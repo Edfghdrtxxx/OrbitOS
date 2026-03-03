@@ -1,2 +1,2 @@
 # OrbitOS
-A self-contained iterative daily working collaborative repo
+A self-contained iterative daily working AI-collaborative repo
