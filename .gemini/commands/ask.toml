@@ -1,0 +1,4 @@
+# Quick answers
+
+description = "Quick answers to questions without heavy note-taking overhead"
+prompt = "Use the ask skill. Question: {prompt}"

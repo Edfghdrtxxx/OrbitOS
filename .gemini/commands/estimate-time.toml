@@ -1,0 +1,4 @@
+# Estimate time for today's tasks
+
+description = "Provide reasoning-based time estimates for today's tasks at subtask resolution"
+prompt = "Use the estimate-time skill."

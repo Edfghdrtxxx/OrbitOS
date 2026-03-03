@@ -1,0 +1,4 @@
+# Parse knowledge
+
+description = "Consolidates text blobs into the OrbitOS vault structure (Areas + Wiki)"
+prompt = "Use the parse-knowledge skill. Input: {prompt}"

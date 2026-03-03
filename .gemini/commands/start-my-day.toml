@@ -1,0 +1,4 @@
+# Daily planning workflow
+
+description = "Daily planning workflow - review yesterday, plan today, connect to active projects"
+prompt = "Use the start-my-day skill."

@@ -1,0 +1,8 @@
+{
+  "theme": "moonstone",
+  "cssTheme": "Primary",
+  "showViewHeader": true,
+  "baseFontSize": 15,
+  "baseFontSizeAction": false,
+  "nativeMenus": false
+}

@@ -1,0 +1,4 @@
+# Obsidian Markdown support
+
+description = "Apply Obsidian-specific Markdown syntax (wikilinks, callouts, properties)"
+prompt = "Use the obsidian-markdown skill. Task: {prompt}"

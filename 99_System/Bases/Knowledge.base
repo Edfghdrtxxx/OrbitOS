@@ -1,0 +1,90 @@
+filters:
+  and:
+    - file.ext == "md"
+    - or:
+        - file.inFolder("30_Research")
+        - file.inFolder("40_Wiki")
+formulas:
+  display_title: file.asLink(file.basename.replace("_", " ").replace("-", " "))
+  category: file.folder.split("/").reverse()[0]
+  area_name: file.path.split("/")[1]
+  source_type: if(file.inFolder("40_Wiki"), "Wiki", "Area")
+  tag_list: if(tags != "", tags.join(", "), "")
+properties:
+  formula.display_title:
+    displayName: Title
+  formula.category:
+    displayName: Category
+  formula.area_name:
+    displayName: Area
+  formula.source_type:
+    displayName: Type
+  formula.tag_list:
+    displayName: Tags
+  created:
+    displayName: Created
+views:
+  - type: table
+    name: 📚 Wiki (Concepts)
+    filters:
+      and:
+        - file.inFolder("40_Wiki")
+    groupBy:
+      property: formula.area_name
+      direction: ASC
+    order:
+      - formula.display_title
+      - formula.category
+      - formula.tag_list
+      - created
+    sort:
+      - property: formula.display_title
+        direction: DESC
+      - property: formula.category
+        direction: ASC
+    columnSize:
+      formula.display_title: 250
+      formula.category: 150
+      formula.tag_list: 200
+  - type: table
+    name: 📖 Research (Reference)
+    filters:
+      and:
+        - file.inFolder("30_Research")
+    groupBy:
+      property: formula.area_name
+      direction: ASC
+    order:
+      - formula.display_title
+      - formula.category
+      - formula.tag_list
+      - created
+    sort:
+      - property: formula.category
+        direction: ASC
+    columnSize:
+      formula.display_title: 250
+      formula.category: 150
+      formula.tag_list: 200
+  - type: table
+    name: 🔍 All Knowledge
+    filters:
+      and:
+        - formula.tag_list.contains("mcp")
+    groupBy:
+      property: formula.source_type
+      direction: ASC
+    order:
+      - formula.display_title
+      - formula.area_name
+      - formula.category
+      - formula.tag_list
+    sort:
+      - property: formula.area_name
+        direction: ASC
+      - property: formula.display_title
+        direction: ASC
+    columnSize:
+      formula.display_title: 250
+      formula.area_name: 120
+      formula.category: 150

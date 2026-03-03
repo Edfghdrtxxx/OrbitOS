@@ -1,0 +1,4 @@
+# Project kickoff
+
+description = "Converts an idea or an Inbox note into a structured Project Note"
+prompt = "Use the kickoff skill. Input: {prompt}"

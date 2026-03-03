@@ -1,0 +1,4 @@
+# Obsidian Bases support
+
+description = "Create or edit Obsidian Bases (.base files) with views and filters"
+prompt = "Use the obsidian-bases skill. Task: {prompt}"

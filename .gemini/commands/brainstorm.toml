@@ -1,0 +1,4 @@
+# Brainstorming session
+
+description = "Interactive brainstorming session, then optionally create a Project or capture knowledge"
+prompt = "Use the brainstorm skill. Topic: {prompt}"

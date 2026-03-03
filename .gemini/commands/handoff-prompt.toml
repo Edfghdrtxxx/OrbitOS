@@ -1,0 +1,4 @@
+# Handoff prompt generation
+
+description = "Generate a handoff prompt for cross-session or cross-tool task transfer"
+prompt = "Use the handoff-prompt skill. Topic: {prompt}"

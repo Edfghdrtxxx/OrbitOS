@@ -1,0 +1,4 @@
+# Deep research workflow
+
+description = "Deep research workflow for technologies, concepts, or complex topics"
+prompt = "Use the research skill. Topic: {prompt}"

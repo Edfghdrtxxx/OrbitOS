@@ -1,0 +1,54 @@
+filters:
+  and:
+    - file.ext == "md"
+    - or:
+        - type == "inbox"
+        - type == "project"
+    - not:
+        - file.inFolder("99_System/Templates")
+formulas:
+  display_title: file.asLink(if(title != "", title, file.basename.replace("_", " ")))
+  priority_label: if(priority == "P0", "🔥 Critical", if(priority == "P1", "⚡ High", if(priority == "P2", "📌 Medium", if(priority == "P3", "📋 Low", "💭 Someday"))))
+properties:
+  formula.display_title:
+    displayName: Title
+  formula.priority_label:
+    displayName: Priority
+  status:
+    displayName: Status
+  area:
+    displayName: Area
+  topic:
+    displayName: Topic
+views:
+  - type: table
+    name: ⏸️ On Hold
+    filters:
+      and:
+        - type == "project"
+        - status == "on-hold"
+    order:
+      - formula.display_title
+      - formula.priority_label
+      - due
+      - area
+  - type: table
+    name: ✅ Completed Projects
+    filters:
+      and:
+        - type == "project"
+        - status == "done"
+    order:
+      - formula.display_title
+      - area
+  - type: table
+    name: ✅ Processed Inbox
+    filters:
+      and:
+        - type == "inbox"
+        - status == "processed"
+    order:
+      - formula.display_title
+      - topic
+    columnSize:
+      formula.display_title: 285

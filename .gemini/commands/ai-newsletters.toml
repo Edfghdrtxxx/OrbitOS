@@ -1,0 +1,4 @@
+# AI Newsletter curation
+
+description = "Curate AI newsletter content with smart deduplication and ranking"
+prompt = "Use the ai-newsletters skill."

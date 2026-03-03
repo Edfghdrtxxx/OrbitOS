@@ -1,0 +1,30 @@
+# Obsidian - track core settings, ignore workspace/cache
+.obsidian/*
+!.obsidian/app.json
+!.obsidian/appearance.json
+!.obsidian/community-plugins.json
+!.obsidian/core-plugins.json
+!.obsidian/graph.json
+
+# Obsidian system
+.trash/
+
+# Tool configs - ignore local/temp only
+.claude/settings.local.json
+.gemini/tmp/
+
+# System junk
+.DS_Store
+Thumbs.db
+*.tmp
+*~
+*.log
+
+# Sensitive personal data
+100_memoranda/
+50_Resources/EmailMessages/
+
+# Large binaries and build artifacts
+20_Project/AstrBot/
+20_Project/marker/
+20_Project/Bilibili-RAG/

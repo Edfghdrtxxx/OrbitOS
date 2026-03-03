@@ -1,0 +1,4 @@
+# AI Product launches curation
+
+description = "Curate AI product launches from Product Hunt, HN, GitHub, and Reddit"
+prompt = "Use the ai-products skill."

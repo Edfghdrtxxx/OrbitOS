@@ -1,0 +1,4 @@
+# Skill creation guide
+
+description = "Guide for creating or updating Gemini CLI skills"
+prompt = "Use the skill-creator skill. Input: {prompt}"

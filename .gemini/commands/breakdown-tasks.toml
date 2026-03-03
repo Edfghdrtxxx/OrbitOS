@@ -1,0 +1,4 @@
+# Task breakdown and estimation
+
+description = "Break down tasks into stratified subtasks with time estimates and dependency markers, then insert into today's daily note"
+prompt = "Use the breakdown-tasks skill. Task: {prompt}"

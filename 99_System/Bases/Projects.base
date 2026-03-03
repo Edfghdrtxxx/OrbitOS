@@ -1,0 +1,73 @@
+filters:
+  and:
+    - file.ext == "md"
+    - or:
+        - type == "inbox"
+        - type == "project"
+    - not:
+        - file.inFolder("99_System/Templates")
+formulas:
+  display_title: file.asLink(if(title != "", title, file.basename.replace("_", " ")))
+  due_relative: if(due != "", date(due).relative(), "")
+  is_overdue: if(due != "", date(due) < today() && status != "done" && status != "processed", false)
+  urgency_icon: if(formula.is_overdue, "🔴", if(due != "" && date(due) <= today() + "3d", "🟠", if(due != "" && date(due) <= today() + "7d", "🟡", "🟢")))
+  priority_label: if(priority == "P0", "🔥 Critical", if(priority == "P1", "⚡ High", if(priority == "P2", "📌 Medium", if(priority == "P3", "📋 Low", "💭 Someday"))))
+  area_display: area.replace("[[", "").replace("]]", "")
+properties:
+  formula.urgency_icon:
+    displayName: Urgency
+  formula.display_title:
+    displayName: Title
+  formula.priority_label:
+    displayName: Priority
+  formula.due_relative:
+    displayName: Due
+  status:
+    displayName: Status
+  formula.area_display:
+    displayName: Area
+  topic:
+    displayName: Topic
+views:
+  - type: table
+    name: 📁 Projects
+    filters:
+      and:
+        - type == "project"
+        - status == "active"
+    groupBy:
+      property: priority
+      direction: ASC
+    order:
+      - formula.urgency_icon
+      - formula.display_title
+      - formula.priority_label
+      - formula.due_relative
+      - formula.area_display
+    sort:
+      - property: formula.urgency_icon
+        direction: DESC
+      - property: formula.display_title
+        direction: ASC
+    columnSize:
+      formula.urgency_icon: 121
+      formula.display_title: 238
+      formula.priority_label: 91
+      formula.due_relative: 90
+  - type: table
+    name: 📥 Inbox
+    filters:
+      and:
+        - type == "inbox"
+        - status != "processed"
+    groupBy:
+      property: priority
+      direction: ASC
+    order:
+      - formula.urgency_icon
+      - formula.display_title
+      - formula.priority_label
+      - formula.due_relative
+      - topic
+    columnSize:
+      formula.display_title: 202

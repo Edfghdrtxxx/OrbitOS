@@ -1,0 +1,4 @@
+# Archive workflow
+
+description = "Archive completed projects and processed inbox items"
+prompt = "Use the archive skill."
