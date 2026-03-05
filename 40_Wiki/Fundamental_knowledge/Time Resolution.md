@@ -16,7 +16,7 @@ Time Resolution is the smallest time interval a detection system can reliably di
 
 - **Quantification**: Typically reported as the FWHM of the time-difference distribution between coincident events, ranging from picoseconds (fast [[Scintillation Detector|scintillators]]) to microseconds (slow gas detectors)
 - **Limiting factors**: Detector signal [[Rise Time|rise time]], [[Time Walk]], electronic [[Jitter|jitter]], photoelectron statistics, and [[Dark Count Rate|dark counts]] all degrade time resolution
-- **Correction methods**: Using a [[Constant Fraction Discriminator]] or [[Constant Ratio Timing]] removes amplitude-dependent contributions; higher light yield and faster [[Photodetector|photodetectors]] improve intrinsic resolution
+- **Correction methods**: Using a [[Constant Fraction Discriminator]] or [[Constant Ratio Timing]] removes amplitude-dependent contributions; higher [[Light Yield|light yield]] and faster [[Photodetector|photodetectors]] improve intrinsic resolution
 - **Relationship to energy**: Better [[Energy Resolution]] often trades off against time resolution because optimising charge collection (slow shaping) conflicts with fast timing
 
 ## Examples
@@ -35,6 +35,7 @@ Time Resolution is the smallest time interval a detection system can reliably di
 - [[Drift Time]]
 - [[Rise Time]]
 - [[Spatial Resolution]]
+- [[Light Yield]]
 
 ## References
 

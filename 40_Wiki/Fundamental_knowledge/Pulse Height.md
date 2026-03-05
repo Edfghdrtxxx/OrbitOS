@@ -18,7 +18,7 @@ Pulse Height is the peak amplitude of an electrical signal produced by a radiati
 - **Measurement chain**: The detector pulse is shaped by a [[Preamplifier|preamplifier]], then digitised by an [[ADC]] whose bin width determines the minimum resolvable energy difference (channel width)
 - **Impact on timing**: Variations in pulse height cause [[Time Walk]] in [[Leading-Edge Discriminator|leading-edge discriminators]] — larger pulses cross the threshold earlier, introducing amplitude-dependent timing errors corrected by a [[Constant Fraction Discriminator]]
 - **Resolution link**: The statistical spread of pulse heights for mono-energetic radiation defines the detector's [[Energy Resolution]], typically reported as FWHM/centroid (%)
-- **Spectroscopy applications**: Pulse-height analysis with a [[Multichannel Analyzer|multichannel analyzer]] is the basis of [[Gamma Spectroscopy]], alpha spectroscopy, and charged-particle identification
+- **Spectroscopy applications**: Pulse-height analysis with a [[Multichannel Analyzer|multichannel analyzer]] is the basis of [[Gamma Spectroscopy]], alpha spectroscopy, and [[Particle Identification|charged-particle identification]]
 
 ## Examples
 
