@@ -53,15 +53,13 @@ marker_single C:\path\to\file.pdf
 WSL/Linux:
 
 ```bash
-marker_single /path/to/file.pdf \
-  --output_dir /mnt/d/obsidian/OrbitOS/50_Resources/Physics/references
+marker_single /mnt/d/Something/course/MachineLearning/PDFVersion/DANN_Electronic_Identification.pdf --output_dir /mnt/d/Something/course/MachineLearning/MDVersion/
 ```
 
 PowerShell (Windows):
 
 ```powershell
-marker_single C:\path\to\file.pdf `
-  --output_dir D:\obsidian\OrbitOS\50_Resources\Physics\references
+marker_single C:\path\to\file.pdf --output_dir D:\obsidian\OrbitOS\50_Resources\Physics\references
 ```
 
 With the Bilibili-RAG API wrapper:
