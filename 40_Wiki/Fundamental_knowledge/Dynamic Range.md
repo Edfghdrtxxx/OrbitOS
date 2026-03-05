@@ -22,7 +22,7 @@ Dynamic Range is the ratio between the largest and smallest signal amplitudes a 
 
 ## Examples
 
-- A [[Scintillation Detector]] system measuring gamma rays from 50 keV to 10 MeV needs a dynamic range of ~200:1 (~46 dB), requiring at minimum an 8-bit [[ADC]]
+- A [[Scintillation Detector]] system measuring [[Gamma Ray|gamma rays]] from 50 keV to 10 MeV needs a dynamic range of ~200:1 (~46 dB), requiring at minimum an 8-bit [[ADC]]
 - In a [[Time Projection Chamber]], pad signals can vary over three orders of magnitude depending on particle species, demanding 10+ bit digitisation in the [[FPGA]]-based front-end
 
 ## Related Concepts

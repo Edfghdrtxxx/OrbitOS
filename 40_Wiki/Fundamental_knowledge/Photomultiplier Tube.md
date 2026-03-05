@@ -10,14 +10,14 @@ review_interval: 0
 
 ## Definition
 
-A Photomultiplier Tube (PMT) is a vacuum-tube photodetector that converts weak light signals into measurable electrical pulses through the photoelectric effect at a photocathode followed by electron multiplication across a chain of dynodes, achieving gains of 10⁶–10⁷.
+A Photomultiplier Tube (PMT) is a vacuum-tube photodetector that converts weak light signals into measurable electrical pulses through the photoelectric effect at a photocathode followed by electron multiplication across a chain of dynodes, achieving gains of $10^6$–$10^7$.
 
 ## Key Points
 
 - **Operating principle**: Incident photon → photoelectron (photocathode) → secondary electron cascade through 8–14 dynodes → amplified anode current pulse
-- **Key specifications**: Quantum efficiency (QE, 20–30% for bialkali cathodes at ~400 nm), gain (~10⁶), transit time spread (TTS, ~0.3–1 ns — limits timing resolution)
+- **Key specifications**: Quantum efficiency (QE, 20–30% for bialkali cathodes at $\sim 400\;\text{nm}$), gain ($\sim 10^6$), transit time spread (TTS, $\sim 0.3$–$1\;\text{ns}$ — limits timing resolution)
 - **Role in timing**: PMT transit time spread sets the fundamental timing limit; combined with [[Constant Ratio Timing]], sub-nanosecond time resolution is achieved for [[Time-of-Flight]] and [[Coincidence Detection]]
-- **Limitations**: Sensitive to magnetic fields (requires shielding), bulky, high-voltage supply needed (~1–2 kV); increasingly supplemented by [[Silicon Photomultiplier|silicon photomultipliers]] (SiPMs)
+- **Limitations**: Sensitive to magnetic fields (requires shielding), bulky, high-voltage supply needed ($\sim 1$–$2\;\text{kV}$); increasingly supplemented by [[Silicon Photomultiplier|silicon photomultipliers]] (SiPMs)
 
 ## Examples
 

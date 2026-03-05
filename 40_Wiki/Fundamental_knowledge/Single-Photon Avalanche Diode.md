@@ -16,7 +16,7 @@ A Single-Photon Avalanche Diode (SPAD) is a semiconductor [[Photodetector]] oper
 
 - Each micro-cell in a [[Silicon Photomultiplier]] is a SPAD; the SiPM sums many SPAD outputs to obtain photon-counting capability
 - Requires above-breakdown bias and external [[Quenching Circuit|quenching]] to return to the sensitive state after each avalanche
-- Offers sub-nanosecond timing resolution, high gain (~10⁵–10⁶), and compact size compared to [[Photomultiplier Tube]]s
+- Offers sub-nanosecond timing resolution, high gain ($\sim 10^5$–$10^6$), and compact size compared to [[Photomultiplier Tube]]s
 - [[Dark Count Rate]] and [[Optical Crosstalk]] limit performance at low light levels
 
 ## Examples

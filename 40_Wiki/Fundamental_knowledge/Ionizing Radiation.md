@@ -16,15 +16,15 @@ Ionizing radiation is any radiation with sufficient energy to remove electrons f
 
 ## Key Points
 
-- **Alpha (α):** helium-4 nuclei, high LET (Linear Energy Transfer), stopped by paper/skin but extremely damaging if ingested — wR = 20 in [[Sievert]] calculations
-- **Beta (β):** electrons or positrons, moderate penetration (stopped by a few mm of aluminum), wR = 1
-- **Gamma (γ) / X-rays:** electromagnetic radiation, highly penetrating (requires lead or concrete shielding), wR = 1
-- **Neutrons:** uncharged, penetrate deeply, cause [[Neutron Activation]] in materials — wR ranges from 5 to 20 depending on energy
+- **Alpha ($\alpha$):** helium-4 nuclei, high LET (Linear Energy Transfer), stopped by paper/skin but extremely damaging if ingested — $w_R = 20$ in [[Sievert]] calculations
+- **Beta ($\beta$):** electrons or positrons, moderate penetration (stopped by a few mm of aluminum), $w_R = 1$
+- **Gamma ($\gamma$) / X-rays:** electromagnetic radiation, highly penetrating (requires lead or concrete shielding), $w_R = 1$
+- **Neutrons:** uncharged, penetrate deeply, cause [[Neutron Activation]] in materials — $w_R$ ranges from 5 to 20 depending on energy
 - Biological damage mechanism: ionization breaks DNA strands, producing deterministic effects (radiation sickness at high dose) and stochastic effects (cancer risk at any dose)
 
 ## Examples
 
-- Gamma rays from ⁶⁰Co decay — used in medical therapy and industrial radiography
+- Gamma rays from $^{60}\text{Co}$ decay — used in medical therapy and industrial radiography
 - Neutron radiation from a cyclotron target at RCNP — the primary cause of [[Neutron Activation]] in surrounding materials
 
 ## Related Concepts
