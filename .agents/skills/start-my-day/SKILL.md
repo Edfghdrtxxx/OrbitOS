@@ -38,16 +38,9 @@ Help the user start their day by reviewing yesterday's progress, creating today'
    - Extract the **identity statement** and **1-year goal**
    - These will be surfaced in both the daily note and the terminal summary
 
-6. **Fetch AI Content** (run in parallel)
-   - Run `/ai-newsletters` workflow to get today's AI newsletter digest
-   - Run `/ai-products` workflow to get today's AI product launches
-   - Both skills will return condensed summaries for /start-my-day context
-   - Store top 5 content opportunities and top 5 product launches
-   - **If either fetch fails, skip that section gracefully** — never block the daily note for content fetching
-
-7. **Analyze & Prioritize**
+6. **Analyze & Prioritize**
    - Identify time-sensitive items (deadlines, events)
-   - Find projects not touched in 3+ days (stale)
+   - Re-read the daily note as a premise, to find projects not touched in 3+ days (stale)
    - Determine logical next steps for each active project
 
 ## Step 2: Ask User Input (Interactive)
@@ -65,6 +58,7 @@ Use the AskUserQuestion tool to gather (combine into as few rounds as possible):
 
 **Question 4:** "Anything else to capture? (new ideas, overnight messages, blockers, concerns, please make sure you have viewed all messages from each platform)"
 - Options: "QQ", "Wechat", "Gmail", "CAS email" and <free text input>
+- **Semantics:** Platform selections = "I've checked these, nothing extra to capture." Free text = the actual items to capture. Do NOT prompt for more details on selected platforms.
 
 **Energy-aware planning:**
 - **High:** Full priority list, suggest deep work blocks
@@ -84,11 +78,6 @@ Use the AskUserQuestion tool to gather (combine into as few rounds as possible):
    - **Priorities**: Carryover tasks from the last note (incomplete + `#daily`), then user's focus, then project next actions. Adjust quantity based on energy level (Q2).
    - **Log**: Leave empty for user
    - **Notes**: Add recommendations (time-sensitive items, stale projects, inbox count)
-   - **AI Digest**: Add summary section with top content from newsletters and product launches
-     - Include top 3-5 content opportunities from AI newsletters
-     - Include top 3-5 product launch opportunities
-     - Each item MUST include a markdown link to the original source: `[Title](url)`
-     - Add clear links to full digests in respective folders: `[[50_Resources/Newsletters/YYYY-MM-DD-Digest]]` and `[[50_Resources/ProductLaunches/YYYY-MM-DD-Digest]]`
    - **Related Projects**: List active projects with current status
 
 ## Step 4: Process New Ideas (from Q4)
@@ -105,18 +94,48 @@ For each new idea/task mentioned in Q4:
    [User's description]
    ```
 
-## Step 5: Present Summary (Minimal)
+## Step 5: Present Summary & Offer AI Digests
 
-Output a short terminal confirmation only — the user reads details in Obsidian:
+Output a short terminal confirmation, then offer optional AI content digestion:
 
 ```
 Good morning! Your day is ready.
 
 Energy: [level] | Priorities: [N] | Active projects: [N] | Inbox: [N] pending
 Today's note: [[YYYY-MM-DD]]
-
-> Next: `/breakdown-tasks` → `/estimate-time`
 ```
+
+**Then ask the user** using the AskQuestion tool:
+
+**Question:** "Want AI digests? (newsletters + product launches)"
+- Options: "Yes, fetch both", "Newsletters only", "Products only", "Skip"
+
+- **If user selects any fetch option:** Proceed to Step 6.
+- **If user selects "Skip":** End with `> Next: /breakdown-tasks → /estimate-time`
+
+## Step 6: AI Content Digestion (Optional, Parallel)
+
+Only runs if user opted in during Step 5.
+
+1. **Launch subagents in parallel** based on user's choice:
+   - `/ai-newsletters` — fetches, deduplicates, ranks AI newsletter content
+   - `/ai-products` — fetches, deduplicates, ranks AI product launches
+   - Launch both concurrently when "Yes, fetch both" is selected
+
+2. **On completion, append to today's daily note** (`10_Daily/YYYY-MM-DD.md`):
+   - Add an `## AI Digest` section at the end of the note (before any trailing blank lines)
+   - Include top 3–5 content opportunities from newsletters (if fetched)
+   - Include top 3–5 product launch opportunities (if fetched)
+   - Each item MUST include a markdown link to the original source: `[Title](url)`
+   - Add links to full digests: `[[50_Resources/NewsLetter/YYYY-MM/YYYY-MM-DD-Digest]]` and/or `[[50_Resources/ProductLaunches/YYYY-MM/YYYY-MM-DD-Digest]]`
+
+3. **If a subagent fails**, skip that section gracefully — never retroactively break the daily note.
+
+4. **End with:**
+   ```
+   AI Digest appended to [[YYYY-MM-DD]].
+   > Next: `/breakdown-tasks` → `/estimate-time`
+   ```
 
 # IMPORTANT RULES
 

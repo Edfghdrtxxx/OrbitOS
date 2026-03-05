@@ -103,5 +103,5 @@ verified_on: 2026-02-13
 
 - [[Work_vs_PhD_Scorecard]]
 - [[Work_vs_PhD_Decision_Workflow]]
-- [[Work_Methods/Checklist]]
+- [[WorkChecklist]]
 - [[General Checklist]]

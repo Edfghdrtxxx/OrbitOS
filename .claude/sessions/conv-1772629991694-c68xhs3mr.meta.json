@@ -1,0 +1,19 @@
+{
+  "id": "conv-1772629991694-c68xhs3mr",
+  "title": "Test interactive interview tool",
+  "titleGenerationStatus": "success",
+  "createdAt": 1772629991694,
+  "updatedAt": 1772630697460,
+  "lastResponseAt": 1772630661871,
+  "sessionId": "f36c2025-8ae7-4f7a-adb6-d56e086488e8",
+  "sdkSessionId": "f36c2025-8ae7-4f7a-adb6-d56e086488e8",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 1344,
+    "cacheReadInputTokens": 24206,
+    "contextWindow": 200000,
+    "contextTokens": 25551,
+    "percentage": 13
+  }
+}

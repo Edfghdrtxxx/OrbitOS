@@ -20,7 +20,7 @@ The **Academic Word List** contains **570 word families** (Coxhead, 2000) that a
 > 1. Work through one category per study session (don't cram all at once)
 > 2. For each word: read the example, check the word family, then **write your own sentence** using your physics/ML context
 > 3. Add mastered words to your [[Daily Accumulation]] log
-> 4. Review using spaced repetition (Anki) per [[TOEFL_Study_Plan#Vocabulary (ongoing throughout all phases)|Phase 1 plan]]
+> 4. Review using spaced repetition (Anki) per [[TOEFL_Study_Progress#Vocabulary (ongoing throughout all phases)|Phase 1 plan]]
 ---
 
 ## Category A — Research & Analysis
@@ -605,7 +605,7 @@ Use this space to collect your best practice paragraphs. Whenever you complete E
 ## Study Method
 
 1. **Anki deck**: Add each word with definition + example + Chinese gloss + word family
-2. **Spaced repetition**: 10–15 new words per session, review daily per [[TOEFL_Study_Plan#Vocabulary (ongoing throughout all phases)|Phase 1 plan]]
+2. **Spaced repetition**: 10–15 new words per session, review daily per [[TOEFL_Study_Progress#Vocabulary (ongoing throughout all phases)|Phase 1 plan]]
 3. **Context exposure**: When reading papers for your [[Masters_Thesis]], highlight AWL words — you're already doing academic reading
 4. **Active use**: Force yourself to use 3 new AWL words in any English writing (emails, daily notes, practice paragraphs)
 5. **Listen for them**: During TOEFL Listening practice or MIT OCW lectures, note every AWL word you catch
@@ -618,7 +618,7 @@ Use this space to collect your best practice paragraphs. Whenever you complete E
 ## Related
 
 - [[Daily Accumulation]] — day-by-day vocabulary log (add mastered AWL words here)
-- [[TOEFL_Study_Plan]] — full study schedule and phase targets
+- [[TOEFL_Study_Progress]] — full study schedule and phase targets
 - [[English_Learning]] — parent project
 - [[Masters_Thesis]] — academic writing synergy
 - [[UTokyo_RIKEN]] — English proficiency supports the PhD pathway

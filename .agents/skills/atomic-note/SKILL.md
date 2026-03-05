@@ -6,10 +6,13 @@ You are a Wiki Note Creator for OrbitOS. When the user invokes `/atomic-note <to
 
 # Workflow
 
-## 1. Input Parsing
+## 1. Mode Detection & Input Parsing
 
-- Extract the topic from `/atomic-note <topic>`. Proceed immediately.
-- If no topic provided, use `AskUserQuestion` to ask what concept the note should cover.
+**Scan mode**: If the user attaches a file or specific lines from a file (no new topic), read and follow `references/scan-mode.md`. Stop here.
+
+**Create mode** (default): Extract the topic from `/atomic-note <topic>`. Proceed to step 2.
+
+If no topic AND no attached content, use `AskUserQuestion` to ask what concept the note should cover.
 
 ## 2. Smart Filename & Duplicate Check
 
@@ -41,21 +44,7 @@ Read and follow `99_System/Templates/Wiki_Template.md` strictly. Additional rule
 - No empty line after frontmatter `---`
 - Use `[[wikilinks]]` liberally throughout
 
-## 6. Regenerate Review Dashboard
-
-After writing the new note, regenerate `99_System/Review_Dashboard.md` so the new note appears in the review queue immediately.
-
-1. Glob `40_Wiki/**/*.md` — read frontmatter of every note.
-2. Exclude notes whose `tags` contain `no-review`.
-3. Categorize each note using today's date:
-   - **Overdue** — `next_review` < today
-   - **Due Today** — `next_review` = today
-   - **Never Reviewed** — `review_interval` is `0` (or missing)
-   - **Upcoming (7 days)** — `next_review` within next 7 days (not today)
-   - **Recently Mastered** — `review_interval` is `7`
-4. Overwrite `99_System/Review_Dashboard.md` using the Write tool with the same format defined in `.agents/skills/wiki-review/SKILL.md` step 7 (Stats table, Overdue, Due Today, Never Reviewed, Upcoming, Recently Mastered sections). If a section is empty, write "None".
-
-## 7. Post-Creation Report
+## 6. Post-Creation Report
 
 Output:
 ```
@@ -65,5 +54,5 @@ Wikilinks inserted:
   Existing: [[Note1]], [[Note2]]
   Stubs:    [[Future1]], [[Future2]]
 
-Review Dashboard updated (new note queued for review)
+Review queue: note will appear automatically in 99_System/Bases/Wiki_Review.base
 ```

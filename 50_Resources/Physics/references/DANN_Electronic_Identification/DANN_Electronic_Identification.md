@@ -1,4 +1,4 @@
-![](images/_page_0_Picture_0.jpeg)
+![](_page_0_Picture_0.jpeg)
 
 # Experimental Physics
 
@@ -123,7 +123,7 @@ where n is the number of colours, f the number of flavours and  $\Lambda_{QCD}$ 
 
 Confinement states that anything with a non-zero colour charge can not propagate as a free particle, but instead must be confined to colour singlets. The reason that quarks can not be
 
-<span id="page-7-1"></span>![](50_Resources/Physics/references/DANN_Electronic_Identification/images/_page_7_Figure_2.jpeg)
+<span id="page-7-1"></span>![](50_Resources/RawPhysicsResources/references/DANN_Electronic_Identification/images/_page_7_Figure_2.jpeg)
 
 Figure 2.1: The Strong coupling α<sup>s</sup> as a function of momentum transfer Q. Both theoretical predictions and experimental values are shown.
 
@@ -135,7 +135,7 @@ Most high-energy collider experiments are typically on the scale of |q| > 100 Ge
 
 The massless QCD Lagrangian has a chiral symmetry, which corresponds to left- and right handedness of the massless quarks. Of course, as quarks are not massless, this is an approximate symmetry only for the lightest quarks, i.e., up and down quarks, as their masses are far smaller than typical QCD energy scales; thus, this discussion only makes sense in the context of light hadrons, consisting of up and down quarks. They have a global SU(3)<sup>L</sup> × SU(3)<sup>R</sup> chiral symmetry in flavour space, meaning that left and right-handed particles are not mixed, preserving their handedness in the strong interaction, left and right handed particles are not treated differently in the strong interaction. The structure of the QCD vacuum is far from trivial. It is said to be filled
 
-![](images/_page_8_Picture_2.jpeg)
+![](_page_8_Picture_2.jpeg)
 
 Figure 2.2: On the left: Linear field lines between a quark pair. On the right: The formation of a quark anti-quark pair due to separations. Taken from [\[2\]](#page-55-1)
 
@@ -155,7 +155,7 @@ $$\Lambda_A: \quad \psi \to e^{-i\gamma^5 \frac{\vec{\tau}}{2} \cdot \vec{\Theta
 
 Which are known as vectorial and axial vectorial transformations, where ⃗τ are the Pauli isospin matrices and Θ are angular transformations. It is possible to show that the Lagrangian is sym- ⃗ metric under both transformations in the massless limit. These symmetries are known as chiral symmetries. Of course, quarks are massive and thus introducing a mass term into the Lagrangian,
 
-<span id="page-9-0"></span>![](images/_page_9_Figure_2.jpeg)
+<span id="page-9-0"></span>![](_page_9_Figure_2.jpeg)
 
 Figure 2.3: Masses of chiral partners as observed in vacuum. An average mass difference of 500 MeV is observed.[3]
 
@@ -195,7 +195,7 @@ States that, under axial transformation, become mixed are called chiral partners
 
 breaking of the Lagrangian due to the small quark masses. A reason for these discrepancies is due to spontaneous symmetry breaking, which happens if the symmetry of the Hamiltonian is not realised in the ground state.
 
-<span id="page-10-0"></span>![](images/_page_10_Figure_3.jpeg)
+<span id="page-10-0"></span>![](_page_10_Figure_3.jpeg)
 
 Figure 2.4: A: Potential which is symmetric in both the ground state and the zero particle state. B: Mexican Hat potential, whilst its symmetric in the zero-particle state, it is not symmetry in the ground state.[\[4\]](#page-55-3)
 
@@ -229,7 +229,7 @@ Up until now, we have discussed the behaviour of hadronic matter in the QCD vacu
 
 <span id="page-12-2"></span>Fig. [3.1](#page-12-2) shows a schematic overview of the QCD phase diagram. Hadronic matter is described by the temperature, T, and the baryochemical potential µB. Ordinary matter exists at low temperature and a baryochemical potential of µ<sup>b</sup> ≈ 935 MeV. The phase diagram shows two main regions, the hadron gas at low T and/or µ<sup>b</sup> and the Quark-Gluon plasma at high T. The two phases are separated via phase transition at low µ<sup>b</sup> with a critical temperature T<sup>c</sup> ≈ 170 MeV. At low T and high µb, there exists a so-called colour superconductor, which is beyond the scope of this thesis.
 
-![](images/_page_12_Figure_4.jpeg)
+![](50_Resources/RawPhysicsResources/references/DANN_Electronic_Identification/images/_page_12_Figure_4.jpeg)
 
 Figure 3.1: A schematic overview of the QCD phase diagram, showing relations between temperature T, and baryon chemical potential, µB. Key phases and their physical significance are highlighted.[\[6\]](#page-55-5)
 
@@ -241,11 +241,11 @@ Nuclear collisions are characterised by multiple stages as shown in Fig. [3.3,](
 
 Initial State The initial state of a nuclear collision can be described by the Colour Glass Condensate (CGC) [\[8\]](#page-55-6), which states that the incoming nuclei are largely gluonic matter. The number of gluons grows rapidly as a function of the collision energy. Fig. [3.4](#page-15-1) shows the Parton Distribution Function (PDF) of the proton, which represents the probability density of finding a parton carrying momentum fraction x, at energy scale Q<sup>2</sup> . We call this fraction
 
-<span id="page-13-0"></span>![](images/_page_13_Picture_2.jpeg)
+<span id="page-13-0"></span>![](_page_13_Picture_2.jpeg)
 
 Figure 3.2: The collision of two nuclei. On the left: Initial conditions before the collision. Due to their relativistic speed, the nuclei appear as Lorentz-contracted discs. On the right: The aftermath of the collision. We can distinguish between participants, the particles in the area of the nuclei that have collided, and the spectators, which are the particles in the area outside the collision.
 
-<span id="page-13-1"></span>![](images/_page_13_Figure_4.jpeg)
+<span id="page-13-1"></span>![](_page_13_Figure_4.jpeg)
 
 Figure 3.3: Schematic overview of the space-time evolution of nuclear collisions. [\[7\]](#page-55-7)
 
@@ -265,7 +265,7 @@ Electromagnetic probes are continuously produced at multiple stages of the QGP e
 
 The measured dileptonic spectrum essentially has a timeline, which can be divided into multiple phases. The pre-equilibrium phase, where the radiated dileptons mostly come from processes such as the Drell-Yan annihilation. After rapid thermalisation, the QGP phase is established. In this phase, dileptons are produced predominantly via quark-antiquark annihilations. At later stages, the QGP is now a hot hadronic gas and the dileptons are radiated from pion and kaon annihilation
 
-<span id="page-15-1"></span>![](images/_page_15_Figure_2.jpeg)
+<span id="page-15-1"></span>![](_page_15_Figure_2.jpeg)
 
 Figure 3.4: Parton Distribution Functions (PDF) representing the probability density of quarks and gluons as a function of momentum fraction x. Note that for high x, most of the momentum is carried by the up and down quarks in 2:1 ratio, as expected from the valence quarks of the proton. At low x, the gluons dominate and thus most momentum carried is by the gluons. [\[10\]](#page-55-9)
 
@@ -285,7 +285,7 @@ $$E_l = \vec{p_l}^2 + m_l^2. (3.2)$$
 
 Eq. [3.2](#page-15-2) is just the Einstein energy-momentum relation, with m the mass hypothesis for the given lepton. It's important to note that the invariant mass is by definition Lorentz-Invariant, hence the relation holds in all intertial frames. As a consequence, the invariant mass spectrum is not affected by Doppler shifts due to the expanding source. Fig. [3.5](#page-16-1) shows the invariant mass spectrum, divided into three regions. The largest contribution to correlated dielectron pairs comes from hadronic decays, with a significant abundance originating from light hadronic decays, which are composed of hadrons built from light quarks, specifically the up, down, and strange quarks. In the following sections, we'll discuss the three regions of the dielectronic spectrum and its relevance to the study.
 
-<span id="page-16-1"></span>![](images/_page_16_Figure_2.jpeg)
+<span id="page-16-1"></span>![](_page_16_Figure_2.jpeg)
 
 Figure 3.5: Dielectron invariant mass spectrum, showing the yield as a function of invariant mass. The primary sources of dielectrons for each mass region are shown.[\[3\]](#page-55-2)
 
@@ -293,7 +293,7 @@ Figure 3.5: Dielectron invariant mass spectrum, showing the yield as a function 
 
 As seen in Fig. [3.5,](#page-16-1) the low mass region is between 0 GeV/c < mee < 0.9 GeV/c. The dominant source of low-mass dielectrons is via Dalitz decays for mee < 0.5 GeV/c, which is a three-body decay of a neutral pseudoscalar meson, such as the π0, into a e +e <sup>−</sup> pair and a photon, where a virtual photon converts to a real lepton pair, resulting in the total process π<sup>0</sup> → e +e <sup>−</sup>γ. Fig. [3.6a](#page-16-2) shows the Feynman diagram that corresponds to this process.
 
-<span id="page-16-2"></span>![](images/_page_16_Picture_6.jpeg)
+<span id="page-16-2"></span>![](_page_16_Picture_6.jpeg)
 
 (a) Vector meson dominance diagram (b) Dalitz Decay of a pion
 
@@ -331,7 +331,7 @@ As discussed previously, in a vacuum, the quark condensates lead to the generati
 
 Studies [\[11\]](#page-55-10) show us that the broadening of the ρ spectral function in the dielectron spectrum indicates chiral symmetry restoration. When chiral symmetry is restored, the ρ−a<sup>1</sup> mass splitting is burned off, and the states become degenerate. The calculations assume the decrease of the chiral condensates calculated in lattice QCD, and they use first-principle Weinberg sum rules to relate the difference between vector and axial-vector spectral functions. Fig. [3.7](#page-18-0) shows the spectral functions from the calculations, which show broadening and degeneracies of the vector and axialvector spectra at temperatures characteristic of hadronic gas. The broadening of the ρ-meson spectral function in in-medium dielectronic spectra, thus implies chiral symmetry restoration.
 
-<span id="page-18-0"></span>![](images/_page_18_Figure_4.jpeg)
+<span id="page-18-0"></span>![](_page_18_Figure_4.jpeg)
 
 Figure 3.7: Temperature evolution of the ρ vector meson (black) and a<sup>1</sup> axial vector meson (red). As the temperature increases, the spectral functions exhibit increasing broadening and degeneracy, indicating the restoration of chiral symmetry in a hot and dense medium. [\[11\]](#page-55-10)
 
@@ -341,7 +341,7 @@ The Large Hadron Collider (LHC) is located at CERN near Geneva. It is a particle
 
 A Large Ion Collider Experiment (ALICE) is designed for heavy-ion collisions to investigate strong interactions under extreme conditions. It is especially optimised to deal with high-density particle environments as they arise in heavy-ion collisions. A schematic overview of the detector system at ALICE is shown in Fig. 4.1. It can be divided into two parts, the Central Barrel,  $|\eta| < 0.8$ , which is used for hadron, electron and photon analysis. The second part is the Forward Muon Spectrometer,  $-4 < \eta < -2.5$ , which primarily focuses on muon measurements. We focus on three subsystems of the detector that are relevant to our current dielectron study: the Inner Tracking System (ITS), the Time Projection Chamber (TPC), and the Time-of-Flight (TOF). In this chapter, we will go over the most important properties of these detectors.
 
-<span id="page-19-1"></span>![](images/_page_19_Figure_5.jpeg)
+<span id="page-19-1"></span>![](_page_19_Figure_5.jpeg)
 
 Figure 4.1: A schematic overview of the ALICE detector system.
 
@@ -349,7 +349,7 @@ Figure 4.1: A schematic overview of the ALICE detector system.
 
 <span id="page-20-2"></span>The Inner Tracking System[\[12\]](#page-55-11) is the first detector encountered for particles of |η| < 0.8. It is primarily used for determining the primary and secondary vertices. It also enables the tracking and identification of low-momentum particles that do not reach the Time Projection Chamber via energy loss signals.
 
-![](images/_page_20_Picture_4.jpeg)
+![](_page_20_Picture_4.jpeg)
 
 Figure 4.2: Schematic overview of the Inner Tracking System. [\[13\]](#page-55-12)
 
@@ -361,7 +361,7 @@ The Time Projection Chamber[\[14\]](#page-55-13) is the second detector encounte
 
 The TPC volume is filled with a gas, which is a mixture of 90% Ne and 10% CO2. An electric field is applied parallel to the beam axis, allowing charged particles traversing through the volume to ionise the gas. A combination of the particle momentum and the energy loss information can then be used for particle identification.
 
-![](images/_page_21_Picture_2.jpeg)
+![](_page_21_Picture_2.jpeg)
 
 Figure 4.3: A schematic overview of the Time Projection Chamber.[\[15\]](#page-55-14)
 
@@ -369,7 +369,7 @@ Figure 4.3: A schematic overview of the Time Projection Chamber.[\[15\]](#page-5
 
 The Time of Flight[\[16\]](#page-56-0) is mainly used for the separation of pions, kaons, and protons. It measures the time for the particle to travel from the collision to the detector. The measurement depends on the time difference thit − tt<sup>0</sup> where t0 is the starting time determined by the T0 detector. It has a cylindrical shape that covers the polar angle from 45 degrees to 135 degrees over the entire azimuthal range. It has 18 modal structures in ϕ, and each module consists of detector elements that are called MRPC strips. Fig. [6.5](#page-37-2) shows a schematic overview of the time-of-flight (TOF) system.
 
-![](images/_page_21_Figure_6.jpeg)
+![](_page_21_Figure_6.jpeg)
 
 Figure 4.4: A schematic overview of the Time of Flight. [\[17\]](#page-56-1)
 
@@ -385,7 +385,7 @@ XGBoost (eXtreme Gradient Boosting)[\[18\]](#page-56-2) is a widely used machine
 
 <span id="page-22-2"></span>We start by defining tree models. Fig. [5.1](#page-22-2) shows a schematic overview of a tree model. It's a structure used to make decisions or predictions, and is commonly used in Machine Learning algorithms. It takes in data and splits the data at each node until it reaches the final leaves, which allows us to define a probabilistic model and form a prediction using decision theory.
 
-![](images/_page_22_Figure_8.jpeg)
+![](_page_22_Figure_8.jpeg)
 
 Figure 5.1: Schematic Overview of a tree model, illustrating each component.
 
@@ -398,7 +398,7 @@ $$\hat{y}_i = \phi(x_i) = \sum_{k=1}^K f_k(x_i), \quad f_k \in \mathcal{F},$$
 
 <span id="page-23-0"></span>where  $\mathcal{F}$  is the space of regression trees,  $\mathcal{F} = \{f(x) = w_{q(x)} \mid q : \mathbb{R}^m \to T, w \in \mathbb{R}^T\}$ . We define q as the specific tree structure for each example to its corresponding leaf index, T is the number of leaves, and  $f_k$  is the complete tree structure q with weights w. To reach a decision for input vector  $\mathbf{x_i}$ , we sum the weights for each corresponding leaf. Fig. 5.2 shows an example of a tree ensemble.
 
-![](images/_page_23_Figure_5.jpeg)
+![](_page_23_Figure_5.jpeg)
 
 Figure 5.2: An illustration of a Tree Ensemble Method. [18]
 
@@ -433,7 +433,7 @@ Each neuron has some value assigned to it, called an activation. A network train
 
 In this section, we'll cover the essential mathematics that describes neural networks. Sec. 5.2.1
 
-<span id="page-25-1"></span>![](images/_page_25_Figure_2.jpeg)
+<span id="page-25-1"></span>![](_page_25_Figure_2.jpeg)
 
 Figure 5.3: Illustration of a simple Neural Network, consisting of one hidden layer. [\[19\]](#page-56-3)
 
@@ -499,7 +499,7 @@ Solving this analytically is not possible due to the complexity of neural networ
 
 To solve Eq. [5.14](#page-27-1) numerically, we introduce an algorithm called Stochastic Gradient Descent (SGD). Algorithms that aim to minimize the loss function are often called optimizers. Since a neural network consists of many weights and biases, adjusting each one has an impact on the performance of the model, and thus on the loss. This implies that a loss surface becomes highly complex. Fig. [5.4](#page-27-2) shows the loss surface in the parameter space. The lowest possible point in a loss surface is called a global minimum. Any other minimum is called a local minimum.
 
-<span id="page-27-2"></span>![](images/_page_27_Picture_7.jpeg)
+<span id="page-27-2"></span>![](_page_27_Picture_7.jpeg)
 
 Figure 5.4: Visualisation of the Loss surface of Neural Networks,x with a clear global minimum.[\[20\]](#page-56-4)
 
@@ -573,7 +573,7 @@ This section follows the line of reasoning in [\[22\]](#page-56-6). We start by 
 
 We can now define a feed-forward neural network that takes input x and predicts its class label y, and the domain label d. The proposed architecture is shown in Fig. [5.5.](#page-30-0) The mapping from x to y and d can be broken down in three parts. We first map x onto a D-dimensional feature vector f ∈ R <sup>D</sup>, using a feed-forward neural network. The parameters of f are given by θ<sup>f</sup> , such that the mapping is given by f = G<sup>f</sup> (x; θ<sup>f</sup> ). Using this feature vector f, we can now define the mapping functions Gd(f; θd), which maps f to the domain label d, and Gy(f; θy), which maps f to the class label y.
 
-<span id="page-30-0"></span>![](images/_page_30_Picture_2.jpeg)
+<span id="page-30-0"></span>![](_page_30_Picture_2.jpeg)
 
 Figure 5.5: The architecture of a Domain Adversarial Neural Network. The network consists of three components: feature extractor (purple), label classifier (blue), domain classifier (pink). In between the domain classifier and the feature extractor an implementation of a gradient reversal layer is shown.[\[22\]](#page-56-6)
 
@@ -619,7 +619,7 @@ $$Recall = \frac{TP}{TP + FN} \tag{5.34}$$
 
 A precision and recall curve visualises the trade-off between precision and recall. We can vary the precision and thus the recall by changing the threshold. If a pure sample is required, we can obtain a high-precision sample by lowering its recall, and vice versa. An example of a precision-recall curve for different models is shown in Fig. [5.6,](#page-32-2) where a perfect model is illustrated, corresponding to an area of one. It's an important metric for imbalanced datasets, as it only focuses on the positive samples.
 
-<span id="page-32-2"></span>![](images/_page_32_Figure_2.jpeg)
+<span id="page-32-2"></span>![](_page_32_Figure_2.jpeg)
 
 Figure 5.6: Different Precision-Recall curves. The dashed line indicates a perfect model, with an AUPRC of one.
 
@@ -633,7 +633,7 @@ In high-energy collisions, a large number of tracks are produced. For a high-qua
 
 A charged particle leaves discrete signals, which can be used to measure the positions in space where it passed within an uncertainty. Using discrete signals in multiple detectors, track reconstruction is possible. Before the track reconstruction can be realised, SPD measurements allow for a precise localisation, which constrains tracks to this vertex. The reconstruction algorithms begin at the back-end of the TPC, due to the lower track density, which allows for easier identification of potential track candidates. Once a track candidate is identified, a Kalman filter [\[23\]](#page-56-7) can then propagate the track towards the outermost part of the ITS. If the track is successfully reconstructed throughout the TPC, it is said that it is refitted in the TPC. A prolongation of this track is then searched for in the ITS and reconstructed towards the innermost vertex, resulting in a refit in the ITS. The next step is then an outer pass towards the back end of the TOF from the inner part of the ITS. This approach is optimised to deal with the characteristics of high-density regions for heavy-ion collisions. All tracks require a refit in the ITS and TPC.
 
-![](images/_page_33_Picture_3.jpeg)
+![](_page_33_Picture_3.jpeg)
 
 Figure 6.1: Schematic overview of the track refitting procedure. Top rows indicate the first step, middle rows the second and the third rows the final step in the procedure. [\[14\]](#page-55-13)
 
@@ -641,7 +641,7 @@ The ITS is important to reject secondary tracks, since photons can not produce a
 
 Charged particles produce ionisation as they travel through the TPC, and these signals are then read out. If the charge exceeds a certain threshold, it is referred to as a cluster, with a maxi-
 
-<span id="page-34-2"></span>![](images/_page_34_Figure_2.jpeg)
+<span id="page-34-2"></span>![](_page_34_Figure_2.jpeg)
 
 Figure 6.2: DCA comparison for a hit in the first ITS layer and no hit in the first layer using Monte Carlo simulated data. The left is the DCA in the xy-plane, and the figure on the right is the DCA in the z-plane.
 
@@ -661,13 +661,13 @@ As charged particles move through matter, they can both lose energy and be defle
 
 6 DATA ANALYSIS 32
 
-<span id="page-35-0"></span>![](images/_page_35_Figure_2.jpeg)
+<span id="page-35-0"></span>![](_page_35_Figure_2.jpeg)
 
 Figure 6.3: A comparison of Monte-Carlo simulated data and real data, for some relevant track selection variables used. Vertical dashed lines indicate the track selection cuts decided upon.
 
 <span id="page-36-0"></span>6 DATA ANALYSIS 33
 
-![](images/_page_36_Figure_1.jpeg)
+![](_page_36_Figure_1.jpeg)
 
 Figure 6.4: dE/dx spectrum as a function of momentum for pp collisions at s = 7 TeV.[\[24\]](#page-56-8)
 
@@ -700,7 +700,7 @@ $$m = p \cdot \frac{t_{\text{TOF}}}{L} \cdot \sqrt{1 - \frac{L^2}{c^2 t_{\text{T
 
 <span id="page-37-2"></span>Then, using this information, we arrive at the equation for nσTOF:
 
-![](images/_page_37_Figure_8.jpeg)
+![](_page_37_Figure_8.jpeg)
 
 Figure 6.5: Particle speed as measured in the TOF as a function of momentum for pp collisions at s = √ 5.02 TeV.
 
@@ -714,7 +714,7 @@ As a starting point in producing a high-purity electron sample, we utilised the 
 
 Hyperparameter optimisation was carried out using the Optuna framework[25]. Table 2 shows the hyperparameters that have been optimised and their respective ranges. The objective used was binary:logistic, the evaluation metric was AUCPR, and the booster was gbtree.
 
-<span id="page-38-0"></span>![](images/_page_38_Figure_2.jpeg)
+<span id="page-38-0"></span>![](_page_38_Figure_2.jpeg)
 
 Figure 6.6: Left: Feature Importance for 3 input features. Right: Feature Importance for 5 input features.
 
@@ -748,7 +748,7 @@ Table 2: Optuna hyperparameter search space for XGBoost.
 
 <span id="page-39-2"></span>We can visualise the Optuna hyperparameter search using Fig. [6.7,](#page-39-3) which shows each trial plotted from lightest to darkest, corresponding to the trial number. It shows for each hyperparameter, as the search continues, the area towards the search-space converges. The y-axis shows the objective value, and the x-axis shows the search space for each hyperparameter.
 
-<span id="page-39-3"></span>![](images/_page_39_Figure_5.jpeg)
+<span id="page-39-3"></span>![](_page_39_Figure_5.jpeg)
 
 Figure 6.7: XGB Optuna hyperparameter optimisation Slice Plot.
 
@@ -764,7 +764,7 @@ To capture the importance of momentum dependence in the data, two momentum-weigh
 
 6 DATA ANALYSIS 37
 
-<span id="page-40-0"></span>![](images/_page_40_Figure_2.jpeg)
+<span id="page-40-0"></span>![](_page_40_Figure_2.jpeg)
 
 Figure 6.8: Input parameters within blue Monte Carlo distributions and red the Real Data distributions. Their differences are highlighted in ratio plots below.
 
@@ -804,7 +804,7 @@ The first hyperparameter optimisation in Optuna was carried out using domain pro
 
 After some tests on the label distributions of the DANN versus that of the MLP, we found that the KS test is unreliable when it comes to measuring distribution similarities, since our dataset has a large peak at the lower end of the distribution, due to the extensive background, the KS-test is less reliable since its very sensitivy to minor offsets in sharply defined peaks [\[30\]](#page-56-14). We proceeded to use the Wasserstein Distance as the metric to measure the differences in label probability distributions. A second Optuna hyperoptimization was carried out with the WD and AUPRC as metrics, instead of domain probabilities. Due to time constraints, rerunning an entire hyperparameter search over all variables was inefficient. Since the initial performance of the models optimized on AUPRC and accuracy was promising, we reran the hyperoptimization only on the training metrics and the drop-out sizes and kept the rest of the model's architecture consistent. Fig. [6.9](#page-42-1) shows the Optuna slice plot for 50 trials, with each trial running for 50 epochs. The figure shows that for the learning rates, there is a clear divergence towards a single value as the trials go on. Other features are more spread out, such as the dropout values. The RMSprop was the preferred optimizer in this case, as most of the later trials tended towards it. Trials that return an objective of zero are pruned trials.
 
-<span id="page-42-1"></span>![](images/_page_42_Figure_5.jpeg)
+<span id="page-42-1"></span>![](_page_42_Figure_5.jpeg)
 
 Figure 6.9: DANN Optuna hyperparameter optimisation Slice Plot.
 
@@ -828,7 +828,7 @@ We present the results of electron identification in pp collisions at <sup>√</
 
 The area under the precision-recall curve (AUPRC) for the XGBoost model is 0.9886. We settled on a 99% purity sample, which corresponds to an 80% recall. To gauge the performance of the Monte Carlo-trained model when generalised to real data, we plot the label probability distributions. Fig. [7.1](#page-44-2) shows the label probability for Monte Carlo in blue, and real data in red, with the ratio plotted below. There is a clear disagreement regarding the probability distribution of both datasets. To quantify this disagreement, we used the Wasserstein Distance to calculate the distribution differences, which, in the case of XGBoost, turned out to be 0.000291. This value is small, as expected, since the distributions are generally similar. We can now use this value as a baseline indicator and observe how domain adaptation improves it.
 
-<span id="page-44-2"></span>![](images/_page_44_Figure_5.jpeg)
+<span id="page-44-2"></span>![](_page_44_Figure_5.jpeg)
 
 Figure 7.1: Label probability distribution for the XGBoost model. In red is the distribution for the Monte Carlo data run through the trained model, and in blue is the distribution for the real data. Below is a ratio plot, MC/Real Data. Dashed vertical lines indicate thresholds for different levels of purity, with in blue 97%, green 98% and in red 99% purity sample.
 
@@ -836,7 +836,7 @@ To further show both the performance on Monte Carlo and its generalisation, we p
 
 97%, 98% and 99% purity samples. Fig. [7.2](#page-45-2) shows the electron sample on a Monte Carlo dataset on the left, and its generalisation for real data on the right.
 
-<span id="page-45-2"></span>![](images/_page_45_Figure_2.jpeg)
+<span id="page-45-2"></span>![](_page_45_Figure_2.jpeg)
 
 Figure 7.2: TPC energy loss distribution versus momentum for different purity bins. In red is the sample corresponding to 99% purity, in green 98% and blue 97%. On the left, we ran Monte Carlo data through the fully trained XGBoost model, and on the right, we ran a real dataset.
 
@@ -850,17 +850,17 @@ Despite its success in performance when it comes to Monte Carlo, XGBoost shows n
 
 Using λ = 0 essentially eliminates any impact the domain classifier might have on the feature space, rendering the model essentially into a multi-layered perceptron. Fig. [7.3](#page-46-0) shows the evolution of the AUPRC and the loss per epoch for both the training and validation phases. We can see that both the loss and the AUPRC start to flatten around the 80th epoch, showing no further improvement. After 100 epochs, the model reaches an AUPRC of 0.9862. The metric history shows the impact of the dropout layers on the model. We can see a clear difference, especially in the AUPRC, with the validation AUPRC consistently higher. Since the dropout layers essentially render a fraction of the neurons useless for each epoch, training becomes significantly more challenging, forcing the model to learn complex patterns that are overly dependent on only a specific subset of neurons. We plotted the label distributions for both Monte Carlo and real data, as shown in Fig. [7.4.](#page-46-1)
 
-<span id="page-46-0"></span>![](images/_page_46_Figure_1.jpeg)
+<span id="page-46-0"></span>![](50_Resources/RawPhysicsResources/references/DANN_Electronic_Identification/images/_page_46_Figure_1.jpeg)
 
 Figure 7.3: Training History for the losses and the AUPRC for the base-line neural network (λ = 0). In blue are the training curves and in orange the validation curves.
 
-<span id="page-46-1"></span>![](images/_page_46_Figure_3.jpeg)
+<span id="page-46-1"></span>![](_page_46_Figure_3.jpeg)
 
 Figure 7.4: Label probability distribution for the base-line neural network (λ = 0). In red is the distribution for the Monte Carlo data run through the trained model, and in blue is the distribution for the real data. Below is a ratio plot, MC/Real Data. Dashed vertical lines indicate thresholds for different levels of purity, with in blue 97%, green 98% and in red 99% purity samples.
 
 Again, the distributions show clear disagreements, with a WD value of 0.000331. Fig. [7.5](#page-47-1) shows the TPC signals with the electron sample highlighted for both Monte Carlo and real data. Again, we can see the impact of the shift in the distribution on the network's performance. Both recall and precision decrease, and further analysis would yield imprecise results.
 
-<span id="page-47-1"></span>![](images/_page_47_Figure_2.jpeg)
+<span id="page-47-1"></span>![](_page_47_Figure_2.jpeg)
 
 Figure 7.5: TPC energy loss distribution versus momentum for different purity bins. In red is the sample corresponding to 99% purity, in green 98% and blue 97%. On the left we ran Monte Carlo data through the fully trained base-line neural network, and on the right we ran a real dataset.
 
@@ -872,17 +872,17 @@ We present the results of the domain adaptation for three values of λ. Fig. X s
 
 While λ = 1 yields the best overall performance and shows promise, the quality of the generalisation of the Monte Carlo trained model goes down with momentum. This can be attributed to the severe class imbalance in our binary classification problem. As the domain classifier is trained (or rather, untrained), a large portion of the samples comes from the background. This leads to the domain adaptation's main focus being on the majority negative class, resulting in difficulty to
 
-<span id="page-48-0"></span>![](images/_page_48_Figure_1.jpeg)
+<span id="page-48-0"></span>![](_page_48_Figure_1.jpeg)
 
 Figure 7.6: Training History for three values of λ, 0.1, 0.5 and 1. Dashed lines are the testing metrics.
 
-![](images/_page_49_Figure_1.jpeg)
+![](_page_49_Figure_1.jpeg)
 
 Figure 7.7: Label Probability distributions for increasing values of λ. From the top: λ = 0.1, 0.5, 1. In red the Monte Carlo distributions and in blue the real data distributions. Dashed vertical lines indicate thresholds for different levels of purity, with in blue 97%, green 98% and in red 99% purity sample.
 
 learn domain-invariant features for the positive class. This becomes especially true in the higher momentum region, as the sample decreases with momentum, which is reflected in the TPC signal illustrated in Fig. [7.8.](#page-50-1)
 
-<span id="page-50-1"></span>![](images/_page_50_Figure_2.jpeg)
+<span id="page-50-1"></span>![](_page_50_Figure_2.jpeg)
 
 Figure 7.8: TPC energy loss distributions for increasing λ. From the top: λ = 0.1, 0.5, 1. On the left the Monte Carlo distributions and on the right the real data distributions.
 
@@ -892,7 +892,7 @@ Fig. [7.9](#page-51-1) illustrates the feature space for the 99% purity sample o
 
 <span id="page-51-1"></span>dimensional space. The axes are arbitrary.
 
-![](images/_page_51_Figure_2.jpeg)
+![](_page_51_Figure_2.jpeg)
 
 Figure 7.9: t-SNE visualisation of the feature space for the 99% purity sample. In blue we have the Monte Carlo data and in red the real data. The axis are arbitrary.
 
@@ -904,11 +904,11 @@ Fig. [7.10](#page-52-0) shows the probability distribution of the model optimise
 
 While producing a numerically superior value, the model did not perform better. We can see that, by optimising directly for the minimisation of the WD value, the model instead prioritised alignment in the low probability region. This is shown in the label probability distribution, which reaches a maximum value of 0.85. This again demonstrates that a global distribution metric, in the case of imbalanced datasets, is a poor proxy for performance on the smaller and more sensitive positive class.
 
-<span id="page-52-0"></span>![](images/_page_52_Figure_1.jpeg)
+<span id="page-52-0"></span>![](_page_52_Figure_1.jpeg)
 
 Figure 7.10: Label probability distributions for the model optimised to minise WD value. In blue real data distributions and in red Monte Carlo. The dashed vertical lines indicate purity thresholds.
 
-<span id="page-52-1"></span>![](images/_page_52_Figure_3.jpeg)
+<span id="page-52-1"></span>![](_page_52_Figure_3.jpeg)
 
 Figure 7.11: TPC Singal for the model optimised to minise the WD value for different purity samples. On the left the Monte Carlo data sample and on the right the real data sample.
 

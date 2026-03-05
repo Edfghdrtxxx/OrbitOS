@@ -30,7 +30,7 @@ The degradation (of training accuracy) indicates that not all systems are simila
 
 <sup>1</sup>http://image-net.org/challenges/LSVRC/2015/ and http://mscoco.org/dataset/#detections-challenge2015.
 
-![](50_Resources/Physics/references/Deep_Residual_Learning_for_Image_Recognition/images/_page_1_Figure_0.jpeg)
+![](50_Resources/RawPhysicsResources/references/Deep_Residual_Learning_for_Image_Recognition/images/_page_1_Figure_0.jpeg)
 
 Figure 2. Residual learning: a building block.
 
@@ -272,11 +272,11 @@ We further explore n = 18 that leads to a 110-layer ResNet. In this case, we fin
 
 <sup>5</sup>With an initial learning rate of 0.1, it starts converging (<90% error) after several epochs, but still reaches similar accuracy.
 
-![](50_Resources/Physics/references/Deep_Residual_Learning_for_Image_Recognition/images/_page_7_Figure_0.jpeg)
+![](50_Resources/RawPhysicsResources/references/Deep_Residual_Learning_for_Image_Recognition/images/_page_7_Figure_0.jpeg)
 
 Figure 6. Training on **CIFAR-10**. Dashed lines denote training error, and bold lines denote testing error. **Left**: plain networks. The error of plain-110 is higher than 60% and not displayed. **Middle**: ResNets. **Right**: ResNets with 110 and 1202 layers.
 
-![](50_Resources/Physics/references/Deep_Residual_Learning_for_Image_Recognition/images/_page_7_Figure_2.jpeg)
+![](50_Resources/RawPhysicsResources/references/Deep_Residual_Learning_for_Image_Recognition/images/_page_7_Figure_2.jpeg)
 
 Figure 7. Standard deviations (std) of layer responses on CIFAR-10. The responses are the outputs of each  $3\times3$  layer, after BN and before nonlinearity. **Top**: the layers are shown in their original order. **Bottom**: the responses are ranked in descending order.
 

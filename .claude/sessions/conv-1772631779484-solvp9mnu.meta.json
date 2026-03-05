@@ -1,0 +1,19 @@
+{
+  "id": "conv-1772631779484-solvp9mnu",
+  "title": "Test json-canvas with simple example",
+  "titleGenerationStatus": "success",
+  "createdAt": 1772631779484,
+  "updatedAt": 1772631976770,
+  "lastResponseAt": 1772631912606,
+  "sessionId": "edaf3ee2-7235-488c-babe-2da143943ad2",
+  "sdkSessionId": "edaf3ee2-7235-488c-babe-2da143943ad2",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 3,
+    "cacheCreationInputTokens": 889,
+    "cacheReadInputTokens": 29182,
+    "contextWindow": 200000,
+    "contextTokens": 30074,
+    "percentage": 15
+  }
+}

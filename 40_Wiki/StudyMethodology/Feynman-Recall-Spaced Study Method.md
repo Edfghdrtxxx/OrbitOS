@@ -33,11 +33,11 @@ Based on the [[Feynman Technique]]: explain a concept in your own words as if te
 
 Generate **10 test questions** based on the studied content, stratified by difficulty:
 
-| Tier | Count | Purpose |
-|------|-------|---------|
-| Basic (基础) | 3 | Core definitions and facts |
-| Applied (应用) | 4 | Use concepts in context |
-| Comprehensive (综合分析) | 3 | Cross-topic synthesis and analysis |
+| Tier                 | Count | Purpose                            |
+| -------------------- | ----- | ---------------------------------- |
+| Basic (基础)           | 3     | Core definitions and facts         |
+| Applied (应用)         | 4     | Use concepts in context            |
+| Comprehensive (综合分析) | 3     | Cross-topic synthesis and analysis |
 
 After answering, each question is graded with error explanations provided.
 

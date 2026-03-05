@@ -23,7 +23,7 @@ tags: [physics, mathematics, statistics, fundamentals, PhD-prep]
 **Key Constraints:**
 - Timeline: Build steadily through master's period; intensify before PhD application (late 2026)
 - Resources: Textbooks, MIT OCW, 3Blue1Brown, problem sets, lecture notes — mix of all formats
-- Dependencies: Directly supports [[Masters_Thesis]], [[Automated Framework for MATE(TPC)]], and PhD application
+- Dependencies: Directly supports [[Masters_Thesis]], [[MATE-Automation]], and PhD application
 
 ---
 
@@ -66,7 +66,7 @@ tags: [physics, mathematics, statistics, fundamentals, PhD-prep]
 ## Related
 
 - [[Masters_Thesis]] - Direct application of physics and statistics knowledge
-- [[Automated Framework for MATE(TPC)]] - ML and data analysis application
+- [[MATE-Automation]] - ML and data analysis application
 - [[Fundamental_Learning_Progress]] - Detailed phase plan + UTokyo exam structure notes
 - [[UTokyo_RIKEN]] - PhD route that sets the exam scope and priorities
 - [[LeetCode_Practice]] - Algorithmic thinking complements mathematical foundations

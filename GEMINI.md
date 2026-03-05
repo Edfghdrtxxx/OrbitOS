@@ -72,7 +72,7 @@ last_reviewed:
 next_review: YYYY-MM-DD  # set to today's date
 review_interval: 0
 ```
-After creating Wiki notes, regenerate `99_System/Review_Dashboard.md` by scanning all `40_Wiki/**/*.md` frontmatter and categorizing notes into: Overdue, Due Today, Never Reviewed, Upcoming (7d), Recently Mastered. See `.agents/skills/wiki-review/SKILL.md` for the full dashboard format.
+The review dashboard is a live Obsidian Bases view at `99_System/Bases/Wiki_Review.base` — it auto-updates from frontmatter. Do NOT manually regenerate any dashboard file.
 
 ## Rules
 - Projects link to Areas via frontmatter, NOT folder hierarchy
@@ -81,4 +81,9 @@ After creating Wiki notes, regenerate `99_System/Review_Dashboard.md` by scannin
 - No empty line after frontmatter `---` (it becomes visible in body)
 - Communicate in English and use English for all template content
 - Flag potential issues proactively: duplicate projects, scheduling conflicts, stale tasks, or missing links — but execute the user's request regardless unless asked to reconsider
-**Zero Assumptions:** Never guess user intent. If multiple implementations exist or requirements are incomplete, **halt and use the interactive `ask_user` tool** to gather explicit direction.
+
+
+## Principles of Paramount Importance
+ - **Zero Assumptions:** Never guess user intent. If multiple implementations exist or requirements are incomplete, **halt and use the `AskUserQuestion` tool** to gather explicit direction.
+ - **No Silent Assumptions:** Even when the task is requested, confirm the *method* if it wasn’t specified. Don’t guess the user’s expectation.
+ 

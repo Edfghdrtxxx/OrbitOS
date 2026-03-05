@@ -1,0 +1,19 @@
+{
+  "id": "conv-1772628654387-c078hvt86",
+  "title": "Introduce yourself as Claude",
+  "titleGenerationStatus": "success",
+  "createdAt": 1772628654388,
+  "updatedAt": 1772630704431,
+  "lastResponseAt": 1772629951455,
+  "sessionId": "b49ec971-2789-4310-8fc9-c8bc61ee7fbd",
+  "sdkSessionId": "b49ec971-2789-4310-8fc9-c8bc61ee7fbd",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 870,
+    "cacheReadInputTokens": 33373,
+    "contextWindow": 200000,
+    "contextTokens": 34244,
+    "percentage": 17
+  }
+}

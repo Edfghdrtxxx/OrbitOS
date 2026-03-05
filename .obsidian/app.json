@@ -3,5 +3,7 @@
   "defaultViewMode": "preview",
   "readableLineLength": false,
   "alwaysUpdateLinks": true,
-  "trashOption": "local"
+  "trashOption": "local",
+  "newFileLocation": "root",
+  "attachmentFolderPath": "50_Resources/Attachments"
 }

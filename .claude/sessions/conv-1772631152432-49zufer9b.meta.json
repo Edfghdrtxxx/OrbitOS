@@ -1,0 +1,20 @@
+{
+  "id": "conv-1772631152432-49zufer9b",
+  "title": "Compare obsidian-markdown alternatives",
+  "titleGenerationStatus": "success",
+  "createdAt": 1772631152432,
+  "updatedAt": 1772631757462,
+  "lastResponseAt": 1772631503690,
+  "sessionId": "536238c8-feae-42f6-9fd5-f7a0432c258c",
+  "sdkSessionId": "536238c8-feae-42f6-9fd5-f7a0432c258c",
+  "currentNote": "Obsidian Markdown rules.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 490,
+    "cacheReadInputTokens": 36393,
+    "contextWindow": 200000,
+    "contextTokens": 36884,
+    "percentage": 18
+  }
+}

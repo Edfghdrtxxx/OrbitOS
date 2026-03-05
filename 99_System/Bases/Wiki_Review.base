@@ -1,0 +1,96 @@
+filters:
+  and:
+    - file.inFolder("40_Wiki")
+    - file.ext == "md"
+    - not:
+        - file.hasTag("no-review")
+formulas:
+  days_until_review: if(next_review, (date(next_review) - today()).days, "")
+  review_status: if(!next_review, "⚪ No Date", if((date(next_review) - today()).days < 0, "🔴 Overdue", if((date(next_review) - today()).days == 0, "🟡 Due Today", if((date(next_review) - today()).days <= 7, "🟢 Upcoming", "✅ On Track"))))
+  ever_reviewed: if(review_interval > 0, "✓ Yes", "✗ No")
+  category: file.folder.split("/").reverse()[0]
+  display_title: file.asLink(file.basename.replace("_", " "))
+properties:
+  formula.display_title:
+    displayName: Note
+  formula.review_status:
+    displayName: Status
+  formula.days_until_review:
+    displayName: Days Left
+  formula.ever_reviewed:
+    displayName: Reviewed?
+  formula.category:
+    displayName: Category
+  next_review:
+    displayName: Next Review
+  review_interval:
+    displayName: Interval (days)
+  last_reviewed:
+    displayName: Last Reviewed
+  area:
+    displayName: Area
+views:
+  - type: table
+    name: 🔴 Needs Review
+    filters:
+      or:
+        - "!next_review"
+        - next_review <= today()
+        - review_interval == 0
+    groupBy:
+      property: formula.review_status
+      direction: ASC
+    order:
+      - formula.display_title
+      - formula.review_status
+      - next_review
+      - review_interval
+      - formula.category
+    sort:
+      - property: formula.days_until_review
+        direction: ASC
+    columnSize:
+      formula.display_title: 250
+      formula.review_status: 130
+      formula.category: 150
+  - type: table
+    name: 🟢 Upcoming (7 days)
+    filters:
+      and:
+        - next_review > today()
+        - (date(next_review) - today()).days <= 7
+    order:
+      - formula.display_title
+      - next_review
+      - formula.days_until_review
+      - review_interval
+      - formula.category
+    sort:
+      - property: formula.days_until_review
+        direction: ASC
+    columnSize:
+      formula.display_title: 250
+      formula.category: 150
+  - type: table
+    name: 📊 All Wiki Notes
+    groupBy:
+      property: formula.category
+      direction: ASC
+    order:
+      - formula.display_title
+      - formula.review_status
+      - formula.ever_reviewed
+      - next_review
+      - review_interval
+      - area
+    sort:
+      - property: formula.review_status
+        direction: ASC
+      - property: formula.display_title
+        direction: ASC
+    summaries:
+      review_interval: Average
+    columnSize:
+      formula.display_title: 250
+      formula.review_status: 130
+      formula.ever_reviewed: 100

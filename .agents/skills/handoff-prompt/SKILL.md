@@ -1,34 +1,44 @@
 ---
 name: handoff-prompt
-description: Generate a handoff prompt that describes WHAT and WHY without over-prescribing HOW, so the follow-up AI retains full design freedom
+description: Generate a handoff prompt that transfers the mental model — the WHY and WHAT — so the follow-up AI can own the HOW entirely
 ---
+
+# Philosophy
+
+The follow-up AI is a senior peer, not a junior taking orders. Your job is to **transfer understanding**, then get out of the way. A great handoff reads like a project briefing, not a ticket with acceptance criteria.
+
+**Trust the AI.** It can read files, explore code, and make design decisions. You don’t need to pre-chew anything. Give it the mental model — what matters to the user, why this task exists, what success looks like — and let it drive.
 
 # What You Produce
 
-A clipboard-ready fenced markdown block under **30 lines**, using this template. Omit any section that has nothing meaningful to say.
+A clipboard-ready outline prompt under **30 lines**. The follow-up AI is autonomous — give it the problem space, not step-by-step instructions.
 
 ```markdown
 # Handoff: [Short Task Title]
 
-## Context
-[Current state + 3-7 file paths. Reference files by path, not by summarizing their contents.]
+## Why This Matters
+[The user’s actual motivation. What problem are they solving? What do they care about?]
 
-## Goal
-[Desired end-state in one paragraph. The WHY, not the HOW.]
+## Current State
+[Where things stand now. Point to files by path — don’t summarize contents.]
 
-## Guidelines
-- MUST: [Non-negotiable rules — user confirmed or documented facts.]
-- SHOULD: [Stated user preferences. Can be pushed back on with good reason.]
+## Hard Constraints (only if they exist)
+- [Non-negotiable rules the follow-up AI couldn’t infer from context alone.]
 
-## Principle
-**Zero Assumptions:** Never guess user intent. If multiple implementations exist or requirements are incomplete, **halt and use the `AskUserQuestion` tool** to gather explicit direction.
-
+## Principles of Paramount Importance
+ - **Zero Assumptions:** Never guess user intent. If multiple implementations exist or requirements are incomplete, **halt and use the `AskUserQuestion` tool** to gather explicit direction.
+ - **No Silent Assumptions:** Even when the task is requested, confirm the *method* if it wasn’t specified. Don’t guess the user’s expectation.
 ```
 
 # Rules
 
-- The follow-up AI is a collaborator, not a code monkey. Describe the problem space — never dictate logic, algorithms, file structures, or output formats.
-- Point to files by path. Never summarize their contents — the follow-up AI will read them fresh.
-- Every item in **Guidelines (MUST)** must be genuinely non-negotiable. If you're unsure, move it to **Uncertainty**.
-- Before outputting: "Could the follow-up AI propose 2+ different implementations from this?" If not, revise.
-**Zero Assumptions:** Never guess user intent. If multiple implementations exist or requirements are incomplete, **halt and use the `AskUserQuestion` tool** to gather explicit direction.
+- **Transfer the mental model, not the solution.** The follow-up AI should understand *why the user cares* — not just what to do.
+- **Less is more.** If the follow-up AI can infer it from the files, omit it.
+- **Point, don’t summarize.** File paths > content excerpts.
+- **Self-check:** "Am I telling the AI what to think, or giving it what it needs to think for itself?" If the former, cut.
+
+# Principles of Paramount Importance
+ - **Zero Assumptions:** Never guess user intent. If multiple implementations exist or requirements are incomplete, **halt and use the `AskUserQuestion` tool** to gather explicit direction.
+ - **No Silent Assumptions:** Even when the task is requested, confirm the *method* if it wasn’t specified. Don’t guess the user’s expectation.
+
+> **Evolution:** If `evolution.md` exists in this skill folder, read it before executing. It contains accumulated usage lessons.

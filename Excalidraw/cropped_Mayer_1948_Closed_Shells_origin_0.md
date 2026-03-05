@@ -12,9 +12,9 @@ excalidraw-plugin: parsed
 
 ## Text Elements
 ## Element Links
-wDlAs3VF: [[50_Resources/Physics/references/Mayer 1948 — On Closed Shells in Nuclei/Mayer_1948_Closed_Shells_origin.pdf#page=1]]
+wDlAs3VF: [[Mayer_1948_Closed_Shells_origin.pdf#page=1]]
 
-l5z4qJiI: [[50_Resources/Physics/references/Mayer 1948 — On Closed Shells in Nuclei/Mayer_1948_Closed_Shells_origin.pdf#page=1]]
+l5z4qJiI: [[Mayer_1948_Closed_Shells_origin.pdf#page=1]]
 
 ## Embedded Files
 2c0b935c9a25583f4474f9a11b55791c82c1bacb: [[Mayer_1948_Closed_Shells_origin.pdf#page=1]]

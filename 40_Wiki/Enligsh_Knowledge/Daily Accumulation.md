@@ -66,6 +66,7 @@ spectrum *(noun)* ::: 光谱 / 频谱 / 范围
 speculate / speculation *(verb/noun)* ::: 推测 / 投机；投机行为
 interval *(noun)* ::: 间隔；区间
 adverbial *(adjective/noun)* ::: 副词的；副词性成分
+retrospective *(noun/adjective)* ::: 回顾；回顾性的
 
 ## Confused Pairs
 

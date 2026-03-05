@@ -169,7 +169,6 @@ source: brainstorming-session
 - Path: `40_Wiki/<Category>/<Concept>.md`
 - Include review frontmatter: `last_reviewed:` (empty), `next_review:` (today), `review_interval: 0`
 - Keep notes atomic (one concept per note)
-- After creating all Wiki notes, regenerate `99_System/Review_Dashboard.md` (follow the format in `.agents/skills/wiki-review/SKILL.md` step 7)
 
 ## Option 3: Keep Exploring
 

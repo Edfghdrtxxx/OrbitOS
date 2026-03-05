@@ -153,7 +153,6 @@ Wiki Notes:
 - Path: 40_Wiki/<Category>/<ConceptName>.md
 - Include review frontmatter: last_reviewed: (empty), next_review: (today), review_interval: 0
 - Keep notes atomic and focused on a single concept
-- After creating all Wiki notes, regenerate 99_System/Review_Dashboard.md (follow the format in .agents/skills/wiki-review/SKILL.md step 7)
 
 Related Links:
 - Do NOT put related/see-also links in frontmatter

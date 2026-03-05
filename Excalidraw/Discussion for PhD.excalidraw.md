@@ -77,7 +77,7 @@ Mind Map ^9Fpm08IV
 Discussion Check List ^i3lKCphr
 
 ## Element Links
-siK7ytxj: [[TOEFL_Study_Plan]]
+siK7ytxj: [[TOEFL_Study_Progress]]
 
 sQufV9T2: [[UTokyo_RIKEN_Professor_Outreach#^bK5vt887]]
 

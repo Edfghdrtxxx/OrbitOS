@@ -22,15 +22,15 @@ Determine whether a primary/backup pathway can be finalized under the workflow r
 ## 2) Required Inputs Read First
 The decision run began by reading these required notes:
 1. `20_Project/Japan_Itinerary/Japan_Itinerary.md`
-2. `20_Project/Japan_Itinerary/Work_vs_PhD_Decision_Workflow.md`
-3. `20_Project/Japan_Itinerary/Work_vs_PhD_Scorecard.md`
+2. `99_System/Archives/Projects/2026/Work_vs_PhD_Decision_Workflow.md`
+3. `99_System/Archives/Projects/2026/Work_vs_PhD_Scorecard.md`
 4. `20_Project/Japan_Itinerary/Official_Source_Verification_2026-02-13.md`
-5. `20_Project/Japan_Itinerary/Work_Methods/Checklist.md`
+5. `99_System/Archives/Projects/2026/Work_Methods/Checklist.md`
 6. `20_Project/Japan_Itinerary/PhD_Methods/Checklist.md`
 
 Also reviewed related evidence notes for track-level details:
-- `20_Project/Japan_Itinerary/Work_Methods/Companies/IBM_Research_Tokyo/Overview.md`
-- `20_Project/Japan_Itinerary/Work_Methods/Companies/Canon_Medical/Overview.md`
+- `99_System/Archives/Projects/2026/Work_Methods/Companies/IBM_Research_Tokyo/Overview.md`
+- `99_System/Archives/Projects/2026/Work_Methods/Companies/Canon_Medical/Overview.md`
 - `20_Project/Japan_Itinerary/PhD_Methods/Universities/UTokyo_RIKEN.md`
 - `20_Project/Japan_Itinerary/PhD_Methods/Universities/Osaka_University.md`
 

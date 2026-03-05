@@ -148,7 +148,7 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 
 | File | Purpose |
 |---|---|
-| [[Work_Methods/Checklist]] | Work visa, job search platforms, arrival setup (archived, not actively pursued) |
+| [[WorkChecklist]] | Work visa, job search platforms, arrival setup (archived, not actively pursued) |
 
 ---
 

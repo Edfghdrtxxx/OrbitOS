@@ -7,13 +7,10 @@ created: 2026-02-13
 priority: high
 tags: [learning, physics, math, PhD-prep, self-assessment]
 ---
-# Learning Progress
+# Fundamental Learning Progress
 
 > [!info] Purpose
 > Track knowledge gaps identified from thesis reference papers and build foundations for PhD entrance exam prep (Spring/Summer 2028). Items are ordered by dependency so earlier items unlock later ones.
-
-> [!tip] How to use
-> Work top-down within each phase. Check off items as you can **explain the concept clearly and solve a basic problem** using it. Add dates when completed.
 
 > [!important] Two-stage learning pathway
 > **Stage 1 (this plan):** Thesis/paper comprehension + solid foundations in all four exam subjects through 2027.
@@ -58,11 +55,323 @@ tags: [learning, physics, math, PhD-prep, self-assessment]
 | **Apr 2027** | Thesis defense window (light study only) | - | 4 |
 | **May–Sep 2027** | Strengthen weakest exam subjects + Stage 2 planning | - | 21 |
 
+> [!tip] Current Status
+> **Phase:** 0.1 — Linear Algebra
+> **Week:** 3 of 84 (Mar 3, 2026)
+> **Status:** In progress
+
 ---
 
-## ~~Urgent: Find Past Exam Papers~~ DONE (2026-02-17)
+## Map of Content — Knowledge Trace
 
-> [!success] Completed — see exam structure callout at top of page.
+> [!tip] How to use
+> Work top-down within each subject. Check off items as you can **explain the concept clearly and solve a basic problem** using it. Each `[[wikilink]]` points to an atomic note — create it when you start studying that concept.
+>
+> **Two checkbox systems:** MOC checkboxes = concept mastery ("I understand this"). Timeline checkboxes below = weekly tasks ("I did this study session"). Track both independently.
+
+### Dependency Map
+
+```
+Math Foundations + Complex Analysis ─┬─→ Quantum Mechanics ──→ Nuclear Shell Model ──→ Experimental Methods
+                                     │                                              └──→ Ab Initio Theory
+                                     ├─→ Classical Mechanics
+                                     ├─→ Electromagnetism
+                                     └─→ Statistical Mechanics (Thermo — no QM needed)
+                                                    │
+                      Quantum Mechanics ─→ StatMech 7.2–7.3 (needs QM for quantum statistics)
+```
+
+> [!important] Phases 0–4 are thesis-driven (research competence). Phases 5–7 build working foundations in all four exam subjects so Stage 2 can focus on exam-speed drilling, not learning from scratch. All four subjects carry equal weight (100 pts each).
+
+### Mathematics Foundations
+
+#### Linear Algebra
+
+> **Why:** Eigenvalue problems appear everywhere — QM energy levels, shell model diagonalization, coupled-cluster theory. You cannot read the Tran (2018) paper's theory section without this. SVD is also essential for your ML work.
+
+- [ ] [[Vector_Spaces]] — basis, span, linear independence, dimension
+- [ ] [[Matrix_Operations]] — multiplication, transpose, inverse, determinant
+- [ ] [[Systems_of_Linear_Equations]] — Gaussian elimination, rank
+- [ ] [[Eigenvalues_and_Eigenvectors]] — definition, characteristic equation
+- [ ] [[Diagonalization]] — when possible, similarity transformations
+- [ ] [[Hermitian_and_Unitary_Matrices]] — properties, guaranteed real eigenvalues
+- [ ] [[Change_of_Basis]] — coordinate transformations
+- [ ] [[Inner_Product_Spaces]] — orthogonality, Gram-Schmidt process
+- [ ] [[Singular_Value_Decomposition]] — geometric meaning, applications to ML (ResNet feature analysis)
+- [ ] [[Trace_and_Determinant]] — physical meaning, invariance properties
+
+#### Calculus & Integration
+
+> **Why:** Nuclear density distributions ρ(r) are integrated in spherical coordinates. The proton radius definition Rp = (∫ρ(r)r²dr)^(1/2) in Tran (2018) Eq.(2) requires this directly.
+
+- [ ] [[Multivariable_Calculus]] — partial derivatives, gradient, divergence, curl
+- [ ] [[Multiple_Integrals]] — double/triple integrals, change of variables (Jacobian)
+- [ ] [[Spherical_and_Cylindrical_Coordinates]] — volume elements, common integrals
+- [ ] [[Line_and_Surface_Integrals]] — physical applications (flux, circulation)
+- [ ] [[Dirac_Delta_Function]] — definition, sifting property, 3D form
+- [ ] [[Gaussian_Integrals]] — standard results, completing the square trick
+
+#### Differential Equations
+
+> **Why:** The nuclear shell model starts from solving the Schrödinger equation with a harmonic oscillator potential — the math of Phase 0.3 is exactly what generates magic numbers.
+
+- [ ] [[First_Order_ODEs]] — separable, linear, integrating factors
+- [ ] [[Second_Order_Linear_ODEs]] — constant coefficients, characteristic equation
+- [ ] [[Boundary_Value_Problems]] — physical meaning of boundary conditions
+- [ ] [[Separation_of_Variables_PDEs]] — concept and procedure
+- [ ] [[Schrodinger_Equation_as_Eigenvalue_ODE]] — recognize the structure
+- [ ] [[Harmonic_Oscillator_ODE]] — solutions (Hermite polynomials), energy levels
+
+#### Fourier Analysis
+
+- [ ] [[Fourier_Series]] — decomposing periodic functions
+- [ ] [[Fourier_Transform]] — concept, frequency domain, convolution theorem
+- [ ] [[Fourier_Transform_in_QM]] — momentum-space vs position-space wavefunctions
+
+#### Complex Analysis (Exam-Critical)
+
+> [!warning] Contour integrals appear in nearly every Math problem across 10 years of UTokyo past papers. This is not optional.
+
+> **Why:** The UTokyo Math problem routinely tests contour integration and the residue theorem. This is confirmed across 2015–2025 past papers. Mastery here directly earns points on Problem 1.
+> **Resource:** Brown & Churchill "Complex Variables and Applications" Ch.4–7, or Boas "Mathematical Methods" Ch.14
+
+- [ ] [[Complex_Numbers]] — Euler's formula, polar form, complex exponentials
+- [ ] [[Analytic_Functions]] — Cauchy-Riemann equations, concept of holomorphic functions
+- [ ] [[Contour_Integration]] — parameterizing paths, line integrals in the complex plane
+- [ ] [[Cauchy_Integral_Theorem]] — Cauchy's integral theorem and formula
+- [ ] [[Laurent_Series]] — classification of singularities (poles, essential singularities)
+- [ ] [[Residue_Theorem]] — computing residues, applying to real integrals
+- [ ] [[Standard_Contour_Integral_Applications]] — rational functions, trigonometric integrals, branch cuts (concept)
+
+---
+
+### Quantum Mechanics
+
+#### QM Foundations
+
+- [ ] [[Wavefunctions]] — normalization, probability interpretation, expectation values
+- [ ] [[Quantum_Operators]] — position, momentum, Hamiltonian — what "operator" means
+- [ ] [[Commutators]] — [x, p] = iℏ, physical meaning (uncertainty principle)
+- [ ] [[Dirac_Notation]] — |ψ⟩, ⟨ψ|, ⟨φ|ψ⟩ inner product, completeness relation
+- [ ] [[Matrix_Representation_of_Operators]] — connecting linear algebra to QM
+- [ ] [[Measurement_Postulate]] — eigenvalues as outcomes, collapse
+
+#### Angular Momentum (Critical for Nuclear Physics)
+
+> **Why:** This is the core math behind the SO splitting that creates magic numbers 28, 50, 82, 126 and the Z=6 subshell closure in the Tran paper. The splitting formula E_SO ∝ ⟨L·S⟩ with j=l+1/2 pushed down is the central mechanism.
+
+- [ ] [[Orbital_Angular_Momentum]] — L = r × p, L², Lz operators
+- [ ] [[Angular_Momentum_Eigenvalues]] — quantum numbers l and ml
+- [ ] [[Spherical_Harmonics]] — Ylm: what they look like, orthogonality
+- [ ] [[Spin_Angular_Momentum]] — spin-1/2, Pauli matrices, spinors
+- [ ] [[Spin_Orbit_Coupling]] — V_SO ∝ L·S, how to compute L·S using J = L + S
+- [ ] [[Total_Angular_Momentum]] — j = l ± 1/2, mj quantum number
+- [ ] [[Clebsch_Gordan_Coefficients]] — coupling two angular momenta (concept level)
+
+#### Perturbation Theory & Variational Method
+
+> **Why:** Perturbation theory explains SO splitting directly. The variational method is a standard PhD exam topic and conceptually important for understanding ab initio approaches.
+
+- [ ] [[Time_Independent_Perturbation_Theory]] — first-order energy correction
+- [ ] [[Non_Degenerate_Perturbation]] — E_n^(1) = ⟨n|H'|n⟩
+- [ ] [[Degenerate_Perturbation_Theory]] — concept (diagonalize within subspace)
+- [ ] [[SO_Coupling_as_Perturbation]] — physical example: SO coupling to the central potential
+- [ ] [[Variational_Principle]] — E_trial ≥ E_ground, choosing trial wavefunctions
+- [ ] [[Variational_Method_Applications]] — hydrogen-like atom or helium ground state (one worked example)
+
+---
+
+### Nuclear Shell Model (Paper Core)
+
+#### Nuclear Potential & Shell Structure
+
+> **Milestone:** After this section, re-read Tran (2018) Fig. 1 and the introduction — it should make complete sense.
+
+- [ ] [[Mean_Field_Concept]] — nucleons move in an average potential created by all others
+- [ ] [[Harmonic_Oscillator_Potential]] — energy levels E = (2n + l + 3/2)ℏω
+- [ ] [[Shell_Closures_HO]] — degeneracy and closures at N = 2, 8, 20 (HO magic numbers — first series)
+- [ ] [[L_Squared_Term]] — partial lifting of l-degeneracy
+- [ ] [[Nuclear_Spin_Orbit_Splitting]] — adding V_SO = -V_ls (l·s), splitting j = l+1/2 and j = l-1/2
+- [ ] [[Nuclear_vs_Atomic_SO]] — why j = l+1/2 is lower in energy (sign convention, nuclear SO is opposite to atomic)
+- [ ] [[Magic_Numbers_Derivation]] — fill levels with (2j+1) nucleons each → derive 28, 50, 82, 126 (second series)
+- [ ] [[Z6_Subshell_Closure]] — Z = 6 as the smallest SO closure: 1p₃/₂ filled with 4 protons
+
+#### Evidence for Magic Numbers (Mayer 1948)
+
+- [ ] [[Isotopic_Abundances]] — why magic-number nuclei are over-represented in nature
+- [ ] [[Stable_Isotones]] — more stable nuclei at N = 50, 82, 126
+- [ ] [[Neutron_Absorption_Cross_Sections]] — magic nuclei have low σ (tightly bound, less reactive)
+- [ ] [[Binding_Energy_Discontinuities]] — extra binding at shell closures
+- [ ] [[Semi_Empirical_Mass_Formula]] — Weizsäcker formula terms (volume, surface, Coulomb, asymmetry, pairing) — derive each term's physical origin and estimate B/A
+
+#### Modern Evidence for Z=6 (Tran 2018 — the Main Paper)
+
+- [ ] [[Three_Signatures_Z6]] — Rp systematics, B(E2), binding energy gaps
+- [ ] [[Constant_Rp_Carbon_Isotopes]] — why constant Rp across C-13 to C-19 implies inert proton core
+- [ ] [[BE2_Weisskopf_Units]] — small values = protons don't participate in collective motion = closed shell
+- [ ] [[Shell_Gap_Indicator_Delta_p3]] — second derivative of binding energies, Eq.(1) in paper
+- [ ] [[One_Proton_Separation_Energy]] — Sp(N,Z) and its relation to single-particle energies
+- [ ] [[Pairing_Energy_Subtraction]] — why empirical Δp = 12A^(-1/2) MeV is needed
+- [ ] [[Kink_Analysis_Rp]] — Rp/Rp^cal vs Z plots (Fig. 3a): what kinks signify
+
+---
+
+### Experimental Methods
+
+#### Cross Sections Basics
+
+- [ ] [[Total_Cross_Section]] — geometric interpretation, units (barn = 10⁻²⁴ cm²)
+- [ ] [[Reaction_vs_Elastic_Cross_Section]] — reaction cross section vs elastic scattering
+- [ ] [[Charge_Changing_Cross_Section]] — σ_CC: all processes that change Z of projectile
+- [ ] [[Transmission_Method]] — count incident vs surviving projectiles
+
+#### Proton Radii Extraction
+
+- [ ] [[Point_Proton_RMS_Radius]] — Rp = (∫ρ_p(r) r² dr)^(1/2) — Eq.(2) in Tran
+- [ ] [[Density_Distribution_Models]] — Harmonic oscillator type vs Woods-Saxon type
+- [ ] [[Glauber_Model]] — optical-limit approximation, connects σ_CC to ρ_p(r)
+- [ ] [[Rp_Extraction_Procedure]] — assume ρ_p shape → calculate σ_CC → fit → compute Rp
+
+#### Electromagnetic Transitions
+
+- [ ] [[Electric_Quadrupole_E2_Transitions]] — 2⁺ → 0⁺ in even-even nuclei
+- [ ] [[BE2_Reduced_Transition_Probability]] — measures collectivity of transition
+- [ ] [[Weisskopf_Unit]] — single-particle estimate; B(E2) < 3 W.u. = near single-particle = closed shell
+- [ ] [[Lifetime_Measurements]] — how B(E2) is extracted from excited-state lifetimes
+
+---
+
+### Ab Initio Nuclear Theory (Conceptual)
+
+> Aim for understanding the logic, not the math details.
+
+#### Chiral Effective Field Theory
+
+- [ ] [[Chiral_EFT_Concept]] — derive nuclear forces from QCD symmetries (chiral symmetry)
+- [ ] [[Power_Counting]] — LO → NLO → NNLO → N³LO (systematic improvement)
+- [ ] [[Two_Nucleon_Forces]] — NN forces: dominant interaction
+- [ ] [[Three_Nucleon_Forces]] — 3NFs: appear at NNLO, crucial for reproducing radii and drip lines
+- [ ] [[Cutoff_Dependence]] — different cutoffs (1.8, 2.0, 2.2, 2.8 fm⁻¹) give different predictions
+- [ ] [[NNLOsat_Interaction]] — optimized to reproduce radii and binding energies simultaneously
+
+#### Many-Body Methods
+
+- [ ] [[Independent_Particle_Model]] — mean field → beyond mean field: the hierarchy
+- [ ] [[Shell_Model_Diagonalization]] — diagonalize Hamiltonian in a valence space (conceptual)
+- [ ] [[Coupled_Cluster_Method]] — exponential ansatz, builds correlations on top of reference state
+- [ ] [[Lambda_CCSD_T]] — singles, doubles, perturbative triples — levels of approximation
+- [ ] [[EOM_CC]] — equation-of-motion extension for open-shell nuclei (particle-attached/removed)
+- [ ] [[Similarity_Renormalization_Group]] — SRG: softens interaction to make calculation feasible
+
+#### Key Results from Tran (2018)
+
+- [ ] [[NN_plus_3NF_Results]] — proton radii and binding energies of C-14, C-15 reproduced well
+- [ ] [[Without_3NF_Comparison]] — radii ~10-15% too small, ground states overbound by ~24%
+- [ ] [[3NF_Implication_Z6]] — 3NFs are essential for reproducing the Z=6 subshell closure
+- [ ] [[Shell_Evolution_3NF]] — 3NFs widen the 1p₃/₂ – 1p₁/₂ gap in carbon isotopes
+
+---
+
+### Classical Mechanics (Working Foundations)
+
+> Goal: solid problem-solving foundations — be able to solve textbook problems, not just discuss concepts. Stage 2 will drill exam-level speed and difficulty. (CM+EM = 100 pts on the exam, equal weight to QM or StatMech.)
+
+#### Lagrangian Mechanics
+
+- [ ] [[Generalized_Coordinates]] — what they are, why use them
+- [ ] [[Lagrangian_Mechanics]] — L = T - V: kinetic minus potential energy
+- [ ] [[Euler_Lagrange_Equations]] — d/dt(∂L/∂q̇) - ∂L/∂q = 0
+- [ ] [[Constraints_and_Lagrange_Multipliers]] — holonomic vs non-holonomic
+- [ ] [[Noethers_Theorem]] — symmetry and conservation, cyclic coordinates
+
+#### Hamiltonian Mechanics
+
+- [ ] [[Legendre_Transform]] — L(q, q̇) → H(q, p) with p = ∂L/∂q̇
+- [ ] [[Hamiltons_Equations]] — q̇ = ∂H/∂p, ṗ = -∂H/∂q
+- [ ] [[Phase_Space]] — concept, Liouville's theorem (concept)
+- [ ] [[Poisson_Brackets]] — {f, g}, connection to QM commutators
+
+#### Key Problems
+
+- [ ] [[Central_Force_Problem]] — reduced mass, effective potential, orbits
+- [ ] [[Small_Oscillations_Normal_Modes]] — normal modes, eigenvalue problem (connects to linear algebra)
+
+> **Resource:** Taylor "Classical Mechanics" — accessible, good problems
+
+---
+
+### Electromagnetism (Working Foundations)
+
+> Goal: solid problem-solving foundations. Rebuild from Maxwell's equations up — be able to solve standard textbook problems (Griffiths level). Stage 2 will drill exam-level speed. (CM+EM share Problem 4, worth 100 pts.)
+
+#### Electrostatics & Magnetostatics
+
+- [ ] [[Coulombs_Law_and_Gauss_Law]] — electric field, integral and differential forms
+- [ ] [[Electric_Potential]] — Poisson/Laplace equations
+- [ ] [[Conductors_Capacitors_Dielectrics]] — concept level
+- [ ] [[Biot_Savart_and_Amperes_Law]] — magnetic vector potential
+- [ ] [[Magnetic_Dipole_and_Magnetization]] — magnetization in materials (concept level)
+
+#### Maxwell's Equations & Waves
+
+- [ ] [[Maxwells_Equations]] — full set: differential and integral forms
+- [ ] [[Displacement_Current]] — why it's needed, physical meaning
+- [ ] [[Electromagnetic_Wave_Equation]] — derivation from Maxwell's equations
+- [ ] [[Plane_Wave_Solutions]] — E and B relationship, Poynting vector, energy flux
+- [ ] [[EM_Boundary_Conditions]] — reflection, transmission at interfaces (concept level)
+
+#### Potentials & Radiation
+
+- [ ] [[Scalar_and_Vector_Potentials]] — (φ, A), gauge invariance (Coulomb vs Lorenz gauge)
+- [ ] [[Electromagnetic_Energy_and_Momentum]] — energy density (concept)
+- [ ] [[Electric_Dipole_Radiation]] — far-field pattern (concept — connects to E2 transitions in nuclear)
+
+> **Resource:** Griffiths "Introduction to Electrodynamics" — Ch.7–9 for waves/radiation
+
+---
+
+### Statistical Mechanics (Working Foundations)
+
+> Goal: solid problem-solving foundations — partition functions, ensembles, quantum statistics at textbook level. Built from scratch — this is the largest gap. Stage 2 will drill exam-level problems. (StatMech = Problem 3, worth 100 pts.)
+
+#### Thermodynamics Review
+
+- [ ] [[Laws_of_Thermodynamics]] — Zeroth, First, Second, Third laws
+- [ ] [[State_Variables]] — T, P, V, S, U — extensive vs intensive
+- [ ] [[Work_Heat_Internal_Energy]] — dU = δQ - δW
+- [ ] [[Entropy]] — definition, direction of spontaneous processes
+- [ ] [[Free_Energies]] — Helmholtz F = U - TS, Gibbs G = U + PV - TS — when to use which
+- [ ] [[Maxwell_Relations]] — derived from exactness of differentials
+- [ ] [[Thermodynamic_Potentials_Legendre_Transform]] — connects to Hamiltonian mechanics
+
+#### Statistical Foundations
+
+- [ ] [[Microstates_and_Macrostates]] — what they mean
+- [ ] [[Boltzmann_Entropy]] — S = k_B ln Ω
+- [ ] [[Boltzmann_Distribution]] — P_i ∝ exp(-E_i / k_B T)
+- [ ] [[Partition_Function]] — definition, how all thermodynamic quantities derive from it
+- [ ] [[Microcanonical_Ensemble]] — isolated system, fixed E, N, V
+- [ ] [[Canonical_Ensemble]] — fixed T, N, V — the workhorse
+- [ ] [[Grand_Canonical_Ensemble]] — fixed T, μ, V — for open systems
+- [ ] [[Ensemble_Equivalence]] — connection between ensembles in thermodynamic limit
+
+#### Applications
+
+- [ ] [[Ideal_Gas_Statistical]] — partition function, equation of state, heat capacity
+- [ ] [[Quantum_Harmonic_Oscillators]] — quantum vs classical, Einstein model of solids
+- [ ] [[Two_Level_Systems]] — paramagnets, Schottky anomaly
+- [ ] [[Quantum_Statistics]] — Fermi-Dirac vs Bose-Einstein distributions
+- [ ] [[Fermi_Gas]] — Fermi energy, density of states, electron gas in metals (connects to nuclear Fermi gas model)
+- [ ] [[Blackbody_Radiation]] — Planck distribution (concept level)
+- [ ] [[Phase_Transitions]] — first vs second order, Ising model (concept level)
+
+> **Resource:** Schroeder "An Introduction to Thermal Physics" (readable) or Pathria (more rigorous)
+
+---
+
+## Past Exam Papers
+
+> [!success] Completed (2026-02-17) — see exam structure callout at top.
 
 ### Past Papers (saved to `50_Resources/Physics/UTokyo_Past_Exams/`)
 
@@ -106,317 +415,6 @@ tags: [learning, physics, math, PhD-prep, self-assessment]
 
 ---
 
-## Phase 0: Math Foundations (Upstream Blockers)
-
-> [!warning] These unlock everything else. Prioritize ruthlessly.
-
-### 0.1 Linear Algebra
-
-- [ ] Vector spaces: basis, span, linear independence, dimension
-- [ ] Matrix operations: multiplication, transpose, inverse, determinant
-- [ ] Systems of linear equations: Gaussian elimination, rank
-- [ ] Eigenvalues and eigenvectors: definition, characteristic equation
-- [ ] Diagonalization: when possible, similarity transformations
-- [ ] Hermitian / unitary matrices: properties, guaranteed real eigenvalues
-- [ ] Change of basis and coordinate transformations
-- [ ] Inner product spaces: orthogonality, Gram-Schmidt process
-- [ ] SVD (Singular Value Decomposition): geometric meaning, applications to ML (ResNet feature analysis)
-- [ ] Trace and determinant: physical meaning, invariance properties
-
-> **Why:** Eigenvalue problems appear everywhere — QM energy levels, shell model diagonalization, coupled-cluster theory. You cannot read the Tran (2018) paper's theory section without this. SVD is also essential for your ML work.
-
-### 0.2 Calculus & Integration
-
-- [ ] Multivariable functions: partial derivatives, gradient, divergence, curl
-- [ ] Multiple integrals: double/triple integrals, change of variables (Jacobian)
-- [ ] Spherical and cylindrical coordinates: volume elements, common integrals
-- [ ] Line and surface integrals: physical applications (flux, circulation)
-- [ ] Delta function (Dirac delta): definition, sifting property, 3D form
-- [ ] Gaussian integrals: standard results, completing the square trick
-
-> **Why:** Nuclear density distributions ρ(r) are integrated in spherical coordinates. The proton radius definition Rp = (∫ρ(r)r²dr)^(1/2) in Tran (2018) Eq.(2) requires this directly.
-
-### 0.3 Differential Equations
-
-- [ ] First-order ODEs: separable, linear, integrating factors
-- [ ] Second-order linear ODEs: constant coefficients, characteristic equation
-- [ ] Boundary value problems: physical meaning of boundary conditions
-- [ ] Separation of variables for PDEs: concept and procedure
-- [ ] Schrödinger equation as an eigenvalue ODE: recognize the structure
-- [ ] Harmonic oscillator ODE: solutions (Hermite polynomials), energy levels
-
-> **Why:** The nuclear shell model starts from solving the Schrödinger equation with a harmonic oscillator potential — the math of Phase 0.3 is exactly what generates magic numbers.
-
-### 0.4 Fourier Analysis (Light Touch)
-
-- [ ] Fourier series: decomposing periodic functions
-- [ ] Fourier transform: concept, frequency domain, convolution theorem
-- [ ] Connection to QM: momentum-space vs position-space wavefunctions
-
-### 0.5 Complex Analysis Basics (Exam-Critical)
-
-> [!warning] Contour integrals appear in nearly every Math problem across 10 years of UTokyo past papers. This is not optional.
-
-- [ ] Complex numbers: Euler's formula, polar form, complex exponentials
-- [ ] Analytic functions: Cauchy-Riemann equations, concept of holomorphic functions
-- [ ] Contour integration: parameterizing paths, line integrals in the complex plane
-- [ ] Cauchy's integral theorem and Cauchy's integral formula
-- [ ] Laurent series: classification of singularities (poles, essential singularities)
-- [ ] **Residue theorem:** computing residues, applying to real integrals
-- [ ] Standard applications: integrals of rational functions, trigonometric integrals, integrals with branch cuts (concept)
-
-> **Why:** The UTokyo Math problem routinely tests contour integration and the residue theorem. This is confirmed across 2015–2025 past papers. Mastery here directly earns points on Problem 1.
-> **Resource:** Brown & Churchill "Complex Variables and Applications" Ch.4–7, or Boas "Mathematical Methods" Ch.14
-
----
-
-## Phase 1: Quantum Mechanics Math Rebuild
-
-> [!note] Builds on Phase 0 (especially linear algebra + ODEs)
-
-### 1.1 Foundations
-
-- [ ] Wavefunctions: normalization, probability interpretation, expectation values
-- [ ] Operators: position, momentum, Hamiltonian — what "operator" means
-- [ ] Commutators: [x, p] = iℏ, physical meaning (uncertainty principle)
-- [ ] Dirac notation: |ψ⟩, ⟨ψ|, ⟨φ|ψ⟩ inner product, completeness relation
-- [ ] Matrix representation of operators: connecting linear algebra to QM
-- [ ] Measurement postulate: eigenvalues as outcomes, collapse
-
-### 1.2 Angular Momentum (Critical for Nuclear Physics)
-
-- [ ] Orbital angular momentum: L = r × p, L², Lz operators
-- [ ] Eigenvalues of L² and Lz: quantum numbers l and ml
-- [ ] Spherical harmonics Ylm: what they look like, orthogonality
-- [ ] Spin angular momentum: spin-1/2, Pauli matrices, spinors
-- [ ] **Spin-orbit coupling: V_SO ∝ L·S** — how to compute L·S using J = L + S
-- [ ] Total angular momentum J: j = l ± 1/2, mj quantum number
-- [ ] Clebsch-Gordan coefficients: coupling two angular momenta (concept level)
-
-> **Why:** This is the core math behind the SO splitting that creates magic numbers 28, 50, 82, 126 and the Z=6 subshell closure in the Tran paper. The splitting formula E_SO ∝ ⟨L·S⟩ with j=l+1/2 pushed down is the central mechanism.
-
-### 1.3 Perturbation Theory + Variational Method
-
-- [ ] Time-independent perturbation theory: first-order energy correction
-- [ ] Non-degenerate case: E_n^(1) = ⟨n|H'|n⟩
-- [ ] Degenerate perturbation theory: concept (diagonalize within subspace)
-- [ ] Physical example: SO coupling as a perturbation to the central potential
-- [ ] Variational principle: E_trial ≥ E_ground, choosing trial wavefunctions
-- [ ] Variational method: apply to hydrogen-like atom or helium ground state (one worked example)
-
-> **Why:** Perturbation theory explains SO splitting directly. The variational method is a standard PhD exam topic and conceptually important for understanding ab initio approaches.
-
----
-
-## Phase 2: Nuclear Shell Model (Paper Core)
-
-> [!note] Builds on Phase 1 (especially angular momentum + SO coupling)
-
-### 2.1 Nuclear Potential & Shell Structure
-
-- [ ] Mean-field concept: nucleons move in an average potential created by all others
-- [ ] Harmonic oscillator potential: energy levels E = (2n + l + 3/2)ℏω
-- [ ] Degeneracy and shell closures at N = 2, 8, 20 (HO magic numbers — first series)
-- [ ] Adding the l² term: partial lifting of l-degeneracy
-- [ ] **Adding spin-orbit V_SO = -V_ls (l·s):** splitting each l-level into j = l+1/2 and j = l-1/2
-- [ ] Why j = l+1/2 is lower in energy (sign convention, nuclear SO is opposite to atomic)
-- [ ] Counting: fill levels with (2j+1) nucleons each → derive 28, 50, 82, 126 (second series)
-- [ ] **Z = 6 as the smallest SO closure:** 1p₃/₂ filled with 4 protons (2 from 1s₁/₂ + 4 from 1p₃/₂ = 6)
-
-> **Milestone:** After this section, re-read Tran (2018) Fig. 1 and the introduction — it should make complete sense.
-
-### 2.2 Evidence for Magic Numbers (Mayer 1948 Paper)
-
-- [ ] Isotopic abundances: why magic-number nuclei are over-represented in nature
-- [ ] Number of stable isotones: more stable nuclei at N = 50, 82, 126
-- [ ] Neutron absorption cross sections: magic nuclei have low σ (tightly bound, less reactive)
-- [ ] Binding energy discontinuities: extra binding at shell closures
-- [ ] Semi-empirical mass formula: Weizsäcker formula terms (volume, surface, Coulomb, asymmetry, pairing) — derive each term's physical origin and estimate B/A for a given nucleus
-
-### 2.3 Modern Evidence for Z = 6 (Tran 2018 — the Main Paper)
-
-- [ ] Three independent signatures used: Rp systematics, B(E2), binding energy gaps
-- [ ] Why constant Rp across C-13 to C-19 implies inert proton core
-- [ ] B(E2) in Weisskopf units: small values = protons don't participate in collective motion = closed shell
-- [ ] Shell gap indicator Δp^(3): second derivative of binding energies, Eq.(1) in paper
-- [ ] One-proton separation energy Sp(N,Z) and its relation to single-particle energies
-- [ ] Pairing energy subtraction: why empirical Δp = 12A^(-1/2) MeV is needed
-- [ ] Kink analysis in Rp/Rp^cal vs Z plots (Fig. 3a): what kinks signify
-
----
-
-## Phase 3: Experimental Methods
-
-> [!note] Needed to understand HOW the evidence was obtained
-
-### 3.1 Cross Sections Basics
-
-- [ ] Total cross section σ: geometric interpretation, units (barn = 10⁻²⁴ cm²)
-- [ ] Reaction cross section vs elastic scattering cross section
-- [ ] Charge-changing cross section σ_CC: all processes that change Z of projectile
-- [ ] Transmission method: count incident vs surviving projectiles
-
-### 3.2 Proton Radii Extraction
-
-- [ ] Point-proton rms radius: Rp = (∫ρ_p(r) r² dr)^(1/2) — Eq.(2) in Tran
-- [ ] Density distribution models: Harmonic oscillator type vs Woods-Saxon type
-- [ ] Glauber model (concept level): optical-limit approximation, connects σ_CC to ρ_p(r)
-- [ ] How Rp is extracted: assume ρ_p shape → calculate σ_CC → fit parameter to match experiment → compute Rp
-
-### 3.3 Electromagnetic Transitions
-
-- [ ] Electric quadrupole (E2) transitions: 2⁺ → 0⁺ in even-even nuclei
-- [ ] B(E2) reduced transition probability: measures collectivity of transition
-- [ ] Weisskopf unit (W.u.): single-particle estimate; B(E2) < 3 W.u. = near single-particle = closed shell
-- [ ] Lifetime measurements: how B(E2) is extracted from excited-state lifetimes
-
----
-
-## Phase 4: Ab Initio Nuclear Theory (Conceptual)
-
-> [!note] Aim for understanding the logic, not the math details
-
-### 4.1 Chiral Effective Field Theory
-
-- [ ] Concept: derive nuclear forces from QCD symmetries (chiral symmetry)
-- [ ] Power counting: LO → NLO → NNLO → N³LO (systematic improvement)
-- [ ] Two-nucleon (NN) forces: dominant interaction
-- [ ] Three-nucleon forces (3NFs): appear at NNLO, crucial for reproducing radii and drip lines
-- [ ] Cutoff dependence: different cutoffs (1.8, 2.0, 2.2, 2.8 fm⁻¹) give different predictions
-- [ ] NNLOsat interaction: optimized to reproduce radii and binding energies simultaneously
-
-### 4.2 Many-Body Methods
-
-- [ ] Independent particle model → mean field → beyond mean field: the hierarchy
-- [ ] Shell model: diagonalize Hamiltonian in a valence space (conceptual)
-- [ ] Coupled-cluster (CC) method: exponential ansatz, builds correlations on top of reference state
-- [ ] Λ-CCSD(T): singles, doubles, perturbative triples — levels of approximation
-- [ ] EOM-CC: equation-of-motion extension for open-shell nuclei (particle-attached/removed)
-- [ ] SRG: Similarity Renormalization Group — softens interaction to make calculation feasible
-
-### 4.3 Key Results from Tran (2018)
-
-- [ ] With NN+3NF: proton radii and binding energies of C-14, C-15 reproduced well
-- [ ] Without 3NF: radii ~10-15% too small, ground states overbound by ~24%
-- [ ] Implication: 3NFs are essential for reproducing the Z=6 subshell closure
-- [ ] Shell evolution: 3NFs widen the 1p₃/₂ – 1p₁/₂ gap in carbon isotopes
-
----
-
-## Phase 5: Classical Mechanics (Working Foundations)
-
-> [!note] Goal: solid problem-solving foundations — be able to solve textbook problems, not just discuss concepts. Stage 2 will drill exam-level speed and difficulty, but the core mechanics must be learned here. (CM+EM = 100 pts on the exam, equal weight to QM or StatMech.)
-
-### 5.1 Lagrangian Mechanics
-
-- [ ] Generalized coordinates: what they are, why use them
-- [ ] Lagrangian L = T - V: kinetic minus potential energy
-- [ ] Euler-Lagrange equations: d/dt(∂L/∂q̇) - ∂L/∂q = 0
-- [ ] Constraints: holonomic vs non-holonomic, Lagrange multipliers
-- [ ] Symmetry and conservation: Noether's theorem (concept), cyclic coordinates
-
-### 5.2 Hamiltonian Mechanics
-
-- [ ] Legendre transform: L(q, q̇) → H(q, p) with p = ∂L/∂q̇
-- [ ] Hamilton's equations: q̇ = ∂H/∂p, ṗ = -∂H/∂q
-- [ ] Phase space: concept, Liouville's theorem (concept)
-- [ ] Poisson brackets: {f, g}, connection to QM commutators
-
-### 5.3 Key Problems (Light)
-
-- [ ] Central force problem: reduced mass, effective potential, orbits
-- [ ] Small oscillations: normal modes, eigenvalue problem (connects to linear algebra)
-
-> **Resource:** Taylor "Classical Mechanics" — accessible, good problems
-
----
-
-## Phase 6: Electromagnetism (Working Foundations)
-
-> [!note] Goal: solid problem-solving foundations. Rebuild from Maxwell's equations up — be able to solve standard textbook problems (Griffiths level). Stage 2 will drill exam-level speed. (CM+EM share Problem 4, worth 100 pts.)
-
-### 6.1 Electrostatics & Magnetostatics
-
-- [ ] Coulomb's law, electric field, Gauss's law (integral and differential forms)
-- [ ] Electric potential, Poisson/Laplace equations
-- [ ] Conductors, capacitors, dielectrics (concept level)
-- [ ] Biot-Savart law, Ampère's law, magnetic vector potential
-- [ ] Magnetic dipole, magnetization in materials (concept level)
-
-### 6.2 Maxwell's Equations & Waves
-
-- [ ] Full set of Maxwell's equations: differential and integral forms
-- [ ] Displacement current: why it's needed, physical meaning
-- [ ] Electromagnetic wave equation: derivation from Maxwell's equations
-- [ ] Plane wave solutions: E and B relationship, Poynting vector, energy flux
-- [ ] Boundary conditions: reflection, transmission at interfaces (concept level)
-
-### 6.3 Potentials & Radiation (Light Touch)
-
-- [ ] Scalar and vector potentials (φ, A), gauge invariance (Coulomb vs Lorenz gauge)
-- [ ] Electromagnetic energy and momentum: energy density (concept)
-- [ ] Electric dipole radiation: far-field pattern (concept — connects to E2 transitions in nuclear)
-
-> **Resource:** Griffiths "Introduction to Electrodynamics" — Ch.7–9 for waves/radiation
-
----
-
-## Phase 7: Statistical Mechanics (Working Foundations)
-
-> [!note] Goal: solid problem-solving foundations — partition functions, ensembles, quantum statistics at textbook level. Built from scratch — this is the largest gap. Stage 2 will drill exam-level problems, but core concepts and standard derivations must be learned here. (StatMech = Problem 3, worth 100 pts.)
-
-### 7.1 Thermodynamics Review
-
-- [ ] Zeroth, First, Second, Third laws of thermodynamics
-- [ ] State variables: T, P, V, S, U — what's extensive vs intensive
-- [ ] Work, heat, internal energy: dU = δQ - δW
-- [ ] Entropy: definition, direction of spontaneous processes
-- [ ] Free energies: Helmholtz F = U - TS, Gibbs G = U + PV - TS — when to use which
-- [ ] Maxwell relations: derived from exactness of differentials
-- [ ] Thermodynamic potentials and Legendre transforms (connects to Hamiltonian mechanics)
-
-### 7.2 Statistical Foundations
-
-- [ ] Microstates and macrostates: what they mean
-- [ ] Boltzmann entropy: S = k_B ln Ω
-- [ ] Boltzmann distribution: P_i ∝ exp(-E_i / k_B T)
-- [ ] Partition function Z: definition, how all thermodynamic quantities derive from it
-- [ ] Microcanonical ensemble: isolated system, fixed E, N, V
-- [ ] Canonical ensemble: fixed T, N, V — the workhorse
-- [ ] Grand canonical ensemble: fixed T, μ, V — for open systems
-- [ ] Connection between ensembles: equivalence in thermodynamic limit
-
-### 7.3 Applications
-
-- [ ] Ideal gas: partition function, equation of state, heat capacity
-- [ ] Harmonic oscillators: quantum vs classical, Einstein model of solids
-- [ ] Two-level systems: paramagnets, Schottky anomaly
-- [ ] Quantum statistics: Fermi-Dirac vs Bose-Einstein distributions
-- [ ] Fermi gas: Fermi energy, density of states, electron gas in metals (connects to nuclear Fermi gas model)
-- [ ] Blackbody radiation: Planck distribution (concept level)
-- [ ] Phase transitions: first vs second order, Ising model (concept level)
-
-> **Resource:** Schroeder "An Introduction to Thermal Physics" (readable) or Pathria (more rigorous)
-
----
-
-## Dependency Map
-
-```
-Phase 0 (Math + Complex Analysis) ─┬─→ Phase 1 (QM) ──→ Phase 2 (Shell Model) ──→ Phase 3 (Experiments)
-                                    │                                            └──→ Phase 4 (Ab Initio)
-                                    ├─→ Phase 5 (Classical Mechanics — working foundations)
-                                    ├─→ Phase 6 (Electromagnetism — working foundations)
-                                    └─→ Phase 7.1 (Thermodynamics — no QM needed)
-                                                       │
-                     Phase 1 (QM) ─→ Phase 7.2–7.3 (Statistical Mechanics — needs QM for quantum statistics)
-
-```
-
-> [!important] Phases 0–4 are thesis-driven (research competence). Phases 5–7 build working foundations in all four exam subjects so Stage 2 can focus on exam-speed drilling, not learning from scratch. All four subjects carry equal weight (100 pts each).
-
----
-
 ## Learning Timeline (Feb 2026 to Sep 2027)
 
 > [!info] Constraints
@@ -427,7 +425,7 @@ Phase 0 (Math + Complex Analysis) ─┬─→ Phase 1 (QM) ──→ Phase 2 (S
 
 ### Detailed Monthly Plan
 
-#### Feb 2026 (Weeks 1-3): Phase 0.1 - Linear Algebra + Urgent Tasks
+#### Feb 2026 (Weeks 1-3): Linear Algebra + Urgent Tasks
 > ~10 hrs/week x 3 weeks = 30 hrs
 
 - [x] ~~**Urgent:** Find and review UTokyo past exam papers~~ (DONE — see exam structure callout at top)
@@ -437,7 +435,7 @@ Phase 0 (Math + Complex Analysis) ─┬─→ Phase 1 (QM) ──→ Phase 2 (S
 - **Resource:** 3Blue1Brown "Essence of Linear Algebra" (watch first), then MIT 18.06 problem sets
 - **Checkpoint:** Can you diagonalize a 3x3 matrix and explain what eigenvalues mean geometrically?
 
-#### Mar 2026 (Weeks 4–7): Phase 0.2 + 0.3 + 0.4 — Calculus, DEs, Fourier
+#### Mar 2026 (Weeks 4–7): Calculus, DEs, Fourier
 > ~10 hrs/week × 4 weeks = 40 hrs
 
 - [ ] Week 4: Multivariable calculus — partial derivatives, gradient, divergence, curl — *solve Griffiths EM Ch.1 problems 1.11–1.18*
@@ -447,7 +445,7 @@ Phase 0 (Math + Complex Analysis) ─┬─→ Phase 1 (QM) ──→ Phase 2 (S
 - **Resource:** MIT OCW 18.02, Paul's Online Math Notes (ODEs)
 - **Checkpoint:** Can you evaluate ∫ρ(r)r²d³r in spherical coordinates? Can you solve the 1D HO Schrödinger equation structure?
 
-#### Apr 2026 (Weeks 8–9): Phase 0.5 — Complex Analysis (Exam-Critical)
+#### Apr 2026 (Weeks 8–9): Complex Analysis (Exam-Critical)
 > ~10 hrs/week × 2 weeks = 20 hrs
 
 - [ ] Week 8: Complex numbers review, analytic functions, Cauchy-Riemann equations, contour integration basics — *parameterize and evaluate 3 simple contour integrals*
@@ -455,7 +453,7 @@ Phase 0 (Math + Complex Analysis) ─┬─→ Phase 1 (QM) ──→ Phase 2 (S
 - **Resource:** Brown & Churchill Ch.4–7, or Boas Ch.14
 - **Checkpoint:** Can you evaluate ∫₋∞^∞ dx/(x²+1)² using the residue theorem?
 
-#### Apr–early May 2026 (Weeks 10–14): Phase 1 — QM Math Core (5 weeks)
+#### Apr–early May 2026 (Weeks 10–14): QM Math Core (5 weeks)
 > ~10 hrs/week × 5 weeks = 50 hrs
 
 - [ ] Week 10: Wavefunctions, operators, commutators, expectation values — *solve Griffiths QM problems 1.3, 1.5, 1.9*
@@ -467,7 +465,7 @@ Phase 0 (Math + Complex Analysis) ─┬─→ Phase 1 (QM) ──→ Phase 2 (S
 - **Checkpoint:** Can you derive ⟨L·S⟩ = ½[j(j+1) - l(l+1) - s(s+1)]ℏ² and explain why j = l+1/2 is lower energy in nuclei?
 - **Escape route:** If stuck on Clebsch-Gordan after 1 week, skip to using tabulated values only. Momentum matters more than perfection.
 
-#### Late May–Jun 2026 (Weeks 15–19): Phase 2.1 — Shell Model Core
+#### Late May–Jun 2026 (Weeks 15–19): Shell Model Core
 > ~10 hrs/week × 5 weeks = 50 hrs (last 2 weeks begin Phase 5 parallel at 3 hrs/wk)
 
 - [ ] Week 15: Mean-field concept, HO potential energy levels, shell closures at 2, 8, 20
@@ -478,7 +476,7 @@ Phase 0 (Math + Complex Analysis) ─┬─→ Phase 1 (QM) ──→ Phase 2 (S
 - **Resource:** Krane Ch.5 (Nuclear Shell Model)
 - **Milestone:** Re-read Tran (2018) Fig. 1 and introduction — should be fully clear now
 
-#### Jul 2026 (Weeks 20–23): Phase 2.2 + 2.3 — Magic Number Evidence
+#### Jul 2026 (Weeks 20–23): Magic Number Evidence
 > Main: 7 hrs/week | Parallel: Phase 5 at 3 hrs/week
 
 - [ ] Week 20: Mayer (1948) paper deep read — abundances, isotones, cross sections, binding energy arguments
@@ -488,7 +486,7 @@ Phase 0 (Math + Complex Analysis) ─┬─→ Phase 1 (QM) ──→ Phase 2 (S
 - **Phase 5 parallel:** Hamiltonian mechanics, Hamilton's equations, Poisson brackets — *solve 3 Lagrangian/Hamiltonian problems from Taylor*
 - **Checkpoint:** Can you explain THREE independent lines of evidence for Z=6 being magic?
 
-#### Aug 2026 (Weeks 24–28): Phase 3 — Experimental Methods
+#### Aug 2026 (Weeks 24–28): Experimental Methods
 > Main: 5 hrs/week | Parallel: Phase 6 EM (3 hrs) + Phase 7.1 Thermo (2 hrs)
 
 - [ ] Week 24–25: Cross section concepts, σ_CC, transmission method
@@ -507,7 +505,7 @@ Phase 0 (Math + Complex Analysis) ─┬─→ Phase 1 (QM) ──→ Phase 2 (S
 - **Phase 6 parallel:** Maxwell's equations, EM wave equation, plane waves — *solve Griffiths EM Ch.7–9 problems*
 - **Phase 7.1 parallel:** Entropy, free energies, Maxwell relations — *read Schroeder Ch.3–5, solve problems*
 
-#### Oct 2026 (Weeks 33–36): Phase 4 — Ab Initio Theory + Phase 7.2 Start
+#### Oct 2026 (Weeks 33–36): Ab Initio Theory + Phase 7.2 Start
 > Main: 5 hrs/week | Parallel: Phase 7.2 (3 hrs) + Phase 5/6 review (2 hrs)
 
 - [ ] Week 33–34: Many-body methods — shell model diagonalization (concept), coupled-cluster

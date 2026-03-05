@@ -16,7 +16,7 @@ review_interval: 0
 ## Definitions
 
 ### Vector Space Axioms
-A set $V$ over a field $F$ (usually $\mathbb{R}$ or $\mathbb{C}$) is a **vector space** if for all $\mathbf{u}, \mathbf{v}, \mathbf{w} \in V$ and scalars $a, b \in F$:
+A set $V$ over a [[Field (mathematics)|field]] $F$ (usually $\mathbb{R}$ or $\mathbb{C}$) is a **vector space** if for all $\mathbf{u}, \mathbf{v}, \mathbf{w} \in V$ and scalars $a, b \in F$:
 
 1. **Closure under addition:** $\mathbf{u} + \mathbf{v} \in V$
 2. **Closure under scalar multiplication:** $a\mathbf{u} \in V$
@@ -30,11 +30,11 @@ A set $V$ over a field $F$ (usually $\mathbb{R}$ or $\mathbb{C}$) is a **vector 
 10. **Identity element:** $1\mathbf{u} = \mathbf{u}$
 
 > [!tip] Why 10 axioms?
-> These aren't arbitrary — they guarantee that linear combinations $c_1\mathbf{v}_1 + c_2\mathbf{v}_2 + \cdots$ always make sense. Every theorem in linear algebra ultimately traces back to these.
+> These aren't arbitrary — they guarantee that [[Linear Combination|linear combinations]] $c_1\mathbf{v}_1 + c_2\mathbf{v}_2 + \cdots$ always make sense. Every theorem in linear algebra ultimately traces back to these.
 
 ### Linear Independence
 
-Vectors $\{\mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_n\}$ are **linearly independent** if the only solution to:
+Vectors $\{\mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_n\}$ are **[[Linear Independence|linearly independent]]** if the only solution to:
 
 $$c_1\mathbf{v}_1 + c_2\mathbf{v}_2 + \cdots + c_n\mathbf{v}_n = \mathbf{0}$$
 
@@ -58,7 +58,7 @@ is $c_1 = c_2 = \cdots = c_n = 0$.
 > |------|-------------|------------|
 > | Can I remove one vector and still reach the same places? | No — each one is essential | Yes — at least one is redundant |
 > | Do the vectors all point along different "dimensions"? | Yes | No — some share a dimension |
-> | If I stack them as rows and row-reduce, do I get all pivots? | Yes — full rank | No — at least one zero row |
+> | If I stack them as rows and [[Row Reduction|row-reduce]], do I get all [[Pivot|pivots]]? | Yes — full [[Rank|rank]] | No — at least one zero row |
 >
 > **2D visual.** Two vectors in the plane:
 > - **Independent:** they point in different directions → they span the whole plane. You can reach any point $(x, y)$ by mixing them.
@@ -74,32 +74,32 @@ is $c_1 = c_2 = \cdots = c_n = 0$.
 
 ### Span
 
-The **span** of a set of vectors is all possible linear combinations:
+The **[[Span|span]]** of a set of vectors is all possible [[Linear Combination|linear combinations]]:
 
 $$\text{span}\{\mathbf{v}_1, \ldots, \mathbf{v}_n\} = \{c_1\mathbf{v}_1 + \cdots + c_n\mathbf{v}_n \mid c_i \in F\}$$
 
 ### Basis and Dimension
 
-A **basis** is a linearly independent set that spans the entire space.
+A **[[Basis|basis]]** is a [[Linear Independence|linearly independent]] set that [[Span|spans]] the entire space.
 
-- **Dimension** = number of vectors in any basis
+- **[[Dimension]]** = number of vectors in any basis
 - $\mathbb{R}^3$ has dimension 3 (standard basis: $\hat{e}_1, \hat{e}_2, \hat{e}_3$)
 - A basis is the minimal spanning set and the maximal independent set
 
 > [!example] Physics Connection
-> In QM, the eigenstates $|n\rangle$ of the Hamiltonian form a basis for the state space. Any state can be written as $|\psi\rangle = \sum_n c_n |n\rangle$. The coefficients $c_n$ are probability amplitudes — this is exactly a linear combination in a vector space.
+> In QM, the eigenstates $|n\rangle$ of the Hamiltonian form a basis for the state space. Any state can be written as $|\psi\rangle = \sum_n c_n |n\rangle$. The coefficients $c_n$ are [[Probability Amplitude|probability amplitudes]] — this is exactly a [[Linear Combination|linear combination]] in a vector space.
 
 ### Subspace
 
-A **subspace** $W \subseteq V$ is a subset that is itself a vector space under the same operations. Quick test: check closure under addition and scalar multiplication (other axioms are inherited).
+A **[[Subspace|subspace]]** $W \subseteq V$ is a subset that is itself a vector space under the same operations. Quick test: check closure under addition and scalar multiplication (other axioms are inherited).
 
 ## Key Results
 
 | Result            | Statement                                                  |
 | ----------------- | ---------------------------------------------------------- |
 | Unique zero       | The zero vector is unique                                  |
-| Basis size        | All bases of a finite-dimensional space have the same size |
-| Extension         | Any independent set can be extended to a basis             |
+| Basis size        | All [[Basis|bases]] of a finite-dimensional space have the same size |
+| Extension         | Any [[Linear Independence|independent]] set can be extended to a basis             |
 | Dimension formula | $\dim(U + W) = \dim U + \dim W - \dim(U \cap W)$           |
 
 ## Practice Problems
@@ -108,14 +108,14 @@ Problems are grouped by difficulty. Work through them in order — each level bu
 
 ### Level 1 — Warm-up (Definitions & Recognition)
 
-**P1.1** Are the following vectors in $\mathbb{R}^2$ linearly independent?
+**P1.1** Are the following vectors in $\mathbb{R}^2$ [[Linear Independence|linearly independent]]?
 
 $$\mathbf{v}_1 = \begin{pmatrix} 1 \\ 2 \end{pmatrix}, \quad \mathbf{v}_2 = \begin{pmatrix} 3 \\ 6 \end{pmatrix}$$
 
 > [!todo] Your Answer
 > P1.1: <!-- Write your answer here --> No, they are linearly dependent, because$\mathbf{v}_1$ has linear relationship with $\mathbf{v}_2$, where $3 \cdot \mathbf{v}_1 = \mathbf{v}_2$, there exists a non-trivial scalar combination -> dependent.
 
-**P1.2** Which of these subsets of $\mathbb{R}^2$ are subspaces? Explain why or why not.
+**P1.2** Which of these subsets of $\mathbb{R}^2$ are [[Subspace|subspaces]]? Explain why or why not.
 - (a) $\{(x, y) \mid x \geq 0\}$
 - (b) $\{(x, y) \mid y = 2x\}$
 - (c) $\{(x, y) \mid x + y = 1\}$
@@ -134,7 +134,7 @@ $$\mathbf{v}_1 = \begin{pmatrix} 1 \\ 2 \end{pmatrix}, \quad \mathbf{v}_2 = \beg
 
 ### Level 2 — Computation (Row Reduction & Rank)
 
-**P2.1** Determine if these vectors in $\mathbb{R}^3$ are linearly independent by row-reducing:
+**P2.1** Determine if these vectors in $\mathbb{R}^3$ are linearly independent by [[Row Reduction|row-reducing]]:
 
 $$\mathbf{v}_1 = \begin{pmatrix} 1 \\ 0 \\ 2 \end{pmatrix}, \quad \mathbf{v}_2 = \begin{pmatrix} 0 \\ 1 \\ -1 \end{pmatrix}, \quad \mathbf{v}_3 = \begin{pmatrix} 2 \\ 1 \\ 3 \end{pmatrix}$$
 
@@ -160,7 +160,7 @@ $$\mathbf{v}_1 = \begin{pmatrix} 1 \\ 0 \\ 2 \end{pmatrix}, \quad \mathbf{v}_2 =
 \end{pmatrix}$$
 > The rank (2) is less than the number of vectors (3), so at least one vector is a linear combination of the others - they are linearly dependent.
 
-**P2.2** Find a basis for the subspace $W = \{(x, y, z) \in \mathbb{R}^3 \mid x - 2y + z = 0\}$. What is $\dim(W)$?
+**P2.2** Find a [[Basis|basis]] for the subspace $W = \{(x, y, z) \in \mathbb{R}^3 \mid x - 2y + z = 0\}$. What is $\dim(W)$?
 
 > [!todo] Your Answer
 > P2.2: <!-- Parametrize the subspace and identify basis vectors --> 
@@ -200,9 +200,9 @@ $$\begin{pmatrix} 3 & 1 & 0 \\ 0 & 2 & 7 \\ 6 & 2 & 0 \end{pmatrix}$$
 > P2.4c: <!-- Swap needed? Which rows and why? --> Not needed, because we can directly attempt to reduce row 3 by row 1 and row 2 with correct pivot (a11 is non-zero).
 
 > [!hint]- When is a row swap necessary?
-> A swap is needed only when the current pivot position is **zero**. If the pivot is non-zero (even if it's not 1), you can proceed directly. Swapping a non-zero pivot for a "nicer" number is optional, not required.
+> A swap is needed only when the current [[Pivot|pivot]] position is **zero**. If the pivot is non-zero (even if it's not 1), you can proceed directly. Swapping a non-zero pivot for a "nicer" number is optional, not required.
 
-**P2.5 (Explicit row operations)** Row-reduce the following matrix to echelon form. You **must** label every elementary row operation (e.g., $R_2 \to R_2 - 3R_1$). No skipped steps.
+**P2.5 (Explicit row operations)** Row-reduce the following matrix to [[Echelon Form|echelon form]]. You **must** label every elementary row operation (e.g., $R_2 \to R_2 - 3R_1$). No skipped steps.
 
 $$\begin{pmatrix} 1 & 2 & -1 \\ 3 & 5 & 0 \\ 2 & 3 & 1 \end{pmatrix}$$
 
@@ -213,7 +213,7 @@ $$\begin{pmatrix} 1 & 2 & -1 \\ 3 & 5 & 0 \\ 2 & 3 & 1 \end{pmatrix}$$
 > Here comes to R3
 > Reduce "2" first: R3 -> R3 - 2R1 -> (0, -1, 3) -> Is the same as current R2: R3 -> R3 - R2 -> (0, 0, 0,)
 
-**P2.6 (Extracting the dependency relation)** The vectors below are linearly dependent. Row-reduce to find the rank, then **explicitly state** which vector is a linear combination of the others and verify by substitution.
+**P2.6 (Extracting the dependency relation)** The vectors below are linearly dependent. Row-reduce to find the [[Rank|rank]], then **explicitly state** which vector is a [[Linear Combination|linear combination]] of the others and verify by substitution.
 
 $$\mathbf{u}_1 = \begin{pmatrix} 1 \\ 2 \\ 1 \end{pmatrix}, \quad \mathbf{u}_2 = \begin{pmatrix} 3 \\ 1 \\ 0 \end{pmatrix}, \quad \mathbf{u}_3 = \begin{pmatrix} 5 \\ 5 \\ 2 \end{pmatrix}$$
 
@@ -225,7 +225,7 @@ $$\mathbf{u}_1 = \begin{pmatrix} 1 \\ 2 \\ 1 \end{pmatrix}, \quad \mathbf{u}_2 =
 > P2.6 Dependency relation: <!-- e.g., u3 = ?·u1 + ?·u2. Then verify component by component. --> u3 = 2u1 + u2
 
 > [!hint]- How to read off the dependency from the reduced matrix
-> After row-reducing the augmented system $[v_1 \mid v_2 \mid v_3]$, any free variable column tells you that vector can be written in terms of the pivot columns. Set the free variable to 1 and back-substitute to find the coefficients.
+> After row-reducing the augmented system $[v_1 \mid v_2 \mid v_3]$, any [[Free Variable|free variable]] column tells you that vector can be written in terms of the pivot columns. Set the free variable to 1 and back-substitute to find the coefficients.
 
 **P2.7 (Rows vs. columns — same rank?)** Take the three vectors from P2.1:
 
@@ -286,7 +286,7 @@ $$\mathbf{v}_1 = \begin{pmatrix} 1 \\ 0 \\ 2 \end{pmatrix}, \quad \mathbf{v}_2 =
 > [!todo] Your Answer
 > P3.2: <!-- Write your proof here -->
 
-**P3.3** Let $V$ be a vector space of dimension $n$. Prove that any set of $n+1$ vectors must be linearly dependent.
+**P3.3** Let $V$ be a vector space of [[Dimension|dimension]] $n$. Prove that any set of $n+1$ vectors must be linearly dependent.
 
 > [!todo] Your Answer
 > P3.3: <!-- Write your proof here. Hint: think about the shape of the matrix -->
@@ -320,16 +320,17 @@ Is $|\psi\rangle$ linearly independent from the basis states? Why does this ques
 ## QM Connection
 
 The vector space structure is why quantum mechanics works the way it does:
-- **Superposition** = linear combinations are valid states
-- **Measurement outcomes** = eigenvalues of operators acting on this space
-- **Hilbert space** = infinite-dimensional vector space with an inner product (Phase 0.1 topic 8)
+- **[[Superposition]]** = [[Linear Combination|linear combinations]] are valid states
+- **Measurement outcomes** = [[Eigenvalues and Eigenvectors|eigenvalues]] of operators acting on this space
+- **[[Hilbert Space]]** = infinite-dimensional vector space with an [[Inner Product Spaces|inner product]] (Phase 0.1 topic 8)
 
 ---
 
 ## Related
-- Next: [[Matrix_Operations]]
+- Next: [[Matrix Operations]]
 - Parent: [[Linear_Algebra]]
-- Forward: [[Eigenvalues_and_Eigenvectors]], [[Inner_Product_Spaces]]
+- Forward: [[Eigenvalues and Eigenvectors]], [[Inner Product Spaces]]
+- Concepts: [[Linear Independence]], [[Span]], [[Basis]], [[Dimension]], [[Subspace]], [[Linear Combination]], [[Row Reduction]], [[Rank]], [[Hilbert Space]]
 
 ## Feedback
 

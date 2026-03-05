@@ -67,7 +67,7 @@ tags: [english, TOEFL, language]
 ## Related
 
 - [[UTokyo_RIKEN]] - TOEFL/English requirements tied to the PhD pathway
-- [[TOEFL_Study_Plan]] - Detailed schedule, milestones, and practice resources
+- [[TOEFL_Study_Progress]] - Detailed schedule, milestones, and practice resources
 - [[Japanese_Language]] - Parallel language learning
 - [[Masters_Thesis]] - Academic English writing synergy
 - [[Fundamental_Knowledge]] - Explaining concepts in English reinforces both projects

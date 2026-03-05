@@ -14,7 +14,7 @@ tags: [thesis, resnet, tpc, particle-id]
 
 **Objective:** Complete Master's thesis on deep learning-based particle identification (PID) for Time Projection Chambers (TPC) using simulated data. Primary method: ResNet-based classification. ^4d11fd
 
-**Scope:** Simulation-only study — real experimental data is not required at this stage. The thesis demonstrates PID capability using the [[Automated Framework for MATE(TPC)]] pipeline.
+**Scope:** Simulation-only study — real experimental data is not required at this stage. The thesis demonstrates PID capability using the [[MATE-Automation]] pipeline.
 
 **Success Metrics:**
 - [ ] ResNet PID model achieves strong AUC / classification accuracy across target particle species on TPC simulation data
@@ -26,7 +26,7 @@ tags: [thesis, resnet, tpc, particle-id]
 - Data: TPC simulation data (Geant4-based or equivalent) — already available
 - Compute: IMP lab resources; Python + ML framework (PyTorch or TensorFlow)
 - Timeline: Thesis must be submitted before June 2027 (prerequisite for UTokyo Kenkyusei application)
-- Dependencies: [[Automated Framework for MATE(TPC)]] codebase
+- Dependencies: [[MATE-Automation]] codebase
 
 ---
 
@@ -75,7 +75,7 @@ tags: [thesis, resnet, tpc, particle-id]
 
 ## Related
 
-- [[Automated Framework for MATE(TPC)]] — The codebase for this thesis
+- [[MATE-Automation]] — The codebase for this thesis
 - [[Japan_Itinerary]] — Post-graduation plans; thesis completion is the #1 gate
 - [[Fundamental_Knowledge]] — Physics depth supports thesis quality and PhD exam prep
 
