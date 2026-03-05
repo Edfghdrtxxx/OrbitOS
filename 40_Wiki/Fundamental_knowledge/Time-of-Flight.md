@@ -10,18 +10,18 @@ review_interval: 0
 
 ## Definition
 
-Time-of-Flight (ToF) is a measurement technique that determines a particle's velocity by precisely timing how long it takes to traverse a known distance between two detector stations, enabling mass and particle identification when combined with momentum information.
+Time-of-Flight (ToF) is a measurement technique that determines a particle's velocity by precisely timing how long it takes to traverse a known distance between two detector stations, enabling mass and [[particle identification]] when combined with momentum information.
 
 ## Key Points
 
-- **Principle**: Velocity *v = L / Δt*, where *L* is the flight path and *Δt* is the measured transit time; combined with momentum *p*, particle mass is extracted via *m = p / βγc*
-- **Timing requirements**: Sub-nanosecond time resolution is typically needed, achieved using [[Constant Ratio Timing]] (CFD) or high-resolution TDCs
+- **Principle**: Velocity $v = L / \Delta t$, where $L$ is the flight path and $\Delta t$ is the measured transit time; combined with momentum $p$, particle mass is extracted via $m = p / (\beta\gamma c)$
+- **Timing requirements**: Sub-nanosecond time resolution is typically needed, achieved using [[Constant Ratio Timing]] (CFD) or high-resolution [[TDC]]s
 - **Detector elements**: Start and stop signals commonly from [[Scintillation Detector|scintillation detectors]], [[Photomultiplier Tube|PMTs]], or micro-channel plates; [[Time Walk]] correction is critical
 - **Applications**: Particle identification in nuclear and high-energy physics, PET medical imaging, laser ranging (LIDAR)
 
 ## Examples
 
-- In a beam-line experiment, a plastic [[Scintillation Detector|scintillator]] start detector and a downstream stop detector measure ToF over ~1 m to separate protons, deuterons, and tritons at intermediate energies
+- In a beam-line experiment, a plastic [[Scintillation Detector|scintillator]] start detector and a downstream stop detector measure ToF over $\sim 1\;\text{m}$ to separate protons, deuterons, and tritons at intermediate energies
 - [[Time Projection Chamber]] detectors combine drift-time measurement with external ToF walls for full particle identification in heavy-ion collision experiments
 
 ## Related Concepts

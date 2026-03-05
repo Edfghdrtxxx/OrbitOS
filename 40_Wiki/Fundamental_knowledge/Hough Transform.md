@@ -14,7 +14,7 @@ The Hough transform is a voting-based algorithm that maps features in the origin
 
 ## Key Points
 
-- **Line detection (classic)**: A point *(x, y)* in image space maps to a sinusoid in *(ρ, θ)* space; collinear points produce intersecting sinusoids whose peak identifies the line
+- **Line detection (classic)**: A point $(x, y)$ in image space maps to a sinusoid in $(\rho, \theta)$ space; collinear points produce intersecting sinusoids whose peak identifies the line
 - **Generalised forms**: Extensible to circles (3D accumulator), ellipses, and custom shapes; used in [[Time Projection Chamber]] track finding as a helix or circle fit in momentum–position space
 - **Robustness**: Voting inherently tolerates outliers and gaps in the data, making it suitable for detector hits with inefficiencies and background
 - **Computational trade-off**: Accumulator size grows with parameter dimensionality; often combined with local maxima search or [[RANSAC]] for efficiency
@@ -23,7 +23,7 @@ The Hough transform is a voting-based algorithm that maps features in the origin
 
 - Detecting straight lines in [[Edge Detection|edge-detected]] images (e.g., lane detection)
 - Finding circular arcs in wire-chamber or [[Time Projection Chamber]] hit patterns for charged-particle [[Track Reconstruction]]
-- Identifying helical trajectories in magnetic-field detectors by Hough transform in curvature–dip–*z*0 space
+- Identifying helical trajectories in magnetic-field detectors by Hough transform in curvature–dip–$z_0$ space
 
 ## Related Concepts
 

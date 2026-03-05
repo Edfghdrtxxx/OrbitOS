@@ -14,10 +14,10 @@ The photoelectric effect is the emission of electrons from a material surface wh
 
 ## Key Points
 
-- Kinetic energy of emitted electrons follows E_k = hν − φ, where hν is the [[Photon]] energy and φ is the [[Work Function]] of the material
+- Kinetic energy of emitted electrons follows $E_k = h\nu - \varphi$, where $h\nu$ is the [[Photon]] energy and $\varphi$ is the [[Work Function]] of the material
 - Below the threshold frequency, no electrons are emitted regardless of light intensity — a result unexplainable by classical wave theory
 - Albert Einstein received the 1921 Nobel Prize for explaining this effect using [[Quantum Mechanics|quantum]] light quanta (photons)
-- Dominates [[Gamma Spectroscopy|gamma-ray]] interactions at low photon energies (< ~100 keV) and high atomic number absorbers
+- Dominates [[Gamma Spectroscopy|gamma-ray]] interactions at low photon energies ($\lesssim 100\;\text{keV}$) and high atomic number absorbers
 - In [[Scintillation Detector]]s and [[Photomultiplier Tube]]s, the photoelectric effect converts scintillation [[Photon]]s into measurable electrical signals
 
 ## Examples

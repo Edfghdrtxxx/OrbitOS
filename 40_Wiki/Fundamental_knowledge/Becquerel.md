@@ -16,9 +16,9 @@ The becquerel (Bq) is the SI unit of radioactivity, defined as one nuclear decay
 
 ## Key Points
 
-- 1 Bq = 1 decay/s; the older unit curie (Ci) = 3.7 × 10¹⁰ Bq (originally based on 1 g of ²²⁶Ra)
-- Activity depends on both the number of atoms and the decay constant: A = λN = (ln2/t₁/₂) × N, linking directly to [[Half-Life]]
-- [[Smear Test]] results are reported in Bq/cm² to quantify [[Surface Contamination]]
+- $1\;\text{Bq} = 1\;\text{decay/s}$; the older unit curie $(\text{Ci}) = 3.7 \times 10^{10}\;\text{Bq}$ (originally based on $1\;\text{g}$ of $^{226}\text{Ra}$)
+- Activity depends on both the number of atoms and the decay constant: $A = \lambda N = (\ln 2 / t_{1/2}) \times N$, linking directly to [[Half-Life]]
+- [[Smear Test]] results are reported in $\text{Bq/cm}^2$ to quantify [[Surface Contamination]]
 - High Bq does not automatically mean high dose — a pure beta emitter at distance may deliver less dose than a gamma emitter with lower activity
 
 ## Examples
