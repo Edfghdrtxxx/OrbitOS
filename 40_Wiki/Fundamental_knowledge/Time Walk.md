@@ -14,15 +14,15 @@ Time Walk is the systematic shift in measured signal timing caused by variations
 
 ## Key Points
 
-- **Cause**: A fixed-level (leading-edge) discriminator fires at different points on the rising edge depending on pulse height, producing timing offsets that correlate with signal amplitude
-- **Magnitude**: Can range from sub-nanosecond to tens of nanoseconds depending on detector type and signal dynamic range
+- **Cause**: A fixed-level (leading-edge) discriminator fires at different points on the rising edge depending on [[Pulse Height|pulse height]], producing timing offsets that correlate with signal amplitude
+- **Magnitude**: Can range from sub-nanosecond to tens of nanoseconds depending on detector type and signal [[Dynamic Range|dynamic range]]
 - **Correction**: Eliminated by [[Constant Ratio Timing]] ([[Constant Fraction Discriminator]]), or compensated post-hoc via amplitude-dependent correction curves
-- **Impact**: Degrades time resolution in [[Time-of-Flight]] measurements, [[Coincidence Detection]], and any timing-critical experiment
+- **Impact**: Degrades [[Time Resolution|time resolution]] in [[Time-of-Flight]] measurements, [[Coincidence Detection]], and any timing-critical experiment
 
 ## Examples
 
-- In a [[Scintillation Detector]] system, gamma rays of different energies produce pulses of varying amplitude; without correction, a leading-edge discriminator introduces time walk of several nanoseconds between low- and high-energy events
-- In [[Time Projection Chamber]] pad electronics, time walk on drift-time measurements distorts reconstructed particle tracks unless corrected by a digital CFD in [[FPGA]] firmware or offline calibration
+- In a [[Scintillation Detector]] system, [[Gamma Ray|gamma rays]] of different energies produce pulses of varying amplitude; without correction, a leading-edge discriminator introduces time walk of several nanoseconds between low- and high-energy events
+- In [[Time Projection Chamber]] pad electronics, time walk on [[Drift Time|drift-time]] measurements distorts [[Track Reconstruction|reconstructed particle tracks]] unless corrected by a digital CFD in [[FPGA]] firmware or offline calibration
 
 ## Related Concepts
 
@@ -32,6 +32,11 @@ Time Walk is the systematic shift in measured signal timing caused by variations
 - [[Scintillation Detector]]
 - [[Time Projection Chamber]]
 - [[Leading-Edge Discriminator]]
+- [[Time Resolution]]
+- [[Dynamic Range]]
+- [[Drift Time]]
+- [[Gamma Ray]]
+- [[Pulse Height]]
 
 ## References
 

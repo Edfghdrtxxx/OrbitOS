@@ -8,6 +8,8 @@ review_interval: 0
 ---
 # [Concept Name]
 
+> [!important] All math expressions, equations, and formulas **must** use LaTeX notation (`$...$` for inline, `$$...$$` for display blocks).
+
 ## Definition
 
 [Clear, concise definition of the concept]
