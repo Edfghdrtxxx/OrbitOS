@@ -5,5 +5,16 @@
   "alwaysUpdateLinks": true,
   "trashOption": "local",
   "newFileLocation": "root",
-  "attachmentFolderPath": "50_Resources/Attachments"
+  "attachmentFolderPath": "50_Resources/Attachments",
+  "userIgnoreFilters": [
+    "node_modules",
+    "**/Lib/",
+    "**/site-packages/",
+    "**/__pycache__/",
+    "**/changelogs/",
+    "**/.github/",
+    "20_Project/AstrBot/backend/",
+    "20_Project/Bilibili-RAG/bilibili-rag/",
+    "20_Project/Marker/data/"
+  ]
 }
