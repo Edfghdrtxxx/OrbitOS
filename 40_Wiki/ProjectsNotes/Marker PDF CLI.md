@@ -14,7 +14,8 @@ WSL/Linux:
 
 ```bash
 cd /mnt/d/obsidian/OrbitOS/20_Project/Marker
-python -m venv .venv
+# It's safer to use python3 to avoid conda conflicts.
+python3 -m venv .venv 
 source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install marker-pdf
