@@ -57,15 +57,20 @@ For each project to be archived:
    - Organize by year and month of processing
    - Preserves chronological capture history
 
-3. **Update metadata:**
+3. **Update archived file metadata:**
    - Add `archived: YYYY-MM-DD` to frontmatter
+   - Add `archived-in: "[[YYYY-MM-DD]]"` to frontmatter (reverse-link to the daily note that triggered archival)
    - Keep all other metadata intact
 
-4. **Preserve links:**
-   - Update today's daily note with archive action
-   - Note: Existing wikilinks will still work from new location
+4. **Update today's daily note:**
+   - Add an entry to `## Log` describing what was archived
+   - **Remove archived projects from `## Related Projects`** (or mark them `— status: archived` if user prefers keeping a trace)
+   - If the archived project had **carryover tasks still present in `## Priorities`**, flag them to the user and ask whether to remove, keep as standalone tasks, or reassign to another project
 
-5. **Clean up:**
+5. **Preserve links:**
+   - Existing wikilinks will still work from new location — no link rewriting needed
+
+6. **Clean up:**
    - Check for orphaned assets in `50_Resources/`
    - Ask user if any should be cleaned up
 
@@ -83,6 +88,11 @@ Present completion summary:
 - idea-note.md → Archives/Inbox/2026/01/
 - quick-capture.md → Archives/Inbox/2026/01/
 
+**Daily Note Updates:**
+- `## Log`: [N] archive entries added
+- `## Related Projects`: [N] projects removed (or marked archived)
+- Carryover tasks: [status — removed / reassigned / kept]
+
 **Vault Status:**
 - Active projects: [N]
 - Inbox items: [N]
@@ -99,10 +109,10 @@ Present completion summary:
 
 - **Preserve all content** - Never delete, only move
 - **Organize by year** - Use completion year for folder organization
-- **Update frontmatter** - Add archived date
+- **Update frontmatter** - Add `archived` date and `archived-in` reverse-link
 - **Confirm before archiving** - Let user review what will be archived
 - **Maintain links** - Obsidian wikilinks work across locations
-- **Log the action** - Update today's daily note
+- **Update the daily note fully** - Log in `## Log`, clean `## Related Projects`, flag stale carryover tasks in `## Priorities`
 
 # EDGE CASES
 
@@ -110,6 +120,8 @@ Present completion summary:
 - **Mixed status in folder:** Ask user to clarify - archive entire folder or just certain files?
 - **Large projects with assets:** Confirm whether to archive assets too
 - **Recently completed:** Remind user they may want to do a project retrospective first
+- **Carryover tasks from archived project:** Tasks may still appear in today's `## Priorities` as carryover from previous days. Ask user: remove them, keep as standalone, or reassign to another project
+- **Project appears in `## Related Projects` of older daily notes:** Do NOT retroactively edit past daily notes — they are immutable logs. Only update today's note
 
 # ARCHIVE STRUCTURE
 
@@ -166,6 +178,10 @@ Present completion summary:
 
 **Processed Inbox Items (1):**
 - Build my personal OS with obsidian and Claude Code.md - Processed to [[Personal_OS_Setup]]
+
+**Daily Note Impact:**
+- `## Related Projects`: [[Personal_OS_Setup]] will be removed
+- `## Priorities`: 1 carryover task found referencing [[Personal_OS_Setup]] — will ask what to do
 
 Would you like to archive these items?
 (They'll be moved to 99_System/Archives/ but wikilinks will continue to work)
