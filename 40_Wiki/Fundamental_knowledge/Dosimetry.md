@@ -17,7 +17,7 @@ Dosimetry is the measurement and calculation of radiation dose absorbed by matte
 ## Key Points
 
 - **Personal dosimeters** (film badges, TLDs, electronic dosimeters) are worn by personnel inside a [[Radiation Controlled Area]] to record cumulative exposure
-- Dose limits are set by regulation — e.g., 50 mSv/year and 100 mSv per 5 years for occupational workers in Japan
+- Dose limits are set by regulation — e.g., $50\;\text{mSv/year}$ and $100\;\text{mSv}$ per 5 years for occupational workers in Japan
 - Follows the [[ALARA Principle]]: dose should be kept as low as reasonably achievable, not just below the legal limit
 - Area dosimeters monitor ambient radiation levels in workspaces and at boundaries of controlled areas
 

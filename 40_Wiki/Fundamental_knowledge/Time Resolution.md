@@ -21,8 +21,8 @@ Time Resolution is the smallest time interval a detection system can reliably di
 
 ## Examples
 
-- A BaF₂ [[Scintillation Detector]] paired with a [[Photomultiplier Tube]] achieves ~200 ps FWHM time resolution, enabling sub-nanosecond [[Time-of-Flight]] measurements for [[Particle Identification|particle identification]]
-- In a [[Time Projection Chamber]], the time resolution of the pad electronics (~1–10 ns) directly determines the [[Spatial Resolution|spatial resolution]] along the drift axis via the [[Drift Time]]–position relation
+- A $\text{BaF}_2$ [[Scintillation Detector]] paired with a [[Photomultiplier Tube]] achieves $\sim 200\;\text{ps}$ FWHM time resolution, enabling sub-nanosecond [[Time-of-Flight]] measurements for [[Particle Identification|particle identification]]
+- In a [[Time Projection Chamber]], the time resolution of the pad electronics ($\sim 1$–$10\;\text{ns}$) directly determines the [[Spatial Resolution|spatial resolution]] along the drift axis via the [[Drift Time]]–position relation
 
 ## Related Concepts
 

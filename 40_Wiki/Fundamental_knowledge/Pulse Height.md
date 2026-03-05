@@ -22,7 +22,7 @@ Pulse Height is the peak amplitude of an electrical signal produced by a radiati
 
 ## Examples
 
-- A [[HPGe Detector]] irradiated by ¹³⁷Cs produces a photopeak at a pulse height corresponding to 662 keV, with an [[Energy Resolution]] of ~0.2% FWHM
+- A [[HPGe Detector]] irradiated by $^{137}\text{Cs}$ produces a photopeak at a pulse height corresponding to $662\;\text{keV}$, with an [[Energy Resolution]] of $\sim 0.2\%$ FWHM
 - In a [[Scintillation Detector]] coupled to a [[Silicon Photomultiplier]], the pulse height varies with the number of detected scintillation photons, requiring careful gain calibration for accurate energy assignment
 
 ## Related Concepts

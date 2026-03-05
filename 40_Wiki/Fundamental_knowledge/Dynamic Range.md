@@ -14,7 +14,7 @@ Dynamic Range is the ratio between the largest and smallest signal amplitudes a 
 
 ## Key Points
 
-- **Expression**: Commonly stated as \(DR = 20 \log_{10}(A_{\max}/A_{\min})\) in dB; a 12-bit [[ADC]] provides ~72 dB dynamic range
+- **Expression**: Commonly stated as $DR = 20 \log_{10}(A_{\max}/A_{\min})$ in dB; a 12-bit [[ADC]] provides $\sim 72\;\text{dB}$ dynamic range
 - **Limiting factors**: At the low end, electronic noise and [[Dark Count Rate|dark counts]] set the floor; at the high end, [[Saturation|saturation]] or non-linearity caps the ceiling
 - **Impact on timing**: A wide dynamic range amplifies [[Time Walk]] in [[Leading-Edge Discriminator|leading-edge discriminators]] because pulses span a larger amplitude spread
 - **Design trade-off**: Increasing dynamic range often requires sacrificing [[Energy Resolution]] or timing precision unless compression techniques (logarithmic amplifiers, dual-gain paths) are used
@@ -22,7 +22,7 @@ Dynamic Range is the ratio between the largest and smallest signal amplitudes a 
 
 ## Examples
 
-- A [[Scintillation Detector]] system measuring [[Gamma Ray|gamma rays]] from 50 keV to 10 MeV needs a dynamic range of ~200:1 (~46 dB), requiring at minimum an 8-bit [[ADC]]
+- A [[Scintillation Detector]] system measuring [[Gamma Ray|gamma rays]] from $50\;\text{keV}$ to $10\;\text{MeV}$ needs a dynamic range of $\sim 200{:}1$ ($\sim 46\;\text{dB}$), requiring at minimum an 8-bit [[ADC]]
 - In a [[Time Projection Chamber]], pad signals can vary over three orders of magnitude depending on particle species, demanding 10+ bit digitisation in the [[FPGA]]-based front-end
 
 ## Related Concepts

@@ -14,10 +14,10 @@ Drift Time is the interval required for ionization electrons (or ions) to travel
 
 ## Key Points
 
-- **Governing relation**: \(t_{\text{drift}} = d / v_d\), where \(d\) is the drift distance and \(v_d\) is the [[Drift Velocity|drift velocity]] determined by the [[Electric Field|electric field]] strength and gas mixture
+- **Governing relation**: $t_{\text{drift}} = d / v_d$, where $d$ is the drift distance and $v_d$ is the [[Drift Velocity|drift velocity]] determined by the [[Electric Field|electric field]] strength and gas mixture
 - **Spatial reconstruction**: In a [[Time Projection Chamber]], the drift time of each electron cluster is multiplied by the calibrated drift velocity to recover the coordinate along the electric field axis, enabling full 3D [[Track Reconstruction]]
 - **Error sources**: [[Time Walk]], [[Diffusion|diffusion]] (both longitudinal and transverse), and electric-field non-uniformities degrade the drift-time-to-position mapping
-- **Typical values**: Ranges from ~100 ns (mm-scale [[Micromegas]] gaps) to ~100 µs (metre-scale TPCs), depending on detector geometry and drift field
+- **Typical values**: Ranges from $\sim 100\;\text{ns}$ (mm-scale [[Micromegas]] gaps) to $\sim 100\;\mu\text{s}$ (metre-scale TPCs), depending on detector geometry and drift field
 - **Calibration**: Drift velocity is measured in-situ using known reference tracks or laser ionization systems; temperature and pressure must be monitored because $v_d$ is sensitive to gas density
 
 ## Examples
