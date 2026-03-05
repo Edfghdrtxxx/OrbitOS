@@ -14,8 +14,8 @@ Coincidence detection is a technique in nuclear and particle physics that select
 
 ## Key Points
 
-- **Resolving time (2τ)**: The coincidence window width; shorter windows reduce accidental coincidences but require better timing resolution from the detectors
-- **Accidental rate**: *R_acc = 2τ · R₁ · R₂*, where *R₁*, *R₂* are individual detector rates — minimized by precise timing via [[Constant Ratio Timing]]
+- **Resolving time ($2\tau$)**: The coincidence window width; shorter windows reduce accidental coincidences but require better timing resolution from the detectors
+- **Accidental rate**: $R_{\text{acc}} = 2\tau \cdot R_1 \cdot R_2$, where $R_1$, $R_2$ are individual detector rates — minimized by precise timing via [[Constant Ratio Timing]]
 - **Types**: True coincidences (correlated physics events), accidental/random coincidences (uncorrelated), and scattered coincidences (in imaging applications)
 - **Hardware**: Implemented with coincidence units (AND logic), or in [[FPGA]] firmware for digital trigger systems
 

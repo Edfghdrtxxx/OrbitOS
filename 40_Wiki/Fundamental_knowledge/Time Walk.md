@@ -14,7 +14,7 @@ Time Walk is the systematic shift in measured signal timing caused by variations
 
 ## Key Points
 
-- **Cause**: A fixed-level (leading-edge) discriminator fires at different points on the rising edge depending on [[Pulse Height|pulse height]], producing timing offsets that correlate with signal amplitude
+- **Cause**: A fixed-level ([[Leading-Edge Discriminator]]) discriminator fires at different points on the [[Rising Edge|rising edge]] depending on [[Pulse Height|pulse height]], producing timing offsets that correlate with signal amplitude
 - **Magnitude**: Can range from sub-nanosecond to tens of nanoseconds depending on detector type and signal [[Dynamic Range|dynamic range]]
 - **Correction**: Eliminated by [[Constant Ratio Timing]] ([[Constant Fraction Discriminator]]), or compensated post-hoc via amplitude-dependent correction curves
 - **Impact**: Degrades [[Time Resolution|time resolution]] in [[Time-of-Flight]] measurements, [[Coincidence Detection]], and any timing-critical experiment
@@ -37,6 +37,7 @@ Time Walk is the systematic shift in measured signal timing caused by variations
 - [[Drift Time]]
 - [[Gamma Ray]]
 - [[Pulse Height]]
+- [[Rising Edge]]
 
 ## References
 

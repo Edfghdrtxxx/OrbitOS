@@ -14,9 +14,9 @@ A Constant Fraction Discriminator (CFD) is an electronic circuit that implements
 
 ## Key Points
 
-- **Circuit operation**: Input signal is split — one path attenuated by fraction *f* (typically 0.2–0.4), the other inverted and delayed by *t_d* (matched to the rise time); the zero-crossing of their sum is detected by a comparator to generate the timing output
+- **Circuit operation**: Input signal is split — one path attenuated by fraction $f$ (typically 0.2–0.4), the other inverted and delayed by $t_d$ (matched to the rise time); the zero-crossing of their sum is detected by a comparator to generate the timing output
 - **Purpose**: Eliminates [[Time Walk]] inherent in leading-edge discriminators, achieving sub-nanosecond time resolution independent of pulse amplitude
-- **Parameter selection**: Fraction *f* trades off walk performance vs. jitter; delay *t_d* must approximate the signal rise time — mismatched parameters degrade timing resolution
+- **Parameter selection**: Fraction $f$ trades off walk performance vs. jitter; delay $t_d$ must approximate the signal rise time — mismatched parameters degrade timing resolution
 - **Digital implementation**: Digital CFD (dCFD) algorithms replicate the analog process in [[FPGA]] firmware on digitized waveforms, offering flexibility and multi-channel scalability
 
 ## Examples

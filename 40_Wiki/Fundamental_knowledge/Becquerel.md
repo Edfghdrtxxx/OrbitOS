@@ -23,8 +23,8 @@ The becquerel (Bq) is the SI unit of radioactivity, defined as one nuclear decay
 
 ## Examples
 
-- A ⁶⁰Co source with activity 1 MBq (10⁶ decays/s) — a common calibration source
-- Clearance limit for surface contamination: typically 0.4 Bq/cm² for alpha emitters, 4 Bq/cm² for beta/gamma
+- A $^{60}\text{Co}$ source with activity $1\;\text{MBq}$ ($10^6$ decays/s) — a common calibration source
+- Clearance limit for surface contamination: typically $0.4\;\text{Bq/cm}^2$ for alpha emitters, $4\;\text{Bq/cm}^2$ for beta/gamma
 
 ## Related Concepts
 
