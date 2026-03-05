@@ -2,7 +2,7 @@
 type: project
 status: active
 area: "[[Physics Research]]"
-path: "../../Something/AFTPC_V3_MultiAgentVersion"
+path: ../../Something/MATE-Automation-V4
 ---
 The codebase lives outside this vault. The `path` above is **relative to the vault root** (`OrbitOS/`). ^3a27d1
 
