@@ -10,30 +10,31 @@ review_interval: 0
 
 ## Definition
 
-The Hough transform is a feature-extraction algorithm that maps points or edges in image space into a parameter space, where geometric primitives (lines, circles, ellipses) are detected by accumulating votes — a peak in parameter space corresponds to the presence of that shape in the original data.
+The Hough transform is a voting-based algorithm that maps features in the original space (e.g., points in an image) into a parameter space where each feature votes for a family of shapes (lines, circles, ellipses) that could pass through it, allowing robust detection of geometric structures even in noisy data.
 
 ## Key Points
 
-- **Line detection (classic form):** Each point (x, y) votes for all lines (ρ, θ) that could pass through it; collinear points produce a common peak in (ρ, θ) space
-- **Generalised to curves:** Circle, ellipse, and helix Hough transforms extend the idea to higher-dimensional parameter spaces
-- **Robustness:** Tolerant to gaps and noise because each point contributes independently; widely used when parametric models are known
-- **Computational cost:** Grows with parameter-space resolution; often approximated with randomised or probabilistic variants
+- **Line detection (classic)**: A point *(x, y)* in image space maps to a sinusoid in *(ρ, θ)* space; collinear points produce intersecting sinusoids whose peak identifies the line
+- **Generalised forms**: Extensible to circles (3D accumulator), ellipses, and custom shapes; used in [[Time Projection Chamber]] track finding as a helix or circle fit in momentum–position space
+- **Robustness**: Voting inherently tolerates outliers and gaps in the data, making it suitable for detector hits with inefficiencies and background
+- **Computational trade-off**: Accumulator size grows with parameter dimensionality; often combined with local maxima search or [[RANSAC]] for efficiency
 
 ## Examples
 
-- Detecting straight-line tracks in wire-chamber or [[Time Projection Chamber]] pad readout by accumulating hits in (ρ, θ) space
-- Circle detection in iris recognition or particle identification from ring-imaging Cherenkov detectors
-- Helix Hough transform for helical track finding in solenoidal magnetic fields (e.g., collider tracking)
+- Detecting straight lines in [[Edge Detection|edge-detected]] images (e.g., lane detection)
+- Finding circular arcs in wire-chamber or [[Time Projection Chamber]] hit patterns for charged-particle [[Track Reconstruction]]
+- Identifying helical trajectories in magnetic-field detectors by Hough transform in curvature–dip–*z*0 space
 
 ## Related Concepts
 
 - [[Time Projection Chamber]]
-- [[Particle Identification]]
-- [[Linear_Algebra]]
-- [[Kalman Filter]]
+- [[FPGA]]
 - [[Track Reconstruction]]
+- [[RANSAC]]
+- [[Edge Detection]]
+- [[Kalman Filter]]
 
 ## References
 
-- Hough, P. V. C. (1962). "Method and means for recognizing complex patterns." US Patent 3069654
-- Duda, R. O., & Hart, P. E. (1972). "Use of the Hough transformation to detect lines and curves in pictures." *Comm. ACM* 15(1): 11–15
+- Duda, R. O., & Hart, P. E. (1972). "Use of the Hough transformation to detect lines and curves in pictures." *Communications of the ACM*, 15(1), 11–15
+- Ballard, D. H. (1981). "Generalizing the Hough transform to detect arbitrary shapes." *Pattern Recognition*, 13(2), 111–122

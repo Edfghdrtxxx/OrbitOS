@@ -15,8 +15,8 @@ A Time Projection Chamber (TPC) is a gaseous (or liquid) particle detector that 
 ## Key Points
 
 - **Operating principle**: Charged particles ionize the gas; liberated electrons drift in a uniform electric field toward the readout plane; the 2D hit position combined with measured drift time yields full 3D track reconstruction
-- **Particle identification**: The dE/dx (energy loss per unit length) measured along the track follows the Bethe-Bloch formula and distinguishes particle species — a core technique for particle identification in direct reactions
-- **Readout technologies**: Pad planes, Micromegas, GEM-based amplification stages; digitized by ADCs and processed in [[FPGA]] firmware with [[Constant Ratio Timing|digital CFD]] for precise drift-time extraction
+- **Particle identification**: The dE/dx (energy loss per unit length) measured along the track follows the [[Bethe-Bloch Formula]] and distinguishes particle species — a core technique for particle identification in direct reactions
+- **Readout technologies**: Pad planes, [[Micromegas]], [[GEM Detector|GEM]]-based amplification stages; digitized by [[ADC]]s and processed in [[FPGA]] firmware with [[Constant Ratio Timing|digital CFD]] for precise drift-time extraction
 - **Key parameters**: Drift velocity (depends on gas mixture and field), diffusion (limits spatial resolution), and gain (from gas amplification)
 
 ## Examples
