@@ -16,7 +16,7 @@ ALARA (As Low As Reasonably Achievable) is the radiation protection principle th
 
 ## Key Points
 
-- The three pillars of ALARA: **Time** (minimize time near source), **Distance** (maximize distance — dose falls as 1/r²), **Shielding** (place absorbing material between you and the source)
+- The three pillars of ALARA: **Time** (minimize time near source), **Distance** (maximize distance — dose falls as $1/r^2$), **Shielding** (place absorbing material between you and the source)
 - It is a legal requirement in most countries, not just a guideline — built into Japan's Act on Prevention of Radiation Hazards
 - Applies to both personnel dose ([[Dosimetry]]) and contamination/activation of the environment
 - Even if your dose is well below the annual limit, ALARA demands you still reduce it where practical

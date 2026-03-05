@@ -15,7 +15,7 @@ Dynamic Range is the ratio between the largest and smallest signal amplitudes a 
 ## Key Points
 
 - **Expression**: Commonly stated as \(DR = 20 \log_{10}(A_{\max}/A_{\min})\) in dB; a 12-bit [[ADC]] provides ~72 dB dynamic range
-- **Limiting factors**: At the low end, electronic noise and [[Dark Count Rate|dark counts]] set the floor; at the high end, saturation or non-linearity caps the ceiling
+- **Limiting factors**: At the low end, electronic noise and [[Dark Count Rate|dark counts]] set the floor; at the high end, [[Saturation|saturation]] or non-linearity caps the ceiling
 - **Impact on timing**: A wide dynamic range amplifies [[Time Walk]] in [[Leading-Edge Discriminator|leading-edge discriminators]] because pulses span a larger amplitude spread
 - **Design trade-off**: Increasing dynamic range often requires sacrificing [[Energy Resolution]] or timing precision unless compression techniques (logarithmic amplifiers, dual-gain paths) are used
 - **Relevance to DAQ**: The [[DAQ]] system's overall dynamic range must match the detector's output span to avoid clipping or underutilisation of digitiser bits
@@ -33,6 +33,7 @@ Dynamic Range is the ratio between the largest and smallest signal amplitudes a 
 - [[DAQ]]
 - [[Pulse Height]]
 - [[Signal-to-Noise Ratio]]
+- [[Saturation]]
 
 ## References
 

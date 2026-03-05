@@ -21,8 +21,8 @@ A shell closure occurs when a nucleon shell is filled, producing extra stability
 
 ## Examples
 
-- $^4$He (Z = N = 2) and $^{16}$O (Z = N = 8) are classic closed-shell nuclei
-- $^{208}$Pb (Z = 82, N = 126) is doubly magic and exceptionally stable
+- $^4\text{He}$ ($Z = N = 2$) and $^{16}\text{O}$ ($Z = N = 8$) are classic closed-shell nuclei
+- $^{208}\text{Pb}$ ($Z = 82$, $N = 126$) is doubly magic and exceptionally stable
 
 ## Related Concepts
 

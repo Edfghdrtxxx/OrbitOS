@@ -15,14 +15,14 @@ Time Resolution is the smallest time interval a detection system can reliably di
 ## Key Points
 
 - **Quantification**: Typically reported as the FWHM of the time-difference distribution between coincident events, ranging from picoseconds (fast [[Scintillation Detector|scintillators]]) to microseconds (slow gas detectors)
-- **Limiting factors**: Detector signal rise time, [[Time Walk]], electronic jitter, photoelectron statistics, and [[Dark Count Rate|dark counts]] all degrade time resolution
+- **Limiting factors**: Detector signal [[Rise Time|rise time]], [[Time Walk]], electronic [[Jitter|jitter]], photoelectron statistics, and [[Dark Count Rate|dark counts]] all degrade time resolution
 - **Correction methods**: Using a [[Constant Fraction Discriminator]] or [[Constant Ratio Timing]] removes amplitude-dependent contributions; higher light yield and faster [[Photodetector|photodetectors]] improve intrinsic resolution
 - **Relationship to energy**: Better [[Energy Resolution]] often trades off against time resolution because optimising charge collection (slow shaping) conflicts with fast timing
 
 ## Examples
 
 - A BaF₂ [[Scintillation Detector]] paired with a [[Photomultiplier Tube]] achieves ~200 ps FWHM time resolution, enabling sub-nanosecond [[Time-of-Flight]] measurements for [[Particle Identification|particle identification]]
-- In a [[Time Projection Chamber]], the time resolution of the pad electronics (~1–10 ns) directly determines the spatial resolution along the drift axis via the [[Drift Time]]–position relation
+- In a [[Time Projection Chamber]], the time resolution of the pad electronics (~1–10 ns) directly determines the [[Spatial Resolution|spatial resolution]] along the drift axis via the [[Drift Time]]–position relation
 
 ## Related Concepts
 
@@ -33,6 +33,8 @@ Time Resolution is the smallest time interval a detection system can reliably di
 - [[Dead Time]]
 - [[Jitter]]
 - [[Drift Time]]
+- [[Rise Time]]
+- [[Spatial Resolution]]
 
 ## References
 

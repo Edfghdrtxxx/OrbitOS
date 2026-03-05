@@ -14,16 +14,16 @@ Drift Time is the interval required for ionization electrons (or ions) to travel
 
 ## Key Points
 
-- **Governing relation**: \(t_{\text{drift}} = d / v_d\), where \(d\) is the drift distance and \(v_d\) is the drift velocity determined by the electric field strength and gas mixture
+- **Governing relation**: \(t_{\text{drift}} = d / v_d\), where \(d\) is the drift distance and \(v_d\) is the [[Drift Velocity|drift velocity]] determined by the [[Electric Field|electric field]] strength and gas mixture
 - **Spatial reconstruction**: In a [[Time Projection Chamber]], the drift time of each electron cluster is multiplied by the calibrated drift velocity to recover the coordinate along the electric field axis, enabling full 3D [[Track Reconstruction]]
-- **Error sources**: [[Time Walk]], diffusion (both longitudinal and transverse), and electric-field non-uniformities degrade the drift-time-to-position mapping
+- **Error sources**: [[Time Walk]], [[Diffusion|diffusion]] (both longitudinal and transverse), and electric-field non-uniformities degrade the drift-time-to-position mapping
 - **Typical values**: Ranges from ~100 ns (mm-scale [[Micromegas]] gaps) to ~100 µs (metre-scale TPCs), depending on detector geometry and drift field
-- **Calibration**: Drift velocity is measured in-situ using known reference tracks or laser ionization systems; temperature and pressure must be monitored because \(v_d\) is sensitive to gas density
+- **Calibration**: Drift velocity is measured in-situ using known reference tracks or laser ionization systems; temperature and pressure must be monitored because $v_d$ is sensitive to gas density
 
 ## Examples
 
-- In the ALICE TPC at CERN, the maximum drift length is ~2.5 m with a drift time of ~90 µs at a field of ~400 V/cm in a Ne/CO₂/N₂ mixture
-- In a small [[Micromegas]]-based detector with a 5 mm drift gap, electrons arrive at the mesh within ~100 ns, yielding sub-100 µm position resolution after [[Time Walk]] correction
+- In the ALICE TPC at CERN, the maximum drift length is $\sim 2.5\;\text{m}$ with a drift time of $\sim 90\;\mu\text{s}$ at a field of $\sim 400\;\text{V/cm}$ in a $\text{Ne/CO}_2/\text{N}_2$ mixture
+- In a small [[Micromegas]]-based detector with a 5 mm drift gap, electrons arrive at the mesh within ~100 ns, yielding sub-100 µm [[Spatial Resolution|position resolution]] after [[Time Walk]] correction
 
 ## Related Concepts
 
@@ -33,6 +33,9 @@ Drift Time is the interval required for ionization electrons (or ions) to travel
 - [[Micromegas]]
 - [[GEM Detector]]
 - [[Drift Velocity]]
+- [[Electric Field]]
+- [[Diffusion]]
+- [[Spatial Resolution]]
 - [[DAQ]]
 
 ## References

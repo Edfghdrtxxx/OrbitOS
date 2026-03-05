@@ -16,15 +16,15 @@ A radioisotope (radioactive isotope) is an atom with an unstable nucleus that re
 
 ## Key Points
 
-- Can be **naturally occurring** (e.g., ⁴⁰K, ²³⁸U) or **artificially produced** via [[Neutron Activation]], proton bombardment, or fission
+- Can be **naturally occurring** (e.g., $^{40}\text{K}$, $^{238}\text{U}$) or **artificially produced** via [[Neutron Activation]], proton bombardment, or fission
 - Each radioisotope has a unique decay scheme (type of radiation, energy, half-life) — this "fingerprint" is used for identification via [[Gamma Spectroscopy]]
 - Activity is measured in [[Becquerel]] (1 Bq = 1 decay/second)
 - In a [[Radiation Controlled Area]], radioisotopes are the source of both [[Surface Contamination]] (loose material) and activation products
 
 ## Examples
 
-- ⁶⁰Co (cobalt-60): produced by neutron activation of ⁵⁹Co, emits gamma rays, half-life 5.27 years — common in activated steel
-- ²⁴Na (sodium-24): produced in aluminum components at accelerators, half-life 15 hours — decays quickly but emits high-energy gammas
+- $^{60}\text{Co}$ (cobalt-60): produced by neutron activation of $^{59}\text{Co}$, emits gamma rays, half-life 5.27 years — common in activated steel
+- $^{24}\text{Na}$ (sodium-24): produced in aluminum components at accelerators, half-life 15 hours — decays quickly but emits high-energy gammas
 
 ## Related Concepts
 

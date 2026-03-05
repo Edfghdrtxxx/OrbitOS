@@ -14,7 +14,7 @@ The Rising Edge is the leading portion of a detector signal pulse during which t
 
 ## Key Points
 
-- **Slope dependence**: Faster rising edges (shorter rise times) yield more precise timing because the threshold crossing point is better defined, reducing sensitivity to noise and amplitude variations
+- **Slope dependence**: Faster rising edges (shorter [[Rise Time|rise times]]) yield more precise timing because the threshold crossing point is better defined, reducing sensitivity to noise and amplitude variations
 - **Rise time**: Defined as the interval for the pulse to go from 10% to 90% of its peak; typical values range from ~1 ns ([[Scintillation Detector|fast scintillators]]) to ~µs (ionisation chambers)
 - **Timing extraction**: A [[Leading-Edge Discriminator]] fires when the rising edge crosses a fixed threshold, while a [[Constant Fraction Discriminator]] triggers at a constant fraction of the peak, making the trigger point independent of [[Pulse Height]]
 - **Time Walk mechanism**: At a fixed threshold, a large-amplitude pulse's rising edge crosses earlier than a small pulse's, producing the amplitude-dependent timing shift known as [[Time Walk]]
@@ -32,6 +32,8 @@ The Rising Edge is the leading portion of a detector signal pulse during which t
 - [[Pulse Height]]
 - [[Time Resolution]]
 - [[Constant Ratio Timing]]
+- [[Rise Time]]
+- [[Jitter]]
 
 ## References
 

@@ -17,7 +17,7 @@ and $B/A$ is the binding energy per nucleon.
 
 ## Key Points
 
-- Binding energy per nucleon ($B/A$) peaks near iron (A ≈ 56), explaining why fusion powers light stars and fission splits heavy nuclei.
+- Binding energy per nucleon ($B/A$) peaks near iron ($A \approx 56$), explaining why fusion powers light stars and fission splits heavy nuclei.
 - Energy is released when a reaction moves nuclei toward higher $B/A$
 - The [[Liquid Drop Model]] provides a smooth semi-empirical formula for $B/A$, but fails to account for sudden jumps at [[Nuclear Magic Numbers]]
 - The [[Nuclear Shell Model]] explains these sharp discontinuities: completed shells produce extra stability (higher $B/A$) compared to the smooth liquid-drop prediction
@@ -25,8 +25,8 @@ and $B/A$ is the binding energy per nucleon.
 
 ## Examples
 
-- $^4\text{He}$ has an exceptionally high $B/A$ ≈ 7.07 MeV, reflecting the double magic closure at Z = N = 2
-- The jump in $B/A$ between $^{208}\text{Pb}$ (doubly magic, Z = 82, N = 126) and its neighbors is a textbook signature of shell effects
+- $^4\text{He}$ has an exceptionally high $B/A \approx 7.07\;\text{MeV}$, reflecting the double magic closure at $Z = N = 2$
+- The jump in $B/A$ between $^{208}\text{Pb}$ (doubly magic, $Z = 82$, $N = 126$) and its neighbors is a textbook signature of shell effects
 
 ## Related Concepts
 
