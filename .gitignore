@@ -21,14 +21,12 @@ Thumbs.db
 *.log
 
 # Sensitive personal data
-100_memoranda/
+100_Memoranda/
 50_Resources/EmailMessages/
 
 # Large binaries and build artifacts
 20_Project/AstrBot/*
 !20_Project/AstrBot/AstrBot.md
-20_Project/marker/*
-!20_Project/marker/marker.md
 20_Project/Bilibili-RAG/*
 !20_Project/Bilibili-RAG/Bilibili-RAG.md
 

@@ -13,7 +13,7 @@ Quick CLI commands for recurring `marker-pdf` usage.
 WSL/Linux:
 
 ```bash
-cd /mnt/d/obsidian/OrbitOS/20_Project/marker
+cd /mnt/d/obsidian/OrbitOS/20_Project/Marker
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
@@ -23,7 +23,7 @@ python -m pip install marker-pdf
 PowerShell (Windows):
 
 ```powershell
-cd D:\obsidian\OrbitOS\20_Project\marker
+cd D:\obsidian\OrbitOS\20_Project\Marker
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
@@ -68,7 +68,7 @@ With the Bilibili-RAG API wrapper:
 WSL/Linux:
 
 ```bash
-/mnt/d/obsidian/OrbitOS/20_Project/marker/marker_with_bilibili_env.sh \
+/mnt/d/obsidian/OrbitOS/20_Project/Marker/marker_with_bilibili_env.sh \
   marker_single /path/to/file.pdf \
   --output_dir /mnt/d/obsidian/OrbitOS/50_Resources/Physics/references
 ```
@@ -76,7 +76,7 @@ WSL/Linux:
 PowerShell (Windows, via WSL):
 
 ```powershell
-wsl /mnt/d/obsidian/OrbitOS/20_Project/marker/marker_with_bilibili_env.sh `
+wsl /mnt/d/obsidian/OrbitOS/20_Project/Marker/marker_with_bilibili_env.sh `
   marker_single /path/to/file.pdf `
   --output_dir /mnt/d/obsidian/OrbitOS/50_Resources/Physics/references
 ```
@@ -86,14 +86,14 @@ wsl /mnt/d/obsidian/OrbitOS/20_Project/marker/marker_with_bilibili_env.sh `
 WSL/Linux:
 
 ```bash
-/mnt/d/obsidian/OrbitOS/20_Project/marker/marker_with_bilibili_env.sh \
+/mnt/d/obsidian/OrbitOS/20_Project/Marker/marker_with_bilibili_env.sh \
   marker_single /path/to/file.pdf
 ```
 
 PowerShell (Windows, via WSL):
 
 ```powershell
-wsl /mnt/d/obsidian/OrbitOS/20_Project/marker/marker_with_bilibili_env.sh `
+wsl /mnt/d/obsidian/OrbitOS/20_Project/Marker/marker_with_bilibili_env.sh `
   marker_single /path/to/file.pdf
 ```
 
