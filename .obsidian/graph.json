@@ -1,13 +1,13 @@
 {
-  "collapse-filter": true,
-  "search": "",
+  "collapse-filter": false,
+  "search": "file:constant",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": true,
   "showOrphans": true,
   "collapse-color-groups": true,
   "colorGroups": [],
-  "collapse-display": false,
+  "collapse-display": true,
   "showArrow": false,
   "textFadeMultiplier": -2,
   "nodeSizeMultiplier": 0.825897773985884,
@@ -18,5 +18,5 @@
   "linkStrength": 1,
   "linkDistance": 326,
   "scale": 0.414096275243549,
-  "close": true
+  "close": false
 }
