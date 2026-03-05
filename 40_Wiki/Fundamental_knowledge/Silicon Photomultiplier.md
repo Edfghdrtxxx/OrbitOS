@@ -18,7 +18,7 @@ A Silicon Photomultiplier (SiPM) is a solid-state [[Photodetector]] composed of 
 - Compact form factor (mm-scale) and low operating voltage (~30 V) compared to the [[Photomultiplier Tube]] (~1 kV)
 - Immune to magnetic fields, making SiPMs ideal for detectors inside solenoid magnets where [[Photomultiplier Tube]]s fail
 - Commonly coupled to [[Scintillation Detector]]s for [[Gamma Spectroscopy]], PET medical imaging, and [[Time-of-Flight]] measurements
-- Dark count rate and optical crosstalk are the primary noise sources that limit performance
+- [[Dark Count Rate]] and [[Optical Crosstalk]] are the primary noise sources that limit performance
 
 ## Examples
 
@@ -35,6 +35,8 @@ A Silicon Photomultiplier (SiPM) is a solid-state [[Photodetector]] composed of 
 - [[Time-of-Flight]]
 - [[Ionizing Radiation]]
 - [[Photodetector]]
+- [[Dark Count Rate]]
+- [[Optical Crosstalk]]
 
 ## References
 

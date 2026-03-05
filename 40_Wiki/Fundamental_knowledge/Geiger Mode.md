@@ -35,5 +35,5 @@ Geiger mode is the operating regime of an avalanche photodiode (APD) or [[Single
 
 ## References
 
-- Cova et al., "Avalanche photodiodes and quenching circuits for single-photon detection," *Appl. Opt.* **35**, 1956 (1996)
+- Cova, S., Ghioni, M., Lacaita, A., Samori, C. & Zappa, F., "Avalanche photodiodes and quenching circuits for single-photon detection," *Appl. Opt.* **35**, 1956–1976 (1996)
 - Knoll, G. F. (2010). *Radiation Detection and Measurement*, 4th ed. Wiley
