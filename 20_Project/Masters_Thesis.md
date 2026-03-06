@@ -6,7 +6,12 @@ area: "[[Physics Research]]"
 created: 2026-02-13
 due: 2027-06
 priority: high
-tags: [thesis, resnet, tpc, particle-id]
+tags:
+  - thesis
+  - resnet
+  - tpc
+  - particle-id
+updated: 2026-03-06
 ---
 # Master's Thesis
 
