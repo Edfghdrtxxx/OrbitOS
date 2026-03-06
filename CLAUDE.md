@@ -57,7 +57,7 @@ Act as Knowledge Manager and Daily Planner. Capture, connect, and organize knowl
 - **IPA:** Rejected (requires CAS degree; user wants UTokyo degree)
 - **Primary execution plan:** [[UTokyo_RIKEN]]
 - **Backup university:** [[Osaka_University]]
-- **Immediate priorities:** (1) Supervisor outreach to UTokyo CNS professors, (2) Self-funded Kenkyusei budget verification, (3) Physics+math entrance exam prep
+- **Immediate priorities:** (1) Supervisor outreach to UTokyo CNS professors, (2) Self-funded Kenkyuse verification, (3) Physics+math entrance exam prep
 - **Japanese Language:** Currently N5 or below; proficiency is both a personal goal and immigration asset
 - **English:** B2 level, equivalent to IELTS 6.5 approximately
 - **Career Direction:** Research career (university faculty, national lab); rejects 996 work culture

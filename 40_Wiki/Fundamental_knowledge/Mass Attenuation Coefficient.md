@@ -1,8 +1,11 @@
 ---
 area: "[[Physics]]"
-tags: [nuclear-physics, radiation, shielding]
+tags:
+  - nuclear-physics
+  - radiation
+  - shielding
 created: 2026-03-05
-last_reviewed:
+last_reviewed: 2026-03-06
 next_review: 2026-03-05
 review_interval: 0
 ---
