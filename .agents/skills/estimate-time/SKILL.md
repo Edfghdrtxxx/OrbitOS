@@ -17,7 +17,7 @@ Analyze today's daily plan and provide total time estimates at task resolution. 
 
 ## Step 1: Load Context (Silent)
 
-1. Read `10_Daily/YYYY-MM-DD.md` — extract all `- [ ]` tasks and subtasks. **Exclude** any task tagged `#Deferred` from the active workload.
+1. Read `10_Daily/YYYY-MM-DD.md` — extract all `- [ ]` tasks and subtasks. **Exclude** any task tagged `#Deferred` or `#spare-time` from the active workload.
 2. Read referenced active projects in `20_Project/` — check for **Deadlines** and **Milestones** (urgency/rigor).
 
 ## Step 2: Estimate & Buffer
