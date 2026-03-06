@@ -40,9 +40,6 @@ energy:
 **e1. Review & Maintenance**
 - [ ] Activate the `/wiki-review` skill to review one knowledge point (~ 45 mins) #daily
 
-**Deferred**
-- [ ] Deferred task (~ X mins)
-
 ## Log
 -
 

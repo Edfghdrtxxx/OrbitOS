@@ -68,7 +68,7 @@ Trigger only if **Final Total Time > capacity**.
    - List **all non-protected, non-deferred tasks** with their estimate and section.
    - Keep the **original order** from the daily note (no prioritization rules).
    - Ask the user which tasks to defer.
-4. **Tag selected tasks:** Append `#Deferred` to the end of each selected task line. Tasks stay in their original section — do NOT move them or create a separate section.
+4. **Tag selected tasks:** Append `#Deferred` to the end of each selected task line. Tasks stay in their original section — do NOT move them or create a separate section. If a candidate task has no preceding section label, ask the user which section it belongs to before tagging.
 5. **Stop immediately** once Final Total Time is **≤ capacity**.
 6. Recompute totals and update the **Re-org** section accordingly.
 
