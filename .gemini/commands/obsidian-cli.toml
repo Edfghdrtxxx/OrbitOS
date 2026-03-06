@@ -1,0 +1,4 @@
+# Interact with Obsidian via CLI
+
+description = "Interact with Obsidian vaults using the Obsidian CLI to manage notes, search, and develop plugins"
+prompt = "Use the obsidian-cli skill. {prompt}"

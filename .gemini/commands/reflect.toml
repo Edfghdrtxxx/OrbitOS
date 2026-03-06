@@ -1,0 +1,4 @@
+# Adversarial self-critique
+
+description = "On-demand adversarial self-critique of the current session's trajectory"
+prompt = "Use the reflect skill. {prompt}"

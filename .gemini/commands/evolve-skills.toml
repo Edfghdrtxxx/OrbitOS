@@ -1,0 +1,4 @@
+# Evolve skills from session lessons
+
+description = "Review session context and persist actionable lessons into per-skill evolution.md files"
+prompt = "Use the evolve-skills skill. {prompt}"

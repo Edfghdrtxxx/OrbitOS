@@ -1,0 +1,4 @@
+# Spaced-repetition Wiki review
+
+description = "Spaced-repetition review of Wiki notes using FRS sessions and a forgetting-curve schedule"
+prompt = "Use the wiki-review skill. {prompt}"

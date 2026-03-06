@@ -1,0 +1,4 @@
+# Extract clean content from web pages
+
+description = "Extract clean markdown content from web pages using Defuddle, removing clutter and navigation"
+prompt = "Use the defuddle skill. URL: {prompt}"
