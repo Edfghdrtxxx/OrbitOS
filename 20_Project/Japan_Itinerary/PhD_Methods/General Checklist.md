@@ -83,7 +83,7 @@ tags: [japan, immigration, phd]
 
 ## Monitoring Checkpoints
 
-- [ ] 2026-03-15: first supervisor outreach emails sent
+- [ ] 2026-04-15: first supervisor outreach emails sent
 - [ ] 2026-07-01: UTokyo Special Selection + GSGC pre-check
 - [ ] 2026-09-01: UTokyo GSGC guideline release check
 - [ ] 2026-10-15 / 2026-12-05: UTokyo cycle window checks

@@ -110,7 +110,7 @@ This is the boss fight because the thesis is the gate to everything. Not supervi
 | Track | Project | Cadence / Deadline |
 |---|---|---|
 | **Daily anchor** | [[Masters_Thesis]] | 2–4 hr block every workday — no exceptions |
-| **Urgent parallel (March)** | [[Japan_Itinerary]] (Supervisor Outreach) | First emails due 2026-03-15; Naidaku deadline 2026-06-30 |
+| **Urgent parallel (April)** | [[Japan_Itinerary]] (Supervisor Outreach) | First emails due 2026-04-15; Naidaku deadline 2026-06-30 |
 | **Ongoing parallel** | [[Fundamental_Knowledge]] | Systematic study now; intensify from Sep 2026 |
 | **Ongoing parallel** | [[English_Learning]] | TOEFL target: Jul–Aug 2026; register by Apr 2026 |
 | **Ongoing parallel** | [[Japanese_Language]] | N4 by Oct 2027; sustainable daily practice |

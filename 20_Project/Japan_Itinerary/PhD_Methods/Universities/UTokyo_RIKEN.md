@@ -56,7 +56,7 @@ decision_date: 2026-02-15
 **Supervisor outreach:**
 - [ ] Identify 3–5 CNS professors who are also RIKEN collaborators
 - [ ] Prepare research-fit statement (TPC + direct reactions + ML-PID)
-- [ ] Send first-contact emails with CV (target: by 2026-03-15)
+- [ ] Send first-contact emails with CV (target: by 2026-04-15)
 - [ ] Secure Naidaku — required for Kenkyusei enrollment
 - [ ] Leverage IMP supervisor connections for introductions
 
@@ -100,7 +100,7 @@ decision_date: 2026-02-15
 | Date | Check |
 |---|---|
 | 2026-02-28 | Kenkyusei application window check (self-funded) |
-| 2026-03-15 | First supervisor outreach emails sent |
+| 2026-04-15 | First supervisor outreach emails sent |
 | 2026-07-01 | Pre-check UTokyo Special Selection / GSGC pages |
 | 2026-09-01 | GSGC guideline release check |
 | 2026-10-15 / 2026-12-05 | Verify Oct 2027 enrollment windows |

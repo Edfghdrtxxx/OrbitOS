@@ -38,7 +38,7 @@ tags: [utokyo, riken, professor-outreach, phd]
 ## Outreach Checklist
 - [ ] Confirm top-3 priority targets from the ranked list and begin outreach. [^utokyo-outreach]
 - [ ] Prepare a research-fit statement focused on TPC + direct reactions + ML-PID. [^utokyo-outreach]
-- [ ] Send first-contact emails with CV (target by 2026-03-15 in plan). [^utokyo-outreach]
+- [ ] Send first-contact emails with CV (target by 2026-04-15 in plan). [^utokyo-outreach]
 
 [^utokyo-pathway]: `20_Project/Japan_Itinerary/PhD_Methods/Universities/UTokyo_RIKEN.md:16`
 [^utokyo-alignment]: `20_Project/Japan_Itinerary/PhD_Methods/Universities/UTokyo_RIKEN.md:28`

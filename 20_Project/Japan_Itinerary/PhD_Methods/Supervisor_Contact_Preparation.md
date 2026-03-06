@@ -4,7 +4,7 @@ type: plan
 status: active
 related: "[[UTokyo_RIKEN]]"
 tags: [supervisor, outreach, utokyo, decision-gate, kenkyusei, cns, riken]
-target_date: 2026-03-15
+target_date: 2026-04-15
 created: 2026-02-17
 ---
 # Supervisor Contact Preparation

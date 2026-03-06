@@ -25,6 +25,7 @@ Act as Knowledge Manager and Daily Planner. Capture, connect, and organize knowl
 `/kickoff` - Idea -> project
 `/research` - Deep dive -> Areas + Wiki (two-agent workflow)
 `/ask` - Quick answers without heavy note-taking
+`/brainstorm` - Interactive brainstorming, then optionally create a Project or capture knowledge
 `/parse-knowledge` - Unstructured text -> vault
 `/archive` - Clean up completed items
 `/estimate-time` - Reasoning-based time estimates for today's tasks at subtask resolution
@@ -32,9 +33,15 @@ Act as Knowledge Manager and Daily Planner. Capture, connect, and organize knowl
 `/breakdown-tasks` - Stratified task decomposition with time estimates and dependencies, inserted into daily note
 `/atomic-note` - Create an atomic Wiki note with auto-linking and wikilink discovery
 `/wiki-review` - Spaced-repetition review of Wiki notes using FRS sessions (forgetting curve)
+`/reflect` - Adversarial self-critique of current session trajectory
+`/phrasing-refining` - Review English drafts for grammar, idiom, and naturalness
+`/evolve-skills` - Persist actionable lessons into per-skill evolution files
+`/defuddle` - Extract clean markdown from web pages (use instead of WebFetch for articles/docs)
 
 **Technical:**
 `obsidian-markdown`, `obsidian-bases`, `json-canvas` - Obsidian features
+`obsidian-cli` - Interact with vault via Obsidian CLI (notes, tasks, properties, plugin dev)
+`excalidraw-diagram-generator` - Generate Excalidraw diagrams from natural language
 
 ## Templates
 `Daily_Note.md`, `Project_Template.md`, `Content_Template.md`, `Wiki_Template.md`, `Inbox_Template.md`
@@ -55,14 +62,6 @@ Act as Knowledge Manager and Daily Planner. Capture, connect, and organize knowl
   - **Phase 2:** PhD enrollment at UTokyo, Oct 2028+. Funding: RIKEN JRA (200k JPY/month)
 - **IPA:** Rejected (requires CAS degree; user wants UTokyo degree)
 - **Primary execution plan:** [[UTokyo_RIKEN]]
-- **Backup university:** [[Osaka_University]]
-- **Immediate priorities:**
-  1. Masters thesis — paper structuring phase; [[MATE-Automation]] is the training pipeline (AFTPC framework)
-  2. Supervisor outreach — 6 UTokyo CNS professors researched & ranked (top: Nori Aoi), none contacted yet; deadline ~2026-03-15
-  3. Self-funded Kenkyusei verification (partial-verified, see [[Official_Source_Verification_2026-02-13]])
-  4. Physics+math entrance exam prep ([[Fundamental_Knowledge]], stale — needs attention)
-  5. TOEFL 100+ — register by Apr 2026; target exam Jul–Aug 2026
-- **Japanese Language:** Currently N5 or below; target N4 by Oct 2027; proficiency is both a personal goal and immigration asset
 - **English:** B2 level (~IELTS 6.5); TOEFL 100+ target for UTokyo application
 - **Career Direction:** Research career (university faculty, national lab); rejects 996 work culture
 - When the user asks about Japan, visa options, university applications, language study, or life planning, treat this as a high-priority topic

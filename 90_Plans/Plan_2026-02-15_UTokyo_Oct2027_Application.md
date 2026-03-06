@@ -15,7 +15,7 @@ pathway: Kenkyusei (Oct 2027) → PhD D1 (Oct 2028)
 | Milestone | Target Date | Gate Condition |
 |---|---|---|
 | Kenkyusei application window check (self-funded) | 2026-02-28 | Official cycle page posted or confirmed by office |
-| First supervisor emails sent | 2026-03-15 | CV + research statement + email drafts ready |
+| First supervisor emails sent | 2026-04-15 | CV + research statement + email drafts ready |
 | Naidaku secured | 2026-06-30 | At least one CNS professor accepts |
 | Self-funding budget verified | 2026-09-01 | Savings confirmed vs Kenkyusei budget |
 | Kenkyusei admission confirmed | 2026-12-31 | Formal acceptance from UTokyo |
@@ -105,7 +105,7 @@ pathway: Kenkyusei (Oct 2027) → PhD D1 (Oct 2028)
   - Closing: attach CV + research statement, mention willingness for an online meeting
 - [ ] Customize for each professor (swap Para 2 details, adjust emphasis)
 - [ ] Have IMP supervisor review the email (or provide an introduction if willing)
-- [ ] **Send first batch of emails by 2026-03-15**
+- [ ] **Send first batch of emails by 2026-04-15**
 
 ### 1.5 Follow-up Protocol
 
