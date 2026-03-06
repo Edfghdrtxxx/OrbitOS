@@ -16,7 +16,7 @@ Magnetic rigidity ($B\rho$) is the product of magnetic field strength $B$ and th
 
 ## Key Points
 
-- Defined as $B\rho = \frac{mv}{Ze} = \frac{p}{Ze}$, where $m$ is the relativistic mass, $v$ is velocity, and $Ze$ is the ion charge
+- Defined as $B\rho = \frac{mv}{Ze} = \frac{p}{Ze}$, where $p = \gamma m_0 v$ is the relativistic momentum and $Ze$ is the ion charge
 - At fixed velocity, $B\rho \propto A/Z$ — this makes $A/Z$ the governing separation parameter in $B\rho$-[[Time-of-Flight|TOF]] identification (not in [[dE-dx]]-based [[Particle Identification|PID]])
 - Fragment separators like [[BigRIPS]] use dipole magnets to select ions by $B\rho$, combined with [[Time-of-Flight|TOF]] and [[dE-dx|ΔE]] for full isotope identification
 - Units: Tesla·meter (T·m)

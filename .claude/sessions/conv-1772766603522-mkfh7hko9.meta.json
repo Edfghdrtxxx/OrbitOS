@@ -3,18 +3,18 @@
   "title": "Organize note into atomic wiki entries",
   "titleGenerationStatus": "success",
   "createdAt": 1772766603522,
-  "updatedAt": 1772766846624,
-  "lastResponseAt": 1772766846624,
+  "updatedAt": 1772767665429,
+  "lastResponseAt": 1772767665429,
   "sessionId": "c1e48746-e74e-4e20-94f8-47fb9402855e",
   "sdkSessionId": "c1e48746-e74e-4e20-94f8-47fb9402855e",
   "currentNote": "50_Resources/Physics/PaperWritingLessons/Untitled.md",
   "usage": {
     "model": "opus",
     "inputTokens": 1,
-    "cacheCreationInputTokens": 196,
-    "cacheReadInputTokens": 29632,
+    "cacheCreationInputTokens": 1154,
+    "cacheReadInputTokens": 38156,
     "contextWindow": 200000,
-    "contextTokens": 29829,
-    "percentage": 15
+    "contextTokens": 39311,
+    "percentage": 20
   }
 }
