@@ -47,19 +47,23 @@ Act as Knowledge Manager and Daily Planner. Capture, connect, and organize knowl
 - **Coding Practice:** LeetCode algorithm problems
 - **Values:** Strictly rejects "996" culture; prefers empathetic, reflective quotes on personal growth
 - **Relationship:** Girlfriend works at Huawei Cloud (PaaS technical support)
-- **History Interest:** Modern Chinese history
 
 ### Japan Immigration (top priority after graduation)
 - **Goal:** Immigrate from China permanently via a research career (PhD in Japan is the vehicle)
 - **Pathway:** FINALIZED (2026-02-15) — UTokyo CNS / RIKEN JRA route with Kenkyusei buffer year
-  - **Phase 1:** Kenkyusei (Research Student) at UTokyo CNS, Oct 2027 ? Sep 2028. Funding: self-funded (MEXT Research Student dropped due to extremely fierce competition, 2026-02-17)
+  - **Phase 1:** Kenkyusei (Research Student) at UTokyo CNS, Oct 2027 – Sep 2028. Funding: self-funded (MEXT Research Student dropped due to extremely fierce competition, 2026-02-17)
   - **Phase 2:** PhD enrollment at UTokyo, Oct 2028+. Funding: RIKEN JRA (200k JPY/month)
 - **IPA:** Rejected (requires CAS degree; user wants UTokyo degree)
 - **Primary execution plan:** [[UTokyo_RIKEN]]
 - **Backup university:** [[Osaka_University]]
-- **Immediate priorities:** (1) Supervisor outreach to UTokyo CNS professors, (2) Self-funded Kenkyuse verification, (3) Physics+math entrance exam prep
-- **Japanese Language:** Currently N5 or below; proficiency is both a personal goal and immigration asset
-- **English:** B2 level, equivalent to IELTS 6.5 approximately
+- **Immediate priorities:**
+  1. Masters thesis — paper structuring phase; [[MATE-Automation]] is the training pipeline (AFTPC framework)
+  2. Supervisor outreach — 6 UTokyo CNS professors researched & ranked (top: Nori Aoi), none contacted yet; deadline ~2026-03-15
+  3. Self-funded Kenkyusei verification (partial-verified, see [[Official_Source_Verification_2026-02-13]])
+  4. Physics+math entrance exam prep ([[Fundamental_Knowledge]], stale — needs attention)
+  5. TOEFL 100+ — register by Apr 2026; target exam Jul–Aug 2026
+- **Japanese Language:** Currently N5 or below; target N4 by Oct 2027; proficiency is both a personal goal and immigration asset
+- **English:** B2 level (~IELTS 6.5); TOEFL 100+ target for UTokyo application
 - **Career Direction:** Research career (university faculty, national lab); rejects 996 work culture
 - When the user asks about Japan, visa options, university applications, language study, or life planning, treat this as a high-priority topic
 
