@@ -15,8 +15,8 @@ A Nuclear Transition is the change of a nucleus from one quantum state (energy l
 ## Key Points
 
 - **Selection rules**: Transition probability depends on the change in angular momentum (ΔJ) and parity (Δπ); electric dipole (E1), magnetic dipole (M1), and electric quadrupole (E2) transitions dominate, with higher multipoles being progressively slower
-- **Gamma emission vs. internal conversion**: The nucleus can de-excite by emitting a [[Gamma Ray]] or by transferring its energy directly to an inner-shell electron (internal conversion); the conversion coefficient \(\alpha\) increases for low-energy, high-multipolarity transitions in high-Z nuclei
-- **Isomeric states**: Some excited states have very long [[Half-Life|half-lives]] (ms to years) because the available transitions are highly forbidden — these are called nuclear isomers (e.g., ⁹⁹ᵐTc, \(t_{1/2}\) = 6 h)
+- **Gamma emission vs. internal conversion**: The nucleus can de-excite by emitting a [[Gamma Ray]] or by transferring its energy directly to an inner-shell electron (internal conversion); the conversion coefficient $\alpha$ increases for low-energy, high-multipolarity transitions in high-Z nuclei
+- **Isomeric states**: Some excited states have very long [[Half-Life|half-lives]] (ms to years) because the available transitions are highly forbidden — these are called nuclear isomers (e.g., ⁹⁹ᵐTc, $t_{1/2}$ = 6 h)
 - **Energy relation**: The gamma-ray energy equals the energy difference between initial and final nuclear levels minus the nuclear recoil energy (negligible for most practical purposes)
 
 ## Examples

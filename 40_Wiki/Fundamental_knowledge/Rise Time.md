@@ -14,7 +14,7 @@ Rise Time is the interval for a detector signal pulse to transition from 10% to 
 
 ## Key Points
 
-- **Bandwidth relation**: Rise time and system bandwidth are inversely related — \(t_r \approx 0.35 / BW\) for a single-pole system, meaning faster rise times demand wider-bandwidth electronics
+- **Bandwidth relation**: Rise time and system bandwidth are inversely related — $t_r \approx 0.35 / BW$ for a single-pole system, meaning faster rise times demand wider-bandwidth electronics
 - **Detector dependence**: Ranges from < 1 ns (fast plastic [[Scintillation Detector|scintillators]] + [[Photomultiplier Tube]]) to ~µs (ionisation chambers), depending on the charge-collection mechanism
 - **Effect on timing**: Shorter rise times steepen the [[Rising Edge]], reducing [[Jitter]] and making the threshold crossing point less sensitive to noise and [[Pulse Height]] variations
 - **Shaping trade-off**: The [[Preamplifier]] and shaping amplifier may deliberately slow the rise time to optimise [[Signal-to-Noise Ratio]] for energy measurements, at the cost of [[Time Resolution]]

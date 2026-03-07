@@ -14,10 +14,10 @@ Photoelectric Absorption is the process in which a [[Gamma Ray]] (photon) is com
 
 ## Key Points
 
-- **Energy relation**: \(T_e = E_\gamma - B_e\), where \(T_e\) is the photoelectron kinetic energy and \(B_e\) is the binding energy of the shell from which it was ejected; subsequent fluorescence X-rays or Auger electrons carry away \(B_e\)
-- **Z-dependence**: The cross-section scales approximately as \(Z^{4\text{–}5} / E_\gamma^{3.5}\), making high-Z materials (Ge, Pb, BGO) far more efficient absorbers — this is why [[HPGe Detector|HPGe]] dominates high-resolution spectroscopy
+- **Energy relation**: $T_e = E_\gamma - B_e$, where $T_e$ is the photoelectron kinetic energy and $B_e$ is the binding energy of the shell from which it was ejected; subsequent fluorescence X-rays or Auger electrons carry away $B_e$
+- **Z-dependence**: The cross-section scales approximately as $Z^{4\text{–}5} / E_\gamma^{3.5}$, making high-Z materials (Ge, Pb, BGO) far more efficient absorbers — this is why [[HPGe Detector|HPGe]] dominates high-resolution spectroscopy
 - **Photopeak formation**: When all secondary radiation (fluorescence, Auger) is also absorbed, the detector records the full photon energy as a single [[Pulse Height]], producing a sharp photopeak in the [[Pulse Height Spectrum]]
-- **Escape peaks**: If a K-shell X-ray escapes the detector, the recorded energy is \(E_\gamma - E_{K}\), producing a characteristic escape peak below the photopeak
+- **Escape peaks**: If a K-shell X-ray escapes the detector, the recorded energy is $E_\gamma - E_{K}$, producing a characteristic escape peak below the photopeak
 
 ## Examples
 

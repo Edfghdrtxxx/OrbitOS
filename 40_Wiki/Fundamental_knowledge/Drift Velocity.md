@@ -16,7 +16,7 @@ Drift Velocity is the average speed at which charge carriers (electrons or ions)
 
 - **Field dependence**: In gases, electron drift velocity rises with field strength, saturates around 5–8 cm/µs in common mixtures (Ar/CO₂, Ar/iC₄H₁₀), and may even decrease at very high fields due to inelastic collisions
 - **Gas-mixture sensitivity**: Adding a quench gas (CO₂, CF₄, iC₄H₁₀) shifts the drift-velocity curve; small variations in gas composition directly affect [[Spatial Resolution]] and [[Track Reconstruction]] accuracy
-- **Temperature/pressure**: Drift velocity scales with the reduced field \(E/N\) (field per gas density), making it sensitive to temperature and pressure changes — real-time monitoring is essential
+- **Temperature/pressure**: Drift velocity scales with the reduced field $E/N$ (field per gas density), making it sensitive to temperature and pressure changes — real-time monitoring is essential
 - **Measurement**: Calibrated in-situ using straight tracks of known geometry or dedicated laser-ionisation systems in a [[Time Projection Chamber]]
 
 ## Examples

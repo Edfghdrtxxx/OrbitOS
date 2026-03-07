@@ -14,9 +14,9 @@ Signal-to-Noise Ratio (SNR) is the ratio of the desired signal power to the back
 
 ## Key Points
 
-- **Expression**: \(\text{SNR} = 20 \log_{10}(V_{\text{signal}} / V_{\text{noise}})\) in dB for voltage signals; higher SNR means cleaner measurements
+- **Expression**: $\text{SNR} = 20 \log_{10}(V_{\text{signal}} / V_{\text{noise}})$ in dB for voltage signals; higher SNR means cleaner measurements
 - **Noise sources**: Thermal (Johnson) noise, shot noise, and 1/f noise in the [[Preamplifier]] and readout chain; pile-up noise at high rates
-- **Impact on timing**: SNR directly affects [[Jitter]] — at the trigger point on the [[Rising Edge]], timing uncertainty scales as \(\sigma_t \approx \sigma_n / (dV/dt)\), where \(\sigma_n\) is the noise RMS
+- **Impact on timing**: SNR directly affects [[Jitter]] — at the trigger point on the [[Rising Edge]], timing uncertainty scales as $\sigma_t \approx \sigma_n / (dV/dt)$, where $\sigma_n$ is the noise RMS
 - **Impact on energy**: Low SNR broadens the [[Pulse Height]] distribution, degrading [[Energy Resolution]] and raising the minimum detectable energy
 - **Optimisation**: Cooling the [[Preamplifier]], optimal shaping time selection, and increasing detector gain (e.g., higher [[Silicon Photomultiplier|SiPM]] overvoltage) all improve SNR
 

@@ -15,7 +15,7 @@ Light Yield is the number of scintillation photons produced per unit of deposite
 ## Key Points
 
 - **Typical values**: NaI(Tl) ~38,000 ph/MeV, CsI(Tl) ~54,000 ph/MeV, plastic scintillators ~10,000 ph/MeV, LYSO ~30,000 ph/MeV; higher light yield improves photoelectron statistics
-- **Impact on energy resolution**: [[Energy Resolution]] scales as \(\sim 1/\sqrt{N_{pe}}\), where \(N_{pe}\) is the number of detected photoelectrons — higher light yield produces more photoelectrons and narrower [[Pulse Height]] distributions
+- **Impact on energy resolution**: [[Energy Resolution]] scales as $\sim 1/\sqrt{N_{pe}}$, where $N_{pe}$ is the number of detected photoelectrons — higher light yield produces more photoelectrons and narrower [[Pulse Height]] distributions
 - **Impact on timing**: More photons on the [[Rising Edge]] steepen the signal, reducing [[Jitter]] and improving [[Time Resolution]]; this is why fast, bright scintillators (BaF₂, LYSO) are preferred for [[Time-of-Flight]] applications
 - **Non-proportionality**: Light yield is not perfectly linear with energy — deviations at low energies (< 100 keV) introduce an intrinsic [[Energy Resolution]] floor that cannot be improved by better [[Photodetector|photodetectors]]
 

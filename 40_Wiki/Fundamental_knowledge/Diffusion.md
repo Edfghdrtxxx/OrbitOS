@@ -14,10 +14,10 @@ Diffusion (in the context of gaseous and liquid detectors) is the random spreadi
 
 ## Key Points
 
-- **Longitudinal vs. transverse**: Diffusion along the drift direction (longitudinal, \(D_L\)) and perpendicular to it (transverse, \(D_T\)) are generally different; both grow as \(\sigma \propto \sqrt{L}\), where \(L\) is the drift distance
-- **Gas-mixture dependence**: Cool gases (CO₂, CF₄) suppress diffusion; Ar/CO₂ mixtures achieve \(D_T \sim\) 200–300 µm/√cm, while pure Ar can exceed 500 µm/√cm
+- **Longitudinal vs. transverse**: Diffusion along the drift direction (longitudinal, $D_L$) and perpendicular to it (transverse, $D_T$) are generally different; both grow as $\sigma \propto \sqrt{L}$, where $L$ is the drift distance
+- **Gas-mixture dependence**: Cool gases (CO₂, CF₄) suppress diffusion; Ar/CO₂ mixtures achieve $D_T \sim$ 200–300 µm/√cm, while pure Ar can exceed 500 µm/√cm
 - **Impact on resolution**: Transverse diffusion limits position resolution perpendicular to the drift, while longitudinal diffusion smears the [[Drift Time]] distribution and degrades resolution along the [[Electric Field]] axis — both degrade [[Track Reconstruction]]
-- **Relation to drift velocity**: [[Drift Velocity]] and diffusion coefficients are both functions of the reduced field \(E/N\); choosing an operating point where velocity is near its plateau often coincides with low diffusion
+- **Relation to drift velocity**: [[Drift Velocity]] and diffusion coefficients are both functions of the reduced field $E/N$; choosing an operating point where velocity is near its plateau often coincides with low diffusion
 
 ## Examples
 

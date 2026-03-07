@@ -10,14 +10,14 @@ review_interval: 0
 
 ## Definition
 
-The Electromagnetic Spectrum is the continuous range of all electromagnetic radiation ordered by frequency (or equivalently wavelength/energy), from radio waves at the low-energy end to [[Gamma Ray|gamma rays]] at the high-energy end — the photon energy \(E = h\nu\) determines how radiation interacts with matter and which detection methods apply.
+The Electromagnetic Spectrum is the continuous range of all electromagnetic radiation ordered by frequency (or equivalently wavelength/energy), from radio waves at the low-energy end to [[Gamma Ray|gamma rays]] at the high-energy end — the photon energy $E = h\nu$ determines how radiation interacts with matter and which detection methods apply.
 
 ## Key Points
 
 - **Regions** (increasing energy): radio → microwave → infrared → visible → ultraviolet → X-ray → gamma ray; boundaries are conventional, not sharp
 - **Relevance to nuclear physics**: Nuclear and particle detectors operate predominantly in the X-ray and [[Gamma Ray]] regimes (keV–GeV), where [[Photoelectric Absorption]], [[Compton Scattering]], and [[Pair Production]] are the governing interactions
 - **Detection technology**: Each spectral region requires different detector types — [[Scintillation Detector|scintillators]] and [[HPGe Detector|HPGe]] for gamma rays, silicon [[Photodetector|photodetectors]] for visible/UV, bolometers for infrared
-- **Energy–wavelength relation**: \(E\,[\text{eV}] = 1240 / \lambda\,[\text{nm}]\); a 662 keV [[Gamma Ray]] corresponds to \(\lambda \approx 1.87\) pm
+- **Energy–wavelength relation**: $E\,[\text{eV}] = 1240 / \lambda\,[\text{nm}]$; a 662 keV [[Gamma Ray]] corresponds to $\lambda \approx 1.87$ pm
 
 ## Examples
 

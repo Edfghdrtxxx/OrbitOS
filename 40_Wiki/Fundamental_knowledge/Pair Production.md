@@ -14,10 +14,10 @@ Pair Production is the creation of an electron–positron pair when a [[Gamma Ra
 
 ## Key Points
 
-- **Threshold**: Requires \(E_\gamma \geq 2 m_e c^2 = 1.022\) MeV; excess energy is shared as kinetic energy between the electron and positron
+- **Threshold**: Requires $E_\gamma \geq 2 m_e c^2 = 1.022$ MeV; excess energy is shared as kinetic energy between the electron and positron
 - **Annihilation radiation**: The positron thermalises and annihilates with an electron, producing two 511 keV [[Gamma Ray|gamma rays]] emitted back-to-back; if one or both escape the detector, single-escape (SE) and double-escape (DE) peaks appear in the [[Pulse Height Spectrum]]
-- **Z-dependence**: Cross-section scales as \(\sim Z^2\), favouring high-Z detector and shielding materials
-- **Detector signature**: Full-energy photopeak, SE peak at \(E_\gamma - 511\) keV, and DE peak at \(E_\gamma - 1022\) keV are hallmarks of pair production in [[Gamma Spectroscopy]]
+- **Z-dependence**: Cross-section scales as $\sim Z^2$, favouring high-Z detector and shielding materials
+- **Detector signature**: Full-energy photopeak, SE peak at $E_\gamma - 511$ keV, and DE peak at $E_\gamma - 1022$ keV are hallmarks of pair production in [[Gamma Spectroscopy]]
 
 ## Examples
 

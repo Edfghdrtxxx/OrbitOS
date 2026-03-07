@@ -14,7 +14,7 @@ An Electric Field is a vector field that describes the force per unit positive c
 
 ## Key Points
 
-- **Definition**: \(\vec{E} = -\nabla \phi\) for electrostatic fields, where \(\phi\) is the electric potential; units are V/m (or V/cm in detector literature)
+- **Definition**: $\vec{E} = -\nabla \phi$ for electrostatic fields, where $\phi$ is the electric potential; units are V/m (or V/cm in detector literature)
 - **Role in gas detectors**: The field strength sets the [[Drift Velocity]] of electrons and ions, determines [[Diffusion]] coefficients, and must be sufficiently uniform to preserve [[Spatial Resolution]] across the active volume of a [[Time Projection Chamber]]
 - **Amplification region**: In [[Micromegas]] and [[GEM Detector|GEM]] detectors, a high-field gap (~50–100 kV/cm) triggers electron avalanche multiplication, converting a few primary electrons into detectable charge
 - **Field cage**: A precision resistor chain creates a uniform drift field in a [[Time Projection Chamber]]; field distortions from space charge or misalignment degrade [[Track Reconstruction]]

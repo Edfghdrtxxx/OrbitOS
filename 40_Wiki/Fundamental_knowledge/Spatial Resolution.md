@@ -16,7 +16,7 @@ Spatial Resolution is the minimum distance over which a detector can distinguish
 
 - **Quantification**: Reported as the RMS or FWHM of the point-spread function; typical values range from ~µm (silicon trackers) to ~mm ([[Time Projection Chamber|TPCs]], [[Micromegas]])
 - **Limiting factors in gas detectors**: [[Diffusion]] of drift electrons, [[Drift Time]] measurement precision (affected by [[Time Walk]] and [[Jitter]]), pad/strip pitch, and [[Electric Field]] non-uniformities
-- **Along the drift axis**: In a [[Time Projection Chamber]], spatial resolution along the field direction is \(\sigma_z = v_d \cdot \sigma_t\), coupling [[Drift Velocity]] and [[Time Resolution]] directly
+- **Along the drift axis**: In a [[Time Projection Chamber]], spatial resolution along the field direction is $\sigma_z = v_d \cdot \sigma_t$, coupling [[Drift Velocity]] and [[Time Resolution]] directly
 - **Transverse to drift**: Determined by the readout segmentation (pad size, strip pitch) and charge-sharing between adjacent electrodes, improved by centre-of-gravity algorithms
 
 ## Examples

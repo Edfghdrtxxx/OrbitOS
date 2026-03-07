@@ -14,7 +14,7 @@ Compton Scattering is the inelastic scattering of a [[Gamma Ray]] (photon) off a
 
 ## Key Points
 
-- **Kinematics**: The scattered photon energy depends on the scattering angle \(\theta\): \(E' = E / (1 + (E/m_e c^2)(1 - \cos\theta))\); maximum energy transfer occurs at \(\theta = 180°\) (backscatter)
+- **Kinematics**: The scattered photon energy depends on the scattering angle $\theta$: $E' = E / (1 + (E/m_e c^2)(1 - \cos\theta))$; maximum energy transfer occurs at $\theta = 180°$ (backscatter)
 - **Compton edge**: In a [[Pulse Height Spectrum]], the maximum electron recoil energy produces a sharp cutoff (Compton edge) below the photopeak; the continuum between zero and the edge is the Compton plateau
 - **Cross-section**: Described by the Klein-Nishina formula; the cross-section decreases with increasing photon energy and scales with the number of electrons (∝ Z)
 - **Detector impact**: Compton-scattered photons that escape the detector deposit only partial energy, degrading the peak-to-total ratio in [[Gamma Spectroscopy]] and complicating [[Energy Resolution]] analysis
