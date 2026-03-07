@@ -1,0 +1,20 @@
+{
+  "id": "conv-1772894152015-1v967evgu",
+  "title": "Refine English phrasing on knowledge gaps",
+  "titleGenerationStatus": "success",
+  "createdAt": 1772894152015,
+  "updatedAt": 1772894324448,
+  "lastResponseAt": 1772894164106,
+  "sessionId": "be248e0b-0515-490f-8d3e-3e7d81fc76c9",
+  "sdkSessionId": "be248e0b-0515-490f-8d3e-3e7d81fc76c9",
+  "currentNote": "10_Daily/2026-03-07.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 3,
+    "cacheCreationInputTokens": 8208,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 8211,
+    "percentage": 4
+  }
+}

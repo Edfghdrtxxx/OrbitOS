@@ -1,0 +1,20 @@
+{
+  "id": "conv-1772894377422-81yxtxa0r",
+  "title": "Check archive skill's inbox-tasks matching",
+  "titleGenerationStatus": "success",
+  "createdAt": 1772894377422,
+  "updatedAt": 1772894490512,
+  "lastResponseAt": 1772894490512,
+  "sessionId": "1dd90dea-1a4a-4a01-ba53-d7db6d483586",
+  "sdkSessionId": "1dd90dea-1a4a-4a01-ba53-d7db6d483586",
+  "currentNote": "10_Daily/2026-03-07.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 160,
+    "cacheReadInputTokens": 21651,
+    "contextWindow": 200000,
+    "contextTokens": 21812,
+    "percentage": 11
+  }
+}

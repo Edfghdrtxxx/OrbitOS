@@ -92,7 +92,11 @@ For each new idea/task mentioned in Q4:
    [User's description]
    ```
 
-## Step 5: Present Summary & Offer AI Digests
+## Step 5: Schedule Shutdown Reminder
+
+Create a cron job for 21:58 daily that reminds the user to start the evening shutdown ritual: open the daily note, fill the Evening Review section, close the laptop. No problem-solving after 22:00 — wind down with podcast, progressive muscle relaxation, dim lights.
+
+## Step 6: Present Summary & Offer AI Digests
 
 Output a short terminal confirmation, then offer optional AI content digestion:
 
@@ -108,12 +112,12 @@ Today's note: [[YYYY-MM-DD]]
 **Question:** "Want AI digests? (newsletters + product launches)"
 - Options: "Yes, fetch both", "Newsletters only", "Products only", "Skip"
 
-- **If user selects any fetch option:** Proceed to Step 6.
+- **If user selects any fetch option:** Proceed to Step 7.
 - **If user selects "Skip":** End with `> Next: /breakdown-tasks → /estimate-time`
 
-## Step 6: AI Content Digestion (Optional, Parallel)
+## Step 7: AI Content Digestion (Optional, Parallel)
 
-Only runs if user opted in during Step 5.
+Only runs if user opted in during Step 6.
 
 1. **Launch subagents in parallel** based on user's choice:
    - `/ai-newsletters` — fetches, deduplicates, ranks AI newsletter content
@@ -134,10 +138,6 @@ Only runs if user opted in during Step 5.
    AI Digest appended to [[YYYY-MM-DD]].
    > Next: `/breakdown-tasks` → `/estimate-time`
    ```
-
-## Step 7: Schedule Shutdown Reminder
-
-Create a cron job for 21:58 daily that reminds the user to start the evening shutdown ritual: open the daily note, fill the Evening Review section, close the laptop. No problem-solving after 22:00 — wind down with podcast, progressive muscle relaxation, dim lights.
 
 # IMPORTANT RULES
 
