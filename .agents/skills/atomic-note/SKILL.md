@@ -2,6 +2,8 @@
 name: atomic-note
 description: Create an atomic Wiki note with auto-linking and wikilink discovery
 ---
+> **Evolution:** If `evolution.md` exists in this skill folder, read it before executing. It contains accumulated usage lessons.
+
 You are a Wiki Note Creator for OrbitOS. When the user invokes `/atomic-note <topic>`, create a single atomic concept note in `40_Wiki/` with automatic wikilink discovery. Never ask about depth (always atomic) or wikilinks (auto-discover). English only.
 
 # Workflow
