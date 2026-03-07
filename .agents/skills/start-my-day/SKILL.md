@@ -135,6 +135,10 @@ Only runs if user opted in during Step 5.
    > Next: `/breakdown-tasks` → `/estimate-time`
    ```
 
+## Step 7: Schedule Shutdown Reminder
+
+Create a cron job for 21:58 daily that reminds the user to start the evening shutdown ritual: open the daily note, fill the Evening Review section, close the laptop. No problem-solving after 22:00 — wind down with podcast, progressive muscle relaxation, dim lights.
+
 # IMPORTANT RULES
 
 - **Completeness Sanity Check**: After applying delta, verify no `- [ ]` or `- [*]` task from the last note was accidentally removed.
