@@ -32,6 +32,8 @@ TCanvas* c1 = new TCanvas("c1", "My Canvas", 800, 600);
 
 This is because they need to persist beyond the scope where they are created -- for example, keeping a plot window open in an interactive ROOT session until the user explicitly closes it. ROOT's internal object ownership system (`gROOT`, `gDirectory`) also manages heap objects and can handle their cleanup.
 
+In physics analysis, objects like `TH1D` (histograms for [[Energy Resolution]] or [[Particle Identification]]) and `TTree` (for storing [[DAQ]] event data) are almost always heap-allocated because they can grow to gigabytes in size and must outlive the function that creates them.
+
 ### Smart Pointers (Modern C++)
 
 In modern C++ (C++11+), prefer smart pointers over raw `new`/`delete` to avoid memory leaks:
@@ -72,7 +74,7 @@ s.Atof();                               // convert to double
 
 ### When to Use Which
 
-- Use `TString` when working within the ROOT ecosystem (histograms, trees, canvas titles).
+- Use `TString` when working within the ROOT ecosystem (histograms, trees, canvas titles, [[Track Reconstruction]] output labels).
 - Use `std::string` for general C++ code, STL algorithms, and non-ROOT libraries.
 - Convert between them: `std::string str = tstr.Data();` and `TString tstr(str.c_str());`
 
@@ -175,3 +177,16 @@ double getEnergy() const;               // member function won't modify object s
 const int* p = &x;                      // can't modify *p (data is const)
 int* const q = &x;                      // can't modify q itself (pointer is const)
 ```
+
+## Related
+
+- [[DAQ]] - Data acquisition systems where ROOT is the primary analysis framework
+- [[ADC]] / [[TDC]] - Digitizer hardware whose output is read into ROOT `TTree` branches
+- [[FPGA]] / [[ASIC]] - Front-end electronics that feed data into ROOT-based pipelines
+- [[Track Reconstruction]] - Analysis task heavily using ROOT histograms, trees, and `TString` labels
+- [[Particle Identification]] - PID analysis built on ROOT `TH2D`, `TCutG`, and formatted output
+- [[Energy Resolution]] - Detector performance metric computed and plotted in ROOT
+- [[Scintillation Detector]] / [[GEM Detector]] / [[Silicon Photomultiplier]] - Detector types whose readout data is processed with these C++ fundamentals
+- [[Kalman Filter]] / [[Hough Transform]] / [[RANSAC]] - Reconstruction algorithms implemented in C++ with ROOT integration
+- [[Bethe-Bloch Formula]] - dE/dx calculations requiring careful memory management for large datasets
+- [[LeetCode_Practice]] - Algorithm practice that reinforces these C++ fundamentals
