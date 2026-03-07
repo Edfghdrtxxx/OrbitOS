@@ -39,19 +39,19 @@ energy:
 
 **e1. Review & Maintenance**
 - [ ] Activate the `/wiki-review` skill to review one knowledge point (~ 45 mins) #daily
+- [ ] Evening review → laptop closed (~ 10 mins) #daily
 
 ## Log
 -
 
-## Evening Review
-**What got done today?**
+## Evening Review (22:00 Shutdown)
+- **What got done today?**
 -
-
-**What's on my mind?**
+- **What's on my mind?** (worries, open loops, unresolved thoughts)
 -
-
-**One priority for tomorrow?**
+- **One priority for tomorrow?**
 -
+- [ ] Screens off, phone on DND
 
 ## Notes
 - Priority labels: a = morning deep work, b = midday, c = afternoon, d = evening, e = end-of-day review
