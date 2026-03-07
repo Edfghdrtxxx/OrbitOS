@@ -10,11 +10,11 @@ review_interval: 0
 
 ## Definition
 
-The spectroscopic factor $C^2S$ quantifies the overlap between a real nuclear state and a pure single-particle configuration, measuring how much of a specific [[Shell Model]] orbital is occupied in the true many-body wave function: $C^2S = |\langle \Psi_A | \Psi_{A-1} \otimes \phi_{nlj} \rangle|^2$.
+The spectroscopic factor $C^2S$ quantifies the overlap between a real nuclear state and a pure single-particle configuration, measuring how much of a specific [[Nuclear Shell Model|Shell Model]] orbital is occupied in the true many-body wave function: $C^2S = |\langle \Psi_A | \Psi_{A-1} \otimes \phi_{nlj} \rangle|^2$.
 
 ## Key Points
 
-- Extracted from [[Direct Reactions]] (e.g., [[Transfer Reactions]] like $(d,p)$, or [[Knockout Reactions]] like $(p,2p)$) by comparing measured differential cross sections to [[DWBA]] calculations: $C^2S = \frac{(d\sigma/d\Omega)_{\text{exp}}}{(d\sigma/d\Omega)_{\text{DWBA}}}$
+- Extracted from [[Direct Reactions]] (e.g., [[Transfer Reactions]] like $(d,p)$, or [[Knockout Reactions]] like $(p,2p)$) by comparing measured [[Differential Cross Section|differential cross sections]] to [[DWBA]] calculations: $C^2S = \frac{(d\sigma/d\Omega)_{\text{exp}}}{(d\sigma/d\Omega)_{\text{DWBA}}}$
 - A value of $C^2S = 1$ means a perfect single-particle state; measured values are typically 0.5-0.7 of [[Shell Model]] predictions due to nucleon-nucleon correlations (the [[Quenching Problem]])
 - The angular distribution shape identifies the transferred orbital angular momentum $\ell$, while the magnitude yields $C^2S$
 - Closely related to [[Asymptotic Normalization Coefficient|ANCs]], which are model-independent alternatives used for peripheral reactions
