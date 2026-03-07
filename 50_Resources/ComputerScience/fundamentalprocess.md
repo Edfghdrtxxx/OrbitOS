@@ -32,7 +32,7 @@ TCanvas* c1 = new TCanvas("c1", "My Canvas", 800, 600);
 
 This is because they need to persist beyond the scope where they are created -- for example, keeping a plot window open in an interactive ROOT session until the user explicitly closes it. ROOT's internal object ownership system (`gROOT`, `gDirectory`) also manages heap objects and can handle their cleanup.
 
-In physics analysis, objects like `TH1D` (histograms for [[Energy Resolution]] or [[Particle Identification]]) and `TTree` (for storing [[DAQ]] event data) are almost always heap-allocated because they can grow to gigabytes in size and must outlive the function that creates them.
+In physics analysis, objects like `TH1D` (histograms for [[Energy Resolution]] or [[Particle Identification]]) and `TTree` (for storing [[DAQ]] event data from [[ADC]]/[[TDC]] readout) are almost always heap-allocated because they can grow to gigabytes in size and must outlive the function that creates them.
 
 ### Smart Pointers (Modern C++)
 
@@ -48,15 +48,15 @@ Note: ROOT objects with internal ownership (e.g., histograms owned by `gDirector
 
 ## 2. TString (ROOT String Class)
 
-`TString` is ROOT's string class, inheriting from `TObject`. It is defined in `$ROOTSYS/core/inc/TString.h`.
+`TString` is ROOT's dedicated string class, defined in `$ROOTSYS/core/inc/TString.h`. Unlike most ROOT classes, it does **not** inherit from `TObject` — it is a standalone class. ROOT's I/O system has special-case streaming support for `TString`, so it can be serialized to/from `TFile` and `TTree` without needing `TObject` inheritance.
 
 ### TString vs std::string
 
 | Feature | TString | std::string |
 |---|---|---|
-| ROOT I/O (serialization) | Native support via `TObject` | Requires wrapper |
+| ROOT I/O (serialization) | Native support (special-cased by ROOT streamer) | Requires wrapper |
 | Regular expressions | Built-in (`TString::Contains`, `TRegexp`) | Requires `<regex>` (C++11) |
-| Format construction | `TString::Form("x = %d", x)` | `std::to_string` or `<format>` (C++20) |
+| Format construction | `TString::Format("x = %d", x)` (returns `TString`) | `std::to_string` or `<format>` (C++20) |
 | ROOT interop | Direct use in `TTree::Branch`, `SetTitle`, etc. | Often needs `.c_str()` conversion |
 | STL compatibility | Limited | Full STL integration |
 
@@ -147,6 +147,7 @@ ref = 20;          // x is now 20
 - **Reference**: for function parameters (avoids copying), return values, and range-based for loops.
 
 ```cpp
+// Filling a [[Bethe-Bloch Formula]] dE/dx histogram in a [[Track Reconstruction]] loop:
 void fill(TH1D& hist) { hist.Fill(3.14); }     // reference: cannot be null
 void fill(TH1D* hist) { if(hist) hist->Fill(3.14); }  // pointer: must null-check
 ```
@@ -154,6 +155,8 @@ void fill(TH1D* hist) { if(hist) hist->Fill(3.14); }  // pointer: must null-chec
 ## 5. The `this` Pointer
 
 Inside a member function, `this` is an implicit pointer to the current object:
+
+In ROOT-based detector code (e.g., configuring a [[Scintillation Detector]] or [[GEM Detector]] readout), `this` enables fluent interfaces:
 
 ```cpp
 class Detector {
@@ -172,7 +175,7 @@ public:
 
 ```cpp
 const double PI = 3.14159265;           // compile-time constant
-void analyze(const TH1D& hist);         // promise not to modify hist
+void analyze(const TH1D& hist);         // promise not to modify hist (e.g., [[Energy Resolution]] plot)
 double getEnergy() const;               // member function won't modify object state
 const int* p = &x;                      // can't modify *p (data is const)
 int* const q = &x;                      // can't modify q itself (pointer is const)
@@ -180,13 +183,9 @@ int* const q = &x;                      // can't modify q itself (pointer is con
 
 ## Related
 
-- [[DAQ]] - Data acquisition systems where ROOT is the primary analysis framework
-- [[ADC]] / [[TDC]] - Digitizer hardware whose output is read into ROOT `TTree` branches
-- [[FPGA]] / [[ASIC]] - Front-end electronics that feed data into ROOT-based pipelines
-- [[Track Reconstruction]] - Analysis task heavily using ROOT histograms, trees, and `TString` labels
-- [[Particle Identification]] - PID analysis built on ROOT `TH2D`, `TCutG`, and formatted output
-- [[Energy Resolution]] - Detector performance metric computed and plotted in ROOT
-- [[Scintillation Detector]] / [[GEM Detector]] / [[Silicon Photomultiplier]] - Detector types whose readout data is processed with these C++ fundamentals
-- [[Kalman Filter]] / [[Hough Transform]] / [[RANSAC]] - Reconstruction algorithms implemented in C++ with ROOT integration
-- [[Bethe-Bloch Formula]] - dE/dx calculations requiring careful memory management for large datasets
-- [[LeetCode_Practice]] - Algorithm practice that reinforces these C++ fundamentals
+- [[DAQ]] - ROOT is the standard analysis framework for DAQ data in nuclear/particle physics
+- [[ADC]] / [[TDC]] - Digitizer output stored in ROOT `TTree` branches using these C++ patterns
+- [[Track Reconstruction]] - Heavy user of ROOT histograms, trees, and `TString` formatting
+- [[Particle Identification]] - PID analysis using ROOT `TH2D`, `TCutG`, and formatted output
+- [[Energy Resolution]] - Detector metric computed and plotted with ROOT
+- [[LeetCode_Practice]] - Algorithm practice that exercises these C++ fundamentals

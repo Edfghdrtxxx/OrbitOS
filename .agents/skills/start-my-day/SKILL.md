@@ -15,7 +15,7 @@ Help the user start their day by reviewing yesterday's progress, creating today'
    - Determine current date (YYYY-MM-DD format)
 
 2. **Read Last Daily Note**
-   - Find the most recent daily note in `10_Daily/`
+   - Find the most recent daily note in `10_Daily/` and then copy it, name it as today's.
    - Extract:
      - Incomplete tasks (unchecked `- [ ]` items)
      - **Daily Recurrent tasks** (items containing `#daily`, even if checked `[x]`)
