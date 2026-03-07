@@ -141,7 +141,7 @@ Only runs if user opted in during Step 5.
 
 # IMPORTANT RULES
 
-- **Continuity**: Read last available daily note. Carry over incomplete (`[ ]`), in-progress (`[*]`), and `#daily` tasks (reset completed `#daily` to `[ ]`, no direct duplicates). **Preserve all inline tags** (`#Deferred`, `#spare-time`, etc.) verbatim on carried-over tasks — never strip, mutate, or relocate tags.
+- **Continuity**: Read last available daily note. Carry over incomplete (`[ ]`), in-progress (`[*]`), and `#daily` tasks. Reset completed `#daily` to `[ ]`; keep `[*]` as `[*]` (still in-progress). No direct duplicates. **Preserve all inline tags** (`#Deferred`, `#spare-time`, etc.) verbatim on carried-over tasks — never strip, mutate, or relocate tags.
 - **Completeness Check**: After populating today's Priorities, verify that every `- [ ]` and `- [*]` task from yesterday appears in today's note (with all tags intact). If any are missing, add them to their natural section.
 - **Stale Deferrals**: Any task tagged `#Deferred` for 5+ consecutive days must be flagged in the **Notes** section (e.g., "`Task X` deferred 7 days — re-scope, schedule, or drop?"). Check by comparing against the oldest available daily note within the past 7 days.
 - **Linking**: Use `[[wikilinks]]` for all projects, concepts, and people throughout the note.
