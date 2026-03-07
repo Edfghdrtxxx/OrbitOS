@@ -44,6 +44,13 @@ energy:
 -
 
 ## Evening Review
+**What got done today?**
+-
+
+**What's on my mind?**
+-
+
+**One priority for tomorrow?**
 -
 
 ## Notes
