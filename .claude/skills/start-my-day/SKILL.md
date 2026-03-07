@@ -16,11 +16,7 @@ Help the user start their day by reviewing yesterday's progress, creating today'
 
 2. **Read Last Daily Note**
    - Find the most recent daily note in `10_Daily/`
-   - Extract:
-     - Incomplete tasks (unchecked `- [ ]` and in-progress `- [*]` items)
-     - **Daily Recurrent tasks** (items containing `#daily`, even if checked `[x]`)
-   - **Preserve all inline tags** on extracted tasks (`#Deferred`, `#spare-time`, `#daily`, etc.) — tags are metadata, never strip or mutate them
-   - Note what was worked on
+   - Scan: what was worked on, which tasks are complete vs. pending, overall progress
 
 3. **Find Active Projects**
    - Search `20_Project/` for notes with `status: active`
@@ -68,19 +64,23 @@ Use the AskUserQuestion tool to gather (combine into as few rounds as possible):
 - **Low:** Reduce to top 2–3 priorities, suggest lighter tasks first
 - **Tired:** Minimum viable day — only the single most important task + maintenance
 
-## Step 3: Create Today's Daily Note
+## Step 3: Create Today's Daily Note (Residual Method)
 
-1. **Check if today's note exists** at `10_Daily/YYYY-MM-DD.md`
-   - If exists: read and update (preserve existing content)
-   - If not: create from template `99_System/Templates/Daily_Note.md`
-
-2. **Populate the daily note:**
-   - **Anchor**: Identity statement + 1-year goal from Game Framework
-   - **Commitments**: Fixed commitments from Q3 (meetings, classes, deadlines)
-   - **Priorities**: Carryover tasks from the last note (incomplete + `#daily`), then user's focus, then project next actions. Adjust quantity based on energy level (Q2). **Tag preservation:** all inline tags (`#Deferred`, `#spare-time`, `#daily`, etc.) from the previous note MUST be preserved verbatim on carried-over tasks. Place deferred tasks in their natural section (by topic), never in a separate "Deferred" section.
-   - **Log**: Leave empty for user
-   - **Notes**: Add recommendations (time-sensitive items, stale projects, inbox count, stale deferrals 5+ days)
-   - **Related Projects**: List active projects with current status
+1. **If today's note exists** at `10_Daily/YYYY-MM-DD.md`: read and update, skip to applying delta
+2. **Copy last daily note** to `10_Daily/YYYY-MM-DD.md`. If none exists, create from template `99_System/Templates/Daily_Note.md`
+3. **Apply delta:**
+   - **Frontmatter**: Update `date` to today, set `energy` from Q2
+   - **Anchor**: Update only if Game Framework changed
+   - **Commitments**: Replace with today's from Q3
+   - **Priorities — keep**: `[ ]` and `[*]` tasks carry over as-is. Do not relocate carried-over tasks
+   - **Priorities — remove**: Delete `[x]` tasks without `#daily`
+   - **Priorities — reset**: `[x]` tasks with `#daily` → `[ ]`
+   - **Priorities — add**: User's focus (Q1), project next actions. Adjust quantity by energy (Q2). Place in natural section by topic
+   - **Log**: Clear body, keep header
+   - **Evening Review**: Clear body, keep header
+   - **AI Digest**: Remove entire section if present
+   - **Notes**: Replace with fresh recommendations
+   - **Related Projects**: Update statuses
 
 ## Step 4: Process New Ideas (from Q4)
 
@@ -141,8 +141,7 @@ Only runs if user opted in during Step 5.
 
 # IMPORTANT RULES
 
-- **Continuity**: Read last available daily note. Carry over incomplete (`[ ]`), in-progress (`[*]`), and `#daily` tasks. Reset completed `#daily` to `[ ]`; keep `[*]` as `[*]` (still in-progress). No direct duplicates. **Preserve all inline tags** (`#Deferred`, `#spare-time`, etc.) verbatim on carried-over tasks — never strip, mutate, or relocate tags.
-- **Completeness Check**: After populating today's Priorities, verify that every `- [ ]` and `- [*]` task from yesterday appears in today's note (with all tags intact). If any are missing, add them to their natural section.
+- **Completeness Sanity Check**: After applying delta, verify no `- [ ]` or `- [*]` task from the last note was accidentally removed.
 - **Stale Deferrals**: Any task tagged `#Deferred` for 5+ consecutive days must be flagged in the **Notes** section (e.g., "`Task X` deferred 7 days — re-scope, schedule, or drop?"). Check by comparing against the oldest available daily note within the past 7 days.
 - **Linking**: Use `[[wikilinks]]` for all projects, concepts, and people throughout the note.
 - **Prioritization**: Time-sensitive items first; flag projects untouched for 3+ days.
@@ -153,10 +152,10 @@ Only runs if user opted in during Step 5.
 # EDGE CASES
 
 - **No active projects:** Suggest processing inbox or starting something new
-- **No yesterday's note:** Skip carryover, start fresh
+- **No previous daily note:** Fall back to template-based creation (no identity to copy)
 - **Weekend/Monday:** Note the gap since last daily note
 - **Empty inbox:** Focus on project execution
-- **Today's note already exists:** Read it, merge priorities, don't duplicate
+- **Today's note already exists:** Already handled in Step 3.1
 
 # TEMPLATE
 

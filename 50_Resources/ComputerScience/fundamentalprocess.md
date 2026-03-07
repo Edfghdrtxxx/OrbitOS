@@ -54,8 +54,8 @@ Note: ROOT objects with internal ownership (e.g., histograms owned by `gDirector
 
 | Feature | TString | std::string |
 |---|---|---|
-| ROOT I/O (serialization) | Native support (special-cased by ROOT streamer) | Requires wrapper |
-| Regular expressions | Built-in (`TString::Contains`, `TRegexp`) | Requires `<regex>` (C++11) |
+| ROOT I/O (serialization) | Native support (special-cased by ROOT streamer) | Supported natively in ROOT 6+; needed wrapper in ROOT 5 |
+| Pattern matching | Substring search (`Contains`), regex via `TRegexp` | `std::string::find` for substrings, `<regex>` for regex (C++11) |
 | Format construction | `TString::Format("x = %d", x)` (returns `TString`) | `std::to_string` or `<format>` (C++20) |
 | ROOT interop | Direct use in `TTree::Branch`, `SetTitle`, etc. | Often needs `.c_str()` conversion |
 | STL compatibility | Limited | Full STL integration |
@@ -103,7 +103,7 @@ std::cout << std::setw(10) << std::left << "Name";             // left-aligned, 
 | `std::cout` | General C++ output, type-safe |
 | `printf` | C-style, concise formatting, widely used in ROOT macros |
 | `std::format` (C++20) | Modern type-safe formatting with Python-like syntax |
-| ROOT logging (`gLog`, `Info`, `Warning`, `Error`) | ROOT framework diagnostic messages |
+| ROOT logging (`TObject::Info/Warning/Error`, `R__LOG_*` macros) | ROOT framework diagnostic messages |
 
 ### Common Pitfall: `std::endl` vs `"\n"`
 
@@ -146,8 +146,9 @@ ref = 20;          // x is now 20
 - **Pointer**: when you need nullable values, dynamic allocation, or pointer arithmetic.
 - **Reference**: for function parameters (avoids copying), return values, and range-based for loops.
 
+For example, filling a [[Bethe-Bloch Formula]] dE/dx histogram during [[Track Reconstruction]]:
+
 ```cpp
-// Filling a [[Bethe-Bloch Formula]] dE/dx histogram in a [[Track Reconstruction]] loop:
 void fill(TH1D& hist) { hist.Fill(3.14); }     // reference: cannot be null
 void fill(TH1D* hist) { if(hist) hist->Fill(3.14); }  // pointer: must null-check
 ```
@@ -156,7 +157,7 @@ void fill(TH1D* hist) { if(hist) hist->Fill(3.14); }  // pointer: must null-chec
 
 Inside a member function, `this` is an implicit pointer to the current object:
 
-In ROOT-based detector code (e.g., configuring a [[Scintillation Detector]] or [[GEM Detector]] readout), `this` enables fluent interfaces:
+`this` enables fluent interfaces and method chaining:
 
 ```cpp
 class Detector {
@@ -175,7 +176,7 @@ public:
 
 ```cpp
 const double PI = 3.14159265;           // compile-time constant
-void analyze(const TH1D& hist);         // promise not to modify hist (e.g., [[Energy Resolution]] plot)
+void analyze(const TH1D& hist);         // promise not to modify hist
 double getEnergy() const;               // member function won't modify object state
 const int* p = &x;                      // can't modify *p (data is const)
 int* const q = &x;                      // can't modify q itself (pointer is const)
