@@ -10,11 +10,11 @@ review_interval: 0
 
 ## Definition
 
-`TString` is the string class in the [[ROOT Framework]] (CERN's high-energy physics analysis framework), inheriting from [[TObject (ROOT)|TObject]]. Located at `$ROOTSYS/core/inc/TString.h`, it provides string handling optimized for physics experiment workflows compared to `std::string`.
+`TString` is the string class in the [[ROOT Framework]] ([[CERN]]'s high-energy physics analysis framework). Located at `$ROOTSYS/core/base/inc/TString.h`, it provides string handling optimized for physics experiment workflows compared to `std::string`. Note: `TString` does **not** inherit from [[TObject (ROOT)|TObject]] — the wrapper class `TObjString` does.
 
 ## Key Points
 
-- Inherits from [[TObject (ROOT)|TObject]], so it integrates with ROOT's I/O, streaming, and reflection systems (e.g., can be written to `.root` files directly)
+- Does **not** inherit from [[TObject (ROOT)|TObject]]; to store a `TString` in ROOT I/O collections that require `TObject*`, wrap it with `TObjString`
 - Offers convenience methods tailored to HEP analysis patterns (file path manipulation, format strings, regex)
 - Interoperable with `std::string` via `.Data()` (returns `const char*`) and constructors accepting `std::string`
 - Prefer `std::string` in pure C++ code; use `TString` when interfacing with ROOT APIs that expect it
@@ -36,4 +36,4 @@ TString path = Form("output/%s.root", name.Data());  // printf-style formatting
 ## References
 
 - Source: `50_Resources/ComputerScience/fundamentalprocess.docx`
-- ROOT docs: `$ROOTSYS/core/inc/TString.h`
+- ROOT docs: `$ROOTSYS/core/base/inc/TString.h`

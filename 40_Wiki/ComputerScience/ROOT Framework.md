@@ -10,7 +10,7 @@ review_interval: 0
 
 ## Definition
 
-ROOT is an open-source C++ framework developed by [[CERN]] for large-scale data processing, statistical analysis, visualization, and storage in high-energy physics (HEP). It provides a complete ecosystem including an interactive C++ interpreter (CINT/[[Cling]]), histogramming, fitting, I/O via `.root` files, and a GUI toolkit.
+ROOT is an open-source C++ framework developed by [[CERN]] for large-scale data processing, statistical analysis, visualization, and storage in high-energy physics (HEP). It provides a complete ecosystem including an interactive C++ interpreter ([[Cling]], successor to the legacy CINT), histogramming, fitting, I/O via `.root` files, and a GUI toolkit.
 
 ## Key Points
 

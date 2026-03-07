@@ -14,11 +14,11 @@ Smart pointers are C++ standard library types (`<memory>`) that wrap raw pointer
 
 ## Key Points
 
-- `std::unique_ptr<T>` — sole ownership, zero overhead, non-copyable, movable; the default choice for [[Stack vs Heap (C++)]] managed allocation
+- `std::unique_ptr<T>` — sole ownership, zero overhead, non-copyable, movable; the default choice for [[Stack vs Heap (C++)|heap-allocated]] memory
 - `std::shared_ptr<T>` — reference-counted shared ownership; the last owner triggers destruction. Slightly heavier due to the control block
 - `std::weak_ptr<T>` — non-owning observer of a `shared_ptr`; breaks circular references
 - Prefer `std::make_unique` / `std::make_shared` over raw `new` for exception safety and clarity
-- In the [[ROOT Framework]], smart pointers are less common because ROOT's ownership model predates C++11; raw `new` + ROOT's internal garbage collection is still idiomatic
+- In the [[ROOT Framework]], smart pointers are less common because ROOT's ownership model predates C++11; raw `new` + directory-based ownership (`gDirectory`, `gROOT`) is still idiomatic
 
 ## Examples
 

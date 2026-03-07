@@ -10,13 +10,13 @@ review_interval: 0
 
 ## Definition
 
-In C++, the **stack** and **heap** are two distinct memory regions. Stack memory is automatically managed — objects are destroyed when they leave scope. Heap memory is manually managed via `new` and `delete`, giving the programmer explicit control over object lifetime.
+In C++, the **stack** and **heap** are two distinct memory regions. Stack memory is automatically managed — objects are destroyed when they leave scope. Heap memory is manually managed via `new` and `delete`, giving the programmer explicit control over [[Object Lifetime (C++)|object lifetime]].
 
 ## Key Points
 
 - **Stack**: fast allocation, automatic cleanup on scope exit, limited size — best for short-lived local variables
 - **Heap**: allocated with `new`, returns a pointer, persists until explicitly freed with `delete` — required for objects that outlive their creating scope
-- Memory leaks occur when heap-allocated objects are never `delete`d; modern C++ mitigates this with smart pointers (`std::unique_ptr`, `std::shared_ptr`)
+- Memory leaks occur when heap-allocated objects are never `delete`d; modern C++ mitigates this with [[Smart Pointers (C++)|smart pointers]] (`std::unique_ptr`, `std::shared_ptr`)
 - In the [[ROOT Framework]], objects like `TCanvas` are typically heap-allocated because they must persist in interactive sessions (e.g., keeping a plot window open until the user closes it)
 
 ## Examples

@@ -17,7 +17,7 @@ review_interval: 0
 - Provides `Write()` / `Read()` for transparent serialization to `.root` files via `TFile`
 - `Draw()` and `Paint()` enable any `TObject`-derived class to render itself on a `TCanvas`
 - `GetName()` / `GetTitle()` give every object a human-readable identity used in directory lookups (`gDirectory->Get("name")`)
-- Classes like `TH1`, `TTree`, `TCanvas`, `TGraph`, and [[TString (ROOT)]] all inherit from `TObject`
+- Classes like `TH1`, `TTree`, `TCanvas`, and `TGraph` all inherit from `TObject`; note that [[TString (ROOT)]] does **not** — use `TObjString` when a `TObject*` wrapper is needed
 - Ownership: objects can register themselves with `gROOT` or `gDirectory`, which affects [[Object Lifetime (C++)]] — ROOT may `delete` them on file close or session end
 
 ## Examples
