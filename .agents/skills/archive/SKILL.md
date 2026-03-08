@@ -27,11 +27,17 @@ Prompt: *"Cross-reference pending inbox items against completed daily tasks. Ret
    - **Filter out** verbs/words too generic to produce meaningful matches (e.g., `create`, `download`, `search`, `find`, `review`)
    - Example: `Sleep-Quality-Analysis.md` with body "Find sleeping status screenshots in WeChat" → `sleep quality`, `sleeping status screenshots`
 3. Grep `10_Daily/` for each search term — look for hits inside `- [x]` lines only. Do NOT brute-force scan all daily notes
-4. Return every match as: `inbox filename | matched task line | daily note filename`
+4. **Validate each match by re-reading the inbox item body.** A keyword overlap is NOT sufficient — the completed task must actually fulfill the inbox item's *intent*. Common false positives:
+   - The daily task improved *tooling/skills* but the inbox item is about doing the *actual work* (e.g., "improve paper skills" ≠ "improve the paper")
+   - The daily task completed a *substep* but the inbox item describes a broader scope
+   - The inbox item has explicit deferral conditions (e.g., "deferred until X is complete") that are not yet met
+   For each match, include a confidence note: `strong` (task clearly fulfills the item) or `weak` (keyword match only, needs user review)
+5. Return every match as: `inbox filename | matched task line | daily note filename | confidence + reasoning`
 
 ### After both agents return
 - Merge results from Agent A and Agent B
-- Present every cross-reference match for user review — the user decides which are valid
+- **For every cross-referenced match, read the inbox item yourself** (don't rely solely on the agent's summary). Verify the match is semantically valid — does the completed task actually close out the inbox item's intent? Drop false positives silently; flag weak matches explicitly for user review
+- Present every validated match for user review — the user decides which are valid
 
 4. **Present findings:**
    ```
