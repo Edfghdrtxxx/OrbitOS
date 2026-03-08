@@ -1,5 +1,5 @@
 ---
-name: anchor
+name: anchor-game-framework
 description: Populate the Anchor section in today's daily note from the Game Framework
 ---
 > **Evolution:** If `evolution.md` exists in this skill folder, read it before executing. It contains accumulated usage lessons.
@@ -22,7 +22,7 @@ Read `99_System/Game_Framework.md` and extract:
 
 - Determine today's date (YYYY-MM-DD)
 - Check if `10_Daily/YYYY-MM-DD.md` exists
-- If it does not exist, inform the user: "Today's daily note doesn't exist yet. Run `/start-my-day` first, then re-run `/anchor`."
+- If it does not exist, inform the user: "Today's daily note doesn't exist yet. Run `/start-my-day` first, then re-run `/anchor-game-framework`."
 
 ## Step 3: Update the Anchor Section
 

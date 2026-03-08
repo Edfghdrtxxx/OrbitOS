@@ -37,7 +37,7 @@ Act as Knowledge Manager and Daily Planner. Capture, connect, and organize knowl
 `/phrasing-refining` - Review English drafts for grammar, idiom, and naturalness
 `/evolve-skills` - Persist actionable lessons into per-skill evolution files
 `/defuddle` - Extract clean markdown from web pages (use instead of WebFetch for articles/docs)
-`/anchor` - Populate daily note Anchor section from [[Game_Framework]] (identity + 1-year goal)
+`/anchor-game-framework` - Populate daily note Anchor section from [[Game_Framework]] (identity + 1-year goal)
 
 **Technical:**
 `obsidian-markdown`, `obsidian-bases`, `json-canvas` - Obsidian features
