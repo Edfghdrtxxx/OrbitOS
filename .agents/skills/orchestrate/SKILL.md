@@ -43,19 +43,41 @@ You understand intent, decompose work, dispatch agents, and synthesize results. 
 
 For each sub-task, spawn a sub-agent via the **Agent** tool.
 
-**Sub-agent prompt requirements — every dispatch MUST include:**
+Follow the `/handoff-prompt` skill philosophy — transfer the mental model, not micro-instructions. Trust the sub-agent. Treat it as a **senior peer, not a subordinate**. Transfer understanding (WHY this matters, WHAT success looks like), then let it own the HOW entirely.
 
-| Field | Description |
-|-------|-------------|
-| Task objective | One-sentence goal |
-| Input context | File paths, prior agent outputs, relevant vault locations |
-| Output format | What the agent should return (file paths created, summary, etc.) |
-| Constraints | Style rules, templates to use, things to avoid |
+See `.agents/skills/handoff-prompt/SKILL.md` for the full methodology.
+
+**Dispatch prompt structure — every dispatch MUST include:**
+
+```
+## Why This Matters
+[User's actual motivation, what they care about]
+
+## Current State
+[File paths, prior agent outputs — point, don't summarize]
+
+## Hard Constraints (only if they exist)
+[Non-negotiable rules that can't be inferred from context alone]
+
+## Success Looks Like
+[Expected deliverable — format, scope, key qualities. Brief, not prescriptive.]
+
+## Principles of Paramount Importance
+- **Zero Assumptions:** Never guess user intent. If multiple implementations exist or requirements are incomplete, halt and use `AskUserQuestion`.
+- **No Silent Assumptions:** Confirm the method if it wasn't specified. Don't guess expectations.
+```
+
+**Prompt principles:**
+- Point to files by path — don't summarize their contents
+- Let the sub-agent decide implementation approach
+- Include hard constraints only if they exist and genuinely can't be inferred
+- Self-check: "Am I telling the agent what to think, or giving it what it needs to think for itself?" If the former, cut.
+- When a sub-task maps to an existing skill, reference the skill file path so the sub-agent can read it — don't paraphrase the skill's rules
 
 **Parallelism rules:**
 - Independent sub-tasks → dispatch in parallel (`run_in_background: true`)
 - Dependent sub-tasks → dispatch sequentially; feed prior output as input context
-- When a sub-task maps to an existing skill (e.g., `/research`, `/start-my-day`, `/atomic-note`), reference that skill's conventions and file in the sub-agent prompt so it follows the established workflow
+- When a sub-task maps to an existing skill (e.g., `/research`, `/start-my-day`, `/atomic-note`), point to the skill file path as context — the sub-agent decides whether and how to use it
 
 **Isolation rule:**
 - When sub-agents make file changes, use `isolation: "worktree"` to prevent write conflicts between parallel agents.
@@ -64,23 +86,31 @@ For each sub-task, spawn a sub-agent via the **Agent** tool.
 
 **Every implementer agent MUST be paired with a separate reviewer agent.**
 
+> **Why the asymmetry:** Implementers need creative freedom to solve problems; reviewers need standardized lenses so the orchestrator can act on their findings consistently.
+
+Reviewers apply the `/reflect` skill methodology — switching into **skeptical auditor mode**, not collaborative doer. See `.agents/skills/reflect/SKILL.md` for the full methodology.
+
 1. After an implementer agent completes, dispatch a reviewer agent with this prompt structure:
 
 ```
-Review the following work for correctness, completeness, and adherence to project conventions:
+You are a skeptical auditor reviewing another agent's work. Switch out of collaborative mode — your job is to find problems, not to help.
 
 **Implementer output:** [summary of what the implementer produced]
 **Files changed:** [list of file paths]
 
-Check:
-- Accuracy of content
-- Edge cases handled
-- Style consistency with OrbitOS conventions (frontmatter, wikilinks, templates)
-- Missing pieces or incomplete sections
+Apply all 5 adversarial lenses systematically:
 
-Return one of:
-- **approved** — work meets all criteria
-- **needs-revision** — with specific, actionable feedback items
+| Lens | Question |
+|------|----------|
+| **Completeness** | "Are you sure that's the full picture? Exhaustively list every possibility." |
+| **Accuracy** | "Are you sure? Double-check sources/logic. If uncertain, state it clearly." |
+| **Hallucinations** | "Did the implementer proceed without explicit confirmation? Flag silent assumptions." |
+| **Depth** | "Is that the only perspective? What are the counter-arguments?" |
+| **Columbo** | "One more thing... X was stated, but doesn't that contradict Y?" |
+
+Document findings per lens, then return one of:
+- **approved** — work survives all 5 lenses
+- **needs-revision** — with specific, actionable feedback items keyed to the lens that surfaced them
 
 **Important: You are read-only. Report findings but MUST NOT make any changes yourself.**
 ```
