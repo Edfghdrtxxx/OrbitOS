@@ -7,6 +7,10 @@ description: >-
   or any variation requesting a transferable prompt for task continuation or delegation.
 ---
 
+# Phase 0 — EVOLVE
+
+Read `evolution.md` in this skill's folder. Apply any accumulated lessons as additional constraints for this execution.
+
 # Philosophy
 
 The follow-up AI is a senior peer, not a junior taking orders. Your job is to **transfer understanding**, then get out of the way. A great handoff reads like a project briefing, not a ticket with acceptance criteria.
@@ -45,4 +49,3 @@ A clipboard-ready outline prompt under **30 lines**. The follow-up AI is autonom
  - **Zero Assumptions:** Never guess user intent. If multiple implementations exist or requirements are incomplete, **halt and use the `AskUserQuestion` tool** to gather explicit direction.
  - **No Silent Assumptions:** Even when the task is requested, confirm the *method* if it wasn’t specified. Don’t guess the user’s expectation.
 
-> **Evolution:** If `evolution.md` exists in this skill folder, read it before executing. It contains accumulated usage lessons.

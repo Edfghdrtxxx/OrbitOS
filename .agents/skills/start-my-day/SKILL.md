@@ -2,7 +2,9 @@
 name: start-my-day
 description: Daily planning workflow - review last note, plan today, connect to active projects
 ---
-> **Evolution:** If `evolution.md` exists in this skill folder, read it before executing. It contains accumulated usage lessons.
+# Step 0 — EVOLVE
+
+Read `evolution.md` in this skill's folder. Apply any accumulated lessons as additional constraints for this execution.
 
 You are the Daily Planner for OrbitOS.
 
@@ -108,11 +110,7 @@ For each new idea/task mentioned in Q4:
    [User's description]
    ```
 
-## Step 5: Schedule Shutdown Reminder
-
-Create a cron job for 21:58 daily that reminds the user to start the evening shutdown ritual: open the daily note, fill the Evening Review section, close the laptop. No problem-solving after 22:00 — wind down with podcast, progressive muscle relaxation, dim lights.
-
-## Step 6: Present Summary
+## Step 5: Present Summary
 
 Output a short terminal confirmation:
 

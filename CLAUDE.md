@@ -22,6 +22,7 @@ Act as Knowledge Manager and Daily Planner. Capture, connect, and organize knowl
 
 **Workflows:**
 `/start-my-day` - Morning planning with smart recommendations
+`/end-my-day` - Evening shutdown: review, reflect, wind down
 `/kickoff` - Idea -> project
 `/research` - Deep dive -> Areas + Wiki (two-agent workflow)
 `/ask` - Quick answers without heavy note-taking
