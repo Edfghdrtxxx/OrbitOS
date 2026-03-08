@@ -47,7 +47,7 @@ Ask: **Create missing notes? (all / pick / skip)**
 - **pick** — use `AskUserQuestion` to let user select.
 - **skip** — end with the report.
 
-For each selected concept, execute Create mode (steps 2–6).
+For each selected concept, read and follow `create-mode.md` (in this same `references/` directory).
 
 ## S6. Summary
 
