@@ -71,6 +71,7 @@ Trigger only if **Final Total Time > capacity**.
 4. **Tag selected tasks:** Append `#Deferred` to the end of each selected task line. Tasks stay in their original section — do NOT move them or create a separate section. If a candidate task has no preceding section label, ask the user which section it belongs to before tagging.
 5. **Stop immediately** once Final Total Time is **≤ capacity**.
 6. Recompute totals and update the **Re-org** section accordingly.
+   - *Loop: if Final Total Time is still > capacity, repeat from sub-step 3 (propose → user picks → tag → recompute). Stop when Final Total Time ≤ capacity or user declines further deferrals.*
 
 # Time Writing Format
 

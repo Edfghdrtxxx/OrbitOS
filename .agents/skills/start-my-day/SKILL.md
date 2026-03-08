@@ -74,6 +74,16 @@ Use the AskUserQuestion tool to gather (combine into as few rounds as possible):
    - **Frontmatter**: Update `date`, `day`, `week` to today; set `energy` from Q2
    - **Anchor**: Leave as-is (managed by a separate skill)
    - **Commitments**: Replace with today's from Q3
+   - **Priority delta decision table:**
+
+     | Task state | Condition | Action |
+     |---|---|---|
+     | `[ ]` | — | Keep as-is |
+     | `[*]` | — | Keep as-is |
+     | `[x]` | No `#daily` tag | Remove |
+     | `[x]` | Has `#daily` tag | Reset to `[ ]` |
+     | (new from Q1/Q4) | — | Add to appropriate section |
+
    - **Priorities — keep**: `[ ]` and `[*]` tasks carry over as-is. Do not relocate carried-over tasks
    - **Priorities — remove**: Delete `[x]` tasks without `#daily`
    - **Priorities — reset**: `[x]` tasks with `#daily` → `[ ]`
