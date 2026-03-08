@@ -1,61 +1,48 @@
 ---
 name: anchor-game-framework
-description: Populate the Anchor section in today's daily note from the Game Framework
+description: Surface the Game Framework's identity statement, 1-year goal, and daily levers for reflection and discussion
 ---
 > **Evolution:** If `evolution.md` exists in this skill folder, read it before executing. It contains accumulated usage lessons.
 
-You manage the **## Anchor** section in the user's daily note.
+You surface the user's **Game Framework** for reflection and discussion.
 
 # OBJECTIVE
 
-Read `99_System/Game_Framework.md`, extract the identity statement and 1-year goal, and populate the `## Anchor` section in today's daily note.
+Read `99_System/Game_Framework.md`, present the key anchoring elements (identity statement, 1-year goal, current boss fight, daily levers), and discuss them with the user. Do NOT edit any files unless the user explicitly asks.
 
 # WORKFLOW
 
 ## Step 1: Read Game Framework
 
 Read `99_System/Game_Framework.md` and extract:
-1. **Identity statement** — from the "Vision — What You're Building" section, the paragraph starting with "I am the type of person who…" (the italic text under "Identity statement:")
-2. **1-year goal** — from the "1-Year Goal — The Mission" section, the bold sentence describing the concrete marker
+1. **Identity statement** — from the "Vision — What You're Building" section
+2. **1-year goal** — from the "1-Year Goal — The Mission" section
+3. **Boss fight** — from the "1-Month Project — The Boss Fight" section
+4. **Daily levers** — from the "Daily Levers — The Quests" section
 
-## Step 2: Locate Today's Daily Note
+## Step 2: Present for Reflection
 
-- Determine today's date (YYYY-MM-DD)
-- Check if `10_Daily/YYYY-MM-DD.md` exists
-- If it does not exist, inform the user: "Today's daily note doesn't exist yet. Run `/start-my-day` first, then re-run `/anchor-game-framework`."
-
-## Step 3: Update the Anchor Section
-
-Use the Edit tool to replace the `## Anchor` section content (everything between `## Anchor` and the next `##` heading) with:
+Display a concise summary:
 
 ```
-## Anchor
+## Your Anchor
+
 > *{identity statement}*
-> **1-year goal:** {1-year goal}
+
+**1-year goal:** {1-year goal}
+**Boss fight:** {boss fight summary}
+**Daily levers:** {quest 1} / {quest 2} / {quest 3}
 ```
 
-- Preserve the exact wording from Game_Framework.md — do not paraphrase
-- Keep formatting consistent: identity in italic blockquote, goal in bold blockquote
-- Do not touch any other section of the daily note
+Then ask: "Anything you want to discuss or update?"
 
-## Step 4: Confirm
+## Step 3: Discussion
 
-Output a short confirmation:
-
-```
-Anchor updated in [[YYYY-MM-DD]].
-> Identity: {first few words}…
-> Goal: {first few words}…
-```
-
-# EDGE CASES
-
-- **Game Framework changed:** Always re-read the file — never cache. The user may update their identity statement or goal.
-- **Anchor section missing:** If the daily note has no `## Anchor` heading, insert it as the first section after the frontmatter heading (after `# YYYY-MM-DD`).
-- **Anchor already up-to-date:** If the content matches, skip the edit and confirm: "Anchor is already up-to-date."
+Engage with whatever the user wants to reflect on — identity fit, goal relevance, lever adjustments, etc. Only modify `99_System/Game_Framework.md` or today's daily note if the user explicitly requests it.
 
 # IMPORTANT RULES
 
-- This skill is intentionally decoupled from `/start-my-day`. It can be run independently at any time.
-- Never modify any section other than `## Anchor`.
-- Extract text verbatim from Game_Framework.md — do not rewrite or summarize.
+- **Read-only by default.** Never edit files unless the user asks.
+- Always re-read `99_System/Game_Framework.md` — never rely on cached content.
+- Extract text verbatim — do not rewrite or summarize.
+- This skill is decoupled from `/start-my-day`. It can be run independently at any time.

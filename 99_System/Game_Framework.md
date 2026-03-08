@@ -18,10 +18,10 @@ tags: [system, identity, planning, game-framework]
 
 **The dissatisfaction:** Being in China with no clear exit date.
 
-**The 5-year anti-vision (if nothing changes):**
+**The 5-year [[Anti-Vision|anti-vision]] (if nothing changes):**
 You become the person who always talked about Japan but never went.
 The plan existed in meticulous notes. The vault was organized. The scorecard was filled out. But the emails were never sent, the thesis dragged, the timeline slipped one year, then two. The UTokyo window closed. China became the default — not chosen, just never escaped.
-A Tuesday in that version of your life: institution politics, research direction set by someone else, 996 culture encroaching, looking at your notes from 2026 wondering why you were so confident it would happen.
+A Tuesday in that version of your life: institution politics, research direction set by someone else, [[996 Culture|996 culture]] encroaching, looking at your notes from 2026 wondering why you were so confident it would happen.
 
 **The cost:** Not Japan itself — the loss of a life built on your terms, doing research you chose, free from exhaustion culture, in a place you deliberately selected.
 
@@ -35,7 +35,7 @@ A Tuesday in that version of your life: institution politics, research direction
 > The life that pulls you forward.
 
 **The 3-year Tuesday (2029):**
-You are at RIKEN / UTokyo CNS. Morning: read a paper and take notes. Mid-morning: run an analysis, discuss results with lab members. Lunch outside — no urgency, no performance anxiety. Afternoon: experiments or writing. Evening: yours. No 996. Japanese works well enough to live in. The research is real and you chose it.
+You are at [[RIKEN Nishina Center for Accelerator-Based Science (RNC)|RIKEN]] / [[UTokyo CNS]]. Morning: read a paper and take notes. Mid-morning: run an analysis, discuss results with lab members. Lunch outside — no urgency, no performance anxiety. Afternoon: experiments or writing. Evening: yours. No 996. Japanese works well enough to live in. The research is real and you chose it.
 
 **Identity statement:**
 *I am the type of person who treats everything — tools, knowledge, plans — as instruments for a better life, and still finds genuine pleasure in the study itself.*
@@ -49,7 +49,7 @@ This is not someone who sacrifices enjoyment for discipline. It's someone for wh
 
 > One concrete marker that proves you've broken the old pattern.
 
-**At least one UTokyo CNS professor has agreed to accept you as Kenkyusei from October 2027.**
+**At least one UTokyo CNS professor has agreed to accept you as [[Kenkyusei]] from October 2027.**
 
 If this is true by February 2027: you are on the Japan track. The supervisor is the gate.
 If this is not true: the plan lived in notes, not in outreach.
@@ -98,7 +98,7 @@ This is the boss fight because the thesis is the gate to everything. Not supervi
 
 - **Health and sustainable pace** — no sprint that requires a crash. Compounding requires consistency.
 - **Find the true happy life** — the research career, Japan, the autonomy — these are not means to an end. They are the end. Don't grind your way past the thing you're grinding toward.
-- **No 996 culture, ever** — not at IMP, not at UTokyo, not anywhere. A supervisor or lab that demands this is a red flag before you arrive, not a problem to solve after.
+- **No 996 culture, ever** — not at [[Institute of Modern Physics|IMP]], not at UTokyo, not anywhere. A supervisor or lab that demands this is a red flag before you arrive, not a problem to solve after.
 - **Financial buffer is non-negotiable** — the self-funded Kenkyusei year costs ~2.5–2.8M JPY. Savings must clear this threshold before departure. Do not commit to the October 2027 timeline without confirmed liquidity. Money is not the goal; its absence collapses the path.
 
 ---
@@ -110,7 +110,7 @@ This is the boss fight because the thesis is the gate to everything. Not supervi
 | Track | Project | Cadence / Deadline |
 |---|---|---|
 | **Daily anchor** | [[Masters_Thesis]] | 2–4 hr block every workday — no exceptions |
-| **Urgent parallel (April)** | [[Japan_Itinerary]] (Supervisor Outreach) | First emails due 2026-04-15; Naidaku deadline 2026-06-30 |
+| **Urgent parallel (April)** | [[Japan_Itinerary]] (Supervisor Outreach) | First emails due 2026-04-15; [[Naidaku]] deadline 2026-06-30 |
 | **Ongoing parallel** | [[Fundamental_Knowledge]] | Systematic study now; intensify from Sep 2026 |
 | **Ongoing parallel** | [[English_Learning]] | TOEFL target: Jul–Aug 2026; register by Apr 2026 |
 | **Ongoing parallel** | [[Japanese_Language]] | N4 by Oct 2027; sustainable daily practice |
