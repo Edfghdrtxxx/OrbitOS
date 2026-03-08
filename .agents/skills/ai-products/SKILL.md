@@ -1,6 +1,6 @@
 ---
 name: ai-products
-description: Curate AI product launches from Product Hunt, Hacker News, GitHub, and Techmeme. Use when user invokes /ai-products or when /start-my-day needs product launches.
+description: Curate AI product launches from Product Hunt, Hacker News, GitHub, and Techmeme. Use when user invokes /ai-products.
 ---
 # AI Product Discovery
 
@@ -46,15 +46,7 @@ Fetch, deduplicate, and rank AI product launches from multiple sources.
 
 ## Output Format
 
-**Manual invocation**: Full digest with all sections.
-
-**From /start-my-day**: Condensed list:
-```
-**Product Launch Opportunities (5):**
-- [Product] - [Angle] - [Top metric]
-...
-Full digest: [[YYYY-MM-DD-Digest]]
-```
+Display full digest with all sections.
 
 ## Error Handling
 
