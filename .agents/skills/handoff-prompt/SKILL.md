@@ -2,9 +2,8 @@
 name: handoff-prompt
 description: >-
   Generate a handoff prompt that transfers the mental model — the WHY and WHAT — so the follow-up AI can own the HOW entirely.
-  TRIGGER when: user says "handoff prompt", "hand this off", "continue in a new session", "pick up later",
-  "running out of context", "delegate this task", "brief the next AI",
-  "someone else will finish this", "I need a handoff",
+  TRIGGER when: user says "handoff prompt", "hand this off", "another context-clean AI", "pick up later",
+  "delegate this task",
   or any variation requesting a transferable prompt for task continuation or delegation.
 ---
 
