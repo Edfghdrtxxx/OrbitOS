@@ -62,9 +62,13 @@ Use the AskUserQuestion tool to gather (combine into as few rounds as possible):
 
 ## Step 3: Create Today's Daily Note (Residual Method)
 
-1. **If today's note exists** at `10_Daily/YYYY-MM-DD.md`: read and update, skip to applying delta
-2. **Copy last daily note** to `10_Daily/YYYY-MM-DD.md`. If none exists, create from template `99_System/Templates/Daily_Note.md` and remove all placeholder tasks before applying delta
-3. **Apply delta:**
+> **Identity shortcut (like ResNet):** `today = copy(yesterday) + delta`.
+> Do NOT reconstruct the note from memory. Copy the previous note verbatim first,
+> then apply only the changes. This prevents accidental task drops.
+
+1. **If today's note exists** at `10_Daily/YYYY-MM-DD.md`: read it, then skip to step 3 (apply delta)
+2. **Copy the last daily note using `cp`:** run `cp 10_Daily/<last-date>.md 10_Daily/<today>.md` via the Bash tool. This is the identity copy — the file is duplicated byte-for-byte, no reading or rewriting involved. If no previous note exists, create from template `99_System/Templates/Daily_Note.md` and remove all placeholder tasks before applying delta
+3. **Apply delta** — use the Edit tool to modify only what changes. Touch nothing else:
    - **Frontmatter**: Update `date`, `day`, `week` to today; set `energy` from Q2
    - **Anchor**: Leave as-is (managed by a separate skill)
    - **Commitments**: Replace with today's from Q3
@@ -96,48 +100,18 @@ For each new idea/task mentioned in Q4:
 
 Create a cron job for 21:58 daily that reminds the user to start the evening shutdown ritual: open the daily note, fill the Evening Review section, close the laptop. No problem-solving after 22:00 — wind down with podcast, progressive muscle relaxation, dim lights.
 
-## Step 6: Present Summary & Offer AI Digests
+## Step 6: Present Summary
 
-Output a short terminal confirmation, then offer optional AI content digestion:
+Output a short terminal confirmation:
 
 ```
 Good morning! Your day is ready.
 
 Energy: [level] | Priorities: [N] | Active projects: [N] | Inbox: [N] pending
 Today's note: [[YYYY-MM-DD]]
+
+> Next: /breakdown-tasks → /estimate-time
 ```
-
-**Then ask the user** using the AskUserQuestion tool:
-
-**Question:** "Want AI digests? (newsletters + product launches)"
-- Options: "Yes, fetch both", "Newsletters only", "Products only", "Skip"
-
-- **If user selects any fetch option:** Proceed to Step 7.
-- **If user selects "Skip":** End with `> Next: /breakdown-tasks → /estimate-time`
-
-## Step 7: AI Content Digestion (Optional, Parallel)
-
-Only runs if user opted in during Step 6.
-
-1. **Launch subagents in parallel** based on user's choice:
-   - `/ai-newsletters` — fetches, deduplicates, ranks AI newsletter content
-   - `/ai-products` — fetches, deduplicates, ranks AI product launches
-   - Launch both concurrently when "Yes, fetch both" is selected
-
-2. **On completion, append to today's daily note** (`10_Daily/YYYY-MM-DD.md`):
-   - Add an `## AI Digest` section at the end of the note (before any trailing blank lines)
-   - Include top 3–5 content opportunities from newsletters (if fetched)
-   - Include top 3–5 product launch opportunities (if fetched)
-   - Each item MUST include a markdown link to the original source: `[Title](url)`
-   - Add links to full digests: `[[50_Resources/NewsLetter/YYYY-MM/YYYY-MM-DD-Digest]]` and/or `[[50_Resources/ProductLaunches/YYYY-MM/YYYY-MM-DD-Digest]]`
-
-3. **If a subagent fails**, skip that section gracefully — never retroactively break the daily note.
-
-4. **End with:**
-   ```
-   AI Digest appended to [[YYYY-MM-DD]].
-   > Next: `/breakdown-tasks` → `/estimate-time`
-   ```
 
 # IMPORTANT RULES
 
