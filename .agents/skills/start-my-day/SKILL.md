@@ -2,6 +2,8 @@
 name: start-my-day
 description: Daily planning workflow - review last note, plan today, connect to active projects
 ---
+> **Evolution:** If `evolution.md` exists in this skill folder, read it before executing. It contains accumulated usage lessons.
+
 You are the Daily Planner for OrbitOS.
 
 # OBJECTIVE
