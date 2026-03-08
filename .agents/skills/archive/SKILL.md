@@ -18,7 +18,13 @@ Help the user archive completed projects and processed inbox items, maintaining 
    - Find all files in `00_Inbox/` with `status: processed` in frontmatter
    - Or files with `[[ProjectName]]` link indicating they've been converted
 
-3. **Present findings:**
+3. **Cross-reference pending inbox items against daily notes (inbox-first approach):**
+   - Collect all inbox files in `00_Inbox/` that still have `status: pending`
+   - For each pending inbox item, derive 2–3 **distinctive noun phrases** from its filename and body to use as search terms (e.g., `Sleep-Quality-Analysis.md` with body "Find sleeping status screenshots in WeChat" → search for `sleeping status screenshots`, `sleep quality`)
+   - Grep `10_Daily/` for each search term — look for hits inside `- [x]` lines only. Do NOT brute-force scan all daily notes
+   - Present every match with the inbox item, the matched task line, and which daily note it appeared in — the user reviews and decides which are valid
+
+4. **Present findings:**
    ```
    ## Items Ready for Archive
 
@@ -30,11 +36,17 @@ Help the user archive completed projects and processed inbox items, maintaining 
    - Idea about X - Processed to [[ProjectName]]
    - Note about Y - Processed on [date]
 
+   **Inbox Items Matched to Completed Daily Tasks ([N]):**
+   - [[Sleep-Quality-Analysis]] — `- [x] Find sleeping status screenshots...` in [[2026-03-07]]
+   - [[Physics-Problem-Set]] — `- [x] Physics problem set...` in [[2026-03-07]]
+   - [[Some-Other-Item]] — `- [x] ...` in [[2026-03-04]]
+
    Would you like to:
    1. Archive all of them
    2. Archive projects only
-   3. Archive inbox only
-   4. Select specific items
+   3. Archive inbox only (processed + cross-referenced)
+   4. Archive cross-referenced inbox items only
+   5. Select specific items
    ```
 
 ## Step 2: Archive Process
@@ -56,6 +68,11 @@ For each project to be archived:
    - Move to `99_System/Archives/Inbox/YYYY/MM/filename.md`
    - Organize by year and month of processing
    - Preserves chronological capture history
+
+   **For Cross-Referenced Inbox Items (completed via daily tasks):**
+   - Same destination as regular inbox items: `99_System/Archives/Inbox/YYYY/MM/filename.md`
+   - Before moving, update frontmatter: set `status: processed` and add `completed-in: "[[YYYY-MM-DD]]"` (the daily note where the task was completed)
+   - If an item was completed across multiple daily notes, use the LATEST completion date
 
 3. **Update archived file metadata:**
    - Add `archived: YYYY-MM-DD` to frontmatter
@@ -85,8 +102,12 @@ Present completion summary:
 - [[Project2]] → Archives/Projects/2026/Project2.md
 
 **Archived [N] inbox items to `99_System/Archives/Inbox/YYYY/MM/`:**
-- idea-note.md → Archives/Inbox/2026/01/
-- quick-capture.md → Archives/Inbox/2026/01/
+- idea-note.md → Archives/Inbox/2026/01/ (frontmatter: `status: processed`)
+- quick-capture.md → Archives/Inbox/2026/01/ (frontmatter: `status: processed`)
+
+**Cross-Referenced Inbox Items ([N] matched via daily tasks):**
+- Sleep-Quality-Analysis.md → Archives/Inbox/2026/03/ (completed in [[2026-03-07]])
+- Physics-Problem-Set.md → Archives/Inbox/2026/03/ (completed in [[2026-03-07]])
 
 **Daily Note Updates:**
 - `## Log`: [N] archive entries added
@@ -122,6 +143,9 @@ Present completion summary:
 - **Recently completed:** Remind user they may want to do a project retrospective first
 - **Carryover tasks from archived project:** Tasks may still appear in today's `## Priorities` as carryover from previous days. Ask user: remove them, keep as standalone, or reassign to another project
 - **Project appears in `## Related Projects` of older daily notes:** Do NOT retroactively edit past daily notes — they are immutable logs. Only update today's note
+- **Cross-reference ambiguity:** If a match looks weak (e.g., generic words like "Update" or "Review"), still present it — the user decides. Never auto-archive cross-referenced items without user review
+- **Inbox item partially completed:** If an inbox item's scope is broader than the completed task (e.g., inbox says "analyze patterns and create improvements" but the task only says "find screenshots"), flag this — the task may be a substep, not a full completion. Ask the user whether the inbox item is truly done
+- **Multiple daily notes reference the same inbox item:** Collect all matching tasks across daily notes and present them together so the user can see the full history
 
 # ARCHIVE STRUCTURE
 
@@ -179,6 +203,10 @@ Present completion summary:
 **Processed Inbox Items (1):**
 - Build my personal OS with obsidian and Claude Code.md - Processed to [[Personal_OS_Setup]]
 
+**Inbox Items Matched to Completed Daily Tasks (2):**
+- [[Sleep-Quality-Analysis]] — `- [x] Find sleeping status screenshots...` in [[2026-03-07]]
+- [[Physics-Problem-Set]] — `- [x] Physics problem set...` in [[2026-03-07]]
+
 **Daily Note Impact:**
 - `## Related Projects`: [[Personal_OS_Setup]] will be removed
 - `## Priorities`: 1 carryover task found referencing [[Personal_OS_Setup]] — will ask what to do
@@ -187,11 +215,12 @@ Would you like to archive these items?
 (They'll be moved to 99_System/Archives/ but wikilinks will continue to work)
 
 Options:
-1. Archive all (2 projects + 1 inbox item)
+1. Archive all (2 projects + 1 inbox item + 2 cross-referenced)
 2. Archive projects only
-3. Archive inbox only
-4. Select specific items
-5. Cancel
+3. Archive inbox only (processed + cross-referenced)
+4. Archive cross-referenced inbox items only
+5. Select specific items
+6. Cancel
 ```
 
 # FOLLOW-UP PROTOCOL

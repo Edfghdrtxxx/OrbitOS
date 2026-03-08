@@ -27,7 +27,7 @@ Act as Knowledge Manager and Daily Planner. Capture, connect, and organize knowl
 `/ask` - Quick answers without heavy note-taking
 `/brainstorm` - Interactive brainstorming, then optionally create a Project or capture knowledge
 `/parse-knowledge` - Unstructured text -> vault
-`/archive` - Clean up completed items
+`/archive` - Clean up completed items (cross-references inbox against `- [x]` tasks in all daily notes)
 `/estimate-time` - Reasoning-based time estimates for today's tasks at subtask resolution
 `/handoff-prompt` - Generate a constraint-based handoff prompt for cross-session/cross-tool task transfer (no over-prescription)
 `/breakdown-tasks` - Stratified task decomposition with time estimates and dependencies, inserted into daily note
@@ -42,6 +42,9 @@ Act as Knowledge Manager and Daily Planner. Capture, connect, and organize knowl
 `obsidian-markdown`, `obsidian-bases`, `json-canvas` - Obsidian features
 `obsidian-cli` - Interact with vault via Obsidian CLI (notes, tasks, properties, plugin dev)
 `excalidraw-diagram-generator` - Generate Excalidraw diagrams from natural language
+
+## Skill Files
+Skill definitions live in `.agents/skills/<skill-name>/SKILL.md` (symlinked to `.claude/skills/`).
 
 ## Templates
 `Daily_Note.md`, `Project_Template.md`, `Content_Template.md`, `Wiki_Template.md`, `Inbox_Template.md`
