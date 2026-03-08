@@ -11,18 +11,27 @@ Help the user archive completed projects and processed inbox items, maintaining 
 
 ## Step 1: Identify Items to Archive
 
-1. **Search for completed projects:**
-   - Find all files in `20_Project/` with `status: done`
+Launch **two Explore subagents in parallel** to scan the vault concurrently:
 
-2. **Search for processed inbox items:**
-   - Find all files in `00_Inbox/` with `status: processed` in frontmatter
-   - Or files with `[[ProjectName]]` link indicating they've been converted
+### Agent A — Direct-status scan
+Prompt: *"Search for archivable items in the OrbitOS vault. Return results as structured lists."*
+- Grep `20_Project/` for files with `status: done` in frontmatter. Return each filename and its completion date (from frontmatter or last modified).
+- Grep `00_Inbox/` for files with `status: processed` in frontmatter, or files containing a `[[ProjectName]]` wikilink indicating conversion. Return each filename and what it was processed into.
 
-3. **Cross-reference pending inbox items against daily notes (inbox-first approach):**
-   - Collect all inbox files in `00_Inbox/` that still have `status: pending`
-   - For each pending inbox item, derive 2–3 **distinctive noun phrases** from its filename and body to use as search terms (e.g., `Sleep-Quality-Analysis.md` with body "Find sleeping status screenshots in WeChat" → search for `sleeping status screenshots`, `sleep quality`)
-   - Grep `10_Daily/` for each search term — look for hits inside `- [x]` lines only. Do NOT brute-force scan all daily notes
-   - Present every match with the inbox item, the matched task line, and which daily note it appeared in — the user reviews and decides which are valid
+### Agent B — Cross-reference inbox vs daily tasks
+Prompt: *"Cross-reference pending inbox items against completed daily tasks. Return matched pairs."*
+1. Collect all files in `00_Inbox/` with `status: pending`
+2. Read each pending inbox item and derive 2–4 search terms per item by:
+   - **Filename:** split kebab-case tokens, drop generic words (`Skill`, `Note`, `Update`, etc.), recombine into noun phrases
+   - **Body:** pull in parenthesized terms, proper nouns, and wikilinks that add specificity beyond the filename
+   - **Filter out** verbs/words too generic to produce meaningful matches (e.g., `create`, `download`, `search`, `find`, `review`)
+   - Example: `Sleep-Quality-Analysis.md` with body "Find sleeping status screenshots in WeChat" → `sleep quality`, `sleeping status screenshots`
+3. Grep `10_Daily/` for each search term — look for hits inside `- [x]` lines only. Do NOT brute-force scan all daily notes
+4. Return every match as: `inbox filename | matched task line | daily note filename`
+
+### After both agents return
+- Merge results from Agent A and Agent B
+- Present every cross-reference match for user review — the user decides which are valid
 
 4. **Present findings:**
    ```
@@ -51,32 +60,31 @@ Help the user archive completed projects and processed inbox items, maintaining 
 
 ## Step 2: Archive Process
 
-For each project to be archived:
+For each item to be archived:
 
-1. **Read the project file(s)**
-   - Get full content and metadata
-   - Note any linked resources or assets
+1. **Ensure archive directories exist:**
+   - Use `mkdir -p` via Bash to create target directories before moving
 
-2. **Move to archives:**
+2. **Move files using `mv` command (Bash tool):**
+   - NEVER use Write to recreate files — always use `mv` to preserve file identity and git history
+   - Batch moves into as few commands as possible (multiple files to the same directory in one `mv`)
 
    **For Projects:**
-   - **Single file:** Move to `99_System/Archives/Projects/YYYY/ProjectName.md`
-   - **Folder:** Move to `99_System/Archives/Projects/YYYY/ProjectName/`
+   - **Single file:** `mv` to `99_System/Archives/Projects/YYYY/ProjectName.md`
+   - **Folder:** `mv` to `99_System/Archives/Projects/YYYY/ProjectName/`
    - Organize by year based on completion date
 
-   **For Inbox Items:**
-   - Move to `99_System/Archives/Inbox/YYYY/MM/filename.md`
-   - Organize by year and month of processing
-   - Preserves chronological capture history
+   **For Inbox Items (processed or cross-referenced):**
+   - `mv` to `99_System/Archives/Inbox/YYYY/MM/filename.md`
+   - Organize by year and month based on completion date
+   - If completed across multiple daily notes, use the LATEST completion date for the month
 
-   **For Cross-Referenced Inbox Items (completed via daily tasks):**
-   - Same destination as regular inbox items: `99_System/Archives/Inbox/YYYY/MM/filename.md`
-   - Before moving, update frontmatter: set `status: processed` and add `completed-in: "[[YYYY-MM-DD]]"` (the daily note where the task was completed)
-   - If an item was completed across multiple daily notes, use the LATEST completion date
-
-3. **Update archived file metadata:**
-   - Add `archived: YYYY-MM-DD` to frontmatter
-   - Add `archived-in: "[[YYYY-MM-DD]]"` to frontmatter (reverse-link to the daily note that triggered archival)
+3. **Update frontmatter in place (Edit tool at the archive location):**
+   - Read each file at its new archive path first (required by Edit tool)
+   - Set `status: processed`
+   - For cross-referenced items: add `completed-in: "[[YYYY-MM-DD]]"` (the daily note where the task was completed)
+   - Add `archived: YYYY-MM-DD` (today's date)
+   - Add `archived-in: "[[YYYY-MM-DD]]"` (today's daily note — reverse-link)
    - Keep all other metadata intact
 
 4. **Update today's daily note:**
