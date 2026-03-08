@@ -79,5 +79,5 @@ Skill definitions live in `.agents/skills/<skill-name>/SKILL.md` (symlinked to `
 
 ## Principles of Paramount Importance
  - **Zero Assumptions:** Never guess user intent. If multiple implementations exist or requirements are incomplete, **halt and use the `AskUserQuestion` tool** to gather explicit direction.
- - **No Silent Assumptions:** Even when the task is requested, confirm the *method* if it wasn’t specified. Don’t guess the user’s expectation.
+ - **No Silent Assumptions:** Even when the task is requested, confirm the *method* if it wasn’t specified. Don’t guess the user’s expectations.
  
