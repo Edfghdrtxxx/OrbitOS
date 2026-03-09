@@ -1,7 +1,9 @@
 ---
 title: RIKEN IPA Application Notes
 type: content
-status: rejected
+status: archived
+archived_on: 2026-03-09
+archived_reason: "IPA pathway rejected (2026-02-15) in favor of UTokyo CNS + RIKEN JRA route. Retained for reference only."
 area: "[[Career]]"
 tags: [japan, phd, riken, ipa, verification]
 source_project: "[[Japan_Itinerary]]"

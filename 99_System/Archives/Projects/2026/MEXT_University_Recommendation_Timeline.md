@@ -142,4 +142,4 @@ The page at `k.u-tokyo.ac.jp` for Chinese students describes a process involving
 
 - [[UTokyo_RIKEN]] — Main strategic roadmap (V1 verification)
 - [[Plan_2026-02-15_UTokyo_Oct2027_Application]] — Execution plan
-- [[General Checklist]] — Document checklist
+- [[General_Checklist]] — Document checklist

@@ -1,4 +1,4 @@
-﻿# Japan Immigration Pathway Decision Process (Comprehensive Record)
+# Japan Immigration Pathway Decision Process (Comprehensive Record)
 
 ## Document Metadata
 - Document date: **2026-02-13**
@@ -35,7 +35,7 @@ Also reviewed related evidence notes for track-level details:
 - `20_Project/Japan_Itinerary/PhD_Methods/Universities/Osaka_University.md`
 
 ## 3) Decision Method Used (Exact Workflow)
-Used the workflow in `Work_vs_PhD_Decision_Workflow.md` exactly:
+Used the workflow in [[Work_vs_PhD_Decision_Workflow]] exactly:
 1. Re-validate policy-sensitive items with official sources.
 2. Resolve or explicitly carry forward 3 blocking gaps:
    - ISA designated activities period/conditions

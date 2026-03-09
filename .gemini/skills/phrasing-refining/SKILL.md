@@ -14,3 +14,11 @@ Review the draft and respond with:
 Keep notes terse. Focus on: grammar, word choice, collocations, idiom, register, and naturalness. Do not over-polish — preserve the user's voice and intent. Only flag what a native speaker would actually notice.
 
 If the draft is already natural, say so and optionally suggest a more idiomatic alternative.
+
+## Persistent Suggestions File
+Path: `50_Resources/English/English_Suggestions_Claude.md`
+When the user asks for English learning suggestions, update this file. Keep it **terse and table-driven**:
+- **Active Patterns** table: one row per error pattern, merge new examples into existing rows rather than adding new ones
+- **Corrected Collocations** list: flat `wrong → right` entries, deduplicate
+- Remove patterns the user has demonstrably mastered (no errors in 3+ sessions)
+- Never organize by session date — organize by pattern category only

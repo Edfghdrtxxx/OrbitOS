@@ -15,36 +15,6 @@ Act as Knowledge Manager and Daily Planner. Capture, connect, and organize knowl
 * **`90_Plans`**: Execution plans (archived after completion)
 * **`99_System`**: Templates, Prompts, Archives (Projects/YYYY/, Inbox/YYYY/MM/)
 
-## Skills
-**Content Curation:**
-`/ai-newsletters` - Daily AI newsletter digest (TLDR AI, The Rundown AI)
-`/ai-products` - AI product launches (Product Hunt, HN, GitHub, Reddit)
-
-**Workflows:**
-`/start-my-day` - Morning planning with smart recommendations
-`/end-my-day` - Evening shutdown: review, reflect, wind down
-`/kickoff` - Idea -> project
-`/research` - Deep dive -> Areas + Wiki (two-agent workflow)
-`/ask` - Quick answers without heavy note-taking
-`/brainstorm` - Interactive brainstorming, then optionally create a Project or capture knowledge
-`/parse-knowledge` - Unstructured text -> vault
-`/archive` - Clean up completed items (cross-references inbox against `- [x]` tasks in all daily notes)
-`/estimate-time` - Reasoning-based time estimates for today's tasks at subtask resolution
-`/handoff-prompt` - Generate a constraint-based handoff prompt for cross-session/cross-tool task transfer (no over-prescription)
-`/breakdown-tasks` - Stratified task decomposition with time estimates and dependencies, inserted into daily note
-`/atomic-note` - Create an atomic Wiki note with auto-linking and wikilink discovery
-`/wiki-review` - Spaced-repetition review of Wiki notes using FRS sessions (forgetting curve)
-`/reflect` - Adversarial self-critique of current session trajectory
-`/phrasing-refining` - Review English drafts for grammar, idiom, and naturalness
-`/evolve-skills` - Persist actionable lessons into per-skill evolution files
-`/defuddle` - Extract clean markdown from web pages (use instead of WebFetch for articles/docs)
-`/anchor-game-framework` - Surface [[Game_Framework]] anchors (identity, goal, levers) for reflection and discussion
-
-**Technical:**
-`obsidian-markdown`, `obsidian-bases`, `json-canvas` - Obsidian features
-`obsidian-cli` - Interact with vault via Obsidian CLI (notes, tasks, properties, plugin dev)
-`excalidraw-diagram-generator` - Generate Excalidraw diagrams from natural language
-
 ## Skill Files
 Skill definitions live in `.agents/skills/<skill-name>/SKILL.md` (symlinked to `.claude/skills/`), or `C:/Users/petro/.claude/skills`.
 
@@ -62,12 +32,15 @@ Skill definitions live in `.agents/skills/<skill-name>/SKILL.md` (symlinked to `
 
 ### Japan Immigration (top priority after graduation)
 - **Goal:** Immigrate from China permanently via a research career (PhD in Japan is the vehicle)
-- **Pathway:** FINALIZED (2026-02-15) — UTokyo CNS / RIKEN JRA route with Kenkyusei buffer year
-  - **Phase 1:** Kenkyusei (Research Student) at UTokyo CNS, Oct 2027 – Sep 2028. Funding: self-funded (MEXT Research Student dropped due to extremely fierce competition, 2026-02-17)
-  - **Phase 2:** PhD enrollment at UTokyo, Oct 2028+. Funding: RIKEN JRA (200k JPY/month)
-- **IPA:** Rejected (requires CAS degree; user wants UTokyo degree)
+- **Pathway:** FINALIZED — UTokyo CNS / RIKEN JRA route. Exam route: **GSGC (Route B) chosen** (GSGC vs Special Selection distinction pending professor meeting). GRE Physics compulsory.
+  - **Supervisor acceptance ACHIEVED** (2026-03-09): Nori Aoi & Nobuaki Imai accepted conditionally on passing entrance exam.
+  - **Primary:** Direct PhD D1 entry at UTokyo (Oct 2027 or Oct 2028), funded via RIKEN JRA (~200k JPY/month). Pass entrance exam via GSGC route.
+  - **Fallback:** Kenkyusei at UTokyo CNS, self-funded (~2.5-2.8M JPY); retake exam next cycle.
+  - Route A (Regular/一般入試) archived.
 - **Primary execution plan:** [[UTokyo_RIKEN]]
-- **English:** B2 level (~IELTS 6.5); TOEFL 100+ target for UTokyo application
+- **English:** TOEFL 100+ target for UTokyo application
+- **Immediate priorities:** (1) Entrance exam prep (GSGC + GRE Physics), (2) TOEFL 100+, (3) Confirm GSGC timing with professors
+- **Japanese Language:** Currently N5 or below; proficiency is both a personal goal and immigration asset
 - **Career Direction:** Research career (university faculty, national lab); rejects 996 work culture
 - When the user asks about Japan, visa options, university applications, language study, or life planning, treat this as a high-priority topic
 

@@ -191,5 +191,5 @@ Previous action plan (2026-02-14 to 2026-03-15):
 - [[Japan_Itinerary]]
 - [[Work_vs_PhD_Scorecard]]
 - [[WorkChecklist]]
-- [[General Checklist]]
+- [[General_Checklist]]
 - [[Official_Source_Verification_2026-02-13]]

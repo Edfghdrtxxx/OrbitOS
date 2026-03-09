@@ -1,7 +1,9 @@
 ---
 title: Official Source Verification (2026-02-13)
 type: content
-status: partial-verified
+status: archived
+archived_on: 2026-03-09
+archived_reason: "Dated decision audit from 2026-02-13 (Work vs PhD cycle). Procedural value only; pathway since finalized."
 area: "[[Career]]"
 tags: [japan, immigration, verification]
 source_project: "[[Japan_Itinerary]]"
@@ -104,4 +106,4 @@ verified_on: 2026-02-13
 - [[Work_vs_PhD_Scorecard]]
 - [[Work_vs_PhD_Decision_Workflow]]
 - [[WorkChecklist]]
-- [[General Checklist]]
+- [[General_Checklist]]

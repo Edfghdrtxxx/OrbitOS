@@ -8,10 +8,10 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 # Japan Itinerary
 > [!info] Folder note — this file is the index for the `Japan_Itinerary/` project folder.
 
-> [!important] Pathway FINALIZED 2026-02-15
-> **UTokyo CNS / RIKEN JRA route with Kenkyusei buffer year.**
-> Phase 1: Kenkyusei at UTokyo CNS (Oct 2027 – Sep 2028), self-funded.
-> Phase 2: PhD D1 enrollment at UTokyo (Oct 2028+), funded via RIKEN JRA (~200k JPY/month).
+> [!important] Pathway FINALIZED 2026-02-15 | Updated 2026-03-09
+> **UTokyo CNS / RIKEN JRA route — direct PhD entry is now the primary target.**
+> **Primary:** Pass entrance exam (summer 2027) → PhD D1 enrollment at UTokyo (Oct 2027), funded via RIKEN JRA (~200k JPY/month).
+> **Fallback:** If entrance exam failed → Kenkyusei at UTokyo CNS (Oct 2027 – Sep 2028), self-funded; retake exam for Oct 2028 PhD entry.
 > IPA pathway explicitly rejected — staying at CAS for the degree conflicts with the UTokyo-degree goal.
 > Full strategic roadmap: [[UTokyo_RIKEN]].
 
@@ -21,7 +21,7 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 
 ^64716f
 
-**Objective:** Immigrate from China permanently via a research-career PhD path. The goal is a stable academic or national-lab career (university faculty, RIKEN researcher) compatible with non-996 values, enabling permanent residency through the Highly Skilled Professional (HSP) point system. ^48f305
+**Objective:** Immigrate from China permanently via a research-career PhD path. The goal is a stable academic or national-lab career (university faculty, RIKEN researcher) compatible with non-996 values, enabling permanent residency through the Highly Skilled Professional (HSP) point system. Identity and vision anchored in [[Game_Framework]]. ^48f305
 
 ### Background
 
@@ -42,20 +42,31 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 
 ## Actions
 
-### Phase 1 — Kenkyusei Buffer Year (Oct 2027 – Sep 2028)
+### Primary Path — Direct PhD Entry (Oct 2027)
 
-> [!note] MEXT University Recommendation (Research Student) dropped 2026-02-17 due to extremely fierce competition. Kenkyusei is now self-funded.
+- Pass the Faculty of Science entrance exam (summer 2027) and enroll directly as PhD D1 at UTokyo Graduate School of Science (Physics).
+- Funded by RIKEN JRA from D1 onward (~200k JPY/month `[V2]` — see [[UTokyo_RIKEN]]).
+- **Exam route: GSGC (Route B) chosen** (decision by user + IMP supervisor). Route A (Regular/一般入試) archived.
+- **GRE Physics Subject Test is compulsory for GSGC (chosen route).**
+
+> [!question] PENDING: GSGC vs Special Selection distinction
+> UTokyo offers two tracks within "Route B": **GSGC** (5-year integrated M+D, includes 180k JPY/month scholarship) and **Special Selection** (3-year doctoral only). Since you already hold a master's, Special Selection may be the correct track. GSGC would mean redoing a master's but includes funding. **Clarify with professors in upcoming meeting.** You can apply to both simultaneously.
+- GSGC-specific timing details (exact application windows, whether written exam is required) are **pending professor meeting** with Aoi Nori or Nobuaki Imai.
+
+### Fallback — Kenkyusei Buffer Year (Oct 2027 – Sep 2028)
+
+> [!note] Activated only if the entrance exam for Oct 2027 PhD entry is failed. MEXT University Recommendation (Research Student) dropped 2026-02-17 due to extremely fierce competition. Kenkyusei is self-funded.
 
 - Arrive as Research Student (非正規学生 / 研究生) at UTokyo CNS.
-- Primary purpose: entrance exam preparation, Japanese language immersion, lab integration.
+- Primary purpose: entrance exam re-preparation, Japanese language immersion, lab integration.
 - Self-funded budget target: ~2.5–2.8M JPY (range ~2.2–2.9M with tuition exemption, ~2.7–3.4M without).
 - Do not over-commit to experiments during this phase — exam readiness is the hard gate.
+- Retake entrance exam for Oct 2028 PhD enrollment.
 
-### Phase 2 — PhD Enrollment (Oct 2028+)
+### Post-Fallback — PhD Enrollment (Oct 2028)
 
-- Full doctoral enrollment at UTokyo Graduate School of Science (Physics).
+- Full doctoral enrollment at UTokyo Graduate School of Science (Physics) if entered via the Kenkyusei fallback path.
 - Funded by RIKEN JRA from D1 onward.
-- Exam route to confirm: Regular Physics (written Aug, oral Jan) vs GSGC/Special Selection.
 
 ### Post-PhD Path
 
@@ -74,17 +85,17 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 
 > [!warning] Physics + math entrance exam readiness is the single highest execution risk post-graduation. Start systematic study now, even at low intensity.
 
-### Immediate Priorities (as of 2026-02-15, updated 2026-02-26)
+### Immediate Priorities (as of 2026-02-15, updated 2026-03-09)
 
 | # | Priority | Deadline | Tracking |
 |---|---|---|---|
 | 1 | **Thesis execution** — document results, define next steps | Ongoing; thesis gate by Jun 2027 | [[Masters_Thesis]] |
-| 2 | Supervisor outreach — identify 3–5 CNS PIs, secure Naidaku | 2026-06-30 | [[UTokyo_RIKEN_Professor_Outreach]], [[Supervisor_Contact_Preparation]] |
-| 3 | IMP advisor briefing — warm introduction strategy | Before first cold email | [[Supervisor_Contact_Preparation]] |
-| 4 | Self-funded Kenkyusei budget verification | ASAP | [[UTokyo_RIKEN]] |
-| 5 | Physics + math entrance exam preparation | Ongoing | [[Fundamental_Knowledge]] |
-| 6 | TOEFL preparation (target 100+ iBT) | Register by Apr 2026 | [[English_Learning]] |
-| 7 | Japanese language study (N5 → N4 → N3 trajectory) | Ongoing | [[Japanese_Language]] |
+| 2 | **Physics + math entrance exam preparation** — now the critical gate; acceptance conditional on passing | Ongoing | [[Fundamental_Knowledge]] |
+| 3 | ~~Supervisor outreach~~ — **DONE** (2026-03-09: Aoi Nori & Nobuaki Imai accepted, conditional on entrance exam) | ~~2026-06-30~~ | [[Professor_Outreach]], [[Supervisor_Relationship_Management]] |
+| 4 | TOEFL preparation (target 100+ iBT) | Register by Apr 2026 | [[English_Learning]] |
+| 5 | Self-funded Kenkyusei budget verification (fallback path) | ASAP | [[UTokyo_RIKEN]] |
+| 6 | Secure Naidaku (Letter of Acceptance) from chosen supervisor | TBD | [[Supervisor_Relationship_Management]] |
+| 7 | Japanese language study (N5 → N4 → N3 trajectory) — **low priority**; not required for admission; entrance exam + TOEFL come first | Ongoing | [[Japanese_Language]] |
 
 ---
 
@@ -98,14 +109,20 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 | 2026-02-14 | Regret-asymmetry reweighting; structured fear interview; scores: Work 49.89 / PhD 53.46. |
 | 2026-02-15 | Critical review: N5 Japanese, basic portfolio, confirmed savings integrated. Final scores: Work 44.42 / PhD 54.52. Pathway FINALIZED. IPA explicitly rejected. Career-direction reframe: PhD = deliberate research-career choice. |
 | 2026-02-17 | MEXT University Recommendation (Research Student) dropped — extremely fierce competition confirmed. Kenkyusei now self-funded. |
+| 2026-03-09 | **Supervisor outreach succeeded.** Two UTokyo CNS professors — Aoi Nori (青井 考) and Nobuaki Imai — accepted, conditional on passing the Faculty of Science entrance exam. Both equally viable. Focus shifts to entrance exam preparation. |
 
-### Current Status (2026-02-23)
+### Current Status (2026-03-09)
 
-> [!success] Pathway finalized. Execution phase underway.
+> [!success] Supervisor outreach succeeded. Two professors accepted (conditional on entrance exam). Focus shifts to exam preparation.
+
+> [!success] **Route decision resolved (2026-03-09):** GSGC (Route B) chosen as the exam route (decision by user + IMP supervisor). Route A (Regular/一般入試) archived. GSGC-specific timing details (application windows, written exam requirement) are **pending professor meeting**.
 
 - **Decision:** FINALIZED — PhD Track (UTokyo CNS / RIKEN JRA route).
-- **Phase 1 funding:** Self-funded Kenkyusei (MEXT University Recommendation dropped).
-- **Phase 2 funding:** RIKEN JRA (~200k JPY/month, verification pending `[V2]` in [[UTokyo_RIKEN]]).
+- **Supervisor outreach:** **SUCCEEDED** (2026-03-09) — **Aoi Nori (青井 考)** and **Nobuaki Imai** both accepted, conditional on passing the Faculty of Science entrance exam. Both equally viable; no preference yet.
+- **Primary path:** Direct PhD entry Oct 2027 (pass entrance exam summer 2027). Funded by RIKEN JRA (~200k JPY/month, verification pending `[V2]` in [[UTokyo_RIKEN]]).
+- **Fallback:** If entrance exam failed → Kenkyusei Oct 2027 – Sep 2028, self-funded (MEXT University Recommendation dropped); retake exam for Oct 2028 PhD entry.
+- **GRE Physics:** Compulsory for GSGC (chosen route).
+- **Exam route:** GSGC (Route B) chosen; Route A archived.
 - **Backup university:** [[Osaka_University]] — activate if UTokyo path encounters critical blockers.
 
 ### Open Execution Risks
@@ -113,7 +130,7 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 | Risk | Status | Notes |
 |---|---|---|
 | Physics + math entrance exam readiness | Open (primary risk) | Tracked in [[Fundamental_Knowledge]] |
-| Supervisor acceptance / Naidaku | Open | [[UTokyo_RIKEN_Professor_Outreach]], [[Supervisor_Contact_Preparation]] |
+| Supervisor acceptance / Naidaku | **Supervisor accepted** (2026-03-09: Aoi Nori & Nobuaki Imai, conditional on entrance exam); Naidaku still pending | [[Professor_Outreach]], [[Supervisor_Relationship_Management]] |
 | Self-funded budget shortfall | Medium-High | Target ~2.5–2.8M JPY; savings 100–200k CNY (~2–4M JPY) |
 | RIKEN JRA salary unverified | Unverified | Item `[V2]` in [[UTokyo_RIKEN]] |
 | COE / visa timing for Jun–Sep 2027 gap | Open | Item `[V9]` in [[UTokyo_RIKEN]] |
@@ -122,33 +139,39 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 
 ## Sub-documents
 
-### PhD Track
+### Strategy & Planning
 
 | File | Purpose |
 |---|---|
-| [[UTokyo_RIKEN]] | **Primary execution roadmap** — pathway detail, timeline, risk register, verification tracker |
-| [[UTokyo_RIKEN_Professor_Outreach]] | CNS professor shortlist and outreach status |
-| [[Supervisor_Contact_Preparation]] | IMP advisor briefing agenda + UTokyo first-contact prep |
-| [[Osaka_University]] | Backup university — timeline and admissions signals |
-| [[RIKEN_IPA_Application_Notes]] | IPA researched and intentionally rejected |
-| [[General Checklist]] | PhD track eligibility, admissions, funding, visa checklist |
+| [[UTokyo_RIKEN]] | **Master strategy document** — pathway detail, timeline, risk register, verification tracker |
+| [[General_Checklist]] | Master eligibility / application / funding / visa dashboard |
+| [[Official_Deadlines]] | Authoritative deadline reference for all application milestones |
+| [[Post_Acceptance_Timeline.canvas]] | Visual 16-month roadmap (canvas) from supervisor acceptance to PhD enrollment |
+| [[Supervisor_Relationship_Management]] | Post-contact operational playbook for maintaining professor relationships |
+| [[Osaka_University]] | Strategic backup university — timeline and admissions signals (status: backup) |
 | [[Plan_2026-02-15_UTokyo_Oct2027_Application]] | Concrete execution plan for UTokyo Oct 2027 application (in `90_Plans/`) |
-| [[UTokyo_RIKEN_Mindmap.png]] | Visual mindmap of the UTokyo CNS / RIKEN JRA pathway |
+| [[UTokyo_RIKEN_Mind_Map.png]] | Visual mindmap of the UTokyo CNS / RIKEN JRA pathway |
 
-### Decision Analysis
+### Professors
+
+| File | Purpose |
+|---|---|
+| [[Professor_Outreach]] | Outreach tracking — 6 candidates, 2 accepted |
+| [[Prof_Nori_Aoi]] | **PRIMARY** — Aoi Nori (青井 考), accepted 2026-03-09, conditional on entrance exam |
+| [[Prof_Nobuaki_Imai]] | **PRIMARY** — Nobuaki Imai, accepted 2026-03-09, conditional on entrance exam |
+| [[Prof_Kentaro_Yako]] | Backup candidate — not yet contacted |
+| [[Prof_Taku_Gunji]] | Alternative candidate — not yet contacted |
+
+### Archived (in `99_System/Archives/Projects/2026/`)
 
 | File | Purpose |
 |---|---|
 | [[Work_vs_PhD_Scorecard]] | Weighted 8-criterion scorecard across 3 cycles; finalized PhD +10.10 |
 | [[Work_vs_PhD_Decision_Workflow]] | Decision protocol, evidence rules, final decision record |
 | [[Official_Source_Verification_2026-02-13]] | Official source evidence register (MOJ, MOFA, university pages) |
-| [[Japan_Pathway_Findings_2026-02-13]] | Research findings and pathway analysis compiled 2026-02-13 (vault root) |
-
-### Work Track (Archived)
-
-| File | Purpose |
-|---|---|
-| [[WorkChecklist]] | Work visa, job search platforms, arrival setup (archived, not actively pursued) |
+| [[Japan_Pathway_Findings_2026-02-13]] | Research findings and pathway analysis (compiled 2026-02-13) |
+| [[RIKEN_IPA_Application_Notes]] | IPA researched and intentionally rejected |
+| [[Discussion_Checklist]] | Archived discussion preparation notes |
 
 ---
 
@@ -156,5 +179,5 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 
 - [[Fundamental_Knowledge]] — Physics and math exam preparation (primary PhD execution dependency)
 - [[English_Learning]] — TOEFL iBT prep (target 100+)
-- [[Japanese_Language]] — JLPT progression from N5; immigration and integration asset
+- [[Japanese_Language]] — JLPT progression from N5; immigration and integration asset (low priority — not needed for admission)
 - [[Masters_Thesis]] — IMP/UCAS degree completion (prerequisite for all routes; June 2027)

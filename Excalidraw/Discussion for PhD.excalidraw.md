@@ -79,14 +79,14 @@ Discussion Check List ^i3lKCphr
 ## Element Links
 siK7ytxj: [[TOEFL_Study_Progress]]
 
-sQufV9T2: [[UTokyo_RIKEN_Professor_Outreach#^bK5vt887]]
+sQufV9T2: [[Professor_Outreach#^bK5vt887]]
 
-QQ1siQQu: [[Discussion checklist]]
+QQ1siQQu: [[Discussion_Checklist]]
 
 ## Embedded Files
 feb71e6901c63c533565c230222f7147ee611d06: [[cropped_Mayer_1948_Closed_Shells_origin_0]]
 
-407df15323c1a8871a08f68441658aaede530209: [[UTokyo_RIKEN Mind Map.png]]
+407df15323c1a8871a08f68441658aaede530209: [[UTokyo_RIKEN_Mind_Map.png]]
 
 %%
 ## Drawing

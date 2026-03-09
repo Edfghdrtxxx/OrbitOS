@@ -10,20 +10,20 @@ tags: [learning, physics, math, PhD-prep, self-assessment]
 # Fundamental Learning Progress
 
 > [!info] Purpose
-> Track knowledge gaps identified from thesis reference papers and build foundations for PhD entrance exam prep (Spring/Summer 2028). Items are ordered by dependency so earlier items unlock later ones.
+> Track knowledge gaps identified from thesis reference papers and build foundations for PhD entrance exam prep. **Primary target: GSGC exam (chosen route) for direct PhD entry (Summer 2027).** Fallback: retake for Summer 2028 if Kenkyusei path activated. Items are ordered by dependency so earlier items unlock later ones.
 
-> [!important] Two-stage learning pathway
+> [!important] Two-stage learning pathway (updated 2026-03-09 — GSGC chosen)
 > **Stage 1 (this plan):** Thesis/paper comprehension + solid foundations in all four exam subjects through 2027.
-> **Stage 2 (separate project):** Intensive PhD entrance exam prep — **Math, QM, StatMech, and CM+EM treated equally** (each worth 100 pts) — for Spring/Summer 2028.
+> **Stage 2 (separate project):** Intensive PhD entrance exam prep. For GSGC (chosen route): GRE Physics + TOEFL + possible department written exam. Stage 2 targets **Summer 2027** for direct PhD entry. If Kenkyusei fallback activates, Stage 2 extends to Summer 2028.
 > This plan covers Stage 1. Phases 0–4 are thesis-driven. Phases 5–7 build strong working foundations (not just conversational) so that Stage 2 can focus on exam-level drilling rather than learning from scratch.
 
-> [!danger] Decision Gate: Confirm Exam Route with Supervisor
-> **Status:** Pending supervisor contact (target: late Feb 2026).
-> If GSGC route is confirmed AND the supervisor waives the written exam, Phases 5–7 can revert to "conversational" level and freed hours shift to **GRE Physics prep**. Phase 0.5 (Complex Analysis) becomes optional.
-> If Route A (regular exam) is confirmed, this plan stands as-is.
-> **Action:** Update this plan immediately after supervisor response. See [[UTokyo_RIKEN#Admission Routes Summary]].
+> [!success] Decision Gate: Exam Route RESOLVED (2026-03-09)
+> **GSGC (Route B) chosen** (decision by user + IMP supervisor). Route A archived.
+> GSGC-specific details (whether written exam is waived by supervisor) are **pending professor meeting**. If written exam is waived, Phases 5–7 can revert to "conversational" level and freed hours shift to **GRE Physics prep**. Phase 0.5 (Complex Analysis) becomes optional.
+> If GSGC written exam is required by supervisor, study plan mostly stays — add GRE Physics as parallel track.
+> **Action:** Update this plan after professor meeting confirms GSGC written exam requirement. See [[UTokyo_RIKEN#Admission Routes Summary]].
 
-> [!abstract] UTokyo PhD Entrance Exam — Confirmed Structure (Aug 2028) — Route A only
+> [!abstract] UTokyo PhD Entrance Exam — Confirmed Structure (Route A only — ARCHIVED; GSGC chosen)
 > **Format:** 240 min, 4 mandatory problems, 400 points total
 > | Problem | Subject | Weight |
 > |---------|---------|--------|
@@ -405,8 +405,8 @@ Math Foundations + Complex Analysis ─┬─→ Quantum Mechanics ──→ Nuc
 
 ### Admission Routes
 
-- **Route A (Regular exam / 一般入試):** The written exam above. Open to all nationalities. This is the route you'll take as Kenkyusei in Aug 2028.
-- **Route B (International special selection / 外国人特別選考):** Document-based, requires GRE Physics + TOEFL iBT. Primarily for applicants from abroad.
+- **Route A (Regular exam / 一般入試):** The written exam above. Open to all nationalities. **ARCHIVED** — not the active plan (GSGC chosen).
+- **Route B (GSGC / Special Selection):** Document-based, requires GRE Physics + TOEFL iBT + possible department written exam. **CHOSEN** (decision by user + IMP supervisor, 2026-03-09). Primary target: Summer 2027 for direct PhD entry.
 - **Internal students (修士→博士):** Skip written exam entirely — thesis defense serves as evaluation. Does NOT apply to Kenkyusei.
 
 ## GSGC Physics — Verified (2026-02-17)
@@ -420,7 +420,7 @@ Math Foundations + Complex Analysis ─┬─→ Quantum Mechanics ──→ Nuc
 > [!info] Constraints
 > - **Graduation:** June 2027
 > - **Thesis defense:** ~April 2027 (~1 month intensive)
-> - **PhD entrance exam:** Spring/Summer 2028 (Stage 2)
+> - **PhD entrance exam (primary):** GSGC route, target Summer 2027 for direct PhD entry. If Kenkyusei fallback: retake Summer 2028.
 > - **Study budget:** 8-12 hrs/week (~10 hrs average), flexible daily blocks
 
 ### Detailed Monthly Plan

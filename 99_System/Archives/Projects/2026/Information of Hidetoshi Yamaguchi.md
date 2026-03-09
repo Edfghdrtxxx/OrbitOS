@@ -1,7 +1,9 @@
 ---
 title: Information of Hidetoshi Yamaguchi
 type: professor-profile
-status: verified
+status: archived
+archived_on: 2026-03-09
+archived_reason: "Scope mismatch (nuclear astrophysics, not direct reactions/TPC). Not contacted; two professors already accepted."
 tags: [utokyo, cns, riken, professor-profile, nuclear-astrophysics]
 created: 2026-03-02
 updated: 2026-03-02
@@ -21,9 +23,9 @@ updated: 2026-03-02
 - CRIB is a CNS facility at RIKEN RIBF for low-energy RI-beam experiments in nuclear astrophysics.[^crib][^crib-ribf]
 - CNS is based at RIKEN Wako campus and emphasizes collaboration with RIKEN Nishina Center.[^cns-overview]
 
-## Recent Publications (last 3–5 years, publicly verified)
-- **2023 (PTEP)**: “Performance of prototype dual gain large effective gain gas electron multiplier for the ALICE TPC upgrade.” Yamaguchi is listed among the authors on the journal page.[^pteppaper-2023]
-- **2023 (Frontiers in Physics)**: “Alpha clustering, coexistence, and condensation in atomic nuclei.” Yamaguchi is listed among the authors (review article).[^frontiers-2023]
+## Recent Publications (last 3ï¿½5 years, publicly verified)
+- **2023 (PTEP)**: ï¿½Performance of prototype dual gain large effective gain gas electron multiplier for the ALICE TPC upgrade.ï¿½ Yamaguchi is listed among the authors on the journal page.[^pteppaper-2023]
+- **2023 (Frontiers in Physics)**: ï¿½Alpha clustering, coexistence, and condensation in atomic nuclei.ï¿½ Yamaguchi is listed among the authors (review article).[^frontiers-2023]
 - **2024 (Frontiers in Astronomy and Space Sciences)**: Editorial for the research topic on compact stars and dense matter; Yamaguchi listed as editor/author.[^frontiers-2024]
 
 ## Student Supervision / International Students

@@ -43,6 +43,11 @@ Present the user with a brief summary of the day, then use AskUserQuestion to ga
 - Log highlights
 - Still open tasks (from `[ ]` / `[*]`)
 
+**Question 0 (Task Marking Check):** "Before we continue — are all tasks marked correctly? Let me know if anything needs updating."
+- Present alongside the summary so the user can cross-check
+- If the user requests changes, apply them to the daily note before proceeding
+- Wait for confirmation before moving to Question 1
+
 **Question 1:** "What got done today? Anything to add beyond what's checked off?"
 - Free text input
 - Pre-fill with the completed tasks summary so the user can confirm or amend

@@ -1,7 +1,8 @@
 ---
-title: Information of Taku Gunji
+title: Prof. Taku Gunji
 type: professor-profile
 status: verified
+area: "[[Career]]"
 tags: [utokyo, cns, riken, professor-profile, alice, tpc]
 created: 2026-03-02
 updated: 2026-03-02
@@ -19,12 +20,12 @@ updated: 2026-03-02
 
 ## RIKEN / Facility Context
 - UTokyo CNS is located at RIKEN Wako campus and emphasizes joint research with RIKEN Nishina Center.[^cns-overview]
-- UTokyo’s ALICE team contributed to ALICE detectors including the TPC and the TPC upgrade (noting UTokyo’s involvement in TPC/TRD and upgrades).[^utokyo-alice-prize]
+- UTokyoï¿½s ALICE team contributed to ALICE detectors including the TPC and the TPC upgrade (noting UTokyoï¿½s involvement in TPC/TRD and upgrades).[^utokyo-alice-prize]
 - The ALICE TPC upgrade uses GEM-based readout to handle higher interaction rates (context for instrumentation alignment).[^alice-tpc-upgrade]
 
-## Recent Publications (last 3–5 years, publicly verified)
-- **2023 (PTEP)**: “Performance of prototype dual gain large effective gain gas electron multiplier for the ALICE TPC upgrade.” Gunji is listed among the authors on the journal page.[^pteppaper-2023]
-- **2024 (EPJ C)**: “The ALICE experiment: a journey through QCD.” (Representative ALICE collaboration review in the lab’s field; not asserting individual authorship here.)[^alice-epjc-2024]
+## Recent Publications (last 3ï¿½5 years, publicly verified)
+- **2023 (PTEP)**: ï¿½Performance of prototype dual gain large effective gain gas electron multiplier for the ALICE TPC upgrade.ï¿½ Gunji is listed among the authors on the journal page.[^pteppaper-2023]
+- **2024 (EPJ C)**: ï¿½The ALICE experiment: a journey through QCD.ï¿½ (Representative ALICE collaboration review in the labï¿½s field; not asserting individual authorship here.)[^alice-epjc-2024]
 
 ## Student Supervision / International Students
 - No public student roster found on CNS/UTokyo lab pages for Gunji Lab as of 2026-03-02. Confirm directly during outreach.[^gunji-lab]

@@ -36,4 +36,4 @@ Kenkyusei (研究生) is a non-degree "Research Student" status at Japanese univ
 ## References
 
 - UTokyo Graduate School admission guidelines
-- [[Game_Framework]] — Kenkyusei as Phase 1 of the Japan pathway
+- [[Game_Framework]] — Kenkyusei as fallback option if direct PhD entrance exam (GSGC route) is failed

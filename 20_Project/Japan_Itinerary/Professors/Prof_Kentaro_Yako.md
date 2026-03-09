@@ -1,7 +1,8 @@
 ---
-title: Information of Kentaro Yako
+title: Prof. Kentaro Yako
 type: professor-profile
 status: verified
+area: "[[Career]]"
 tags: [utokyo, cns, riken, professor-profile, exotic-nuclear-reactions]
 created: 2026-03-02
 updated: 2026-03-02

@@ -1,7 +1,9 @@
 ---
 title: Information of Yasuhiro Sakemi
 type: professor-profile
-status: verified
+status: archived
+archived_on: 2026-03-09
+archived_reason: "Scope mismatch (EDM/symmetry research, not nuclear reactions/TPC). Not contacted; two professors already accepted."
 tags: [utokyo, cns, riken, professor-profile, fundamental-symmetry]
 created: 2026-03-02
 updated: 2026-03-02
@@ -16,8 +18,8 @@ updated: 2026-03-02
 ## Research Focus (public descriptions)
 - Fundamental symmetries in heavy elements; EDM searches; laser cooling of heavy atoms; precision measurement techniques.[^sakemi-lab]
 
-## Recent Publications (last 3–5 years, publicly verified)
-- **2022 (Few-Body Systems)**: “Development of ultracold Francium atomic sources for a nuclear EDM search.” Sakemi is listed among the authors on the journal page.[^sakemi-2022]
+## Recent Publications (last 3ï¿½5 years, publicly verified)
+- **2022 (Few-Body Systems)**: ï¿½Development of ultracold Francium atomic sources for a nuclear EDM search.ï¿½ Sakemi is listed among the authors on the journal page.[^sakemi-2022]
 
 ## Student Supervision / International Students
 - No public student roster found on CNS/UTokyo lab pages for Sakemi Lab as of 2026-03-02. Confirm directly during outreach.[^sakemi-lab]

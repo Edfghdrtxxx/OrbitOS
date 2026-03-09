@@ -1,10 +1,11 @@
 ---
-title: Information of Nobuaki Imai
+title: Prof. Nobuaki Imai
 type: professor-profile
 status: verified
+area: "[[Career]]"
 tags: [utokyo, cns, riken, professor-profile]
 created: 2026-03-02
-updated: 2026-03-02
+updated: 2026-03-09
 ---
 # Information of Nobuaki Imai
 ## Quick Facts
@@ -12,6 +13,7 @@ updated: 2026-03-02
 - Email: n.imai@cns.s.u-tokyo.ac.jp.[^imai-utokyo]
 - Lab: Imai Lab (DONUTS group) listed under CNS graduate education.[^cns-graduate]
 - CNS operates primarily at the RIKEN Wako campus and collaborates with RIKEN Nishina Center.[^cns-overview]
+- **Contact Status (2026-03-09):** Accepted â€” conditional on passing the Faculty of Science entrance exam.
 
 ## Research Focus (public descriptions)
 - Research in quantum many-body nuclear phenomena and experiments with RI beams.[^imai-lab]
@@ -22,9 +24,9 @@ updated: 2026-03-02
 - OEDO-SHARAQ is a CNS-led instrumentation program at RIKEN RIBF to extend low-energy RI-beam capabilities and perform high-resolution measurements.[^sharaq-oedo]
 - CNS is physically located at the RIKEN Wako campus and emphasizes collaboration with RIKEN Nishina Center.[^cns-overview]
 
-## Recent Publications (last 3–5 years, publicly verified)
-- **2024 (PTEP)**: “Candidate for the double Gamow–Teller giant resonance in ^{48}Ca studied by the (^{12}C, ^{12}Be(0^+_2)) reaction at 250 MeV/nucleon.” Imai is listed among the authors in the UTokyo press release and the paper record.[^utokyo-press-2024][^uesaka-rmap-2024]
-- **2023 (PTEP)**: “Performance of prototype dual gain large effective gain gas electron multiplier for the ALICE TPC upgrade.” Imai is listed among the authors on the journal page.[^pteppaper-2023]
+## Recent Publications (last 3ï¿½5 years, publicly verified)
+- **2024 (PTEP)**: ï¿½Candidate for the double Gamowï¿½Teller giant resonance in ^{48}Ca studied by the (^{12}C, ^{12}Be(0^+_2)) reaction at 250 MeV/nucleon.ï¿½ Imai is listed among the authors in the UTokyo press release and the paper record.[^utokyo-press-2024][^uesaka-rmap-2024]
+- **2023 (PTEP)**: ï¿½Performance of prototype dual gain large effective gain gas electron multiplier for the ALICE TPC upgrade.ï¿½ Imai is listed among the authors on the journal page.[^pteppaper-2023]
 
 ## Student Supervision / International Students
 - No public student roster found on CNS/UTokyo lab pages for Imai Lab as of 2026-03-02. Confirm directly during outreach.[^imai-lab]

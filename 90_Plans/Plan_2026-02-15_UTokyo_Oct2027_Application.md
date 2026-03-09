@@ -5,25 +5,29 @@ created: 2026-02-13
 revised: 2026-02-15
 target_intake: October 2027
 university: University of Tokyo
-pathway: Kenkyusei (Oct 2027) → PhD D1 (Oct 2028)
+pathway: "Primary: Direct PhD D1 via GSGC (Oct 2027); Fallback: Kenkyusei (Oct 2027) → PhD D1 (Oct 2028)"
 ---
 # UTokyo October 2027 — Execution Plan
 > [!info] Tracks the full action pipeline for [[UTokyo_RIKEN]]. Updated 2026-02-15 after pathway finalization.
+
+> [!warning] **Partially superseded (2026-03-09)**
+> This plan was written with the Kenkyusei-first pathway as default. The primary path is now **direct PhD D1 entry via GSGC (Route B, chosen)**, with Kenkyusei as fallback only. GSGC-specific timing details are **pending professor meeting**. The milestones below remain valid for the fallback path and for shared preparation tasks (supervisor outreach, TOEFL, documents, housing). Phase 4 (Kenkyusei Year) only activates if the entrance exam is failed.
 
 ## Milestones at a Glance
 
 | Milestone | Target Date | Gate Condition |
 |---|---|---|
-| Kenkyusei application window check (self-funded) | 2026-02-28 | Official cycle page posted or confirmed by office |
+| **Direct PhD D1 enrollment (PRIMARY)** | **2027-10-01** | **GSGC entrance exam passed + Naidaku secured** |
+| Kenkyusei application window check (self-funded) (FALLBACK) | 2026-02-28 | Official cycle page posted or confirmed by office |
 | First supervisor emails sent | 2026-04-15 | CV + research statement + email drafts ready |
 | Naidaku secured | 2026-06-30 | At least one CNS professor accepts |
 | Self-funding budget verified | 2026-09-01 | Savings confirmed vs Kenkyusei budget |
-| Kenkyusei admission confirmed | 2026-12-31 | Formal acceptance from UTokyo |
+| Kenkyusei admission confirmed (FALLBACK) | 2026-12-31 | Formal acceptance from UTokyo |
 | COE application submitted | 2027-05-31 | UTokyo international office processes |
-| Arrive in Japan as Kenkyusei | 2027-10-01 | Visa in hand, housing secured |
+| Arrive in Japan as Kenkyusei (FALLBACK) | 2027-10-01 | Visa in hand, housing secured |
 | Doctoral entrance exam passed | 2028-01–08 | Route-dependent (Regular or GSGC) |
 | JRA application submitted | 2028-04–05 | Exam passed, supervisor endorses |
-| PhD D1 enrollment | 2028-10-01 | Full doctoral student at UTokyo |
+| PhD D1 enrollment (FALLBACK, if Kenkyusei path) | 2028-10-01 | Full doctoral student at UTokyo |
 
 ---
 
@@ -159,7 +163,9 @@ pathway: Kenkyusei (Oct 2027) → PhD D1 (Oct 2028)
 - [ ] Identify weak areas and allocate extra time
 - [ ] Track progress in [[Fundamental_Knowledge]]
 
-### 2.4 Japanese Language (ongoing)
+### 2.4 Japanese Language (ongoing — LOW PRIORITY)
+
+> [!info] Japanese is **not required** for UTokyo GSGC admission or the entrance exam. It is a life-quality and immigration asset, not an exam dependency. Entrance exam prep and TOEFL come first — only spend time here when higher-priority tracks are on schedule.
 
 - [ ] Continue daily study (target: N4 level by Oct 2027)
 - [ ] Use a structured resource (Genki textbooks, WaniKani, Anki decks)
@@ -368,7 +374,7 @@ pathway: Kenkyusei (Oct 2027) → PhD D1 (Oct 2028)
 ## Related Notes
 
 - [[UTokyo_RIKEN]] — Strategic roadmap, financials, risk register, verification tracker
-- [[General Checklist]] — Eligibility and document checklist
+- [[General_Checklist]] — Eligibility and document checklist
 - [[Fundamental_Knowledge]] — Exam preparation tracking
 - [[Japanese_Language]] — Language study progress
 - [[English_Learning]] — TOEFL preparation

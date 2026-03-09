@@ -1,7 +1,7 @@
 ---
 title: Osaka University
 type: project
-status: active
+status: backup
 area: "[[Career]]"
 tags: [japan, phd, osaka-university, nuclear-physics]
 ---
