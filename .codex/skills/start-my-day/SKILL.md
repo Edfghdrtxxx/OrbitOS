@@ -19,7 +19,7 @@ Help the user start their day by reviewing the last daily note's progress, creat
    - Determine current date (YYYY-MM-DD format)
 
 2. **Read Last Daily Note**
-   - Find the most recent daily note in `10_Daily/`
+   - Find the most recent daily note in `10_Daily/` (top-level only — ignore `Archives/` subfolder)
    - Scan: what was worked on, which tasks are complete vs. pending, overall progress
 
 3. **Find Active Projects**
