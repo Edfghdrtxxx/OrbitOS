@@ -50,7 +50,7 @@ decision_date: 2026-02-15
 
 | Path | Period | Purpose | Funding |
 |---|---|---|---|
-| **Primary — Direct PhD (D1)** | Oct 2027 onwards | Pass entrance exam (summer 2027) → full doctoral enrollment | RIKEN JRA `[V2]` |
+| **Primary — Direct PhD (D1)** | Oct 2027 onwards | Pass GSGC entrance exam (~Jan–Feb 2027, est.) → full doctoral enrollment | RIKEN JRA `[V2]` |
 | **Fallback — Kenkyusei** | Oct 2027 – Sep 2028 | If exam failed → buffer year for exam re-prep + lab integration | Self-funded (MEXT Univ. Rec dropped 2026-02-17) |
 | **Fallback — PhD (D1)** | Oct 2028 onwards | Retake exam → full doctoral enrollment | RIKEN JRA `[V2]` |
 

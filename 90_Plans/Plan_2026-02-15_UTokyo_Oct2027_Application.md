@@ -18,6 +18,7 @@ pathway: "Primary: Direct PhD D1 via GSGC (Oct 2027); Fallback: Kenkyusei (Oct 2
 | Milestone | Target Date | Gate Condition |
 |---|---|---|
 | **Direct PhD D1 enrollment (PRIMARY)** | **2027-10-01** | **GSGC entrance exam passed + Naidaku secured** |
+| GRE Physics taken | 2026-09/10 | Score received before ~Dec 2026 GSGC application |
 | Kenkyusei application window check (self-funded) (FALLBACK) | 2026-02-28 | Official cycle page posted or confirmed by office |
 | First supervisor emails sent | 2026-04-15 | CV + research statement + email drafts ready |
 | Naidaku secured | 2026-06-30 | At least one CNS professor accepts |
@@ -184,7 +185,19 @@ pathway: "Primary: Direct PhD D1 via GSGC (Oct 2027); Fallback: Kenkyusei (Oct 2
 - [ ] Track in [[English_Learning]]
 
 
-### 2.6 Verification & Monitoring
+### 2.6 GRE Physics Subject Test
+
+> [!warning] **No retake margin.** The Sep/Oct 2026 window is effectively the last viable sitting for the ~Dec 2026 GSGC application deadline. Scores arrive ~8–11 days after the window closes, but there is no later window before the deadline. Treat this as a single-shot opportunity.
+
+- [ ] **NOW → Jul 2026:** Study GRE Physics content alongside [[Fundamental_Knowledge]] exam prep (significant overlap in QM, E&M, Classical Mechanics, Thermodynamics/StatMech)
+- [ ] **~Jul 2026:** Monitor NEEA portal (gre-main.neea.cn) for 2026-27 registration opening
+- [ ] Register immediately when 2026-27 cycle opens — target a **Sep or Oct 2026** test date
+  - Fee: **$175**; UTokyo institution code: **7048**
+- [ ] Take GRE Physics in **Sep/Oct 2026**
+- [ ] Confirm score receipt (~8–11 days after window closes) and verify UTokyo received the report
+- [ ] See [[Official_Deadlines#3. GRE Physics Subject Test]] for full schedule, NEEA details, and validity rules
+
+### 2.7 Verification & Monitoring
 
 - [ ] **2026-07-01:** Check UTokyo Special Selection and GSGC pages for Oct 2027 cycle info
 - [ ] **2026-09-01:** Check if GSGC guidelines for Oct 2027 have been released
@@ -365,6 +378,7 @@ pathway: "Primary: Direct PhD D1 via GSGC (Oct 2027); Fallback: Kenkyusei (Oct 2
 | Self-funded budget shortfall | Verify savings buffer; adjust timeline or income plan |
 | Naidaku not secured by 2026-09-01 | Escalate through IMP supervisor connections; consider Osaka backup |
 | Visa/COE delayed past 2027-09-01 | Contact UTokyo International Office urgently; explore deferred start |
+| GRE Physics score too low or missed | No retake before ~Dec 2026 GSGC deadline; pivot to Apr 2027 window (delays application to Oct 2028 cycle) or evaluate Regular exam route |
 | Entrance exam failed | Check Kenkyusei extension rules; retake in next cycle; evaluate Osaka |
 | JRA application rejected | Self-fund PhD year from savings; explore other RIKEN/UTokyo RA positions |
 | Savings drop below 2M JPY before departure | Delay by one cycle OR secure alternative funding before committing |
