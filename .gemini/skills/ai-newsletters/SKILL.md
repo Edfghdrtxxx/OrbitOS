@@ -1,6 +1,6 @@
 ---
 name: ai-newsletters
-description: Curate AI newsletter content with smart deduplication and ranking. Use when user invokes /ai-newsletters or when /start-my-day needs newsletter content.
+description: Curate AI newsletter content with smart deduplication and ranking. Use when user invokes /ai-newsletters.
 ---
 # AI Newsletter Curation
 
@@ -38,15 +38,7 @@ Fetch, deduplicate, and rank AI newsletter content into a daily digest.
 
 ## Output Format
 
-**Manual invocation**: Display full digest with all sections.
-
-**From /start-my-day**: Return condensed list:
-```
-**Content Opportunities (5):**
-- [Title] - [Angle]
-...
-Full digest: [[YYYY-MM-DD-Digest]]
-```
+Display full digest with all sections.
 
 ## Error Handling
 

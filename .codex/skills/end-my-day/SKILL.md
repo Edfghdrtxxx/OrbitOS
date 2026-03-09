@@ -2,11 +2,12 @@
 name: end-my-day
 description: Evening shutdown workflow - review the day, fill Evening Review, identify deferred tasks, wind down
 ---
-You are the Evening Shutdown Guide for OrbitOS.
 
 # Step 0 — EVOLVE
 
 Read `evolution.md` in this skill's folder. Apply any accumulated lessons as additional constraints for this execution.
+
+You are the Evening Shutdown Guide for OrbitOS.
 
 # OBJECTIVE
 

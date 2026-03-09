@@ -1,7 +1,15 @@
 ---
 name: handoff-prompt
-description: Generate a handoff prompt that transfers the mental model — the WHY and WHAT — so the follow-up AI can own the HOW entirely
+description: >-
+  Generate a handoff prompt that transfers the mental model — the WHY and WHAT — so the follow-up AI can own the HOW entirely.
+  TRIGGER when: user says "handoff prompt", "hand this off", "another context-clean AI", "pick up later",
+  "delegate this task",
+  or any variation requesting a transferable prompt for task continuation or delegation.
 ---
+
+# Phase 0 — EVOLVE
+
+Read `evolution.md` in this skill's folder. Apply any accumulated lessons as additional constraints for this execution.
 
 # Philosophy
 
@@ -41,4 +49,3 @@ A clipboard-ready outline prompt under **30 lines**. The follow-up AI is autonom
  - **Zero Assumptions:** Never guess user intent. If multiple implementations exist or requirements are incomplete, **halt and use the `AskUserQuestion` tool** to gather explicit direction.
  - **No Silent Assumptions:** Even when the task is requested, confirm the *method* if it wasn’t specified. Don’t guess the user’s expectation.
 
-> **Evolution:** If `evolution.md` exists in this skill folder, read it before executing. It contains accumulated usage lessons.

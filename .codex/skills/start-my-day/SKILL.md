@@ -1,11 +1,15 @@
 ---
 name: start-my-day
-description: Daily planning workflow - review yesterday, plan today, connect to active projects
+description: Daily planning workflow - review last note, plan today, connect to active projects
 ---
+# Step 0 — EVOLVE
+
+Read `evolution.md` in this skill's folder. Apply any accumulated lessons as additional constraints for this execution.
+
 You are the Daily Planner for OrbitOS.
 
 # OBJECTIVE
-Help the user start their day by reviewing yesterday's progress, creating today's daily note with priorities, and connecting daily tasks to active projects. Generate the daily log directly without intermediate plan files.
+Help the user start their day by reviewing the last daily note's progress, creating today's daily note with priorities, and connecting daily tasks to active projects. Generate the daily log directly without intermediate plan files.
 
 # WORKFLOW
 
@@ -16,10 +20,7 @@ Help the user start their day by reviewing yesterday's progress, creating today'
 
 2. **Read Last Daily Note**
    - Find the most recent daily note in `10_Daily/`
-   - Extract:
-     - Incomplete tasks (unchecked `- [ ]` items)
-     - **Daily Recurrent tasks** (items containing `#daily`, even if checked `[x]`)
-   - Note what was worked on
+   - Scan: what was worked on, which tasks are complete vs. pending, overall progress
 
 3. **Find Active Projects**
    - Search `20_Project/` for notes with `status: active`
@@ -33,14 +34,10 @@ Help the user start their day by reviewing yesterday's progress, creating today'
    - List files in `00_Inbox/` with `status: pending`
    - Count items waiting to be processed
 
-5. **Read Game Framework**
-   - Read `99_System/Game_Framework.md`
-   - Extract the **identity statement** and **1-year goal**
-   - These will be surfaced in both the daily note and the terminal summary
-
-6. **Analyze & Prioritize**
+5. **Analyze & Prioritize**
    - Identify time-sensitive items (deadlines, events)
-   - Re-read the daily note as a premise, to find projects not touched in 3+ days (stale)
+   - Re-read the last daily note as a premise, to find projects not touched in 3+ days (stale)
+   - **Stale deferral check**: For each `#Deferred` task, scan the oldest available daily note within the past 7 days. If deferred 5+ consecutive days, flag in Notes section (e.g., "`Task X` deferred 7 days — re-scope, schedule, or drop?")
    - Determine logical next steps for each active project
 
 ## Step 2: Ask User Input (Interactive)
@@ -59,6 +56,7 @@ Use the AskUserQuestion tool to gather (combine into as few rounds as possible):
 **Question 4:** "Anything else to capture? (new ideas, overnight messages, blockers, concerns, please make sure you have viewed all messages from each platform)"
 - Options: "QQ", "Wechat", "Gmail", "CAS email" and <free text input>
 - **Semantics:** Platform selections = "I've checked these, nothing extra to capture." Free text = the actual items to capture. Do NOT prompt for more details on selected platforms.
+- **Task** Treat what I said as a new task. If conflicts with existing tasks, keep asking me.
 
 **Energy-aware planning:**
 - **High:** Full priority list, suggest deep work blocks
@@ -66,19 +64,37 @@ Use the AskUserQuestion tool to gather (combine into as few rounds as possible):
 - **Low:** Reduce to top 2–3 priorities, suggest lighter tasks first
 - **Tired:** Minimum viable day — only the single most important task + maintenance
 
-## Step 3: Create Today's Daily Note
+## Step 3: Create Today's Daily Note (Residual Method)
 
-1. **Check if today's note exists** at `10_Daily/YYYY-MM-DD.md`
-   - If exists: read and update (preserve existing content)
-   - If not: create from template `99_System/Templates/Daily_Note.md`
+> **Identity shortcut (like ResNet):** `today = copy(yesterday) + delta`.
+> Do NOT reconstruct the note from memory. Copy the previous note verbatim first,
+> then apply only the changes. This prevents accidental task drops.
 
-2. **Populate the daily note:**
-   - **Anchor**: Identity statement + 1-year goal from Game Framework
-   - **Commitments**: Fixed commitments from Q3 (meetings, classes, deadlines)
-   - **Priorities**: Carryover tasks from the last note (incomplete + `#daily`), then user's focus, then project next actions. Adjust quantity based on energy level (Q2).
-   - **Log**: Leave empty for user
-   - **Notes**: Add recommendations (time-sensitive items, stale projects, inbox count)
-   - **Related Projects**: List active projects with current status
+1. **If today's note exists** at `10_Daily/YYYY-MM-DD.md`: read it, then skip to step 3 (apply delta)
+2. **Copy the last daily note using `cp`:** run `cp 10_Daily/<last-date>.md 10_Daily/<today>.md` via the Bash tool. This is the identity copy — the file is duplicated byte-for-byte, no reading or rewriting involved. If no previous note exists, create from template `99_System/Templates/Daily_Note.md` and remove all placeholder tasks before applying delta
+3. **Apply delta** — use the Edit tool to modify only what changes. Touch nothing else:
+   - **Frontmatter**: Update `date`, `day`, `week` to today; set `energy` from Q2
+   - **Anchor**: Leave as-is (managed by a separate skill)
+   - **Commitments**: Replace with today's from Q3
+   - **Priority delta decision table:**
+
+     | Task state | Condition | Action |
+     |---|---|---|
+     | `[ ]` | — | Keep as-is |
+     | `[*]` | — | Keep as-is |
+     | `[x]` | No `#daily` tag | Remove |
+     | `[x]` | Has `#daily` tag | Reset to `[ ]` |
+     | (new from Q1/Q4) | — | Add to appropriate section |
+
+   - **Priorities — keep**: `[ ]` and `[*]` tasks carry over as-is. Do not relocate carried-over tasks
+   - **Priorities — remove**: Delete `[x]` tasks without `#daily`
+   - **Priorities — reset**: `[x]` tasks with `#daily` → `[ ]`
+   - **Priorities — add**: User's focus (Q1), project next actions. Adjust quantity by energy (Q2). Place in natural section by topic
+   - **Log**: Clear body, keep header
+   - **Evening Review**: Clear body, keep header
+   - **AI Digest**: Remove entire section if present
+   - **Notes**: Replace with fresh recommendations
+   - **Related Projects**: Update statuses
 
 ## Step 4: Process New Ideas (from Q4)
 
@@ -94,65 +110,34 @@ For each new idea/task mentioned in Q4:
    [User's description]
    ```
 
-## Step 5: Present Summary & Offer AI Digests
+## Step 5: Present Summary
 
-Output a short terminal confirmation, then offer optional AI content digestion:
+Output a short terminal confirmation:
 
 ```
 Good morning! Your day is ready.
 
 Energy: [level] | Priorities: [N] | Active projects: [N] | Inbox: [N] pending
 Today's note: [[YYYY-MM-DD]]
+
+> Next: /breakdown-tasks → /estimate-time
 ```
-
-**Then ask the user** using the AskQuestion tool:
-
-**Question:** "Want AI digests? (newsletters + product launches)"
-- Options: "Yes, fetch both", "Newsletters only", "Products only", "Skip"
-
-- **If user selects any fetch option:** Proceed to Step 6.
-- **If user selects "Skip":** End with `> Next: /breakdown-tasks → /estimate-time`
-
-## Step 6: AI Content Digestion (Optional, Parallel)
-
-Only runs if user opted in during Step 5.
-
-1. **Launch subagents in parallel** based on user's choice:
-   - `/ai-newsletters` — fetches, deduplicates, ranks AI newsletter content
-   - `/ai-products` — fetches, deduplicates, ranks AI product launches
-   - Launch both concurrently when "Yes, fetch both" is selected
-
-2. **On completion, append to today's daily note** (`10_Daily/YYYY-MM-DD.md`):
-   - Add an `## AI Digest` section at the end of the note (before any trailing blank lines)
-   - Include top 3–5 content opportunities from newsletters (if fetched)
-   - Include top 3–5 product launch opportunities (if fetched)
-   - Each item MUST include a markdown link to the original source: `[Title](url)`
-   - Add links to full digests: `[[50_Resources/NewsLetter/YYYY-MM/YYYY-MM-DD-Digest]]` and/or `[[50_Resources/ProductLaunches/YYYY-MM/YYYY-MM-DD-Digest]]`
-
-3. **If a subagent fails**, skip that section gracefully — never retroactively break the daily note.
-
-4. **End with:**
-   ```
-   AI Digest appended to [[YYYY-MM-DD]].
-   > Next: `/breakdown-tasks` → `/estimate-time`
-   ```
 
 # IMPORTANT RULES
 
-- **Continuity**: Read last available daily note. Carry over incomplete and `#daily` tasks (reset to `[ ]`, no direct duplicates).
+- **Completeness Sanity Check**: After applying delta, verify no `- [ ]` or `- [*]` task from the last note was accidentally removed.
 - **Linking**: Use `[[wikilinks]]` for all projects, concepts, and people throughout the note.
 - **Prioritization**: Time-sensitive items first; flag projects untouched for 3+ days.
 - **Capture**: Immediately create Inbox notes for any new ideas or tasks mentioned by the user.
-- **Safety**: Update existing notes carefully; use the standard template for new ones.
 - **Next Steps**: Always end by recommending `/breakdown-tasks` and `/estimate-time`.
 
 # EDGE CASES
 
 - **No active projects:** Suggest processing inbox or starting something new
-- **No yesterday's note:** Skip carryover, start fresh
+- **No previous daily note:** Fall back to template; remove placeholders, populate all sections fresh
 - **Weekend/Monday:** Note the gap since last daily note
 - **Empty inbox:** Focus on project execution
-- **Today's note already exists:** Read it, merge priorities, don't duplicate
+- **Today's note already exists:** Already handled in Step 3.1
 
 # TEMPLATE
 
