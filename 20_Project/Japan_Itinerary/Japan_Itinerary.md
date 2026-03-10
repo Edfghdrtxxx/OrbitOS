@@ -146,7 +146,7 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 | [[UTokyo_RIKEN]] | **Master strategy document** — pathway detail, timeline, risk register, verification tracker |
 | [[General_Checklist]] | Master eligibility / application / funding / visa dashboard |
 | [[Official_Deadlines]] | Authoritative deadline reference for all application milestones |
-| [[Post_Acceptance_Timeline.canvas]] | Visual 16-month roadmap (canvas) from supervisor acceptance to PhD enrollment |
+| [[Post_Acceptance_Timeline-Claude.canvas]] | Visual 16-month roadmap (canvas) from supervisor acceptance to PhD enrollment |
 | [[Supervisor_Relationship_Management]] | Post-contact operational playbook for maintaining professor relationships |
 | [[Osaka_University]] | Strategic backup university — timeline and admissions signals (status: backup) |
 | [[DG_GSGC_vs_Special_Selection]] | Decision gate: GSGC vs Special Selection sub-track (status: OPEN) |
