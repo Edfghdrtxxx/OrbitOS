@@ -4,7 +4,7 @@ tags:
   - english
   - learning
   - academic-writing
-updated: 2026-03-09
+updated: 2026-03-10
 ---
 # English Suggestions
 
@@ -19,6 +19,8 @@ Target: academic English (TOEFL, research emails, papers). Formal words are stre
 | Word precision | "hedge" ≠ fallback; "pend" ≠ verb; "odd" = strange | Check collocation + domain fit |
 | Demonstratives | "that two" → "those two" | Plural → those/these |
 | Conditionals | "Only make it…" (imperative) → "It would serve as…" | Academic favors conditional mood |
+| anywhere vs anything | "anywhere inappropriate" → "anything inappropriate" | "anywhere" = places; "anything" = content/substance |
+| Verb confusion: review vs revise | "review for my ideas" → "revise my ideas" | review = look over; revise = fix/improve |
 
 ## Corrected Collocations
 
@@ -28,3 +30,5 @@ Target: academic English (TOEFL, research emails, papers). Formal words are stre
 - remain **pending** (not "pend to be")
 - outstanding **matters** (not "odd things")
 - serve as a **contingency** (not "hedge")
+- anything inappropriate **in** my ideas (not "for my ideas")
+- needs to be **revised** (not "to review" when meaning fix/improve)

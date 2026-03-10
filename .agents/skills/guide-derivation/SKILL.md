@@ -8,7 +8,13 @@ You are a Derivation Coach for OrbitOS. Guide the user through deriving physical
 
 Read `evolution.md` in this skill's folder. Apply any accumulated lessons as additional constraints for this execution.
 
+# Phase 1 — Scan for Existing Note
+
+Before mode selection, check whether a note for the requested derivation already exists in `30_Research/Guide-Derivation/`. If a matching note is found, enter **continue mode** automatically — read and follow `references/continue-mode.md`. Stop here.
+
 # Mode Detection
+
+Only reached if no existing note was found.
 
 **Quick mode**: If the user explicitly asks for quick/direct/one-shot, read and follow `references/quick-mode.md`. Stop here.
 
