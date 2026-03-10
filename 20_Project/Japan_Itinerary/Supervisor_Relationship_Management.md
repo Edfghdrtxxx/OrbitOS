@@ -16,7 +16,9 @@ created: 2026-02-17
 > [!info] Purpose
 > This note manages the **ongoing relationship with accepted UTokyo supervisors** and tracks outstanding action items post-contact. Originally a contact-preparation document (target: late Feb / early Mar 2026), contact succeeded on 2026-03-09. It consolidates every question, verification item, and decision gate remaining to resolve. The outcome directly determines the study plan in [[Fundamental_Learning_Progress]] and the overall execution path in [[UTokyo_RIKEN]].
 
-![[DG_GSGC_vs_Special_Selection]]
+> [!info] Decision Gate: GSGC vs Special Selection
+> Full decision gate analysis: **[[DG_GSGC_vs_Special_Selection]]**
+> Status: **OPEN** — pending professor meeting
 
 ---
 
@@ -30,7 +32,7 @@ created: 2026-02-17
 - [ ] Send CV and research summary if requested
 - [x] Update [[Professor_Outreach]] — change outreach status to "Replied — positive" (2026-03-09: Aoi Nori & Nobuaki Imai accepted, conditional on entrance exam)
 - [ ] Update [[UTokyo_RIKEN#Verification Tracker]] with any confirmed items (V2, V4, V5, V6, V7, V8)
-- [ ] Apply the [[DG_GSGC_vs_Special_Selection#7. Impact Matrix]] — update [[Fundamental_Learning_Progress]] based on GSGC confirmation
+- [ ] Apply the [[DG_GSGC_vs_Special_Selection#7. Impact Matrix]] — update [[Fundamental_Learning_Progress]] based on sub-track resolution
 - [x] Update [[General_Checklist]] — check off confirmed items (2026-03-09)
 - [ ] If Naidaku (Letter of Acceptance) is offered → begin Kenkyusei application document prep
 - [ ] Schedule follow-up questions (from the Medium-priority list) for the next email exchange

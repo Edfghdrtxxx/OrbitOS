@@ -24,7 +24,7 @@ tags: [japan, immigration, phd, checklist]
 ## Admissions Route & Exam
 
 - [x] UTokyo doctoral route clarified for Oct 2028: Regular Physics vs GSGC/Special Selection (confirm written vs oral timing) (RESOLVED 2026-03-09: GSGC chosen, Route A archived)
-- [ ] **CRITICAL:** Clarify with professors: GSGC (5-year integrated, 180k JPY/month scholarship) vs Special Selection (3-year doctoral only) — which track for someone with existing master's? Can apply to both simultaneously. **Ask in next professor meeting.**
+- [ ] **CRITICAL:** Clarify with professors: GSGC (5-year integrated, 180k JPY/month scholarship) vs Special Selection (3-year doctoral only) — which track for someone with existing master's? Can apply to both simultaneously `[UNVERIFIED]`. **Ask in next professor meeting.**
 - [ ] Kenkyusei status confirmed to qualify for doctoral entrance exam — tracked as V6 in [[Supervisor_Relationship_Management#Unverified Items This Contact Can Resolve]]
 - [ ] Kenkyusei maximum enrollment duration confirmed (for exam-retake Plan B) — tracked as V8 in [[Supervisor_Relationship_Management#Unverified Items This Contact Can Resolve]]
 - [ ] Past problems gathered and prep schedule mapped -> [[Fundamental_Knowledge]]
@@ -77,7 +77,7 @@ tags: [japan, immigration, phd, checklist]
 > [!tip] Decision finalized 2026-02-15, updated 2026-03-09: UTokyo CNS / RIKEN JRA route. **Primary:** Direct PhD D1 via GSGC (chosen route). **Fallback:** Kenkyusei buffer year → PhD D1. Route A archived.
 
 > [!danger] CRITICAL — GSGC vs Special Selection distinction
-> UTokyo offers two tracks within "Route B": **GSGC** (5-year integrated M+D, includes 180k JPY/month scholarship) and **Special Selection** (3-year doctoral only). Since you already hold a master's, Special Selection may be the correct track. GSGC would mean redoing a master's but includes funding. **Clarify with Aoi Nori / Nobuaki Imai in next meeting.** You can apply to both simultaneously. This is now the highest-priority open question.
+> UTokyo offers two tracks within "Route B": **GSGC** (5-year integrated M+D, includes 180k JPY/month scholarship) and **Special Selection** (3-year doctoral only). Since you already hold a master's, Special Selection may be the correct track. GSGC would mean redoing a master's but includes funding. **Clarify with Aoi Nori / Nobuaki Imai in next meeting.** You can apply to both simultaneously `[UNVERIFIED]`. This is now the highest-priority open question.
 
 - [x] [[UTokyo_RIKEN]] - **PRIMARY** (UTokyo CNS + RIKEN JRA); active execution roadmap
 - [ ] Identify 3-5 UTokyo CNS PIs aligned with TPC + direct reactions + ML-PID -> [[UTokyo_RIKEN]]

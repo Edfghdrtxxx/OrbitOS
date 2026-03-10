@@ -24,7 +24,7 @@ decision_date: 2026-02-15
 - **Exam route:** GSGC (Route B) chosen (decision by user + IMP supervisor). Route A archived.
 
 > [!question] PENDING: GSGC vs Special Selection distinction
-> UTokyo offers two tracks within "Route B": **GSGC** (5-year integrated M+D, includes 180k JPY/month scholarship) and **Special Selection** (3-year doctoral only). Since you already hold a master's, Special Selection may be the correct track. GSGC would mean redoing a master's but includes funding. **Clarify with professors in upcoming meeting.** You can apply to both simultaneously.
+> UTokyo offers two tracks within "Route B": **GSGC** (5-year integrated M+D, includes 180k JPY/month scholarship) and **Special Selection** (3-year doctoral only). Since you already hold a master's, Special Selection may be the correct track. GSGC would mean redoing a master's but includes funding. **Clarify with professors in upcoming meeting.** You can apply to both simultaneously `[UNVERIFIED]`.
 - **Next actions:** (1) Prioritize entrance exam preparation — GSGC route chosen, (2) Confirm GSGC-specific timing with professors (application windows, written exam requirement — **pending professor meeting**), (3) Register for GRE Physics (compulsory for GSGC), (4) Confirm Kenkyusei application window (fallback prep), (5) Continue physics + Japanese study.
 - **Top risks:** Entrance exam difficulty (High), ~~supervisor acceptance (Medium-High)~~ **mitigated (2026-03-09)**, self-funded budget shortfall for fallback Kenkyusei year (Medium-High).
 - **Rejected alternatives:** MEXT Embassy/CSC (return-service conflict), MEXT University Recommendation (Research Student, dropped 2026-02-17), IPA (requires CAS degree — user wants UTokyo degree).
@@ -250,7 +250,7 @@ Core written scope (UTokyo Physics doctoral, 2026-cycle reference):
 | **Internal (修士→博士)** | Thesis defense only | Does NOT apply to Kenkyusei | N/A |
 
 > [!question] PENDING: GSGC vs Special Selection distinction
-> UTokyo offers two tracks within "Route B": **GSGC** (5-year integrated M+D, includes 180k JPY/month scholarship) and **Special Selection** (3-year doctoral only). Since you already hold a master's, Special Selection may be the correct track. GSGC would mean redoing a master's but includes funding. **Clarify with professors in upcoming meeting.** You can apply to both simultaneously.
+> UTokyo offers two tracks within "Route B": **GSGC** (5-year integrated M+D, includes 180k JPY/month scholarship) and **Special Selection** (3-year doctoral only). Since you already hold a master's, Special Selection may be the correct track. GSGC would mean redoing a master's but includes funding. **Clarify with professors in upcoming meeting.** You can apply to both simultaneously `[UNVERIFIED]`.
 
 > [!note] GSGC-specific timing details (exact application windows, whether written exam is required for user) are **pending professor meeting** with Aoi Nori or Nobuaki Imai.
 

@@ -183,13 +183,13 @@ ELSE IF information remains ambiguous after professor meeting
 
 ## 7. Impact Matrix
 
-> [!important] Expanded from the original matrix in [[Supervisor_Relationship_Management#Decision Gate Impact Matrix]]. This version covers all four outcome scenarios.
+> [!important] Expanded from the original matrix in [[Supervisor_Relationship_Management]]. This version covers all four outcome scenarios.
 
 ### (a) GSGC Confirmed + Written Exam Waived
 
 | Dimension | Impact |
 |---|---|
-| **Study plan** | Phases 5–7 of [[Fundamental_Learning_Progress]] revert to "conversational" level. Phase 0.5 (Complex Analysis) becomes optional. Add GRE Physics Subject Test prep block (target: 800+). Freed ~15 hrs/week from Jun–Dec 2026 redirect to GRE drilling. |
+| **Study plan** | Phases 5–7 of [[Fundamental_Learning_Progress]] revert to "conversational" level. Phase 0.5 (Complex Analysis) becomes optional. Add GRE Physics Subject Test prep block (target: TBD — no published minimum). Freed ~6-9 hrs/week from Jun–Dec 2026 redirect to GRE drilling. |
 | **Financial** | GSGC scholarship: 180k JPY/month. JRA stacking status determines total income (`[U3]`). If stackable: ~380k/month — highly comfortable. If exclusive: must choose; JRA (200k + Shakai Hoken) likely preferred over GSGC scholarship (180k). |
 | **Timeline** | If entering at D1: Oct 2027 – Sep 2030 (3 years). If forced to M1: Oct 2027 – Sep 2032 (5 years) — unacceptable without compelling reason. Application via Period 2 (~Dec 2026). |
 | **Downstream file updates** | [[Fundamental_Learning_Progress]]: reduce Phases 5–7, add GRE prep block. [[UTokyo_RIKEN#Entrance Exam]]: mark written exam as waived. [[UTokyo_RIKEN#Route B — GSGC Physics]]: update status. [[Official_Deadlines]]: confirm GSGC-specific dates. |
@@ -280,6 +280,7 @@ If the professor meeting does not fully resolve U1–U5:
 | [[General_Checklist]] | Check off "CRITICAL: Clarify with professors: GSGC vs Special Selection." Update "Target Universities / Labs" danger callout. Update 2026-07-01 monitoring checkpoint status. |
 | [[Supervisor_Relationship_Management]] | Replace the "Decision Gate (PARTIALLY RESOLVED)" danger callout with a link to this document's resolution. Update Decision Gate Impact Matrix reference. |
 | [[Fundamental_Learning_Progress]] | Adjust study plan phases based on whether written exam is waived/required. Adjust GRE Physics prep priority if test requirements differ between tracks. |
+| [[Professor_Outreach]] | Remove `[!question]` callout; update target route statement to reflect confirmed sub-track |
 | This file ([[DG_GSGC_vs_Special_Selection]]) | Change frontmatter `status: open` to `status: resolved`. Add resolution summary. Archive the unchosen option's analysis. |
 
 ---
@@ -293,3 +294,4 @@ If the professor meeting does not fully resolve U1–U5:
 - [[Supervisor_Relationship_Management]] — Post-contact action tracking and original decision gate matrix
 - [[Fundamental_Learning_Progress]] — Study plan directly affected by this decision
 - [[English_Learning]] — TOEFL prep (required for both tracks)
+- [[Professor_Outreach]] — Professor candidate list and outreach tracking
