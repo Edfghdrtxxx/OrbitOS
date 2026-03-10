@@ -12,9 +12,6 @@ next_review:
 review_interval: 0
 ---
 # [Derivation Name]
-
-> [!important] All math expressions use LaTeX: `$...$` inline, `$$...$$` display. Final results in `\boxed{}`.
-
 ## Setup
 
 **Goal:** [What we are deriving]
