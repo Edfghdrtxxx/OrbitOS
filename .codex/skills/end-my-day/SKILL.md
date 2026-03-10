@@ -47,6 +47,7 @@ Present the user with a brief summary of the day, then use AskUserQuestion to ga
 - Present alongside the summary so the user can cross-check
 - If the user requests changes, apply them to the daily note before proceeding
 - Wait for confirmation before moving to Question 1
+- **MANDATORY — After Question 0 is resolved (regardless of the user's answer):** Re-read the daily note to pick up any changes (whether made by the user externally or applied in this step). This re-read is non-optional even if the user says "all correct" — the note may have been edited outside this session. Refresh the completed/incomplete task lists before proceeding; the reflections in Q1–Q3 must reference the latest state.
 
 **Question 1:** "What got done today? Anything to add beyond what's checked off?"
 - Free text input
