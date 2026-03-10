@@ -17,7 +17,7 @@ Read the full note content. Determine its completion status:
 
 Use `AskUserQuestion` to ask:
 
-> This derivation note already exists and appears complete. What would you like to do?
+> Found existing note: `<path>`. This derivation appears complete. What would you like to do?
 > - **Normal review** — I'll read it at my own pace.
 > - **Wiki review** — Start a spaced-repetition review session using the `wiki-review` skill.
 > - **Start again** — Discard the existing note and derive from scratch.
@@ -30,7 +30,7 @@ Use `AskUserQuestion` to ask:
 
 Use `AskUserQuestion` to ask:
 
-> This derivation note already exists but is incomplete. Make sure you have browsed this note first. What would you like to do?
+> Found existing note: `<path>`. This derivation is incomplete. Make sure you have browsed this note first. What would you like to do?
 > - **Continue** — Pick up from where the note left off.
 > - **Start from scratch** — Discard the existing note and derive from the beginning.
 
