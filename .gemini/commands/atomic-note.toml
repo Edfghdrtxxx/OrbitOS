@@ -1,4 +1,0 @@
-# Create an atomic Wiki note with auto-linking
-
-description = "Create an atomic Wiki note with auto-linking and wikilink discovery"
-prompt = "Use the atomic-note skill. Topic: {prompt}"

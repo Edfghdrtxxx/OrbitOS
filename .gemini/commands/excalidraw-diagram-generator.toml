@@ -1,4 +1,0 @@
-# Generate Excalidraw diagrams
-
-description = "Generate Excalidraw diagrams from natural language descriptions (flowcharts, mind maps, architecture diagrams)"
-prompt = "Use the excalidraw-diagram-generator skill. Description: {prompt}"

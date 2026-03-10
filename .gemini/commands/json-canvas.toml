@@ -1,4 +1,0 @@
-# JSON Canvas support
-
-description = "Create or edit JSON Canvas files (.canvas) for visual organization"
-prompt = "Use the json-canvas skill. Task: {prompt}"
