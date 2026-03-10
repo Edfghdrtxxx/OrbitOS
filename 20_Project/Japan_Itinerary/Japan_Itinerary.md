@@ -150,6 +150,7 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 | [[Supervisor_Relationship_Management]] | Post-contact operational playbook for maintaining professor relationships |
 | [[Osaka_University]] | Strategic backup university — timeline and admissions signals (status: backup) |
 | [[DG_GSGC_vs_Special_Selection]] | Decision gate: GSGC vs Special Selection sub-track (status: OPEN) |
+| [[Questions_and_Verifiable_Source]] | Tracks claims against official sources; flags discrepancies and open questions for professor meetings |
 | [[Plan_2026-02-15_UTokyo_Oct2027_Application]] | Concrete execution plan for UTokyo Oct 2027 application (in `90_Plans/`) |
 | [[UTokyo_RIKEN_Mind_Map.png]] | Visual mindmap of the UTokyo CNS / RIKEN JRA pathway |
 
