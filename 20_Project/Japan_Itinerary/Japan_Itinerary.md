@@ -49,8 +49,8 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 - **Exam route: GSGC (Route B) chosen** (decision by user + IMP supervisor). Route A (Regular/一般入試) archived.
 - **GRE Physics Subject Test is compulsory for GSGC (chosen route).**
 
-> [!question] PENDING: GSGC vs Special Selection distinction
-> UTokyo offers two tracks within "Route B": **GSGC** (5-year integrated M+D, includes 180k JPY/month scholarship) and **Special Selection** (3-year doctoral only). Since you already hold a master's, Special Selection may be the correct track. GSGC would mean redoing a master's but includes funding. **Clarify with professors in upcoming meeting.** You can apply to both simultaneously.
+> [!question] PENDING: GSGC vs Special Selection
+> Sub-track distinction pending professor meeting. See **[[DG_GSGC_vs_Special_Selection]]** for full analysis, decision criteria, and resolution path.
 - GSGC-specific timing details (exact application windows, whether written exam is required) are **pending professor meeting** with Aoi Nori or Nobuaki Imai.
 
 ### Fallback — Kenkyusei Buffer Year (Oct 2027 – Sep 2028)
@@ -149,6 +149,7 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 | [[Post_Acceptance_Timeline.canvas]] | Visual 16-month roadmap (canvas) from supervisor acceptance to PhD enrollment |
 | [[Supervisor_Relationship_Management]] | Post-contact operational playbook for maintaining professor relationships |
 | [[Osaka_University]] | Strategic backup university — timeline and admissions signals (status: backup) |
+| [[DG_GSGC_vs_Special_Selection]] | Decision gate: GSGC vs Special Selection sub-track (status: OPEN) |
 | [[Plan_2026-02-15_UTokyo_Oct2027_Application]] | Concrete execution plan for UTokyo Oct 2027 application (in `90_Plans/`) |
 | [[UTokyo_RIKEN_Mind_Map.png]] | Visual mindmap of the UTokyo CNS / RIKEN JRA pathway |
 

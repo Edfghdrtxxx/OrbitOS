@@ -10,6 +10,13 @@ tags: [decision-gate, utokyo, gsgc, special-selection, phd, entrance-exam]
 > [!info] Single source of truth
 > This document is the authoritative reference for the open question of which UTokyo doctoral admission sub-track to pursue. All other vault files should link here rather than duplicating this analysis. See [[Supervisor_Relationship_Management]], [[UTokyo_RIKEN]], [[Official_Deadlines]], [[General_Checklist]], and [[Fundamental_Learning_Progress]] for downstream dependencies.
 
+> [!tip] Meeting Prep Quick Reference
+> **Priority questions for Aoi Nori / Nobuaki Imai:**
+> 1. "I will complete my master's degree in June 2027. Am I eligible to apply for GSGC, or is GSGC only for applicants entering at the master's level? If eligible, would I enter at the doctoral (D1) level?"
+> 2. "Can I apply to both GSGC and Special Selection in the same application cycle?"
+>
+> Full unknowns list → [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve|Section 5]] | Decision tree → [[DG_GSGC_vs_Special_Selection#6. Decision Criteria|Section 6]]
+
 ---
 
 ## 1. Decision Statement
@@ -49,7 +56,7 @@ This is not merely a preference — it is a structural eligibility question. The
 ### Option A: GSGC (Global Science Graduate Course)
 
 **Description:**
-5-year integrated Master's + Doctoral program conducted entirely in English. Includes a 180k JPY/month scholarship. Applicants enter at the master's level and progress through to doctorate.
+5-year integrated Master's + Doctoral program conducted entirely in English. Includes a 180k JPY/month scholarship. Applicants enter at the master's level and progress through to doctorate `[UNVERIFIED]` (see U1/U2 below — eligibility for master's holders is the core unknown).
 
 **Eligibility:**
 
@@ -170,7 +177,7 @@ ELSE IF U1 = "CAN apply" AND U2 = "can enter at D1"
   → Evaluate based on:
     - U3 (scholarship stacking): If stackable with JRA → GSGC is financially superior.
     - U3 (mutually exclusive): Compare 180k GSGC scholarship vs 200k JRA.
-      JRA includes Shakai Hoken — likely net superior. Special Selection + JRA
+      JRA includes Shakai Hoken `[V2-UNVERIFIED]` — likely net superior if verified. Special Selection + JRA
       may be preferable unless GSGC has other benefits.
     - U4 (dual application): If allowed → apply to both; choose best offer.
     - If dual application not allowed → choose based on financial analysis above.

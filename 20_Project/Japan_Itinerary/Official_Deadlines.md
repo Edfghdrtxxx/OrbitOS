@@ -10,8 +10,8 @@ last_verified: 2026-03-09
 
 > [!warning] Timeline estimates below are based on **GSGC cycle data**. Special Selection may have different application windows. If the GSGC vs Special Selection sub-track decision resolves in favor of Special Selection (or both), verify application dates against the [Special Selection page](https://www.s.u-tokyo.ac.jp/en/admission/special.html). See [[DG_GSGC_vs_Special_Selection]].
 
-> [!question] PENDING: GSGC vs Special Selection distinction
-> UTokyo offers two tracks within "Route B": **GSGC** (5-year integrated M+D, includes 180k JPY/month scholarship) and **Special Selection** (3-year doctoral only). Since you already hold a master's, Special Selection may be the correct track. GSGC would mean redoing a master's but includes funding. **Clarify with professors in upcoming meeting.** You can apply to both simultaneously `[UNVERIFIED]`.
+> [!question] PENDING: GSGC vs Special Selection
+> Sub-track distinction pending professor meeting. See **[[DG_GSGC_vs_Special_Selection]]** for full analysis, decision criteria, and resolution path.
 
 Based on confirmed Oct 2026 cycle, shifted +1 year (**ESTIMATED**):
 
@@ -23,9 +23,9 @@ Based on confirmed Oct 2026 cycle, shifted +1 year (**ESTIMATED**):
 | Oral Exam | ~Feb 2027 | Estimated | Based on EPS dept pattern |
 | Results | ~Early Mar 2027 | Estimated | Same |
 
-Exam conducted via Zoom (online). Doctoral oral: 40 min (20 min presentation + 5 min plan + 15 min Q&A).
+Exam conducted via Zoom (online) `[UNVERIFIED — format may change per cycle]`. Doctoral oral: 40 min (20 min presentation + 5 min plan + 15 min Q&A) `[UNVERIFIED]`.
 
-**Required:** GRE Physics (code 7048) + TOEFL (code 8002-01, single date, no MyBest). No published minimum scores.
+**Required:** GRE Physics (code 7048) + TOEFL (code 8002-01, single date, no MyBest). No published minimum scores `[UNVERIFIED — last checked: 2026-03]`.
 
 > [!success] VERIFIED: Pre-graduation application allowed (2026-03-09)
 > Eligibility wording: "One who **is expected to be conferred** a Master's Degree … **before entering the Doctoral program.**" Degree completion required by enrollment (Oct 2027), not by application (Dec 2026). Submit certificate of expected graduation at application; actual degree certificate at enrollment. Source: [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html)

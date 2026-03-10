@@ -23,8 +23,8 @@ decision_date: 2026-02-15
 - **GRE Physics Subject Test:** Compulsory for GSGC (chosen route).
 - **Exam route:** GSGC (Route B) chosen (decision by user + IMP supervisor). Route A archived.
 
-> [!question] PENDING: GSGC vs Special Selection distinction
-> UTokyo offers two tracks within "Route B": **GSGC** (5-year integrated M+D, includes 180k JPY/month scholarship) and **Special Selection** (3-year doctoral only). Since you already hold a master's, Special Selection may be the correct track. GSGC would mean redoing a master's but includes funding. **Clarify with professors in upcoming meeting.** You can apply to both simultaneously `[UNVERIFIED]`.
+> [!question] PENDING: GSGC vs Special Selection
+> Sub-track distinction pending professor meeting. See **[[DG_GSGC_vs_Special_Selection]]** for full analysis, decision criteria, and resolution path.
 - **Next actions:** (1) Prioritize entrance exam preparation — GSGC route chosen, (2) Confirm GSGC-specific timing with professors (application windows, written exam requirement — **pending professor meeting**), (3) Register for GRE Physics (compulsory for GSGC), (4) Confirm Kenkyusei application window (fallback prep), (5) Continue physics + Japanese study.
 - **Top risks:** Entrance exam difficulty (High), ~~supervisor acceptance (Medium-High)~~ **mitigated (2026-03-09)**, self-funded budget shortfall for fallback Kenkyusei year (Medium-High).
 - **Rejected alternatives:** MEXT Embassy/CSC (return-service conflict), MEXT University Recommendation (Research Student, dropped 2026-02-17), IPA (requires CAS degree — user wants UTokyo degree).
@@ -249,8 +249,8 @@ Core written scope (UTokyo Physics doctoral, 2026-cycle reference):
 | **B2 — Special Selection** | Documents + GRE + possible written exam | GRE Physics + TOEFL + supervisor endorsement; 3-year doctoral only | **CHOSEN (pending sub-track clarification)** |
 | **Internal (修士→博士)** | Thesis defense only | Does NOT apply to Kenkyusei | N/A |
 
-> [!question] PENDING: GSGC vs Special Selection distinction
-> UTokyo offers two tracks within "Route B": **GSGC** (5-year integrated M+D, includes 180k JPY/month scholarship) and **Special Selection** (3-year doctoral only). Since you already hold a master's, Special Selection may be the correct track. GSGC would mean redoing a master's but includes funding. **Clarify with professors in upcoming meeting.** You can apply to both simultaneously `[UNVERIFIED]`.
+> [!question] PENDING: GSGC vs Special Selection
+> Sub-track distinction pending professor meeting. See **[[DG_GSGC_vs_Special_Selection]]** for full analysis, decision criteria, and resolution path.
 
 > [!note] GSGC-specific timing details (exact application windows, whether written exam is required for user) are **pending professor meeting** with Aoi Nori or Nobuaki Imai.
 
@@ -300,7 +300,14 @@ Core written scope (UTokyo Physics doctoral, 2026-cycle reference):
 | V7 | JRA application window: Apr–May for Oct start | AI handoff | `UNVERIFIED` | Medium | Confirm during outreach |
 | V8 | Kenkyusei maximum enrollment duration | Unknown | `UNKNOWN` | Medium | Critical for R7 (exam failure Plan B) |
 | V9 | Visa/COE processing timeline for Oct 2027 from China | Unknown | `UNKNOWN` | Medium | Check with UTokyo international office |
-| V10 | Master's degree holder eligibility for GSGC (5-year M+D program) | Unknown | `UNVERIFIED` | High | Check GSGC guidelines PDF and confirm with professors. See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] |
+| V10 | Master's degree holder eligibility for GSGC (5-year M+D program) | Unknown | `UNVERIFIED` | Critical | Check GSGC guidelines PDF and confirm with professors. See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] |
+| V11 | If master's holder is GSGC-eligible, entry at M1 or D1? | Unknown | `UNVERIFIED` | Critical | Contingent on V10. See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] |
+| V12 | GSGC scholarship (180k/month) + RIKEN JRA (200k/month) stacking/exclusivity | Unknown | `UNVERIFIED` | High | See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] |
+| V13 | Can applicant apply to both GSGC and Special Selection simultaneously? | Unknown | `UNVERIFIED` | High | See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] |
+| V14 | Special Selection application windows (same as GSGC or different?) | Unknown | `UNVERIFIED` | Medium | See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] |
+| V15 | Is GRE Physics required for Special Selection? | Unknown | `UNVERIFIED` | Medium | See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] |
+| V16 | Does Special Selection require a written exam? | Unknown | `UNVERIFIED` | Medium | See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] |
+| V17 | GSGC scholarship eligibility period if entering at D1 | Unknown | `UNVERIFIED` | Low | Contingent on V10/V11. See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] |
 
 ## Official Sources
 
