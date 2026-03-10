@@ -29,8 +29,16 @@ review_interval: 0
 
 ## Derivation
 
+> [!hint] Why $\delta S = 0$? — The logical chain
+> 1. **Problem:** Among all paths $q(t)$ connecting two fixed points $q(t_1)$ and $q(t_2)$, which one does nature choose?
+> 2. **Hamilton's principle** answers: the path that makes the action $S[q]$ **stationary** — just like finding a minimum of an ordinary function by setting $\mathrm{d}f/\mathrm{d}x = 0$.
+> 3. **"Stationary"** means: if you wiggle the path slightly, $S$ doesn't change to first order. We call that first-order change $\delta S$.
+> 4. **Our job:** Compute $\delta S$ explicitly (in terms of $q$ and its derivatives), then demand $\delta S = 0$. The equation that falls out is the Euler-Lagrange equation.
+>
+> So the entire derivation is really just answering: *"What does $\delta S = 0$ look like when you work out the math?"*
+
 > [!question] Step 1
-> We want to find the condition on $q(t)$ such that $\delta S = 0$. What's the first move — how do we set up the variation?
+> To compute $\delta S$, we need to consider what happens when we slightly perturb the path. Suppose the true path is $q(t)$. How would you write a "nearby" path, and what boundary conditions must it satisfy?
 
 ## Result
 
