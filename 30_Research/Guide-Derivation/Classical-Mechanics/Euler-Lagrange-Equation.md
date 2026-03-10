@@ -25,7 +25,7 @@ review_interval: 0
 - Hamilton's principle: the physical path makes $S$ stationary ($\delta S = 0$)
 - Fixed endpoints: $q(t_1)$ and $q(t_2)$ are given
 
-**Strategy:** _to be determined_
+**Strategy:** Calculus of variations — compute $\delta S = 0$ by introducing a variation of the path, expand the integrand to first order, and extract the condition that must hold for arbitrary variations.
 
 ## Derivation
 
