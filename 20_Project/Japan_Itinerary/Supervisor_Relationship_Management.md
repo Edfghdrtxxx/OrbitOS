@@ -16,9 +16,7 @@ created: 2026-02-17
 > [!info] Purpose
 > This note manages the **ongoing relationship with accepted UTokyo supervisors** and tracks outstanding action items post-contact. Originally a contact-preparation document (target: late Feb / early Mar 2026), contact succeeded on 2026-03-09. It consolidates every question, verification item, and decision gate remaining to resolve. The outcome directly determines the study plan in [[Fundamental_Learning_Progress]] and the overall execution path in [[UTokyo_RIKEN]].
 
-> [!danger] Decision Gate (PARTIALLY RESOLVED)
-> ~~Which admission route — Regular Physics exam (Route A) or GSGC (Route B)?~~ **RESOLVED 2026-03-09: GSGC chosen, Route A archived.**
-> **Remaining open gates:** (1) **GSGC vs Special Selection** — GSGC is 5-year integrated M+D with 180k JPY/month scholarship; Special Selection is 3-year doctoral only. Which track for someone with existing master's? (2) **Written exam waiver** — If GSGC written exam is waived by supervisor, Phases 5-7 reduce dramatically and freed hours shift to GRE Physics prep. Both questions need clarification from Aoi Nori / Nobuaki Imai.
+![[DG_GSGC_vs_Special_Selection]]
 
 ---
 
@@ -32,7 +30,7 @@ created: 2026-02-17
 - [ ] Send CV and research summary if requested
 - [x] Update [[Professor_Outreach]] — change outreach status to "Replied — positive" (2026-03-09: Aoi Nori & Nobuaki Imai accepted, conditional on entrance exam)
 - [ ] Update [[UTokyo_RIKEN#Verification Tracker]] with any confirmed items (V2, V4, V5, V6, V7, V8)
-- [ ] Apply the [[#Decision Gate Impact Matrix]] — update [[Fundamental_Learning_Progress]] based on GSGC confirmation
+- [ ] Apply the [[DG_GSGC_vs_Special_Selection#7. Impact Matrix]] — update [[Fundamental_Learning_Progress]] based on GSGC confirmation
 - [x] Update [[General_Checklist]] — check off confirmed items (2026-03-09)
 - [ ] If Naidaku (Letter of Acceptance) is offered → begin Kenkyusei application document prep
 - [ ] Schedule follow-up questions (from the Medium-priority list) for the next email exchange
@@ -86,24 +84,8 @@ created: 2026-02-17
 
 ---
 
-## Decision Gate Impact Matrix
-
-> [!important] After receiving the prospective UTokyo supervisor's response, use this matrix to immediately update the affected plans.
-
-| Prospective UTokyo Supervisor Says | Update Action | Affected Files |
-|---|---|---|
-| **GSGC confirmed + written exam waived** | Phases 5–7 revert to "conversational" level. Phase 0.5 (Complex Analysis) becomes optional. Add GRE Physics Subject Test prep block (target: 800+). Freed ~15 hrs/week from Jun–Dec 2026 redirect to GRE drilling. | [[Fundamental_Learning_Progress]], [[UTokyo_RIKEN#Entrance Exam]] |
-| **GSGC confirmed + written exam required** | Study plan mostly stays. Add GRE Physics prep as parallel track. Written exam is 2 hrs (CM, QM, EM, Thermo, StatMech) — shorter and broader than Route A. Slight reduction in Phase depth possible. | [[Fundamental_Learning_Progress]], [[UTokyo_RIKEN#Route B — GSGC Physics]] |
-| **Route A (Regular exam) confirmed** | **ARCHIVED** — GSGC (Route B) is the chosen route. This row kept for reference only. If Route A were reactivated: study plan stays as-is, all 4 subjects at full depth, prioritize TOEFL iBT. | [[Fundamental_Learning_Progress]] (no change), [[English_Learning]] |
-| **Kenkyusei CAN sit for doctoral exam** | Mark V6 as `VERIFIED`. Kenkyusei → PhD fallback pipeline confirmed. | [[UTokyo_RIKEN#Verification Tracker]] V6 |
-| **Kenkyusei CANNOT sit for doctoral exam** | **Critical blocker.** Entire Kenkyusei → PhD pipeline needs redesign. Explore: direct PhD application from China? Apply as external candidate during Kenkyusei? Escalate to [[Osaka_University]] backup. | [[UTokyo_RIKEN]], [[General_Checklist]] |
-| **JRA = 200k JPY/month confirmed** | Mark V2 as `VERIFIED`. Budget stays. | [[UTokyo_RIKEN#Verification Tracker]] V2 |
-| **JRA amount differs or unavailable** | Recalculate Phase 2 budget. If no JRA, explore: JSPS DC, Teaching Assistant, other RIKEN positions. May need to reassess financial viability. | [[UTokyo_RIKEN#Financials]] |
-| **Tuition exemption applies to international students** | Mark V4 as `VERIFIED`. Kenkyusei year budget drops to ~2.2M JPY. | [[UTokyo_RIKEN#Verification Tracker]] V4, [[UTokyo_RIKEN#Financials]] |
-| **Tuition exemption does NOT apply** | Budget increases by ~536k JPY/year. Assess savings buffer. If tight, explore part-time RA work during Kenkyusei. | [[UTokyo_RIKEN#Financials]] |
-| **Prospective supervisor suggests different start date** (e.g., Apr 2027 or Apr 2028) | Adjust entire timeline: Kenkyusei start, exam target, JRA application window. Recalculate visa gap period. | [[UTokyo_RIKEN#Timeline & Actions]], [[General_Checklist#Monitoring Checkpoints]] |
-| **Prospective supervisor declines / no fit** | Move to next professor on the ranked list. If all 5 exhausted, activate [[Osaka_University]] backup. | [[Professor_Outreach]], [[Osaka_University]] |
-| **IMP advisor recommends a specific professor not on the current list** | Add them to [[Professor_Outreach]] and potentially reprioritize. A personal recommendation from an alumnus carries significant weight — this professor may become the new Priority 1 contact. | [[Professor_Outreach]] |
+> [!info] Decision Gate Impact Matrix
+> The full impact matrix for GSGC vs Special Selection scenarios has been moved to [[DG_GSGC_vs_Special_Selection#7. Impact Matrix]]. Refer there for the authoritative version covering all four outcome scenarios.
 
 ---
 

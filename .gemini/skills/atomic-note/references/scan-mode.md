@@ -13,7 +13,7 @@ Record the source file path (needed for patching in S4).
 - Must be atomic (single-concept)
 - Ignore context-local terms
 
-**Cross-reference** — Glob `40_Wiki/**/*.md` and `30_Research/**/*.md`, collect filenames (without extension). Classify:
+**Cross-reference** — Glob `40_Wiki/**/*.md`, `30_Research/**/*.md`, and `50_Resources/**/*.md`, collect filenames (without extension). Classify:
 
 | Category | Condition |
 |---|---|

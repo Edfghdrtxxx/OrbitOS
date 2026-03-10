@@ -60,6 +60,9 @@ decision_date: 2026-02-15
 > At application: submit certificate of expected graduation. At enrollment: submit actual degree certificate.
 > Source: [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html)
 
+> [!warning] Eligibility source caveat
+> The above eligibility check was sourced from the **Special Selection** page, not the GSGC page. GSGC is a 5-year integrated M+D program — pre-graduation eligibility wording may not apply identically. See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] for details.
+
 ## Timeline & Actions
 
 ### NOW → Apr 2026: Entrance Exam Prep (GSGC) & Application Preparation
@@ -129,7 +132,7 @@ decision_date: 2026-02-15
 |---|---|
 | 2026-02-28 | Kenkyusei application window check (self-funded) |
 | 2026-04-15 | First supervisor outreach emails sent |
-| 2026-07-01 | Pre-check UTokyo Special Selection / GSGC pages |
+| 2026-07-01 | Pre-check UTokyo Special Selection / GSGC pages; **confirm GSGC vs Special Selection distinction resolved** (backstop — see [[DG_GSGC_vs_Special_Selection]] and [[General_Checklist#Monitoring Checkpoints]]) |
 | 2026-09-01 | GSGC guideline release check |
 | 2026-10-15 / 2026-12-05 | Verify Oct 2027 enrollment windows |
 | 2027-01-15 | If no call visible, email Graduate School Office |
@@ -175,6 +178,9 @@ Personal savings: 100–200k CNY (≈ 2–4M JPY). Comfortable at upper range; d
 | Commuting | Reimbursed up to 55k JPY | `[V3]` |
 
 **Tuition:** 535,800 JPY/year `[V5]` — likely fully exempt under UTokyo's income-based policy (JRA income of 2.4M << 6M threshold) `[V4]`. Key unknowns: applicability to international students, how JRA income is classified.
+
+> [!question] GSGC scholarship not modeled in financials
+> The GSGC track includes a 180k JPY/month scholarship, which is not reflected in this financial section. Additionally, whether the GSGC scholarship and RIKEN JRA can be held simultaneously is unverified. See [[DG_GSGC_vs_Special_Selection]] for the full analysis.
 
 ## Entrance Exam
 
@@ -294,6 +300,7 @@ Core written scope (UTokyo Physics doctoral, 2026-cycle reference):
 | V7 | JRA application window: Apr–May for Oct start | AI handoff | `UNVERIFIED` | Medium | Confirm during outreach |
 | V8 | Kenkyusei maximum enrollment duration | Unknown | `UNKNOWN` | Medium | Critical for R7 (exam failure Plan B) |
 | V9 | Visa/COE processing timeline for Oct 2027 from China | Unknown | `UNKNOWN` | Medium | Check with UTokyo international office |
+| V10 | Master's degree holder eligibility for GSGC (5-year M+D program) | Unknown | `UNVERIFIED` | High | Check GSGC guidelines PDF and confirm with professors. See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] |
 
 ## Official Sources
 

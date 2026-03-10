@@ -13,6 +13,9 @@ tags: [utokyo, riken, professor-outreach, phd]
 
 ## Outreach Context (Evidence-Linked)
 - Target route: **Primary:** Direct PhD D1 via GSGC (Oct 2027); **Fallback:** Kenkyusei (Oct 2027) → PhD D1 (Oct 2028). UTokyo CNS with RIKEN JRA funding. *(Updated 2026-03-09: GSGC chosen, Route A archived)* [^utokyo-pathway]
+
+> [!question] GSGC vs Special Selection sub-track distinction pending
+> Route B is chosen, but the specific sub-track (GSGC 5-year integrated M+D vs Special Selection 3-year doctoral only) remains unresolved for someone with an existing master's. See [[DG_GSGC_vs_Special_Selection]].
 - Research alignment focus: TPC, direct reactions, particle identification, ML-supported analysis. [^utokyo-alignment]
 - Immediate action: identify 3-5 CNS professors who are also RIKEN collaborators and begin outreach. [^utokyo-outreach]
 - CNS promotes a collaborative project with the RIKEN Nishina Center (RIKEN). [^cns-riken]

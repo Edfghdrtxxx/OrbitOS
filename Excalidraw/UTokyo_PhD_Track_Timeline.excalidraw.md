@@ -113,7 +113,7 @@ ENTRANCE EXAM
 (Aug 2028) ^kW5AttAF
 
 Route A (Regular): 240 min, 4 problems (Math/QM/StatMech/CM+EM, 100 pts each) + TOEFL (100 pts) = 500
-Route B (GSGC): GRE Physics + TOEFL + docs — resolve route with supervisor!
+Route B (GSGC): GRE Physics + TOEFL + docs — Route B chosen — GSGC vs Special Selection sub-track pending (see DG_GSGC_vs_Special_Selection)
 Answers in English OK. Past papers: 50_Resources/Physics/UTokyo_Past_Exams/ ^in0vcxRi
 
 Register TOEFL

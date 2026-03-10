@@ -11,7 +11,7 @@ pathway: "Primary: Direct PhD D1 via GSGC (Oct 2027); Fallback: Kenkyusei (Oct 2
 > [!info] Tracks the full action pipeline for [[UTokyo_RIKEN]]. Updated 2026-02-15 after pathway finalization.
 
 > [!warning] **Partially superseded (2026-03-09)**
-> This plan was written with the Kenkyusei-first pathway as default. The primary path is now **direct PhD D1 entry via GSGC (Route B, chosen)**, with Kenkyusei as fallback only. GSGC-specific timing details are **pending professor meeting**. The milestones below remain valid for the fallback path and for shared preparation tasks (supervisor outreach, TOEFL, documents, housing). Phase 4 (Kenkyusei Year) only activates if the entrance exam is failed.
+> This plan was written with the Kenkyusei-first pathway as default. The primary path is now **direct PhD D1 entry via GSGC (Route B, chosen)**, with Kenkyusei as fallback only. GSGC-specific timing details are **pending professor meeting**. Additionally, the **GSGC vs Special Selection sub-track distinction is unresolved** — see [[DG_GSGC_vs_Special_Selection]] for the full decision gate. The milestones below remain valid for the fallback path and for shared preparation tasks (supervisor outreach, TOEFL, documents, housing). Phase 4 (Kenkyusei Year) only activates if the entrance exam is failed.
 
 ## Milestones at a Glance
 

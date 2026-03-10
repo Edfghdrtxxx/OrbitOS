@@ -87,7 +87,7 @@ tags: [japan, immigration, phd, checklist]
 ## Monitoring Checkpoints
 
 - [x] 2026-04-15: first supervisor outreach emails sent (2026-03-09: completed ahead of schedule — Aoi Nori & Nobuaki Imai accepted, conditional on entrance exam)
-- [ ] 2026-07-01: Confirm GSGC vs Special Selection distinction resolved; verify GSGC Period 1 guideline released
+- [ ] 2026-07-01: Confirm GSGC vs Special Selection distinction resolved; verify GSGC Period 1 guideline released. See [[DG_GSGC_vs_Special_Selection]] for resolution path.
 - [ ] 2026-09-01: UTokyo GSGC guideline release check
 - [ ] 2026-10-15 / 2026-12-05: UTokyo cycle window checks
 - [ ] 2027-01-15: if no Oct 2027 call posted, email Graduate School Office

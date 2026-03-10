@@ -19,6 +19,7 @@ tags: [learning, physics, math, PhD-prep, self-assessment]
 
 > [!success] Decision Gate: Exam Route RESOLVED (2026-03-09)
 > **GSGC (Route B) chosen** (decision by user + IMP supervisor). Route A archived.
+> **Note:** While Route B is chosen, the **GSGC vs Special Selection sub-track distinction is pending** — GSGC is a 5-year integrated M+D program; Special Selection is 3-year doctoral only. Which applies to someone with an existing master's degree is unresolved. See [[DG_GSGC_vs_Special_Selection]] for full decision gate.
 > GSGC-specific details (whether written exam is waived by supervisor) are **pending professor meeting**. If written exam is waived, Phases 5–7 can revert to "conversational" level and freed hours shift to **GRE Physics prep**. Phase 0.5 (Complex Analysis) becomes optional.
 > If GSGC written exam is required by supervisor, study plan mostly stays — add GRE Physics as parallel track.
 > **Action:** Update this plan after professor meeting confirms GSGC written exam requirement. See [[UTokyo_RIKEN#Admission Routes Summary]].
@@ -406,7 +407,7 @@ Math Foundations + Complex Analysis ─┬─→ Quantum Mechanics ──→ Nuc
 ### Admission Routes
 
 - **Route A (Regular exam / 一般入試):** The written exam above. Open to all nationalities. **ARCHIVED** — not the active plan (GSGC chosen).
-- **Route B (GSGC / Special Selection):** Document-based, requires GRE Physics + TOEFL iBT + possible department written exam. **CHOSEN** (decision by user + IMP supervisor, 2026-03-09). Primary target: Summer 2027 for direct PhD entry.
+- **Route B (GSGC / Special Selection):** Document-based, requires GRE Physics + TOEFL iBT + possible department written exam. **CHOSEN** (decision by user + IMP supervisor, 2026-03-09). Primary target: Summer 2027 for direct PhD entry. *(Note: GSGC vs Special Selection sub-track distinction pending — see [[DG_GSGC_vs_Special_Selection]])*
 - **Internal students (修士→博士):** Skip written exam entirely — thesis defense serves as evaluation. Does NOT apply to Kenkyusei.
 
 ## GSGC Physics — Verified (2026-02-17)

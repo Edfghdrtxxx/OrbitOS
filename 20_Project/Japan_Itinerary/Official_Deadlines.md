@@ -8,6 +8,8 @@ last_verified: 2026-03-09
 ---
 ## 1. UTokyo GSGC Application (Oct 2027 enrollment — PRIMARY)
 
+> [!warning] Timeline estimates below are based on **GSGC cycle data**. Special Selection may have different application windows. If the GSGC vs Special Selection sub-track decision resolves in favor of Special Selection (or both), verify application dates against the [Special Selection page](https://www.s.u-tokyo.ac.jp/en/admission/special.html). See [[DG_GSGC_vs_Special_Selection]].
+
 > [!question] PENDING: GSGC vs Special Selection distinction
 > UTokyo offers two tracks within "Route B": **GSGC** (5-year integrated M+D, includes 180k JPY/month scholarship) and **Special Selection** (3-year doctoral only). Since you already hold a master's, Special Selection may be the correct track. GSGC would mean redoing a master's but includes funding. **Clarify with professors in upcoming meeting.** You can apply to both simultaneously.
 

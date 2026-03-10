@@ -6,6 +6,7 @@ Create a single atomic concept note in `40_Wiki/` with automatic wikilink discov
 
 - Filename = topic verbatim (Obsidian supports spaces). Sanitise only invalid characters (`/\:*?"<>|`) silently.
 - Glob `40_Wiki/**/<topic>.md` — if it exists, report the duplicate and **stop**.
+- **Near-duplicate scan:** Also glob `50_Resources/**/*<topic>*.md` and `30_Research/**/*<topic>*.md` for notes whose filename contains the topic (or vice-versa). If any match, report them and ask the user whether to proceed, merge, or stop — do NOT silently create a duplicate.
 
 ## C2. Category Placement
 
@@ -15,7 +16,7 @@ Create a single atomic concept note in `40_Wiki/` with automatic wikilink discov
 
 ## C3. Wikilink Discovery
 
-- Glob `40_Wiki/**/*.md` and `30_Research/**/*.md`. Collect note names.
+- Glob `40_Wiki/**/*.md`, `30_Research/**/*.md`, and `50_Resources/**/*.md`. Collect note names.
 - Match existing note names against the new topic's content — insert `[[ExistingNote]]` wikilinks in Definition, Key Points, and Related Concepts.
 - Identify terms that could become future atomic notes — add as stub wikilinks in Related Concepts.
 
