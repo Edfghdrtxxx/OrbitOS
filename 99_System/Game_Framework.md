@@ -119,7 +119,7 @@ This is the boss fight because the entrance exam is the gate to everything. The 
 | Track | Project | Cadence / Deadline |
 |---|---|---|
 | **Daily anchor** | [[Masters_Thesis]] | 2–4 hr block every workday — no exceptions |
-| **Urgent parallel** | [[Japan_Itinerary]] (Direct PhD Entry — GSGC Entrance Exam) | ~~Supervisor Outreach~~ **DONE (2026-03-09)** — GSGC (Route B) chosen; focus on entrance exam prep + GRE Physics for direct PhD Oct 2027; Naidaku pending exam pass |
+| **Urgent parallel** | [[Japan_Itinerary]] / [[UTokyo_RIKEN]] (Direct PhD Entry — GSGC Entrance Exam) | ~~Supervisor Outreach~~ **DONE (2026-03-09)** — GSGC (Route B) chosen; focus on entrance exam prep + GRE Physics for direct PhD Oct 2027; Naidaku pending exam pass |
 | **Ongoing parallel → ELEVATED** | [[Fundamental_Knowledge]] + **GRE Physics** | **Now the critical gate** — entrance exam via GSGC (chosen route) + GRE Physics (compulsory for GSGC); systematic study now; intensify from Sep 2026 |
 | **Ongoing parallel** | [[English_Learning]] | TOEFL target: Jul–Aug 2026; register by Apr 2026 |
 | **Low priority** | [[Japanese_Language]] | N4 by Oct 2027; not required for admission — only when exam prep + TOEFL are on track |

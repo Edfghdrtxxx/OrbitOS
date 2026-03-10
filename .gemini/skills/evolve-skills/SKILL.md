@@ -37,12 +37,12 @@ For each confirmed skill:
 1. **Read** existing `<skill-folder>/evolution.md` (if any)
 2. **Deduplicate** — skip lessons that already exist in the file
 3. **Append** new lessons under a dated entry (format below)
-4. **Ensure consumption** — if the target skill's `SKILL.md` does not already contain a Phase 0 evolution read instruction, inject this block into the skill's `## Workflow` section, before the existing first phase:
+4. **Ensure consumption** — if the target skill's `SKILL.md` does not already contain a Phase 0 evolution read instruction, inject this block right after the frontmatter (before the skill's title heading):
 
    ```
-   ### 0. Load Evolution Context
+   # Phase 0 — EVOLVE
 
-   If `evolution.md` exists in this skill's folder, **read it now** before proceeding. It contains accumulated usage lessons, user preferences, and fixes from prior sessions. Apply its guidance throughout execution.
+   Read `evolution.md` in this skill's folder. Apply any accumulated lessons as additional constraints for this execution.
    ```
 
 5. **Write** using native Write/Edit tools (no scripts, no JSON intermediaries)

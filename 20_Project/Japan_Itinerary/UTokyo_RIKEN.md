@@ -69,15 +69,15 @@ decision_date: 2026-02-15
 
 > [!warning] **MEXT University Recommendation (Research Student) dropped** (2026-02-17) due to extremely fierce competition. Keep [[MEXT_University_Recommendation_Timeline]] for reference only.
 
-**Supervisor outreach:**
+**Supervisor outreach:** (full log → [[Professor_Outreach]])
 - [x] Identify 3–5 CNS professors who are also RIKEN collaborators *(2026-03-09: Two professors identified and contacted)*
 - [x] Prepare research-fit statement (TPC + direct reactions + ML-PID)
 - [x] Send first-contact emails with CV (target: by 2026-04-15) *(2026-03-09: Done ahead of deadline)*
-- [ ] Secure Naidaku — required for Kenkyusei enrollment *(2026-03-09: Both professors agreed to accept conditionally — Naidaku expected once entrance exam is passed)*
+- [ ] Secure Naidaku — required for Kenkyusei enrollment *(2026-03-09: Both professors agreed to accept conditionally — Naidaku expected once entrance exam is passed)* → see [[Supervisor_Relationship_Management]]
 - [x] Leverage IMP supervisor connections for introductions
 
 > [!success] **Outreach Milestone (2026-03-09)**
-> Two UTokyo CNS professors — **Aoi Nori (青井 考)** and **Nobuaki Imai** — responded positively and agreed to accept conditionally on passing the Faculty of Science entrance exam. Both are equally viable; no preference yet. **Direct PhD entry (Oct 2027) is now the primary target.** Kenkyusei is the fallback if the entrance exam is failed. Strategic focus shifts to entrance exam preparation.
+> Two UTokyo CNS professors — **[[Prof_Nori_Aoi|Aoi Nori]] (青井 考)** and **[[Prof_Nobuaki_Imai|Nobuaki Imai]]** — responded positively and agreed to accept conditionally on passing the Faculty of Science entrance exam. Both are equally viable; no preference yet. **Direct PhD entry (Oct 2027) is now the primary target.** Kenkyusei is the fallback if the entrance exam is failed. Strategic focus shifts to entrance exam preparation.
 
 ### Jun – Dec 2026: Acceptance & Preparation
 
@@ -126,7 +126,7 @@ decision_date: 2026-02-15
 
 ### Monitoring Checkpoints
 
-> [!note] Replace with official dates once UTokyo publishes Oct 2027 cycle pages.
+> [!note] Replace with official dates once UTokyo publishes Oct 2027 cycle pages. See [[Official_Deadlines]] for consolidated deadline tracking.
 
 | Date | Check |
 |---|---|
@@ -328,3 +328,12 @@ Core written scope (UTokyo Physics doctoral, 2026-cycle reference):
 - [[Japanese_Language]]
 - [[English_Learning]]
 - [[Osaka_University]]
+- [[Supervisor_Relationship_Management]]
+- [[Official_Deadlines]]
+- [[Professor_Outreach]]
+- [[Plan_2026-02-15_UTokyo_Oct2027_Application]]
+- [[Prof_Nori_Aoi]]
+- [[Prof_Nobuaki_Imai]]
+- [[Game_Framework]]
+- [[Post_Acceptance_Timeline]]
+- [[UTokyo_PhD_Track_Timeline]]

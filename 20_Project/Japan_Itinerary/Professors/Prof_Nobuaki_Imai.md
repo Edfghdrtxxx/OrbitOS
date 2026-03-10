@@ -13,7 +13,7 @@ updated: 2026-03-09
 - Email: n.imai@cns.s.u-tokyo.ac.jp.[^imai-utokyo]
 - Lab: Imai Lab (DONUTS group) listed under CNS graduate education.[^cns-graduate]
 - CNS operates primarily at the RIKEN Wako campus and collaborates with RIKEN Nishina Center.[^cns-overview]
-- **Contact Status (2026-03-09):** Accepted — conditional on passing the Faculty of Science entrance exam.
+- **Contact Status (2026-03-09):** Accepted — conditional on passing the Faculty of Science entrance exam. → [[UTokyo_RIKEN]]
 
 ## Research Focus (public descriptions)
 - Research in quantum many-body nuclear phenomena and experiments with RI beams.[^imai-lab]

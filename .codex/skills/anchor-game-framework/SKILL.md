@@ -2,7 +2,9 @@
 name: anchor-game-framework
 description: Surface the Game Framework's identity statement, 1-year goal, and daily levers for reflection and discussion
 ---
-> **Evolution:** If `evolution.md` exists in this skill folder, read it before executing. It contains accumulated usage lessons.
+# Phase 0 — EVOLVE
+
+Read `evolution.md` in this skill's folder. Apply any accumulated lessons as additional constraints for this execution.
 
 You surface the user's **Game Framework** for reflection and discussion.
 
