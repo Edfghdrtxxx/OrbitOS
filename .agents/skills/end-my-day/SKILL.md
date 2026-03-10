@@ -24,41 +24,65 @@ Help the user close their day by reviewing what was accomplished, reflecting on 
    - Open `10_Daily/YYYY-MM-DD.md`
    - If it doesn't exist, check if it's after midnight and yesterday's note exists — if so, use yesterday's note (confirm with user). Otherwise, inform the user and stop — there's nothing to review
 
-3. **Scan Completed Work**
+3. **Scan Completed Work (Daily Note)**
    - Collect all `[x]` tasks from the Priorities section
    - Read the Log section for additional entries
-   - Build a summary of what got done today
 
-4. **Scan Incomplete Work**
+4. **Scan Incomplete Work (Daily Note)**
    - Collect all `[ ]` and `[*]` tasks still open
    - These are candidates for tomorrow's carry-over
    - Note any tasks tagged `#Deferred` or that have been deferred multiple days (cross-check the previous daily note if available)
 
-## Step 2: Present & Reflect (Interactive)
+5. **Scan Git Activity**
+   - Run `git log --since="YYYY-MM-DD 00:00" --until="YYYY-MM-DD 23:59" --oneline --all` to list today's commits
+   - Run `git diff --stat HEAD~N..HEAD` (where N = number of today's commits) to get a file-level change summary — skip if no commits today
+   - Parse commit messages for: topics worked on, files changed, rough scope of work
+   - Cross-reference git activity with daily note tasks — match commits to tasks where possible (e.g., a commit mentioning "thesis" maps to thesis-related tasks)
+   - Identify any git work that has NO corresponding task in the daily note (these are "unlisted accomplishments" to surface to the user)
 
-Present the user with a brief summary of the day, then use AskUserQuestion to gather reflections. Combine into as few rounds as possible.
+**The goal of Step 1 is to build a rich, auto-generated picture of the day from two sources (daily note + git) so Step 2 only needs lightweight confirmation from the user.**
 
-**Summary:** Show a concise list:
-- Completed tasks (from `[x]`)
-- Log highlights
-- Still open tasks (from `[ ]` / `[*]`)
+## Step 2: Present & Reflect (Interactive — Lightweight)
 
-**Question 0 (Task Marking Check):** "Before we continue — are all tasks marked correctly? Let me know if anything needs updating."
-- Present alongside the summary so the user can cross-check
-- If the user requests changes, apply them to the daily note before proceeding
-- Wait for confirmation before moving to Question 1
-- **MANDATORY — After Question 0 is resolved (regardless of the user's answer):** Re-read the daily note to pick up any changes (whether made by the user externally or applied in this step). This re-read is non-optional even if the user says "all correct" — the note may have been edited outside this session. Refresh the completed/incomplete task lists before proceeding; the reflections in Q1–Q3 must reference the latest state.
+The hard work is done in Step 1. Step 2 presents the auto-generated summary and asks the user to confirm or supplement — NOT to reconstruct the day from scratch.
 
-**Question 1:** "What got done today? Anything to add beyond what's checked off?"
-- Free text input
-- Pre-fill with the completed tasks summary so the user can confirm or amend
+### 2a. Present the Day Summary
 
-**Question 2:** "What's on your mind? Any worries, open loops, or unresolved thoughts?"
-- Free text input
-- If there are incomplete tasks, mention them as prompts (e.g., "You still have X and Y open — anything to note about these?")
+Output a structured summary to the terminal combining both sources:
 
-**Question 3:** "One priority for tomorrow?"
+```
+📋 Today's Summary (auto-generated)
+
+From daily note:
+  ✅ [completed task 1]
+  ✅ [completed task 2]
+  ⬜ [open task 1]
+  ⬜ [open task 2]
+
+From git (N commits):
+  • [commit summary 1] — [files changed]
+  • [commit summary 2] — [files changed]
+  [If unlisted work found]: ⚡ Not in daily note: [description]
+
+Log highlights: [any entries from the Log section]
+```
+
+### 2b. Confirmation Round (Single AskUserQuestion Call)
+
+Use ONE AskUserQuestion call with up to 4 questions:
+
+**Question 1 (Task Check):** "Here's what I gathered. Are all tasks marked correctly, and is anything missing?"
+- Options: "Looks good" / "Need to update tasks" / Other
+- If updates needed: apply changes, re-read daily note, refresh lists before proceeding
+
+**Question 2 (Reflections):** "Anything on your mind? Worries, open loops, or thoughts to capture?"
+- Free text
+- Mention incomplete tasks as prompts (e.g., "You still have X and Y open — anything to note?")
+
+**Question 3 (Tomorrow):** "One priority for tomorrow?"
 - Options based on incomplete tasks + "Something else"
+
+**MANDATORY:** After Question 1 is resolved, re-read the daily note to pick up any external edits before writing the Evening Review. This is non-optional even if the user says "Looks good."
 
 ## Step 3: Write Evening Review
 
@@ -67,7 +91,7 @@ Using the Edit tool, fill the Evening Review section in today's daily note:
 ```markdown
 ## Evening Review
 - **What got done today?**
-- [User's response from Q1, enriched with task completions]
+- [Merge auto-generated summary (completed tasks + git activity) with any additions from the user's confirmation. Use wikilinks for projects. Keep it concise — bullet points, not paragraphs.]
 - **What's on my mind?** (worries, open loops, unresolved thoughts)
 - [User's response from Q2]
 - **One priority for tomorrow?**
