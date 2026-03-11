@@ -52,6 +52,9 @@ Based on weight and common pitfalls:
 | Jul–Sep 2026 | GRE-specific prep: practice tests, Specialized Topics review, Lab Methods review |
 | Sep/Oct 2026 | **Test day** |
 
+> [!note] Scheduling overlap
+> Jul–Aug 2026 is also the TOEFL test window (see [[English_Learning]]). Coordinate GRE-specific and TOEFL prep to avoid bandwidth conflict — consider front-loading TOEFL (Jul) and back-loading GRE drills (Aug–Sep).
+
 ## Registration Checklist
 
 - [ ] Monitor NEEA portal (`gre-main.neea.cn`) for 2026-27 cycle opening (~Jul 2026)
@@ -61,11 +64,11 @@ Based on weight and common pitfalls:
 - [ ] Verify score delivery after window closes (~8-11 days)
 
 > [!danger] October window priority
-> Mainland China has only **two test centers** (Beijing and Shanghai). Based on test-taker reports, **only the October window reliably has domestic seats**. September and April availability is unconfirmed. Do not count on a retake within the same cycle.
+> Mainland China has only **two test centers** (Beijing and Shanghai) `[UNVERIFIED — single test-taker report, 2025]`. Based on test-taker reports, **only the October window reliably has domestic seats** — September and April availability is unconfirmed. Do not count on a retake within the same cycle. Verify center list and seat availability on NEEA portal when the 2026-27 cycle opens.
 
 ## Exam Day Checklist (Beijing Center)
 
-**Location:** ETS Test Center, Gongxiao International Building (宫霄国际大厦), 9F, Chaoyang District, Beijing.
+**Location:** ETS Test Center, Gongxiao International Building (宫霄国际大厦), 9F, Chaoyang District, Beijing `[UNVERIFIED — address from 2025 report; verify before test day]`.
 
 ### What to Bring
 
@@ -82,7 +85,7 @@ Based on weight and common pitfalls:
 
 The center provides: scratch paper, pens, tissues (ask the proctor).
 
-### Procedure Flow
+### Procedure Flow `[UNVERIFIED — based on single test-taker report, Beijing center, 2025; procedure may differ by location or change between cycles]`
 
 ```
 1F Entrance: ID + Confirmation Letter check → receive Exam Room Card (考场卡)
@@ -102,7 +105,7 @@ Exam: 120 min, continuous timer — restroom breaks do NOT pause the clock
 
 1. Arrive **30+ minutes early**
 2. The clock does not stop — plan restroom breaks strategically
-3. No guessing penalty — answer every question
+3. No guessing penalty — answer every question `[UNVERIFIED — confirm rights-only scoring on ETS website]`
 4. Jacket rule is strictly enforced — dress in layers you can keep on
 
 ## Contingency

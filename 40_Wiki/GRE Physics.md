@@ -10,7 +10,7 @@ review_interval: 0
 
 ## Definition
 
-The GRE Physics Subject Test is a standardized exam administered by ETS that assesses undergraduate-level physics knowledge. It is used by graduate programs (primarily in the US and select international universities such as [[UTokyo CNS|UTokyo]]) as part of doctoral admissions.
+The GRE Physics Subject Test is a standardized exam administered by ETS that assesses undergraduate-level physics knowledge. It is used by graduate programs (primarily in the US and select international universities such as UTokyo) as part of doctoral admissions.
 
 ## Format
 
@@ -27,7 +27,7 @@ The GRE Physics Subject Test is a standardized exam administered by ETS that ass
 
 - Score range: **200–990** (10-point increments)
 - Three subscores reported: (1) Classical Mechanics, (2) Electromagnetism, (3) Quantum Mechanics & Atomic Physics
-- No penalty for guessing (rights-only scoring since the computer-based transition)
+- No penalty for guessing (rights-only scoring since the computer-based transition) `[UNVERIFIED — based on general ETS policy for computer-delivered tests; confirm on ETS website before test day]`
 
 ## Content Breakdown
 
@@ -61,10 +61,10 @@ Score reports arrive **~8–11 days** after a test window closes.
 
 ## Test Centers (China)
 
-Only **two centers** in mainland China: **Beijing** and **Shanghai**.
+Only **two centers** in mainland China: **Beijing** and **Shanghai** `[UNVERIFIED — single test-taker report, 2025; confirm on NEEA portal before registration]`.
 
-- **Beijing:** ETS Test Center, Gongxiao International Building (宫霄国际大厦), 9F, Chaoyang District
-- Seat availability is extremely limited domestically — **the October window is the most reliable for securing a domestic seat**. September and April availability is unconfirmed.
+- **Beijing:** ETS Test Center, Gongxiao International Building (宫霄国际大厦), 9F, Chaoyang District `[UNVERIFIED — address from 2025 report; verify before test day]`
+- Seat availability is extremely limited domestically — **the October window is the most reliable for securing a domestic seat** `[UNVERIFIED — single test-taker report, 2025]`. September and April availability is unconfirmed.
 
 ## Registration
 
@@ -81,7 +81,7 @@ Only **two centers** in mainland China: **Beijing** and **Shanghai**.
 
 ## Related Concepts
 
-- [[TOEFL]]
+- [[English_Learning|TOEFL]]
 - [[Fundamental_Knowledge]]
 - [[GRE_Physics_Prep]]
 

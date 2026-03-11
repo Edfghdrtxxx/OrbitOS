@@ -51,7 +51,7 @@ Same pattern as Section 1, shifted +1 year. Application periods would fall in ~O
 - Cost: **$175** worldwide (ETS official fee)
 - Retake: once every 14 days
 - ETS validity: 5 years. **UTokyo requirement: within 2 years of application start date** (stricter)
-- **Domestic seat scarcity:** Only **two test centers** in mainland China (Beijing, Shanghai). Based on test-taker reports, **only the October window reliably has domestic seats** — September and April availability is unconfirmed. Register immediately when the cycle opens (~Jul 2026). See [[GRE_Physics_Prep]] for full logistics.
+- **Domestic seat scarcity:** Only **two test centers** in mainland China (Beijing, Shanghai) `[UNVERIFIED — single test-taker report, 2025]`. Based on test-taker reports, **only the October window reliably has domestic seats** — September and April availability is unconfirmed. Register immediately when the cycle opens (~Jul 2026). Verify on NEEA portal. See [[GRE_Physics_Prep]] for full logistics.
 
 > [!info] GRE Physics — targeting Sep/Oct 2026 window
 > Apr 2026 window skipped (decision 2026-03-09). Targeting **Sep/Oct 2026** window instead (dates estimated, not yet published by ETS). Scores from Sep/Oct 2026 arrive well before the estimated GSGC Application Period 2 (~Dec 2026), based on the confirmed Oct 2026 cycle pattern where Application Period 2 ran Dec 5–22, 2025. Registration for 2026-27 windows expected to open ~July 2026. China registration via NEEA portal (gre-main.neea.cn).
