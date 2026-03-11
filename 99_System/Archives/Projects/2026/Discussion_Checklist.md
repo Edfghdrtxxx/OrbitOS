@@ -15,7 +15,7 @@ archived: 2026-03-09
 1. [x] **Professor Shortlist Review:** Walk through the 3–5 UTokyo CNS PI shortlist — are there better-fit PIs, anyone to avoid? Ask for personal introductions. (2026-03-09: Aoi Nori & Nobuaki Imai accepted, conditional on entrance exam)
 2. [x] **Outreach Logistics:** Should supervisor send a warm intro first, or should you cold-email with supervisor CC'd? Advice on timing and tone. (2026-03-09: outreach completed successfully)
 3. [x] **Kenkyusei Necessity:** Is the Kenkyusei year inevitable, or could direct PhD admission (Oct 2027) be possible? If Kenkyusei is likely, should the first email state that willingness? (2026-03-09: resolved — direct PhD D1 via GSGC is now the primary route; Kenkyusei retained as fallback only)
-4. [ ] **Pre-Outreach Project Ideas:** Planning 1–2 small projects aligned with the target group before emailing — which topics would be most convincing, or is existing ResNet work sufficient?
+4. [x] **Pre-Outreach Project Ideas:** Planning 1–2 small projects aligned with the target group before emailing — which topics would be most convincing, or is existing ResNet work sufficient?
 5. [ ] **CV & Research Statement Review:** Request review of CV and 1-page research fit statement before **March 15** outreach.
 6. [x] **PhD Entry Route:** Regular Physics exam (written/oral) vs. **GSGC** (Global Science Graduate Course, English-taught) — which is more realistic? (Ref: [[UTokyo_RIKEN#Route B — GSGC Physics (Global Science Graduate Course)]])
 7. [ ] **GSGC Route B:** Since GRE Physics is mandatory, what score (e.g., 900+) would make me eligible for an **online exam waiver**?
