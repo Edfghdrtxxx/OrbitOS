@@ -36,18 +36,18 @@ Same pattern as Section 1, shifted +1 year. Application periods would fall in ~O
 
 ## 3. GRE Physics Subject Test
 
-| Item | Date/Window | Status | Source |
-|------|------------|--------|--------|
-| 2025-26 Window 1 | Sep 8–21, 2025 | Confirmed (past) | [ETS Schedule](https://www.ets.org/gre/test-takers/subject-tests/schedule.html) |
-| 2025-26 Window 2 | Oct 13–26, 2025 | Confirmed (past) | Same |
-| 2025-26 Window 3 | Apr 20–May 3, 2026 | Confirmed | Same |
-| Score report (Window 3) | May 11, 2026 | Confirmed | [ETS Scores](https://www.ets.org/gre/test-takers/subject-tests/scores/get-scores.html) |
-| 2026-27 windows | ~Sep 2026, ~Oct 2026, ~Apr 2027 | Estimated (not published) | — |
-| Registration for 2026-27 | ~July 2026 | Estimated | — |
+| Item                     | Date/Window                     | Status                    | Source                                                                                 |
+| ------------------------ | ------------------------------- | ------------------------- | -------------------------------------------------------------------------------------- |
+| 2025-26 Window 1         | Sep 8–21, 2025                  | Confirmed (past)          | [ETS Schedule](https://www.ets.org/gre/test-takers/subject-tests/schedule.html)        |
+| 2025-26 Window 2         | Oct 13–26, 2025                 | Confirmed (past)          | Same                                                                                   |
+| 2025-26 Window 3         | Apr 20–May 3, 2026              | Confirmed                 | Same                                                                                   |
+| Score report (Window 3)  | May 11, 2026                    | Confirmed                 | [ETS Scores](https://www.ets.org/gre/test-takers/subject-tests/scores/get-scores.html) |
+| 2026-27 windows          | ~Sep 2026, ~Oct 2026, ~Apr 2027 | Estimated (not published) | —                                                                                      |
+| Registration for 2026-27 | ~July 2026                      | Estimated                 | —                                                                                      |
 
 **Notes:**
 - Computer-delivered since Sep 2023, 2 hours duration
-- China registration via NEEA: gre-main.neea.cn
+- China registration via NEEA: https://gre-main.neea.cn/
 - Cost: **$175** worldwide (ETS official fee)
 - Retake: once every 14 days
 - ETS validity: 5 years. **UTokyo requirement: within 2 years of application start date** (stricter)

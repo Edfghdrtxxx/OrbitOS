@@ -30,23 +30,7 @@ GSGC pages don't list per-department GRE requirements, but the FAQ and Guideline
 
 ### GRE Physics Subject Test — Official Topic Breakdown
 
-Source: [ETS GRE Physics Content & Structure](https://www.ets.org/gre/test-takers/subject-tests/about/content-structure.html) (fetched 2026-03-11). ~70 five-choice questions, 2 hours, computer-delivered, SI units.
-
-| Topic | Weight | Key Subtopics |
-|---|---|---|
-| Classical Mechanics | 20% | Kinematics, Newton's laws, work/energy, oscillations, rotational motion, Lagrangian/Hamiltonian, central forces, fluid dynamics |
-| Electromagnetism | 18% | Electrostatics, DC circuits, magnetic fields, Lorentz force, induction, Maxwell's equations |
-| Quantum Mechanics | 13% | Fundamental concepts, Schrödinger equation, angular momentum, hydrogen atom, perturbation theory |
-| Thermodynamics & Statistical Mechanics | 10% | Laws of thermo, ensembles, partition functions, ideal gas, blackbody radiation |
-| Atomic Physics | 10% | Properties of electrons, Bohr model, fine/hyperfine structure, selection rules, X-rays |
-| Specialized Topics | 9% | Nuclear/particle physics, condensed matter, astrophysics, mathematical methods |
-| Optics & Wave Phenomena | 8% | Wave properties, superposition, interference, diffraction, polarization, geometrical optics |
-| Special Relativity | 6% | Lorentz transformation, time dilation, length contraction, four-vectors, energy-momentum |
-| Laboratory Methods | 6% | Data/error analysis, electronics, instrumentation, radiation detection, laser physics |
-
-Three subscores reported: (1) Classical Mechanics, (2) Electromagnetism, (3) Quantum Mechanics & Atomic Physics.
-
-Required math: calculus, vector algebra, coordinate systems, Fourier series, PDEs, matrices, determinants, complex variables.
+See [[GRE Physics]] for the full topic breakdown table, format details, and test center information (canonical source: [ETS GRE Physics Content & Structure](https://www.ets.org/gre/test-takers/subject-tests/about/content-structure.html), fetched 2026-03-11).
 
 ## 2. GSGC vs Special Selection — Key Distinction
 
