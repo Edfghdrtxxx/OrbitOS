@@ -11,7 +11,7 @@ created: 2026-03-11
 
 ## Why It Matters
 
-GRE Physics is **compulsory** for the GSGC (chosen route) and Special Selection pathways at UTokyo Faculty of Science, Physics department. See [[Questions_and_Verifiable_Source#1. GRE Physics — Confirmed for Special Selection; Likely for GSGC]].
+GRE Physics is **compulsory** for the Special Selection and GSGC pathways at UTokyo Faculty of Science, Physics department. See [[Questions_and_Verifiable_Source#1. GRE Physics — Confirmed for Special Selection; Likely for GSGC]].
 
 - UTokyo institution code: **7048**
 - UTokyo requires scores **within 2 years** of application start date (stricter than ETS's 5-year validity)
@@ -21,7 +21,7 @@ GRE Physics is **compulsory** for the GSGC (chosen route) and Special Selection 
 
 ### Resources
 
-- **Primary textbook:** *Conquering the GRE Physics*
+- **Primary textbook:** *Conquering the GRE Physics*, [[GRE_Physics_Practice_Book.pdf]]
 - **Supplementary:** Past ETS practice tests (available on ETS website)
 - **Overlap:** Physics fundamentals track in [[Fundamental_Knowledge]] covers most GRE content areas — coordinate study to avoid duplication
 

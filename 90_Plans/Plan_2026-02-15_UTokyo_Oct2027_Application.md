@@ -2,58 +2,67 @@
 type: plan
 status: active
 created: 2026-02-13
-revised: 2026-02-15
+revised: 2026-03-11
 target_intake: October 2027
 university: University of Tokyo
-pathway: "Primary: Direct PhD D1 via GSGC (Oct 2027); Fallback: Kenkyusei (Oct 2027) → PhD D1 (Oct 2028)"
+pathway: "Primary: Direct PhD D1 via Special Selection (Oct 2027); Fallback: Kenkyusei (Oct 2027) → PhD D1 (Oct 2028)"
 ---
 # UTokyo October 2027 — Execution Plan
-> [!info] Tracks the full action pipeline for [[UTokyo_RIKEN]]. Updated 2026-02-15 after pathway finalization.
+> [!info] Tracks the full action pipeline for [[UTokyo_RIKEN]]. Revised 2026-03-11 to reflect supervisor acceptance, Special Selection as D1 path, and updated timelines.
 
-> [!warning] **Partially superseded (2026-03-09)**
-> This plan was written with the Kenkyusei-first pathway as default. The primary path is now **direct PhD D1 entry via GSGC (Route B, chosen)**, with Kenkyusei as fallback only. GSGC-specific timing details are **pending professor meeting**. Additionally, the **GSGC vs Special Selection sub-track distinction is unresolved** — see [[DG_GSGC_vs_Special_Selection]] for the full decision gate. The milestones below remain valid for the fallback path and for shared preparation tasks (supervisor outreach, TOEFL, documents, housing). Phase 4 (Kenkyusei Year) only activates if the entrance exam is failed.
+> [!success] **Supervisor acceptance ACHIEVED (2026-03-09)**
+> Prof. Nori Aoi (青井 考) and Prof. Nobuaki Imai have both agreed to accept you **conditionally on passing the entrance exam**. Naidaku is effectively secured — formal letter contingent on exam pass.
+
+> [!warning] **GSGC role UNRESOLVED — D1 entry is via Special Selection**
+> Direct PhD D1 entry can only be achieved via **Special Selection**. GSGC is a 5-year integrated M+D program (entry at M1 level). GSGC's remaining role (if any — e.g., scholarship stacking with JRA) needs to be discussed with professors in upcoming online meetings. See [[DG_GSGC_vs_Special_Selection]] for the full decision gate. Hard backstop: **2026-07-01**.
 
 ## Milestones at a Glance
 
-| Milestone | Target Date | Gate Condition |
+| Milestone | Target Date | Status |
 |---|---|---|
-| **Direct PhD D1 enrollment (PRIMARY)** | **2027-10-01** | **GSGC entrance exam passed + Naidaku secured** |
-| GRE Physics taken | 2026-09/10 | Score received before ~Dec 2026 GSGC application |
-| Kenkyusei application window check (self-funded) (FALLBACK) | 2026-02-28 | Official cycle page posted or confirmed by office |
-| First supervisor emails sent | 2026-04-15 | CV + research statement + email drafts ready |
-| Naidaku secured | 2026-06-30 | At least one CNS professor accepts |
-| Self-funding budget verified | 2026-09-01 | Savings confirmed vs Kenkyusei budget |
-| Kenkyusei admission confirmed (FALLBACK) | 2026-12-31 | Formal acceptance from UTokyo |
-| COE application submitted | 2027-05-31 | UTokyo international office processes |
-| Arrive in Japan as Kenkyusei (FALLBACK) | 2027-10-01 | Visa in hand, housing secured |
-| Doctoral entrance exam passed | 2028-01–08 | Route-dependent (Regular or GSGC) |
-| JRA application submitted | 2028-04–05 | Exam passed, supervisor endorses |
-| PhD D1 enrollment (FALLBACK, if Kenkyusei path) | 2028-10-01 | Full doctoral student at UTokyo |
+| ~~Supervisor acceptance~~ | ~~2026-06-30~~ | **DONE** (2026-03-09) — conditional on exam |
+| GSGC role clarified (D1 = Special Selection) | 2026-04-30 (backstop: 2026-07-01) | PENDING — professor meeting |
+| TOEFL iBT taken | 2026-07 or 2026-08 | Target 100+; no MyBest accepted |
+| GRE Physics taken | 2026-09 or 2026-10 | Single-shot; no retake before application deadline (window TBD) |
+| Special Selection application submitted | TBD — confirm with professors / Oct 2027 cycle info | ⚠️ Window unverified |
+| Written exam (if required) | TBD | ⚠️ Format unverified — confirm with professors |
+| Oral exam | TBD | ⚠️ Date unverified — confirm with professors |
+| Results announced | TBD | Pass → Direct PhD D1; Fail → Kenkyusei fallback |
+| **Direct PhD D1 enrollment (PRIMARY)** | **2027-10-01** | Entrance exam passed |
+| Kenkyusei arrival (FALLBACK) | 2027-10-01 | Only if entrance exam failed |
+| PhD D1 enrollment (FALLBACK) | 2028-10-01 | If Kenkyusei path activated |
 
 ---
 
-## Phase 0: Immediate (NOW → 2026-02-28)
+## Phase 0: Immediate (NOW → 2026-04-30)
 
-### ~~0.1 MEXT University Recommendation Research~~ ? DROPPED (2026-02-17)
-> [!note] Dropped due to extremely fierce competition. Keep for reference only.
+### 0.1 Clarify GSGC Role & Special Selection Details — CRITICAL
 
-- [ ] Read UTokyo Graduate School of Science international admissions page end-to-end: https://www.s.u-tokyo.ac.jp/en/admission/graduate.html
-- [ ] Search for "University Recommendation" (大学推薦) on UTokyo's MEXT scholarship pages
-- [ ] Check if Research Student / Kenkyusei category is eligible under University Recommendation (General Category)
-- [ ] Identify the internal nomination timeline — when does UTokyo's department submit nominations to MEXT?
-- [ ] Confirm whether a Letter of Acceptance (Naidaku) is required *before* the University Recommendation nomination
-- [ ] List all required documents for the University Recommendation application
-- [ ] Check the [UTokyo MEXT page for Chinese students](https://www.k.u-tokyo.ac.jp/exam/master/foreign_research_students/mext_scholarship_cn/) for China-specific instructions
-- [ ] Write a summary of findings and update [[UTokyo_RIKEN]] verification item `[V1]`
-- [ ] If eligibility is unclear from web pages alone, draft an inquiry email to UTokyo Graduate School Office (send in Phase 1)
+> D1 entry = Special Selection (confirmed). Remaining unknowns: GSGC's role (scholarship? irrelevant?), Special Selection application window, and exam format.
 
-### 0.2 Verification Quick Wins
+- [ ] Prepare priority questions for professor meeting (see [[DG_GSGC_vs_Special_Selection]] unknowns U1–U8)
+  - U4: Can GSGC scholarship (180k/mo) + RIKEN JRA (200k/mo) stack? Or is GSGC irrelevant for D1 applicants?
+  - **NEW:** What is the Special Selection application window for Oct 2027 entry?
+  - **NEW:** What is the Special Selection exam format? (Written exam scope, duration, oral exam structure)
+  - U5: Can you apply to both GSGC and Special Selection simultaneously?
+- [ ] Schedule online meeting with Prof. Aoi Nori or Prof. Nobuaki Imai (~Mar–Apr 2026)
+- [ ] Attend meeting and record answers
+- [ ] Update [[DG_GSGC_vs_Special_Selection]] with decisions
+- [ ] **Backstop 2026-07-01:** If unresolved, escalate to UTokyo Graduate School Office directly
+
+### 0.2 TOEFL iBT Registration (by Apr 2026)
+
+- [ ] Register for TOEFL iBT — **target exam date: July or August 2026**
+- [ ] Registration must happen in Phase 0; exam prep and sitting are in Phase 1
+- [ ] Track in [[English_Learning]]
+
+### 0.3 Verification Quick Wins (carried over)
 
 - [ ] Fetch the [RIKEN JRA page](https://www.riken.jp/en/careers/programs/jra/) and verify: salary amount, employment status, Shakai Hoken, commuting reimbursement → update `[V2]` `[V3]`
 - [ ] Fetch the [UTokyo tuition exemption page](https://www.u-tokyo.ac.jp/en/prospective-students/exemptions.html) and verify: income threshold, international student eligibility, income definition → update `[V4]`
 - [ ] Confirm current UTokyo annual tuition (535,800 vs 520,800) from official fee schedule → update `[V5]`
 
-### 0.3 Savings Audit
+### 0.4 Savings Audit (carried over)
 
 - [ ] Check all bank accounts and liquid assets — calculate total in CNY
 - [ ] Convert to JPY at current exchange rate
@@ -63,131 +72,21 @@ pathway: "Primary: Direct PhD D1 via GSGC (Oct 2027); Fallback: Kenkyusei (Oct 2
 
 ---
 
-## Phase 1: Supervisor Outreach (2026-03-01 → 2026-06-30)
+## Phase 1: Exam Preparation & Applications (2026-05-01 → 2026-12-31)
 
-### 1.1 Target Professor Identification
+### 1.1 TOEFL iBT Preparation & Exam
 
-- [ ] Go to the [UTokyo CNS staff page](https://www.cns.s.u-tokyo.ac.jp/) and list all PIs
-- [ ] For each PI, check their research topics — flag those working on: TPC, direct reactions, heavy-ion physics, particle identification, or ML in nuclear/particle physics
-- [ ] Cross-reference with RIKEN RIBF collaboration lists — prioritize PIs who are also RIKEN collaborators
-- [ ] Check recent publications (last 3 years) for each candidate PI on INSPIRE-HEP or Google Scholar
-- [ ] Narrow to a ranked shortlist of 3–5 professors
-- [ ] For each, note: name, position, research group, recent paper titles, email address
-- [ ] Save shortlist as a table in [[UTokyo_RIKEN]] or a dedicated sub-note
+> Registration should already be done in Phase 0.2.
 
-### 1.2 CV Preparation
-
-- [ ] Start from current IMP/UCAS academic CV
-- [ ] Add or update: education history (IMP, UCAS, expected graduation June 2027)
-- [ ] Add: master's thesis topic and preliminary results
-- [ ] Add: technical skills section (ROOT, Geant4, Python, ML frameworks, TPC analysis)
-- [ ] Add: ML experience (ResNet, ViT, domain adaptation — DANN, MCD)
-- [ ] Add: publications or conference presentations (if any)
-- [ ] Add: relevant coursework (nuclear physics, quantum mechanics, statistics)
-- [ ] Proofread for grammar and formatting
-- [ ] Have IMP supervisor review the CV
-- [ ] Export as PDF
-
-### 1.3 Research Statement
-
-- [ ] Write a 1-page research fit statement covering:
-  - Current IMP research: what you do, methods used, key results
-  - How it connects to CNS / RIBF work (TPC, direct reactions, RIBF beams)
-  - Your ML angle: how ML-PID and domain adaptation could contribute
-  - What you hope to explore during PhD
-- [ ] Tailor one version per top-3 professor (adjust emphasis to match their specific work)
-- [ ] Have IMP supervisor review for accuracy
-- [ ] Proofread for English quality (consider Grammarly or peer review)
-
-### 1.4 Inquiry Email Drafting
-
-- [ ] Write a base email template:
-  - Subject line: concise, mentions Research Student + your field
-  - Para 1: who you are (IMP master's, expected graduation, field)
-  - Para 2: why their lab (cite 1–2 specific papers or projects)
-  - Para 3: your background fit (TPC, ML-PID, direct reactions)
-  - Para 4: request (possibility of accepting you as Kenkyusei from Oct 2027, leading to PhD)
-  - Closing: attach CV + research statement, mention willingness for an online meeting
-- [ ] Customize for each professor (swap Para 2 details, adjust emphasis)
-- [ ] Have IMP supervisor review the email (or provide an introduction if willing)
-- [ ] **Send first batch of emails by 2026-04-15**
-
-### 1.5 Follow-up Protocol
-
-- [ ] Create a tracking table: Professor | Date Sent | Response | Next Action | Status
-- [ ] If no response after 2 weeks, send a polite follow-up
-- [ ] If no response after 4 weeks, try an alternative contact method (lab secretary, conference encounter, IMP supervisor introduction)
-- [ ] If a professor responds positively, schedule an online meeting
-- [ ] Prepare for the meeting: read their 3 most recent papers, prepare 2–3 questions about their current projects
-- [ ] After meeting, send a thank-you email summarizing discussed points and next steps
-
-### 1.6 Secure Naidaku
-
-- [ ] Once a professor verbally agrees, confirm in writing: "I understand you are willing to accept me as a Research Student from October 2027"
-- [ ] Ask the professor what formal steps are needed on their end (internal approval, department notification)
-- [ ] Confirm if they will provide a written Letter of Acceptance (Naidaku) and when
-- [ ] Obtain the Naidaku document (physical or digital, depending on UTokyo requirements)
-- [ ] **Deadline: Naidaku in hand by 2026-06-30** (needed for Kenkyusei formal application)
-
-### 1.7 IMP Supervisor Leverage
-
-- [ ] Ask your IMP supervisor if they have direct contacts at UTokyo CNS or RIKEN
-- [ ] If yes, request a personal introduction email (CC'd to you)
-- [ ] If your IMP supervisor has co-authored papers with any CNS PI, mention this in your inquiry email
-- [ ] Discuss your Japan plan openly with your IMP supervisor — ensure they support your timeline
-
----
-
-## Phase 2: Application & Preparation (2026-07-01 → 2026-12-31)
-
-### ~~2.1 MEXT University Recommendation Application~~ — DROPPED (2026-02-17)
-
-> [!info] UTokyo nominates only ~3 students for MEXT University Recommendation. **Extremely fierce competition** ? dropped as a primary plan. Proceeding with **self-funded Kenkyusei** as primary pathway. Savings verification becomes critical — see [[UTokyo_RIKEN#Financials]].
-
-### 2.2 Self-Funded Kenkyusei Formal Application (PRIMARY)
-
-- [ ] Check the [UTokyo Research Student application page](https://www.s.u-tokyo.ac.jp/en/admission/research-students.html) for Oct 2027 cycle
-- [ ] Note the application window (expected ~Apr–May 2027 based on prior cycles)
-- [ ] Prepare all required documents (transcripts, recommendation letters, research proposal, TOEFL score, Naidaku)
-- [ ] Submit self-funded application in the Apr–May 2027 window
-
-### 2.3 Entrance Exam Preparation (ongoing)
-
-- [ ] Obtain past UTokyo Physics doctoral entrance exams (ask supervisor, lab members, or UTokyo contacts)
-- [ ] Categorize problems by topic: QM, StatMech, Classical Mechanics, E&M
-- [ ] Create a study schedule: dedicate fixed hours per week to exam prep
-- [ ] Work through Griffiths QM or Sakurai (depending on level) → problems
-- [ ] Work through Pathria or Reif for Statistical Mechanics → problems
-- [ ] Work through Goldstein or Landau for Classical Mechanics → problems
-- [ ] Work through Jackson or Griffiths E&M → problems
-- [ ] Attempt 1 past exam per month starting Sep 2026; score yourself
-- [ ] Identify weak areas and allocate extra time
-- [ ] Track progress in [[Fundamental_Knowledge]]
-
-### 2.4 Japanese Language (ongoing — LOW PRIORITY)
-
-> [!info] Japanese is **not required** for UTokyo GSGC admission or the entrance exam. It is a life-quality and immigration asset, not an exam dependency. Entrance exam prep and TOEFL come first — only spend time here when higher-priority tracks are on schedule.
-
-- [ ] Continue daily study (target: N4 level by Oct 2027)
-- [ ] Use a structured resource (Genki textbooks, WaniKani, Anki decks)
-- [ ] Practice listening: NHK Easy News, podcasts
-- [ ] Practice speaking: language exchange partner or iTalki tutor
-- [ ] Take JLPT N5 when ready (July or December 2026 exam)
-- [ ] Track progress in [[Japanese_Language]]
-
-### 2.5 English Proficiency
-
-- [ ] **TOEFL iBT is required for Kenkyusei application and the PhD English score component** (submit in advance)
-- [ ] Register for TOEFL iBT ? **target exam date: July or August 2026** (Sep/Oct are fallback; ensure scores available by Apr?May 2027 Kenkyusei application)
-- [ ] UTokyo requires B2+ CEFR level (roughly TOEFL iBT 72+, but aim for 80-90+)
+- [ ] UTokyo requires single test date score (no MyBest); aim for 100+
+- [ ] Focused prep: 2–3 months before exam date
+- [ ] Sit for TOEFL iBT in **July or August 2026**
 - [ ] TOEFL scores valid if taken within 2 years of application start date
-- [ ] Allow 2–3 months prep before exam date
 - [ ] Track in [[English_Learning]]
 
+### 1.2 GRE Physics Subject Test
 
-### 2.6 GRE Physics Subject Test
-
-> [!warning] **No retake margin.** The Sep/Oct 2026 window is effectively the last viable sitting for the ~Dec 2026 GSGC application deadline. Scores arrive ~8–11 days after the window closes, but there is no later window before the deadline. Treat this as a single-shot opportunity.
+> [!warning] **No retake margin.** The Sep/Oct 2026 window is likely the last viable sitting before the application deadline (window TBD — previously estimated ~Dec 2026). Treat as single-shot.
 
 - [ ] **NOW → Jul 2026:** Study GRE Physics content alongside [[Fundamental_Knowledge]] exam prep (significant overlap in QM, E&M, Classical Mechanics, Thermodynamics/StatMech)
 - [ ] **~Jul 2026:** Monitor NEEA portal (gre-main.neea.cn) for 2026-27 registration opening
@@ -197,176 +96,224 @@ pathway: "Primary: Direct PhD D1 via GSGC (Oct 2027); Fallback: Kenkyusei (Oct 2
 - [ ] Confirm score receipt (~8–11 days after window closes) and verify UTokyo received the report
 - [ ] See [[Official_Deadlines#3. GRE Physics Subject Test]] for full schedule, NEEA details, and validity rules
 
-### 2.7 Verification & Monitoring
+### 1.3 Entrance Exam Preparation (ongoing — ELEVATED PRIORITY)
 
-- [ ] **2026-07-01:** Check UTokyo Special Selection and GSGC pages for Oct 2027 cycle info
-- [ ] **2026-09-01:** Check if GSGC guidelines for Oct 2027 have been released
-- [ ] **2026-10-15:** Check UTokyo for Oct 2027 enrollment windows
-- [ ] **2026-12-05:** Second check if Oct 2027 windows not yet posted
-- [ ] Confirm with supervisor: which exam route (Regular Physics vs GSGC/Special Selection) for Oct 2028 PhD entry?
-- [ ] Verify Kenkyusei exam eligibility: can you sit for the doctoral entrance exam while in Kenkyusei status? → update `[V6]`
-- [ ] Verify maximum Kenkyusei enrollment duration → update `[V8]`
+> [!important] Entrance exam is now the **single critical gate**. Supervisor acceptance is secured; everything depends on passing.
 
----
+- [ ] Obtain past UTokyo Physics doctoral entrance exams (ask Prof. Aoi/Imai, lab members)
+- [ ] Categorize problems by topic: QM, StatMech, Classical Mechanics, E&M, Thermodynamics
+- [ ] Create a study schedule: dedicate fixed hours per week to exam prep
+- [ ] Core textbooks:
+  - QM: Griffiths or Sakurai
+  - Statistical Mechanics: Pathria or Reif
+  - Classical Mechanics: Goldstein or Landau
+  - E&M: Jackson or Griffiths
+- [ ] Attempt 1 past exam per month starting Sep 2026; score yourself
+- [ ] Identify weak areas and allocate extra time
+- [ ] Track progress in [[Fundamental_Knowledge]]
 
-## Phase 3: Pre-Departure (2027-01-01 → 2027-09-30)
+### 1.4 Special Selection Application
 
-### 3.1 Formal Application Submission (self-funded)
+> [!warning] **Application window and exam format are UNVERIFIED.** Previous estimates (~Dec 5–22, Application Period 2) were sourced from GSGC data and may not apply to Special Selection. Confirm with professors or wait for Oct 2027 cycle info.
 
-- [ ] **2027-01-15:** If no Oct 2027 call is posted yet, email the Graduate School Office
-- [ ] When the Oct 2027 self-funded Research Student application window opens (~Apr–May 2027):
-  - [ ] Download application forms
-  - [ ] Fill in all fields carefully (name in katakana, research plan, funding source)
-  - [ ] Attach all supporting documents
-  - [ ] Submit before deadline (typically early May)
-- [ ] Confirm receipt of application with the office
-- [ ] Track admission decision timeline
+- [ ] **2026-07-01:** Check UTokyo Special Selection page for Oct 2027 cycle info
+- [ ] **2026-09-01:** Check if Special Selection guidelines for Oct 2027 have been released
+- [ ] **2026-10-15:** Re-check if not yet posted
+- [ ] **2026-12-05:** Final check — application window expected around this time (unverified)
+- [ ] Prepare all required documents:
+  - [ ] Application forms
+  - [ ] Research plan / statement of purpose
+  - [ ] CV
+  - [ ] Transcripts (IMP/UCAS)
+  - [ ] TOEFL score report (single test date, no MyBest)
+  - [ ] GRE Physics score report
+  - [ ] Recommendation letters (IMP supervisor + others)
+  - [ ] Supervisor endorsement from Prof. Aoi/Imai
+- [ ] Submit Special Selection application within the confirmed window
+- [ ] Confirm receipt with UTokyo
 
-### 3.2 COE & Visa
+### 1.5 Japanese Language (ongoing — LOW PRIORITY)
 
-- [ ] Once admission is confirmed, coordinate with UTokyo International Office for COE application
-- [ ] Provide all required COE documents:
-  - [ ] Acceptance letter from UTokyo
-  - [ ] Proof of financial support (bank statement showing sufficient funds)
-  - [ ] Passport copy
-  - [ ] Photo (4cm × 3cm, recent)
-  - [ ] Application form (UTokyo may fill parts on your behalf)
-- [ ] Wait for COE issuance (typically 1–3 months)
-- [ ] Once COE arrives, apply for Student visa at the Japanese consulate/embassy in China
-  - [ ] Visa application form
-  - [ ] COE (original)
-  - [ ] Valid passport
-  - [ ] Photo
-  - [ ] Other mission-specific documents → check embassy website
-- [ ] **Target: visa in hand by 2027-08-31**
-- [ ] Track in relation to the Jun–Sep 2027 gap (Risk R6 in [[UTokyo_RIKEN]])
+> [!info] Japanese is **not required** for UTokyo Special Selection admission or the entrance exam. It is a life-quality and immigration asset. Entrance exam prep and TOEFL come first.
 
-### 3.3 Housing
-
-- [ ] Research housing options near RIKEN Wako campus (Wako, Niiza, Asaka, Nerima areas)
-- [ ] Check if UTokyo or RIKEN offers dormitory/housing for Research Students
-- [ ] If private rental: research typical costs (60–80k JPY/month), agency fees, key money
-- [ ] If dormitory available: apply early (limited spots)
-- [ ] Budget for move-in costs: 240,000–320,000 JPY (first month + deposit + key money + agent fee)
-- [ ] Arrange housing before arrival if possible (some agencies work with overseas applicants)
-- [ ] Alternatively, book temporary accommodation (weekly mansion, Airbnb) for first 2–4 weeks
-
-### 3.4 Logistics & Setup Preparation
-
-- [ ] Research phone/SIM options for Japan (MVNO plans: 3–5k JPY/month)
-- [ ] Research bank account options (Japan Post Bank is easiest for new residents; some require My Number card first)
-- [ ] Prepare a packing list: essential documents, electronics, medicine, winter clothes
-- [ ] Get passport validity checked (must be valid for the entire stay; renew if needed)
-- [ ] Arrange international money transfer method (Wise, bank wire)
-- [ ] Convert a portion of CNY savings to JPY before departure (watch exchange rates)
-- [ ] Research National Health Insurance enrollment for self-funded students (15–20k JPY/month)
-- [ ] Download useful apps: Google Maps (Japan), Suica/Pasmo (transit), LINE (communication)
-
-### 3.5 IMP Graduation Wrap-Up
-
-- [ ] Complete master's thesis by IMP deadline (expected: spring 2027)
-- [ ] Defend thesis
-- [ ] Obtain degree certificate and official transcripts
-- [ ] Obtain letters of recommendation from IMP supervisor (for UTokyo formal records)
-- [ ] Settle any institutional obligations at IMP/UCAS
+- [ ] Continue daily study (target: N4 level by Oct 2027)
+- [ ] Use structured resources (Genki, WaniKani, Anki)
+- [ ] Take JLPT N5 when ready (July or December 2026 exam)
+- [ ] Track progress in [[Japanese_Language]]
 
 ---
 
-## Phase 4: Kenkyusei Year (2027-10-01 → 2028-09-30)
+## Phase 2: Examination & Results (dates TBD — estimated early 2027)
 
-### 4.1 Arrival & Setup (Oct 2027)
+### 2.1 Written Exam (date TBD)
 
-- [ ] Arrive in Japan; go through immigration (receive Residence Card)
-- [ ] Register address at local municipal office (within 14 days)
-- [ ] Enroll in National Health Insurance at municipal office
-- [ ] Open bank account (Japan Post Bank or Shinsei Bank)
-- [ ] Get phone/SIM contract
-- [ ] Set up housing: furniture, bedding, kitchen basics
-- [ ] Get commuter pass (Suica/Pasmo) for Wako ↔ campus route
-- [ ] Register at UTokyo as Research Student
-- [ ] Meet supervisor and lab members; attend lab orientation
+> [!warning] **Exam format unverified.** The details below (2hr, CM/QM/EM/Thermo/StatMech) were sourced from GSGC materials. Special Selection may use a different format. Confirm with Prof. Aoi/Imai.
 
-### 4.2 Entrance Exam Preparation (primary focus)
+- [ ] Confirm exact exam date and format with professors when published
+- [ ] Expected topics (unverified — may differ for Special Selection): CM, QM, EM, Thermodynamics, StatMech
+- [ ] Supervisor may indicate if written exam is waived based on GRE score (confirm with professors)
+- [ ] Final intensive prep: 2–3 weeks before exam, focus on weak areas and timed practice
+- [ ] Sit for written exam
 
-- [ ] Confirm exam route with supervisor: Regular Physics (written Aug, oral Jan) or GSGC/Special Selection
-- [ ] Obtain latest past exams from lab seniors or department office
-- [ ] Establish daily study routine: 4–6 hours of exam prep
-- [ ] Join or form a study group with other Kenkyusei or master's students preparing for the same exam
-- [ ] Take monthly mock exams (timed, using past papers)
-- [ ] Review weak areas identified in mock exams
-- [ ] Attend relevant UTokyo lectures if permitted (to calibrate expected level)
-- [ ] **Do not over-commit to experiments** — exam is the gate to everything
+### 2.2 Oral Exam (date TBD)
 
-### 4.3 Lab Integration (secondary)
+- [ ] Prepare for oral exam / interview:
+  - [ ] Review your research statement and be ready to discuss it in depth
+  - [ ] Prepare to explain your IMP research (TPC, ML-PID, domain adaptation)
+  - [ ] Prepare 2–3 questions about the lab's current projects
+  - [ ] Practice articulating your PhD research direction
+- [ ] Sit for oral exam
 
-- [ ] Attend weekly lab meetings and seminars
-- [ ] Learn the lab's experimental setup and data analysis pipeline
-- [ ] Contribute to a minor analysis task if asked (but protect study time)
-- [ ] Build relationships with lab members — they will be your PhD colleagues
-- [ ] Discuss research direction for PhD with supervisor (align expectations)
+### 2.3 Results (date TBD)
 
-### 4.4 Language Immersion
-
-- [ ] Use Japanese daily: lab interactions, shopping, transit
-- [ ] Continue structured study (target: N3 by end of Kenkyusei year)
-- [ ] Take JLPT N4 or N3 (July or December exam)
-
-### 4.5 Evaluate April 2028 Entry (Decision Point: Dec 2027)
-
-> Only attempt early entry if ALL conditions are met:
-
-- [ ] Supervisor explicitly approves April 2028 entry timing
-- [ ] Official UTokyo cycle pages confirm eligibility for your Kenkyusei status
-- [ ] Mock exam scores are consistently at pass level
-- [ ] **If any condition fails → default to October 2028 entry (no churn)**
-
-### 4.6 Doctoral Entrance Exam
-
-**If Regular Physics route:**
-- [ ] Submit exam application (check deadline, typically months before exam)
-- [ ] Sit for written exam (August 2028)
-- [ ] Sit for oral exam (January 2028 or 2029, depending on cycle)
-- [ ] Await results
-
-**If GSGC / Special Selection:**
-- [ ] Submit application during the winter screening window (Jan/Feb 2028)
-- [ ] Complete screening process (document review + interview)
-- [ ] Await results
-
-- [ ] **If passed:** proceed to Phase 5
-- [ ] **If failed:** activate contingency (see Risk R7 in [[UTokyo_RIKEN]])
-  - [ ] Check if Kenkyusei status can be extended for a retake
-  - [ ] Check next exam cycle timing
-  - [ ] Evaluate [[Osaka_University]] backup activation
+- [ ] Await results announcement
+- [ ] **If PASSED → proceed to Phase 3 (Direct PhD path)**
+- [ ] **If FAILED → activate Kenkyusei fallback (Phase 4)**
+  - [ ] Confirm with professors: Kenkyusei acceptance still available?
+  - [ ] Begin self-funded Kenkyusei application (see Phase 4)
 
 ---
 
-## Phase 5: PhD Transition (2028-04-01 → 2028-10-01)
+## Phase 3: Pre-Departure — Direct PhD Path (2027-04-01 → 2027-09-30)
 
-### 5.1 JRA Application
+> [!info] This phase activates only if the entrance exam is **PASSED**.
 
-- [ ] Confirm JRA application window with supervisor (expected Apr–May 2028)
+### 3.1 PhD Enrollment Procedures
+
+- [ ] Complete PhD D1 enrollment procedures at UTokyo Graduate School of Science
+- [ ] Coordinate with UTokyo International Office for all required paperwork
+- [ ] Register for courses / fulfill PhD program requirements
+
+### 3.2 JRA Application
+
+- [ ] Confirm JRA application window with Prof. Aoi/Imai (expected ~Apr–May 2027)
 - [ ] Prepare JRA application materials:
   - [ ] Research plan for PhD period
   - [ ] Supervisor endorsement / recommendation
-  - [ ] Proof of UTokyo doctoral entrance exam pass
+  - [ ] Proof of entrance exam pass
   - [ ] CV
 - [ ] Submit JRA application
-- [ ] Track result
+- [ ] Track result — funding: ~200k JPY/month pre-tax (~160–165k net)
 
-### 5.2 Tuition Exemption
+### 3.3 Tuition Exemption
 
 - [ ] Apply for UTokyo tuition exemption before the D1 enrollment deadline
 - [ ] Provide income documentation (JRA offer or prior year income)
 - [ ] Track exemption decision
 
-### 5.3 PhD Enrollment
+### 3.4 COE & Visa
 
-- [ ] Complete PhD D1 enrollment procedures at UTokyo Graduate School of Science
-- [ ] Switch residence status if needed (confirm with immigration — likely same Student visa, but verify)
-- [ ] Register for courses / fulfill PhD program requirements
-- [ ] Begin full-time research at CNS / RIBF
-- [ ] JRA funding activates
+- [ ] Coordinate with UTokyo International Office for COE application
+- [ ] Provide all required COE documents:
+  - [ ] Acceptance letter from UTokyo
+  - [ ] Proof of financial support (JRA offer + bank statement)
+  - [ ] Passport copy
+  - [ ] Photo (4cm × 3cm, recent)
+  - [ ] Application form
+- [ ] Wait for COE issuance (typically 1–3 months)
+- [ ] Once COE arrives, apply for Student visa at the Japanese consulate/embassy in China
+- [ ] **Target: visa in hand by 2027-08-31**
+
+### 3.5 Housing
+
+- [ ] Research housing options near RIKEN Wako campus (Wako, Niiza, Asaka, Nerima areas)
+- [ ] Check if UTokyo or RIKEN offers dormitory/housing for doctoral students
+- [ ] If private rental: research typical costs (60–80k JPY/month), agency fees, key money
+- [ ] Budget for move-in costs: 240,000–320,000 JPY
+- [ ] Arrange housing before arrival or book temporary accommodation for first 2–4 weeks
+
+### 3.6 IMP Graduation Wrap-Up
+
+> [!warning] **Scheduling overlap.** Thesis defense (spring 2027) may overlap with the entrance exam period (dates TBD, estimated early 2027). Plan thesis completion to minimize collision — ideally finish the thesis draft before exam season begins.
+
+- [ ] Complete master's thesis by IMP deadline (expected: spring 2027)
+- [ ] Defend thesis
+- [ ] Obtain degree certificate and official transcripts
+- [ ] Obtain letters of recommendation from IMP supervisor
+- [ ] Settle any institutional obligations at IMP/UCAS
+
+### 3.7 Logistics & Setup
+
+- [ ] Research phone/SIM, bank account, health insurance options
+- [ ] Prepare international money transfer method (Wise, bank wire)
+- [ ] Convert portion of CNY savings to JPY
+- [ ] Get passport validity checked (renew if needed)
+- [ ] **Arrive in Japan by 2027-10-01** — begin PhD D1
+
+---
+
+## Phase 4: Kenkyusei Fallback (2027-04-01 → 2028-10-01)
+
+> [!warning] This phase activates ONLY if the entrance exam is **FAILED**. If passed, skip entirely — proceed with Phase 3.
+
+### 4.1 Kenkyusei Application (Apr–May 2027)
+
+- [ ] Check the [UTokyo Research Student application page](https://www.s.u-tokyo.ac.jp/en/admission/research-students.html) for Oct 2027 cycle
+- [ ] Note the application window (expected ~Apr–May 2027)
+- [ ] Prepare all required documents (transcripts, recommendation letters, research proposal, TOEFL score, Naidaku from professors)
+- [ ] Submit self-funded Kenkyusei application
+- [ ] Budget: ~2.5–2.8M JPY for the Kenkyusei year
+
+### 4.2 COE, Visa, Housing & IMP Wrap-Up
+
+- [ ] Follow same COE/Visa process as Phase 3.4
+- [ ] Follow same housing process as Phase 3.5
+- [ ] Complete IMP graduation (Phase 3.6)
+- [ ] Arrive in Japan by 2027-10-01 as Kenkyusei
+
+### 4.3 Arrival & Setup (Oct 2027)
+
+- [ ] Immigration, municipal registration, health insurance, bank account, phone
+- [ ] Register at UTokyo as Research Student
+- [ ] Meet supervisor and lab members
+
+### 4.4 Entrance Exam Retake Preparation (primary focus)
+
+- [ ] Confirm exam route for next cycle with supervisor
+- [ ] Obtain latest past exams from lab members
+- [ ] Establish daily study routine: 4–6 hours exam prep
+- [ ] Join or form study group
+- [ ] Monthly mock exams
+- [ ] **Do not over-commit to experiments** — exam is the gate
+
+### 4.5 Lab Integration (secondary)
+
+- [ ] Attend weekly lab meetings and seminars
+- [ ] Learn the lab's experimental setup and data analysis pipeline
+- [ ] Contribute to minor analysis tasks if asked (protect study time)
+- [ ] Discuss PhD research direction with supervisor
+
+### 4.6 Entrance Exam Retake
+
+- [ ] Submit exam application for next cycle
+- [ ] Sit for written exam
+- [ ] Sit for oral exam
+- [ ] **If passed:** proceed to PhD enrollment (Oct 2028)
+- [ ] **If failed:** activate contingency — check Kenkyusei extension, evaluate [[Osaka_University]] backup
+
+### 4.7 PhD Transition (if retake passed)
+
+- [ ] JRA application (~Apr–May 2028)
+- [ ] Tuition exemption application
+- [ ] PhD D1 enrollment (Oct 2028)
+
+---
+
+## Completed / Archived
+
+### ~~Supervisor Outreach (Original Phase 1)~~ — COMPLETED (2026-03-09)
+
+> [!success] **Naidaku achieved.** Prof. Nori Aoi and Prof. Nobuaki Imai accepted conditionally on passing the entrance exam. IMP supervisor connection was instrumental.
+
+- [x] Target professor identification
+- [x] CV preparation
+- [x] Research statement
+- [x] Inquiry emails sent
+- [x] Naidaku secured (conditional)
+
+### ~~MEXT University Recommendation Research~~ — DROPPED (2026-02-17)
+
+> Dropped due to extremely fierce competition (~3 nominations per year).
 
 ---
 
@@ -374,20 +321,24 @@ pathway: "Primary: Direct PhD D1 via GSGC (Oct 2027); Fallback: Kenkyusei (Oct 2
 
 | Trigger | Action |
 |---|---|
-| No professor responds by 2026-06-30 | Expand search to non-CNS UTokyo nuclear physics groups; activate Osaka outreach |
-| Self-funded budget shortfall | Verify savings buffer; adjust timeline or income plan |
-| Naidaku not secured by 2026-09-01 | Escalate through IMP supervisor connections; consider Osaka backup |
+| GSGC role + Special Selection details unresolved by 2026-07-01 | Escalate directly to UTokyo Graduate School Office |
+| GRE Physics score too low or missed | No retake before application deadline (TBD); pivot to next window (delays to Oct 2028 cycle) or evaluate Regular exam route |
+| TOEFL score below 72 (B2 threshold) | Retake in Sep–Oct 2026; fallback window available |
+| Entrance exam failed (Mar 2027) | Activate Kenkyusei fallback (Phase 4); retake exam for Oct 2028 |
+| Self-funded budget shortfall (if Kenkyusei) | Verify savings buffer; adjust timeline or seek alternative funding |
 | Visa/COE delayed past 2027-09-01 | Contact UTokyo International Office urgently; explore deferred start |
-| GRE Physics score too low or missed | No retake before ~Dec 2026 GSGC deadline; pivot to Apr 2027 window (delays application to Oct 2028 cycle) or evaluate Regular exam route |
-| Entrance exam failed | Check Kenkyusei extension rules; retake in next cycle; evaluate Osaka |
-| JRA application rejected | Self-fund PhD year from savings; explore other RIKEN/UTokyo RA positions |
-| Savings drop below 2M JPY before departure | Delay by one cycle OR secure alternative funding before committing |
+| Entrance exam failed twice | Check Kenkyusei extension rules; evaluate [[Osaka_University]] backup |
+| JRA application rejected | Self-fund from savings; explore other RIKEN/UTokyo RA positions |
+| Savings drop below 2M JPY before departure | Delay by one cycle OR secure alternative funding |
 
 ---
 
 ## Related Notes
 
 - [[UTokyo_RIKEN]] — Strategic roadmap, financials, risk register, verification tracker
+- [[DG_GSGC_vs_Special_Selection]] — Open decision gate: GSGC vs Special Selection sub-track
+- [[Questions_and_Verifiable_Source]] — Sources verification and outstanding questions
+- [[Official_Deadlines]] — Application windows, exam schedules, deadlines
 - [[General_Checklist]] — Eligibility and document checklist
 - [[Fundamental_Knowledge]] — Exam preparation tracking
 - [[Japanese_Language]] — Language study progress
