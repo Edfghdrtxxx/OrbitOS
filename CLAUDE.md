@@ -16,7 +16,7 @@ Act as Knowledge Manager and Daily Planner. Capture, connect, and organize knowl
 * **`99_System`**: Templates, Prompts, Archives (Projects/YYYY/, Inbox/YYYY/MM/)
 
 ## Skill Files
-Skill definitions live in `.agents/skills/<skill-name>/SKILL.md` (symlinked to `.claude/skills/`), or `C:/Users/petro/.claude/skills`.
+Skill definitions live in `.agents/skills/<skill-name>/SKILL.md` (symlinked to `.claude/skills/`), or `C:/Users/petro/.claude/skills` (Search(pattern: "C:/Users/petro/.claude/skills/**/)).
 
 ## Templates
 `Daily_Note.md`, `Project_Template.md`, `Content_Template.md`, `Wiki_Template.md`, `Inbox_Template.md`

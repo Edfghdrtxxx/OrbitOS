@@ -23,7 +23,7 @@ pathway: "Primary: Direct PhD D1 via Special Selection (Oct 2027); Fallback: Ken
 | ~~Supervisor acceptance~~ | ~~2026-06-30~~ | **DONE** (2026-03-09) — conditional on exam |
 | GSGC role clarified (D1 = Special Selection) | 2026-04-30 (backstop: 2026-07-01) | PENDING — professor meeting |
 | TOEFL iBT taken | 2026-07 or 2026-08 | Target 100+; no MyBest accepted |
-| GRE Physics taken | 2026-09 or 2026-10 | Single-shot; no retake before application deadline (window TBD) |
+| GRE Physics taken | 2026-09 or 2026-10 | Single-shot; no retake before Special Selection deadline (~Dec 2026) |
 | Special Selection application submitted | TBD — confirm with professors / Oct 2027 cycle info | ⚠️ Window unverified |
 | Written exam (if required) | TBD | ⚠️ Format unverified — confirm with professors |
 | Oral exam | TBD | ⚠️ Date unverified — confirm with professors |
@@ -86,7 +86,7 @@ pathway: "Primary: Direct PhD D1 via Special Selection (Oct 2027); Fallback: Ken
 
 ### 1.2 GRE Physics Subject Test
 
-> [!warning] **No retake margin.** The Sep/Oct 2026 window is likely the last viable sitting before the application deadline (window TBD — previously estimated ~Dec 2026). Treat as single-shot.
+> [!warning] **No retake margin.** The Sep/Oct 2026 window is likely the last viable sitting before the Special Selection application deadline (estimated ~Dec 5–22, 2026 — see [[Official_Deadlines]]). Treat as single-shot.
 
 - [ ] **NOW → Jul 2026:** Study GRE Physics content alongside [[Fundamental_Knowledge]] exam prep (significant overlap in QM, E&M, Classical Mechanics, Thermodynamics/StatMech)
 - [ ] **~Jul 2026:** Monitor NEEA portal (gre-main.neea.cn) for 2026-27 registration opening
@@ -114,7 +114,7 @@ pathway: "Primary: Direct PhD D1 via Special Selection (Oct 2027); Fallback: Ken
 
 ### 1.4 Special Selection Application
 
-> [!warning] **Application window and exam format are UNVERIFIED.** Previous estimates (~Dec 5–22, Application Period 2) were sourced from GSGC data and may not apply to Special Selection. Confirm with professors or wait for Oct 2027 cycle info.
+> [!warning] **Application window and exam format are UNVERIFIED.** Current estimates (~Dec 5–22, Application Period 2) are based on the confirmed Oct 2026 Special Selection cycle shifted +1 year. Confirm with professors or wait for Oct 2027 cycle info. See [[Official_Deadlines#1. UTokyo Special Selection Application (Oct 2027 enrollment — PRIMARY)]].
 
 - [ ] **2026-07-01:** Check UTokyo Special Selection page for Oct 2027 cycle info
 - [ ] **2026-09-01:** Check if Special Selection guidelines for Oct 2027 have been released
@@ -147,7 +147,7 @@ pathway: "Primary: Direct PhD D1 via Special Selection (Oct 2027); Fallback: Ken
 
 ### 2.1 Written Exam (date TBD)
 
-> [!warning] **Exam format unverified.** The details below (2hr, CM/QM/EM/Thermo/StatMech) were sourced from GSGC materials. Special Selection may use a different format. Confirm with Prof. Aoi/Imai.
+> [!warning] **Exam format unverified.** The details below (2hr, CM/QM/EM/Thermo/StatMech) were previously sourced from GSGC materials and may not apply to Special Selection. Confirm with Prof. Aoi/Imai.
 
 - [ ] Confirm exact exam date and format with professors when published
 - [ ] Expected topics (unverified — may differ for Special Selection): CM, QM, EM, Thermodynamics, StatMech
@@ -322,7 +322,7 @@ pathway: "Primary: Direct PhD D1 via Special Selection (Oct 2027); Fallback: Ken
 | Trigger | Action |
 |---|---|
 | GSGC role + Special Selection details unresolved by 2026-07-01 | Escalate directly to UTokyo Graduate School Office |
-| GRE Physics score too low or missed | No retake before application deadline (TBD); pivot to next window (delays to Oct 2028 cycle) or evaluate Regular exam route |
+| GRE Physics score too low or missed | No retake before Special Selection application deadline (estimated ~Dec 2026); pivot to next window (delays to Oct 2028 cycle) or evaluate Regular exam route |
 | TOEFL score below 72 (B2 threshold) | Retake in Sep–Oct 2026; fallback window available |
 | Entrance exam failed (Mar 2027) | Activate Kenkyusei fallback (Phase 4); retake exam for Oct 2028 |
 | Self-funded budget shortfall (if Kenkyusei) | Verify savings buffer; adjust timeline or seek alternative funding |
