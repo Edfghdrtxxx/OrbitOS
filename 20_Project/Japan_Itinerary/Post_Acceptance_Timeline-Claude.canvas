@@ -8,8 +8,6 @@
 		{"id":"g300000000000001","type":"group","x":1560,"y":-60,"width":700,"height":1740,"color":"6","label":"Jul – Sep 2026"},
 		{"id":"g600000000000001","type":"group","x":4800,"y":-60,"width":700,"height":1740,"color":"6","label":"Apr – Jun 2027"},
 		{"id":"g800000000000001","type":"group","x":5580,"y":-60,"width":700,"height":1740,"color":"6","label":"Jul – Sep 2027"},
-		{"id":"n401000000000001","type":"text","text":"## GRE Score Ready\nUTokyo requires scores within 2 years of application\nSubmitted to UTokyo (7048)\nValid for BOTH pathways (GSGC & Special Selection)","x":2340,"y":114,"width":340,"height":190,"color":"1"},
-		{"id":"n_ss_app_001","type":"text","text":"## SPECIAL SELECTION APPLICATION\n**~Dec 5–22, 2026** (estimated, same cycle)\n*(if Special Selection track chosen)*\nSubmit:\n- GRE Physics score (Required — Physics dept)\n- TOEFL iBT score (100+ target)\n- Supervisor endorsement from Aoi / Imai\n- Research plan (finalized)\n- Academic transcripts\n- PENDING: Exact application period for 2026-2027 cycle","x":2340,"y":585,"width":560,"height":315,"color":"6"},
 		{"id":"n102000000000001","type":"text","text":"## TOEFL Planning\n- Current format (since Jan 21, 2026)\n- Plan registration in Apr\n- UTokyo code: **8002-01**","x":160,"y":-40,"width":300,"height":180,"color":"2"},
 		{"id":"n101000000000001","type":"text","text":"## GRE Physics Prep\n- Begin study plan\n- Register at gre-main.neea.cn\n- Cost: **$175** worldwide\n- UTokyo code: **7048**\n- Required for BOTH pathways (GSGC & Special Selection)","x":160,"y":240,"width":300,"height":240,"color":"1"},
 		{"id":"n104000000000001","type":"text","text":"## PhD Pathway Prep\n- Route B (CHOSEN)\n- Sub-track PENDING: GSGC or Special Selection\n  (→ [[DG_GSGC_vs_Special_Selection]])\n- Research plan drafting\n- Gather application docs","x":80,"y":500,"width":300,"height":280,"color":"6"},
@@ -19,14 +17,10 @@
 		{"id":"n201000000000001","type":"text","text":"## GRE TEST WINDOW\n**Target: Sep/Oct 2026**\n(Apr 2026 window skipped)\n2026-27 registration opens ~Jul 2026 (est.)","x":1700,"y":240,"width":340,"height":180,"color":"1"},
 		{"id":"n404000000000001","type":"text","text":"## Thesis\nNearing completion\nInternal review","x":2560,"y":2080,"width":300,"height":120,"color":"5"},
 		{"id":"n305000000000001","type":"text","text":"## Thesis\nContinued writing\nDraft chapters","x":1560,"y":2100,"width":300,"height":120,"color":"5"},
-		{"id":"n403000000000001","type":"text","text":"## GSGC APPLICATION — Period 2\n**~Dec 5–22, 2026** (estimated)\n*(if GSGC track chosen)*\nSubmit:\n- GRE Physics score (may waive written exam — PENDING)\n- TOEFL iBT score (100+ target)\n- Supervisor endorsement from Aoi / Imai\n- Research plan (finalized)\n- Academic transcripts","x":2960,"y":430,"width":560,"height":290,"color":"6"},
-		{"id":"n402000000000001","type":"text","text":"## TOEFL Score Ready\nSubmitted to UTokyo (Institution code:8002-01)    \nValid through 2028","x":2720,"y":-11,"width":260,"height":145,"color":"2"},
-		{"id":"n301000000000001","type":"text","text":"## GRE Retake Window\n~Oct 2026 (est.)\nRetake if Sep score insufficient\nCheck registration at\ngre-main.neea.cn","x":2340,"y":330,"width":320,"height":170,"color":"1"},
 		{"id":"b1a2c3d4e5f60004","type":"text","text":"## Exam Prep Continues\nPast exam papers\nTargeted weak areas","x":2560,"y":1800,"width":300,"height":130,"color":"#e040fb"},
 		{"id":"a000000000000001","type":"text","text":"# Post-Acceptance Timeline: Mar 2026 → PhD Enrollment (Oct 2027+)\nProfessors Aoi Nori & Nobuaki Imai conditionally accepted. Two pathways: GSGC (5-year M+D) or Special Selection (3-year D1). Decision gate pending professor meeting. Updated 2026-03-10.","x":-120,"y":-240,"width":6580,"height":100,"color":"5"},
 		{"id":"n302000000000001","type":"text","text":"## TOEFL EXAM\n**Jul–Aug 2026**\nScore: 3 days after test\nOfficial: 4-8 biz days\nTarget: **100+**\nValidity: 2 years","x":1760,"y":-40,"width":280,"height":190,"color":"2"},
 		{"id":"n503000000000001","type":"text","text":"## GSGC RESULTS\n**~Early Mar 2027** (estimated)\n✅ PASS → 5-year M+D program enrollment Oct 2027\n  PENDING: Prior master's credit / M1 waiver\n❌ FAIL → Activate Kenkyusei fallback plan\n*(if GSGC track chosen)*","x":4280,"y":220,"width":450,"height":200,"color":"6"},
-		{"id":"f1a2b3c4d5e60001","type":"text","text":"## TOEFL Retake Window\nIf score < 100, retake available","x":3820,"y":-11,"width":270,"height":125,"color":"2"},
 		{"id":"n502000000000001","type":"text","text":"## GSGC ORAL EXAM\n**~Feb 2027** (est.)\nResearch plan presentation\nQ&A with committee\nFormat: TBD w/ professor\n*(if GSGC track chosen)*","x":3750,"y":150,"width":260,"height":186,"color":"6"},
 		{"id":"n504000000000001","type":"text","text":"## Thesis\nFinal draft preparation\nPre-defense review","x":4050,"y":2065,"width":300,"height":120,"color":"5"},
 		{"id":"n_ss_exam_001","type":"text","text":"## SPECIAL SELECTION EXAM\n**~Jan–Feb 2027** (estimated)\nCombined written + oral\n*(if Special Selection track chosen)*\nPENDING: Exact exam format\n(may differ from GSGC — clarify with professors)\nCovers: physics core + research plan","x":3710,"y":743,"width":340,"height":240,"color":"6"},
@@ -57,7 +51,13 @@
 		{"id":"p100000000000001","type":"text","text":"## PENDING\n⚠️ Written exam waiver\nConfirm GRE → waiver\nwith professor meeting","x":-100,"y":1275,"width":220,"height":140,"color":"3"},
 		{"id":"p200000000000001","type":"text","text":"## PENDING\n⚠️ Oral exam format\nExact date + structure\nAsk in professor meeting","x":160,"y":1275,"width":230,"height":140,"color":"3"},
 		{"id":"p300000000000001","type":"text","text":"## PENDING\n⚠️ Research plan scope\nExpectations for chosen pathway's\nresearch plan submission","x":1180,"y":1295,"width":280,"height":180,"color":"3"},
-		{"id":"f9a3b7c2d1e40568","type":"text","text":"## DECISION GATE: GSGC vs Special Selection\nProfessor meeting determines pathway\nGSGC = 5-year M+D (may require M1)\nSpecial Selection = 3-year D only (direct D1)\n→ Clarify with Aoi Nori & Nobuaki Imai\n→ [[DG_GSGC_vs_Special_Selection]]","x":420,"y":1205,"width":320,"height":280,"color":"3"}
+		{"id":"f9a3b7c2d1e40568","type":"text","text":"## DECISION GATE: GSGC vs Special Selection\nProfessor meeting determines pathway\nGSGC = 5-year M+D (may require M1)\nSpecial Selection = 3-year D only (direct D1)\n→ Clarify with Aoi Nori & Nobuaki Imai\n→ [[DG_GSGC_vs_Special_Selection]]","x":420,"y":1205,"width":320,"height":280,"color":"3"},
+		{"id":"n402000000000001","type":"text","text":"## TOEFL Score Ready\nSubmitted to UTokyo (Institution code:8002-01)    \nValid through 2028","x":2830,"y":-31,"width":260,"height":145,"color":"2"},
+		{"id":"n403000000000001","type":"text","text":"## GSGC APPLICATION — Period 2\n**~Dec 5–22, 2026** (estimated)\n*(if GSGC track chosen)*\nSubmit:\n- GRE Physics score (may waive written exam — PENDING)\n- TOEFL iBT score (100+ target)\n- Supervisor endorsement from Aoi / Imai\n- Research plan (finalized)\n- Academic transcripts","x":2970,"y":465,"width":560,"height":290,"color":"6"},
+		{"id":"n401000000000001","type":"text","text":"## GRE Score Ready\nUTokyo requires scores within 2 years of application\nSubmitted to UTokyo (7048)\nValid for BOTH pathways (GSGC & Special Selection)","x":2350,"y":175,"width":340,"height":190,"color":"1"},
+		{"id":"n301000000000001","type":"text","text":"## GRE Retake Window\n~Oct 2026 (est.)\nRetake if Sep score insufficient\nCheck registration at\ngre-main.neea.cn","x":2350,"y":410,"width":320,"height":170,"color":"1"},
+		{"id":"n_ss_app_001","type":"text","text":"## SPECIAL SELECTION APPLICATION\n**~Dec 5–22, 2026** (estimated, same cycle)\n*(if Special Selection track chosen)*\nSubmit:\n- GRE Physics score (Required — Physics dept)\n- TOEFL iBT score (100+ target)\n- Supervisor endorsement from Aoi / Imai\n- Research plan (finalized)\n- Academic transcripts\n- PENDING: Exact application period for 2026-2027 cycle","x":2350,"y":620,"width":560,"height":315,"color":"6"},
+		{"id":"f1a2b3c4d5e60001","type":"text","text":"## TOEFL Retake Window\nIf score < 100, retake available \nWindow :Sep–Nov 2026 (leaving enough time for ETS to deliver the score before Dec 5)","x":2375,"y":-47,"width":270,"height":194,"color":"2"}
 	],
 	"edges":[
 		{"id":"e100000000000001","fromNode":"n101000000000001","fromSide":"right","toNode":"n201000000000001","toSide":"left","color":"1","label":"GRE prep → test"},
@@ -65,10 +65,10 @@
 		{"id":"e102000000000001","fromNode":"n201000000000001","fromSide":"right","toNode":"n401000000000001","toSide":"left","color":"1","label":"score ready"},
 		{"id":"e200000000000001","fromNode":"n102000000000001","fromSide":"right","toNode":"n202000000000001","toSide":"left","color":"2","label":"plan → register"},
 		{"id":"e201000000000001","fromNode":"n202000000000001","fromSide":"right","toNode":"n302000000000001","toSide":"left","color":"2","label":"register → exam"},
-		{"id":"e202000000000001","fromNode":"n302000000000001","fromSide":"right","toNode":"n402000000000001","toSide":"left","color":"2","label":"score delivered"},
+		{"id":"e202000000000001","fromNode":"n302000000000001","fromSide":"right","toNode":"f1a2b3c4d5e60001","toSide":"left","color":"2","label":"score delivered"},
 		{"id":"e300000000000001","fromNode":"n401000000000001","fromSide":"right","toNode":"n403000000000001","toSide":"left","color":"1","label":"GRE → GSGC app"},
 		{"id":"e_gre_to_ss_app","fromNode":"n401000000000001","fromSide":"right","toNode":"n_ss_app_001","toSide":"top","color":"1","label":"GRE → SS app"},
-		{"id":"e301000000000001","fromNode":"n402000000000001","fromSide":"bottom","toNode":"n403000000000001","toSide":"top","color":"6","label":"TOEFL → GSGC app"},
+		{"id":"e301000000000001","fromNode":"n402000000000001","fromSide":"bottom","toNode":"n403000000000001","toSide":"top","color":"2","label":"TOEFL → GSGC app"},
 		{"id":"e_toefl_to_ss_app","fromNode":"n402000000000001","fromSide":"bottom","toNode":"n_ss_app_001","toSide":"top","color":"2","label":"TOEFL → SS app"},
 		{"id":"e302000000000001","fromNode":"n403000000000001","fromSide":"right","toNode":"n501000000000001","toSide":"left","color":"6","label":"GSGC app → written"},
 		{"id":"e303000000000001","fromNode":"n501000000000001","fromSide":"top","toNode":"n502000000000001","toSide":"bottom","color":"6","label":"written → oral"},
@@ -114,8 +114,8 @@
 		{"id":"ec03000000000001","fromNode":"n503000000000001","fromSide":"right","toNode":"n901000000000001","toSide":"left","color":"3","label":"if passed → COE"},
 		{"id":"ec03_ss","fromNode":"n_ss_results_001","fromSide":"right","toNode":"n901000000000001","toSide":"bottom","color":"3","label":"if passed → COE"},
 		{"id":"ed00000000000001","fromNode":"d3e4f5a6b7c80001","fromSide":"right","toNode":"n701000000000001","toSide":"left","color":"3","label":"JRA → PhD funding"},
-		{"id":"ff18124feeda7751","fromNode":"n402000000000001","fromSide":"right","toNode":"f1a2b3c4d5e60001","toSide":"left","color":"2","label":"if < 100"},
 		{"id":"ef02000000000001","fromNode":"n900000000000001","fromSide":"top","toNode":"n_gsgc_pass","toSide":"bottom","color":"3","label":"scholarship if GSGC"},
-		{"id":"ef03000000000001","fromNode":"n901000000000001","fromSide":"right","toNode":"c7d8e9f0a1b20001","toSide":"left","color":"3","label":"COE → visa"}
+		{"id":"ef03000000000001","fromNode":"n901000000000001","fromSide":"right","toNode":"c7d8e9f0a1b20001","toSide":"left","color":"3","label":"COE → visa"},
+		{"id":"47e8a4cf61d6ce5e","fromNode":"f1a2b3c4d5e60001","fromSide":"right","toNode":"n402000000000001","toSide":"left","color":"2"}
 	]
 }
