@@ -23,7 +23,7 @@ tags: [english, TOEFL, language]
 **Key Constraints:**
 - Timeline: Before PhD application deadlines (likely late 2026 or early 2027)
 - Resources: Self-study + online materials; TOEFL registration ~$200
-- Dependencies: Balanced with [[Masters_Thesis]], [[Japanese_Language]], and [[Fundamental_Knowledge]]
+- Dependencies: Balanced with [[Masters_Thesis]], [[Japanese_Language]], and [[Fundamental_Knowledge]] 
 
 ---
 
