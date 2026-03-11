@@ -26,6 +26,27 @@ GSGC pages don't list per-department GRE requirements, but the FAQ and Guideline
 
 > [!success] Bottom Line
 > GRE Physics is needed regardless of pathway. The vault claim is **correct in substance**.
+> **GRE General is NOT required** for the Physics department — only Chemistry and Biological Sciences require it.
+
+### GRE Physics Subject Test — Official Topic Breakdown
+
+Source: [ETS GRE Physics Content & Structure](https://www.ets.org/gre/test-takers/subject-tests/about/content-structure.html) (fetched 2026-03-11). ~70 five-choice questions, 2 hours, computer-delivered, SI units.
+
+| Topic | Weight | Key Subtopics |
+|---|---|---|
+| Classical Mechanics | 20% | Kinematics, Newton's laws, work/energy, oscillations, rotational motion, Lagrangian/Hamiltonian, central forces, fluid dynamics |
+| Electromagnetism | 18% | Electrostatics, DC circuits, magnetic fields, Lorentz force, induction, Maxwell's equations |
+| Quantum Mechanics | 13% | Fundamental concepts, Schrödinger equation, angular momentum, hydrogen atom, perturbation theory |
+| Thermodynamics & Statistical Mechanics | 10% | Laws of thermo, ensembles, partition functions, ideal gas, blackbody radiation |
+| Atomic Physics | 10% | Properties of electrons, Bohr model, fine/hyperfine structure, selection rules, X-rays |
+| Specialized Topics | 9% | Nuclear/particle physics, condensed matter, astrophysics, mathematical methods |
+| Optics & Wave Phenomena | 8% | Wave properties, superposition, interference, diffraction, polarization, geometrical optics |
+| Special Relativity | 6% | Lorentz transformation, time dilation, length contraction, four-vectors, energy-momentum |
+| Laboratory Methods | 6% | Data/error analysis, electronics, instrumentation, radiation detection, laser physics |
+
+Three subscores reported: (1) Classical Mechanics, (2) Electromagnetism, (3) Quantum Mechanics & Atomic Physics.
+
+Required math: calculus, vector algebra, coordinate systems, Fourier series, PDEs, matrices, determinants, complex variables.
 
 ## 2. GSGC vs Special Selection — Key Distinction
 
@@ -51,6 +72,7 @@ This confirms they are separate programs. For someone with an existing master's,
 | GSGC Guidelines PDF | [www.s.u-tokyo.ac.jp/GSGC/pdf/Guidelines.pdf](https://www.s.u-tokyo.ac.jp/GSGC/pdf/Guidelines.pdf) |
 | Physics — GSGC | [www.phys.s.u-tokyo.ac.jp/en/admission/462/](https://www.phys.s.u-tokyo.ac.jp/en/admission/462/) |
 | Physics — International | [www.phys.s.u-tokyo.ac.jp/en/admission/312/](https://www.phys.s.u-tokyo.ac.jp/en/admission/312/) |
+| ETS GRE Physics Content | [www.ets.org/gre/test-takers/subject-tests/about/content-structure.html](https://www.ets.org/gre/test-takers/subject-tests/about/content-structure.html) |
 
 > [!todo] Not Yet Checked
 > Japanese-language pages (募集要項): [Graduate Admission (JA)](https://www.s.u-tokyo.ac.jp/ja/admission/graduate.html), [Doctoral Admission (JA)](https://www.s.u-tokyo.ac.jp/ja/admission/doctor/)
