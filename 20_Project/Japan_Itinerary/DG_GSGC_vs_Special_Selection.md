@@ -98,19 +98,19 @@ This is not merely a preference — it is a structural eligibility question. The
 
 **Financial implications:**
 - No built-in scholarship (unlike GSGC's 180k/month)
-- Primary funding source: RIKEN JRA (~200k JPY/month `[V2]`)
+- Primary funding source: RIKEN JRA (~200k JPY/month `[UNVERIFIED — JRA amount]`) #upcoming-confirmation-needed
 - No stacking question arises — JRA would be the sole funding mechanism
 - If JRA is not obtained: self-funded PhD (financially precarious)
 - UTokyo tuition exemption (`[V4]`) would apply independently
 
 **Timeline implications:**
 - 3-year doctoral program: Oct 2027 – Sep 2030
-- `[UNVERIFIED]` **Whether Special Selection has different application windows than GSGC.** The current vault assumes both share the same windows (~Oct and ~Dec 2026), but this has not been confirmed against official Special Selection-specific deadlines.
+- `[VERIFIED]` Application windows are the SAME as GSGC (Period 1: ~Oct 15-31, Period 2: ~Dec 5-22). VERIFIED — UTokyo admissions page, Mar 2026.
 - Official Special Selection page: [https://www.s.u-tokyo.ac.jp/en/admission/special.html](https://www.s.u-tokyo.ac.jp/en/admission/special.html)
 
 **Study plan implications:**
-- GRE Physics likely required (same as GSGC for Physics department) — `[UNVERIFIED]` confirm whether Special Selection has identical test requirements
-- Written exam status: same supervisor-dependent mechanism as GSGC `[UNVERIFIED]`
+- GRE Physics required for Physics department under Special Selection — `[VERIFIED]` — UTokyo admissions page, Mar 2026. GRE General NOT required.
+- Written exam status: `[UNVERIFIED]` #upcoming-confirmation-needed — Special Selection is primarily document-based; whether Physics dept requires a written exam component is unconfirmed
 - Core study plan remains similar to GSGC scenario
 
 ### Option C: Apply to Both Simultaneously
@@ -120,21 +120,15 @@ Submit applications to both GSGC and Special Selection in the same cycle.
 
 **Eligibility:**
 
-> [!warning] UNVERIFIED
-> `[UNVERIFIED]` The claim "you can apply to both simultaneously" appears in multiple vault files ([[UTokyo_RIKEN]], [[Official_Deadlines]], [[General_Checklist]]) but **no official source citation supports this claim**. It is possible that:
-> - UTokyo allows dual applications within the same Graduate School of Science
-> - UTokyo restricts applicants to one track per cycle
-> - The tracks share a common application with a sub-track preference field
->
-> This must be verified before planning a dual-application strategy.
+> [!success] VERIFIED — UTokyo admissions page, Mar 2026
+> Dual application (both GSGC and Special Selection simultaneously) is **officially allowed**. Applicants pay the application fee twice. This was confirmed directly from the UTokyo admissions page.
 
 **Financial implications:**
 - If both are accepted: user can presumably choose the more favorable offer (GSGC with scholarship vs Special Selection with JRA)
 - Additional application fees may apply (minimal cost)
 
 **Timeline implications:**
-- If application windows differ, additional preparation may be needed
-- If application windows overlap, materials can be largely reused
+- Application windows are the same for both tracks (VERIFIED), so materials can be largely reused
 
 **Study plan implications:**
 - No significant additional study burden — both tracks use similar evaluation criteria (GRE Physics, TOEFL, possible written exam)
@@ -150,10 +144,10 @@ Submit applications to both GSGC and Special Selection in the same cycle.
 | U1 | **Can a master's degree holder apply to GSGC?** Or is GSGC restricted to applicants entering at the master's level (M1)? | `[UNVERIFIED]` — no official source found confirming or denying | Professors (Aoi Nori / Nobuaki Imai) first; UTokyo Graduate School Office as backup | **CRITICAL** |
 | U2 | **If a master's holder enters GSGC, do they start at M1 (repeating master's) or can they enter directly at D1?** | `[UNVERIFIED]` | Professors; GSGC program office | **CRITICAL** |
 | U3 | **Can GSGC scholarship (180k/month) and RIKEN JRA (200k/month) be held simultaneously?** Or are they mutually exclusive? | `[UNVERIFIED]` — not addressed in any vault source | Professors; RIKEN JRA office; UTokyo scholarship office | **HIGH** |
-| U4 | **Can you apply to both GSGC and Special Selection in the same application cycle?** | `[UNVERIFIED]` — claimed in vault but no official citation | Professors; UTokyo Graduate School Office | **HIGH** |
-| U5 | **Does Special Selection have different application windows than GSGC?** | `[UNVERIFIED]` — current vault assumes they share windows | [UTokyo Special Selection page](https://www.s.u-tokyo.ac.jp/en/admission/special.html); UTokyo Graduate School Office | **HIGH** |
-| U6 | **Does Special Selection require the GRE Physics Subject Test?** (GSGC requires it for Physics — is this true for Special Selection too?) | `[UNVERIFIED]` — assumed same as GSGC but not independently confirmed | [UTokyo Special Selection page](https://www.s.u-tokyo.ac.jp/en/admission/special.html); professors | **MEDIUM** |
-| U7 | **Is the GSGC written exam (supervisor-dependent) also applicable to Special Selection?** Or does Special Selection have a different evaluation mechanism? | `[UNVERIFIED]` | Professors | **MEDIUM** |
+| U4 | **Can you apply to both GSGC and Special Selection in the same application cycle?** | `[VERIFIED]` — YES, dual application is officially allowed (pay fee twice). VERIFIED — UTokyo admissions page, Mar 2026 | Resolved | **HIGH** |
+| U5 | **Does Special Selection have different application windows than GSGC?** | `[VERIFIED]` — NO, they share the SAME application windows (Period 1: ~Oct 15-31, Period 2: ~Dec 5-22). VERIFIED — UTokyo admissions page, Mar 2026 | Resolved | **HIGH** |
+| U6 | **Does Special Selection require the GRE Physics Subject Test?** (GSGC requires it for Physics — is this true for Special Selection too?) | `[VERIFIED]` — YES, GRE Physics is required for Physics department under Special Selection. GRE General is NOT required. VERIFIED — UTokyo admissions page, Mar 2026 | Resolved | **MEDIUM** |
+| U7 | **Is the GSGC written exam (supervisor-dependent) also applicable to Special Selection?** Or does Special Selection have a different evaluation mechanism? | `[UNVERIFIED]` #upcoming-confirmation-needed — Selection is primarily document-based review; "some departments may have additional requirements such as interviews and online written examinations." Whether Physics dept conducts a written exam as part of Special Selection, or is purely document + oral, is unconfirmed. | Professors | **MEDIUM** |
 | U8 | **What is the GSGC scholarship eligibility period?** If a master's holder enters GSGC at D1, do they receive the scholarship for the doctoral period only (3 years) or not at all (since the scholarship is part of the 5-year package)? | `[UNVERIFIED]` — only relevant if U1 and U2 are resolved favorably | GSGC program office | **MEDIUM** (contingent on U1/U2) |
 
 ---
@@ -177,7 +171,7 @@ ELSE IF U1 = "CAN apply" AND U2 = "can enter at D1"
   → Evaluate based on:
     - U3 (scholarship stacking): If stackable with JRA → GSGC is financially superior.
     - U3 (mutually exclusive): Compare 180k GSGC scholarship vs 200k JRA.
-      JRA includes Shakai Hoken `[V2-UNVERIFIED]` — likely net superior if verified. Special Selection + JRA
+      JRA includes Shakai Hoken `[UNVERIFIED — JRA details]` #upcoming-confirmation-needed — likely net superior if verified. Special Selection + JRA
       may be preferable unless GSGC has other benefits.
     - U4 (dual application): If allowed → apply to both; choose best offer.
     - If dual application not allowed → choose based on financial analysis above.
@@ -214,9 +208,9 @@ ELSE IF information remains ambiguous after professor meeting
 
 | Dimension | Impact |
 |---|---|
-| **Study plan** | Core physics prep continues. GRE Physics prep continues (if required for Special Selection — `[U6]`). Written exam status depends on supervisor assessment (`[U7]`). Overall study plan similar to GSGC scenarios but without the GSGC scholarship safety net. |
-| **Financial** | No GSGC scholarship. Primary funding: RIKEN JRA (200k/month `[V2]`). If JRA not obtained: self-funded PhD — significantly higher financial risk. Tuition exemption (`[V4]`) becomes more critical. Budget aligns with current [[UTokyo_RIKEN#Financials]] PhD section. |
-| **Timeline** | 3-year doctoral: Oct 2027 – Sep 2030. Application window must be verified independently (`[U5]`). May differ from GSGC Application Period 2. |
+| **Study plan** | Core physics prep continues. GRE Physics prep continues (required for Special Selection — `[U6 VERIFIED]`). Written exam status depends on supervisor assessment (`[U7 UNVERIFIED]` #upcoming-confirmation-needed). Overall study plan similar to GSGC scenarios but without the GSGC scholarship safety net. |
+| **Financial** | No GSGC scholarship. Primary funding: RIKEN JRA (200k/month `[UNVERIFIED — JRA amount]`). If JRA not obtained: self-funded PhD — significantly higher financial risk. Tuition exemption (`[V4]`) becomes more critical. Budget aligns with current [[UTokyo_RIKEN#Financials]] PhD section. |
+| **Timeline** | 3-year doctoral: Oct 2027 – Sep 2030. Application windows confirmed same as GSGC (`[U5 VERIFIED]`): Period 1 ~Oct 15-31, Period 2 ~Dec 5-22. |
 | **Downstream file updates** | [[UTokyo_RIKEN]]: remove/archive all GSGC-specific content; update Admission Routes Summary to show Special Selection as sole chosen route. [[Official_Deadlines]]: replace GSGC timeline with Special Selection-specific dates. [[General_Checklist]]: update Target Universities section. [[Fundamental_Learning_Progress]]: adjust if test requirements differ. All files containing "GSGC vs Special Selection" callouts: replace with resolution statement. |
 
 ### (d) Both Applicable — Apply to Both
@@ -225,7 +219,7 @@ ELSE IF information remains ambiguous after professor meeting
 |---|---|
 | **Study plan** | No significant additional study burden — both tracks use similar evaluation criteria. Prepare for the more demanding option (whichever requires written exam + GRE) to cover both. |
 | **Financial** | Best-case scenario: accepted to both, choose whichever offers better total funding (GSGC scholarship vs JRA, or both if stackable). Worst-case: accepted to neither — same fallback as Kenkyusei path. |
-| **Timeline** | Must meet the earlier of the two application windows (if they differ — `[U5]`). Prepare two sets of application materials if forms differ. Additional application fee (minimal). |
+| **Timeline** | Application windows are the same for both tracks (`[U5 VERIFIED]`): Period 1 ~Oct 15-31, Period 2 ~Dec 5-22. Prepare two sets of application materials if forms differ. Additional application fee: 10,000 JPY each. |
 | **Downstream file updates** | [[UTokyo_RIKEN]]: update Admission Routes Summary to reflect dual-track application strategy. [[Official_Deadlines]]: add both application windows with clear labels. [[General_Checklist]]: add dual-application checklist items. Prepare comparison framework for final choice if both offers received. |
 
 ---

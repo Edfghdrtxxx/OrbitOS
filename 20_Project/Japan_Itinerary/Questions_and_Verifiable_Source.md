@@ -39,11 +39,45 @@ From the [GSGC FAQ](https://www.s.u-tokyo.ac.jp/GSGC/faq/) (verbatim):
 
 This confirms they are separate programs. For someone with an existing master's, Special Selection allows direct D1 entry; GSGC may require M1 re-enrollment. See [[Japan_Itinerary]] for current pathway decision and [[UTokyo_RIKEN]] for the execution plan.
 
+## Verification Tracker (updated 2026-03-11)
+
+| # | Claim | Status | Source |
+|---|-------|--------|--------|
+| V1 | Special Selection = 3-year doctoral-only, direct D1 entry | VERIFIED | UTokyo admissions page |
+| V2 | Eligibility: expected master's degree explicitly OK | VERIFIED | UTokyo admissions page |
+| V3 | Application windows same as GSGC (Period 1: ~Oct 15-31, Period 2: ~Dec 5-22) | VERIFIED | UTokyo admissions page |
+| V4 | GRE Physics required for Physics dept under Special Selection | VERIFIED | UTokyo admissions page |
+| V5 | GRE General NOT required for Physics | VERIFIED | UTokyo admissions page |
+| V6 | TOEFL iBT required (single date only, no MyBest, code 8002-01) | VERIFIED | UTokyo admissions page |
+| V7 | GRE institution code: 7048 | VERIFIED | UTokyo admissions page |
+| V8 | No published minimum scores for GRE or TOEFL | VERIFIED | UTokyo admissions page |
+| V9 | Dual application (GSGC + SS simultaneously) officially allowed | VERIFIED | UTokyo admissions page |
+| V10 | Application fee: 10,000 JPY | VERIFIED | UTokyo admissions page |
+| V11 | Admission fee: 282,000 JPY | VERIFIED | UTokyo admissions page |
+| V12 | Tuition: 520,800 JPY/year | VERIFIED | UTokyo admissions page |
+| V13 | Period 1 results: ~end of December | VERIFIED | UTokyo admissions page |
+| V14 | Period 2 results: ~early March | VERIFIED | UTokyo admissions page |
+| V15 | Selection: primarily document-based review | VERIFIED | UTokyo admissions page |
+| V16 | Required docs: application form, GRE scores, TOEFL, transcripts, diplomas, papers/thesis, GPA docs, Personal Statement, Statement of Purpose, email proof of professor consultation, two recommendation letters | VERIFIED | UTokyo admissions page |
+| V17 | Physics dept: only ONE supervising professor | VERIFIED | UTokyo admissions page |
+| V18 | No PEC required for Physics — email proof sufficient | VERIFIED | UTokyo admissions page |
+| V19 | Conducted in English | VERIFIED | UTokyo admissions page |
+| V20 | Score validity: within 2 years of application start date | VERIFIED | UTokyo admissions page |
+| V21 | FY2027 guidelines expected late April 2026 | VERIFIED | UTokyo admissions page |
+| UA | Whether Physics dept conducts a written exam as part of Special Selection | UNVERIFIED #upcoming-confirmation-needed | Ask professors |
+| UB | Physics dept oral exam format for Special Selection (duration, presentation, content) | UNVERIFIED #upcoming-confirmation-needed | Ask professors |
+| UC | FY2027 exact application dates | UNVERIFIED #upcoming-confirmation-needed | Not yet published (~late April 2026) |
+| UD | Whether GRE Physics can waive a written exam component (if one exists) | UNVERIFIED #upcoming-confirmation-needed | Ask professors |
+| UE | Minimum GRE/TOEFL score cutoffs at Physics dept level (unpublished) | UNVERIFIED #upcoming-confirmation-needed | Ask professors |
+
 ## Open Questions for Professor Meeting
 
 1. **GSGC entry level:** For someone with an existing master's (graduating June 2027), does GSGC require M1 re-enrollment or is doctoral-level entry possible?
-2. **GRE Physics timeline:** When should it be taken relative to the application deadline for the recommended pathway?
-3. **Application cycle:** When do the 2026-2027 guidelines become available for Oct 2027 entry? (Current pages show 2025-2026 cycle dates only.)
+2. **Written exam for Special Selection:** Does the Physics department conduct a written exam as part of Special Selection, or is it purely document + oral? #upcoming-confirmation-needed
+3. **Oral exam format:** What is the oral exam format for Special Selection in Physics — duration, presentation requirements, content? #upcoming-confirmation-needed
+4. **GRE Physics and written exam:** Can GRE Physics waive a written exam component, if one exists? #upcoming-confirmation-needed
+5. **Score cutoffs:** Are there unpublished minimum GRE/TOEFL score cutoffs at the Physics dept level? #upcoming-confirmation-needed
+6. **Application cycle:** FY2027 guidelines expected late April 2026 — confirm exact dates when available. #upcoming-confirmation-needed
 
 ## Sources (fetched 2026-03-10)
 

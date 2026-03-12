@@ -16,9 +16,10 @@ Based on confirmed Oct 2026 cycle, shifted +1 year (**ESTIMATED**):
 |------|------------|--------|--------|
 | Application Period 1 | ~Oct 15–31, 2026 | Estimated | [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html) |
 | Application Period 2 | ~Dec 5–22, 2026 | Estimated | Same |
-| Written Exam | TBD | ⚠️ Unverified — confirm format with professors | — |
-| Oral Exam | TBD | ⚠️ Unverified — confirm format with professors | — |
-| Results | TBD | — | — |
+| Written Exam | TBD | ⚠️ Unverified — see exam format note below | — |
+| Oral Exam | TBD | ⚠️ Unverified — see exam format note below | — |
+| Results (Period 1) | ~End of December | VERIFIED — UTokyo admissions page | [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html) |
+| Results (Period 2) | ~Early March | VERIFIED — UTokyo admissions page | [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html) |
 
 > [!danger] NO deferred or late application
 > The Special Selection page lists **exactly two application windows** per cycle. There is no rolling admission, no spring/summer round, and no mechanism for deferred or late application. The only summer window (Jul–Aug) is exclusively for MEXT Embassy-recommended candidates. **Missing both Period 1 and Period 2 means a full 1-year delay to Oct 2028.**
@@ -33,11 +34,16 @@ Based on confirmed Oct 2026 cycle, shifted +1 year (**ESTIMATED**):
 - GRE Physics score report — sent by ETS to UTokyo (code **7048**), delivery takes **8–11 days** after window closes
 - Transcripts (IMP/UCAS), certificate of expected graduation
 - Recommendation letters, supervisor endorsement from Prof. Aoi/Imai
+- Application fee: **10,000 JPY** (VERIFIED — UTokyo admissions page). Admission fee: 282,000 JPY. Tuition: 520,800 JPY/year (260,400 JPY per 6 months).
+- Required docs (VERIFIED — UTokyo admissions page): application form, GRE scores (examinee + official report), TOEFL scores (both), transcripts, diplomas, published papers/thesis, GPA documentation, Personal Statement (1-2 pages), Statement of Purpose (1-2 pages), proof of prior consultation with professor (email copies sufficient — no PEC required for Physics), two recommendation letters (web-submitted by recommenders). Only ONE supervising professor should be chosen for Physics dept.
+- Conducted in English: VERIFIED — UTokyo admissions page
 - ⚠️ Request ETS score sends **well before** the application window opens to ensure delivery
+- FY2027 guideline release: late April 2026 — VERIFIED (UTokyo admissions page)
+- FY2027 exact application dates: not yet published #upcoming-confirmation-needed
 
-Exam format details (written exam scope, duration, oral exam structure) are **UNVERIFIED** for Special Selection — previous estimates (2hr written, Zoom oral 40 min) were sourced from GSGC data and may not apply. Confirm with professors.
+Exam format details (written exam scope, duration, oral exam structure) are **UNVERIFIED** for Special Selection #upcoming-confirmation-needed — previous estimates (2hr written, Zoom oral 40 min) were sourced from GSGC data and may not apply. Official selection method is primarily document-based review; "some departments may have additional requirements such as interviews and online written examinations" (VERIFIED — UTokyo admissions page). Whether Physics dept conducts a written exam or is purely document + oral must be confirmed with professors.
 
-**Required:** GRE Physics (code 7048) + TOEFL (code 8002-01, single date, no MyBest). No published minimum scores `[UNVERIFIED — last checked: 2026-03]`.
+**Required:** GRE Physics (code 7048) + TOEFL (code 8002-01, single date, no MyBest). VERIFIED — UTokyo admissions page. No published minimum scores (VERIFIED that none are published — but unpublished dept-level cutoffs may exist #upcoming-confirmation-needed).
 
 > [!success] VERIFIED: Pre-graduation application allowed (2026-03-09)
 > Eligibility wording: "One who **is expected to be conferred** a Master's Degree … **before entering the Doctoral program.**" Degree completion required by enrollment (Oct 2027), not by application (Dec 2026). Submit certificate of expected graduation at application; actual degree certificate at enrollment. Source: [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html)
@@ -62,7 +68,7 @@ Same pattern as Section 1, shifted +1 year. Application periods would fall in ~O
 - China registration via NEEA: https://gre-main.neea.cn/
 - Cost: **$175** worldwide (ETS official fee)
 - Retake: once every 14 days
-- ETS validity: 5 years. **UTokyo requirement: within 2 years of application start date** (stricter)
+- ETS validity: 5 years. **UTokyo requirement: within 2 years of application start date** (stricter). VERIFIED — UTokyo admissions page
 - **Domestic seat scarcity:** Only **two test centers** in mainland China (Beijing, Shanghai) `[UNVERIFIED — single test-taker report, 2025]`. Based on test-taker reports, **only the October window reliably has domestic seats** — September and April availability is unconfirmed. Register immediately when the cycle opens (~Jul 2026). Verify on NEEA portal. See [[GRE_Physics_Prep]] for full logistics.
 
 > [!info] GRE Physics — targeting Sep/Oct 2026 window
