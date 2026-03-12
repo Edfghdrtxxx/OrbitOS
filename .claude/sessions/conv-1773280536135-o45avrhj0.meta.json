@@ -1,0 +1,20 @@
+{
+  "id": "conv-1773280536135-o45avrhj0",
+  "title": "Organize, convert to English and refine",
+  "titleGenerationStatus": "success",
+  "createdAt": 1773280536135,
+  "updatedAt": 1773280561277,
+  "lastResponseAt": 1773280559244,
+  "sessionId": "fb4e3a66-e979-4dab-a5b5-bb5e4a538935",
+  "sdkSessionId": "fb4e3a66-e979-4dab-a5b5-bb5e4a538935",
+  "currentNote": "50_Resources/MeetingOutlines/2026-03-12_Group_Meeting.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 858,
+    "cacheReadInputTokens": 16315,
+    "contextWindow": 200000,
+    "contextTokens": 17174,
+    "percentage": 9
+  }
+}
