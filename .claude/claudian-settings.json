@@ -40,7 +40,7 @@
   },
   "permissionMode": "yolo",
   "model": "opus",
-  "thinkingBudget": "medium",
+  "thinkingBudget": "high",
   "enableAutoTitleGeneration": true,
   "titleGenerationModel": "",
   "show1MModel": false,

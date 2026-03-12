@@ -1,0 +1,20 @@
+{
+  "id": "conv-1773278241709-lk94dfse7",
+  "title": "Clarify PEC meaning in Special Selection",
+  "titleGenerationStatus": "success",
+  "createdAt": 1773278241709,
+  "updatedAt": 1773278354200,
+  "lastResponseAt": 1773278354200,
+  "sessionId": "b6ce7015-6b97-4aaa-9830-487faeb51eb5",
+  "sdkSessionId": "b6ce7015-6b97-4aaa-9830-487faeb51eb5",
+  "currentNote": "20_Project/Japan_Itinerary/Post_Acceptance_Timeline-Claude.canvas",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 3,
+    "cacheCreationInputTokens": 808,
+    "cacheReadInputTokens": 24860,
+    "contextWindow": 200000,
+    "contextTokens": 25671,
+    "percentage": 13
+  }
+}
