@@ -19,6 +19,16 @@ Time-of-Flight (ToF) is a measurement technique that determines a particle's vel
 - **Detector elements**: Start and stop signals commonly from [[Scintillation Detector|scintillation detectors]], [[Photomultiplier Tube|PMTs]], or micro-channel plates; [[Time Walk]] correction is critical
 - **Applications**: Particle identification in nuclear and high-energy physics, PET medical imaging, laser ranging (LIDAR)
 
+## Typical Count Rates
+
+| Beam type | Rate | Detector choice |
+|-----------|------|-----------------|
+| Exotic [[Radioactive Isotope Beam\|RIB]] | $10^0$–$10^3$ pps | Any ToF detector |
+| Moderate RIB | $10^3$–$10^6$ pps | Plastic scintillator or [[Diamond Detector]] |
+| Primary / stable beam | $10^6$–$10^9$ pps | [[Diamond Detector]] preferred |
+
+Detector rate limits: plastic [[Scintillation Detector|scintillator]] + [[Photomultiplier Tube|PMT]] ~$10^5$–$10^6$ pps; MCP ~$10^4$–$10^5$ pps; [[Diamond Detector]] ~$10^7$ pps.
+
 ## Examples
 
 - In a beam-line experiment, a plastic [[Scintillation Detector|scintillator]] start detector and a downstream stop detector measure ToF over $\sim 1\;\text{m}$ to separate protons, deuterons, and tritons at intermediate energies
