@@ -28,6 +28,8 @@ The three English articles — **a**, **an**, and **the** — are determiners th
 - "I need **a** new laptop." (any laptop — indefinite)
 - "**The** laptop I ordered arrived." (specific one — definite)
 - "∅ Water boils at 100°C." (uncountable, general truth — zero article)
+- "Could you explain **a** detector called MUSIC?" (introducing one detector out of many — the listener may not know it yet)
+- "Could you explain **the** detector known as MUSIC?" (treating MUSIC as an established, well-known entity — implies shared knowledge)
 
 ## Related Concepts
 
