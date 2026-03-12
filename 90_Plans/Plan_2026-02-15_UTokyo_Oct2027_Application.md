@@ -41,7 +41,7 @@ pathway: "Primary: Direct PhD D1 via Special Selection (Oct 2027); Fallback: Ken
 > D1 entry = Special Selection (confirmed). Remaining unknowns: GSGC's role (scholarship? irrelevant?), Special Selection application window, and exam format.
 
 - [ ] Prepare priority questions for professor meeting (see [[DG_GSGC_vs_Special_Selection]] unknowns U1–U8)
-  - U4: Can GSGC scholarship (180k/mo) + RIKEN JRA (200k/mo) stack? Or is GSGC irrelevant for D1 applicants?
+  - U4: Can GSGC scholarship (180k/mo) + RIKEN JRA (250k/mo *expected*) stack? Or is GSGC irrelevant for D1 applicants?
   - **NEW:** What is the Special Selection application window for Oct 2027 entry?
   - **NEW:** What is the Special Selection exam format? (Written exam scope, duration, oral exam structure)
   - U5: Can you apply to both GSGC and Special Selection simultaneously?
@@ -58,7 +58,7 @@ pathway: "Primary: Direct PhD D1 via Special Selection (Oct 2027); Fallback: Ken
 
 ### 0.3 Verification Quick Wins (carried over)
 
-- [ ] Fetch the [RIKEN JRA page](https://www.riken.jp/en/careers/programs/jra/) and verify: salary amount, employment status, Shakai Hoken, commuting reimbursement → update `[V2]` `[V3]`
+- [x] ~~Fetch the [RIKEN JRA page](https://www.riken.jp/en/careers/programs/jra/) and verify: salary amount, employment status, Shakai Hoken, commuting reimbursement → update `[V2]` `[V3]`~~ *(Done 2026-03-12: V2 → 250k/mo expected, V3 → 150k commuting. See [[UTokyo_RIKEN#Verification Tracker]])*
 - [ ] Fetch the [UTokyo tuition exemption page](https://www.u-tokyo.ac.jp/en/prospective-students/exemptions.html) and verify: income threshold, international student eligibility, income definition → update `[V4]`
 - [ ] Confirm current UTokyo annual tuition (535,800 vs 520,800) from official fee schedule → update `[V5]`
 
@@ -193,7 +193,7 @@ pathway: "Primary: Direct PhD D1 via Special Selection (Oct 2027); Fallback: Ken
   - [ ] Proof of entrance exam pass
   - [ ] CV
 - [ ] Submit JRA application
-- [ ] Track result — funding: ~200k JPY/month pre-tax (~160–165k net)
+- [ ] Track result — funding: ~250k JPY/month pre-tax (*expected* FY2026; ~200–210k net est.)
 
 ### 3.3 Tuition Exemption
 

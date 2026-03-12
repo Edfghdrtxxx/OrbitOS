@@ -19,7 +19,7 @@ decision_date: 2026-02-15
 ^f6663b
 
 - **Pathway (updated 2026-03-09):** **Primary:** Direct PhD D1 entry (Oct 2027) at UTokyo CNS, with RIKEN JRA funding from D1 onward. **Fallback:** If entrance exam failed → Kenkyusei (Oct 2027 – Sep 2028) → PhD D1 (Oct 2028).
-- **Funding:** PhD funded by RIKEN JRA (200k JPY/month `[V2]`). Kenkyusei year (fallback only) self-funded (~2.5–2.8M JPY). MEXT University Recommendation (Research Student) dropped due to extremely fierce competition (2026-02-17).
+- **Funding:** PhD funded by RIKEN JRA (250k JPY/month *expected* FY2026 `[V2]`). Kenkyusei year (fallback only) self-funded (~2.5–2.8M JPY). MEXT University Recommendation (Research Student) dropped due to extremely fierce competition (2026-02-17).
 - **GRE Physics Subject Test:** Compulsory for GSGC (chosen route).
 - **Exam route:** GSGC (Route B) chosen (decision by user + IMP supervisor). Route A archived.
 
@@ -172,12 +172,14 @@ Personal savings: 100–200k CNY (≈ 2–4M JPY). Comfortable at upper range; d
 
 | Item | Amount | Notes |
 |---|---|---|
-| JRA salary | 200,000 JPY/month (pre-tax) | Part-time employee status `[V2]` |
-| Net income | ~160–165k JPY/month | After Shakai Hoken & taxes `[V2]` |
+| JRA salary | 250,000 JPY/month (pre-tax, *expected* FY2026) | Part-time employee, 5 hrs/day Mon–Fri `[V2]` |
+| Net income | ~200–210k JPY/month | After Shakai Hoken & taxes (est.) `[V2]` |
 | Includes | Health insurance + pension | Shakai Hoken `[V2]` |
-| Commuting | Reimbursed up to 55k JPY | `[V3]` |
+| Commuting | Reimbursed up to 150,000 JPY/month | `[V3]` |
+| Paid leave | 20 annual + 42 special student days | `[V2]` |
+| Contract | Apr 1 or Oct 1 → Mar 31, renewable up to 2–3 years | `[V2]` |
 
-**Tuition:** 535,800 JPY/year `[V5]` — likely fully exempt under UTokyo's income-based policy (JRA income of 2.4M << 6M threshold) `[V4]`. Key unknowns: applicability to international students, how JRA income is classified.
+**Tuition:** 535,800 JPY/year `[V5]` — likely fully exempt under UTokyo's income-based policy (JRA income of 3.0M << 6M threshold) `[V4]`. Key unknowns: applicability to international students, how JRA income is classified.
 
 > [!question] GSGC scholarship not modeled in financials
 > The GSGC track includes a 180k JPY/month scholarship, which is not reflected in this financial section. Additionally, whether the GSGC scholarship and RIKEN JRA can be held simultaneously is unverified. See [[DG_GSGC_vs_Special_Selection]] for the full analysis.
@@ -292,8 +294,8 @@ Core written scope (UTokyo Physics doctoral, 2026-cycle reference):
 | ID | Claim | Source | Status | Priority | Action |
 |---|---|---|---|---|---|
 | V1 | MEXT University Rec. (Research Student) | UTokyo official + grad office | `DROPPED` | Low | Dropped due to extremely fierce competition (2026-02-17). Keep [[MEXT_University_Recommendation_Timeline]] for reference only. |
-| V2 | JRA: 200k JPY/month, part-time employee, Shakai Hoken | AI handoff | `UNVERIFIED` | High | Check [RIKEN JRA page](https://www.riken.jp/en/careers/programs/jra/) |
-| V3 | JRA commuting reimbursement up to 55k JPY | AI handoff | `UNVERIFIED` | Medium | Same as V2 |
+| V2 | JRA: 250k JPY/month (*expected* FY2026), part-time employee (5 hrs/day), Shakai Hoken, 20+42 paid leave days, contract renewable 2–3 yrs | [RIKEN JRA FY2026](https://www.riken.jp/en/careers/programs/jra/jra2026/) | `VERIFIED` | — | Verified 2026-03-12. General page still shows 200k; FY2026 call shows 250k (*expected*). Confirm with supervisor which figure applies. |
+| V3 | JRA commuting allowance up to 150k JPY/month | [RIKEN JRA FY2026](https://www.riken.jp/en/careers/programs/jra/jra2026/) | `VERIFIED` | — | Verified 2026-03-12. |
 | V4 | UTokyo 2025 policy: tuition exemption for income < 6M JPY | AI handoff | `UNVERIFIED` | High | Check [UTokyo exemptions](https://www.u-tokyo.ac.jp/en/prospective-students/exemptions.html) |
 | V5 | UTokyo tuition: 535,800 JPY/year | AI handoff | `UNVERIFIED` | Medium | Prior verified figure was 520,800 — check current |
 | V6 | Kenkyusei can sit for doctoral entrance exam | Assumed | `UNVERIFIED` | High | Confirm with grad office or supervisor |
@@ -302,7 +304,7 @@ Core written scope (UTokyo Physics doctoral, 2026-cycle reference):
 | V9 | Visa/COE processing timeline for Oct 2027 from China | Unknown | `UNKNOWN` | Medium | Check with UTokyo international office |
 | V10 | Master's degree holder eligibility for GSGC (5-year M+D program) | Unknown | `UNVERIFIED` | Critical | Check GSGC guidelines PDF and confirm with professors. See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] |
 | V11 | If master's holder is GSGC-eligible, entry at M1 or D1? | Unknown | `UNVERIFIED` | Critical | Contingent on V10. See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] |
-| V12 | GSGC scholarship (180k/month) + RIKEN JRA (200k/month) stacking/exclusivity | Unknown | `UNVERIFIED` | High | See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] |
+| V12 | GSGC scholarship (180k/month) + RIKEN JRA (250k/month) stacking/exclusivity | Unknown | `UNVERIFIED` | High | See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] |
 | V13 | Can applicant apply to both GSGC and Special Selection simultaneously? | Unknown | `UNVERIFIED` | High | See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] |
 | V14 | Special Selection application windows (same as GSGC or different?) | Unknown | `UNVERIFIED` | Medium | See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] |
 | V15 | Is GRE Physics required for Special Selection? | Unknown | `UNVERIFIED` | Medium | See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] |
