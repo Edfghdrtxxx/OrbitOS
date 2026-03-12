@@ -17,7 +17,7 @@ A diamond detector is a solid-state radiation detector using synthetic CVD (chem
 - **Principle**: A charged particle traverses the diamond crystal, creating electron-hole pairs (~36 pairs/μm); an applied electric field collects the charge, producing a fast current pulse with ~1 ns collection time
 - **High-rate capability**: Handles up to ~$10^7$ pps due to ultra-fast charge collection and minimal [[Dead Time]], making it ideal for primary beam monitoring and high-intensity [[Time-of-Flight]] measurements
 - **Radiation hardness**: The diamond lattice is extremely robust under irradiation, far exceeding silicon in radiation tolerance — critical for use near primary beam lines
-- **Trade-offs**: Lower signal-to-noise than silicon (~36 vs ~80 electron-hole pairs/μm), expensive to produce as high-quality single-crystal CVD, and typically limited to ~1 cm² active area
+- **Trade-offs**: Lower signal-to-noise than silicon (~36 vs ~108 electron-hole pairs/μm), expensive to produce as high-quality single-crystal CVD, and typically limited to ~1 cm² active area
 - **Timing resolution**: Achieves tens of picoseconds, comparable to or better than fast [[Scintillation Detector|plastic scintillators]] with [[Photomultiplier Tube|PMTs]]
 
 ## Examples
