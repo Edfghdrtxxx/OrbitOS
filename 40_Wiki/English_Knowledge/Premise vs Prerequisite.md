@@ -30,7 +30,7 @@ A **premise** is a statement or assumption that forms the basis of an argument o
 - [[Important vs necessary (English usage)]]
 - [[Academic_Word_List_AWL]]
 - [[Assumption]]
-- [[Precondition]]
+- [[Course (word meanings)]]
 
 ## References
 
