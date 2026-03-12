@@ -1,0 +1,19 @@
+{
+  "id": "conv-1773281468711-17sh1kmvc",
+  "title": "Verify RIKEN JRA funding via Special Selection",
+  "titleGenerationStatus": "success",
+  "createdAt": 1773281468711,
+  "updatedAt": 1773282026666,
+  "lastResponseAt": 1773282026666,
+  "sessionId": null,
+  "currentNote": "20_Project/Japan_Itinerary/Post_Acceptance_Timeline-Claude.canvas",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 2304,
+    "cacheReadInputTokens": 47471,
+    "contextWindow": 200000,
+    "contextTokens": 49776,
+    "percentage": 25
+  }
+}

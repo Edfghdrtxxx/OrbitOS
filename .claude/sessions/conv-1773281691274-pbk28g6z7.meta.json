@@ -1,0 +1,20 @@
+{
+  "id": "conv-1773281691274-pbk28g6z7",
+  "title": "Clarify admission fee",
+  "titleGenerationStatus": "success",
+  "createdAt": 1773281691274,
+  "updatedAt": 1773281716128,
+  "lastResponseAt": 1773281716128,
+  "sessionId": "c629a1ed-efba-467e-964e-77b651603fae",
+  "sdkSessionId": "c629a1ed-efba-467e-964e-77b651603fae",
+  "currentNote": "20_Project/Japan_Itinerary/Post_Acceptance_Timeline-Claude.canvas",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 9354,
+    "cacheReadInputTokens": 15859,
+    "contextWindow": 200000,
+    "contextTokens": 25214,
+    "percentage": 13
+  }
+}
