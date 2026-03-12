@@ -32,7 +32,7 @@ This meeting covered the RCNP experiment progress (Huiren) and a baseline & rate
 
 ### 4. Future Experiment Plans
 
-- The team plans to participate in another RCNP run; the schedule is not yet finalized — a decision is expected by April.
+- The team plans to participate in another RCNP run; the schedule is not yet finalized.
 - Budget pressure exists but is not an immediate blocker.
 
 ### 5. Reporting Standards — Huiren

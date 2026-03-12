@@ -3,19 +3,19 @@
   "title": "Organize, convert to English and refine",
   "titleGenerationStatus": "success",
   "createdAt": 1773280536135,
-  "updatedAt": 1773291124141,
-  "lastResponseAt": 1773291124141,
+  "updatedAt": 1773291909992,
+  "lastResponseAt": 1773291909992,
   "sessionId": "fb4e3a66-e979-4dab-a5b5-bb5e4a538935",
   "sdkSessionId": "fb4e3a66-e979-4dab-a5b5-bb5e4a538935",
   "currentNote": "50_Resources/MeetingOutlines/2026-03-12_Group_Meeting.md",
   "usage": {
     "model": "opus",
-    "inputTokens": 3,
-    "cacheCreationInputTokens": 1355,
-    "cacheReadInputTokens": 24814,
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 241,
+    "cacheReadInputTokens": 31889,
     "contextWindow": 200000,
-    "contextTokens": 26172,
-    "percentage": 13
+    "contextTokens": 32131,
+    "percentage": 16
   },
   "subagentData": {
     "toolu_014wABqmD3VHxzpqaNPi6BMd": {
