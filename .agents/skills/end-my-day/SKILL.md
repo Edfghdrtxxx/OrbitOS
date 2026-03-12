@@ -33,11 +33,23 @@ Help the user close their day by reviewing what was accomplished, reflecting on 
    - These are candidates for tomorrow's carry-over
    - Note any tasks tagged `#Deferred` or that have been deferred multiple days (cross-check the previous daily note if available)
 
-5. **Scan Git Activity**
-   - Run `git log --since="YYYY-MM-DD 00:00" --until="YYYY-MM-DD 23:59" --oneline --all` to list today's commits
-   - Run `git diff --stat HEAD~N..HEAD` (where N = number of today's commits) to get a file-level change summary — skip if no commits today
+5. **Scan Git Activity (Multi-Repo)**
+
+   Scan git activity across ALL tracked repositories:
+
+   | Repo | Path | Project Link |
+   |------|------|--------------|
+   | OrbitOS (vault) | `D:/obsidian/OrbitOS` | — |
+   | MATE-Automation-V4 | `D:/Something/research/MATE-Automation-V4` | [[MATE-Automation]] |
+
+   For EACH repo:
+   - Run `git -C <repo-path> log --since="YYYY-MM-DD 00:00" --until="YYYY-MM-DD 23:59" --oneline --all` to list today's commits
+   - Run `git -C <repo-path> diff --stat HEAD~N..HEAD` (where N = number of today's commits) to get a file-level change summary — skip if no commits today
+   - If the repo path doesn't exist or isn't a git repo, note it silently and skip (don't error out)
+
+   Then across ALL repos combined:
    - Parse commit messages for: topics worked on, files changed, rough scope of work
-   - Cross-reference git activity with daily note tasks — match commits to tasks where possible (e.g., a commit mentioning "thesis" maps to thesis-related tasks)
+   - Cross-reference git activity with daily note tasks — match commits to tasks where possible (e.g., a commit mentioning "thesis" or MATE maps to thesis-related tasks)
    - Identify any git work that has NO corresponding task in the daily note (these are "unlisted accomplishments" to surface to the user)
 
 **The goal of Step 1 is to build a rich, auto-generated picture of the day from two sources (daily note + git) so Step 2 only needs lightweight confirmation from the user.**
@@ -59,9 +71,12 @@ From daily note:
   ⬜ [open task 1]
   ⬜ [open task 2]
 
-From git (N commits):
-  • [commit summary 1] — [files changed]
-  • [commit summary 2] — [files changed]
+From git:
+  OrbitOS (N commits):
+    • [commit summary 1] — [files changed]
+    • [commit summary 2] — [files changed]
+  MATE-Automation-V4 (N commits):
+    • [commit summary 1] — [files changed]
   [If unlisted work found]: ⚡ Not in daily note: [description]
 
 Log highlights: [any entries from the Log section]
