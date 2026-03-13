@@ -13,3 +13,8 @@
 
 **User Preference:**
 - The orchestrator must NOT read files for deep context gathering itself. When preliminary exploration or information gathering is needed (e.g., to understand which files exist, what they contain, or to build dispatch context), dispatch Explore sub-agents instead. The orchestrator may only read files for lightweight dispatch decisions (e.g., checking if a file exists, reading a skill's evolution.md). Multiple Explore agents should be launched in parallel when the scope spans several areas.
+
+## 2026-03-13: Impact analysis for structural refactors
+
+### Lessons
+- When dispatching Explore agents, always include an impact-analysis pass: grep old path strings, folder names, and conventions across the entire repo (skills, templates, scripts, system files) to find all producers and consumers of the affected structure. Content classification alone ("what is this file?") is insufficient — the real question is "what reads from, writes to, or assumes the existence of these paths?" Missing this step risks breaking project consistency silently.
