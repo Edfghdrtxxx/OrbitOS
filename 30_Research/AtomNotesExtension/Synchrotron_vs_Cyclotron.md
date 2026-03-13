@@ -46,7 +46,7 @@ $$B(t) = \frac{p(t)}{qR_0}, \qquad f_\text{RF}(t) = h \cdot \frac{v(t)}{2\pi R_0
 
 where $h$ is the harmonic number. $B$ must ramp from injection to extraction values; the ratio $B_\text{max}/B_\text{min}$ (dynamic range) is a key design parameter.
 
-**Connecting limit:** At low energy ($\gamma \to 1$), a synchrotron with $R_0$ fixed and $B$ ramping is formally equivalent to extracting from a cyclotron at the single radius $R_0$ — the physics is identical, only the engineering differs.
+**Connecting limit:** At low energy ($\gamma \to 1$), both machines are governed by the same relation $B r = p/q$; the distinction is purely engineering — the cyclotron fills many radii simultaneously with a static field, while the synchrotron confines particles to one radius with a time-varying field.
 
 ## When to Use Which
 

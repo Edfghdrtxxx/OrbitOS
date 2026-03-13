@@ -14,7 +14,7 @@ The Fermi energy $E_F$ is the highest occupied single-particle energy level of a
 
 ## Key Points
 
-- In the free [[Fermi Gas Model]] (3D), $E_F = \dfrac{\hbar^2}{2m}\left(\dfrac{3\pi^2 n}{1}\right)^{2/3}$, where $n$ is the number density and $m$ the particle mass
+- In the free [[Fermi Gas Model]] (3D), $E_F = \dfrac{\hbar^2}{2m}(3\pi^2 n)^{2/3}$, where $n$ is the number density and $m$ the particle mass
 - At $T = 0$ all states with $E < E_F$ are occupied and all states with $E > E_F$ are empty; at finite $T$ the occupation follows the [[Fermi-Dirac Distribution]] with a smooth transition near $E_F$
 - In nuclear physics, the Fermi energy of nucleons inside a nucleus is typically $\sim 33$–$38\;\text{MeV}$, setting the scale for the depth of the [[Mean-Field Potential]] (the nuclear potential well is roughly $E_F + |B/A| \approx 40$–$50\;\text{MeV}$ deep, where $|B/A|$ is the average [[B_A curve|binding energy per nucleon]])
 - Closely related to but distinct from the [[Chemical Potential]] $\mu$: at $T = 0$, $\mu = E_F$ exactly; at finite $T$ they differ

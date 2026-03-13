@@ -16,7 +16,7 @@ A quadrupole magnet produces a magnetic field whose strength increases linearly 
 
 - The field inside an ideal magnetic quadrupole is $B_x = gy,\; B_y = gx$, where $g = \partial B_y/\partial x$ is the **field gradient** (in $\text{T/m}$); there is zero field on axis
 - A single quadrupole focuses in one plane (say horizontal) and defocuses in the other (vertical) — net focusing in both planes requires at least two quadrupoles of opposite polarity, forming a **FODO cell** (analogous to alternating convex/concave lenses in optics)
-- The focusing strength (inverse focal length) is $k = qg/(p)$ where $p$ is the beam rigidity $B\rho = p/q$; higher-energy beams need stronger gradients for the same focusing
+- The focusing strength (inverse focal length) is $k = g/(B\rho)$ where $B\rho = p/q$ is the beam rigidity; higher-energy beams need stronger gradients for the same focusing
 - Quadrupoles are classified by aperture type: **normal-conducting** (iron-dominated, $g \lesssim 20\;\text{T/m}$) and **superconducting** (coil-dominated, $g$ up to $\sim 200\;\text{T/m}$ in the LHC inner triplets)
 - In fragment separators (e.g., BigRIPS at [[RIKEN Nishina Center for Accelerator-Based Science (RNC)|RIKEN]], HFRS at planned HIAF), large-aperture superconducting quadrupoles collect the wide angular spread of [[In-Flight Fission]] and [[Projectile Fragmentation]] products
 
