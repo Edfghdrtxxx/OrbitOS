@@ -7,3 +7,7 @@
 ## 2026-03-09
 ### Fixes
 - Q4 free-text items must be added as tasks in today's Priorities section (placed in the appropriate topic group), not only captured to Inbox. The Q4 spec says "Treat what I said as a new task" — this means both: (1) create Inbox note, and (2) add to daily Priorities.
+
+## 2026-03-13
+### Lessons
+- Non-enumerated sections (e.g., "Thinking and Planning") that contain reusable working context must not be silently deleted. Migrate actionable insights into Notes before removing the section.
