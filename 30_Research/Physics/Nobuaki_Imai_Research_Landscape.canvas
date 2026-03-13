@@ -1,0 +1,54 @@
+{
+	"nodes":[
+		{"id":"central","type":"text","text":"# Prof. Nobuaki Imai\n**Associate Professor — CNS, University of Tokyo**\nScientific coordinator, OEDO-SHARAQ beamline\n~288 publications, 4,461+ citations\n[[Nobuaki_Imai_Research_Program]]","x":700,"y":440,"width":340,"height":200,"color":"6"},
+
+		{"id":"g_research","type":"group","x":-520,"y":-60,"width":880,"height":880,"color":"4","label":"Research Program"},
+		{"id":"n_donuts","type":"text","text":"## DONUTS Group\nImai's research group at CNS UTokyo\nNuclear structure & reaction dynamics","x":-480,"y":0,"width":280,"height":120,"color":"4"},
+		{"id":"n_sakura","type":"text","text":"## SAKURA\n*Study of Astrophysical Key reactions in the Universe with low-energy RI beam Apparatus*\nSurrogate (d,p) reactions for astrophysical cross sections","x":100,"y":0,"width":220,"height":200,"color":"4"},
+		{"id":"n_structure","type":"text","text":"## Nuclear Structure\nDeformation coexistence\nCollective motions (rotational, vibrational)\nExtreme rotation & high-spin states","x":-480,"y":200,"width":280,"height":140,"color":"4"},
+		{"id":"n_reaction_dynamics","type":"text","text":"## Nuclear Reaction Dynamics\nr-process nucleosynthesis\nSuperheavy element production\nNuclear waste transmutation","x":-480,"y":420,"width":280,"height":140,"color":"4"},
+		{"id":"n_nuspeq","type":"text","text":"## NUSPEQ (Aoi Group)\nCollaborating group at CNS\nCAT-M active-target TPC\nShared OEDO-SHARAQ infrastructure","x":-480,"y":640,"width":280,"height":140,"color":"3"},
+
+		{"id":"g_facilities","type":"group","x":1300,"y":-60,"width":920,"height":880,"color":"1","label":"Facilities & Instruments"},
+		{"id":"n_oedo","type":"text","text":"## OEDO Decelerator\n*Optimized Energy-Degrading Optics for RI beams*\nAchromatic energy degradation\nOutput: 10-50 MeV/u\nFirst beam: June 2017","x":1340,"y":0,"width":280,"height":160,"color":"1"},
+		{"id":"n_sharaq","type":"text","text":"## SHARAQ Spectrometer\nQQDQD magnetic spectrometer\nResolving power: dp/p = 1/15000\nHigh-resolution missing-mass spectroscopy","x":1660,"y":0,"width":280,"height":140,"color":"1"},
+		{"id":"n_ribf","type":"text","text":"## RIKEN RIBF / BigRIPS\nProjectile fragmentation & in-flight fission\nSecondary beams at ~200 MeV/u\nUpstream of OEDO-SHARAQ","x":1340,"y":240,"width":280,"height":140,"color":"1"},
+		{"id":"n_diamond","type":"text","text":"## Diamond Detectors\nCVD diamond, ultra-thin (<10 um)\nSub-100 ps timing resolution\nBeam tracking & PID at OEDO\nRadiation-hard, room-temperature","x":1660,"y":240,"width":280,"height":160,"color":"1"},
+		{"id":"n_thgem","type":"text","text":"## DG-M-THGEM / Active Target TPC\nDual-gain THGEM prototype\nBeam region gain <100, Recoil gain ~2000\nStable to 2.5 x 10^6 pps\n(Iwamoto, Ota, Imai — PTEP 2023)","x":1340,"y":480,"width":340,"height":160,"color":"1"},
+
+		{"id":"g_physics","type":"group","x":100,"y":820,"width":1200,"height":580,"color":"2","label":"Physics Topics"},
+		{"id":"n_dgt","type":"text","text":"## Double Gamow-Teller Giant Resonance\nTwo-phonon giant resonance (DZ = +/-2)\nFirst candidate observation in 48Ca\n(Sasano, Yako, Imai — PTEP 2024)","x":140,"y":880,"width":320,"height":140,"color":"2"},
+		{"id":"n_dcx","type":"text","text":"## Charge-Exchange Reactions (DCX)\n48Ca(12C, 12Be(0+_2)) at 250 MeV/u\nHeavy-ion double charge-exchange\nDirect mechanism at high energy","x":140,"y":1100,"width":320,"height":140,"color":"2"},
+		{"id":"n_surrogate","type":"text","text":"## Surrogate Reactions (d,p)\n79Se(d,p) neutron capture cross-section\nConstrains (n,gamma) on unstable nuclei\nFlagship PLB 2024 paper (Imai first-author)","x":520,"y":880,"width":320,"height":140,"color":"2"},
+		{"id":"n_0vbb","type":"text","text":"## 0vbb Connection\nNeutrinoless double-beta decay\nDGT matrix element linearly correlated\nwith 0vbb NME (Shimizu et al. PRL 2018)\nIndependent constraint on NMEs","x":900,"y":880,"width":340,"height":160,"color":"5"},
+		{"id":"n_79se","type":"text","text":"## 79Se Neutron Capture (r-process)\nSurrogate measurement for nuclear waste\ntransmutation & r-process nucleosynthesis\nPress coverage: UTokyo, ScienceDaily, Phys.org","x":520,"y":1100,"width":340,"height":140,"color":"2"}
+	],
+	"edges":[
+		{"id":"e_central_research","fromNode":"central","fromSide":"left","toNode":"n_donuts","toSide":"right","color":"4","label":"leads"},
+		{"id":"e_central_facilities","fromNode":"central","fromSide":"right","toNode":"n_oedo","toSide":"left","color":"1","label":"coordinates"},
+		{"id":"e_central_physics","fromNode":"central","fromSide":"bottom","toNode":"n_dgt","toSide":"top","color":"2","label":"investigates"},
+
+		{"id":"e_donuts_sakura","fromNode":"n_donuts","fromSide":"right","toNode":"n_sakura","toSide":"left","color":"4","label":"sub-project"},
+		{"id":"e_donuts_structure","fromNode":"n_donuts","fromSide":"bottom","toNode":"n_structure","toSide":"top","color":"4","label":"pillar"},
+		{"id":"e_donuts_reaction","fromNode":"n_donuts","fromSide":"bottom","toNode":"n_reaction_dynamics","toSide":"top","color":"4"},
+		{"id":"e_donuts_nuspeq","fromNode":"n_donuts","fromSide":"bottom","toNode":"n_nuspeq","toSide":"top","color":"3","label":"collaborates"},
+
+		{"id":"e_oedo_sharaq","fromNode":"n_oedo","fromSide":"right","toNode":"n_sharaq","toSide":"left","color":"1","label":"feeds into"},
+		{"id":"e_ribf_oedo","fromNode":"n_ribf","fromSide":"top","toNode":"n_oedo","toSide":"bottom","color":"1","label":"upstream"},
+		{"id":"e_diamond_oedo","fromNode":"n_diamond","fromSide":"left","toNode":"n_oedo","toSide":"right","color":"1","label":"beam tracking"},
+		{"id":"e_ribf_bigrips","fromNode":"n_ribf","fromSide":"right","toNode":"n_diamond","toSide":"left","color":"1","label":"PID"},
+
+		{"id":"e_dgt_0vbb","fromNode":"n_dgt","fromSide":"right","toNode":"n_0vbb","toSide":"left","color":"5","label":"NME correlation"},
+		{"id":"e_dcx_dgt","fromNode":"n_dcx","fromSide":"top","toNode":"n_dgt","toSide":"bottom","color":"2","label":"experimental probe"},
+		{"id":"e_dcx_0vbb","fromNode":"n_dcx","fromSide":"right","toNode":"n_0vbb","toSide":"bottom","color":"5","label":"same (A,Z) -> (A,Z+-2)"},
+		{"id":"e_sakura_79se","fromNode":"n_sakura","fromSide":"bottom","toNode":"n_79se","toSide":"top","color":"2","label":"flagship result"},
+		{"id":"e_surrogate_79se","fromNode":"n_surrogate","fromSide":"bottom","toNode":"n_79se","toSide":"top","color":"2","label":"(d,p) method"},
+		{"id":"e_sakura_surrogate","fromNode":"n_sakura","fromSide":"bottom","toNode":"n_surrogate","toSide":"top","color":"4","label":"astrophysics program"},
+
+		{"id":"e_oedo_surrogate","fromNode":"n_oedo","fromSide":"bottom","toNode":"n_surrogate","toSide":"right","color":"1","label":"low-energy RI beam"},
+		{"id":"e_sharaq_dgt","fromNode":"n_sharaq","fromSide":"bottom","toNode":"n_0vbb","toSide":"right","color":"1","label":"missing-mass spectroscopy"},
+		{"id":"e_thgem_nuspeq","fromNode":"n_thgem","fromSide":"left","toNode":"n_nuspeq","toSide":"right","color":"3","label":"shared TPC R&D"},
+		{"id":"e_reaction_79se","fromNode":"n_reaction_dynamics","fromSide":"bottom","toNode":"n_79se","toSide":"left","color":"4","label":"transmutation"},
+		{"id":"e_ribf_dcx","fromNode":"n_ribf","fromSide":"bottom","toNode":"n_dcx","toSide":"right","color":"1","label":"250 MeV/u DCX"}
+	]
+}

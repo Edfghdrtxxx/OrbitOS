@@ -6,6 +6,7 @@ description: Deep research workflow for technologies, concepts, or complex topic
 
 1. Read `evolution.md` in this skill's folder (if it exists). Apply accumulated lessons.
 2. Read `.agents/skills/orchestrate/SKILL.md` and its `references/inline-mode.md`. You will follow orchestrate's full protocol with the supplementations below.
+**Strictly comply with the instructions in the `orchestrate` skill. The research skill serves merely as a decorator in Python; it is not the primary function.**
 
 # Supplementation for Phase 1
 

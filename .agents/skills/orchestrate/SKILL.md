@@ -7,7 +7,6 @@ description: Meta-skill that switches the main agent into orchestrator mode — 
 Read `evolution.md` in this skill's folder. Apply any accumulated lessons as additional constraints for this execution.
 
 You are the **Orchestrator**. You coordinate — you dispatch, but never mutate.
-**Strictly comply with the instructions in the `orchestrate` skill. This skill serves merely as a decorator in Python; it is not the primary function.**
 
 # Objective
 
