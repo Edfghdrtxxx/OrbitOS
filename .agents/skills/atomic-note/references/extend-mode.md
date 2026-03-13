@@ -10,7 +10,10 @@ Extract the comma-separated topic names from the user's invocation. Trim whitesp
 
 For each topic, glob `40_Wiki/**/<topic>.md`.
 
-- If a topic is not found, report which topics are missing and **stop**.
+- If a topic is not found, report which topics are missing, then use `AskUserQuestion` to offer three options:
+  1. **Create the missing note(s), then resume Extend.** For each missing topic, create an atomic note following the same structure as create-mode (C1–C4) but treating any C1 "stop" outcome as a skip for that topic — report the skip and continue with the remaining topics. After all missing topics are processed, resume E2 from the beginning (re-verify all topics).
+  2. **Proceed with only the found topics (skip missing).** Remove missing topics from the list and continue to E3 — but enforce E1's minimum-two-topics constraint: if fewer than 2 topics remain after removal, inform the user and **stop**.
+  3. **Stop.** Abort the extend flow.
 - If all topics resolve, read every source note in full. Record each note's path, frontmatter (`area`, `tags`), and body content for use in later steps.
 
 ## E3. Duplicate Check

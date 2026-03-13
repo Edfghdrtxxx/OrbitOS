@@ -12,15 +12,7 @@ sources:
 
 This note synthesizes the three foundational probability distributions used throughout experimental physics: the [[Binomial Distribution]], the [[Poisson Distribution]], and the [[Gaussian Distribution]]. Rather than treating each in isolation, this research note compares their properties side-by-side, maps the mathematical limits that connect them, and provides a practical decision guide for choosing the right model in counting experiments, detector characterization, and data analysis.
 
-## Definition Comparison
-
-**[[Binomial Distribution]]** --- The most general of the three discrete distributions. It models the number of successes $k$ in a fixed number $n$ of independent Bernoulli trials, each with the same success probability $p$. It answers: *"Out of $n$ tries, how many succeed?"*
-
-**[[Poisson Distribution]]** --- A discrete distribution that models the number of events $k$ occurring in a fixed interval (time, space, or exposure) given a constant average rate $\lambda$. It answers: *"How many events occur in this window?"* There is no explicit upper bound on $k$, and no notion of a finite number of trials.
-
-**[[Gaussian Distribution]]** --- The unique continuous distribution that emerges whenever many independent contributions are summed ([[Central Limit Theorem]]). Parameterized by mean $\mu$ and standard deviation $\sigma$, it answers: *"What is the probability density at a given value $x$?"* Unlike the other two, the support extends over all real numbers $(-\infty, +\infty)$.
-
-## Comparison Table
+## At a Glance
 
 | Property | [[Binomial Distribution]] | [[Poisson Distribution]] | [[Gaussian Distribution]] |
 |---|---|---|---|
@@ -33,6 +25,14 @@ This note synthesizes the three foundational probability distributions used thro
 | **Skewness** | $\frac{1-2p}{\sqrt{np(1-p)}}$ | $\frac{1}{\sqrt{\lambda}}$ | $0$ (symmetric) |
 | **Key constraint** | Finite $n$, fixed $p$ | Events independent, rate constant | Result of many additive contributions |
 | **Physics use cases** | Detector efficiency, [[Silicon Photomultiplier]] pixel firing, decay within one [[Half-Life]] | Radioactive decay counts, photon counting, [[Dead Time]] corrections | [[Energy Resolution]] peak shapes, measurement errors, [[Least Squares Fitting]] residuals |
+
+## Definition Comparison
+
+**[[Binomial Distribution]]** --- The most general of the three discrete distributions. It models the number of successes $k$ in a fixed number $n$ of independent Bernoulli trials, each with the same success probability $p$. It answers: *"Out of $n$ tries, how many succeed?"*
+
+**[[Poisson Distribution]]** --- A discrete distribution that models the number of events $k$ occurring in a fixed interval (time, space, or exposure) given a constant average rate $\lambda$. It answers: *"How many events occur in this window?"* There is no explicit upper bound on $k$, and no notion of a finite number of trials.
+
+**[[Gaussian Distribution]]** --- The unique continuous distribution that emerges whenever many independent contributions are summed ([[Central Limit Theorem]]). Parameterized by mean $\mu$ and standard deviation $\sigma$, it answers: *"What is the probability density at a given value $x$?"* Unlike the other two, the support extends over all real numbers $(-\infty, +\infty)$.
 
 ## Mathematical Relationships
 

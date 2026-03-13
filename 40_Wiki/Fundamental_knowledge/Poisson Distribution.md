@@ -17,12 +17,12 @@ The Poisson distribution describes the probability of a given number of events o
 - The mean and variance are both equal to $\lambda$
 - Arises as the limit of the [[Binomial Distribution]] when $n \to \infty$ and $p \to 0$ with $np = \lambda$ held constant
 - Models rare or discrete counting events: radioactive decay counts, [[Dead Time]] corrections, photon detection in [[Scintillation Detector]] systems
-- For large $\lambda$, the Poisson distribution approaches the [[Gaussian Distribution]] with $\mu = \sigma^2 = \lambda$
+- For large $\lambda$, the Poisson distribution approaches the [[Gaussian Distribution]] with $\mu = \lambda,\; \sigma^2 = \lambda$
 - The relative uncertainty scales as $\frac{1}{\sqrt{\lambda}}$, which governs [[Energy Resolution]] in counting experiments
 
 ## Examples
 
-- Counting the number of $\alpha$-particles detected by a [[Photodetector]] in a fixed time window
+- Counting the number of $\alpha$-particles detected by a [[Scintillation Detector]] in a fixed time window
 - Number of cosmic ray events per minute in a [[Coincidence Detection]] setup
 
 ## Related Concepts
@@ -30,7 +30,6 @@ The Poisson distribution describes the probability of a given number of events o
 - [[Binomial Distribution]]
 - [[Gaussian Distribution]]
 - [[Half-Life]]
-- [[Probability Amplitude]]
 - [[Central Limit Theorem]]
 - [[Statistical Uncertainty]]
 
