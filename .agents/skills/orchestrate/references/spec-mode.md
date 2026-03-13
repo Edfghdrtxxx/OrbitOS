@@ -100,7 +100,7 @@ The reviewer's role is **skeptical auditor** — its job is to find problems, no
 **Revision loop:**
 1. If the reviewer returns **needs-revision**, dispatch a new implementer with the reviewer's feedback as additional context.
 2. After the new implementer completes, dispatch a new reviewer.
-3. **Max 2 revision rounds** per sub-task. If still unresolved, escalate to the user with full context (original objective, implementer outputs, reviewer feedback).
+3. **Max 4 revision rounds** per sub-task. If still unresolved, escalate to the user with full context (original objective, implementer outputs, reviewer feedback).
 
 **Checkpoint update:** After each review passes, dispatch a sub-agent to mark the corresponding checkbox in task.md as `[x]`. This keeps task.md as the live source of truth for progress.
 

@@ -19,12 +19,25 @@ For each sub-task, spawn a sub-agent via the **Agent** tool.
 
 Self-check before sending any dispatch prompt: *"Am I telling the agent what to think, or giving it what it needs to think for itself?"* If the former, cut.
 
-**Parallelism rules:**
+### File-Based Handoff
+
+The orchestrator is a **control plane, not a data conduit**. Sub-agent research and intermediate outputs pass through the filesystem, not through the orchestrator's context.
+
+**Setup:** The first dispatched sub-agent creates the scratch directory: `99_System/.scratch/<session-id>/` (use a short, descriptive session ID like `imai-research` or `tpc-wiki`). Include this as an explicit instruction in the first agent's dispatch prompt.
+
+**Output convention:** Each sub-agent that produces intermediate content (research findings, drafted sections, collected data) writes to a numbered file in the scratch directory (e.g., `01_publications.md`, `02_physics_background.md`). The orchestrator tells each agent its output path in the dispatch prompt.
+
+**What the orchestrator receives:** Sub-agents return only a **1-2 sentence summary** (success/failure + scope covered). The orchestrator uses this summary for routing decisions — it does not need the full content.
+
+**What downstream agents receive:** Dependent sub-agents are given **file paths to read**, not re-serialized content. Example: "Read `99_System/.scratch/imai-research/01_publications.md` for prior findings."
+
+### Parallelism rules
 - Independent sub-tasks → dispatch in parallel (`run_in_background: true`)
-- Dependent sub-tasks → dispatch sequentially; feed prior output as input context
+- Dependent sub-tasks → dispatch sequentially; pass scratch file paths as input context
 
 **Isolation rule:**
-- When sub-agents make file changes, use `isolation: "worktree"` to prevent write conflicts between parallel agents.
+- When sub-agents mutate **existing** files, use `isolation: "worktree"` to prevent write conflicts between parallel agents.
+- Sub-agents that only write to the scratch directory (`99_System/.scratch/`) must **NOT** use worktree isolation — they need to write to the shared filesystem so downstream agents can read their output. Non-overlapping numbered file paths (e.g., `01_*.md`, `02_*.md`) prevent write conflicts without worktree overhead.
 
 **Sub-agent types:** The Agent tool's `subagent_type` parameter selects different capabilities — `Explore` (fast, read-only codebase discovery), `Plan` (architecture design, returns plans not code), and `general-purpose` (full tool access, default). Choose based on what the sub-task actually needs.
 
@@ -32,7 +45,7 @@ Self-check before sending any dispatch prompt: *"Am I telling the agent what to 
 
 **Every implementer agent MUST be paired with a separate reviewer agent.**
 
-The reviewer's role is **skeptical auditor** — its job is to find problems, not to help. Give it the implementer's output and the files changed, then let it own HOW it audits. The reviewer decides its own approach to scrutiny.
+The reviewer's role is **skeptical auditor** — its job is to find problems, not to help. Give it the implementer's output files (both scratch files and final deliverables) and the files changed, then let it own HOW it audits. The reviewer decides its own approach to scrutiny — it can cross-check scratch files (source material) against deliverables.
 
 **Hard rules:**
 - Reviewers are **read-only** — they report findings but MUST NOT make changes themselves. Only implementer agents write to files.
@@ -41,11 +54,14 @@ The reviewer's role is **skeptical auditor** — its job is to find problems, no
 **Revision loop:**
 1. If the reviewer returns **needs-revision**, dispatch a new implementer with the reviewer's feedback as additional context.
 2. After the new implementer completes, dispatch a new reviewer.
-3. **Max 2 revision rounds** per sub-task. If still unresolved, escalate to the user with full context (original objective, implementer outputs, reviewer feedback).
+3. **Max 4 revision rounds** per sub-task. If still unresolved, escalate to the user with full context (original objective, implementer outputs, reviewer feedback).
 
 ## Phase 5 — SYNTHESIZE
 
-After all agents complete and all reviews pass, present a structured summary:
+After all agents complete and all reviews pass:
+
+1. Present a structured summary (see template below).
+2. **Scratch dir report:** List the scratch directory path (`99_System/.scratch/<session-id>/`) and its contents at the end of the summary so the user can review or clean up manually.
 
 ```
 ### Results
@@ -57,6 +73,9 @@ After all agents complete and all reviews pass, present a structured summary:
 
 ### Flags
 - [any concerns, conflicts, or items needing user attention]
+
+### Scratch Files
+- `99_System/.scratch/<session-id>/` — [list files, can be deleted]
 ```
 
 If there are no flags, omit the Flags section.
