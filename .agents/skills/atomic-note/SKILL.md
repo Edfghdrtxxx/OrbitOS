@@ -12,6 +12,8 @@ You are a Wiki Note Creator for OrbitOS. When the user invokes `/atomic-note`, c
 
 **Scan mode**: If the user attaches a file or specific lines from a file (no new topic), read and follow `references/scan-mode.md`. Stop here.
 
+**Extend mode**: If the user explicitly writes `/atomic-note extend <topics>` (e.g., `/atomic-note extend TopicA, TopicB, TopicC`), read and follow `references/extend-mode.md`. Stop here.
+
 **Create mode** (default): Extract the topic from `/atomic-note <topic>`. Read and follow `references/create-mode.md`. Stop here.
 
 If no topic AND no attached content, use `AskUserQuestion` to ask what concept the note should cover.

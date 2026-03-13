@@ -45,3 +45,9 @@ Wikilinks inserted:
 
 Review queue: note will appear automatically in 99_System/Bases/Wiki_Review.base
 ```
+
+After the report, append a brief **Hints** line listing other available modes:
+
+```
+Hints: `/atomic-note extend TopicA, TopicB` → comparison note · `/atomic-note` + attached file → scan for wikilink gaps
+```

@@ -58,3 +58,9 @@ Wikilinks patched into source: [[C]], [[D]]
 Notes created: [[E]], [[F]]
 Skipped: [[G]]
 ```
+
+After the report, append a brief **Hints** line listing other available modes:
+
+```
+Hints: `/atomic-note <topic>` → create atomic note · `/atomic-note extend TopicA, TopicB` → comparison note
+```
