@@ -1,6 +1,6 @@
 # Extend Mode — Comparison / Synthesis Research Note
 
-Generate a non-atomic comparison or synthesis note from multiple existing atomic Wiki notes. Output goes to `30_Research/AtomNotesExtension/`.
+Generate a non-atomic comparison or synthesis note from multiple existing atomic Wiki notes. Output goes to `30_Research/<Area>/`, where `<Area>` is the area inferred in step E4.
 
 ## E1. Parse Input Topics
 
@@ -18,17 +18,18 @@ For each topic, glob `40_Wiki/**/<topic>.md`.
 
 ## E3. Duplicate Check
 
-Glob `30_Research/AtomNotesExtension/**/*.md`. Check whether a note already exists whose filename contains all of the source topic names (in any order, case-insensitive). If a match is found, report it and use `AskUserQuestion` to ask: **overwrite / rename / stop**.
+Glob `30_Research/**/*.md`. Check whether a note already exists whose filename contains all of the source topic names (in any order, case-insensitive). If a match is found, report it and use `AskUserQuestion` to ask: **overwrite / rename / stop**.
 
 ## E4. Infer Metadata
 
 - **Area:** If all source notes share the same `area` value, use it. If they differ, list the unique areas and pick the most common one; note the choice in the report.
 - **Tags:** Union of all source notes' tags, plus `comparison` or `synthesis` (choose whichever better describes the relationship). Deduplicate.
 - **Filename:** `<Topic1>_vs_<Topic2>[_vs_<TopicN>].md` — use the topic names joined with `_vs_`. Sanitise only invalid characters (`/\:*?"<>|`).
+- **Folder:** Strip wikilink brackets (`[[` and `]]`) from the inferred area value to produce a clean folder name. The target directory is `30_Research/<Area>/`. Create this directory if it does not already exist.
 
 ## E5. Generate the Comparison / Synthesis Note
 
-Create the note at `30_Research/AtomNotesExtension/<Filename>.md` with the following structure.
+Create the note at `30_Research/<Area>/<Filename>.md` with the following structure.
 
 ### Frontmatter
 
@@ -90,7 +91,7 @@ Practical guidance: under what conditions, assumptions, or problem types should 
 Output:
 
 ```
-Created: 30_Research/AtomNotesExtension/<Filename>.md
+Created: 30_Research/<Area>/<Filename>.md
 
 Sources:
   [[Topic1]] — 40_Wiki/<path>/Topic1.md

@@ -1,6 +1,6 @@
 ---
 type: derivation
-domain: Nuclear-Physics
+area: "[[Physics]]"
 premises:
   - "Time-dependent perturbation theory (Fermi's golden rule)"
   - "Quasi-stationary (metastable) state decaying exponentially"

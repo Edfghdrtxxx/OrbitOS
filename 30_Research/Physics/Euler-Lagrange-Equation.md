@@ -1,6 +1,6 @@
 ---
 type: derivation
-domain: Classical Mechanics
+area: "[[Physics]]"
 premises: []
 result:
 tags:

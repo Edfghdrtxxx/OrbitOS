@@ -10,7 +10,7 @@ Read `evolution.md` in this skill's folder. Apply any accumulated lessons as add
 
 # Phase 1 — Scan for Existing Note
 
-Before mode selection, check whether a note for the requested derivation already exists in `30_Research/Guide-Derivation/`. If a matching note is found, enter **continue mode** automatically — read and follow `references/continue-mode.md`. Stop here.
+Before mode selection, check whether a note for the requested derivation already exists in `30_Research/`. Scan area subfolders (e.g., `30_Research/Physics/`, `30_Research/Mathematics/`) for derivation notes matching the request. If a matching note is found, enter **continue mode** automatically — read and follow `references/continue-mode.md`. Stop here.
 
 # Mode Detection
 
@@ -44,8 +44,8 @@ Then read and follow the corresponding `references/<mode>-mode.md`.
 
 # Output
 
-- **Always save** the completed derivation to `30_Research/Guide-Derivation/<Domain>/<Name>.md` (e.g., `Quantum-Mechanics/Time-Independent-Schrodinger-Equation.md`).
-- Create the domain subdirectory if it doesn't exist.
+- **Always save** the completed derivation to `30_Research/<Area>/<Name>.md` (e.g., `Physics/Time-Independent-Schrodinger-Equation.md`). The `<Area>` is determined by the `area` frontmatter field (e.g., "Physics" for Nuclear-Physics or Classical-Mechanics domains).
+- Create the area subdirectory if it doesn't exist.
 - **Terminal output is terse**: print only the file path and a one-line summary. The user reads the full derivation in Obsidian.
 
 ## Obsidian CLI Integration
@@ -54,17 +54,18 @@ Use `obsidian` CLI to create and manage derivation notes. Template: `99_System/T
 
 ```bash
 # 1. Scaffold from template (creates file with frontmatter + placeholder body)
-obsidian create path="30_Research/Guide-Derivation/<Domain>/<Name>.md" template="Derivation_Template" silent
+obsidian create path="30_Research/<Area>/<Name>.md" template="Derivation_Template" silent
 
 # 2. Set frontmatter properties
-obsidian property:set name="domain" value="<Domain>" path="30_Research/Guide-Derivation/<Domain>/<Name>.md"
+obsidian property:set name="area" value="\"[[<Area>]]\"" path="30_Research/<Area>/<Name>.md"
+obsidian property:set name="domain" value="<Domain>" path="30_Research/<Area>/<Name>.md"
 obsidian property:set name="premises" value="[\"<premise 1>\",\"<premise 2>\"]" path="..."
 obsidian property:set name="result" value="<LaTeX expression>" path="..."
 obsidian property:set name="tags" value="[\"derivation\",\"<domain-tag>\"]" path="..."
 obsidian property:set name="aliases" value="[\"<alt name>\"]" path="..."
 
 # 3. Open for reading
-obsidian open path="30_Research/Guide-Derivation/<Domain>/<Name>.md"
+obsidian open path="30_Research/<Area>/<Name>.md"
 ```
 
 After scaffolding and setting properties, use the **Edit tool** to replace the template placeholder body with the actual derivation content. If updating an existing derivation, add `overwrite` to the create command. Fall back to Write tool only if Obsidian is not running.

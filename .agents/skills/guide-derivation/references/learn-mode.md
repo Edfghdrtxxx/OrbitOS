@@ -10,13 +10,13 @@ Interactive. The user builds the derivation; I coach. **The Obsidian note is the
 
 ## L0. Scaffold the Session Note
 
-Ensure the `<Domain>/` subdirectory exists (create if needed). Then scaffold the note and open it.
+Ensure the `<Area>/` subdirectory exists (create if needed). Then scaffold the note and open it.
 
 ```bash
-obsidian create path="30_Research/Guide-Derivation/<Domain>/<Name>.md" template="Derivation_Template" silent
-# Set known properties now: domain, tags, aliases
+obsidian create path="30_Research/<Area>/<Name>.md" template="Derivation_Template" silent
+# Set known properties now: area, domain, tags, aliases
 # Defer until L6: premises, result (not yet known)
-obsidian open path="30_Research/Guide-Derivation/<Domain>/<Name>.md"
+obsidian open path="30_Research/<Area>/<Name>.md"
 ```
 
 From this point, **build the note incrementally** using Edit/append. Terminal prints only short status lines (e.g., "Step 2 written to note", "Waiting for your answer").

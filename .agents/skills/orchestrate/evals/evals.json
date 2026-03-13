@@ -1,0 +1,48 @@
+{
+  "skill_name": "orchestrate",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Fix the analysis code",
+      "expected_output": "The orchestrator halts and asks clarifying questions (which analysis code? what is broken?) rather than guessing scope.",
+      "files": [],
+      "expectations": [
+        "The orchestrator uses AskUserQuestion (or equivalent clarification) before proceeding",
+        "The orchestrator does NOT decompose or dispatch sub-agents without first clarifying",
+        "The orchestrator does NOT use Edit, Write, or Bash tools directly",
+        "The orchestrator reads evolution.md as part of Phase 0"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Review all Python scripts in the project for hardcoded file paths, then replace them with paths relative to the project root. Also check for any unused imports while you're at it.",
+      "expected_output": "The orchestrator restates the task, recommends inline-mode (not spec-mode), decomposes into sub-tasks, dispatches sub-agents with reviewer pairing, and stays read-only itself.",
+      "files": [],
+      "expectations": [
+        "The orchestrator restates the task back to the user before proceeding",
+        "The orchestrator recommends inline-mode (not spec-mode) with brief justification",
+        "The orchestrator decomposes the task into discrete sub-tasks with clear objectives",
+        "The orchestrator dispatches sub-agents via the Agent tool for implementation work",
+        "The orchestrator dispatches reviewer agents to audit implementer outputs",
+        "The orchestrator does NOT use Edit, Write, or Bash tools directly",
+        "The orchestrator reads evolution.md as part of Phase 0"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "We need to restructure the feature extraction module. Currently the physics features (dE/dx, Bragg peak, range) are computed inline in three different scripts. I want them consolidated into a shared library with unit tests, then update all three consumers. This will probably take a few sessions to get right.",
+      "expected_output": "The orchestrator restates the task, recommends spec-mode (multi-step, stateful, reviewable), drafts a task.md with Purpose + Tasks sections, dispatches sub-agents, and stays read-only itself.",
+      "files": [],
+      "expectations": [
+        "The orchestrator restates the task back to the user before proceeding",
+        "The orchestrator recommends spec-mode with justification citing multi-step, stateful, and reviewable criteria",
+        "The orchestrator drafts task.md content with Purpose and Tasks sections",
+        "The orchestrator dispatches a sub-agent to write task.md to openspec/changes/",
+        "The orchestrator dispatches sub-agents via the Agent tool for implementation work",
+        "The orchestrator dispatches reviewer agents to audit implementer outputs",
+        "The orchestrator does NOT use Edit, Write, or Bash tools directly",
+        "The orchestrator reads evolution.md as part of Phase 0"
+      ]
+    }
+  ]
+}
