@@ -14,7 +14,7 @@ In-flight fission (IFF) is a technique in which a high-energy heavy-ion beam (ty
 
 ## Key Points
 
-- Complementary to [[Projectile Fragmentation]]: fragmentation shaves nucleons from the projectile surface and favours the proton-rich side, while IFF accesses the **neutron-rich** region around $A \sim 80$–$160$ — the mid-mass "terra incognita" critical for understanding the [[r-process Nucleosynthesis|$r$-process]]
+- Complementary to [[Projectile Fragmentation]]: fragmentation shaves nucleons from the projectile surface and favours the proton-rich side, while IFF accesses the **neutron-rich** region around $A \sim 80$–$160$ — the mid-mass "terra incognita" critical for understanding the [[r-process Nucleosynthesis|r-process]]
 - The production target is thin (a few $\text{g/cm}^2$ of ${}^{9}\text{Be}$ or ${}^{12}\text{C}$); fission is induced by [[Coulomb Excitation|Coulomb excitation]] (electromagnetic) or nuclear-contact reactions above the [[Coulomb Barrier]]
 - Forward kinematics preserves the beam-like velocity of fragments, enabling in-flight isotope separation within $\sim\mu\text{s}$ — orders of magnitude faster than [[ISOL]] methods, allowing study of very short-lived nuclei
 - Key facilities: RIBF at [[RIKEN Nishina Center for Accelerator-Based Science (RNC)|RIKEN]] ([[BigRIPS]] separator, ${}^{238}\text{U}$ beam at $345\;\text{MeV/u}$), FRIB (USA), and the planned HIAF at [[Institute of Modern Physics|IMP]]

@@ -39,7 +39,7 @@ Generate **5 adversarial questions** designed to expose weaknesses:
 | Type | Count | Purpose |
 |------|-------|---------|
 | Trick / Misconception trap | 2 | Questions that exploit common misunderstandings of the concept |
-| Cross-concept synthesis | 2 | Combine this concept with related notes (use `[[wikilinks]]` from the note's body and Related Concepts) |
+| Cross-concept synthesis | 2 | Combine this concept with related notes (use `[[wikilinks]]` found anywhere in the note's content) |
 | Exam-style ambush | 1 | The hardest realistic question — "how would a professor weaponize this on a final?" |
 
 Present questions **one at a time**. Wait for the user's answer before grading and moving on. Track the score (X/5).
@@ -48,7 +48,7 @@ After grading each answer, flag English expression issues in the user's response
 
 ## Phase 3 — Pattern Diagnosis
 
-Read `99_System/review_log.md`. Filter for rows matching the current note.
+Read `99_System/review_log.md` (if the file does not exist or is empty, treat it as "no prior history" and proceed directly to Phase 4). Filter for rows matching the current note.
 
 - **If prior history exists:** Compare today's mistakes to past weaknesses. Surface recurring patterns:
   *"You've struggled with [X] in [N] previous sessions (dates). This suggests a persistent gap in [underlying concept]."*
@@ -58,7 +58,7 @@ Read `99_System/review_log.md`. Filter for rows matching the current note.
 ## Phase 4 — Weak Spot Prediction
 
 Based on:
-- The note's `[[wikilinks]]` and Related Concepts
+- `[[Wikilinks]]` found anywhere in the note's content
 - Today's mistakes
 - The mistake ledger (patterns across ALL notes, not just this one)
 

@@ -1,6 +1,6 @@
 ---
 name: wiki-review
-description: Spaced-repetition review of Wiki notes using FRS sessions and a forgetting-curve schedule
+description: Adversarial spaced-repetition review (full deep / quick recall) of Wiki notes; Research/Resources by request
 ---
 # Phase 0 — EVOLVE
 
@@ -61,7 +61,9 @@ review_interval: 0    # Current level (0-7)
 
 ## 2. Triage
 
-Categorize every eligible note into exactly one bucket:
+Categorize every eligible note into exactly one bucket.
+
+Evaluate conditions in the order listed — a note is placed in the FIRST bucket it matches.
 
 - **Overdue** — `next_review` date is before today
 - **Due Today** — `next_review` date equals today
