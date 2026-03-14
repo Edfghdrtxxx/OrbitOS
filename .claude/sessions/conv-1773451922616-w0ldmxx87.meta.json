@@ -1,0 +1,20 @@
+{
+  "id": "conv-1773451922616-w0ldmxx87",
+  "title": "Scan atomic notes",
+  "titleGenerationStatus": "success",
+  "createdAt": 1773451922616,
+  "updatedAt": 1773452434592,
+  "lastResponseAt": 1773452434592,
+  "sessionId": "9bdb3d3a-7614-4aee-b3d5-9693c2d521dc",
+  "sdkSessionId": "9bdb3d3a-7614-4aee-b3d5-9693c2d521dc",
+  "currentNote": "40_Wiki/Fundamental_knowledge/In-Flight Fission.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 332,
+    "cacheReadInputTokens": 55326,
+    "contextWindow": 200000,
+    "contextTokens": 55659,
+    "percentage": 28
+  }
+}
