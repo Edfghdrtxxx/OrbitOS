@@ -9,6 +9,7 @@ tags:
   - exam-prep
 created: 2026-03-14
 ---
+
 ## Summary
 
 A CS student at MIT finished his final semester with a 4.0 GPA using a distinctive NotebookLM workflow. Instead of using AI to passively summarize material, he used it as an **adversarial study partner** — forcing it to expose his weaknesses rather than reinforce his comfort.
@@ -23,6 +24,8 @@ He ran three prompts **every single week**, saved as phone shortcuts:
 He wasn't studying the material. He was studying **how the material gets weaponized against you**.
 
 ### Prompt 2 — Find the Pattern in Mistakes
+> *"The move that made me close my laptop and stare at the ceiling."*
+
 He uploaded every single assignment he'd gotten wrong all semester, then asked:
 
 > "Find the pattern in my mistakes. What's the one concept I keep misunderstanding in different forms?"
@@ -38,7 +41,7 @@ While his classmates were rereading slides the night before finals, he already k
 
 **He didn't study harder. He just never let himself feel comfortable.**
 
-The real strategy wasn't the tool — it was the **mindset**: use AI not to confirm what you know, but to ruthlessly diagnose what you don't.
+As a commenter (@Techmik) put it: *"The real strategy wasn't the tool — it was the mindset."* Use AI not to confirm what you know, but to ruthlessly diagnose what you don't.
 
 ## Takeaways
 
@@ -47,3 +50,8 @@ The real strategy wasn't the tool — it was the **mindset**: use AI not to conf
 3. **Systematic weakness tracking** — Upload mistakes and find recurring patterns across assignments
 4. **Predictive preparation** — Identify the gaps *before* the exam, every week, not the night before
 5. **Discomfort as signal** — Comfort means you're not learning; seek out what you can't do yet
+
+## Application
+This three-prompt pattern maps directly to structured exam prep for [[Fundamental_Knowledge]] (UTokyo entrance / GRE Physics) and [[English_Learning]] (TOEFL). Replace "NotebookLM" with any AI tool — the method is tool-agnostic.
+
+![[MIT_Learning_Philosophy.jpg]]
