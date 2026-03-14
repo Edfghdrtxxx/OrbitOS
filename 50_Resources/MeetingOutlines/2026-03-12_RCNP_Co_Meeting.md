@@ -2,7 +2,7 @@
 
 ## Summary
 
-The meeting covered TPC data analysis techniques across multiple experiments. Josema presented unpacker/merger updates; Tatsuya and Daniel discussed ADC threshold calibration and RANSAC algorithm optimization for event reconstruction. Xuan shared preliminary PID spectra from TPC and silicon data, noting discrepancies likely due to pile-up in the ion chamber. Weiliang introduced "ATPC Flow," a new Python/C++ analysis framework still under development. Zhang reported completing a 7.2 TB data transfer from MSU to Sappho. Additional updates included silicon calibrations (Tim/Amber) and carbon-17 reaction analysis (Périne).
+The meeting covered [[Time Projection Chamber|TPC]] data analysis techniques across multiple experiments. Josema presented unpacker/merger updates; Tatsuya and Daniel discussed [[ADC]] threshold calibration and [[RANSAC]] algorithm optimization for event reconstruction. Xuan shared preliminary PID spectra from TPC and silicon data, noting discrepancies likely due to pile-up in the [[Ionisation Chamber|ion chamber]]. Weiliang introduced "ATPC Flow," a new Python/C++ analysis framework still under development. Zhang reported completing a 7.2 TB data transfer from MSU to Sappho. Additional updates included silicon calibrations (Tim/Amber) and carbon-17 reaction analysis (Périne).
 
 ## Notes
 
@@ -37,14 +37,14 @@ The meeting covered TPC data analysis techniques across multiple experiments. Jo
 ### 5. Plastic Detector Signal Distribution — Tatsuya, Xuan
 
 - Examined differences in F2 and F3 plastic detector responses and how positions affect signal distribution.
-- Timing resolution issues identified: ¹²Ba and ¹⁴Ba patterns appeared consistent between detectors, but discrepancies exist in weaker signal times.
+- [[Time Resolution|Timing resolution]] issues identified: ¹²Ba and ¹⁴Ba patterns appeared consistent between detectors, but discrepancies exist in weaker signal times.
 - Potential pile-up effects identified in the ion chamber; strange patterns in the distribution potentially related to the main component.
 
 ### 6. Ion Chamber Pulse Detection & Pile-Up — Yassid, Daniel, Tatsuya
 
 - Yassid suggested checking how the system handles multiple pulses and their timing correlation.
 - Daniel and Yassid recommended creating a time distribution spectrum for the ion chamber to identify pile-up effects — particularly important for higher intensity experiments.
-- Discussion covered energy loss data interpretation and particle stopping patterns in silicon layers; Tatsuya explained particle interactions across different detection layers.
+- Discussion covered [[dE-dx|energy loss]] data interpretation and particle stopping patterns in silicon layers; Tatsuya explained particle interactions across different detection layers.
 
 ### 7. ATPC Flow Development — Weiliang, Daniel
 
