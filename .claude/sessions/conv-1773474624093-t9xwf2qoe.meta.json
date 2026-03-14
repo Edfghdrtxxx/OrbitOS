@@ -1,0 +1,164 @@
+{
+  "id": "conv-1773474624093-t9xwf2qoe",
+  "title": "Audit note",
+  "titleGenerationStatus": "success",
+  "createdAt": 1773474624094,
+  "updatedAt": 1773474820141,
+  "lastResponseAt": 1773474820141,
+  "sessionId": "940b16a0-1108-4640-a642-738099399d09",
+  "sdkSessionId": "940b16a0-1108-4640-a642-738099399d09",
+  "currentNote": "40_Wiki/Fundamental_knowledge/r-process Nucleosynthesis.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 1901,
+    "cacheReadInputTokens": 15833,
+    "contextWindow": 200000,
+    "contextTokens": 17735,
+    "percentage": 9
+  },
+  "subagentData": {
+    "toolu_01VKUG6RtV7cKf4gnmrrLrfc": {
+      "id": "toolu_01VKUG6RtV7cKf4gnmrrLrfc",
+      "description": "Check wikilink targets exist",
+      "prompt": "Check whether the following wikilinked notes exist in the vault. Search for each filename using Glob. Report which exist and which are broken (red links).\n\nLinks to check:\n1. Neutron Capture Cross Section (or \"Neutron Capture Cross Section.md\")\n2. Shell closure (or \"Shell closure.md\")\n3. OEDO\n4. SHARAQ Spectrometer\n5. RIKEN Nishina Center for Accelerator-Based Science (RNC)\n6. Surrogate Reaction\n7. Radioactive Isotope Beam\n8. Binding Energy\n9. Half-Life\n10. Flux\n11. Reaction Rate\n12. B_A curve (or \"B_A curve.md\")\n\nSearch broadly — they could be in any subfolder. Use glob patterns like **/*Neutron Capture*.md, **/*Shell closure*.md, etc.",
+      "status": "completed",
+      "toolCalls": [
+        {
+          "id": "toolu_01JYQuDEUviRr7QMnWMb6iUm",
+          "name": "Glob",
+          "input": {
+            "pattern": "**/*Neutron Capture*.md",
+            "path": "D:\\obsidian\\OrbitOS"
+          },
+          "status": "completed",
+          "isExpanded": false,
+          "result": "D:\\obsidian\\OrbitOS\\40_Wiki\\Fundamental_knowledge\\Neutron Capture Cross Section.md"
+        },
+        {
+          "id": "toolu_013a8MQjULvZEajmNdPs6XeL",
+          "name": "Glob",
+          "input": {
+            "pattern": "**/*Shell closure*.md",
+            "path": "D:\\obsidian\\OrbitOS"
+          },
+          "status": "completed",
+          "isExpanded": false,
+          "result": "D:\\obsidian\\OrbitOS\\40_Wiki\\Fundamental_knowledge\\Shell closure.md"
+        },
+        {
+          "id": "toolu_01HFWTSNgNXXxwHxsT35s34x",
+          "name": "Glob",
+          "input": {
+            "pattern": "**/*OEDO*.md",
+            "path": "D:\\obsidian\\OrbitOS"
+          },
+          "status": "completed",
+          "isExpanded": false,
+          "result": "D:\\obsidian\\OrbitOS\\40_Wiki\\Fundamental_knowledge\\OEDO.md"
+        },
+        {
+          "id": "toolu_01Vb3dUTBBf6VteVoHkXgXh4",
+          "name": "Glob",
+          "input": {
+            "pattern": "**/*SHARAQ*.md",
+            "path": "D:\\obsidian\\OrbitOS"
+          },
+          "status": "completed",
+          "isExpanded": false,
+          "result": "D:\\obsidian\\OrbitOS\\40_Wiki\\Fundamental_knowledge\\SHARAQ Spectrometer.md"
+        },
+        {
+          "id": "toolu_0155b5bFuZG9hKzEbkjZc3a9",
+          "name": "Glob",
+          "input": {
+            "pattern": "**/*RIKEN Nishina*.md",
+            "path": "D:\\obsidian\\OrbitOS"
+          },
+          "status": "completed",
+          "isExpanded": false,
+          "result": "D:\\obsidian\\OrbitOS\\40_Wiki\\RIKEN Nishina Center for Accelerator-Based Science (RNC).md"
+        },
+        {
+          "id": "toolu_01BynDP78nc3nq5jMTXr3bCG",
+          "name": "Glob",
+          "input": {
+            "pattern": "**/*Surrogate Reaction*.md",
+            "path": "D:\\obsidian\\OrbitOS"
+          },
+          "status": "completed",
+          "isExpanded": false,
+          "result": "D:\\obsidian\\OrbitOS\\40_Wiki\\Fundamental_knowledge\\Surrogate Reaction.md"
+        },
+        {
+          "id": "toolu_01A6x9DDnEhfkWgY6eEr1BnL",
+          "name": "Glob",
+          "input": {
+            "pattern": "**/*Radioactive Isotope Beam*.md",
+            "path": "D:\\obsidian\\OrbitOS"
+          },
+          "status": "completed",
+          "isExpanded": false,
+          "result": "D:\\obsidian\\OrbitOS\\40_Wiki\\Fundamental_knowledge\\Radioactive Isotope Beam.md"
+        },
+        {
+          "id": "toolu_01Ahrd5DB5KrBnixT8jHAFak",
+          "name": "Glob",
+          "input": {
+            "pattern": "**/*Binding Energy*.md",
+            "path": "D:\\obsidian\\OrbitOS"
+          },
+          "status": "completed",
+          "isExpanded": false,
+          "result": "D:\\obsidian\\OrbitOS\\40_Wiki\\Fundamental_knowledge\\Binding Energy.md"
+        },
+        {
+          "id": "toolu_018wKhwoYYSqaqP2R58dt639",
+          "name": "Glob",
+          "input": {
+            "pattern": "**/*Half-Life*.md",
+            "path": "D:\\obsidian\\OrbitOS"
+          },
+          "status": "completed",
+          "isExpanded": false,
+          "result": "D:\\obsidian\\OrbitOS\\40_Wiki\\Fundamental_knowledge\\Half-Life.md"
+        },
+        {
+          "id": "toolu_01Q4ZCTbPBj7hNG8LWLrQ3yF",
+          "name": "Glob",
+          "input": {
+            "pattern": "**/*Flux*.md",
+            "path": "D:\\obsidian\\OrbitOS"
+          },
+          "status": "completed",
+          "isExpanded": false,
+          "result": "D:\\obsidian\\OrbitOS\\40_Wiki\\Fundamental_knowledge\\Flux.md"
+        },
+        {
+          "id": "toolu_01EVb8rUK4MSXkUa82Dfi9fs",
+          "name": "Glob",
+          "input": {
+            "pattern": "**/*Reaction Rate*.md",
+            "path": "D:\\obsidian\\OrbitOS"
+          },
+          "status": "completed",
+          "isExpanded": false,
+          "result": "D:\\obsidian\\OrbitOS\\40_Wiki\\Fundamental_knowledge\\Reaction Rate.md"
+        },
+        {
+          "id": "toolu_012mJ4KNkN4jMUig3vt4XQNd",
+          "name": "Glob",
+          "input": {
+            "pattern": "**/*B_A curve*.md",
+            "path": "D:\\obsidian\\OrbitOS"
+          },
+          "status": "completed",
+          "isExpanded": false,
+          "result": "D:\\obsidian\\OrbitOS\\40_Wiki\\Fundamental_knowledge\\B_A curve.md"
+        }
+      ],
+      "isExpanded": false,
+      "result": "All 12 files exist in the vault. There are zero broken links. Here is the full report:\n\n| # | Wikilink | Status | Vault Path |\n|---|----------|--------|------------|\n| 1 | `[[Neutron Capture Cross Section]]` | EXISTS | `40_Wiki/Fundamental_knowledge/Neutron Capture Cross Section.md` |\n| 2 | `[[Shell closure]]` | EXISTS | `40_Wiki/Fundamental_knowledge/Shell closure.md` |\n| 3 | `[[OEDO]]` | EXISTS | `40_Wiki/Fundamental_knowledge/OEDO.md` |\n| 4 | `[[SHARAQ Spectrometer]]` | EXISTS | `40_Wiki/Fundamental_knowledge/SHARAQ Spectrometer.md` |\n| 5 | `[[RIKEN Nishina Center for Accelerator-Based Science (RNC)]]` | EXISTS | `40_Wiki/RIKEN Nishina Center for Accelerator-Based Science (RNC).md` |\n| 6 | `[[Surrogate Reaction]]` | EXISTS | `40_Wiki/Fundamental_knowledge/Surrogate Reaction.md` |\n| 7 | `[[Radioactive Isotope Beam]]` | EXISTS | `40_Wiki/Fundamental_knowledge/Radioactive Isotope Beam.md` |\n| 8 | `[[Binding Energy]]` | EXISTS | `40_Wiki/Fundamental_knowledge/Binding Energy.md` |\n| 9 | `[[Half-Life]]` | EXISTS | `40_Wiki/Fundamental_knowledge/Half-Life.md` |\n| 10 | `[[Flux]]` | EXISTS | `40_Wiki/Fundamental_knowledge/Flux.md` |\n| 11 | `[[Reaction Rate]]` | EXISTS | `40_Wiki/Fundamental_knowledge/Reaction Rate.md` |\n| 12 | `[[B_A curve]]` | EXISTS | `40_Wiki/Fundamental_knowledge/B_A curve.md` |\n\nOne structural note: `RIKEN Nishina Center for Accelerator-Based Science (RNC).md` sits one level up in `40_Wiki/` directly, while all other 11 files are nested under `40_Wiki/Fundamental_knowledge/`. This is not a broken link, but worth knowing if you ever want to consolidate their locations."
+    }
+  }
+}

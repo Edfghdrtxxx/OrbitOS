@@ -3,18 +3,18 @@
   "title": "Explain line 18 with Feynman Technique",
   "titleGenerationStatus": "success",
   "createdAt": 1773460167407,
-  "updatedAt": 1773467870790,
-  "lastResponseAt": 1773467870790,
+  "updatedAt": 1773474613124,
+  "lastResponseAt": 1773474505437,
   "sessionId": "e552879c-3968-4148-a28b-df7000f69b00",
   "sdkSessionId": "e552879c-3968-4148-a28b-df7000f69b00",
   "currentNote": "40_Wiki/Fundamental_knowledge/r-process Nucleosynthesis.md",
   "usage": {
     "model": "opus",
     "inputTokens": 3,
-    "cacheCreationInputTokens": 259,
-    "cacheReadInputTokens": 31877,
+    "cacheCreationInputTokens": 32,
+    "cacheReadInputTokens": 39285,
     "contextWindow": 200000,
-    "contextTokens": 32139,
-    "percentage": 16
+    "contextTokens": 39320,
+    "percentage": 20
   }
 }

@@ -55,7 +55,7 @@ review_interval: 0    # Current level (0-7)
 ## 1. Scan
 
 - Glob `40_Wiki/**/*.md` to find all Wiki notes.
-- Read frontmatter of each note. Extract `next_review`, `review_interval`, and `tags`.
+- Read frontmatter of each note. Extract `next_review`, `review_interval`, `tags`, and `created`.
 - **Exclude** any note whose `tags` array contains `no-review`.
 - Record today's date for all comparisons.
 
@@ -78,9 +78,10 @@ Priority order for review: Overdue > Due Today > Never Reviewed.
 
 Within each priority bucket, sort notes so the most valuable reviews surface first:
 
-- **Overdue**: Sort by `review_interval` descending (notes further along in the SRS cycle represent more invested effort — losing them hurts more), then by days overdue descending (longest-waiting first among same interval).
-- **Due Today**: Same logic — `review_interval` descending, then alphabetical.
-- **Never Reviewed**: Sort by creation date ascending (oldest first — they've been waiting longest).
+- **Overdue**: Sort by `review_interval` descending (notes further along in the SRS cycle represent more invested effort — losing them hurts more), then by days overdue descending (longest-waiting first among same interval), then alphabetical by note title as final tiebreaker.
+- **Due Today**: Same — `review_interval` descending, then alphabetical by note title.
+- **Never Reviewed**: Sort by `created` date ascending (oldest first — they've been waiting longest). Notes missing `created` sort last. Final tiebreaker: alphabetical.
+- **All other buckets** (Upcoming, Recently Mastered, Scheduled): Sort by `next_review` ascending (soonest first), then alphabetical.
 
 ## 3. Present Queue
 
@@ -109,24 +110,32 @@ List up to 10 notes in the "Ready for Review" section, sorted by within-bucket r
 
 ## 4. Cold Start Detection
 
-If the **Overdue** count exceeds 20, the backlog is too large to review sequentially. Instead of going straight to mode selection, present the queue table (step 3) followed by a focused menu:
+If the **Overdue** count exceeds 20, the backlog is too large to review sequentially. After presenting the queue table (step 3), show a focused menu:
 
 ```
 ⚠ You have X overdue notes — reviewing them all isn't practical.
 
 Pick a strategy:
-1. **Focus by area** — Choose one area (e.g., Fundamental_knowledge, English_Knowledge) and review only those
+1. **Focus by area** — Choose one area and review only notes from that topic
 2. **Highest investment** — Review the notes with the highest review_interval first (you've put the most work into these)
 3. **Quick wins** — Review the most recently created notes (freshest in memory, easiest to recall)
 4. **Proceed with full queue** — Ignore the backlog size and start from the top
 ```
 
-Use `AskUserQuestion` to let the user choose, then:
+Use `AskUserQuestion` to let the user choose, then apply the selected strategy:
 
-- **Option 1**: Ask which area. Filter the Overdue + Due Today + Never Reviewed lists to notes whose file path contains that area folder name. Re-present a filtered "Ready for Review" list (up to 10), then ask full/quick.
-- **Option 2**: Sort all Overdue notes by `review_interval` descending. Present the top 10. Then ask full/quick.
-- **Option 3**: Sort all Overdue notes by creation date descending (newest first). Present the top 10. Then ask full/quick.
-- **Option 4**: Fall through to the normal flow — present the standard top 10 and ask full/quick.
+- **Option 1 (Focus by area)**: Glob the immediate subdirectories of `40_Wiki/` to discover valid area names. Present them as a numbered list (e.g., `Fundamental_knowledge`, `English_Knowledge`, `Japan_Immigration`, `Physiologics`, etc.) and use `AskUserQuestion` to let the user pick one. Filter the Overdue + Due Today + Never Reviewed lists to notes whose file path is under that subdirectory. If the filter returns zero notes, inform the user and re-present the area list. Present the filtered "Ready for Review" list (up to 10).
+- **Option 2 (Highest investment)**: Sort all Overdue notes using the Within-Bucket Sorting rules for Overdue (interval desc → days overdue desc → alphabetical). Present the top 10. If all notes share the same `review_interval`, note this to the user: "All overdue notes are at interval X — showing oldest-overdue first."
+- **Option 3 (Quick wins)**: Sort all Overdue notes by `created` date descending (newest first; notes missing `created` sort last). Present the top 10.
+- **Option 4 (Proceed)**: Skip directly to note selection using the queue already presented in step 3 — do not re-present it.
+
+### Note and Mode Selection
+
+After the strategy produces a list (or for Option 4, the existing queue), use `AskUserQuestion` to let the user pick a specific `[[NoteName]]` from the presented notes. Then ask: **full or quick?**
+
+Dispatch to the chosen mode's reference file, passing the selected note. Because a specific note is provided, the mode file's "note specified" branch handles it directly — its Note Acquisition section is bypassed.
+
+**Important:** This cold start flow replaces the Mode Detection Default path's final step. Do not ask full/quick a second time after dispatching.
 
 # Frontmatter Update Procedure
 
