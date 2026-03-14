@@ -11,16 +11,20 @@ created: 2026-03-13
 
 A surrogate reaction is an indirect method for determining neutron-induced cross sections on unstable nuclei by using a different reaction that populates the same compound nucleus. The technique bypasses the need for a neutron beam impinging on a radioactive target -- which is impractical for short-lived isotopes -- by instead using a charged-particle reaction in inverse kinematics.
 
-> [!Feynman]- Explain it like I'm 12
-> Imagine you want to know what happens when you throw a specific ball (a neutron) at a specific tower of blocks (an unstable nucleus). The problem? That tower crumbles in seconds — you can't even set it up before it falls apart, let alone aim a ball at it.
+> [!Feynman]- Feynman Technique
+> **The goal:** Measure ${}^{79}\text{Se}(n,\gamma)$ — how readily ⁷⁹Se captures a neutron.
 >
-> **The trick:** You don't *need* to throw that exact ball. You just need the tower to end up in the same wobbly state it *would* have been in after the ball hit it. So instead, you smack the tower with a *different* ball (a deuteron) that's easier to aim. The tower wobbles the same way, and a piece flies off (a proton leaves behind the same excited nucleus). Now you watch how the wobbly tower collapses — does it spit out a gamma ray? break into fragments? — and those probabilities are (approximately) the same as if the neutron had hit it.
+> **The problem:** You'd need a ⁷⁹Se *target*. But ⁷⁹Se is radioactive — you can't accumulate enough of it to make a foil and shoot neutrons at it. The experiment is physically impossible in normal kinematics.
 >
-> **Key assumption (Weisskopf-Ewing):** The tower "forgets" *how* it got wobbly. It only cares about *how much energy* it has, not which ball hit it. When this assumption holds, surrogate = direct.
+> **The workaround — two ideas stacked together:**
 >
-> **When it breaks down:** If the way the tower was hit matters — i.e., it was set spinning in a specific direction (spin-parity dependence) — then the two methods give different answers, and you need extra theory ([[DWBA]]) to correct for that.
+> 1. **Inverse kinematics** solves the target problem. Flip the setup: accelerate ⁷⁹Se into a *beam* and slam it into a stable deuterium (CD₂) target. The RI beam only needs to survive nanoseconds in flight — even nuclei with half-lives of seconds are fine. *(This is the part you simulate in LISE++ — fragment production, energy degradation through [[OEDO]], beam purity.)*
 >
-> **Bottom line:** Surrogate reactions are a clever workaround — you replace an impossible experiment with a possible one, relying on the compound nucleus acting as a "memory-erasing" middleman.
+> 2. **Surrogate substitution** solves the neutron problem. You wanted ${}^{79}\text{Se} + n$, but now you're doing ${}^{79}\text{Se} + d$. A deuteron is a loosely-bound $n + p$. In the $(d,p)$ reaction, the neutron is transferred to ⁷⁹Se while the proton flies away — so the ⁷⁹Se *did* capture a neutron, just one that was delivered inside a deuteron instead of as a free beam. The compound nucleus ⁸⁰Se* is formed either way.
+>
+> **Why this is valid (Weisskopf-Ewing):** The compound nucleus is so highly excited that it "forgets" how it was formed. Its decay probabilities ($\gamma$-emission, fission, etc.) depend only on its excitation energy, not on whether the neutron arrived freely or via $(d,p)$. So you measure the decay branching from the surrogate and combine it with *calculated* formation cross sections → out comes the desired $(n,\gamma)$ cross section.
+>
+> **When it breaks:** At low excitation energy or for light nuclei, specific spin-parity states dominate. The $(d,p)$ reaction populates a *different* spin-parity distribution than $(n,\gamma)$ would — the nucleus *does* remember how it was formed. You then need [[DWBA]] to model the angular momentum transfer and correct for this mismatch.
 
 ## Core Principle
 
