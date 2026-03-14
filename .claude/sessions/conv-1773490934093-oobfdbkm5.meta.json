@@ -3,18 +3,18 @@
   "title": "Explain shell evolution with Feynman technique",
   "titleGenerationStatus": "success",
   "createdAt": 1773490934093,
-  "updatedAt": 1773491773548,
-  "lastResponseAt": 1773491773548,
+  "updatedAt": 1773492408984,
+  "lastResponseAt": 1773492408984,
   "sessionId": "45e7e7d0-99ef-4ef4-819f-1a5fd4ee751d",
   "sdkSessionId": "45e7e7d0-99ef-4ef4-819f-1a5fd4ee751d",
   "currentNote": "40_Wiki/Fundamental_knowledge/Shell Evolution.md",
   "usage": {
     "model": "opus",
     "inputTokens": 1,
-    "cacheCreationInputTokens": 1825,
-    "cacheReadInputTokens": 28483,
+    "cacheCreationInputTokens": 1121,
+    "cacheReadInputTokens": 32932,
     "contextWindow": 200000,
-    "contextTokens": 30309,
-    "percentage": 15
+    "contextTokens": 34054,
+    "percentage": 17
   }
 }
