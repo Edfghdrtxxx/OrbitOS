@@ -13,11 +13,11 @@ review_interval: 0
 
 ## Definition
 
-BigRIPS (Big RIKEN Projectile-fragment Separator) is an [[In-Flight Fission|in-flight]] radioactive isotope beam (RI-beam) separator at the [[RIKEN Nishina Center for Accelerator-Based Science (RNC)|RIKEN Nishina Center]], coupled to the SRC (Superconducting Ring Cyclotron). It produces and separates exotic nuclei via projectile fragmentation and fission, delivering isotopically pure beams for downstream experiments.
+BigRIPS (Big RIKEN Projectile-fragment Separator) is an [[In-Flight Fission|in-flight]] radioactive isotope beam (RI-beam) separator at the [[RIKEN Nishina Center for Accelerator-Based Science (RNC)|RIKEN Nishina Center]], coupled to the SRC ([[Superconducting Ring Cyclotron]]). It produces and separates exotic nuclei via projectile fragmentation and fission, delivering isotopically pure beams for downstream experiments.
 
 ## Key Points
 
-- Uses two-stage [[Magnetic Rigidity|Bρ]] selection with an achromatic degrader between stages; the combination of Bρ–ΔE–Bρ provides element and isotope separation
+- Uses two-stage [[Magnetic Rigidity|Bρ]] selection with an [[Achromatic Degrader|achromatic degrader]] between stages; the combination of Bρ–ΔE–Bρ provides element and isotope separation
 - [[Particle Identification]] is performed event-by-event using [[Magnetic Rigidity|Bρ]], [[Time-of-Flight|TOF]], and [[dE-dx]] measurements, yielding $A/Z$ and $Z$ for each ion
 - Capable of producing beams far from stability — including the most neutron-rich isotopes accessible to date
 - Downstream spectrometers (ZeroDegree, SAMURAI) accept the separated beams for reaction studies

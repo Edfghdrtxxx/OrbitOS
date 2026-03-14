@@ -1,0 +1,20 @@
+{
+  "id": "conv-1773475700488-ippaapfav",
+  "title": "Define Superconducting Ring Cyclotron",
+  "titleGenerationStatus": "success",
+  "createdAt": 1773475700488,
+  "updatedAt": 1773476097118,
+  "lastResponseAt": 1773476097118,
+  "sessionId": "16a1d6c0-4594-42b5-89c0-aa9292ef54b8",
+  "sdkSessionId": "16a1d6c0-4594-42b5-89c0-aa9292ef54b8",
+  "currentNote": "40_Wiki/Fundamental_knowledge/BigRIPS.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 203,
+    "cacheReadInputTokens": 35634,
+    "contextWindow": 200000,
+    "contextTokens": 35838,
+    "percentage": 18
+  }
+}
