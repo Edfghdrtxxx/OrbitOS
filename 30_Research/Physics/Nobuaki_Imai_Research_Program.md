@@ -23,8 +23,8 @@ created: 2026-03-13
 
 His publication record spans **~288 publications** with **4,461+ citations**, reflecting sustained contributions across three interconnected research themes:
 
-1. **Nuclear structure via [[Radioactive Isotope Beam|RI beams]]** — probing shell evolution, deformation coexistence, and collective modes far from stability
-2. **Nuclear reaction dynamics** — charge-exchange reactions, [[Transfer Reactions|nucleon transfer]], and surrogate methods for astrophysical cross sections
+1. **Nuclear structure via [[Radioactive Isotope Beam|RI beams]]** — probing [[Shell Evolution|shell evolution]], [[Deformation Coexistence|deformation coexistence]], and collective modes far from stability
+2. **Nuclear reaction dynamics** — [[Charge-Exchange Reaction|charge-exchange reactions]], [[Transfer Reactions|nucleon transfer]], and [[Surrogate Reaction|surrogate methods]] for astrophysical cross sections
 3. **Detector development** — diamond detectors, GEM/THGEM-based TPCs, and beam diagnostics for low-energy RI beam experiments
 
 ---
@@ -101,7 +101,7 @@ Two sets of superconducting quadrupole triplets **refocus** the decelerated beam
 
 ### 3.4 SHARAQ Spectrometer
 
-Downstream of S0, the **SHARAQ** magnetic spectrometer (configuration: **QQDQD** — two quadrupoles, dipole, quadrupole, dipole) performs high-resolution missing-mass spectroscopy with a resolving power of:
+Downstream of S0, the **SHARAQ** magnetic spectrometer (configuration: **QQDQD** — two quadrupoles, dipole, quadrupole, dipole) performs high-resolution [[Missing-Mass Spectroscopy|missing-mass spectroscopy]] with a resolving power of:
 
 $$\frac{\Delta p}{p} = \frac{1}{15000}$$
 
@@ -109,8 +109,8 @@ This combination — an energy-degrading RI beamline feeding a high-resolution s
 
 ### 3.5 Physics Enabled
 
-- **Nucleon transfer reactions** $(d,p)$, $(p,d)$ at $10$–$30$ MeV/u on unstable targets (in inverse kinematics) — extract [[Spectroscopic Factor|spectroscopic factors]] and single-particle structure via [[DWBA]] analysis
-- **Sub-barrier Coulomb excitation** — measure $B(E2)$ values and probe deformation in exotic nuclei
+- **Nucleon transfer reactions** $(d,p)$, $(p,d)$ at $10$–$30$ MeV/u on unstable targets (in [[Inverse Kinematics|inverse kinematics]]) — extract [[Spectroscopic Factor|spectroscopic factors]] and single-particle structure via [[DWBA]] analysis
+- **Sub-barrier [[Coulomb Excitation|Coulomb excitation]]** — measure $B(E2)$ values and probe deformation in exotic nuclei
 - **Surrogate reactions** for astrophysics — $(d,p)$ as a surrogate for $(n,\gamma)$ to constrain r-process reaction rates on short-lived nuclei
 
 ---
@@ -119,7 +119,7 @@ This combination — an energy-degrading RI beamline feeding a high-resolution s
 
 ### 4.1 Gamow-Teller Transitions
 
-The **Gamow-Teller (GT) transition** is mediated by the axial-vector part of the weak interaction. The transition operator is:
+The **[[Gamow-Teller Transition|Gamow-Teller (GT) transition]]** is mediated by the axial-vector part of the weak interaction. The transition operator is:
 
 $$\hat{O}_{GT} = g_A \sum_k \boldsymbol{\sigma}_k \boldsymbol{\tau}_k$$
 
@@ -129,11 +129,11 @@ where $\boldsymbol{\sigma}$ is the spin operator and $\boldsymbol{\tau}$ the iso
 - $\Delta \pi = 0$ (no parity change)
 - $\Delta T_z = \pm 1$ (isospin flip)
 
-This is a **spin-flip, isospin-flip** excitation — distinct from Fermi transitions ($\boldsymbol{\tau}$ only, $\Delta J = 0$).
+This is a **spin-flip, isospin-flip** excitation — distinct from [[Fermi Transition|Fermi transitions]] ($\boldsymbol{\tau}$ only, $\Delta J = 0$).
 
 ### 4.2 GT Giant Resonance (GTGR)
 
-The **Gamow-Teller Giant Resonance** is a coherent superposition of $1^+$ particle-hole excitations — a collective spin-isospin oscillation of the nucleus. It was first observed experimentally in $(p,n)$ reactions in the 1980s. The centroid energy lies above the Isobaric Analog State by a few MeV, governed by the residual spin-isospin interaction.
+The **Gamow-Teller Giant Resonance** is a coherent superposition of $1^+$ particle-hole excitations — a collective spin-isospin oscillation of the nucleus. It was first observed experimentally in $(p,n)$ reactions in the 1980s. The centroid energy lies above the [[Isobaric Analog State]] by a few MeV, governed by the residual spin-isospin interaction.
 
 ### 4.3 Double GT (DGT) Resonance
 
@@ -141,13 +141,13 @@ The **Double Gamow-Teller** transition applies the GT operator twice in sequence
 
 $$\hat{O}_{DGT} = \sum_{k,l} (\boldsymbol{\sigma}_k \tau^-_k)(\boldsymbol{\sigma}_l \tau^-_l)$$
 
-where the sum runs over nucleon pairs $(k, l)$. This results in $\Delta Z = \pm 2$ (double charge change). The DGT is a **two-phonon giant resonance**, first predicted theoretically by **Auerbach, Zamick & Zheng (1989)**.
+where the sum runs over nucleon pairs $(k, l)$. This results in $\Delta Z = \pm 2$ (double charge change). The DGT is a **two-phonon [[Giant Resonance|giant resonance]]**, first predicted theoretically by **Auerbach, Zamick & Zheng (1989)**.
 
 ### 4.4 Scientific Importance — Connection to $0\nu\beta\beta$
 
-The DGT resonance has gained enormous significance because of a **linear correlation** between the DGT nuclear matrix element and the nuclear matrix element governing **neutrinoless double-beta decay** ($0\nu\beta\beta$), as demonstrated by **Shimizu et al. (PRL, 2018)**.
+The DGT resonance has gained enormous significance because of a **linear correlation** between the DGT nuclear matrix element and the nuclear matrix element governing **[[Neutrinoless Double-Beta Decay|neutrinoless double-beta decay]]** ($0\nu\beta\beta$), as demonstrated by **Shimizu et al. (PRL, 2018)**.
 
-The $0\nu\beta\beta$ decay — if observed — would prove neutrinos are Majorana fermions and violate lepton number conservation. Extracting the neutrino mass from a $0\nu\beta\beta$ half-life measurement requires the nuclear matrix element $M^{0\nu}$, which is currently model-dependent and uncertain by factors of $\sim 2$–$3$. Measuring the DGT strength experimentally provides an **independent constraint** on these NMEs through a reaction mechanism that probes the same nuclear structure.
+The $0\nu\beta\beta$ decay — if observed — would prove neutrinos are Majorana fermions and violate lepton number conservation. Extracting the neutrino mass from a $0\nu\beta\beta$ half-life measurement requires the [[Nuclear Matrix Element|nuclear matrix element]] $M^{0\nu}$, which is currently model-dependent and uncertain by factors of $\sim 2$–$3$. Measuring the DGT strength experimentally provides an **independent constraint** on these NMEs through a reaction mechanism that probes the same nuclear structure.
 
 ### 4.5 Experimental Access at RIKEN
 
@@ -197,7 +197,7 @@ $$\left(\frac{d\sigma}{d\Omega}\right)_{0°} \propto B(GT)$$
 This proportionality is the foundation of the "$(p,n)$ method" for extracting GT strengths.
 
 **Key modes excited:**
-- **Fermi transitions** ($\boldsymbol{\tau}$ only) $\to$ **Isobaric Analog State (IAS)** — sharp, well-defined peak
+- **[[Fermi Transition|Fermi transitions]]** ($\boldsymbol{\tau}$ only) $\to$ **[[Isobaric Analog State|Isobaric Analog State (IAS)]]** — sharp, well-defined peak
 - **GT transitions** ($\boldsymbol{\sigma} \cdot \boldsymbol{\tau}$) $\to$ **GTGR** — broad resonance above the IAS
 
 ### 5.2 Double Charge-Exchange (DCX)
@@ -250,7 +250,7 @@ These detectors are particularly suited for **beam tracking and diagnostics** at
 
 ### 6.2 GEM/THGEM for Active-Target TPC
 
-A 2023 PTEP paper (Iwamoto, Ota, Imai et al.) describes the **DG-M-THGEM** prototype — a dual-gain Micro-pattern THGEM (Thick Gas Electron Multiplier) designed for **active-target [[Time Projection Chamber|TPC]]** experiments at CNS.
+A 2023 PTEP paper (Iwamoto, Ota, Imai et al.) describes the **DG-M-THGEM** prototype — a dual-gain Micro-pattern THGEM (Thick Gas Electron Multiplier) designed for **[[Active-Target TPC|active-target TPC]]** experiments at CNS.
 
 **Key innovation — dual gain regions:**
 
