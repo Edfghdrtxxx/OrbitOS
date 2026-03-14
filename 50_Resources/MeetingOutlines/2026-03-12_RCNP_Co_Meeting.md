@@ -1,17 +1,17 @@
-# RCNP Collaboration Meeting — 2026-03-12
+# [[RCNP]] Collaboration Meeting — 2026-03-12
 
 ## Summary
 
-The meeting covered [[Time Projection Chamber|TPC]] data analysis techniques across multiple experiments. Josema presented unpacker/merger updates; Tatsuya and Daniel discussed [[ADC]] threshold calibration and [[RANSAC]] algorithm optimization for event reconstruction. Xuan shared preliminary PID spectra from TPC and silicon data, noting discrepancies likely due to pile-up in the [[Ionisation Chamber|ion chamber]]. Weiliang introduced "ATPC Flow," a new Python/C++ analysis framework still under development. Zhang reported completing a 7.2 TB data transfer from MSU to Sappho. Additional updates included silicon calibrations (Tim/Amber) and carbon-17 reaction analysis (Périne).
+The meeting covered [[Time Projection Chamber|TPC]] data analysis techniques across multiple experiments. Josema presented unpacker/merger updates; Tatsuya and Daniel discussed [[ADC]] threshold calibration and [[RANSAC]] algorithm optimization for event reconstruction. Xuan shared preliminary [[PID]] spectra from TPC and silicon data, noting discrepancies likely due to [[Pile-up|pile-up]] in the [[Ionisation Chamber|ion chamber]]. Weiliang introduced "ATPC Flow," a new Python/C++ analysis framework still under development. Zhang reported completing a 7.2 TB data transfer from MSU to Sappho. Additional updates included silicon calibrations (Tim/Amber) and carbon-17 reaction analysis (Périne).
 
 ## Notes
 
 ### 1. Unpacker Updates & PID Discussion — Josema, Périne, Tatsuya
 
 - Josema presented updates on the Unpacker implementation, including new features for VIN paths and encoder reader functionality.
-- Demonstrated how to add specific lines of code to read timestamps and PPAC data; timestamp matching shows nearly identical results between systems.
+- Demonstrated how to add specific lines of code to read timestamps and [[PPAC]] data; timestamp matching shows nearly identical results between systems.
 - Périne clarified that certain peaks in the ion chamber correspond to ¹⁹N and ¹⁷C.
-- Tatsuya suggested using silicon detector data for better particle identification.
+- Tatsuya suggested using [[Silicon Detector|silicon detector]] data for better particle identification.
 - Silicon detectors were removed during beam time, but historical PID data from F2 remains available for cross-checking.
 
 ### 2. Data Transfer & Event Checking — Zhang, Daniel, Soki
@@ -31,7 +31,7 @@ The meeting covered [[Time Projection Chamber|TPC]] data analysis techniques acr
 ### 4. Experimental Data Analysis & Parameters — Josema, Tatsuya, Xuan
 
 - Josema demonstrated analysis macros for examining ADC values and time bucket distributions (sampling frequency: 12.5 MHz).
-- Tatsuya proposed checking threshold values and drift velocity for each experiment and sharing them in a spreadsheet.
+- Tatsuya proposed checking threshold values and [[Drift Velocity|drift velocity]] for each experiment and sharing them in a spreadsheet.
 - Xuan presented updates from running a new ATPC branch, sharing PID spectrum results with features requiring further investigation, particularly regarding energy degradation effects.
 
 ### 5. Plastic Detector Signal Distribution — Tatsuya, Xuan
@@ -70,7 +70,7 @@ The meeting covered [[Time Projection Chamber|TPC]] data analysis techniques acr
 - [ ] **Soki** — Check and optimize the ADC threshold and time bucket settings for TPC analysis.
 - [ ] **Xuan** — Check the effect of pile-up in ion chamber data and investigate the multiplicity (pulses per trace).
 - [ ] **Xuan** — Upload slides to the shared folder when ready.
-- [ ] **Josema** — Continue updating/tuning the Bragg peak fitting section.
+- [ ] **Josema** — Continue updating/tuning the [[Bragg Peak|Bragg peak]] fitting section.
 - [ ] **Weiliang** — Continue ATPC Flow development and share updates when ready for broader use.
 - [ ] **Zhang** — Install the analysis environment and begin analysis after data transfer is complete.
 - [ ] **Tim/Amber** — Continue silicon calibrations and extend unpacker to carry strip information; coordinate with Josema; push to main branch when ready.

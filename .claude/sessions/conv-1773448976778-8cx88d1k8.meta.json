@@ -3,17 +3,17 @@
   "title": "Organize meeting record",
   "titleGenerationStatus": "success",
   "createdAt": 1773448976778,
-  "updatedAt": 1773449189929,
-  "lastResponseAt": 1773449189929,
+  "updatedAt": 1773450524519,
+  "lastResponseAt": 1773450524519,
   "sessionId": "58654b65-7cf1-467a-8843-1e85b6f8fb56",
   "sdkSessionId": "58654b65-7cf1-467a-8843-1e85b6f8fb56",
   "usage": {
     "model": "opus",
-    "inputTokens": 1,
-    "cacheCreationInputTokens": 147,
-    "cacheReadInputTokens": 26096,
+    "inputTokens": 2,
+    "cacheCreationInputTokens": 638,
+    "cacheReadInputTokens": 60436,
     "contextWindow": 200000,
-    "contextTokens": 26244,
-    "percentage": 13
+    "contextTokens": 61076,
+    "percentage": 31
   }
 }
