@@ -1,6 +1,6 @@
-# Quick Mode — Rapid Recall
+# Quick Mode — Rapid Recall (Weaponized)
 
-Lightweight review optimized for throughput — review 5-8 notes in 10 minutes. Minimal friction, no deep probing.
+Lightweight review optimized for throughput — review 5-8 notes in 10 minutes. Minimal friction, but questions are adversarial: expose how the concept tricks you, not just whether you remember it (MIT Learning Philosophy).
 
 ## Note Acquisition
 
@@ -25,11 +25,11 @@ Once a note is selected:
 
 Generate **3 quick questions**:
 
-| Type | Count |
-|------|-------|
-| Core definition / fact | 1 |
-| Application / context | 1 |
-| Cross-link (reference a `[[wikilink]]` from the note) | 1 |
+| Type | Count | Purpose |
+|------|-------|---------|
+| Misconception trap | 1 | A question designed to exploit a common misunderstanding of the concept |
+| Application / context | 1 | Apply the concept to a concrete scenario |
+| Cross-concept trap | 1 | Combine with a `[[wikilink]]` from the note to create a tricky question |
 
 Present **all 3 questions at once**. Wait for the user to answer, then grade all together.
 

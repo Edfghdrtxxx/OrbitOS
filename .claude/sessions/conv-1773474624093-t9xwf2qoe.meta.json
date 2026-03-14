@@ -3,19 +3,19 @@
   "title": "Audit note",
   "titleGenerationStatus": "success",
   "createdAt": 1773474624094,
-  "updatedAt": 1773474820141,
-  "lastResponseAt": 1773474820141,
+  "updatedAt": 1773475198151,
+  "lastResponseAt": 1773475198151,
   "sessionId": "940b16a0-1108-4640-a642-738099399d09",
   "sdkSessionId": "940b16a0-1108-4640-a642-738099399d09",
   "currentNote": "40_Wiki/Fundamental_knowledge/r-process Nucleosynthesis.md",
   "usage": {
     "model": "opus",
-    "inputTokens": 1,
-    "cacheCreationInputTokens": 1901,
-    "cacheReadInputTokens": 15833,
+    "inputTokens": 3,
+    "cacheCreationInputTokens": 2392,
+    "cacheReadInputTokens": 22947,
     "contextWindow": 200000,
-    "contextTokens": 17735,
-    "percentage": 9
+    "contextTokens": 25342,
+    "percentage": 13
   },
   "subagentData": {
     "toolu_01VKUG6RtV7cKf4gnmrrLrfc": {
@@ -159,6 +159,71 @@
       ],
       "isExpanded": false,
       "result": "All 12 files exist in the vault. There are zero broken links. Here is the full report:\n\n| # | Wikilink | Status | Vault Path |\n|---|----------|--------|------------|\n| 1 | `[[Neutron Capture Cross Section]]` | EXISTS | `40_Wiki/Fundamental_knowledge/Neutron Capture Cross Section.md` |\n| 2 | `[[Shell closure]]` | EXISTS | `40_Wiki/Fundamental_knowledge/Shell closure.md` |\n| 3 | `[[OEDO]]` | EXISTS | `40_Wiki/Fundamental_knowledge/OEDO.md` |\n| 4 | `[[SHARAQ Spectrometer]]` | EXISTS | `40_Wiki/Fundamental_knowledge/SHARAQ Spectrometer.md` |\n| 5 | `[[RIKEN Nishina Center for Accelerator-Based Science (RNC)]]` | EXISTS | `40_Wiki/RIKEN Nishina Center for Accelerator-Based Science (RNC).md` |\n| 6 | `[[Surrogate Reaction]]` | EXISTS | `40_Wiki/Fundamental_knowledge/Surrogate Reaction.md` |\n| 7 | `[[Radioactive Isotope Beam]]` | EXISTS | `40_Wiki/Fundamental_knowledge/Radioactive Isotope Beam.md` |\n| 8 | `[[Binding Energy]]` | EXISTS | `40_Wiki/Fundamental_knowledge/Binding Energy.md` |\n| 9 | `[[Half-Life]]` | EXISTS | `40_Wiki/Fundamental_knowledge/Half-Life.md` |\n| 10 | `[[Flux]]` | EXISTS | `40_Wiki/Fundamental_knowledge/Flux.md` |\n| 11 | `[[Reaction Rate]]` | EXISTS | `40_Wiki/Fundamental_knowledge/Reaction Rate.md` |\n| 12 | `[[B_A curve]]` | EXISTS | `40_Wiki/Fundamental_knowledge/B_A curve.md` |\n\nOne structural note: `RIKEN Nishina Center for Accelerator-Based Science (RNC).md` sits one level up in `40_Wiki/` directly, while all other 11 files are nested under `40_Wiki/Fundamental_knowledge/`. This is not a broken link, but worth knowing if you ever want to consolidate their locations."
+    },
+    "toolu_01Ci2xzRAwV36uXvLDiE1yae": {
+      "id": "toolu_01Ci2xzRAwV36uXvLDiE1yae",
+      "description": "Check area field in nearby wiki notes",
+      "prompt": "Read the frontmatter of several Wiki notes in 40_Wiki/Fundamental_knowledge/ to see what values they use for the `area` field. Check at least 5 files: Binding Energy.md, Shell closure.md, Flux.md, Neutron Capture Cross Section.md, Surrogate Reaction.md. Report the `area` value (or lack thereof) for each.",
+      "status": "completed",
+      "toolCalls": [
+        {
+          "id": "toolu_01PJJkxAvaCfJ25KqorMqoqn",
+          "name": "Read",
+          "input": {
+            "file_path": "D:\\obsidian\\OrbitOS\\40_Wiki\\Fundamental_knowledge\\Binding Energy.md",
+            "limit": 15
+          },
+          "status": "completed",
+          "isExpanded": false,
+          "result": "     1→---\n     2→area: \"[[Physics]]\"\n     3→tags: [nuclear-physics, foundations]\n     4→created: 2026-03-03\n     5→last_reviewed: 2026-03-03\n     6→next_review: 2026-03-04\n     7→review_interval: 1\n     8→---\n     9→# Binding Energy\n    10→\n    11→## Definition\n    12→\n    13→Binding energy is the energy required to disassemble a nucleus into its constituent protons and neutrons. It equals the mass defect (difference between the sum of individual nucleon masses and the actual nuclear mass) converted via $E = mc^2$. Higher binding energy per nucleon indicates a more stable nucleus.\n    14→\n    15→Concise formula:  $$B = \\left[Z m_p + (A - Z) m_n - M(A,Z)\\right]c^2$$"
+        },
+        {
+          "id": "toolu_01Sgz3C5peXujjnZZr7VTu58",
+          "name": "Read",
+          "input": {
+            "file_path": "D:\\obsidian\\OrbitOS\\40_Wiki\\Fundamental_knowledge\\Shell closure.md",
+            "limit": 15
+          },
+          "status": "completed",
+          "isExpanded": false,
+          "result": "     1→---\n     2→area: \"[[Physics]]\"\n     3→tags: [nuclear-physics, structure]\n     4→created: 2026-03-03\n     5→last_reviewed:\n     6→next_review: 2026-03-03\n     7→review_interval: 0\n     8→---\n     9→# Shell closure\n    10→\n    11→## Definition\n    12→\n    13→A shell closure occurs when a nucleon shell is filled, producing extra stability and characteristic gaps in the single-particle spectrum. These closures define [[Nuclear Magic Numbers]].\n    14→\n    15→## Key Points"
+        },
+        {
+          "id": "toolu_01TR7W9exQURuWkfp71Xgsnp",
+          "name": "Read",
+          "input": {
+            "file_path": "D:\\obsidian\\OrbitOS\\40_Wiki\\Fundamental_knowledge\\Flux.md",
+            "limit": 15
+          },
+          "status": "completed",
+          "isExpanded": false,
+          "result": "     1→---\n     2→area: \"[[Physics]]\"\n     3→tags:\n     4→  - nuclear-physics\n     5→  - physics\n     6→created: 2026-03-14\n     7→last_reviewed:\n     8→next_review: 2026-03-14\n     9→review_interval: 0\n    10→---\n    11→# Flux\n    12→## Definition\n    13→\n    14→**Flux** is the rate at which a quantity passes through a surface per unit area per unit time. In nuclear and particle physics, **particle flux** $\\phi$ is the number of particles traversing a unit cross-sectional area per unit time, typically expressed as cm⁻²·s⁻¹. For a uniform beam or gas of particles with number density $n$ and speed $v$: $\\phi = n \\cdot v$.\n    15→"
+        },
+        {
+          "id": "toolu_01KKsYFYzmSujQrLvQjnRXrA",
+          "name": "Read",
+          "input": {
+            "file_path": "D:\\obsidian\\OrbitOS\\40_Wiki\\Fundamental_knowledge\\Neutron Capture Cross Section.md",
+            "limit": 15
+          },
+          "status": "completed",
+          "isExpanded": false,
+          "result": "     1→---\n     2→area: \"[[Physics]]\"\n     3→tags:\n     4→  - radiation-safety\n     5→  - nuclear-physics\n     6→created: 2026-03-04\n     7→last_reviewed:\n     8→next_review: 2026-03-04\n     9→review_interval: 0\n    10→---\n    11→# Neutron Capture Cross Section\n    12→\n    13→## Definition\n    14→\n    15→The neutron capture cross section (σ) is the effective target area a nucleus presents for capturing a neutron, measured in barns (1 b = 10⁻²⁴ cm²). A larger cross section means the nucleus is more likely to undergo [[Neutron Activation]]."
+        },
+        {
+          "id": "toolu_01T686hVLcUwza5qQe8eFbLr",
+          "name": "Read",
+          "input": {
+            "file_path": "D:\\obsidian\\OrbitOS\\40_Wiki\\Fundamental_knowledge\\Surrogate Reaction.md",
+            "limit": 15
+          },
+          "status": "completed",
+          "isExpanded": false,
+          "result": "     1→---\n     2→type: wiki\n     3→tags:\n     4→  - nuclear-physics\n     5→  - reaction-mechanism\n     6→  - nuclear-astrophysics\n     7→created: 2026-03-13\n     8→---\n     9→# Surrogate Reaction\n    10→## Definition\n    11→\n    12→A surrogate reaction is an indirect method for determining neutron-induced cross sections on unstable nuclei by using a different reaction that populates the same compound nucleus. The technique bypasses the need for a neutron beam impinging on a radioactive target -- which is impractical for short-lived isotopes -- by instead using a charged-particle reaction in inverse kinematics.\n    13→\n    14→## Core Principle\n    15→"
+        }
+      ],
+      "isExpanded": false,
+      "result": "Here are the `area` field values for each file:\n\n| File | `area` value |\n|---|---|\n| `Binding Energy.md` | `\"[[Physics]]\"` |\n| `Shell closure.md` | `\"[[Physics]]\"` |\n| `Flux.md` | `\"[[Physics]]\"` |\n| `Neutron Capture Cross Section.md` | `\"[[Physics]]\"` |\n| `Surrogate Reaction.md` | **absent** — no `area` field at all |\n\nFour of the five files use `area: \"[[Physics]]\"`. `Surrogate Reaction.md` is the outlier: its frontmatter only contains `type`, `tags`, and `created`, with no `area` field present."
     }
   }
 }

@@ -1,5 +1,6 @@
 ---
 type: wiki
+area: "[[Physics]]"
 aliases:
   - r-process
 tags:
@@ -7,6 +8,9 @@ tags:
   - nucleosynthesis
   - nuclear-physics
 created: 2026-03-13
+last_reviewed:
+next_review:
+review_interval: 0
 ---
 # r-process Nucleosynthesis
 ## Definition
@@ -17,7 +21,7 @@ The **rapid neutron capture process** (r-process) is a nucleosynthesis mechanism
 
 1. **Seed nuclei** (typically iron-group, $A \sim 56$) are exposed to an extreme neutron flux ($n_n > 10^{20}$ cm$^{-3}$)
 2. Neutron captures $(n, \gamma)$ proceed faster than $\beta^-$ decay timescales, pushing nuclei along isotopic chains toward the neutron drip line
-3. At **waiting points** -- nuclei where the [[Neutron Capture Cross Section|neutron capture cross section]] drops sharply (particularly at [[Shell closure|shell closures]] $N = 50, 82, 126$) -- $\beta^-$ decay competes with further capture, incrementing $Z$ by one
+3. At **waiting points** — nuclei where the [[Neutron Capture Cross Section|neutron capture cross section]] drops sharply (particularly at [[Shell closure|shell closures]] $N = 50, 82, 126$) — $\beta^-$ decay competes with further capture, incrementing $Z$ by one
 4. After the neutron flux ceases, nuclei $\beta$-decay back toward stability, producing the observed r-process abundance peaks at $A \approx 80, 130, 195$
 
 ## Astrophysical Sites
@@ -29,7 +33,7 @@ The **rapid neutron capture process** (r-process) is a nucleosynthesis mechanism
 ## Nuclear Physics Inputs
 
 R-process network calculations require thousands of nuclear properties for unstable nuclei:
-- [[Neutron Capture Cross Section|Neutron capture cross sections]] $(n, \gamma)$ -- often accessible only via [[Surrogate Reaction|surrogate methods]]
+- [[Neutron Capture Cross Section|Neutron capture cross sections]] $(n, \gamma)$ - often accessible only via [[Surrogate Reaction|surrogate methods]]
 - $\beta$-decay half-lives and $\beta$-delayed neutron emission probabilities
 - Nuclear masses (binding energies) determining neutron separation energies
 - Fission barriers and fission fragment distributions for the heaviest nuclei
@@ -53,7 +57,7 @@ The "r" stands for **rapid** — named by contrast with the **s-process** (slow 
 
 ### Why iron seeds, not lighter nuclei?
 
-Stars fuse H → He → C → O → ... → Fe over millions of years. Fusion **stops** at iron because it sits at the peak of the [[B_A curve|B/A curve]] (maximum [[Binding Energy|binding energy]] per nucleon) — further fusion is endothermic. Iron-group nuclei therefore **accumulate as the ash** of stellar evolution. By the time a catastrophic event occurs (core collapse, neutron star merger), lighter nuclei like helium have been largely consumed. Iron is simply **what's available** when the neutron flood begins — and starting from $A \sim 56$ is far more efficient than building from $A \sim 4$.
+Stars fuse H → He → C → O → ... → Fe over millions of years. Fusion **stops** at the iron group because this region contains the most tightly bound nuclei on the [[B_A curve|B/A curve]] (the true peak is ${}^{62}$Ni, but silicon burning preferentially produces ${}^{56}$Ni, which decays to ${}^{56}$Fe) — further fusion is endothermic. Iron-group nuclei therefore **accumulate as the ash** of stellar evolution. By the time a catastrophic event occurs (core collapse, neutron star merger), lighter nuclei like helium have been largely consumed. Iron is simply **what's available** when the neutron flood begins — and starting from $A \sim 56$ is far more efficient than building from $A \sim 4$.
 
 ## Related Concepts
 
@@ -63,3 +67,9 @@ Stars fuse H → He → C → O → ... → Fe over millions of years. Fusion **
 - [[Radioactive Isotope Beam]]
 - [[Binding Energy]]
 - [[Half-Life]]
+
+## References
+
+- E. M. Burbidge, G. R. Burbidge, W. A. Fowler & F. Hoyle, "Synthesis of the Elements in Stars," *Rev. Mod. Phys.* **29**, 547 (1957) — the foundational B²FH paper classifying r- and s-processes
+- A. G. W. Cameron, "Nuclear Reactions in Stars and Nucleogenesis," *Publ. Astron. Soc. Pac.* **69**, 201 (1957) — independent, contemporaneous classification
+- ${}^{130}$Sn$(d,p)$ neutron capture measurement: *Phys. Rev. C* **110** (2024) — OEDO-SHARAQ surrogate result constraining the $N = 82$ r-process path
