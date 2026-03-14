@@ -13,7 +13,7 @@ created: 2026-03-13
 
 ## 1. Prof. Nobuaki Imai — Overview
 
-**Nobuaki Imai** (今井伸明) is an Associate Professor at the [[UTokyo CNS|Center for Nuclear Study (CNS)]], University of Tokyo, a position he has held since 2014. He is the scientific coordinator of the **OEDO-SHARAQ** beamline system at [[RIKEN Nishina Center for Accelerator-Based Science (RNC)|RIKEN RIBF]].
+**Nobuaki Imai** (今井伸明) is an Associate Professor at the [[UTokyo CNS|Center for Nuclear Study (CNS)]], University of Tokyo, a position he has held since 2014. He is the scientific coordinator of the **[[OEDO]]-[[SHARAQ Spectrometer|SHARAQ]]** beamline system at [[RIKEN Nishina Center for Accelerator-Based Science (RNC)|RIKEN RIBF]].
 
 **Career trajectory:**
 - **PhD** — University of Tokyo

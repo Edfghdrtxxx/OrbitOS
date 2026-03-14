@@ -17,9 +17,9 @@ The meeting covered [[Time Projection Chamber|TPC]] data analysis techniques acr
 ### 2. Data Transfer & Event Checking — Zhang, Daniel, Soki
 
 - Zhang completed a 7.2 TB data transfer from MSU to Sappho in four days; discussed file name formatting issues (Daniel suggested a script to convert to underscores).
-- Ginseng plans to copy missing backup data from MSU to Sappho, potentially using global bus due to the ~500 Gb data size.
-- Daniel reported that scalar data for the FlipTIC is included in the matched data files but requires documentation and turning on the DAC computer for channel mapping.
-- Soki shared progress on event checking in Run 52; plans to present results at the JPS meeting on March 26.
+- Ginseng[^?] plans to copy missing backup data from MSU to Sappho, potentially using global bus due to the ~500 GB data size.
+- Daniel reported that scalar data for the FlipTIC[^?] is included in the matched data files but requires documentation and turning on the DAC computer for channel mapping.
+- Soki shared progress on event checking in Run 52; plans to present results at the JPS meeting on March 26. Next steps include updating the branch and checking "blackout fitting"[^?].
 
 ### 3. Lead Point Visualization & Geometry Issues — Soki, Tatsuya, Josema, Yassid
 
@@ -37,7 +37,7 @@ The meeting covered [[Time Projection Chamber|TPC]] data analysis techniques acr
 ### 5. Plastic Detector Signal Distribution — Tatsuya, Xuan
 
 - Examined differences in F2 and F3 plastic detector responses and how positions affect signal distribution.
-- [[Time Resolution|Timing resolution]] issues identified: ¹²Ba and ¹⁴Ba patterns appeared consistent between detectors, but discrepancies exist in weaker signal times.
+- [[Time Resolution|Timing resolution]] issues identified: ¹²Be and ¹⁴Be patterns appeared consistent between detectors, but discrepancies exist in weaker signal times.
 - Potential pile-up effects identified in the ion chamber; strange patterns in the distribution potentially related to the main component.
 
 ### 6. Ion Chamber Pulse Detection & Pile-Up — Yassid, Daniel, Tatsuya
@@ -76,3 +76,5 @@ The meeting covered [[Time Projection Chamber|TPC]] data analysis techniques acr
 - [ ] **Tim/Amber** — Continue silicon calibrations and extend unpacker to carry strip information; coordinate with Josema; push to main branch when ready.
 - [ ] **Périne** — Prepare slides for next meeting showing progress on ¹⁷C analysis and reaction selection.
 - [ ] **All teams** — Check threshold value and drift velocity from data and share results in the Google spreadsheet.
+
+[^?]: Uncertain transcription — original AI transcript may have misheard this term.

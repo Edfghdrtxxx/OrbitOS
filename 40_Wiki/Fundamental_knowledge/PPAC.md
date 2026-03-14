@@ -17,7 +17,7 @@ A Parallel Plate Avalanche Counter (PPAC) is a gaseous detector consisting of tw
 ## Key Points
 
 - Provides both X and Y position information via delay-line or strip readout, with sub-millimetre spatial resolution
-- Achieves timing resolution on the order of ~100 ps, making it well-suited for [[Time Resolution|time-of-flight]] measurements in fragment separators like [[BigRIPS]]
+- Achieves timing resolution on the order of ~100 ps, making it well-suited for time-of-flight measurements requiring high [[Time Resolution|time resolution]] in fragment separators like [[BigRIPS]]
 - Operates at low gas pressure (typically a few Torr of isobutane or similar), which minimises energy loss and scattering of the beam particles
 - Commonly paired with [[Scintillation Detector|plastic scintillators]] for [[PID|particle identification]] via $B\rho$–TOF–$\Delta E$ methods
 
