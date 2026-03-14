@@ -1,0 +1,20 @@
+{
+  "id": "conv-1773494019703-i9orgh7fp",
+  "title": "Insert Feynman Technique section",
+  "titleGenerationStatus": "success",
+  "createdAt": 1773494019703,
+  "updatedAt": 1773494105048,
+  "lastResponseAt": 1773494105048,
+  "sessionId": "89cd0a7e-6a1c-43b1-9eb6-02f5e31b3c66",
+  "sdkSessionId": "89cd0a7e-6a1c-43b1-9eb6-02f5e31b3c66",
+  "currentNote": "40_Wiki/Fundamental_knowledge/Surrogate Reaction.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 663,
+    "cacheReadInputTokens": 16810,
+    "contextWindow": 200000,
+    "contextTokens": 17474,
+    "percentage": 9
+  }
+}
