@@ -1,0 +1,39 @@
+{
+  "eval_id": 1,
+  "eval_name": "full-mode-physics",
+  "configuration": "without_skill",
+  "expectations": [
+    {
+      "text": "Phase 1 asks user to explain Bethe-Bloch Formula in their own words",
+      "passed": false,
+      "evidence": "No Feynman check phase. Jumps straight to 16 quiz questions. No 'explain in your own words' prompt."
+    },
+    {
+      "text": "Phase 1 feedback identifies key omissions (beta-gamma dependence, MIP, corrections)",
+      "passed": true,
+      "evidence": "Part 2 evaluation identifies: vague speed vs beta-gamma, missing z² charge dependence, no MIP terminology, no corrections, no applications. Thorough analysis."
+    },
+    {
+      "text": "Phase 1 generates exactly 3 follow-up probing questions",
+      "passed": false,
+      "evidence": "Generates 10 follow-up questions (F1-F10), not 3. No constraint on count."
+    },
+    {
+      "text": "Phase 2 generates 5 adversarial questions with correct type distribution (2 trick, 2 cross-concept, 1 exam-style)",
+      "passed": false,
+      "evidence": "Generates 16 questions with custom categories (4 conceptual, 4 trick, 6 cross-topic, 2 synthesis). Does not follow 2/2/1 distribution."
+    },
+    {
+      "text": "Cross-concept questions reference actual wikilinks from the Bethe-Bloch Formula note",
+      "passed": true,
+      "evidence": "References TPC, ToF, Ionizing Radiation, Particle Identification, Linear Energy Transfer — all from the note's wikilinks"
+    },
+    {
+      "text": "Output includes English language correction/feedback",
+      "passed": false,
+      "evidence": "No English language correction section. Baseline has no awareness of the user being a non-native English learner."
+    }
+  ],
+  "pass_rate": 0.333,
+  "summary": "Baseline produces high-quality physics content but without the structured phases, question count constraints, or English correction. Overwhelming volume (16+10 questions vs 5+3)."
+}

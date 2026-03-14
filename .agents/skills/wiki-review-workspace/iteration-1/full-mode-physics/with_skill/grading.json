@@ -1,0 +1,39 @@
+{
+  "eval_id": 1,
+  "eval_name": "full-mode-physics",
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "Phase 1 asks user to explain Bethe-Bloch Formula in their own words",
+      "passed": true,
+      "evidence": "Output: 'Explain [[Bethe-Bloch Formula]] in your own words. Don't look at the note — just tell me what you know.'"
+    },
+    {
+      "text": "Phase 1 feedback identifies key omissions (beta-gamma dependence, MIP, corrections)",
+      "passed": true,
+      "evidence": "Identifies: incomplete beta-gamma vs speed, missing charge z dependence, vague MIP description, missing dE/dx notation, missing density effect and shell corrections, missing TPC application"
+    },
+    {
+      "text": "Phase 1 generates exactly 3 follow-up probing questions",
+      "passed": true,
+      "evidence": "Three follow-up questions: (1) why beta-gamma not KE, (2) why different species separate, (3) density effect correction"
+    },
+    {
+      "text": "Phase 2 generates 5 adversarial questions with correct type distribution (2 trick, 2 cross-concept, 1 exam-style)",
+      "passed": true,
+      "evidence": "Q1 Trick (momentum misconception), Q2 Trick (same charge different mass), Q3 Cross-concept (truncated mean + ionization), Q4 Cross-concept (ToF + dE/dx PID), Q5 Exam-style (derive functional dependence)"
+    },
+    {
+      "text": "Cross-concept questions reference actual wikilinks from the Bethe-Bloch Formula note",
+      "passed": true,
+      "evidence": "Q3 references [[Time Projection Chamber]] and [[Ionizing Radiation]], Q4 references [[Time-of-Flight]] and [[Particle Identification]] — all wikilinks present in the note"
+    },
+    {
+      "text": "Output includes English language correction/feedback",
+      "passed": true,
+      "evidence": "English Note section after Phase 1 feedback: 'Your response is grammatically correct. One small improvement...'"
+    }
+  ],
+  "pass_rate": 1.0,
+  "summary": "All 6 assertions pass. Full mode followed all 5 phases correctly with appropriate question types and wikilink-based cross-concept synthesis."
+}

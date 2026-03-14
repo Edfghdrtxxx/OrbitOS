@@ -74,6 +74,14 @@ Evaluate conditions in the order listed — a note is placed in the FIRST bucket
 
 Priority order for review: Overdue > Due Today > Never Reviewed.
 
+### Within-Bucket Sorting
+
+Within each priority bucket, sort notes so the most valuable reviews surface first:
+
+- **Overdue**: Sort by `review_interval` descending (notes further along in the SRS cycle represent more invested effort — losing them hurts more), then by days overdue descending (longest-waiting first among same interval).
+- **Due Today**: Same logic — `review_interval` descending, then alphabetical.
+- **Never Reviewed**: Sort by creation date ascending (oldest first — they've been waiting longest).
+
 ## 3. Present Queue
 
 Display a summary:
@@ -97,7 +105,28 @@ Display a summary:
 ...
 ```
 
-List up to 10 notes in the "Ready for Review" section, sorted by priority.
+List up to 10 notes in the "Ready for Review" section, sorted by within-bucket rules above.
+
+## 4. Cold Start Detection
+
+If the **Overdue** count exceeds 20, the backlog is too large to review sequentially. Instead of going straight to mode selection, present the queue table (step 3) followed by a focused menu:
+
+```
+⚠ You have X overdue notes — reviewing them all isn't practical.
+
+Pick a strategy:
+1. **Focus by area** — Choose one area (e.g., Fundamental_knowledge, English_Knowledge) and review only those
+2. **Highest investment** — Review the notes with the highest review_interval first (you've put the most work into these)
+3. **Quick wins** — Review the most recently created notes (freshest in memory, easiest to recall)
+4. **Proceed with full queue** — Ignore the backlog size and start from the top
+```
+
+Use `AskUserQuestion` to let the user choose, then:
+
+- **Option 1**: Ask which area. Filter the Overdue + Due Today + Never Reviewed lists to notes whose file path contains that area folder name. Re-present a filtered "Ready for Review" list (up to 10), then ask full/quick.
+- **Option 2**: Sort all Overdue notes by `review_interval` descending. Present the top 10. Then ask full/quick.
+- **Option 3**: Sort all Overdue notes by creation date descending (newest first). Present the top 10. Then ask full/quick.
+- **Option 4**: Fall through to the normal flow — present the standard top 10 and ask full/quick.
 
 # Frontmatter Update Procedure
 

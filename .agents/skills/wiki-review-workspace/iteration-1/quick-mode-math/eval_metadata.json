@@ -1,0 +1,32 @@
+{
+  "eval_id": 2,
+  "eval_name": "quick-mode-math",
+  "prompt": "/wiki-review quick [[Vector_Spaces]]",
+  "assertions": [
+    {
+      "name": "exactly_three_questions",
+      "type": "count",
+      "description": "Generates exactly 3 questions, no more no less"
+    },
+    {
+      "name": "question_type_coverage",
+      "type": "structural",
+      "description": "Has 1 core definition/fact, 1 application/context, 1 cross-link question (typed or labeled)"
+    },
+    {
+      "name": "cross_link_references_wikilink",
+      "type": "content_quality",
+      "description": "Cross-link question references an actual wikilink from the Vector_Spaces note (e.g., Linear Independence, Basis, Eigenvalues)"
+    },
+    {
+      "name": "all_presented_at_once",
+      "type": "structural",
+      "description": "All 3 questions presented together in one block, not one-at-a-time"
+    },
+    {
+      "name": "concise_format",
+      "type": "qualitative",
+      "description": "Output is brief and fast-paced, minimal commentary — matches quick mode's throughput goal"
+    }
+  ]
+}

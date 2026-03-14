@@ -1,0 +1,34 @@
+{
+  "eval_id": 2,
+  "eval_name": "quick-mode-math",
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "Generates exactly 3 questions",
+      "passed": true,
+      "evidence": "Q1, Q2, Q3 — exactly 3 questions generated"
+    },
+    {
+      "text": "Has 1 core definition/fact, 1 application/context, 1 cross-link question",
+      "passed": true,
+      "evidence": "Q1 labeled 'Core definition / fact' (zero vector axiom), Q2 labeled 'Application / context' (QM probability amplitudes), Q3 labeled 'Cross-link — [[Subspace]]'"
+    },
+    {
+      "text": "Cross-link question references an actual wikilink from the Vector_Spaces note",
+      "passed": true,
+      "evidence": "Q3 references [[Subspace]] which appears in the note's Related section and body text"
+    },
+    {
+      "text": "All 3 questions presented together in one block",
+      "passed": true,
+      "evidence": "All three questions appear under '## Rapid-Fire Check — 3 Questions' with instruction 'Answer all three, then I will grade them together'"
+    },
+    {
+      "text": "Output is brief and fast-paced, minimal commentary",
+      "passed": true,
+      "evidence": "36 lines total including formatting. Core content (questions) is concise. Includes brief scoring preview and AskUserQuestion note (test harness artifacts)."
+    }
+  ],
+  "pass_rate": 1.0,
+  "summary": "All 5 assertions pass. Quick mode correctly generates 3 typed questions, presents them together, and stays concise."
+}

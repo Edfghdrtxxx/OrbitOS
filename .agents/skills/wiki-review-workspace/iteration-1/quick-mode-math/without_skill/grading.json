@@ -1,0 +1,34 @@
+{
+  "eval_id": 2,
+  "eval_name": "quick-mode-math",
+  "configuration": "without_skill",
+  "expectations": [
+    {
+      "text": "Generates exactly 3 questions",
+      "passed": true,
+      "evidence": "Q1, Q2, Q3 — exactly 3 questions generated (matched the user's request for '3 questions')"
+    },
+    {
+      "text": "Has 1 core definition/fact, 1 application/context, 1 cross-link question",
+      "passed": false,
+      "evidence": "Q1 is definition (linear independence), Q2 is definition (basis properties), Q3 is computation (dimension formula). No application/context or cross-link question. Two definitions instead."
+    },
+    {
+      "text": "Cross-link question references an actual wikilink from the Vector_Spaces note",
+      "passed": false,
+      "evidence": "No cross-link question. Q3 asks about the dimension formula but doesn't reference any linked note."
+    },
+    {
+      "text": "All 3 questions presented together in one block",
+      "passed": true,
+      "evidence": "All 3 questions presented in sequence, followed by 'Take a minute on each.'"
+    },
+    {
+      "text": "Output is brief and fast-paced, minimal commentary",
+      "passed": true,
+      "evidence": "24 lines total. Very concise, no extra commentary."
+    }
+  ],
+  "pass_rate": 0.6,
+  "summary": "Baseline produces 3 decent questions but lacks type diversity (two definitions, no cross-link) and no scoring/interval system."
+}

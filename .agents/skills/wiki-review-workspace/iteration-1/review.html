@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eval Review</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js" integrity="sha384-EnyY0/GSHQGSxSgMwaIPzSESbqoOLSexfnSMN2AP+39Ckmn92stwABZynq1JyzdT" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --bg: #faf9f5;
+      --surface: #ffffff;
+      --border: #e8e6dc;
+      --text: #141413;
+      --text-muted: #b0aea5;
+      --accent: #d97757;
+      --accent-hover: #c4613f;
+      --green: #788c5d;
+      --green-bg: #eef2e8;
+      --red: #c44;
+      --red-bg: #fceaea;
+      --header-bg: #141413;
+      --header-text: #faf9f5;
+      --radius: 6px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ---- Header ---- */
+    .header {
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .header .instructions {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      margin-top: 0.25rem;
+    }
+    .header .progress {
+      font-size: 0.875rem;
+      opacity: 0.8;
+      text-align: right;
+    }
+
+    /* ---- Main content ---- */
+    .main {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* ---- Sections ---- */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      flex-shrink: 0;
+    }
+    .section-header {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.75rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .section-body {
+      padding: 1rem;
+    }
+
+    /* ---- Config badge ---- */
+    .config-badge {
+      display: inline-block;
+      padding: 0.2rem 0.625rem;
+      border-radius: 9999px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-left: 0.75rem;
+      vertical-align: middle;
+    }
+    .config-badge.config-primary {
+      background: rgba(33, 150, 243, 0.12);
+      color: #1976d2;
+    }
+    .config-badge.config-baseline {
+      background: rgba(255, 193, 7, 0.15);
+      color: #f57f17;
+    }
+
+    /* ---- Prompt ---- */
+    .prompt-text {
+      white-space: pre-wrap;
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+
+    /* ---- Outputs ---- */
+    .output-file {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .output-file + .output-file {
+      margin-top: 1rem;
+    }
+    .output-file-header {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .output-file-header .dl-btn {
+      font-size: 0.7rem;
+      color: var(--accent);
+      text-decoration: none;
+      cursor: pointer;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-weight: 500;
+      opacity: 0.8;
+    }
+    .output-file-header .dl-btn:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+    .output-file-content {
+      padding: 0.75rem;
+      overflow-x: auto;
+    }
+    .output-file-content pre {
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+    }
+    .output-file-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    .output-file-content iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+    .output-file-content table {
+      border-collapse: collapse;
+      font-size: 0.8125rem;
+      width: 100%;
+    }
+    .output-file-content table td,
+    .output-file-content table th {
+      border: 1px solid var(--border);
+      padding: 0.375rem 0.5rem;
+      text-align: left;
+    }
+    .output-file-content table th {
+      background: var(--bg);
+      font-weight: 600;
+    }
+    .output-file-content .download-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.875rem;
+      cursor: pointer;
+    }
+    .output-file-content .download-link:hover {
+      background: var(--border);
+    }
+    .empty-state {
+      color: var(--text-muted);
+      font-style: italic;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    /* ---- Feedback ---- */
+    .prev-feedback {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.625rem 0.75rem;
+      margin-top: 0.75rem;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .prev-feedback-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
+      color: var(--text-muted);
+    }
+    .feedback-textarea {
+      width: 100%;
+      min-height: 100px;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.9375rem;
+      line-height: 1.5;
+      resize: vertical;
+      color: var(--text);
+    }
+    .feedback-textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    .feedback-status {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      min-height: 1.1em;
+    }
+
+    /* ---- Grades (collapsible) ---- */
+    .grades-toggle {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+    .grades-toggle:hover {
+      color: var(--accent);
+    }
+    .grades-toggle .arrow {
+      margin-right: 0.5rem;
+      transition: transform 0.15s;
+      font-size: 0.75rem;
+    }
+    .grades-toggle .arrow.open {
+      transform: rotate(90deg);
+    }
+    .grades-content {
+      display: none;
+      margin-top: 0.75rem;
+    }
+    .grades-content.open {
+      display: block;
+    }
+    .grades-summary {
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .grade-badge {
+      display: inline-block;
+      padding: 0.125rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .grade-pass { background: var(--green-bg); color: var(--green); }
+    .grade-fail { background: var(--red-bg); color: var(--red); }
+    .assertion-list {
+      list-style: none;
+    }
+    .assertion-item {
+      padding: 0.625rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.8125rem;
+    }
+    .assertion-item:last-child { border-bottom: none; }
+    .assertion-status {
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+    .assertion-status.pass { color: var(--green); }
+    .assertion-status.fail { color: var(--red); }
+    .assertion-evidence {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      margin-top: 0.25rem;
+      padding-left: 1.5rem;
+    }
+
+    /* ---- View tabs ---- */
+    .view-tabs {
+      display: flex;
+      gap: 0;
+      padding: 0 2rem;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .view-tab {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.625rem 1.25rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: var(--text-muted);
+      border-bottom: 2px solid transparent;
+      transition: all 0.15s;
+    }
+    .view-tab:hover { color: var(--text); }
+    .view-tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+    .view-panel { display: none; }
+    .view-panel.active { display: flex; flex-direction: column; flex: 1; overflow: hidden; }
+
+    /* ---- Benchmark view ---- */
+    .benchmark-view {
+      padding: 1.5rem 2rem;
+      overflow-y: auto;
+      flex: 1;
+    }
+    .benchmark-table {
+      border-collapse: collapse;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.8125rem;
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+    .benchmark-table th, .benchmark-table td {
+      padding: 0.625rem 0.75rem;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    .benchmark-table th {
+      font-family: 'Poppins', sans-serif;
+      background: var(--header-bg);
+      color: var(--header-text);
+      font-weight: 500;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .benchmark-table tr:hover { background: var(--bg); }
+    .benchmark-table tr.benchmark-row-with { background: rgba(33, 150, 243, 0.06); }
+    .benchmark-table tr.benchmark-row-without { background: rgba(255, 193, 7, 0.06); }
+    .benchmark-table tr.benchmark-row-with:hover { background: rgba(33, 150, 243, 0.12); }
+    .benchmark-table tr.benchmark-row-without:hover { background: rgba(255, 193, 7, 0.12); }
+    .benchmark-table tr.benchmark-row-avg { font-weight: 600; border-top: 2px solid var(--border); }
+    .benchmark-table tr.benchmark-row-avg.benchmark-row-with { background: rgba(33, 150, 243, 0.12); }
+    .benchmark-table tr.benchmark-row-avg.benchmark-row-without { background: rgba(255, 193, 7, 0.12); }
+    .benchmark-delta-positive { color: var(--green); font-weight: 600; }
+    .benchmark-delta-negative { color: var(--red); font-weight: 600; }
+    .benchmark-notes {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+    }
+    .benchmark-notes h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+    }
+    .benchmark-notes ul {
+      list-style: disc;
+      padding-left: 1.25rem;
+    }
+    .benchmark-notes li {
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      margin-bottom: 0.375rem;
+    }
+    .benchmark-empty {
+      color: var(--text-muted);
+      font-style: italic;
+      text-align: center;
+      padding: 3rem;
+    }
+
+    /* ---- Navigation ---- */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      flex-shrink: 0;
+    }
+    .nav-btn {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: all 0.15s;
+    }
+    .nav-btn:hover:not(:disabled) {
+      background: var(--bg);
+      border-color: var(--text-muted);
+    }
+    .nav-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .done-btn {
+      font-family: 'Poppins', sans-serif;
+      padding: 0.5rem 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.15s;
+    }
+    .done-btn:hover {
+      background: var(--bg);
+      border-color: var(--text-muted);
+    }
+    .done-btn.ready {
+      border: none;
+      background: var(--accent);
+      color: white;
+      font-weight: 600;
+    }
+    .done-btn.ready:hover {
+      background: var(--accent-hover);
+    }
+    /* ---- Done overlay ---- */
+    .done-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+    }
+    .done-overlay.visible {
+      display: flex;
+    }
+    .done-card {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 2rem 3rem;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 500px;
+    }
+    .done-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .done-card p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    .done-card .btn-row {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .done-card button {
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 0.875rem;
+    }
+    .done-card button:hover {
+      background: var(--bg);
+    }
+    /* ---- Toast ---- */
+    .toast {
+      position: fixed;
+      bottom: 5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 0.625rem 1.25rem;
+      border-radius: var(--radius);
+      font-size: 0.875rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      z-index: 200;
+    }
+    .toast.visible {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" style="height:100vh; display:flex; flex-direction:column;">
+    <div class="header">
+      <div>
+        <h1>Eval Review: <span id="skill-name"></span></h1>
+        <div class="instructions">Review each output and leave feedback below. Navigate with arrow keys or buttons. When done, copy feedback and paste into Claude Code.</div>
+      </div>
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <!-- View tabs (only shown when benchmark data exists) -->
+    <div class="view-tabs" id="view-tabs" style="display:none;">
+      <button class="view-tab active" onclick="switchView('outputs')">Outputs</button>
+      <button class="view-tab" onclick="switchView('benchmark')">Benchmark</button>
+    </div>
+
+    <!-- Outputs panel (qualitative review) -->
+    <div class="view-panel active" id="panel-outputs">
+    <div class="main">
+      <!-- Prompt -->
+      <div class="section">
+        <div class="section-header">Prompt <span class="config-badge" id="config-badge" style="display:none;"></span></div>
+        <div class="section-body">
+          <div class="prompt-text" id="prompt-text"></div>
+        </div>
+      </div>
+
+      <!-- Outputs -->
+      <div class="section">
+        <div class="section-header">Output</div>
+        <div class="section-body" id="outputs-body">
+          <div class="empty-state">No output files found</div>
+        </div>
+      </div>
+
+      <!-- Previous Output (collapsible) -->
+      <div class="section" id="prev-outputs-section" style="display:none;">
+        <div class="section-header">
+          <div class="grades-toggle" onclick="togglePrevOutputs()">
+            <span class="arrow" id="prev-outputs-arrow">&#9654;</span>
+            Previous Output
+          </div>
+        </div>
+        <div class="grades-content" id="prev-outputs-content"></div>
+      </div>
+
+      <!-- Grades (collapsible) -->
+      <div class="section" id="grades-section" style="display:none;">
+        <div class="section-header">
+          <div class="grades-toggle" onclick="toggleGrades()">
+            <span class="arrow" id="grades-arrow">&#9654;</span>
+            Formal Grades
+          </div>
+        </div>
+        <div class="grades-content" id="grades-content"></div>
+      </div>
+
+      <!-- Feedback -->
+      <div class="section">
+        <div class="section-header">Your Feedback</div>
+        <div class="section-body">
+          <textarea
+            class="feedback-textarea"
+            id="feedback"
+            placeholder="What do you think of this output? Any issues, suggestions, or things that look great?"
+          ></textarea>
+          <div class="feedback-status" id="feedback-status"></div>
+          <div class="prev-feedback" id="prev-feedback" style="display:none;">
+            <div class="prev-feedback-label">Previous feedback</div>
+            <div id="prev-feedback-text"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav" id="outputs-nav">
+      <button class="nav-btn" id="prev-btn" onclick="navigate(-1)">&#8592; Previous</button>
+      <button class="done-btn" id="done-btn" onclick="showDoneDialog()">Submit All Reviews</button>
+      <button class="nav-btn" id="next-btn" onclick="navigate(1)">Next &#8594;</button>
+    </div>
+    </div><!-- end panel-outputs -->
+
+    <!-- Benchmark panel (quantitative stats) -->
+    <div class="view-panel" id="panel-benchmark">
+      <div class="benchmark-view" id="benchmark-content">
+        <div class="benchmark-empty">No benchmark data available. Run a benchmark to see quantitative results here.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Done overlay -->
+  <div class="done-overlay" id="done-overlay">
+    <div class="done-card">
+      <h2>Review Complete</h2>
+      <p>Your feedback has been saved. Go back to your Claude Code session and tell Claude you're done reviewing.</p>
+      <div class="btn-row">
+        <button onclick="closeDoneDialog()">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // ---- Embedded data (injected by generate_review.py) ----
+    const EMBEDDED_DATA = {"skill_name": "wiki-review", "runs": [{"id": "scan-triage-with_skill", "prompt": "/wiki-review", "eval_id": 0, "outputs": [{"name": "output.md", "type": "text", "content": "## Wiki Review Queue \u00e2\u20ac\u201d 2026-03-14\n\n| Category         | Count |\n|------------------|-------|\n| Overdue          | 219   |\n| Due Today        | 12    |\n| Never Reviewed   | 12    |\n| Upcoming (7d)    | 0     |\n| Mastered         | 0     |\n| Total tracked    | 243   |\n\n### Ready for Review\n1. [[Agent Teams]] \u00e2\u20ac\u201d Overdue (was due 2026-03-03)\n2. [[Cognitive Load in LLMs]] \u00e2\u20ac\u201d Overdue (was due 2026-03-03)\n3. [[Context Window]] \u00e2\u20ac\u201d Overdue (was due 2026-03-03)\n4. [[Autonomous Research]] \u00e2\u20ac\u201d Overdue (was due 2026-03-03)\n5. [[FARS]] \u00e2\u20ac\u201d Overdue (was due 2026-03-03)\n6. [[Connecting a local repo to a GitHub remote]] \u00e2\u20ac\u201d Overdue (was due 2026-03-03)\n7. [[Academic_Word_List_AWL]] \u00e2\u20ac\u201d Overdue (was due 2026-03-03)\n8. [[Daily Accumulation]] \u00e2\u20ac\u201d Overdue (was due 2026-03-03)\n9. [[Following_vs_As_Follows_vs_Subsequent]] \u00e2\u20ac\u201d Overdue (was due 2026-03-03)\n10. [[SourceVSResource]] \u00e2\u20ac\u201d Overdue (was due 2026-03-03)\n\n---\n\n**Note:** 6 notes are excluded from review (tagged `no-review`). 219 overdue notes suggest the review system has not been actively used \u00e2\u20ac\u201d you may want to do a bulk reset or prioritize a subset.\n\n---\n\n**I would now ask:** Would you like to review in **full** mode (deep adversarial review with scoring) or **quick** mode (rapid recall check)?\n"}], "grading": {"eval_id": 0, "eval_name": "scan-triage", "configuration": "with_skill", "expectations": [{"text": "Queue table present with all categories (Overdue, Due Today, Never Reviewed, Upcoming, Mastered)", "passed": true, "evidence": "Output contains exact formatted table: Overdue 219, Due Today 12, Never Reviewed 12, Upcoming 0, Mastered 0, Total 243"}, {"text": "Correct total count matches eligible wiki notes minus no-review exclusions", "passed": true, "evidence": "249 total notes - 6 no-review = 243 eligible. Matches output. Baseline independently confirmed 249 total."}, {"text": "Ready for Review list follows priority ordering: Overdue > Due Today > Never Reviewed", "passed": true, "evidence": "All 10 listed notes are Overdue (highest priority). Due Today and Never Reviewed would appear after if list were longer."}, {"text": "Date-aware categorization: notes before today are Overdue, equal to today are Due Today", "passed": true, "evidence": "219 Overdue (next_review before 2026-03-14), 12 Due Today (next_review = 2026-03-14). Baseline confirms 12 notes due today."}, {"text": "Output ends with asking user to choose full or quick mode", "passed": true, "evidence": "Ends with: 'Would you like to review in full mode (deep adversarial review with scoring) or quick mode (rapid recall check)?'"}], "pass_rate": 1.0, "summary": "All 5 assertions pass. Scan correctly categorized 243 notes, excluded 6 no-review, presented formatted queue with mode prompt."}}, {"id": "scan-triage-without_skill", "prompt": "/wiki-review", "eval_id": 0, "outputs": [{"name": "output.md", "type": "text", "content": "# Wiki Review Status Report\n\n**Date:** 2026-03-14\n**Total wiki notes scanned:** 249\n\n---\n\n## High-Level Summary\n\n| Status | Count | % |\n|---|---|---|\n| Overdue (next_review <= today, never reviewed) | 235 | 94.4% |\n| Reviewed at least once | 2 | 0.8% |\n| Missing next_review date | 5 | 2.0% |\n| No review fields at all | 7 | 2.8% |\n\n**Key finding:** Nearly every wiki note (240 out of 249) has `last_reviewed` empty and `review_interval: 0`, meaning they were created but never reviewed. All 240 have a `next_review` date set to on or before today, making them all overdue.\n\nOnly **2 notes** have ever been reviewed:\n1. **Binding Energy** -- last_reviewed: 2026-03-03, next_review: 2026-03-04, review_interval: 1 (overdue by 10 days)\n2. **Mass Attenuation Coefficient** -- last_reviewed: 2026-03-06, next_review: 2026-03-05, review_interval: 0 (overdue by 9 days)\n\n---\n\n## Breakdown by Category\n\n| Category | Total | Never Reviewed | Reviewed | No Review Fields | Missing next_review |\n|---|---|---|---|---|---|\n| Fundamental_knowledge | 165 | 156 | 2 | 7 | 0 |\n| English_Knowledge | 30 | 30 | 0 | 0 | 0 |\n| ComputerScience | 15 | 15 | 0 | 0 | 0 |\n| Japan_Immigration | 10 | 10 | 0 | 0 | 0 |\n| Physiologics | 10 | 6 | 0 | 0 | 4 |\n| (root-level) | 9 | 8 | 0 | 0 | 1 |\n| AI | 3 | 3 | 0 | 0 | 0 |\n| AI/FARS-Autonomous_Research | 2 | 2 | 0 | 0 | 0 |\n| Self-Development | 2 | 2 | 0 | 0 | 0 |\n| ProjectsNotes | 2 | 2 | 0 | 0 | 0 |\n| StudyMethodology | 1 | 1 | 0 | 0 | 0 |\n\n---\n\n## Overdue Notes by Days Overdue\n\n### 11 days overdue (next_review: 2026-03-03) -- 32 notes\n\nThese are the oldest overdue notes, created as early as 2026-02-13:\n\n| Note | Category | Created |\n|---|---|---|\n| Academic_Word_List_AWL | English_Knowledge | 2026-02-17 |\n| Agent Teams | AI | 2026-03-02 |\n| Autonomous Research | AI/FARS-Autonomous_Research | 2026-02-27 |\n| B_A curve | Fundamental_knowledge | 2026-03-03 |\n| Bilibili-RAG Docker Startup (WSL) | ProjectsNotes | -- |\n| Certificate_of_Eligibility_COE | Japan_Immigration | 2026-02-13 |\n| Cognitive Load in LLMs | AI | 2026-03-02 |\n| Connecting a local repo to a GitHub remote | ComputerScience | 2026-03-03 |\n| Context Window | AI | 2026-03-02 |\n| Daily Accumulation | English_Knowledge | -- |\n| Designated_Activities_for_Job_Hunting_Tokutei_Katsudo | Japan_Immigration | 2026-02-13 |\n| Engineer_Specialist_in_Humanities_International_Services | Japan_Immigration | 2026-02-13 |\n| FARS | AI/FARS-Autonomous_Research | 2026-02-27 |\n| Feynman-Recall-Spaced Study Method | StudyMethodology | 2026-03-01 |\n| Following_vs_As_Follows_vs_Subsequent | English_Knowledge | 2026-03-03 |\n| Highly_Skilled_Professional_HSP_System | Japan_Immigration | 2026-02-13 |\n| Institute of Modern Physics | (root) | 2026-02-14 |\n| Japan_Graduate_Scholarships_MEXT_and_JASSO | Japan_Immigration | 2026-02-13 |\n| Linear_Algebra | Fundamental_knowledge | 2026-02-15 |\n| Liquid Drop Model | Fundamental_knowledge | 2026-03-03 |\n| Marker PDF CLI | ProjectsNotes | -- |\n| Mass Defect | Fundamental_knowledge | 2026-03-03 |\n| Mean-Field Potential | Fundamental_knowledge | 2026-03-03 |\n| Mission-Specific_Visa_Document_Requirements | Japan_Immigration | 2026-02-13 |\n| Relative Path | (root) | 2026-03-03 |\n| Residence_Card_and_Municipal_Registration | Japan_Immigration | 2026-02-13 |\n| RIKEN Nishina Center for Accelerator-Based Science (RNC) | (root) | 2026-02-14 |\n| Shell closure | Fundamental_knowledge | 2026-03-03 |\n| SourceVSResource | English_Knowledge | 2026-03-03 |\n| Student_Visa_Japan | Japan_Immigration | 2026-02-13 |\n| Vector_Spaces | Fundamental_knowledge | 2026-02-15 |\n| WSL VHDX Compact | (root) | -- |\n\n### 10 days overdue (next_review: 2026-03-04) -- 63 notes\n\nLarge batch from 2026-03-04, mostly Fundamental_knowledge (linear algebra, nuclear physics, detector concepts):\n\nADC, ALARA Principle, ASIC, Associativity, Basis, Becquerel, Bethe-Bloch Formula, Binding Energy, Coincidence Detection, Commutativity, Constant Fraction Discriminator, Constant Ratio Timing, Course (word meanings), DAQ, Dead Time, Dimension, Distributivity, Dosimetry, Echelon Form, Eigenvalues and Eigenvectors, Energy Resolution, experience and experiences, Field (mathematics), Finite Field, FPGA, Free Variable, Gamma Spectroscopy, GEM Detector, Half-Life, Hilbert Space, HPGe Detector, Idiomatic questions about improvement priorities, Identity Element, Important vs necessary (English usage), Inner Product Spaces, Inverse Element, Ionizing Radiation, Leading-Edge Discriminator, Linear Combination, Linear Energy Transfer, Linear Independence, Matrix Operations, Micromegas, Needs improvement phrasing, Neutron Activation, Neutron Capture Cross Section, Particle Identification, Photoelectric Effect, Photomultiplier Tube, Pivot, Probability Amplitude, Radiation Controlled Area, Radiation Exit Survey, Radioisotope, Rank, Row Reduction, Scintillation Detector, self-fulfilling prophecy, Sievert, Silicon Photomultiplier, Smear Test, Span, Subfield, Subspace, Superposition, Surface Contamination, TDC, Time Projection Chamber, Time Walk, Time-of-Flight\n\n### 9 days overdue (next_review: 2026-03-05) -- 38 notes\n\n.gitignore, Compton Scattering, Dark Count Rate, Diffusion, Drift Time, Drift Velocity, Dynamic Range, Edge Detection, Electric Field, Electromagnetic Spectrum, Gamma Ray, Geiger Mode, Git Submodules, Hough Transform, Ionisation Chamber, Jitter, Kalman Filter, Light Yield, Mass Attenuation Coefficient, Multichannel Analyzer, Nuclear Transition, Optical Crosstalk, Pair Production, Photodetector, Photoelectric Absorption, Preamplifier, Pulse Height, Pulse Height Spectrum, Python Virtual Environments, RANSAC, Radioactive Decay, Rise Time, Rising Edge, Saturation, Signal-to-Noise Ratio, Single-Photon Avalanche Diode, Spatial Resolution, Time Resolution, Track Reconstruction\n\n### 8 days overdue (next_review: 2026-03-06) -- 8 notes\n\nAddress vs Solve, BigRIPS, dE-dx, Isotope Separation, Magnetic Rigidity, Range-Energy Relation, Stopping Power, Delta-E-E Method\n\n### 7 days overdue (next_review: 2026-03-07) -- 24 notes\n\nCBT-I, CERN, Cling, Cognitive Offloading, Cortisol, Differential Cross Section, Direct Reactions, DWBA, First-Night Effect, Geant4, Knockout Reactions, Object Lifetime (C++), Pre-sleep Hyperarousal, PyROOT, RAII, ROOT Framework, Smart Pointers (C++), Spectroscopic Factor, Stack vs Heap (C++), stdcout (C++), Stimulus Control Therapy, TObject (ROOT), Transfer Reactions, TString (ROOT)\n\n### 6 days overdue (next_review: 2026-03-08) -- 15 notes\n\n996 Culture, Anti-Vision, Articles, Conditional Sentences, Gerund, Kenkyusei, Naidaku, Pain Point, Passive Voice, Present Perfect, Relative Clauses, Sweet Spot, Symbolic Link, UTokyo CNS, Where vs That (Relative Clauses)\n\n### 5 days overdue (next_review: 2026-03-09) -- 2 notes\n\n-itude, Gratitude\n\n### 4 days overdue (next_review: 2026-03-10) -- 12 notes\n\nAngular Momentum, Coulomb Barrier, Fine Structure, Fine Structure Constant, Harmonic Oscillator, Magic Numbers, Nuclear Shell Model, Quantum Numbers, Rutherford Scattering Formula, Spectral Lines, Spin-Orbit Coupling, Superconducting Electron Cyclotron Resonance\n\n### 3 days overdue (next_review: 2026-03-11) -- 2 notes\n\n-cess- (Latin root), Relativity theory\n\n### 2 days overdue (next_review: 2026-03-12) -- 13 notes\n\n-sent- Root (sentire), Chasing vs Pursuit, Connotation vs Annotation, Diamond Detector, English Collocations, Isobutane, Latin Root form, Latin Root per, MUSIC Detector, Premise vs Prerequisite, Radioactive Isotope Beam, Spill Gate, Typically vs Usually vs Generally\n\n### 1 day overdue (next_review: 2026-03-13) -- 8 notes\n\nBinomial Distribution, Cyclotron, Fermi energy, Gaussian Distribution, In-Flight Fission, Poisson Distribution, Quadrupole Magnet, Synchrotron\n\n### Due today (next_review: 2026-03-14) -- 12 notes\n\nBragg Peak, Coulomb Excitation, Flux, ISOL, Nuclear Fission, PID, PPAC, Pile-up, Projectile Fragmentation, RCNP, Reaction Rate, Silicon Detector\n\n---\n\n## Notes Missing next_review Date (5 notes)\n\nThese notes have review fields but no `next_review` date set:\n\n| Note | Category | Created |\n|---|---|---|\n| GRE Physics | (root) | 2026-03-11 |\n| Circadian Rhythm | Physiologics | 2026-03-03 |\n| Dopamine Baseline | Physiologics | 2026-03-03 |\n| Habituation and Tolerance | Physiologics | 2026-03-03 |\n| Learned Helplessness | Physiologics | 2026-03-03 |\n\n---\n\n## Notes with No Review Fields at All (7 notes)\n\nThese notes lack `last_reviewed`, `next_review`, and `review_interval` entirely:\n\n| Note | Category | Created |\n|---|---|---|\n| Charge-Exchange Reaction | Fundamental_knowledge | 2026-03-13 |\n| Double Gamow-Teller Giant Resonance | Fundamental_knowledge | 2026-03-13 |\n| Gamow-Teller Transition | Fundamental_knowledge | 2026-03-13 |\n| OEDO | Fundamental_knowledge | 2026-03-13 |\n| r-process Nucleosynthesis | Fundamental_knowledge | 2026-03-13 |\n| SHARAQ Spectrometer | Fundamental_knowledge | 2026-03-13 |\n| Surrogate Reaction | Fundamental_knowledge | 2026-03-13 |\n\nAll 7 were created on 2026-03-13, suggesting a batch creation that did not use the standard Wiki template.\n\n---\n\n## Observations\n\n1. **The review system is effectively unused.** Of 249 notes, only 2 have ever been reviewed, and both are now overdue again. The `review_interval` field is 0 or 1 across the entire vault, indicating no spaced repetition progression has occurred.\n\n2. **All overdue.** Every note with a `next_review` date is overdue as of today. The oldest batch (32 notes) has been overdue since 2026-03-03 (11 days).\n\n3. **Frontmatter inconsistencies:**\n   - 7 notes (all from 2026-03-13) are missing review fields entirely.\n   - 5 notes have review fields but no `next_review` date.\n   - 3 notes have no `created` date.\n\n4. **Volume makes manual review impractical.** With 240+ notes needing review, a prioritization strategy is needed. Consider:\n   - Reviewing by category relevance (e.g., prioritize Fundamental_knowledge for exam prep).\n   - Batch-reviewing notes created on the same date.\n   - Starting with the 12 notes due today and the 7 missing review fields to fix frontmatter.\n\n5. **The review_interval: 0 pattern** suggests the spaced repetition system was set up in the template but never activated through actual review cycles.\n"}], "grading": {"eval_id": 0, "eval_name": "scan-triage", "configuration": "without_skill", "expectations": [{"text": "Queue table present with all categories (Overdue, Due Today, Never Reviewed, Upcoming, Mastered)", "passed": false, "evidence": "Output uses custom categories (Overdue/never reviewed, Reviewed at least once, Missing next_review, No review fields) instead of the skill's standard categories. No Upcoming/Mastered buckets."}, {"text": "Correct total count matches eligible wiki notes minus no-review exclusions", "passed": false, "evidence": "Reports 249 total but does not exclude no-review tagged notes. No awareness of the no-review opt-out mechanism."}, {"text": "Ready for Review list follows priority ordering: Overdue > Due Today > Never Reviewed", "passed": false, "evidence": "Lists all notes by days-overdue grouping, not by priority buckets. No 'Ready for Review' section."}, {"text": "Date-aware categorization: notes before today are Overdue, equal to today are Due Today", "passed": true, "evidence": "Correctly identifies notes due today (12) separately from overdue notes. Groups overdue by days overdue."}, {"text": "Output ends with asking user to choose full or quick mode", "passed": false, "evidence": "Output ends with observations and recommendations. No mode selection prompt \u00e2\u20ac\u201d baseline has no awareness of full/quick review modes."}], "pass_rate": 0.2, "summary": "Baseline correctly scans and categorizes by date but uses ad-hoc structure. No awareness of the review system's modes, no-review exclusion, or standard queue format."}}, {"id": "full-mode-physics-with_skill", "prompt": "/wiki-review full [[Bethe-Bloch Formula]]", "eval_id": 1, "outputs": [{"name": "output.md", "type": "text", "content": "# Wiki Review \u00e2\u20ac\u201d Full Mode: [[Bethe-Bloch Formula]]\n\n**Date:** 2026-03-14\n**Note:** `40_Wiki/Fundamental_knowledge/Bethe-Bloch Formula.md`\n**Current review_interval:** 0 (Never reviewed)\n\n---\n\n## Phase 1 \u00e2\u20ac\u201d Feynman Check\n\n**Prompt (would be sent via AskUserQuestion):**\n\n> Explain [[Bethe-Bloch Formula]] in your own words. Don't look at the note \u00e2\u20ac\u201d just tell me what you know.\n\n### Simulated Student Response\n\n> \"The Bethe-Bloch formula describes how charged particles lose energy as they pass through matter. It depends on the particle's speed and the material. Different particles lose energy at different rates which helps identify them. The energy loss has a minimum at some point.\"\n\n### Feedback\n\nYour explanation captures the broad idea but is **imprecise in several areas** and has **significant omissions**. Let me break it down:\n\n**Errors / Imprecisions:**\n\n1. **\"Depends on the particle's speed\"** \u00e2\u20ac\u201d This is incomplete. The Bethe-Bloch formula depends on the particle's velocity expressed as $\\beta\\gamma$ (the Lorentz factor times beta), not simply \"speed.\" It also depends on the particle's **charge** ($z$). A doubly-charged helium ion loses energy ~4x faster than a singly-charged particle at the same velocity. You omitted charge entirely.\n\n2. **\"The energy loss has a minimum at some point\"** \u00e2\u20ac\u201d Too vague. The minimum occurs at $\\beta\\gamma \\approx 3$\u00e2\u20ac\u201c$4$. Particles near this minimum are called **minimum-ionizing particles (MIPs)**, which is a critical concept. You should also mention that beyond the minimum, there is a **logarithmic relativistic rise** \u00e2\u20ac\u201d the energy loss does not simply stay flat.\n\n**Key Omissions:**\n\n- No mention of what **specific quantity** the formula describes: the mean rate of ionization energy loss, $-\\mathrm{d}E/\\mathrm{d}x$.\n- No mention of material properties \u00e2\u20ac\u201d specifically, the formula depends on the target's **atomic number** and **mean excitation energy** $I$.\n- No mention of the **corrections**: the **density effect** (Sternheimer correction) at high energies and **shell corrections** at low energies.\n- No mention of the practical application: how $\\mathrm{d}E/\\mathrm{d}x$ measured in a **Time Projection Chamber** is compared against Bethe-Bloch curves to perform **particle identification** (e.g., separating protons from pions at the same momentum).\n\n**English Note:** Your response is grammatically correct. One small improvement: \"depends on the particle's speed and the material\" would be stronger as \"depends on the particle's velocity and the properties of the traversed material.\"\n\n### Follow-up Questions (would be sent via AskUserQuestion)\n\n1. What is the physical variable on the x-axis of a typical Bethe-Bloch curve, and why is $\\beta\\gamma$ used instead of kinetic energy or momentum?\n2. Why do different particle species (proton, pion, kaon) trace **separate** curves on a $\\mathrm{d}E/\\mathrm{d}x$ vs. momentum plot, even though the Bethe-Bloch formula is supposedly \"universal\"?\n3. What is the density effect correction, and at what energy regime does it become important?\n\n### Simulated Follow-up Responses & Grading\n\n**Q1 simulated answer:** \"The x-axis is beta-gamma because the formula uses that variable. I'm not sure why they don't use momentum.\"\n\n**Feedback:** Partially correct \u00e2\u20ac\u201d $\\beta\\gamma$ is indeed the natural variable of the Bethe-Bloch formula because the energy loss depends on the particle's velocity, not its momentum. The key insight is that **at the same momentum, different-mass particles have different $\\beta\\gamma$ values**, which is precisely why their $\\mathrm{d}E/\\mathrm{d}x$ curves separate when plotted against momentum (since $p = m \\beta\\gamma c$). When plotted against $\\beta\\gamma$ directly, all singly-charged particles collapse onto a single universal curve.\n\n**Q2 simulated answer:** \"Because they have different masses, so at the same momentum they have different speeds.\"\n\n**Feedback:** Correct! This is the essential point. At the same momentum $p$, a heavier particle (e.g., proton) has a lower $\\beta\\gamma$ than a lighter one (e.g., pion), because $\\beta\\gamma = p/(mc)$. Lower $\\beta\\gamma$ means higher $\\mathrm{d}E/\\mathrm{d}x$ (in the region above the minimum). This mass-dependent separation is the basis of particle identification via specific energy loss.\n\n**Q3 simulated answer:** \"I don't remember what the density effect is.\"\n\n**Feedback:** The density effect (Sternheimer correction) accounts for the **polarization of the medium** by the electric field of the fast-moving particle. At high energies ($\\beta\\gamma \\gg 1$), the particle's transverse electric field extends further, but the medium's atoms screen (polarize against) distant interactions. This suppresses the relativistic rise of $\\mathrm{d}E/\\mathrm{d}x$ \u00e2\u20ac\u201d without the correction, the formula would overestimate energy loss at high $\\beta\\gamma$. It becomes significant in the regime where the relativistic rise would otherwise continue growing logarithmically.\n\n---\n\n## Phase 2 \u00e2\u20ac\u201d Weaponize the Material\n\nFive adversarial questions, presented one at a time with simulated responses.\n\n---\n\n### Question 1/5 \u00e2\u20ac\u201d Trick / Misconception Trap\n\n**Q:** A student claims: \"The Bethe-Bloch formula predicts that a particle with higher momentum always loses more energy per unit length than a particle with lower momentum.\" Is this correct? Explain why or why not.\n\n**Simulated answer:** \"No, that's wrong. Higher momentum doesn't always mean more energy loss. There's a minimum in the curve.\"\n\n**Grade: 1/1**\n\n**Feedback:** Correct conclusion, but your reasoning could be sharper. The statement is false for two reasons: (1) The Bethe-Bloch formula depends on $\\beta\\gamma$, not momentum directly \u00e2\u20ac\u201d and the relationship between $p$ and $\\beta\\gamma$ depends on mass. (2) Even for a single particle species, $\\mathrm{d}E/\\mathrm{d}x$ first decreases with increasing momentum (falling toward the MIP minimum), then increases (relativistic rise). So the relationship is non-monotonic. Still, you identified the key idea. Full mark.\n\n---\n\n### Question 2/5 \u00e2\u20ac\u201d Trick / Misconception Trap\n\n**Q:** Two particles pass through a [[Time Projection Chamber]]: one is a 500 MeV/c proton and the other is a 500 MeV/c pion. Both have the same charge $|z|=1$. A student says: \"Since the Bethe-Bloch formula only depends on $\\beta\\gamma$ and $z$, and both have $z=1$, they must deposit the same energy per unit length.\" What is wrong with this reasoning?\n\n**Simulated answer:** \"They have different masses so they have different beta-gamma at the same momentum. The proton is heavier so it's slower and loses more energy.\"\n\n**Grade: 1/1**\n\n**Feedback:** Excellent. At 500 MeV/c, the proton ($m \\approx 938$ MeV/$c^2$) has $\\beta\\gamma = p/(mc) \\approx 0.53$, well below the MIP minimum, meaning high $\\mathrm{d}E/\\mathrm{d}x$. The pion ($m \\approx 140$ MeV/$c^2$) has $\\beta\\gamma \\approx 3.57$, right near the MIP minimum, so much lower $\\mathrm{d}E/\\mathrm{d}x$. The student's error was conflating \"same $z$\" with \"same energy loss\" while ignoring that $\\beta\\gamma$ differs.\n\n---\n\n### Question 3/5 \u00e2\u20ac\u201d Cross-concept Synthesis\n\n**Q:** In a [[Time Projection Chamber]], you measure the $\\mathrm{d}E/\\mathrm{d}x$ of a track using the **truncated mean** method rather than the arithmetic mean. Explain why the truncated mean is used, and connect this to the statistical distribution of energy loss described by the [[Ionizing Radiation|ionization]] process at the microscopic level.\n\n**Simulated answer:** \"I think the truncated mean removes outliers. Maybe because sometimes a particle loses a lot of energy in one interaction and that would throw off the average.\"\n\n**Grade: 0/1**\n\n**Feedback:** You have the right intuition but the answer is too superficial. The key physics is the **Landau distribution**: the energy loss in thin layers is not Gaussian but has a long high-energy tail caused by rare, large-energy-transfer $\\delta$-ray (knock-on electron) events. The arithmetic mean is dominated by these rare high-loss events and converges slowly. The **truncated mean** (typically discarding the highest 20-40% of samples) produces an estimator that is much closer to the **most probable energy loss** (the Landau peak), which is what the Bethe-Bloch formula's \"mean\" approximates for thick absorbers. You needed to mention the Landau distribution or delta rays explicitly.\n\n---\n\n### Question 4/5 \u00e2\u20ac\u201d Cross-concept Synthesis\n\n**Q:** A colleague is designing a detector that combines [[Time-of-Flight]] (ToF) and $\\mathrm{d}E/\\mathrm{d}x$ from a TPC for [[Particle Identification]]. At what momentum range does each method provide the best separation power, and why does combining them extend the overall PID capability? Reference the Bethe-Bloch curve shape in your answer.\n\n**Simulated answer:** \"Time of flight works at low momentum because slower particles have bigger time differences. dE/dx works... I think it works better at low momentum too? I'm not sure how they complement each other.\"\n\n**Grade: 0/1**\n\n**Feedback:** Half right. ToF indeed provides excellent separation at **low momentum** (below ~2 GeV/c for $\\pi/K$ and ~4 GeV/c for $K/p$) because the velocity difference between species is large. But $\\mathrm{d}E/\\mathrm{d}x$ provides separation in **two** regimes: (1) at **low $\\beta\\gamma$** (the $1/\\beta^2$ rise region), where different-mass particles at the same momentum sit at very different points on the Bethe-Bloch curve, and (2) at **high $\\beta\\gamma$** (the relativistic rise region), where the logarithmic increase in $\\mathrm{d}E/\\mathrm{d}x$ again separates species (lighter particles reach the rise first). In the **crossover region** near the MIP minimum, all species converge and $\\mathrm{d}E/\\mathrm{d}x$ separation is poor \u00e2\u20ac\u201d this is exactly where ToF still has residual power. Combining them covers the gap.\n\n---\n\n### Question 5/5 \u00e2\u20ac\u201d Exam-style Ambush\n\n**Q:** Derive or state the key functional dependence of the Bethe-Bloch formula: write the dominant terms in $-\\mathrm{d}E/\\mathrm{d}x$ as a function of $\\beta$, $\\gamma$, $z$ (projectile charge), $Z$ (target atomic number), and $I$ (mean excitation energy). Then explain physically why the formula has a $1/\\beta^2$ factor and a $\\ln(\\beta^2\\gamma^2)$ factor.\n\n**Simulated answer:** \"I think it's proportional to z squared over beta squared, times the log of something with gamma. The 1/beta squared is because slower particles spend more time near atoms. I don't remember the log term.\"\n\n**Grade: 1/1**\n\n**Feedback:** Partial but the essential physics is there, so I'll give credit. The dominant dependence is:\n\n$$-\\frac{\\mathrm{d}E}{\\mathrm{d}x} \\propto \\frac{z^2 Z}{\\beta^2} \\left[ \\ln\\!\\left(\\frac{2m_e c^2 \\beta^2 \\gamma^2}{I}\\right) - \\beta^2 - \\frac{\\delta(\\beta\\gamma)}{2} \\right]$$\n\nThe $1/\\beta^2$ factor: a slower particle spends more time in the vicinity of each target electron, transferring more momentum per encounter (the impulse is proportional to the interaction time). The $\\ln(\\beta^2\\gamma^2)$ factor: as $\\beta\\gamma$ increases, the maximum transferable energy $T_{\\max}$ in a single collision grows (relativistic kinematics), and the transverse electric field extends further (Lorentz contraction boosts the transverse component), increasing the range of impact parameters that contribute.\n\nYou correctly identified $z^2/\\beta^2$ and the physical reasoning for $1/\\beta^2$. The log term explanation was missing. A solid exam answer would need the full expression and both physical explanations.\n\n---\n\n### Phase 2 Score: 3/5\n\n---\n\n## Phase 3 \u00e2\u20ac\u201d Pattern Diagnosis\n\nFirst full review of this note \u00e2\u20ac\u201d no pattern data yet.\n\n---\n\n## Phase 4 \u00e2\u20ac\u201d Weak Spot Prediction\n\nBased on today's performance and the wikilinks in this note:\n\n**Weaknesses identified:**\n- Failed Q3: Could not connect microscopic ionization statistics (Landau distribution, delta rays) to the practical truncated-mean method used in [[Time Projection Chamber]]s.\n- Failed Q4: Did not understand how [[Time-of-Flight]] and $\\mathrm{d}E/\\mathrm{d}x$ complement each other across different momentum regimes for [[Particle Identification]].\n\n**Prediction:** Based on your performance, you are likely least prepared for **[[Time Projection Chamber]]**. Here is why: both of your missed questions involved TPC-specific concepts \u00e2\u20ac\u201d the statistical treatment of measured $\\mathrm{d}E/\\mathrm{d}x$ samples (truncated mean, Landau distribution) and how TPC-based PID integrates with other detector subsystems. Your understanding of the Bethe-Bloch formula itself is reasonable, but its **practical application in detector systems** is where the gaps are.\n\n**Suggested next reviews:**\n1. **[[Time Projection Chamber]]** \u00e2\u20ac\u201d Directly addresses the detector-level understanding gap.\n2. **[[Particle Identification]]** \u00e2\u20ac\u201d Your Q4 answer revealed confusion about multi-detector PID strategies and where each method excels.\n\n---\n\n## Phase 5 \u00e2\u20ac\u201d Update\n\n### Score & Interval Decision\n\n- **Score: 3/5** (>= 3 threshold met)\n- **Action:** Advance interval from 0 to 1\n- **Interval mapping:** Level 1 = 1 day\n\n### Frontmatter Update (READ-ONLY TEST \u00e2\u20ac\u201d no changes applied)\n\nWould update `40_Wiki/Fundamental_knowledge/Bethe-Bloch Formula.md`:\n```\nUpdated [[Bethe-Bloch Formula]]:\n  last_reviewed: 2026-03-14\n  review_interval: 1 (was 0)\n  next_review: 2026-03-15\n```\n\n### Mistake Ledger (READ-ONLY TEST \u00e2\u20ac\u201d no changes applied)\n\nWould append to `99_System/review_log.md`:\n```\n| 2026-03-14 | [[Bethe-Bloch Formula]] | full | 3/5 | Landau distribution / truncated mean connection; multi-detector PID regime complementarity (ToF vs dE/dx) |\n```\n\n### Continue or Stop?\n\n**(Would ask via AskUserQuestion):** Would you like to review another note, or stop here?\n\nHints: `/wiki-review quick` for rapid recall mode, or `/wiki-review quick [[Note]]` for a specific note.\n"}], "grading": {"eval_id": 1, "eval_name": "full-mode-physics", "configuration": "with_skill", "expectations": [{"text": "Phase 1 asks user to explain Bethe-Bloch Formula in their own words", "passed": true, "evidence": "Output: 'Explain [[Bethe-Bloch Formula]] in your own words. Don't look at the note \u00e2\u20ac\u201d just tell me what you know.'"}, {"text": "Phase 1 feedback identifies key omissions (beta-gamma dependence, MIP, corrections)", "passed": true, "evidence": "Identifies: incomplete beta-gamma vs speed, missing charge z dependence, vague MIP description, missing dE/dx notation, missing density effect and shell corrections, missing TPC application"}, {"text": "Phase 1 generates exactly 3 follow-up probing questions", "passed": true, "evidence": "Three follow-up questions: (1) why beta-gamma not KE, (2) why different species separate, (3) density effect correction"}, {"text": "Phase 2 generates 5 adversarial questions with correct type distribution (2 trick, 2 cross-concept, 1 exam-style)", "passed": true, "evidence": "Q1 Trick (momentum misconception), Q2 Trick (same charge different mass), Q3 Cross-concept (truncated mean + ionization), Q4 Cross-concept (ToF + dE/dx PID), Q5 Exam-style (derive functional dependence)"}, {"text": "Cross-concept questions reference actual wikilinks from the Bethe-Bloch Formula note", "passed": true, "evidence": "Q3 references [[Time Projection Chamber]] and [[Ionizing Radiation]], Q4 references [[Time-of-Flight]] and [[Particle Identification]] \u00e2\u20ac\u201d all wikilinks present in the note"}, {"text": "Output includes English language correction/feedback", "passed": true, "evidence": "English Note section after Phase 1 feedback: 'Your response is grammatically correct. One small improvement...'"}], "pass_rate": 1.0, "summary": "All 6 assertions pass. Full mode followed all 5 phases correctly with appropriate question types and wikilink-based cross-concept synthesis."}}, {"id": "full-mode-physics-without_skill", "prompt": "/wiki-review full [[Bethe-Bloch Formula]]", "eval_id": 1, "outputs": [{"name": "output.md", "type": "text", "content": "# Deep Review: Bethe-Bloch Formula\n\n**Note under review:** `40_Wiki/Fundamental_knowledge/Bethe-Bloch Formula.md`\n**Date:** 2026-03-14\n\n---\n\n## Part 1: Quiz Questions\n\nThe following questions are designed to test deep understanding of the Bethe-Bloch formula, not surface-level memorization. They include conceptual reasoning, trick questions, and cross-topic connections.\n\n---\n\n### Conceptual Understanding\n\n**Q1.** The Bethe-Bloch formula describes the *mean* energy loss. Why is the word \"mean\" critical here? What happens if you try to use the Bethe-Bloch prediction for a single measurement of dE/dx from one thin detector layer?\n\n**Q2.** The formula depends on the particle's velocity through $\\beta\\gamma$, not directly on its kinetic energy. Why is this distinction important when comparing energy loss of different particle species at the same momentum?\n\n**Q3.** Explain physically why there is a minimum in the dE/dx curve at $\\beta\\gamma \\approx 3$--$4$. What two competing effects create this minimum?\n\n**Q4.** After the minimum, the energy loss exhibits a \"relativistic rise.\" What is the physical origin of this rise? And does this rise continue forever, or is there something that limits it?\n\n---\n\n### Trick Questions\n\n**Q5. (TRICK)** A student claims: \"The Bethe-Bloch formula shows that a proton always loses more energy per centimeter than a pion in the same material.\" Is this correct? If not, under what conditions could a pion actually lose *more* energy per centimeter than a proton?\n\n**Q6. (TRICK)** Another student says: \"Since the Bethe-Bloch formula depends on $Z^2$ of the projectile, a fully stripped carbon ion ($Z=6$) loses exactly 36 times more energy than a proton at the same velocity.\" What is wrong (or incomplete) about this reasoning?\n\n**Q7. (TRICK)** Does the Bethe-Bloch formula apply to electrons passing through matter? Why or why not?\n\n**Q8. (TRICK)** A student reads that dE/dx depends on the \"atomic number of the target material\" and concludes that a particle loses more energy per centimeter in lead ($Z=82$) than in aluminum ($Z=13$). Is this conclusion necessarily correct? What subtlety is being overlooked?\n\n---\n\n### Connections to Related Topics\n\n**Q9.** In a Time Projection Chamber, experimentalists use the \"truncated mean\" of dE/dx samples rather than a simple arithmetic mean. Why? What property of the energy-loss distribution makes the truncated mean necessary?\n\n**Q10.** The note mentions both the density effect (Sternheimer correction) and shell corrections. At what energy regimes does each correction become important, and what physics does each one capture?\n\n**Q11.** How does the Bethe-Bloch formula connect to the Range-Energy Relation? If you know the Bethe-Bloch function exactly, can you compute a particle's range? What additional information or assumptions do you need?\n\n**Q12.** In the $\\Delta E$-$E$ method, the identification parameter is proportional to $Z^2 A^\\mu$, not simply $Z$. How does this arise from the Bethe-Bloch formula? Why does this method separate elements more easily than isotopes?\n\n**Q13.** The note mentions Linear Energy Transfer (LET) in the context of dose calculations. What is the relationship between stopping power (as given by Bethe-Bloch) and LET? Are they the same quantity? If not, what is the difference?\n\n**Q14.** A TPC and a Time-of-Flight (ToF) detector both perform particle identification. In what momentum range does dE/dx-based PID (Bethe-Bloch) work best, and where does ToF take over? Why?\n\n---\n\n### Synthesis / Hard Questions\n\n**Q15.** Imagine you are designing a TPC for an experiment at IMP. You need to distinguish protons from deuterons at 500 MeV/nucleon. Looking at the Bethe-Bloch formula, what determines whether your detector can separate these two species? What practical detector parameter matters most?\n\n**Q16.** The Bethe-Bloch formula was derived by Bethe in 1930 using quantum mechanics (Born approximation). Under what conditions does the Born approximation break down, and what happens to the accuracy of the Bethe-Bloch prediction?\n\n---\n\n## Part 2: Evaluation of Student Response\n\n### The Student's Response\n\n> \"The Bethe-Bloch formula describes how charged particles lose energy as they pass through matter. It depends on the particle's speed and the material. Different particles lose energy at different rates which helps identify them. The energy loss has a minimum at some point.\"\n\n---\n\n### Evaluation\n\n**Overall Grade: C- (Mediocre / Surface-level)**\n\nThe response demonstrates basic familiarity with the topic but lacks the depth, precision, and physical reasoning expected of someone who truly understands the formula. Here is a detailed breakdown:\n\n#### What the student got right:\n- Correctly states the formula describes energy loss of charged particles in matter.\n- Correctly identifies that it depends on the particle's speed and the material.\n- Correctly notes that different particles lose energy at different rates (enabling PID).\n- Correctly mentions the existence of a minimum.\n\n#### What is missing or imprecise:\n\n1. **\"Energy loss\" is vague.** The student should specify that the Bethe-Bloch formula describes the *mean rate* of energy loss per unit path length ($-dE/dx$), not total energy loss. This distinction matters enormously in practice.\n\n2. **\"Depends on the particle's speed\" is incomplete.** The formula depends on $\\beta\\gamma$ (the Lorentz factor times velocity), the particle's charge $z$ (going as $z^2$), and the target material's atomic number $Z$ and mean excitation energy $I$. The charge dependence is arguably the most important feature for particle identification, and the student omits it entirely.\n\n3. **\"Different particles lose energy at different rates\" lacks mechanism.** The student does not explain *why* different particles produce different dE/dx curves. The key insight is that at the same *momentum*, different-mass particles have different *velocities* (and therefore different $\\beta\\gamma$), which shifts them to different positions on the universal Bethe-Bloch curve. This is the entire basis for dE/dx-based particle identification.\n\n4. **\"Has a minimum at some point\" is too vague.** The student should state:\n   - The minimum occurs at $\\beta\\gamma \\approx 3$--$4$.\n   - Particles at this minimum are called \"minimum-ionizing particles\" (MIPs).\n   - After the minimum, there is a logarithmic relativistic rise.\n   - The minimum arises from the competition between the $1/\\beta^2$ decrease at low velocities and the logarithmic increase from relativistic effects.\n\n5. **No mention of corrections.** A solid answer should reference the density effect (Sternheimer) at high energy and shell corrections at low energy, even briefly.\n\n6. **No mention of practical applications.** The student does not connect the formula to any detector (TPC, scintillator) or measurement technique ($\\Delta E$-$E$ method, truncated mean).\n\n7. **No mention of what the formula does NOT describe.** Understanding scope is part of understanding: Bethe-Bloch does not apply to neutral particles, does not describe radiative losses (important for electrons), and breaks down at very low velocities.\n\n---\n\n### What a strong response would include:\n\nA strong response would cover: (1) the precise definition ($-dE/dx$ = mean energy loss per unit path length), (2) the key dependencies ($\\beta\\gamma$, $z^2$, and material properties $Z$, $I$), (3) the physics of the minimum and relativistic rise, (4) why different species separate on a dE/dx-vs-momentum plot (same $p$ implies different $\\beta\\gamma$ for different masses), (5) at least one correction (density effect or shell corrections), and (6) at least one concrete application (TPC, $\\Delta E$-$E$ method).\n\n---\n\n## Part 3: Follow-up Questions for the Student\n\nBased on the gaps revealed in the student's response, the following follow-up questions target the weakest areas:\n\n---\n\n### Probing the \"speed\" dependency:\n\n**F1.** You said the formula depends on the particle's speed. But two particles -- a proton and a pion -- are both traveling at $0.9c$. Do they lose the same energy per centimeter? Why or why not?\n\n**F2.** You mentioned \"speed.\" The formula actually uses $\\beta\\gamma$ rather than simply $\\beta$ (or velocity). Why does $\\beta\\gamma$ appear rather than $\\beta$ alone? What happens to the dE/dx curve if you plot it against $\\beta$ instead of $\\beta\\gamma$?\n\n---\n\n### Probing the minimum:\n\n**F3.** You said the energy loss \"has a minimum at some point.\" Can you tell me approximately where that minimum occurs (in terms of $\\beta\\gamma$)? What are particles at this minimum called, and why does this concept matter in experimental physics?\n\n**F4.** What happens to the energy loss *below* the minimum -- say, for a slow, non-relativistic particle? Does dE/dx increase or decrease as the particle slows down, and why?\n\n---\n\n### Probing PID understanding:\n\n**F5.** You said \"different particles lose energy at different rates, which helps identify them.\" Walk me through the mechanism: if I give you a proton and a kaon, both at the same *momentum*, explain step-by-step why they have different dE/dx values.\n\n**F6.** At very high momentum, the dE/dx curves for protons, pions, and kaons all converge. Why? What does this imply about the usefulness of dE/dx-based particle identification at high momentum?\n\n---\n\n### Probing scope and limitations:\n\n**F7.** Does the Bethe-Bloch formula work for an electron passing through lead? If not, what additional process must you account for?\n\n**F8.** Does the Bethe-Bloch formula tell you the energy loss of a *specific* particle on a *specific* traversal, or something else? Why is this distinction important when you actually measure dE/dx in a detector?\n\n---\n\n### Connecting to practical applications:\n\n**F9.** In a TPC experiment, you have 100 dE/dx samples along a particle's track. Would you compute the arithmetic mean of all 100 to estimate the particle's dE/dx? If not, what would you do instead and why?\n\n**F10.** Your note mentions the density effect (Sternheimer correction). In your own words, what physical phenomenon does this correction account for? Does it increase or decrease the predicted energy loss compared to the uncorrected formula?\n\n---\n\n*End of review session.*\n"}], "grading": {"eval_id": 1, "eval_name": "full-mode-physics", "configuration": "without_skill", "expectations": [{"text": "Phase 1 asks user to explain Bethe-Bloch Formula in their own words", "passed": false, "evidence": "No Feynman check phase. Jumps straight to 16 quiz questions. No 'explain in your own words' prompt."}, {"text": "Phase 1 feedback identifies key omissions (beta-gamma dependence, MIP, corrections)", "passed": true, "evidence": "Part 2 evaluation identifies: vague speed vs beta-gamma, missing z\u00c2\u00b2 charge dependence, no MIP terminology, no corrections, no applications. Thorough analysis."}, {"text": "Phase 1 generates exactly 3 follow-up probing questions", "passed": false, "evidence": "Generates 10 follow-up questions (F1-F10), not 3. No constraint on count."}, {"text": "Phase 2 generates 5 adversarial questions with correct type distribution (2 trick, 2 cross-concept, 1 exam-style)", "passed": false, "evidence": "Generates 16 questions with custom categories (4 conceptual, 4 trick, 6 cross-topic, 2 synthesis). Does not follow 2/2/1 distribution."}, {"text": "Cross-concept questions reference actual wikilinks from the Bethe-Bloch Formula note", "passed": true, "evidence": "References TPC, ToF, Ionizing Radiation, Particle Identification, Linear Energy Transfer \u00e2\u20ac\u201d all from the note's wikilinks"}, {"text": "Output includes English language correction/feedback", "passed": false, "evidence": "No English language correction section. Baseline has no awareness of the user being a non-native English learner."}], "pass_rate": 0.333, "summary": "Baseline produces high-quality physics content but without the structured phases, question count constraints, or English correction. Overwhelming volume (16+10 questions vs 5+3)."}}, {"id": "quick-mode-math-with_skill", "prompt": "/wiki-review quick [[Vector_Spaces]]", "eval_id": 2, "outputs": [{"name": "output.md", "type": "text", "content": "# Wiki Review \u00e2\u20ac\u201d Quick Mode\n\n**Note:** [[Vector_Spaces]]\n**Date:** 2026-03-14\n**Current interval:** 0 (never reviewed)\n\n---\n\n## Rapid-Fire Check \u00e2\u20ac\u201d 3 Questions\n\nAnswer all three, then I will grade them together.\n\n**Q1 (Core definition / fact):**\nA vector space requires 10 axioms. Suppose a set satisfies all axioms except that it lacks a zero vector (axiom 5). Give a concrete reason why this set fails to be a vector space \u00e2\u20ac\u201d what specific operation or property breaks down without the zero vector?\n\n**Q2 (Application / context):**\nIn quantum mechanics, the eigenstates $|n\\rangle$ of a Hamiltonian form a basis for the state space, and an arbitrary state is written as $|\\psi\\rangle = \\sum_n c_n |n\\rangle$. What is the name given to the coefficients $c_n$ in this expansion, and what physical quantity do they relate to when squared in modulus?\n\n**Q3 (Cross-link \u00e2\u20ac\u201d [[Subspace]]):**\nState the quick test for determining whether a subset $W \\subseteq V$ is a subspace. Why don't you need to verify all 10 vector space axioms separately for $W$?\n\n---\n\n*Waiting for user answers to grade all three together.*\n\n*After grading:*\n- **Pass (2/3 or better):** Advance interval 0 -> 1, next review 2026-03-15\n- **Fail (0-1/3):** Interval stays at 0 (no regression in quick mode)\n\n---\n\n**[AskUserQuestion \u00e2\u20ac\u201d WOULD ASK]:**\nI would present the three questions above and wait for the user to answer all three before grading. Since this is a read-only test, here is what I would ask:\n\n> Please answer all 3 questions above. Take your time \u00e2\u20ac\u201d once you respond, I will grade them together and update the review interval.\n"}], "grading": {"eval_id": 2, "eval_name": "quick-mode-math", "configuration": "with_skill", "expectations": [{"text": "Generates exactly 3 questions", "passed": true, "evidence": "Q1, Q2, Q3 \u00e2\u20ac\u201d exactly 3 questions generated"}, {"text": "Has 1 core definition/fact, 1 application/context, 1 cross-link question", "passed": true, "evidence": "Q1 labeled 'Core definition / fact' (zero vector axiom), Q2 labeled 'Application / context' (QM probability amplitudes), Q3 labeled 'Cross-link \u00e2\u20ac\u201d [[Subspace]]'"}, {"text": "Cross-link question references an actual wikilink from the Vector_Spaces note", "passed": true, "evidence": "Q3 references [[Subspace]] which appears in the note's Related section and body text"}, {"text": "All 3 questions presented together in one block", "passed": true, "evidence": "All three questions appear under '## Rapid-Fire Check \u00e2\u20ac\u201d 3 Questions' with instruction 'Answer all three, then I will grade them together'"}, {"text": "Output is brief and fast-paced, minimal commentary", "passed": true, "evidence": "36 lines total including formatting. Core content (questions) is concise. Includes brief scoring preview and AskUserQuestion note (test harness artifacts)."}], "pass_rate": 1.0, "summary": "All 5 assertions pass. Quick mode correctly generates 3 typed questions, presents them together, and stays concise."}}, {"id": "quick-mode-math-without_skill", "prompt": "/wiki-review quick [[Vector_Spaces]]", "eval_id": 2, "outputs": [{"name": "output.md", "type": "text", "content": "# Vector Spaces -- Quick Quiz\n\nHere are 3 questions to test whether the key ideas stuck. Answer from memory first, then check your note.\n\n---\n\n**Q1. What does it mean for a set of vectors to be linearly independent?**\n\nGive the formal condition (the equation and what must be true about its solutions), then state the intuition in one sentence.\n\n---\n\n**Q2. A basis has two defining properties. What are they, and why does that make it \"just right\" (not too big, not too small)?**\n\nHint: think about what happens if you remove one vector, or add one.\n\n---\n\n**Q3. You have two subspaces $U$ and $W$ of a finite-dimensional vector space. State the dimension formula that relates $\\dim(U+W)$, $\\dim U$, $\\dim W$, and $\\dim(U \\cap W)$. Why does the intersection term get subtracted?**\n\n---\n\nTake a minute on each. When you are ready, tell me your answers and I will check them against the note.\n"}], "grading": {"eval_id": 2, "eval_name": "quick-mode-math", "configuration": "without_skill", "expectations": [{"text": "Generates exactly 3 questions", "passed": true, "evidence": "Q1, Q2, Q3 \u00e2\u20ac\u201d exactly 3 questions generated (matched the user's request for '3 questions')"}, {"text": "Has 1 core definition/fact, 1 application/context, 1 cross-link question", "passed": false, "evidence": "Q1 is definition (linear independence), Q2 is definition (basis properties), Q3 is computation (dimension formula). No application/context or cross-link question. Two definitions instead."}, {"text": "Cross-link question references an actual wikilink from the Vector_Spaces note", "passed": false, "evidence": "No cross-link question. Q3 asks about the dimension formula but doesn't reference any linked note."}, {"text": "All 3 questions presented together in one block", "passed": true, "evidence": "All 3 questions presented in sequence, followed by 'Take a minute on each.'"}, {"text": "Output is brief and fast-paced, minimal commentary", "passed": true, "evidence": "24 lines total. Very concise, no extra commentary."}], "pass_rate": 0.6, "summary": "Baseline produces 3 decent questions but lacks type diversity (two definitions, no cross-link) and no scoring/interval system."}}], "previous_feedback": {}, "previous_outputs": {}, "benchmark": {"skill_name": "wiki-review", "iteration": 1, "date": "2026-03-14", "configurations": [{"name": "with_skill", "label": "With wiki-review skill", "results": [{"eval_id": 0, "eval_name": "scan-triage", "pass_rate": 1.0, "passed": 5, "total": 5, "tokens": 31166, "duration_seconds": 154.9}, {"eval_id": 1, "eval_name": "full-mode-physics", "pass_rate": 1.0, "passed": 6, "total": 6, "tokens": 20801, "duration_seconds": 152.8}, {"eval_id": 2, "eval_name": "quick-mode-math", "pass_rate": 1.0, "passed": 5, "total": 5, "tokens": 24020, "duration_seconds": 50.0}], "aggregate": {"mean_pass_rate": 1.0, "stddev_pass_rate": 0.0, "mean_tokens": 25329, "stddev_tokens": 5348, "mean_duration_seconds": 119.2, "stddev_duration_seconds": 59.8}}, {"name": "without_skill", "label": "Baseline (no skill)", "results": [{"eval_id": 0, "eval_name": "scan-triage", "pass_rate": 0.2, "passed": 1, "total": 5, "tokens": 46158, "duration_seconds": 490.0}, {"eval_id": 1, "eval_name": "full-mode-physics", "pass_rate": 0.333, "passed": 2, "total": 6, "tokens": 23488, "duration_seconds": 98.3}, {"eval_id": 2, "eval_name": "quick-mode-math", "pass_rate": 0.6, "passed": 3, "total": 5, "tokens": 20724, "duration_seconds": 66.3}], "aggregate": {"mean_pass_rate": 0.378, "stddev_pass_rate": 0.201, "mean_tokens": 30123, "stddev_tokens": 13727, "mean_duration_seconds": 218.2, "stddev_duration_seconds": 237.7}}], "delta": {"pass_rate": "+0.622 (100% vs 37.8%)", "tokens": "-4794 avg (25.3k vs 30.1k)", "duration": "-99.0s avg (119s vs 218s)"}, "analyst_observations": ["The skill achieves 100% pass rate across all 3 test cases vs 37.8% baseline \u00e2\u20ac\u201d a +62.2pp improvement.", "Scan-triage shows the largest structural gap: baseline produces ad-hoc analysis (useful but unstructured) while the skill produces the exact queue format needed for the spaced-repetition workflow. Baseline also fails to exclude no-review tagged notes.", "Full-mode skill enforces pedagogically sound structure: Feynman check before adversarial questions, constrained question counts (5+3), and English correction. Baseline dumps 16+10 questions \u00e2\u20ac\u201d thorough but overwhelming for a single review session.", "Quick-mode skill adds structured question typing (definition/application/cross-link) that baseline lacks. Both produce 3 questions, but the skill ensures topic coverage diversity.", "Scan-triage baseline took 490s (3.2x longer than with-skill at 155s) because it read more note content and produced verbose per-note listings. The skill's focused frontmatter-only scan is more efficient.", "The baseline produces higher-quality physics analysis in some areas (the full-mode C- grade breakdown is excellent), suggesting the raw capability is there \u00e2\u20ac\u201d the skill's value is in structuring and constraining this capability into a repeatable workflow.", "Non-discriminating assertion: 'date_aware_categorization' passed for both configurations in scan-triage. Claude naturally understands dates well.", "Non-discriminating assertion: 'all_presented_at_once' and 'concise_format' both pass for baseline quick-mode. These are easy for Claude without a skill."]}};
+
+    // ---- State ----
+    let feedbackMap = {};  // run_id -> feedback text
+    let currentIndex = 0;
+    let visitedRuns = new Set();
+
+    // ---- Init ----
+    async function init() {
+      // Load saved feedback from server — but only if this isn't a fresh
+      // iteration (indicated by previous_feedback being present). When
+      // previous feedback exists, the feedback.json on disk is stale from
+      // the prior iteration and should not pre-fill the textareas.
+      const hasPrevious = Object.keys(EMBEDDED_DATA.previous_feedback || {}).length > 0
+        || Object.keys(EMBEDDED_DATA.previous_outputs || {}).length > 0;
+      if (!hasPrevious) {
+        try {
+          const resp = await fetch("/api/feedback");
+          const data = await resp.json();
+          if (data.reviews) {
+            for (const r of data.reviews) feedbackMap[r.run_id] = r.feedback;
+          }
+        } catch { /* first run, no feedback yet */ }
+      }
+
+      document.getElementById("skill-name").textContent = EMBEDDED_DATA.skill_name;
+      showRun(0);
+
+      // Wire up feedback auto-save
+      const textarea = document.getElementById("feedback");
+      let saveTimeout = null;
+      textarea.addEventListener("input", () => {
+        clearTimeout(saveTimeout);
+        document.getElementById("feedback-status").textContent = "";
+        saveTimeout = setTimeout(() => saveCurrentFeedback(), 800);
+      });
+    }
+
+    // ---- Navigation ----
+    function navigate(delta) {
+      const newIndex = currentIndex + delta;
+      if (newIndex >= 0 && newIndex < EMBEDDED_DATA.runs.length) {
+        saveCurrentFeedback();
+        showRun(newIndex);
+      }
+    }
+
+    function updateNavButtons() {
+      document.getElementById("prev-btn").disabled = currentIndex === 0;
+      document.getElementById("next-btn").disabled =
+        currentIndex === EMBEDDED_DATA.runs.length - 1;
+    }
+
+    // ---- Show a run ----
+    function showRun(index) {
+      currentIndex = index;
+      const run = EMBEDDED_DATA.runs[index];
+
+      // Progress
+      document.getElementById("progress").textContent =
+        `${index + 1} of ${EMBEDDED_DATA.runs.length}`;
+
+      // Prompt
+      document.getElementById("prompt-text").textContent = run.prompt;
+
+      // Config badge
+      const badge = document.getElementById("config-badge");
+      const configMatch = run.id.match(/(with_skill|without_skill|new_skill|old_skill)/);
+      if (configMatch) {
+        const config = configMatch[1];
+        const isBaseline = config === "without_skill" || config === "old_skill";
+        badge.textContent = config.replace(/_/g, " ");
+        badge.className = "config-badge " + (isBaseline ? "config-baseline" : "config-primary");
+        badge.style.display = "inline-block";
+      } else {
+        badge.style.display = "none";
+      }
+
+      // Outputs
+      renderOutputs(run);
+
+      // Previous outputs
+      renderPrevOutputs(run);
+
+      // Grades
+      renderGrades(run);
+
+      // Previous feedback
+      const prevFb = (EMBEDDED_DATA.previous_feedback || {})[run.id];
+      const prevEl = document.getElementById("prev-feedback");
+      if (prevFb) {
+        document.getElementById("prev-feedback-text").textContent = prevFb;
+        prevEl.style.display = "block";
+      } else {
+        prevEl.style.display = "none";
+      }
+
+      // Feedback
+      document.getElementById("feedback").value = feedbackMap[run.id] || "";
+      document.getElementById("feedback-status").textContent = "";
+
+      updateNavButtons();
+
+      // Track visited runs and promote done button when all visited
+      visitedRuns.add(index);
+      const doneBtn = document.getElementById("done-btn");
+      if (visitedRuns.size >= EMBEDDED_DATA.runs.length) {
+        doneBtn.classList.add("ready");
+      }
+
+      // Scroll main content to top
+      document.querySelector(".main").scrollTop = 0;
+    }
+
+    // ---- Render outputs ----
+    function renderOutputs(run) {
+      const container = document.getElementById("outputs-body");
+      container.innerHTML = "";
+
+      const outputs = run.outputs || [];
+      if (outputs.length === 0) {
+        container.innerHTML = '<div class="empty-state">No output files</div>';
+        return;
+      }
+
+      for (const file of outputs) {
+        const fileDiv = document.createElement("div");
+        fileDiv.className = "output-file";
+
+        // Always show file header with download link
+        const header = document.createElement("div");
+        header.className = "output-file-header";
+        const nameSpan = document.createElement("span");
+        nameSpan.textContent = file.name;
+        header.appendChild(nameSpan);
+        const dlBtn = document.createElement("a");
+        dlBtn.className = "dl-btn";
+        dlBtn.textContent = "Download";
+        dlBtn.download = file.name;
+        dlBtn.href = getDownloadUri(file);
+        header.appendChild(dlBtn);
+        fileDiv.appendChild(header);
+
+        const content = document.createElement("div");
+        content.className = "output-file-content";
+
+        if (file.type === "text") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          content.appendChild(pre);
+        } else if (file.type === "image") {
+          const img = document.createElement("img");
+          img.src = file.data_uri;
+          img.alt = file.name;
+          content.appendChild(img);
+        } else if (file.type === "pdf") {
+          const iframe = document.createElement("iframe");
+          iframe.src = file.data_uri;
+          content.appendChild(iframe);
+        } else if (file.type === "xlsx") {
+          renderXlsx(content, file.data_b64);
+        } else if (file.type === "binary") {
+          const a = document.createElement("a");
+          a.className = "download-link";
+          a.href = file.data_uri;
+          a.download = file.name;
+          a.textContent = "Download " + file.name;
+          content.appendChild(a);
+        } else if (file.type === "error") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          pre.style.color = "var(--red)";
+          content.appendChild(pre);
+        }
+
+        fileDiv.appendChild(content);
+        container.appendChild(fileDiv);
+      }
+    }
+
+    // ---- XLSX rendering via SheetJS ----
+    function renderXlsx(container, b64Data) {
+      try {
+        const raw = Uint8Array.from(atob(b64Data), c => c.charCodeAt(0));
+        const wb = XLSX.read(raw, { type: "array" });
+
+        for (let i = 0; i < wb.SheetNames.length; i++) {
+          const sheetName = wb.SheetNames[i];
+          const ws = wb.Sheets[sheetName];
+
+          if (wb.SheetNames.length > 1) {
+            const sheetLabel = document.createElement("div");
+            sheetLabel.style.cssText =
+              "font-weight:600; font-size:0.8rem; color:#b0aea5; margin-top:0.5rem; margin-bottom:0.25rem;";
+            sheetLabel.textContent = "Sheet: " + sheetName;
+            container.appendChild(sheetLabel);
+          }
+
+          const htmlStr = XLSX.utils.sheet_to_html(ws, { editable: false });
+          const wrapper = document.createElement("div");
+          wrapper.innerHTML = htmlStr;
+          container.appendChild(wrapper);
+        }
+      } catch (err) {
+        container.textContent = "Error rendering spreadsheet: " + err.message;
+      }
+    }
+
+    // ---- Grades ----
+    function renderGrades(run) {
+      const section = document.getElementById("grades-section");
+      const content = document.getElementById("grades-content");
+
+      if (!run.grading) {
+        section.style.display = "none";
+        return;
+      }
+
+      const grading = run.grading;
+      section.style.display = "block";
+      // Reset to collapsed
+      content.classList.remove("open");
+      document.getElementById("grades-arrow").classList.remove("open");
+
+      const summary = grading.summary || {};
+      const expectations = grading.expectations || [];
+
+      let html = '<div style="padding: 1rem;">';
+
+      // Summary line
+      const passRate = summary.pass_rate != null
+        ? Math.round(summary.pass_rate * 100) + "%"
+        : "?";
+      const badgeClass = summary.pass_rate >= 0.8 ? "grade-pass" : summary.pass_rate >= 0.5 ? "" : "grade-fail";
+      html += '<div class="grades-summary">';
+      html += '<span class="grade-badge ' + badgeClass + '">' + passRate + '</span>';
+      html += '<span>' + (summary.passed || 0) + ' passed, ' + (summary.failed || 0) + ' failed of ' + (summary.total || 0) + '</span>';
+      html += '</div>';
+
+      // Assertions list
+      html += '<ul class="assertion-list">';
+      for (const exp of expectations) {
+        const statusClass = exp.passed ? "pass" : "fail";
+        const statusIcon = exp.passed ? "\u2713" : "\u2717";
+        html += '<li class="assertion-item">';
+        html += '<span class="assertion-status ' + statusClass + '">' + statusIcon + '</span>';
+        html += '<span>' + escapeHtml(exp.text) + '</span>';
+        if (exp.evidence) {
+          html += '<div class="assertion-evidence">' + escapeHtml(exp.evidence) + '</div>';
+        }
+        html += '</li>';
+      }
+      html += '</ul>';
+
+      html += '</div>';
+      content.innerHTML = html;
+    }
+
+    function toggleGrades() {
+      const content = document.getElementById("grades-content");
+      const arrow = document.getElementById("grades-arrow");
+      content.classList.toggle("open");
+      arrow.classList.toggle("open");
+    }
+
+    // ---- Previous outputs (collapsible) ----
+    function renderPrevOutputs(run) {
+      const section = document.getElementById("prev-outputs-section");
+      const content = document.getElementById("prev-outputs-content");
+      const prevOutputs = (EMBEDDED_DATA.previous_outputs || {})[run.id];
+
+      if (!prevOutputs || prevOutputs.length === 0) {
+        section.style.display = "none";
+        return;
+      }
+
+      section.style.display = "block";
+      // Reset to collapsed
+      content.classList.remove("open");
+      document.getElementById("prev-outputs-arrow").classList.remove("open");
+
+      // Render the files into the content area
+      content.innerHTML = "";
+      const wrapper = document.createElement("div");
+      wrapper.style.padding = "1rem";
+
+      for (const file of prevOutputs) {
+        const fileDiv = document.createElement("div");
+        fileDiv.className = "output-file";
+
+        const header = document.createElement("div");
+        header.className = "output-file-header";
+        const nameSpan = document.createElement("span");
+        nameSpan.textContent = file.name;
+        header.appendChild(nameSpan);
+        const dlBtn = document.createElement("a");
+        dlBtn.className = "dl-btn";
+        dlBtn.textContent = "Download";
+        dlBtn.download = file.name;
+        dlBtn.href = getDownloadUri(file);
+        header.appendChild(dlBtn);
+        fileDiv.appendChild(header);
+
+        const fc = document.createElement("div");
+        fc.className = "output-file-content";
+
+        if (file.type === "text") {
+          const pre = document.createElement("pre");
+          pre.textContent = file.content;
+          fc.appendChild(pre);
+        } else if (file.type === "image") {
+          const img = document.createElement("img");
+          img.src = file.data_uri;
+          img.alt = file.name;
+          fc.appendChild(img);
+        } else if (file.type === "pdf") {
+          const iframe = document.createElement("iframe");
+          iframe.src = file.data_uri;
+          fc.appendChild(iframe);
+        } else if (file.type === "xlsx") {
+          renderXlsx(fc, file.data_b64);
+        } else if (file.type === "binary") {
+          const a = document.createElement("a");
+          a.className = "download-link";
+          a.href = file.data_uri;
+          a.download = file.name;
+          a.textContent = "Download " + file.name;
+          fc.appendChild(a);
+        }
+
+        fileDiv.appendChild(fc);
+        wrapper.appendChild(fileDiv);
+      }
+
+      content.appendChild(wrapper);
+    }
+
+    function togglePrevOutputs() {
+      const content = document.getElementById("prev-outputs-content");
+      const arrow = document.getElementById("prev-outputs-arrow");
+      content.classList.toggle("open");
+      arrow.classList.toggle("open");
+    }
+
+    // ---- Feedback (saved to server -> feedback.json) ----
+    function saveCurrentFeedback() {
+      const run = EMBEDDED_DATA.runs[currentIndex];
+      const text = document.getElementById("feedback").value;
+
+      if (text.trim() === "") {
+        delete feedbackMap[run.id];
+      } else {
+        feedbackMap[run.id] = text;
+      }
+
+      // Build reviews array from map
+      const reviews = [];
+      for (const [run_id, feedback] of Object.entries(feedbackMap)) {
+        if (feedback.trim()) {
+          reviews.push({ run_id, feedback, timestamp: new Date().toISOString() });
+        }
+      }
+
+      fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ reviews, status: "in_progress" }),
+      }).then(() => {
+        document.getElementById("feedback-status").textContent = "Saved";
+      }).catch(() => {
+        // Static mode or server unavailable — no-op on auto-save,
+        // feedback will be downloaded on final submit
+        document.getElementById("feedback-status").textContent = "Will download on submit";
+      });
+    }
+
+    // ---- Done ----
+    function showDoneDialog() {
+      // Save current textarea to feedbackMap (but don't POST yet)
+      const run = EMBEDDED_DATA.runs[currentIndex];
+      const text = document.getElementById("feedback").value;
+      if (text.trim() === "") {
+        delete feedbackMap[run.id];
+      } else {
+        feedbackMap[run.id] = text;
+      }
+
+      // POST once with status: complete — include ALL runs so the model
+      // can distinguish "no feedback" (looks good) from "not reviewed"
+      const reviews = [];
+      const ts = new Date().toISOString();
+      for (const r of EMBEDDED_DATA.runs) {
+        reviews.push({ run_id: r.id, feedback: feedbackMap[r.id] || "", timestamp: ts });
+      }
+      const payload = JSON.stringify({ reviews, status: "complete" }, null, 2);
+      fetch("/api/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: payload,
+      }).then(() => {
+        document.getElementById("done-overlay").classList.add("visible");
+      }).catch(() => {
+        // Server not available (static mode) — download as file
+        const blob = new Blob([payload], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "feedback.json";
+        a.click();
+        URL.revokeObjectURL(url);
+        document.getElementById("done-overlay").classList.add("visible");
+      });
+    }
+
+    function closeDoneDialog() {
+      // Reset status back to in_progress
+      saveCurrentFeedback();
+      document.getElementById("done-overlay").classList.remove("visible");
+    }
+
+    // ---- Toast ----
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.add("visible");
+      setTimeout(() => toast.classList.remove("visible"), 2000);
+    }
+
+    // ---- Keyboard nav ----
+    document.addEventListener("keydown", (e) => {
+      // Don't capture when typing in textarea
+      if (e.target.tagName === "TEXTAREA") return;
+
+      if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+        e.preventDefault();
+        navigate(-1);
+      } else if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+        e.preventDefault();
+        navigate(1);
+      }
+    });
+
+    // ---- Util ----
+    function getDownloadUri(file) {
+      if (file.data_uri) return file.data_uri;
+      if (file.data_b64) return "data:application/octet-stream;base64," + file.data_b64;
+      if (file.type === "text") return "data:text/plain;charset=utf-8," + encodeURIComponent(file.content);
+      return "#";
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement("div");
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // ---- View switching ----
+    function switchView(view) {
+      document.querySelectorAll(".view-tab").forEach(t => t.classList.remove("active"));
+      document.querySelectorAll(".view-panel").forEach(p => p.classList.remove("active"));
+      document.querySelector(`[onclick="switchView('${view}')"]`).classList.add("active");
+      document.getElementById("panel-" + view).classList.add("active");
+    }
+
+    // ---- Benchmark rendering ----
+    function renderBenchmark() {
+      const data = EMBEDDED_DATA.benchmark;
+      if (!data) return;
+
+      // Show the tabs
+      document.getElementById("view-tabs").style.display = "flex";
+
+      const container = document.getElementById("benchmark-content");
+      const summary = data.run_summary || {};
+      const metadata = data.metadata || {};
+      const notes = data.notes || [];
+
+      let html = "";
+
+      // Header
+      html += "<h2 style='font-family: Poppins, sans-serif; margin-bottom: 0.5rem;'>Benchmark Results</h2>";
+      html += "<p style='color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.25rem;'>";
+      if (metadata.skill_name) html += "<strong>" + escapeHtml(metadata.skill_name) + "</strong> &mdash; ";
+      if (metadata.timestamp) html += metadata.timestamp + " &mdash; ";
+      if (metadata.evals_run) html += "Evals: " + metadata.evals_run.join(", ") + " &mdash; ";
+      html += (metadata.runs_per_configuration || "?") + " runs per configuration";
+      html += "</p>";
+
+      // Summary table
+      html += '<table class="benchmark-table">';
+
+      function fmtStat(stat, pct) {
+        if (!stat) return "—";
+        const suffix = pct ? "%" : "";
+        const m = pct ? (stat.mean * 100).toFixed(0) : stat.mean.toFixed(1);
+        const s = pct ? (stat.stddev * 100).toFixed(0) : stat.stddev.toFixed(1);
+        return m + suffix + " ± " + s + suffix;
+      }
+
+      function deltaClass(val) {
+        if (!val) return "";
+        const n = parseFloat(val);
+        if (n > 0) return "benchmark-delta-positive";
+        if (n < 0) return "benchmark-delta-negative";
+        return "";
+      }
+
+      // Discover config names dynamically (everything except "delta")
+      const configs = Object.keys(summary).filter(k => k !== "delta");
+      const configA = configs[0] || "config_a";
+      const configB = configs[1] || "config_b";
+      const labelA = configA.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      const labelB = configB.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      const a = summary[configA] || {};
+      const b = summary[configB] || {};
+      const delta = summary.delta || {};
+
+      html += "<thead><tr><th>Metric</th><th>" + escapeHtml(labelA) + "</th><th>" + escapeHtml(labelB) + "</th><th>Delta</th></tr></thead>";
+      html += "<tbody>";
+
+      html += "<tr><td><strong>Pass Rate</strong></td>";
+      html += "<td>" + fmtStat(a.pass_rate, true) + "</td>";
+      html += "<td>" + fmtStat(b.pass_rate, true) + "</td>";
+      html += '<td class="' + deltaClass(delta.pass_rate) + '">' + (delta.pass_rate || "—") + "</td></tr>";
+
+      // Time (only show row if data exists)
+      if (a.time_seconds || b.time_seconds) {
+        html += "<tr><td><strong>Time (s)</strong></td>";
+        html += "<td>" + fmtStat(a.time_seconds, false) + "</td>";
+        html += "<td>" + fmtStat(b.time_seconds, false) + "</td>";
+        html += '<td class="' + deltaClass(delta.time_seconds) + '">' + (delta.time_seconds ? delta.time_seconds + "s" : "—") + "</td></tr>";
+      }
+
+      // Tokens (only show row if data exists)
+      if (a.tokens || b.tokens) {
+        html += "<tr><td><strong>Tokens</strong></td>";
+        html += "<td>" + fmtStat(a.tokens, false) + "</td>";
+        html += "<td>" + fmtStat(b.tokens, false) + "</td>";
+        html += '<td class="' + deltaClass(delta.tokens) + '">' + (delta.tokens || "—") + "</td></tr>";
+      }
+
+      html += "</tbody></table>";
+
+      // Per-eval breakdown (if runs data available)
+      const runs = data.runs || [];
+      if (runs.length > 0) {
+        const evalIds = [...new Set(runs.map(r => r.eval_id))].sort((a, b) => a - b);
+
+        html += "<h3 style='font-family: Poppins, sans-serif; margin-bottom: 0.75rem;'>Per-Eval Breakdown</h3>";
+
+        const hasTime = runs.some(r => r.result && r.result.time_seconds != null);
+        const hasErrors = runs.some(r => r.result && r.result.errors > 0);
+
+        for (const evalId of evalIds) {
+          const evalRuns = runs.filter(r => r.eval_id === evalId);
+          const evalName = evalRuns[0] && evalRuns[0].eval_name ? evalRuns[0].eval_name : "Eval " + evalId;
+
+          html += "<h4 style='font-family: Poppins, sans-serif; margin: 1rem 0 0.5rem; color: var(--text);'>" + escapeHtml(evalName) + "</h4>";
+          html += '<table class="benchmark-table">';
+          html += "<thead><tr><th>Config</th><th>Run</th><th>Pass Rate</th>";
+          if (hasTime) html += "<th>Time (s)</th>";
+          if (hasErrors) html += "<th>Crashes During Execution</th>";
+          html += "</tr></thead>";
+          html += "<tbody>";
+
+          // Group by config and render with average rows
+          const configGroups = [...new Set(evalRuns.map(r => r.configuration))];
+          for (let ci = 0; ci < configGroups.length; ci++) {
+            const config = configGroups[ci];
+            const configRuns = evalRuns.filter(r => r.configuration === config);
+            if (configRuns.length === 0) continue;
+
+            const rowClass = ci === 0 ? "benchmark-row-with" : "benchmark-row-without";
+            const configLabel = config.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+
+            for (const run of configRuns) {
+              const r = run.result || {};
+              const prClass = r.pass_rate >= 0.8 ? "benchmark-delta-positive" : r.pass_rate < 0.5 ? "benchmark-delta-negative" : "";
+              html += '<tr class="' + rowClass + '">';
+              html += "<td>" + configLabel + "</td>";
+              html += "<td>" + run.run_number + "</td>";
+              html += '<td class="' + prClass + '">' + ((r.pass_rate || 0) * 100).toFixed(0) + "% (" + (r.passed || 0) + "/" + (r.total || 0) + ")</td>";
+              if (hasTime) html += "<td>" + (r.time_seconds != null ? r.time_seconds.toFixed(1) : "—") + "</td>";
+              if (hasErrors) html += "<td>" + (r.errors || 0) + "</td>";
+              html += "</tr>";
+            }
+
+            // Average row
+            const rates = configRuns.map(r => (r.result || {}).pass_rate || 0);
+            const avgRate = rates.reduce((a, b) => a + b, 0) / rates.length;
+            const avgPrClass = avgRate >= 0.8 ? "benchmark-delta-positive" : avgRate < 0.5 ? "benchmark-delta-negative" : "";
+            html += '<tr class="benchmark-row-avg ' + rowClass + '">';
+            html += "<td>" + configLabel + "</td>";
+            html += "<td>Avg</td>";
+            html += '<td class="' + avgPrClass + '">' + (avgRate * 100).toFixed(0) + "%</td>";
+            if (hasTime) {
+              const times = configRuns.map(r => (r.result || {}).time_seconds).filter(t => t != null);
+              html += "<td>" + (times.length ? (times.reduce((a, b) => a + b, 0) / times.length).toFixed(1) : "—") + "</td>";
+            }
+            if (hasErrors) html += "<td></td>";
+            html += "</tr>";
+          }
+          html += "</tbody></table>";
+
+          // Per-assertion detail for this eval
+          const runsWithExpectations = {};
+          for (const config of configGroups) {
+            runsWithExpectations[config] = evalRuns.filter(r => r.configuration === config && r.expectations && r.expectations.length > 0);
+          }
+          const hasAnyExpectations = Object.values(runsWithExpectations).some(runs => runs.length > 0);
+          if (hasAnyExpectations) {
+            // Collect all unique assertion texts across all configs
+            const allAssertions = [];
+            const seen = new Set();
+            for (const config of configGroups) {
+              for (const run of runsWithExpectations[config]) {
+                for (const exp of (run.expectations || [])) {
+                  if (!seen.has(exp.text)) {
+                    seen.add(exp.text);
+                    allAssertions.push(exp.text);
+                  }
+                }
+              }
+            }
+
+            html += '<table class="benchmark-table" style="margin-top: 0.5rem;">';
+            html += "<thead><tr><th>Assertion</th>";
+            for (const config of configGroups) {
+              const label = config.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+              html += "<th>" + escapeHtml(label) + "</th>";
+            }
+            html += "</tr></thead><tbody>";
+
+            for (const assertionText of allAssertions) {
+              html += "<tr><td>" + escapeHtml(assertionText) + "</td>";
+
+              for (const config of configGroups) {
+                html += "<td>";
+                for (const run of runsWithExpectations[config]) {
+                  const exp = (run.expectations || []).find(e => e.text === assertionText);
+                  if (exp) {
+                    const cls = exp.passed ? "benchmark-delta-positive" : "benchmark-delta-negative";
+                    const icon = exp.passed ? "\u2713" : "\u2717";
+                    html += '<span class="' + cls + '" title="Run ' + run.run_number + ': ' + escapeHtml(exp.evidence || "") + '">' + icon + "</span> ";
+                  } else {
+                    html += "— ";
+                  }
+                }
+                html += "</td>";
+              }
+              html += "</tr>";
+            }
+            html += "</tbody></table>";
+          }
+        }
+      }
+
+      // Notes
+      if (notes.length > 0) {
+        html += '<div class="benchmark-notes">';
+        html += "<h3>Analysis Notes</h3>";
+        html += "<ul>";
+        for (const note of notes) {
+          html += "<li>" + escapeHtml(note) + "</li>";
+        }
+        html += "</ul></div>";
+      }
+
+      container.innerHTML = html;
+    }
+
+    // ---- Start ----
+    init();
+    renderBenchmark();
+  </script>
+</body>
+</html>

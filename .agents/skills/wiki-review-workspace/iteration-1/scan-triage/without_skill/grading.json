@@ -1,0 +1,34 @@
+{
+  "eval_id": 0,
+  "eval_name": "scan-triage",
+  "configuration": "without_skill",
+  "expectations": [
+    {
+      "text": "Queue table present with all categories (Overdue, Due Today, Never Reviewed, Upcoming, Mastered)",
+      "passed": false,
+      "evidence": "Output uses custom categories (Overdue/never reviewed, Reviewed at least once, Missing next_review, No review fields) instead of the skill's standard categories. No Upcoming/Mastered buckets."
+    },
+    {
+      "text": "Correct total count matches eligible wiki notes minus no-review exclusions",
+      "passed": false,
+      "evidence": "Reports 249 total but does not exclude no-review tagged notes. No awareness of the no-review opt-out mechanism."
+    },
+    {
+      "text": "Ready for Review list follows priority ordering: Overdue > Due Today > Never Reviewed",
+      "passed": false,
+      "evidence": "Lists all notes by days-overdue grouping, not by priority buckets. No 'Ready for Review' section."
+    },
+    {
+      "text": "Date-aware categorization: notes before today are Overdue, equal to today are Due Today",
+      "passed": true,
+      "evidence": "Correctly identifies notes due today (12) separately from overdue notes. Groups overdue by days overdue."
+    },
+    {
+      "text": "Output ends with asking user to choose full or quick mode",
+      "passed": false,
+      "evidence": "Output ends with observations and recommendations. No mode selection prompt — baseline has no awareness of full/quick review modes."
+    }
+  ],
+  "pass_rate": 0.2,
+  "summary": "Baseline correctly scans and categorizes by date but uses ad-hoc structure. No awareness of the review system's modes, no-review exclusion, or standard queue format."
+}

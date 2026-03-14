@@ -1,0 +1,34 @@
+{
+  "eval_id": 0,
+  "eval_name": "scan-triage",
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "Queue table present with all categories (Overdue, Due Today, Never Reviewed, Upcoming, Mastered)",
+      "passed": true,
+      "evidence": "Output contains exact formatted table: Overdue 219, Due Today 12, Never Reviewed 12, Upcoming 0, Mastered 0, Total 243"
+    },
+    {
+      "text": "Correct total count matches eligible wiki notes minus no-review exclusions",
+      "passed": true,
+      "evidence": "249 total notes - 6 no-review = 243 eligible. Matches output. Baseline independently confirmed 249 total."
+    },
+    {
+      "text": "Ready for Review list follows priority ordering: Overdue > Due Today > Never Reviewed",
+      "passed": true,
+      "evidence": "All 10 listed notes are Overdue (highest priority). Due Today and Never Reviewed would appear after if list were longer."
+    },
+    {
+      "text": "Date-aware categorization: notes before today are Overdue, equal to today are Due Today",
+      "passed": true,
+      "evidence": "219 Overdue (next_review before 2026-03-14), 12 Due Today (next_review = 2026-03-14). Baseline confirms 12 notes due today."
+    },
+    {
+      "text": "Output ends with asking user to choose full or quick mode",
+      "passed": true,
+      "evidence": "Ends with: 'Would you like to review in full mode (deep adversarial review with scoring) or quick mode (rapid recall check)?'"
+    }
+  ],
+  "pass_rate": 1.0,
+  "summary": "All 5 assertions pass. Scan correctly categorized 243 notes, excluded 6 no-review, presented formatted queue with mode prompt."
+}

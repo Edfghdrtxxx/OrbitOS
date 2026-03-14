@@ -1,0 +1,1228 @@
+{
+  "total_eligible": 243,
+  "excluded": 6,
+  "overdue": [
+    {
+      "name": "Agent Teams",
+      "next_review": "2026-03-03",
+      "review_interval": 0
+    },
+    {
+      "name": "Cognitive Load in LLMs",
+      "next_review": "2026-03-03",
+      "review_interval": 0
+    },
+    {
+      "name": "Context Window",
+      "next_review": "2026-03-03",
+      "review_interval": 0
+    },
+    {
+      "name": "Autonomous Research",
+      "next_review": "2026-03-03",
+      "review_interval": 0
+    },
+    {
+      "name": "FARS",
+      "next_review": "2026-03-03",
+      "review_interval": 0
+    },
+    {
+      "name": "Connecting a local repo to a GitHub remote",
+      "next_review": "2026-03-03",
+      "review_interval": 0
+    },
+    {
+      "name": "Academic_Word_List_AWL",
+      "next_review": "2026-03-03",
+      "review_interval": 0
+    },
+    {
+      "name": "Daily Accumulation",
+      "next_review": "2026-03-03",
+      "review_interval": 0
+    },
+    {
+      "name": "Following_vs_As_Follows_vs_Subsequent",
+      "next_review": "2026-03-03",
+      "review_interval": 0
+    },
+    {
+      "name": "SourceVSResource",
+      "next_review": "2026-03-03",
+      "review_interval": 0
+    },
+    {
+      "name": "B_A curve",
+      "next_review": "2026-03-03",
+      "review_interval": 0
+    },
+    {
+      "name": "Linear_Algebra",
+      "next_review": "2026-03-03",
+      "review_interval": 0
+    },
+    {
+      "name": "Liquid Drop Model",
+      "next_review": "2026-03-03",
+      "review_interval": 0
+    },
+    {
+      "name": "Mass Defect",
+      "next_review": "2026-03-03",
+      "review_interval": 0
+    },
+    {
+      "name": "Mean-Field Potential",
+      "next_review": "2026-03-03",
+      "review_interval": 0
+    },
+    {
+      "name": "Shell closure",
+      "next_review": "2026-03-03",
+      "review_interval": 0
+    },
+    {
+      "name": "Vector_Spaces",
+      "next_review": "2026-03-03",
+      "review_interval": 0
+    },
+    {
+      "name": "Certificate_of_Eligibility_COE",
+      "next_review": "2026-03-03",
+      "review_interval": 0
+    },
+    {
+      "name": "Engineer_Specialist_in_Humanities_International_Services",
+      "next_review": "2026-03-03",
+      "review_interval": 0
+    },
+    {
+      "name": "Highly_Skilled_Professional_HSP_System",
+      "next_review": "2026-03-03",
+      "review_interval": 0
+    },
+    {
+      "name": "Japan_Graduate_Scholarships_MEXT_and_JASSO",
+      "next_review": "2026-03-03",
+      "review_interval": 0
+    },
+    {
+      "name": "Mission-Specific_Visa_Document_Requirements",
+      "next_review": "2026-03-03",
+      "review_interval": 0
+    },
+    {
+      "name": "Residence_Card_and_Municipal_Registration",
+      "next_review": "2026-03-03",
+      "review_interval": 0
+    },
+    {
+      "name": "Student_Visa_Japan",
+      "next_review": "2026-03-03",
+      "review_interval": 0
+    },
+    {
+      "name": "RIKEN Nishina Center for Accelerator-Based Science (RNC)",
+      "next_review": "2026-03-03",
+      "review_interval": 0
+    },
+    {
+      "name": "Feynman-Recall-Spaced Study Method",
+      "next_review": "2026-03-03",
+      "review_interval": 0
+    },
+    {
+      "name": "Course (word meanings)",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Idiomatic questions about improvement priorities",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Important vs necessary (English usage)",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Needs improvement phrasing",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "experience and experiences",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "ADC",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "ALARA Principle",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "ASIC",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Associativity",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Basis",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Becquerel",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Bethe-Bloch Formula",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Binding Energy",
+      "next_review": "2026-03-04",
+      "review_interval": 1
+    },
+    {
+      "name": "Coincidence Detection",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Commutativity",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Constant Fraction Discriminator",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Constant Ratio Timing",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "DAQ",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Dead Time",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Dimension",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Distributivity",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Dosimetry",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Echelon Form",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Eigenvalues and Eigenvectors",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Energy Resolution",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "FPGA",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Field (mathematics)",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Finite Field",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Free Variable",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "GEM Detector",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Gamma Spectroscopy",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "HPGe Detector",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Half-Life",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Hilbert Space",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Identity Element",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Inner Product Spaces",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Inverse Element",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Ionizing Radiation",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Leading-Edge Discriminator",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Linear Combination",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Linear Energy Transfer",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Linear Independence",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Matrix Operations",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Micromegas",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Neutron Activation",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Neutron Capture Cross Section",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Particle Identification",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Photoelectric Effect",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Photomultiplier Tube",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Pivot",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Probability Amplitude",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Radiation Controlled Area",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Radiation Exit Survey",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Radioisotope",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Rank",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Row Reduction",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Scintillation Detector",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Sievert",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Silicon Photomultiplier",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Smear Test",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Span",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Subfield",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Subspace",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Superposition",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Surface Contamination",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "TDC",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Time Projection Chamber",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Time Walk",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "Time-of-Flight",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": "self-fulfilling prophecy",
+      "next_review": "2026-03-04",
+      "review_interval": 0
+    },
+    {
+      "name": ".gitignore",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Git Submodules",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Python Virtual Environments",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Compton Scattering",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Dark Count Rate",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Diffusion",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Drift Time",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Drift Velocity",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Dynamic Range",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Edge Detection",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Electric Field",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Electromagnetic Spectrum",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Gamma Ray",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Geiger Mode",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Hough Transform",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Ionisation Chamber",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Jitter",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Kalman Filter",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Light Yield",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Mass Attenuation Coefficient",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Multichannel Analyzer",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Nuclear Transition",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Optical Crosstalk",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Pair Production",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Photodetector",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Photoelectric Absorption",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Preamplifier",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Pulse Height Spectrum",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Pulse Height",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "RANSAC",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Radioactive Decay",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Rise Time",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Rising Edge",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Saturation",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Signal-to-Noise Ratio",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Single-Photon Avalanche Diode",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Spatial Resolution",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Time Resolution",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Track Reconstruction",
+      "next_review": "2026-03-05",
+      "review_interval": 0
+    },
+    {
+      "name": "Address vs Solve",
+      "next_review": "2026-03-06",
+      "review_interval": 0
+    },
+    {
+      "name": "BigRIPS",
+      "next_review": "2026-03-06",
+      "review_interval": 0
+    },
+    {
+      "name": "Isotope Separation",
+      "next_review": "2026-03-06",
+      "review_interval": 0
+    },
+    {
+      "name": "Magnetic Rigidity",
+      "next_review": "2026-03-06",
+      "review_interval": 0
+    },
+    {
+      "name": "Range-Energy Relation",
+      "next_review": "2026-03-06",
+      "review_interval": 0
+    },
+    {
+      "name": "Stopping Power",
+      "next_review": "2026-03-06",
+      "review_interval": 0
+    },
+    {
+      "name": "dE-dx",
+      "next_review": "2026-03-06",
+      "review_interval": 0
+    },
+    {
+      "name": "ΔE-E Method",
+      "next_review": "2026-03-06",
+      "review_interval": 0
+    },
+    {
+      "name": "CERN",
+      "next_review": "2026-03-07",
+      "review_interval": 0
+    },
+    {
+      "name": "Cling",
+      "next_review": "2026-03-07",
+      "review_interval": 0
+    },
+    {
+      "name": "Object Lifetime (C++)",
+      "next_review": "2026-03-07",
+      "review_interval": 0
+    },
+    {
+      "name": "PyROOT",
+      "next_review": "2026-03-07",
+      "review_interval": 0
+    },
+    {
+      "name": "RAII",
+      "next_review": "2026-03-07",
+      "review_interval": 0
+    },
+    {
+      "name": "ROOT Framework",
+      "next_review": "2026-03-07",
+      "review_interval": 0
+    },
+    {
+      "name": "Smart Pointers (C++)",
+      "next_review": "2026-03-07",
+      "review_interval": 0
+    },
+    {
+      "name": "Stack vs Heap (C++)",
+      "next_review": "2026-03-07",
+      "review_interval": 0
+    },
+    {
+      "name": "TObject (ROOT)",
+      "next_review": "2026-03-07",
+      "review_interval": 0
+    },
+    {
+      "name": "TString (ROOT)",
+      "next_review": "2026-03-07",
+      "review_interval": 0
+    },
+    {
+      "name": "stdcout (C++)",
+      "next_review": "2026-03-07",
+      "review_interval": 0
+    },
+    {
+      "name": "DWBA",
+      "next_review": "2026-03-07",
+      "review_interval": 0
+    },
+    {
+      "name": "Differential Cross Section",
+      "next_review": "2026-03-07",
+      "review_interval": 0
+    },
+    {
+      "name": "Direct Reactions",
+      "next_review": "2026-03-07",
+      "review_interval": 0
+    },
+    {
+      "name": "Knockout Reactions",
+      "next_review": "2026-03-07",
+      "review_interval": 0
+    },
+    {
+      "name": "Spectroscopic Factor",
+      "next_review": "2026-03-07",
+      "review_interval": 0
+    },
+    {
+      "name": "Transfer Reactions",
+      "next_review": "2026-03-07",
+      "review_interval": 0
+    },
+    {
+      "name": "Geant4",
+      "next_review": "2026-03-07",
+      "review_interval": 0
+    },
+    {
+      "name": "CBT-I",
+      "next_review": "2026-03-07",
+      "review_interval": 0
+    },
+    {
+      "name": "Cognitive Offloading",
+      "next_review": "2026-03-07",
+      "review_interval": 0
+    },
+    {
+      "name": "Cortisol",
+      "next_review": "2026-03-07",
+      "review_interval": 0
+    },
+    {
+      "name": "First-Night Effect",
+      "next_review": "2026-03-07",
+      "review_interval": 0
+    },
+    {
+      "name": "Pre-sleep Hyperarousal",
+      "next_review": "2026-03-07",
+      "review_interval": 0
+    },
+    {
+      "name": "Stimulus Control Therapy",
+      "next_review": "2026-03-07",
+      "review_interval": 0
+    },
+    {
+      "name": "996 Culture",
+      "next_review": "2026-03-08",
+      "review_interval": 0
+    },
+    {
+      "name": "Symbolic Link",
+      "next_review": "2026-03-08",
+      "review_interval": 0
+    },
+    {
+      "name": "Articles",
+      "next_review": "2026-03-08",
+      "review_interval": 0
+    },
+    {
+      "name": "Conditional Sentences",
+      "next_review": "2026-03-08",
+      "review_interval": 0
+    },
+    {
+      "name": "Gerund",
+      "next_review": "2026-03-08",
+      "review_interval": 0
+    },
+    {
+      "name": "Pain Point",
+      "next_review": "2026-03-08",
+      "review_interval": 0
+    },
+    {
+      "name": "Passive Voice",
+      "next_review": "2026-03-08",
+      "review_interval": 0
+    },
+    {
+      "name": "Present Perfect",
+      "next_review": "2026-03-08",
+      "review_interval": 0
+    },
+    {
+      "name": "Relative Clauses",
+      "next_review": "2026-03-08",
+      "review_interval": 0
+    },
+    {
+      "name": "Sweet Spot",
+      "next_review": "2026-03-08",
+      "review_interval": 0
+    },
+    {
+      "name": "Where vs That (Relative Clauses)",
+      "next_review": "2026-03-08",
+      "review_interval": 0
+    },
+    {
+      "name": "Kenkyusei",
+      "next_review": "2026-03-08",
+      "review_interval": 0
+    },
+    {
+      "name": "Naidaku",
+      "next_review": "2026-03-08",
+      "review_interval": 0
+    },
+    {
+      "name": "Anti-Vision",
+      "next_review": "2026-03-08",
+      "review_interval": 0
+    },
+    {
+      "name": "UTokyo CNS",
+      "next_review": "2026-03-08",
+      "review_interval": 0
+    },
+    {
+      "name": "-itude",
+      "next_review": "2026-03-09",
+      "review_interval": 0
+    },
+    {
+      "name": "Gratitude",
+      "next_review": "2026-03-09",
+      "review_interval": 0
+    },
+    {
+      "name": "Angular Momentum",
+      "next_review": "2026-03-10",
+      "review_interval": 0
+    },
+    {
+      "name": "Coulomb Barrier",
+      "next_review": "2026-03-10",
+      "review_interval": 0
+    },
+    {
+      "name": "Fine Structure Constant",
+      "next_review": "2026-03-10",
+      "review_interval": 0
+    },
+    {
+      "name": "Fine Structure",
+      "next_review": "2026-03-10",
+      "review_interval": 0
+    },
+    {
+      "name": "Harmonic Oscillator",
+      "next_review": "2026-03-10",
+      "review_interval": 0
+    },
+    {
+      "name": "Magic Numbers",
+      "next_review": "2026-03-10",
+      "review_interval": 0
+    },
+    {
+      "name": "Nuclear Shell Model",
+      "next_review": "2026-03-10",
+      "review_interval": 0
+    },
+    {
+      "name": "Quantum Numbers",
+      "next_review": "2026-03-10",
+      "review_interval": 0
+    },
+    {
+      "name": "Rutherford Scattering Formula",
+      "next_review": "2026-03-10",
+      "review_interval": 0
+    },
+    {
+      "name": "Spectral Lines",
+      "next_review": "2026-03-10",
+      "review_interval": 0
+    },
+    {
+      "name": "Spin-Orbit Coupling",
+      "next_review": "2026-03-10",
+      "review_interval": 0
+    },
+    {
+      "name": "Superconducting Electron Cyclotron Resonance",
+      "next_review": "2026-03-10",
+      "review_interval": 0
+    },
+    {
+      "name": "-cess- (Latin root)",
+      "next_review": "2026-03-11",
+      "review_interval": 0
+    },
+    {
+      "name": "Relativity theory",
+      "next_review": "2026-03-11",
+      "review_interval": 0
+    },
+    {
+      "name": "-sent- Root (sentire)",
+      "next_review": "2026-03-12",
+      "review_interval": 0
+    },
+    {
+      "name": "Chasing vs Pursuit",
+      "next_review": "2026-03-12",
+      "review_interval": 0
+    },
+    {
+      "name": "Connotation vs Annotation",
+      "next_review": "2026-03-12",
+      "review_interval": 0
+    },
+    {
+      "name": "English Collocations",
+      "next_review": "2026-03-12",
+      "review_interval": 0
+    },
+    {
+      "name": "Latin Root form",
+      "next_review": "2026-03-12",
+      "review_interval": 0
+    },
+    {
+      "name": "Latin Root per",
+      "next_review": "2026-03-12",
+      "review_interval": 0
+    },
+    {
+      "name": "Premise vs Prerequisite",
+      "next_review": "2026-03-12",
+      "review_interval": 0
+    },
+    {
+      "name": "Typically vs Usually vs Generally",
+      "next_review": "2026-03-12",
+      "review_interval": 0
+    },
+    {
+      "name": "Diamond Detector",
+      "next_review": "2026-03-12",
+      "review_interval": 0
+    },
+    {
+      "name": "Isobutane",
+      "next_review": "2026-03-12",
+      "review_interval": 0
+    },
+    {
+      "name": "MUSIC Detector",
+      "next_review": "2026-03-12",
+      "review_interval": 0
+    },
+    {
+      "name": "Radioactive Isotope Beam",
+      "next_review": "2026-03-12",
+      "review_interval": 0
+    },
+    {
+      "name": "Spill Gate",
+      "next_review": "2026-03-12",
+      "review_interval": 0
+    },
+    {
+      "name": "Binomial Distribution",
+      "next_review": "2026-03-13",
+      "review_interval": 0
+    },
+    {
+      "name": "Cyclotron",
+      "next_review": "2026-03-13",
+      "review_interval": 0
+    },
+    {
+      "name": "Fermi energy",
+      "next_review": "2026-03-13",
+      "review_interval": 0
+    },
+    {
+      "name": "Gaussian Distribution",
+      "next_review": "2026-03-13",
+      "review_interval": 0
+    },
+    {
+      "name": "In-Flight Fission",
+      "next_review": "2026-03-13",
+      "review_interval": 0
+    },
+    {
+      "name": "Poisson Distribution",
+      "next_review": "2026-03-13",
+      "review_interval": 0
+    },
+    {
+      "name": "Quadrupole Magnet",
+      "next_review": "2026-03-13",
+      "review_interval": 0
+    },
+    {
+      "name": "Synchrotron",
+      "next_review": "2026-03-13",
+      "review_interval": 0
+    }
+  ],
+  "due_today": [
+    {
+      "name": "Bragg Peak",
+      "next_review": "2026-03-14",
+      "review_interval": 0
+    },
+    {
+      "name": "Coulomb Excitation",
+      "next_review": "2026-03-14",
+      "review_interval": 0
+    },
+    {
+      "name": "Flux",
+      "next_review": "2026-03-14",
+      "review_interval": 0
+    },
+    {
+      "name": "ISOL",
+      "next_review": "2026-03-14",
+      "review_interval": 0
+    },
+    {
+      "name": "Nuclear Fission",
+      "next_review": "2026-03-14",
+      "review_interval": 0
+    },
+    {
+      "name": "PID",
+      "next_review": "2026-03-14",
+      "review_interval": 0
+    },
+    {
+      "name": "PPAC",
+      "next_review": "2026-03-14",
+      "review_interval": 0
+    },
+    {
+      "name": "Pile-up",
+      "next_review": "2026-03-14",
+      "review_interval": 0
+    },
+    {
+      "name": "Projectile Fragmentation",
+      "next_review": "2026-03-14",
+      "review_interval": 0
+    },
+    {
+      "name": "RCNP",
+      "next_review": "2026-03-14",
+      "review_interval": 0
+    },
+    {
+      "name": "Reaction Rate",
+      "next_review": "2026-03-14",
+      "review_interval": 0
+    },
+    {
+      "name": "Silicon Detector",
+      "next_review": "2026-03-14",
+      "review_interval": 0
+    }
+  ],
+  "never_reviewed": [
+    {
+      "name": "Charge-Exchange Reaction",
+      "next_review": null,
+      "review_interval": 0
+    },
+    {
+      "name": "Double Gamow-Teller Giant Resonance",
+      "next_review": null,
+      "review_interval": 0
+    },
+    {
+      "name": "Gamow-Teller Transition",
+      "next_review": null,
+      "review_interval": 0
+    },
+    {
+      "name": "OEDO",
+      "next_review": null,
+      "review_interval": 0
+    },
+    {
+      "name": "SHARAQ Spectrometer",
+      "next_review": null,
+      "review_interval": 0
+    },
+    {
+      "name": "Surrogate Reaction",
+      "next_review": null,
+      "review_interval": 0
+    },
+    {
+      "name": "r-process Nucleosynthesis",
+      "next_review": null,
+      "review_interval": 0
+    },
+    {
+      "name": "GRE Physics",
+      "next_review": null,
+      "review_interval": 0
+    },
+    {
+      "name": "Circadian Rhythm",
+      "next_review": null,
+      "review_interval": 0
+    },
+    {
+      "name": "Dopamine Baseline",
+      "next_review": null,
+      "review_interval": 0
+    },
+    {
+      "name": "Habituation and Tolerance",
+      "next_review": null,
+      "review_interval": 0
+    },
+    {
+      "name": "Learned Helplessness",
+      "next_review": null,
+      "review_interval": 0
+    }
+  ],
+  "upcoming_7d": [],
+  "mastered": [],
+  "scheduled": []
+}

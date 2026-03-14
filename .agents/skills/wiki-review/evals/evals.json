@@ -1,0 +1,23 @@
+{
+  "skill_name": "wiki-review",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "/wiki-review",
+      "expected_output": "Scan all 40_Wiki notes, categorize by review status (overdue/due today/never reviewed/upcoming/mastered/scheduled), present a formatted queue table with counts and up to 10 ready-for-review notes sorted by priority, then ask user to choose full or quick mode.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "prompt": "/wiki-review full [[Bethe-Bloch Formula]]",
+      "expected_output": "Read the Bethe-Bloch Formula note, check/add review frontmatter, then start Phase 1 (Feynman Check) by asking user to explain the concept. After simulated user response, generate 5 adversarial questions (2 trick, 2 cross-concept using wikilinks from the note, 1 exam-style).",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "/wiki-review quick [[Vector_Spaces]]",
+      "expected_output": "Read the Vector_Spaces note, check/add review frontmatter, then generate 3 quick questions (1 core definition/fact, 1 application/context, 1 cross-link referencing a wikilink from the note). Present all 3 at once.",
+      "files": []
+    }
+  ]
+}

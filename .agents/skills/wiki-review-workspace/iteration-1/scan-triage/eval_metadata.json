@@ -1,0 +1,32 @@
+{
+  "eval_id": 0,
+  "eval_name": "scan-triage",
+  "prompt": "/wiki-review",
+  "assertions": [
+    {
+      "name": "queue_table_present",
+      "type": "contains_structure",
+      "description": "Output contains formatted category table with Overdue, Due Today, Never Reviewed, Upcoming, Mastered counts"
+    },
+    {
+      "name": "correct_total_count",
+      "type": "manual_check",
+      "description": "Total tracked count matches actual number of eligible wiki notes (no no-review tags excluded)"
+    },
+    {
+      "name": "priority_ordering",
+      "type": "structural",
+      "description": "Ready for Review list follows priority: Overdue > Due Today > Never Reviewed"
+    },
+    {
+      "name": "date_aware_categorization",
+      "type": "logical",
+      "description": "Notes with next_review before 2026-03-14 are Overdue, equal to 2026-03-14 are Due Today"
+    },
+    {
+      "name": "mode_prompt",
+      "type": "contains",
+      "description": "Output ends with asking user to choose full or quick mode"
+    }
+  ]
+}

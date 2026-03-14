@@ -1,0 +1,37 @@
+{
+  "eval_id": 1,
+  "eval_name": "full-mode-physics",
+  "prompt": "/wiki-review full [[Bethe-Bloch Formula]]",
+  "assertions": [
+    {
+      "name": "feynman_prompt",
+      "type": "contains",
+      "description": "Phase 1 asks user to explain Bethe-Bloch Formula in their own words"
+    },
+    {
+      "name": "feedback_identifies_omissions",
+      "type": "content_quality",
+      "description": "Phase 1 feedback identifies key omissions from simulated response (beta-gamma dependence, minimum ionizing particles, density/shell corrections)"
+    },
+    {
+      "name": "three_followup_questions",
+      "type": "count",
+      "description": "Phase 1 generates exactly 3 follow-up probing questions"
+    },
+    {
+      "name": "five_adversarial_questions",
+      "type": "count",
+      "description": "Phase 2 generates 5 adversarial questions with correct type distribution (2 trick, 2 cross-concept, 1 exam-style)"
+    },
+    {
+      "name": "cross_concept_uses_wikilinks",
+      "type": "content_quality",
+      "description": "Cross-concept questions reference actual wikilinks from the Bethe-Bloch Formula note (TPC, Scintillation Detector, Particle Identification, etc.)"
+    },
+    {
+      "name": "english_correction",
+      "type": "presence",
+      "description": "Output includes English language correction/feedback section"
+    }
+  ]
+}

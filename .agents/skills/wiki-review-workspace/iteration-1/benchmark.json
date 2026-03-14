@@ -1,0 +1,104 @@
+{
+  "skill_name": "wiki-review",
+  "iteration": 1,
+  "date": "2026-03-14",
+  "configurations": [
+    {
+      "name": "with_skill",
+      "label": "With wiki-review skill",
+      "results": [
+        {
+          "eval_id": 0,
+          "eval_name": "scan-triage",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "tokens": 31166,
+          "duration_seconds": 154.9
+        },
+        {
+          "eval_id": 1,
+          "eval_name": "full-mode-physics",
+          "pass_rate": 1.0,
+          "passed": 6,
+          "total": 6,
+          "tokens": 20801,
+          "duration_seconds": 152.8
+        },
+        {
+          "eval_id": 2,
+          "eval_name": "quick-mode-math",
+          "pass_rate": 1.0,
+          "passed": 5,
+          "total": 5,
+          "tokens": 24020,
+          "duration_seconds": 50.0
+        }
+      ],
+      "aggregate": {
+        "mean_pass_rate": 1.0,
+        "stddev_pass_rate": 0.0,
+        "mean_tokens": 25329,
+        "stddev_tokens": 5348,
+        "mean_duration_seconds": 119.2,
+        "stddev_duration_seconds": 59.8
+      }
+    },
+    {
+      "name": "without_skill",
+      "label": "Baseline (no skill)",
+      "results": [
+        {
+          "eval_id": 0,
+          "eval_name": "scan-triage",
+          "pass_rate": 0.2,
+          "passed": 1,
+          "total": 5,
+          "tokens": 46158,
+          "duration_seconds": 490.0
+        },
+        {
+          "eval_id": 1,
+          "eval_name": "full-mode-physics",
+          "pass_rate": 0.333,
+          "passed": 2,
+          "total": 6,
+          "tokens": 23488,
+          "duration_seconds": 98.3
+        },
+        {
+          "eval_id": 2,
+          "eval_name": "quick-mode-math",
+          "pass_rate": 0.6,
+          "passed": 3,
+          "total": 5,
+          "tokens": 20724,
+          "duration_seconds": 66.3
+        }
+      ],
+      "aggregate": {
+        "mean_pass_rate": 0.378,
+        "stddev_pass_rate": 0.201,
+        "mean_tokens": 30123,
+        "stddev_tokens": 13727,
+        "mean_duration_seconds": 218.2,
+        "stddev_duration_seconds": 237.7
+      }
+    }
+  ],
+  "delta": {
+    "pass_rate": "+0.622 (100% vs 37.8%)",
+    "tokens": "-4794 avg (25.3k vs 30.1k)",
+    "duration": "-99.0s avg (119s vs 218s)"
+  },
+  "analyst_observations": [
+    "The skill achieves 100% pass rate across all 3 test cases vs 37.8% baseline — a +62.2pp improvement.",
+    "Scan-triage shows the largest structural gap: baseline produces ad-hoc analysis (useful but unstructured) while the skill produces the exact queue format needed for the spaced-repetition workflow. Baseline also fails to exclude no-review tagged notes.",
+    "Full-mode skill enforces pedagogically sound structure: Feynman check before adversarial questions, constrained question counts (5+3), and English correction. Baseline dumps 16+10 questions — thorough but overwhelming for a single review session.",
+    "Quick-mode skill adds structured question typing (definition/application/cross-link) that baseline lacks. Both produce 3 questions, but the skill ensures topic coverage diversity.",
+    "Scan-triage baseline took 490s (3.2x longer than with-skill at 155s) because it read more note content and produced verbose per-note listings. The skill's focused frontmatter-only scan is more efficient.",
+    "The baseline produces higher-quality physics analysis in some areas (the full-mode C- grade breakdown is excellent), suggesting the raw capability is there — the skill's value is in structuring and constraining this capability into a repeatable workflow.",
+    "Non-discriminating assertion: 'date_aware_categorization' passed for both configurations in scan-triage. Claude naturally understands dates well.",
+    "Non-discriminating assertion: 'all_presented_at_once' and 'concise_format' both pass for baseline quick-mode. These are easy for Claude without a skill."
+  ]
+}
