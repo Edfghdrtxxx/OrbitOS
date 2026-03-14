@@ -8,7 +8,7 @@ review_interval: 0
 ---
 # Magnetic Spectrometer
 
-![[Magnetic_Spectrometer_Principle.svg]]
+![[MagneticSpectrometer_Schematic.jpg|633]]
 
 ## Definition
 
