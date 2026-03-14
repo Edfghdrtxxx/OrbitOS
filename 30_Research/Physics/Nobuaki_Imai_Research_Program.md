@@ -60,7 +60,7 @@ The group's physics program spans two broad pillars:
 | Research student | Qin Hao | — |
 | MEXT scholar | Yasmin Anuar | — |
 
-**Related group at CNS:** Prof. Nori Aoi leads the **NUSPEQ** group (Nuclear Structure and Production of Exotic Quanta), which operates the CAT-M active-target TPC. Both groups share the OEDO-SHARAQ infrastructure and collaborate closely.
+**Related group at CNS:** Prof. Nori Aoi leads the **NUSPEQ** group (Nuclear Structure and Production of Exotic Quanta), which operates the CAT-M [[Active-Target TPC|active-target TPC]]. Both groups share the OEDO-SHARAQ infrastructure and collaborate closely.
 
 ---
 
@@ -68,7 +68,7 @@ The group's physics program spans two broad pillars:
 
 ### 3.1 Purpose and Motivation
 
-The **OEDO** system (*Optimized Energy-Degrading Optics for RI beams*) solves a fundamental problem at in-flight [[Radioactive Isotope Beam|RI beam]] facilities: projectile fragmentation and in-flight fission at [[BigRIPS]] produce secondary beams at $\sim200$ MeV/u, but many reaction studies — [[Transfer Reactions|nucleon transfer]], sub-barrier Coulomb excitation, surrogate reactions — require beam energies of $10$–$50$ MeV/u with good energy resolution.
+The **OEDO** system (*Optimized Energy-Degrading Optics for RI beams*) solves a fundamental problem at in-flight [[Radioactive Isotope Beam|RI beam]] facilities: projectile fragmentation and in-flight fission at [[BigRIPS]] produce secondary beams at $\sim200$ MeV/u, but many reaction studies — [[Transfer Reactions|nucleon transfer]], sub-barrier [[Coulomb Excitation|Coulomb excitation]], [[Surrogate Reaction|surrogate reactions]] — require beam energies of $10$–$50$ MeV/u with good energy resolution.
 
 Conventional thick degraders destroy beam quality (emittance blow-up, straggling). OEDO achieves achromatic energy degradation while preserving beam optics.
 
@@ -281,7 +281,7 @@ This solves the fundamental dynamic-range problem in active-target TPCs: the bea
 | 2024 | **PRL** | $3n$/$3p$ spectroscopy | Spectroscopy of three-nucleon systems |
 | 2024 | — (preprint or proceeding) | ${}^{93}$Zr spallation cross-sections | Cross-section measurements for long-lived fission product ${}^{93}$Zr |
 | 2024 | **PRC** v110 | ${}^{130}$Sn neutron capture for r-process | Constraining r-process nucleosynthesis path near $N=82$ shell closure |
-| 2023 | **PTEP** | DG-M-THGEM for active-target [[Time Projection Chamber|TPC]] | Dual-gain THGEM prototype; stable to $2.5 \times 10^6$ pps; gain ratio beam/recoil < 100/2000 |
+| 2023 | **PTEP** | DG-M-THGEM for [[Active-Target TPC|active-target TPC]] | Dual-gain THGEM prototype; stable to $2.5 \times 10^6$ pps; gain ratio beam/recoil < 100/2000 |
 | 2019 | **PTEP** | OEDO beamline description | Comprehensive technical paper on OEDO design and commissioning. **Imai first-author.** |
 
 ---
@@ -308,6 +308,22 @@ This solves the fundamental dynamic-range problem in active-target TPCs: the bea
 - [[Particle Identification]]
 - [[BigRIPS]]
 - [[Radioactive Isotope Beam]]
+- [[Charge-Exchange Reaction]]
+- [[Gamow-Teller Transition]]
+- [[Fermi Transition]]
+- [[Surrogate Reaction]]
+- [[Inverse Kinematics]]
+- [[Coulomb Excitation]]
+- [[Missing-Mass Spectroscopy]]
+- [[Isobaric Analog State]]
+- [[Giant Resonance]]
+- [[Shell Evolution]]
+- [[Deformation Coexistence]]
+- [[Neutrinoless Double-Beta Decay]]
+- [[Nuclear Matrix Element]]
+- [[Active-Target TPC]]
+- [[Diamond Detector]]
+- [[Double Gamow-Teller Giant Resonance]]
 
 ### Online Sources
 
