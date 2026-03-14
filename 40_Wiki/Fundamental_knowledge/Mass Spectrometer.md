@@ -8,6 +8,8 @@ review_interval: 0
 ---
 # Mass Spectrometer
 
+![[Mass_Spectrometer_Schematic.svg]]
+
 ## Definition
 
 A mass spectrometer is an instrument that measures the mass-to-charge ratio ($m/q$) of ions by exploiting differences in their trajectories under electromagnetic fields. In nuclear physics, mass spectrometers determine atomic masses with high precision, providing critical input for [[Binding Energy]] calculations and nuclear structure studies.

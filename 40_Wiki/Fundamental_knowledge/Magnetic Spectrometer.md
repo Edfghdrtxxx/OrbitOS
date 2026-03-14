@@ -8,6 +8,8 @@ review_interval: 0
 ---
 # Magnetic Spectrometer
 
+![[Magnetic_Spectrometer_Principle.svg]]
+
 ## Definition
 
 A magnetic spectrometer is a device that uses magnetic fields to analyze charged particles by bending their trajectories according to their [[Magnetic Rigidity]] $B\rho = p/q$, enabling momentum determination and [[Particle Identification]]. In nuclear and particle physics, magnetic spectrometers are essential for measuring reaction products in scattering experiments and for [[Isotope Separation]] of [[Radioactive Isotope Beam]] species.
