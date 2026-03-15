@@ -13,10 +13,10 @@ Launch an Explore agent (`Agent` tool, `subagent_type: Explore`) with the follow
 > Wikilink gap analysis for **"{source_path}"**:
 > 1. **Read source:** Read the file at `{source_path}` in full
 > 2. **Collect vault notes:** Glob `40_Wiki/**/*.md`, `30_Research/**/*.md`, `50_Resources/**/*.md` — collect all filenames (without extension)
-> 3. **Cross-reference:** For each vault note name, check if it appears in the source as `[[name]]` or `[[name|...]]` (already linked) vs as plain text (exists but unlinked, case-insensitive). Classify into: **already linked**, **exists but unlinked**
+> 3. **Cross-reference:** For each vault note name, check if it appears in the source as `[[name]]` or `[[name|...]]` (already linked) vs as plain text (exists but unlinked, case-insensitive). Classify into: **already linked**, **exists but unlinked**. For each unlinked concept, also report the **line number and surrounding text** of its first occurrence in body text (skip frontmatter).
 > 4. **Concept extraction:** Identify terms in the source that merit standalone atomic wiki notes but have no match in the vault. Filters: must be a real concept (not trivial words or generic phrases), must be atomic (single-concept), ignore context-local terms
 >
-> Return: already-linked list, exists-unlinked list, missing-concepts list.
+> Return: already-linked list, exists-unlinked list (with line number + context for each), missing-concepts list.
 
 **Main agent uses the returned results for S3 onward.**
 
@@ -40,11 +40,11 @@ For each **Exists (unlinked)** concept:
 
 ## S4.5. Image Enrichment
 
-Read and follow `references/image-enrichment.md` (in this same skill directory). Run all steps (I1–I5, including I3.5) against the **scanned source note**:
+Read and follow `references/image-enrichment.md` (in this same skill directory). Run all steps (I1–I4) against the **scanned source note**:
 
 - Use the source note's title as `{ConceptName}` for the local check (I1) and Wikimedia search (I2).
 - If the source note already has a `## Schematics` section with images, report them and still proceed to fetch more from Wikimedia.
-- If the source note has no `## Schematics` section, run the full I1–I5 flow (including I3.5) and insert the section.
+- If the source note has no `## Schematics` section, run the full I1–I4 flow and insert the section.
 
 ## S5. Batch Creation
 

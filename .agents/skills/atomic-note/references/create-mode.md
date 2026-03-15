@@ -14,12 +14,17 @@ Launch an Explore agent (`Agent` tool, `subagent_type: Explore`) with the follow
 >
 > Return all four results clearly labeled.
 
+**If the user specified a source file** (e.g. `/atomic-note {topic} in <file>`), append this additional step to the Explore agent prompt before sending — substitute `{source_path}` with the actual file path:
+
+> 5. **Backlink scan:** Grep `{source_path}` for plain-text mentions of `{topic}` (not already wrapped in `[[]]`). Report line numbers and surrounding context for each match.
+
 **Main agent rules on returned results:**
 
 - **Exact duplicate found →** report and **stop**.
 - **Near-duplicates found →** report them, ask user: proceed / merge / stop. Do NOT silently create a duplicate.
 - **Subfolder placement:** use a subfolder only if the topic **clearly** fits one. Ask only if genuinely ambiguous between 2+. Otherwise default to `40_Wiki/`.
 - **Wikilink matching:** match collected note names against the new topic's content — insert `[[ExistingNote]]` wikilinks in Definition, Key Points, and Related Concepts. Terms that could become future atomic notes → stub wikilinks in Related Concepts.
+- **Backlink insertion (if step 5 was included):** After the note is created (C2–C3), offer the user to insert `[[{topic}]]` wikilinks at the reported locations in the source file. Insert only on confirmation.
 
 ## C2. Note Generation
 
@@ -36,7 +41,7 @@ Read and follow `99_System/Templates/Wiki_Template.md` strictly. Additional rule
 
 ## C3. Image Enrichment
 
-Read and follow `references/image-enrichment.md` (in this same skill directory). Run all steps (I1–I5, including I3.5) to find, download, view, and embed schematics into the newly created note. The `## Schematics` section goes after the `# Heading` and before `## Definition`.
+Read and follow `references/image-enrichment.md` (in this same skill directory). Run all steps (I1–I4) — the subagent fetches images, you view/confirm them, then embed. The `## Schematics` section goes after the `# Heading` and before `## Definition`.
 
 ## C4. Post-Creation Report
 
