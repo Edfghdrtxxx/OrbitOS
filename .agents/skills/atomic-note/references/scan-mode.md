@@ -44,7 +44,7 @@ For each **Exists (unlinked)** concept:
 Read and follow `references/image-enrichment.md` (in this same skill directory). Run steps I1–I4 against the **scanned source note**:
 
 - Use the source note's title as `{ConceptName}` for the local check (I1) and Wikimedia search (I2).
-- If the source note already has a `## Schematics` section with images, report them and ask whether to fetch more.
+- If the source note already has a `## Schematics` section with images, report them and still proceed to fetch more from Wikimedia.
 - If the source note has no `## Schematics` section, run the full I1–I4 flow and insert the section.
 
 ## S5. Batch Creation
@@ -66,10 +66,7 @@ Wikilinks patched into source: [[C]], [[D]]
 Notes created: [[E]], [[F]]
 Skipped: [[G]]
 
-Images:
-  Local:    {count} existing in Attachments
-  Fetched:  {count} downloaded from Wikimedia Commons
-  Embedded: {list of ![[filenames]]}
+{I5 image report — see image-enrichment.md}
 ```
 
 After the report, append a brief **Hints** line listing other available modes:

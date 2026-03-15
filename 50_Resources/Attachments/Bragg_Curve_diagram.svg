@@ -1,0 +1,8 @@
+<svg width="253mm" height="175mm" version="1.1" viewBox="0 0 253 175" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <rect width="253" height="175" fill="#fff"/><path d="m28 6v143h218" fill="none" stroke="#000"/><path d="m22.5 7h6m-6 71h6m-6 71h6m218 0v6m-73-6v6m-73-6v6m-73-6v6"   stroke="#000" stroke-width=".5"/>
+ <g fill="none" stroke-width="1.5"><path d="m28 76c48-7 106-9 137-61 1-2 5-7 11-8 5 0 9 0 13 0 4 0 6 2 7 8 7 40 4 78 10 121 1 5 7 12 8 11" stroke="#00f"/>
+ <path d="m28 111c-1-1 80 5 134-18 21-9 29-19 33-40 3-13 4-31 4-44 4 43 0 91 7 130 1 7 8 9 8 9" stroke="#f00"/><path d="m28 55c1-3 8-38 9-39 4-12 12-9 17-5 25 17 51 38 77 57 33 24 90 46 112 49" stroke="#080"/></g>
+ <g style="font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman'" font-size="10px">
+ <g font-size="9px"><text x="31" y="86" fill="#00f">modified PROTON beam<tspan x="31" y="94">250 MeV</tspan></text><text x="31" y="59" fill="#080">PHOTON beam</text><text x="31" y="69" fill="#080"> 6 MeV</text><text x="31" y="121" fill="#f00">native PROTON beam 250 MeV</text></g>
+ <g text-anchor="middle"><text x="28" y="161">0</text><text x="101" y="161">10</text><text x="174" y="161">20</text><text x="247" y="161">30</text><text x="137" y="171">Depth in Tissue (cm)</text></g>
+ <g text-anchor="end"><text transform="rotate(-90)" x="-55" y="09">Dose (%)</text><text x="21" y="9">100</text><text x="21" y="80">50</text><text x="21" y="152">0</text></g></g></svg>

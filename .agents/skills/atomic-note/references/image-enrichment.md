@@ -13,29 +13,16 @@ All image files in `50_Resources/Attachments/` follow this pattern:
 | Component | Rule | Examples |
 |---|---|---|
 | `ConceptName` | Note title, spaces → underscores | `Cyclotron`, `Lorentz_Force`, `RF_Electric_Field` |
-| `descriptor` | Short semantic label (see table below) | `schematic`, `principle`, `patent` |
+| `descriptor` | Short semantic label (see list below) | `schematic`, `principle`, `patent` |
 | `ext` | Original format preserved | `png`, `svg`, `jpg` |
 
-**Standard descriptors** (pick the most fitting):
-
-| Descriptor | Use for |
-|---|---|
-| `schematic` | Labeled technical drawing showing components |
-| `diagram` | Conceptual/block diagram |
-| `principle` | Diagram showing operating principle or physics |
-| `cross_section` | Cross-sectional view |
-| `patent` | Patent drawing |
-| `graph` | Plot / data graph |
-| `photo` | Photograph of real equipment |
-| `comparison` | Side-by-side or overlay comparison (extend mode) |
-
-If multiple images share the same descriptor, append a number: `Cyclotron_schematic_2.png`.
+**Standard descriptors:** `schematic`, `diagram`, `principle`, `cross_section`, `patent`, `graph`, `photo`, `comparison` (extend mode). If multiple images share the same descriptor, append a number: `Cyclotron_schematic_2.png`.
 
 ## I1. Local Image Check
 
 Glob `50_Resources/Attachments/{ConceptName}_*` (where `{ConceptName}` = note title with spaces → underscores).
 
-- **Images found →** list them, embed any that aren't already in the note, then ask: **"Existing images found. Fetch more from Wikimedia? (yes / no)"**
+- **Images found →** list them, embed any that aren't already in the note, then proceed to I2 to fetch additional schematics.
 - **No images found →** proceed to I2.
 
 ## I2. Wikimedia Commons Search
@@ -61,7 +48,7 @@ Verify the file downloaded successfully (non-zero size).
 
 ## I4. Embed in Note
 
-Insert a `## Schematics` section **immediately after the frontmatter closing `---`** and before `## Definition` (for wiki notes) or before the first body heading (for research notes).
+Insert a `## Schematics` section **after the `# Heading`** and before `## Definition` (for wiki notes) or before the first body heading (for research notes).
 
 **Embedding format** — each image uses two lines:
 
@@ -73,6 +60,7 @@ Insert a `## Schematics` section **immediately after the frontmatter closing `--
 - One blank line between image–caption pairs.
 - Caption is italic (`*...*`), describes the content, and ends with parenthesized license + source.
 - If the note already has a `## Schematics` section, append new images to it rather than creating a duplicate section.
+- **Dedup:** Skip any image whose `![[filename]]` already appears in the note.
 
 ## I5. Image Report
 

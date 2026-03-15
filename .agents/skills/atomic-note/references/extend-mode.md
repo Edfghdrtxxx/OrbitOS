@@ -116,10 +116,7 @@ Sections generated:
   When to Use Which
   Related Concepts
 
-Images:
-  Local:    {count} existing in Attachments
-  Fetched:  {count} downloaded from Wikimedia Commons
-  Embedded: {list of ![[filenames]]}
+{I5 image report — see image-enrichment.md}
 ```
 
 After the report, append a brief **Hints** line listing other available modes:
