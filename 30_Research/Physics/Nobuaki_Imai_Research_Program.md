@@ -18,7 +18,7 @@ created: 2026-03-13
 **Career trajectory:**
 - **PhD** — University of Tokyo
 - **RIKEN** — postdoctoral research
-- **KEK** (High Energy Accelerator Research Organization) — ~10 years, including 2 years as a visiting researcher at **CERN**
+- **[[KEK]]** (High Energy Accelerator Research Organization) — ~10 years, including 2 years as a visiting researcher at **[[CERN]]**
 - **CNS, UTokyo** — Associate Professor (2014–present)
 
 His publication record spans **~288 publications** with **4,461+ citations**, reflecting sustained contributions across three interconnected research themes:
@@ -39,12 +39,12 @@ The group's physics program spans two broad pillars:
 
 **Nuclear Structure:**
 - [[Deformation Coexistence]] in neutron-rich nuclei
-- Collective motions (rotational bands, vibrational excitations)
-- Extreme rotation and high-spin states
+- [[Collective Motions]] (rotational bands, vibrational excitations)
+- [[Extreme Rotation]] and [[High-spin States]]
 
 **Nuclear Reaction Dynamics:**
-- Astrophysical nucleosynthesis — neutron capture cross sections relevant to the [[r-process|rapid neutron capture process]]
-- Superheavy element production mechanisms
+- Astrophysical nucleosynthesis — [[Neutron Capture Cross Section|neutron capture cross sections]] relevant to the [[r-process Nucleosynthesis|r-process]]
+- [[Superheavy Element|Superheavy element]] production mechanisms
 - Nuclear waste transmutation via surrogate reaction methods
 
 ### SAKURA Sub-project
@@ -68,7 +68,7 @@ The group's physics program spans two broad pillars:
 
 ### 3.1 Purpose and Motivation
 
-The **OEDO** system (*Optimized Energy-Degrading Optics for RI beams*) solves a fundamental problem at in-flight [[Radioactive Isotope Beam|RI beam]] facilities: projectile fragmentation and in-flight fission at [[BigRIPS]] produce secondary beams at $\sim200$ MeV/u, but many reaction studies — [[Transfer Reactions|nucleon transfer]], sub-barrier [[Coulomb Excitation|Coulomb excitation]], [[Surrogate Reaction|surrogate reactions]] — require beam energies of $10$–$50$ MeV/u with good energy resolution.
+The **OEDO** system (*Optimized Energy-Degrading Optics for RI beams*) solves a fundamental problem at in-flight [[Radioactive Isotope Beam|RI beam]] facilities: [[Projectile Fragmentation|projectile fragmentation]] and [[In-Flight Fission|in-flight fission]] at [[BigRIPS]] produce secondary beams at $\sim200$ MeV/u, but many reaction studies — [[Transfer Reactions|nucleon transfer]], sub-barrier [[Coulomb Excitation|Coulomb excitation]], [[Surrogate Reaction|surrogate reactions]] — require beam energies of $10$–$50$ MeV/u with good [[Energy Resolution|energy resolution]].
 
 Conventional thick degraders destroy beam quality (emittance blow-up, straggling). OEDO achieves achromatic energy degradation while preserving beam optics.
 
@@ -110,7 +110,7 @@ This combination — an energy-degrading RI beamline feeding a high-resolution s
 ### 3.5 Physics Enabled
 
 - **Nucleon transfer reactions** $(d,p)$, $(p,d)$ at $10$–$30$ MeV/u on unstable targets (in [[Inverse Kinematics|inverse kinematics]]) — extract [[Spectroscopic Factor|spectroscopic factors]] and single-particle structure via [[DWBA]] analysis
-- **Sub-barrier [[Coulomb Excitation|Coulomb excitation]]** — measure $B(E2)$ values and probe deformation in exotic nuclei
+- **Sub-barrier [[Coulomb Excitation|Coulomb excitation]]** — measure [[B(E2)|$B(E2)$]] values and probe deformation in exotic nuclei
 - **Surrogate reactions** for astrophysics — $(d,p)$ as a surrogate for $(n,\gamma)$ to constrain r-process reaction rates on short-lived nuclei
 
 ---
@@ -119,7 +119,7 @@ This combination — an energy-degrading RI beamline feeding a high-resolution s
 
 ### 4.1 Gamow-Teller Transitions
 
-The **[[Gamow-Teller Transition|Gamow-Teller (GT) transition]]** is mediated by the axial-vector part of the weak interaction. The transition operator is:
+The **[[Gamow-Teller Transition|Gamow-Teller (GT) transition]]** is mediated by the axial-vector part of the [[Weak Interaction|weak interaction]]. The transition operator is:
 
 $$\hat{O}_{GT} = g_A \sum_k \boldsymbol{\sigma}_k \boldsymbol{\tau}_k$$
 
@@ -137,7 +137,7 @@ The **Gamow-Teller Giant Resonance** is a coherent superposition of $1^+$ partic
 
 ### 4.3 Double GT (DGT) Resonance
 
-The **Double Gamow-Teller** transition applies the GT operator twice in sequence (a sequential double application of the GT operator):
+The **[[Double Gamow-Teller Giant Resonance|Double Gamow-Teller]]** transition applies the GT operator twice in sequence (a sequential double application of the GT operator):
 
 $$\hat{O}_{DGT} = \sum_{k,l} (\boldsymbol{\sigma}_k \tau^-_k)(\boldsymbol{\sigma}_l \tau^-_l)$$
 
@@ -147,7 +147,7 @@ where the sum runs over nucleon pairs $(k, l)$. This results in $\Delta Z = \pm 
 
 The DGT resonance has gained enormous significance because of a **linear correlation** between the DGT nuclear matrix element and the nuclear matrix element governing **[[Neutrinoless Double-Beta Decay|neutrinoless double-beta decay]]** ($0\nu\beta\beta$), as demonstrated by **Shimizu et al. (PRL, 2018)**.
 
-The $0\nu\beta\beta$ decay — if observed — would prove neutrinos are Majorana fermions and violate lepton number conservation. Extracting the neutrino mass from a $0\nu\beta\beta$ half-life measurement requires the [[Nuclear Matrix Element|nuclear matrix element]] $M^{0\nu}$, which is currently model-dependent and uncertain by factors of $\sim 2$–$3$. Measuring the DGT strength experimentally provides an **independent constraint** on these NMEs through a reaction mechanism that probes the same nuclear structure.
+The $0\nu\beta\beta$ decay — if observed — would prove neutrinos are [[Majorana Fermion|Majorana fermions]] and violate [[Lepton Number|lepton number]] conservation. Extracting the neutrino mass from a $0\nu\beta\beta$ half-life measurement requires the [[Nuclear Matrix Element|nuclear matrix element]] $M^{0\nu}$, which is currently model-dependent and uncertain by factors of $\sim 2$–$3$. Measuring the DGT strength experimentally provides an **independent constraint** on these NMEs through a reaction mechanism that probes the same nuclear structure.
 
 ### 4.5 Experimental Access at RIKEN
 
@@ -159,7 +159,7 @@ at $250$ MeV/u using the RIBF facility at RIKEN.
 
 **Why ${}^{12}\text{Be}(0^+_2)$?** The selection of the $0^+_2$ excited state of ${}^{12}\text{Be}$ ensures the DGT pathway. The double charge-exchange proceeds through a ${}^{12}\text{B}(1^+)$ intermediate state, requiring two successive spin-flip transitions — the hallmark of the DGT mechanism.
 
-**Detection method:** The ${}^{12}\text{Be}(0^+_2)$ state decays via an $E0$ transition (electric monopole, $0^+ \to 0^+$), which proceeds by **internal pair creation** ($e^+e^-$). The positron subsequently annihilates, producing characteristic **511 keV $\gamma$-rays** that serve as the experimental tag.
+**Detection method:** The ${}^{12}\text{Be}(0^+_2)$ state decays via an $E0$ transition (electric monopole, $0^+ \to 0^+$), which proceeds by **[[Internal Pair Creation|internal pair creation]]** ($e^+e^-$). The positron subsequently annihilates, producing characteristic **511 keV [[Gamma Ray|$\gamma$-rays]]** that serve as the experimental tag.
 
 ### 4.6 2024 PTEP Result
 
@@ -225,7 +225,7 @@ The **NUMEN** (NUclear Matrix Elements for Neutrinoless double-beta decay) proje
 
 ### 5.5 RIKEN Approach
 
-The RIKEN program operates at $250$ MeV/u — significantly higher than NUMEN. At these energies, the **direct reaction mechanism dominates** over multi-step processes, yielding a **simpler theoretical interpretation** via [[DWBA]] and distorted-wave approaches. The trade-off is lower cross sections at forward angles.
+The RIKEN program operates at $250$ MeV/u — significantly higher than NUMEN. At these energies, the **[[Direct Reactions|direct reaction]] mechanism dominates** over multi-step processes, yielding a **simpler theoretical interpretation** via [[DWBA]] and distorted-wave approaches. The trade-off is lower cross sections at forward angles.
 
 ---
 
@@ -233,7 +233,7 @@ The RIKEN program operates at $250$ MeV/u — significantly higher than NUMEN. A
 
 ### 6.1 Diamond Detectors
 
-Imai has pursued **CVD (Chemical Vapor Deposition) diamond** as a detector material for beam diagnostics and [[Particle Identification|particle identification]] at OEDO.
+Imai has pursued **[[CVD|CVD (Chemical Vapor Deposition)]] diamond** as a detector material for beam diagnostics and [[Particle Identification|particle identification]] at OEDO.
 
 **Material advantages of diamond:**
 
@@ -244,7 +244,7 @@ Imai has pursued **CVD (Chemical Vapor Deposition) diamond** as a detector mater
 | Radiation hardness | Extreme — survives high-fluence RI beam environments |
 | Count rate capability | Very high — suitable for beam rates $> 10^6$ pps |
 
-**Ultra-thin diamond $\Delta E/E$ telescopes:** By fabricating diamond films $< 10$ $\mu$m thick, Imai's group has developed $\Delta E$–$E$ telescope configurations for **low-energy heavy-ion PID** at $2$–$3$ MeV/u. At these energies, conventional silicon $\Delta E$ detectors are too thick (ions stop in the $\Delta E$ layer), making ultra-thin diamond essential.
+**Ultra-thin diamond $\Delta E/E$ telescopes:** By fabricating diamond films $< 10$ $\mu$m thick, Imai's group has developed [[ΔE-E Method|$\Delta E$–$E$ telescope]] configurations for **low-energy heavy-ion PID** at $2$–$3$ MeV/u. At these energies, conventional silicon $\Delta E$ detectors are too thick (ions stop in the $\Delta E$ layer), making ultra-thin diamond essential.
 
 These detectors are particularly suited for **beam tracking and diagnostics** at OEDO, where slowed-down RI beams have low energy and high $Z$, demanding thin, fast, radiation-hard detectors.
 
@@ -259,7 +259,7 @@ A 2023 PTEP paper (Iwamoto, Ota, Imai et al.) describes the **DG-M-[[THGEM]]** p
 | Beam region | $< 100$ | Prevents saturation from high-ionization beam particles |
 | Recoil region | $\sim 2000$ | Amplifies faint recoil tracks for detection |
 
-This solves the fundamental dynamic-range problem in active-target TPCs: the beam particle deposits orders of magnitude more energy than the light recoil products of interest.
+This solves the fundamental [[Dynamic Range|dynamic-range]] problem in active-target TPCs: the beam particle deposits orders of magnitude more energy than the light recoil products of interest.
 
 **Stability:** Demonstrated stable operation up to $2.5 \times 10^6$ pps beam intensity.
 
@@ -280,7 +280,7 @@ This solves the fundamental dynamic-range problem in active-target TPCs: the bea
 | 2024 | **PTEP** | DGT candidate in ${}^{48}$Ca via $({}^{12}\text{C}, {}^{12}\text{Be}(0^+_2))$ | First candidate observation of DGTGR; $0°$ cross section $1.33 \pm 0.12$ $\mu$b/sr; ~40% DGT via [[DWBA]] decomposition |
 | 2024 | **PRL** | $3n$/$3p$ spectroscopy | Spectroscopy of three-nucleon systems |
 | 2024 | — (preprint or proceeding) | ${}^{93}$Zr spallation cross-sections | Cross-section measurements for long-lived fission product ${}^{93}$Zr |
-| 2024 | **PRC** v110 | ${}^{130}$Sn neutron capture for r-process | Constraining r-process nucleosynthesis path near $N=82$ shell closure |
+| 2024 | **PRC** v110 | ${}^{130}$Sn neutron capture for r-process | Constraining r-process nucleosynthesis path near $N=82$ [[Shell closure|shell closure]] |
 | 2023 | **PTEP** | DG-M-THGEM for [[Active-Target TPC|active-target TPC]] | Dual-gain THGEM prototype; stable to $2.5 \times 10^6$ pps; gain ratio beam/recoil < 100/2000 |
 | 2019 | **PTEP** | OEDO beamline description | Comprehensive technical paper on OEDO design and commissioning. **Imai first-author.** |
 
@@ -324,6 +324,23 @@ This solves the fundamental dynamic-range problem in active-target TPCs: the bea
 - [[Active-Target TPC]]
 - [[Diamond Detector]]
 - [[Double Gamow-Teller Giant Resonance]]
+- [[KEK]]
+- [[CERN]]
+- [[Projectile Fragmentation]]
+- [[In-Flight Fission]]
+- [[Energy Resolution]]
+- [[Neutron Capture Cross Section]]
+- [[Superheavy Element]]
+- [[B(E2)]]
+- [[Weak Interaction]]
+- [[Majorana Fermion]]
+- [[Lepton Number]]
+- [[Internal Pair Creation]]
+- [[Gamma Ray]]
+- [[CVD]]
+- [[ΔE-E Method]]
+- [[Dynamic Range]]
+- [[Shell closure]]
 
 ### Online Sources
 
