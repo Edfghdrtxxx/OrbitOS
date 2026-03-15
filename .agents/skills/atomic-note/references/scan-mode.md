@@ -45,7 +45,7 @@ Read and follow `references/image-enrichment.md` (in this same skill directory).
 
 - Use the source note's title as `{ConceptName}` for the local check (I1) and Wikimedia search (I2).
 - If the source note already has a `## Schematics` section with images, report them and still proceed to fetch more from Wikimedia.
-- If the source note has no `## Schematics` section, run the full I1–I4 flow and insert the section.
+- If the source note has no `## Schematics` section, run the full I1–I5 flow (including I3.5) and insert the section.
 
 ## S5. Batch Creation
 
