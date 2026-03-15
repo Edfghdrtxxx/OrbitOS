@@ -15,6 +15,8 @@ created: 2026-03-13
 
 **Nobuaki Imai** (今井伸明) is an Associate Professor at the [[UTokyo CNS|Center for Nuclear Study (CNS)]], University of Tokyo, a position he has held since 2014. He is the scientific coordinator of the **[[OEDO]]-[[SHARAQ Spectrometer|SHARAQ]]** beamline system at [[RIKEN Nishina Center for Accelerator-Based Science (RNC)|RIKEN RIBF]].
 
+**See also:** [[Prof_Nobuaki_Imai|Professor Profile]] | [[Nobuaki_Imai_Research_Landscape.canvas|Research Landscape (canvas)]]
+
 **Career trajectory:**
 - **PhD** — University of Tokyo
 - **RIKEN** — postdoctoral research
@@ -56,7 +58,7 @@ The group's physics program spans two broad pillars:
 | Role | Name | Notes |
 |------|------|-------|
 | PI | Nobuaki Imai | Associate Professor |
-| D2 | Jiatai Li | RIKEN JRA fellow |
+| D3 (thesis completed Jan 2026) | Jiatai Li | RIKEN JRA fellow |
 | Research student | Qin Hao | — |
 | MEXT scholar | Yasmin Anuar | — |
 
@@ -101,9 +103,11 @@ Two sets of superconducting quadrupole triplets **refocus** the decelerated beam
 
 ### 3.4 SHARAQ Spectrometer
 
-Downstream of S0, the **SHARAQ** magnetic spectrometer (configuration: **QQDQD** — two quadrupoles, dipole, quadrupole, dipole) performs high-resolution [[Missing-Mass Spectroscopy|missing-mass spectroscopy]] with a resolving power of:
+Downstream of S0, the **SHARAQ** magnetic spectrometer (configuration: **QQDQD** — two quadrupoles, dipole, quadrupole, dipole) performs high-resolution [[Missing-Mass Spectroscopy|missing-mass spectroscopy]] with a momentum resolution of:
 
 $$\frac{\Delta p}{p} = \frac{1}{15000}$$
+
+(equivalently, a resolving power $p/\Delta p = 15000$).
 
 This combination — an energy-degrading RI beamline feeding a high-resolution spectrometer — is currently the only facility of its kind, combining achromatic energy degradation with high-resolution missing-mass spectroscopy for RI beams ([Imai et al., PTEP 2019, 023D02](https://doi.org/10.1093/ptep/ptz002)).
 
@@ -121,9 +125,9 @@ This combination — an energy-degrading RI beamline feeding a high-resolution s
 
 The **[[Gamow-Teller Transition|Gamow-Teller (GT) transition]]** is mediated by the axial-vector part of the [[Weak Interaction|weak interaction]]. The transition operator is:
 
-$$\hat{O}_{GT} = g_A \sum_k \boldsymbol{\sigma}_k \boldsymbol{\tau}_k$$
+$$\hat{O}_{GT^\pm} = g_A \sum_k \boldsymbol{\sigma}_k \tau^\pm_k$$
 
-where $\boldsymbol{\sigma}$ is the spin operator and $\boldsymbol{\tau}$ the isospin-lowering (or raising) operator. The selection rules are:
+where $\boldsymbol{\sigma}$ is the spin operator and $\tau^+$ ($\tau^-$) converts a neutron into a proton (proton into a neutron), corresponding to $\Delta T_z = -1$ ($+1$) respectively. The selection rules are:
 
 - $\Delta J = 0, \pm 1$ (but $0 \to 0$ forbidden)
 - $\Delta \pi = 0$ (no parity change)
@@ -139,9 +143,9 @@ The **Gamow-Teller Giant Resonance** is a coherent superposition of $1^+$ partic
 
 The **[[Double Gamow-Teller Giant Resonance|Double Gamow-Teller]]** transition applies the GT operator twice in sequence (a sequential double application of the GT operator):
 
-$$\hat{O}_{DGT} = \sum_{k,l} (\boldsymbol{\sigma}_k \tau^-_k)(\boldsymbol{\sigma}_l \tau^-_l)$$
+$$\hat{O}_{DGT^\pm} = \sum_{k,l} (\boldsymbol{\sigma}_k \tau^\pm_k)(\boldsymbol{\sigma}_l \tau^\pm_l)$$
 
-where the sum runs over nucleon pairs $(k, l)$. This results in $\Delta Z = \pm 2$ (double charge change). The DGT is a **two-phonon [[Giant Resonance|giant resonance]]**, first predicted theoretically by **Auerbach, Zamick & Zheng (1989)**.
+where the sum runs over nucleon pairs $(k, l)$. The $\tau^+$ form converts two neutrons into protons ($\Delta Z = +2$ on the target), while the $\tau^-$ form converts two protons into neutrons ($\Delta Z = -2$). The DGT is a **two-phonon [[Giant Resonance|giant resonance]]**, first predicted theoretically by **Auerbach, Zamick & Zheng (1989)**.
 
 ### 4.4 Scientific Importance — Connection to $0\nu\beta\beta$
 
@@ -153,9 +157,9 @@ The $0\nu\beta\beta$ decay — if observed — would prove neutrinos are [[Major
 
 The DGT resonance is accessed via **heavy-ion double charge-exchange (DCX) reactions**:
 
-$${}^{48}\text{Ca}({}^{12}\text{C}, {}^{12}\text{Be}(0^+_2))$$
+$${}^{48}\text{Ca}({}^{12}\text{C}, {}^{12}\text{Be}(0^+_2)) \, {}^{48}\text{Ti}$$
 
-at $250$ MeV/u using the RIBF facility at RIKEN.
+at $250$ MeV/u using the RIBF facility at RIKEN. In this reaction, the target undergoes $\Delta Z = +2$ (${}^{48}\text{Ca} \to {}^{48}\text{Ti}$), corresponding to the $\hat{O}_{DGT^+}$ operator (two neutrons converted to protons).
 
 **Why ${}^{12}\text{Be}(0^+_2)$?** The selection of the $0^+_2$ excited state of ${}^{12}\text{Be}$ ensures the DGT pathway. The double charge-exchange proceeds through a ${}^{12}\text{B}(1^+)$ intermediate state, requiring two successive spin-flip transitions — the hallmark of the DGT mechanism.
 
@@ -289,7 +293,7 @@ This solves the fundamental [[Dynamic Range|dynamic-range]] problem in active-ta
 ## 8. Currently Approved Experiments
 
 - **SHARAQ21–25**: As of December 2025, three new experimental proposals have been approved for the OEDO-SHARAQ system.
-- **SHARAQ19**: Completed. Jiatai Li (D2 student, RIKEN JRA) completed his PhD thesis based on SHARAQ19 data in **January 2026**.
+- **SHARAQ19**: Completed. Jiatai Li (D3 student, RIKEN JRA) completed his PhD thesis based on SHARAQ19 data in **January 2026**.
 
 ---
 

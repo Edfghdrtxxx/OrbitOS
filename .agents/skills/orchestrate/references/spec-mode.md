@@ -60,6 +60,11 @@ The task.md is a coordination artifact, not a contract. If scope changes mid-exe
 
 The task.md file is the single source of truth for all project progress. Do not track progress in conversation summaries, agent outputs, or any other artifact. Every completion, revision, or scope change must be reflected in task.md — if it is not in the file, it did not happen.
 
+**Direct verification (list-first):** Follow the tiered access priority from SKILL.md:
+1. **Glob first** — list `openspec/changes/<change-name>/` to confirm expected files exist (e.g., `review_01.md` was written). This is enough for most progress checks.
+2. **Read targeted** — read `task.md` to verify checkbox state, or a specific `review_*.md` to inspect its verdict, only when the sub-agent's return summary is ambiguous or conflicting.
+3. **Read full content** — only as a last resort when routing genuinely cannot proceed without the content. Prefer dispatching an Explore agent over pulling large files into the orchestrator's context.
+
 ## Phase 2 — DECOMPOSE
 
 1. Break the confirmed task into discrete sub-tasks. Each sub-task must have:

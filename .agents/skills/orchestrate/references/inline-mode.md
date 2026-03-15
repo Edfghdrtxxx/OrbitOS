@@ -27,7 +27,12 @@ The orchestrator is a **control plane, not a data conduit**. Sub-agent research 
 
 **Output convention:** Each sub-agent that produces intermediate content (research findings, drafted sections, collected data) writes to a numbered file in the scratch directory (e.g., `01_publications.md`, `02_physics_background.md`). The orchestrator tells each agent its output path in the dispatch prompt.
 
-**What the orchestrator receives:** Sub-agents return only a **1-2 sentence summary** (success/failure + scope covered). The orchestrator uses this summary for routing decisions — it does not need the full content.
+**What the orchestrator receives:** Sub-agents return only a **1-2 sentence summary** (success/failure + scope covered). The orchestrator uses this summary as the primary signal for routing decisions.
+
+**Direct verification (list-first):** Follow the tiered access priority from SKILL.md:
+1. **Glob first** — list `99_System/.scratch/<session-id>/` to confirm expected files exist (e.g., `01_publications.md`, `review_03.md` were written). This is enough for most progress checks.
+2. **Read targeted** — read a specific small file (e.g., `review_*.md` to check its verdict) only when the sub-agent's return summary is ambiguous or conflicting and you need the actual content to route correctly.
+3. **Read full content** — only as a last resort when downstream dispatch *cannot proceed* without understanding the content, AND dispatching an Explore agent would add unnecessary overhead. Pulling large scratch files into the orchestrator's context defeats the file-based handoff design.
 
 **What downstream agents receive:** Dependent sub-agents are given **file paths to read**, not re-serialized content. Example: "Read `99_System/.scratch/imai-research/01_publications.md` for prior findings."
 
