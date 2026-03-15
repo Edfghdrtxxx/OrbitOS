@@ -8,7 +8,9 @@ Use standard but light-weight spec workflow to accomplish complex tasks.
 openspec/
 └── changes/
     ├── [change-name]/
-    │   └── task.md
+    │   ├── task.md
+    │   ├── review_01.md
+    │   └── review_01b.md  (revision round 2, if needed)
     └── archive/
         └── YYYY-MM-DD-[name]/
             └── task.md
@@ -82,6 +84,7 @@ Self-check before sending any dispatch prompt: *"Am I telling the agent what to 
 
 **Isolation rule:**
 - When sub-agents make file changes, use `isolation: "worktree"` to prevent write conflicts between parallel agents.
+- **Exception — reviewers:** Reviewers write review files to the change directory (`openspec/changes/[change-name]/`). They must **NOT** use worktree isolation — their review files need to be on the shared filesystem so downstream implementers can read them. Non-overlapping file names (`review_01.md`, `review_02.md`) prevent write conflicts without worktree overhead.
 
 **Sub-agent types:** The Agent tool's `subagent_type` parameter selects different capabilities — `Explore` (fast, read-only codebase discovery), `Plan` (architecture design, returns plans not code), and `general-purpose` (full tool access, default). Choose based on what the sub-task actually needs.
 
@@ -93,14 +96,19 @@ Self-check before sending any dispatch prompt: *"Am I telling the agent what to 
 
 The reviewer's role is **skeptical auditor** — its job is to find problems, not to help. Give it the implementer's output and the files changed, then let it own HOW it audits. The reviewer decides its own approach to scrutiny.
 
+**Worktree access:** When the implementer ran in a worktree, pass the worktree path to the reviewer so it can read the implementer's actual file changes directly (e.g., "The implementer's changes are at `/tmp/worktree-abc123/` — read files from that path to review them"). The reviewer writes its review file to the shared change directory (`openspec/changes/[change-name]/`), not to the worktree.
+
 **Hard rules:**
-- Reviewers are **read-only** — they report findings but MUST NOT make changes themselves. Only implementer agents write to files.
-- Reviewers return one of: **approved** or **needs-revision** (with specific, actionable feedback).
+- Reviewers are **read-only w.r.t. implementation files** — they MUST NOT modify deliverables or any files written by implementers.
+- Reviewers **write a single review file** to the change directory: `review_<NN>.md` (where `<NN>` matches the task number, e.g., `review_01.md`). This is the reviewer's only permitted write. The orchestrator tells each reviewer its output path in the dispatch prompt.
+- Reviewers return a **1-2 sentence summary** to the orchestrator (approved/needs-revision + scope covered). The detailed findings live in the review file — the orchestrator does not need the full content.
+
+**Review file format:** Verdict line (`approved` or `needs-revision`), then a Findings section with specific, actionable items (file paths, line numbers, what's wrong, why it matters).
 
 **Revision loop:**
-1. If the reviewer returns **needs-revision**, dispatch a new implementer with the reviewer's feedback as additional context.
-2. After the new implementer completes, dispatch a new reviewer.
-3. **Max 4 revision rounds** per sub-task. If still unresolved, escalate to the user with full context (original objective, implementer outputs, reviewer feedback).
+1. If the reviewer returns **needs-revision**, dispatch a new implementer with the review file path as input context (e.g., "Read `openspec/changes/[change-name]/review_01.md` for reviewer feedback"). Do not re-serialize the review content into the dispatch prompt.
+2. After the new implementer completes, dispatch a new reviewer (which writes `review_<NN>b.md` for round 2, `review_<NN>c.md` for round 3, etc.).
+3. **Max 4 revision rounds** per sub-task. If still unresolved, escalate to the user with full context (original objective, implementer output paths, review file paths).
 
 **Checkpoint update:** After each review passes, dispatch a sub-agent to mark the corresponding checkbox in task.md as `[x]`. This keeps task.md as the live source of truth for progress.
 

@@ -48,13 +48,16 @@ The orchestrator is a **control plane, not a data conduit**. Sub-agent research 
 The reviewer's role is **skeptical auditor** — its job is to find problems, not to help. Give it the implementer's output files (both scratch files and final deliverables) and the files changed, then let it own HOW it audits. The reviewer decides its own approach to scrutiny — it can cross-check scratch files (source material) against deliverables.
 
 **Hard rules:**
-- Reviewers are **read-only** — they report findings but MUST NOT make changes themselves. Only implementer agents write to files.
-- Reviewers return one of: **approved** or **needs-revision** (with specific, actionable feedback).
+- Reviewers are **read-only w.r.t. implementation files** — they MUST NOT modify deliverables, scratch content, or any files written by implementers.
+- Reviewers **write a single review file** to the scratch directory: `review_<NN>.md` (where `<NN>` matches the sub-task number, e.g., `review_03.md`). This is the reviewer's only permitted write. The orchestrator tells each reviewer its output path in the dispatch prompt.
+- Reviewers return a **1-2 sentence summary** to the orchestrator (approved/needs-revision + scope covered). The detailed findings live in the review file — the orchestrator does not need the full content.
+
+**Review file format:** Verdict line (`approved` or `needs-revision`), then a Findings section with specific, actionable items (file paths, line numbers, what's wrong, why it matters).
 
 **Revision loop:**
-1. If the reviewer returns **needs-revision**, dispatch a new implementer with the reviewer's feedback as additional context.
-2. After the new implementer completes, dispatch a new reviewer.
-3. **Max 4 revision rounds** per sub-task. If still unresolved, escalate to the user with full context (original objective, implementer outputs, reviewer feedback).
+1. If the reviewer returns **needs-revision**, dispatch a new implementer with the review file path as input context (e.g., "Read `99_System/.scratch/<session-id>/review_03.md` for reviewer feedback"). Do not re-serialize the review content into the dispatch prompt.
+2. After the new implementer completes, dispatch a new reviewer (which writes `review_<NN>b.md` for round 2, `review_<NN>c.md` for round 3, etc.).
+3. **Max 4 revision rounds** per sub-task. If still unresolved, escalate to the user with full context (original objective, implementer output paths, review file paths).
 
 ## Phase 5 — SYNTHESIZE
 
