@@ -6,20 +6,19 @@ Scan attached content for missing wiki notes and unlinked references.
 
 Record the source file path (needed for patching in S4).
 
-## S2. Concept Extraction & Cross-Reference
+## S2. Vault Investigation (Explore Agent)
 
-**Extract candidates** — identify terms that merit standalone atomic wiki notes. Filters:
-- Must be a concept, not a trivial word or generic phrase
-- Must be atomic (single-concept)
-- Ignore context-local terms
+Launch an Explore agent (`Agent` tool, `subagent_type: Explore`) with the following prompt — substitute `{source_path}` with the actual file path:
 
-**Cross-reference** — Glob `40_Wiki/**/*.md`, `30_Research/**/*.md`, and `50_Resources/**/*.md`, collect filenames (without extension). Classify:
+> Wikilink gap analysis for **"{source_path}"**:
+> 1. **Read source:** Read the file at `{source_path}` in full
+> 2. **Collect vault notes:** Glob `40_Wiki/**/*.md`, `30_Research/**/*.md`, `50_Resources/**/*.md` — collect all filenames (without extension)
+> 3. **Cross-reference:** For each vault note name, check if it appears in the source as `[[name]]` or `[[name|...]]` (already linked) vs as plain text (exists but unlinked, case-insensitive). Classify into: **already linked**, **exists but unlinked**
+> 4. **Concept extraction:** Identify terms in the source that merit standalone atomic wiki notes but have no match in the vault. Filters: must be a real concept (not trivial words or generic phrases), must be atomic (single-concept), ignore context-local terms
+>
+> Return: already-linked list, exists-unlinked list, missing-concepts list.
 
-| Category | Condition |
-|---|---|
-| **Already linked** | Wiki note exists AND `[[wikilink]]` present in source |
-| **Exists (unlinked)** | Wiki note exists but NOT linked in source |
-| **Missing** | No wiki note exists |
+**Main agent uses the returned results for S3 onward.**
 
 ## S3. Gap Report
 
@@ -55,7 +54,7 @@ Ask: **Create missing notes? (all / pick / skip)**
 - **pick** — use `AskUserQuestion` to let user select.
 - **skip** — end with the report.
 
-For each selected concept, read and follow `create-mode.md` (in this same `references/` directory). Note: each created note will also run its own C4.5 image enrichment step.
+For each selected concept, read and follow `create-mode.md` (in this same `references/` directory). Note: each created note will also run its own C1 vault investigation and C3 image enrichment step.
 
 ## S6. Summary
 

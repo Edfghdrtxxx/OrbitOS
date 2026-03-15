@@ -1,33 +1,39 @@
 # Extend Mode — Comparison / Synthesis Research Note
 
-Generate a non-atomic comparison or synthesis note from multiple existing atomic Wiki notes. Output goes to `30_Research/<Area>/`, where `<Area>` is the area inferred in step E4.
+Generate a non-atomic comparison or synthesis note from multiple existing atomic Wiki notes. Output goes to `30_Research/<Area>/`, where `<Area>` is the area inferred in step E3.
 
 ## E1. Parse Input Topics
 
 Extract the comma-separated topic names from the user's invocation. Trim whitespace from each topic. There must be at least two topics; if only one is provided, inform the user that extend mode requires multiple topics and **stop**.
 
-## E2. Verify Source Notes Exist
+## E2. Vault Investigation (Explore Agent)
 
-For each topic, glob `40_Wiki/**/<topic>.md`.
+Launch an Explore agent (`Agent` tool, `subagent_type: Explore`) with the following prompt — substitute `{topics}` with the comma-separated topic list:
 
-- If a topic is not found, report which topics are missing, then use `AskUserQuestion` to offer three options:
-  1. **Create the missing note(s), then resume Extend.** For each missing topic, create an atomic note following the same structure as create-mode (C1–C4) but treating any C1 "stop" outcome as a skip for that topic — report the skip and continue with the remaining topics. After all missing topics are processed, resume E2 from the beginning (re-verify all topics).
-  2. **Proceed with only the found topics (skip missing).** Remove missing topics from the list and continue to E3 — but enforce E1's minimum-two-topics constraint: if fewer than 2 topics remain after removal, inform the user and **stop**.
+> Source verification and duplicate check for extend-mode topics: **{topics}**
+> 1. **Verify sources:** For each topic, glob `40_Wiki/**/<topic>.md`. Report found/not-found with paths.
+> 2. **Read sources:** For each found topic, read the note in full. Return: path, full frontmatter (`area`, `tags`), and body content.
+> 3. **Duplicate check:** Glob `30_Research/**/*.md`. Report any note whose filename contains ALL topic names (any order, case-insensitive).
+> 4. **Wikilink candidates:** Glob `40_Wiki/**/*.md`, `30_Research/**/*.md` — return all filenames (without extension) as a flat list for cross-linking in the generated note.
+>
+> Return all results clearly labeled per topic.
+
+**Main agent rules on returned results:**
+
+- **Topics not found →** report which are missing, then use `AskUserQuestion` to offer:
+  1. **Create the missing note(s), then resume Extend.** For each missing topic, run create-mode (C1–C3). After all processed, re-run E2 from the beginning.
+  2. **Proceed with only the found topics (skip missing).** Enforce minimum 2 topics; if fewer remain, **stop**.
   3. **Stop.** Abort the extend flow.
-- If all topics resolve, read every source note in full. Record each note's path, frontmatter (`area`, `tags`), and body content for use in later steps.
+- **Duplicate found →** report it, ask: overwrite / rename / stop.
 
-## E3. Duplicate Check
-
-Glob `30_Research/**/*.md`. Check whether a note already exists whose filename contains all of the source topic names (in any order, case-insensitive). If a match is found, report it and use `AskUserQuestion` to ask: **overwrite / rename / stop**.
-
-## E4. Infer Metadata
+## E3. Infer Metadata
 
 - **Area:** If all source notes share the same `area` value, use it. If they differ, list the unique areas and pick the most common one; note the choice in the report.
 - **Tags:** Union of all source notes' tags, plus `comparison` or `synthesis` (choose whichever better describes the relationship). Deduplicate.
 - **Filename:** `<Topic1>_vs_<Topic2>[_vs_<TopicN>].md` — use the topic names joined with `_vs_`. Sanitise only invalid characters (`/\:*?"<>|`).
 - **Folder:** Strip wikilink brackets (`[[` and `]]`) from the inferred area value to produce a clean folder name. The target directory is `30_Research/<Area>/`. Create this directory if it does not already exist.
 
-## E5. Generate the Comparison / Synthesis Note
+## E4. Generate the Comparison / Synthesis Note
 
 Create the note at `30_Research/<Area>/<Filename>.md` with the following structure.
 
@@ -86,7 +92,7 @@ Practical guidance: under what conditions, assumptions, or problem types should 
 - The note is deliberately **non-atomic** — it should be comprehensive and comparative.
 - Sections may be expanded, merged, or reordered if the specific topic combination warrants it, but all four body sections above must appear (unless explicitly removed per the rules above).
 
-## E5.5. Image Enrichment
+## E4.5. Image Enrichment
 
 Read and follow `references/image-enrichment.md` (in this same skill directory). For extend mode:
 
@@ -94,7 +100,7 @@ Read and follow `references/image-enrichment.md` (in this same skill directory).
 - Use the `comparison` descriptor for any side-by-side or overlay diagrams that span multiple topics.
 - Insert a single `## Schematics` section in the generated note (before `## At a Glance`), grouping images by source topic.
 
-## E6. Post-Creation Report
+## E5. Post-Creation Report
 
 Output:
 

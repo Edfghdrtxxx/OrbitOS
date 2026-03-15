@@ -2,25 +2,26 @@
 
 Create a single atomic concept note in `40_Wiki/` with automatic wikilink discovery.
 
-## C1. Smart Filename & Duplicate Check
+## C1. Vault Investigation (Explore Agent)
 
-- Filename = topic verbatim (Obsidian supports spaces). Sanitise only invalid characters (`/\:*?"<>|`) silently.
-- Glob `40_Wiki/**/<topic>.md` — if it exists, report the duplicate and **stop**.
-- **Near-duplicate scan:** Also glob `50_Resources/**/*<topic>*.md` and `30_Research/**/*<topic>*.md` for notes whose filename contains the topic (or vice-versa). If any match, report them and ask the user whether to proceed, merge, or stop — do NOT silently create a duplicate.
+Launch an Explore agent (`Agent` tool, `subagent_type: Explore`) with the following prompt — substitute `{topic}` with the actual topic name:
 
-## C2. Category Placement
+> Vault investigation for **"{topic}"**:
+> 1. **Duplicate check:** Glob `40_Wiki/**/{topic}.md` — report exact match path or "none"
+> 2. **Near-duplicate scan:** Glob `50_Resources/**/*{topic}*.md` and `30_Research/**/*{topic}*.md` — report matching filenames and paths
+> 3. **Subfolder listing:** Glob `40_Wiki/*/` — list all subfolder names
+> 4. **Wikilink candidates:** Glob `40_Wiki/**/*.md`, `30_Research/**/*.md`, `50_Resources/**/*.md` — return all filenames (without extension) as a flat list
+>
+> Return all four results clearly labeled.
 
-- Glob `40_Wiki/*/` to list existing subfolders.
-- Place in a subfolder only if the topic **clearly** fits one. Otherwise place directly in `40_Wiki/`.
-- Only ask the user if genuinely ambiguous between two+ equally valid subfolders.
+**Main agent rules on returned results:**
 
-## C3. Wikilink Discovery
+- **Exact duplicate found →** report and **stop**.
+- **Near-duplicates found →** report them, ask user: proceed / merge / stop. Do NOT silently create a duplicate.
+- **Subfolder placement:** use a subfolder only if the topic **clearly** fits one. Ask only if genuinely ambiguous between 2+. Otherwise default to `40_Wiki/`.
+- **Wikilink matching:** match collected note names against the new topic's content — insert `[[ExistingNote]]` wikilinks in Definition, Key Points, and Related Concepts. Terms that could become future atomic notes → stub wikilinks in Related Concepts.
 
-- Glob `40_Wiki/**/*.md`, `30_Research/**/*.md`, and `50_Resources/**/*.md`. Collect note names.
-- Match existing note names against the new topic's content — insert `[[ExistingNote]]` wikilinks in Definition, Key Points, and Related Concepts.
-- Identify terms that could become future atomic notes — add as stub wikilinks in Related Concepts.
-
-## C4. Note Generation
+## C2. Note Generation
 
 Read and follow `99_System/Templates/Wiki_Template.md` strictly. Additional rules:
 - `created`: today's date (`YYYY-MM-DD`)
@@ -33,11 +34,11 @@ Read and follow `99_System/Templates/Wiki_Template.md` strictly. Additional rule
 - No empty line after frontmatter `---`
 - Use `[[wikilinks]]` liberally throughout
 
-## C4.5. Image Enrichment
+## C3. Image Enrichment
 
 Read and follow `references/image-enrichment.md` (in this same skill directory). Run all steps (I1–I5, including I3.5) to find, download, view, and embed schematics into the newly created note. The `## Schematics` section goes after the `# Heading` and before `## Definition`.
 
-## C5. Post-Creation Report
+## C4. Post-Creation Report
 
 Output:
 ```
