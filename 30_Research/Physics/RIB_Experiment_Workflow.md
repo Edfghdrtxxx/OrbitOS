@@ -9,6 +9,50 @@ tags:
   - HIRFL
 created: 2026-03-15
 ---
+> [!question]- Self-Test Questions
+>
+> **Ion Source & Primary Beam**
+> 1. What three things does the ion source determine that propagate through the rest of the experiment?
+> 2. Explain the ECR resonance condition and why minimum-B confinement is needed.
+> 3. Why does charge state matter so much for achievable beam energy? Write the scaling relation.
+> 4. What is the gas mixing effect and why is it used?
+> 5. What distinguishes SECRAL-II from SECRAL, and what is the frequency scaling law?
+>
+> **Accelerator Complex**
+> 6. Describe the two-cyclotron tandem system (SFC + SSC) and their respective roles.
+> 7. What are the three operating phases of the CSRm synchrotron?
+> 8. What unique physics measurements does the CSRe storage ring enable?
+> 9. How does electron cooling improve beam quality, and at what stages is it applied?
+>
+> **Fragment Separation & Secondary Beam**
+> 10. Explain projectile fragmentation — why does it preserve most of the projectile's velocity?
+> 11. What is the $B\rho$-$\Delta E$-$B\rho$ separation method and why are two dipole stages needed?
+> 12. What is the "cocktail beam" problem and how is it mitigated?
+> 13. Compare in-flight separation (RIBLL) vs. ISOL — advantages and limitations of each.
+>
+> **Target & Reaction Mechanisms**
+> 14. What is inverse kinematics and why is it essential for RIB experiments?
+> 15. Name three types of direct reactions and what nuclear structure information each probes.
+> 16. How do (d,p) transfer reactions reveal single-particle structure?
+>
+> **Detector Systems**
+> 17. How do upstream detectors (PPACs, plastic scintillators) characterize the beam event-by-event?
+> 18. What is a TPC and why is it well-suited for tracking low-energy recoils?
+> 19. How does the $\Delta E$-$E$ telescope method identify particles?
+>
+> **Electronics, DAQ & Digitization**
+> 20. Compare traditional VME/CAMAC analog chain vs. the GET digital system.
+> 21. What is the role of the trigger system, and what happens if it is too loose or too tight?
+> 22. What does a typical event structure look like in the raw data?
+>
+> **Data Analysis**
+> 23. How is particle identification performed using $B\rho$, $\Delta E$, and TOF?
+> 24. Describe the chain from raw detector signals to an excitation energy spectrum.
+> 25. How are spectroscopic factors extracted, and what nuclear models are they compared against?
+
+> [!help]- My Questions & Concerns
+> 1. **Are cross sections / spectroscopic factors always the goal in RIB experiments?** — No. They are the primary output of *direct-reaction* experiments, but the broader RIB program also targets: mass measurements (IMS/SMS at CSRe), lifetime/decay studies, total reaction cross sections $\sigma_R$ (nuclear sizes), deformation parameters $\beta_2$/$\beta_4$ (collectivity), and Gamow-Teller strengths $B(GT)$ (weak-interaction physics). Each uses different observables and analysis chains.
+
 # The Complete Workflow of a Radioactive Isotope Beam Experiment
 
 This document is a comprehensive, end-to-end guide to how a [[Radioactive Isotope Beam]] experiment works -- from the first ionized atom leaving the [[Ion Source]] to the final spectroscopic factor appearing in a publication. It follows the physical journey of the beam through each stage of the [[experimental apparatus]], explaining not just *what* happens at each step but *why* each step is necessary and how its performance constrains everything downstream. [[HIRFL]]-[[RIBLL]] at the Institute of Modern Physics (IMP) in Lanzhou serves as the concrete running example throughout, with notes on how other major facilities (RIKEN RIBF, FRIB, GSI/FAIR) differ. A Master's student reading this document should come away with a complete mental map of RIB experimental physics -- the kind of map that makes instrument choices, analysis decisions, and literature results immediately intelligible.

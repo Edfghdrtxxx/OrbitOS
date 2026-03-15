@@ -217,7 +217,7 @@ The initial and final nuclear states in a DCX reaction are **identical** to thos
 
 $$(A, Z) \to (A, Z \pm 2)$$
 
-While the transition operators are not identical — DCX proceeds via the strong interaction while $\beta\beta$ proceeds via the weak interaction — they probe **formally similar nuclear structure** (two-nucleon correlations, pairing, short-range correlations). This makes DCX a powerful tool for constraining $0\nu\beta\beta$ nuclear matrix elements.
+While the transition operators are not identical — DCX proceeds via the [[Strong Interaction|strong interaction]] while $\beta\beta$ proceeds via the [[Weak Interaction|weak interaction]] — they probe **formally similar nuclear structure** (two-nucleon correlations, pairing, short-range correlations). This makes DCX a powerful tool for constraining $0\nu\beta\beta$ nuclear matrix elements.
 
 ### 5.4 NUMEN Project (INFN-LNS, Catania)
 
@@ -333,6 +333,7 @@ This solves the fundamental [[Dynamic Range|dynamic-range]] problem in active-ta
 - [[Superheavy Element]]
 - [[B(E2)]]
 - [[Weak Interaction]]
+- [[Strong Interaction]]
 - [[Majorana Fermion]]
 - [[Lepton Number]]
 - [[Internal Pair Creation]]
