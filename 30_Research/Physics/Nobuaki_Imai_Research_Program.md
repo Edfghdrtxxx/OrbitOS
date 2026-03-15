@@ -38,7 +38,7 @@ His publication record spans **~288 publications** with **4,461+ citations**, re
 The group's physics program spans two broad pillars:
 
 **Nuclear Structure:**
-- Deformation coexistence in neutron-rich nuclei
+- [[Deformation Coexistence]] in neutron-rich nuclei
 - Collective motions (rotational bands, vibrational excitations)
 - Extreme rotation and high-spin states
 
