@@ -99,6 +99,8 @@ Use ONE AskUserQuestion call with up to 4 questions:
 
 **MANDATORY:** After Question 1 is resolved, re-read the daily note to pick up any external edits before writing the Evening Review. This is non-optional even if the user says "Looks good."
 
+**MANDATORY:** After Question 1 is resolved and the daily note has been re-read, dispatch a **background subagent** with the prompt `Execute /archive`. This runs the archive workflow concurrently while the user continues with Questions 2–3 and the rest of the shutdown flow. Do not wait for the archive agent to finish before proceeding.
+
 ## Step 3: Write Evening Review
 
 Using the Edit tool, fill the Evening Review section in today's daily note:
