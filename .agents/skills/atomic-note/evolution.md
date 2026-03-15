@@ -11,3 +11,5 @@
 ## 2026-03-07
 ### Lessons
 - When creating notes from source material (e.g. .docx, pasted text), verify factual claims independently before propagating them. The source may contain errors (e.g. "TString inherits from TObject" was wrong — TObjString does, TString does not). Do not blindly trust the input.
+- This extends to **self-generated content**: journal article citations (title, authors, volume, page, year) are frequently hallucinated in plausible-sounding ways (correct authors + wrong title, or correct journal + wrong page). Before writing a References section, look up each citation via INSPIRE-HEP, DOI, or Google Scholar. Textbook citations (title + year) are lower risk but should still be sanity-checked.
+- **Wikilink aliases must be semantically correct.** Do not alias `[[ConceptA|ConceptB]]` unless ConceptB genuinely IS ConceptA. Example failure: `[[Coulomb Excitation|fusion-evaporation]]` — these are completely different reaction mechanisms. When uncertain about the correct target note, use a stub `[[Fusion-Evaporation Reaction|fusion-evaporation]]` rather than forcing an incorrect alias to an existing note.

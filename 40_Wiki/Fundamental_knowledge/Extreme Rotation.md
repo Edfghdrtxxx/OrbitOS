@@ -45,6 +45,6 @@ Extreme rotation refers to the regime where a nucleus is spun to very high angul
 
 ## References
 
-- Åberg, S. et al. — "Superdeformed nuclear states," *Ann. Rev. Nucl. Part. Sci.* 40, 439 (1990)
-- Janssens, R. V. F. & Khoo, T. L. — "Superdeformation," *Ann. Rev. Nucl. Part. Sci.* 41, 321 (1991)
+- Åberg, S., Flocard, H. & Nazarewicz, W. — "Nuclear Shapes in Mean Field Theory," *Ann. Rev. Nucl. Part. Sci.* 40, 439 (1990)
+- Janssens, R. V. F. & Khoo, T. L. — "Superdeformed Nuclei," *Ann. Rev. Nucl. Part. Sci.* 41, 321 (1991)
 - Context: [[Nobuaki_Imai_Research_Program]] — DONUTS group research program
