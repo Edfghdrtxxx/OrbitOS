@@ -68,6 +68,8 @@ The reviewer's role is **skeptical auditor** — its job is to find problems, no
 
 ## Phase 5 — SYNTHESIZE
 
+**Structural gate:** Before synthesizing, `Glob` the scratch directory (`99_System/.scratch/<session-id>/`) and verify it contains at least one implementation-produced file paired with at least one corresponding review file (`review_*.md`). If the directory lacks this minimum structure — e.g., implementation output exists but no review was written, or vice versa — halt and investigate before proceeding. Every implementation must have been reviewed.
+
 After all agents complete and all reviews pass:
 
 1. Present a structured summary (see template below).
