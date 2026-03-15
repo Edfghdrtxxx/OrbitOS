@@ -11,7 +11,7 @@ review_interval: 0
 
 ## Paper Summary
 
-Maria Goeppert Mayer's landmark 1948 paper systematically compiles experimental evidence that nuclei with **20, 50, 82, or 126 neutrons or protons** form particularly stable closed-shell configurations. This paper laid the empirical groundwork for the [[Nuclear Shell Model]].
+Maria Goeppert Mayer's landmark 1948 paper systematically compiles experimental evidence that nuclei with **20, 50, 82, or 126 neutrons or protons** form particularly stable closed-shell configurations. This paper laid the empirical groundwork for the [[50_Resources/Physics/ExtractionDistillation/Nuclear Shell Model]].
 
 ## Main Argument
 
@@ -62,7 +62,7 @@ This paper was a crucial precursor to the full shell model. One year later (1949
 ## Related Concepts
 
 - [[Nuclear Magic Numbers]]
-- [[Nuclear Shell Model]]
+- [[50_Resources/Physics/ExtractionDistillation/Nuclear Shell Model]]
 - [[Spin-Orbit Coupling in Nuclei]]
 
 ## References

@@ -34,7 +34,7 @@ Interaction cross sections of ¹³⁻²⁰C on a carbon target were measured at 
 ## Related Concepts
 
 - [[Nuclear Magic Numbers]]
-- [[Nuclear Shell Model]]
+- [[50_Resources/Physics/ExtractionDistillation/Nuclear Shell Model]]
 - [[Spin-Orbit Coupling in Nuclei]]
 
 ## References

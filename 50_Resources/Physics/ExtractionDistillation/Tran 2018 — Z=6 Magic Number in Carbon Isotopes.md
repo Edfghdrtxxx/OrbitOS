@@ -15,7 +15,7 @@ Tran et al. present experimental evidence that **Z = 6 is a magic number (subshe
 
 ## Motivation
 
-- The [[Nuclear Shell Model]] and its magic numbers are a cornerstone of nuclear structure
+- The [[50_Resources/Physics/ExtractionDistillation/Nuclear Shell Model]] and its magic numbers are a cornerstone of nuclear structure
 - While the phenomenological spin-orbit force (1949) explains the classical magic numbers, its microscopic origin remains an open question
 - Studying the *smallest* SO-originated closure (Z = 6) provides a clean test of modern nuclear theory
 
@@ -62,7 +62,7 @@ The subshell closure at Z = 6 is **prevalent** — it persists robustly from ¹�
 ## Related Concepts
 
 - [[Nuclear Magic Numbers]]
-- [[Nuclear Shell Model]]
+- [[50_Resources/Physics/ExtractionDistillation/Nuclear Shell Model]]
 - [[Spin-Orbit Coupling in Nuclei]]
 - [[Subshell Closure at Z=6]]
 - [[Mayer 1948 — On Closed Shells in Nuclei]]

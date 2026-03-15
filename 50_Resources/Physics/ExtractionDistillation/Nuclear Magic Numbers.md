@@ -37,7 +37,7 @@ Beyond the classical magic numbers, **subshell closures** at smaller nucleon num
 
 ## Related Concepts
 
-- [[Nuclear Shell Model]]
+- [[50_Resources/Physics/ExtractionDistillation/Nuclear Shell Model]]
 - [[Spin-Orbit Coupling in Nuclei]]
 - [[Subshell Closure at Z=6]]
 

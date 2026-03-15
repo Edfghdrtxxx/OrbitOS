@@ -27,7 +27,7 @@ The 1p shell splits into 1p₃/₂ (j = 3/2) and 1p₁/₂ (j = 1/2). Filling th
 
 ## Related Concepts
 
-- [[Nuclear Shell Model]]
+- [[50_Resources/Physics/ExtractionDistillation/Nuclear Shell Model]]
 - [[Nuclear Magic Numbers]]
 - [[Subshell Closure at Z=6]]
 
