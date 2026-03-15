@@ -106,7 +106,7 @@ The reviewer's role is **skeptical auditor** — its job is to find problems, no
 **Review file format:** Verdict line (`approved` or `needs-revision`), then a Findings section with specific, actionable items (file paths, line numbers, what's wrong, why it matters).
 
 **Revision loop:**
-1. If the reviewer returns **needs-revision**, dispatch a new implementer with the review file path as input context (e.g., "Read `openspec/changes/[change-name]/review_01.md` for reviewer feedback"). Do not re-serialize the review content into the dispatch prompt.
+1. If the reviewer returns **needs-revision**, dispatch a new implementer with the review file path as input context (e.g., "Read `openspec/changes/[change-name]/review_01.md` for reviewer feedback"). Prefer file paths over re-serialization, but paste the review content into the dispatch prompt if the revision implementer runs in a worktree without access to the change directory (same pattern as the task.md context injection rule).
 2. After the new implementer completes, dispatch a new reviewer (which writes `review_<NN>b.md` for round 2, `review_<NN>c.md` for round 3, etc.).
 3. **Max 4 revision rounds** per sub-task. If still unresolved, escalate to the user with full context (original objective, implementer output paths, review file paths).
 

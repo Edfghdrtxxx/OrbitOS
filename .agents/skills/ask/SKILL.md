@@ -31,8 +31,8 @@ Use `AskUserQuestion` to offer:
 | Option | What happens |
 |--------|-------------|
 | **Practice expressing** | Enter Feynman Expression Mode (below) |
-| **Save as atomic note** | Spawn a background subagent to run `/atomic-note` for the concept |
-| **Both** | Spawn `/atomic-note` in background **immediately**, then enter Feynman Expression Mode in parallel |
+| **Save as atomic note** | Spawn a background subagent with prompt: `/atomic-note <Topic>` |
+| **Both** | Spawn subagent `/atomic-note <Topic>` in background, then enter Feynman Expression Mode in parallel |
 
 If the user declines, the exchange is complete.
 
