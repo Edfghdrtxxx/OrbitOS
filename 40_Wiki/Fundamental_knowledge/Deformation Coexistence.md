@@ -21,7 +21,7 @@ review_interval: 0
 >
 > **Deformation coexistence** is the surprising situation where both bowls exist at almost the same depth. The nucleus has two (or even three!) nearly equal-energy configurations with completely different shapes. It's as if you could have the same ball of clay be round AND cigar-shaped at almost the same energy cost — and the nucleus can quantum-mechanically tunnel between them.
 >
-> The most dramatic example is $^{186}$Pb, where spherical, oblate, and prolate shapes all coexist within just 650 keV — like three bowls side by side, all nearly the same depth. You detect this experimentally by finding multiple low-lying $0^+$ states and measuring large $E0$ transition strengths between them, which signals that the nucleus is literally changing its size and shape as it hops between configurations.
+> The most dramatic example is $^{186}$Pb, where spherical, oblate, and prolate shapes all coexist within just 650 keV — like three bowls side by side, all nearly the same depth. You detect this experimentally by finding multiple [[Low-lying 0+ Excited State|low-lying]] $0^+$ states and measuring large $E0$ transition strengths between them, which signals that the nucleus is literally changing its size and shape as it hops between configurations.
 
 ## Definition
 

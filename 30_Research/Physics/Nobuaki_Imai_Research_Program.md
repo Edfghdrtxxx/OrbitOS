@@ -25,7 +25,7 @@ His publication record spans **~288 publications** with **4,461+ citations**, re
 
 1. **Nuclear structure via [[Radioactive Isotope Beam|RI beams]]** — probing [[Shell Evolution|shell evolution]], [[Deformation Coexistence|deformation coexistence]], and collective modes far from stability
 2. **Nuclear reaction dynamics** — [[Charge-Exchange Reaction|charge-exchange reactions]], [[Transfer Reactions|nucleon transfer]], and [[Surrogate Reaction|surrogate methods]] for astrophysical cross sections
-3. **Detector development** — diamond detectors, GEM/THGEM-based TPCs, and beam diagnostics for low-energy RI beam experiments
+3. **Detector development** — [[Diamond Detector|diamond detectors]], [[GEM Detector|GEM]]/[[THGEM]]-based TPCs, and beam diagnostics for low-energy RI beam experiments
 
 ---
 
@@ -248,9 +248,9 @@ Imai has pursued **CVD (Chemical Vapor Deposition) diamond** as a detector mater
 
 These detectors are particularly suited for **beam tracking and diagnostics** at OEDO, where slowed-down RI beams have low energy and high $Z$, demanding thin, fast, radiation-hard detectors.
 
-### 6.2 GEM/THGEM for Active-Target TPC
+### 6.2 [[GEM Detector|GEM]]/[[THGEM]] for Active-Target TPC
 
-A 2023 PTEP paper (Iwamoto, Ota, Imai et al.) describes the **DG-M-THGEM** prototype — a dual-gain Micro-pattern THGEM (Thick Gas Electron Multiplier) designed for **[[Active-Target TPC|active-target TPC]]** experiments at CNS.
+A 2023 PTEP paper (Iwamoto, Ota, Imai et al.) describes the **DG-M-[[THGEM]]** prototype — a dual-gain Micro-pattern [[THGEM]] (Thick Gas Electron Multiplier) designed for **[[Active-Target TPC|active-target TPC]]** experiments at CNS.
 
 **Key innovation — dual gain regions:**
 

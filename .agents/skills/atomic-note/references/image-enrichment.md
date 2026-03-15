@@ -22,7 +22,7 @@ All image files in `50_Resources/Attachments/` follow this pattern:
 
 Glob `50_Resources/Attachments/{ConceptName}_*` (where `{ConceptName}` = note title with spaces → underscores).
 
-- **Images found →** list them, embed any that aren't already in the note, then proceed to I2 to fetch additional schematics.
+- **Images found →** list them, then **read each image file** using the Read tool to view its visual content (labels, axes, annotations, depicted structures). This informs accurate captions in I4. Proceed to I2 to fetch additional schematics.
 - **No images found →** proceed to I2.
 
 ## I2. Wikimedia Commons Search
@@ -34,7 +34,7 @@ Use the Wikipedia/Wikimedia API to find relevant schematics:
 3. For each candidate, fetch metadata: `https://en.wikipedia.org/w/api.php?action=query&titles={FileTitle}&prop=imageinfo&iiprop=url|extmetadata&iiextmetadatafilter=ImageDescription|LicenseShortName&format=json`
 4. **License filter:** Only use images that are **Public domain**, **CC0**, **CC BY**, **CC BY-SA** (any version). Reject all others.
 5. Select the **2–4 most informative** schematics (prefer labeled diagrams over photographs; prefer SVG over raster when available).
-6. If no suitable schematics are found via API, report this and skip image embedding — do NOT fabricate image URLs.
+6. If no suitable schematics are found via API, report this in I5. Do NOT fabricate image URLs. Still proceed to I4 to create the `## Schematics` section with the no-images explanation.
 
 ## I3. Download & Rename
 
@@ -46,9 +46,13 @@ curl -L -o "50_Resources/Attachments/{ConceptName}_{descriptor}.{ext}" "{direct_
 
 Verify the file downloaded successfully (non-zero size).
 
+## I3.5. View Downloaded Images
+
+**Read each downloaded image** using the Read tool to view its visual content. Use what you see — labels, axes, annotations, depicted structures — to write accurate, descriptive captions in I4. Do not guess caption content from the filename alone. (Local images from I1 are already viewed during that step.)
+
 ## I4. Embed in Note
 
-Insert a `## Schematics` section **after the `# Heading`** and before `## Definition` (for wiki notes) or before the first body heading (for research notes).
+**Always create the section:** Insert a `## Schematics` section **after the `# Heading`** and before `## Definition` (for wiki notes) or before the first body heading (for research notes) — even when I1 and I2 found no images. If no images are available, add the italic explanation: `*No suitable open-license schematics found on Wikimedia Commons for this topic.*`
 
 **Embedding format** — each image uses two lines:
 

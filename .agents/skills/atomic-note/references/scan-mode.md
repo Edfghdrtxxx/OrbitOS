@@ -41,7 +41,7 @@ For each **Exists (unlinked)** concept:
 
 ## S4.5. Image Enrichment
 
-Read and follow `references/image-enrichment.md` (in this same skill directory). Run steps I1–I4 against the **scanned source note**:
+Read and follow `references/image-enrichment.md` (in this same skill directory). Run all steps (I1–I5, including I3.5) against the **scanned source note**:
 
 - Use the source note's title as `{ConceptName}` for the local check (I1) and Wikimedia search (I2).
 - If the source note already has a `## Schematics` section with images, report them and still proceed to fetch more from Wikimedia.

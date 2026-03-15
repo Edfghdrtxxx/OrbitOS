@@ -90,7 +90,7 @@ Practical guidance: under what conditions, assumptions, or problem types should 
 
 Read and follow `references/image-enrichment.md` (in this same skill directory). For extend mode:
 
-- Run I1–I4 for **each source topic** — check local images and Wikimedia for each concept individually.
+- Run all steps (I1–I5, including I3.5) for **each source topic** — check local images and Wikimedia for each concept individually.
 - Use the `comparison` descriptor for any side-by-side or overlay diagrams that span multiple topics.
 - Insert a single `## Schematics` section in the generated note (before `## At a Glance`), grouping images by source topic.
 

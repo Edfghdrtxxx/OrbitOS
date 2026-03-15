@@ -35,7 +35,7 @@ Read and follow `99_System/Templates/Wiki_Template.md` strictly. Additional rule
 
 ## C4.5. Image Enrichment
 
-Read and follow `references/image-enrichment.md` (in this same skill directory). Run steps I1–I4 to find, download, and embed schematics into the newly created note. The `## Schematics` section goes after the `# Heading` and before `## Definition`.
+Read and follow `references/image-enrichment.md` (in this same skill directory). Run all steps (I1–I5, including I3.5) to find, download, view, and embed schematics into the newly created note. The `## Schematics` section goes after the `# Heading` and before `## Definition`.
 
 ## C5. Post-Creation Report
 
