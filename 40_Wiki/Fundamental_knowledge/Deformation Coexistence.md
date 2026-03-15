@@ -17,7 +17,7 @@ review_interval: 0
 > [!Feynman]- Feynman Explanation
 > Imagine a ball of clay. If you leave it alone, it stays round — that's what the nuclear shell structure "wants" to do for nuclei near [[Magic Numbers]]. The filled shells create an energy gap that stabilizes a nice spherical shape, like a ball sitting in a bowl.
 >
-> But nuclei aren't just passive clay — protons and neutrons constantly interact, and their collective push-and-pull (pairing and quadrupole correlations) can stretch or squash the nucleus into a cigar (prolate) or a pancake (oblate). This is like a second bowl, right next to the first one, that the ball could also sit in.
+> But nuclei aren't just passive clay — protons and neutrons constantly interact, and their collective push-and-pull (pairing and [[Quadrupole Correlation|quadrupole correlations]]) can stretch or squash the nucleus into a cigar (prolate) or a pancake (oblate). This is like a second bowl, right next to the first one, that the ball could also sit in.
 >
 > **Deformation coexistence** is the surprising situation where both bowls exist at almost the same depth. The nucleus has two (or even three!) nearly equal-energy configurations with completely different shapes. It's as if you could have the same ball of clay be round AND cigar-shaped at almost the same energy cost — and the nucleus can quantum-mechanically tunnel between them.
 >
@@ -29,7 +29,7 @@ Deformation coexistence (also called shape coexistence) is the phenomenon where 
 
 ## Key Points
 
-- The physical origin is the competition between spherical [[Nuclear Shell Model|shell closure]] energy gaps (favoring a spherical shape) and pairing plus quadrupole correlations (favoring deformation through multi-particle multi-hole excitations across the gap)
+- The physical origin is the competition between spherical [[Nuclear Shell Model|shell closure]] energy gaps (favoring a spherical shape) and pairing plus [[Quadrupole Correlation|quadrupole correlations]] (favoring deformation through multi-particle multi-hole excitations across the gap)
 - [[Intruder States]] created by promoting particles across a major shell gap can produce a deformed minimum in the [[Potential Energy Surface]] that lies close in energy to the spherical ground state
 - Key experimental signatures include low-lying $0^+$ excited states, large $\rho^2(E0)$ monopole transition strengths between $0^+$ states (indicating a change in mean-square charge radius), and irregular patterns in $E(2^+_1)$ energies
 - Shape coexistence is particularly prominent near proton numbers $Z \approx 40$ (Zr–Sr region), $Z \approx 82$ (Pb–Hg–Po region), and in the neutron-deficient Cd and Sn isotopes
@@ -52,6 +52,7 @@ Deformation coexistence (also called shape coexistence) is the phenomenon where 
 - [[Potential Energy Surface]]
 - [[Intruder States]]
 - [[Spin-Orbit Coupling]]
+- [[Quadrupole Correlation]]
 
 ## References
 
