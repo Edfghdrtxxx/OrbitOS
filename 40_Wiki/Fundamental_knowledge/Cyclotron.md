@@ -10,13 +10,13 @@ review_interval: 0
 
 ## Schematics
 
-![[Cyclotron_diagram.png|Cyclotron schematic — dees, magnet, and spiral particle path]]
+![[Cyclotron_diagram.png|Cyclotron schematic — dees, magnet, and spiral particle path|925]]
 *Classic cyclotron schematic showing the D-shaped electrodes, electromagnet, and particle spiral. (Public domain, Radio-Craft 1947)*
 
-![[Cyclotron_spiral_path.png|Spiral path of a positive charge inside a cyclotron]]
+![[Cyclotron_spiral_path.png|Spiral path of a positive charge inside a cyclotron|253]]
 *Trajectory of a positive charge accelerated across the dee gap each half-turn. (CC BY-SA 4.0, Wikimedia Commons)*
 
-![[Cyclotron_patent.png|Lawrence's original 1934 cyclotron patent]]
+![[Cyclotron_patent.png|Lawrence's original 1934 cyclotron patent|798]]
 *Ernest Lawrence's cyclotron patent drawing (U.S. Patent 1,948,384, 1934). (Public domain)*
 
 ## Definition

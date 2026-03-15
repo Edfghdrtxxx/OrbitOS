@@ -86,6 +86,14 @@ Practical guidance: under what conditions, assumptions, or problem types should 
 - The note is deliberately **non-atomic** — it should be comprehensive and comparative.
 - Sections may be expanded, merged, or reordered if the specific topic combination warrants it, but all four body sections above must appear (unless explicitly removed per the rules above).
 
+## E5.5. Image Enrichment
+
+Read and follow `references/image-enrichment.md` (in this same skill directory). For extend mode:
+
+- Run I1–I4 for **each source topic** — check local images and Wikimedia for each concept individually.
+- Use the `comparison` descriptor for any side-by-side or overlay diagrams that span multiple topics.
+- Insert a single `## Schematics` section in the generated note (before `## At a Glance`), grouping images by source topic.
+
 ## E6. Post-Creation Report
 
 Output:
@@ -101,11 +109,17 @@ Area: [[InferredArea]]
 Tags: [tag1, tag2, ...]
 
 Sections generated:
+  Schematics
   At a Glance (comparison table)
   Definition Comparison
   Mathematical Relationships
   When to Use Which
   Related Concepts
+
+Images:
+  Local:    {count} existing in Attachments
+  Fetched:  {count} downloaded from Wikimedia Commons
+  Embedded: {list of ![[filenames]]}
 ```
 
 After the report, append a brief **Hints** line listing other available modes:

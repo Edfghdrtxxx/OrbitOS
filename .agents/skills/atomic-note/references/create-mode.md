@@ -33,6 +33,10 @@ Read and follow `99_System/Templates/Wiki_Template.md` strictly. Additional rule
 - No empty line after frontmatter `---`
 - Use `[[wikilinks]]` liberally throughout
 
+## C4.5. Image Enrichment
+
+Read and follow `references/image-enrichment.md` (in this same skill directory). Run steps I1–I4 to find, download, and embed schematics into the newly created note. The `## Schematics` section goes between the frontmatter and `## Definition`.
+
 ## C5. Post-Creation Report
 
 Output:
@@ -42,6 +46,11 @@ Created: 40_Wiki/<path>/<Topic>.md
 Wikilinks inserted:
   Existing: [[Note1]], [[Note2]]
   Stubs:    [[Future1]], [[Future2]]
+
+Images:
+  Local:    {count} existing in Attachments
+  Fetched:  {count} downloaded from Wikimedia Commons
+  Embedded: {list of ![[filenames]]}
 
 Review queue: note will appear automatically in 99_System/Bases/Wiki_Review.base
 ```

@@ -10,6 +10,10 @@ review_interval: 0
 
 > [!important] All math expressions, equations, and formulas **must** use LaTeX notation (`$...$` for inline, `$$...$$` for display blocks).
 
+## Schematics
+
+[Auto-populated by image enrichment — `![[image]]` embeds with italic captions]
+
 ## Definition
 
 [Clear, concise definition of the concept]

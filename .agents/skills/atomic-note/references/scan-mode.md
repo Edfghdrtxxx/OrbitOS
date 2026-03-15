@@ -39,6 +39,14 @@ For each **Exists (unlinked)** concept:
 - If filename ≠ surface text, use `[[Filename|surface text]]`.
 - Report all insertions.
 
+## S4.5. Image Enrichment
+
+Read and follow `references/image-enrichment.md` (in this same skill directory). Run steps I1–I4 against the **scanned source note**:
+
+- Use the source note's title as `{ConceptName}` for the local check (I1) and Wikimedia search (I2).
+- If the source note already has a `## Schematics` section with images, report them and ask whether to fetch more.
+- If the source note has no `## Schematics` section, run the full I1–I4 flow and insert the section.
+
 ## S5. Batch Creation
 
 Ask: **Create missing notes? (all / pick / skip)**
@@ -47,7 +55,7 @@ Ask: **Create missing notes? (all / pick / skip)**
 - **pick** — use `AskUserQuestion` to let user select.
 - **skip** — end with the report.
 
-For each selected concept, read and follow `create-mode.md` (in this same `references/` directory).
+For each selected concept, read and follow `create-mode.md` (in this same `references/` directory). Note: each created note will also run its own C4.5 image enrichment step.
 
 ## S6. Summary
 
@@ -57,6 +65,11 @@ Scan complete: <source path>
 Wikilinks patched into source: [[C]], [[D]]
 Notes created: [[E]], [[F]]
 Skipped: [[G]]
+
+Images:
+  Local:    {count} existing in Attachments
+  Fetched:  {count} downloaded from Wikimedia Commons
+  Embedded: {list of ![[filenames]]}
 ```
 
 After the report, append a brief **Hints** line listing other available modes:

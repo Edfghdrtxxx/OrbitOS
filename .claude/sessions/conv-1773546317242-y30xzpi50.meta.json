@@ -1,0 +1,19 @@
+{
+  "id": "conv-1773546317242-y30xzpi50",
+  "title": "Audit skill improvements",
+  "titleGenerationStatus": "success",
+  "createdAt": 1773546317242,
+  "updatedAt": 1773546330652,
+  "lastResponseAt": 1773546325344,
+  "sessionId": "6c8f7119-ed28-4dbc-af0a-8f302b9c394a",
+  "sdkSessionId": "6c8f7119-ed28-4dbc-af0a-8f302b9c394a",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 3,
+    "cacheCreationInputTokens": 4733,
+    "cacheReadInputTokens": 11609,
+    "contextWindow": 200000,
+    "contextTokens": 16345,
+    "percentage": 8
+  }
+}
