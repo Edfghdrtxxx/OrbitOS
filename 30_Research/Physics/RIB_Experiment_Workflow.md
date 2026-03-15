@@ -52,6 +52,7 @@ created: 2026-03-15
 
 > [!help]- My Questions & Concerns
 > 1. **Are cross sections / spectroscopic factors always the goal in RIB experiments?** — No. They are the primary output of *direct-reaction* experiments, but the broader RIB program also targets: mass measurements (IMS/SMS at CSRe), lifetime/decay studies, total reaction cross sections $\sigma_R$ (nuclear sizes), deformation parameters $\beta_2$/$\beta_4$ (collectivity), and Gamow-Teller strengths $B(GT)$ (weak-interaction physics). Each uses different observables and analysis chains.
+> 2. **Why do we need each observable respectively?** — Each probes a different nuclear degree of freedom: $C^2S$ → shell occupancy & single-particle structure; mass → binding energy & existence (drip lines); lifetime → decay rates (r-process speed, fully-ionized decay channels); $\sigma_R$ → matter radius (halo discovery); $\beta_2$/$\beta_4$ → nuclear shape & collectivity; $B(GT)$ → spin-isospin response (weak rates for astrophysics). No single observable captures all of these — a complete picture requires multiple experimental modes.
 
 # The Complete Workflow of a Radioactive Isotope Beam Experiment
 
