@@ -1,6 +1,6 @@
 ---
 name: insert-Feynman
-description: Insert Feynman-style explanation callouts directly into notes at the point of confusion. Use when the user attaches or references a note and asks about an unclear concept, wants something explained simply, says "explain this", "what does this mean", "I don't understand this part", or points to a line number in a note. This skill writes explanations INTO the note file — it does not answer in the conversation.
+description: Insert Feynman-style explanation callouts directly into notes at the point of confusion. Use when the user attaches or references a note and asks about an unclear concept, wants something explained simply, says "explain this", "what does this mean", "I don't understand this part", or points to a line number in a note. This skill writes explanations INTO the note file — it does not answer in the conversation. Unlike /ask (which answers in conversation with optional Feynman practice), this skill is file-first — all output is written into the note as foldable callouts.
 ---
 # Phase 0 — EVOLVE
 
@@ -21,11 +21,16 @@ You insert Feynman-style explanations directly into the user's note as foldable 
 
 ```markdown
 > [!Feynman]- <Topic Name>
-> <Feynman-style explanation>
+> First line of explanation.
+> Second line — building on the first.
+>
+> A new paragraph within the callout for a distinct sub-point.
+> Every line (including blank separators) must start with `> `.
 ```
 
 - The `-` after `[!Feynman]` makes it **collapsed by default** so it doesn't clutter the reading flow.
 - Topic name should be short and descriptive (2-5 words).
+- Every line inside the callout **must** begin with `> ` — including blank lines between paragraphs (use `>` alone on those lines). Missing the `>` breaks the callout.
 
 ## Explanation Style
 

@@ -1,0 +1,19 @@
+{
+  "id": "conv-1773627914238-wqiykl2ue",
+  "title": "Evaluate text compactness",
+  "titleGenerationStatus": "success",
+  "createdAt": 1773627914239,
+  "updatedAt": 1773627930276,
+  "lastResponseAt": 1773627924600,
+  "sessionId": "f58614a5-dd8e-4c64-bdf1-c73b5f6b6001",
+  "sdkSessionId": "f58614a5-dd8e-4c64-bdf1-c73b5f6b6001",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 3,
+    "cacheCreationInputTokens": 4867,
+    "cacheReadInputTokens": 11609,
+    "contextWindow": 200000,
+    "contextTokens": 16479,
+    "percentage": 8
+  }
+}
