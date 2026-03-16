@@ -77,7 +77,7 @@ The group's physics program spans two broad pillars:
 | Research student | Qin Hao | — |
 | MEXT scholar | Yasmin Anuar | — |
 
-**Related group at CNS:** Prof. Nori Aoi leads the **NUSPEQ** group (Nuclear Structure and Production of Exotic Quanta), which operates the CAT-M [[Active-Target TPC|active-target TPC]]. Both groups share the OEDO-SHARAQ infrastructure and collaborate closely.
+**Related group at CNS:** Prof. [[Nori_Aoi_Research_Program|Nori Aoi]] leads the **NUSPEQ** group (Nuclear Spectroscopy for Extreme Quantum system), which operates the CAT-M [[Active-Target TPC|active-target TPC]]. Both groups share the OEDO-SHARAQ infrastructure and collaborate closely.
 
 ---
 
@@ -298,7 +298,7 @@ This solves the fundamental [[Dynamic Range|dynamic-range]] problem in active-ta
 ### 6.3 Other Detector Systems
 
 - **GRAPE** — Germanium Array for Prompt $\gamma$-ray Emission; high-resolution $\gamma$-ray detection array
-- **CAT-M** — CNS Active Target TPC (primarily Aoi's NUSPEQ group, but shared infrastructure)
+- **CAT-M** — CNS Active Target TPC (primarily [[Nori_Aoi_Research_Program|Nori Aoi]]'s NUSPEQ group, but shared infrastructure)
 - **TiNA** — detector system used in conjunction with SHARAQ experiments
 - **PANDORA** — detector system in the CNS experimental program
 
