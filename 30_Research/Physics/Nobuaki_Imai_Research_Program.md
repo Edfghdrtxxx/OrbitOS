@@ -100,7 +100,17 @@ Placed at the momentum-dispersive focal plane of [[BigRIPS]], the wedge degrader
 
 A radio-frequency deflecting cavity converts **longitudinal phase-space correlations** (time-of-flight ↔ energy correlations introduced by the degrader) into **transverse position correlations**. The RF field kicks particles sideways proportionally to their arrival time, mapping the time structure onto spatial coordinates that downstream optics can correct.
 
-A critical secondary function: particles with the **wrong mass-to-charge ratio** $A/Q$ arrive at different RF phases and receive different transverse kicks, enabling **contaminant filtering** without additional material in the beam path. A slit system downstream of the RF deflector selects the corrected beam component and rejects contaminants that received off-phase kicks.
+> [!Feynman]- RF Deflector
+> **Q:** What is RF deflector?
+> **Language note:** More natural phrasing: *"What is an RF deflector?"* — needs the article "an" before a countable noun.
+>
+> Imagine a line of runners crossing a finish line one after another. A fast camera can record *when* each runner arrives — that's **time information**. Now imagine instead of a camera, you have a fan blowing sideways that gets stronger and weaker in a cycle. Early arrivals get pushed left, late arrivals get pushed right. You've just converted *arrival time* into *sideways position* — and positions are much easier to deal with using lenses and slits.
+>
+> That's exactly what an RF deflector does to a particle beam. "RF" stands for **radio-frequency** — it's an electromagnetic cavity oscillating millions of times per second. As particles fly through the cavity, the oscillating electric field gives each particle a sideways kick whose strength depends on *when* that particle arrives. Particles that arrive at different times (because they have slightly different energies after passing through the degrader) get kicked by different amounts, spreading them out spatially.
+>
+> Once the time differences are mapped onto spatial positions, ordinary beam optics (magnets and slits) can correct or filter them — something that's impossible to do when the differences are purely in timing. As a bonus, contaminant particles with the wrong mass-to-charge ratio arrive at the wrong phase of the oscillation cycle, so they get kicked to the wrong place and can be blocked by a slit downstream.
+
+A critical secondary function: particles with the **wrong mass-to-charge ratio** $A/Q$ arrive at different RF phases and receive different transverse kicks, enabling **contaminant filtering** without additional material in the beam path. A slit system downstream of the RF deflector selects the corrected beam component and rejects contaminants that received off-phase kicks. (see `Feynman: RF Deflector`)
 
 #### 3. Superconducting Quadrupole Triplet Magnets (two sets)
 

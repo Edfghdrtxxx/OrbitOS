@@ -30,39 +30,7 @@ Help the user start their day by reviewing the last daily note's progress, creat
      - Last update date (to identify stale projects 3+ days)
      - Any due dates or time-sensitive items
 
-4. **Investigate Deadlines (Explore Agent)**
-
-   Launch an Explore agent (`subagent_type: Explore`) **in background** to scan for all time-sensitive items within 60 days of today. The agent runs concurrently with the remaining Step 1 work.
-
-   **Agent prompt template** (fill in `{today}` and `{cutoff}` = today + 60 days):
-
-   > Search the OrbitOS vault at D:/obsidian/OrbitOS for deadlines and time-sensitive items. Today is `{today}`.
-   >
-   > **Scope** (search these, nothing else):
-   > - `20_Project/` — all files recursively
-   > - `90_Plans/` — all files recursively
-   > - `30_Research/` — frontmatter `due:` / `next_review:` fields only
-   > - `00_Inbox/` — frontmatter `due:` fields only
-   >
-   > **What to look for:**
-   > - Frontmatter fields: `due`, `next_review`, `target_intake`, or any date-valued key that implies a deadline
-   > - Markdown tables with date columns (especially in `Official_Deadlines.md` and execution plans)
-   > - Dated checkbox pattern: `- [ ] YYYY-MM-DD:` (action items with date triggers)
-   > - Inline dates near keywords: deadline, due, by, before, until, window, registration, application, exam, submit, target
-   > - Phase/milestone boundaries in section headings (e.g., "Phase 0: NOW → 2026-04-30")
-   >
-   > **Filter:** Only include items whose date falls between `{today}` and `{cutoff}` (60-day window). Exclude past dates unless they are overdue unchecked tasks (`- [ ]` with a date before today).
-   >
-   > **Output format — return a markdown list, one item per line:**
-   > ```
-   > - **[D-{days}]** {what} — {date} ({source file}) {confidence}
-   > ```
-   > - `D-{days}`: days remaining (negative = overdue, e.g., `D+3` means 3 days overdue)
-   > - `{confidence}`: one of `VERIFIED`, `Estimated`, `Unverified` — look for these markers in the source; default to `Unverified` if not marked
-   > - Sort by date ascending (most urgent first)
-   > - If nothing is found, return "No deadlines within 60 days."
-
-   **Usage:** The agent's output is consumed silently in Step 3 — do not show it to the user during Step 2. Incorporate findings into the Notes section of the daily note.
+4. **Investigate Deadlines** — Launch Explore agent **in background** using `deadline-agent-prompt.md` (fill `{today}`, `{cutoff}` = +60 days). Output consumed silently in Step 3 Notes.
 
 5. **Check Inbox**
    - List files in `00_Inbox/` with `status: pending`
@@ -104,6 +72,7 @@ Use the AskUserQuestion tool to gather (combine into as few rounds as possible):
 > Do NOT reconstruct the note from memory. Copy the previous note verbatim first,
 > then apply only the changes. This prevents accidental task drops.
 
+0. **Wait for deadline agent** from Step 1.4 before proceeding.
 1. **If today's note exists** at `10_Daily/YYYY-MM-DD.md`: read it, then skip to step 3 (apply delta)
 2. **Copy the last daily note using `cp`:** run `cp 10_Daily/<last-date>.md 10_Daily/<today>.md` via the Bash tool. This is the identity copy — the file is duplicated byte-for-byte, no reading or rewriting involved. If no previous note exists, create from template `99_System/Templates/Daily_Note.md` and remove all placeholder tasks before applying delta
 3. **Apply delta** — use the Edit tool to modify only what changes. Touch nothing else:
@@ -127,7 +96,7 @@ Use the AskUserQuestion tool to gather (combine into as few rounds as possible):
    - **Log**: Clear body, keep header
    - **Evening Review**: Clear body, keep header
    - **AI Digest**: Remove entire section if present
-   - **Notes**: Replace with fresh recommendations. **Deadline integration:** prepend the Explore agent's deadline findings as a `> [!warning] Upcoming Deadlines` callout before other notes. Each deadline item is one line: `> - **[D-{days}]** {what} — {date} ({confidence})`. Omit the source file path — keep it concise. If the agent returned "No deadlines within 60 days", omit the callout entirely.
+   - **Notes**: Replace with fresh recommendations. Prepend deadline agent findings as `> [!warning] Upcoming Deadlines` callout (omit source file paths; omit callout if none found).
    - **Related Projects**: Update statuses
 
 ## Step 4: Process New Ideas (from Q4)
