@@ -101,6 +101,8 @@ Inform each sub-agent that its report will be reviewed by a separate agent and m
 
 **Output convention:** Every research sub-agent writes a report to the change directory: `<NN>_<description>.md` (where `<NN>` matches the task number, e.g., `01_explore_auth.md`). The report captures findings, relevant file paths, constraints discovered, and recommendations for the spec. The orchestrator tells each sub-agent its output path in the dispatch prompt.
 
+**What the orchestrator receives:** Sub-agents return only a **1-2 sentence summary** (success/failure + scope covered). The orchestrator uses this summary as the primary signal for routing decisions. Detailed findings live in the report file — the orchestrator does not need the full content.
+
 **Context injection:** Point sub-agents to the task.md file path so they can read it directly. Only paste task.md content into the prompt when the sub-agent cannot access the openspec/ path.
 
 ## Phase 4 — REVIEW
@@ -143,9 +145,8 @@ The orchestrator MUST NOT silently proceed past an escalation.
 
 After all research reports pass review, **synthesize findings into the final task.md**:
 
-1. Read all approved research reports (this is coordination, not execution).
-2. Dispatch a sub-agent to update task.md: replace the skeleton `Tasks` section with detailed, actionable tasks informed by the research. Each task should include enough context (file paths, constraints, dependencies) that an implementer — human or AI — can execute it without re-doing the research.
-3. Present the final summary to the user:
+1. Dispatch a sub-agent to synthesize. Pass it: the task.md file path, all approved research report file paths, and the instruction to replace the skeleton `Tasks` section with detailed, actionable tasks informed by the research. Each task should include enough context (file paths, constraints, dependencies) that an implementer — human or AI — can execute it without re-doing the research. The sub-agent returns a **1-2 sentence summary** of what it wrote — the orchestrator does not read the reports itself.
+2. Present the final summary to the user:
 
 ```
 ### Specification Complete
