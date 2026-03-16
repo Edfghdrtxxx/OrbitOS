@@ -1,7 +1,10 @@
 ---
 created: 2026-03-16
-status: pending
+status: processed
 source: start-my-day
+completed-in: "[[2026-03-16]]"
+archived: 2026-03-16
+archived-in: "[[2026-03-16]]"
 ---
 Improve the `/orchestrate` skill based on yesterday's thinking 
 
