@@ -15,6 +15,21 @@ created: 2026-03-13
 
 **Nobuaki Imai** (今井伸明) is an Associate Professor at the [[UTokyo CNS|Center for Nuclear Study (CNS)]], University of Tokyo, a position he has held since 2014. He is the scientific coordinator of the **[[OEDO]]-[[SHARAQ Spectrometer|SHARAQ]]** beamline system at [[RIKEN Nishina Center for Accelerator-Based Science (RNC)|RIKEN RIBF]].
 
+> [!Feynman]- OEDO-SHARAQ as "Beam Prep + Precision Scale"
+> **Q:** Could I interpret the OEDO-SHARAQ beamline system as a system with a determined low-energy RIB and a high momentum resolution mass spectrometer?
+> 
+> **Language note:** More natural phrasing: *"Can I think of the OEDO-SHARAQ system as combining a **well-defined** low-energy RIB source with a high-**momentum-resolution** spectrometer?"* — "determined" → "well-defined" (determined implies willpower, not precision); "mass spectrometer" → "spectrometer" (SHARAQ measures momentum, not mass directly); hyphenate "momentum-resolution" as a compound modifier.
+>
+> Yes — that decomposition captures the essential logic. Think of it as a two-stage machine:
+>
+> **Stage 1 — OEDO (the beam chef).** BigRIPS hands you a fast, messy RI beam at ~200 MeV/u. OEDO slows it down to 10–50 MeV/u *achromatically* — meaning the output energy is well-defined regardless of the momentum spread coming in. So "determined low-energy RIB" is accurate: you get a beam whose energy and identity you *know* with precision, not a smeared-out mess.
+>
+> **Stage 2 — SHARAQ (the precision scale).** After your prepared beam hits a reaction target, the outgoing particles enter SHARAQ. With $p/\Delta p = 15{,}000$, it measures the momentum of reaction products so precisely that you can reconstruct the *mass of what you can't see* — the excited state left behind in the target nucleus. That's **missing-mass spectroscopy**: you weigh the invisible product by measuring everything else.
+>
+> One nuance: calling SHARAQ a "mass spectrometer" works as intuition, but it's technically a **magnetic spectrometer** — it measures momentum, not mass directly. The mass information comes from kinematics (conservation of energy and momentum). A traditional mass spectrometer (like in chemistry) separates ions by $m/q$; SHARAQ instead reconstructs the missing mass of an undetected nuclear state from the precisely measured momentum of the detected ejectile.
+>
+> So your mental model is sound: OEDO gives you a *known, clean beam*, SHARAQ gives you *precision momentum measurement* → together they enable missing-mass spectroscopy on exotic nuclei that no other facility can do.
+
 **See also:** [[Prof_Nobuaki_Imai|Professor Profile]] | [[Nobuaki_Imai_Research_Landscape.canvas|Research Landscape (canvas)]]
 
 **Career trajectory:**
@@ -72,8 +87,7 @@ The group's physics program spans two broad pillars:
 
 The **OEDO** system (*Optimized Energy-Degrading Optics for RI beams*) solves a fundamental problem at in-flight [[Radioactive Isotope Beam|RI beam]] facilities: [[Projectile Fragmentation|projectile fragmentation]] and [[In-Flight Fission|in-flight fission]] at [[BigRIPS]] produce secondary beams at $\sim200$ MeV/u, but many reaction studies — [[Transfer Reactions|nucleon transfer]], sub-barrier [[Coulomb Excitation|Coulomb excitation]], [[Surrogate Reaction|surrogate reactions]] — require beam energies of $10$–$50$ MeV/u with good [[Energy Resolution|energy resolution]].
 
-Conventional thick degraders destroy beam quality (emittance blow-up, straggling). OEDO achieves achromatic energy degradation while preserving beam optics.
-
+Conventional thick degraders destroy beam quality (emittance blow-up, straggling). OEDO achieves achromatic energy degradation while preserving beam optics. (see `Feynman: OEDO-SHARAQ as "Beam Prep + Precision Scale"`)
 **Construction completed:** March 2017. **First beam:** June 2017.
 
 ### 3.2 Technical Design — Three Key Components
@@ -103,13 +117,13 @@ Two sets of superconducting quadrupole triplets **refocus** the decelerated beam
 
 ### 3.4 SHARAQ Spectrometer
 
-Downstream of S0, the **SHARAQ** magnetic spectrometer (configuration: **QQDQD** — two quadrupoles, dipole, quadrupole, dipole) performs high-resolution [[Missing-Mass Spectroscopy|missing-mass spectroscopy]] with a momentum resolution of:
+Downstream of S0, the **SHARAQ** magnetic spectrometer (configuration: **QQDQD** — two quadrupoles, dipole, quadrupole, dipole) performs high-resolution [[Missing-Mass Spectroscopy|missing-mass spectroscopy]] with a momentum resolution of: (see `Feynman: OEDO-SHARAQ as "Beam Prep + Precision Scale"`)
 
 $$\frac{\Delta p}{p} = \frac{1}{15000}$$
 
 (equivalently, a resolving power $p/\Delta p = 15000$).
 
-This combination — an energy-degrading RI beamline feeding a high-resolution spectrometer — is currently the only facility of its kind, combining achromatic energy degradation with high-resolution missing-mass spectroscopy for RI beams ([Imai et al., PTEP 2019, 023D02](https://doi.org/10.1093/ptep/ptz002)).
+This combination — an energy-degrading RI beamline feeding a high-resolution spectrometer — is currently the only facility of its kind, combining achromatic energy degradation with high-resolution missing-mass spectroscopy for RI beams ([Imai et al., PTEP 2019, 023D02](https://doi.org/10.1093/ptep/ptz002)). (see `Feynman: OEDO-SHARAQ as "Beam Prep + Precision Scale"`)
 
 ### 3.5 Physics Enabled
 

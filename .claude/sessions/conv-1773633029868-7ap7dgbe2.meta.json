@@ -1,0 +1,20 @@
+{
+  "id": "conv-1773633029868-7ap7dgbe2",
+  "title": "Design OEDO-SHARAQ RIB detection system",
+  "titleGenerationStatus": "success",
+  "createdAt": 1773633029868,
+  "updatedAt": 1773633893891,
+  "lastResponseAt": 1773633893891,
+  "sessionId": "9d31a4ea-427a-4f7a-afa5-4021193b4658",
+  "sdkSessionId": "9d31a4ea-427a-4f7a-afa5-4021193b4658",
+  "currentNote": "30_Research/Physics/Nobuaki_Imai_Research_Program.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 3,
+    "cacheCreationInputTokens": 444,
+    "cacheReadInputTokens": 51424,
+    "contextWindow": 200000,
+    "contextTokens": 51871,
+    "percentage": 26
+  }
+}

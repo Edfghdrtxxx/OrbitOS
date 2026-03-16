@@ -30,11 +30,45 @@ Help the user start their day by reviewing the last daily note's progress, creat
      - Last update date (to identify stale projects 3+ days)
      - Any due dates or time-sensitive items
 
-4. **Check Inbox**
+4. **Investigate Deadlines (Explore Agent)**
+
+   Launch an Explore agent (`subagent_type: Explore`) **in background** to scan for all time-sensitive items within 60 days of today. The agent runs concurrently with the remaining Step 1 work.
+
+   **Agent prompt template** (fill in `{today}` and `{cutoff}` = today + 60 days):
+
+   > Search the OrbitOS vault at D:/obsidian/OrbitOS for deadlines and time-sensitive items. Today is `{today}`.
+   >
+   > **Scope** (search these, nothing else):
+   > - `20_Project/` — all files recursively
+   > - `90_Plans/` — all files recursively
+   > - `30_Research/` — frontmatter `due:` / `next_review:` fields only
+   > - `00_Inbox/` — frontmatter `due:` fields only
+   >
+   > **What to look for:**
+   > - Frontmatter fields: `due`, `next_review`, `target_intake`, or any date-valued key that implies a deadline
+   > - Markdown tables with date columns (especially in `Official_Deadlines.md` and execution plans)
+   > - Dated checkbox pattern: `- [ ] YYYY-MM-DD:` (action items with date triggers)
+   > - Inline dates near keywords: deadline, due, by, before, until, window, registration, application, exam, submit, target
+   > - Phase/milestone boundaries in section headings (e.g., "Phase 0: NOW → 2026-04-30")
+   >
+   > **Filter:** Only include items whose date falls between `{today}` and `{cutoff}` (60-day window). Exclude past dates unless they are overdue unchecked tasks (`- [ ]` with a date before today).
+   >
+   > **Output format — return a markdown list, one item per line:**
+   > ```
+   > - **[D-{days}]** {what} — {date} ({source file}) {confidence}
+   > ```
+   > - `D-{days}`: days remaining (negative = overdue, e.g., `D+3` means 3 days overdue)
+   > - `{confidence}`: one of `VERIFIED`, `Estimated`, `Unverified` — look for these markers in the source; default to `Unverified` if not marked
+   > - Sort by date ascending (most urgent first)
+   > - If nothing is found, return "No deadlines within 60 days."
+
+   **Usage:** The agent's output is consumed silently in Step 3 — do not show it to the user during Step 2. Incorporate findings into the Notes section of the daily note.
+
+5. **Check Inbox**
    - List files in `00_Inbox/` with `status: pending`
    - Count items waiting to be processed
 
-5. **Analyze & Prioritize**
+6. **Analyze & Prioritize**
    - Identify time-sensitive items (deadlines, events)
    - Re-read the last daily note as a premise, to find projects not touched in 3+ days (stale)
    - **Stale deferral check**: For each `#Deferred` task, scan the oldest available daily note within the past 7 days. If deferred 5+ consecutive days, flag in Notes section (e.g., "`Task X` deferred 7 days — re-scope, schedule, or drop?")
@@ -93,7 +127,7 @@ Use the AskUserQuestion tool to gather (combine into as few rounds as possible):
    - **Log**: Clear body, keep header
    - **Evening Review**: Clear body, keep header
    - **AI Digest**: Remove entire section if present
-   - **Notes**: Replace with fresh recommendations
+   - **Notes**: Replace with fresh recommendations. **Deadline integration:** prepend the Explore agent's deadline findings as a `> [!warning] Upcoming Deadlines` callout before other notes. Each deadline item is one line: `> - **[D-{days}]** {what} — {date} ({confidence})`. Omit the source file path — keep it concise. If the agent returned "No deadlines within 60 days", omit the callout entirely.
    - **Related Projects**: Update statuses
 
 ## Step 4: Process New Ideas (from Q4)

@@ -15,18 +15,24 @@ You insert Feynman-style explanations directly into the user's note as foldable 
 1. **Read the note** the user points you to (path or attached file).
 2. **Identify what's unclear** — the user may give a line number, quote a phrase, or describe what confuses them. If ambiguous, use `AskUserQuestion` to confirm.
 3. **Write the explanation** as a foldable callout and insert it directly below the unclear statement in the note.
-4. **Annotate related statements** — if other lines in the note touch the same concept, append `` see `Feynman: <topic>` `` at the end of those lines so the user can find the main explanation.
+4. **Annotate related statements** — if other lines in the note touch the same concept, append `` (see `Feynman: <topic>`) `` at the end of those lines so the user can find the main explanation.
 
 ## Callout Format
 
 ```markdown
 > [!Feynman]- <Topic Name>
+> **Q:** The user's original question, preserved verbatim or lightly trimmed for clarity.
+> **Language note:** A brief correction of any non-native phrasing in the question — what they meant to say in natural English.
+>
 > First line of explanation.
 > Second line — building on the first.
 >
 > A new paragraph within the callout for a distinct sub-point.
 > Every line (including blank separators) must start with `> `.
 ```
+
+- **Always start with `> **Q:**`** — preserve the user's question (verbatim or lightly trimmed) as the first line inside the callout, so future readers know *what was being asked*.
+- **Always follow with `> **Language note:**`** — the user is a non-native English speaker. Rectify any awkward or incorrect phrasing from the question into natural English. Keep it to one sentence: state the better phrasing and, if helpful, briefly note why (word choice, idiom, grammar). If the question is already natural English, write "Phrasing is natural — no corrections needed."
 
 - The `-` after `[!Feynman]` makes it **collapsed by default** so it doesn't clutter the reading flow.
 - Topic name should be short and descriptive (2-5 words).
@@ -54,7 +60,7 @@ Write every explanation as if teaching someone encountering the idea for the fir
 When a concept explained in one Feynman callout is also mentioned elsewhere in the same note, append a subtle annotation to those other lines:
 
 ```markdown
-Original line content see `Feynman: <Topic Name>`
+Original line content (see `Feynman: <Topic Name>`)
 ```
 
 - Use inline code, not wikilinks.
@@ -67,3 +73,14 @@ Original line content see `Feynman: <Topic Name>`
 - Do not restructure or reformat the user's existing note content.
 - Do not add frontmatter or metadata changes.
 - Do not create new files — work within the note the user specified.
+
+
+## Template
+```markdown
+> [!Feynman]- OEDO-SHARAQ as "Beam Prep + Precision Scale"
+> **Q:** Could I interpret the OEDO-SHARAQ beamline system as a system with a determined low-energy RIB and a high momentum resolution mass spectrometer?
+> 
+> **Language note:** More natural phrasing: *"Can I think of the OEDO-SHARAQ system as combining a **well-defined** low-energy RIB source with a high-**momentum-resolution** spectrometer?"* — "determined" → "well-defined" (determined implies willpower, not precision); "mass spectrometer" → "spectrometer" (SHARAQ measures momentum, not mass directly); hyphenate "momentum-resolution" as a compound modifier.
+
+<Answers>
+```
