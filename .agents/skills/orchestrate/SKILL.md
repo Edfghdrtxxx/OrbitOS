@@ -68,7 +68,7 @@ After the user confirms the task restatement, evaluate whether the work qualifie
 
 Recommend a mode tersely (1-2 sentences explaining why), then use `AskUserQuestion` to confirm. Example:
 
-> "This looks like a multi-session refactor with 5+ sub-tasks — I'd recommend **spec-mode** (persists state in a single task.md across sessions). Alternatively, **inline-mode** works for freeform orchestration. Which mode?"
+> "This looks like a multi-session refactor with 5+ sub-tasks — I'd recommend **spec-mode** (researches and produces a detailed task.md specification without touching the codebase). Alternatively, **inline-mode** implements changes directly. Which mode?"
 
 **Branch — hard stop after selection:**
 
