@@ -114,6 +114,14 @@ After all agents complete and all reviews pass:
 
 If there are no flags, omit the Flags section.
 
+## Phase 6 — REFLECT
+
+After presenting the synthesis summary, invoke `/reflect` using the Skill tool. This is a **mandatory** step — do not skip it.
+
+The purpose is to catch **orchestrator-level mistakes** — scope drift, dropped sub-tasks, bad routing decisions, unverified assumptions made during decomposition or dispatch. Individual implementation quality is already covered by Phase 4 reviewers; this step audits the orchestration process itself.
+
+Let the reflect skill run generically against the full session. Present its findings to the user. Do **not** act on any findings until the user explicitly approves — this is required by the reflect skill's own protocol.
+
 # Failure Handling
 
 - If a sub-agent fails, **retry once** with adjusted instructions (e.g., narrower scope, more explicit paths).

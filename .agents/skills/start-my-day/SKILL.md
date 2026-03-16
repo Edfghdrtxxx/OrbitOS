@@ -123,6 +123,12 @@ Today's note: [[YYYY-MM-DD]]
 > Next: /breakdown-tasks → /estimate-time
 ```
 
+## Step 6: Reflect
+
+Invoke `/reflect` using the Skill tool. This is a **mandatory** step — do not skip it.
+
+Let the reflect skill run generically against the full session. Present its findings to the user. Do **not** act on any findings until the user explicitly approves — this is required by the reflect skill's own protocol.
+
 # IMPORTANT RULES
 
 - **Completeness Sanity Check**: After applying delta, verify no `- [ ]` or `- [*]` task from the last note was accidentally removed.
