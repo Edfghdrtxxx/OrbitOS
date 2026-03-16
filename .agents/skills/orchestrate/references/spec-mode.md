@@ -9,8 +9,11 @@ openspec/
 └── changes/
     ├── [change-name]/
     │   ├── task.md
+    │   ├── 01_refactor_auth.md      (implementer report)
     │   ├── review_01.md
-    │   └── review_01b.md  (revision round 2, if needed)
+    │   ├── review_01b.md            (revision round 2, if needed)
+    │   ├── 02_update_tests.md       (implementer report)
+    │   └── review_02.md
     └── archive/
         └── YYYY-MM-DD-[name]/
             └── task.md
@@ -93,15 +96,19 @@ Self-check before sending any dispatch prompt: *"Am I telling the agent what to 
 
 **Sub-agent types:** The Agent tool's `subagent_type` parameter selects different capabilities — `Explore` (fast, read-only codebase discovery), `Plan` (architecture design, returns plans not code), and `general-purpose` (full tool access, default). Choose based on what the sub-task actually needs.
 
+**Output convention:** Every implementer sub-agent writes a report file to the change directory: `<NN>_<description>.md` (where `<NN>` matches the task number, e.g., `01_refactor_auth.md`). The report captures what was changed, where (file paths), and any decisions made. This serves as both an audit trail for the orchestrator and input context for the reviewer. The orchestrator tells each implementer its output path in the dispatch prompt.
+
+When the implementer runs in a worktree, it writes the report to the **shared change directory** (not the worktree) so the orchestrator and reviewer can read it directly.
+
 **Context injection:** Point sub-agents to the task.md file path so they can read it directly. Only paste task.md content into the prompt when the sub-agent is in an isolated worktree without access to the openspec/ path. The task.md writer sub-agent does not need worktree isolation because it writes to a non-competing path.
 
 ## Phase 4 — REVIEW
 
 **Every implementer agent MUST be paired with a separate reviewer agent.**
 
-The reviewer's role is **skeptical auditor** — its job is to find problems, not to help. Give it the implementer's output and the files changed, then let it own HOW it audits. The reviewer decides its own approach to scrutiny.
+The reviewer's role is **skeptical auditor** — its job is to find problems, not to help. Give it the implementer's report file path (`<NN>_<description>.md`) and any worktree path, then let it own HOW it audits. The reviewer decides its own approach to scrutiny — it can cross-check the report against the actual file changes.
 
-**Worktree access:** When the implementer ran in a worktree, pass the worktree path to the reviewer so it can read the implementer's actual file changes directly (e.g., "The implementer's changes are at `/tmp/worktree-abc123/` — read files from that path to review them"). The reviewer writes its review file to the shared change directory (`openspec/changes/[change-name]/`), not to the worktree.
+**Worktree access:** When the implementer ran in a worktree, pass the worktree path to the reviewer so it can read the implementer's actual file changes directly (e.g., "The implementer's changes are at `/tmp/worktree-abc123/` — read files from that path to review them. The implementer's report is at `openspec/changes/[change-name]/01_refactor_auth.md`."). The reviewer writes its review file to the shared change directory (`openspec/changes/[change-name]/`), not to the worktree.
 
 **Hard rules:**
 - Reviewers are **read-only w.r.t. implementation files** — they MUST NOT modify deliverables or any files written by implementers.
@@ -119,7 +126,7 @@ The reviewer's role is **skeptical auditor** — its job is to find problems, no
 
 ## Phase 5 — SYNTHESIZE
 
-**Structural gate:** Before synthesizing, `Glob` the change directory (`openspec/changes/<change-name>/`) and verify it contains at least one implementation-produced file paired with at least one corresponding review file (`review_*.md`). If the directory lacks this minimum structure — e.g., implementation output exists but no review was written, or vice versa — halt and investigate before proceeding. Every implementation must have been reviewed.
+**Structural gate:** Before synthesizing, `Glob` the change directory (`openspec/changes/<change-name>/`) and verify pairing: for every implementer report (`<NN>_*.md`) there must be a corresponding review (`review_<NN>.md`). If any report lacks a review — or vice versa — halt and investigate before proceeding.
 
 After all agents complete and all reviews pass, present a structured summary:
 

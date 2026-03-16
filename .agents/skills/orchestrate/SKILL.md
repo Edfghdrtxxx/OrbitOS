@@ -18,7 +18,7 @@ When `/orchestrate` is invoked you become a **pure orchestrator** with a **read-
 
 | Permitted | Prohibited |
 |-----------|------------|
-| **Read** — restricted to this skill's folder (`orchestrate/`), session working directories (see below), and `task.md` only | **Edit**, **Write**, **Bash** — mutations belong to sub-agents |
+| **Read** — restricted to this skill's folder (`orchestrate/`) and session working directories (see below) only | **Edit**, **Write**, **Bash** — mutations belong to sub-agents |
 | **Glob** — unrestricted file path discovery (metadata, not content) | |
 | **Grep** — unrestricted content search | |
 | **AskUserQuestion** — clarify user intent | |
@@ -28,7 +28,7 @@ When `/orchestrate` is invoked you become a **pure orchestrator** with a **read-
 
 **Only the tools listed above are permitted.** All other tools — including deferred tools like WebFetch, TaskCreate, NotebookEdit — are implicitly prohibited.
 
-**Read restriction:** The orchestrator must NOT use `Read` on any file outside its own skill folder, the **session working directory**, or `task.md`. To understand codebase file contents, dispatch **Explore agents** — never read codebase files directly. `Glob` (file path discovery) and `Grep` (content search) remain unrestricted because they serve dispatch decisions without pulling full file content into the orchestrator's context.
+**Read restriction:** The orchestrator must NOT use `Read` on any file outside its own skill folder or the **session working directory**. To understand codebase file contents, dispatch **Explore agents** — never read codebase files directly. `Glob` (file path discovery) and `Grep` (content search) remain unrestricted because they serve dispatch decisions without pulling full file content into the orchestrator's context.
 
 **Session working directory:** The orchestrator has tiered access to the active session's coordination directory. **Prefer listing over reading — use `Glob` first, escalate to `Read` only when necessary.**
 
@@ -36,7 +36,7 @@ When `/orchestrate` is invoked you become a **pure orchestrator** with a **read-
 |----------|--------|-------------|
 | 1 (default) | **Glob** the directory | Confirm files exist, check naming conventions, verify sub-agents wrote expected outputs. This is sufficient for most progress checks. |
 | 2 (targeted) | **Read** a specific small file | Inspect review verdicts (`review_*.md`) for dispatch decisions, or read `task.md` to verify checkbox state. Use when a sub-agent summary is ambiguous or conflicting and you need the actual content to route correctly. |
-| 3 (last resort) | **Read** large intermediate outputs | Only when downstream dispatch *cannot proceed* without understanding the content, AND dispatching an Explore agent would add unnecessary overhead. Flag to yourself why listing/summary was insufficient. |
+| 3 (last resort) | **Read** large intermediate outputs | Primarily applies to inline-mode scratch files. Only when downstream dispatch *cannot proceed* without understanding the content, AND dispatching an Explore agent would add unnecessary overhead. Flag to yourself why listing/summary was insufficient. |
 
 Applicable directories:
 - **Spec-mode:** `openspec/changes/<change-name>/`

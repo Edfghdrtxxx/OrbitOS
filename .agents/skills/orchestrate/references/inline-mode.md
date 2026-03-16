@@ -25,7 +25,10 @@ The orchestrator is a **control plane, not a data conduit**. Sub-agent research 
 
 **Setup:** The first dispatched sub-agent creates the scratch directory: `99_System/.scratch/<session-id>/` (use a short, descriptive session ID like `imai-research` or `tpc-wiki`). Include this as an explicit instruction in the first agent's dispatch prompt.
 
-**Output convention:** Each sub-agent that produces intermediate content (research findings, drafted sections, collected data) writes to a numbered file in the scratch directory (e.g., `01_publications.md`, `02_physics_background.md`). The orchestrator tells each agent its output path in the dispatch prompt.
+**Output convention:** Every implementer sub-agent writes a numbered file to the scratch directory: `<NN>_<description>.md` (e.g., `01_publications.md`, `02_physics_background.md`). The orchestrator tells each agent its output path in the dispatch prompt.
+
+- **Content producers** (research, drafts, collected data): the scratch file IS the deliverable.
+- **Worktree implementers** (mutate existing files): the scratch file is a report capturing what was changed, where (file paths), and any decisions made. The implementer writes this report to the **shared scratch directory**, not the worktree.
 
 **What the orchestrator receives:** Sub-agents return only a **1-2 sentence summary** (success/failure + scope covered). The orchestrator uses this summary as the primary signal for routing decisions.
 
@@ -68,7 +71,7 @@ The reviewer's role is **skeptical auditor** — its job is to find problems, no
 
 ## Phase 5 — SYNTHESIZE
 
-**Structural gate:** Before synthesizing, `Glob` the scratch directory (`99_System/.scratch/<session-id>/`) and verify it contains at least one implementation-produced file paired with at least one corresponding review file (`review_*.md`). If the directory lacks this minimum structure — e.g., implementation output exists but no review was written, or vice versa — halt and investigate before proceeding. Every implementation must have been reviewed.
+**Structural gate:** Before synthesizing, `Glob` the scratch directory (`99_System/.scratch/<session-id>/`) and verify pairing: for every implementer output (`<NN>_*.md`) there must be a corresponding review (`review_<NN>.md`). If any output lacks a review — or vice versa — halt and investigate before proceeding.
 
 After all agents complete and all reviews pass:
 

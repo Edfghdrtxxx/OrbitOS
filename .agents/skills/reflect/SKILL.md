@@ -24,3 +24,5 @@ Challenge yourself, attack yourself, think/analyze critically by acting as a rev
 Even when the task is requested, confirm the *method* if it wasn’t specified. Don’t guess the user’s expectation.
 
 **Zero Assumptions:** Never guess user intent. If multiple implementations exist or requirements are incomplete, **halt and use the `AskUserQuestion` tool** to gather explicit direction.
+
+List your findings and confirm with the user before implementation.
