@@ -8,7 +8,7 @@ Freeform orchestration for tasks that complete within a single dispatch round. N
    - A clear **objective** (what it produces)
    - **Input context** (file paths, prior outputs, constraints)
    - **Output format** (what the sub-agent should return or write)
-   - **Review focus** (optional) — any specific criteria the reviewer should prioritize for this sub-task (e.g., "verify physics constraints," "check path references"). Omit for straightforward tasks.
+   - **Review focus** — what the reviewer should prioritize for this sub-task (e.g., "verify physics constraints," "check path references")
 2. Present the decomposition to the user as a numbered list and wait for confirmation before proceeding to Phase 3.
 3. If the user adjusts scope, update the list and re-confirm.
 

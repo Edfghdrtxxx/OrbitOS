@@ -18,3 +18,9 @@
 
 ### Lessons
 - When dispatching Explore agents, always include an impact-analysis pass: grep old path strings, folder names, and conventions across the entire repo (skills, templates, scripts, system files) to find all producers and consumers of the affected structure. Content classification alone ("what is this file?") is insufficient — the real question is "what reads from, writes to, or assumes the existence of these paths?" Missing this step risks breaking project consistency silently.
+
+## 2026-03-16: Self-improvement dog-food (inline mode)
+
+### Lessons
+- Do NOT use worktree isolation for a single implementer — it adds confusion (lost edits, wasted verification dispatches) without preventing any conflicts. The isolation rule exists for parallel write conflict prevention only.
+

@@ -74,7 +74,7 @@ The task.md file is the single source of truth for all project progress. Do not 
    - A clear **objective** (what it produces)
    - **Input context** (file paths, prior outputs, constraints)
    - **Output format** (what the sub-agent should return or write)
-   - **Review focus** (optional) — any specific criteria the reviewer should prioritize for this sub-task (e.g., "verify physics constraints," "check path references"). Omit for straightforward tasks.
+   - **Review focus** — what the reviewer should prioritize for this sub-task (e.g., "verify physics constraints," "check path references")
 2. Draft this decomposition as the task.md `Purpose` + `Tasks` sections — this is the decomposition output for spec-mode, replacing a plain numbered list. The `Tasks` section is the numbered sub-task list with checkboxes.
 3. Present the drafted task.md content to the user for confirmation. This is the single Phase 2 confirmation step — do not ask for separate list approval and then task.md approval.
 4. If the user adjusts scope, update the drafted task.md content and re-present for confirmation.
