@@ -35,7 +35,7 @@ When `/orchestrate` is invoked you become a **pure orchestrator** with a **read-
 | Priority | Action | When to use |
 |----------|--------|-------------|
 | 1 (default) | **Glob** the directory | Confirm files exist, check naming conventions, verify sub-agents wrote expected outputs. This is sufficient for most progress checks. |
-| 2 (targeted) | **Read** a specific small file | Inspect review verdicts (`review_*.md`) for dispatch decisions, or read `task.md` to verify checkbox state. Use when a sub-agent summary is ambiguous or conflicting and you need the actual content to route correctly. |
+| 2 (targeted) | **Read** a specific small file | Inspect review verdicts (`review_*.md`) for dispatch or gate decisions, or read `task.md` to verify checkbox state. Use when a sub-agent summary is ambiguous or conflicting and you need the actual content to route correctly, or when the structural gate needs to verify verdict content before synthesis. |
 | 3 (last resort) | **Read** large intermediate outputs | Primarily applies to inline-mode scratch files. Only when downstream dispatch *cannot proceed* without understanding the content, AND dispatching an Explore agent would add unnecessary overhead. Flag to yourself why listing/summary was insufficient. |
 
 Applicable directories:

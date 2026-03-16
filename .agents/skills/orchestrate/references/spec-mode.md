@@ -74,9 +74,11 @@ The task.md file is the single source of truth for all project progress. Do not 
    - A clear **objective** (what it produces)
    - **Input context** (file paths, prior outputs, constraints)
    - **Output format** (what the sub-agent should return or write)
+   - **Review focus** (optional) — any specific criteria the reviewer should prioritize for this sub-task (e.g., "verify physics constraints," "check path references"). Omit for straightforward tasks.
 2. Draft this decomposition as the task.md `Purpose` + `Tasks` sections — this is the decomposition output for spec-mode, replacing a plain numbered list. The `Tasks` section is the numbered sub-task list with checkboxes.
 3. Present the drafted task.md content to the user for confirmation. This is the single Phase 2 confirmation step — do not ask for separate list approval and then task.md approval.
-4. After confirmation, dispatch a sub-agent to write the task.md to `openspec/changes/[change-name]/task.md`. Wait for this dispatch to complete before proceeding to Phase 3 — do not background it.
+4. If the user adjusts scope, update the drafted task.md content and re-present for confirmation.
+5. After confirmation, dispatch a sub-agent to write the task.md to `openspec/changes/[change-name]/task.md`. Wait for this dispatch to complete before proceeding to Phase 3 — do not background it.
 
 ## Phase 3 — DISPATCH
 
@@ -85,6 +87,8 @@ For each sub-task, spawn a sub-agent via the **Agent** tool.
 **Core philosophy:** Transfer the mental model — WHY this matters and WHAT success looks like — then let the sub-agent own the HOW entirely. Treat every sub-agent as a **senior peer, not a subordinate**. Trust it to figure out the implementation.
 
 Self-check before sending any dispatch prompt: *"Am I telling the agent what to think, or giving it what it needs to think for itself?"* If the former, cut.
+
+Inform each implementer that its output will be reviewed by a separate agent and may require revision.
 
 **Parallelism rules:**
 - Independent sub-tasks → dispatch in parallel (`run_in_background: true`)
@@ -118,15 +122,29 @@ The reviewer's role is **skeptical auditor** — its job is to find problems, no
 **Review file format:** Verdict line (`approved` or `needs-revision`), then a Findings section with specific, actionable items (file paths, line numbers, what's wrong, why it matters).
 
 **Revision loop:**
+
+**The orchestrator MUST re-dispatch for revision when a reviewer returns `needs-revision`.** The orchestrator MUST NOT proceed to the next sub-task or to SYNTHESIZE until the sub-task receives an `approved` verdict or hits the escalation limit below.
+
 1. If the reviewer returns **needs-revision**, dispatch a new implementer with the review file path as input context (e.g., "Read `openspec/changes/[change-name]/review_01.md` for reviewer feedback"). Prefer file paths over re-serialization, but paste the review content into the dispatch prompt if the revision implementer runs in a worktree without access to the change directory (same pattern as the task.md context injection rule).
 2. After the new implementer completes, dispatch a new reviewer (which writes `review_<NN>b.md` for round 2, `review_<NN>c.md` for round 3, etc.).
-3. **Max 4 revision rounds** per sub-task. If still unresolved, escalate to the user with full context (original objective, implementer output paths, review file paths).
+3. **Max 4 revision rounds** per sub-task. If still unresolved, escalate to the user with: the original sub-task objective, the implementer report file path, all review file paths for this sub-task, and a 1-2 sentence summary of the unresolved disagreement.
+
+**Post-escalation:** After escalation, the orchestrator MUST wait for explicit user direction before proceeding. The user may:
+- **Accept as-is:** Proceed, but flag the sub-task as `accepted-without-approval` in the synthesis summary.
+- **Provide manual guidance:** The orchestrator dispatches a new implementer with the user's specific instructions (this does NOT reset the round counter — it is a user-directed override).
+- **Abandon the sub-task:** Remove it from the task list. The synthesis summary notes the abandonment.
+
+The orchestrator MUST NOT silently proceed past an escalation.
 
 **Checkpoint update:** After each review passes, dispatch a sub-agent to mark the corresponding checkbox in task.md as `[x]`. This keeps task.md as the live source of truth for progress.
 
 ## Phase 5 — SYNTHESIZE
 
-**Structural gate:** Before synthesizing, `Glob` the change directory (`openspec/changes/<change-name>/`) and verify pairing: for every implementer report (`<NN>_*.md`) there must be a corresponding review (`review_<NN>.md`). If any report lacks a review — or vice versa — halt and investigate before proceeding.
+**Structural gate:** Before synthesizing, verify the change directory (`openspec/changes/<change-name>/`):
+
+1. **Pairing:** `Glob` the directory. For every implementer report (`<NN>_*.md`), a corresponding `review_<NN>.md` (or revision review `review_<NN>[b-z].md`) must exist. Separately, for every review file (`review_<NN>*.md`), a corresponding implementer report (`<NN>_*.md`) must exist. If either check fails, halt and investigate.
+2. **Verdict:** Read the verdict line of each review file — or the latest revision review if revision files exist (e.g., `review_01c.md` takes precedence over `review_01b.md` and `review_01.md`). This is a "gate decision" Read under SKILL.md's tiered access Priority 2. Every review must contain a recognized verdict (`approved` or `needs-revision`) as its first line. If any latest review says `needs-revision`, the sub-task is incomplete — halt and return to Phase 4. If a sub-task was accepted via user escalation override (post-escalation), verify the override was explicitly granted.
+3. **Malformed reviews:** If a review file is empty or its first line does not contain a recognized verdict keyword (`approved` or `needs-revision`), treat the review as malformed — halt and investigate. Do not silently pass or silently fail.
 
 After all agents complete and all reviews pass, present a structured summary:
 
