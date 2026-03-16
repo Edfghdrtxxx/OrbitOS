@@ -26,14 +26,15 @@ created: 2026-03-16
 **See also:** [[Nobuaki_Imai_Research_Program|Prof. Nobuaki Imai — Research Program]] | [[Prof_Nori_Aoi|Professor Profile]]
 
 **Career trajectory:**
+- **Master's** — University of Tokyo, Graduate School of Science, Dept. of Physics (1992–1994)
 - **PhD** — University of Tokyo, Graduate School of Science, Dept. of Physics (1994–1998)
 - **JSPS Research Fellow** — Rikkyo University (Apr–Sep 1998)
 - **Research Assistant** — UTokyo, Ishihara Lab then Sakurai Lab (1998–2002)
 - **Researcher** — [[RIKEN Nishina Center for Accelerator-Based Science (RNC)|RIKEN Nishina Center]], Heavy Ion Nuclear Physics Laboratory (2003–2011)
-- **Professor** — [[RCNP|Osaka University RCNP]] (2011–2025); served as Vice Director
+- **Professor** — [[RCNP|Osaka University RCNP]] (2011–2025)
 - **Professor** — [[UTokyo CNS]], Graduate School of Science (March 2025–present)
 
-His publication record spans **~284 publications** (INSPIRE-HEP) with **10,600+ citations** (ResearchGate), reflecting sustained contributions across four interconnected research themes:
+His publication record spans **~284 papers** on INSPIRE-HEP and **~464 research works** with **10,600+ citations** on ResearchGate (the larger count includes collaborative and conference works auto-attributed by the platform). His contributions span four interconnected research themes:
 
 1. **[[Shell Evolution]] in exotic nuclei** — disappearance of classic magic numbers (N=20, N=28), emergence of new ones (N=16, N=34)
 2. **Nuclear deformation and collectivity** — [[Superdeformation|superdeformation]], [[Shape Coexistence|shape coexistence]], and extreme deformation (hyperdeformation) in light nuclei
@@ -197,6 +198,10 @@ The **[[Island of Inversion]]** is a region of the nuclear chart around N=20, Z=
 | ${}^{34}\text{Mg}$ | 22 | ${}^{36}\text{Si}$ fragmentation | 660(10) | $\sim 3.2$ | Well-deformed (Aoi first author) |
 | ${}^{36}\text{Mg}$ | 24 | in-beam $\gamma$ | — | $\sim 3.1$ | Merging region |
 
+**${}^{33}\text{Mg}$: Ground-State Parity Resolution**
+- H.L. Crawford et al. (incl. **N. Aoi**), *Phys. Rev. C* **103**, 064318 (2021) — 12 citations
+- One-neutron removal from ${}^{34}\text{Mg}$ and one-proton removal from ${}^{34}\text{Al}$; momentum distribution analysis resolved the ground-state parity of ${}^{33}\text{Mg}$ as negative parity, confirming strong intruder dominance in the island of inversion
+
 ### 4.3 Merging of N=20 and N=28 Islands
 
 In the neutron-rich Mg isotopic chain, the traditional shell closures at both N=20 and N=28 break down, creating a continuous region of deformation that merges the two "islands of inversion."
@@ -217,6 +222,12 @@ The N=28 magic number (filled $f_{7/2}$ neutron orbital) breaks down in neutron-
 - $E(4^+)/E(2^+) = 2.93(5)$ — indicates well-developed deformation
 - Rapid deformation development from N=24 to N=28 in Si isotopes: N=28 shell closure completely breaks down at Z=14
 
+**${}^{40}\text{Mg}$: First Spectroscopy at the Drip Line**
+- P. Doornenbal et al. (incl. **N. Aoi**), *Phys. Rev. Lett.* **122**, 052501 (2019)
+- First study of excited states in ${}^{40}\text{Mg}$ (N=28, near the [[Neutron Drip Line|neutron drip line]]) via one-proton removal from ${}^{41}\text{Al}$
+- Two gamma-ray transitions observed; unexpected excitation spectrum compared to systematics and shell-model predictions
+- Uses [[DALI2]] + [[ZeroDegree]] spectrometer at RIBF
+
 ### 4.5 Emergence of N=34 — Evidence from ${}^{54}\text{Ca}$
 
 **${}^{54}\text{Ca}$: New Magic Number** (Aoi's most-cited paper)
@@ -228,10 +239,31 @@ The N=28 magic number (filled $f_{7/2}$ neutron orbital) breaks down in neutron-
 ### 4.6 Discovery of N=16 Magic Number
 
 **Neutron Drip Line Studies**
-- N. Aoi et al., *Phys. Rev. Lett.* (2000)
+- H. Sakurai, S.M. Lukyanov, M. Notani, **N. Aoi** et al., *Phys. Lett. B* (1999) — 171 citations; and related *Phys. Rev. Lett.* (2000)
 - Projectile fragmentation of a 94.1 MeV/u ${}^{40}\text{Ar}$ beam on the [[RIPS]] separator at RIKEN
 - First observation of ${}^{31}\text{F}$; evidence for particle instability of ${}^{24,25}\text{N}$, ${}^{27,28}\text{O}$, ${}^{30}\text{F}$
 - Established N=16 as a new magic number near the [[Neutron Drip Line|neutron drip line]]
+
+### 4.7 Neutron-Rich Nuclei Beyond ${}^{132}\text{Sn}$
+
+${}^{132}\text{Sn}$ is a doubly magic nucleus (Z=50, N=82) far from stability. Exploring nuclei beyond this shell closure tests the [[Seniority Scheme|seniority scheme]] and proton-neutron configuration mixing in the heaviest neutron-rich nuclei accessible at RIBF.
+
+**${}^{136}\text{Sn}$ and ${}^{132}\text{Cd}$: Spectroscopy Beyond the ${}^{132}\text{Sn}$ Core**
+- **N. Aoi** (2nd author) et al., *EPJ Web Conf.* (2018)
+- In-beam gamma-ray spectroscopy with one- and two-proton removal reactions at RIBF
+- $2^+_1 \to 0^+_{\text{gs}}$ transitions identified in both nuclei
+- ${}^{136}\text{Sn}$: $E(2^+)$ similar to ${}^{134}\text{Sn}$, suggesting the **seniority scheme** holds for heavy tin isotopes beyond N=82
+- ${}^{132}\text{Cd}$: first spectroscopic information for even-even nuclei in the "southeast" region of ${}^{132}\text{Sn}$, where valence neutrons play an essential role in low-lying excitations
+
+### 4.8 Spin-Orbit Potential Modification in Neutron-Rich Nuclei
+
+The [[Spin-Orbit Interaction|spin-orbit potential]], which is responsible for the nuclear shell structure and the origin of magic numbers, may be modified in neutron-rich nuclei due to their extended neutron distributions.
+
+**Shallow Spin-Orbit Potential in ${}^{6}\text{He}$ and ${}^{8}\text{He}$**
+- S. Sakaguchi, T. Uesaka, **N. Aoi** (co-author) et al., *Phys. Rev. C* **87**, 021601(R) (2013)
+- Vector analyzing power measurements using a solid polarized proton target at 71 MeV/u
+- The spin-orbit potential for ${}^{8}\text{He}$ (and ${}^{6}\text{He}$) is **significantly shallower and more diffuse** than global systematics of stable nuclei
+- Close similarity between the matter radius and the root-mean-square radius of the spin-orbit potential indicates the extended neutron distribution directly modifies the spin-orbit interaction — with implications for understanding shell evolution in neutron-rich nuclei
 
 ---
 
@@ -300,7 +332,7 @@ In extremely neutron-rich nuclei, the proton and neutron contributions to collec
 - H.J. Ong, N. Imai, **N. Aoi** et al., *Phys. Rev. C* **73**, 024610 (2006) — 38 citations
 - Inelastic proton scattering on ${}^{16}\text{C}$ at 33 MeV/u
 - $M_n/M_p = 7.6 \pm 1.7$ — an extraordinarily large ratio indicating the $2^+$ state is nearly a **pure valence neutron excitation**
-- The $B(E2; 2^+ \to 0^+) = 0.28 \pm 0.06$ W.u. confirms minimal proton involvement
+- The $B(E2; 2^+ \to 0^+) = 0.28 \pm 0.06$ W.u. confirms minimal proton involvement (from proton scattering analysis, consistent with the 0.26 W.u. obtained via the lifetime method by Imai et al. above — the two values agree within uncertainties despite using different experimental techniques)
 - Conclusion: the quadrupole collectivity in ${}^{16}\text{C}$ is **neutron-dominant** — protons barely participate in the collective motion, demonstrating proton-neutron decoupling unique to exotic nuclei
 
 ### 5.4 B(E2) Systematics in Proton-Rich N=Z Nuclei
@@ -399,6 +431,12 @@ Physics applications include: [[Missing-Mass Spectroscopy|missing-mass spectrosc
 | 1999 | **PLB** | Particle stability of ${}^{31}\text{F}$ | Mapped neutron drip line; ${}^{25}\text{N}$, ${}^{28}\text{O}$ unbound | 171 |
 | 2014 | **NIM A** | [[DALI2]] detector array | Technical description of workhorse gamma-ray array | 155 |
 | 2013 | **PRL** | Merging N=20 and N=28 in ${}^{34,36,38}\text{Mg}$ | $E(4^+)/E(2^+) \sim 3.1$ persists from N=22 to N=26 | 101 |
+| 2012 | **PLB** | Interaction cross sections for Ne isotopes | Halo structures of ${}^{29}\text{Ne}$ and ${}^{31}\text{Ne}$ | 127 |
+| 2012 | **PRL** | N=16 spherical shell closure in ${}^{24}\text{O}$ | Confirmed N=16 via knockout from ${}^{24}\text{O}$ | 110 |
+| 2015 | **PRC** | Dipole polarizability of ${}^{120}\text{Sn}$ | Constrained nuclear energy density functionals | 104 |
+| 2003 | **PLB** | Isomeric $0^+$ state in ${}^{12}\text{Be}$ | Isomeric state in light neutron-rich nucleus | 97 |
+| 2009 | **PRL** | Spectroscopy of ${}^{32}\text{Ne}$ | Island of inversion extends to N=22 | 96 |
+| 1994 | **PLB** | Observation of ${}^{10}\text{He}$ | First observation of heaviest helium isotope | 69 |
 
 ### 8.2 Notable First-Author Papers
 
@@ -410,7 +448,7 @@ Physics applications include: [[Missing-Mass Spectroscopy|missing-mass spectrosc
 | 2006 | **PRC** | Neutron-dominant collectivity in ${}^{16}\text{C}$ | $M_n/M_p = 7.6$; proton-neutron decoupling | 38 |
 | 1996 | **PRC** | Magnetic moments of ${}^{17}\text{N}$ and ${}^{17}\text{B}$ | Mirror nuclei structure at borders of stability | 39 |
 
-### 8.3 Recent Highlights (2020–2025)
+### 8.3 Recent Highlights (2019–2025)
 
 | Year | Journal | Title / Topic | Key Result |
 |------|---------|---------------|------------|
@@ -418,7 +456,9 @@ Physics applications include: [[Missing-Mass Spectroscopy|missing-mass spectrosc
 | 2024 | **PLB** | Triaxial deformation of neutron-rich Zr nuclei | HiCARI spectroscopy exploring triaxial shapes |
 | 2024 | **PLB** | Production of nuclei near ${}^{78}\text{Ni}$ | Mapping nuclei near doubly magic ${}^{78}\text{Ni}$ |
 | 2022 | **PRL** | E0 from superdeformed band in ${}^{40}\text{Ca}$ | Smallest $\rho^2(E0)$ in $A < 50$ nuclei |
+| 2021 | **PRC** | Spectroscopy of ${}^{33}\text{Mg}$ via knockout | Resolved ground-state parity (negative); intruder dominance |
 | 2020 | **PLB** | Shape coexistence in ${}^{24}\text{Mg}$ | $\beta_2 \sim 1$ for excited $0^+$; superdeformed |
+| 2019 | **PRL** | First spectroscopy of ${}^{40}\text{Mg}$ | Drip-line N=28 nucleus; unexpected excitation spectrum |
 
 ---
 
@@ -437,9 +477,9 @@ Physics applications include: [[Missing-Mass Spectroscopy|missing-mass spectrosc
 
 | Period | Title | PI |
 |--------|-------|----|
-| 2003–2005 | Determination of proton- and neutron-contributions in collective motion | Sakurai |
+| 2003–2005 | Determination of proton- and neutron-contributions in collective motion | [[Hiroyoshi Sakurai\|Sakurai]] |
 | 2003–2006 | Evolution of shell structure and collectivity in neutron-rich nuclei | [[Susumu Shimoura\|Shimoura]] |
-| 2001–2002 | Gamma-ray spectroscopy on neutron-rich nuclei via RI beam fragmentation | Sakurai |
+| 2001–2002 | Gamma-ray spectroscopy on neutron-rich nuclei via RI beam fragmentation | [[Hiroyoshi Sakurai\|Sakurai]] |
 | 1999–2001 | Compressibility in nuclei far from stability | [[Susumu Shimoura\|Shimoura]] |
 
 ### 9.2 SUNFLOWER Collaboration
@@ -528,6 +568,9 @@ The group lent its name to a major international symposium:
 - [[Susumu Shimoura]]
 - [[Shinsuke Ota]]
 - [[Takaharu Otsuka]]
+- [[Hiroyoshi Sakurai]]
+- [[Seniority Scheme]]
+- [[Spin-Orbit Interaction]]
 - [[ALICE]]
 - [[CERN]]
 - [[KEK]]
