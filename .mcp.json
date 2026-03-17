@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "lisepp": {
+      "command": "python",
+      "args": ["D:/Something/research/LISE++/lisepp-mcp/server.py"],
+      "type": "stdio"
+    }
+  }
+}
