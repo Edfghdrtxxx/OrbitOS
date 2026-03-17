@@ -56,6 +56,8 @@ The orchestrator is a **control plane, not a data conduit**. Sub-agent research 
 
 **Every implementer agent MUST be paired with a separate reviewer agent.**
 
+**Pre-review verification:** Before dispatching a reviewer, Glob the scratch directory to confirm the expected output file (`<NN>_<description>.md`) exists. If missing, treat the implementer as failed and follow Failure Handling.
+
 The reviewer's role is **skeptical auditor** — its job is to find problems, not to help. Give it the implementer's output files (both scratch files and final deliverables) and the files changed, then let it own HOW it audits. The reviewer decides its own approach to scrutiny — it can cross-check scratch files (source material) against deliverables.
 
 **Worktree access:** When the implementer ran in a worktree (because it mutated existing files), pass the worktree path to the reviewer so it can read the implementer's actual file changes directly. The reviewer writes its review file to the shared scratch directory, not to the worktree.
@@ -75,7 +77,7 @@ The reviewer's role is **skeptical auditor** — its job is to find problems, no
 
 1. If the reviewer returns **needs-revision**, dispatch a new implementer with the review file path as input context (e.g., "Read `99_System/.scratch/<session-id>/review_03.md` for reviewer feedback"). Prefer file paths over re-serialization, but paste the review content into the dispatch prompt if the revision implementer runs in a worktree without access to the scratch directory.
 2. After the new implementer completes, dispatch a new reviewer (which writes `review_<NN>b.md` for round 2, `review_<NN>c.md` for round 3, etc.).
-3. **Max 4 revision rounds** per sub-task. If still unresolved, escalate to the user with: the original sub-task objective, the implementer output file path, all review file paths for this sub-task, and a 1-2 sentence summary of the unresolved disagreement.
+3. **Max 4 revision rounds** per sub-task — i.e., if `review_<NN>d.md` returns `needs-revision`, escalate. Escalate to the user with: the original sub-task objective, the implementer output file path, all review file paths for this sub-task, and a 1-2 sentence summary of the unresolved disagreement.
 
 **Post-escalation:** After escalation, the orchestrator MUST wait for explicit user direction before proceeding. The user may:
 - **Accept as-is:** Proceed, but flag the sub-task as `accepted-without-approval` in the synthesis summary.
@@ -138,6 +140,6 @@ When you do update, keep it brief: 1-2 lines per sub-task. Do not dump verbose l
 - **No argument provided:** Ask the user what they'd like to orchestrate. Do not assume a default task.
 - **Single trivial sub-task after decomposition:** Still dispatch via a sub-agent. The user explicitly chose orchestrator mode — respect that choice.
 - **User changes mind mid-dispatch:** Acknowledge the change, halt outstanding dispatches where possible, and re-enter the UNDERSTAND phase with the updated intent.
-- **Mode switch requested:** If the user asks to switch to spec-mode mid-execution, halt outstanding dispatches and return to SKILL.md Phase 1.5 to re-select the mode.
+- **Mode switch requested:** If the user asks to switch to spec-mode mid-execution, halt outstanding dispatches and return to SKILL.md Phase 1.5 to re-select the mode. Note: inline-mode has no persistent state file — only scratch directory contents persist.
 - **Referenced skill file doesn't exist:** Inform the user that the skill file was not found, then proceed without skill-specific conventions.
 - **Scope expands after DECOMPOSE reveals greater complexity:** If spec-mode criteria now apply (multi-step, stateful, reviewable), inform the user and offer to switch to spec-mode.

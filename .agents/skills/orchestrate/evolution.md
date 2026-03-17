@@ -17,7 +17,7 @@
 ## 2026-03-13: Impact analysis for structural refactors
 
 ### Lessons
-- When dispatching Explore agents, always include an impact-analysis pass: grep old path strings, folder names, and conventions across the entire repo (skills, templates, scripts, system files) to find all producers and consumers of the affected structure. Content classification alone ("what is this file?") is insufficient — the real question is "what reads from, writes to, or assumes the existence of these paths?" Missing this step risks breaking project consistency silently.
+- When dispatching Explore agents **for structural refactors** (renaming, moving, or reorganizing files/folders), always include an impact-analysis pass: grep old path strings, folder names, and conventions across the entire repo (skills, templates, scripts, system files) to find all producers and consumers of the affected structure. Content classification alone ("what is this file?") is insufficient — the real question is "what reads from, writes to, or assumes the existence of these paths?" Missing this step risks breaking project consistency silently. This does not apply to general research dispatches where sub-agents own the investigation approach.
 
 ## 2026-03-16: Self-improvement dog-food (inline mode)
 
