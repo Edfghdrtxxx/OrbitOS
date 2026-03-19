@@ -4,7 +4,7 @@ tags:
   - english
   - learning
   - academic-writing
-updated: 2026-03-18
+updated: 2026-03-19
 ---
 # English Suggestions
 
@@ -22,9 +22,13 @@ Target: academic English (TOEFL, research emails, papers). Formal words are stre
 | anywhere vs anything | "anywhere inappropriate" → "anything inappropriate" | "anywhere" = places; "anything" = content/substance |
 | Verb confusion: review vs revise | "review for my ideas" → "revise my ideas" | review = look over; revise = fix/improve |
 | Countable/uncountable + agreement | "these material", "these folder" | material (substance) = uncountable; check plural agreement |
-| Non-idiomatic framing phrases | "from my comprehension" → "as I understand it" | Likely L1 transfer (据我理解); learn fixed English frames |
+| Non-idiomatic framing phrases | "from my comprehension" → "as I understand it"; "to my understanding" works but stiff in speech | Likely L1 transfer (据我理解); learn fixed English frames |
 | Stiff verb choice | "reference" (verb), "achieve a balance state" | Default to phrasal verbs: look at, end up in |
 | Tangled cause-effect chains | Stacked "caused by" clauses reverse logic | Use condition → consequence order, one clause at a time |
+| Word-order scramble in noun phrases | "cross section properties of various energy of neutron reaction with" → "cross-section properties of neutron reactions at various energies" | Chinese modifier order (的 chains) doesn't transfer; English: head noun first, then modifiers via prepositions |
+| Singular/plural in technical contexts | "different energy regime" → "different energy regimes"; "various energy" → "various energies" | After *different/various/several/multiple*, the noun is almost always plural |
+| Phantom article: "In the contrast" | "In the contrast" → "In contrast" / "Conversely" | Fixed phrase — no article. Cf. also "on the other hand" (with *the*) |
+| Missing preposition + article before nouns | "when reaction with Helium in high energy" | Need: "for reactions with helium **at** high **energies**" — both prep and plural missing |
 | "How to X?" as a question | "How to consider hair transplant?" | Natives ask "What should I consider…?" or "How do I…?" — bare "how to" is a heading/title form, not a question |
 | Wrong noun for grammar terms | "course" for clause, "cause" for clause | clause = grammatical unit; course = class; cause = reason |
 | "led by" for grammar elements | "a course led by 'when'" → "a clause introduced by 'when'" | *Led by* = people/teams; *introduced by* / *starting with* = grammar |
@@ -56,3 +60,7 @@ Target: academic English (TOEFL, research emails, papers). Formal words are stre
 - **the noise-augmented dataset** or **noisy data** (not "dataset with noise") — use adjective form
 - **run/execute X against Y** = apply tool to target (not "in Y" when Y is the target, not the environment)
 - **implementation of** methods/features; but **addition of** experiments — you *implement* code, you *add/conduct* experiments
+- **in contrast** (not "in the contrast") — fixed phrase, no article
+- **at** high energies (not "in high energy") — energy levels use *at*, plural
+- energy **range** (not "energy region") — standard physics collocation for a span of energies
+- **the reason** (not "the reason why") — *why* is redundant after *reason*
