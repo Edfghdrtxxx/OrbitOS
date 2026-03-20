@@ -30,6 +30,12 @@ openspec/
 ## Purpose
 [2-4 sentences. What problem this solves and why it matters now.]
 
+## Acceptance Criteria
+- [AC 1]: [testable condition]
+
+## Key Decisions
+- [Decision 1]: [chosen option] — [rationale]
+
 ## Research Plan
 
 - [ ] 1. [Research sub-task objective]
@@ -43,8 +49,7 @@ openspec/
 ### Format rules
 
 - **Purpose** grounds every sub-agent in the WHY. Keep it direct — no sub-sections.
-- **Research Plan** uses checkboxes. Update them in place as research reports pass review. This is the single source of truth for orchestration progress.
-- Each sub-task includes Input (what to look at), Output (what the report should contain), and Review focus (what the reviewer should prioritize). These inform dispatch prompts.
+- **Research Plan** uses checkboxes — the single source of truth for orchestration progress. Update in place as research passes review.
 
 ## The task.md format
 
@@ -55,10 +60,12 @@ openspec/
 [2-4 sentences. What problem this solves and why it matters now.
 This replaces the entire proposal document. Be direct -- no "Objective / Problem / Solution" sub-sections.]
 
+## Acceptance Criteria
+- [AC 1]: [testable condition]
+
 ## Context
 [Optional. Include only information that would be lost between dispatch rounds:
 file paths, data shapes, architectural constraints, physics parameters.
-Do NOT put motivation (belongs in Purpose) or progress notes (belong in decomposition.md).
 Skip this section entirely for straightforward work.]
 
 ## Tasks
@@ -66,9 +73,7 @@ Skip this section entirely for straightforward work.]
 - [ ] 1. First thing to do
   - Detail or command if needed
 - [ ] 2. Second thing to do
-- [ ] 3. Third thing to do
-  - Sub-step detail
-- [x] 4. Completed task (update in place as work progresses)
+- [x] 3. Completed task (update in place as work progresses)
 
 ## Outcome
 [Filled in after completion. 2-3 sentences on what was actually done and any decisions made along the way.]
@@ -76,168 +81,118 @@ Skip this section entirely for straightforward work.]
 
 ### Format rules
 
-- **Tasks use checkboxes.** Each task should include enough context (file paths, constraints, dependencies) that an implementer — human or AI — can execute it without re-doing the research.
-- **Outcome is written at the end**, not planned upfront. It captures what actually happened, not what was intended.
+- **Tasks use checkboxes.** Each task should include enough context that an implementer can execute it without re-doing the research.
+- **Outcome is written at the end**, not planned upfront.
 
 ## Lifecycle
 
-1. **DECOMPOSE** — Draft decomposition.md (research plan) and task.md skeleton (Purpose only).
-2. **DISPATCH + REVIEW** — Sub-agents investigate per the research plan. Each sub-task's report is reviewed. Passed sub-tasks are checked off in decomposition.md.
-3. **SYNTHESIZE** — Compile all approved findings into task.md's Tasks section. Review the synthesized spec for completeness and accuracy. Iterate until task.md is a clean, actionable deliverable.
+1. **ELICIT** — Requirements conversation with the user. Lock acceptance criteria, constraints, scope, and key design decisions.
+2. **DECOMPOSE** — Draft decomposition.md (research plan) and task.md skeleton (Purpose only).
+3. **DISPATCH + REVIEW** — Sub-agents investigate per the research plan. Each report is reviewed. Passed sub-tasks are checked off in decomposition.md.
+4. **SYNTHESIZE** — Compile approved findings into task.md. Review the synthesized spec. Iterate until clean.
 
-The decomposition.md is a coordination artifact. The task.md is the deliverable. If scope changes mid-research, dispatch a sub-agent to update decomposition.md in place rather than creating a new document.
+The decomposition.md is a coordination artifact. The task.md is the deliverable. If scope changes mid-research, update decomposition.md in place.
 
-## Progress tracking
+## Invariants
 
-The **decomposition.md** file is the single source of truth for orchestration progress (which research sub-tasks are complete). The **task.md** file is the deliverable — its Tasks section is populated during SYNTHESIZE, not during research.
+- **decomposition.md checkboxes are the single source of truth** for progress. If it's not checked off in the file, it didn't happen.
+- **All sub-agents are read-only** — they do not mutate the codebase. Only write to the change directory.
+- **Every research report gets a paired review.** No report reaches synthesis without an `approved` verdict.
+- **Sub-agents return 1-2 sentence summaries only.** Detailed findings live in report files — the orchestrator does not pull full content unless routing is ambiguous.
+- **Escalation protocol** (applies to both research and synthesis reviews): After max 4 revision rounds without approval, escalate to the user. The orchestrator MUST wait for explicit direction: accept as-is (flagged in summary), provide manual guidance, or abandon the sub-task. Never silently proceed past an escalation.
+- **Reviews must have a recognized verdict** (`approved` or `needs-revision`) as the first line. If missing or malformed, halt and investigate.
 
-Do not track progress in conversation summaries, agent outputs, or any other artifact. Every research completion must be reflected as a `[x]` in decomposition.md — if it is not in the file, it did not happen.
+## Phase 2 — ELICIT
 
-**Direct verification (list-first):** Follow the tiered access priority from SKILL.md:
-1. **Glob first** — list `openspec/changes/<change-name>/` to confirm expected files exist (e.g., `review_01.md` was written). This is enough for most progress checks.
-2. **Read targeted** — read `decomposition.md` to verify checkbox state or sub-task count, or a specific `review_*.md` to inspect its verdict, only when the sub-agent's return summary is ambiguous or conflicting. This also covers the structural gate's completeness check and verdict verification before synthesis.
-3. **Read full content** — only as a last resort when routing genuinely cannot proceed without the content. Prefer dispatching an Explore agent over pulling large files into the orchestrator's context.
+Before decomposing, conduct a requirements conversation with the user. No sub-agents — orchestrator + user only.
 
-## Phase 2 — DECOMPOSE
+**Goal:** Surface and lock acceptance criteria, constraints, scope boundaries, and key design decisions that would be expensive to change mid-research.
 
-1. **Outline what task.md will eventually need.** Before planning any research, sketch the implementation areas that task.md's Tasks section will cover. What are the major pieces of work an implementer would need to do? This sketch is disposable — it exists only to drive the next step.
+1. Use AskUserQuestion iteratively (minimum 2 rounds) to probe unknowns. Focus on what Phase 1 didn't surface — don't re-confirm the task.
+2. When stable, present an **elicitation summary** (acceptance criteria, constraints, scope, key decisions — omit empty categories) for user confirmation.
+3. Transition to Phase 3. Pass the confirmed summary into the DECOMPOSE dispatch so it populates decomposition.md's AC and Key Decisions sections.
 
-2. **Derive the research plan from what you don't know.** For each area in the sketch, ask: *what don't I know yet that would make this task wrong or incomplete if I wrote it now?* Those unknowns — not the work areas themselves — become the decomposition.md sub-tasks. Each sub-task must have:
-   - A clear **objective** (what it investigates or analyzes)
-   - **Input context** (file paths, subsystems to explore, constraints)
-   - **Output format** (what the research report should contain)
-   - **Review focus** — what the reviewer should prioritize (e.g., "verify completeness of dependency analysis," "check for missed edge cases")
+**Edge cases:**
+- Clear requirements from Phase 1 → seed question can be confirmatory; 2-round minimum still applies.
+- Task simpler than expected → offer to switch to inline-mode.
+- User requests skip → warn, proceed, omit AC and Key Decisions from decomposition.md.
 
-3. Draft decomposition.md with `Purpose` and a `Research Plan` listing each sub-task.
-4. Draft an initial task.md with the `## Purpose` section only (matching decomposition.md's Purpose). Do not include `## Tasks`, `## Context`, or `## Outcome` section headers — those are added during SYNTHESIZE.
-5. Present both drafts to the user by pasting their content in the conversation (the orchestrator cannot write files directly). This is the single Phase 2 confirmation step — do not ask for separate approvals.
-6. If the user adjusts scope, update the in-context drafts and re-present for confirmation.
-7. After confirmation, dispatch a sub-agent to write both files to `openspec/changes/[change-name]/`. Wait for this dispatch to complete before proceeding to Phase 3 — do not background it.
+## Phase 3 — DECOMPOSE
 
-## Phase 3 — DISPATCH
+1. **Sketch what task.md will need.** Use ELICIT's AC and decisions to identify which implementation areas matter. This sketch is disposable — it drives the research plan.
 
-For each research sub-task in the decomposition.md Research Plan, spawn a sub-agent via the **Agent** tool.
+2. **Derive the research plan from unknowns.** Unknowns resolved during ELICIT don't need sub-tasks. For each area: *what don't I know that would make task.md wrong?* Those unknowns become decomposition.md sub-tasks.
 
-**Core philosophy:** Transfer the mental model — WHY this research matters and WHAT the spec needs — then let the sub-agent own the HOW entirely. Treat every sub-agent as a **senior peer, not a subordinate**. Trust it to figure out the investigation approach.
+3. Draft decomposition.md (Purpose, AC, Key Decisions, Research Plan) and a task.md skeleton (Purpose only — no other section headers yet).
 
-Self-check before sending any dispatch prompt: *"Am I telling the agent what to think, or giving it what it needs to think for itself?"* If the former, cut.
+4. Present both drafts for user confirmation. This confirms the research plan, not requirements (those were locked in ELICIT).
 
-Inform each sub-agent that its report will be reviewed by a separate agent and may require revision.
+5. After confirmation, dispatch a sub-agent to write both files. Include the elicitation summary so it can populate AC and Key Decisions. Wait for completion before proceeding.
 
-**Sub-agents are read-only.** Spec-mode sub-agents investigate and analyze — they do NOT mutate the codebase. Use `subagent_type: "Explore"` for codebase discovery or `subagent_type: "Plan"` for architectural analysis. Use `general-purpose` only when the sub-task requires tools beyond what Explore/Plan provide (e.g., WebSearch for external research), but still instruct it to make no file changes outside the change directory.
+## Phase 4 — DISPATCH
 
-**No worktree isolation.** Since spec-mode sub-agents do not mutate the codebase, worktree isolation is unnecessary.
+For each research sub-task, spawn a sub-agent. Transfer the mental model — WHY this research matters and WHAT the spec needs — then let the sub-agent own the HOW. Treat sub-agents as senior peers, not subordinates.
 
-**Parallelism rules:**
-- Independent research sub-tasks → dispatch in parallel (`run_in_background: true`)
-- Dependent sub-tasks → dispatch sequentially; feed prior output as input context
-- Two sub-tasks are **dependent** when one requires the other's findings as input. Partial scope overlap (e.g., both explore the same file for different questions) does not create a dependency — only data-flow does.
+Each dispatch prompt includes: the decomposition.md path, the sub-agent's output path (`<NN>_<description>.md`), and the read-only constraint. Inform each sub-agent its report will be reviewed.
 
-**Output convention:** Every research sub-agent writes a report to the change directory: `<NN>_<description>.md` (where `<NN>` matches the sub-task number in decomposition.md, e.g., `01_explore_auth.md`). The report captures findings, relevant file paths, constraints discovered, and recommendations for the spec. The orchestrator tells each sub-agent its output path in the dispatch prompt.
+**Parallelism:** Independent sub-tasks run in parallel. Dependent sub-tasks (where one requires another's findings as input) run sequentially. Partial scope overlap is not a dependency — only data-flow is.
 
-**What the orchestrator receives:** Sub-agents return only a **1-2 sentence summary** (success/failure + scope covered). The orchestrator uses this summary as the primary signal for routing decisions. Detailed findings live in the report file — the orchestrator does not need the full content.
+Use `subagent_type: "Explore"` for codebase discovery, `"Plan"` for architectural analysis, `general-purpose` only when other tools are needed (e.g., WebSearch).
 
-**Context injection:** Each dispatch prompt must include: (1) the decomposition.md file path so the sub-agent can read the research plan and purpose, (2) the sub-agent's output file path, and (3) the read-only constraint. Only paste decomposition.md content into the prompt when the sub-agent cannot access the openspec/ path.
+## Phase 5 — REVIEW
 
-## Phase 4 — REVIEW
+Every research report MUST be paired with a separate reviewer agent. The reviewer is a **skeptical auditor** — it finds gaps and inaccuracies, not helps.
 
-**Every research sub-agent MUST be paired with a separate reviewer agent.**
+**Review output:** Each reviewer writes `review_<NN>.md` with a verdict line (`approved` or `needs-revision`) followed by specific, actionable findings. Reviewers are read-only — they must not modify research reports.
 
-**Pre-review verification:** Before dispatching a reviewer, Glob the change directory to confirm the expected report file (`<NN>_<description>.md`) exists. If missing, treat the research sub-agent as failed and follow Failure Handling.
+**Revision loop:** On `needs-revision`, re-dispatch research with the review file as input. Subsequent reviews use letter suffixes (`review_<NN>b.md`, `review_<NN>c.md`, etc.). Max 4 rounds before escalation (see Invariants).
 
-The reviewer's role is **skeptical auditor of the research quality** — its job is to find gaps, inaccuracies, or missed considerations, not to help. Give it the research report file path (`<NN>_<description>.md`) and let it own HOW it audits. The reviewer should verify findings against the actual codebase, check for completeness, and flag anything that would make the resulting spec unreliable.
+After each review passes, update the corresponding checkbox in decomposition.md.
 
-**Hard rules:**
-- Reviewers are **read-only** — they MUST NOT modify research reports or any other files.
-- Reviewers **write a single review file** to the change directory: `review_<NN>.md` (where `<NN>` matches the sub-task number, e.g., `review_01.md`). This is the reviewer's only permitted write. The orchestrator tells each reviewer its output path in the dispatch prompt.
-- Reviewers return a **1-2 sentence summary** to the orchestrator (approved/needs-revision + scope covered). The detailed findings live in the review file — the orchestrator does not need the full content.
+## Phase 6 — SYNTHESIZE
 
-**Review file format:** Verdict line (`approved` or `needs-revision`), then a Findings section with specific, actionable items (file paths, what's missing, why it matters for the spec).
+**Pre-synthesis gate:** Verify all current research sub-tasks have paired reviews with `approved` verdicts. If any sub-task is incomplete, return to Phase 5. Orphaned reports (from scope changes) are excluded from synthesis.
 
-**Revision loop:**
+**Synthesis:**
 
-**The orchestrator MUST re-dispatch for revision when a reviewer returns `needs-revision`.** The orchestrator MUST NOT proceed to the next sub-task or to SYNTHESIZE until the sub-task receives an `approved` verdict or hits the escalation limit below.
+1. Dispatch a sub-agent to synthesize. It carries AC from decomposition.md into task.md, populates the Tasks section from approved research, verifies Tasks satisfy all AC, and adds Context if needed. It returns per-sub-task one-line summaries.
+2. Dispatch a reviewer to audit task.md against decomposition.md and all research reports. Review file: `review_synthesis.md`. Revision files: `review_synthesis_b.md`, `review_synthesis_c.md`. Max 3 synthesis rounds before escalation (see Invariants).
 
-1. If the reviewer returns **needs-revision**, dispatch a new research sub-agent with the review file path as input context (e.g., "Read `openspec/changes/[change-name]/review_01.md` for reviewer feedback").
-2. After the new sub-agent completes, dispatch a new reviewer (which writes `review_<NN>b.md` for round 2, `review_<NN>c.md` for round 3, etc.).
-3. **Max 4 revision rounds** per sub-task — i.e., if `review_<NN>d.md` returns `needs-revision`, escalate. If still unresolved, escalate to the user with: the original sub-task objective, the research report file path, all review file paths for this sub-task, and a 1-2 sentence summary of the unresolved disagreement.
-
-**Post-escalation:** After escalation, the orchestrator MUST wait for explicit user direction before proceeding. The user may:
-- **Accept as-is:** Proceed, but flag the sub-task as `accepted-without-approval` in the synthesis summary.
-- **Provide manual guidance:** The orchestrator dispatches a new sub-agent with the user's specific instructions (this does NOT reset the round counter — it is a user-directed override).
-- **Abandon the sub-task:** Remove it from the research plan. The synthesis summary notes the abandonment.
-
-The orchestrator MUST NOT silently proceed past an escalation.
-
-**Checkpoint update:** After each review passes, dispatch a `general-purpose` sub-agent to mark the corresponding checkbox in decomposition.md as `[x]`. Minimal prompt: the decomposition.md file path, which sub-task number to check off, and the instruction to make no changes outside the change directory. **When multiple sub-tasks complete in parallel, dispatch checkpoint sub-agents sequentially** — not in parallel — to avoid write conflicts on decomposition.md. These dispatches are lightweight (single checkbox edit) and do not warrant a progress update to the user.
-
-## Phase 5 — SYNTHESIZE
-
-**Structural gate:** Before synthesizing, verify the change directory (`openspec/changes/<change-name>/`):
-
-1. **Pairing:** `Glob` the directory. For every research report (`<NN>_*.md`), a corresponding `review_<NN>.md` (or revision review `review_<NN>[b-z].md`) must exist. Separately, for every review file matching `review_<NN>*.md`, a corresponding research report (`<NN>_*.md`) must exist. `review_synthesis*.md` files are excluded from this pairing check — they are verified separately in the synthesis loop below. If pairing fails, dispatch an Explore agent to identify which files are missing or orphaned before halting.
-2. **Completeness:** Read `decomposition.md` (Priority 2 targeted read) and extract the current Research Plan sub-task numbers. Compare against the `<NN>_*.md` reports found in step 1:
-   - **Missing reports** (sub-task in plan but no report on disk): a sub-task was silently dropped — halt and escalate to the user.
-   - **Orphaned reports** (report on disk but sub-task number no longer in plan): expected after a scope change. Verify the sub-task was intentionally removed from decomposition.md. These reports are excluded from synthesis (per the scope-change edge case) — proceed without halting.
-3. **Verdict:** Read the verdict line of each review file for current (non-orphaned) sub-tasks — or the latest revision review if revision files exist (e.g., `review_01c.md` takes precedence over `review_01b.md` and `review_01.md`). Alphabetical ordering of the letter suffix determines recency (valid for up to 25 rounds; max is 4). This is a "gate decision" Read under SKILL.md's tiered access Priority 2. Every review must contain a recognized verdict (`approved` or `needs-revision`) as its first line. If any latest review says `needs-revision`, the sub-task is incomplete — halt and return to Phase 4. If a sub-task was accepted via user escalation override (post-escalation), verify the override was explicitly granted.
-4. **Malformed reviews:** If any review file — including `review_synthesis*.md` files produced during the synthesis loop — is empty or its first line does not contain a recognized verdict keyword (`approved` or `needs-revision`), treat it as malformed — halt and investigate. Do not silently pass or silently fail.
-
-After all research reports pass review, **synthesize findings into task.md**:
-
-1. **Synthesis dispatch.** Dispatch a `general-purpose` sub-agent to synthesize. Pass it: the decomposition.md file path, the task.md file path (currently a skeleton), and all approved research report file paths. Instruct it to: populate task.md's `Tasks` section with detailed, actionable implementation steps informed by the research; add a `Context` section if there is information that would be lost between sessions; and return a **per-sub-task one-line summary** (not just a single summary) so the orchestrator can populate the final output template.
-2. **Synthesis review.** Dispatch a reviewer to audit the synthesized task.md. Pass it: the task.md file path AND all approved research report file paths, so it can verify that all findings are accurately reflected, tasks are actionable and complete, and nothing was lost or misrepresented. The reviewer writes `review_synthesis.md` to the change directory.
-3. **Synthesis verdict.** Read the verdict line of the synthesis review file (Priority 2 targeted read) to confirm the verdict — do not rely solely on the reviewer's return summary. If `approved`, proceed to step 4. If `needs-revision`, dispatch a new synthesis sub-agent with the review file path as input context. Re-review after each revision (revision files: `review_synthesis_b.md` for round 2, `review_synthesis_c.md` for round 3). If `review_synthesis_c.md` returns `needs-revision`, escalate to the user.
-
-   **Synthesis naming convention:** Synthesis review files use an underscore before the revision letter (`review_synthesis_b.md`) because `synthesis` is a word, unlike the numeric research convention (`review_01b.md`). Both conventions are intentional.
-
-   **Post-escalation** (mirrors Phase 4):
-   - **Accept as-is:** Proceed, but flag task.md as `accepted-without-full-review` in the final summary.
-   - **Provide manual guidance:** Dispatch a new synthesis sub-agent with the user's specific instructions.
-   - **Abandon synthesis:** Present task.md in its current state with a warning that it did not pass review. Skip the outcome write-back and proceed directly to Phase 6 (REFLECT).
-
-4. After the synthesis passes review (or is accepted via escalation), present the final summary to the user. Use the per-sub-task summaries returned by the synthesis sub-agent in step 1:
+3. Present the final summary:
 
 ```
 ### Specification Complete
-- [research sub-task 1]: [findings summary] — [reviewed | accepted-without-approval]
-- [research sub-task 2]: [findings summary] — [reviewed]
+- [sub-task 1]: [findings summary] — [reviewed | accepted-without-approval]
 
 ### Deliverable
 - `openspec/changes/[change-name]/task.md` — ready for implementation
 
 ### Flags
-- [any concerns or items needing user attention]
+- [any concerns needing user attention — omit section if none]
 ```
 
-If there are no flags, omit the Flags section.
+4. Dispatch a sub-agent to fill in task.md's Outcome section. Wait for completion. Archiving is manual (user-initiated).
 
-**Outcome write-back:** After presenting the summary, dispatch a sub-agent to fill in the `## Outcome` section of task.md with 2-3 sentences on what was actually done and any decisions made. Wait for this dispatch to complete before proceeding to Phase 6 — do not background it. Do not archive the task directory — archiving (moving to `archive/YYYY-MM-DD-[name]/`) is done manually by the user.
+## Phase 7 — REFLECT
 
-## Phase 6 — REFLECT
+After outcome write-back, invoke `/reflect` via the Skill tool. **Mandatory** — do not skip.
 
-After the outcome write-back completes, invoke `/reflect` using the Skill tool. This is a **mandatory** step — do not skip it.
-
-The purpose is to catch **orchestrator-level mistakes** — scope drift, dropped sub-tasks, bad routing decisions, unverified assumptions made during decomposition or dispatch. Individual research quality is already covered by Phase 4 reviewers; this step audits the orchestration process itself.
-
-Let the reflect skill run generically against the full session. Present its findings to the user. Do **not** act on any findings until the user explicitly approves — this is required by the reflect skill's own protocol.
+Purpose: catch orchestrator-level mistakes (scope drift, dropped sub-tasks, bad routing). Present findings to the user; do not act until explicitly approved.
 
 # Failure Handling
 
-- If a sub-agent fails, **retry once** with adjusted instructions (e.g., narrower scope, more explicit paths).
-- If it fails again, **report the failure** to the user with: original objective, error context, and a suggested next step.
+- Sub-agent fails → retry once with adjusted instructions. Fails again → report to user with objective, error context, and suggested next step.
 
 # Progress Updates
 
-**Wait for all agents in a stage to complete before outputting.** Do not send incremental status updates as individual agents finish — hold until the entire dispatch round (all parallel agents) has resolved, then give one consolidated update. This preserves the context window and reduces noise.
-
-When you do update, keep it brief: 1-2 lines per sub-task. Do not dump verbose logs.
+Wait for all agents in a dispatch round to complete before updating. One consolidated update, 1-2 lines per sub-task.
 
 # Edge Cases
 
-- **No argument provided:** Ask the user what they'd like to orchestrate. Do not assume a default task.
-- **Single trivial sub-task after decomposition:** Inform the user that spec-mode overhead may be disproportionate for a single research task, and offer to switch to inline-mode. If the user confirms spec-mode, proceed normally.
-- **User changes mind mid-dispatch:** Acknowledge the change, halt outstanding dispatches where possible, and re-enter the UNDERSTAND phase with the updated intent.
-- **Mode switch requested:** If the user asks to switch to inline-mode mid-execution, halt outstanding dispatches and return to SKILL.md Phase 1.5 to re-select the mode. Completed sub-tasks should already be reflected as `[x]` items in decomposition.md — the files persist regardless of mode switch.
-- **Referenced skill file doesn't exist:** Inform the user that the skill file was not found, then proceed without skill-specific conventions.
-- **Scope narrows after DECOMPOSE reveals the true complexity:** If the mode gate criteria no longer hold, inform the user and offer to switch to inline-mode.
-- **Scope change after decomposition.md is written:** Dispatch a sub-agent to update decomposition.md in place (the orchestrator is read-only). Already-approved research reports for dropped sub-tasks remain on disk but must be excluded from synthesis — instruct the synthesis sub-agent to use only the sub-tasks currently marked in decomposition.md's Research Plan, ignoring orphaned report files.
+- **No argument provided:** Ask the user what to orchestrate.
+- **Single trivial sub-task:** Offer to switch to inline-mode.
+- **User changes mind mid-dispatch:** Halt dispatches, re-enter UNDERSTAND.
+- **Mode switch requested:** Halt dispatches, return to SKILL.md Phase 1.5. Completed work persists.
+- **Referenced skill file missing:** Proceed without skill-specific conventions.
+- **Scope narrows after DECOMPOSE:** Offer inline-mode if mode gate no longer holds.
+- **Scope change after decomposition.md written:** Update decomposition.md in place. Orphaned reports excluded from synthesis.
