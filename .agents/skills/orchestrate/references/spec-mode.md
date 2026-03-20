@@ -33,9 +33,9 @@ openspec/
 ## Research Plan
 
 - [ ] 1. [Research sub-task objective]
-  - Input: [file paths, subsystems, constraints]
-  - Output: [what the report should contain]
-  - Review focus: [what the reviewer should prioritize]
+  - Input: [file paths, subsystems, constraints to investigate]
+  - Output: [findings the report should contain]
+  - Review focus: [what the reviewer should verify]
 - [ ] 2. ...
 - [x] 3. Completed sub-task (update in place as research passes review)
 ```
@@ -100,16 +100,19 @@ Do not track progress in conversation summaries, agent outputs, or any other art
 
 ## Phase 2 — DECOMPOSE
 
-1. Break the confirmed task into **research and analysis sub-tasks** needed to produce a comprehensive implementation specification. Each sub-task must have:
+1. **Outline what task.md will eventually need.** Before planning any research, sketch the implementation areas that task.md's Tasks section will cover. What are the major pieces of work an implementer would need to do? This sketch is disposable — it exists only to drive the next step.
+
+2. **Derive the research plan from what you don't know.** For each area in the sketch, ask: *what don't I know yet that would make this task wrong or incomplete if I wrote it now?* Those unknowns — not the work areas themselves — become the decomposition.md sub-tasks. Each sub-task must have:
    - A clear **objective** (what it investigates or analyzes)
    - **Input context** (file paths, subsystems to explore, constraints)
    - **Output format** (what the research report should contain)
    - **Review focus** — what the reviewer should prioritize (e.g., "verify completeness of dependency analysis," "check for missed edge cases")
-2. Draft decomposition.md with `Purpose` and a `Research Plan` listing each sub-task.
-3. Draft an initial task.md with the `## Purpose` section only (matching decomposition.md's Purpose). Do not include `## Tasks`, `## Context`, or `## Outcome` section headers — those are added during SYNTHESIZE.
-4. Present both drafts to the user by pasting their content in the conversation (the orchestrator cannot write files directly). This is the single Phase 2 confirmation step — do not ask for separate approvals.
-5. If the user adjusts scope, update the in-context drafts and re-present for confirmation.
-6. After confirmation, dispatch a sub-agent to write both files to `openspec/changes/[change-name]/`. Wait for this dispatch to complete before proceeding to Phase 3 — do not background it.
+
+3. Draft decomposition.md with `Purpose` and a `Research Plan` listing each sub-task.
+4. Draft an initial task.md with the `## Purpose` section only (matching decomposition.md's Purpose). Do not include `## Tasks`, `## Context`, or `## Outcome` section headers — those are added during SYNTHESIZE.
+5. Present both drafts to the user by pasting their content in the conversation (the orchestrator cannot write files directly). This is the single Phase 2 confirmation step — do not ask for separate approvals.
+6. If the user adjusts scope, update the in-context drafts and re-present for confirmation.
+7. After confirmation, dispatch a sub-agent to write both files to `openspec/changes/[change-name]/`. Wait for this dispatch to complete before proceeding to Phase 3 — do not background it.
 
 ## Phase 3 — DISPATCH
 
