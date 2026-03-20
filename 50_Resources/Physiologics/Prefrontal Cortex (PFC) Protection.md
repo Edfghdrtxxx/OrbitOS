@@ -1,3 +1,11 @@
+---
+type: resource
+format: ai-conversation
+source: AI conversation
+area: "[[Physiologics]]"
+created: 2026-03-20
+tags: [neuroscience, prefrontal-cortex, cognitive-health, neuroprotection]
+---
 ## Core Functions and Vulnerability of the Prefrontal Cortex
 
 The prefrontal cortex (PFC) is the last brain region to mature (full myelination around age 25), yet one of the first to decline with age. It governs:
