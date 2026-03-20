@@ -66,6 +66,27 @@ If two fix attempts produce no new evidence, **stop guessing**. Correct approach
 3. **Lock behavior** — Write a small test that captures the failing case
 4. Let AI fix based on this evidence. If still stuck, **Git rollback** to the last stable point.
 
+## Supplementary Practices (from broader community)
+
+The original framework covers the structural essentials. These additional practices, drawn from multiple practitioners, address common failure modes that the 9+5 framework doesn't explicitly cover.
+
+### Prompt discipline
+
+- **Ask AI to plan before coding each feature** — Not just at project level. Before each task, say "outline your approach, don't write code yet." This prevents overengineered solutions and forces a simplification discussion upfront.
+- **Request multiple options, pick the simplest** — Have AI generate 2–3 approaches ranked by simplicity. You choose. This surfaces creative solutions while keeping complexity under control.
+- **Feed relevant documentation into context** — Don't just pick mature stacks (Step 5) — paste the actual library docs, API references, or working examples into the prompt. AI accuracy depends on having the right docs in-context.
+
+### Context & understanding
+
+- **Fresh context per feature** — Start a new chat/session for each feature or major task. Stale context causes drift, hallucination, and conflicting implementations. Carry over only the 3 root documents (Step 7), not conversation history.
+- **Ask AI to explain its code** — If you can't debug it, you can't maintain it. Periodically request file-level or function-level explanations to build your mental model and catch hidden assumptions ("black-box code" risk).
+
+### Quality mindset
+
+- **Treat all AI output as draft, not production code** — AI code optimizes for "it runs," not for edge cases, error handling, or maintainability. Every generation is a starting point that requires human review before it ships.
+
+> For a deeper methodology (separate Proposal / Specs / Design / Tasks artifacts), see Zarar's [Spec-Driven Development](https://zarar.dev/spec-driven-development-from-vibe-coding-to-structured-development/) — an evolution beyond the single-PRD approach.
+
 ## Terminology
 
 | Term | Definition |
@@ -78,3 +99,10 @@ If two fix attempts produce no new evidence, **stop guessing**. Correct approach
 ## Source
 
 [Bilibili Video: VibeCoding开发前9个步骤和开发中5个关键点](https://www.bilibili.com/video/BV1kAw2z9E2s) — 姜学长
+
+**Supplementary sources:**
+- [12 Rules to Vibe Code Without Frustration](https://creatoreconomy.so/p/12-rules-to-vibe-code-without-frustration) — Peter Yang
+- [Spec-Driven Development: From Vibe Coding to Structured Development](https://zarar.dev/spec-driven-development-from-vibe-coding-to-structured-development/) — Zarar
+- [Vibe Coding in Practice: Patterns, Pitfalls, and Prompting Strategies](https://aimconsulting.com/insights/vibe-coding-practice-patterns-pitfalls-prompting/) — AIM Consulting
+- [8 Vibe Coding Best Practices (2026)](https://www.softr.io/blog/vibe-coding-best-practices) — Softr
+- [A Structured Workflow for Vibe Coding Full-Stack Apps](https://dev.to/wasp/a-structured-workflow-for-vibe-coding-full-stack-apps-352l) — Wasp / DEV Community
