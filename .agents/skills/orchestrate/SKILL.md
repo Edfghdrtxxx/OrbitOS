@@ -55,7 +55,9 @@ Single-agent skills like `/start-my-day` use tools directly because they are foc
 
 1. Parse the user's request.
 2. Apply the **Zero Assumptions** principle — never guess user intent. If multiple implementations exist or requirements are incomplete, **halt and use `AskUserQuestion`** to gather explicit direction. Do not guess scope.
-3. When project context is needed to properly understand or restate the request (e.g., what files exist, what subsystems are involved, how components relate), dispatch **Explore agents** (`subagent_type: "Explore"`) to gather that context. Launch multiple Explore agents in parallel when the scope spans several areas. Use `Glob` and `Grep` for quick discovery, but never `Read` codebase files — that belongs to Explore agents. Use the Explore agents' output to inform your task restatement.
+3. When project context is needed to properly understand or restate the request (e.g., what files exist, what subsystems are involved, how components relate), dispatch **Explore agents** (`subagent_type: "Explore"`) to gather that context. Launch multiple Explore agents in parallel when the scope spans several areas. Use the Explore agents' output to inform your task restatement.
+
+   **Glob/Grep boundary rule:** The orchestrator may use `Glob` and `Grep` only for **quick discovery** — defined as **1-2 targeted checks** whose sole purpose is routing a dispatch (e.g., "does this scratch directory exist?", "which spec file matches this name?"). **Chaining 3+ Glob/Grep calls to build a comprehensive picture of project state is prohibited.** Any systematic context-gathering — understanding what is implemented vs. pending, auditing completion status, surveying project structure, or mapping how components relate — MUST be delegated to Explore agents. Never `Read` codebase files — that belongs to Explore agents.
 4. Restate the task back to the user in one or two sentences and wait for confirmation before proceeding.
 
 # Phase 1.5 — MODE SELECT
