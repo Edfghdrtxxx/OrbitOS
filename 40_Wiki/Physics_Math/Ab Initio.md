@@ -22,17 +22,16 @@ review_interval: 0
 
 ## Key Points
 
-- Ab initio methods contrast with phenomenological models (e.g., the traditional [[Nuclear Shell Model]] with fitted effective interactions or the [[Liquid Drop Model]]) by requiring no adjustable parameters beyond the underlying interaction
-- In nuclear physics, major ab initio frameworks include the [[No-Core Shell Model]] (NCSM), [[Coupled Cluster Theory|Coupled Cluster]] (CC), [[In-Medium Similarity Renormalization Group|IM-SRG]], and Self-Consistent Green's Function (SCGF) methods
-- In quantum chemistry, the [[Hartree-Fock Method]] serves as the starting point; post-HF methods (Configuration Interaction, Coupled Cluster, Møller-Plesset perturbation theory) systematically recover electron correlation energy
-- Computational cost scales steeply with particle number — nuclear ab initio calculations are currently feasible up to medium-mass nuclei ($A \lesssim 100$), a frontier that has expanded dramatically since ~2010
-- These methods successfully reproduce [[Binding Energy|binding energies]], [[Magic Numbers|magic numbers]], [[Shell Evolution|shell evolution]], and [[Spin-Orbit Coupling|spin-orbit splittings]] from first principles
+- No adjustable parameters — contrasts with phenomenological models (e.g., [[Nuclear Shell Model]] with fitted interactions, [[Liquid Drop Model]])
+- Nuclear frameworks: [[No-Core Shell Model]] (NCSM), [[Coupled Cluster Theory|Coupled Cluster]] (CC), [[In-Medium Similarity Renormalization Group|IM-SRG]], Self-Consistent Green's Function (SCGF)
+- Chemistry frameworks: [[Hartree-Fock Method]] as starting point; post-HF methods (CI, CC, MP2) recover electron correlation energy
+- Computational cost scales steeply with $A$ — currently feasible up to medium-mass nuclei ($A \lesssim 100$)
+- Reproduces [[Binding Energy|binding energies]], [[Magic Numbers|magic numbers]], [[Shell Evolution|shell evolution]], and [[Spin-Orbit Coupling|spin-orbit splittings]] from first principles
 
 ## Examples
 
-- **Nuclear:** NCSM calculations of ${}^{4}\text{He}$ and $p$-shell nuclei using chiral NN+3N forces reproduce experimental binding energies and spectra without fitting
-- **Chemistry:** Coupled Cluster with Singles and Doubles (CCSD(T)) is often called the "gold standard" of quantum chemistry for molecular energy calculations
-- **Validation:** Ab initio predictions of the ${}^{48}\text{Ca}$ neutron skin thickness and ${}^{78}\text{Ni}$ [[Shell closure|shell closure]] have been confirmed experimentally, demonstrating predictive power for exotic nuclei
+- **Nuclear:** Ab initio predictions of ${}^{78}\text{Ni}$ as doubly magic were confirmed by first spectroscopy in 2019 (Nature **570**, 190), validating [[Shell closure|shell closure]] far from stability
+- **Chemistry:** CCSD(T) — Coupled Cluster with Singles, Doubles, and perturbative Triples — is the "gold standard" of quantum chemistry for molecular energy calculations
 
 ## Related Concepts
 
@@ -50,5 +49,5 @@ review_interval: 0
 ## References
 
 - Barrett, Navrátil, Vary, "Ab initio no core shell model," *Prog. Part. Nucl. Phys.* **69**, 131 (2013)
-- Hergert et al., "In-Medium Similarity Renormalization Group for Nuclear Structure," *Phys. Rep.* **621**, 165 (2016)
+- Hergert et al., "The in-medium similarity renormalization group: A novel ab initio method for nuclei," *Phys. Rep.* **621**, 165 (2016)
 - Hagen et al., "Coupled-cluster computations of atomic nuclei," *Rep. Prog. Phys.* **77**, 096302 (2014)
