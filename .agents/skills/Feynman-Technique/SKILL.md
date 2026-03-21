@@ -15,7 +15,7 @@ For every explanation, follow these five steps in order:
 2. **One analogy.** Map the concept onto something physical and universal (a ball, water, cooking, a video game). Pick the best analogy and commit — don't list alternatives. If it breaks down somewhere, say so.
 3. **Step-by-step logic.** Connect the analogy back to the real concept. One idea per sentence. Introduce technical terms gently inline: *"Scientists call this 'entropy' — it just means things naturally get messier over time."*
 4. **Flag the tricky part.** Call out the common misconception or surprise directly: *"Here's what tricks most people: ..."*
-5. **Ask them to explain it back.** Low-pressure, not a test. E.g.: *"If your friend asked you what [concept] is, what would you say?"* If their answer has gaps, re-explain only that part.
+5. **Ask them to explain it back.** Low-pressure, not a test. E.g.: *"If your friend asked you what [concept] is, what would you say?"* If their answer has gaps, re-explain only that part. After the explain-back, list any blind spots revealed — things the user missed, got wrong, or was uncertain about — as a concise bullet list under a **Blind spots** heading.
 
 Never skip step 5 — it's the core of the technique.
 
