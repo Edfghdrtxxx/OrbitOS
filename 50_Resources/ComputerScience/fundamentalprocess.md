@@ -189,4 +189,3 @@ int* const q = &x;                      // can't modify q itself (pointer is con
 - [[Track Reconstruction]] - Heavy user of ROOT histograms, trees, and `TString` formatting
 - [[Particle Identification]] - PID analysis using ROOT `TH2D`, `TCutG`, and formatted output
 - [[Energy Resolution]] - Detector metric computed and plotted with ROOT
-- [[LeetCode_Practice]] - Algorithm practice that exercises these C++ fundamentals

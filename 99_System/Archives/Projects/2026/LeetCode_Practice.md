@@ -1,7 +1,9 @@
 ---
 title: LeetCode Practice
 type: project
-status: active
+status: abandoned
+archived: 2026-03-21
+archived-in: "[[2026-03-21]]"
 area: "[[Career]]"
 created: 2026-02-13
 due:

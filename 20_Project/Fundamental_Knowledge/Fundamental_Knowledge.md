@@ -69,7 +69,6 @@ tags: [physics, mathematics, statistics, fundamentals, PhD-prep]
 - [[MATE-Automation]] - ML and data analysis application
 - [[Fundamental_Learning_Progress]] - Detailed phase plan + UTokyo exam structure notes
 - [[UTokyo_RIKEN]] - PhD route that sets the exam scope and priorities
-- [[LeetCode_Practice]] - Algorithmic thinking complements mathematical foundations
 - [[English_Learning]] - Need to discuss these topics fluently in English
 
 ---

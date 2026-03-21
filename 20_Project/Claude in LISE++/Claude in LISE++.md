@@ -12,7 +12,7 @@ tags: [lise++, nuclear-physics, automation]
 
 ## Context
 
-**Objective:** Bridge the gap between Claude Code and LISE++
+**Objective:** Bridge the gap between Claude Code and LISE++ and another [Energy Loss simulation tool](https://catima.readthedocs.io/en/latest)
 
 **Project Directory:** `D:\Something\research\LISE++`
 
