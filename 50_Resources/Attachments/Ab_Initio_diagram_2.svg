@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" width="428" height="247" viewBox="0 0 428 247"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xml:space="default"
+	xml:lang="en">
+<title>Electron correlation energy</title>
+<defs>
+	<style type="text/css">
+		line, polyline{
+			fill: none;
+			stroke: currentColor;
+			stroke-width: 1.25;
+		}
+		polygon{
+			fill: currentColor;
+		}
+		text{
+			fill: currentColor;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 15px;
+			font-weight: bold;
+		}
+		.arrow  { marker-end: url(#arrowhead); }
+		#e-unit { font-size: 16px; text-anchor: middle; }
+		#title  { font-size: 18px; text-anchor: middle; }
+	</style>
+
+	<!-- Black arrowhead -->
+	<marker id="arrowhead"
+		viewBox="0 0 8 6"
+		refX="0"
+		refY="3"
+		markerWidth="8"
+		markerHeight="6"
+		markerUnits="userSpaceOnUse"
+		orient="auto"
+	><polygon points="
+		8 3
+		0 0
+		0 6
+		8 3
+	"/></marker>
+</defs>
+
+<polyline points="
+	136.5 110.5
+	112.5 110.5
+	112.5 181.5
+	136.5 181.5
+"/>
+<line x1="181" y1="52"  x2="155" y2="52"/>
+<line x1="181" y1="110" x2="155" y2="110"/>
+<line x1="180" y1="141" x2="155" y2="141"/>
+<line x1="182" y1="181" x2="156" y2="181"/>
+<line x1="182" y1="230" x2="156" y2="230"/>
+<line x1="145" y1="247" x2="145" y2="8" class="arrow"/>
+<text x="129" y="26" id="e-unit">E</text>
+<text x="185" y="57">Hartree-Fock energy</text>
+<text x="185" y="115">Hartree-Fock limit</text>
+<text x="185" y="147">Post-Hartree-Fock methods</text>
+<text x="185" y="236">Relativistic energy</text>
+
+<!-- NOTE: The superfluous “X” coordinates on the elements
+below are needed to fix a weird rendering quirk in librsvg -->
+<text x="0" id="title">
+	<tspan x="58" y="130">electron</tspan>
+	<tspan x="58" y="151">correlation</tspan>
+	<tspan x="55" y="172">energy</tspan>
+</text>
+<text x="0">
+	<tspan x="185" y="181">Exact solution of nonrelativistic</tspan>
+	<tspan x="185" y="197">Schrödinger equation</tspan>
+</text>
+</svg>
