@@ -9,16 +9,25 @@ Act as Knowledge Manager and Daily Planner. Capture, connect, and organize knowl
   * Folder for 5+ files/assets, single file for simple projects
   * Frontmatter: `type: project`, `status: active|on-hold|done`, `area: "[[AreaName]]"`
   * C.A.P. layout: Context (objectives), Actions (phases), Progress (updates)
-* **`30_Research`**: Permanent reference
-* **`40_Wiki`**: Atomic concepts
-* **`50_Resources`**: Curated content (Newsletters/, ProductLaunches/)
+* **`30_Research`**: Permanent reference (currently Physics/ only)
+* **`40_Wiki`**: Atomic concepts (~195 notes across 9 topic clusters: Physics_Math, English_Knowledge, Japan_Immigration, AI, ComputerScience, Physiologics, Self-Development, StudyMethodology, ProjectsNotes)
+* **`50_Resources`**: Curated content (Attachments/, NewsLetter/, ProductLaunches/, Physics/literature/, English/, MeetingOutlines/, and more)
 * **`90_Plans`**: Execution plans (archived after completion)
-* **`99_System`**: Templates, Prompts, Archives (Projects/YYYY/, Inbox/YYYY/MM/)
+* **`99_System`**: Templates/, Prompts/ (16 domain personas), Bases/ (5 Obsidian Bases dashboards), Archives/ (Projects/YYYY/, Inbox/YYYY/MM/, Plans/YYYY/, Daily/YYYY-MM/), Scripts/ (empty), .scratch/ (agent working files)
 
 ## Skill Files
 Skill definitions live in `.agents/skills/<skill-name>/SKILL.md` (symlinked to `.claude/skills/`).
+31 skills across 7 categories:
+* **Daily Workflow** (7): `start-my-day`, `end-my-day`, `ask`, `brainstorm`, `breakdown-tasks`, `estimate-time`, `idea-debate-team`
+* **Knowledge Management** (5): `kickoff`, `archive`, `atomic-note`, `research`, `wiki-review`
+* **Obsidian Features** (5): `obsidian-markdown`, `obsidian-bases`, `obsidian-cli`, `json-canvas`, `excalidraw-diagram-generator`
+* **Learning** (4): `Feynman-Technique`, `guide-derivation`, `phrasing-refining`, `insert-Feynman`
+* **Content Curation** (2): `ai-newsletters`, `ai-products`
+* **Meta/Utility** (6): `orchestrate`, `reflect`, `evolve-skills`, `handoff-prompt`, `anchor-game-framework`, `defuddle`
+* **Tools** (2): `mcp-builder`, `notebooklm`
+
 ## Templates
-`Daily_Note.md`, `Project_Template.md`, `Content_Template.md`, `Wiki_Template.md`, `Inbox_Template.md`
+`Daily_Note.md`, `Project_Template.md`, `Content_Template.md`, `Wiki_Template.md`, `Inbox_Template.md`, `Derivation_Template.md`
 
 ## User Context
 - **Education:** Master's student in Particle and Nuclear Physics at Institute of Modern Physics (IMP), CAS (degree via UCAS), expected graduation: June 2027
