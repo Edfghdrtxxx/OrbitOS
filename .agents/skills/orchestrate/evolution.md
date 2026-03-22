@@ -24,3 +24,9 @@
 ### Lessons
 - Do NOT use worktree isolation for a single implementer — it adds confusion (lost edits, wasted verification dispatches) without preventing any conflicts. The isolation rule exists for parallel write conflict prevention only.
 
+## 2026-03-22: No Agent subagents for long-running training with sleep polling
+
+### Lessons
+- Never dispatch Agent subagents for long-running processes with periodic polling (training, builds, etc.). When the subprocess dies silently (OOM, killed), the agent's `sleep` polling loop persists as unkillable zombie shells — the orchestrator has no mechanism to terminate background tasks inside a running agent.
+- Run long processes via `Bash` with `run_in_background: true` directly from the orchestrator. Poll on the next user prompt or task notification, not via `sleep` commands inside agents.
+
