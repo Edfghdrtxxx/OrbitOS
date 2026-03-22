@@ -4,7 +4,7 @@ tags:
   - english
   - learning
   - academic-writing
-updated: 2026-03-19
+updated: 2026-03-22
 ---
 # English Suggestions
 
@@ -37,6 +37,9 @@ Target: academic English (TOEFL, research emails, papers). Formal words are stre
 | "from" for evidence/basis | "from the comparison" = based on | Use **based on** / **as shown by** / restructure so the comparison is the subject |
 | Filler: "that we need to" | "a task that we need to use X" | State the action directly: "a task: use X" or "a task to use X" |
 | "respectively" misuse | "an agent for each EXP respectively" | *Respectively* maps two parallel lists 1:1; for one-per-each, use **each/dedicated/in parallel** |
+| Redundant intensifier | "precisely accurate" | *Precise* and *accurate* are distinct concepts; don't use one to intensify the other. Use **highly accurate** |
+| Unnatural metaphor (L1 transfer) | "not a key for every problem" | Not a recognized English metaphor. Use **silver bullet** (idiomatic) or **universal solution** (formal) |
+| "under the situation" | "under the proper situation" | English uses **in** the right context/situation, not *under*. "Under" works for *conditions/circumstances*, not *situation* |
 
 ## Corrected Collocations
 
@@ -64,3 +67,7 @@ Target: academic English (TOEFL, research emails, papers). Formal words are stre
 - **at** high energies (not "in high energy") — energy levels use *at*, plural
 - energy **range** (not "energy region") — standard physics collocation for a span of energies
 - **the reason** (not "the reason why") — *why* is redundant after *reason*
+- **highly** accurate (not "precisely accurate") — *precise* and *accurate* mean different things; one can't intensify the other
+- **not a silver bullet** / **not a universal solution** (not "not a key for every problem") — no such English metaphor
+- **in** the right situation (not "under the situation") — *under* pairs with *conditions/circumstances*, not *situation*
+- **computationally expensive/demanding** (not "compute-intensive") — standard collocations in academic writing
