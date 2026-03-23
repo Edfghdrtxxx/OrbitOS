@@ -23,6 +23,16 @@ He ran three prompts **every single week**, saved as phone shortcuts:
 
 He wasn't studying the material. He was studying **how the material gets weaponized against you**.
 
+> [!tip]- NotebookLM Prompts — Weaponize
+> **Podcast** (debate format):
+> `notebooklm generate audio --format debate "Argue about the 3 most common ways professors turn this material into tricky exam problems. One host defends intuitive understanding, the other exposes where intuition breaks down. End with a combined problem that links concepts from the last 3 weeks."`
+>
+> **Quiz** (hard):
+> `notebooklm generate quiz --difficulty hard "Focus on adversarial exam-style questions: concept combinations across multiple chapters, edge cases where formulas break, and problems that look like one topic but require another."`
+>
+> **Study Guide**:
+> `notebooklm generate report --format study-guide --append "Structure around exam traps, not topic summaries. For each concept: (1) what it looks like on an exam, (2) the common wrong answer and why students pick it, (3) the trick to recognizing the trap."`
+
 ### Prompt 2 — Find the Pattern in Mistakes
 > *"The move that made me close my laptop and stare at the ceiling."*
 
@@ -32,8 +42,28 @@ He uploaded every single assignment he'd gotten wrong all semester, then asked:
 
 Every other student was using NotebookLM as a search engine. He was using it as a **mirror**.
 
+> [!tip]- NotebookLM Prompts — Mirror
+> **Podcast** (critique format):
+> `notebooklm generate audio --format critique "Analyze the uploaded assignments and wrong answers. Identify the recurring conceptual misunderstanding hiding behind different surface-level mistakes. Be brutally honest — what does this student keep getting wrong, and why?"`
+>
+> **Report** (custom):
+> `notebooklm generate report --format custom --append "You are an exam diagnostician. Across all uploaded assignments and mistakes, find the ONE concept this student keeps misunderstanding in different forms. Show the pattern: list each mistake, trace it back to the root misunderstanding, and give a concrete drill to fix it."`
+>
+> **Flashcards**:
+> `notebooklm generate flashcards --difficulty hard "Generate cards ONLY from concepts where the source material shows errors or weak understanding. Each card should target a specific misconception — the front should present the trap, the back should explain why the intuitive answer is wrong."`
+
 ### Prompt 3 — Predict Weak Spots
 > "Based on my notes and these past papers, what topic am I least prepared for right now? Give me the 5 questions most likely to appear on my final that I can't answer yet."
+
+> [!tip]- NotebookLM Prompts — Predict Weak Spots
+> **Podcast** (deep-dive):
+> `notebooklm generate audio --format deep-dive "Compare what's covered in the notes against what past papers emphasize. Focus the entire conversation on the gaps — topics the student is least prepared for. Rank them by likelihood of appearing on the final."`
+>
+> **Quiz** (targeted gaps):
+> `notebooklm generate quiz --difficulty hard "Generate the 5 questions most likely to appear on the final that the student CANNOT answer based on their current notes. Focus on under-studied topics and cross-concept connections not yet practiced."`
+>
+> **Briefing Doc**:
+> `notebooklm generate report --format briefing-doc --append "Produce a gap analysis: compare topics in the notes vs topics in past exams. For each gap, estimate exam likelihood (high/medium/low) and give the minimum knowledge needed to answer a question on it. Prioritize by risk."`
 
 ## Core Idea
 
