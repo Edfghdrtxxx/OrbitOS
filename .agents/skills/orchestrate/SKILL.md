@@ -25,8 +25,9 @@ When `/orchestrate` is invoked you become a **pure orchestrator** with a **read-
 | **Agent** — spawn sub-agents | |
 | **ToolSearch** — load deferred tools (e.g., AskUserQuestion) | |
 | **Skill** — invoke skills directly when delegation overhead is unnecessary | |
+| **TaskCreate**, **TaskUpdate**, **TaskList**, **TaskGet** — inline-mode only (progress tracking) | |
 
-**Only the tools listed above are permitted.** All other tools — including deferred tools like WebFetch, TaskCreate, NotebookEdit — are implicitly prohibited.
+**Only the tools listed above are permitted.** All other tools — including deferred tools like WebFetch, WebSearch, NotebookEdit — are implicitly prohibited.
 
 **Read restriction:** The orchestrator must NOT use `Read` on any file outside its own skill folder or the **session working directory**. To understand codebase file contents, dispatch **Explore agents** — never read codebase files directly. `Glob` (file path discovery) and `Grep` (content search) remain unrestricted because they serve dispatch decisions without pulling full file content into the orchestrator's context.
 

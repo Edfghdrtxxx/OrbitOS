@@ -11,10 +11,13 @@ Freeform orchestration for tasks that complete within a single dispatch round. N
    - **Review focus** — what the reviewer should prioritize for this sub-task (e.g., "verify physics constraints," "check path references")
 2. Present the decomposition to the user as a numbered list and wait for confirmation before proceeding to Phase 3.
 3. If the user adjusts scope, update the list and re-confirm.
+4. **Create tasks:** After user confirms the decomposition, use `TaskCreate` for each sub-task. Set dependencies via `TaskUpdate` (`addBlockedBy`) where sub-tasks are sequential. Always append a final **decision gate task** (e.g., "Iterate by re-dispatching if needed") blocked by the last review task — this makes iteration visible in the task tracking. The gate covers both triggers: reviewer `needs-revision` (Phase 4 revision loop) and reflect findings (Phase 6). Tasks are the inline-mode progress source of truth — the orchestrator queries `TaskList` instead of re-inferring state from scratch directory contents.
 
 ## Phase 3 — DISPATCH
 
 For each sub-task, spawn a sub-agent via the **Agent** tool.
+
+Before dispatching each sub-agent, mark its corresponding task as `in_progress` via `TaskUpdate`.
 
 **Core philosophy:** Transfer the mental model — WHY this matters and WHAT success looks like — then let the sub-agent own the HOW entirely. Treat every sub-agent as a **senior peer, not a subordinate**. Trust it to figure out the implementation.
 
@@ -73,12 +76,17 @@ The reviewer's role is **skeptical auditor** — its job is to find problems, no
 
 **Content-producer review requirement:** All sub-tasks — including content producers (where the scratch file IS the deliverable) — require review. Content-producer reviews assess completeness and accuracy of the deliverable itself, just as worktree-implementer reviews assess correctness of file changes.
 
+**Task completion:** On `approved` verdict from the first review, `TaskUpdate` the sub-task to `completed` before proceeding to the next sub-task.
+
 **Revision loop:**
 
 **The orchestrator MUST re-dispatch for revision when a reviewer returns `needs-revision`.** The orchestrator MUST NOT proceed to the next sub-task or to SYNTHESIZE until the sub-task receives an `approved` verdict or hits the escalation limit below.
 
 1. If the reviewer returns **needs-revision**, dispatch a new implementer with the review file path as input context (e.g., "Read `99_System/.scratch/<session-id>/review_03.md` for reviewer feedback"). Prefer file paths over re-serialization, but paste the review content into the dispatch prompt if the revision implementer runs in a worktree without access to the scratch directory.
 2. After the new implementer completes, dispatch a new reviewer (which writes `review_<NN>b.md` for round 2, `review_<NN>c.md` for round 3, etc.).
+   - On `approved` verdict: `TaskUpdate` the sub-task to `completed`.
+   - On `needs-revision`: task stays `in_progress` (no update needed).
+   - On escalation: note the escalation outcome in the task via `TaskUpdate` (update description or mark completed per user decision).
 3. **Max 4 revision rounds** per sub-task — i.e., if `review_<NN>d.md` returns `needs-revision`, escalate. Escalate to the user with: the original sub-task objective, the implementer output file path, all review file paths for this sub-task, and a 1-2 sentence summary of the unresolved disagreement.
 
 **Post-escalation:** After escalation, the orchestrator MUST wait for explicit user direction before proceeding. The user may:
@@ -93,6 +101,7 @@ The orchestrator MUST NOT silently proceed past an escalation.
 **Structural gate:** Before synthesizing, verify the scratch directory (`99_System/.scratch/<session-id>/`):
 
 1. **Pairing:** `Glob` the directory. For every implementer output (`<NN>_*.md`), a corresponding `review_<NN>.md` (or revision review `review_<NN>[b-z].md`) must exist. Separately, for every review file (`review_<NN>*.md`), a corresponding implementer output (`<NN>_*.md`) must exist. If either check fails, halt and investigate.
+   - **Task cross-check:** Run `TaskList` as a sanity complement to the filesystem gate. All tasks should show `completed`. If `TaskList` and filesystem state disagree (e.g., a task is `completed` but its review file is missing, or a review is `approved` but the task is still `in_progress`), halt and investigate before proceeding.
 2. **Verdict:** Read the verdict line of each review file — or the latest revision review if revision files exist (e.g., `review_03c.md` takes precedence over `review_03b.md` and `review_03.md`). This is a "gate decision" Read under SKILL.md's tiered access Priority 2. Every review must contain a recognized verdict (`approved` or `needs-revision`) as its first line. If any latest review says `needs-revision`, the sub-task is incomplete — halt and return to Phase 4. If a sub-task was accepted via user escalation override (post-escalation), verify the override was explicitly granted.
 3. **Malformed reviews:** If a review file is empty or its first line does not contain a recognized verdict keyword (`approved` or `needs-revision`), treat the review as malformed — halt and investigate. Do not silently pass or silently fail.
 
@@ -125,6 +134,8 @@ After presenting the synthesis summary, invoke `/reflect` using the Skill tool. 
 The purpose is to catch **orchestrator-level mistakes** — scope drift, dropped sub-tasks, bad routing decisions, unverified assumptions made during decomposition or dispatch. Individual implementation quality is already covered by Phase 4 reviewers; this step audits the orchestration process itself.
 
 Let the reflect skill run generically against the full session. Present its findings to the user. Do **not** act on any findings until the user explicitly approves — this is required by the reflect skill's own protocol.
+
+**Decision gate:** The decision gate task (created at DECOMPOSE) covers both iteration triggers. In Phase 4, mark it `in_progress` when a reviewer returns `needs-revision` and re-dispatch; return it to `pending` once the revision passes. In Phase 6, if the user approves reflect fixes, mark it `in_progress`, re-dispatch, then mark `completed` when resolved. If no iteration was needed at either phase, mark `completed` immediately after reflect.
 
 # Failure Handling
 
