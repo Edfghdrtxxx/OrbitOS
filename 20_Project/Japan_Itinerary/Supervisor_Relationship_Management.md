@@ -41,10 +41,7 @@ created: 2026-02-17
 ### Merged from [[Discussion_Checklist]] (2026-03-09)
 
 - [ ] **Pre-Outreach Project Ideas:** Plan 1–2 small projects aligned with the target group — which topics would be most convincing to Aoi Nori / Nobuaki Imai, or is existing ResNet work sufficient? Discuss with IMP advisor.
-- [ ] **CV & Research Statement Review:** Request IMP advisor review of CV and 1-page research fit statement before sending to UTokyo professors. [DEADLINE: March 15]
-
-> [!warning] Deadline: March 15 — prepare CV and research statement for follow-up to Aoi Nori / Nobuaki Imai.
-> The March 15 deadline is still relevant: these materials are needed as follow-up to the accepted professors. The CV and research fit statement should be reviewed by IMP advisor before sending.
+- [x] **CV & Research Statement Review:** ~~Request IMP advisor review of CV and 1-page research fit statement before sending to UTokyo professors.~~ (Dismissed 2026-03-23)
 
 ### On No Response (after 2 weeks)
 
