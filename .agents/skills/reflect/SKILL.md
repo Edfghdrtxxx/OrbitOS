@@ -25,4 +25,11 @@ Even when the task is requested, confirm the *method* if it wasn't specified. Do
 
 **Zero Assumptions:** Never guess user intent. If multiple implementations exist or requirements are incomplete, **halt and use the `AskUserQuestion` tool** to gather explicit direction.
 
-List your findings first, then use `AskUserQuestion` to let the user decide on each actionable issue — provide concrete options (e.g., "Fix it this way", "Leave as-is"). Batch up to 4 independent findings per call.
+List findings in text output, then use `AskUserQuestion` with each finding spelled out as:
+`issue (location) — consequence → Option A: fix / Option B: leave as-is`
+
+Example:
+> 1. Returns None on bad input (parse_config:42) — silent failure → A: raise ValueError / B: return default
+> 2. No retry backoff (fetch_data:87) — API hammering → A: add backoff / B: leave as-is
+
+Batch up to 4 findings. Never summarize as just a count.
