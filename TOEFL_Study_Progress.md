@@ -2,9 +2,11 @@
 type: plan
 status: active
 created: 2026-02-17
+updated: 2026-03-24
+format: TOEFL iBT 2026 (launched Jan 21, 2026)
 target_exam: 2026-09 or 2026-10
-target_score: 100+
-current_estimate: 70-85
+target_score: band 5.0 (comparable 100+/120)
+current_estimate: 70-85 (old scale)
 daily_time: 1-1.5 hours
 weakest_section: Listening
 related:
@@ -13,11 +15,14 @@ related:
   - "[[Japanese_Language]]"
   - "[[Masters_Thesis]]"
 ---
-# TOEFL iBT Study Plan — Target 100+
+# TOEFL iBT Study Plan — Target Band 5.0 (100+)
 
 > [!info] Timeline: Feb 2026 → Sep/Oct 2026 (~7-8 months)
-> Current estimated level: 70-85. Target: 100+. Daily study: 1-1.5 hours.
+> Current estimated level: 70-85 (old scale). Target: **band 5.0** (comparable to 100+/120). Daily study: 1-1.5 hours.
 > Weakest section: **Listening**. Score needed for [[UTokyo_RIKEN]] Kenkyusei & PhD applications. ^JjniPbhh
+
+> [!warning] New TOEFL iBT Format (Jan 21, 2026)
+> The TOEFL iBT switched to a **band score system (1-6, half-point increments)** per section. A comparable 0-120 total is provided during the 2026-2028 transition period. Test duration is now **~1.5 hours** (down from ~2 hours). Reading and Listening are **adaptive**. Speaking and Writing tasks have been completely redesigned. See section details below.
 
 ## Schedule at a Glance
 
@@ -33,23 +38,25 @@ Jul 1 ██████████████████████ Sep 15 
 
 | Phase | Dates | Weeks | Focus | Target Score |
 |---|---|---|---|---|
-| **1 — Foundation** | Feb 17 – Apr 15 | 8 | Vocab, habits, core skills | 80-85 |
-| **2 — Skill Building** | Apr 16 – Jun 30 | 11 | Test strategies, Listening intensive | 88-93 |
-| **3 — Test Prep** | Jul 1 – Sep 15 | 11 | Weekly mocks, weakness elimination | 100+ |
+| **1 — Foundation** | Feb 17 – Apr 15 | 8 | Vocab, habits, core skills | 80-85 (comparable) |
+| **2 — Skill Building** | Apr 16 – Jun 30 | 11 | Test strategies, Listening intensive | 88-93 (comparable) |
+| **3 — Test Prep** | Jul 1 – Sep 15 | 11 | Weekly mocks, weakness elimination | band 5.0 / 100+ |
 | **4 — Final Week** | Sep 15 – Sep 21 | 1 | Light review, rest, **exam day** | — |
-| Retake window | Dec 2026 | — | If needed, focused 2-month rework | 100+ |
+| Retake window | Dec 2026 | — | If needed, focused 2-month rework | band 5.0 / 100+ |
 
 > **Key milestones:** Mock #1 (Apr ~13) · Mock #2 (Jun ~29) · Mocks #3-7 (weekly Jul–Sep) · **TOEFL Exam (Sep/Oct 2026)** · Retake if needed (Dec 2026)
 
 ## Score Breakdown Target
 
-| Section | Max | Target | Priority |
-|---|---|---|---|
-| Reading | 30 | 26+ | Medium |
-| Listening | 30 | 25+ | **HIGH** (weakest) |
-| Speaking | 30 | 23+ | Medium-High |
-| Writing | 30 | 26+ | Medium |
-| **Total** | **120** | **100+** | |
+| Section | Band Max | Band Target | Comparable (old scale) | Priority |
+|---|---|---|---|---|
+| Reading | 6 | 5.0+ | ~26/30 | Medium |
+| Listening | 6 | 5.0+ | ~25/30 | **HIGH** (weakest) |
+| Speaking | 6 | 4.5+ | ~23/30 | Medium-High |
+| Writing | 6 | 5.0+ | ~26/30 | Medium |
+| **Total** | — | **5.0+** | **100+/120** | |
+
+> [!note] During the 2026-2028 transition, ETS provides both the new band score (1-6) and a comparable 0-120 total score. Per-section comparable values (/30) in the table above are rough estimates — ETS may only provide a total comparable score, not per-section. UTokyo applications may reference either scale — confirm with the admissions office which they accept.
 
 > [!tip] Current Status
 > **Phase:** 1 — Foundation
@@ -65,35 +72,35 @@ Jul 1 ██████████████████████ Sep 15 
 
 ### Core Skills
 
-- [ ] [[TOEFL_Listening]] — intensive & extensive listening, note-taking, speed training
+- [ ] [[TOEFL_Listening]] — intensive & extensive listening, note-taking, speed training, adaptive format
   - [ ] Daily podcast/lecture practice (TED-Ed, BBC, NPR)
   - [ ] Note-taking while listening
   - [ ] Dictation exercises (5 min audio/day)
   - [ ] Speed training (1.25x playback)
   - [ ] Academic lecture comprehension (MIT OCW, Yale)
+  - [ ] Daily-life conversation comprehension (emails, announcements, casual exchanges)
   - [ ] Multi-part question mastery
   - [ ] Speaker attitude & detail shift detection ("however," "actually," "but in fact")
-- [ ] [[TOEFL_Speaking]] — response templates, recording practice, shadowing
-  - [ ] Task 1: Independent (45s prep / 60s response)
-  - [ ] Task 2: Integrated — campus life (read + listen + speak)
-  - [ ] Task 3: Integrated — academic (read + listen + speak)
-  - [ ] Task 4: Integrated — lecture summary (listen + speak)
+  - [ ] Adaptive difficulty comfort — maintain accuracy under escalating difficulty
+- [ ] [[TOEFL_Speaking]] — Listen and Repeat, Interview responses, shadowing, natural fluency
+  - [ ] Listen and Repeat — accurate reproduction of phrases and sentences (pronunciation, intonation, rhythm)
+  - [ ] Take an Interview — responding to everyday topic questions (remote work, celebrations, shopping, language learning, etc.)
   - [ ] Pronunciation refinement
-  - [ ] Pacing with visible timer
-  - [ ] Flexible template bank
-  - [ ] Shadowing (TED Talk speakers)
-- [ ] [[TOEFL_Reading]] — skimming, scanning, inference, passage strategies
-  - [ ] Main idea identification
-  - [ ] Supporting detail questions
-  - [ ] Inference questions (highest value)
-  - [ ] Insert text questions
-  - [ ] Summary questions
+  - [ ] Natural conversational fluency and pacing
+  - [ ] Shadowing (TED Talk speakers, podcast hosts)
+  - [ ] Listening precision — catching exact wording for repetition tasks
+- [ ] [[TOEFL_Reading]] — skimming, scanning, inference, cloze, daily-life reading, adaptive format
+  - [ ] Academic passage comprehension (main idea, detail, inference)
+  - [ ] Complete the Words — cloze-style exercises filling in missing letters within academic text
+  - [ ] Read in Daily Life — non-academic materials (emails, posters, menus, articles, announcements)
   - [ ] Vocabulary in context
+  - [ ] Summary questions
   - [ ] "Read questions first" technique
-- [ ] [[TOEFL_Writing]] — integrated writing, academic discussion, essay structure
-  - [ ] Integrated writing (read + listen + write, 20 min)
-  - [ ] Academic discussion task (10 min, ~100 words)
-  - [ ] Template bank: comparison/contrast, cause/effect, agree/disagree
+  - [ ] Adaptive difficulty comfort — maintain accuracy under escalating difficulty
+- [ ] [[TOEFL_Writing]] — email composition, academic discussion, concise professional writing
+  - [ ] Write an Email — brief, practical email with appropriate register (~5-10 min per item)
+  - [ ] Write for an Academic Discussion — posting to academic discussion forums (thesis + examples, concise format)
+  - [ ] Tone and register awareness (formal vs. semi-formal vs. casual)
   - [ ] Grammar accuracy under time pressure
   - [ ] Varied sentence structure & vocabulary
 
@@ -146,10 +153,10 @@ Jul 1 ██████████████████████ Sep 15 
 
 #### Phase 1 Checkpoint
 
-- [ ] Take a **full TOEFL practice test** (free: ETS TOEFL Practice Online, or use official practice materials)
-- [ ] Record baseline scores for each section
+- [ ] Take a **full TOEFL practice test** (use 2026-format official materials or ETS practice tools)
+- [ ] Record baseline scores for each section (band + comparable)
 - [ ] Identify top 2 weakest areas for Phase 2 focus
-- [ ] **Target score at this checkpoint: 80-85**
+- [ ] **Target comparable score at this checkpoint: 80-85**
 
 ### Phase 2: Skill Building (Apr 16 – Jun 30, 2026) — 11 weeks
 
@@ -157,43 +164,46 @@ Jul 1 ██████████████████████ Sep 15 
 
 #### Listening Intensive (40% of study time)
 
-- [ ] Do **1 full TOEFL Listening section** (6 passages) per week, timed
+- [ ] Do **1 full TOEFL Listening section** per week, timed (~29 min, up to 47 items)
 - [ ] After each practice: replay missed questions, transcribe the relevant 30-second segment
 - [ ] Practice **lecture note-taking format:** main topic → subtopics → examples → conclusion
 - [ ] Listen to content at **1.25x speed** for training; TOEFL will feel slow after this
 - [ ] Start listening to academic lectures: MIT OpenCourseWare, Yale Open Courses (physics lectures are ideal — familiar content + English practice)
+- [ ] Practice **daily-life conversation** comprehension — casual exchanges, announcements, service interactions
+- [ ] Get comfortable with **adaptive difficulty** — the section adjusts based on your performance; practice maintaining composure when questions get harder
 
 #### Reading Strategy
 
 - [ ] Practice the "read the questions first" technique for detail questions
 - [ ] Master **inference questions** — these are worth the most points and are often missed
-- [ ] Do 3 TOEFL Reading passages per week (timed)
-- [ ] Focus on **insert text** and **summary** question types (these are harder and worth more)
+- [ ] Do 3 TOEFL Reading sets per week (timed, ~30 min, up to 50 items)
+- [ ] Practice **Complete the Words** cloze exercises — fill in missing letters within academic text
+- [ ] Practice **Read in Daily Life** items — emails, posters, menus, articles, announcements
+- [ ] Get comfortable with **adaptive difficulty** — question difficulty adjusts based on section performance
 
 #### Speaking Development
 
-- [ ] Practice all 4 TOEFL Speaking task types
+- [ ] Practice **Listen and Repeat** — hear a phrase/sentence, repeat it accurately; focus on pronunciation, intonation, and listening precision (~8 min, up to 11 items total for Speaking)
+- [ ] Practice **Take an Interview** — respond naturally to simulated interview questions on everyday topics (remote work, celebrations, shopping, language learning, etc.)
 - [ ] Record and review 3 responses per week
-- [ ] Focus on: clear organization, fluency over perfection, transition words
-- [ ] If possible, find a speaking partner or use AI conversation tools for practice
+- [ ] Focus on: natural conversational fluency, accurate repetition, clear pronunciation
+- [ ] **Shadowing practice** remains highly relevant — shadow TED Talk speakers and podcast hosts for natural rhythm and intonation
+- [ ] If possible, find a speaking partner or use AI conversation tools for interview practice
 
 #### Writing Development
 
-- [ ] Practice both TOEFL Writing tasks:
-  - Integrated Writing: read passage + listen to lecture + write (20 min, 150-225 words)
-  - Academic Discussion: contribute to an online discussion (10 min, ~100 words)
+- [ ] Practice both new TOEFL Writing task types (~23 min, up to 12 items):
+  - **Write an Email:** brief, practical email composition (e.g., missed quiz, property maintenance, noisy neighbors, wrong package) — focus on concise, clear writing with appropriate register
+  - **Write for an Academic Discussion:** post to academic discussion forums — thesis + supporting examples in a concise format
 - [ ] Write 2 full TOEFL Writing responses per week
-- [ ] Build a **template bank** for common writing patterns:
-  - Comparison/contrast
-  - Cause/effect
-  - Agree/disagree with reasons
-- [ ] Focus on: clear thesis, specific examples, logical transitions, varied sentence structure
+- [ ] Practice **register awareness**: match tone to context (formal academic vs. semi-formal email)
+- [ ] Focus on: clear purpose, specific examples, logical transitions, varied sentence structure
 
 #### Phase 2 Checkpoint
 
-- [ ] Take a **full timed TOEFL mock test** (simulate real conditions: 2 hours, no breaks, quiet room)
-- [ ] Analyze section-by-section scores
-- [ ] **Target score at this checkpoint: 88-93**
+- [ ] Take a **full timed TOEFL mock test** (simulate real conditions: ~1.5 hours, no breaks, quiet room)
+- [ ] Analyze section-by-section scores (band + comparable)
+- [ ] **Target comparable score at this checkpoint: 88-93**
 - [ ] Adjust Phase 3 focus based on results
 
 ### Phase 3: Test Preparation (Jul 1 – Sep 15, 2026) — 11 weeks
@@ -208,23 +218,27 @@ Jul 1 ██████████████████████ Sep 15 
 
 #### Listening Final Push
 
-- [ ] If Listening is still below 25: dedicate 50% of daily time to Listening
+- [ ] If Listening is still below band 5.0 (~25 comparable): dedicate 50% of daily time to Listening
 - [ ] Practice with **faster and more complex** academic lectures
+- [ ] Practice **daily-life conversations** — casual exchanges, service interactions, announcements
 - [ ] Focus on: understanding speaker attitude, catching detail shifts ("however," "actually," "but in fact")
 - [ ] Master multi-part questions (select 2 or more correct answers)
+- [ ] Practice under **adaptive conditions** — simulate escalating difficulty
 
 #### Speaking Refinement
 
 - [ ] Polish pronunciation of commonly mispronounced academic words
-- [ ] Practice speaking responses with a **timer visible** — pacing is critical
-- [ ] Prepare flexible templates that work across many topics
-- [ ] Record final versions of 10 practice responses — review for fluency
+- [ ] **Listen and Repeat** accuracy drills — focus on difficult phrases, compound sentences, and varied intonation patterns
+- [ ] **Interview practice** — prepare for a wide range of everyday topics; aim for natural, conversational delivery
+- [ ] Record final versions of 10 practice responses — review for fluency and pronunciation accuracy
+- [ ] Continue shadowing practice for natural rhythm
 
 #### Writing Polish
 
-- [ ] Practice writing under strict time limits (20 min integrated, 10 min discussion)
+- [ ] Practice **Email writing** under strict time limits — aim for concise, clear, appropriately toned responses
+- [ ] Practice **Academic Discussion** posts — thesis + examples, concise format
 - [ ] Build a collection of **versatile examples** you can adapt to many prompts
-- [ ] Focus on: word count targets, clear paragraph breaks, varied vocabulary
+- [ ] Focus on: appropriate register, clear paragraph breaks, varied vocabulary
 
 #### Test Registration & Logistics
 
@@ -246,23 +260,24 @@ Jul 1 ██████████████████████ Sep 15 
 #### 2 Days Before
 
 - [ ] Stop all practice
-- [ ] Prepare test-day items: passport, confirmation email, water bottle, snack for break
-- [ ] Light review of speaking/writing templates only
+- [ ] Prepare test-day items: passport, confirmation email, water bottle
+- [ ] Light review of speaking and writing strategies only
 - [ ] Relax — rest > cramming at this point
 
 #### Test Day
 
 - [ ] Wake up early, eat a good breakfast
 - [ ] Arrive 30 minutes early
-- [ ] During the test: **don't panic on hard questions** — TOEFL is adaptive and some questions are designed to be challenging
+- [ ] During the test: **don't panic on hard questions** — Reading and Listening are adaptive, so difficulty escalation means you are doing well
 - [ ] Use all available time — never submit early
+- [ ] Total test time: **~1.5 hours**
 - [ ] After the test: scores arrive in 4-6 days for Reading/Listening, 6-10 days for Speaking/Writing
 
 ---
 
 ## Mock Test Tracker
 
-| Mock # | Date | R | L | S | W | Total | Notes |
+| Mock # | Date | R (band) | L (band) | S (band) | W (band) | Comparable Total (/120) | Notes |
 |---|---|---|---|---|---|---|---|
 | 1 | | | | | | | |
 | 2 | | | | | | | |
@@ -275,9 +290,9 @@ Jul 1 ██████████████████████ Sep 15 
 
 ## Retake Strategy
 
-If you score below 100:
+If you score below band 5.0 (comparable 100):
 
-| Score | Action |
+| Comparable Score | Action |
 |---|---|
 | 95-99 | Consider accepting — still competitive. Retake only if a specific section dragged you down |
 | 85-94 | Retake in Dec 2026 — focus intensively on weakest section for 2 months |
@@ -330,7 +345,7 @@ If you score below 100:
 ```
 Feb 2026          TOEFL study begins (Phase 1)
     ↓
-Mar 2026          Supervisor outreach emails sent — English quality matters here too
+Mar 2026          Supervisor acceptance achieved (Mar 9) — English remains critical for ongoing communication
     ↓
 Apr 2026          Phase 2 begins — skill building
     ↓
@@ -353,24 +368,27 @@ Apr-May 2027      Kenkyusei application — TOEFL score submitted
 
 ## Resources
 
+> [!note] The TOEFL iBT changed format on January 21, 2026. Ensure all practice materials target the **2026 format**. Resources marked "(pre-2026)" use the old format and may not reflect current task types.
+> See [[TOEFL_2026_Practice_Resources]] for a comprehensive list of 2026-format materials.
+
 ### Free
 
 | Resource | Best For |
 |---|---|
-| ETS TOEFL Free Practice Test | 1 free full test — save for Phase 2 or 3 |
-| [TOEFL Go!](https://www.ets.org/toefl/test-takers/ibt/prepare/toefl-go.html) (ETS app) | Official practice questions on mobile |
-| TED Talks + TED-Ed | Listening + vocabulary |
-| BBC Learning English | Grammar + listening |
-| Scientific American | Reading + vocabulary |
+| ETS TOEFL Free Practice Test | 1 free full test — save for Phase 2 or 3 (confirm 2026 format available) |
+| [TOEFL Go!](https://www.ets.org/toefl/test-takers/ibt/prepare/toefl-go.html) (ETS app) | Official practice questions on mobile (check for 2026-format update) |
+| TED Talks + TED-Ed | Listening + vocabulary + shadowing for speaking |
+| BBC Learning English | Grammar + listening + daily-life conversation practice |
+| Scientific American | Reading + vocabulary (academic passages) |
 | Anki (TOEFL decks) | Vocabulary spaced repetition |
 
 ### Paid (recommended)
 
 | Resource | Cost | Best For |
 |---|---|---|
-| ETS Official TOEFL iBT Tests (book) | ~$30 | Most realistic practice tests |
-| Magoosh TOEFL | ~$100/6mo | Video lessons + practice questions |
-| Barron's TOEFL iBT | ~$25 | Good for Reading/Listening practice |
+| ETS Official TOEFL iBT Tests (book) | ~$30 | Most realistic practice tests — **must be 2026 edition** |
+| Magoosh TOEFL | ~$100/6mo | Video lessons + practice questions (verify 2026-format coverage) |
+| Barron's TOEFL iBT | ~$25 | Good for Reading/Listening practice — **must be 2026 edition** |
 
 ### For Listening Specifically
 
@@ -378,5 +396,13 @@ Apr-May 2027      Kenkyusei application — TOEFL score submitted
 |---|---|
 | MIT OCW Physics lectures | Familiar content in English — dual benefit |
 | Crash Course Physics (YouTube) | Engaging, fast-paced — trains speed comprehension |
-| NPR podcasts | Natural American English, varied topics |
-| TOEFL Listening practice apps | Test-format specific practice |
+| NPR podcasts | Natural American English, varied topics — good for daily-life listening |
+| TOEFL Listening practice apps | Test-format specific practice (ensure 2026-format) |
+
+### For Speaking (2026 Format)
+
+| Resource | Why |
+|---|---|
+| Shadowing practice (TED Talks, podcasts) | Builds natural rhythm, pronunciation, and intonation for Listen and Repeat |
+| AI conversation tools (ChatGPT voice, etc.) | Interview-style practice on everyday topics |
+| [[TOEFL_2026_Practice_Resources]] | Full list of 2026-format speaking practice materials |
