@@ -4,42 +4,52 @@ tags:
   - english
   - learning
   - academic-writing
-updated: 2026-03-22
+updated: 2026-03-24
 ---
 # English Suggestions
 
 Target: academic English (TOEFL, research emails, papers). Formal words are strengths — refine precision, not register.
 
+## Daily Focus
+
+1. **L1 idiom transfer** — When writing an argument or debate response, pause at any metaphor or idiom. Ask: "Did I translate this from Chinese or have I seen it in English?" If translated, replace with plain English ("reject outright") or a known English idiom ("silver bullet"). Test: Google the exact phrase in quotes — if <1000 results, it's not English.
+
+2. **Redundant synonym pairs** — After finishing any draft, do one scan for back-to-back adjectives/nouns that mean the same thing ("fundamental and basic", "precisely accurate"). Delete one, keep the stronger. Rule of thumb: if removing one word doesn't change the meaning, remove it.
+
+3. **"Just as what X said"** — In TOEFL integrated speaking/writing, you reference others' opinions constantly. Drill these three frames until automatic: "As X said, ...", "Just as X noted, ...", "X pointed out that ...". Drop "what" every time.
+
 ## Active Patterns
 
-| Pattern | Example | Fix |
-|---|---|---|
-| Phantom prepositions | "represents for X" → "represents X"; "towards C" → "to C" | Transitive verbs take direct objects — no extra prep |
-| Articles | missing "the" before GRE, GSGC | specific/unique → **the** |
-| Word precision | "hedge" ≠ fallback; "pend" ≠ verb; "odd" = strange | Check collocation + domain fit |
-| Demonstratives | "that two" → "those two" | Plural → those/these |
-| Conditionals | "Only make it…" (imperative) → "It would serve as…" | Academic favors conditional mood |
-| anywhere vs anything | "anywhere inappropriate" → "anything inappropriate" | "anywhere" = places; "anything" = content/substance |
-| Verb confusion: review vs revise | "review for my ideas" → "revise my ideas" | review = look over; revise = fix/improve |
-| Countable/uncountable + agreement | "these material", "these folder" | material (substance) = uncountable; check plural agreement |
-| Non-idiomatic framing phrases | "from my comprehension" → "as I understand it"; "to my understanding" works but stiff in speech | Likely L1 transfer (据我理解); learn fixed English frames |
-| Stiff verb choice | "reference" (verb), "achieve a balance state" | Default to phrasal verbs: look at, end up in |
-| Tangled cause-effect chains | Stacked "caused by" clauses reverse logic | Use condition → consequence order, one clause at a time |
-| Word-order scramble in noun phrases | "cross section properties of various energy of neutron reaction with" → "cross-section properties of neutron reactions at various energies" | Chinese modifier order (的 chains) doesn't transfer; English: head noun first, then modifiers via prepositions |
-| Singular/plural in technical contexts | "different energy regime" → "different energy regimes"; "various energy" → "various energies" | After *different/various/several/multiple*, the noun is almost always plural |
-| Phantom article: "In the contrast" | "In the contrast" → "In contrast" / "Conversely" | Fixed phrase — no article. Cf. also "on the other hand" (with *the*) |
-| Missing preposition + article before nouns | "when reaction with Helium in high energy" | Need: "for reactions with helium **at** high **energies**" — both prep and plural missing |
-| "How to X?" as a question | "How to consider hair transplant?" | Natives ask "What should I consider…?" or "How do I…?" — bare "how to" is a heading/title form, not a question |
-| Wrong noun for grammar terms | "course" for clause, "cause" for clause | clause = grammatical unit; course = class; cause = reason |
-| "led by" for grammar elements | "a course led by 'when'" → "a clause introduced by 'when'" | *Led by* = people/teams; *introduced by* / *starting with* = grammar |
-| Bad collocations with "robustness" | "more powerful robustness" | Robustness is **superior/greater/stronger**, not "powerful" |
-| Wrong preposition: for → on | "robustness for the dataset" | Properties/performance measured **on** a dataset, not *for* it |
-| "from" for evidence/basis | "from the comparison" = based on | Use **based on** / **as shown by** / restructure so the comparison is the subject |
-| Filler: "that we need to" | "a task that we need to use X" | State the action directly: "a task: use X" or "a task to use X" |
-| "respectively" misuse | "an agent for each EXP respectively" | *Respectively* maps two parallel lists 1:1; for one-per-each, use **each/dedicated/in parallel** |
-| Redundant intensifier | "precisely accurate" | *Precise* and *accurate* are distinct concepts; don't use one to intensify the other. Use **highly accurate** |
-| Unnatural metaphor (L1 transfer) | "not a key for every problem" | Not a recognized English metaphor. Use **silver bullet** (idiomatic) or **universal solution** (formal) |
-| "under the situation" | "under the proper situation" | English uses **in** the right context/situation, not *under*. "Under" works for *conditions/circumstances*, not *situation* |
+| Pattern | Latest Example | Fix | Trigger Context |
+|---|---|---|---|
+| Phantom prepositions | "represents for X" → "represents X" | Transitive verbs take direct objects — no extra prep | Fast writing; L1 verb+prep transfer |
+| Articles | missing "the" before GRE, GSGC | specific/unique → **the** | All contexts |
+| Word precision | "hedge" ≠ fallback; "pend" ≠ verb | Check collocation + domain fit | Reaching for formal vocabulary |
+| Demonstratives | "that two" → "those two" | Plural → those/these | Quick spoken/written responses |
+| Conditionals | "Only make it…" → "It would serve as…" | Academic favors conditional mood | Academic writing, proposals |
+| anywhere vs anything | "anywhere inappropriate" → "anything inappropriate" | "anywhere" = places; "anything" = content | Generalizing — confusing place/thing pronouns |
+| Verb confusion: review vs revise | "review for my ideas" → "revise my ideas" | review = look over; revise = fix/improve | Emails to professors |
+| Countable/uncountable + agreement | "these material", "these folder" | Check plural agreement | Technical writing with mass/count nouns |
+| Non-idiomatic framing phrases | "from my comprehension" → "as I understand it" | L1 transfer (据我理解); use fixed English frames | Stating your interpretation in discussion |
+| Stiff verb choice | "reference" (verb), "achieve a balance state" | Default to phrasal verbs: look at, end up in | Overusing formal verbs in casual contexts |
+| Tangled cause-effect chains | Stacked "caused by" clauses reverse logic | Condition → consequence order, one clause at a time | Long explanatory sentences in papers |
+| Word-order scramble in noun phrases | "cross section properties of various energy of neutron reaction with" | Head noun first, then modifiers via prepositions | Translating 的-chains |
+| Singular/plural in technical contexts | "different energy regime" → "regimes" | After *different/various/several/multiple*, noun is plural | Technical/physics writing |
+| Phantom article in fixed phrases | "In the contrast" → "In contrast" | Fixed phrase — no article | Transition phrases in essays |
+| Missing preposition + article | "when reaction with Helium in high energy" | "for reactions with helium **at** high **energies**" | Compressing phrases when writing fast |
+| "How to X?" as a question | "How to consider hair transplant?" | "What should I consider…?" / "How do I…?" | Asking questions |
+| Wrong noun for grammar terms | "course" for clause | clause ≠ course ≠ cause | Discussing grammar |
+| "led by" for grammar elements | "a course led by 'when'" | *introduced by* / *starting with* — *led by* is for people | Discussing grammar |
+| Bad collocations with "robustness" | "more powerful robustness" | **superior/greater/stronger** robustness | Academic ML writing |
+| Wrong preposition: for → on | "robustness for the dataset" | Measured **on** a dataset, not *for* | Academic ML writing |
+| "from" for evidence/basis | "from the comparison" | **based on** / **as shown by** | Drawing conclusions in papers |
+| Filler: "that we need to" | "a task that we need to use X" | "a task to use X" — state action directly | Wordy explanation chains |
+| "respectively" misuse | "an agent for each EXP respectively" | **each/dedicated/in parallel** for one-per-each | Technical descriptions |
+| Redundant synonym pairs | "fundamental and basic"; "precisely accurate" | Pick one — they mean the same thing. Delete the weaker word | Trying to sound emphatic; doubling up |
+| L1 idiom transfer | "one-cut discard" (一刀切); "not a key for every problem" | Translate the *meaning*, not the Chinese phrase: **outright dismissal**, **silver bullet** | Argument/debate writing |
+| "under the situation" | "under the proper situation" | **in** the right situation — *under* pairs with *conditions/circumstances* | Formal writing |
+| "Just as what X said" | "Just as what Marcus said" | Drop "what": "Just as Marcus said" / "As Marcus noted" | Referencing others' opinions (TOEFL, debate) |
+| "limits" vs "limitations" | "limits of requiring" → "limitations to requiring" | "limits" = numerical caps; "limitations" = shortcomings. Collocation: "limitations **to**" | Discussing disadvantages of a policy |
 
 ## Corrected Collocations
 
@@ -55,19 +65,22 @@ Target: academic English (TOEFL, research emails, papers). Formal words are stre
 - **share** the same philosophy (not "have the same")
 - **as I understand it** (not "from my comprehension")
 - a clause **introduced by** "when" (not "led by") — *led by* is for people
-- **What should I consider** before X? (not "How to consider X?") — *how to* is a heading form, not a question
-- **assist** people, not activities → "help explain" / "aid comprehension" (not "assist learning")
-- **more powerful** robustness → **superior/greater** robustness — "powerful" doesn't collocate with robustness
-- robustness **on** the dataset (not "for the dataset") — performance/properties measured *on* data
-- **based on** the comparison (not "from the comparison") — evidence needs *based on / as shown by*, not *from*
-- **the noise-augmented dataset** or **noisy data** (not "dataset with noise") — use adjective form
-- **run/execute X against Y** = apply tool to target (not "in Y" when Y is the target, not the environment)
-- **implementation of** methods/features; but **addition of** experiments — you *implement* code, you *add/conduct* experiments
-- **in contrast** (not "in the contrast") — fixed phrase, no article
-- **at** high energies (not "in high energy") — energy levels use *at*, plural
-- energy **range** (not "energy region") — standard physics collocation for a span of energies
-- **the reason** (not "the reason why") — *why* is redundant after *reason*
-- **highly** accurate (not "precisely accurate") — *precise* and *accurate* mean different things; one can't intensify the other
-- **not a silver bullet** / **not a universal solution** (not "not a key for every problem") — no such English metaphor
-- **in** the right situation (not "under the situation") — *under* pairs with *conditions/circumstances*, not *situation*
-- **computationally expensive/demanding** (not "compute-intensive") — standard collocations in academic writing
+- **What should I consider** before X? (not "How to consider X?")
+- **assist** people, not activities → "help explain" / "aid comprehension"
+- **superior/greater** robustness (not "more powerful robustness")
+- robustness **on** the dataset (not "for the dataset")
+- **based on** the comparison (not "from the comparison")
+- **the noise-augmented dataset** or **noisy data** (not "dataset with noise")
+- **run/execute X against Y** = apply tool to target (not "in Y")
+- **implementation of** methods; **addition of** experiments
+- **in contrast** (not "in the contrast") — no article
+- **at** high energies (not "in high energy")
+- energy **range** (not "energy region")
+- **the reason** (not "the reason why") — *why* is redundant
+- **highly** accurate (not "precisely accurate")
+- **not a silver bullet** / **not a universal solution** (not "not a key for every problem")
+- **in** the right situation (not "under the situation")
+- **computationally expensive/demanding** (not "compute-intensive")
+- **limitations to** requiring X (not "limits of requiring X") — "limits" = caps, "limitations" = shortcomings
+- **Just as** Marcus said (not "Just as what Marcus said") — drop "what"
+- **reject outright** / **dismiss entirely** (not "one-cut discard") — 一刀切 doesn't translate literally
