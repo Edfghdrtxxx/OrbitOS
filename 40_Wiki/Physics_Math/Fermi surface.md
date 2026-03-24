@@ -35,8 +35,8 @@ The Fermi surface is the surface in momentum space (or $k$-space) that separates
 
 ## Examples
 
-- **Copper:** Nearly spherical Fermi surface with "necks" touching the [[Brillouin Zone]] boundary along the $\langle 111 \rangle$ directions, explaining its high electrical conductivity.
-- **Nuclear matter:** In symmetric nuclear matter at saturation density, the proton and neutron Fermi surfaces are concentric spheres at $k_F \approx 1.36\;\text{fm}^{-1}$, corresponding to $E_F \approx 37\;\text{MeV}$.
+- **Copper:** Nearly spherical Fermi surface (close to free-electron behavior) with characteristic "necks" at the $\langle 111 \rangle$ [[Brillouin Zone]] boundaries — a textbook example of how lattice periodicity distorts an otherwise spherical surface.
+- **Nuclear matter:** In symmetric nuclear matter at saturation density, the proton and neutron Fermi surfaces are concentric spheres at $k_F \approx 1.36\;\text{fm}^{-1}$, corresponding to $E_F \approx 38\;\text{MeV}$.
 
 ## Related Concepts
 
