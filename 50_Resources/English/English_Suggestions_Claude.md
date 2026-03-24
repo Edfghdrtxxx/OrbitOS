@@ -14,9 +14,9 @@ Target: academic English (TOEFL, research emails, papers). Formal words are stre
 
 1. **L1 idiom transfer** — When writing an argument or debate response, pause at any metaphor or idiom. Ask: "Did I translate this from Chinese or have I seen it in English?" If translated, replace with plain English ("reject outright") or a known English idiom ("silver bullet"). Test: Google the exact phrase in quotes — if <1000 results, it's not English.
 
-2. **Redundant synonym pairs** — After finishing any draft, do one scan for back-to-back adjectives/nouns that mean the same thing ("fundamental and basic", "precisely accurate"). Delete one, keep the stronger. Rule of thumb: if removing one word doesn't change the meaning, remove it.
+2. **Redundant synonym pairs** — After finishing any draft, do one scan for back-to-back adjectives/nouns that mean the same thing ("fundamental and basic"). Delete one, keep the stronger. Rule of thumb: if removing one word doesn't change the meaning, remove it.
 
-3. **"Just as what X said"** — In TOEFL integrated speaking/writing, you reference others' opinions constantly. Drill these three frames until automatic: "As X said, ...", "Just as X noted, ...", "X pointed out that ...". Drop "what" every time.
+3. **"Just as what X said"** — In TOEFL integrated speaking/writing, you reference others' opinions constantly. In each practice response, write one sentence using each frame: "As X said, ...", "Just as X noted, ...", "X pointed out that ...". Drop "what" every time.
 
 ## Active Patterns
 
@@ -45,7 +45,8 @@ Target: academic English (TOEFL, research emails, papers). Formal words are stre
 | "from" for evidence/basis | "from the comparison" | **based on** / **as shown by** | Drawing conclusions in papers |
 | Filler: "that we need to" | "a task that we need to use X" | "a task to use X" — state action directly | Wordy explanation chains |
 | "respectively" misuse | "an agent for each EXP respectively" | **each/dedicated/in parallel** for one-per-each | Technical descriptions |
-| Redundant synonym pairs | "fundamental and basic"; "precisely accurate" | Pick one — they mean the same thing. Delete the weaker word | Trying to sound emphatic; doubling up |
+| Redundant synonym pairs | "fundamental and basic" | Pick one — they mean the same thing. Delete the weaker word | Trying to sound emphatic; doubling up |
+| Misused intensifier (distinct concepts) | "precisely accurate" | *Precise* ≠ *accurate* (repeatability vs closeness to true value). Use **highly accurate** | Technical/academic writing — using one scientific term to intensify another |
 | L1 idiom transfer | "one-cut discard" (一刀切); "not a key for every problem" | Translate the *meaning*, not the Chinese phrase: **outright dismissal**, **silver bullet** | Argument/debate writing |
 | "under the situation" | "under the proper situation" | **in** the right situation — *under* pairs with *conditions/circumstances* | Formal writing |
 | "Just as what X said" | "Just as what Marcus said" | Drop "what": "Just as Marcus said" / "As Marcus noted" | Referencing others' opinions (TOEFL, debate) |

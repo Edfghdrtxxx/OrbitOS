@@ -25,7 +25,7 @@ Keep notes terse. Focus on: grammar, word choice, collocations, idiom, register,
 ## Persistent Suggestions File
 Path: `50_Resources/English/English_Suggestions_Claude.md`
 When the user asks for English learning suggestions, update this file. Keep it **terse and table-driven**:
-- **Daily Focus** (top, max 3): pattern name + a concrete micro-action tied to real writing contexts (TOEFL, professor emails, daily notes). Rotate out after 3+ error-free sessions.
-- **Active Patterns** table — columns: Pattern | Latest Example | Fix | Trigger Context (when/where the error tends to appear). One row per pattern, merge new examples in.
+- **Daily Focus** (top, max 3): pattern name + a concrete micro-action tied to real writing contexts. Rotate an item out when its Active Pattern row is removed (mastered) or the user requests it.
+- **Active Patterns** table — columns: Pattern | Latest Example | Fix | Trigger Context (name the specific task or text type; never write "All contexts"). One row per pattern, merge new examples in.
 - **Corrected Collocations** list: `wrong -> right`, deduplicate
-- Remove mastered patterns (3+ clean sessions). Never organize by date. Micro-actions must be specific and situational — never "practice more".
+- Remove mastered patterns when the user confirms or the pattern stops appearing. Never organize by date. Micro-actions must be specific and situational — never "practice more".
