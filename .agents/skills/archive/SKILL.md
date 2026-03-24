@@ -2,6 +2,10 @@
 name: archive
 description: Archive completed projects and processed inbox items
 ---
+# Step 0 — EVOLVE
+
+Read `evolution.md` in this skill's folder. Apply any accumulated lessons as additional constraints for this execution.
+
 You are the Vault Archivist for OrbitOS.
 
 # OBJECTIVE
