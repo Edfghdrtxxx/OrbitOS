@@ -79,6 +79,15 @@ This confirms they are separate programs. For someone with an existing master's,
 5. **Score cutoffs:** Are there unpublished minimum GRE/TOEFL score cutoffs at the Physics dept level? #upcoming-confirmation-needed
 6. **Application cycle:** FY2027 guidelines expected late April 2026 — confirm exact dates when available. #upcoming-confirmation-needed
 
+## Pre-Meeting Questions for [[Prof_Nobuaki_Imai|Imai-san]] (One-on-One)
+
+> [!info] Context
+> Current leaning is toward Imai's group (DONUTS) over Aoi's group (NUSPEQ). These questions are for a one-on-one meeting with Imai before finalizing the group choice.
+
+1. **Thesis topic vision:** What thesis topic would Imai-san envision specifically for a student with AFTPC + ML/PID background?
+2. **Typical PhD week:** What does a typical week look like for PhD students in his group (lab time, seminars, beam time rotations, independent work)?
+3. **Jiatai Li's experience:** What happened with Jiatai Li's thesis — and would it be possible to connect with him for practical advice on navigating the group as a Chinese student?
+
 ## Sources (fetched 2026-03-10)
 
 | Source | URL |

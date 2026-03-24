@@ -11,7 +11,19 @@ created: 2026-02-17
 # Supervisor Relationship Management
 
 > [!success] Outcome (2026-03-09)
-> **Supervisor outreach succeeded.** Two UTokyo CNS professors — **Aoi Nori (青井 考)** and **Nobuaki Imai** — accepted, conditional on passing the Faculty of Science entrance exam. Both are equally viable; no preference yet. Focus now shifts to entrance exam preparation.
+> **Supervisor outreach succeeded.** Two UTokyo CNS professors — **Aoi Nori (青井 考)** and **Nobuaki Imai** — accepted, conditional on passing the Faculty of Science entrance exam. Focus now shifts to entrance exam preparation.
+
+> [!important] Group Preference (2026-03-24)
+> **Current leaning: [[Prof_Nobuaki_Imai|Imai-san]]'s group (DONUTS)** — pending confirmation via one-on-one meeting.
+>
+> **Rationale:**
+> - Astrophysics alignment via SAKURA program
+> - Better mentoring attention (smaller group)
+> - Chinese peer support (Jiatai Li, Qin Hao) for practical onboarding
+> - Approved experiment pipeline (SHARAQ21-25)
+> - [[Prof_Nori_Aoi|Aoi-san]]'s network remains accessible via same-campus collaboration at CNS
+>
+> **Next action:** Request a one-on-one online meeting with Imai-san (20-30 min) to discuss thesis direction, group life, and finalize the decision. See [[Questions_and_Verifiable_Source#Pre-Meeting Questions for Imai-san (One-on-One)]] for the question list.
 
 > [!info] Purpose
 > This note manages the **ongoing relationship with accepted UTokyo supervisors** and tracks outstanding action items post-contact. Originally a contact-preparation document (target: late Feb / early Mar 2026), contact succeeded on 2026-03-09. It consolidates every question, verification item, and decision gate remaining to resolve. The outcome directly determines the study plan in [[Fundamental_Learning_Progress]] and the overall execution path in [[UTokyo_RIKEN]].
