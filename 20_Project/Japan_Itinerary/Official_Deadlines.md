@@ -8,7 +8,7 @@ last_verified: 2026-03-11
 ---
 ## 1. UTokyo Special Selection Application (Oct 2027 enrollment — PRIMARY)
 
-> [!important] D1 entry = **Special Selection only** (confirmed 2026-03-11). GSGC is a 5-year integrated M+D program (entry at M1, not D1). GSGC's remaining role (e.g., scholarship stacking with JRA) is pending professor meeting — see [[DG_GSGC_vs_Special_Selection]].
+> [!important] D1 entry = **Special Selection** (working assumption as of 2026-03-11; sub-track formally undecided — pending professor meeting). GSGC is a 5-year integrated M+D program (entry at M1, not D1). GSGC's remaining role (e.g., scholarship stacking with JRA) is pending professor meeting — see [[DG_GSGC_vs_Special_Selection]].
 
 Based on confirmed Oct 2026 cycle, shifted +1 year (**ESTIMATED**):
 

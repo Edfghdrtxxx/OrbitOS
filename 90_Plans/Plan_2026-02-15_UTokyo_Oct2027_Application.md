@@ -289,7 +289,7 @@ pathway: "Primary: Direct PhD D1 via Route B (Oct 2027); Fallback: Kenkyusei (Oc
 - [ ] Sit for written exam
 - [ ] Sit for oral exam
 - [ ] **If passed:** proceed to PhD enrollment (Oct 2028)
-- [ ] **If failed:** activate contingency — check Kenkyusei extension, evaluate [[Osaka_University]] backup
+- [ ] **If failed:** activate contingency — check Kenkyusei extension; proceed with [[Osaka_University]] application (monitoring already active from first failure)
 
 ### 4.7 PhD Transition (if retake passed)
 

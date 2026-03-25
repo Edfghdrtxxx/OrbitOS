@@ -8,7 +8,7 @@ created: 2026-03-10
 # Questions and Verifiable Sources
 > [!warning] These findings are from **English-language** UTokyo pages fetched 2026-03-10. Japanese-language guidelines (募集要項) may differ. Professor-communicated information may override what's on the website. Treat as flags to verify, not corrections.
 
-## 1. GRE Physics — Confirmed for Special Selection; Likely for GSGC
+## 1. GRE Physics — Confirmed for Special Selection and GSGC
 
 **Vault claim:** GRE Physics is compulsory for GSGC.
 
