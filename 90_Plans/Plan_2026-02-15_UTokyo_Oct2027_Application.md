@@ -5,7 +5,7 @@ created: 2026-02-13
 revised: 2026-03-11
 target_intake: October 2027
 university: University of Tokyo
-pathway: "Primary: Direct PhD D1 via Special Selection (Oct 2027); Fallback: Kenkyusei (Oct 2027) → PhD D1 (Oct 2028)"
+pathway: "Primary: Direct PhD D1 via Route B (Oct 2027); Fallback: Kenkyusei (Oct 2027) → PhD D1 (Oct 2028)"
 ---
 # UTokyo October 2027 — Execution Plan
 > [!info] Tracks the full action pipeline for [[UTokyo_RIKEN]]. Revised 2026-03-11 to reflect supervisor acceptance, Special Selection as D1 path, and updated timelines.
@@ -13,15 +13,15 @@ pathway: "Primary: Direct PhD D1 via Special Selection (Oct 2027); Fallback: Ken
 > [!success] **Supervisor acceptance ACHIEVED (2026-03-09)**
 > Prof. Nori Aoi (青井 考) and Prof. Nobuaki Imai have both agreed to accept you **conditionally on passing the entrance exam**. Naidaku is effectively secured — formal letter contingent on exam pass.
 
-> [!warning] **GSGC role UNRESOLVED — D1 entry is via Special Selection**
-> Direct PhD D1 entry can only be achieved via **Special Selection**. GSGC is a 5-year integrated M+D program (entry at M1 level). GSGC's remaining role (if any — e.g., scholarship stacking with JRA) needs to be discussed with professors in upcoming online meetings. See [[DG_GSGC_vs_Special_Selection]] for the full decision gate. Hard backstop: **2026-07-01**.
+> [!warning] **Sub-track UNRESOLVED — GSGC vs Special Selection undecided**
+> Route B is chosen (Route A archived), but the sub-track (GSGC vs Special Selection) is not yet decided. This affects D1 entry mechanism, scholarship eligibility, and application window. Needs to be discussed with professors in upcoming online meetings. See [[DG_GSGC_vs_Special_Selection]] for the full decision gate. Hard backstop: **2026-07-01**.
 
 ## Milestones at a Glance
 
 | Milestone | Target Date | Status |
 |---|---|---|
 | ~~Supervisor acceptance~~ | ~~2026-06-30~~ | **DONE** (2026-03-09) — conditional on exam |
-| GSGC role clarified (D1 = Special Selection) | 2026-04-30 (backstop: 2026-07-01) | PENDING — professor meeting |
+| Sub-track clarified (GSGC vs Special Selection) | 2026-04-30 (backstop: 2026-07-01) | PENDING — professor meeting |
 | TOEFL iBT taken | 2026-07 or 2026-08 | Target 100+; no MyBest accepted |
 | GRE Physics taken | 2026-09 or 2026-10 | Single-shot; no retake before Special Selection deadline (~Dec 2026) |
 | Special Selection application submitted | TBD — confirm with professors / Oct 2027 cycle info | ⚠️ Window unverified |

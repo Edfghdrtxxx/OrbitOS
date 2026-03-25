@@ -10,7 +10,7 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 
 > [!important] Pathway FINALIZED 2026-02-15 | Updated 2026-03-09
 > **UTokyo CNS / RIKEN JRA route — direct PhD entry is now the primary target.**
-> **Primary:** Pass GSGC entrance exam (~Jan–Feb 2027, est.) → PhD D1 enrollment at UTokyo (Oct 2027), funded via RIKEN JRA (~200k JPY/month).
+> **Primary:** Pass Route B entrance exam (~Jan–Feb 2027, est.) → PhD D1 enrollment at UTokyo (Oct 2027), funded via RIKEN JRA (~200k JPY/month).
 > **Fallback:** If entrance exam failed → Kenkyusei at UTokyo CNS (Oct 2027 – Sep 2028), self-funded; retake exam for Oct 2028 PhD entry.
 > IPA pathway explicitly rejected — staying at CAS for the degree conflicts with the UTokyo-degree goal.
 > Full strategic roadmap: [[UTokyo_RIKEN]].
@@ -44,14 +44,14 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 
 ### Primary Path — Direct PhD Entry (Oct 2027)
 
-- Pass the GSGC entrance exam (~Jan–Feb 2027, est.) and enroll directly as PhD D1 at UTokyo Graduate School of Science (Physics).
+- Pass the Route B entrance exam (~Jan–Feb 2027, est.) and enroll directly as PhD D1 at UTokyo Graduate School of Science (Physics).
 - Funded by RIKEN JRA from D1 onward (~200k JPY/month `[V2]` — see [[UTokyo_RIKEN]]).
-- **Exam route: GSGC (Route B) chosen** (decision by user + IMP supervisor). Route A (Regular/一般入試) archived.
-- **GRE Physics Subject Test is compulsory for GSGC (chosen route).**
+- **Exam route: Route B chosen** (decision by user + IMP supervisor). Route A (Regular/一般入試) archived. Sub-track (GSGC vs Special Selection) undecided — pending professor meeting.
+- **GRE Physics Subject Test is compulsory for Route B.**
 
 > [!question] PENDING: GSGC vs Special Selection
 > Sub-track distinction pending professor meeting. See **[[DG_GSGC_vs_Special_Selection]]** for full analysis, decision criteria, and resolution path.
-- GSGC-specific timing details (exact application windows, whether written exam is required) are **pending professor meeting** with Aoi Nori or Nobuaki Imai.
+- Route B timing details (exact application windows, whether written exam is required, sub-track selection) are **pending professor meeting** with Aoi Nori or Nobuaki Imai.
 
 ### Fallback — Kenkyusei Buffer Year (Oct 2027 – Sep 2028)
 
@@ -115,14 +115,14 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 
 > [!success] Supervisor outreach succeeded. Two professors accepted (conditional on entrance exam). Focus shifts to exam preparation.
 
-> [!success] **Route decision resolved (2026-03-09):** GSGC (Route B) chosen as the exam route (decision by user + IMP supervisor). Route A (Regular/一般入試) archived. GSGC-specific timing details (application windows, written exam requirement) are **pending professor meeting**.
+> [!success] **Route decision resolved (2026-03-09):** Route B chosen as the exam route (decision by user + IMP supervisor). Route A (Regular/一般入試) archived. Sub-track (GSGC vs Special Selection) undecided — timing details (application windows, written exam requirement) are **pending professor meeting**.
 
 - **Decision:** FINALIZED — PhD Track (UTokyo CNS / RIKEN JRA route).
 - **Supervisor outreach:** **SUCCEEDED** (2026-03-09) — **Aoi Nori (青井 考)** and **Nobuaki Imai** both accepted, conditional on passing the Faculty of Science entrance exam. Both equally viable; no preference yet.
-- **Primary path:** Direct PhD entry Oct 2027 (pass GSGC entrance exam ~Jan–Feb 2027, est.). Funded by RIKEN JRA (~200k JPY/month, verification pending `[V2]` in [[UTokyo_RIKEN]]).
+- **Primary path:** Direct PhD entry Oct 2027 (pass Route B entrance exam ~Jan–Feb 2027, est.). Funded by RIKEN JRA (~200k JPY/month, verification pending `[V2]` in [[UTokyo_RIKEN]]).
 - **Fallback:** If entrance exam failed → Kenkyusei Oct 2027 – Sep 2028, self-funded (MEXT University Recommendation dropped); retake exam for Oct 2028 PhD entry.
-- **GRE Physics:** Compulsory for GSGC (chosen route).
-- **Exam route:** GSGC (Route B) chosen; Route A archived.
+- **GRE Physics:** Compulsory for Route B.
+- **Exam route:** Route B chosen; Route A archived. Sub-track (GSGC vs Special Selection) undecided.
 - **Backup university:** [[Osaka_University]] — activate if UTokyo path encounters critical blockers.
 
 ### Open Execution Risks

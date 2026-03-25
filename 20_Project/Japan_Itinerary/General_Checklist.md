@@ -9,7 +9,7 @@ tags: [japan, immigration, phd, checklist]
 
 > [!warning] Verify all requirements against official sources before acting. This checklist is scaffolding, not authoritative.
 
-> [!tip] Current decision baseline (updated 2026-03-09): Primary route is [[UTokyo_RIKEN]] (UTokyo CNS + RIKEN JRA). GSGC chosen; Route A archived. **Supervisor pre-contact COMPLETE** — Aoi Nori & Nobuaki Imai accepted conditionally. IPA archived/rejected. Next critical decision: GSGC vs Special Selection.
+> [!tip] Current decision baseline (updated 2026-03-09): Primary route is [[UTokyo_RIKEN]] (UTokyo CNS + RIKEN JRA). Route B chosen; Route A archived. **Sub-track (GSGC vs Special Selection) undecided — pending professor meeting.** **Supervisor pre-contact COMPLETE** — Aoi Nori & Nobuaki Imai accepted conditionally. IPA archived/rejected.
 
 ## Eligibility Requirements
 
@@ -17,13 +17,13 @@ tags: [japan, immigration, phd, checklist]
 - [ ] Research proposal aligned with target CNS/RIKEN lab topics (TPC, direct reactions, ML-PID) -> [[UTokyo_RIKEN]]
 - [x] Supervisor pre-contact completed (UTokyo/CNS first; Osaka backup if needed) -> [[UTokyo_RIKEN]] (2026-03-09: Aoi Nori & Nobuaki Imai accepted, conditional on entrance exam)
 - [x] Letter of Acceptance (Naidaku) feasibility confirmed with target supervisor(s) (2026-03-09: feasibility confirmed; formal Naidaku pending exam pass — both Aoi Nori & Nobuaki Imai willing to issue Naidaku once Faculty of Science entrance exam is passed)
-- [ ] Route eligibility confirmed by cycle pages: **Primary:** Direct PhD D1 via GSGC (Oct 2027 or Oct 2028); **Fallback:** Kenkyusei (Oct 2027) -> PhD D1 (Oct 2028)
+- [ ] Route eligibility confirmed by cycle pages: **Primary:** Direct PhD D1 via Route B (Oct 2027 or Oct 2028); **Fallback:** Kenkyusei (Oct 2027) -> PhD D1 (Oct 2028)
 - [ ] Language/test requirements verified per selected route (TOEFL/GRE/Japanese as applicable) -> [[English_Learning]], [[Japanese_Language]]
 - [x] IPA route eligibility reviewed and intentionally rejected for degree-path reasons -> [[RIKEN_IPA_Application_Notes]]
 
 ## Admissions Route & Exam
 
-- [x] UTokyo doctoral route clarified for Oct 2028: Regular Physics vs GSGC/Special Selection (confirm written vs oral timing) (RESOLVED 2026-03-09: GSGC chosen, Route A archived)
+- [x] UTokyo doctoral route clarified for Oct 2028: Regular Physics vs GSGC/Special Selection (confirm written vs oral timing) (RESOLVED 2026-03-09: Route B chosen, Route A archived; sub-track GSGC vs Special Selection still undecided)
 - [ ] **CRITICAL:** Clarify GSGC vs Special Selection sub-track with professors — see **[[DG_GSGC_vs_Special_Selection]]** for full analysis. **Ask in next professor meeting.**
 - [ ] Kenkyusei status confirmed to qualify for doctoral entrance exam — tracked as V6 in [[Supervisor_Relationship_Management#Unverified Items This Contact Can Resolve]]
 - [ ] Kenkyusei maximum enrollment duration confirmed (for exam-retake Plan B) — tracked as V8 in [[Supervisor_Relationship_Management#Unverified Items This Contact Can Resolve]]
@@ -74,7 +74,7 @@ tags: [japan, immigration, phd, checklist]
 
 ## Target Universities / Labs
 
-> [!tip] Decision finalized 2026-02-15, updated 2026-03-09: UTokyo CNS / RIKEN JRA route. **Primary:** Direct PhD D1 via GSGC (chosen route). **Fallback:** Kenkyusei buffer year → PhD D1. Route A archived.
+> [!tip] Decision finalized 2026-02-15, updated 2026-03-09: UTokyo CNS / RIKEN JRA route. **Primary:** Direct PhD D1 via Route B (sub-track undecided). **Fallback:** Kenkyusei buffer year → PhD D1. Route A archived.
 
 > [!danger] CRITICAL: GSGC vs Special Selection
 > Sub-track distinction pending professor meeting. See **[[DG_GSGC_vs_Special_Selection]]** for full analysis and resolution path.
@@ -91,7 +91,7 @@ tags: [japan, immigration, phd, checklist]
 - [ ] 2026-09-01: UTokyo GSGC guideline release check
 - [ ] 2026-10-15 / 2026-12-05: UTokyo cycle window checks
 - [ ] 2027-01-15: if no Oct 2027 call posted, email Graduate School Office
-- [ ] Monitor Osaka IPC/non-IPC official calls from April 2026 onward as backup
+- [ ] ~~Monitor Osaka IPC/non-IPC official calls from April 2026 onward~~ → **DEFERRED** (cold standby; reactivate only if UTokyo entrance exam fails on first attempt)
 
 ## Related
 

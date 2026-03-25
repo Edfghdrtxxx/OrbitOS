@@ -109,7 +109,7 @@ created: 2026-02-17
 > - [x] Have a direct conversation with your IMP advisor about the full UTokyo CNS / RIKEN JRA plan (2026-03-09: conversation completed; IMP advisor fully aware of plan)
 > - [x] Ask which CNS professors your IMP advisor knows personally (2026-03-09: resulted in contact with Aoi Nori & Nobuaki Imai)
 > - [x] Ask for a warm introduction email (2026-03-09: warm introduction facilitated; outreach succeeded)
-> - [x] Ask for insider knowledge: admission route advice (Route A vs GSGC), lab culture, housing tips (2026-03-09: GSGC chosen as route based on advisor guidance)
+> - [x] Ask for insider knowledge: admission route advice (Route A vs Route B), lab culture, housing tips (2026-03-09: Route B chosen based on advisor guidance; sub-track undecided)
 > - [ ] Gauge whether your IMP advisor can speak to any verification items (V2, V4, V6, V8) from firsthand UTokyo experience — **still outstanding; ask in next meeting**
 >
 > ### Conversation Memorandum
@@ -122,17 +122,17 @@ created: 2026-02-17
 > **1. Opening context** — Explain that your post-graduation goal is to immigrate from China permanently via a research career. Frame this as seeking guidance, not announcing a decision.
 >
 > **2. The plan in brief** — Walk through the roadmap so the advisor has the full picture:
->    - Primary: Direct PhD D1 entry at UTokyo (Oct 2027 or Oct 2028) via GSGC (chosen route), funded via RIKEN JRA (~200k JPY/month).
+>    - Primary: Direct PhD D1 entry at UTokyo (Oct 2027 or Oct 2028) via Route B, funded via RIKEN JRA (~200k JPY/month).
 >    - Fallback: If entrance exam failed → Kenkyusei (Research Student) at UTokyo CNS, self-funded; retake exam for next cycle PhD entry.
 >    - Long-term: permanent residency through an academic/research career in Japan.
 >
-> **3. The Kenkyusei question** — (2026-03-09: RESOLVED — direct PhD D1 via GSGC is primary route; Kenkyusei retained as fallback only)
-> - [x] Is it possible to apply directly for PhD enrollment at UTokyo from China, skipping the Kenkyusei buffer year entirely? (2026-03-09: Yes — direct PhD D1 entry via GSGC is the primary route)
+> **3. The Kenkyusei question** — (2026-03-09: RESOLVED — direct PhD D1 via Route B is primary route; Kenkyusei retained as fallback only)
+> - [x] Is it possible to apply directly for PhD enrollment at UTokyo from China, skipping the Kenkyusei buffer year entirely? (2026-03-09: Yes — direct PhD D1 entry via Route B is the primary route)
 > - [x] Did the advisor's own path to UTokyo involve Kenkyusei? If so, was it mandatory for international students or optional? (2026-03-09: discussed)
 > - [x] If Kenkyusei is skippable, does the advisor recommend skipping it — or is the buffer year still valuable for building lab rapport and exam prep? (2026-03-09: skipping recommended; Kenkyusei is fallback only)
 >
-> **4. Admission route** — (2026-03-09: RESOLVED — GSGC chosen)
-> - [x] Which doctoral admission route does the advisor recommend: Regular Physics exam (Route A, 一般入試) or GSGC? (2026-03-09: GSGC chosen; Route A archived)
+> **4. Admission route** — (2026-03-09: RESOLVED — Route B chosen; sub-track undecided)
+> - [x] Which doctoral admission route does the advisor recommend: Regular Physics exam (Route A, 一般入試) or Route B? (2026-03-09: Route B chosen; Route A archived; GSGC vs Special Selection sub-track pending)
 > - [ ] If GSGC, is the written exam typically waived by the supervisor, or should you prepare for it regardless? — **still outstanding; clarify with professors**
 >
 > **5. Connections & introduction** — (2026-03-09: COMPLETE — introductions led to acceptance)

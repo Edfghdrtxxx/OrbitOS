@@ -20,12 +20,12 @@ decision_date: 2026-02-15
 
 - **Pathway (updated 2026-03-09):** **Primary:** Direct PhD D1 entry (Oct 2027) at UTokyo CNS, with RIKEN JRA funding from D1 onward. **Fallback:** If entrance exam failed → Kenkyusei (Oct 2027 – Sep 2028) → PhD D1 (Oct 2028).
 - **Funding:** PhD funded by RIKEN JRA (250k JPY/month *expected* FY2026 `[V2]`). Kenkyusei year (fallback only) self-funded (~2.5–2.8M JPY). MEXT University Recommendation (Research Student) dropped due to extremely fierce competition (2026-02-17).
-- **GRE Physics Subject Test:** Compulsory for GSGC (chosen route).
-- **Exam route:** GSGC (Route B) chosen (decision by user + IMP supervisor). Route A archived.
+- **GRE Physics Subject Test:** Compulsory for Route B (GSGC and/or Special Selection).
+- **Exam route:** Route B chosen (decision by user + IMP supervisor). Route A archived. Sub-track (GSGC vs Special Selection) undecided — pending professor meeting.
 
 > [!question] PENDING: GSGC vs Special Selection
 > Sub-track distinction pending professor meeting. See **[[DG_GSGC_vs_Special_Selection]]** for full analysis, decision criteria, and resolution path.
-- **Next actions:** (1) Prioritize entrance exam preparation — GSGC route chosen, (2) Confirm GSGC-specific timing with professors (application windows, written exam requirement — **pending professor meeting**), (3) Register for GRE Physics (compulsory for GSGC), (4) Confirm Kenkyusei application window (fallback prep), (5) Continue physics + Japanese study.
+- **Next actions:** (1) Prioritize entrance exam preparation — Route B chosen, (2) Confirm sub-track (GSGC vs Special Selection) and timing with professors (application windows, written exam requirement — **pending professor meeting**), (3) Register for GRE Physics (compulsory for Route B), (4) Confirm Kenkyusei application window (fallback prep), (5) Continue physics + Japanese study.
 - **Top risks:** Entrance exam difficulty (High), ~~supervisor acceptance (Medium-High)~~ **mitigated (2026-03-09)**, self-funded budget shortfall for fallback Kenkyusei year (Medium-High).
 - **Rejected alternatives:** MEXT Embassy/CSC (return-service conflict), MEXT University Recommendation (Research Student, dropped 2026-02-17), IPA (requires CAS degree — user wants UTokyo degree).
 
@@ -103,11 +103,11 @@ decision_date: 2026-02-15
 - [ ] Immerse in Japanese language environment
 - [ ] Build lab relationships
 
-### Doctoral Entrance Exam — GSGC (Chosen Route)
+### Doctoral Entrance Exam — Route B (Sub-Track Undecided)
 
 - [ ] Confirm GSGC-specific exam schedule from official 2027/2028 cycle pages `[V6]` — **pending professor meeting**
   - ~~**Regular Physics route (ARCHIVED):** written exam (Aug), oral exam (Jan)~~
-  - **GSGC / Special Selection (CHOSEN):** screening around Jan/Feb (cycle-dependent); possible online written exam if supervisor deems necessary
+  - **GSGC / Special Selection (Route B; sub-track undecided):** screening around Jan/Feb (cycle-dependent); possible online written exam if supervisor deems necessary
 - [ ] Only attempt April 2028 entry if **all** conditions met by Dec 2027: supervisor approval, confirmed eligibility, pass-level mock readiness. Otherwise, default to Oct 2028.
 
 ### JRA Application (timing route-dependent)
@@ -195,13 +195,13 @@ Core written scope (UTokyo Physics doctoral, 2026-cycle reference):
 
 > [!important] Entrance exam preparation is **top priority** — it is the gate to direct PhD entry (Oct 2027). If direct entry is missed, exam prep continues during the Kenkyusei fallback year. Exact exam sequence depends on route (Regular Physics vs GSGC).
 
-> [!danger] **GRE Physics Subject Test is COMPULSORY for GSGC (chosen route).** Register early — test dates and seats are limited.
+> [!danger] **GRE Physics Subject Test is COMPULSORY for Route B.** Register early — test dates and seats are limited.
 
-> [!success] **Route decision resolved (2026-03-09):** GSGC (Route B) chosen (decision by user + IMP supervisor). Route A archived. GSGC-specific timing details (application windows, written exam requirement) **pending professor meeting**.
+> [!success] **Route decision resolved (2026-03-09):** Route B chosen (decision by user + IMP supervisor). Route A archived. Sub-track (GSGC vs Special Selection) undecided — timing details (application windows, written exam requirement) **pending professor meeting**.
 
 ### Route A — Regular Physics Exam (一般入試)
 
-> [!abstract] Confirmed structure (Aug 2028) — ARCHIVED (Route A not the active plan; GSGC chosen)
+> [!abstract] Confirmed structure (Aug 2028) — ARCHIVED (Route A not the active plan; Route B chosen)
 > **Format:** 240 min, 4 mandatory problems (全問必答), 400 points total
 > | Problem | Subject | Weight |
 > |---------|---------|--------|
@@ -244,13 +244,13 @@ Core written scope (UTokyo Physics doctoral, 2026-cycle reference):
 
 ### Admission Routes Summary
 
-> [!success] **GSGC (Route B) is the CHOSEN exam route** (decision by user + IMP supervisor, 2026-03-09). GRE Physics is compulsory for GSGC. Route A archived.
+> [!success] **Route B is the CHOSEN exam route** (decision by user + IMP supervisor, 2026-03-09). GRE Physics is compulsory. Route A archived. Sub-track (GSGC vs Special Selection) undecided — pending professor meeting.
 
 | Route | Mechanism | Key Requirements | Status |
 |---|---|---|---|
 | **A — Regular (一般入試)** | Written exam (Aug) + oral (Jan) | 4 mandatory physics problems + TOEFL | **ARCHIVED** — documented for reference, not the active plan |
-| **B1 — GSGC** | Documents + GRE + possible written exam | GRE Physics + TOEFL + supervisor endorsement; 5-year integrated M+D; includes 180k JPY/month scholarship | **CHOSEN (pending sub-track clarification)** |
-| **B2 — Special Selection** | Documents + GRE + possible written exam | GRE Physics + TOEFL + supervisor endorsement; 3-year doctoral only | **CHOSEN (pending sub-track clarification)** |
+| **B1 — GSGC** | Documents + GRE + possible written exam | GRE Physics + TOEFL + supervisor endorsement; 5-year integrated M+D; includes 180k JPY/month scholarship | **Route B chosen; sub-track undecided** |
+| **B2 — Special Selection** | Documents + GRE + possible written exam | GRE Physics + TOEFL + supervisor endorsement; 3-year doctoral only | **Route B chosen; sub-track undecided** |
 | **Internal (修士→博士)** | Thesis defense only | Does NOT apply to Kenkyusei | N/A |
 
 > [!question] PENDING: GSGC vs Special Selection
@@ -262,7 +262,7 @@ Core written scope (UTokyo Physics doctoral, 2026-cycle reference):
 
 - [ ] Research proposal linking IMP thesis → UTokyo CNS / RIKEN topics
 - [ ] TOEFL iBT score → [[English_Learning]]
-- [ ] **GRE Physics Subject Test** — compulsory for GSGC (chosen route); register early
+- [ ] **GRE Physics Subject Test** — compulsory for Route B; register early
 - [ ] Letter of Acceptance (Naidaku)
 - [ ] Academic transcripts and degree documents (IMP/CAS/UCAS)
 - [ ] Letters of recommendation

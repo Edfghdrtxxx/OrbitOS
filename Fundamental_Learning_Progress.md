@@ -10,21 +10,21 @@ tags: [learning, physics, math, PhD-prep, self-assessment]
 # Fundamental Learning Progress
 
 > [!info] Purpose
-> Track knowledge gaps identified from thesis reference papers and build foundations for PhD entrance exam prep. **Primary target: GSGC exam (chosen route) for direct PhD entry (Summer 2027).** Fallback: retake for Summer 2028 if Kenkyusei path activated. Items are ordered by dependency so earlier items unlock later ones.
+> Track knowledge gaps identified from thesis reference papers and build foundations for PhD entrance exam prep. **Primary target: Route B exam for direct PhD entry (Summer 2027).** Fallback: retake for Summer 2028 if Kenkyusei path activated. Items are ordered by dependency so earlier items unlock later ones.
 
-> [!important] Two-stage learning pathway (updated 2026-03-09 — GSGC chosen)
+> [!important] Two-stage learning pathway (updated 2026-03-09 — Route B chosen)
 > **Stage 1 (this plan):** Thesis/paper comprehension + solid foundations in all four exam subjects through 2027.
-> **Stage 2 (separate project):** Intensive PhD entrance exam prep. For GSGC (chosen route): GRE Physics + TOEFL + possible department written exam. Stage 2 targets **Summer 2027** for direct PhD entry. If Kenkyusei fallback activates, Stage 2 extends to Summer 2028.
+> **Stage 2 (separate project):** Intensive PhD entrance exam prep. For Route B: GRE Physics + TOEFL + possible department written exam. Stage 2 targets **Summer 2027** for direct PhD entry. If Kenkyusei fallback activates, Stage 2 extends to Summer 2028.
 > This plan covers Stage 1. Phases 0–4 are thesis-driven. Phases 5–7 build strong working foundations (not just conversational) so that Stage 2 can focus on exam-level drilling rather than learning from scratch.
 
 > [!success] Decision Gate: Exam Route RESOLVED (2026-03-09)
-> **GSGC (Route B) chosen** (decision by user + IMP supervisor). Route A archived.
+> **Route B chosen** (decision by user + IMP supervisor). Route A archived. Sub-track (GSGC vs Special Selection) undecided.
 > **Note:** While Route B is chosen, the **GSGC vs Special Selection sub-track distinction is pending** — GSGC is a 5-year integrated M+D program; Special Selection is 3-year doctoral only. Which applies to someone with an existing master's degree is unresolved. See [[DG_GSGC_vs_Special_Selection]] for full decision gate.
 > GSGC-specific details (whether written exam is waived by supervisor) are **pending professor meeting**. If written exam is waived, Phases 5–7 can revert to "conversational" level and freed hours shift to **GRE Physics prep**. Phase 0.5 (Complex Analysis) becomes optional.
 > If GSGC written exam is required by supervisor, study plan mostly stays — add GRE Physics as parallel track.
 > **Action:** Update this plan after professor meeting confirms GSGC written exam requirement. See [[UTokyo_RIKEN#Admission Routes Summary]].
 
-> [!abstract] UTokyo PhD Entrance Exam — Confirmed Structure (Route A only — ARCHIVED; GSGC chosen)
+> [!abstract] UTokyo PhD Entrance Exam — Confirmed Structure (Route A only — ARCHIVED; Route B chosen)
 > **Format:** 240 min, 4 mandatory problems, 400 points total
 > | Problem | Subject | Weight |
 > |---------|---------|--------|
@@ -406,7 +406,7 @@ Math Foundations + Complex Analysis ─┬─→ Quantum Mechanics ──→ Nuc
 
 ### Admission Routes
 
-- **Route A (Regular exam / 一般入試):** The written exam above. Open to all nationalities. **ARCHIVED** — not the active plan (GSGC chosen).
+- **Route A (Regular exam / 一般入試):** The written exam above. Open to all nationalities. **ARCHIVED** — not the active plan (Route B chosen).
 - **Route B (GSGC / Special Selection):** Document-based, requires GRE Physics + TOEFL iBT + possible department written exam. **CHOSEN** (decision by user + IMP supervisor, 2026-03-09). Primary target: Summer 2027 for direct PhD entry. *(Note: GSGC vs Special Selection sub-track distinction pending — see [[DG_GSGC_vs_Special_Selection]])*
 - **Internal students (修士→博士):** Skip written exam entirely — thesis defense serves as evaluation. Does NOT apply to Kenkyusei.
 
