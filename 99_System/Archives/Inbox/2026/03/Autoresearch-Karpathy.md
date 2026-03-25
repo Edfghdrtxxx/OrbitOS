@@ -2,6 +2,9 @@
 created: 2026-03-15
 status: processed
 source: start-my-day
+completed-in: "[[2026-03-24]]"
+archived: 2026-03-24
+archived-in: "[[2026-03-24]]"
 ---
 Research Karpathy's "research intern robot" (autoresearch): https://github.com/karpathy/autoresearch
 
