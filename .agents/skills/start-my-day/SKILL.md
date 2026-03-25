@@ -87,6 +87,7 @@ Use the AskUserQuestion tool to gather (combine into as few rounds as possible):
      | `[*]` | — | Keep as-is |
      | `[x]` | No `#daily` tag | Remove |
      | `[x]` | Has `#daily` tag | Reset to `[ ]` |
+     | `[ ]`/`[x]` | Has `#weekly` tag | Keep as-is; do not reset or remove — managed manually by the user |
      | (new from Q1/Q4) | — | Add to appropriate section |
 
    - **Priorities — keep**: `[ ]` and `[*]` tasks carry over as-is. Do not relocate carried-over tasks
