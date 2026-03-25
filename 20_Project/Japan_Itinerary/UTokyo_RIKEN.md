@@ -278,7 +278,7 @@ Core written scope (UTokyo Physics doctoral, 2026-cycle reference):
 | R4 | **JRA competition** — not guaranteed even with passed exam | Medium | Build strong lab relationship during Kenkyusei year; discuss JRA with supervisor early. |
 | R5 | **Tuition exemption denied** | Low | Apply for partial exemption as fallback; 535,800 JPY/year is coverable. |
 | R6 | **Visa gap** (Jun–Sep 2027) — no student status between IMP graduation and Kenkyusei start | Medium | Plan COE timing with UTokyo (2–3 months before arrival). Stay in China during gap. `[V9]` |
-| R7 | **Exam failure with no Plan B** — Kenkyusei ends without forward path | High | Evaluate: Can Kenkyusei be extended? Retake in next cycle? Activate [[Osaka_University]] backup? `[V8]` |
+| R7 | **Exam failure with no Plan B** — Kenkyusei ends without forward path | High | On **first** exam failure: reactivate [[Osaka_University]] monitoring (deadlines + professor outreach). On second failure: evaluate Kenkyusei extension, activate Osaka application. `[V8]` |
 | R8 | **Kenkyusei exam eligibility unverified** — assumption that Kenkyusei can sit for doctoral exam | Medium | Confirm with Graduate School Office during outreach. `[V6]` |
 | R9 | **Kenkyusei application window missed** — internal deadlines vary by department | Medium | Monitor official UTokyo Research Student page and confirm with Graduate School Office. |
 
@@ -309,7 +309,7 @@ Core written scope (UTokyo Physics doctoral, 2026-cycle reference):
 | V12 | GSGC scholarship (180k/month) + RIKEN JRA (250k/month) stacking/exclusivity | Unknown | `UNVERIFIED` | High | See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] |
 | V13 | Can applicant apply to both GSGC and Special Selection simultaneously? | Unknown | `UNVERIFIED` | High | See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] |
 | V14 | Special Selection application windows (same as GSGC or different?) | Unknown | `UNVERIFIED` | Medium | See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] |
-| V15 | Is GRE Physics required for Special Selection? | Unknown | `UNVERIFIED` | Medium | See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] |
+| V15 | Is GRE Physics required for Special Selection? | User-verified | `VERIFIED` | — | Confirmed compulsory for SSIA as well (2026-03-25) |
 | V16 | Does Special Selection require a written exam? | Unknown | `UNVERIFIED` | Medium | See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] |
 | V17 | GSGC scholarship eligibility period if entering at D1 | Unknown | `UNVERIFIED` | Low | Contingent on V10/V11. See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] |
 

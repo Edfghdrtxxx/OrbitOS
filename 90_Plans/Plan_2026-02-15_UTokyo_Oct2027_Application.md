@@ -327,7 +327,7 @@ pathway: "Primary: Direct PhD D1 via Route B (Oct 2027); Fallback: Kenkyusei (Oc
 | Entrance exam failed (Mar 2027) | Activate Kenkyusei fallback (Phase 4); retake exam for Oct 2028 |
 | Self-funded budget shortfall (if Kenkyusei) | Verify savings buffer; adjust timeline or seek alternative funding |
 | Visa/COE delayed past 2027-09-01 | Contact UTokyo International Office urgently; explore deferred start |
-| Entrance exam failed twice | Check Kenkyusei extension rules; evaluate [[Osaka_University]] backup |
+| Entrance exam failed (first attempt) | Reactivate [[Osaka_University]] monitoring (check deadlines, begin professor outreach); continue Kenkyusei retake prep |
 | JRA application rejected | Self-fund from savings; explore other RIKEN/UTokyo RA positions |
 | Savings drop below 2M JPY before departure | Delay by one cycle OR secure alternative funding |
 
