@@ -38,7 +38,7 @@ A Tuesday in that version of your life: institution politics, research direction
 You are at [[RIKEN Nishina Center for Accelerator-Based Science (RNC)|RIKEN]] / [[UTokyo CNS]]. Morning: read a paper and take notes. Mid-morning: run an analysis, discuss results with lab members. Lunch outside — no urgency, no performance anxiety. Afternoon: experiments or writing. Evening: yours. No 996. Japanese works well enough to live in. The research is real and you chose it.
 
 **Identity statement:**
-*I am the type of person who treats everything — tools, knowledge, plans — as instruments for a better life, and still finds genuine pleasure in the study itself.*
+*I am the type of person who treats everything — tools, knowledge, plans — as instruments for a better life, and still finds genuine pleasure in the study itself. I carry a strong desire to expand my worldview and gain broader exposure to the world — because the life I'm building demands it.*
 > *Draft — your actual words were: "considers all the stuff as tools for a better life, and can still obtain pleasure from study." Rewrite this statement yourself when ready.*
 
 This is not someone who sacrifices enjoyment for discipline. It's someone for whom learning and building feel natural, because the goals are truly theirs.
@@ -51,14 +51,14 @@ This is not someone who sacrifices enjoyment for discipline. It's someone for wh
 
 ~~At least one UTokyo CNS professor has agreed to accept you as [[Kenkyusei]] from October 2027.~~ **ACHIEVED (2026-03-09, 11 months early).**
 
-**Updated goal (2026-03-09): Pass the University of Tokyo Faculty of Science entrance examination and complete one more involving physics project.**
+**Updated goal (2026-03-09): Pass the University of Tokyo Graduate School of Science entrance examination and complete one more involving physics project.**
 
 If this is true by February 2027: you are on the Japan track with direct PhD entry — no buffer year needed.
 If the exam is failed: the Kenkyusei fallback activates (Oct 2027 – Sep 2028), and you retake the exam for Oct 2028 PhD entry. The path is slower but not broken.
 The supervisor gate is cleared. **The entrance exam is now the gate.**
 
 > [!success] **Progress (2026-03-09) — SUPERVISOR GOAL ACHIEVED; NEW GOAL SET**
-> Two UTokyo CNS professors — **Aoi Nori (青井 考)** and **Nobuaki Imai** — responded positively and agreed to accept you conditionally on passing the Faculty of Science entrance exam. The supervisor gate is cleared. **Direct PhD entry (Oct 2027) is now the primary target** — Kenkyusei is only the fallback if the exam is failed. The plan lived in outreach, and outreach worked. Now the plan must live in exam preparation.
+> Two UTokyo CNS professors — **Aoi Nori (青井 考)** and **Nobuaki Imai** — responded positively and agreed to accept you conditionally on passing the Graduate School of Science entrance exam. The supervisor gate is cleared. **Direct PhD entry (Oct 2027) is now the primary target** — Kenkyusei is only the fallback if the exam is failed. The plan lived in outreach, and outreach worked. Now the plan must live in exam preparation.
 
 The thesis is the daily anchor — it does not need to be in this goal. It is already in the daily levers.
 
@@ -70,7 +70,7 @@ This is your sole filter for "does this decision move the mission forward?"
 
 > What you need to build this month to keep the 1-year goal alive.
 
-**Entrance exam groundwork:** The supervisors said yes. Now prove you belong — start building the foundation to pass the UTokyo Faculty of Science entrance exam via Route B.
+**Entrance exam groundwork:** The supervisors said yes. Now prove you belong — start building the foundation to pass the UTokyo Graduate School of Science entrance exam via Route B.
 
 Concretely:
 - Confirm GSGC timing and exam details with professors (Route B vs Special Selection distinction)
