@@ -77,7 +77,7 @@ decision_date: 2026-02-15
 - [x] Leverage IMP supervisor connections for introductions
 
 > [!success] **Outreach Milestone (2026-03-09)**
-> Two UTokyo CNS professors — **[[Prof_Nori_Aoi|Aoi Nori]] (青井 考)** and **[[Prof_Nobuaki_Imai|Nobuaki Imai]]** — responded positively and agreed to accept conditionally on passing the Faculty of Science entrance exam. **Direct PhD entry (Oct 2027) is now the primary target.** Kenkyusei is the fallback if the entrance exam is failed. Strategic focus shifts to entrance exam preparation.
+> Two UTokyo CNS professors — **[[Prof_Nori_Aoi|Aoi Nori]] (青井 考)** and **[[Prof_Nobuaki_Imai|Nobuaki Imai]]** — responded positively and agreed to accept conditionally on passing the Graduate School of Science entrance exam. **Direct PhD entry (Oct 2027) is now the primary target.** Kenkyusei is the fallback if the entrance exam is failed. Strategic focus shifts to entrance exam preparation.
 >
 > **Group preference update (2026-03-24):** Leaning toward [[Prof_Nobuaki_Imai|Imai-san]]'s group (DONUTS). Pending confirmation via one-on-one meeting. See [[Supervisor_Relationship_Management]] for rationale.
 

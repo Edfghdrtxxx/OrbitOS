@@ -109,7 +109,7 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 | 2026-02-14 | Regret-asymmetry reweighting; structured fear interview; scores: Work 49.89 / PhD 53.46. |
 | 2026-02-15 | Critical review: N5 Japanese, basic portfolio, confirmed savings integrated. Final scores: Work 44.42 / PhD 54.52. Pathway FINALIZED. IPA explicitly rejected. Career-direction reframe: PhD = deliberate research-career choice. |
 | 2026-02-17 | MEXT University Recommendation (Research Student) dropped — extremely fierce competition confirmed. Kenkyusei now self-funded. |
-| 2026-03-09 | **Supervisor outreach succeeded.** Two UTokyo CNS professors — Aoi Nori (青井 考) and Nobuaki Imai — accepted, conditional on passing the Faculty of Science entrance exam. Both equally viable. Focus shifts to entrance exam preparation. |
+| 2026-03-09 | **Supervisor outreach succeeded.** Two UTokyo CNS professors — Aoi Nori (青井 考) and Nobuaki Imai — accepted, conditional on passing the Graduate School of Science entrance exam. Both equally viable. Focus shifts to entrance exam preparation. |
 
 ### Current Status (2026-03-09)
 
@@ -118,7 +118,7 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 > [!success] **Route decision resolved (2026-03-09):** Route B chosen as the exam route (decision by user + IMP supervisor). Route A (Regular/一般入試) archived. Sub-track (GSGC vs Special Selection) undecided — timing details (application windows, written exam requirement) are **pending professor meeting**.
 
 - **Decision:** FINALIZED — PhD Track (UTokyo CNS / RIKEN JRA route).
-- **Supervisor outreach:** **SUCCEEDED** (2026-03-09) — **Aoi Nori (青井 考)** and **Nobuaki Imai** both accepted, conditional on passing the Faculty of Science entrance exam. Both equally viable; no preference yet.
+- **Supervisor outreach:** **SUCCEEDED** (2026-03-09) — **Aoi Nori (青井 考)** and **Nobuaki Imai** both accepted, conditional on passing the Graduate School of Science entrance exam. Both equally viable; no preference yet.
 - **Primary path:** Direct PhD entry Oct 2027 (pass Route B entrance exam ~Jan–Feb 2027, est.). Funded by RIKEN JRA (~200k JPY/month, verification pending `[V2]` in [[UTokyo_RIKEN]]).
 - **Fallback:** If entrance exam failed → Kenkyusei Oct 2027 – Sep 2028, self-funded (MEXT University Recommendation dropped); retake exam for Oct 2028 PhD entry.
 - **GRE Physics:** Compulsory for Route B.

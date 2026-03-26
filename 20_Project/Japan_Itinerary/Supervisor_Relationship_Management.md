@@ -11,7 +11,7 @@ created: 2026-02-17
 # Supervisor Relationship Management
 
 > [!success] Outcome (2026-03-09)
-> **Supervisor outreach succeeded.** Two UTokyo CNS professors — **Aoi Nori (青井 考)** and **Nobuaki Imai** — accepted, conditional on passing the Faculty of Science entrance exam. Focus now shifts to entrance exam preparation.
+> **Supervisor outreach succeeded.** Two UTokyo CNS professors — **Aoi Nori (青井 考)** and **Nobuaki Imai** — accepted, conditional on passing the Graduate School of Science entrance exam. Focus now shifts to entrance exam preparation.
 
 > [!important] Group Preference (2026-03-24)
 > **Current leaning: [[Prof_Nobuaki_Imai|Imai-san]]'s group (DONUTS)** — pending confirmation via one-on-one meeting.

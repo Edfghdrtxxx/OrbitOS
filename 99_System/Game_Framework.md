@@ -20,8 +20,8 @@ tags: [system, identity, planning, game-framework]
 
 **The 5-year [[Anti-Vision|anti-vision]] (if nothing changes):**
 You become the person who always talked about Japan but never went.
-The plan existed in meticulous notes. The vault was organized. The scorecard was filled out. But the emails were never sent, the thesis dragged, the timeline slipped one year, then two. The UTokyo window closed. China became the default — not chosen, just never escaped.
-A Tuesday in that version of your life: institution politics, research direction set by someone else, [[996 Culture|996 culture]] encroaching, looking at your notes from 2026 wondering why you were so confident it would happen.
+The supervisors said yes — but you never walked through the door. Exam prep was always "next week." The thesis consumed everything. GRE Physics kept getting deferred. The October 2027 window passed. Then the fallback year. Then the excuses. China became the default — not chosen, just never escaped.
+A Tuesday in that version of your life: institution politics, research direction set by someone else, [[996 Culture|996 culture]] encroaching, looking at your notes from 2026 wondering why you had the door open and still didn't walk through.
 
 **The cost:** Not Japan itself — the loss of a life built on your terms, doing research you chose, free from exhaustion culture, in a place you deliberately selected.
 

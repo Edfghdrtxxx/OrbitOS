@@ -16,7 +16,7 @@ tags: [japan, immigration, phd, checklist]
 - [x] Degree baseline verified for target route (UTokyo primary: master's completion timing + doctoral entry requirements) — VERIFIED (2026-03-09): UTokyo accepts applications before graduation; degree needed by enrollment (Oct 2027), not by application (Dec 2026). Jun 2027 graduation satisfies this. Source: [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html)
 - [ ] Research proposal aligned with target CNS/RIKEN lab topics (TPC, direct reactions, ML-PID) -> [[UTokyo_RIKEN]]
 - [x] Supervisor pre-contact completed (UTokyo/CNS first; Osaka backup if needed) -> [[UTokyo_RIKEN]] (2026-03-09: Aoi Nori & Nobuaki Imai accepted, conditional on entrance exam)
-- [x] Letter of Acceptance (Naidaku) feasibility confirmed with target supervisor(s) (2026-03-09: feasibility confirmed; formal Naidaku pending exam pass — both Aoi Nori & Nobuaki Imai willing to issue Naidaku once Faculty of Science entrance exam is passed)
+- [x] Letter of Acceptance (Naidaku) feasibility confirmed with target supervisor(s) (2026-03-09: feasibility confirmed; formal Naidaku pending exam pass — both Aoi Nori & Nobuaki Imai willing to issue Naidaku once Graduate School of Science entrance exam is passed)
 - [ ] Route eligibility confirmed by cycle pages: **Primary:** Direct PhD D1 via Route B (Oct 2027 or Oct 2028); **Fallback:** Kenkyusei (Oct 2027) -> PhD D1 (Oct 2028)
 - [ ] Language/test requirements verified per selected route (TOEFL/GRE/Japanese as applicable) -> [[English_Learning]], [[Japanese_Language]]
 - [x] IPA route eligibility reviewed and intentionally rejected for degree-path reasons -> [[RIKEN_IPA_Application_Notes]]

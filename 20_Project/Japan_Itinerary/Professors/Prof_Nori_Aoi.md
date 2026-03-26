@@ -14,7 +14,7 @@ updated: 2026-03-09
 - **Lab/Group:** NUSPEQ (NUclear SPectroscopy for Extreme Quantum system) / Exotic Nuclear Reaction Group. [^aoi-lab]
 - **Primary facilities:** RIBF (RI Beam Factory) at RIKEN, SHARAQ spectrometer, OEDO beamline, CAT-M (CNS Active Target - Medium). [^aoi-research]
 - **Location:** CNS is based at the RIKEN Wako campus, facilitating the JRA (Junior Research Associate) pathway. [^aoi-cns]
-- **Contact Status (2026-03-09):** Accepted — conditional on passing the Faculty of Science entrance exam. → [[UTokyo_RIKEN]]
+- **Contact Status (2026-03-09):** Accepted — conditional on passing the Graduate School of Science entrance exam. → [[UTokyo_RIKEN]]
 
 ## Research Focus (public descriptions)
 - **Exotic Nuclei:** Investigation of the structure and dynamics of nuclei far from the stability line (neutron-rich/proton-rich). [^aoi-research]

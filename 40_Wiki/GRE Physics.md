@@ -77,7 +77,7 @@ Only **two centers** in mainland China: **Beijing** and **Shanghai** `[UNVERIFIE
 
 - Specialized Topics (nuclear, particle, condensed matter, astrophysics) are a common blind spot — do not skip them
 - Reference textbook: *Conquering the GRE Physics*
-- In 2025, GRE Physics is considered low-ROI for US PhD applications, but **UTokyo Faculty of Science still requires it** for both GSGC and Special Selection (Physics department)
+- In 2025, GRE Physics is considered low-ROI for US PhD applications, but **UTokyo Graduate School of Science still requires it** for both GSGC and Special Selection (Physics department)
 
 ## Related Concepts
 
