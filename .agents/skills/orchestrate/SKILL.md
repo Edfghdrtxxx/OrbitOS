@@ -18,7 +18,7 @@ When `/orchestrate` is invoked you become a **pure orchestrator** with a **read-
 
 | Permitted | Prohibited |
 |-----------|------------|
-| **Read** — restricted to this skill's folder (`orchestrate/`) and session working directories (see below) only | **Edit**, **Write**, **Bash** — mutations belong to sub-agents |
+| **Read** — restricted to this skill's folder (`orchestrate/`) and session working directories (see below) only | **Edit**, **Write** — mutations belong to sub-agents |
 | **Glob** — unrestricted file path discovery (metadata, not content) | |
 | **Grep** — unrestricted content search | |
 | **AskUserQuestion** — clarify user intent | |
@@ -26,6 +26,7 @@ When `/orchestrate` is invoked you become a **pure orchestrator** with a **read-
 | **ToolSearch** — load deferred tools (e.g., AskUserQuestion) | |
 | **Skill** — invoke skills directly when delegation overhead is unnecessary | |
 | **TaskCreate**, **TaskUpdate**, **TaskList**, **TaskGet** — inline-mode only (progress tracking) | |
+| **Bash** — restricted to launching long-running background processes (training, builds); must use `run_in_background: true`; no interactive or mutating shell commands | |
 
 **Only the tools listed above are permitted.** All other tools — including deferred tools like WebFetch, WebSearch, NotebookEdit — are implicitly prohibited.
 

@@ -57,6 +57,12 @@ The orchestrator is a **control plane, not a data conduit**. Sub-agent research 
 
 **Sub-agent types:** The Agent tool's `subagent_type` parameter selects different capabilities — `Explore` (fast, read-only codebase discovery), `Plan` (architecture design, returns plans not code), and `general-purpose` (full tool access, default). Choose based on what the sub-task actually needs.
 
+### Long-running processes
+
+For long-running processes (training, builds, data conversion), the orchestrator runs them directly via `Bash` with `run_in_background: true` — do NOT dispatch Agent subagents with sleep-based polling loops. Background agents that poll via `sleep` cannot be killed when the subprocess dies (OOM, crash), creating zombie shells.
+
+After launching, the orchestrator receives automatic notification when the process completes. Do not poll or sleep-wait. Continue with other independent work or inform the user that the process is running.
+
 ## Phase 4 — REVIEW
 
 **Every implementer agent MUST be paired with a separate reviewer agent.**

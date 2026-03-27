@@ -90,6 +90,8 @@ Skip this section entirely for straightforward work.]
 2. **DECOMPOSE** — Draft decomposition.md (research plan) and task.md skeleton (Purpose only).
 3. **DISPATCH + REVIEW** — Sub-agents investigate per the research plan. Each report is reviewed. Passed sub-tasks are checked off in decomposition.md.
 4. **SYNTHESIZE** — Compile approved findings into task.md. Review the synthesized spec. Iterate until clean.
+5. **REFLECT** — Self-critique for orchestrator-level mistakes.
+6. **REFINE** — Collaborative Q&A to confirm task.md reflects actual intent.
 
 The decomposition.md is a coordination artifact. The task.md is the deliverable. If scope changes mid-research, update decomposition.md in place.
 
@@ -158,7 +160,24 @@ After each review passes, update the corresponding checkbox in decomposition.md.
 1. Dispatch a sub-agent to synthesize. It carries AC from decomposition.md into task.md, populates the Tasks section from approved research, verifies Tasks satisfy all AC, and adds Context if needed. It returns per-sub-task one-line summaries.
 2. Dispatch a reviewer to audit task.md against decomposition.md and all research reports. Review file: `review_synthesis.md`. Revision files: `review_synthesis_b.md`, `review_synthesis_c.md`. Max 3 synthesis rounds before escalation (see Invariants).
 
-3. Present the final summary:
+## Phase 7 — REFLECT
+
+After synthesis review passes, invoke `/reflect` via the Skill tool. **Mandatory** — do not skip.
+
+Purpose: catch orchestrator-level mistakes (scope drift, dropped sub-tasks, bad routing). Present findings to the user; do not act until explicitly approved.
+
+## Phase 8 — REFINE
+
+Collaborative Q&A after self-critique. Ensure task.md reflects actual intent, not just what research surfaced.
+
+1. Dispatch a general-purpose sub-agent to read the completed task.md and produce **3-5 pointed questions**. Each question must reference a specific section or task and target: unstated assumptions, ambiguous scope, missing sequencing, or trade-offs the user hasn't weighed in on. Hollow or generic questions are prohibited — each must include enough context from task.md that the user can answer without reading the file.
+2. Present questions to the user via AskUserQuestion.
+3. Dispatch a general-purpose sub-agent to incorporate answers into task.md.
+4. Repeat from step 1 until the user signals satisfaction. Cap at 3 rounds — flag remaining concerns and proceed.
+
+**After the loop completes:**
+
+5. Present the final summary:
 
 ```
 ### Specification Complete
@@ -171,13 +190,7 @@ After each review passes, update the corresponding checkbox in decomposition.md.
 - [any concerns needing user attention — omit section if none]
 ```
 
-4. Dispatch a sub-agent to fill in task.md's Outcome section. Wait for completion. Archiving is manual (user-initiated).
-
-## Phase 7 — REFLECT
-
-After outcome write-back, invoke `/reflect` via the Skill tool. **Mandatory** — do not skip.
-
-Purpose: catch orchestrator-level mistakes (scope drift, dropped sub-tasks, bad routing). Present findings to the user; do not act until explicitly approved.
+6. Dispatch a sub-agent to fill in task.md's Outcome section. Wait for completion. Archiving is manual (user-initiated).
 
 # Failure Handling
 
