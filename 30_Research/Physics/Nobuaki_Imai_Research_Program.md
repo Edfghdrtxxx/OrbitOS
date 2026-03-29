@@ -151,8 +151,6 @@ This combination — an energy-degrading RI beamline feeding a high-resolution s
 
 ### 4.1 Gamow-Teller Transitions
 
-The **[[Gamow-Teller Transition|Gamow-Teller (GT) transition]]** is mediated by the axial-vector part of the [[Weak Interaction|weak interaction]]. The transition operator is:
-
 > [!Feynman]- GT Transitions, Weak Interaction & Axial-Vector
 > **Q:** What is the Gamow-Teller Transitions, weak interaction and axial-vector part?
 > **Language note:** More natural phrasing: *"What are Gamow-Teller transitions, the weak interaction, and the axial-vector part?"* — "Transitions" is plural, so use "What are" (not "What is"); "the weak interaction" needs the definite article "the"; don't capitalize "transitions" mid-sentence.
@@ -171,6 +169,7 @@ The **[[Gamow-Teller Transition|Gamow-Teller (GT) transition]]** is mediated by 
 >
 > In short: the weak force has a spin-flipping channel (axial-vector) and a non-spin-flipping channel (vector). Gamow-Teller transitions are the ones that use the spin-flipping channel.
 
+The **[[Gamow-Teller Transition|Gamow-Teller (GT) transition]]** is mediated by the axial-vector part of the [[Weak Interaction|weak interaction]]. The transition operator is:
 $$\hat{O}_{GT^\pm} = g_A \sum_k \boldsymbol{\sigma}_k \tau^\pm_k$$
 
 where $\boldsymbol{\sigma}$ is the spin operator and $\tau^+$ ($\tau^-$) converts a neutron into a proton (proton into a neutron), corresponding to $\Delta T_z = -1$ ($+1$) respectively. The selection rules are:
@@ -180,6 +179,51 @@ where $\boldsymbol{\sigma}$ is the spin operator and $\tau^+$ ($\tau^-$) convert
 - $\Delta T_z = \pm 1$ (isospin flip)
 
 This is a **spin-flip, isospin-flip** excitation — distinct from [[Fermi Transition|Fermi transitions]] ($\boldsymbol{\tau}$ only, $\Delta J = 0$).
+
+#### Reduced Transition Strength and Beta-Decay Rates
+
+The reduced GT transition strength from initial state $|i\rangle$ to final state $|f\rangle$ is defined as:
+
+$$B(GT^\pm; i \to f) = \frac{1}{2J_i + 1} \left| \langle f \| \sum_k \boldsymbol{\sigma}_k \tau^\pm_k \| i \rangle \right|^2$$
+
+This quantity directly determines allowed beta-decay rates through the comparative half-life:
+
+$$ft = \frac{K}{g_V^2 \, B(F) + g_A^2 \, B(GT)}$$
+
+where $K = 6144$ s, $g_V = 1$ (protected by the [[Conserved Vector Current|conserved vector current (CVC)]] hypothesis), and $g_A = 1.276$ (measured from free neutron decay). For pure GT transitions ($B(F) = 0$), the $ft$ value is inversely proportional to $B(GT)$ — stronger GT strength means faster decay.
+
+#### Ikeda Sum Rule
+
+The total GT strengths in the $\beta^-$ and $\beta^+$ directions obey the **model-independent Ikeda sum rule**:
+
+$$S_{\beta^-} - S_{\beta^+} = 3(N - Z)$$
+
+where $S_{\beta^\pm} = \sum_f B(GT^\pm; i \to f)$ sums over all final states. This relation follows purely from the commutation algebra of $\boldsymbol{\sigma}\tau$ operators and holds regardless of the nuclear model. It serves as a rigorous benchmark: any measurement of the full GT strength distribution must satisfy this constraint. For neutron-rich nuclei ($N > Z$), the $\beta^-$ channel (neutron $\to$ proton) dominates overwhelmingly.
+
+#### GT Quenching
+
+Experimentally measured GT strength is systematically **quenched** to $\sim 50$–$60\%$ of independent-particle-model (IPM) predictions — a long-standing puzzle in nuclear structure. The deficit is parameterized via an effective coupling constant:
+
+$$g_A^{\text{eff}} = q \cdot g_A^{\text{free}}, \quad q \approx 0.74\text{--}0.77 \; (sd\text{- and } pf\text{-shells})$$
+
+so that $B(GT)$ is suppressed by $q^2 \approx 0.55$–$0.6$. The quenching originates from:
+
+- **2p-2h configurations** — GT strength couples to two-particle–two-hole excitations that redistribute strength to high excitation energies ($E_x > 30$ MeV), beyond typical experimental windows
+- **$\Delta$-isobar admixtures** — the $N \to \Delta(1232)$ transition competes with the nucleon spin-flip, shifting strength into the $\Delta$-resonance region ($\sim 300$ MeV excitation energy)
+- **Tensor correlations** — short-range nucleon-nucleon tensor forces deplete GT strength from low-lying states
+
+Modern *ab initio* calculations suggest the "missing" strength is not truly lost but pushed to high excitation energies. The quenching problem has **direct consequences for $0\nu\beta\beta$ predictions** (§4.4): since the DGT operator acts twice, the nuclear matrix element scales roughly as $g_A^4$ rather than $g_A^2$, amplifying the uncertainty from quenching.
+
+#### GT vs. Fermi Comparison
+
+| Property | Fermi | Gamow-Teller |
+|----------|-------|--------------|
+| Operator | $g_V \sum_k \tau^\pm_k$ | $g_A \sum_k \boldsymbol{\sigma}_k \tau^\pm_k$ |
+| Spin change | No ($\Delta S = 0$) | Yes ($\Delta S = 1$) |
+| $\Delta J^\pi$ | $0^+$ only | $0^+, 1^+$ ($0 \to 0$ forbidden) |
+| Coupling | $g_V = 1$ (CVC-protected) | $g_A = 1.276$ (quenched in-medium) |
+| Sum rule | $S_F^- - S_F^+ = N - Z$ | $S_{GT}^- - S_{GT}^+ = 3(N - Z)$ |
+| Collective mode | [[Isobaric Analog State\|IAS]] — sharp, narrow | [[#4.2 GT Giant Resonance (GTGR)\|GTGR]] — broad resonance |
 
 ### 4.2 GT Giant Resonance (GTGR)
 
