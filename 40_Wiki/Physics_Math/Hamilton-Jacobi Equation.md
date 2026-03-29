@@ -27,12 +27,12 @@ where $H$ is the [[Hamiltonian Mechanics|Hamiltonian]] and the momenta are repla
 - **Time-independent case:** When $H$ has no explicit time dependence, separation $S = W(q) - Et$ yields the time-independent HJ equation $H(q, \nabla W) = E$, where $W$ is Hamilton's characteristic function.
 - **Separation of variables:** If the HJ equation is separable in a coordinate system, each separated equation yields a conserved quantity — this is the standard route to [[Action-Angle Variables|action-angle variables]] and exact solutions for integrable systems.
 - **Connection to quantum mechanics:** The [[Schrodinger-Equation|Schrodinger equation]] reduces to the HJ equation in the classical limit ($\hbar \to 0$) via the [[WKB Approximation|WKB approximation]], where the phase of the wavefunction plays the role of $S$.
-- **Relation to the [[Euler-Lagrange-Equation|Euler-Lagrange equation]]:** Both are equivalent reformulations of classical mechanics; the HJ equation arises from the variational principle applied to the action integral $S = \int L\, dt$.
+- **Relation to the [[Euler-Lagrange-Equation|Euler-Lagrange equation]]:** Both are equivalent formulations of classical mechanics; the HJ equation is derived via [[Canonical Transformation|canonical transformation]] theory, and $S$ equals the classical action $\int L\, dt$ evaluated along the true path.
 
 ## Examples
 
 1. **Free particle:** $H = p^2/2m$ gives $S = \frac{(q - q_0)^2}{2(t - t_0)} m$, recovering uniform straight-line motion.
-2. **[[Harmonic Oscillator]]:** Separation in $(q, t)$ yields oscillatory solutions with $W = \int \sqrt{2m(E - \tfrac{1}{2}k q^2)}\, dq$, directly producing the action variable $J = E/\omega$.
+2. **[[Harmonic Oscillator]]:** Separation in $(q, t)$ yields oscillatory solutions with $W = \int \sqrt{2m(E - \tfrac{1}{2}k q^2)}\, dq$, directly producing the action variable $J = E/\omega$ (using $J = \frac{1}{2\pi}\oint p\, dq$).
 
 ## Related Concepts
 
@@ -48,4 +48,4 @@ where $H$ is the [[Hamiltonian Mechanics|Hamiltonian]] and the momenta are repla
 ## References
 
 - H. Goldstein, C. Poole, J. Safko, *Classical Mechanics*, 3rd ed. (Addison-Wesley, 2002), Ch. 10.
-- L. D. Landau, E. M. Lifshitz, *Mechanics*, 3rd ed. (Butterworth-Heinemann, 1976), Sec. 47-48.
+- L. D. Landau, E. M. Lifshitz, *Mechanics*, 3rd ed. (Pergamon Press, 1976), Sec. 47-48.
