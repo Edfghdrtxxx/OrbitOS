@@ -143,7 +143,10 @@ def gaussian_smooth(y, sigma_pts=3):
     x_kern = np.arange(kernel_size) - kernel_size // 2
     kernel = np.exp(-x_kern ** 2 / (2 * sigma_pts ** 2))
     kernel /= kernel.sum()
-    return np.convolve(y, kernel, mode="same")
+    pad = kernel_size // 2
+    y_padded = np.pad(y, pad, mode="edge")
+    smoothed = np.convolve(y_padded, kernel, mode="same")
+    return smoothed[pad:-pad]
 
 
 def curve_value_at(x_array, y_array, x_target):
@@ -207,8 +210,8 @@ def create_morigin_figure():
     )
     # r [fm] label at arrow tip
     ax_nn.text(
-        1.08, y_zero_frac_nn, r"$r$",
-        transform=ax_nn.transAxes, fontsize=12, va="center", ha="left",
+        1.08, y_zero_frac_nn, r"$r$ [fm]",
+        transform=ax_nn.transAxes, fontsize=11, va="center", ha="left",
     )
 
     # --- ax_nuc axis lines ---
@@ -230,9 +233,35 @@ def create_morigin_figure():
         arrowprops=dict(arrowstyle="->", color=C_BLACK, lw=1.0),
     )
     ax_nuc.text(
-        1.08, y_zero_frac_nuc, r"$r$",
-        transform=ax_nuc.transAxes, fontsize=12, va="center", ha="left",
+        1.08, y_zero_frac_nuc, r"$r$ [fm]",
+        transform=ax_nuc.transAxes, fontsize=11, va="center", ha="left",
     )
+
+    # --- 5.1 Tick marks on schematic axes ---
+
+    # ax_nn: r-axis ticks (along y=0)
+    for r_val in [1, 2, 3]:
+        ax_nn.plot([r_val, r_val], [-10, 10], color=C_BLACK, lw=0.8, zorder=2)
+        ax_nn.text(r_val, -20, str(r_val), fontsize=8, ha="center", va="top",
+                   color=C_BLACK)
+
+    # ax_nn: V-axis ticks (along x=0)
+    for v_val, v_label in [(-100, r"$-$100"), (100, "100"), (200, "200")]:
+        ax_nn.plot([-0.1, 0.1], [v_val, v_val], color=C_BLACK, lw=0.8, zorder=2)
+        ax_nn.text(-0.18, v_val, v_label, fontsize=7, ha="right", va="center",
+                   color=C_BLACK)
+
+    # ax_nuc: r-axis ticks (along y=0)
+    for r_val in [-4, -2, 2, 4]:
+        ax_nuc.plot([r_val, r_val], [-1.8, 1.8], color=C_BLACK, lw=0.8, zorder=2)
+        ax_nuc.text(r_val, -3.5, str(r_val), fontsize=8, ha="center", va="top",
+                    color=C_BLACK)
+
+    # ax_nuc: V-axis ticks (along x=0)
+    for v_val, v_label in [(-50, r"$-$50"), (-25, r"$-$25")]:
+        ax_nuc.plot([-0.3, 0.3], [v_val, v_val], color=C_BLACK, lw=0.8, zorder=2)
+        ax_nuc.text(-0.5, v_val, v_label, fontsize=7, ha="right", va="center",
+                    color=C_BLACK)
 
     # ==================================================================
     # SECTION 6 -- Mathematical curves
@@ -242,22 +271,22 @@ def create_morigin_figure():
     r = np.linspace(0.01, 5.0, 500)
     v_nn = V_NN(r)
     v_nn_clipped = np.clip(v_nn, -120, 280)
-    ax_nn.plot(r, v_nn_clipped, color=C_BLACK, linewidth=2.0, zorder=3)
+    ax_nn.plot(r, v_nn_clipped, color=C_BLACK, linewidth=1.2, zorder=3)
 
     # --- 6.3 SRC wavefunction ---
     psi_src = psi_SRC(r)
     psi_src_scaled = psi_src / np.max(np.abs(psi_src)) * 50.0
-    ax_nn.plot(r, psi_src_scaled, color=C_BLUE, linewidth=2.5, zorder=4)
+    ax_nn.plot(r, psi_src_scaled, color=C_BLUE, linewidth=1.5, zorder=4)
 
     # --- 6.4 Woods-Saxon potential (symmetric well) ---
     r_nuc = np.linspace(-8.0, 8.0, 1000)
     v_ws = V_WS(np.abs(r_nuc))
-    ax_nuc.plot(r_nuc, v_ws, color=C_BLACK, linewidth=2.0, zorder=3)
+    ax_nuc.plot(r_nuc, v_ws, color=C_BLACK, linewidth=1.2, zorder=3)
 
     # --- 6.5 Mean-field wavefunction (antisymmetric 1p state in full well) ---
     psi_mean = np.sign(r_nuc) * psi_mf(np.abs(r_nuc), b=1.8)
     psi_mean_scaled = psi_mean / np.max(np.abs(psi_mean)) * 15.0 - 25.0
-    ax_nuc.plot(r_nuc, psi_mean_scaled, color=C_ORANGE, linewidth=2.5, zorder=4)
+    ax_nuc.plot(r_nuc, psi_mean_scaled, color=C_ORANGE, linewidth=1.5, zorder=4)
 
     # --- 6.6 Momentum distribution ---
     k = np.linspace(0.01, 4.5, 500)
@@ -273,20 +302,20 @@ def create_morigin_figure():
 
     # Individual components FIRST (zorder=5, above total)
     ax_mom.plot(
-        k, rho_mf, color=C_ORANGE, linewidth=2.0, linestyle="--",
+        k, rho_mf, color=C_ORANGE, linewidth=1.2, linestyle="--",
         zorder=5, label=r"Mean-field (IPM)",
     )
     ax_mom.plot(
-        k, rho_tensor, color=C_BLUE, linewidth=2.0, linestyle=":",
+        k, rho_tensor, color=C_BLUE, linewidth=1.2, linestyle=":",
         zorder=5, label=r"Tensor SRC ($np$)",
     )
     ax_mom.plot(
-        k, rho_scalar, color=C_GREEN, linewidth=2.0, linestyle="-.",
+        k, rho_scalar, color=C_GREEN, linewidth=1.2, linestyle="-.",
         zorder=5, label=r"Central SRC ($pp/nn$)",
     )
     # Total curve BELOW components (zorder=4)
     ax_mom.plot(
-        k, rho_total_smooth, color=C_RED, linewidth=2.5, linestyle="-",
+        k, rho_total_smooth, color=C_RED, linewidth=1.5, linestyle="-",
         zorder=4, label=r"$\rho(k)$ total",
     )
 
@@ -324,11 +353,11 @@ def create_morigin_figure():
 
     # V(r) labels on y-axes (outside axes bounds)
     ax_nn.text(
-        -0.06, 0.92, r"$V(r)$", transform=ax_nn.transAxes,
-        fontsize=12, va="center", ha="right", clip_on=False,
+        -0.06, 0.92, r"$V(r)$ [MeV]", transform=ax_nn.transAxes,
+        fontsize=10, va="center", ha="right", clip_on=False,
     )
     ax_nuc.text(
-        x_zero_frac_nuc - 0.04, 0.92, r"$V(r)$", transform=ax_nuc.transAxes,
+        x_zero_frac_nuc - 0.04, 0.92, r"$V(r)$ [MeV]", transform=ax_nuc.transAxes,
         fontsize=12, va="center", ha="right", clip_on=False,
     )
 
@@ -370,7 +399,7 @@ def create_morigin_figure():
         arrowprops=dict(arrowstyle="<->", color=C_GREEN, lw=1.2),
     )
     ax_mom.text(
-        3.15, 2e-4, "SRC dominant", fontsize=9, ha="center", va="bottom",
+        3.3, 2e-4, "SRC dominant", fontsize=9, ha="center", va="bottom",
         color=C_GREEN, fontstyle="italic",
     )
 
@@ -397,39 +426,39 @@ def create_morigin_figure():
     arrow_mf = ConnectionPatch(
         xyA=(mf_src_x, mf_src_y), coordsA="data", axesA=ax_nuc,
         xyB=(mf_tgt_x, mf_tgt_y), coordsB="data", axesB=ax_mom,
-        arrowstyle="-|>", color=C_ORANGE, linewidth=1.0, alpha=0.45,
-        connectionstyle="arc3,rad=0.25", linestyle="--",
-        mutation_scale=10, zorder=1,
+        arrowstyle="-|>", color=C_ORANGE, linewidth=0.6, alpha=0.45,
+        linestyle="--",
+        mutation_scale=7, zorder=1,
     )
     fig.add_artist(arrow_mf)
 
     # Arrow 2: SRC wavefunction (ax_nn) -> tensor SRC high-k (ax_mom)
     src_blue_src_x = 4.2
     src_blue_src_y = curve_value_at(r, psi_src_scaled, src_blue_src_x)
-    src_blue_tgt_x = 1.8
+    src_blue_tgt_x = 1.6
     src_blue_tgt_y = curve_value_at(k, rho_tensor, src_blue_tgt_x)
 
     arrow_src_blue = ConnectionPatch(
         xyA=(src_blue_src_x, src_blue_src_y), coordsA="data", axesA=ax_nn,
         xyB=(src_blue_tgt_x, src_blue_tgt_y), coordsB="data", axesB=ax_mom,
-        arrowstyle="-|>", color=C_BLUE, linewidth=1.0, alpha=0.45,
-        connectionstyle="arc3,rad=-0.3", linestyle="--",
-        mutation_scale=10, zorder=1,
+        arrowstyle="-|>", color=C_BLUE, linewidth=0.6, alpha=0.45,
+        linestyle="--",
+        mutation_scale=7, zorder=1,
     )
     fig.add_artist(arrow_src_blue)
 
     # Arrow 3: SRC wavefunction (ax_nn) -> central SRC region (ax_mom)
     src_central_src_x = 3.5
     src_central_src_y = curve_value_at(r, psi_src_scaled, src_central_src_x)
-    src_central_tgt_x = 3.2
+    src_central_tgt_x = 2.9
     src_central_tgt_y = curve_value_at(k, rho_scalar, src_central_tgt_x)
 
     arrow_src_central = ConnectionPatch(
         xyA=(src_central_src_x, src_central_src_y), coordsA="data", axesA=ax_nn,
         xyB=(src_central_tgt_x, src_central_tgt_y), coordsB="data", axesB=ax_mom,
-        arrowstyle="-|>", color=C_GREEN, linewidth=1.0, alpha=0.45,
-        connectionstyle="arc3,rad=-0.2", linestyle="--",
-        mutation_scale=10, zorder=1,
+        arrowstyle="-|>", color=C_GREEN, linewidth=0.6, alpha=0.45,
+        linestyle="--",
+        mutation_scale=7, zorder=1,
     )
     fig.add_artist(arrow_src_central)
 
@@ -439,15 +468,15 @@ def create_morigin_figure():
     # repulsive core -- matching the original's prominent green & blue arrows
     arrow_pair_1 = FancyArrowPatch(
         posA=(0.7, 250), posB=(0.7, 60),
-        arrowstyle="->,head_length=14,head_width=10",
-        color=C_GREEN, linewidth=5.0, alpha=0.85, zorder=10,
+        arrowstyle="->,head_length=8,head_width=6",
+        color=C_GREEN, linewidth=2.5, alpha=0.85, zorder=10,
     )
     ax_nn.add_patch(arrow_pair_1)
 
     arrow_pair_2 = FancyArrowPatch(
         posA=(1.3, 220), posB=(1.3, 20),
-        arrowstyle="->,head_length=14,head_width=10",
-        color=C_BLUE, linewidth=5.0, alpha=0.85, zorder=10,
+        arrowstyle="->,head_length=8,head_width=6",
+        color=C_BLUE, linewidth=2.5, alpha=0.85, zorder=10,
     )
     ax_nn.add_patch(arrow_pair_2)
 
