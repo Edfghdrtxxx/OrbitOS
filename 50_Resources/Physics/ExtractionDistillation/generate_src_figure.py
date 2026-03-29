@@ -343,7 +343,7 @@ def create_morigin_figure():
         fontsize=10, color=C_BLACK, va="center", ha="center",
     )
     ax_nuc.text(
-        4.5, -10, r"$\psi_{1p}(r)$",
+        5.8, -16, r"$\psi_{1p}(r)$",
         fontsize=10, color=C_ORANGE, va="center", ha="center",
     )
 
