@@ -172,7 +172,7 @@ This combination — an energy-degrading RI beamline feeding a high-resolution s
 The **[[Gamow-Teller Transition|Gamow-Teller (GT) transition]]** is mediated by the axial-vector part of the [[Weak Interaction|weak interaction]]. The transition operator is:
 $$\hat{O}_{GT^\pm} = g_A \sum_k \boldsymbol{\sigma}_k \tau^\pm_k$$
 
-where $\boldsymbol{\sigma}$ is the spin operator and $\tau^+$ ($\tau^-$) converts a neutron into a proton (proton into a neutron), corresponding to $\Delta T_z = -1$ ($+1$) respectively. The selection rules are:
+where $\boldsymbol{\sigma}$ is the spin operator. The $\pm$ superscript follows the charge-change convention: $\tau^+$ converts a neutron into a proton ($\beta^-$ direction, $\Delta Z = +1$, $\Delta T_z = -1$) and $\tau^-$ converts a proton into a neutron ($\beta^+$ direction, $\Delta Z = -1$, $\Delta T_z = +1$), with $T_z \equiv (N - Z)/2$. The selection rules are:
 
 - $\Delta J = 0, \pm 1$ (but $0 \to 0$ forbidden)
 - $\Delta \pi = 0$ (no parity change)
@@ -212,7 +212,7 @@ so that $B(GT)$ is suppressed by $q^2 \approx 0.55$–$0.6$. The quenching origi
 - **$\Delta$-isobar admixtures** — the $N \to \Delta(1232)$ transition competes with the nucleon spin-flip, shifting strength into the $\Delta$-resonance region ($\sim 300$ MeV excitation energy)
 - **Tensor correlations** — short-range nucleon-nucleon tensor forces deplete GT strength from low-lying states
 
-Modern *ab initio* calculations suggest the "missing" strength is not truly lost but pushed to high excitation energies. The quenching problem has **direct consequences for $0\nu\beta\beta$ predictions** (§4.4): since the DGT operator acts twice, the nuclear matrix element scales roughly as $g_A^4$ rather than $g_A^2$, amplifying the uncertainty from quenching.
+Modern *ab initio* calculations suggest the "missing" strength is not truly lost but pushed to high excitation energies. The quenching problem has **direct consequences for $0\nu\beta\beta$ predictions** (§4.4): since the DGT operator acts twice, the DGT cross section scales as $g_A^4$ rather than the single-GT $g_A^2$, amplifying the uncertainty from quenching.
 
 #### GT vs. Fermi Comparison
 
@@ -231,15 +231,15 @@ The **Gamow-Teller Giant Resonance** is a coherent superposition of $1^+$ partic
 
 ### 4.3 Double GT (DGT) Resonance
 
-The **[[Double Gamow-Teller Giant Resonance|Double Gamow-Teller]]** transition applies the GT operator twice in sequence (a sequential double application of the GT operator):
+The **[[Double Gamow-Teller Giant Resonance|Double Gamow-Teller]]** transition applies the GT operator twice — a coherent two-body excitation, distinct from the multi-step sequential charge-exchange background (§4.7):
 
 $$\hat{O}_{DGT^\pm} = \sum_{k,l} (\boldsymbol{\sigma}_k \tau^\pm_k)(\boldsymbol{\sigma}_l \tau^\pm_l)$$
 
-where the sum runs over nucleon pairs $(k, l)$. The $\tau^+$ form converts two neutrons into protons ($\Delta Z = +2$ on the target), while the $\tau^-$ form converts two protons into neutrons ($\Delta Z = -2$). The DGT is a **two-phonon [[Giant Resonance|giant resonance]]**, first predicted theoretically by **Auerbach, Zamick & Zheng (1989)**.
+where the sum runs over nucleon pairs $(k, l)$ and $g_A$ is factored out of the operator (the observable DGT cross section carries $g_A^4$). The $\tau^+$ form converts two neutrons into protons ($\Delta Z = +2$ on the target), while the $\tau^-$ form converts two protons into neutrons ($\Delta Z = -2$). The DGT is a **two-phonon [[Giant Resonance|giant resonance]]**, first predicted theoretically by **Auerbach, Zamick & Zheng (1989)**.
 
 ### 4.4 Scientific Importance — Connection to $0\nu\beta\beta$
 
-The DGT resonance has gained enormous significance because of a **linear correlation** between the DGT nuclear matrix element and the nuclear matrix element governing **[[Neutrinoless Double-Beta Decay|neutrinoless double-beta decay]]** ($0\nu\beta\beta$), as demonstrated by **Shimizu et al. (PRL, 2018)**.
+The DGT resonance has gained enormous significance because of a **linear correlation** between the DGT nuclear matrix element and the nuclear matrix element governing **[[Neutrinoless Double-Beta Decay|neutrinoless double-beta decay]]** ($0\nu\beta\beta$), as demonstrated in nuclear shell-model calculations by **Shimizu et al. (PRL, 2018)**.
 
 The $0\nu\beta\beta$ decay — if observed — would prove neutrinos are [[Majorana Fermion|Majorana fermions]] and violate [[Lepton Number|lepton number]] conservation. Extracting the neutrino mass from a $0\nu\beta\beta$ half-life measurement requires the [[Nuclear Matrix Element|nuclear matrix element]] $M^{0\nu}$, which is currently model-dependent and uncertain by factors of $\sim 2$–$3$. Measuring the DGT strength experimentally provides an **independent constraint** on these NMEs through a reaction mechanism that probes the same nuclear structure.
 
