@@ -65,7 +65,7 @@ C_INDIGO = "#332288"   # NN potential + WS potential curves
 C_ORANGE = "#EE7733"   # Mean-field: wavefunction + connection + rho component
 C_RED    = "#CC3311"   # Total rho(k) curve only
 C_BLUE   = "#0077BB"   # Tensor SRC: wavefunction contribution + arrows + rho
-C_TEAL   = "#009988"   # Central SRC: wavefunction contribution + arrows + rho
+C_TEAL   = "#009988"   # (unused legacy – kept for reference only)
 C_GREEN  = "#44AA44"   # Bold emphasis arrow in NN panel (green, matching original)
 C_GRAY   = "#BBBBBB"   # k_F marker
 C_BLACK  = "#000000"   # Axes, labels
@@ -109,9 +109,12 @@ def psi_mf(r, b=1.8):
 
 
 def rho_meanfield(k, k_F=1.36):
-    """Mean-field / IPM momentum distribution -- Gaussian-like, peaks below k_F."""
-    sigma = 0.45
-    return 1.5 * np.exp(-((k - 0.8) ** 2) / (2 * sigma ** 2))
+    """Mean-field / IPM momentum distribution -- plateau below k_F, Gaussian tail above."""
+    plateau = 1.5
+    k_onset = 0.6
+    sigma = 0.50
+    x = np.maximum(0.0, k - k_onset)
+    return plateau * np.exp(-(x ** 2) / (2 * sigma ** 2))
 
 
 def rho_src_tensor(k):
@@ -119,7 +122,8 @@ def rho_src_tensor(k):
     amplitude = 0.08
     k0 = 1.5
     decay = 2.5
-    raw = amplitude * (k / k0) ** 2 * np.exp(-decay * (k - k0)) * (k > k0).astype(float)
+    onset = 1.0 / (1.0 + np.exp(-(k - k0) / 0.1))
+    raw = amplitude * (k / k0) ** 2 * np.exp(-decay * (k - k0)) * onset
     return np.maximum(raw, LOG_FLOOR)
 
 
@@ -128,7 +132,8 @@ def rho_src_scalar(k):
     amplitude = 0.008
     k0 = 2.8
     decay = 2.0
-    raw = amplitude * (k / k0) ** 3 * np.exp(-decay * (k - k0)) * (k > k0).astype(float)
+    onset = 1.0 / (1.0 + np.exp(-(k - k0) / 0.1))
+    raw = amplitude * (k / k0) ** 3 * np.exp(-decay * (k - k0)) * onset
     return np.maximum(raw, LOG_FLOOR)
 
 
@@ -413,20 +418,20 @@ def create_morigin_figure():
     )
     fig.add_artist(arrow_src_blue)
 
-    # Arrow 3: SRC wavefunction (ax_nn) -> central SRC teal region (ax_mom)
-    src_teal_src_x = 3.5
-    src_teal_src_y = curve_value_at(r, psi_src_scaled, src_teal_src_x)
-    src_teal_tgt_x = 2.5
-    src_teal_tgt_y = curve_value_at(k, rho_scalar, src_teal_tgt_x)
+    # Arrow 3: SRC wavefunction (ax_nn) -> central SRC region (ax_mom)
+    src_central_src_x = 3.5
+    src_central_src_y = curve_value_at(r, psi_src_scaled, src_central_src_x)
+    src_central_tgt_x = 3.2
+    src_central_tgt_y = curve_value_at(k, rho_scalar, src_central_tgt_x)
 
-    arrow_src_teal = ConnectionPatch(
-        xyA=(src_teal_src_x, src_teal_src_y), coordsA="data", axesA=ax_nn,
-        xyB=(src_teal_tgt_x, src_teal_tgt_y), coordsB="data", axesB=ax_mom,
+    arrow_src_central = ConnectionPatch(
+        xyA=(src_central_src_x, src_central_src_y), coordsA="data", axesA=ax_nn,
+        xyB=(src_central_tgt_x, src_central_tgt_y), coordsB="data", axesB=ax_mom,
         arrowstyle="-|>", color=C_GREEN, linewidth=1.0, alpha=0.45,
         connectionstyle="arc3,rad=-0.2", linestyle="--",
         mutation_scale=10, zorder=1,
     )
-    fig.add_artist(arrow_src_teal)
+    fig.add_artist(arrow_src_central)
 
     # --- 8.2 Conceptual emphasis arrows ---
 
