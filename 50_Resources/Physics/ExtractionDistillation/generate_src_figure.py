@@ -176,7 +176,7 @@ def create_morigin_figure():
     # ── Set axis limits (Section 6.1) ──────────────────────────────────
     ax_nn.set_xlim(0, 5.0)
     ax_nn.set_ylim(-120, 300)
-    ax_nuc.set_xlim(0, 8.0)
+    ax_nuc.set_xlim(-8.0, 8.0)
     ax_nuc.set_ylim(-55, 20)
     ax_mom.set_xlim(0, 4.5)
 
@@ -209,12 +209,16 @@ def create_morigin_figure():
     # --- ax_nuc axis lines ---
     # y=0 in data coords -> axes fraction: (0-(-55))/(20-(-55)) = 55/75
     y_zero_frac_nuc = 55.0 / 75.0  # 0.7333
+    # x=0 in data coords -> axes fraction: (0-(-8))/(8-(-8)) = 8/16 = 0.5
+    x_zero_frac_nuc = 0.5
 
+    # Vertical axis at x=0 (center of symmetric well)
     ax_nuc.annotate(
-        "", xy=(0, 1.05), xycoords="axes fraction",
-        xytext=(0, -0.02), textcoords="axes fraction",
+        "", xy=(x_zero_frac_nuc, 1.05), xycoords="axes fraction",
+        xytext=(x_zero_frac_nuc, -0.02), textcoords="axes fraction",
         arrowprops=dict(arrowstyle="->", color=C_BLACK, lw=1.0),
     )
+    # Horizontal axis through y=0
     ax_nuc.annotate(
         "", xy=(1.05, y_zero_frac_nuc), xycoords="axes fraction",
         xytext=(-0.02, y_zero_frac_nuc), textcoords="axes fraction",
@@ -233,20 +237,20 @@ def create_morigin_figure():
     r = np.linspace(0.01, 5.0, 500)
     v_nn = V_NN(r)
     v_nn_clipped = np.clip(v_nn, -120, 280)
-    ax_nn.plot(r, v_nn_clipped, color=C_INDIGO, linewidth=2.0, zorder=3)
+    ax_nn.plot(r, v_nn_clipped, color=C_BLACK, linewidth=2.0, zorder=3)
 
     # --- 6.3 SRC wavefunction ---
     psi_src = psi_SRC(r)
     psi_src_scaled = psi_src / np.max(np.abs(psi_src)) * 50.0
-    ax_nn.plot(r, psi_src_scaled, color=C_TEAL, linewidth=2.5, zorder=4)
+    ax_nn.plot(r, psi_src_scaled, color=C_BLUE, linewidth=2.5, zorder=4)
 
-    # --- 6.4 Woods-Saxon potential ---
-    r_nuc = np.linspace(0.0, 8.0, 500)
-    v_ws = V_WS(r_nuc)
-    ax_nuc.plot(r_nuc, v_ws, color=C_INDIGO, linewidth=2.0, zorder=3)
+    # --- 6.4 Woods-Saxon potential (symmetric well) ---
+    r_nuc = np.linspace(-8.0, 8.0, 1000)
+    v_ws = V_WS(np.abs(r_nuc))
+    ax_nuc.plot(r_nuc, v_ws, color=C_BLACK, linewidth=2.0, zorder=3)
 
-    # --- 6.5 Mean-field wavefunction (nodeless 1p state) ---
-    psi_mean = psi_mf(r_nuc, b=1.8)
+    # --- 6.5 Mean-field wavefunction (antisymmetric 1p state in full well) ---
+    psi_mean = np.sign(r_nuc) * psi_mf(np.abs(r_nuc), b=1.8)
     psi_mean_scaled = psi_mean / np.max(np.abs(psi_mean)) * 15.0 - 25.0
     ax_nuc.plot(r_nuc, psi_mean_scaled, color=C_ORANGE, linewidth=2.5, zorder=4)
 
@@ -272,7 +276,7 @@ def create_morigin_figure():
         zorder=5, label=r"Tensor SRC ($np$)",
     )
     ax_mom.plot(
-        k, rho_scalar, color=C_TEAL, linewidth=2.0, linestyle="-.",
+        k, rho_scalar, color=C_GREEN, linewidth=2.0, linestyle="-.",
         zorder=5, label=r"Central SRC ($pp/nn$)",
     )
     # Total curve BELOW components (zorder=4)
@@ -305,12 +309,12 @@ def create_morigin_figure():
     # --- 7.2 Physics labels ---
     # PHYSICS AUDIT FIX: "NN interaction" not "n-n interaction"
     ax_nn.text(
-        0.05, 0.86, "NN interaction", transform=ax_nn.transAxes,
-        fontsize=11, fontstyle="italic", va="top", ha="left", color=C_BLACK,
+        0.95, 0.95, "NN interaction", transform=ax_nn.transAxes,
+        fontsize=11, fontstyle="italic", va="top", ha="right", color=C_BLACK,
     )
     ax_nuc.text(
-        0.30, 0.30, "nuclear potential", transform=ax_nuc.transAxes,
-        fontsize=11, fontstyle="italic", va="top", ha="left", color=C_BLACK,
+        0.50, -0.08, "nuclear potential", transform=ax_nuc.transAxes,
+        fontsize=11, fontstyle="italic", va="bottom", ha="center", color=C_BLACK,
     )
 
     # V(r) labels on y-axes (outside axes bounds)
@@ -319,7 +323,7 @@ def create_morigin_figure():
         fontsize=12, va="center", ha="right", clip_on=False,
     )
     ax_nuc.text(
-        -0.06, 0.92, r"$V(r)$", transform=ax_nuc.transAxes,
+        x_zero_frac_nuc - 0.04, 0.92, r"$V(r)$", transform=ax_nuc.transAxes,
         fontsize=12, va="center", ha="right", clip_on=False,
     )
 
@@ -338,11 +342,11 @@ def create_morigin_figure():
     # Place at very bottom of plot in clear space
     ax_mom.annotate(
         "", xy=(2.0, 1.5e-4), xytext=(4.3, 1.5e-4),
-        arrowprops=dict(arrowstyle="<->", color=C_TEAL, lw=1.2),
+        arrowprops=dict(arrowstyle="<->", color=C_GREEN, lw=1.2),
     )
     ax_mom.text(
         3.15, 2e-4, "SRC dominant", fontsize=9, ha="center", va="bottom",
-        color=C_TEAL, fontstyle="italic",
+        color=C_GREEN, fontstyle="italic",
     )
 
     # --- 7.6 Legend ---
@@ -398,7 +402,7 @@ def create_morigin_figure():
     arrow_src_teal = ConnectionPatch(
         xyA=(src_teal_src_x, src_teal_src_y), coordsA="data", axesA=ax_nn,
         xyB=(src_teal_tgt_x, src_teal_tgt_y), coordsB="data", axesB=ax_mom,
-        arrowstyle="-|>", color=C_TEAL, linewidth=1.0, alpha=0.45,
+        arrowstyle="-|>", color=C_GREEN, linewidth=1.0, alpha=0.45,
         connectionstyle="arc3,rad=-0.2", linestyle="--",
         mutation_scale=10, zorder=1,
     )
@@ -411,7 +415,7 @@ def create_morigin_figure():
     arrow_pair_1 = FancyArrowPatch(
         posA=(0.7, 250), posB=(0.7, 60),
         arrowstyle="->,head_length=14,head_width=10",
-        color=C_TEAL, linewidth=5.0, alpha=0.85, zorder=10,
+        color=C_GREEN, linewidth=5.0, alpha=0.85, zorder=10,
     )
     ax_nn.add_patch(arrow_pair_1)
 
