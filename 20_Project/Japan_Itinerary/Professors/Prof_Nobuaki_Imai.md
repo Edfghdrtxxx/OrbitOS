@@ -24,9 +24,9 @@ updated: 2026-03-09
 - OEDO-SHARAQ is a CNS-led instrumentation program at RIKEN RIBF to extend low-energy RI-beam capabilities and perform high-resolution measurements.[^sharaq-oedo]
 - CNS is physically located at the RIKEN Wako campus and emphasizes collaboration with RIKEN Nishina Center.[^cns-overview]
 
-## Recent Publications (last 3�5 years, publicly verified)
-- **2024 (PTEP)**: �Candidate for the double Gamow�Teller giant resonance in ^{48}Ca studied by the (^{12}C, ^{12}Be(0^+_2)) reaction at 250 MeV/nucleon.� Imai is listed among the authors in the UTokyo press release and the paper record.[^utokyo-press-2024][^uesaka-rmap-2024]
-- **2023 (PTEP)**: �Performance of prototype dual gain large effective gain gas electron multiplier for the ALICE TPC upgrade.� Imai is listed among the authors on the journal page.[^pteppaper-2023]
+## Recent Publications (last 3-5 years, publicly verified)
+- **2024 (PTEP)**: "Candidate for the double Gamow–Teller giant resonance in ^{48}Ca studied by the (^{12}C, ^{12}Be(0^+_2)) reaction at 250 MeV/nucleon." Imai is listed among the authors in the UTokyo press release and the paper record.[^utokyo-press-2024][^uesaka-rmap-2024]
+- **2023 (PTEP)**: "Performance of prototype dual gain large effective gain gas electron multiplier for the ALICE TPC upgrade." Imai is listed among the authors on the journal page.[^pteppaper-2023]
 
 ## Student Supervision / International Students
 - No public student roster found on CNS/UTokyo lab pages for Imai Lab as of 2026-03-02. Confirm directly during outreach.[^imai-lab]

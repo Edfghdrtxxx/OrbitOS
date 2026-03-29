@@ -1,0 +1,20 @@
+{
+  "id": "conv-1774759432379-9pjoden7k",
+  "title": "Fix encoding error in note",
+  "titleGenerationStatus": "success",
+  "createdAt": 1774759432380,
+  "updatedAt": 1774759527617,
+  "lastResponseAt": 1774759527617,
+  "sessionId": "2120d45d-d4a2-43c5-9594-32a3e4bda82e",
+  "sdkSessionId": "2120d45d-d4a2-43c5-9594-32a3e4bda82e",
+  "currentNote": "20_Project/Japan_Itinerary/Professors/Prof_Nobuaki_Imai.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 264,
+    "cacheReadInputTokens": 18994,
+    "contextWindow": 200000,
+    "contextTokens": 19259,
+    "percentage": 10
+  }
+}
