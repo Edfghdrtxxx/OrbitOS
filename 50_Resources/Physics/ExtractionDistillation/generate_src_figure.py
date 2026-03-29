@@ -118,16 +118,16 @@ def rho_src_tensor(k):
     """Tensor-correlated SRC pairs (np pairs, D-state) -- power-law tail."""
     amplitude = 0.08
     k0 = 1.5
-    decay = 3.5
+    decay = 2.5
     raw = amplitude * (k / k0) ** 2 * np.exp(-decay * (k - k0)) * (k > k0).astype(float)
     return np.maximum(raw, LOG_FLOOR)
 
 
 def rho_src_scalar(k):
     """Scalar/central SRC (pp/nn pairs) -- steeper power-law tail at higher k."""
-    amplitude = 0.015
-    k0 = 2.2
-    decay = 2.5
+    amplitude = 0.008
+    k0 = 2.8
+    decay = 2.0
     raw = amplitude * (k / k0) ** 3 * np.exp(-decay * (k - k0)) * (k > k0).astype(float)
     return np.maximum(raw, LOG_FLOOR)
 
@@ -327,8 +327,28 @@ def create_morigin_figure():
         fontsize=12, va="center", ha="right", clip_on=False,
     )
 
+    # --- 7.2b Curve name annotations ---
+    # NN panel: potential and SRC wavefunction
+    ax_nn.text(
+        2.5, -80, r"$V_{NN}(r)$",
+        fontsize=10, color=C_BLACK, va="center", ha="center",
+    )
+    ax_nn.text(
+        3.5, 60, r"$\psi_\mathrm{SRC}(r)$",
+        fontsize=10, color=C_BLUE, va="center", ha="center",
+    )
+    # Nuclear panel: Woods-Saxon potential and mean-field wavefunction
+    ax_nuc.text(
+        -6.0, -18, r"$V_\mathrm{WS}(r)$",
+        fontsize=10, color=C_BLACK, va="center", ha="center",
+    )
+    ax_nuc.text(
+        4.5, -10, r"$\psi_{1p}(r)$",
+        fontsize=10, color=C_ORANGE, va="center", ha="center",
+    )
+
     # --- 7.3 Momentum panel labels ---
-    ax_mom.set_ylabel(r"$\rho(p)$  (log)", fontsize=12, labelpad=5)
+    ax_mom.set_ylabel(r"$\rho(k)$  (log)", fontsize=12, labelpad=5)
     ax_mom.set_xlabel(r"Momentum  [fm$^{-1}$]", fontsize=12, labelpad=5)
 
     # --- 7.4 k_F marker ---
