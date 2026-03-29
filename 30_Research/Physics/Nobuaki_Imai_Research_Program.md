@@ -198,7 +198,7 @@ The total GT strengths in the $\beta^-$ and $\beta^+$ directions obey the **mode
 
 $$S_{\beta^-} - S_{\beta^+} = 3(N - Z)$$
 
-where $S_{\beta^\pm} = \sum_f B(GT^\pm; i \to f)$ sums over all final states. This relation follows purely from the commutation algebra of $\boldsymbol{\sigma}\tau$ operators and holds regardless of the nuclear model. It serves as a rigorous benchmark: any measurement of the full GT strength distribution must satisfy this constraint. For neutron-rich nuclei ($N > Z$), the $\beta^-$ channel (neutron $\to$ proton) dominates overwhelmingly.
+where $S_{\beta^-}$ is the total GT strength in the $\beta^-$ direction (n $\to$ p, summing over all final states) and $S_{\beta^+}$ is the total strength in the $\beta^+$ direction (p $\to$ n). This relation follows purely from the commutation algebra of $\boldsymbol{\sigma}\tau$ operators and holds regardless of the nuclear model. It serves as a rigorous benchmark: any measurement of the full GT strength distribution must satisfy this constraint. For neutron-rich nuclei ($N > Z$), the $\beta^-$ channel (neutron $\to$ proton) dominates overwhelmingly.
 
 #### GT Quenching
 
@@ -224,6 +224,8 @@ Modern *ab initio* calculations suggest the "missing" strength is not truly lost
 | Coupling | $g_V = 1$ (CVC-protected) | $g_A = 1.276$ (quenched in-medium) |
 | Sum rule | $S_F^- - S_F^+ = N - Z$ | $S_{GT}^- - S_{GT}^+ = 3(N - Z)$ |
 | Collective mode | [[Isobaric Analog State\|IAS]] — sharp, narrow | [[#4.2 GT Giant Resonance (GTGR)\|GTGR]] — broad resonance |
+
+*In the sum rule row, $\pm$ denotes the $\beta$-decay direction ($\beta^- =$ n$\to$p, $\beta^+ =$ p$\to$n), not the $\tau^\pm$ charge convention.*
 
 ### 4.2 GT Giant Resonance (GTGR)
 
