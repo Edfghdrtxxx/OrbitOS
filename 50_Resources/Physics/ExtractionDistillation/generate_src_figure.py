@@ -62,12 +62,13 @@ OUT_SVG = OUT_DIR / "SRC_momentum_distribution.svg"
 
 # ── Color palette (Tol Bright, colorblind-friendly) ───────────────────────
 C_INDIGO = "#332288"   # NN potential + WS potential curves
-C_TEAL   = "#009988"   # SRC wavefunction + central SRC rho component
-C_RED    = "#CC3311"    # Mean-field wavefunction + rho total
-C_ORANGE = "#EE7733"    # Mean-field rho component + MF connection arrow
-C_BLUE   = "#0077BB"    # Tensor SRC rho component + tensor connection arrow
-C_GRAY   = "#BBBBBB"    # k_F marker
-C_BLACK  = "#000000"    # Axes, labels
+C_ORANGE = "#EE7733"   # Mean-field: wavefunction + connection + rho component
+C_RED    = "#CC3311"   # Total rho(k) curve only
+C_BLUE   = "#0077BB"   # Tensor SRC: wavefunction contribution + arrows + rho
+C_TEAL   = "#009988"   # Central SRC: wavefunction contribution + arrows + rho
+C_GREEN  = "#44AA44"   # Bold emphasis arrow in NN panel (green, matching original)
+C_GRAY   = "#BBBBBB"   # k_F marker
+C_BLACK  = "#000000"   # Axes, labels
 
 # ── Log-scale floor ───────────────────────────────────────────────────────
 LOG_FLOOR = 1e-10
@@ -201,7 +202,7 @@ def create_morigin_figure():
     )
     # r [fm] label at arrow tip
     ax_nn.text(
-        1.08, y_zero_frac_nn, r"$r$ [fm]",
+        1.08, y_zero_frac_nn, r"$r$",
         transform=ax_nn.transAxes, fontsize=12, va="center", ha="left",
     )
 
@@ -220,7 +221,7 @@ def create_morigin_figure():
         arrowprops=dict(arrowstyle="->", color=C_BLACK, lw=1.0),
     )
     ax_nuc.text(
-        1.08, y_zero_frac_nuc, r"$r$ [fm]",
+        1.08, y_zero_frac_nuc, r"$r$",
         transform=ax_nuc.transAxes, fontsize=12, va="center", ha="left",
     )
 
@@ -247,7 +248,7 @@ def create_morigin_figure():
     # --- 6.5 Mean-field wavefunction (nodeless 1p state) ---
     psi_mean = psi_mf(r_nuc, b=1.8)
     psi_mean_scaled = psi_mean / np.max(np.abs(psi_mean)) * 15.0 - 25.0
-    ax_nuc.plot(r_nuc, psi_mean_scaled, color=C_RED, linewidth=2.5, zorder=4)
+    ax_nuc.plot(r_nuc, psi_mean_scaled, color=C_ORANGE, linewidth=2.5, zorder=4)
 
     # --- 6.6 Momentum distribution ---
     k = np.linspace(0.01, 4.5, 500)
@@ -297,10 +298,9 @@ def create_morigin_figure():
     # ==================================================================
 
     # --- 7.1 Panel labels ---
-    label_props = dict(fontsize=14, fontweight="bold", va="top", ha="left")
-    ax_nn.text(0.02, 0.98, "(a)", transform=ax_nn.transAxes, **label_props)
-    ax_nuc.text(0.02, 0.98, "(b)", transform=ax_nuc.transAxes, **label_props)
-    ax_mom.text(0.02, 0.98, "(c)", transform=ax_mom.transAxes, **label_props)
+    # Removed formal (a)(b)(c) labels to match original figure style.
+    # Descriptive text labels ("NN interaction", "nuclear potential") serve
+    # as panel identifiers instead (see 7.2 below).
 
     # --- 7.2 Physics labels ---
     # PHYSICS AUDIT FIX: "NN interaction" not "n-n interaction"
@@ -324,8 +324,8 @@ def create_morigin_figure():
     )
 
     # --- 7.3 Momentum panel labels ---
-    ax_mom.set_ylabel(r"$\rho(k)$  [arb. units]", fontsize=12, labelpad=5)
-    ax_mom.set_xlabel(r"Momentum  $k$  [fm$^{-1}$]", fontsize=12, labelpad=5)
+    ax_mom.set_ylabel(r"$\rho(p)$  (log)", fontsize=12, labelpad=5)
+    ax_mom.set_xlabel(r"Momentum  [fm$^{-1}$]", fontsize=12, labelpad=5)
 
     # --- 7.4 k_F marker ---
     ax_mom.axvline(x=k_F, color=C_GRAY, linewidth=1.2, linestyle="--", zorder=2)
@@ -406,18 +406,19 @@ def create_morigin_figure():
 
     # --- 8.2 Conceptual emphasis arrows ---
 
-    # Two arrows in ax_nn: correlated nucleon pair pointing at repulsive core
+    # Two BIG, BOLD arrows in ax_nn: correlated nucleon pair pointing at
+    # repulsive core -- matching the original's prominent green & blue arrows
     arrow_pair_1 = FancyArrowPatch(
-        posA=(0.8, 200), posB=(0.8, 80),
-        arrowstyle="->,head_length=6,head_width=4",
-        color=C_TEAL, linewidth=2.5, alpha=0.5, zorder=10,
+        posA=(0.7, 250), posB=(0.7, 60),
+        arrowstyle="->,head_length=14,head_width=10",
+        color=C_TEAL, linewidth=5.0, alpha=0.85, zorder=10,
     )
     ax_nn.add_patch(arrow_pair_1)
 
     arrow_pair_2 = FancyArrowPatch(
-        posA=(1.2, 200), posB=(1.2, 80),
-        arrowstyle="->,head_length=6,head_width=4",
-        color=C_BLUE, linewidth=2.5, alpha=0.5, zorder=10,
+        posA=(1.3, 220), posB=(1.3, 20),
+        arrowstyle="->,head_length=14,head_width=10",
+        color=C_BLUE, linewidth=5.0, alpha=0.85, zorder=10,
     )
     ax_nn.add_patch(arrow_pair_2)
 
