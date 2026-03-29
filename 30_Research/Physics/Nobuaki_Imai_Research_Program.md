@@ -153,6 +153,24 @@ This combination — an energy-degrading RI beamline feeding a high-resolution s
 
 The **[[Gamow-Teller Transition|Gamow-Teller (GT) transition]]** is mediated by the axial-vector part of the [[Weak Interaction|weak interaction]]. The transition operator is:
 
+> [!Feynman]- GT Transitions, Weak Interaction & Axial-Vector
+> **Q:** What is the Gamow-Teller Transitions, weak interaction and axial-vector part?
+> **Language note:** More natural phrasing: *"What are Gamow-Teller transitions, the weak interaction, and the axial-vector part?"* — "Transitions" is plural, so use "What are" (not "What is"); "the weak interaction" needs the definite article "the"; don't capitalize "transitions" mid-sentence.
+>
+> Let's build this up in three layers.
+>
+> **Layer 1 — The weak interaction.** Nature has four fundamental forces. You know gravity and electromagnetism. The **weak interaction** (or "weak force") is a third one — it's the only force that can change one type of quark into another, which means it can turn a neutron into a proton or vice versa. This is exactly what happens in radioactive beta decay: a neutron inside a nucleus emits an electron and becomes a proton. Without the weak force, the Sun couldn't shine and most radioactive decay wouldn't happen.
+>
+> **Layer 2 — Vector vs. axial-vector.** When physicists write the math of the weak interaction, they find it has two "channels" — two different ways it couples to a particle. Think of them as two separate knobs:
+> - The **vector part** acts on a particle's motion (its momentum direction) but does not care about its spin. This part drives **Fermi transitions** ($\Delta J = 0$, no spin change).
+> - The **axial-vector part** reaches in and flips the particle's **spin**. "Axial" means it behaves like a rotation axis — it transforms differently from an ordinary arrow under mirror reflection. This part drives **Gamow-Teller transitions**.
+>
+> Here's what trips people up: "axial-vector" sounds intimidating, but all it really means is "the piece of the weak force that can flip a nucleon's spin direction." It's called "axial" because spin behaves like an axial vector — if you look at a spinning top in a mirror, the spin appears to reverse, unlike an ordinary arrow (say, pointing left) which stays the same in the mirror.
+>
+> **Layer 3 — Gamow-Teller transitions.** Now combine both ideas. A GT transition is a nuclear process where the weak interaction — specifically its axial-vector channel — simultaneously **flips a nucleon's spin** and **flips its isospin** (neutron $\leftrightarrow$ proton). That's why the operator $\boldsymbol{\sigma}\tau^{\pm}$ has both $\boldsymbol{\sigma}$ (spin operator) and $\tau^{\pm}$ (isospin-flip operator). Compare this to a Fermi transition, which only flips the isospin with no spin change.
+>
+> In short: the weak force has a spin-flipping channel (axial-vector) and a non-spin-flipping channel (vector). Gamow-Teller transitions are the ones that use the spin-flipping channel.
+
 $$\hat{O}_{GT^\pm} = g_A \sum_k \boldsymbol{\sigma}_k \tau^\pm_k$$
 
 where $\boldsymbol{\sigma}$ is the spin operator and $\tau^+$ ($\tau^-$) converts a neutron into a proton (proton into a neutron), corresponding to $\Delta T_z = -1$ ($+1$) respectively. The selection rules are:
@@ -222,7 +240,7 @@ Single CE reactions probe $\Delta T_z = \pm 1$ spin-isospin excitations:
 | $({}^3\text{He}, t)$ | $T_z - 1$ | Light-ion alternative |
 | $(t, {}^3\text{He})$ | $T_z + 1$ | Light-ion alternative |
 
-At intermediate energies ($> 100$ MeV/u), the nucleon-nucleon interaction is dominated by **one-pion exchange**, which is predominantly $\boldsymbol{\sigma} \cdot \boldsymbol{\tau}$ in character. This ensures that the **forward-angle ($0°$) cross section** is proportional to the reduced GT transition strength:
+At intermediate energies ($> 100$ MeV/u), the nucleon-nucleon interaction is dominated by **one-pion exchange**, which is predominantly $\boldsymbol{\sigma} \cdot \boldsymbol{\tau}$ in character. This ensures that the **forward-angle ($0°$) cross section** is proportional to the reduced GT transition strength: (see `Feynman: GT Transitions, Weak Interaction & Axial-Vector`)
 
 $$\left(\frac{d\sigma}{d\Omega}\right)_{0°} \propto B(GT)$$
 
@@ -249,7 +267,7 @@ The initial and final nuclear states in a DCX reaction are **identical** to thos
 
 $$(A, Z) \to (A, Z \pm 2)$$
 
-While the transition operators are not identical — DCX proceeds via the [[Strong Interaction|strong interaction]] while $\beta\beta$ proceeds via the [[Weak Interaction|weak interaction]] — they probe **formally similar nuclear structure** (two-nucleon correlations, pairing, short-range correlations). This makes DCX a powerful tool for constraining $0\nu\beta\beta$ nuclear matrix elements.
+While the transition operators are not identical — DCX proceeds via the [[Strong Interaction|strong interaction]] while $\beta\beta$ proceeds via the [[Weak Interaction|weak interaction]] — they probe **formally similar nuclear structure** (two-nucleon correlations, pairing, short-range correlations). (see `Feynman: GT Transitions, Weak Interaction & Axial-Vector`) This makes DCX a powerful tool for constraining $0\nu\beta\beta$ nuclear matrix elements.
 
 ### 5.4 NUMEN Project (INFN-LNS, Catania)
 
