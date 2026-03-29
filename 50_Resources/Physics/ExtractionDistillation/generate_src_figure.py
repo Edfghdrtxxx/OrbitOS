@@ -246,7 +246,7 @@ def create_morigin_figure():
                    color=C_BLACK)
 
     # ax_nn: V-axis ticks (along x=0)
-    for v_val, v_label in [(-100, r"$-$100"), (100, "100"), (200, "200")]:
+    for v_val, v_label in [(-50, r"$-$50"), (100, "100"), (200, "200")]:
         ax_nn.plot([-0.1, 0.1], [v_val, v_val], color=C_BLACK, lw=0.8, zorder=2)
         ax_nn.text(-0.18, v_val, v_label, fontsize=7, ha="right", va="center",
                    color=C_BLACK)
