@@ -59,4 +59,4 @@ Three findings were tested against my reasoning; none flipped the conclusion:
 
 1. Tell IMP advisor: proceeding with Imai-san
 2. Request one-on-one online meeting with Imai (20-30 min)
-3. Ask the three pre-meeting questions — see [[Questions_and_Verifiable_Source#Pre-Meeting Questions for Imai-san (One-on-One)]]
+3. Ask the three pre-meeting questions — see [[Questions_and_Verifiable_Source#Open Questions for Professor Meeting]]
