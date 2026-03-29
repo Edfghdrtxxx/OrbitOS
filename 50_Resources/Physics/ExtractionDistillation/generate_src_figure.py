@@ -258,9 +258,9 @@ def create_morigin_figure():
                     color=C_BLACK)
 
     # ax_nuc: V-axis ticks (along x=0)
-    for v_val, v_label in [(-50, r"$-$50"), (-25, r"$-$25")]:
+    for v_val, v_label, v_offset in [(-50, r"$-$50", -3), (-25, r"$-$25", 0)]:
         ax_nuc.plot([-0.3, 0.3], [v_val, v_val], color=C_BLACK, lw=0.8, zorder=2)
-        ax_nuc.text(-0.5, v_val, v_label, fontsize=7, ha="right", va="center",
+        ax_nuc.text(-0.5, v_val + v_offset, v_label, fontsize=7, ha="right", va="center",
                     color=C_BLACK)
 
     # ==================================================================
@@ -271,7 +271,7 @@ def create_morigin_figure():
     r = np.linspace(0.01, 5.0, 500)
     v_nn = V_NN(r)
     v_nn_clipped = np.clip(v_nn, -120, 280)
-    ax_nn.plot(r, v_nn_clipped, color=C_BLACK, linewidth=1.2, zorder=3)
+    ax_nn.plot(r, v_nn_clipped, color=C_GREEN, linewidth=1.2, zorder=3)
 
     # --- 6.3 SRC wavefunction ---
     psi_src = psi_SRC(r)
@@ -365,7 +365,7 @@ def create_morigin_figure():
     # NN panel: potential and SRC wavefunction
     ax_nn.text(
         2.5, -80, r"$V_{NN}(r)$",
-        fontsize=10, color=C_BLACK, va="center", ha="center",
+        fontsize=10, color=C_GREEN, va="center", ha="center",
     )
     ax_nn.text(
         3.5, 60, r"$\psi_\mathrm{SRC}(r)$",
@@ -433,8 +433,8 @@ def create_morigin_figure():
     fig.add_artist(arrow_mf)
 
     # Arrow 2: SRC wavefunction (ax_nn) -> tensor SRC high-k (ax_mom)
-    src_blue_src_x = 4.2
-    src_blue_src_y = curve_value_at(r, psi_src_scaled, src_blue_src_x)
+    src_blue_src_x = 2.0
+    src_blue_src_y = 95.0
     src_blue_tgt_x = 1.6
     src_blue_tgt_y = curve_value_at(k, rho_tensor, src_blue_tgt_x)
 
@@ -448,8 +448,8 @@ def create_morigin_figure():
     fig.add_artist(arrow_src_blue)
 
     # Arrow 3: SRC wavefunction (ax_nn) -> central SRC region (ax_mom)
-    src_central_src_x = 3.5
-    src_central_src_y = curve_value_at(r, psi_src_scaled, src_central_src_x)
+    src_central_src_x = 1.0
+    src_central_src_y = 180.0
     src_central_tgt_x = 2.9
     src_central_tgt_y = curve_value_at(k, rho_scalar, src_central_tgt_x)
 
@@ -467,14 +467,14 @@ def create_morigin_figure():
     # Two BIG, BOLD arrows in ax_nn: correlated nucleon pair pointing at
     # repulsive core -- matching the original's prominent green & blue arrows
     arrow_pair_1 = FancyArrowPatch(
-        posA=(0.7, 250), posB=(0.7, 60),
+        posA=(1.5, 260), posB=(0.5, 100),
         arrowstyle="->,head_length=8,head_width=6",
         color=C_GREEN, linewidth=2.5, alpha=0.85, zorder=10,
     )
     ax_nn.add_patch(arrow_pair_1)
 
     arrow_pair_2 = FancyArrowPatch(
-        posA=(1.3, 220), posB=(1.3, 20),
+        posA=(2.5, 180), posB=(1.5, 10),
         arrowstyle="->,head_length=8,head_width=6",
         color=C_BLUE, linewidth=2.5, alpha=0.85, zorder=10,
     )
