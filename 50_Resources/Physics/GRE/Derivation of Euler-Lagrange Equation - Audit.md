@@ -375,7 +375,7 @@ Klein-Gordon equation with a **source term** $g_s\bar\psi\psi$ — the scalar de
 **Vary w.r.t. $\omega_\nu$** (vector meson equation):
 
 - $\frac{\partial\mathcal{L}}{\partial\omega_\nu} = -g_v\bar\psi\gamma^\nu\psi + m_v^2\omega^\nu$
-- $\partial_\mu\frac{\partial\mathcal{L}}{\partial(\partial_\mu\omega_\nu)} = \partial_\mu\Omega^{\mu\nu}$
+- $\partial_\mu\frac{\partial\mathcal{L}}{\partial(\partial_\mu\omega_\nu)} = -\partial_\mu\Omega^{\mu\nu}$
 
 $$\boxed{\partial_\mu\Omega^{\mu\nu} + m_v^2\omega^\nu = g_v\bar\psi\gamma^\nu\psi}$$
 

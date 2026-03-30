@@ -18,7 +18,7 @@ review_interval: 0
 
 ## Definition
 
-A conservative force is a force for which the [[work]] done in moving a particle between two points is independent of the path taken. Equivalently, the total work done around any closed loop is zero: $\oint \mathbf{F} \cdot d\mathbf{r} = 0$. A conservative force can always be expressed as the negative gradient of a scalar [[Potential Energy Surface|potential energy]] function: $\mathbf{F} = -\nabla U$.
+A conservative force is a force for which the work done in moving a particle between two points is independent of the path taken. Equivalently, the total work done around any closed loop is zero: $\oint \mathbf{F} \cdot d\mathbf{r} = 0$. A conservative force can always be expressed as the negative gradient of a scalar [[Potential Energy|potential energy]] function: $\mathbf{F} = -\nabla U$.
 
 ## Key Points
 
@@ -36,12 +36,12 @@ A conservative force is a force for which the [[work]] done in moving a particle
 ## Related Concepts
 
 - [[Non-conservative Force]] — the complementary class of forces where path independence fails
+- [[Potential Energy]] — scalar function whose negative gradient yields the force
 - [[Potential Energy Surface]]
 - [[Canonical Transformation]]
 - [[Hamilton-Jacobi Equation]]
 - [[Euler-Lagrange-Equation]]
 - [[Angular Momentum]] — conserved quantity in central conservative force fields
-- [[Lorentz Force]]
 
 ## References
 

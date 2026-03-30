@@ -26,7 +26,7 @@ A non-conservative force is a force for which the work done on a particle depend
 
 ## Examples
 
-- **Kinetic friction:** $\mathbf{F}_f = -\mu_k N \hat{v}$, always opposes motion — the classic dissipative force relevant to [[Stopping Power]] and [[Linear Energy Transfer]] in particle physics
+- **Kinetic friction:** $\mathbf{F}_f = -\mu_k N \hat{v}$, always opposes motion — the classic dissipative force
 - **Air resistance / viscous drag:** $\mathbf{F} \propto -v$ (low speed) or $\mathbf{F} \propto -v^2$ (high speed)
 - **Tension in a string with internal losses** and other contact forces with irreversible deformation
 
@@ -38,6 +38,7 @@ A non-conservative force is a force for which the work done on a particle depend
 - [[Linear Energy Transfer]]
 - [[Potential Energy Surface]] — exists only for [[Conservative Force|conservative forces]]
 - [[Euler-Lagrange-Equation]] — generalized to include non-conservative forces via the Rayleigh dissipation function
+- [[Lorentz Force]] — magnetic component $q\mathbf{v}\times\mathbf{B}$ does zero work (always perpendicular to velocity), making it neither conservative nor dissipative
 
 ## References
 
