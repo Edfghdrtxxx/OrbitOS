@@ -28,6 +28,22 @@ where $T$ is kinetic energy and $V$ is potential energy.
 
 Start from Newton's second law for a conservative force $F = -\frac{\partial V}{\partial q}$:
 
+> [!Feynman]- Conservative vs Non-Conservative Forces
+> **Q:** What is the conservative force and what is another kind?
+> **Language note:** More natural phrasing: *"What is a conservative force, and what is the other kind?"* — use the article "a" before "conservative force"; "another kind" → "the other kind" since there are exactly two categories.
+>
+> Imagine you carry a ball up a hill. You can take a straight path, a zigzag path, or a spiral path. If the ball ends up at the same height, gravity has done the same amount of work on it regardless of which path you took. That is what makes gravity a **conservative force**: the work it does depends only on where you start and where you end — not on the path between them.
+>
+> The key consequence: you can define a **potential energy** $V(q)$ for a conservative force. The force is just the slope of that energy landscape: $F = -\partial V / \partial q$. The minus sign means the force pushes you "downhill" on the energy surface.
+>
+> Common conservative forces: gravity, electrostatic (Coulomb) force, spring (Hooke's law) force.
+>
+> The other kind is a **non-conservative force** (also called a **dissipative force**). Friction is the classic example. If you slide a box from A to B along a short path, friction does less work than if you take a long detour — the work *depends on the path*. Because of this, you cannot define a potential energy $V$ for friction. Energy is lost to heat, and you cannot get it back by reversing the path.
+>
+> Common non-conservative forces: friction, air resistance (drag), viscous damping.
+>
+> Here is what trips people up: this entire Euler-Lagrange derivation assumes $L = T - V$, which **only works for conservative forces**. If non-conservative forces are present, you need a modified form (the Euler-Lagrange equation with a generalized force term $Q_i$ on the right-hand side) because there is no $V$ to put into the Lagrangian.
+
 $$m\ddot{q} = -\frac{\partial V}{\partial q}$$
 
 Now check: if we define $L = T - V = \frac{1}{2}m\dot{q}^2 - V(q)$ and compute the Euler-Lagrange equation (derived below), we get:
@@ -36,7 +52,7 @@ $$\frac{\partial L}{\partial q} - \frac{d}{dt}\frac{\partial L}{\partial \dot{q}
 
 which **reproduces Newton's second law exactly**. The combination $T + V$ does not produce the correct sign. So $L = T - V$ is not an arbitrary choice — it is the unique combination (up to total time derivatives) that encodes Newtonian dynamics.
 
-More generally, $L(q, \dot{q}, t)$ is any scalar function of generalized coordinates, their velocities, and time that generates the correct equations of motion. For non-mechanical systems (fields, relativity), $L$ is constructed from symmetry principles rather than $T - V$.
+More generally, $L(q, \dot{q}, t)$ is any scalar function of generalized coordinates, their velocities, and time that generates the correct equations of motion. For non-mechanical systems (fields, relativity), $L$ is constructed from symmetry principles rather than $T - V$. (see `Feynman: Conservative vs Non-Conservative Forces`)
 
 ### Step 1 — Why Is the Action $S = \int L\,dt$?
 
