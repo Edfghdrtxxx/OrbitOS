@@ -14,7 +14,7 @@ review_interval: 0
 
 ## Definition
 
-A canonical transformation is a change of coordinates $(q, p) \to (Q, P)$ in [[Phase Space]] that preserves the form of [[Hamiltonian Mechanics|Hamilton's equations of motion]]. Equivalently, it is a transformation that preserves the [[Symplectic Structure]] of phase space — i.e., the [[Poisson Bracket|Poisson brackets]] satisfy $\{Q_i, P_j\} = \delta_{ij}$.
+A canonical transformation is a change of coordinates $(q, p) \to (Q, P)$ in [[Phase Space]] that preserves the form of [[Hamiltonian Mechanics|Hamilton's equations of motion]]. Equivalently, it is a transformation that preserves the [[Symplectic Structure]] of phase space — i.e., the [[Poisson Bracket|Poisson brackets]] satisfy $\{Q_i, P_j\} = \delta_{ij}$, $\{Q_i, Q_j\} = 0$, and $\{P_i, P_j\} = 0$.
 
 ## Key Points
 
@@ -45,4 +45,4 @@ A canonical transformation is a change of coordinates $(q, p) \to (Q, P)$ in [[P
 ## References
 
 - H. Goldstein, C. Poole, J. Safko, *Classical Mechanics*, 3rd ed., Addison-Wesley, 2002 — Ch. 9 "Canonical Transformations"
-- L.D. Landau, E.M. Lifshitz, *Mechanics*, 3rd ed., Butterworth-Heinemann, 1976 — §45 "Canonical transformations"
+- L.D. Landau, E.M. Lifshitz, *Mechanics*, 3rd ed., Pergamon Press, 1976 — §45 "Canonical transformations"
