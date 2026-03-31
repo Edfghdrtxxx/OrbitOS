@@ -34,60 +34,16 @@ Data collection began in **January 2010**. The collaboration comprises approxima
 
 ## Key Points
 
-### Beam Production
-
-- Protons are accelerated to **30 GeV** by J-PARC's Main Ring [[Synchrotron]].
-- The proton beam strikes a graphite target, producing [[Pi Meson|pions]] and kaons that decay in a 96 m decay volume into $\nu_\mu$ (or $\bar{\nu}_\mu$ in antineutrino mode).
-- The beam is directed **2.5 degrees off-axis** from Super-Kamiokande. This off-axis technique narrows the neutrino energy spectrum, peaking at $\sim 600\;\text{MeV}$, which is tuned to the oscillation maximum at the 295 km baseline:
-
-$$L/E \approx 295\;\text{km} / 0.6\;\text{GeV} \approx 500\;\text{km/GeV}$$
-
-### Near Detector Complex (ND280)
-
-The ND280 detector sits **280 m** downstream from the target at J-PARC and characterizes the unoscillated beam. It contains:
-
-- **Pi-Zero Detector (P0D):** Measures neutral-current $\pi^0$ production.
-- **Two Fine-Grained Detectors (FGDs):** Plastic scintillator bars serving as neutrino interaction targets.
-- **Three [[Time Projection Chamber|Time Projection Chambers]] (TPCs):** The core tracking detectors, using [[Micromegas]] readout modules. They measure particle momentum (via curvature in a 0.2 T magnetic field), charge sign, and [[Particle Identification|particle identification]] through ionisation energy loss ($dE/dx$). Each TPC has $\sim 9000$ Micromegas pads per module.
-- **Electromagnetic Calorimeter (ECal):** Surrounds the inner detectors; identifies photons and measures electromagnetic showers.
-- **Side Muon Range Detector (SMRD):** Scintillator slabs in the magnet yoke gaps detect escaping muons.
-
-### Far Detector: Super-Kamiokande
-
-- A 50,000-ton (22,500-ton fiducial) water Cherenkov detector located 1,000 m underground in the Mozumi mine.
-- Lined with $\sim 11,000$ 20-inch [[Photomultiplier Tube|photomultiplier tubes]].
-- Distinguishes $\nu_e$ from $\nu_\mu$ interactions via the Cherenkov ring pattern: muon rings are sharp-edged while electron rings are fuzzy (electromagnetic showering).
-
-### Key Physics Results
-
-| Measurement | Result |
-|---|---|
-| $\nu_e$ appearance | First observation of $\nu_e$ appearance in a $\nu_\mu$ beam (2013), confirming $\theta_{13} \neq 0$ |
-| $\theta_{23}$ | Most precise measurement; consistent with maximal mixing ($\theta_{23} \approx 45°$), slight preference for upper octant |
-| $\delta_{CP}$ | First experiment to provide significant constraints on $\delta_{CP}$; data prefer $\delta_{CP} \approx -\pi/2$, excluding CP conservation at $> 2\sigma$ |
-| Mass ordering | Slight preference for normal ordering ($m_1 < m_2 < m_3$) when combined with reactor data |
-
-### Oscillation Physics
-
-The $\nu_\mu \to \nu_e$ appearance probability (to leading order in vacuum) is:
-
-$$P(\nu_\mu \to \nu_e) \approx \sin^2\theta_{23}\;\sin^2 2\theta_{13}\;\sin^2\!\left(\frac{\Delta m^2_{31}\,L}{4E}\right)$$
-
-The CP asymmetry is measured by comparing $\nu_\mu \to \nu_e$ and $\bar{\nu}_\mu \to \bar{\nu}_e$ rates. A non-zero $\delta_{CP}$ introduces a difference:
-
-$$A_{CP} = \frac{P(\nu_\mu \to \nu_e) - P(\bar{\nu}_\mu \to \bar{\nu}_e)}{P(\nu_\mu \to \nu_e) + P(\bar{\nu}_\mu \to \bar{\nu}_e)}$$
-
-### T2K-II and Upgrades
-
-- **T2K-II (2023--2026):** Beam power ramped toward **1.3 MW** (from initial $\sim 500\;\text{kW}$).
-- **ND280 Upgrade:** Replaces the P0D with the **SuperFGD** (a 3D-segmented scintillator cube detector), two horizontal-drift Ar TPCs (**HATPCs**), and a **Time-of-Flight** system. This improves acceptance and reduces systematic uncertainties.
-- **Hyper-Kamiokande:** The next-generation far detector ($\sim 260,000\;\text{ton}$), planned to begin operation around 2027, will dramatically increase statistics for CP violation measurement.
+- **Off-axis beam**: 30 GeV protons from J-PARC strike a graphite target; the resulting $\nu_\mu$ beam is directed **2.5° off-axis** from Super-Kamiokande, narrowing the energy spectrum to peak at $\sim 600\;\text{MeV}$ — tuned to the oscillation maximum at $L/E \approx 500\;\text{km/GeV}$.
+- **ND280 near detector**: Located 280 m downstream, it characterises the unoscillated beam using three [[Time Projection Chamber|TPCs]] with [[Micromegas]] readout (1,728 pads per module, 48$\times$36 grid), two Fine-Grained Detectors (FGDs), and surrounding calorimeters, all in a 0.2 T magnetic field.
+- **Super-Kamiokande far detector**: A 50,000-ton (22,500-ton fiducial) water Cherenkov detector 1,000 m underground, lined with $\sim 11,000$ 20-inch [[Photomultiplier Tube|PMTs]]. Distinguishes $\nu_e$ from $\nu_\mu$ via Cherenkov ring topology.
+- **Key results**: First observation of $\nu_e$ appearance in a $\nu_\mu$ beam (2014), confirming $\theta_{13} \neq 0$; most precise $\theta_{23}$ measurement (consistent with maximal mixing); first significant constraints on $\delta_{CP}$, preferring $\approx -\pi/2$ and excluding CP conservation at $> 2\sigma$.
+- **Oscillation formula**: The $\nu_\mu \to \nu_e$ appearance probability (leading order): $P(\nu_\mu \to \nu_e) \approx \sin^2\theta_{23}\;\sin^2 2\theta_{13}\;\sin^2(\Delta m^2_{31}\,L / 4E)$. CP violation is probed by comparing $\nu$ and $\bar{\nu}$ rates.
 
 ## Examples
 
-- T2K's Micromegas TPCs are a prominent real-world application of [[Micromegas]] technology in a large-scale particle physics experiment, reading out $\sim 72,000$ channels across the three TPCs.
-- The off-axis technique pioneered by T2K has become a standard approach in long-baseline neutrino experiments (also used by NOvA).
-- T2K's measurement of $\theta_{13}$ was among the first indications that this parameter is non-zero, later confirmed precisely by reactor experiments (Daya Bay, RENO, Double Chooz).
+- T2K's Micromegas TPCs are a prominent real-world application of [[Micromegas]] technology in a large-scale particle physics experiment, reading out ~10,368 channels across the three TPCs (3 TPCs $\times$ 2 modules $\times$ 1,728 pads).
+- The off-axis beam technique pioneered by T2K has become a standard approach in long-baseline neutrino experiments (also used by NOvA).
 
 ## Related Concepts
 

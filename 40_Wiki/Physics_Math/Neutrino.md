@@ -18,7 +18,7 @@ review_interval: 0
 
 ## Definition
 
-A **neutrino** ($\nu$) is a fundamental spin-$\frac{1}{2}$ [[fermion]] belonging to the [[lepton]] family of the Standard Model. Neutrinos carry no [[Electric Field|electric charge]] and interact only through the **weak nuclear force** and **gravity**, making them extraordinarily difficult to detect. They are the second most abundant particle in the universe after photons.
+A **neutrino** ($\nu$) is a fundamental spin-$\frac{1}{2}$ [[fermion]] belonging to the [[lepton]] family of the Standard Model. Neutrinos carry no electric charge and interact only through the **weak nuclear force** and **gravity**, making them extraordinarily difficult to detect. They are the second most abundant particle in the universe after photons.
 
 There are three known **flavors**, each paired with a charged lepton:
 
@@ -67,38 +67,16 @@ where $\Delta m^2$ is the squared-mass difference, $L$ is the propagation distan
 - If neutrinos are **Majorana** particles, $\nu = \bar{\nu}$ and lepton number is violated by 2 units.
 - The experimental signature is [[Neutrinoless Double-Beta Decay]] ($0\nu\beta\beta$): observation would prove the Majorana nature and constrain the effective Majorana mass $\langle m_{\beta\beta} \rangle$.
 
-### Sources of Neutrinos
+### Sources and Detection
 
-- **Solar:** The pp chain and CNO cycle in the Sun produce $\nu_e$ (the solar neutrino problem, resolved by oscillations).
-- **Atmospheric:** Cosmic ray interactions in Earth's atmosphere produce $\nu_\mu$ and $\nu_e$.
-- **Reactor:** Nuclear fission reactors emit $\bar{\nu}_e$ copiously.
-- **Supernova:** Core-collapse supernovae release $\sim 99\%$ of their gravitational binding energy as neutrinos of all flavors ($\sim 10^{58}$ neutrinos in $\sim 10$ s). SN 1987A provided the first extrasolar neutrino detection.
-- **Astrophysical / cosmological:** The cosmic neutrino background (C$\nu$B) at $T \approx 1.95 \; \text{K}$ is a relic from the Big Bang, analogous to the CMB.
-- **Accelerator:** Beams of $\nu_\mu$ or $\bar{\nu}_\mu$ produced at facilities like Fermilab and J-PARC.
-
-### Detection Methods
-
-Because neutrinos interact only weakly, enormous detectors are required:
-- **Cherenkov detectors:** Super-Kamiokande, IceCube -- detect Cherenkov light from charged leptons produced in neutrino interactions.
-- **Scintillation detectors:** [[Scintillation Detector|Liquid scintillator]] detectors (e.g., Borexino, JUNO) for low-energy neutrinos.
-- **Radiochemical:** Homestake (chlorine), GALLEX/SAGE (gallium) -- pioneering solar neutrino experiments.
-- **Liquid argon TPCs:** [[Time Projection Chamber|TPCs]] filled with liquid argon (DUNE, MicroBooNE) provide detailed event reconstruction.
-
-### Role in Nuclear Reactions
-
-- In beta decay ($\beta^-$): $n \to p + e^- + \bar{\nu}_e$
-- In beta-plus decay ($\beta^+$): $p \to n + e^+ + \nu_e$
-- In electron capture: $p + e^- \to n + \nu_e$
-- Neutrinos carry away energy and momentum, explaining the continuous [[Radioactive Decay|beta-decay]] energy spectrum (historically, this "missing energy" led Pauli to postulate the neutrino in 1930).
-- Neutrinos drive the [[r-process Nucleosynthesis|r-process]] and [[p-process]] in explosive nucleosynthesis environments.
+- **Key sources:** solar ($\nu_e$ from pp chain / CNO cycle), atmospheric (cosmic ray showers), reactor ($\bar{\nu}_e$), supernova (all flavors; SN 1987A was the first extrasolar detection), and accelerator beams ($\nu_\mu / \bar{\nu}_\mu$ at Fermilab, J-PARC)
+- **Detection methods** exploit the rare weak interactions in massive targets: water Cherenkov detectors (Super-Kamiokande, IceCube), [[Scintillation Detector|liquid scintillator]] detectors (Borexino, JUNO), radiochemical experiments (Homestake, GALLEX/SAGE), and liquid argon [[Time Projection Chamber|TPCs]] (DUNE, MicroBooNE)
 
 ## Examples
 
 1. **Solar neutrino problem:** Ray Davis's Homestake experiment (1968) detected only $\sim\frac{1}{3}$ of the predicted solar $\nu_e$ flux. This deficit was resolved by the SNO experiment (2001), which showed that $\nu_e$ oscillate into $\nu_\mu$ and $\nu_\tau$ en route to Earth (MSW matter effect in the Sun).
 
 2. **Atmospheric neutrino anomaly:** Super-Kamiokande (1998) observed a zenith-angle-dependent deficit of $\nu_\mu$ from cosmic ray showers, providing the first definitive evidence of neutrino oscillations. This earned the 2015 Nobel Prize in Physics (Kajita and McDonald).
-
-3. **Reactor neutrino disappearance:** The Daya Bay experiment (2012) measured $\theta_{13} \neq 0$ by observing $\bar{\nu}_e$ disappearance at short baselines, completing the measurement of all three PMNS mixing angles.
 
 ## Related Concepts
 

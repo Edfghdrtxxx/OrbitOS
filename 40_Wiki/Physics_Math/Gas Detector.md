@@ -8,8 +8,6 @@ review_interval: 0
 ---
 # Gas Detector
 
-> [!important] All math expressions, equations, and formulas **must** use LaTeX notation (`$...$` for inline, `$$...$$` for display blocks).
-
 ## Schematics
 
 ![[Gas_Detector_voltage_regions.gif]]
@@ -23,14 +21,14 @@ review_interval: 0
 
 ## Definition
 
-A **gas detector** (gaseous ionization detector) is a class of [[Ionizing Radiation]] detector that measures charged particles or photons by collecting the [[Ionisation Chamber|ionization]] produced when radiation passes through a gas-filled volume under an applied [[Electric Field]]. The number of collected electron-ion pairs — and therefore the output signal — depends on the applied voltage, the gas composition, and the detector geometry, giving rise to distinct operating regimes (ionization, proportional, Geiger-Mueller).
+A **gas detector** (gaseous ionization detector) is a class of [[Ionizing Radiation]] detector that measures charged particles or photons by collecting the ionization produced when radiation passes through a gas-filled volume under an applied [[Electric Field]]. The number of collected electron-ion pairs — and therefore the output signal — depends on the applied voltage, the gas composition, and the detector geometry, giving rise to distinct operating regimes (ionization, proportional, Geiger-Mueller).
 
 ## Key Points
 
 - **Operating principle:** Incident radiation ionizes gas molecules, producing primary electron-ion pairs. The applied [[Electric Field]] drifts electrons toward the anode and positive ions toward the cathode, generating a measurable current or pulse whose amplitude is proportional to the deposited energy (in the proportional regime) or saturated (in the Geiger-Mueller regime).
-- **Voltage regions:** As the anode voltage increases, the detector traverses the recombination region, the [[Ionisation Chamber|ionization chamber]] plateau, the proportional region (with gas gain $M \sim 10^{3}$–$10^{6}$), the limited-proportional region, and finally the [[Geiger Mode|Geiger-Mueller]] region where every event produces a full discharge regardless of primary ionization.
+- **Voltage regions:** As the anode voltage increases, the detector traverses the recombination region, the [[Ionisation Chamber|ionization chamber]] plateau, the proportional region (with gas gain up to ~$10^{5}$), the limited-proportional region, and finally the [[Geiger Mode|Geiger-Mueller]] region where every event produces a full discharge regardless of primary ionization.
 - **Gas choices:** Common fill gases include noble gases (Ar, He, Xe) mixed with organic or polyatomic quench gases (e.g., $\text{CO}_2$, $\text{CH}_4$, isobutane). The quench gas absorbs UV photons and prevents spurious secondary discharges. Gas mixture composition directly affects [[Drift Velocity]], [[Diffusion]], and gain stability.
-- **Signal formation:** The measurable signal on the electrodes arises primarily from the motion of positive ions (Shockley-Ramo theorem), not from electron collection alone, because ions traverse a much larger potential difference over a longer time. A [[Preamplifier]] is typically required for pulse shaping.
+- **Signal formation:** By the Shockley-Ramo theorem the measurable signal depends on the motion of charge carriers through the weighting field. In cylindrical wire chambers the signal arises predominantly from positive-ion drift, because ions traverse most of the potential difference; in planar geometries (e.g., parallel-plate ionization chambers) both electrons and ions contribute comparably. A [[Preamplifier]] is typically required for pulse shaping.
 - **Applications:** Gas detectors are used in [[Gamma Spectroscopy]], radiation dosimetry ([[Dosimetry]]), particle tracking in [[Time Projection Chamber]] systems, high-energy physics experiments, and radiation protection surveys ([[Radiation Controlled Area]]).
 
 ## Examples

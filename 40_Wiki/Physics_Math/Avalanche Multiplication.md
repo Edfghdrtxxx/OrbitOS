@@ -25,50 +25,16 @@ Avalanche multiplication is the process by which a free electron drifting throug
 
 ## Key Points
 
-### First Townsend Coefficient $\alpha$
-
-- The **first Townsend ionization coefficient** $\alpha$ (units: $\text{cm}^{-1}$) gives the number of ionizing collisions per unit path length traveled by an electron along the [[Electric Field]] direction
-- It depends on the reduced electric field $E/p$ (or $E/N$), where $E$ is the field strength, $p$ the gas pressure, and $N$ the number density
-- Empirical parameterization (Townsend form):
-
-$$\alpha = A\, p\, \exp\!\Bigl(-\frac{B\,p}{E}\Bigr)$$
-
-where $A$ and $B$ are gas-dependent constants
-
-### Gas Gain
-
-- For a uniform field of length $d$ (e.g., the amplification gap in [[Micromegas]]):
-
-$$G = e^{\alpha\, d}$$
-
-- In a cylindrical geometry (wire chambers) with radially varying field $E(r)$:
-
-$$\ln G = \int_{r_{\min}}^{r_{\max}} \alpha\bigl(E(r)\bigr)\, dr$$
-
-- Typical operating gains: $10^3$–$10^4$ in proportional mode; gains beyond $\sim 10^6$–$10^8$ enter the [[Geiger Mode]] (saturated avalanche, loss of proportionality)
-
-### Paschen-Like Considerations
-
-- The **Paschen curve** relates the breakdown voltage $V_{\text{bd}}$ to the product $p \cdot d$ (pressure $\times$ gap distance), showing a minimum at an optimal $p\cdot d$
-- Below the Paschen minimum, electrons undergo too few collisions to sustain an avalanche; above it, electrons lose energy to non-ionizing collisions before gaining enough for ionization
-- [[Micromegas]] exploits a very narrow gap ($\sim 128\;\mu\text{m}$) at atmospheric pressure, operating near the Paschen minimum for stable, high-gain amplification
-
-### Avalanche Statistics
-
-- The number of electrons in a single avalanche follows a **Polya distribution** (generalization of the exponential / Furry distribution) due to stochastic fluctuations in ionization spacing
-- These fluctuations set a fundamental limit on [[Energy Resolution]] in proportional counters, characterized by the **Fano factor** for primary ionization and the **single-electron gain variance** for the multiplication stage
-
-### Gas Mixture Effects
-
-- Noble gases (Ar, Ne, Xe) provide the primary ionization medium; a **quencher** (e.g., [[Isobutane|isobutane]], CO$_2$, CF$_4$) absorbs UV photons from de-excitation to suppress secondary avalanches and photon feedback
-- The choice of gas mixture directly affects $\alpha$, maximum stable gain, [[Drift Velocity]], and [[Diffusion]] properties
+- **First Townsend coefficient $\alpha$**: The number of ionizing collisions per unit path length ($\text{cm}^{-1}$), depending on the reduced field $E/p$. Empirical form: $\alpha = A\, p\, \exp(-B\,p/E)$ where $A$, $B$ are gas-dependent constants.
+- **Gas gain**: For a uniform field of length $d$, $G = e^{\alpha\, d}$. In wire chambers with radial field: $\ln G = \int \alpha(E(r))\, dr$. Typical proportional-mode gains are $10^3$–$10^4$; beyond $\sim 10^6$ enters [[Geiger Mode]].
+- **Paschen curve**: The breakdown voltage $V_{\text{bd}}$ depends on $p \cdot d$; [[Micromegas]] exploits a narrow gap ($\sim 128\;\mu\text{m}$) near the Paschen minimum for stable high-gain operation.
+- **Avalanche statistics**: Single-avalanche electron counts follow a **Polya distribution**; these fluctuations, together with the **Fano factor** for primary ionisation, set fundamental limits on [[Energy Resolution]].
+- **Gas mixture & quenching**: Noble gases provide the ionisation medium; a quencher (e.g., [[Isobutane|isobutane]], CO$_2$, CF$_4$) absorbs UV photons to suppress photon feedback and secondary avalanches.
 
 ## Examples
 
-- **[[Micromegas]]:** Amplification gap $\sim 128\;\mu\text{m}$, field $\sim 40\;\text{kV/cm}$, gain $\sim 10^4$ — fast signals ($\sim 100\;\text{ns}$) ideal for [[Time Projection Chamber]] readout
-- **[[GEM Detector]]:** Electrons avalanche inside $50$–$70\;\mu\text{m}$ holes in a kapton foil; multiple GEM stages can be cascaded for gains up to $\sim 10^5$ while suppressing ion backflow
-- **Multi-Wire Proportional Chamber (MWPC):** Avalanche occurs in the $1/r$ field near thin anode wires ($\sim 20\;\mu\text{m}$ diameter); the original high-rate gaseous detector (Charpak, 1968 Nobel Prize)
-- **[[Single-Photon Avalanche Diode]]:** Solid-state analog — a reverse-biased p–n junction above breakdown voltage triggers a self-sustaining avalanche from a single photon-generated carrier (operates in [[Geiger Mode]])
+- **[[Micromegas]]:** Amplification gap $\sim 128\;\mu\text{m}$, field $\sim 40\;\text{kV/cm}$, gain $\sim 10^4$ — fast signals ($\sim 100\;\text{ns}$) ideal for [[Time Projection Chamber]] readout.
+- **Multi-Wire Proportional Chamber (MWPC):** Avalanche occurs in the $1/r$ field near thin anode wires ($\sim 20\;\mu\text{m}$ diameter); the original high-rate gaseous detector (Charpak, 1992 Nobel Prize).
 
 ## Related Concepts
 

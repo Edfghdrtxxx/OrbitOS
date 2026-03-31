@@ -15,7 +15,7 @@ review_interval: 0
 
 ## Definition
 
-The muon ($\mu^-$) is a second-generation charged [[Lepton|lepton]] with electric charge $-1\,e$, rest mass $m_\mu = 105.6584\;\text{MeV}/c^2$ (about 207 times the electron mass), and mean lifetime $\tau_\mu = 2.1969\;\mu\text{s}$. It participates in [[Electromagnetic Spectrum|electromagnetic]] and weak interactions but not the strong force. The muon decays almost exclusively via the weak interaction into an electron and two neutrinos.
+The muon ($\mu^-$) is a second-generation charged [[Lepton|lepton]] with electric charge $-1\,e$, rest mass $m_\mu = 105.6584\;\text{MeV}/c^2$ (about 207 times the electron mass), and mean lifetime $\tau_\mu = 2.1969\;\mu\text{s}$. It participates in electromagnetic and weak interactions but not the strong force. The muon decays almost exclusively via the weak interaction into an electron and two neutrinos.
 
 ## Key Points
 
@@ -24,7 +24,6 @@ The muon ($\mu^-$) is a second-generation charged [[Lepton|lepton]] with electri
 - **Anomalous magnetic moment ($g-2$)**: The muon's magnetic moment is $\vec{\mu} = g_\mu \frac{e}{2m_\mu}\vec{S}$, with $g_\mu \approx 2$. The anomaly $a_\mu = (g_\mu - 2)/2$ has been measured to sub-ppm precision at Fermilab (E989), yielding $a_\mu^\text{exp} = 116\,592\,059(22) \times 10^{-11}$. A persistent $> 4\sigma$ tension with some Standard Model predictions hints at possible contributions from new physics (e.g., supersymmetry, leptoquarks), though lattice QCD calculations of the hadronic vacuum polarisation are narrowing the gap
 - **Cosmic-ray production**: High-energy cosmic protons striking the upper atmosphere produce pions ($\pi^\pm$), which decay as $\pi^- \to \mu^- + \bar{\nu}_\mu$. These muons constitute the dominant charged component of cosmic rays at sea level. Their survival over $\sim 15\;\text{km}$ despite $c\tau \approx 660\;\text{m}$ is a textbook demonstration of relativistic time dilation
 - **Energy loss**: Muons lose energy primarily through [[Ionizing Radiation|ionisation]] at moderate energies, described by the [[Bethe-Bloch Formula]] (see [[dE-dx]]). At high energies ($\gtrsim 100\;\text{GeV}$), radiative processes ([[Bremsstrahlung]], [[Pair Production]], photonuclear interactions) dominate. Their large mass relative to the electron suppresses bremsstrahlung by a factor of $(m_e/m_\mu)^2 \approx 2.3 \times 10^{-5}$, making muons highly penetrating
-- **Applications**: Muon tomography uses the multiple Coulomb scattering of cosmic muons to image dense objects (e.g., nuclear reactor cores, archaeological structures such as the Great Pyramid). Muon beams at facilities like PSI, J-PARC, and Fermilab enable precision measurements ($g-2$, $\mu \to e\gamma$ searches) and muon spin rotation/relaxation ($\mu$SR) studies of condensed matter
 
 ## Examples
 

@@ -26,14 +26,13 @@ ATLAS (A Toroidal LHC ApparatuS) is one of the two general-purpose particle phys
   4. **Muon Spectrometer** -- monitored drift tubes (MDT) and cathode strip chambers in a toroidal magnetic field ($\sim 0.5\;\text{T}$) providing standalone muon momentum measurement up to $|\eta| < 2.7$
 - **Toroidal magnet system** -- unique among LHC experiments; three large air-core toroid systems (barrel + two endcaps) bend muon trajectories without an iron return yoke, enabling the large spectrometer volume
 - **Trigger and [[DAQ]]** -- a two-level trigger system reduces the 40 MHz bunch-crossing rate to $\sim 1\;\text{kHz}$ of events written to storage; Level-1 uses custom [[FPGA]]/[[ASIC]] hardware, the High-Level Trigger runs software algorithms on a computing farm
-- **New Small Wheel (NSW) upgrade** -- installed during Long Shutdown 2 (2019-2022), the NSW replaces the innermost endcap muon stations with $>1200\;\text{m}^2$ of resistive [[Micromegas]] detectors and small-strip thin-gap chambers (sTGC), providing both precision tracking ($\sigma \sim 100\;\mu\text{m}$) and trigger capability at high luminosity
+- **New Small Wheel (NSW) upgrade** -- installed during Long Shutdown 2 (2018-2022), the NSW replaces the innermost endcap muon stations with $>1200\;\text{m}^2$ of resistive [[Micromegas]] detectors and small-strip thin-gap chambers (sTGC), providing both precision tracking ($\sigma \sim 100\;\mu\text{m}$) and trigger capability at high luminosity
 - **Physics programme** -- Higgs boson property measurements, searches for supersymmetry and dark matter candidates, precision electroweak and top-quark physics, heavy-ion collisions, and Standard Model tests at $\sqrt{s} = 13.6\;\text{TeV}$
 
 ## Examples
 
 - The 2012 Higgs boson observation combined the $H \to \gamma\gamma$ and $H \to ZZ^* \to 4\ell$ channels, achieving $>5\sigma$ significance; ATLAS measured $m_H = 125.09 \pm 0.24\;\text{GeV}$ (combined with CMS, Run 1)
 - The NSW [[Micromegas]] modules are the largest application of resistive Micromegas technology, demonstrating [[Spatial Resolution|spatial resolution]] $\sim 100\;\mu\text{m}$ and rate capability up to $15\;\text{kHz/cm}^2$ for the High-Luminosity LHC
-- ATLAS uses [[Geant4]] for full detector simulation, with event reconstruction employing [[Kalman Filter]]-based track fitting in the inner detector and muon spectrometer
 
 ## Related Concepts
 

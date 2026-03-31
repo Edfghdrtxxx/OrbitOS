@@ -11,7 +11,7 @@ review_interval: 0
 ## Schematics
 
 ![[Readout_Electronics_ROIC_block_diagram.jpg]]
-*Block diagram of a Readout Integrated Circuit (ROIC) showing the signal path from pixel array through column buffers, programmable gain amplifiers (PGA), and analog multiplexer/output drivers. Source: Wikimedia Commons.*
+*Block diagram of a Readout Integrated Circuit (ROIC), originally from infrared imaging sensor technology but illustrating the general signal-chain architecture (pixel array, column buffers, programmable gain amplifiers, multiplexer/output drivers) common to all detector readout systems. Source: Wikimedia Commons.*
 
 A generic detector readout chain follows this signal flow:
 
@@ -27,12 +27,9 @@ Readout electronics is the complete electronic signal chain that extracts, condi
 
 - **Front-end amplification**: A charge-sensitive preamplifier (CSA) integrates the detector current pulse onto a feedback capacitor $C_f$, producing a voltage step $\Delta V = Q / C_f$ where $Q$ is the collected charge. The CSA must have low equivalent noise charge (ENC) to preserve the intrinsic detector resolution.
 - **Pulse shaping**: A shaping amplifier (often a CR-RC$^n$ filter with peaking time $\tau_p$) transforms the CSA output into a well-defined pulse, optimizing the trade-off between noise and rate capability. Shorter $\tau_p$ reduces [[Dead Time]] pileup but increases series noise.
-- **Discriminators and triggers**: A [[Leading-Edge Discriminator]] or [[Constant Fraction Discriminator]] converts the analog pulse into a digital logic signal for timing; multi-level trigger logic (often on [[FPGA]]s) selects events of interest before full digitization.
-- **Digitization**: The [[ADC]] captures pulse amplitude (energy information) while the [[TDC]] records precise event timestamps. Modern waveform digitizers sample the entire pulse shape, enabling digital pulse processing (baseline correction, pile-up deconvolution) in firmware.
-- **Digital back-end**: [[FPGA]]-based or [[ASIC]]-based logic performs zero suppression, pedestal subtraction, event building, and data serialization before transmission to the [[DAQ]]. In high-channel-count experiments, this reduces raw data rates by orders of magnitude.
-- **ASIC vs. FPGA trade-off**: An [[ASIC]] integrates the full analog + digital chain on a single die with minimal power per channel, ideal for large-scale detectors (thousands of channels). An [[FPGA]] offers reprogrammability and faster development cycles, preferred during R&D and for moderate channel counts.
-- **Noise budget**: Total electronic noise has contributions from thermal (Johnson) noise, shot noise (detector leakage current), and $1/f$ (flicker) noise. The ENC scales as $\text{ENC}^2 \propto C_d^2$, where $C_d$ is the detector capacitance, making low-capacitance detectors and short interconnects essential.
-- **Grounding and shielding**: Mixed analog-digital readout boards require careful separation of analog and digital ground planes, shielded signal routing, and decoupled power supplies to prevent digital switching noise from degrading the analog front-end sensitivity.
+- **Noise budget**: Total electronic noise has contributions from thermal (Johnson) noise, shot noise (detector leakage current), and $1/f$ (flicker) noise. The ENC scales as $\text{ENC}^2 \propto C_d^2$, where $C_d$ is the detector capacitance, making low-capacitance detectors and short interconnects essential. Proper grounding, shielded signal routing, and analog/digital ground-plane separation are critical in mixed-signal boards.
+- **Digitization**: The [[ADC]] captures pulse amplitude (energy information) while the [[TDC]] records precise event timestamps. Modern waveform digitizers sample the entire pulse shape, enabling digital pulse processing (baseline correction, pile-up deconvolution) in firmware. Discriminators ([[Leading-Edge Discriminator|leading-edge]] or [[Constant Fraction Discriminator|constant-fraction]]) convert analog pulses into digital timing/trigger signals upstream of digitization.
+- **Digital back-end**: [[FPGA]]-based or [[ASIC]]-based logic performs zero suppression, pedestal subtraction, event building, and data serialization before transmission to the [[DAQ]]. [[ASIC]]s minimize power per channel for large-scale detectors, while [[FPGA]]s offer reprogrammability during R&D.
 
 ## Examples
 
@@ -56,7 +53,6 @@ Readout electronics is the complete electronic signal chain that extracts, condi
 - [[Constant Fraction Discriminator]]
 - [[Coincidence Detection]]
 - [[Track Reconstruction]]
-- [[Silicon Photomultiplier]]
 
 ## References
 
