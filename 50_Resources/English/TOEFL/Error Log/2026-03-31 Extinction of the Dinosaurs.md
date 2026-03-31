@@ -89,11 +89,15 @@ You likely associated "exhaustion" with the *consequences* of the disruption (re
 
 ## Blind Spot Analysis
 
-### 1. Literal vs. figurative reading
+### 1. Literal vs. figurative reading + complex sentence parsing
 
 You interpreted "disappear from the fossil record" literally (physical removal) instead of understanding it as a figurative/scientific expression meaning "no longer present." This suggests a tendency to **default to concrete/physical interpretations** when the passage uses abstract or domain-specific phrasing.
 
-**Action:** When you see verbs like *disappear, emerge, surface, decline, vanish* in academic passages, pause and ask: is this describing a physical action or a conceptual/abstract change?
+A contributing factor: the sentence itself has complex syntax — *"as one moves from layers of rock documenting X up into rocks representing Y"* is a metaphorical/geological way of saying "looking at successive geological layers." For a non-native speaker, this dense prepositional structure can obscure the core meaning, making it easier to latch onto surface-level words like "layers of rock" and "removed."
+
+**Action:**
+- When you see verbs like *disappear, emerge, surface, decline, vanish* in academic passages, pause and ask: is this describing a physical action or a conceptual/abstract change?
+- For long, complex sentences, **strip the sentence to its core clause first** (Subject + Verb + Object), then layer modifiers back in. Here: "Plants and animals disappear from the fossil record" — everything else is detail about *where* and *when*.
 
 ### 2. Logical chain tracking (argument structure)
 
@@ -110,3 +114,14 @@ In Error 2, you grabbed a detail instead of following the full argument. TOEFL R
 For vocab questions, you're choosing words that *feel related to the topic* rather than words that *mean the same thing*. This is a common trap.
 
 **Action:** Always use the **substitution test** — plug each option into the original sentence and check if the meaning stays the same. If the sentence changes its message, that option is wrong regardless of how thematically related it seems.
+
+### 4. TOEFL distractor trap — passage word recycling
+
+A pattern across Errors 1 and 2: both wrong answers **borrow exact words or numbers from the passage** to seem plausible.
+
+- Error 1: your wrong choice reused "layers of rock" — passage phrasing repurposed in a fabricated claim.
+- Error 2: your wrong choice reused "million years" — a specific number from the passage attached to a wrong conclusion.
+
+This is a deliberate TOEFL distractor strategy. Wrong answers that *sound* like the passage are designed to catch test-takers who recognize familiar words without verifying meaning.
+
+**Action:** Treat passage-word recycling as a **yellow flag**, not a green light. When an answer option echoes exact phrasing from the passage, slow down and verify: does it preserve the passage's *meaning*, or just its *words*?
