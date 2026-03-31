@@ -28,13 +28,16 @@ Topic: The K-Pg mass extinction event, iridium anomaly in boundary clay, and the
 
 ### Why wrong
 
-You misread **"disappear from the fossil record"** as a physical action (fossils being *removed* from rock), when it actually means **organisms ceased to appear** in the geological record — i.e., they went extinct. The original sentence describes an *absence* of fossils in newer layers, not a physical extraction.
+The word **"disappear"** here carries a **stative** meaning — "are no longer present" — describing the *absence* of fossils in newer rock layers. But "disappear" can also convey an **active/agentive** meaning — "were made to vanish / were taken away." You read it the active way, which naturally led to choosing an answer about fossils being physically "removed" from rock.
+
+The context resolves the ambiguity: "disappear **from the fossil record** as one moves from [older layers] up into [newer layers]" describes an **observation** (a scientist scanning layers and noticing absence), not an event (something extracting fossils). The subject is "plants and animals," not their fossils — they disappeared from the record because they went extinct, not because their fossils were removed.
 
 Your chosen answer also introduces a fabricated idea ("removed from the layers of rock") that is nowhere in the original sentence — a hallmark of TOEFL distractor traps.
 
 ### Takeaway
 
-- **"Disappear from the record"** = stop appearing = extinction. Not physical removal.
+- **"Disappear"** has two possible readings: stative ("are no longer present") vs. active ("were taken away"). In academic/scientific writing, it almost always means the former. Resolve the ambiguity by checking: is the sentence describing an *observation* or an *event*?
+- **Impersonal "one":** In "as **one** moves from layers of rock...", "one" is the formal impersonal pronoun meaning "a person in general / anyone." It's equivalent to informal "you" — the sentence imagines a generic observer scanning geological layers. This usage is common in academic English: "One might argue...", "One can observe...". Don't confuse it with the number or a back-reference to a specific noun.
 - For Sentence Simplification: the correct answer preserves the **core meaning** (what happened + when). Reject any option that introduces a new concept not present in the original.
 
 ---
