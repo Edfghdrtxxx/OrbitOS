@@ -8,6 +8,17 @@ review_interval: 0
 ---
 # Micromegas
 
+## Schematics
+
+![[Micromegas_principle.png]]
+*Cross-section of a Micromegas detector showing the 3 mm conversion gap, micro-mesh (micro-grille), 100 μm amplification gap, readout strips, and the avalanche process with drift field E₁ ≈ 1 kV/cm and amplification field E₂ ≈ 40 kV/cm. (CC BY-SA 3.0, Wikimedia Commons)*
+
+![[Micromegas_diagram.png]]
+*Microscopic view of a bulk Micromegas mesh laminated onto a PCB with photolithographic pillars defining the amplification gap. (CC BY-SA 4.0, Wikimedia Commons)*
+
+![[Micromegas_graph.png]]
+*Simulated Micromegas signal: fast electron component (blue, ~few ns rise) and slow ion component (red, ~100 ns drift), illustrating the characteristic fast timing response. (CC BY-SA 4.0, Wikimedia Commons)*
+
 ## Definition
 
 Micromegas (Micro-Mesh Gaseous Structure) is a [[Gas Detector]] amplification technology that uses a thin [[Metallic Mesh]] suspended $\sim 100\;\mu\text{m}$ above an anode to create a high-field [[Amplification Gap]] where ionisation electrons undergo avalanche multiplication. It is a leading readout technology for [[Time Projection Chamber]]s in nuclear and particle physics.
@@ -22,7 +33,7 @@ Micromegas (Micro-Mesh Gaseous Structure) is a [[Gas Detector]] amplification te
 
 ## Examples
 
-- The T2K near-detector TPC uses bulk Micromegas modules to reconstruct neutrino interaction vertices with high spatial precision
+- The T2K near-detector [[Time Projection Chamber|TPC]] uses bulk Micromegas modules to reconstruct neutrino interaction vertices with high spatial precision
 - The ATLAS New Small Wheel upgrade deploys over $1{,}200\;\text{m}^2$ of resistive Micromegas for muon tracking and triggering in the LHC forward region
 
 ## Related Concepts
