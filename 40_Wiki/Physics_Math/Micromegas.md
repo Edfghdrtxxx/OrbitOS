@@ -28,13 +28,13 @@ Micromegas (Micro-Mesh Gaseous Structure) is a [[Gas Detector]] amplification te
 - The narrow amplification gap ($\sim 128\;\mu\text{m}$) produces fast signals ($\sim 100\;\text{ns}$) with gain up to $\sim 10^4$, well-suited for high-rate environments
 - Bulk Micromegas fabrication (mesh laminated onto the PCB with photolithographic pillars) enables large-area, uniform detectors at low cost
 - Provides excellent [[Spatial Resolution|spatial resolution]] ($\sim 50\;\mu\text{m}$) when combined with fine-pitch strip or pad anodes read out by [[FPGA]]-based electronics
-- Compared to [[GEM Detector]]s, Micromegas has a simpler single-stage structure but requires careful spark protection (resistive anode layers)
+- Compared to [[GEM Detector]]s, Micromegas has a simpler single-stage structure but requires careful spark protection ([[Resistive Anode]] layers)
 - Used in [[Time Projection Chamber]] readout for experiments such as T2K and ATLAS NSW at [[CERN]]
 
 ## Examples
 
 - The T2K near-detector [[Time Projection Chamber|TPC]] uses bulk Micromegas modules to reconstruct neutrino interaction vertices with high spatial precision
-- The ATLAS New Small Wheel upgrade deploys over $1{,}200\;\text{m}^2$ of resistive Micromegas for muon tracking and triggering in the LHC forward region
+- The ATLAS New Small Wheel upgrade deploys over $1{,}200\;\text{m}^2$ of [[Resistive Anode|resistive]] Micromegas for muon tracking and triggering in the LHC forward region
 
 ## Related Concepts
 
