@@ -10,13 +10,11 @@ review_interval: 0
 
 ## Schematics
 
-> [!info] LHC layout with experiments and injector chain
-> ![[LHC_layout_experiments.svg]]
-> *Schematic of the LHC ring showing the four main experiments (CMS, ATLAS, ALICE, LHCb) and the injector chain (PS, SPS). Credit: Arpad Horvath, CC BY-SA 2.5.*
+![[LHC_layout_experiments.svg]]
+*Schematic of the LHC ring showing the four main experiments (CMS, ATLAS, ALICE, LHCb) and the injector chain (PS, SPS). Credit: Arpad Horvath, CC BY-SA 2.5.*
 
-> [!info] Geographical location of the LHC
-> ![[LHC_location_map.png]]
-> *Map showing the LHC tunnel straddling the Franco-Swiss border near Geneva. Credit: Wikimedia Commons, CC BY-SA 2.0.*
+![[LHC_location_map.png]]
+*Map showing the LHC tunnel straddling the Franco-Swiss border near Geneva. Credit: Wikimedia Commons, CC BY-SA 2.0.*
 
 ## Definition
 

@@ -11,13 +11,13 @@ review_interval: 0
 ## Schematics
 
 ![[Gas_Detector_voltage_regions.gif]]
-*Operating voltage regions of a gas detector showing ionization, proportional, limited proportional, and Geiger-Mueller regions. (Wikimedia Commons)*
+*Ion-pair current vs. applied voltage for a wire-cylinder gas detector, showing the ionization chamber, proportional counter, and Geiger-Mueller operating regions with separate curves for alpha and beta radiation. (Wikimedia Commons)*
 
 ![[Gas_Detector_ion_chamber_operation.gif]]
-*Principle of operation of an ionization chamber gas detector. (Wikimedia Commons)*
+*Visualisation of ionization chamber operation: incident radiation creates ion pairs in the gas, and the applied electric field drifts electrons to the anode and positive ions to the cathode, generating a measurable current. (Wikimedia Commons)*
 
 ![[Gas_Detector_classification.png]]
-*Classification of gaseous ionization detector types. (Wikimedia Commons)*
+*Classification of particle detectors (hermetic detector family), showing gaseous ionization types (ionization chamber, Geiger counter, spark chamber, proportional counter and derivatives) alongside solid-state types. (Wikimedia Commons)*
 
 ## Definition
 

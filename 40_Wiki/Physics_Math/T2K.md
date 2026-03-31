@@ -10,21 +10,17 @@ review_interval: 0
 
 ## Schematics
 
-> [!info] Image placeholders
-> The following diagrams are available on Wikimedia Commons but could not be auto-downloaded. Manually save them to `50_Resources/Attachments/` and update the embeds below.
->
-> 1. **ND280 detector scheme** -- [ND280_detector_scheme.png](https://commons.wikimedia.org/wiki/File:ND280_detector_scheme.png) (CC BY 4.0, T2K Collaboration)
->    Save as: `T2K_ND280_detector_scheme.png`
-> 2. **Neutrino beam production** -- [Neutrino_beam_production.svg](https://commons.wikimedia.org/wiki/File:Neutrino_beam_production.svg) (CC BY-SA 4.0)
->    Save as: `T2K_neutrino_beam_production.svg`
-> 3. **ND280 pit photograph** -- [J-PARC_T2K_ND280_Pit.jpg](https://commons.wikimedia.org/wiki/File:J-PARC_T2K_ND280_Pit.jpg) (CC BY-SA 2.0)
->    Save as: `T2K_ND280_pit_photo.jpg`
-
-<!-- Uncomment after downloading:
-![[T2K_ND280_detector_scheme.png]]
 ![[T2K_neutrino_beam_production.svg]]
-![[T2K_ND280_pit_photo.jpg]]
--->
+*Muon neutrino beam production at J-PARC: protons strike a graphite target, magnetic horns focus positive pions/kaons into the decay volume, producing a $\nu_\mu$ beam. (CC BY-SA 4.0, Batmann / Wikimedia Commons)*
+
+![[T2K_ND280_detector_scheme.png]]
+*Exploded view of the ND280 off-axis near detector, showing TPCs, FGDs, P0D, ECal, SMRD, and the UA1 magnet yoke. (CC BY 4.0, T2K Collaboration, [arXiv:2002.09323](https://arxiv.org/abs/2002.09323))*
+
+![[T2K_ND280_upgrade_scheme.png]]
+*Upgraded ND280 inner configuration with two horizontal HA-TPCs and the Super-FGD. (CC BY 4.0, D. Attie et al., [arXiv:1907.07060](https://arxiv.org/abs/1907.07060))*
+
+![[T2K_SuperK_PID.png]]
+*Super-Kamiokande $e/\mu$ particle identification: PID discriminator distribution with insets showing electron-like (fuzzy ring) and muon-like (sharp ring) Cherenkov events. (CC BY 4.0, T2K Collaboration, [arXiv:1910.03887](https://arxiv.org/abs/1910.03887))*
 
 ## Definition
 
