@@ -16,7 +16,7 @@ review_interval: 0
 
 ## Definition
 
-An E0 (electric monopole) transition is an electromagnetic [[Nuclear Transition|nuclear transition]] between two states of identical spin-parity ($J^\pi \to J^\pi$, most importantly $0^+ \to 0^+$) that cannot proceed by photon emission and instead occurs exclusively via internal conversion or internal pair creation.
+An E0 (electric monopole) transition is an electromagnetic [[Nuclear Transition|nuclear transition]] between two states of identical spin-parity ($J^\pi \to J^\pi$, most importantly $0^+ \to 0^+$) that cannot proceed by photon emission and instead occurs exclusively via [[Internal Conversion|internal conversion]] or [[Internal Pair Creation|internal pair creation]].
 
 ## Key Points
 

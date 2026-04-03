@@ -14,14 +14,14 @@ review_interval: 0
 
 ## Definition
 
-Internal pair creation (IPC), also called internal pair conversion, is a nuclear de-excitation process in which an excited nucleus transitions to a lower energy state by emitting a **virtual photon** that converts into an [[Pair Production|electron-positron pair]] ($e^+e^-$) within the [[Coulomb Barrier|Coulomb field]] of the nucleus itself. Unlike external [[Pair Production]], no real photon is involved — the virtual photon is an intermediate state of the electromagnetic interaction between the nucleus and the created pair.
+Internal pair creation (IPC), also called internal pair conversion, is a nuclear de-excitation process in which an excited nucleus transitions to a lower energy state by emitting a **virtual photon** that converts into an [[Pair Production|electron-positron pair]] ($e^+e^-$) within the [[Electric Field|Coulomb field]] of the nucleus itself. Unlike external [[Pair Production]], no real photon is involved — the virtual photon is an intermediate state of the electromagnetic interaction between the nucleus and the created pair.
 
 ## Key Points
 
-- IPC is the **only single-photon de-excitation channel** for [[E0 Transition|E0 transitions]] ($0^+ \to 0^+$), since single [[Gamma Ray|gamma-ray]] emission is strictly forbidden for $\Delta J = 0$, no parity change transitions
+- Along with [[Internal Conversion|internal conversion]] (IC), IPC is one of only **two electromagnetic channels** available for [[E0 Transition|E0 transitions]] ($0^+ \to 0^+$), since single [[Gamma Ray|gamma-ray]] emission is strictly forbidden for $\Delta J = 0$, no parity change. IPC is the only channel that produces an $e^+e^-$ pair
 - The process requires a minimum transition energy of $E_\text{tr} > 2m_e c^2 \approx 1.022\;\text{MeV}$ to produce the $e^+e^-$ pair
 - The IPC coefficient $\Omega$ (ratio of pair emission rate to gamma emission rate) increases with transition energy and [[Quantum Numbers|multipolarity]], and scales roughly as $Z^2$ with the atomic number
-- For non-E0 transitions, IPC competes with [[Gamma Ray|gamma emission]] and [[Coincidence Detection|internal conversion]] as a de-excitation mechanism, but is typically much less probable except at high transition energies
+- For non-E0 transitions, IPC competes with [[Gamma Ray|gamma emission]] and [[Internal Conversion|internal conversion]] as a de-excitation mechanism, but is typically much less probable except at high transition energies
 - IPC is a key experimental signature for identifying [[Low-lying 0+ Excited State|low-lying $0^+$ excited states]] and probing [[Deformation Coexistence|shape coexistence]] in nuclei
 
 ## Examples
