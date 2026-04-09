@@ -40,7 +40,7 @@ Internal pair creation (IPC), also called internal pair conversion, is a nuclear
 
 ## Examples
 
-- The $0^+_2 \to 0^+_1$ transition in $^{16}\text{O}$ at $E_x = 6.05\;\text{MeV}$ is a classic E0 transition observable only via IPC (or internal conversion to atomic electrons). Measuring the $e^+e^-$ opening angle and energy sharing provides the [[Nuclear Matrix Element|monopole matrix element]] $\rho^2(E0)$
+- The $0^+_2 \to 0^+_1$ transition in $^{16}\text{O}$ at $E_x = 6.05\;\text{MeV}$ is a classic $E0$ transition observable only via IPC (or internal conversion to atomic electrons). Measuring the $e^+e^-$ opening angle and energy sharing provides the [[Nuclear Matrix Element|monopole matrix element]] $\rho^2(E0)$
 - In [[HPGe Detector|germanium detector]] arrays, IPC events produce characteristic signatures: the $e^+$ annihilates producing two 511 keV [[Gamma Ray|gamma rays]] in [[Coincidence Detection|coincidence]], enabling identification of E0 transitions in [[Gamma Spectroscopy|spectroscopy]] experiments
 
 ## Related Concepts
