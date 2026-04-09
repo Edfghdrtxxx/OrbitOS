@@ -261,7 +261,7 @@ Core written scope (UTokyo Physics doctoral, 2026-cycle reference):
 ## Application Materials
 
 - [ ] Research proposal linking IMP thesis → UTokyo CNS / RIKEN topics
-- [ ] TOEFL iBT score → [[English_Learning]]
+- [ ] TOEFL iBT score → [[English_Learning]] *(registered 2026-04-09; exam **2026-08-30** at STN80118A Beijing; score available ~Sep 2 — see [[TOEFL_Study_Progress]])*
 - [ ] **GRE Physics Subject Test** — compulsory for Route B; register early
 - [ ] Letter of Acceptance (Naidaku)
 - [ ] Academic transcripts and degree documents (IMP/CAS/UCAS)

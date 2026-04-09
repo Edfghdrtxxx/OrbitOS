@@ -76,7 +76,7 @@ Concretely:
 - Confirm GSGC timing and exam details with professors (Route B vs Special Selection distinction)
 - Begin systematic GRE Physics study plan — identify weak areas, set weekly targets
 - Continue thesis execution in parallel (results documented, gaps identified, draft outline with supervisor)
-- Register for TOEFL by end of April 2026
+- ~~Register for TOEFL by end of April 2026~~ **DONE 2026-04-09** — booked 2026-08-30 at STN80118A Beijing
 
 This is the boss fight because the entrance exam is the gate to everything. The supervisor door is open — now you have to walk through it. The thesis keeps the daily anchor alive, but the exam is the mission-critical path to Japan.
 
@@ -121,7 +121,7 @@ This is the boss fight because the entrance exam is the gate to everything. The 
 | **Daily anchor** | [[Masters_Thesis]] | 2–4 hr block every workday — no exceptions |
 | **Urgent parallel** | [[Japan_Itinerary]] / [[UTokyo_RIKEN]] (Direct PhD Entry — Entrance Exam) | ~~Supervisor Outreach~~ **DONE (2026-03-09)** — Route B chosen; focus on entrance exam prep + GRE Physics for direct PhD Oct 2027; Naidaku pending exam pass |
 | **Ongoing parallel → ELEVATED** | [[Fundamental_Knowledge]] + **GRE Physics** | **Now the critical gate** — entrance exam via Route B + GRE Physics (compulsory); systematic study now; intensify from Sep 2026 |
-| **Ongoing parallel** | [[English_Learning]] | TOEFL target: Jul–Aug 2026; register by Apr 2026 |
+| **Ongoing parallel** | [[English_Learning]] | TOEFL **registered 2026-04-09**; exam **2026-08-30** at STN80118A Beijing; target 100+ |
 | **Low priority** | [[Japanese_Language]] | N4 by Oct 2027; not required for admission — only when exam prep + TOEFL are on track |
 
 ---
