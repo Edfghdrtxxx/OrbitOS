@@ -16,6 +16,20 @@ review_interval: 0
 
 Internal pair creation (IPC), also called internal pair conversion, is a nuclear de-excitation process in which an excited nucleus transitions to a lower energy state by emitting a **virtual photon** that converts into an [[Pair Production|electron-positron pair]] ($e^+e^-$) within the [[Electric Field|Coulomb field]] of the nucleus itself. Unlike external [[Pair Production]], no real photon is involved — the virtual photon is an intermediate state of the electromagnetic interaction between the nucleus and the created pair.
 
+> [!Feynman]- Why a "Virtual Photon"?
+> **Q:** Why we need a "virtual photon" schematic to explain the process?
+> **Language note:** More natural phrasing: *"Why do we need the 'virtual photon' picture to explain this process?"* — add auxiliary "do" for question grammar; "schematic" → "picture" (schematic usually means a diagram; here you mean the conceptual framework).
+>
+> Think of it this way. In quantum electrodynamics (QED — the theory that describes how charged particles and light interact), there is a strict rule: **charged matter never creates or destroys other charged matter "directly."** Every electromagnetic interaction must be carried by a photon — that is how the electromagnetic force works at the quantum level.
+>
+> So the nucleus cannot just "hand" its extra energy to an electron-positron pair out of nothing. Instead, the energy first becomes a photon, and *that* photon then converts into the $e^+e^-$ pair. This is the only language QED allows.
+>
+> But here is the key twist: that photon never escapes to a detector. It is created and consumed inside the same process — born and gone in the same instant. That is exactly what "virtual" means: it is a real participant in the calculation, but not something you can ever catch and measure on its own. A real photon satisfies $E = pc$; a virtual one does not have to — it can carry any combination of energy and momentum that the process demands.
+>
+> Why bother with this seemingly invisible middleman? Because without it, we cannot calculate the probability of the process correctly. The virtual photon carries all the quantum numbers (spin, parity, multipolarity) from the nuclear transition, and those quantum numbers determine *how* the $e^+e^-$ pair comes out — their angular distribution, energy sharing, and total rate. Remove the virtual photon from the picture, and you lose the machinery that connects "what the nucleus did" to "what the detectors see."
+>
+> Here is what trips people up: the virtual photon is not a "real thing flying through space" — it is a bookkeeping tool that encodes the electromagnetic interaction. But it is not optional bookkeeping. It is the *only* consistent way QED lets us describe one chunk of charge-neutral matter (the nucleus) creating another chunk of charge-neutral matter (the $e^+e^-$ pair) through the electromagnetic force.
+
 ## Key Points
 
 - Along with [[Internal Conversion|internal conversion]] (IC), IPC is one of only **two electromagnetic channels** available for [[E0 Transition|E0 transitions]] ($0^+ \to 0^+$), since single [[Gamma Ray|gamma-ray]] emission is strictly forbidden for $\Delta J = 0$, no parity change. IPC is the only channel that produces an $e^+e^-$ pair
