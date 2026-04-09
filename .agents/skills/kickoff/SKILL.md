@@ -113,7 +113,7 @@ Instructions:
    - **Actions**: Phases/milestones with tasks
    - **Progress**: Empty section for future updates
 5. Link the project in today's daily note at 10_Daily/YYYY-MM-DD.md
-6. Archive the plan: move to 90_Plans/Archives/
+6. Archive the plan: move to 99_System/Archives/Plans/YYYY/ (use the current year; create the directory if needed)
 7. If this kickoff originated from an inbox item (00_Inbox/):
    - Update the inbox file's frontmatter: set status: processed, add archived: YYYY-MM-DD
    - Move the file to 99_System/Archives/Inbox/YYYY/MM/ (use the current date for year/month)
