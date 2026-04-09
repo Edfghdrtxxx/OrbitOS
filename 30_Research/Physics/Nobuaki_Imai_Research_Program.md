@@ -83,6 +83,8 @@ The group's physics program spans two broad pillars:
 
 ## 3. OEDO-SHARAQ System
 
+![[OEDO-SHARAQ.png|1116]]
+
 ### 3.1 Purpose and Motivation
 
 The **OEDO** system (*Optimized Energy-Degrading Optics for RI beams*) solves a fundamental problem at in-flight [[Radioactive Isotope Beam|RI beam]] facilities: [[Projectile Fragmentation|projectile fragmentation]] and [[In-Flight Fission|in-flight fission]] at [[BigRIPS]] produce secondary beams at $\sim200$ MeV/u, but many reaction studies — [[Transfer Reactions|nucleon transfer]], sub-barrier [[Coulomb Excitation|Coulomb excitation]], [[Surrogate Reaction|surrogate reactions]] — require beam energies of $10$–$50$ MeV/u with good [[Energy Resolution|energy resolution]].
