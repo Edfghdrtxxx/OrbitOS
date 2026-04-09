@@ -83,13 +83,17 @@ The group's physics program spans two broad pillars:
 
 ## 3. OEDO-SHARAQ System
 
-![[OEDO-SHARAQ.png|1116]]
+![[OEDO-SHARAQ.png|803]]
+*Figure 1: Conceptual overview of the OEDO-SHARAQ system. OEDO ("The Beam Chef") performs achromatic slowdown of ~200 MeV/u RI beams to 10–50 MeV/u, while SHARAQ ("The Precision Scale") reconstructs unseen excited states via missing-mass spectroscopy with resolving power $p/\Delta p = 15{,}000$.*
 
 ### 3.1 Purpose and Motivation
 
 The **OEDO** system (*Optimized Energy-Degrading Optics for RI beams*) solves a fundamental problem at in-flight [[Radioactive Isotope Beam|RI beam]] facilities: [[Projectile Fragmentation|projectile fragmentation]] and [[In-Flight Fission|in-flight fission]] at [[BigRIPS]] produce secondary beams at $\sim200$ MeV/u, but many reaction studies — [[Transfer Reactions|nucleon transfer]], sub-barrier [[Coulomb Excitation|Coulomb excitation]], [[Surrogate Reaction|surrogate reactions]] — require beam energies of $10$–$50$ MeV/u with good [[Energy Resolution|energy resolution]].
 
 Conventional thick degraders destroy beam quality (emittance blow-up, straggling). OEDO achieves achromatic energy degradation while preserving beam optics. (see `Feynman: OEDO-SHARAQ as "Beam Prep + Precision Scale"`)
+
+![[OEDO-SHARAQ_beam_comparison.png|806]]
+*Figure 2: Energy spectrum comparison between the raw BigRIPS beam (broad spread, ~200 MeV/u, low resolution) and the OEDO-SHARAQ output (narrow energy window, 10–50 MeV/u, high resolution). Precision missing-mass spectroscopy requires beams dialed down into this narrow window.*
 **Construction completed:** March 2017. **First beam:** June 2017.
 
 ### 3.2 Technical Design — Three Key Components
