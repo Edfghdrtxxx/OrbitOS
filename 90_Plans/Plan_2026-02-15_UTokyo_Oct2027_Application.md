@@ -22,7 +22,8 @@ pathway: "Primary: Direct PhD D1 via Route B (Oct 2027); Fallback: Kenkyusei (Oc
 |---|---|---|
 | ~~Supervisor acceptance~~ | ~~2026-06-30~~ | **DONE** (2026-03-09) — conditional on exam |
 | Sub-track clarified (GSGC vs Special Selection) | 2026-04-30 (backstop: 2026-07-01) | PENDING — professor meeting |
-| TOEFL iBT taken | 2026-07 or 2026-08 | Target 100+; no MyBest accepted |
+| TOEFL iBT registered | ~~2026-04 (by Apr 30)~~ | **DONE (2026-04-09)** — booked 2026-08-30 at STN80118A Beijing |
+| TOEFL iBT taken | ~~2026-07 or 2026-08~~ **2026-08-30** | Target 100+; no MyBest accepted; arrive 08:30 |
 | GRE Physics taken | 2026-09 or 2026-10 | Single-shot; no retake before Special Selection deadline (~Dec 2026) |
 | Special Selection application submitted | TBD — confirm with professors / Oct 2027 cycle info | ⚠️ Window unverified |
 | Written exam (if required) | TBD | ⚠️ Format unverified — confirm with professors |
@@ -50,11 +51,11 @@ pathway: "Primary: Direct PhD D1 via Route B (Oct 2027); Fallback: Kenkyusei (Oc
 - [ ] Update [[DG_GSGC_vs_Special_Selection]] with decisions
 - [ ] **Backstop 2026-07-01:** If unresolved, escalate to UTokyo Graduate School Office directly
 
-### 0.2 TOEFL iBT Registration (by Apr 2026)
+### 0.2 TOEFL iBT Registration (by Apr 2026) — **DONE 2026-04-09**
 
-- [ ] Register for TOEFL iBT — **target exam date: July or August 2026**
-- [ ] Registration must happen in Phase 0; exam prep and sitting are in Phase 1
-- [ ] Track in [[English_Learning]]
+- [x] ~~Register for TOEFL iBT — **target exam date: July or August 2026**~~ → **Done 2026-04-09: booked 2026-08-30 (Sun) at STN80118A 国试大厦考点, Beijing. Arrival deadline 08:30. ETS registration # pending (≤24h).**
+- [x] Registration must happen in Phase 0; exam prep and sitting are in Phase 1
+- [x] Track in [[English_Learning]] and [[TOEFL_Study_Progress]]
 
 ### 0.3 Verification Quick Wins (carried over)
 
@@ -76,13 +77,13 @@ pathway: "Primary: Direct PhD D1 via Route B (Oct 2027); Fallback: Kenkyusei (Oc
 
 ### 1.1 TOEFL iBT Preparation & Exam
 
-> Registration should already be done in Phase 0.2.
+> Registration complete (Phase 0.2, done 2026-04-09). **Exam booked: 2026-08-30 at STN80118A Beijing.**
 
 - [ ] UTokyo requires single test date score (no MyBest); aim for 100+
-- [ ] Focused prep: 2–3 months before exam date
-- [ ] Sit for TOEFL iBT in **July or August 2026**
-- [ ] TOEFL scores valid if taken within 2 years of application start date
-- [ ] Track in [[English_Learning]]
+- [ ] Focused prep: 2–3 months before exam date (peak window: Jun–Aug 2026)
+- [ ] Sit for TOEFL iBT on **2026-08-30** (booked 2026-04-09 — arrive by 08:30)
+- [ ] TOEFL scores valid if taken within 2 years of application start date (valid through 2028-08-30)
+- [ ] Track in [[English_Learning]] and [[TOEFL_Study_Progress]]
 
 ### 1.2 GRE Physics Subject Test
 

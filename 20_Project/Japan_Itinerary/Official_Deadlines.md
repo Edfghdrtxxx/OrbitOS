@@ -76,6 +76,14 @@ Same pattern as Section 1, shifted +1 year. Application periods would fall in ~O
 
 ## 4. TOEFL iBT
 
+> [!success] **REGISTERED 2026-04-09** — Exam booked for **2026-08-30 (Sun)**
+> - **Test center:** STN80118A — 国试大厦考点 (Guoshi Building)
+> - **Address:** 北京市海淀区上地六街一号 (No. 1 Shangdi 6th St., Haidian District, Beijing)
+> - **Transit:** Metro Line 13 → 清河 (Qinghe) Station → west plaza exit → walk ~800 m → enter via **east gate**
+> - **Latest arrival:** 2026-08-30 **08:30** (late = denied entry, no refund)
+> - **ETS registration #:** pending (≤24h; contact NEEA if not issued)
+> - **Score valid through:** 2028-08-30 (covers both Oct 2027 and Oct 2028 Special Selection cycles)
+
 | Item | Detail | Source |
 |------|--------|--------|
 | Registration portal (China) | toefl.neea.cn | [ETS China](https://www.ets.org/toefl/china/toefl.html) |
@@ -90,10 +98,10 @@ Same pattern as Section 1, shifted +1 year. Application periods would fall in ~O
 
 **Registration logistics:**
 - ETS recommends registering **4 months in advance** for best date selection; closes **5 days** before test (late registration: 2 days before)
-- Register in **April 2026** for a **July–August 2026** exam date (3–4 months lead time — comfortable)
+- ~~Register in **April 2026** for a **July–August 2026** exam date~~ → **Done 2026-04-09: booked 2026-08-30** (~4.7 months lead time)
 - Retake possible: if score < 100, retake in **Sep–Oct 2026** and still make Period 2 (~Dec 2026) application deadline
 
-**Plan:** Register Apr 2026, test Jul–Aug 2026. Score valid through Jul–Aug 2028 (covers both Oct 2027 and Oct 2028 cycles).
+**Plan:** ~~Register Apr 2026, test Jul–Aug 2026.~~ → **Executed: registered 2026-04-09, test 2026-08-30 at STN80118A Beijing.** Score valid through 2028-08-30 (covers both Oct 2027 and Oct 2028 cycles).
 
 **Score delivery to UTokyo:**
 - Select institution code **8002-01** when registering, or send additional score report after test

@@ -2,9 +2,13 @@
 type: plan
 status: active
 created: 2026-02-17
-updated: 2026-03-24
+updated: 2026-04-09
 format: TOEFL iBT 2026 (launched Jan 21, 2026)
-target_exam: 2026-09 or 2026-10
+target_exam: 2026-08-30
+exam_date: 2026-08-30
+test_center: STN80118A — 国试大厦考点 (Guoshi Building), 北京市海淀区上地六街一号
+registration_status: registered (2026-04-09); ETS registration # pending (≤24h)
+arrival_deadline: 2026-08-30 08:30 (late arrival = denied entry)
 target_score: band 5.0 (comparable 100+/120)
 current_estimate: 70-85 (old scale)
 daily_time: 1-1.5 hours
@@ -17,7 +21,13 @@ related:
 ---
 # TOEFL iBT Study Plan — Target Band 5.0 (100+)
 
-> [!info] Timeline: Feb 2026 → Sep/Oct 2026 (~7-8 months)
+> [!success] **Exam registered — 2026-08-30 (Sun) at STN80118A 国试大厦考点, Beijing** *(booked 2026-04-09)*
+> Arrive **by 08:30**. See [Test Registration & Logistics](#test-registration--logistics) for full details.
+
+> [!warning] **Timeline needs re-baselining to 2026-08-30**
+> The phase dates below were written for a Sep 21 target. The registered exam is **Aug 30 — 22 days earlier**. Phase 3 (Jul 1 – Sep 15) and Phase 4 (Sep 15 – Sep 21) should be compressed accordingly. Check tables, the "Days until exam" tip, the "Integration with UTokyo Timeline" block, and the Weekly Progress Tracker rows. **Not auto-shifted — confirm with user before restructuring phases.**
+
+> [!info] Timeline: Feb 2026 → Aug 30 2026 (~6.5 months) — *compressed from original Sep/Oct target*
 > Current estimated level: 70-85 (old scale). Target: **band 5.0** (comparable to 100+/120). Daily study: 1-1.5 hours.
 > Weakest section: **Listening**. Score needed for [[UTokyo_RIKEN]] Kenkyusei & PhD applications. ^JjniPbhh
 
@@ -242,10 +252,20 @@ Jul 1 ██████████████████████ Sep 15 
 
 #### Test Registration & Logistics
 
-- [ ] Register for TOEFL iBT at [ets.org/toefl](https://www.ets.org/toefl) — choose Sep or early Oct 2026 date
-- [ ] Identify nearest test center and book early (seats fill up)
-- [ ] Check passport validity (TOEFL requires passport as ID in China)
+- [x] ~~Register for TOEFL iBT at [ets.org/toefl](https://www.ets.org/toefl) — choose Sep or early Oct 2026 date~~ → **REGISTERED 2026-04-09 for 2026-08-30 (Sun)** via NEEA portal
+- [x] Identify nearest test center and book early (seats fill up) → **STN80118A — 国试大厦考点 (Guoshi Building)**
+- [x] Check passport validity (TOEFL requires passport as ID in China)
 - [ ] Plan logistics: travel to test center, arrive early, bring only passport + confirmation
+
+> [!success] **Registered exam details (2026-04-09)**
+> - **Exam format:** TOEFL iBT (托福网考)
+> - **Date:** 2026-08-30 (Sunday)
+> - **Latest arrival:** 2026-08-30 **08:30** — late arrival = denied entry, no refund
+> - **Test center:** STN80118A — 国试大厦考点 (Guoshi Building)
+> - **Address:** 北京市海淀区上地六街一号 (No. 1 Shangdi 6th St., Haidian District, Beijing)
+> - **Transit:** Metro Line 13 → 清河 (Qinghe) Station → exit via west plaza → walk ~800 m to Guoshi Building, **enter via east gate**
+> - **ETS registration #:** pending (system generates within 24h; contact NEEA if not issued)
+> - **UTokyo score recipient code:** 8002-01 (single test date — **no MyBest**)
 
 ### Phase 4: Final Week & Test Day
 

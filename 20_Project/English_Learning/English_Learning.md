@@ -53,14 +53,15 @@ tags: [english, TOEFL, language]
 - [ ] Complete 1-2 full TPO practice tests per week in final month
 - [ ] Reading & Writing maintenance — practice integrated writing (listening + writing)
 - [ ] Vocabulary: academic word list + TOEFL high-frequency words via Anki
-- [ ] Register for official TOEFL exam date
-- [ ] Take official exam; retake if below 100
+- [x] Register for official TOEFL exam date → **booked 2026-08-30 at STN80118A 国试大厦考点, Beijing (registered 2026-04-09)**
+- [ ] Take official exam on **2026-08-30**; retake if below 100
 
 ---
 
 ## Progress
 
 - 2026-02-13: [[2026-02-13]] - Project initiated, target set: TOEFL 100+, focus on Listening & Speaking
+- 2026-04-09: [[2026-04-09]] - **TOEFL iBT registered** for 2026-08-30 (Sun) at STN80118A 国试大厦考点 (Guoshi Building), Beijing. Metro Line 13 → Qinghe Station. Arrival deadline 08:30. See [[TOEFL_Study_Progress]] for full logistics.
 
 ---
 

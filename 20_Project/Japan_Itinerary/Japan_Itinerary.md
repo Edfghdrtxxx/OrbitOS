@@ -92,7 +92,7 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 | 1 | **Thesis execution** — document results, define next steps | Ongoing; thesis gate by Jun 2027 | [[Masters_Thesis]] |
 | 2 | **Physics + math entrance exam preparation** — now the critical gate; acceptance conditional on passing | Ongoing | [[Fundamental_Knowledge]] |
 | 3 | ~~Supervisor outreach~~ — **DONE** (2026-03-09: Aoi Nori & Nobuaki Imai accepted, conditional on entrance exam) | ~~2026-06-30~~ | [[Professor_Outreach]], [[Supervisor_Relationship_Management]] |
-| 4 | TOEFL preparation (target 100+ iBT) | Register by Apr 2026 | [[English_Learning]] |
+| 4 | TOEFL preparation (target 100+ iBT) | ~~Register by Apr 2026~~ → **Registered 2026-04-09**; exam **2026-08-30** at STN80118A Beijing | [[English_Learning]], [[TOEFL_Study_Progress]] |
 | 5 | Self-funded Kenkyusei budget verification (fallback path) | ASAP | [[UTokyo_RIKEN]] |
 | 6 | Secure Naidaku (Letter of Acceptance) from chosen supervisor | TBD | [[Supervisor_Relationship_Management]] |
 | 7 | Japanese language study (N5 → N4 → N3 trajectory) — **low priority**; not required for admission; entrance exam + TOEFL come first | Ongoing | [[Japanese_Language]] |
