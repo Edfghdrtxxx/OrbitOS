@@ -264,3 +264,80 @@ Compiled PDF visually inspected at 1189mm x 1280mm. All content fully visible:
 | F -- Stage 4: Sun | Col 2, 2x2 grid BR | 0.44\linewidth |
 | G -- [X/Fe] vs. [Fe/H] | Col 3, Block 3.1 | 0.65\linewidth (unchanged) |
 | H -- Yield comparison | **Col 1, Block 1.4** (moved from Col 3) | **0.50\linewidth** (was 0.65) |
+
+---
+
+## Revision 5 (Final): Dangling Citation Fix, Image H Re-placement, and Figure Enlargement
+
+Date: 2026-04-10
+Triggered by: user final-fix request -- three issues: (1) Reference [1] never cited in text, (2) Image H narrative placement, (3) all figures too small.
+
+### Changes Applied
+
+#### Fix 1: Dangling Reference [1] (Grevesse & Sauval 1998)
+
+Reference [1] was listed in the References block but never cited in the poster text. Added an in-text citation in Block 1.3 (Stellar Populations & the Age--Metallicity Relation), specifically after the [Fe/H] definition where the solar reference `(Fe/H)_\odot` appears:
+
+> `$[\text{Fe/H}] = \log\!\bigl((\text{Fe/H})_\star / (\text{Fe/H})_\odot\bigr)$, where the solar reference is from [1].`
+
+This is the most natural location since [1] (Grevesse & Sauval 1998) establishes the standard solar composition used as the denominator in the [Fe/H] scale.
+
+#### Fix 2: Image H Moved Back to Column 3
+
+Image H (yield comparison figure, `6fe66b...`) was moved in Revision 4 from Column 3 to Column 1 after the introductory blocks. This created a narrative jump: the reader encountered theoretical yield models (comparing progenitor masses at different metallicities) before seeing the four-stage evolution or the observational [X/Fe] evidence that the models are meant to explain.
+
+**Decision:** Moved Image H back to Column 3 as Block 3.2 (Supernova Yields: Theory vs. Observation), placed between the Observational Signatures block and the Conclusions block. This restores the content plan's intended narrative flow:
+
+1. Column 1: Setting the Stage (what is inhomogeneous, how we measure it)
+2. Column 2: The Four Stages (what was produced and when)
+3. Column 3: Evidence -> Models -> Conclusions (observe, model, conclude)
+
+Column 1 is now lighter (2 blocks instead of 3), but this improves visual balance since Column 3 was previously sparse with only Observational Signatures + Conclusions + References.
+
+#### Fix 3: All Figures Enlarged
+
+Since the page height is adaptive, all figures were enlarged for maximum visual impact:
+
+| Image | Previous Size | New Size |
+|-------|---------------|----------|
+| A -- Milky Way structure (Col 1) | 0.55\linewidth | **0.85\linewidth** |
+| B -- [Fe/H] vs. Age (Col 1) | 0.55\linewidth | **0.85\linewidth** |
+| C, D, E, F -- 2x2 grid (Col 2) | 0.44\linewidth each | **0.48\linewidth** each |
+| G -- [X/Fe] vs. [Fe/H] (Col 3) | 0.65\linewidth | **0.90\linewidth** |
+| H -- Yield comparison (Col 3) | 0.50\linewidth | **0.85\linewidth** |
+
+#### Page Height Increase
+
+Increased `paperheight` from 1280mm to **1450mm** to accommodate the larger figures. The page is now 1189mm x 1450mm (aspect ratio ~0.82:1).
+
+### Final Page Dimensions
+
+| Dimension | Value |
+|-----------|-------|
+| Paper width | 1189 mm (unchanged) |
+| Paper height | **1450 mm** (was 1280 mm; +13.3%) |
+| Aspect ratio | ~0.82:1 |
+
+### Visual Verification (PASS)
+
+Compiled PDF (two pdflatex passes) visually inspected:
+- **Column 1:** Cosmic Chemical Inhomogeneity (Image A at 0.85), Stellar Populations with [1] citation (Image B at 0.85) -- both large and impactful
+- **Column 2:** Four Stages with 2x2 grid (C/D/E/F at 0.48 each) -- centerpiece fills the column well
+- **Column 3:** Observational Signatures (Image G at 0.90), Supernova Yields (Image H at 0.85), Conclusions, References [1]--[7] -- all fully visible
+- **All 8 images** render correctly at enlarged sizes
+- **Zero overfull box errors** in compilation log
+- **All 7 references** cited in text: [1] in Block 1.3 (Fe/H definition), [2] in Block 1.3 caption, [3] in Col 2 caption, [4] in Block 3.1 and 3.2 captions, [5,6,7] in Block 3.2 text
+- **Narrative flow** restored to content plan's intended sequence
+
+### Images after Revision 5 (all 8 present)
+
+| Image | Column | Size |
+|-------|--------|------|
+| A -- Milky Way structure | Col 1, Block 1.2 | **0.85\linewidth** |
+| B -- [Fe/H] vs. Age | Col 1, Block 1.3 | **0.85\linewidth** |
+| C -- Stage 1: BBN | Col 2, 2x2 grid TL | **0.48\linewidth** |
+| D -- Stage 2: Halo Stars | Col 2, 2x2 grid TR | **0.48\linewidth** |
+| E -- Stage 3: r-process | Col 2, 2x2 grid BL | **0.48\linewidth** |
+| F -- Stage 4: Sun | Col 2, 2x2 grid BR | **0.48\linewidth** |
+| G -- [X/Fe] vs. [Fe/H] | Col 3, Block 3.1 | **0.90\linewidth** |
+| H -- Yield comparison | **Col 3, Block 3.2** (restored from Col 1) | **0.85\linewidth** |
