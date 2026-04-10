@@ -10,4 +10,4 @@ AI writer tool for research papers, shared by @alex_prompter on X.
 **Next steps:**
 - [ ] Review the tweet and linked tool/product
 - [ ] Evaluate usefulness for thesis and future paper writing
-- [ ] If valuable, add to [[PaperWriting]] resources
+- [ ] If valuable, add to `50_Resources/PaperWriting/`
