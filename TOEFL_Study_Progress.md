@@ -52,9 +52,9 @@ Jul 1 ██████████████████████ Sep 15 
 | **2 — Skill Building** | Apr 16 – Jun 30 | 11 | Test strategies, Listening intensive | 88-93 (comparable) |
 | **3 — Test Prep** | Jul 1 – Sep 15 | 11 | Weekly mocks, weakness elimination | band 5.0 / 100+ |
 | **4 — Final Week** | Sep 15 – Sep 21 | 1 | Light review, rest, **exam day** | — |
-| Retake window | Dec 2026 | — | If needed, focused 2-month rework | band 5.0 / 100+ |
+| **Attempt #2** | ~Nov 2026 | — | Unconditional second attempt — register by 2026-06-19 | band 5.0 / 100+ |
 
-> **Key milestones:** Mock #1 (Apr ~13) · Mock #2 (Jun ~29) · Mocks #3-7 (weekly Jul–Sep) · **TOEFL Exam (Sep/Oct 2026)** · Retake if needed (Dec 2026)
+> **Key milestones:** Mock #1 (Apr ~13) · Mock #2 (Jun ~29) · Mocks #3-7 (weekly Jul–Sep) · **TOEFL Attempt #1 (2026-08-30)** · **Register Attempt #2 (by 2026-06-19)** · **TOEFL Attempt #2 (~Nov 2026)**
 
 ## Score Breakdown Target
 
@@ -135,7 +135,8 @@ Jul 1 ██████████████████████ Sep 15 
 |---|---|
 | ~~Mid-2026~~ | ~~MEXT University Recommendation~~ → dropped (extremely fierce competition) |
 | Apr-May 2027 | **Kenkyusei formal application window** — TOEFL score is a required document |
-| Sep-Oct 2026 | **Your exam target** — leaves 6-month buffer before Kenkyusei application + retake window in Dec 2026 |
+| Aug 30, 2026 | **Attempt #1** — registered at STN80118A Beijing |
+| ~Nov 2026 | **Attempt #2** (unconditional) — register by 2026-06-19; submit better score to UTokyo before Period 2 (~Dec 5) |
 
 > [!warning] TOEFL scores are valid for **2 years**. A Sep 2026 score expires Sep 2028 — covers both Kenkyusei and PhD entrance applications.
 
@@ -308,17 +309,18 @@ Jul 1 ██████████████████████ Sep 15 
 
 ---
 
-## Retake Strategy
+## Two-Attempt Strategy (updated 2026-04-10)
 
-If you score below band 5.0 (comparable 100):
+Unconditional two-attempt plan — take TOEFL twice regardless of Attempt #1 score for safety margin.
 
-| Comparable Score | Action |
-|---|---|
-| 95-99 | Consider accepting — still competitive. Retake only if a specific section dragged you down |
-| 85-94 | Retake in Dec 2026 — focus intensively on weakest section for 2 months |
-| Below 85 | Analyze what went wrong, adjust strategy, retake in Dec 2026 or Jan 2027 |
+| Attempt | Target Date | Action |
+|---|---|---|
+| **#1** | **2026-08-30** | Registered (2026-04-09) at STN80118A Beijing |
+| **#2** | **~Nov 2026** | Register by **2026-06-19**; do NOT auto-send to UTokyo — compare scores first, then manually send the better one (code 8002-01) |
 
-> [!note] You can retake TOEFL after a **3-day waiting period**. But a focused 2-month gap between attempts is more effective.
+After Attempt #1 (scores available ~Sep 2), use the gap to target specific weaknesses for Attempt #2.
+
+> [!note] You can retake TOEFL after a **3-day waiting period**. A focused 2-month gap between attempts (Aug 30 → ~Nov) is optimal.
 
 ---
 
@@ -373,11 +375,13 @@ Jun 2026          Naidaku deadline approaching — need strong English for commu
     ↓
 Jul 2026          Phase 3 begins — test preparation
     ↓
-Sep-Oct 2026      ★ TOEFL EXAM ★
+Aug 30 2026       ★ TOEFL ATTEMPT #1 ★
     ↓
-Oct-Dec 2026      Score available for Kenkyusei / PhD applications
+Sep 2026          Attempt #1 scores available (~3 days); target weaknesses for Attempt #2
     ↓
-Dec 2026          Retake window if needed
+Nov 2026          ★ TOEFL ATTEMPT #2 ★ (unconditional — register by 2026-06-19)
+    ↓
+Nov-Dec 2026      Compare scores → manually send better score to UTokyo (code 8002-01) before Period 2 (~Dec 5)
     ↓
 Apr-May 2027      Kenkyusei application — TOEFL score submitted
 ```

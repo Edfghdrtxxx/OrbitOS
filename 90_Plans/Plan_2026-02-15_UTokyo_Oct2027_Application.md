@@ -23,7 +23,9 @@ pathway: "Primary: Direct PhD D1 via Route B (Oct 2027); Fallback: Kenkyusei (Oc
 | ~~Supervisor acceptance~~ | ~~2026-06-30~~ | **DONE** (2026-03-09) — conditional on exam |
 | Sub-track clarified (GSGC vs Special Selection) | 2026-04-30 (backstop: 2026-07-01) | PENDING — professor meeting |
 | TOEFL iBT registered | ~~2026-04 (by Apr 30)~~ | **DONE (2026-04-09)** — booked 2026-08-30 at STN80118A Beijing |
-| TOEFL iBT taken | ~~2026-07 or 2026-08~~ **2026-08-30** | Target 100+; no MyBest accepted; arrive 08:30 |
+| TOEFL iBT Attempt #1 | **2026-08-30** | Target 100+; no MyBest accepted; arrive 08:30 |
+| TOEFL Attempt #2 registered | **by 2026-06-19** | Unconditional two-attempt strategy; exam ~Nov 2026 |
+| TOEFL iBT Attempt #2 | **~Nov 2026** | Do NOT auto-send; compare scores → manually send better one (code 8002-01) before Period 2 (~Dec 5) |
 | GRE Physics taken | 2026-09 or 2026-10 | Single-shot; no retake before Special Selection deadline (~Dec 2026) |
 | Special Selection application submitted | TBD — confirm with professors / Oct 2027 cycle info | ⚠️ Window unverified |
 | Written exam (if required) | TBD | ⚠️ Format unverified — confirm with professors |
@@ -81,7 +83,9 @@ pathway: "Primary: Direct PhD D1 via Route B (Oct 2027); Fallback: Kenkyusei (Oc
 
 - [ ] UTokyo requires single test date score (no MyBest); aim for 100+
 - [ ] Focused prep: 2–3 months before exam date (peak window: Jun–Aug 2026)
-- [ ] Sit for TOEFL iBT on **2026-08-30** (booked 2026-04-09 — arrive by 08:30)
+- [ ] Sit for TOEFL iBT **Attempt #1** on **2026-08-30** (booked 2026-04-09 — arrive by 08:30)
+- [ ] **Register for Attempt #2 by 2026-06-19** — unconditional two-attempt strategy
+- [ ] Sit for TOEFL iBT **Attempt #2** (~Nov 2026); do NOT auto-send — compare scores, then manually send the better one to UTokyo (code 8002-01) before Period 2 (~Dec 5)
 - [ ] TOEFL scores valid if taken within 2 years of application start date (valid through 2028-08-30)
 - [ ] Track in [[English_Learning]] and [[TOEFL_Study_Progress]]
 
@@ -324,7 +328,7 @@ pathway: "Primary: Direct PhD D1 via Route B (Oct 2027); Fallback: Kenkyusei (Oc
 |---|---|
 | GSGC role + Special Selection details unresolved by 2026-07-01 | Escalate directly to UTokyo Graduate School Office |
 | GRE Physics score too low or missed | No retake before Special Selection application deadline (estimated ~Dec 2026); pivot to next window (delays to Oct 2028 cycle) or evaluate Regular exam route |
-| TOEFL score below 72 (B2 threshold) | Retake in Sep–Oct 2026; fallback window available |
+| TOEFL score below 72 (B2 threshold) after both attempts | Reassess English prep strategy; consider third attempt if timeline permits |
 | Entrance exam failed (Mar 2027) | Activate Kenkyusei fallback (Phase 4); retake exam for Oct 2028 |
 | Self-funded budget shortfall (if Kenkyusei) | Verify savings buffer; adjust timeline or seek alternative funding |
 | Visa/COE delayed past 2027-09-01 | Contact UTokyo International Office urgently; explore deferred start |

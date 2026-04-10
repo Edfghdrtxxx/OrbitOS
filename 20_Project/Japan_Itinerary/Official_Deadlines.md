@@ -104,7 +104,7 @@ Same pattern as Section 1, shifted +1 year. Application periods would fall in ~O
 
 **Plan:** Unconditional two-attempt strategy (updated 2026-04-10):
 - **Attempt #1:** ~~Register Apr 2026, test Jul–Aug 2026.~~ → **Executed: registered 2026-04-09, test 2026-08-30 at STN80118A Beijing.** Score valid through 2028-08-30.
-- **Attempt #2:** Register by **2026-06-19**, target exam ~Nov 2026. Submit best score to UTokyo (code 8002-01) before Period 2 (~Dec 5).
+- **Attempt #2:** Register by **2026-06-19**, target exam ~Nov 2026. Do NOT auto-send to UTokyo at registration — compare both scores, then manually send the better one (code 8002-01) before Period 2 (~Dec 5).
 
 **Score delivery to UTokyo:**
 - Select institution code **8002-01** when registering, or send additional score report after test
