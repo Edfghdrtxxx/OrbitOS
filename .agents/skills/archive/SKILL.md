@@ -46,7 +46,7 @@ Prompt: *"Search for archivable items in the OrbitOS vault. Return results as st
 
 ### Agent B — Cross-reference inbox vs daily tasks
 Prompt: *"Cross-reference pending inbox items against completed daily tasks. Return matched pairs."*
-1. Collect all files in `00_Inbox/` with `status: captured`
+1. Collect all files in `00_Inbox/` with `status: pending`
 2. Read each pending inbox item and derive 2–4 search terms per item by:
    - **Filename:** split kebab-case tokens, drop generic words (`Skill`, `Note`, `Update`, etc.), recombine into noun phrases
    - **Body:** pull in parenthesized terms, proper nouns, and wikilinks that add specificity beyond the filename

@@ -33,7 +33,7 @@ Help the user start their day by reviewing the last daily note's progress, creat
 4. **Investigate Deadlines** — Launch Explore agent **in background** using `deadline-agent-prompt.md` (fill `{today}`, `{cutoff}` = +60 days). Output consumed silently in Step 3 Notes.
 
 5. **Check Inbox**
-   - List files in `00_Inbox/` with `status: captured`
+   - List files in `00_Inbox/` with `status: pending`
    - Count items waiting to be processed
 
 6. **Analyze & Prioritize**

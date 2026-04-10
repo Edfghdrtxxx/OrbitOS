@@ -1,6 +1,6 @@
 ---
 created: 2026-04-10
-status: captured
+status: pending
 source: start-my-day
 ---
 Discuss with Claude: how to capture key points in TOEFL Listening — strategies & practice methods.
