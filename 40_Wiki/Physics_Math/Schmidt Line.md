@@ -28,7 +28,7 @@ The Schmidt lines are the theoretical upper and lower bounds for the [[Magnetic 
 ## Examples
 
 - ${}^{17}\text{O}$ (one neutron beyond the $N = 8$ [[Magic Numbers|magic number]]) has $j = 5/2^+$ and a magnetic moment close to the neutron $d_{5/2}$ Schmidt value, confirming a nearly pure single-particle state.
-- ${}^{209}\text{Bi}$ (one proton beyond $Z = 82$) with $j = 9/2^-$ also sits near the proton $h_{9/2}$ Schmidt line, consistent with the doubly-magic-plus-one picture.
+- ${}^{209}\text{Bi}$ (one proton beyond $Z = 82$) with $j = 9/2^-$ lies between the Schmidt lines, confirming the $h_{9/2}$ assignment consistent with the doubly-magic-plus-one picture.
 
 ## Related Concepts
 

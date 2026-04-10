@@ -14,7 +14,7 @@ review_interval: 0
 *Energy level diagram of hydrogen fine structure, showing splittings due to spin-orbit coupling at order $\alpha^2$. (CC BY-SA 4.0, Wikimedia Commons)*
 
 ![[Fine_Structure_Constant_diagram.svg]]
-*Eighth-order QED Feynman diagrams contributing to the electron anomalous magnetic moment $a_e$, each vertex contributing a factor of $\alpha$. (CC BY-SA 3.0, Wikimedia Commons)*
+*Higher-order QED Feynman diagrams contributing to the electron anomalous magnetic moment $a_e$, each vertex contributing a factor of $\alpha$. (CC BY-SA 3.0, Wikimedia Commons)*
 
 ## Definition
 
