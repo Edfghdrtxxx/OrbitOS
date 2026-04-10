@@ -1,7 +1,14 @@
 ---
+type: inbox
 created: 2026-04-10
+topic: AI-assisted paper writing
+due:
+priority:
 status: pending
 source: start-my-day
+related: "[[Auto-Research-Claude-Investigation]], [[MATE-Automation]]"
+tags:
+  - inbox
 ---
 AI writer tool for research papers, shared by @alex_prompter on X.
 
