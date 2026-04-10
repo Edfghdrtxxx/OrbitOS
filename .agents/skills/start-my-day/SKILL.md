@@ -33,7 +33,7 @@ Help the user start their day by reviewing the last daily note's progress, creat
 4. **Investigate Deadlines** — Launch Explore agent **in background** using `deadline-agent-prompt.md` (fill `{today}`, `{cutoff}` = +60 days). Output consumed silently in Step 3 Notes.
 
 5. **Check Inbox**
-   - List files in `00_Inbox/` with `status: pending`
+   - List files in `00_Inbox/` with `status: captured`
    - Count items waiting to be processed
 
 6. **Analyze & Prioritize**
@@ -104,15 +104,7 @@ Use the AskUserQuestion tool to gather (combine into as few rounds as possible):
 
 For each new idea/task mentioned in Q4:
 1. Check if it exists in projects or inbox
-2. If new, create `00_Inbox/[Brief-Title].md`:
-   ```yaml
-   ---
-   created: YYYY-MM-DD
-   status: pending
-   source: start-my-day
-   ---
-   [User's description]
-   ```
+2. If new, create `00_Inbox/[Brief-Title].md` using the template at `99_System/Templates/Inbox_Template.md`. Set `source: start-my-day` and fill in all applicable fields.
 
 ## Step 5: Present Summary
 

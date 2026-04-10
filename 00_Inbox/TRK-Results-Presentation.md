@@ -1,6 +1,6 @@
 ---
 created: 2026-04-09
-status: pending
+status: captured
 source: start-my-day
 ---
 Organize the results of TRK experiments and make a presentation.

@@ -1,6 +1,6 @@
 ---
 created: 2026-03-20
-status: pending
+status: captured
 source: start-my-day
 ---
 TRK experiment series — track number classification + angle reconstruction from raw simulation data via [[MATE-Automation]].

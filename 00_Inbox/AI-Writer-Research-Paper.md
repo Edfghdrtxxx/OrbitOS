@@ -1,6 +1,6 @@
 ---
 created: 2026-04-10
-status: pending
+status: captured
 source: start-my-day
 ---
 AI writer tool for research papers, shared by @alex_prompter on X.

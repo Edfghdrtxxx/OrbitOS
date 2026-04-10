@@ -1,6 +1,6 @@
 ---
 created: 2026-04-09
-status: pending
+status: captured
 source: start-my-day
 ---
 Read the inspiration from the chat in Claude Code to improve the current Cross-Attention architecture and seek for potential improvements and development.
