@@ -99,9 +99,12 @@ Same pattern as Section 1, shifted +1 year. Application periods would fall in ~O
 **Registration logistics:**
 - ETS recommends registering **4 months in advance** for best date selection; closes **5 days** before test (late registration: 2 days before)
 - ~~Register in **April 2026** for a **July–August 2026** exam date~~ → **Done 2026-04-09: booked 2026-08-30** (~4.7 months lead time)
-- Retake possible: if score < 100, retake in **Sep–Oct 2026** and still make Period 2 (~Dec 2026) application deadline
+- ~~Retake possible: if score < 100, retake in Sep–Oct 2026~~ → **Strategy change 2026-04-10:** unconditional two-attempt plan — take TOEFL twice regardless of Attempt #1 score for safety margin
+- **⏰ 2026-06-19 — Register for TOEFL Attempt #2** (target: ~Nov 2026 exam date, pre-Special Selection Period 2 ~Dec 5–22)
 
-**Plan:** ~~Register Apr 2026, test Jul–Aug 2026.~~ → **Executed: registered 2026-04-09, test 2026-08-30 at STN80118A Beijing.** Score valid through 2028-08-30 (covers both Oct 2027 and Oct 2028 cycles).
+**Plan:** Unconditional two-attempt strategy (updated 2026-04-10):
+- **Attempt #1:** ~~Register Apr 2026, test Jul–Aug 2026.~~ → **Executed: registered 2026-04-09, test 2026-08-30 at STN80118A Beijing.** Score valid through 2028-08-30.
+- **Attempt #2:** Register by **2026-06-19**, target exam ~Nov 2026. Submit best score to UTokyo (code 8002-01) before Period 2 (~Dec 5).
 
 **Score delivery to UTokyo:**
 - Select institution code **8002-01** when registering, or send additional score report after test
