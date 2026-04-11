@@ -1,6 +1,6 @@
 ---
 name: breakdown-tasks
-description: Break down tasks into stratified subtasks with time estimates and dependency markers, then insert into today's daily note
+description: Decompose a single already-identified task or goal into a stratified subtask tree with time estimates and blocker markers, so the user can see the full scope before starting and track progress granularly. Use when the user points at one thing they need broken down — distinct from `/daily-note-addition`, which is the flat-capture path for parking multiple loose independent ideas without decomposition.
 ---
 
 # OBJECTIVE
