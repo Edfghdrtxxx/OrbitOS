@@ -30,7 +30,7 @@ Help the user start their day by reviewing the last daily note's progress, creat
      - Last update date (to identify stale projects 3+ days)
      - Any due dates or time-sensitive items
 
-4. **Investigate Deadlines** — Launch Explore agent **in background** using `deadline-agent-prompt.md` (fill `{today}`, `{cutoff}` = +60 days). Output consumed silently in Step 3 Notes.
+4. **Investigate Deadlines** — Launch Explore agent **in background** using `agent-prompts/deadline.md` (fill `{today}`, `{cutoff}` = +60 days). Output consumed silently in Step 3 Notes.
 
 5. **Check Inbox**
    - List files in `00_Inbox/` with `status: pending`
@@ -106,6 +106,23 @@ For each new idea/task mentioned in Q4:
 1. Check if it exists in projects or inbox
 2. If new, create `00_Inbox/[Brief-Title].md` using the template at `99_System/Templates/Inbox_Template.md`. Set `source: start-my-day` and fill in all applicable fields.
 
+## Step 4.5: Inbox Backfill (Auto-Create)
+
+For checklist items in today's note lacking a matching inbox note, create one.
+
+1. **Dispatch Explore agent** with `agent-prompts/inbox-backfill.md`. Fill
+   `{today}` and `{daily_note_path}` (= `10_Daily/<today>.md`). Foreground
+   dispatch — must run *after* Step 4 so that Q4 captures are visible to the
+   matcher and don't get duplicated.
+2. **Parse output** for `=== FILE: ... === END FILE ===` blocks.
+   If agent returns `NO BACKFILL NEEDED`, skip to Step 5.
+3. **For each block**:
+   a. Extract target path and body.
+   b. **Safety check**: if `00_Inbox/<filename>` already exists, skip and log
+      the collision (the agent's matcher missed it).
+   c. Otherwise write the file via the Write tool, verbatim.
+4. **Record created count** as `{backfilled_count}` for the Step 5 summary.
+
 ## Step 5: Present Summary
 
 Output a short terminal confirmation:
@@ -113,11 +130,13 @@ Output a short terminal confirmation:
 ```
 Good morning! Your day is ready.
 
-Energy: [level] | Priorities: [N] | Active projects: [N] | Inbox: [N] pending
+Energy: [level] | Priorities: [N] | Active projects: [N] | Inbox: [N] pending (+[M] backfilled)
 Today's note: [[YYYY-MM-DD]]
 
 > Next: /breakdown-tasks → /estimate-time
 ```
+
+Drop the `(+[M] backfilled)` suffix when `M == 0`.
 
 ## Step 6: Reflect
 
