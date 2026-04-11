@@ -24,11 +24,10 @@ You already read the note in Step 1 — use the **actual bucket headings and exi
 If no bucket is a clean fit, append the idea to the last bucket in the Priorities section and flag the weak match in Step 6's report so the user can move it.
 
 ## 4. Format the bullet
-`- [ ] <idea text> (~ X mins) #idea`
+`- [ ] <idea text> (~ X mins)`
 
 - **Estimate:** rough `~ X mins` (nearest 5m) when scope is obvious; `(~?)` otherwise. Reason contextually, never from keywords.
 - **Wikilink:** when an idea clearly ties to a project already referenced in the note's `## Related Projects` section (or a project wikilinked elsewhere in the note), weave that `[[ProjectName]]` into the bullet text naturally — not tacked on at the end. Pull the project names from the note you just read, not from memory.
-- **Tag:** always end with `#idea` so later queries can aggregate captures across days.
 
 ## 5. Insert
 For each bullet, find where the chosen bucket's content ends in the note you read in Step 1 — wherever its items give way to a clearly different section. **Derive that boundary from the note's actual structure, not a fixed marker** — the same principle as Step 3 classification. Append the new bullet as the bucket's final item using `Edit` with a multi-line anchor drawn from the note's real surrounding content; if the bucket has nested sub-checkboxes, the anchor should span the last top-level item through the closing boundary so the match is unique in the file.
