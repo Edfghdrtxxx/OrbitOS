@@ -1,7 +1,10 @@
 ---
 created: 2026-04-09
-status: pending
+status: processed
 source: start-my-day
+completed-in: "[[2026-04-11]]"
+archived: 2026-04-11
+archived-in: "[[2026-04-11]]"
 ---
 Organize the results of TRK experiments and make a presentation.
 
