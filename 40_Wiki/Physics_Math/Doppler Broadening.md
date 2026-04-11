@@ -7,7 +7,6 @@ next_review: 2026-04-11
 review_interval: 0
 ---
 # Doppler Broadening
-> [!important] All math expressions, equations, and formulas **must** use LaTeX notation (`$...$` for inline, `$$...$$` for display blocks).
 
 ## Schematics
 
