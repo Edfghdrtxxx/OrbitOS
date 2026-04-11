@@ -25,7 +25,11 @@ For each bare item, emit one block:
 
 === FILE: 00_Inbox/<Kebab-Case-Filename>.md ===
 ---
+type: inbox
 created: {today}
+topic:
+due:
+priority:
 status: pending
 source: start-my-day
 related:
@@ -39,6 +43,11 @@ tags:
 === END FILE ===
 
 If nothing to create, output exactly: NO BACKFILL NEEDED
+
+## Frontmatter field rules
+- `type: inbox` — always literal, never omit
+- `topic:`, `due:`, `priority:` — leave empty (no value after the colon). Downstream skills (`/kickoff`, `/archive`) fill these later.
+- `related:` — if the task text has NO wikilinks, emit `related: []` (empty list). Otherwise emit one `- "[[Name]]"` bullet per wikilink found, preserving order.
 
 ## Filename rules
 - Kebab-case, derived from the task's core noun phrase
