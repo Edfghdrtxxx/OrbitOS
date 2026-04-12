@@ -109,7 +109,7 @@ Only relevant if GSGC is ineligible or Imai-san recommends Special Selection.
 
 ### 4. Publication Expectations
 
-- [ ] **Publication trajectory:** "What is the typical publication trajectory for a PhD student in your group — how many papers, what journals (PLB, PRC, PTEP), and is there a first-author expectation before defense?"
+- [ ] **Publication trajectory:** "What is the typical publication trajectory for a PhD student in your group — how many papers, what journals (PRL, PLB, PRC), and is there a first-author expectation before defense?"
 
 ### 5. RIKEN JRA + Housing
 
