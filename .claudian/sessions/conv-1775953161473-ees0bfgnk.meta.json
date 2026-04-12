@@ -1,0 +1,24 @@
+{
+  "id": "conv-1775953161473-ees0bfgnk",
+  "providerId": "claude",
+  "title": "Analyze effect conditions",
+  "titleGenerationStatus": "success",
+  "createdAt": 1775953161474,
+  "updatedAt": 1775953189649,
+  "lastResponseAt": 1775953189649,
+  "sessionId": "5e7a46a7-b933-456d-92e2-62060cde93b3",
+  "providerState": {
+    "providerSessionId": "5e7a46a7-b933-456d-92e2-62060cde93b3"
+  },
+  "currentNote": "40_Wiki/Physics_Math/Doppler Broadening.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 1952,
+    "cacheReadInputTokens": 15912,
+    "contextWindow": 200000,
+    "contextTokens": 17865,
+    "percentage": 9,
+    "contextWindowIsAuthoritative": true
+  }
+}

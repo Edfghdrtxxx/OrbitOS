@@ -1,12 +1,12 @@
 {
   "id": "conv-1775100252779-h41d72f87",
+  "providerId": "claude",
   "title": "I need more context! You're asking \"What does t...",
   "titleGenerationStatus": "success",
   "createdAt": 1775100252779,
-  "updatedAt": 1775100268192,
+  "updatedAt": 1775953010139,
   "lastResponseAt": 1775100268192,
   "sessionId": "e89ae50e-3e8c-432d-bdb2-43acf96c2a8f",
-  "sdkSessionId": "e89ae50e-3e8c-432d-bdb2-43acf96c2a8f",
   "currentNote": "10_Daily/2026-04-01.md",
   "usage": {
     "model": "opus",
