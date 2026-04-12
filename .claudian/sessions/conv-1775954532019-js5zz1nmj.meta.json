@@ -1,0 +1,24 @@
+{
+  "id": "conv-1775954532019-js5zz1nmj",
+  "providerId": "claude",
+  "title": "Find UCAS IMP educator's email\n\n---\n\n**Note:** ...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1775954532019,
+  "updatedAt": 1775954633343,
+  "lastResponseAt": 1775954633343,
+  "sessionId": "9a0e3b41-ad0f-478e-8ca2-20f95e70d007",
+  "providerState": {
+    "providerSessionId": "9a0e3b41-ad0f-478e-8ca2-20f95e70d007"
+  },
+  "currentNote": "00_Inbox/Course-Dropping-JiaYi-Li.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 1179,
+    "cacheReadInputTokens": 25126,
+    "contextWindow": 200000,
+    "contextTokens": 26306,
+    "percentage": 13,
+    "contextWindowIsAuthoritative": true
+  }
+}

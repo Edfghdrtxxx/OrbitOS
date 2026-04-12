@@ -110,18 +110,22 @@ For each new idea/task mentioned in Q4:
 
 For checklist items in today's note lacking a matching inbox note, create one.
 
-1. **Dispatch Explore agent** with `agent-prompts/inbox-backfill.md`. Fill
-   `{today}` and `{daily_note_path}` (= `10_Daily/<today>.md`). Foreground
-   dispatch — must run *after* Step 4 so that Q4 captures are visible to the
-   matcher and don't get duplicated.
-2. **Parse output** for `=== FILE: ... === END FILE ===` blocks.
-   If agent returns `NO BACKFILL NEEDED`, skip to Step 5.
-3. **For each block**:
-   a. Extract target path and body.
-   b. **Safety check**: if `00_Inbox/<filename>` already exists, skip and log
-      the collision (the agent's matcher missed it).
-   c. Otherwise write the file via the Write tool, verbatim.
-4. **Record created count** as `{backfilled_count}` for the Step 5 summary.
+1. **Dispatch a writable sub-agent** — use the Agent tool with the default
+   `general-purpose` subagent type (NOT `Explore`, which is read-only). Pass
+   `agent-prompts/inbox-backfill.md` with `{today}` and `{daily_note_path}`
+   (= `10_Daily/<today>.md`) filled in. Foreground dispatch — must run
+   *after* Step 4 so Q4 captures are visible to the matcher and don't get
+   duplicated.
+2. The sub-agent owns the full workflow: it scans, matches, and writes the
+   new inbox files via its own Write tool. You do NOT parse spec blocks or
+   write files yourself at this step.
+3. **Parse the sub-agent's final report**:
+   - `NO BACKFILL NEEDED` → set `{backfilled_count} = 0`, skip to Step 5.
+   - Otherwise, read the `Created <N> inbox notes:` line to get
+     `{backfilled_count}`. If the report lists `Collisions skipped: <M>`,
+     surface those filenames inline in the Step 5 output so the user knows.
+4. Trust the sub-agent's report — do not re-verify or re-write. It is
+   authoritative for Step 4.5.
 
 ## Step 5: Present Summary
 
