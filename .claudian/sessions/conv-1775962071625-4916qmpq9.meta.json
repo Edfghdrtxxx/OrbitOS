@@ -1,0 +1,24 @@
+{
+  "id": "conv-1775962071625-4916qmpq9",
+  "providerId": "claude",
+  "title": "Fix line display formatting",
+  "titleGenerationStatus": "success",
+  "createdAt": 1775962071625,
+  "updatedAt": 1775962170033,
+  "lastResponseAt": 1775962170033,
+  "sessionId": "b038e2d4-ca33-420c-a19d-4bdf373f31be",
+  "providerState": {
+    "providerSessionId": "b038e2d4-ca33-420c-a19d-4bdf373f31be"
+  },
+  "currentNote": "10_Daily/2026-04-12.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 3,
+    "cacheCreationInputTokens": 120,
+    "cacheReadInputTokens": 18350,
+    "contextWindow": 200000,
+    "contextTokens": 18473,
+    "percentage": 9,
+    "contextWindowIsAuthoritative": true
+  }
+}
