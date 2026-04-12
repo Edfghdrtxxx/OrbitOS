@@ -63,7 +63,9 @@ tags:
 - Kebab-case, derived from the task's core noun phrase
 - Strip filler verbs when they don't carry meaning
   ("Fix the heatmap plot" → `Heatmap-Plot-Visualization.md`)
-- Must not collide with any existing file in `00_Inbox/` (see collision check)
+
+(Collision handling lives in the Write procedure above, not here — single
+source of truth.)
 
 ## Final report (your last message)
 After all Write calls finish, respond with **exactly one** of:
