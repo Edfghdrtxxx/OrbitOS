@@ -82,11 +82,52 @@ This confirms they are separate programs. For someone with an existing master's,
 ## Pre-Meeting Questions for [[Prof_Nobuaki_Imai|Imai-san]] (One-on-One)
 
 > [!info] Context
-> Current leaning is toward Imai's group (DONUTS) over Aoi's group (NUSPEQ). These questions are for a one-on-one meeting with Imai before finalizing the group choice.
+> **Meeting: 2026-04-13 09:30 (online)**. First one-on-one with Imai-san. This is the commitment point per IMP advisor directive (contact one professor only). Current leaning: Imai's group (DONUTS) over Aoi's group (NUSPEQ). Meeting structure: present slides (~10 min), then discussion/questions (~15-20 min). Presentation covers: MATE-TPC ML-PID work → connection to DONUTS/SAKURA → outlook.
 
-1. **Thesis topic vision:** What thesis topic would Imai-san envision specifically for a student with AFTPC + ML/PID background?
-2. **Typical PhD week:** What does a typical week look like for PhD students in his group (lab time, seminars, beam time rotations, independent work)?
-3. **Jiatai Li's experience:** What happened with Jiatai Li's thesis — and would it be possible to connect with him for practical advice on navigating the group as a Chinese student?
+> [!danger] Time management
+> Realistically 5-8 questions max in a 20-30 min meeting. Prioritize **CRITICAL** and **HIGH** — weave **MEDIUM** in only if conversation flows naturally. Let Imai-san talk; don't interrogate.
+
+### CRITICAL — Decision Gate (must ask; gates entire application strategy)
+
+These resolve [[DG_GSGC_vs_Special_Selection]] — the single biggest blocker (target: 2026-04-30, D-18).
+
+1. **GSGC eligibility + entry level (U1/U2):** "I will complete my master's degree in June 2027. Am I eligible to apply for GSGC, or is GSGC only for applicants entering at the master's level? If eligible, would I enter at the doctoral (D1) level?" #upcoming-confirmation-needed
+2. **Exam format for Special Selection (UA/UB):** "For Special Selection in the Physics department — is there a written exam, or is it purely document review + oral? What is the oral exam format (duration, presentation, content)?" #upcoming-confirmation-needed
+3. **Which sub-track does Imai-san recommend?** "Given my situation — existing master's, international applicant, aiming for Oct 2027 D1 entry — which route would you recommend: GSGC, Special Selection, or applying to both?"
+
+### HIGH — Research Direction & Thesis Fit
+
+These confirm that DONUTS is the right group and shape your research proposal.
+
+4. **Thesis topic vision:** "What thesis topic would you envision for a student with active-target TPC + ML-based PID background? Would I work within the SAKURA program, or is there another direction?"
+5. **Experiment pipeline:** "Which approved experiments (SHARAQ21-25 or beyond) would a new PhD student likely contribute to? What is the expected beam time schedule over the next 3 years?"
+6. **Publication expectations:** "What is the typical publication trajectory for a PhD student in your group — how many papers, what journals (PLB, PRC, PTEP), and is there a first-author expectation before defense?"
+
+### HIGH — Funding & Logistics
+
+7. **RIKEN JRA (V2/V7):** "Is RIKEN JRA funding available for PhD students in your group? What is the current stipend, and when should I apply for an Oct 2027 start?"
+   - Follow-up if GSGC is eligible (U3): "Can GSGC scholarship (180k/month) and JRA coexist, or are they mutually exclusive?"
+
+### MEDIUM — Group Life & Practical (weave in naturally)
+
+8. **Typical PhD week:** "What does a typical week look like for PhD students in your group — lab time, seminars, beam time rotations, independent work? What language are meetings conducted in?"
+9. **Chinese peers:** "I noticed Jiatai Li completed his D3 in January 2026 and Qin Hao is currently in the group. Would it be possible to connect with them for practical advice on navigating the group and life at Wako/Hongo as a Chinese student?"
+10. **Housing:** "Do you have recommendations for housing near the Wako campus, or does UTokyo offer dormitory access for PhD students?"
+
+### LOW — Ask only if time permits or defer to follow-up email
+
+11. **GRE Physics waiver (UD):** "Can a strong GRE Physics score waive any written exam component, if one exists?" #upcoming-confirmation-needed
+12. **Score cutoffs (UE):** "Are there unpublished minimum GRE/TOEFL score cutoffs at the Physics department level?" #upcoming-confirmation-needed
+13. **FY2027 dates (UC):** "When do you expect FY2027 application guidelines to be published — and do you know the exact application dates?" (Expected late April 2026 per UTokyo website) #upcoming-confirmation-needed
+14. **Tuition exemption (V4):** "Are international PhD students eligible for UTokyo's tuition exemption? How is income defined — does JRA count?"
+15. **Lab visit:** "Is there a student orientation or lab visit opportunity I could attend before enrollment?"
+
+> [!tip] Conversation strategy
+> - **Open with gratitude:** Thank Imai-san for his time and for accepting you conditionally in March.
+> - **Present first, ask after:** Let the presentation (~10 min) show you've done your homework on his research. This builds credibility before asking questions.
+> - **Lead with Q4 (thesis topic)** after the presentation — it flows naturally from "here's my background → what would I work on with you?" Then pivot to Q1 (GSGC eligibility) as a practical planning question.
+> - **Don't force all questions.** If Imai-san is engaged on research direction, let that conversation develop. Administrative questions (Q1-3, Q7) can be sent in a follow-up email if the meeting runs short.
+> - **Take notes.** Record answers verbatim where possible — they become verification evidence for the decision gate.
 
 ## Sources (fetched 2026-03-10)
 
