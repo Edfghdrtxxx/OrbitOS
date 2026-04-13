@@ -9,7 +9,7 @@ tags: [japan, immigration, phd, checklist]
 
 > [!warning] Verify all requirements against official sources before acting. This checklist is scaffolding, not authoritative.
 
-> [!tip] Current decision baseline (updated 2026-03-09): Primary route is [[UTokyo_RIKEN]] (UTokyo CNS + RIKEN JRA). Route B chosen; Route A archived. **Sub-track (GSGC vs Special Selection) undecided — pending professor meeting.** **Supervisor pre-contact COMPLETE** — Aoi Nori & Nobuaki Imai accepted conditionally. IPA archived/rejected.
+> [!tip] Current decision baseline (updated 2026-04-13): Primary route is [[UTokyo_RIKEN]] (UTokyo CNS + RIKEN JRA). Route B chosen; Route A archived. **Sub-track RESOLVED: Special Selection confirmed (2026-04-13 Imai meeting). Committed to Imai's group (DONUTS).** **Supervisor pre-contact COMPLETE** — committed to Nobuaki Imai. IPA archived/rejected.
 
 ## Eligibility Requirements
 
@@ -24,7 +24,7 @@ tags: [japan, immigration, phd, checklist]
 ## Admissions Route & Exam
 
 - [x] UTokyo doctoral route clarified for Oct 2028: Regular Physics vs GSGC/Special Selection (confirm written vs oral timing) (RESOLVED 2026-03-09: Route B chosen, Route A archived; sub-track GSGC vs Special Selection still undecided)
-- [ ] **CRITICAL:** Clarify GSGC vs Special Selection sub-track with professors — see **[[DG_GSGC_vs_Special_Selection]]** for full analysis. **Ask in next professor meeting.**
+- [x] **CRITICAL:** GSGC vs Special Selection RESOLVED — Special Selection confirmed (2026-04-13 Imai meeting). See [[DG_GSGC_vs_Special_Selection]]
 - [ ] Kenkyusei status confirmed to qualify for doctoral entrance exam — tracked as V6 in [[Supervisor_Relationship_Management#Unverified Items This Contact Can Resolve]]
 - [ ] Kenkyusei maximum enrollment duration confirmed (for exam-retake Plan B) — tracked as V8 in [[Supervisor_Relationship_Management#Unverified Items This Contact Can Resolve]]
 - [ ] Past problems gathered and prep schedule mapped -> [[Fundamental_Knowledge]]
@@ -74,10 +74,10 @@ tags: [japan, immigration, phd, checklist]
 
 ## Target Universities / Labs
 
-> [!tip] Decision finalized 2026-02-15, updated 2026-03-09: UTokyo CNS / RIKEN JRA route. **Primary:** Direct PhD D1 via Route B (sub-track undecided). **Fallback:** Kenkyusei buffer year → PhD D1. Route A archived.
+> [!tip] Decision finalized 2026-02-15, updated 2026-04-13: UTokyo CNS / RIKEN JRA route. **Primary:** Direct PhD D1 via Route B — **Special Selection confirmed**. Committed to Imai's group (DONUTS). **Fallback:** Kenkyusei buffer year → PhD D1. Route A archived.
 
-> [!danger] CRITICAL: GSGC vs Special Selection
-> Sub-track distinction pending professor meeting. See **[[DG_GSGC_vs_Special_Selection]]** for full analysis and resolution path.
+> [!success] RESOLVED: Special Selection confirmed
+> Sub-track resolved via one-on-one online meeting with Imai-san (2026-04-13). GSGC ineligible; Special Selection is the only path. Interview only, no written exam. See [[DG_GSGC_vs_Special_Selection]].
 
 - [x] [[UTokyo_RIKEN]] - **PRIMARY** (UTokyo CNS + RIKEN JRA); active execution roadmap
 - [ ] Identify 3-5 UTokyo CNS PIs aligned with TPC + direct reactions + ML-PID -> [[UTokyo_RIKEN]]
@@ -87,7 +87,7 @@ tags: [japan, immigration, phd, checklist]
 ## Monitoring Checkpoints
 
 - [x] 2026-04-15: first supervisor outreach emails sent (2026-03-09: completed ahead of schedule — Aoi Nori & Nobuaki Imai accepted, conditional on entrance exam)
-- [ ] 2026-07-01: Confirm GSGC vs Special Selection distinction resolved; verify GSGC Period 1 guideline released. See [[DG_GSGC_vs_Special_Selection]] for resolution path.
+- [x] 2026-07-01: GSGC vs Special Selection — RESOLVED ahead of schedule (2026-04-13). Special Selection confirmed.
 - [ ] 2026-09-01: UTokyo GSGC guideline release check
 - [ ] 2026-10-15 / 2026-12-05: UTokyo cycle window checks
 - [ ] 2027-01-15: if no Oct 2027 call posted, email Graduate School Office

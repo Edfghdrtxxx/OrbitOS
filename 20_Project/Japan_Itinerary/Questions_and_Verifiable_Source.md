@@ -39,7 +39,7 @@ From the [GSGC FAQ](https://www.s.u-tokyo.ac.jp/GSGC/faq/) (verbatim):
 
 This confirms they are separate programs. For someone with an existing master's, Special Selection allows direct D1 entry; GSGC may require M1 re-enrollment. See [[Japan_Itinerary]] for current pathway decision and [[UTokyo_RIKEN]] for the execution plan.
 
-## Verification Tracker (updated 2026-03-11)
+## Verification Tracker (updated 2026-04-13)
 
 | # | Claim | Status | Source |
 |---|-------|--------|--------|
@@ -64,24 +64,30 @@ This confirms they are separate programs. For someone with an existing master's,
 | V19 | Conducted in English | VERIFIED | UTokyo admissions page |
 | V20 | Score validity: within 2 years of application start date | VERIFIED | UTokyo admissions page |
 | V21 | FY2027 guidelines expected late April 2026 | VERIFIED | UTokyo admissions page |
-| UA | Whether Physics dept conducts a written exam as part of Special Selection | UNVERIFIED #upcoming-confirmation-needed | Ask professors |
-| UB | Physics dept oral exam format for Special Selection (duration, presentation, content) | UNVERIFIED #upcoming-confirmation-needed | Ask professors |
-| UC | FY2027 exact application dates | UNVERIFIED #upcoming-confirmation-needed | Not yet published (~late April 2026) |
-| UD | Whether GRE Physics can waive a written exam component (if one exists) | UNVERIFIED #upcoming-confirmation-needed | Ask professors |
-| UE | Minimum GRE/TOEFL score cutoffs at Physics dept level (unpublished) | UNVERIFIED #upcoming-confirmation-needed | Ask professors |
+| UA | Whether Physics dept conducts a written exam as part of Special Selection | VERIFIED — No written exam; interview only | Imai meeting 2026-04-13 |
+| UB | Physics dept oral exam format for Special Selection (duration, presentation, content) | VERIFIED — Interview format (document-based review + interview) | Imai meeting 2026-04-13 |
+| UC | FY2027 exact application dates | UNVERIFIED — not yet published (~late April 2026); admission materials before Dec 2026 confirmed by Imai | Imai meeting 2026-04-13 (partial) |
+| UD | Whether GRE Physics can waive a written exam component (if one exists) | N/A — No written exam exists to waive | Imai meeting 2026-04-13 |
+| UE | Minimum GRE/TOEFL score cutoffs at Physics dept level (unpublished) | VERIFIED — GRE Physics minimum 900 | Imai meeting 2026-04-13 |
 
 ## Open Questions for Professor Meeting
 
-1. **GSGC entry level:** For someone with an existing master's (graduating June 2027), does GSGC require M1 re-enrollment or is doctoral-level entry possible?
-2. **Written exam for Special Selection:** Does the Physics department conduct a written exam as part of Special Selection, or is it purely document + oral? #upcoming-confirmation-needed
-3. **Oral exam format:** What is the oral exam format for Special Selection in Physics — duration, presentation requirements, content? #upcoming-confirmation-needed
-4. **GRE Physics and written exam:** Can GRE Physics waive a written exam component, if one exists? #upcoming-confirmation-needed
-5. **Score cutoffs:** Are there unpublished minimum GRE/TOEFL score cutoffs at the Physics dept level? #upcoming-confirmation-needed
-6. **Application cycle:** FY2027 guidelines expected late April 2026 — confirm exact dates when available. #upcoming-confirmation-needed
+> [!success] Resolved (2026-04-13 Imai meeting)
+> These questions were addressed in the one-on-one meeting with Prof. Nobuaki Imai on 2026-04-13. See answers inline in [[Questions_and_Verifiable_Source#Pre-Meeting Questions for Imai-san (One-on-One)|Pre-Meeting Questions]] and updated statuses in the [[Questions_and_Verifiable_Source#Verification Tracker (updated 2026-04-13)|Verification Tracker]].
 
-## Pre-Meeting Questions for [[Prof_Nobuaki_Imai|Imai-san]] (One-on-One)
+1. **GSGC entry level:** For someone with an existing master's (graduating June 2027), does GSGC require M1 re-enrollment or is doctoral-level entry possible? — **RESOLVED: GSGC is ineligible for master's holders. Special Selection is the only path.**
+2. **Written exam for Special Selection:** Does the Physics department conduct a written exam as part of Special Selection, or is it purely document + oral? — **RESOLVED: No written exam; interview only.**
+3. **Oral exam format:** What is the oral exam format for Special Selection in Physics — duration, presentation requirements, content? — **RESOLVED: Document-based review + interview format.**
+4. **GRE Physics and written exam:** Can GRE Physics waive a written exam component, if one exists? — **RESOLVED: N/A — no written exam exists.**
+5. **Score cutoffs:** Are there unpublished minimum GRE/TOEFL score cutoffs at the Physics dept level? — **RESOLVED: GRE Physics minimum 900.**
+6. **Application cycle:** FY2027 guidelines expected late April 2026 — confirm exact dates when available. — **Partially resolved: materials due before Dec 2026 (Imai). Exact dates still pending official publication.**
 
-> [!info] Context
+## Pre-Meeting Questions for [[Prof_Nobuaki_Imai|Imai-san]] (One-on-One) — COMPLETED 2026-04-13
+
+> [!success] Meeting completed 2026-04-13
+> One-on-one with Prof. Nobuaki Imai held on 2026-04-13 (online). Key outcomes: Special Selection confirmed as only path (GSGC ineligible for master's holders), no written exam (interview only), GRE Physics minimum 900, committed to Imai's group (DONUTS). See resolved answers inline below.
+
+> [!info] Original Context
 > **Meeting: 2026-04-13 09:30 (online)**. First one-on-one with Imai-san. This is the commitment point per IMP advisor directive (contact one professor only). Current leaning: Imai's group (DONUTS) over Aoi's group (NUSPEQ). Meeting structure: present slides (~10 min), then discussion/questions (~15-20 min). Presentation covers: MATE-TPC ML-PID work → connection to DONUTS/SAKURA → outlook.
 
 > [!danger] Time management
@@ -91,34 +97,46 @@ This confirms they are separate programs. For someone with an existing master's,
 
 Resolves [[DG_GSGC_vs_Special_Selection]] — the single biggest blocker (target: 2026-04-30, D-18).
 
-- [ ] **GSGC eligibility + entry level (U1/U2):** "I will complete my master's degree in June 2027. Am I eligible to apply for GSGC, or is GSGC only for applicants entering at the master's level? If eligible, would I enter at the doctoral (D1) level?" #upcoming-confirmation-needed <Special Selection Confirmed>
-- [ ] **Which sub-track does Imai-san recommend?** "Given my situation — existing master's, international applicant, aiming for Oct 2027 D1 entry — which route would you recommend: GSGC, Special Selection, or applying to both?"
-   - Follow-up if GSGC is eligible (U3): "Can GSGC scholarship (180k/month) and RIKEN JRA coexist, or are they mutually exclusive?"
+- [x] **GSGC eligibility + entry level (U1/U2):** "I will complete my master's degree in June 2027. Am I eligible to apply for GSGC, or is GSGC only for applicants entering at the master's level? If eligible, would I enter at the doctoral (D1) level?"
+  > [!success] Confirmed (2026-04-13 Imai meeting)
+  > **GSGC is NOT applicable for someone with an existing master's degree.** Special Selection is the ONLY path for D1 entry.
+- [x] **Which sub-track does Imai-san recommend?** "Given my situation — existing master's, international applicant, aiming for Oct 2027 D1 entry — which route would you recommend: GSGC, Special Selection, or applying to both?"
+  > [!success] Confirmed (2026-04-13 Imai meeting)
+  > **Special Selection confirmed.** GSGC ineligible — follow-up on scholarship stacking is N/A.
 
 ### 2. If Special Selection — Exam Format
 
 Only relevant if GSGC is ineligible or Imai-san recommends Special Selection.
 
-- [ ] **Written exam? (UA):** "For Special Selection in the Physics department — is there a written exam, or is it purely document review + oral?" #upcoming-confirmation-needed
-- [ ] **Oral exam format (UB):** "What is the oral exam format — duration, presentation, content?" #upcoming-confirmation-needed
-- [ ] **GRE Physics waiver (UD):** "Can a strong GRE Physics score waive a written exam component, if one exists?" #upcoming-confirmation-needed
-<Interview only, no written exam>
+- [x] **Written exam? (UA):** "For Special Selection in the Physics department — is there a written exam, or is it purely document review + oral?"
+  > [!success] Confirmed (2026-04-13 Imai meeting)
+  > **No written exam.** Special Selection in Physics is document-based review + interview only.
+- [x] **Oral exam format (UB):** "What is the oral exam format — duration, presentation, content?"
+  > [!success] Confirmed (2026-04-13 Imai meeting)
+  > **Interview format** — document-based review + interview. Specific duration/content details to be confirmed from official FY2027 guidelines.
+- [x] **GRE Physics waiver (UD):** "Can a strong GRE Physics score waive a written exam component, if one exists?"
+  > [!success] Confirmed (2026-04-13 Imai meeting)
+  > **N/A — no written exam exists to waive.**
 ### 3. Score Cutoffs
 
-- [ ] **GRE/TOEFL cutoffs (UE):** "Are there unpublished minimum GRE Physics or TOEFL score cutoffs at the Physics department level — either official or practical?" #upcoming-confirmation-needed
-<GRE Physics 900 scores>
+- [x] **GRE/TOEFL cutoffs (UE):** "Are there unpublished minimum GRE Physics or TOEFL score cutoffs at the Physics department level — either official or practical?"
+  > [!success] Confirmed (2026-04-13 Imai meeting)
+  > **GRE Physics minimum: 900.** This is the practical minimum score to be competitive, per Imai-san.
 
 ### 4. Publication Expectations
 
-- [ ] **Publication trajectory:** "What is the typical publication trajectory for a PhD student in your group — how many papers, what journals (PRL, PLB, PRC), and is there a first-author expectation before defense?"
-<Judge by professors, no explicit hard standard>
+- [x] **Publication trajectory:** "What is the typical publication trajectory for a PhD student in your group — how many papers, what journals (PRL, PLB, PRC), and is there a first-author expectation before defense?"
+  > [!success] Confirmed (2026-04-13 Imai meeting)
+  > **Publications are judged by professors; no explicit hard standard.** No fixed publication count or venue requirement for PhD defense.
 
 ### 5. RIKEN JRA + Housing
 
-- [ ] **RIKEN JRA (V2/V7):** "Is RIKEN JRA funding available for PhD students in your group? What is the current stipend, and when should I apply for an Oct 2027 start?"
-- [ ] **Housing:** "Do you have recommendations for housing near the Wako campus, or does UTokyo offer dormitory access for PhD students?"
-<JRA and two more types of scholarship available>
-<Rent by ourselves in Wako>
+- [x] **RIKEN JRA (V2/V7):** "Is RIKEN JRA funding available for PhD students in your group? What is the current stipend, and when should I apply for an Oct 2027 start?"
+  > [!success] Confirmed (2026-04-13 Imai meeting)
+  > **JRA and two more types of scholarship available.** Multiple funding sources beyond RIKEN JRA exist (specific names not provided by Imai-san).
+- [x] **Housing:** "Do you have recommendations for housing near the Wako campus, or does UTokyo offer dormitory access for PhD students?"
+  > [!success] Confirmed (2026-04-13 Imai meeting)
+  > **Rent by ourselves in Wako.** No university dormitory; students find their own housing in the Wako area.
 
 ### Backup — Follow-up email if time runs short
 

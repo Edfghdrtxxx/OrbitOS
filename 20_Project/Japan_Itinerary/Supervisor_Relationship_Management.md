@@ -13,8 +13,8 @@ created: 2026-02-17
 > [!success] Outcome (2026-03-09)
 > **Supervisor outreach succeeded.** Two UTokyo CNS professors — **Aoi Nori (青井 考)** and **Nobuaki Imai** — accepted, conditional on passing the Graduate School of Science entrance exam. Focus now shifts to entrance exam preparation.
 
-> [!important] Group Preference (2026-03-24)
-> **Current leaning: [[Prof_Nobuaki_Imai|Imai-san]]'s group (DONUTS)** — pending confirmation via one-on-one meeting.
+> [!important] Group Preference — **CONFIRMED** (2026-04-13)
+> **Committed to [[Prof_Nobuaki_Imai|Imai-san]]'s group (DONUTS).** Confirmed 2026-04-13 via one-on-one online meeting.
 >
 > **Rationale:**
 > - Astrophysics alignment via SAKURA program
@@ -22,15 +22,13 @@ created: 2026-02-17
 > - Chinese peer support (Jiatai Li, Qin Hao) for practical onboarding
 > - Approved experiment pipeline (SHARAQ21-25)
 > - [[Prof_Nori_Aoi|Aoi-san]]'s network remains accessible via same-campus collaboration at CNS
->
-> **Next action:** Request a one-on-one online meeting with Imai-san (20-30 min) to discuss thesis direction, group life, and finalize the decision. See [[Questions_and_Verifiable_Source#Pre-Meeting Questions for Imai-san (One-on-One)]] for the question list.
 
 > [!info] Purpose
 > This note manages the **ongoing relationship with accepted UTokyo supervisors** and tracks outstanding action items post-contact. Originally a contact-preparation document (target: late Feb / early Mar 2026), contact succeeded on 2026-03-09. It consolidates every question, verification item, and decision gate remaining to resolve. The outcome directly determines the study plan in [[Fundamental_Learning_Progress]] and the overall execution path in [[UTokyo_RIKEN]].
 
 > [!info] Decision Gate: GSGC vs Special Selection
 > Full decision gate analysis: **[[DG_GSGC_vs_Special_Selection]]**
-> Status: **OPEN** — pending professor meeting
+> Status: **RESOLVED** (2026-04-13) — Special Selection confirmed
 
 ---
 
@@ -44,7 +42,7 @@ created: 2026-02-17
 - [ ] Send CV and research summary if requested
 - [x] Update [[Professor_Outreach]] — change outreach status to "Replied — positive" (2026-03-09: Aoi Nori & Nobuaki Imai accepted, conditional on entrance exam)
 - [ ] Update [[UTokyo_RIKEN#Verification Tracker]] with any confirmed items (V2, V4, V5, V6, V7, V8)
-- [ ] Apply the [[DG_GSGC_vs_Special_Selection#7. Impact Matrix]] — update [[Fundamental_Learning_Progress]] based on sub-track resolution
+- [x] Apply the [[DG_GSGC_vs_Special_Selection#7. Impact Matrix]] — Special Selection confirmed (2026-04-13)
 - [x] Update [[General_Checklist]] — check off confirmed items (2026-03-09)
 - [ ] If Naidaku (Letter of Acceptance) is offered → begin Kenkyusei application document prep
 - [ ] Schedule follow-up questions (from the Medium-priority list) for the next email exchange
@@ -86,7 +84,7 @@ created: 2026-02-17
 
 | ID | Claim | Current Status | Question to Ask |
 |---|---|---|---|
-| V2 | JRA: 200k JPY/month, part-time employee, Shakai Hoken | `UNVERIFIED` | Q7 |
+| V2 | JRA: 200k JPY/month, part-time employee, Shakai Hoken | `PARTIALLY VERIFIED` — JRA confirmed available + 2 other scholarship types (Imai 2026-04-13); exact amounts still unverified | Q7 |
 | V4 | UTokyo tuition exemption for income < 6M JPY (international eligibility?) | `UNVERIFIED` | Q8 |
 | V5 | UTokyo tuition: 535,800 JPY/year | `UNVERIFIED` | Can verify via UTokyo website independently |
 | V6 | Kenkyusei can sit for doctoral entrance exam | `UNVERIFIED` | Q4 |
@@ -145,7 +143,7 @@ created: 2026-02-17
 > - [ ] What is the maximum Kenkyusei enrollment duration — and can you extend and retake if you fail the exam? `[V8]` — **still unknown**
 > - [ ] Is RIKEN JRA funding (~200k JPY/month, Shakai Hoken) still accurate for CNS-affiliated PhD students? `[V2]` — **still unverified**
 > - [ ] Are international PhD students eligible for UTokyo's tuition exemption? How is income defined — does JRA count? `[V4]` — **still unverified**
-> - [ ] Any tips on housing near the Wako campus, or does UTokyo offer dormitory access for Kenkyusei?
+> - [x] Any tips on housing near the Wako campus, or does UTokyo offer dormitory access for Kenkyusei? — **RESOLVED (Imai 2026-04-13):** Self-rent in Wako confirmed; no dormitory available.
 > - [ ] What is the lab culture like — language used in meetings, work-life balance expectations?
 >
 > > [!note] Terminology used in this note

@@ -40,14 +40,14 @@ Skill definitions live in `.agents/skills/<skill-name>/SKILL.md` (symlinked to `
 
 ### Japan Immigration (top priority after graduation)
 - **Goal:** Immigrate from China permanently via a research career (PhD in Japan is the vehicle)
-- **Pathway:** FINALIZED — UTokyo CNS / RIKEN JRA route. Exam route: **Route B chosen** (GSGC vs Special Selection sub-track undecided — pending professor meeting). GRE Physics compulsory.
-  - **Supervisor acceptance ACHIEVED** (2026-03-09): Nori Aoi & Nobuaki Imai accepted conditionally on passing entrance exam.
+- **Pathway:** FINALIZED — UTokyo CNS / RIKEN JRA route. Exam route: **Route B — Special Selection** (confirmed 2026-04-13 Imai meeting). GSGC ineligible. Interview only (no written exam). GRE Physics compulsory (minimum 900).
+  - **Supervisor COMMITTED** (2026-04-13): Nobuaki Imai (DONUTS group) confirmed as sole supervisor. Aoi Nori accessible via same-campus collaboration.
   - **Primary:** Direct PhD D1 entry at UTokyo (Oct 2027 or Oct 2028), funded via RIKEN JRA (~200k JPY/month). Pass entrance exam via Route B.
   - **Fallback:** Kenkyusei at UTokyo CNS, self-funded (~2.5-2.8M JPY); retake exam next cycle.
   - Route A (Regular/一般入試) archived.
 - **Primary execution plan:** [[UTokyo_RIKEN]]
 - **English:** TOEFL 100+ target for UTokyo application
-- **Immediate priorities:** (1) Entrance exam prep (Route B + GRE Physics), (2) TOEFL 100+, (3) Confirm sub-track (GSGC vs Special Selection) with professors
+- **Immediate priorities:** (1) Entrance exam prep (Route B + GRE Physics 900+), (2) TOEFL 100+, (3) Prepare Special Selection application materials by Dec 2026
 - **Japanese Language:** Currently N5 or below; proficiency is both a personal goal and immigration asset
 - **Career Direction:** Research career (university faculty, national lab); rejects 996 work culture
 - When the user asks about Japan, visa options, university applications, language study, or life planning, treat this as a high-priority topic

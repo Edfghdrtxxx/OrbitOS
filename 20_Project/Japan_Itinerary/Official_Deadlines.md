@@ -4,11 +4,11 @@ type: reference
 status: active
 area: "[[Career]]"
 tags: [japan, phd, utokyo, deadlines, gre, toefl, gsgc]
-last_verified: 2026-03-11
+last_verified: 2026-04-13
 ---
 ## 1. UTokyo Special Selection Application (Oct 2027 enrollment — PRIMARY)
 
-> [!important] D1 entry = **Special Selection** (working assumption as of 2026-03-11; sub-track formally undecided — pending professor meeting). GSGC is a 5-year integrated M+D program (entry at M1, not D1). GSGC's remaining role (e.g., scholarship stacking with JRA) is pending professor meeting — see [[DG_GSGC_vs_Special_Selection]].
+> [!important] D1 entry = **Special Selection** (confirmed 2026-04-13 by Prof. Imai). GSGC ineligible for master's holders. Interview only — no written exam. GSGC is ineligible — see [[DG_GSGC_vs_Special_Selection]] (RESOLVED).
 
 Based on confirmed Oct 2026 cycle, shifted +1 year (**ESTIMATED**):
 
@@ -16,8 +16,8 @@ Based on confirmed Oct 2026 cycle, shifted +1 year (**ESTIMATED**):
 |------|------------|--------|--------|
 | Application Period 1 | ~Oct 15–31, 2026 | Estimated | [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html) |
 | Application Period 2 | ~Dec 5–22, 2026 | Estimated | Same |
-| Written Exam | TBD | ⚠️ Unverified — see exam format note below | — |
-| Oral Exam | TBD | ⚠️ Unverified — see exam format note below | — |
+| Written Exam | N/A | **N/A — confirmed no written exam** (Imai 2026-04-13) | — |
+| Oral Exam | TBD | **Interview only** — format TBD. CONFIRMED (Imai 2026-04-13) | — |
 | Results (Period 1) | ~End of December | VERIFIED — UTokyo admissions page | [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html) |
 | Results (Period 2) | ~Early March | VERIFIED — UTokyo admissions page | [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html) |
 
@@ -25,7 +25,7 @@ Based on confirmed Oct 2026 cycle, shifted +1 year (**ESTIMATED**):
 > The Special Selection page lists **exactly two application windows** per cycle. There is no rolling admission, no spring/summer round, and no mechanism for deferred or late application. The only summer window (Jul–Aug) is exclusively for MEXT Embassy-recommended candidates. **Missing both Period 1 and Period 2 means a full 1-year delay to Oct 2028.**
 > Verified: 2026-03-11. Source: [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html)
 
-> [!info] Realistic target: **Period 2 (~Dec 5–22, 2026)**
+> [!info] Realistic target: **Period 2 (~Dec 5–22, 2026)** — confirmed (Imai 2026-04-13: admission materials before Dec 2026)
 > Given GRE Physics timing (Sep/Oct 2026, scores arrive ~Nov 2026), Period 2 is the natural target. Period 1 (~Oct 31) is feasible only if GRE is taken in the Sep window and scores arrive in time.
 
 **All materials must be submitted within the application window.** This includes:
@@ -41,9 +41,9 @@ Based on confirmed Oct 2026 cycle, shifted +1 year (**ESTIMATED**):
 - FY2027 guideline release: late April 2026 — VERIFIED (UTokyo admissions page)
 - FY2027 exact application dates: not yet published #upcoming-confirmation-needed
 
-Exam format details (written exam scope, duration, oral exam structure) are **UNVERIFIED** for Special Selection #upcoming-confirmation-needed — previous estimates (2hr written, Zoom oral 40 min) were sourced from GSGC data and may not apply. Official selection method is primarily document-based review; "some departments may have additional requirements such as interviews and online written examinations" (VERIFIED — UTokyo admissions page). Whether Physics dept conducts a written exam or is purely document + oral must be confirmed with professors.
+Exam format CONFIRMED (2026-04-13 Imai meeting): **Interview only — no written exam** for Physics department Special Selection. Previous estimates of written exam (2hr, Zoom oral 40 min) were GSGC-sourced and do not apply. Official selection method is primarily document-based review + interview (VERIFIED — UTokyo admissions page + Imai confirmation).
 
-**Required:** GRE Physics (code 7048) + TOEFL (code 8002-01, single date, no MyBest). VERIFIED — UTokyo admissions page. No published minimum scores (VERIFIED that none are published — but unpublished dept-level cutoffs may exist #upcoming-confirmation-needed).
+**Required:** GRE Physics (code 7048) + TOEFL (code 8002-01, single date, no MyBest). VERIFIED — UTokyo admissions page. GRE Physics practical minimum: **900** (confirmed by Imai-san, 2026-04-13). No published TOEFL minimum.
 
 > [!success] VERIFIED: Pre-graduation application allowed (2026-03-09)
 > Eligibility wording: "One who **is expected to be conferred** a Master's Degree … **before entering the Doctoral program.**" Degree completion required by enrollment (Oct 2027), not by application (Dec 2026). Submit certificate of expected graduation at application; actual degree certificate at enrollment. Source: [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html)

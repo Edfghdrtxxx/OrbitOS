@@ -5,7 +5,7 @@ status: verified
 area: "[[Career]]"
 tags: [utokyo, cns, riken, professor-profile]
 created: 2026-03-02
-updated: 2026-03-09
+updated: 2026-04-13
 ---
 # Information of Nobuaki Imai
 ## Quick Facts
@@ -13,7 +13,19 @@ updated: 2026-03-09
 - Email: n.imai@cns.s.u-tokyo.ac.jp.[^imai-utokyo]
 - Lab: Imai Lab (DONUTS group) listed under CNS graduate education.[^cns-graduate]
 - CNS operates primarily at the RIKEN Wako campus and collaborates with RIKEN Nishina Center.[^cns-overview]
-- **Contact Status (2026-03-09):** Accepted — conditional on passing the Graduate School of Science entrance exam. → [[UTokyo_RIKEN]]
+- **Supervisor Status (2026-04-13):** **COMMITTED** — confirmed as sole supervisor via one-on-one online meeting. Special Selection pathway. → [[UTokyo_RIKEN]]
+
+## Meeting Notes (2026-04-13)
+- **Format:** Online, ~30 min
+- **Key outcomes:**
+  - Special Selection confirmed as the ONLY path (GSGC ineligible)
+  - Interview only — no written exam
+  - GRE Physics 900 minimum cutoff
+  - JRA available + 2 other scholarship types (names not specified)
+  - Self-rent in Wako — no dormitory
+  - Publications judged by professors; no explicit hard standard
+  - Materials due before Dec 2026
+- **Commitment:** User committed to Imai's group (DONUTS); Aoi no longer considered as primary supervisor
 
 ## Research Focus (public descriptions)
 - Research in quantum many-body nuclear phenomena and experiments with RI beams.[^imai-lab]

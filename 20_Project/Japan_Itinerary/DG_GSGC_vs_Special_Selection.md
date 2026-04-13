@@ -1,10 +1,18 @@
 ---
 type: decision-gate
-status: open
+status: resolved
 parent: "[[Japan_Itinerary]]"
 created: 2026-03-10
+resolved: 2026-04-13
 tags: [decision-gate, utokyo, gsgc, special-selection, phd, entrance-exam]
 ---
+> [!success] RESOLVED (2026-04-13) — Special Selection Confirmed
+> **Decision: Special Selection (Option B).** GSGC is ineligible for applicants with an existing master's degree — confirmed by Prof. Nobuaki Imai in one-on-one meeting.
+> - No written exam — interview only
+> - GRE Physics minimum: 900
+> - Admission materials due before Dec 2026
+> - See [[Questions_and_Verifiable_Source]] for full meeting answers
+
 # Decision Gate: GSGC vs Special Selection
 
 > [!info] Single source of truth
@@ -42,12 +50,12 @@ This is not merely a preference — it is a structural eligibility question. The
 
 | Milestone | Target Date | Status |
 |---|---|---|
-| Next professor meeting (Aoi Nori / Nobuaki Imai) | ~Mar–Apr 2026 | **Pending scheduling** |
-| Backstop checkpoint | **2026-07-01** | Hard deadline per [[General_Checklist#Monitoring Checkpoints]] — if unresolved by this date, escalate to direct inquiry to UTokyo Graduate School Office |
-| GSGC guideline release (Oct 2027 cycle) | ~Sep 2026 (estimated) | Official guidelines will confirm eligibility rules for the relevant cycle |
-| Application Period 1 (earliest possible) | ~Oct 15, 2026 (estimated) | Must have sub-track decision finalized before application |
+| Professor meeting (Nobuaki Imai) | 2026-04-13 | **COMPLETED** — Special Selection confirmed; GSGC ineligible |
+| Backstop checkpoint | **2026-07-01** | No longer needed — gate resolved 2026-04-13 |
+| GSGC guideline release (Oct 2027 cycle) | ~Sep 2026 (estimated) | N/A — GSGC ineligible |
+| Application Period 1 (earliest possible) | ~Oct 15, 2026 (estimated) | Sub-track decision finalized: Special Selection. Materials due before Dec 2026. |
 
-> [!danger] If this gate is not resolved by 2026-07-01, the user risks entering the application period (~Oct 2026) without knowing which track to prepare materials for. The backstop action is to email the UTokyo Graduate School Office directly.
+> [!success] Gate resolved 2026-04-13 via Imai meeting. Backstop no longer needed.
 
 ---
 
@@ -141,18 +149,21 @@ Submit applications to both GSGC and Special Selection in the same cycle.
 
 | # | Question | Verification Status | Who to Ask | Priority |
 |---|----------|-------------------|------------|----------|
-| U1 | **Can a master's degree holder apply to GSGC?** Or is GSGC restricted to applicants entering at the master's level (M1)? | `[UNVERIFIED]` — no official source found confirming or denying | Professors (Aoi Nori / Nobuaki Imai) first; UTokyo Graduate School Office as backup | **CRITICAL** |
-| U2 | **If a master's holder enters GSGC, do they start at M1 (repeating master's) or can they enter directly at D1?** | `[UNVERIFIED]` | Professors; GSGC program office | **CRITICAL** |
-| U3 | **Can GSGC scholarship (180k/month) and RIKEN JRA (200k/month) be held simultaneously?** Or are they mutually exclusive? | `[UNVERIFIED]` — not addressed in any vault source | Professors; RIKEN JRA office; UTokyo scholarship office | **HIGH** |
+| U1 | **Can a master's degree holder apply to GSGC?** Or is GSGC restricted to applicants entering at the master's level (M1)? | `RESOLVED` — master's holders CANNOT apply to GSGC | Imai meeting 2026-04-13 | **CRITICAL** |
+| U2 | **If a master's holder enters GSGC, do they start at M1 (repeating master's) or can they enter directly at D1?** | `N/A` — GSGC ineligible | Imai meeting 2026-04-13 | **CRITICAL** |
+| U3 | **Can GSGC scholarship (180k/month) and RIKEN JRA (200k/month) be held simultaneously?** Or are they mutually exclusive? | `N/A` — GSGC ineligible | Imai meeting 2026-04-13 | **HIGH** |
 | U4 | **Can you apply to both GSGC and Special Selection in the same application cycle?** | `[VERIFIED]` — YES, dual application is officially allowed (pay fee twice). VERIFIED — UTokyo admissions page, Mar 2026 | Resolved | **HIGH** |
 | U5 | **Does Special Selection have different application windows than GSGC?** | `[VERIFIED]` — NO, they share the SAME application windows (Period 1: ~Oct 15-31, Period 2: ~Dec 5-22). VERIFIED — UTokyo admissions page, Mar 2026 | Resolved | **HIGH** |
 | U6 | **Does Special Selection require the GRE Physics Subject Test?** (GSGC requires it for Physics — is this true for Special Selection too?) | `[VERIFIED]` — YES, GRE Physics is required for Physics department under Special Selection. GRE General is NOT required. VERIFIED — UTokyo admissions page, Mar 2026 | Resolved | **MEDIUM** |
-| U7 | **Is the GSGC written exam (supervisor-dependent) also applicable to Special Selection?** Or does Special Selection have a different evaluation mechanism? | `[UNVERIFIED]` #upcoming-confirmation-needed — Selection is primarily document-based review; "some departments may have additional requirements such as interviews and online written examinations." Whether Physics dept conducts a written exam as part of Special Selection, or is purely document + oral, is unconfirmed. | Professors | **MEDIUM** |
-| U8 | **What is the GSGC scholarship eligibility period?** If a master's holder enters GSGC at D1, do they receive the scholarship for the doctoral period only (3 years) or not at all (since the scholarship is part of the 5-year package)? | `[UNVERIFIED]` — only relevant if U1 and U2 are resolved favorably | GSGC program office | **MEDIUM** (contingent on U1/U2) |
+| U7 | **Is the GSGC written exam (supervisor-dependent) also applicable to Special Selection?** Or does Special Selection have a different evaluation mechanism? | `RESOLVED` — No written exam; interview only | Imai meeting 2026-04-13 | **MEDIUM** |
+| U8 | **What is the GSGC scholarship eligibility period?** If a master's holder enters GSGC at D1, do they receive the scholarship for the doctoral period only (3 years) or not at all (since the scholarship is part of the 5-year package)? | `N/A` — GSGC ineligible | Imai meeting 2026-04-13 | **MEDIUM** (contingent on U1/U2) |
 
 ---
 
 ## 6. Decision Criteria
+
+> [!success] Decision resolved (2026-04-13)
+> The decision tree resolved via the first branch: `U1 = "master's holders CANNOT apply to GSGC"` --> **Decision: Special Selection (Option B).** GSGC is ineligible. All downstream files referencing GSGC should be updated accordingly.
 
 Once the unknowns above are resolved, the decision follows this logic:
 

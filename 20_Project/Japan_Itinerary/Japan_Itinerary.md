@@ -8,10 +8,10 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 # Japan Itinerary
 > [!info] Folder note — this file is the index for the `Japan_Itinerary/` project folder.
 
-> [!important] Pathway FINALIZED 2026-02-15 | Updated 2026-03-09
+> [!important] Pathway FINALIZED 2026-02-15 | Updated 2026-04-13
 > **UTokyo CNS / RIKEN JRA route — direct PhD entry is now the primary target.**
-> **Primary:** Pass Route B entrance exam (~Jan–Feb 2027, est.) → PhD D1 enrollment at UTokyo (Oct 2027), funded via RIKEN JRA (~200k JPY/month).
-> **Fallback:** If entrance exam failed → Kenkyusei at UTokyo CNS (Oct 2027 – Sep 2028), self-funded; retake exam for Oct 2028 PhD entry.
+> **Primary:** Special Selection application (~Dec 2026) → PhD D1 enrollment at UTokyo (Oct 2027), funded via RIKEN JRA (~200k JPY/month). **Special Selection confirmed** (interview only, no written exam). Supervisor: **Nobuaki Imai (DONUTS group)**.
+> **Fallback:** If application unsuccessful → Kenkyusei at UTokyo CNS (Oct 2027 – Sep 2028), self-funded; retake exam for Oct 2028 PhD entry.
 > IPA pathway explicitly rejected — staying at CAS for the degree conflicts with the UTokyo-degree goal.
 > Full strategic roadmap: [[UTokyo_RIKEN]].
 
@@ -44,14 +44,14 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 
 ### Primary Path — Direct PhD Entry (Oct 2027)
 
-- Pass the Route B entrance exam (~Jan–Feb 2027, est.) and enroll directly as PhD D1 at UTokyo Graduate School of Science (Physics).
+- Submit Special Selection application (~Dec 2026) and enroll directly as PhD D1 at UTokyo Graduate School of Science (Physics).
 - Funded by RIKEN JRA from D1 onward (~200k JPY/month `[V2]` — see [[UTokyo_RIKEN]]).
-- **Exam route: Route B chosen** (decision by user + IMP supervisor). Route A (Regular/一般入試) archived. Sub-track (GSGC vs Special Selection) undecided — pending professor meeting.
-- **GRE Physics Subject Test is compulsory for Route B.**
+- **Exam route: Route B chosen** (decision by user + IMP supervisor). Route A (Regular/一般入試) archived. **Sub-track RESOLVED: Special Selection confirmed** (2026-04-13 Imai meeting). GSGC ineligible for candidates with an existing master's degree.
+- **GRE Physics Subject Test is compulsory** — minimum score 900 to be competitive.
 
-> [!question] PENDING: GSGC vs Special Selection
-> Sub-track distinction pending professor meeting. See **[[DG_GSGC_vs_Special_Selection]]** for full analysis, decision criteria, and resolution path.
-- Route B timing details (exact application windows, whether written exam is required, sub-track selection) are **pending professor meeting** with Aoi Nori or Nobuaki Imai.
+> [!success] RESOLVED: Special Selection confirmed (2026-04-13)
+> GSGC is NOT applicable for someone with an existing master's degree. Special Selection is the ONLY path for D1 entry. **Interview only — no written exam.** Document-based review + interview. GRE Physics minimum: 900. See **[[DG_GSGC_vs_Special_Selection]]** for full analysis.
+- Admission materials must be submitted **before Dec 2026**. Publications judged by professors (no explicit hard standard).
 
 ### Fallback — Kenkyusei Buffer Year (Oct 2027 – Sep 2028)
 
@@ -85,17 +85,18 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 
 > [!warning] Physics + math entrance exam readiness is the single highest execution risk post-graduation. Start systematic study now, even at low intensity.
 
-### Immediate Priorities (as of 2026-02-15, updated 2026-03-09)
+### Immediate Priorities (as of 2026-02-15, updated 2026-04-13)
 
 | # | Priority | Deadline | Tracking |
 |---|---|---|---|
 | 1 | **Thesis execution** — document results, define next steps | Ongoing; thesis gate by Jun 2027 | [[Masters_Thesis]] |
-| 2 | **Physics + math entrance exam preparation** — now the critical gate; acceptance conditional on passing | Ongoing | [[Fundamental_Knowledge]] |
-| 3 | ~~Supervisor outreach~~ — **DONE** (2026-03-09: Aoi Nori & Nobuaki Imai accepted, conditional on entrance exam) | ~~2026-06-30~~ | [[Professor_Outreach]], [[Supervisor_Relationship_Management]] |
+| 2 | **GRE Physics preparation** — minimum score 900; compulsory for Special Selection | Ongoing | [[Fundamental_Knowledge]], [[GRE_Physics_Prep]] |
+| 3 | ~~Supervisor outreach~~ — **DONE** (2026-03-09: accepted; **2026-04-13: committed to Imai / DONUTS group**) | ~~2026-06-30~~ | [[Professor_Outreach]], [[Supervisor_Relationship_Management]] |
 | 4 | TOEFL preparation (target 100+ iBT) | ~~Register by Apr 2026~~ → **Registered 2026-04-09**; exam **2026-08-30** at STN80118A Beijing | [[English_Learning]], [[TOEFL_Study_Progress]] |
 | 5 | Self-funded Kenkyusei budget verification (fallback path) | ASAP | [[UTokyo_RIKEN]] |
-| 6 | Secure Naidaku (Letter of Acceptance) from chosen supervisor | TBD | [[Supervisor_Relationship_Management]] |
-| 7 | Japanese language study (N5 → N4 → N3 trajectory) — **low priority**; not required for admission; entrance exam + TOEFL come first | Ongoing | [[Japanese_Language]] |
+| 6 | Secure Naidaku (Letter of Acceptance) from Imai | TBD | [[Supervisor_Relationship_Management]] |
+| 7 | ~~GSGC vs Special Selection~~ — **RESOLVED** (2026-04-13: Special Selection confirmed; GSGC ineligible) | ~~Pending professor meeting~~ | [[DG_GSGC_vs_Special_Selection]] |
+| 8 | Japanese language study (N5 → N4 → N3 trajectory) — **low priority**; not required for admission; GRE + TOEFL come first | Ongoing | [[Japanese_Language]] |
 
 ---
 
@@ -110,29 +111,32 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 | 2026-02-15 | Critical review: N5 Japanese, basic portfolio, confirmed savings integrated. Final scores: Work 44.42 / PhD 54.52. Pathway FINALIZED. IPA explicitly rejected. Career-direction reframe: PhD = deliberate research-career choice. |
 | 2026-02-17 | MEXT University Recommendation (Research Student) dropped — extremely fierce competition confirmed. Kenkyusei now self-funded. |
 | 2026-03-09 | **Supervisor outreach succeeded.** Two UTokyo CNS professors — Aoi Nori (青井 考) and Nobuaki Imai — accepted, conditional on passing the Graduate School of Science entrance exam. Both equally viable. Focus shifts to entrance exam preparation. |
+| 2026-04-13 | **Imai meeting completed.** Special Selection confirmed (GSGC ineligible for candidates with existing master's degree). Interview only, no written exam. GRE Physics 900 minimum. Committed to Imai's group (DONUTS). Aoi no longer primary candidate. JRA + 2 other scholarship types available. Self-rent in Wako (no dormitory). Admission materials before Dec 2026. |
 
-### Current Status (2026-03-09)
+### Current Status (2026-04-13)
 
-> [!success] Supervisor outreach succeeded. Two professors accepted (conditional on entrance exam). Focus shifts to exam preparation.
+> [!success] Imai meeting completed. Special Selection confirmed. Committed to Imai / DONUTS group. Focus shifts to GRE Physics, TOEFL, and application materials.
 
-> [!success] **Route decision resolved (2026-03-09):** Route B chosen as the exam route (decision by user + IMP supervisor). Route A (Regular/一般入試) archived. Sub-track (GSGC vs Special Selection) undecided — timing details (application windows, written exam requirement) are **pending professor meeting**.
+> [!success] **Route decision fully resolved (2026-04-13):** Route B chosen; **Sub-track RESOLVED: Special Selection** (GSGC ineligible). Interview only — no written exam. GRE Physics minimum: 900.
 
 - **Decision:** FINALIZED — PhD Track (UTokyo CNS / RIKEN JRA route).
-- **Supervisor outreach:** **SUCCEEDED** (2026-03-09) — **Aoi Nori (青井 考)** and **Nobuaki Imai** both accepted, conditional on passing the Graduate School of Science entrance exam. Both equally viable; no preference yet.
-- **Primary path:** Direct PhD entry Oct 2027 (pass Route B entrance exam ~Jan–Feb 2027, est.). Funded by RIKEN JRA (~200k JPY/month, verification pending `[V2]` in [[UTokyo_RIKEN]]).
-- **Fallback:** If entrance exam failed → Kenkyusei Oct 2027 – Sep 2028, self-funded (MEXT University Recommendation dropped); retake exam for Oct 2028 PhD entry.
-- **GRE Physics:** Compulsory for Route B.
-- **Exam route:** Route B chosen; Route A archived. Sub-track (GSGC vs Special Selection) undecided.
+- **Supervisor:** **Nobuaki Imai (DONUTS group) confirmed** as sole supervisor (2026-04-13). Aoi Nori remains accessible via same-campus collaboration.
+- **Primary path:** Direct PhD entry Oct 2027 (Special Selection application ~Dec 2026). Funded by RIKEN JRA (~200k JPY/month, verification pending `[V2]` in [[UTokyo_RIKEN]]).
+- **Fallback:** If application unsuccessful → Kenkyusei Oct 2027 – Sep 2028, self-funded (MEXT University Recommendation dropped); retake exam for Oct 2028 PhD entry.
+- **GRE Physics:** Compulsory. Minimum score: 900.
+- **Exam route:** Route B chosen; Route A archived. Sub-track RESOLVED: Special Selection (2026-04-13).
+- **Interview only (no written exam).** Document-based review + interview.
+- **Housing:** Self-rent in Wako (no dormitory available).
 - **Backup university:** [[Osaka_University]] — activate if UTokyo path encounters critical blockers.
 
 ### Open Execution Risks
 
 | Risk | Status | Notes |
 |---|---|---|
-| Physics + math entrance exam readiness | Open (primary risk) | Tracked in [[Fundamental_Knowledge]] |
-| Supervisor acceptance / Naidaku | **Supervisor accepted** (2026-03-09: Aoi Nori & Nobuaki Imai, conditional on entrance exam); Naidaku still pending | [[Professor_Outreach]], [[Supervisor_Relationship_Management]] |
-| Self-funded budget shortfall | Medium-High | Target ~2.5–2.8M JPY; savings 100–200k CNY (~2–4M JPY) |
-| RIKEN JRA salary unverified | Unverified | Item `[V2]` in [[UTokyo_RIKEN]] |
+| GRE Physics score ≥ 900 | Open (primary risk) | Minimum cutoff for competitive application; tracked in [[GRE_Physics_Prep]], [[Fundamental_Knowledge]] |
+| Supervisor acceptance / Naidaku | **Committed to Imai / DONUTS** (2026-04-13); Naidaku still pending | [[Prof_Nobuaki_Imai]], [[Supervisor_Relationship_Management]] |
+| Self-funded budget shortfall | Medium-High | Target ~2.5–2.8M JPY; savings 100–200k CNY (~2–4M JPY). Self-rent in Wako (no dormitory). |
+| Funding / scholarships | Open | RIKEN JRA (~200k JPY/month `[V2]`) + 2 other scholarship types mentioned by Imai (names TBD) |
 | COE / visa timing for Jun–Sep 2027 gap | Open | Item `[V9]` in [[UTokyo_RIKEN]] |
 
 ---
@@ -149,7 +153,7 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 | [[Post_Acceptance_Timeline-Claude.canvas]] | Visual 16-month roadmap (canvas) from supervisor acceptance to PhD enrollment |
 | [[Supervisor_Relationship_Management]] | Post-contact operational playbook for maintaining professor relationships |
 | [[Osaka_University]] | Strategic backup university — timeline and admissions signals (status: backup) |
-| [[DG_GSGC_vs_Special_Selection]] | Decision gate: GSGC vs Special Selection sub-track (status: OPEN) |
+| [[DG_GSGC_vs_Special_Selection]] | Decision gate: GSGC vs Special Selection sub-track (status: **RESOLVED** — Special Selection confirmed 2026-04-13) |
 | [[GRE_Physics_Prep]] | GRE Physics personal prep reference — study plan, exam-day logistics, registration checklist |
 | [[Questions_and_Verifiable_Source]] | Tracks claims against official sources; flags discrepancies and open questions for professor meetings |
 | [[Plan_2026-02-15_UTokyo_Oct2027_Application]] | Concrete execution plan for UTokyo Oct 2027 application (in `90_Plans/`) |
@@ -160,8 +164,8 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 | File | Purpose |
 |---|---|
 | [[Professor_Outreach]] | Outreach tracking — 6 candidates, 2 accepted |
-| [[Prof_Nori_Aoi]] | **PRIMARY** — Aoi Nori (青井 考), accepted 2026-03-09, conditional on entrance exam |
-| [[Prof_Nobuaki_Imai]] | **PRIMARY** — Nobuaki Imai, accepted 2026-03-09, conditional on entrance exam |
+| [[Prof_Nori_Aoi]] | Accessible via same-campus collaboration; no longer primary supervisor candidate |
+| [[Prof_Nobuaki_Imai]] | **COMMITTED** — confirmed 2026-04-13 one-on-one meeting. Sole supervisor (DONUTS group). |
 | [[Prof_Kentaro_Yako]] | Backup candidate — not yet contacted |
 | [[Prof_Taku_Gunji]] | Alternative candidate — not yet contacted |
 
