@@ -91,7 +91,7 @@ This confirms they are separate programs. For someone with an existing master's,
 
 Resolves [[DG_GSGC_vs_Special_Selection]] — the single biggest blocker (target: 2026-04-30, D-18).
 
-- [ ] **GSGC eligibility + entry level (U1/U2):** "I will complete my master's degree in June 2027. Am I eligible to apply for GSGC, or is GSGC only for applicants entering at the master's level? If eligible, would I enter at the doctoral (D1) level?" #upcoming-confirmation-needed
+- [ ] **GSGC eligibility + entry level (U1/U2):** "I will complete my master's degree in June 2027. Am I eligible to apply for GSGC, or is GSGC only for applicants entering at the master's level? If eligible, would I enter at the doctoral (D1) level?" #upcoming-confirmation-needed (Special Selection Confirmed)
 - [ ] **Which sub-track does Imai-san recommend?** "Given my situation — existing master's, international applicant, aiming for Oct 2027 D1 entry — which route would you recommend: GSGC, Special Selection, or applying to both?"
    - Follow-up if GSGC is eligible (U3): "Can GSGC scholarship (180k/month) and RIKEN JRA coexist, or are they mutually exclusive?"
 
@@ -102,14 +102,16 @@ Only relevant if GSGC is ineligible or Imai-san recommends Special Selection.
 - [ ] **Written exam? (UA):** "For Special Selection in the Physics department — is there a written exam, or is it purely document review + oral?" #upcoming-confirmation-needed
 - [ ] **Oral exam format (UB):** "What is the oral exam format — duration, presentation, content?" #upcoming-confirmation-needed
 - [ ] **GRE Physics waiver (UD):** "Can a strong GRE Physics score waive a written exam component, if one exists?" #upcoming-confirmation-needed
-
+Interview only, no written exam
 ### 3. Score Cutoffs
 
 - [ ] **GRE/TOEFL cutoffs (UE):** "Are there unpublished minimum GRE Physics or TOEFL score cutoffs at the Physics department level — either official or practical?" #upcoming-confirmation-needed
+GRE Physics > 900 scores
 
 ### 4. Publication Expectations
 
 - [ ] **Publication trajectory:** "What is the typical publication trajectory for a PhD student in your group — how many papers, what journals (PRL, PLB, PRC), and is there a first-author expectation before defense?"
+Judge by professors
 
 ### 5. RIKEN JRA + Housing
 
