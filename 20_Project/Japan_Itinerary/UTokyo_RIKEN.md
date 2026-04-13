@@ -20,12 +20,13 @@ decision_date: 2026-02-15
 
 - **Pathway (updated 2026-03-09):** **Primary:** Direct PhD D1 entry (Oct 2027) at UTokyo CNS, with RIKEN JRA funding from D1 onward. **Fallback:** If entrance exam failed → Kenkyusei (Oct 2027 – Sep 2028) → PhD D1 (Oct 2028).
 - **Funding:** PhD funded by RIKEN JRA (250k JPY/month *expected* FY2026 `[V2]`). Kenkyusei year (fallback only) self-funded (~2.5–2.8M JPY). MEXT University Recommendation (Research Student) dropped due to extremely fierce competition (2026-02-17).
-- **GRE Physics Subject Test:** Compulsory for Route B (GSGC and/or Special Selection).
-- **Exam route:** Route B chosen (decision by user + IMP supervisor). Route A archived. Sub-track (GSGC vs Special Selection) undecided — pending professor meeting.
+- **GRE Physics Subject Test:** Compulsory for Route B (Special Selection). Minimum score: 900.
+- **Exam route:** Route B chosen (decision by user + IMP supervisor). Route A archived. Sub-track RESOLVED: Special Selection confirmed (2026-04-13 Imai meeting). GSGC ineligible.
 
-> [!question] PENDING: GSGC vs Special Selection
-> Sub-track distinction pending professor meeting. See **[[DG_GSGC_vs_Special_Selection]]** for full analysis, decision criteria, and resolution path.
-- **Next actions:** (1) Prioritize entrance exam preparation — Route B chosen, (2) Confirm sub-track (GSGC vs Special Selection) and timing with professors (application windows, written exam requirement — **pending professor meeting**), (3) Register for GRE Physics (compulsory for Route B), (4) Confirm Kenkyusei application window (fallback prep), (5) Continue physics + Japanese study.
+> [!success] RESOLVED: Special Selection Confirmed (2026-04-13)
+> GSGC ineligible for master's holders. Special Selection is the sole admission path. Interview only — no written exam. GRE Physics minimum: 900. See [[DG_GSGC_vs_Special_Selection]] (RESOLVED).
+- **Next actions:** (1) Prioritize entrance exam preparation — Route B / Special Selection confirmed, (2) Prepare admission materials before Dec 2026, (3) Register for GRE Physics (compulsory, minimum 900), (4) Confirm Kenkyusei application window (fallback prep), (5) Continue physics + Japanese study.
+- **Supervisor:** Committed to [[Prof_Nobuaki_Imai|Nobuaki Imai]] (DONUTS group) — confirmed 2026-04-13.
 - **Top risks:** Entrance exam difficulty (High), ~~supervisor acceptance (Medium-High)~~ **mitigated (2026-03-09)**, self-funded budget shortfall for fallback Kenkyusei year (Medium-High).
 - **Rejected alternatives:** MEXT Embassy/CSC (return-service conflict), MEXT University Recommendation (Research Student, dropped 2026-02-17), IPA (requires CAS degree — user wants UTokyo degree).
 
@@ -42,7 +43,7 @@ decision_date: 2026-02-15
 **Why this route:**
 - CNS sits inside RIKEN Wako — UTokyo degree + RIKEN RIBF infrastructure in one place.
 - Direct alignment with current IMP research (TPC, direct reactions, PID).
-- Two professors already accepted conditionally (2026-03-09) — direct PhD entry is viable if entrance exam is passed.
+- Committed supervisor ([[Prof_Nobuaki_Imai|Nobuaki Imai]], DONUTS group) accepted conditionally (2026-03-09; confirmed 2026-04-13) — direct PhD entry is viable if entrance exam is passed.
 - If exam is failed, Kenkyusei buffer year provides a fallback for exam re-prep, language immersion, and lab integration.
 - UTokyo degree carries stronger career signaling in Japan than a CAS degree.
 
@@ -60,12 +61,12 @@ decision_date: 2026-02-15
 > At application: submit certificate of expected graduation. At enrollment: submit actual degree certificate.
 > Source: [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html)
 
-> [!warning] Eligibility source caveat
-> The above eligibility check was sourced from the **Special Selection** page, not the GSGC page. GSGC is a 5-year integrated M+D program — pre-graduation eligibility wording may not apply identically. See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] for details.
+> [!info] Eligibility source note
+> The above eligibility check was sourced from the **Special Selection** page — which is the confirmed admission path (2026-04-13). GSGC is ineligible for master's holders.
 
 ## Timeline & Actions
 
-### NOW → Apr 2026: Entrance Exam Prep (GSGC) & Application Preparation
+### NOW → Apr 2026: Entrance Exam Prep (Special Selection) & Application Preparation
 
 > [!warning] **MEXT University Recommendation (Research Student) dropped** (2026-02-17) due to extremely fierce competition. Keep [[MEXT_University_Recommendation_Timeline]] for reference only.
 
@@ -80,10 +81,12 @@ decision_date: 2026-02-15
 > Two UTokyo CNS professors — **[[Prof_Nori_Aoi|Aoi Nori]] (青井 考)** and **[[Prof_Nobuaki_Imai|Nobuaki Imai]]** — responded positively and agreed to accept conditionally on passing the Graduate School of Science entrance exam. **Direct PhD entry (Oct 2027) is now the primary target.** Kenkyusei is the fallback if the entrance exam is failed. Strategic focus shifts to entrance exam preparation.
 >
 > **Group preference update (2026-03-24):** Leaning toward [[Prof_Nobuaki_Imai|Imai-san]]'s group (DONUTS). Pending confirmation via one-on-one meeting. See [[Supervisor_Relationship_Management]] for rationale.
+>
+> **Supervisor committed (2026-04-13):** Confirmed commitment to [[Prof_Nobuaki_Imai|Nobuaki Imai]] (DONUTS group). Aoi no longer primary supervisor.
 
 ### Jun – Dec 2026: Acceptance & Preparation
 
-- [ ] Confirm PhD application timeline and Kenkyusei application window (fallback)
+- [ ] Confirm PhD application timeline (admission materials before Dec 2026 — Imai 2026-04-13) and Kenkyusei application window (fallback)
 - [ ] Begin COE / visa process through UTokyo `[V9]`
 - [ ] Prepare documents (transcripts, recommendations, research proposal)
 - [ ] **Physics + math exam prep → [[Fundamental_Knowledge]]** *(now the critical gate — elevated priority as of 2026-03-09)*
@@ -103,16 +106,16 @@ decision_date: 2026-02-15
 - [ ] Immerse in Japanese language environment
 - [ ] Build lab relationships
 
-### Doctoral Entrance Exam — Route B (Sub-Track Undecided)
+### Doctoral Entrance Exam — Route B (Special Selection, Confirmed 2026-04-13)
 
-- [ ] Confirm GSGC-specific exam schedule from official 2027/2028 cycle pages `[V6]` — **pending professor meeting**
+- [ ] Confirm Special Selection exam schedule from official 2027/2028 cycle pages `[V6]`
   - ~~**Regular Physics route (ARCHIVED):** written exam (Aug), oral exam (Jan)~~
-  - **GSGC / Special Selection (Route B; sub-track undecided):** screening around Jan/Feb (cycle-dependent); possible online written exam if supervisor deems necessary
+  - **Special Selection (Route B; confirmed 2026-04-13):** Interview only, no written exam. Admission materials before Dec 2026.
 - [ ] Only attempt April 2028 entry if **all** conditions met by Dec 2027: supervisor approval, confirmed eligibility, pass-level mock readiness. Otherwise, default to Oct 2028.
 
 ### JRA Application (timing route-dependent)
 
-> [!note] **Primary path (GSGC, direct PhD Oct 2027):** JRA application timing depends on GSGC schedule — **pending professor meeting**. If direct PhD entry achieved Oct 2027, JRA may be applied for earlier than Apr-May 2028.
+> [!note] **Primary path (Special Selection, direct PhD Oct 2027):** JRA + 2 other scholarship types confirmed available (names TBD, Imai 2026-04-13). If direct PhD entry achieved Oct 2027, JRA may be applied for earlier than Apr-May 2028.
 > **Fallback path (Kenkyusei → PhD Oct 2028):** Apply Apr–May 2028 for Oct 2028 start.
 
 - [ ] Apply for RIKEN JRA `[V7]`
@@ -134,8 +137,8 @@ decision_date: 2026-02-15
 |---|---|
 | 2026-02-28 | Kenkyusei application window check (self-funded) |
 | 2026-04-15 | First supervisor outreach emails sent |
-| 2026-07-01 | Pre-check UTokyo Special Selection / GSGC pages; **confirm GSGC vs Special Selection distinction resolved** (backstop — see [[DG_GSGC_vs_Special_Selection]] and [[General_Checklist#Monitoring Checkpoints]]) |
-| 2026-09-01 | GSGC guideline release check |
+| 2026-07-01 | Pre-check UTokyo Special Selection pages; GSGC vs Special Selection distinction **RESOLVED** (2026-04-13 — Special Selection confirmed) |
+| 2026-09-01 | ~~GSGC guideline release check~~ N/A — GSGC ineligible (2026-04-13) |
 | 2026-10-15 / 2026-12-05 | Verify Oct 2027 enrollment windows |
 | 2027-01-15 | If no call visible, email Graduate School Office |
 
@@ -153,8 +156,8 @@ MEXT University Recommendation (Research Student) dropped due to extremely fierc
 | Tuition | 535,800 `[V5]` | High chance of full exemption `[V4]` |
 | Entrance fee | 282,000 | One-time; harder to waive |
 | Application fee | 10,000 | |
-| Move-in costs | 240,000–320,000 | Key money + deposit + agent fee (Wako/Nerima) |
-| Rent (12 mo) | 720,000–960,000 | 60–80k/month |
+| Move-in costs | 240,000–320,000 | Key money + deposit + agent fee (Wako — self-rent, no dormitory; confirmed Imai 2026-04-13) |
+| Rent (12 mo) | 720,000–960,000 | 60–80k/month (Wako area) |
 | National Health Insurance | 180,000–240,000 | 15–20k/month |
 | Food | 360,000–480,000 | 30–40k/month |
 | Utilities | 120,000–180,000 | 10–15k/month |
@@ -183,8 +186,7 @@ Personal savings: 100–200k CNY (≈ 2–4M JPY). Comfortable at upper range; d
 
 **Tuition:** 535,800 JPY/year `[V5]` — likely fully exempt under UTokyo's income-based policy (JRA income of 3.0M << 6M threshold) `[V4]`. Key unknowns: applicability to international students, how JRA income is classified.
 
-> [!question] GSGC scholarship not modeled in financials
-> The GSGC track includes a 180k JPY/month scholarship, which is not reflected in this financial section. Additionally, whether the GSGC scholarship and RIKEN JRA can be held simultaneously is unverified. See [[DG_GSGC_vs_Special_Selection]] for the full analysis.
+> [!info] GSGC ineligible — scholarship not applicable. JRA + 2 other scholarship types confirmed available (names TBD, Imai 2026-04-13).
 
 ## Entrance Exam
 
@@ -193,11 +195,11 @@ Core written scope (UTokyo Physics doctoral, 2026-cycle reference):
 - Statistical Mechanics → [[Fundamental_Knowledge]]
 - Classical Mechanics + Electromagnetism → [[Fundamental_Knowledge]]
 
-> [!important] Entrance exam preparation is **top priority** — it is the gate to direct PhD entry (Oct 2027). If direct entry is missed, exam prep continues during the Kenkyusei fallback year. Exact exam sequence depends on route (Regular Physics vs GSGC).
+> [!important] Entrance exam preparation is **top priority** — it is the gate to direct PhD entry (Oct 2027). If direct entry is missed, exam prep continues during the Kenkyusei fallback year. Admission via Special Selection: interview only, no written exam (confirmed Imai 2026-04-13). GRE Physics minimum: 900.
 
-> [!danger] **GRE Physics Subject Test is COMPULSORY for Route B.** Register early — test dates and seats are limited.
+> [!danger] **GRE Physics Subject Test is COMPULSORY for Route B (Special Selection). Minimum score: 900 (Imai 2026-04-13).** Register early — test dates and seats are limited.
 
-> [!success] **Route decision resolved (2026-03-09):** Route B chosen (decision by user + IMP supervisor). Route A archived. Sub-track (GSGC vs Special Selection) undecided — timing details (application windows, written exam requirement) **pending professor meeting**.
+> [!success] **Route decision resolved (2026-03-09; sub-track confirmed 2026-04-13):** Route B chosen (decision by user + IMP supervisor). Route A archived. **Special Selection confirmed** — GSGC ineligible for master's holders. Interview only, no written exam. GRE Physics minimum: 900. Admission materials before Dec 2026.
 
 ### Route A — Regular Physics Exam (一般入試)
 
@@ -219,23 +221,27 @@ Core written scope (UTokyo Physics doctoral, 2026-cycle reference):
 
 **Official past papers page:** [博士課程 過去問題集](https://www.phys.s.u-tokyo.ac.jp/about/35361/)
 
-### Route B — GSGC Physics (Global Science Graduate Course)
+### Route B — Special Selection (Confirmed 2026-04-13) / ~~GSGC~~ (INELIGIBLE)
 
-> [!info] Nuclear Physics availability (theory + experiment)
+> [!success] **GSGC INELIGIBLE — Special Selection is the sole path (2026-04-13 Imai meeting)**
+> GSGC is a 5-year integrated M+D program and is ineligible for master's holders. Special Selection (3-year doctoral) is the confirmed admission route. Interview only — no written exam. GRE Physics minimum: 900. Admission materials before Dec 2026.
+
+> [!abstract] ARCHIVED: GSGC details (retained for reference only)
+> 
+> **Nuclear Physics availability (theory + experiment):**
 > - Dept. of Physics sub-courses include **Nuclear Theory (A0)** and **Experimental Nuclear/Particle Physics (A2)**.
-> - The Dept. of Physics participates in GSGC and all graduate courses are conducted in English → nuclear theory/experimental nuclear/particle are within the GSGC scope (confirm specific supervisors via the GSGC faculty list).
-
-> [!info] Admission screening (GSGC General, Physics)
+> - The Dept. of Physics participates in GSGC and all graduate courses are conducted in English.
+> 
+> **Admission screening (GSGC General, Physics):**
 > - Selection based on application documents + test scores (GSGC guidelines for master's-level admission, updated 2025-09-01).
 > - **GRE Physics Subject Test required** for Physics; **GRE General not required**. TOEFL required (unless exemption).
-> - Some departments may add **interviews** and/or **online written examinations** (see department-specific notes).
-
-> [!warning] GSGC Physics written exam (official 2026 notice)
-> - Applicants must contact their prospective supervisor; if the supervisor deems it necessary, the applicant must take an **online written exam** (not all applicants take it).
+> - Some departments may add **interviews** and/or **online written examinations**.
+> 
+> **GSGC Physics written exam (official 2026 notice):**
+> - Applicants must contact their prospective supervisor; if the supervisor deems it necessary, the applicant must take an **online written exam**.
 > - 2026 exam: **Tue Jan 20, 2026 (15:00–17:00 JST)**, 2 hours, **English**. Subjects: CM, QM, EM, Thermodynamics, StatMech.
-> - **Implication:** GSGC Physics is **not purely GRE-based**; there is a department-written exam when required. Official pages do not link any past papers for this exam; prioritize GRE Physics + core subjects and ask the supervisor/office if any past questions can be shared.
 
-**GSGC Official Sources:**
+**GSGC Official Sources (archived):**
 - UTokyo Physics GSGC page (program + written exam notice): https://www.phys.s.u-tokyo.ac.jp/en/%E5%9B%BA%E5%AE%9A%E3%83%9A%E3%83%BC%E3%82%B8/462/
 - GSGC Application Guidelines (Sep 1, 2025 PDF): https://www.s.u-tokyo.ac.jp/GSGC/pdf/Guidelines.pdf
 - GSGC Written Exam Announcement (Physics, 2026 PDF): https://www.phys.s.u-tokyo.ac.jp/en/wp-content/uploads/sites/2/2025/10/GSGC-Written-Exam-annoucement.pdf
@@ -244,29 +250,31 @@ Core written scope (UTokyo Physics doctoral, 2026-cycle reference):
 
 ### Admission Routes Summary
 
-> [!success] **Route B is the CHOSEN exam route** (decision by user + IMP supervisor, 2026-03-09). GRE Physics is compulsory. Route A archived. Sub-track (GSGC vs Special Selection) undecided — pending professor meeting.
+> [!success] **Route B is the CHOSEN exam route** (decision by user + IMP supervisor, 2026-03-09). **Special Selection confirmed** (2026-04-13 Imai meeting). GRE Physics is compulsory (minimum 900). Route A archived.
 
 | Route | Mechanism | Key Requirements | Status |
 |---|---|---|---|
 | **A — Regular (一般入試)** | Written exam (Aug) + oral (Jan) | 4 mandatory physics problems + TOEFL | **ARCHIVED** — documented for reference, not the active plan |
-| **B1 — GSGC** | Documents + GRE + possible written exam | GRE Physics + TOEFL + supervisor endorsement; 5-year integrated M+D; includes 180k JPY/month scholarship | **Route B chosen; sub-track undecided** |
-| **B2 — Special Selection** | Documents + GRE + possible written exam | GRE Physics + TOEFL + supervisor endorsement; 3-year doctoral only | **Route B chosen; sub-track undecided** |
+| **B1 — GSGC** | Documents + GRE + possible written exam | GRE Physics + TOEFL + supervisor endorsement; 5-year integrated M+D; includes 180k JPY/month scholarship | **INELIGIBLE — confirmed 2026-04-13** (master's holders cannot apply) |
+| **B2 — Special Selection** | Documents + GRE + interview | GRE Physics (min 900) + TOEFL + supervisor endorsement; 3-year doctoral only; interview only, no written exam | **CHOSEN & CONFIRMED (2026-04-13)** |
 | **Internal (修士→博士)** | Thesis defense only | Does NOT apply to Kenkyusei | N/A |
 
-> [!question] PENDING: GSGC vs Special Selection
-> Sub-track distinction pending professor meeting. See **[[DG_GSGC_vs_Special_Selection]]** for full analysis, decision criteria, and resolution path.
+> [!success] RESOLVED: Special Selection Confirmed (2026-04-13)
+> GSGC ineligible for master's holders. Special Selection is the sole admission path. Interview only — no written exam. GRE Physics minimum: 900. See [[DG_GSGC_vs_Special_Selection]] (RESOLVED).
 
-> [!note] GSGC-specific timing details (exact application windows, whether written exam is required for user) are **pending professor meeting** with Aoi Nori or Nobuaki Imai.
+> [!note] Special Selection timing: Admission materials before Dec 2026. Confirmed with [[Prof_Nobuaki_Imai|Nobuaki Imai]] (2026-04-13).
 
 ## Application Materials
 
+> [!warning] **Admission materials due before Dec 2026** (confirmed Imai 2026-04-13)
+
 - [ ] Research proposal linking IMP thesis → UTokyo CNS / RIKEN topics
 - [ ] TOEFL iBT score → [[English_Learning]] *(registered 2026-04-09; exam **2026-08-30** at STN80118A Beijing; score available ~Sep 2 — see [[TOEFL_Study_Progress]])*
-- [ ] **GRE Physics Subject Test** — compulsory for Route B; register early
+- [ ] **GRE Physics Subject Test** — compulsory for Special Selection; minimum 900; register early
 - [ ] Letter of Acceptance (Naidaku)
 - [ ] Academic transcripts and degree documents (IMP/CAS/UCAS)
 - [ ] Letters of recommendation
-- [ ] CV with publications / presentations
+- [ ] CV with publications / presentations (judged by professors, no hard standard — Imai 2026-04-13)
 
 ## Risk Register
 
@@ -274,7 +282,7 @@ Core written scope (UTokyo Physics doctoral, 2026-cycle reference):
 |---|---|---|---|
 | R1 | **Self-funded budget shortfall** — Kenkyusei year requires ~2.5–2.8M JPY | Med-High | Savings (2–4M JPY) cover it. Explore RIKEN part-time RA. Critical if savings are at lower range. |
 | R2 | **Entrance exam failure** — rigorous UTokyo Physics exam | High | Primary target is direct PhD (Oct 2027). If failed, Kenkyusei year is the fallback prep buffer — retake for Oct 2028. Prioritize study over research. |
-| R3 | **No supervisor acceptance** — cannot secure Naidaku | ~~Med-High~~ **Low (conditional)** — resurfaces if entrance exam fails | ~~Start outreach early (Feb 2026), leverage IMP connections.~~ **MITIGATED (2026-03-09):** Two CNS professors (Aoi Nori, Nobuaki Imai) agreed to accept conditionally on entrance exam. Naidaku expected upon passing. If exam fails, acceptance lapses and R3 returns to Med-High — see R7 for Plan B. |
+| R3 | **No supervisor acceptance** — cannot secure Naidaku | ~~Med-High~~ **Low (conditional)** — resurfaces if entrance exam fails | ~~Start outreach early (Feb 2026), leverage IMP connections.~~ **MITIGATED (2026-03-09):** Two CNS professors agreed to accept conditionally. **UPDATE (2026-04-13):** Committed to [[Prof_Nobuaki_Imai|Nobuaki Imai]] (DONUTS group) as primary supervisor. Naidaku expected upon passing. If exam fails, acceptance lapses and R3 returns to Med-High — see R7 for Plan B. |
 | R4 | **JRA competition** — not guaranteed even with passed exam | Medium | Build strong lab relationship during Kenkyusei year; discuss JRA with supervisor early. |
 | R5 | **Tuition exemption denied** | Low | Apply for partial exemption as fallback; 535,800 JPY/year is coverable. |
 | R6 | **Visa gap** (Jun–Sep 2027) — no student status between IMP graduation and Kenkyusei start | Medium | Plan COE timing with UTokyo (2–3 months before arrival). Stay in China during gap. `[V9]` |
@@ -284,7 +292,7 @@ Core written scope (UTokyo Physics doctoral, 2026-cycle reference):
 
 ## Open Questions
 
-- [x] Which CNS professors best fit TPC + direct reactions + ML-PID? *(2026-03-09: Aoi Nori and Nobuaki Imai identified and contacted — both responded positively)*
+- [x] Which CNS professors best fit TPC + direct reactions + ML-PID? *(2026-03-09: Aoi Nori and Nobuaki Imai identified and contacted — both responded positively)* *(2026-04-13: Committed to Nobuaki Imai / DONUTS group)*
 - [ ] When will UTokyo publish the official Oct 2027 doctoral entrance exam schedule?
 - [ ] When will UTokyo publish official Oct 2027 Kenkyusei call pages (fallback)?
 - [ ] Is the 2026-cycle Physics exam structure applicable to the Oct 2027 cycle?
@@ -304,14 +312,14 @@ Core written scope (UTokyo Physics doctoral, 2026-cycle reference):
 | V7 | JRA application window: Apr–May for Oct start | AI handoff | `UNVERIFIED` | Medium | Confirm during outreach |
 | V8 | Kenkyusei maximum enrollment duration | Unknown | `UNKNOWN` | Medium | Critical for R7 (exam failure Plan B) |
 | V9 | Visa/COE processing timeline for Oct 2027 from China | Unknown | `UNKNOWN` | Medium | Check with UTokyo international office |
-| V10 | Master's degree holder eligibility for GSGC (5-year M+D program) | Unknown | `UNVERIFIED` | Critical | Check GSGC guidelines PDF and confirm with professors. See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] |
-| V11 | If master's holder is GSGC-eligible, entry at M1 or D1? | Unknown | `UNVERIFIED` | Critical | Contingent on V10. See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] |
-| V12 | GSGC scholarship (180k/month) + RIKEN JRA (250k/month) stacking/exclusivity | Unknown | `UNVERIFIED` | High | See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] |
-| V13 | Can applicant apply to both GSGC and Special Selection simultaneously? | Unknown | `UNVERIFIED` | High | See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] |
+| V10 | Master's degree holder eligibility for GSGC (5-year M+D program) | Imai meeting 2026-04-13 | `N/A — GSGC ineligible (2026-04-13)` | — | Master's holders cannot apply to GSGC. Special Selection is the sole path. |
+| V11 | If master's holder is GSGC-eligible, entry at M1 or D1? | Imai meeting 2026-04-13 | `N/A — GSGC ineligible (2026-04-13)` | — | Moot — GSGC ineligible for master's holders. |
+| V12 | GSGC scholarship (180k/month) + RIKEN JRA (250k/month) stacking/exclusivity | Imai meeting 2026-04-13 | `N/A — GSGC ineligible (2026-04-13)` | — | GSGC scholarship not applicable. JRA + 2 other scholarship types confirmed available (names TBD). |
+| V13 | Can applicant apply to both GSGC and Special Selection simultaneously? | Imai meeting 2026-04-13 | `N/A — GSGC ineligible (2026-04-13)` | — | Moot — only Special Selection is eligible. |
 | V14 | Special Selection application windows (same as GSGC or different?) | Unknown | `UNVERIFIED` | Medium | See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] |
 | V15 | Is GRE Physics required for Special Selection? | User-verified | `VERIFIED` | — | Confirmed compulsory for SSIA as well (2026-03-25) |
-| V16 | Does Special Selection require a written exam? | Unknown | `UNVERIFIED` | Medium | See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] |
-| V17 | GSGC scholarship eligibility period if entering at D1 | Unknown | `UNVERIFIED` | Low | Contingent on V10/V11. See [[DG_GSGC_vs_Special_Selection#5. Unknowns to Resolve]] |
+| V16 | Does Special Selection require a written exam? | Imai meeting 2026-04-13 | `VERIFIED — No written exam; interview only (Imai 2026-04-13)` | — | Confirmed: interview only, no written exam for Physics dept Special Selection. |
+| V17 | GSGC scholarship eligibility period if entering at D1 | Imai meeting 2026-04-13 | `N/A — GSGC ineligible (2026-04-13)` | — | Moot — GSGC ineligible for master's holders. |
 
 ## Official Sources
 

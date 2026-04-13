@@ -5,7 +5,7 @@ status: verified
 area: "[[Career]]"
 tags: [utokyo, cns, riken, professor-profile, exotic-nuclei, tpc, cat-m]
 created: 2026-03-02
-updated: 2026-03-09
+updated: 2026-04-13
 ---
 # Information of Nori Aoi
 ## Quick Facts
@@ -14,7 +14,7 @@ updated: 2026-03-09
 - **Lab/Group:** NUSPEQ (NUclear SPectroscopy for Extreme Quantum system) / Exotic Nuclear Reaction Group. [^aoi-lab]
 - **Primary facilities:** RIBF (RI Beam Factory) at RIKEN, SHARAQ spectrometer, OEDO beamline, CAT-M (CNS Active Target - Medium). [^aoi-research]
 - **Location:** CNS is based at the RIKEN Wako campus, facilitating the JRA (Junior Research Associate) pathway. [^aoi-cns]
-- **Contact Status (2026-03-09):** Accepted — conditional on passing the Graduate School of Science entrance exam. → [[UTokyo_RIKEN]]
+- **Status (2026-04-13):** Accepted (2026-03-09). User committed to [[Prof_Nobuaki_Imai|Imai-san]]'s group (DONUTS) as of 2026-04-13. Aoi-san remains accessible via same-campus collaboration at CNS — not the primary supervisor. → [[UTokyo_RIKEN]]
 
 ## Research Focus (public descriptions)
 - **Exotic Nuclei:** Investigation of the structure and dynamics of nuclei far from the stability line (neutron-rich/proton-rich). [^aoi-research]

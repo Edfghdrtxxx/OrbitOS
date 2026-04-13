@@ -13,23 +13,22 @@ pathway: "Primary: Direct PhD D1 via Route B (Oct 2027); Fallback: Kenkyusei (Oc
 > [!success] **Supervisor acceptance ACHIEVED (2026-03-09)**
 > Prof. Nori Aoi (青井 考) and Prof. Nobuaki Imai have both agreed to accept you **conditionally on passing the entrance exam**. Naidaku is effectively secured — formal letter contingent on exam pass.
 
-> [!warning] **Sub-track UNRESOLVED — GSGC vs Special Selection undecided**
-> Route B is chosen (Route A archived), but the sub-track (GSGC vs Special Selection) is not yet decided. This affects D1 entry mechanism, scholarship eligibility, and application window. Needs to be discussed with professors in upcoming online meetings. See [[DG_GSGC_vs_Special_Selection]] for the full decision gate. Hard backstop: **2026-07-01**.
+> [!success] **Sub-track RESOLVED (2026-04-13)**
+> Special Selection confirmed. GSGC ineligible for master's holders. Interview only — no written exam. GRE Physics minimum: 900. See [[DG_GSGC_vs_Special_Selection]] (RESOLVED).
 
 ## Milestones at a Glance
 
 | Milestone | Target Date | Status |
 |---|---|---|
 | ~~Supervisor acceptance~~ | ~~2026-06-30~~ | **DONE** (2026-03-09) — conditional on exam |
-| Sub-track clarified (GSGC vs Special Selection) | 2026-04-30 (backstop: 2026-07-01) | PENDING — professor meeting |
+| Sub-track clarified (GSGC vs Special Selection) | 2026-04-30 (backstop: 2026-07-01) | **COMPLETED (2026-04-13)** — Special Selection confirmed |
 | TOEFL iBT registered | ~~2026-04 (by Apr 30)~~ | **DONE (2026-04-09)** — booked 2026-08-30 at STN80118A Beijing |
 | TOEFL iBT Attempt #1 | **2026-08-30** | Target 100+; no MyBest accepted; arrive 08:30 |
 | TOEFL Attempt #2 registered | **by 2026-06-19** | Unconditional two-attempt strategy; exam ~Nov 2026 |
 | TOEFL iBT Attempt #2 | **~Nov 2026** | Do NOT auto-send; compare scores → manually send better one (code 8002-01) before Period 2 (~Dec 5) |
-| GRE Physics taken | 2026-09 or 2026-10 | Single-shot; no retake before Special Selection deadline (~Dec 2026) |
-| Special Selection application submitted | TBD — confirm with professors / Oct 2027 cycle info | ⚠️ Window unverified |
-| Written exam (if required) | TBD | ⚠️ Format unverified — confirm with professors |
-| Oral exam | TBD | ⚠️ Date unverified — confirm with professors |
+| GRE Physics taken (minimum: 900) | 2026-09 or 2026-10 | Single-shot; minimum 900 confirmed (Imai 2026-04-13); no retake before deadline (~Dec 2026) |
+| Special Selection application submitted | Before Dec 2026 (confirmed Imai meeting 2026-04-13) | Materials due before Dec 2026 |
+| Interview | TBD | No written exam — interview only (confirmed 2026-04-13) |
 | Results announced | TBD | Pass → Direct PhD D1; Fail → Kenkyusei fallback |
 | **Direct PhD D1 enrollment (PRIMARY)** | **2027-10-01** | Entrance exam passed |
 | Kenkyusei arrival (FALLBACK) | 2027-10-01 | Only if entrance exam failed |
@@ -39,19 +38,15 @@ pathway: "Primary: Direct PhD D1 via Route B (Oct 2027); Fallback: Kenkyusei (Oc
 
 ## Phase 0: Immediate (NOW → 2026-04-30)
 
-### 0.1 Clarify GSGC Role & Special Selection Details — CRITICAL
+### ~~0.1 Clarify GSGC Role & Special Selection Details~~ — COMPLETED (2026-04-13)
 
-> D1 entry = Special Selection (confirmed). Remaining unknowns: GSGC's role (scholarship? irrelevant?), Special Selection application window, and exam format.
+> [!success] Resolved via Imai meeting 2026-04-13. GSGC ineligible for master's holders. Special Selection confirmed: interview only, no written exam, GRE Physics minimum 900, materials before Dec 2026. See [[DG_GSGC_vs_Special_Selection]] (RESOLVED).
 
-- [ ] Prepare priority questions for professor meeting (see [[DG_GSGC_vs_Special_Selection]] unknowns U1–U8)
-  - U4: Can GSGC scholarship (180k/mo) + RIKEN JRA (250k/mo *expected*) stack? Or is GSGC irrelevant for D1 applicants?
-  - **NEW:** What is the Special Selection application window for Oct 2027 entry?
-  - **NEW:** What is the Special Selection exam format? (Written exam scope, duration, oral exam structure)
-  - U5: Can you apply to both GSGC and Special Selection simultaneously?
-- [ ] Schedule online meeting with Prof. Aoi Nori or Prof. Nobuaki Imai (~Mar–Apr 2026)
-- [ ] Attend meeting and record answers
-- [ ] Update [[DG_GSGC_vs_Special_Selection]] with decisions
-- [ ] **Backstop 2026-07-01:** If unresolved, escalate to UTokyo Graduate School Office directly
+- [x] Prepare priority questions for professor meeting
+- [x] Schedule online meeting with Prof. Nobuaki Imai
+- [x] Attend meeting and record answers (2026-04-13)
+- [x] Update [[DG_GSGC_vs_Special_Selection]] with decisions
+- [x] ~~**Backstop 2026-07-01:** If unresolved, escalate~~ — resolved well before backstop
 
 ### 0.2 TOEFL iBT Registration (by Apr 2026) — **DONE 2026-04-09**
 
@@ -119,7 +114,7 @@ pathway: "Primary: Direct PhD D1 via Route B (Oct 2027); Fallback: Kenkyusei (Oc
 
 ### 1.4 Special Selection Application
 
-> [!warning] **Application window and exam format are UNVERIFIED.** Current estimates (~Dec 5–22, Application Period 2) are based on the confirmed Oct 2026 Special Selection cycle shifted +1 year. Confirm with professors or wait for Oct 2027 cycle info. See [[Official_Deadlines#1. UTokyo Special Selection Application (Oct 2027 enrollment — PRIMARY)]].
+> [!info] **Application timeline partially confirmed (2026-04-13).** Materials due before Dec 2026 (confirmed Imai meeting). Exact application window still estimated (~Dec 5–22, Application Period 2) based on the confirmed Oct 2026 cycle shifted +1 year. See [[Official_Deadlines#1. UTokyo Special Selection Application (Oct 2027 enrollment — PRIMARY)]].
 
 - [ ] **2026-07-01:** Check UTokyo Special Selection page for Oct 2027 cycle info
 - [ ] **2026-09-01:** Check if Special Selection guidelines for Oct 2027 have been released
@@ -150,15 +145,9 @@ pathway: "Primary: Direct PhD D1 via Route B (Oct 2027); Fallback: Kenkyusei (Oc
 
 ## Phase 2: Examination & Results (dates TBD — estimated early 2027)
 
-### 2.1 Written Exam (date TBD)
+### ~~2.1 Written Exam~~ — N/A (No Written Exam)
 
-> [!warning] **Exam format unverified.** The details below (2hr, CM/QM/EM/Thermo/StatMech) were previously sourced from GSGC materials and may not apply to Special Selection. Confirm with Prof. Aoi/Imai.
-
-- [ ] Confirm exact exam date and format with professors when published
-- [ ] Expected topics (unverified — may differ for Special Selection): CM, QM, EM, Thermodynamics, StatMech
-- [ ] Supervisor may indicate if written exam is waived based on GRE score (confirm with professors)
-- [ ] Final intensive prep: 2–3 weeks before exam, focus on weak areas and timed practice
-- [ ] Sit for written exam
+> [!success] **Confirmed (2026-04-13):** Special Selection has **no written exam — interview only**. This section is archived. Previously sourced GSGC written exam details (2hr, CM/QM/EM/Thermo/StatMech) do not apply.
 
 ### 2.2 Oral Exam (date TBD)
 
@@ -326,7 +315,7 @@ pathway: "Primary: Direct PhD D1 via Route B (Oct 2027); Fallback: Kenkyusei (Oc
 
 | Trigger | Action |
 |---|---|
-| GSGC role + Special Selection details unresolved by 2026-07-01 | Escalate directly to UTokyo Graduate School Office |
+| ~~GSGC role + Special Selection details unresolved by 2026-07-01~~ | ~~Escalate directly to UTokyo Graduate School Office~~ — **RESOLVED 2026-04-13** |
 | GRE Physics score too low or missed | No retake before Special Selection application deadline (estimated ~Dec 2026); pivot to next window (delays to Oct 2028 cycle) or evaluate Regular exam route |
 | TOEFL score below 72 (B2 threshold) after both attempts | Reassess English prep strategy; consider third attempt if timeline permits |
 | Entrance exam failed (Mar 2027) | Activate Kenkyusei fallback (Phase 4); retake exam for Oct 2028 |
@@ -341,7 +330,7 @@ pathway: "Primary: Direct PhD D1 via Route B (Oct 2027); Fallback: Kenkyusei (Oc
 ## Related Notes
 
 - [[UTokyo_RIKEN]] — Strategic roadmap, financials, risk register, verification tracker
-- [[DG_GSGC_vs_Special_Selection]] — Open decision gate: GSGC vs Special Selection sub-track
+- [[DG_GSGC_vs_Special_Selection]] — RESOLVED decision gate: Special Selection confirmed (2026-04-13)
 - [[Questions_and_Verifiable_Source]] — Sources verification and outstanding questions
 - [[Official_Deadlines]] — Application windows, exam schedules, deadlines
 - [[General_Checklist]] — Eligibility and document checklist

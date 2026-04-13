@@ -19,6 +19,8 @@ tags: [decision-gate, utokyo, gsgc, special-selection, phd, entrance-exam]
 > This document is the authoritative reference for the open question of which UTokyo doctoral admission sub-track to pursue. All other vault files should link here rather than duplicating this analysis. See [[Supervisor_Relationship_Management]], [[UTokyo_RIKEN]], [[Official_Deadlines]], [[General_Checklist]], and [[Fundamental_Learning_Progress]] for downstream dependencies.
 
 > [!tip] Meeting Prep Quick Reference
+> **Meeting completed 2026-04-13. Questions below are archived for reference.**
+>
 > **Priority questions for Aoi Nori / Nobuaki Imai:**
 > 1. "I will complete my master's degree in June 2027. Am I eligible to apply for GSGC, or is GSGC only for applicants entering at the master's level? If eligible, would I enter at the doctoral (D1) level?"
 > 2. "Can I apply to both GSGC and Special Selection in the same application cycle?"
@@ -68,8 +70,8 @@ This is not merely a preference — it is a structural eligibility question. The
 
 **Eligibility:**
 
-> [!danger] CRITICAL UNVERIFIED ASSUMPTION
-> `[UNVERIFIED]` **No official source has been found confirming that a person who already holds (or will hold) a master's degree can apply to GSGC.** The GSGC Guidelines PDF describes a 5-year integrated course starting from master's level. If GSGC is structurally limited to applicants without a master's degree, this option is ineligible by definition.
+> [!info] RESOLVED (2026-04-13)
+> **RESOLVED (2026-04-13):** Confirmed — master's holders CANNOT apply to GSGC. GSGC is a 5-year integrated course for applicants entering at the master's level only. This option is ineligible.
 >
 > The eligibility verification that exists in the vault (pre-graduation application allowed) was **sourced from the Special Selection page**, not the GSGC page. It was applied to GSGC without confirming cross-applicability.
 
@@ -85,7 +87,7 @@ This is not merely a preference — it is a structural eligibility question. The
 - If master's phase must be repeated: 2 years master's + 3 years doctoral = 5 years total (Oct 2027 – Sep 2032)
 - If direct doctoral entry is possible under GSGC: 3 years doctoral (Oct 2027 – Sep 2030) — same as Special Selection but with scholarship
 - Application Period 2 (GSGC eligible): ~Dec 5–22, 2026 (estimated, per [[Official_Deadlines]])
-- Written exam: ~Late Jan 2027 (estimated) — may be waived by supervisor `[UNVERIFIED — pending professor meeting]`
+- Written exam: ~Late Jan 2027 (estimated) — may be waived by supervisor `[N/A — GSGC ineligible per Imai meeting 2026-04-13]`
 
 **Study plan implications:**
 - GRE Physics is compulsory for GSGC
@@ -118,7 +120,7 @@ This is not merely a preference — it is a structural eligibility question. The
 
 **Study plan implications:**
 - GRE Physics required for Physics department under Special Selection — `[VERIFIED]` — UTokyo admissions page, Mar 2026. GRE General NOT required.
-- Written exam status: `[UNVERIFIED]` #upcoming-confirmation-needed — Special Selection is primarily document-based; whether Physics dept requires a written exam component is unconfirmed
+- Written exam status: **VERIFIED — No written exam; interview only** (confirmed Imai meeting 2026-04-13). Selection is document-based review + interview.
 - Core study plan remains similar to GSGC scenario
 
 ### Option C: Apply to Both Simultaneously
@@ -219,7 +221,7 @@ ELSE IF information remains ambiguous after professor meeting
 
 | Dimension | Impact |
 |---|---|
-| **Study plan** | Core physics prep continues. GRE Physics prep continues (required for Special Selection — `[U6 VERIFIED]`). Written exam status depends on supervisor assessment (`[U7 UNVERIFIED]` #upcoming-confirmation-needed). Overall study plan similar to GSGC scenarios but without the GSGC scholarship safety net. |
+| **Study plan** | Core physics prep continues. GRE Physics prep continues (required for Special Selection — `[U6 VERIFIED]`). Written exam: **None — interview only** (U7 RESOLVED, Imai meeting 2026-04-13). Overall study plan similar to GSGC scenarios but without the GSGC scholarship safety net. |
 | **Financial** | No GSGC scholarship. Primary funding: RIKEN JRA (200k/month `[UNVERIFIED — JRA amount]`). If JRA not obtained: self-funded PhD — significantly higher financial risk. Tuition exemption (`[V4]`) becomes more critical. Budget aligns with current [[UTokyo_RIKEN#Financials]] PhD section. |
 | **Timeline** | 3-year doctoral: Oct 2027 – Sep 2030. Application windows confirmed same as GSGC (`[U5 VERIFIED]`): Period 1 ~Oct 15-31, Period 2 ~Dec 5-22. |
 | **Downstream file updates** | [[UTokyo_RIKEN]]: remove/archive all GSGC-specific content; update Admission Routes Summary to show Special Selection as sole chosen route. [[Official_Deadlines]]: replace GSGC timeline with Special Selection-specific dates. [[General_Checklist]]: update Target Universities section. [[Fundamental_Learning_Progress]]: adjust if test requirements differ. All files containing "GSGC vs Special Selection" callouts: replace with resolution statement. |
