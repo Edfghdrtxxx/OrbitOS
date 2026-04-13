@@ -1,0 +1,34 @@
+{
+  "skill_name": "dispatch",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Update frontmatter status to 'done' on these 3 project files: 20_Project/Alpha.md, 20_Project/Beta.md, 20_Project/Gamma.md",
+      "expected_output": "The dispatcher skips restatement and confirmation, assesses the task, and dispatches sub-agents to update the files directly.",
+      "files": [],
+      "expectations": [
+        "Dispatcher reads evolution.md before proceeding",
+        "Dispatcher does NOT restate the task or ask for confirmation before acting",
+        "Dispatcher does NOT create a formal task decomposition tree",
+        "Dispatcher spawns sub-agents via the Agent tool for file edits",
+        "Dispatcher delivers a consolidated summary after agents complete",
+        "All 3 target files have status: done in frontmatter after completion"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "with review — Add a 'tags: [physics]' frontmatter field to all notes in 30_Research/Physics/",
+      "expected_output": "The dispatcher dispatches implementation agents, reports results, then dispatches one consolidated reviewer agent to audit all changes.",
+      "files": [],
+      "expectations": [
+        "Dispatcher reads evolution.md before proceeding",
+        "Dispatcher detects the 'with review' flag from the invocation",
+        "Dispatcher dispatches implementation sub-agents via Agent tool",
+        "Dispatcher delivers a consolidated summary after implementation agents complete",
+        "Dispatcher dispatches exactly one reviewer agent after implementation",
+        "Dispatcher reports reviewer findings to the user",
+        "All target files have tags: [physics] in frontmatter after completion"
+      ]
+    }
+  ]
+}

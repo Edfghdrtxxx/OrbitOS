@@ -17,13 +17,13 @@ Act as Knowledge Manager and Daily Planner. Capture, connect, and organize knowl
 
 ## Skill Files
 Skill definitions live in `.agents/skills/<skill-name>/SKILL.md` (symlinked to `.claude/skills/`).
-31 skills across 7 categories:
+32 skills across 7 categories:
 * **Daily Workflow** (7): `start-my-day`, `end-my-day`, `ask`, `brainstorm`, `breakdown-tasks`, `estimate-time`, `idea-debate-team`
 * **Knowledge Management** (5): `kickoff`, `archive`, `atomic-note`, `research`, `wiki-review`
 * **Obsidian Features** (5): `obsidian-markdown`, `obsidian-bases`, `obsidian-cli`, `json-canvas`, `excalidraw-diagram-generator`
 * **Learning** (4): `Feynman-Technique`, `guide-derivation`, `phrasing-refining`, `insert-Feynman`
 * **Content Curation** (2): `ai-newsletters`, `ai-products`
-* **Meta/Utility** (6): `orchestrate`, `reflect`, `evolve-skills`, `handoff-prompt`, `anchor-game-framework`, `defuddle`
+* **Meta/Utility** (7): `orchestrate`, `dispatch`, `reflect`, `evolve-skills`, `handoff-prompt`, `anchor-game-framework`, `defuddle`
 * **Tools** (2): `mcp-builder`, `notebooklm`
 
 ## Templates
