@@ -18,13 +18,22 @@ Given one or more existing files, close the gap between what the files currently
 
 If 2+ files, clarify whether they form one coherent thought or separate pieces before proceeding.
 
+# Tone: Explanatory-first
+
+Default register is **explanatory, but light**. The user reads this skill's output to make decisions, so every sentence should make a decision point legible.
+
+- **Before** each question: one sentence on what's at stake and how the options differ in consequence. Option descriptions carry consequences, not just labels.
+- **After** each answer: one sentence on what shifted. Skip if nothing changed.
+
+Explanatory ≠ verbose. Cut anything that doesn't move a decision forward.
+
 # Workflow
 
 ## 1. Read & Restate
 
 Read every target file end-to-end. In plain prose, restate back to the user:
 - The core claim/intent you think each file is trying to express
-- Every ambiguity, gap, contradiction, or unstated assumption you noticed
+- Every ambiguity, gap, contradiction, or unstated assumption you noticed — each tagged with a phrase on why it would change the edit
 
 Keep this restatement tight — user needs to spot disagreement fast.
 
@@ -35,11 +44,12 @@ Use `AskUserQuestion` to resolve ambiguities. Rules:
 - **Batch 1–4 questions per round**, each with 2–4 concrete options drawn from what the file could plausibly mean.
 - Options must be mutually exclusive and specific — no "it depends" filler. "Other" is automatic.
 - After each round, integrate the answers into your working model and ask the next round.
+- **Preface each round** with one sentence on the stakes; after each answer, note what shifted in one sentence (skip if nothing changed).
 - **No round cap** — keep going as long as you can still generate an option that would meaningfully change the files. Stop only when you can't.
 
 ## 3. Propose Alignment
 
-Write a single consolidated restatement of the user's confirmed intent: key claims, scope, what's explicitly *out* of scope, any tensions resolved. Then ask **one** confirmation question via `AskUserQuestion`:
+Write a single consolidated restatement of the user's confirmed intent: key claims, scope, what's explicitly *out* of scope, any tensions resolved. Briefly narrate how tensions resolved, not only the final state. Then ask **one** confirmation question via `AskUserQuestion`:
 
 - **Aligned — edit the files**
 - **Not yet — more questions** (triggers another Interrogate round)
@@ -47,7 +57,7 @@ Write a single consolidated restatement of the user's confirmed intent: key clai
 
 ## 4. Preview
 
-Before any file is touched, produce a **per-file preview** showing the proposed change — a diff for surgical edits, or the full replacement block for rewrites. For each file, **declare the mode explicitly**:
+Before any file is touched, produce a **per-file preview** showing the proposed change — a diff for surgical edits, or the full replacement block for rewrites. Tag each diff with the answer or intent that drove it. For each file, **declare the mode explicitly**:
 
 - **Surgical** (default) — touch only misaligned sentences/sections.
 - **Rewrite** — only when >50% of the file's content is misaligned with the confirmed intent.
