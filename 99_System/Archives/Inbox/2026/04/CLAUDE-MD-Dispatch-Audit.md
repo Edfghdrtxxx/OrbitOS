@@ -4,8 +4,11 @@ created: 2026-04-14
 topic:
 due:
 priority:
-status: pending
+status: processed
 source: start-my-day
+completed-in: "[[2026-04-14]]"
+archived: 2026-04-14
+archived-in: "[[2026-04-14]]"
 related: []
 tags:
   - inbox
