@@ -38,7 +38,9 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 | Polish English writing | `/phrasing-refining` | Grammar, idiom, and naturalness review with terse inline corrections |
 | Stress-test an idea | `/idea-debate-team` | Multi-agent debate from distinct lenses to expose blind spots |
 | Self-critique current work | `/reflect` | Adversarial review of current session trajectory |
-| Dispatch parallel agents | `/orchestrate` | Decomposes a task, dispatches sub-agents, synthesizes results |
+| Park a quick thought in today's note | `/daily-note-addition` | Adds flat checkbox captures to the daily note without full triage |
+| Dispatch parallel agents (heavyweight) | `/orchestrate` | Decomposes a task, dispatches sub-agents, reviews, synthesizes results |
+| Dispatch parallel agents (lightweight) | `/dispatch` | Fast sub-agent dispatch — skips decomposition, restatement, and formal review |
 | Extract web page content | `/defuddle` | Clean markdown extraction from URLs, removing clutter |
 | Wrap up my day | `/end-my-day` | Evening review, deferred task identification, wind-down |
 | Create a diagram | `/excalidraw-diagram-generator` | Generates Excalidraw diagrams from natural language |
@@ -55,6 +57,20 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 | `obsidian-bases` | Database-like views of notes (.base files) — 5 dashboards in 99_System/Bases/ |
 | `obsidian-cli` | Vault operations, plugin dev, search, and DOM inspection from CLI |
 | `json-canvas` | Visual maps and flowcharts (.canvas files) |
+
+## Skill Categories
+
+33 skills across 7 categories:
+
+| Category | Count | Skills |
+|---|---|---|
+| **Daily Workflow** | 8 | `start-my-day`, `end-my-day`, `ask`, `brainstorm`, `breakdown-tasks`, `estimate-time`, `idea-debate-team`, `daily-note-addition` |
+| **Knowledge Management** | 5 | `kickoff`, `archive`, `atomic-note`, `research`, `wiki-review` |
+| **Obsidian Features** | 5 | `obsidian-markdown`, `obsidian-bases`, `obsidian-cli`, `json-canvas`, `excalidraw-diagram-generator` |
+| **Learning** | 4 | `Feynman-Technique`, `guide-derivation`, `phrasing-refining`, `insert-Feynman` |
+| **Content Curation** | 2 | `ai-newsletters`, `ai-products` |
+| **Meta/Utility** | 7 | `orchestrate`, `dispatch`, `reflect`, `evolve-skills`, `handoff-prompt`, `anchor-game-framework`, `defuddle` |
+| **Tools** | 2 | `mcp-builder`, `notebooklm` |
 
 ## C.A.P. Project Layout
 
@@ -93,4 +109,4 @@ Link liberally. The AI creates connections automatically, but manual links are j
 - **99_System/Prompts/** — 16 AI personas across Finance, Health, General, Learning, and Software Engineering domains.
 - **99_System/Bases/** — 5 Obsidian Bases dashboards (Projects, Projects Archive, Knowledge, Wiki Review, Integrated Sources).
 - **99_System/Game_Framework.md** — Strategic life/goal framework based on Dan Koe's method: anti-vision, vision, identity, priority stack, daily levers.
-- **.agents/skills/** — 32 skill definitions (symlinked to .claude/skills/).
+- **.agents/skills/** — 33 skill definitions (symlinked to .claude/skills/).

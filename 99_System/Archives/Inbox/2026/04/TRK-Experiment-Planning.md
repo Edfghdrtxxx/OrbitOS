@@ -1,6 +1,10 @@
 ---
 created: 2026-03-20
-status: pending
+status: dropped
+drop-reason: Intentionally dropped due to staleness — TRK classification work was completed but angle reconstruction scope is stale
+dropped-in: "[[2026-04-13]]"
+archived: 2026-04-13
+archived-in: "[[2026-04-12]]"
 source: start-my-day
 ---
 TRK experiment series — track number classification + angle reconstruction from raw simulation data via [[MATE-Automation]].

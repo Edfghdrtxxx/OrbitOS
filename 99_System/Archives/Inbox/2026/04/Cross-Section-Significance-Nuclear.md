@@ -4,7 +4,10 @@ created: 2026-04-12
 topic:
 due:
 priority:
-status: pending
+status: processed
+completed-in: "[[2026-04-12]]"
+archived: 2026-04-13
+archived-in: "[[2026-04-12]]"
 source: start-my-day
 related: []
 tags:
