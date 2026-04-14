@@ -8,7 +8,7 @@ Read `evolution.md` in this skill's folder. Apply any accumulated lessons as add
 
 # Phase 1 — ASSESS
 
-Parse the user's request. Do **not** restate the task or wait for confirmation — move straight to dispatch. If genuinely ambiguous (unclear target files, conflicting instructions), use `AskUserQuestion` to clarify.
+Parse the user's request. If genuinely ambiguous (unclear target files, conflicting instructions), use `AskUserQuestion` to clarify.
 
 Check whether the invocation includes **"with review"**. If so, set the REVIEW flag for Phase 3.
 
