@@ -27,6 +27,16 @@
 ## 2026-03-22: No Agent subagents for long-running training with sleep polling
 
 ### Lessons
-- Never dispatch Agent subagents for long-running processes with periodic polling (training, builds, etc.). When the subprocess dies silently (OOM, killed), the agent's `sleep` polling loop persists as unkillable zombie shells — the orchestrator has no mechanism to terminate background tasks inside a running agent.
-- Run long processes via `Bash` with `run_in_background: true` directly from the orchestrator. Poll on the next user prompt or task notification, not via `sleep` commands inside agents.
+- ~~Never dispatch Agent subagents for long-running processes with periodic polling (training, builds, etc.). When the subprocess dies silently (OOM, killed), the agent's `sleep` polling loop persists as unkillable zombie shells — the orchestrator has no mechanism to terminate background tasks inside a running agent.~~
+- ~~Run long processes via `Bash` with `run_in_background: true` directly from the orchestrator. Poll on the next user prompt or task notification, not via `sleep` commands inside agents.~~
+
+Superseded by 2026-04-15 — `Monitor` replaces sleep-based polling for status watching. The zombie-sleep rule (no `sleep` loops inside Agent subagents) still holds.
+
+## 2026-04-15: Monitor supersedes sleep-based polling for long-running processes
+
+### Lessons
+- `Monitor` is the preferred mechanism for watching long-running processes (training, builds). It streams stdout events to the chat as they arrive (event-driven, not sleep-driven) and is harness-managed — `TaskStop` cleans it up, no zombies.
+- Filter must be **coverage-complete**: match both progress markers (epoch boundaries, milestone lines) AND failure signatures (`Traceback|Error|FAILED|OOM|CUDA error|Killed`). A success-only filter is silent on crash, indistinguishable from still-running.
+- Select progress markers for low event density (epoch-end, not per-step) to avoid flooding the chat. The old "sleep 7200s between checks" rule translates to "roughly one event per epoch boundary" — same density, event-driven.
+- `Bash` with `run_in_background: true` remains the fallback for fire-and-check-once-done cases without intermediate visibility needs. Never spawn `sleep` loops inside Agent subagents.
 
