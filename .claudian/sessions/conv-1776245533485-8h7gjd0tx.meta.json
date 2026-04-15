@@ -1,0 +1,24 @@
+{
+  "id": "conv-1776245533485-8h7gjd0tx",
+  "providerId": "claude",
+  "title": "Explain formaldehyde density and air purifier s...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1776245533485,
+  "updatedAt": 1776245564390,
+  "lastResponseAt": 1776245564390,
+  "sessionId": "0e6ba2fd-ff5b-4d43-b848-6fbc7b0f6bbe",
+  "providerState": {
+    "providerSessionId": "0e6ba2fd-ff5b-4d43-b848-6fbc7b0f6bbe"
+  },
+  "currentNote": "50_Resources/Attachments/Air_Purifier_Comparison_Detailed_2026-04-15.pdf",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 3,
+    "cacheCreationInputTokens": 16136,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 16139,
+    "percentage": 8,
+    "contextWindowIsAuthoritative": true
+  }
+}

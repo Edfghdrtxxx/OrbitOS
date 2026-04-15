@@ -1,4 +1,4 @@
-"""Generate air purifier comparison PDF for Beijing 38m2 loft buyer."""
+"""Generate air purifier comparison PDF for Beijing 38m2 loft buyer (Chinese body)."""
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import cm, mm
@@ -14,7 +14,7 @@ import os
 
 OUT = r"D:/obsidian/OrbitOS/50_Resources/Attachments/Air_Purifier_Comparison_Detailed_2026-04-15.pdf"
 
-# --- Register a CJK-capable font so Chinese SKU names render ----------------
+# --- Register a CJK-capable font so Chinese text renders --------------------
 CJK_FONT = "Helvetica"  # fallback
 for candidate in [
     r"C:\Windows\Fonts\msyh.ttc",
@@ -62,6 +62,9 @@ CELL_HEADER = ParagraphStyle(
 SMALL = ParagraphStyle(
     "Small", parent=BODY, fontSize=8.2, leading=10.5, spaceAfter=3,
 )
+SMALL_CENTER = ParagraphStyle(
+    "SmallC", parent=SMALL, alignment=TA_CENTER, textColor=colors.grey,
+)
 
 def P(txt, style=BODY):
     return Paragraph(txt, style)
@@ -73,9 +76,9 @@ def footer(canvas, doc):
     canvas.setFillColor(colors.grey)
     canvas.drawString(
         1.8 * cm, 1.0 * cm,
-        "Air Purifier Purchase Brief  .  Beijing 38m2 Loft  .  2026-04-15"
+        "空气净化器选购简报 · 北京 38m² Loft · 2026-04-15"
     )
-    canvas.drawRightString(A4[0] - 1.8 * cm, 1.0 * cm, f"Page {doc.page}")
+    canvas.drawRightString(A4[0] - 1.8 * cm, 1.0 * cm, f"第 {doc.page} 页")
     canvas.restoreState()
 
 # --- Build document ----------------------------------------------------------
@@ -83,146 +86,129 @@ doc = SimpleDocTemplate(
     OUT, pagesize=A4,
     leftMargin=1.8 * cm, rightMargin=1.8 * cm,
     topMargin=1.6 * cm, bottomMargin=1.6 * cm,
-    title="Air Purifier Comparison - Beijing Loft",
+    title="空气净化器对比 - 北京 Loft",
     author="OrbitOS",
 )
 
 story = []
 
-# ================== PAGE 1 — What to look for ==============================
-story.append(P("Air Purifier Purchase Brief: Beijing 38m2 Loft", H1))
-story.append(P("Detailed explanatory comparison of three candidates - 2026-04-15", SMALL))
+# ================== PAGE 1 — 评估要点 =======================================
+story.append(P("评估要点：你在为怎样的场景选购？", H1))
+story.append(P("三款候选的解释性对比 · 2026-04-15", SMALL))
 story.append(Spacer(1, 6))
 
-story.append(P("Context", H2))
+story.append(P("背景场景", H2))
 story.append(P(
-    "You're buying for a <b>38 m2 loft</b> in Beijing with new furniture. "
-    "Two pollutants matter: <b>PM2.5</b> (Beijing ambient air + household dust) and "
-    "<b>formaldehyde (HCHO)</b>, which will off-gas from new furniture for 6-12 months. "
-    "All three candidates below target both pollutants, but they differ sharply in "
-    "absolute throughput, filter economics, and long-term cost.", BODY))
+    "你要买的是一台给 <b>38 m² loft 两层、新装修、北京</b> 用的空气净化器。"
+    "有两种污染同时存在：<b>PM2.5</b>（北京大气 + 室内灰尘）和 "
+    "<b>甲醛（HCHO）</b>——新家具未来 6-12 个月会持续释放。本文比较的三款"
+    "都同时处理这两项，区别在于处理速度、持久力、和花费。", BODY))
 
-story.append(P("What is CADR?", H2))
+story.append(P("什么是 CADR？", H2))
 story.append(P(
-    "<b>CADR (Clean Air Delivery Rate)</b> is the volume of clean air, in m3/h, that a "
-    "purifier delivers at its highest setting. There are two separate CADR numbers "
-    "published per machine:", BODY))
+    "<b>CADR（Clean Air Delivery Rate，洁净空气输出比率）</b>单位是 m³/h，"
+    "代表净化器在最高档每小时能把多少立方米的空气清洗到\"洁净\"。"
+    "每台机器会公布两个独立的 CADR：", BODY))
 story.append(P(
-    "&nbsp;&nbsp;- <b>CADR-P</b> - particulate (PM2.5, dust, pollen)", BODY_TIGHT))
+    "&nbsp;&nbsp;- <b>CADR-P</b>：颗粒物（PM2.5、灰尘、花粉）", BODY_TIGHT))
 story.append(P(
-    "&nbsp;&nbsp;- <b>CADR-F</b> - formaldehyde (gas-phase)", BODY_TIGHT))
+    "&nbsp;&nbsp;- <b>CADR-F</b>：甲醛（气态污染物）", BODY_TIGHT))
 story.append(P(
-    "Under the Chinese standard <b>GB/T 18801-2022</b>, applicable area (m2) is "
-    "estimated as <b>CADR x 0.07 to 0.12</b>. For a 38 m2 single floor, aim for "
-    "<b>CADR-P &#8805; 380</b> and <b>CADR-F &#8805; 150-200</b>.", BODY))
+    "按国家标准 <b>GB/T 18801-2022</b>，适用面积（m²）≈ <b>CADR × 0.07-0.12</b>。"
+    "对 38 m² 的单层卧室，建议 <b>CADR-P ≥ 380</b>、<b>CADR-F ≥ 150-200</b>。", BODY))
 
-story.append(P("What is CCM F4?", H2))
+story.append(P("什么是 CCM F4？", H2))
 story.append(P(
-    "<b>CCM (Cumulative Clean Mass)</b> measures how much <i>total</i> pollutant the "
-    "filter can process before saturating. CADR tells you <i>speed</i>; CCM tells you "
-    "<i>endurance</i>. The formaldehyde rating has four tiers, F1 through F4. <b>F4 "
-    "(&gt; 1500 mg formaldehyde)</b> is the highest. For a new-furniture household "
-    "this matters a lot: off-gassing lasts months, not days. A unit with high CADR-F "
-    "but low CCM-F will saturate fast and may start <b>re-releasing</b> trapped "
-    "formaldehyde back into the room. All three candidates here are rated F4, so "
-    "endurance is not a differentiator - but absolute CADR-F and filter refill "
-    "economics are.", BODY))
+    "<b>CCM（Cumulative Clean Mass，累积净化量）</b>衡量一片滤芯在饱和报废前"
+    "能累计处理多少<i>总量</i>的污染物。CADR 代表<i>速度</i>，CCM 代表<i>持久力</i>。"
+    "甲醛 CCM 分四档 F1-F4，<b>F4（> 1500 mg 甲醛）</b>为最高等级。"
+    "对新装修家庭特别关键：甲醛释放要持续好几个月而不是几天，"
+    "如果 CADR-F 高但 CCM-F 低，滤芯两三个月就饱和，反而会把已经吸附的甲醛"
+    "<b>二次释放</b>回房间。本文三款都达到 F4，所以持久力不是分差项——"
+    "真正分胜负的是绝对 CADR-F 和滤芯的耗材成本。", BODY))
 
-story.append(P("Loft caveat: one unit cannot cover both floors", H2))
+story.append(P("Loft 的麻烦：单机覆盖不了两层", H2))
 story.append(P(
-    "A loft is effectively <b>38 m2 x 2 levels</b>. A single &#8776;&#165;1000-class "
-    "purifier cannot clean both floors to spec - covering 76 m2 would require "
-    "<b>CADR-P &#8805; 760</b>, well beyond any of the candidates below. The correct "
-    "framing: <b>size the unit for the bedroom floor</b> (where you spend sleeping "
-    "hours and HCHO exposure compounds), and accept weaker spillover via the "
-    "stairwell for the other floor. If whole-loft coverage is required, plan for a "
-    "<b>second, smaller unit</b> on the other floor rather than oversizing one "
-    "machine.", BODY))
+    "Loft 实际上是 <b>38 m² × 2 层</b>，相当于 76 m² 平层的空气体积。"
+    "¥1000 级别的单机 <b>覆盖不了两层</b>——要达到 76 m² 的标准需要 "
+    "<b>CADR-P ≥ 760</b>，远超本文所有候选。"
+    "正确的策略：<b>按卧室那层的体积来选型</b>（睡眠时间长、甲醛暴露更集中），"
+    "另一层靠楼梯井的空气流通顺带获益。如果下层也重度异味或同样重要，"
+    "应该考虑 <b>再加一台小机</b>，而不是硬上一台大单机——"
+    "因为清洁的空气无法靠自然对流有效地穿越楼梯井向上扩散。", BODY))
 
 story.append(PageBreak())
 
-# ================== PAGE 2 — The three options ============================
-story.append(P("The Three Candidates", H1))
+# ================== PAGE 2 — 三款对比 =====================================
+story.append(P("三款候选详细参数", H1))
 story.append(P(
-    "Compared below on the fields that actually matter for a purchase decision. "
-    "Rows are grouped: identity, cleaning throughput, endurance, acoustics and "
-    "coverage, and operational cost / support.", BODY))
+    "下表按几个决策相关字段分组列出：型号身份、净化速度、持久力、噪音与覆盖、"
+    "以及日常使用成本与售后支持。", BODY))
 story.append(Spacer(1, 4))
 
-header = ["Metric", "(1) Xiaomi Pro H (used)", "(2) Xiaomi 4 Pro H (new)", "(3) Midea KJ400G-Z1Pro (new)"]
+header = ["参数",
+          "① 米家 Pro H（二手）",
+          "② 米家 4 Pro H（全新）",
+          "③ 美的 KJ400G-Z1Pro（全新）"]
 
 rows = [
-    ["Model ID",
-     "AC-M7-SC (2019, discontinued)",
-     "AC-M18-SC (2023, current)",
-     "KJ400G-Z1Pro (current)"],
-    ["Platform",
-     "Xianyu - Beijing local / nationwide",
-     "Tmall - Xiaomi flagship",
-     "Tmall - Midea flagship"],
-    ["Upfront price",
-     "Y588",
-     "Y1004.7 (incl. 15% gov subsidy)",
-     "Y518.99 (incl. Y380 flagship discount)"],
-    ["CADR - Particulate",
-     "600 m3/h",
-     "600 m3/h",
-     "380 m3/h"],
-    ["CADR - Formaldehyde",
-     "220 m3/h",
-     "300 m3/h",
-     "200 m3/h"],
-    ["CCM - Particulate",
+    ["型号",
+     "AC-M7-SC（2019，已停产）",
+     "AC-M18-SC（2023，现售）",
+     "KJ400G-Z1Pro（现售）"],
+    ["平台",
+     "闲鱼 · 北京同城 / 全国包邮",
+     "天猫 · 小米官方旗舰店",
+     "天猫 · 美的官方旗舰店"],
+    ["到手价",
+     "¥588",
+     "¥1004.7（含 15% 国补）",
+     "¥518.99（含店铺立减 ¥380）"],
+    ["CADR-P（颗粒物）",
+     "600 m³/h",
+     "600 m³/h",
+     "380 m³/h"],
+    ["CADR-F（甲醛）",
+     "220 m³/h",
+     "300 m³/h",
+     "200 m³/h"],
+    ["CCM-P（颗粒物）",
      "P4",
      "P4",
      "P4"],
-    ["CCM - Formaldehyde",
+    ["CCM-F（甲醛）",
      "F4",
      "F4",
      "F4"],
-    ["Noise (max)",
-     "<=65 dB(A)",
-     "<=65 dB(A)",
-     "<=65 dB(A), 12-speed"],
-    ["Coverage (GB/T 18801)",
-     "42-72 m2",
-     "42-72 m2",
-     "27-46 m2"],
-    ["Power draw",
+    ["最大噪音",
+     "≤65 dB(A)",
+     "≤65 dB(A)",
+     "≤65 dB(A), 12 档可调"],
+    ["适用面积（GB/T 18801）",
+     "42-72 m²",
+     "42-72 m²",
+     "27-46 m²"],
+    ["功率",
      "70 W",
      "70 W",
      "35 W"],
-    ["Digital HCHO readout",
-     "No",
-     "Yes",
-     "No"],
-    ["App",
-     "Mi Home (Mijia)",
-     "Mi Home (Mijia)",
-     "Meiju"],
-    ["Warranty",
-     "None (second-hand)",
-     "1 yr Xiaomi",
-     "1 yr Midea"],
-    ["Annual filter cost",
-     "Y80-150 (3rd-party RFP-W23)",
-     "Y133 (Xiaomi official, w/ subsidy)",
-     "Y28 adapter / Y100+ genuine"],
+    ["数字甲醛读数",
+     "✗",
+     "✓",
+     "✗"],
+    ["app",
+     "米家",
+     "米家",
+     "美居"],
+    ["保修",
+     "无（二手）",
+     "小米官方 1 年",
+     "美的官方 1 年"],
+    ["年耗材成本",
+     "¥80-150（第三方 RFP-W23）",
+     "¥133（小米原厂，含国补）",
+     "¥28 副厂 / ¥100+ 原厂"],
 ]
-
-# Replace the Xiaomi / Midea row with original Chinese SKU names preserved.
-# Platform row - preserve Chinese store names:
-rows[1] = ["Platform",
-           "\u95f2\u9c7c - \u5317\u4eac\u540c\u57ce / \u5168\u56fd\u5305\u90ae",
-           "Tmall \u5c0f\u7c73\u5b98\u65b9\u65d7\u8230\u5e97",
-           "Tmall \u7f8e\u7684\u5b98\u65b9\u65d7\u8230\u5e97"]
-# Header - preserve Chinese SKU names inline
-header = ["Metric",
-          "(1) \u7c73\u5bb6 Pro H (used)",
-          "(2) \u7c73\u5bb6 4 Pro H (new)",
-          "(3) \u7f8e\u7684 KJ400G-Z1Pro (new)"]
-# App row:
-rows[11] = ["App", "\u7c73\u5bb6 (Mi Home)", "\u7c73\u5bb6 (Mi Home)", "\u7f8e\u5c45 (Meiju)"]
 
 def to_cell(s, style=CELL):
     return Paragraph(str(s).replace("&", "&amp;"), style)
@@ -256,37 +242,36 @@ story.append(t)
 
 story.append(Spacer(1, 6))
 story.append(P(
-    "<b>How to read this table.</b> Rows 4-5 (CADR) tell you <i>speed</i> of cleaning. "
-    "Rows 6-7 (CCM) tell you <i>endurance</i>. Rows 8-10 are comfort / sizing. "
-    "Rows 11-14 are the soft factors: UX, support, and ongoing cost.", SMALL))
+    "<b>如何读这张表：</b>CADR 数值越大净化越快；CCM 字母等级越高滤芯寿命越长"
+    "（P4 / F4 为最高）。适用面积按 GB/T 18801 推算；实际使用建议按房间面积的 "
+    "0.8 倍打折选择，留出冗余。", SMALL))
 
 story.append(PageBreak())
 
-# ================== PAGE 3 — 3-year TCO ===================================
-story.append(P("Cost-Effectiveness: 3-Year Total Cost of Ownership", H1))
+# ================== PAGE 3 — 三年性价比（TCO）==============================
+story.append(P("三年持有成本与性价比", H1))
 story.append(P(
-    "Upfront price is only part of the picture. Filters are the real long-run cost. "
-    "Below is a 3-year TCO model using <b>mid-range filter estimates</b>, followed "
-    "by two efficiency ratios: CADR per Y1000 of TCO - effectively, how much "
-    "cleaning throughput you buy per yuan spent over the lifetime.", BODY))
+    "购机价只是一部分，滤芯才是长期真正的花费。下表用 <b>中位耗材成本估算</b> "
+    "计算三年总成本（TCO），再给出两个效率比值：每 ¥1000 TCO 换来多少 CADR——"
+    "也就是整个使用周期里每一块钱买到的净化能力。", BODY))
 story.append(Spacer(1, 6))
 
-tco_header = ["Metric",
-              "(1) \u7c73\u5bb6 Pro H (used)",
-              "(2) \u7c73\u5bb6 4 Pro H (new)",
-              "(3) \u7f8e\u7684 Z1Pro"]
+tco_header = ["指标",
+              "① 米家 Pro H（二手）",
+              "② 米家 4 Pro H（全新）",
+              "③ 美的 Z1Pro"]
 
 tco_rows = [
-    ["Upfront", "Y588", "Y1005", "Y519"],
-    ["3yr filter cost (mid)", "Y360 (Y120 x 3)", "Y399 (Y133 x 3)", "Y192 (Y64 x 3, genuine avg)"],
-    ["3yr TCO", "Y948", "Y1404", "Y711"],
-    ["CADR-P per Y1000 TCO", "633", "427", "535"],
-    ["CADR-F per Y1000 TCO", "232", "214", "281"],
+    ["购机成本", "¥588", "¥1005", "¥519"],
+    ["三年耗材（中位估计）", "¥360（¥120 × 3）", "¥399（¥133 × 3）", "¥192（¥64 × 3 原厂均值）"],
+    ["三年总成本（TCO）", "¥948", "¥1404", "¥711"],
+    ["每 ¥1000 TCO 的 CADR-P", "633", "427", "535"],
+    ["每 ¥1000 TCO 的 CADR-F", "232", "214", "281"],
 ]
 
 tco_data = [[to_cell(h, CELL_HEADER) for h in tco_header]]
 for r in tco_rows:
-    is_total = r[0] == "3yr TCO"
+    is_total = r[0] == "三年总成本（TCO）"
     lbl_style = ParagraphStyle(
         "lbl2", parent=CELL, fontName=CJK_FONT,
         fontSize=8.5 if is_total else 8.2,
@@ -321,89 +306,81 @@ tco_table.setStyle(tts)
 story.append(tco_table)
 
 story.append(Spacer(1, 10))
-story.append(P("Interpretation", H2))
+story.append(P("解读", H2))
 story.append(P(
-    "<b>Midea Z1Pro wins on pure cost-per-unit-of-cleaning.</b> It has the lowest "
-    "3-year TCO (Y711) and the highest CADR-F per Y1000 TCO (281). But its absolute "
-    "CADR is lower (380 / 200), meaning it clears the same room more slowly and "
-    "leaves less headroom if the room turns out busier or dustier than expected "
-    "(more cooking, guests, or a period of heavy outdoor haze). Its GB/T coverage "
-    "(27-46 m2) is also right at the edge for a 38 m2 floor.", BODY))
+    "<b>美的 Z1Pro 在纯性价比上胜出。</b>三年 TCO 最低（¥711），每 ¥1000 TCO "
+    "换来的 CADR-F 最高（281）。代价是绝对 CADR 较低（380 / 200）——"
+    "同样房间清洗速度更慢，对意料之外的污染（访客多、灰尘大、雾霾爆表日）"
+    "留的余量也较少。GB/T 适用面积（27-46 m²）对 38 m² 单层已经贴在下限。", BODY))
 story.append(P(
-    "<b>Xiaomi Pro H (used) and 4 Pro H (new) deliver higher absolute throughput.</b> "
-    "Both hit CADR-P 600, which gives a comfortable 42-72 m2 coverage envelope. The "
-    "used Pro H is <b>32% cheaper on 3-year TCO</b> than the new 4 Pro H, while "
-    "delivering <b>73%</b> of its CADR-F (220 vs 300) - a favorable tradeoff if "
-    "you're comfortable sourcing from Xianyu. The 4 Pro H earns its &#8776;Y450 "
-    "premium only if you genuinely value the 1-year warranty, the on-unit digital "
-    "formaldehyde readout, and the newer sensor generation.", BODY))
+    "<b>米家 Pro H 二手和 4 Pro H 全新的绝对净化能力更强。</b>两款都是 CADR-P 600，"
+    "有 42-72 m² 的宽裕覆盖余量。Pro H 二手比 4 Pro H 全新 <b>三年 TCO 便宜 32%</b>，"
+    "同时 CADR-F 能做到 4 Pro H 的 <b>73%</b>（220 vs 300）——"
+    "如果你能接受闲鱼二手机，这是很划算的取舍。4 Pro H 多花的 ≈¥450 值不值，"
+    "取决于你是否在意官方 1 年保修、数字甲醛读数和最新一代传感器。", BODY))
 story.append(P(
-    "<b>All three meet CCM F4</b>, so filter saturation is not a year-one concern "
-    "for any of them. The decision collapses to: do you want <i>speed</i> and "
-    "coverage headroom (Xiaomi), or <i>efficiency</i> and low running cost (Midea)?",
+    "<b>三款都达到 CCM F4</b>，第一年内滤芯不会饱和——CCM 不是分差项，"
+    "选择可以简化成 <i>速度与覆盖冗余</i>（米家）vs <i>效率与低运行成本</i>（美的）的权衡。",
     BODY))
 
 story.append(PageBreak())
 
-# ================== PAGE 4 — Recommendation + Xianyu checklist ===============
-story.append(P("Recommendation & Buying Checklist", H1))
+# ================== PAGE 4 — 决策规则 + 闲鱼核查清单 ========================
+story.append(P("怎么选 + 闲鱼买二手的核查清单", H1))
 
-story.append(P("Decision Rules", H2))
+story.append(P("三条决策规则", H2))
 story.append(P(
-    "&#9679; <b>If the decision is about <i>speed</i> of cleaning</b> - visible haze "
-    "days, heavy smell from new furniture, or a busy household - pick "
-    "<b>(1) \u7c73\u5bb6 Pro H (used)</b> or <b>(2) \u7c73\u5bb6 4 Pro H (new)</b>. "
-    "Both give CADR-P 600 and a wide coverage envelope.", BODY))
+    "● <b>① 如果你的首要需求是清洗速度</b>——肉眼可见的雾霾天、"
+    "新家具的重度异味、家里人多——选 <b>① 米家 Pro H（二手）</b>或 "
+    "<b>② 米家 4 Pro H（全新）</b>。绝对 CADR 更高，清洗 38 m² 房间的时间更短，"
+    "覆盖余量宽裕。", BODY))
 story.append(P(
-    "&#9679; <b>If the decision is about <i>long-term cost and efficiency</i></b> - "
-    "you expect steady, moderate conditions and want the lowest running cost - pick "
-    "<b>(3) \u7f8e\u7684 KJ400G-Z1Pro</b>. Lowest TCO, best CADR-F per yuan, lowest "
-    "power draw.", BODY))
+    "● <b>② 如果你的首要需求是长期低成本</b>——预期工况平稳中等，"
+    "想把三年花费压到最低——选 <b>③ 美的 KJ400G-Z1Pro</b>。"
+    "三年 TCO 省出 ¥200+，每一块钱买到的 CADR-F 最高，功率也最低。", BODY))
 story.append(P(
-    "&#9679; <b>Hybrid / whole-loft coverage</b> - buy <b>(3) \u7f8e\u7684 Z1Pro</b> "
-    "for the bedroom floor and leave budget for a second small unit on the other "
-    "floor. Two modest units beat one oversized unit for a split-level layout, "
-    "because clean air cannot effectively flow up a stairwell against natural "
-    "convection.", BODY))
+    "● <b>③ 想兼顾（全屋覆盖）</b>——<b>③ 美的 Z1Pro</b> + 用剩下的 ≈¥480 "
+    "再买一台下层补位用的小净化器（桌面款或车载款）。全屋覆盖反而比单机买 "
+    "① 或 ② 更完整——因为清洁空气无法靠自然对流穿过楼梯井向上扩散。", BODY))
 
 story.append(Spacer(1, 6))
-story.append(P("Xianyu (Second-Hand) Purchase Checklist", H2))
+story.append(P("闲鱼购买前核查清单", H2))
 story.append(P(
-    "If you proceed with option (1) - the used \u7c73\u5bb6 Pro H - apply every "
-    "item on this checklist before paying. The model is discontinued, so you "
-    "cannot recover through warranty if you miss a problem.", BODY))
+    "如果你走的是方案 ①（米家 Pro H 二手），付款前把下面每一条都跑一遍。"
+    "机型已停产，漏掉任何一条你都没法靠保修找回来。", BODY))
 
 checklist = [
-    ("1.", "Request a <b>\u7c73\u5bb6 App screenshot</b> showing the current filter "
-           "remaining percentage. Anything under 50% means you're paying for a unit "
-           "that will need a Y120 filter within months."),
-    ("2.", "Request a <b>15-second power-on video</b> showing the unit running, the "
-           "fan ramping up, and the touch panel responding. This catches dead "
-           "motors, cracked panels, and rattling bearings."),
-    ("3.", "Use <b>\u95f2\u9c7c\u62c5\u4fdd\u4ea4\u6613</b> (Xianyu escrow) - "
-           "never accept requests to transfer directly via WeChat or Alipay. "
-           "Escrow gives you a 7-day inspection window."),
-    ("4.", "On arrival, <b>bind the unit in the \u7c73\u5bb6 App</b> before "
-           "confirming receipt. An un-bindable unit is either stolen, already "
-           "bound to the seller (who refuses to unbind), or counterfeit."),
-    ("5.", "Stock <b>one spare RFP-W23 filter</b> (~Y120) at time of purchase. "
-           "The model is discontinued; third-party filter supply is currently "
-           "fine but will thin out over the next 2-3 years."),
+    ("1.", "要卖家发一张 <b>米家 App 里的滤芯剩余寿命截图</b>——"
+           "官方固态计数，不是口头\"还新\"。低于 50% 意味着你花钱买了一台 "
+           "几个月内就要换 ¥120 滤芯的机器。"),
+    ("2.", "要一段 <b>开机 15 秒视频</b>：机器运行、风机升速、触摸面板响应。"
+           "这能排除死电机、裂面板、轴承异响。"),
+    ("3.", "走 <b>闲鱼担保交易</b>，不要直接微信/支付宝转账——"
+           "担保交易给你 7 天验机窗口期。"),
+    ("4.", "到货后先用 <b>米家 App 绑定设备</b> 再点确认收货。"
+           "绑不上的机器要么是黑机、要么是没解绑的前主人机、要么是翻新假货。"),
+    ("5.", "<b>额外囤一片 RFP-W23 滤芯</b>（~¥120）。"
+           "型号已停产，第三方滤芯目前供应充足但 2-3 年后会逐渐稀缺——"
+           "长期滤芯供应是最大风险。"),
 ]
 for num, txt in checklist:
     story.append(P(f"<b>{num}</b> &nbsp;{txt}", BODY))
 
 story.append(Spacer(1, 8))
-story.append(P("Bottom Line", H2))
+story.append(P("一句总结", H2))
 story.append(P(
-    "For a Beijing loft with new furniture, the <b>lowest-risk, lowest-cost path</b> "
-    "is <b>(3) \u7f8e\u7684 KJ400G-Z1Pro</b> - new, warrantied, Y519 upfront, Y711 "
-    "3-year TCO - paired with a plan for a second small unit on the non-bedroom "
-    "floor once the new-furniture peak passes. The <b>best speed-per-yuan</b> is "
-    "<b>(1) \u7c73\u5bb6 Pro H used</b>, but only if you pass every Xianyu "
-    "checklist item above. The <b>new-and-premium</b> path is <b>(2) 4 Pro H</b>, "
-    "justified only if the digital HCHO readout and warranty have concrete value "
-    "to you.", BODY))
+    "对北京新装修 loft 而言，<b>风险最低、花费最省的路径</b>是 "
+    "<b>③ 美的 KJ400G-Z1Pro</b>——全新、有保修、购机 ¥519、三年 TCO ¥711——"
+    "搭配\"新家具甲醛高峰过去后再补一台小机给下层\"的计划。"
+    "<b>速度性价比最高</b>是 <b>① 米家 Pro H 二手</b>，但前提是把上面的闲鱼"
+    "核查清单逐条跑完。<b>全新旗舰路径</b>是 <b>② 4 Pro H</b>，只有在你确实"
+    "看重数字甲醛读数和官方保修时才值得。", BODY))
+
+story.append(Spacer(1, 10))
+story.append(P(
+    "本简报基于 2026-04-15 的闲鱼北京同城扫描 + 天猫官方价调研。"
+    "价格会随促销浮动，核心结论（CADR / CCM 参数、三款的相对性价比）稳定有效。",
+    SMALL_CENTER))
 
 # --- Build -------------------------------------------------------------------
 doc.build(story, onFirstPage=footer, onLaterPages=footer)
