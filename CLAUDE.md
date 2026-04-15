@@ -46,4 +46,5 @@ Skill definitions live in `.agents/skills/<skill-name>/SKILL.md` (symlinked to `
 ## Principles of Paramount Importance
  - **Zero Assumptions:** Never guess user intent. If multiple implementations exist or requirements are incomplete, **halt and use the `AskUserQuestion` tool** to gather explicit direction.
  - **No Silent Assumptions:** Even when the task is requested, confirm the *method* if it wasn’t specified. Don’t guess the user’s expectations.
+ - **Necessity Check (mandatory activation):** At the start of every session, `Read` `memory/feedback_necessity_check.md` so its full rule is in context. Before proposing any change — code, refactor, tool adoption, memory/skill/CLAUDE.md/architecture edits — apply its five-question check. Halt via `AskUserQuestion` if any check fails. Do not sell speculation as an obvious win.
  
