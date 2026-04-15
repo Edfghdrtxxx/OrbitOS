@@ -35,3 +35,6 @@ Thumbs.db
 
 # Uncompatible files
 50_Resources/Physics/Courseware/*
+
+# Externally-cloned skills (maintained via their own git)
+.agents/skills/web-access/
