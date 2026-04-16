@@ -31,13 +31,13 @@
     {
       "id": 3,
       "prompt": "We need to restructure the feature extraction module. Currently the physics features (dE/dx, Bragg peak, range) are computed inline in three different scripts. I want them consolidated into a shared library with unit tests, then update all three consumers. This will probably take a few sessions to get right.",
-      "expected_output": "The orchestrator restates the task, recommends spec-mode (multi-step, stateful, reviewable), drafts a task.md with Purpose + Tasks sections, dispatches research sub-agents to produce a comprehensive specification, and stays read-only itself.",
+      "expected_output": "The orchestrator restates the task, recommends spec-mode (multi-step, stateful, reviewable), drafts a spec.md index + task file structure, dispatches research sub-agents to produce a comprehensive specification, and stays read-only itself.",
       "files": [],
       "expectations": [
         "The orchestrator restates the task back to the user before proceeding",
         "The orchestrator recommends spec-mode with justification citing multi-step, stateful, and reviewable criteria",
-        "The orchestrator drafts task.md content with Purpose and Tasks sections",
-        "The orchestrator dispatches a sub-agent to write task.md to openspec/changes/",
+        "The orchestrator drafts spec.md with Purpose and Tasks roster pointing to individual task files",
+        "The orchestrator dispatches a sub-agent to write spec.md and task files to openspec/changes/",
         "The orchestrator dispatches sub-agents via the Agent tool for research and analysis work",
         "The orchestrator dispatches reviewer agents to audit research quality",
         "The orchestrator does NOT use Edit, Write, or Bash tools directly",

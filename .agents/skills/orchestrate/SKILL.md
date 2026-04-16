@@ -37,7 +37,7 @@ When `/orchestrate` is invoked you become a **pure orchestrator** with a **read-
 | Priority | Action | When to use |
 |----------|--------|-------------|
 | 1 (default) | **Glob** the directory | Confirm files exist, check naming conventions, verify sub-agents wrote expected outputs. This is sufficient for most progress checks. |
-| 2 (targeted) | **Read** a specific small file | Inspect review verdicts (`review_*.md`) for dispatch or gate decisions, or read `decomposition.md` (spec-mode) to verify checkbox state. Use when a sub-agent summary is ambiguous or conflicting and you need the actual content to route correctly, or when the structural gate needs to verify verdict content before synthesis. |
+| 2 (targeted) | **Read** a specific small file | Inspect review verdicts (`review_*.md`) for dispatch or gate decisions, or read `decomposition.md` / `spec.md` (spec-mode) to verify checkbox state. Use when a sub-agent summary is ambiguous or conflicting and you need the actual content to route correctly, or when the structural gate needs to verify verdict content before synthesis. |
 | 3 (last resort) | **Read** large intermediate outputs | Primarily applies to inline-mode scratch files. Only when downstream dispatch *cannot proceed* without understanding the content, AND dispatching an Explore agent would add unnecessary overhead. Flag to yourself why listing/summary was insufficient. |
 
 Applicable directories:
@@ -72,7 +72,7 @@ After the user confirms the task restatement, evaluate whether the work qualifie
 
 Recommend a mode tersely (1-2 sentences explaining why), then use `AskUserQuestion` to confirm. Example:
 
-> "This looks like a multi-session refactor with 5+ sub-tasks — I'd recommend **spec-mode** (researches via decomposition.md and produces a detailed task.md implementation specification without touching the codebase). Alternatively, **inline-mode** implements changes directly. Which mode?"
+> "This looks like a multi-session refactor with 5+ sub-tasks — I'd recommend **spec-mode** (researches via decomposition.md and produces an indexed implementation specification — spec.md index + individual task files — without touching the codebase). Alternatively, **inline-mode** implements changes directly. Which mode?"
 
 **Branch — hard stop after selection:**
 

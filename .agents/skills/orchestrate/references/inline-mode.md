@@ -29,7 +29,7 @@ Inform each implementer that its output will be reviewed by a separate agent and
 
 The orchestrator is a **control plane, not a data conduit**. Sub-agent research and intermediate outputs pass through the filesystem, not through the orchestrator's context.
 
-**Input specs stay out of the orchestrator's context.** If a `task.md`, plan file, or any external specification exists, do NOT read it — pass the file path to sub-agents and let them internalize it. The orchestrator is a router and scheduler; every file it reads costs context window and cognitive load that should be spent on coordination, not comprehension.
+**Input specs stay out of the orchestrator's context.** If a `spec.md`, plan file, or any external specification exists, do NOT read it — pass the file path to sub-agents and let them internalize it. The orchestrator is a router and scheduler; every file it reads costs context window and cognitive load that should be spent on coordination, not comprehension.
 
 **Setup:** The first dispatched sub-agent creates the scratch directory: `99_System/.scratch/<session-id>/` (use a short, descriptive session ID like `imai-research` or `tpc-wiki`). Include this as an explicit instruction in the first agent's dispatch prompt.
 
