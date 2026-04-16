@@ -64,15 +64,18 @@ Single-agent skills like `/start-my-day` use tools directly because they are foc
 
 # Phase 1.5 — MODE SELECT
 
-After the user confirms the task restatement, evaluate whether the work qualifies for **spec-mode**. All three criteria must hold:
+After the user confirms the task restatement, select mode by **deliverable type**:
 
-- **Multi-step** — more than ~3 sub-tasks, or tasks that span multiple files/subsystems
-- **Stateful** — work will survive beyond a single dispatch round (e.g., long-running experiments, multi-session refactors)
-- **Reviewable** — someone (human or AI) will later need to understand *why* these changes were made
+- **spec-mode** → deliverable is a *specification artifact* (`spec.md` + `tasks/` files) — creating, revising, or restructuring. Mutations land only in the change directory; source code is not touched.
+- **inline-mode** → deliverable is *code/file changes* outside the change directory. Pick for any such mutation, including implementing an existing `spec.md`.
 
-Recommend a mode tersely (1-2 sentences explaining why), then use `AskUserQuestion` to confirm. Example:
+**Disambiguation by user intent toward an existing `spec.md`:**
+- want it executed → **inline-mode**
+- want it edited → **spec-mode**
 
-> "This looks like a multi-session refactor with 5+ sub-tasks — I'd recommend **spec-mode** (researches via decomposition.md and produces an indexed implementation specification — spec.md index + individual task files — without touching the codebase). Alternatively, **inline-mode** implements changes directly. Which mode?"
+Spec-mode produces/edits specs; it does not consume them.
+
+Recommend tersely (1-2 sentences naming the inferred deliverable), then use `AskUserQuestion` to confirm.
 
 **Branch — hard stop after selection:**
 
