@@ -44,6 +44,7 @@ A paradigm in which multiple autonomous AI agents collaborate to accomplish task
 - [[Autonomous Research]] — the research application domain for agent teams
 - [[Context Window]] — each sub-agent gets its own window, multiplying effective capacity
 - [[Prompt Engineering]] — designing effective system prompts for each agent role
+- [[Verification Pooling]] — coordination topology where independent reviewer agents vote on findings; specific instance of the agent-team pattern applied to review tasks
 
 ## References
 
