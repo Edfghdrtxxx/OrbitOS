@@ -1353,27 +1353,28 @@ const state = {
 };
 
 // ═════════════════════════════════════════════════════════════════════
-// Shopping Platforms — merchant-platform taxonomy (Item 7)
+// Shopping Platforms — online e-commerce taxonomy (Item 7, refined)
+// Scope: online shopping ONLY. Food delivery, ride-hailing, offline
+// retail, and restaurant chains live in their own categories.
 // First match wins → declaration order = priority (e.g. 天猫 before 淘宝
-// so Tmall orders don't get swallowed by the generic 淘宝 keyword).
+// so Tmall orders don't get swallowed by the generic 淘宝 keyword;
+// 抖音电商 before bare 抖音 would apply the same way if we broadened).
 // ═════════════════════════════════════════════════════════════════════
 const DEFAULT_PLATFORMS = [
-  { id: 'tmall',     label_en: 'Tmall',       label_zh: '天猫',   keywords: ['天猫', 'tmall'] },
-  { id: 'taobao',    label_en: 'Taobao',      label_zh: '淘宝',   keywords: ['淘宝', 'taobao'] },
-  { id: 'xianyu',    label_en: 'Xianyu',      label_zh: '闲鱼',   keywords: ['闲鱼', 'xianyu', '咸鱼'] },
-  { id: 'jd',        label_en: 'JD.com',      label_zh: '京东',   keywords: ['京东', 'jd.com', 'jingdong'] },
-  { id: 'pdd',       label_en: 'Pinduoduo',   label_zh: '拼多多', keywords: ['拼多多', 'pdd', 'pinduoduo'] },
-  { id: 'meituan',   label_en: 'Meituan',     label_zh: '美团',   keywords: ['美团'] },
-  { id: 'eleme',     label_en: 'Eleme',       label_zh: '饿了么', keywords: ['饿了么', 'eleme'] },
-  { id: 'douyin',    label_en: 'Douyin',      label_zh: '抖音',   keywords: ['抖音', 'douyin', '抖店'] },
-  { id: 'hema',      label_en: 'Hema',        label_zh: '盒马',   keywords: ['盒马', 'hema'] },
-  { id: 'dingdong',  label_en: 'Dingdong',    label_zh: '叮咚买菜', keywords: ['叮咚'] },
-  { id: 'didi',      label_en: 'Didi',        label_zh: '滴滴',   keywords: ['滴滴', 'didi'] },
-  { id: 'metro',     label_en: 'Metro/Transit', label_zh: '地铁公交', keywords: ['地铁', '轨道交通', '公交', 'metro'] },
-  { id: 'starbucks', label_en: 'Starbucks',   label_zh: '星巴克', keywords: ['星巴克', 'starbucks'] },
-  { id: 'luckin',    label_en: 'Luckin',      label_zh: '瑞幸',   keywords: ['瑞幸', 'luckin'] },
-  { id: 'kfc_mc',    label_en: 'KFC / McDonalds', label_zh: '肯德基 / 麦当劳', keywords: ['肯德基', 'kfc', '麦当劳', 'mcdonald'] },
-  { id: 'convenience', label_en: '7-Eleven / Family', label_zh: '便利店', keywords: ['711', '7-eleven', '全家', 'familymart', '便利店'] },
+  { id: 'tmall',       label_en: 'Tmall',        label_zh: '天猫',    keywords: ['天猫', 'tmall'] },
+  { id: 'taobao',      label_en: 'Taobao',       label_zh: '淘宝',    keywords: ['淘宝', 'taobao'] },
+  { id: 'jd',          label_en: 'JD.com',       label_zh: '京东',    keywords: ['京东', 'jd.com', 'jingdong'] },
+  { id: 'pdd',         label_en: 'Pinduoduo',    label_zh: '拼多多',  keywords: ['拼多多', 'pdd', 'pinduoduo'] },
+  { id: 'xianyu',      label_en: 'Xianyu',       label_zh: '闲鱼',    keywords: ['闲鱼', 'xianyu', '咸鱼'] },
+  { id: 'xiaohongshu', label_en: 'Xiaohongshu',  label_zh: '小红书',  keywords: ['小红书', 'xiaohongshu', 'rednote', '红书'] },
+  { id: 'douyin_ec',   label_en: 'Douyin Shop',  label_zh: '抖音电商', keywords: ['抖音电商', '抖店'] },
+  { id: 'vipshop',     label_en: 'Vipshop',      label_zh: '唯品会',  keywords: ['唯品会', 'vipshop', 'vip.com'] },
+  { id: 'dewu',        label_en: 'Dewu (Poizon)', label_zh: '得物',    keywords: ['得物', 'poizon', 'dewu'] },
+  { id: 'yanxuan',     label_en: 'NetEase Yanxuan', label_zh: '网易严选', keywords: ['网易严选', '严选', 'yanxuan'] },
+  { id: 'xmyp',        label_en: 'Xiaomi Youpin', label_zh: '小米有品', keywords: ['小米有品', '有品', 'youpin'] },
+  { id: 'suning',      label_en: 'Suning',       label_zh: '苏宁',    keywords: ['苏宁', 'suning'] },
+  { id: 'amazon',      label_en: 'Amazon',       label_zh: '亚马逊',  keywords: ['亚马逊', 'amazon'] },
+  { id: 'dangdang',    label_en: 'Dangdang',     label_zh: '当当',    keywords: ['当当', 'dangdang'] },
 ];
 const PLATFORM_TAXONOMY_KEY = 'orbitos.platformTaxonomy';
 
