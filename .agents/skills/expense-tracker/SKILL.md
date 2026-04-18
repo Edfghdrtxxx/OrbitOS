@@ -17,13 +17,17 @@ Build a self-contained HTML expense dashboard from Alipay / WeChat Pay CSV expor
 
 ## 0. Verify the workspace exists and is git-ignored (auto-fix)
 Personal financial data must never be committed. Before anything else, self-heal the workspace:
-- Ensure `20_Project/Expense Tracker/input/` and `20_Project/Expense Tracker/Reports/` exist. Create any missing directory with `mkdir -p`.
-- Read `.gitignore` at the repo root. The rule must recursively ignore every file under `20_Project/Expense Tracker/`. Accept any of: `20_Project/Expense Tracker/**` (preferred — explicit recursive glob), `20_Project/Expense Tracker/`, or a broader pattern that covers it. If none of these match, append this block:
+- Ensure `20_Project/Expense Tracker/input/` and `20_Project/Expense Tracker/Reports/` exist. Create any missing directory with `mkdir -p`. This is the ONLY place the skill creates these — later steps assume they exist.
+- **Determine ignore state via `git check-ignore`, not by reading `.gitignore`.** String-matching the file is brittle (commented lines, CRLF, global gitignore, `.git/info/exclude` all produce false results); `git check-ignore` is the authoritative test. Procedure:
+  1. `touch "20_Project/Expense Tracker/input/.probe"`, run `git check-ignore -q "20_Project/Expense Tracker/input/.probe"`, capture the exit code into `$rc`, then `rm -f` the probe file.
+  2. Interpret `$rc`:
+     - `0` → probe IS ignored (by any of: repo `.gitignore`, `.git/info/exclude`, global gitignore, a broader parent pattern). Workspace is safe; do NOT append anything.
+     - `1` → probe is NOT ignored. Append the block below to the repo's root `.gitignore`, then re-probe. If the re-probe still returns `1`, halt and report.
+     - other (e.g., `128`) → git is not usable. Halt and report the git error.
   ```
   # Personal financial data — never commit bill CSVs or generated reports
   20_Project/Expense Tracker/**
   ```
-- As a final safety net, run `git check-ignore -q "20_Project/Expense Tracker/input/.probe"` (after `touch`-ing that probe file); if the exit code is non-zero the folder is NOT being ignored — halt and report the problem instead of continuing. Delete the probe file regardless of outcome.
 - Report concisely what was created/added, or state "workspace already configured" when no changes were needed.
 
 ## 1. Resolve the input folder
@@ -120,4 +124,4 @@ Keep the tone factual.
 - `assets/template.html` — static dashboard template with three injection seams (`__PRELOADED_DATA_JSON__`, `<!-- __CLAUDE_ANALYSIS_HTML_EN__ -->`, `<!-- __CLAUDE_ANALYSIS_HTML_ZH__ -->`). Do not edit per-run.
 - `assets/guide.html` — bilingual export walkthrough shown when no CSVs are found; do not edit per-run.
 - `scripts/build_report.mjs` — Node 22+ ESM CLI, no npm deps. Parses CSVs, emits `transactions.json` and `aggregates.json`.
-- `20_Project/Expense Tracker/expense-dashboard.html` — historical reference dashboard that the template was derived from. Kept as a parsing-logic reference; prefer not to edit, but modify when genuinely necessary (e.g., to keep it in sync with changes to `assets/template.html`).
+- `20_Project/Expense Tracker/expense-dashboard.html` — historical reference dashboard that `assets/template.html` was derived from. Prefer not to edit, but modify when genuinely necessary (e.g., to keep it in sync with changes to `assets/template.html`).

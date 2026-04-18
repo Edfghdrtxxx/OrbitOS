@@ -447,12 +447,12 @@ footer a:hover { color: var(--accent); border-bottom-color: var(--accent); }
     <div class="pane" data-lang-pane="en">
       <h2>What you'll do</h2>
       <p>Request two bill exports — one from Alipay (<code>支付宝</code>), one from WeChat Pay (<code>微信支付</code>) — receive encrypted ZIP files by email, unzip them, and drop the CSVs into this skill's <code>input/</code> folder. The dashboard ingests both formats automatically.</p>
-      <p style="margin-top:10px;">Each platform limits one request to a different time window: Alipay allows up to <strong>1 year</strong>, WeChat Pay only <strong>3 months</strong>. For a longer history, repeat the request with adjacent date ranges.</p>
+      <p style="margin-top:10px;">Both platforms allow up to <strong>1 year per request</strong> — Alipay directly, WeChat Pay via its <strong>"自定义时间"</strong> (Custom time) picker. WeChat's preset buttons stop at 3 months; the custom range can span a full year. For longer histories, repeat the request with adjacent date ranges.</p>
     </div>
     <div class="pane" data-lang-pane="zh">
       <h2>你要做什么</h2>
       <p>分别从支付宝和微信支付各申请一次账单导出，收到邮件中的加密 ZIP 后解压，把 CSV 文件放入本技能的 <code>input/</code> 文件夹。仪表板会自动识别两种格式。</p>
-      <p style="margin-top:10px;">两个平台单次可申请的时间范围不同：支付宝 <strong>最长 1 年</strong>，微信支付 <strong>最长 3 个月</strong>。如需更长时间跨度，请按时间段分多次申请。</p>
+      <p style="margin-top:10px;">两个平台单次均可申请 <strong>最长 1 年</strong>：支付宝可直接选择；微信支付需通过 <strong>"自定义时间"</strong> 选择（预设按钮只有最长 3 个月，但自定义时间可覆盖整整一年）。如需更长时间跨度，请按时间段分多次申请。</p>
     </div>
   </div>
 </section>
@@ -578,7 +578,7 @@ footer a:hover { color: var(--accent); border-bottom-color: var(--accent); }
         <li>Purpose: choose <strong>"用于个人对账"</strong> (For personal reconciliation).
           <div class="callout warn"><strong>Important:</strong> the other option (<em>"用做证明材料"</em>) produces a PDF with company seal — not usable here.</div>
         </li>
-        <li>Tap <strong>"自定义时间"</strong> (Custom time). Maximum interval is <strong>3 months per request</strong>.</li>
+        <li>Tap <strong>"自定义时间"</strong> (Custom time). The preset buttons stop at 3 months — skip them and use the custom picker, which allows up to <strong>1 year per request</strong>.</li>
         <li>Enter your <strong>email</strong>, tap <strong>"下一步"</strong> (Next), then <strong>"确认邮箱"</strong> (Confirm email).</li>
         <li>Enter your <strong>payment password</strong>.</li>
         <li>WeChat emails the encrypted ZIP within 24 hours.
@@ -610,7 +610,7 @@ footer a:hover { color: var(--accent); border-bottom-color: var(--accent); }
         <li>用途选择 <strong>"用于个人对账"</strong>。
           <div class="callout warn"><strong>注意：</strong>另一个选项 <em>"用做证明材料"</em> 生成的是带公章的 PDF，这里用不了。</div>
         </li>
-        <li>点击 <strong>"自定义时间"</strong>，<strong>单次最长 3 个月</strong>。</li>
+        <li>点击 <strong>"自定义时间"</strong>。预设按钮最长只有 3 个月，请跳过预设、直接使用自定义时间选择器 —— 最长可选 <strong>1 年</strong>。</li>
         <li>填写 <strong>邮箱</strong>，点击 <strong>"下一步"</strong>，再点击 <strong>"确认邮箱"</strong>。</li>
         <li>输入 <strong>支付密码</strong>。</li>
         <li>微信会在 24 小时内把加密 ZIP 发到你的邮箱。
@@ -635,8 +635,8 @@ footer a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
     <dt>Time limit<br>时间范围</dt>
     <dd><div class="meta-bilingual">
-      <div data-lang-pane="en"><strong>3 months per request.</strong> Repeat for longer histories.</div>
-      <div data-lang-pane="zh"><strong>单次最长 3 个月。</strong>如需更长时间，分多次申请。</div>
+      <div data-lang-pane="en"><strong>Up to 1 year per request</strong> via the 自定义时间 (Custom time) picker — WeChat's preset buttons stop at 3 months. Repeat for longer histories.</div>
+      <div data-lang-pane="zh">通过 <strong>"自定义时间"</strong> 单次最长 <strong>1 年</strong>（预设按钮只到 3 个月）。如需更长时间，分多次申请。</div>
     </div></dd>
 
     <dt>Rate limits<br>频率限制</dt>
