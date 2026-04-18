@@ -353,6 +353,17 @@ html[data-lang="zh"] .analysis-pane[data-lang-pane="en"] { display: none; }
   gap: 6px;
 }
 .filter-row input { flex: 1; min-width: 0; }
+.search-auto-hint {
+  color: var(--fg-muted);
+  font-size: 0.72rem;
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: 0;
+  margin-top: 0.35rem;
+  line-height: 1.45;
+}
+.search-auto-hint .arr { margin-right: 0.3rem; opacity: 0.7; }
+.search-auto-hint .prev { font-style: normal; color: var(--fg); font-weight: 400; }
 .chips {
   display: flex;
   flex-wrap: wrap;
@@ -671,6 +682,9 @@ footer {
     <div class="filter" style="grid-column: 1 / -1;">
       <label data-i18n="filter.search">Search (counterparty / description)</label>
       <input type="text" id="search-input" data-i18n-placeholder="filter.search.placeholder" placeholder="e.g. 美团, 星巴克, transfer...">
+      <div id="search-auto-hint" class="search-auto-hint hidden">
+        <span class="arr">↳</span><span data-i18n="filter.search.autoHint">Direction auto-expanded to All</span> (<span data-i18n="filter.search.autoRestorePrefix">restore</span> <span id="search-auto-hint-prev" class="prev"></span> <span data-i18n="filter.search.autoRestoreSuffix">on clear</span>)
+      </div>
     </div>
     <div class="filter" style="grid-column: 1 / -1;">
       <label><span data-i18n="filter.categories">Categories</span> <span id="cat-hint" data-i18n="filter.categories.hint" style="color:var(--fg-muted);font-weight:300;text-transform:none;letter-spacing:0">(click to filter · none selected = all)</span></label>
@@ -792,6 +806,9 @@ const I18N = {
     'filter.amount.max': 'max',
     'filter.search': 'Search (counterparty / description)',
     'filter.search.placeholder': 'e.g. 美团, 星巴克, transfer…',
+    'filter.search.autoHint': 'Direction auto-expanded to All',
+    'filter.search.autoRestorePrefix': 'restore',
+    'filter.search.autoRestoreSuffix': 'on clear',
     'filter.categories': 'Categories',
     'filter.categories.hint': '(click to filter · none selected = all)',
     'chart.daily.title': 'Daily cashflow',
@@ -873,6 +890,9 @@ const I18N = {
     'filter.amount.max': '最大',
     'filter.search': '搜索（交易对方 / 描述）',
     'filter.search.placeholder': '如：美团、星巴克、转账……',
+    'filter.search.autoHint': '方向已自动展开为「全部」',
+    'filter.search.autoRestorePrefix': '清空后恢复为',
+    'filter.search.autoRestoreSuffix': '',
     'filter.categories': '分类',
     'filter.categories.hint': '（点击筛选 · 不选等于全选）',
     'chart.daily.title': '每日现金流',
@@ -917,6 +937,23 @@ function t(key) {
   return (I18N[state.lang] && I18N[state.lang][key]) || key;
 }
 
+function updateSearchAutoHint() {
+  const hintEl = document.getElementById('search-auto-hint');
+  const prevEl = document.getElementById('search-auto-hint-prev');
+  if (!hintEl || !prevEl) return;
+  const saved = state.filters.directionSaved;
+  if (saved) {
+    const key = saved === '支出' ? 'filter.direction.expense'
+              : saved === '收入' ? 'filter.direction.income'
+              : 'filter.direction.neutral';
+    prevEl.textContent = t(key);
+    hintEl.classList.remove('hidden');
+  } else {
+    hintEl.classList.add('hidden');
+    prevEl.textContent = '';
+  }
+}
+
 function applyI18n(lang) {
   state.lang = lang;
   document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
@@ -957,6 +994,7 @@ const state = {
     dateFrom: null, dateTo: null,
     dateFromUserSet: false, dateToUserSet: false,
     direction: '支出',
+    directionSaved: null,     // snapshot of user's Direction when auto-expanded for search
     source: 'all',
     amtMin: null, amtMax: null,
     search: '',
@@ -1621,6 +1659,11 @@ function bindEvents() {
   };
   document.getElementById('direction-filter').onchange = e => {
     state.filters.direction = e.target.value;
+    // Release auto-override — manual interaction counts as fresh intent.
+    if (state.filters.directionSaved !== null) {
+      state.filters.directionSaved = null;
+      updateSearchAutoHint();
+    }
     refresh();
   };
   document.getElementById('source-filter').onchange = e => {
@@ -1655,7 +1698,22 @@ function bindEvents() {
     refresh();
   }, 250);
   document.getElementById('search-input').oninput = debounce(e => {
-    state.filters.search = e.target.value.trim();
+    const prev = state.filters.search;
+    const next = e.target.value.trim();
+    state.filters.search = next;
+    if (prev === '' && next !== '' && state.filters.direction !== 'all') {
+      // Entering search: auto-broaden Direction to All so matches in other directions surface.
+      state.filters.directionSaved = state.filters.direction;
+      state.filters.direction = 'all';
+      document.getElementById('direction-filter').value = 'all';
+      updateSearchAutoHint();
+    } else if (prev !== '' && next === '' && state.filters.directionSaved !== null) {
+      // Clearing search: restore the user's previous Direction.
+      state.filters.direction = state.filters.directionSaved;
+      document.getElementById('direction-filter').value = state.filters.directionSaved;
+      state.filters.directionSaved = null;
+      updateSearchAutoHint();
+    }
     refresh();
   }, 200);
 
@@ -1702,6 +1760,7 @@ function setTheme(theme) {
 
 function setLang(lang) {
   applyI18n(lang);
+  updateSearchAutoHint();   // re-localize dynamic prev-direction label
   try { localStorage.setItem('lang', lang); } catch (_) {}
   // Re-render charts so labels localize
   if (state.transactions.length && !document.getElementById('charts-section').classList.contains('hidden')) {
