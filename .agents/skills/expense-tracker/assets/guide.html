@@ -446,12 +446,12 @@ footer a:hover { color: var(--accent); border-bottom-color: var(--accent); }
   <div class="intro">
     <div class="pane" data-lang-pane="en">
       <h2>What you'll do</h2>
-      <p>Request two bill exports — one from Alipay (<code>支付宝</code>), one from WeChat Pay (<code>微信支付</code>) — receive encrypted ZIP files by email, unzip them, and drop the CSVs into this skill's <code>input/</code> folder. The dashboard ingests both formats automatically.</p>
+      <p>Request two bill exports — one from Alipay (<code>支付宝</code>), one from WeChat Pay (<code>微信支付</code>) — receive encrypted ZIP files by email, unzip them, and drop the CSVs into <code>20_Project/Expense Tracker/input/</code> at the top level (subfolders are ignored). The dashboard ingests both formats automatically.</p>
       <p style="margin-top:10px;">Both platforms allow up to <strong>1 year per request</strong> — Alipay directly, WeChat Pay via its <strong>"自定义时间"</strong> (Custom time) picker. WeChat's preset buttons stop at 3 months; the custom range can span a full year. For longer histories, repeat the request with adjacent date ranges.</p>
     </div>
     <div class="pane" data-lang-pane="zh">
       <h2>你要做什么</h2>
-      <p>分别从支付宝和微信支付各申请一次账单导出，收到邮件中的加密 ZIP 后解压，把 CSV 文件放入本技能的 <code>input/</code> 文件夹。仪表板会自动识别两种格式。</p>
+      <p>分别从支付宝和微信支付各申请一次账单导出，收到邮件中的加密 ZIP 后解压，把 CSV 文件直接放入 <code>20_Project/Expense Tracker/input/</code> 的顶层（子文件夹不会被读取）。仪表板会自动识别两种格式。</p>
       <p style="margin-top:10px;">两个平台单次均可申请 <strong>最长 1 年</strong>：支付宝可直接选择；微信支付需通过 <strong>"自定义时间"</strong> 选择（预设按钮只有最长 3 个月，但自定义时间可覆盖整整一年）。如需更长时间跨度，请按时间段分多次申请。</p>
     </div>
   </div>
@@ -656,14 +656,14 @@ footer a:hover { color: var(--accent); border-bottom-color: var(--accent); }
     <div class="pane" data-lang-pane="en">
       <h3>Use this report</h3>
       <ol>
-        <li>Place the extracted CSV files (after unzipping) into the <code>input/</code> folder.</li>
+        <li>Place the extracted CSV files (after unzipping) into <code>20_Project/Expense Tracker/input/</code> at the top level — subfolders are skipped by the parser.</li>
         <li>Return to <strong>Claude Code</strong> and invoke the <code>expense-tracker</code> skill again.</li>
       </ol>
     </div>
     <div class="pane" data-lang-pane="zh">
       <h3>如何继续</h3>
       <ol>
-        <li>将导出的 CSV 文件（解压后）放入 <code>input/</code> 文件夹。</li>
+        <li>将解压后的 CSV 文件直接放入 <code>20_Project/Expense Tracker/input/</code> 顶层（子文件夹会被解析器忽略）。</li>
         <li>回到 <strong>Claude Code</strong>，再次调用 <code>expense-tracker</code> 技能即可。</li>
       </ol>
     </div>
