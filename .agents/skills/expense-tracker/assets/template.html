@@ -1768,10 +1768,12 @@ function bindEvents() {
         document.getElementById('date-to').value = fmtDate(dates[dates.length - 1]);
       }
     }
+    flashHeroValues();
     refresh();
   };
   document.getElementById('net-mode').onchange = e => {
     state.netMode = e.target.value;
+    flashHeroValues();
     refresh();
   };
   document.getElementById('amt-min').oninput = debounce(e => {
@@ -1782,9 +1784,14 @@ function bindEvents() {
     state.filters.amtMax = e.target.value ? parseFloat(e.target.value) : null;
     refresh();
   }, 250);
-  document.getElementById('search-input').oninput = debounce(e => {
+  // Shared search-apply logic — reused by the 200ms debounced oninput handler,
+  // by Enter-key commit, and by the "↵ Apply" button. Mirrors Item 5's
+  // snapshot/restore behavior for `directionSaved`. Keeping this in one place
+  // means Enter/button commits never diverge from typing-driven updates.
+  const searchInputEl = document.getElementById('search-input');
+  function applySearchValue() {
     const prev = state.filters.search;
-    const next = e.target.value.trim();
+    const next = searchInputEl.value.trim();
     state.filters.search = next;
     if (prev === '' && next !== '' && state.filters.direction !== 'all') {
       // Entering search: auto-broaden Direction to All so matches in other directions surface.
@@ -1800,7 +1807,22 @@ function bindEvents() {
       updateSearchAutoHint();
     }
     refresh();
-  }, 200);
+  }
+  const debouncedApplySearch = debounce(applySearchValue, 200);
+  searchInputEl.oninput = debouncedApplySearch;
+  // Expose to commitSearch() so Enter / "↵ Apply" can flush pending debounce
+  // and reuse the exact same apply logic (includes Item 5 auto-hint rules).
+  window.__applySearchValue = applySearchValue;
+  window.__debouncedApplySearch = debouncedApplySearch;
+  // Enter in the search input = flush debounce + commit + flourish.
+  searchInputEl.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      commitSearch();
+    }
+  });
+  // "↵ Apply" button = same commit path as Enter.
+  document.getElementById('search-commit-btn').onclick = commitSearch;
 
   document.querySelectorAll('th[data-sort]').forEach(th => {
     th.onclick = () => {
@@ -1855,7 +1877,43 @@ function setLang(lang) {
 
 function debounce(fn, ms) {
   let t;
-  return function(...args) { clearTimeout(t); t = setTimeout(() => fn.apply(this, args), ms); };
+  const wrapped = function(...args) {
+    clearTimeout(t);
+    t = setTimeout(() => { t = null; fn.apply(this, args); }, ms);
+  };
+  // Allow commit paths (Enter / "↵ Apply") to cancel any pending typing-driven
+  // invocation so we don't trigger two refreshes back-to-back.
+  wrapped.cancel = () => { clearTimeout(t); t = null; };
+  return wrapped;
+}
+
+// Commit the search immediately — used by Enter and the "↵ Apply" button.
+// Flushes any pending debounce so we never get a late double-fire, reuses
+// the shared applySearchValue() so Item 5's auto-hint logic is respected,
+// and triggers the commit-pulse border flourish on #search-input.
+function commitSearch() {
+  if (typeof window.__applySearchValue !== 'function') return;
+  if (typeof window.__debouncedApplySearch === 'function' && window.__debouncedApplySearch.cancel) {
+    window.__debouncedApplySearch.cancel();
+  }
+  window.__applySearchValue();
+  const el = document.getElementById('search-input');
+  if (!el) return;
+  el.classList.remove('commit-pulse');
+  // Force reflow so re-adding the class restarts the animation.
+  void el.offsetWidth;
+  el.classList.add('commit-pulse');
+}
+
+// Trigger the hero-tile crossfade (opacity dip + return, ~160ms) when Mode or
+// Timezone changes. Keeps the numbers feeling "recomputed" rather than
+// silently overwritten. Reduced-motion users get a CSS no-op.
+function flashHeroValues() {
+  document.querySelectorAll('#dashboard .hero-cell .value').forEach(el => {
+    el.classList.remove('recompute-flash');
+    void el.offsetWidth;
+    el.classList.add('recompute-flash');
+  });
 }
 
 function exportFiltered() {
