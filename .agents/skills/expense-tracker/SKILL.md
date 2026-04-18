@@ -17,17 +17,21 @@ Build a self-contained HTML expense dashboard from Alipay / WeChat Pay CSV expor
 
 ## 1. Resolve the input folder
 - If the user gave a path, use it verbatim.
-- Otherwise ask via `AskUserQuestion` with default suggestion `20_Project/Expense Organization/input/`.
-- If the folder does not exist, stop and report the missing path — do not create it.
+- Otherwise **silently default** to `20_Project/Expense Organization/input/` — do NOT prompt. Fall through to Step 1b so the missing/empty case auto-opens the guide first.
 
-## 1b. No valid CSVs → open export guide
+## 1b. No valid CSVs → open export guide, THEN ask
 - Check the resolved folder non-recursively (matching the parser): does it exist AND contain at least one `.csv` file at the top level? Subdirectories are ignored.
 - If it exists and has ≥1 `.csv`, skip this step — proceed to Step 2.
 - Otherwise (folder missing, empty, or no `.csv` files — including the case where the user explicitly passed a folder that's empty/missing):
-  - Ensure `20_Project/Expense Organization/Reports/` exists — create it if missing.
-  - Copy `assets/guide.html` to `20_Project/Expense Organization/Reports/export-guide.html`, overwriting any existing copy (the source is canonical).
-  - Report the absolute path of the copied guide to the user with a ONE-line message: export Alipay + WeChat bills following the guide, drop the CSVs into the input folder, and re-invoke the skill.
-  - **Halt immediately.** Do NOT run the parser, do NOT write aggregates, do NOT produce a dashboard. The rest of the skill is skipped this run.
+  1. **Auto-open the guide FIRST** (before any prompt):
+     - Ensure `20_Project/Expense Organization/Reports/` exists — create it if missing.
+     - Copy `assets/guide.html` to `20_Project/Expense Organization/Reports/export-guide.html`, overwriting any existing copy (the source is canonical).
+     - Open it in the user's default browser via Bash: `cmd //c start "" "<absolute-path-to-copied-guide>"` (Git-Bash-on-Windows incantation — `//c` avoids path mangling, the empty `""` satisfies `start`'s title-argument quirk). On non-Windows platforms, substitute `open` (macOS) or `xdg-open` (Linux). Auto-open is authorized — the user explicitly requested this behavior.
+     - In a ONE-line message, report the absolute path of the copied guide.
+  2. **Then ask via `AskUserQuestion`** what to do now, with options like:
+     - "I'll follow the guide and re-run later" — halt the skill immediately.
+     - "My CSVs are in a different folder — let me give you the path" — user supplies a new path; re-enter Step 1b's CSV check against that path (loop at most once more; if still empty, halt).
+  3. If halted at any point: do NOT run the parser, do NOT write aggregates, do NOT produce a dashboard.
 
 ## 2. Create output scaffolding
 - Compute a timestamp `YYYY-MM-DD_HHMM` from the current local time.

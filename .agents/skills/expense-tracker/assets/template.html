@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ledger · Personal Expense Instrument</title>
+<title data-i18n="doc.title">Ledger · Personal Expense Instrument</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Serif:ital,wght@1,400&display=swap" rel="stylesheet">
@@ -542,10 +542,10 @@ footer {
     <div data-i18n="meta.sources">支付宝 · 微信支付 · unified schema</div>
   </div>
   <div class="controls">
-    <button class="btn ghost" id="theme-toggle" title="theme">
+    <button class="btn ghost" id="theme-toggle" data-i18n-title="toggle.theme.title" title="Theme">
       <span class="icon" id="theme-icon">☾</span><span data-i18n="toggle.theme">Theme</span>
     </button>
-    <button class="btn ghost" id="lang-toggle" title="language">
+    <button class="btn ghost" id="lang-toggle" data-i18n-title="toggle.lang.title" title="Language">
       <span class="icon" id="lang-icon">EN</span><span data-i18n="toggle.lang">Lang</span>
     </button>
   </div>
@@ -596,7 +596,7 @@ footer {
     <div class="hero-cell count fade-in">
       <div class="label" data-i18n="hero.records">Records</div>
       <div class="value" id="total-count">0</div>
-      <div class="sub"><span id="alipay-count">0</span> 支付宝 · <span id="wechat-count">0</span> 微信</div>
+      <div class="sub"><span id="alipay-count">0</span> <span data-i18n="platform.alipay">Alipay</span> · <span id="wechat-count">0</span> <span data-i18n="platform.wechat">WeChat</span></div>
     </div>
   </div>
 </section>
@@ -665,7 +665,7 @@ footer {
 <!-- CHARTS -->
 <section id="charts-section" class="hidden">
   <div class="section-label">
-    <span class="num">§ 04</span> <span data-i18n="section.charts">Analysis</span> <span class="line"></span>
+    <span class="num">§ 04</span> <span data-i18n="section.charts">Charts</span> <span class="line"></span>
   </div>
   <div class="charts">
     <div class="chart-card full">
