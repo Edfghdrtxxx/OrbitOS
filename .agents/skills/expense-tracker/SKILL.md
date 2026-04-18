@@ -18,10 +18,10 @@ Build a self-contained HTML expense dashboard from Alipay / WeChat Pay CSV expor
 ## 0. Verify the workspace exists and is git-ignored (auto-fix)
 Personal financial data must never be committed. Before anything else, self-heal the workspace:
 - Ensure `20_Project/Expense Tracker/input/` and `20_Project/Expense Tracker/Reports/` exist. Create any missing directory with `mkdir -p`.
-- Read `.gitignore` at the repo root. If it does NOT already contain an entry that ignores `20_Project/Expense Tracker/` (either the exact line `20_Project/Expense Tracker/`, or a broader pattern that covers it), append this block:
+- Read `.gitignore` at the repo root. The rule must recursively ignore every file under `20_Project/Expense Tracker/`. Accept any of: `20_Project/Expense Tracker/**` (preferred — explicit recursive glob), `20_Project/Expense Tracker/`, or a broader pattern that covers it. If none of these match, append this block:
   ```
   # Personal financial data — never commit bill CSVs or generated reports
-  20_Project/Expense Tracker/
+  20_Project/Expense Tracker/**
   ```
 - As a final safety net, run `git check-ignore -q "20_Project/Expense Tracker/input/.probe"` (after `touch`-ing that probe file); if the exit code is non-zero the folder is NOT being ignored — halt and report the problem instead of continuing. Delete the probe file regardless of outcome.
 - Report concisely what was created/added, or state "workspace already configured" when no changes were needed.
