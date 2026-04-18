@@ -584,12 +584,12 @@ footer {
       <div class="sub" id="net-range">—</div>
     </div>
     <div class="hero-cell expense fade-in">
-      <div class="label" data-i18n="hero.gross_expense">Gross Expense</div>
+      <div class="label" id="lbl-expense-tile" data-i18n="hero.gross_expense">Gross Expense</div>
       <div class="value"><span class="currency">¥</span><span id="gross-expense">0.00</span></div>
       <div class="sub"><span id="expense-count">0</span> <span data-i18n="hero.transactions_suffix">transactions</span></div>
     </div>
     <div class="hero-cell income fade-in">
-      <div class="label" data-i18n="hero.income">Income</div>
+      <div class="label" id="lbl-income-tile" data-i18n="hero.income">Income</div>
       <div class="value"><span class="currency">¥</span><span id="gross-income">0.00</span></div>
       <div class="sub"><span id="income-count">0</span> <span data-i18n="hero.transactions_suffix">transactions</span></div>
     </div>
@@ -771,7 +771,9 @@ const I18N = {
     'platform.wechat': 'WeChat',
     'hero.net_expense': 'Net Expense (filtered)',
     'hero.gross_expense': 'Gross Expense',
+    'hero.net_expense_tile': 'Net Expense (refunds deducted)',
     'hero.income': 'Income',
+    'hero.net_income_tile': 'Net Income (refunds excluded)',
     'hero.records': 'Records',
     'hero.transactions_suffix': 'transactions',
     'hero.no_data': '— no data —',
@@ -850,7 +852,9 @@ const I18N = {
     'platform.wechat': '微信',
     'hero.net_expense': '净支出（筛选后）',
     'hero.gross_expense': '总支出',
+    'hero.net_expense_tile': '净支出（已扣退款）',
     'hero.income': '收入',
+    'hero.net_income_tile': '净收入（不含退款）',
     'hero.records': '记录数',
     'hero.transactions_suffix': '笔',
     'hero.no_data': '— 无数据 —',
@@ -1229,6 +1233,16 @@ function renderSummary(filtered) {
     ? filtered.reduce((s, t) => s + netIncomeContribution(t), 0)
     : income.reduce((s, t) => s + t.amount, 0);
   const net = exp - inc;
+
+  // Swap tile labels by mode; setAttribute keeps applyI18n consistent on lang toggle
+  const expLbl = document.getElementById('lbl-expense-tile');
+  const incLbl = document.getElementById('lbl-income-tile');
+  const expKey = isNet ? 'hero.net_expense_tile' : 'hero.gross_expense';
+  const incKey = isNet ? 'hero.net_income_tile' : 'hero.income';
+  expLbl.setAttribute('data-i18n', expKey);
+  expLbl.textContent = t(expKey);
+  incLbl.setAttribute('data-i18n', incKey);
+  incLbl.textContent = t(incKey);
 
   document.getElementById('net-expense').textContent = fmtMoney(net);
   document.getElementById('gross-expense').textContent = fmtMoney(exp);
