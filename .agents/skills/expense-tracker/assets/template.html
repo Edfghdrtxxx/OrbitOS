@@ -597,6 +597,220 @@ footer {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* ─── PLATFORMS ─── */
+.platforms-controls {
+  margin-bottom: 20px;
+}
+#platforms-editor {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  padding: 0;
+}
+#platforms-editor > summary {
+  padding: 10px 16px;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  list-style: none;
+  user-select: none;
+}
+#platforms-editor > summary::-webkit-details-marker { display: none; }
+#platforms-editor > summary::before {
+  content: '▸ ';
+  color: var(--accent);
+  margin-right: 6px;
+}
+#platforms-editor[open] > summary::before { content: '▾ '; }
+#platforms-editor > summary:hover { color: var(--accent); }
+.platforms-editor-body {
+  padding: 12px 16px 16px;
+  border-top: 1px solid var(--border);
+}
+#platforms-taxonomy-json {
+  width: 100%;
+  min-height: 180px;
+  max-height: 360px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.55;
+  padding: 10px 12px;
+  resize: vertical;
+  outline: none;
+}
+#platforms-taxonomy-json:focus { border-color: var(--accent); }
+.platforms-editor-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+.platforms-editor-msg {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--fg-muted);
+}
+.platforms-editor-msg.ok { color: var(--income); }
+.platforms-editor-msg.err { color: var(--expense); }
+
+.platforms-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.platform-panel {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+}
+.platform-panel > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 14px 20px;
+  display: grid;
+  grid-template-columns: auto 1fr auto auto auto;
+  gap: 18px;
+  align-items: baseline;
+  user-select: none;
+}
+.platform-panel > summary::-webkit-details-marker { display: none; }
+.platform-panel > summary::before {
+  content: '▸';
+  color: var(--accent);
+  font-size: 10px;
+  transition: transform 0.15s;
+}
+.platform-panel[open] > summary::before { content: '▾'; }
+.platform-panel .p-label {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--fg);
+}
+.platform-panel .p-total {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  color: var(--expense);
+  font-weight: 500;
+  text-align: right;
+  white-space: nowrap;
+}
+.platform-panel .p-meta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  white-space: nowrap;
+}
+.platform-panel .p-share {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  white-space: nowrap;
+  min-width: 54px;
+  text-align: right;
+}
+.platform-panel[data-empty="1"] { display: none; }
+.platform-body {
+  padding: 4px 20px 20px;
+  border-top: 1px solid var(--border-soft);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.platform-body .pb-full { grid-column: 1 / -1; }
+.pb-block h4 {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  font-weight: 500;
+  margin: 14px 0 8px;
+}
+.pb-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 6px;
+}
+.pb-split .pb-tile {
+  background: var(--bg-higher);
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.pb-split .pb-tile .pb-tile-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+.pb-split .pb-tile .pb-tile-amt {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--fg);
+  font-weight: 500;
+}
+.pb-split .pb-tile .pb-tile-cnt {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--fg-muted);
+}
+.pb-split .pb-tile.alipay { border-left: 2px solid #4a90e2; }
+.pb-split .pb-tile.wechat { border-left: 2px solid #5cb85c; }
+.pb-list {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.pb-list li {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 10px;
+  padding: 4px 0;
+  border-bottom: 1px dashed var(--border-soft);
+  color: var(--fg-dim);
+}
+.pb-list li:last-child { border-bottom: none; }
+.pb-list li .pb-k { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pb-list li .pb-v { color: var(--fg); text-align: right; }
+.pb-list li .pb-c { color: var(--fg-muted); text-align: right; }
+.pb-chart-box { position: relative; height: 160px; margin-top: 4px; }
+.pb-none {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--fg-muted);
+  padding: 24px 0;
+  text-align: center;
+  font-size: 12px;
+  grid-column: 1 / -1;
+}
+@media (max-width: 900px) {
+  .platform-panel > summary {
+    grid-template-columns: auto 1fr auto;
+    row-gap: 4px;
+  }
+  .platform-panel > summary .p-meta,
+  .platform-panel > summary .p-share { grid-column: 2 / -1; text-align: left; }
+  .platform-body { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .platform-panel > summary::before { transition: none; }
+}
 .fade-in { animation: fadeUp 0.5s ease both; }
 .fade-in:nth-child(2) { animation-delay: 0.05s; }
 .fade-in:nth-child(3) { animation-delay: 0.1s; }
@@ -815,6 +1029,27 @@ footer {
   </div>
 </section>
 
+<!-- PLATFORMS -->
+<section id="platforms-section" class="hidden">
+  <div class="section-label">
+    <span class="num">§ 06</span> <span data-i18n="section.platforms">Shopping Platforms</span> <span class="line"></span>
+  </div>
+  <div class="platforms-controls">
+    <details id="platforms-editor">
+      <summary data-i18n="platforms.edit">Edit platforms</summary>
+      <div class="platforms-editor-body">
+        <textarea id="platforms-taxonomy-json" spellcheck="false" rows="10"></textarea>
+        <div class="platforms-editor-actions">
+          <button class="btn" id="platforms-apply-btn" data-i18n="platforms.apply">Apply</button>
+          <button class="btn ghost" id="platforms-reset-btn" data-i18n="platforms.reset">Reset</button>
+          <span id="platforms-editor-msg" class="platforms-editor-msg"></span>
+        </div>
+      </div>
+    </details>
+  </div>
+  <div id="platforms-grid" class="platforms-grid"></div>
+</section>
+
 <footer>
   <div data-i18n="footer.privacy">Data processed locally in your browser · encoding: GB18030 / UTF-8 · no network transmission of bill data</div>
   <div data-i18n="footer.version">Ledger v0.1 · for personal reconciliation only</div>
@@ -840,6 +1075,25 @@ const I18N = {
     'section.filters': 'Filters',
     'section.charts': 'Charts',
     'section.transactions': 'Transactions',
+    'section.platforms': 'Shopping Platforms',
+    'platforms.other': 'Other',
+    'platforms.edit': 'Edit platforms',
+    'platforms.apply': 'Apply',
+    'platforms.reset': 'Reset',
+    'platforms.total': 'total',
+    'platforms.txns': 'txns',
+    'platforms.share': 'share',
+    'platforms.payment_split': 'Payment source',
+    'platforms.alipay': 'Alipay',
+    'platforms.wechat': 'WeChat',
+    'platforms.top_categories': 'Top categories',
+    'platforms.top_counterparties': 'Top counterparties',
+    'platforms.daily': 'Daily expense',
+    'platforms.dow': 'By day of week',
+    'platforms.none': 'No transactions match',
+    'platforms.invalid_json': 'Invalid JSON — taxonomy unchanged',
+    'platforms.applied': 'Applied',
+    'platforms.reset_done': 'Defaults restored',
     'upload.heading': 'Drop your CSV bills here',
     'upload.description_html': 'Both Alipay (<code>支付宝</code>, GBK) and WeChat Pay (<code>微信支付</code>, UTF-8) are auto-detected.',
     'upload.select': 'Select files',
@@ -926,6 +1180,25 @@ const I18N = {
     'section.filters': '筛选',
     'section.charts': '图表',
     'section.transactions': '交易明细',
+    'section.platforms': '购物平台',
+    'platforms.other': '其他',
+    'platforms.edit': '编辑平台',
+    'platforms.apply': '应用',
+    'platforms.reset': '重置',
+    'platforms.total': '总计',
+    'platforms.txns': '笔',
+    'platforms.share': '占比',
+    'platforms.payment_split': '支付来源',
+    'platforms.alipay': '支付宝',
+    'platforms.wechat': '微信',
+    'platforms.top_categories': '主要分类',
+    'platforms.top_counterparties': '主要商户',
+    'platforms.daily': '每日支出',
+    'platforms.dow': '按星期',
+    'platforms.none': '无匹配交易',
+    'platforms.invalid_json': 'JSON 无效 — 未更新',
+    'platforms.applied': '已应用',
+    'platforms.reset_done': '已恢复默认',
     'upload.heading': '拖入 CSV 账单',
     'upload.description_html': '自动识别支付宝（<code>GBK</code>）和微信支付（<code>UTF-8</code>）。',
     'upload.select': '选择文件',
@@ -1074,7 +1347,66 @@ const state = {
   theme: 'dark',
   tz: 'Asia/Shanghai',     // date-bucketing timezone for charts + range label
   netMode: 'gross',        // 'gross' = raw expense/income; 'net' = refunds deducted
+  platformCharts: {},      // platformId -> { daily: Chart, dow: Chart }
+  platformBuckets: null,   // last computed platform aggregation, for re-render on lang/theme
+  platformTaxonomy: null,  // active taxonomy (defaults merged with user override)
 };
+
+// ═════════════════════════════════════════════════════════════════════
+// Shopping Platforms — merchant-platform taxonomy (Item 7)
+// First match wins → declaration order = priority (e.g. 天猫 before 淘宝
+// so Tmall orders don't get swallowed by the generic 淘宝 keyword).
+// ═════════════════════════════════════════════════════════════════════
+const DEFAULT_PLATFORMS = [
+  { id: 'tmall',     label_en: 'Tmall',       label_zh: '天猫',   keywords: ['天猫', 'tmall'] },
+  { id: 'taobao',    label_en: 'Taobao',      label_zh: '淘宝',   keywords: ['淘宝', 'taobao'] },
+  { id: 'xianyu',    label_en: 'Xianyu',      label_zh: '闲鱼',   keywords: ['闲鱼', 'xianyu', '咸鱼'] },
+  { id: 'jd',        label_en: 'JD.com',      label_zh: '京东',   keywords: ['京东', 'jd.com', 'jingdong'] },
+  { id: 'pdd',       label_en: 'Pinduoduo',   label_zh: '拼多多', keywords: ['拼多多', 'pdd', 'pinduoduo'] },
+  { id: 'meituan',   label_en: 'Meituan',     label_zh: '美团',   keywords: ['美团'] },
+  { id: 'eleme',     label_en: 'Eleme',       label_zh: '饿了么', keywords: ['饿了么', 'eleme'] },
+  { id: 'douyin',    label_en: 'Douyin',      label_zh: '抖音',   keywords: ['抖音', 'douyin', '抖店'] },
+  { id: 'hema',      label_en: 'Hema',        label_zh: '盒马',   keywords: ['盒马', 'hema'] },
+  { id: 'dingdong',  label_en: 'Dingdong',    label_zh: '叮咚买菜', keywords: ['叮咚'] },
+  { id: 'didi',      label_en: 'Didi',        label_zh: '滴滴',   keywords: ['滴滴', 'didi'] },
+  { id: 'metro',     label_en: 'Metro/Transit', label_zh: '地铁公交', keywords: ['地铁', '轨道交通', '公交', 'metro'] },
+  { id: 'starbucks', label_en: 'Starbucks',   label_zh: '星巴克', keywords: ['星巴克', 'starbucks'] },
+  { id: 'luckin',    label_en: 'Luckin',      label_zh: '瑞幸',   keywords: ['瑞幸', 'luckin'] },
+  { id: 'kfc_mc',    label_en: 'KFC / McDonalds', label_zh: '肯德基 / 麦当劳', keywords: ['肯德基', 'kfc', '麦当劳', 'mcdonald'] },
+  { id: 'convenience', label_en: '7-Eleven / Family', label_zh: '便利店', keywords: ['711', '7-eleven', '全家', 'familymart', '便利店'] },
+];
+const PLATFORM_TAXONOMY_KEY = 'orbitos.platformTaxonomy';
+
+function loadPlatformTaxonomy() {
+  try {
+    const raw = localStorage.getItem(PLATFORM_TAXONOMY_KEY);
+    if (!raw) return JSON.parse(JSON.stringify(DEFAULT_PLATFORMS));
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed) || !parsed.every(isValidPlatformEntry)) {
+      return JSON.parse(JSON.stringify(DEFAULT_PLATFORMS));
+    }
+    return parsed;
+  } catch (_) {
+    return JSON.parse(JSON.stringify(DEFAULT_PLATFORMS));
+  }
+}
+function isValidPlatformEntry(e) {
+  return e && typeof e === 'object'
+    && typeof e.id === 'string' && e.id
+    && typeof e.label_en === 'string'
+    && typeof e.label_zh === 'string'
+    && Array.isArray(e.keywords);
+}
+function matchPlatform(tr, taxonomy) {
+  const hay = ((tr.counterparty || '') + ' ' + (tr.description || '') + ' ' + (tr.note || '')).toLowerCase();
+  for (const p of taxonomy) {
+    for (const kw of p.keywords) {
+      if (!kw) continue;
+      if (hay.includes(String(kw).toLowerCase())) return p.id;
+    }
+  }
+  return '__other__';
+}
 
 // ═════════════════════════════════════════════════════════════════════
 // CSV decoding: try UTF-8, fall back to GBK (GB18030)
@@ -1251,11 +1583,21 @@ function clearAll() {
   state.filters.categories.clear();
   Object.values(state.charts).forEach(c => c.destroy?.());
   state.charts = {};
+  // Destroy platform charts too — they're owned separately from state.charts.
+  Object.values(state.platformCharts).forEach(rec => {
+    rec.daily?.destroy?.();
+    rec.dow?.destroy?.();
+  });
+  state.platformCharts = {};
+  state.platformBuckets = null;
+  const pGrid = document.getElementById('platforms-grid');
+  if (pGrid) pGrid.innerHTML = '';
   document.getElementById('file-status').innerHTML = '';
   document.getElementById('dashboard').classList.add('hidden');
   document.getElementById('filters-section').classList.add('hidden');
   document.getElementById('charts-section').classList.add('hidden');
   document.getElementById('table-section').classList.add('hidden');
+  document.getElementById('platforms-section').classList.add('hidden');
   document.getElementById('claude-analysis').classList.add('hidden');
   document.getElementById('clear-btn').classList.add('hidden');
   clearError();
@@ -1631,6 +1973,277 @@ function renderCharts(filtered) {
 }
 
 // ═════════════════════════════════════════════════════════════════════
+// Shopping Platforms section — renders ONCE per import (stable baseline,
+// ignores filter bar). Per-panel Chart.js instances are lazy: built the
+// first time the panel toggles open.
+// ═════════════════════════════════════════════════════════════════════
+function bucketTransactionsByPlatform(taxonomy) {
+  const buckets = new Map();
+  // Seed a bucket for every declared platform — order preserved
+  for (const p of taxonomy) buckets.set(p.id, { id: p.id, entry: p, txns: [] });
+  buckets.set('__other__', {
+    id: '__other__',
+    entry: { id: '__other__', label_en: t('platforms.other'), label_zh: t('platforms.other'), keywords: [] },
+    txns: [],
+  });
+  for (const tr of state.transactions) {
+    if (tr.direction !== '支出') continue;
+    const pid = matchPlatform(tr, taxonomy);
+    const b = buckets.get(pid) || buckets.get('__other__');
+    b.txns.push(tr);
+  }
+  return buckets;
+}
+
+function platformLabel(entry) {
+  return state.lang === 'zh' ? (entry.label_zh || entry.label_en || entry.id)
+                             : (entry.label_en || entry.label_zh || entry.id);
+}
+
+function destroyPlatformCharts() {
+  Object.values(state.platformCharts).forEach(rec => {
+    rec.daily?.destroy?.();
+    rec.dow?.destroy?.();
+  });
+  state.platformCharts = {};
+}
+
+function renderPlatformsSection() {
+  const section = document.getElementById('platforms-section');
+  const grid = document.getElementById('platforms-grid');
+  if (!section || !grid) return;
+
+  destroyPlatformCharts();
+
+  if (!state.transactions.length) {
+    section.classList.add('hidden');
+    grid.innerHTML = '';
+    state.platformBuckets = null;
+    return;
+  }
+
+  // Ensure we have an active taxonomy (defaults + user override)
+  if (!state.platformTaxonomy) state.platformTaxonomy = loadPlatformTaxonomy();
+  const taxonomy = state.platformTaxonomy;
+
+  const buckets = bucketTransactionsByPlatform(taxonomy);
+  // Aggregate per-bucket stats (non-chart scalars so we can rank without charts)
+  const rows = [];
+  let grossTotal = 0;
+  for (const [, b] of buckets) {
+    const total = b.txns.reduce((s, tr) => s + tr.amount, 0);
+    if (b.txns.length === 0) continue;
+    grossTotal += total;
+    rows.push({
+      id: b.id,
+      entry: b.entry,
+      txns: b.txns,
+      total,
+      count: b.txns.length,
+    });
+  }
+  // Sort: known platforms by total desc, Other always last
+  rows.sort((a, b) => {
+    if (a.id === '__other__') return 1;
+    if (b.id === '__other__') return -1;
+    return b.total - a.total;
+  });
+
+  state.platformBuckets = { rows, grossTotal };
+
+  // Populate taxonomy JSON editor
+  const ta = document.getElementById('platforms-taxonomy-json');
+  if (ta && document.activeElement !== ta) {
+    ta.value = JSON.stringify(taxonomy, null, 2);
+  }
+
+  if (!rows.length) {
+    section.classList.remove('hidden');
+    grid.innerHTML = `<div class="pb-none">${escapeHtml(t('platforms.none'))}</div>`;
+    return;
+  }
+
+  // Decide auto-expand: top 3 by total expense (excluding Other if possible)
+  const expandTargets = new Set(
+    rows.filter(r => r.id !== '__other__').slice(0, 3).map(r => r.id)
+  );
+
+  const html = rows.map(r => renderPlatformPanelHTML(r, grossTotal, expandTargets.has(r.id))).join('');
+  grid.innerHTML = html;
+  section.classList.remove('hidden');
+
+  // Wire lazy-init: on first toggle-open, build the two charts for the panel.
+  grid.querySelectorAll('.platform-panel').forEach(panel => {
+    panel.addEventListener('toggle', () => {
+      if (panel.open && !panel.dataset.chartsInit) {
+        panel.dataset.chartsInit = '1';
+        const pid = panel.dataset.platformId;
+        const row = rows.find(r => r.id === pid);
+        if (row) buildPlatformCharts(row);
+      }
+    });
+    // Eagerly build for auto-expanded panels (top 3)
+    if (panel.open && !panel.dataset.chartsInit) {
+      panel.dataset.chartsInit = '1';
+      const pid = panel.dataset.platformId;
+      const row = rows.find(r => r.id === pid);
+      if (row) buildPlatformCharts(row);
+    }
+  });
+}
+
+function renderPlatformPanelHTML(row, grossTotal, expand) {
+  const pct = grossTotal > 0 ? (row.total / grossTotal * 100) : 0;
+  const alipayTxns = row.txns.filter(tr => tr.source === 'alipay');
+  const wechatTxns = row.txns.filter(tr => tr.source === 'wechat');
+  const alipaySum = alipayTxns.reduce((s, tr) => s + tr.amount, 0);
+  const wechatSum = wechatTxns.reduce((s, tr) => s + tr.amount, 0);
+
+  // Top 5 categories
+  const catMap = {};
+  row.txns.forEach(tr => {
+    const k = tr.category || '—';
+    if (!catMap[k]) catMap[k] = { amt: 0, n: 0 };
+    catMap[k].amt += tr.amount;
+    catMap[k].n += 1;
+  });
+  const topCats = Object.entries(catMap).sort((a, b) => b[1].amt - a[1].amt).slice(0, 5);
+
+  // Top 5 counterparties
+  const cpMap = {};
+  row.txns.forEach(tr => {
+    const k = tr.counterparty || '—';
+    if (!cpMap[k]) cpMap[k] = { amt: 0, n: 0 };
+    cpMap[k].amt += tr.amount;
+    cpMap[k].n += 1;
+  });
+  const topCps = Object.entries(cpMap).sort((a, b) => b[1].amt - a[1].amt).slice(0, 5);
+
+  const label = platformLabel(row.entry);
+  const dailyId = `plat-daily-${row.id}`;
+  const dowId = `plat-dow-${row.id}`;
+
+  const listHtml = entries => entries.length
+    ? `<ul class="pb-list">${entries.map(([k, v]) => `
+        <li>
+          <span class="pb-k" title="${escapeAttr(k)}">${escapeHtml(k)}</span>
+          <span class="pb-v">¥${fmtMoney(v.amt)}</span>
+          <span class="pb-c">${v.n}×</span>
+        </li>`).join('')}</ul>`
+    : `<div class="pb-none">${escapeHtml(t('platforms.none'))}</div>`;
+
+  return `<details class="platform-panel" data-platform-id="${escapeAttr(row.id)}"${expand ? ' open' : ''}>
+    <summary>
+      <span class="p-label">${escapeHtml(label)}</span>
+      <span class="p-total">¥${fmtMoney(row.total)}</span>
+      <span class="p-meta">${row.count} ${escapeHtml(t('platforms.txns'))}</span>
+      <span class="p-share">${pct.toFixed(1)}%</span>
+      <span class="p-meta">${escapeHtml(t('platforms.share'))}</span>
+    </summary>
+    <div class="platform-body">
+      <div class="pb-block pb-full">
+        <h4>${escapeHtml(t('platforms.payment_split'))}</h4>
+        <div class="pb-split">
+          <div class="pb-tile alipay">
+            <span class="pb-tile-label">${escapeHtml(t('platforms.alipay'))}</span>
+            <span class="pb-tile-amt">¥${fmtMoney(alipaySum)}</span>
+            <span class="pb-tile-cnt">${alipayTxns.length} ${escapeHtml(t('platforms.txns'))}</span>
+          </div>
+          <div class="pb-tile wechat">
+            <span class="pb-tile-label">${escapeHtml(t('platforms.wechat'))}</span>
+            <span class="pb-tile-amt">¥${fmtMoney(wechatSum)}</span>
+            <span class="pb-tile-cnt">${wechatTxns.length} ${escapeHtml(t('platforms.txns'))}</span>
+          </div>
+        </div>
+      </div>
+      <div class="pb-block">
+        <h4>${escapeHtml(t('platforms.top_categories'))}</h4>
+        ${listHtml(topCats)}
+      </div>
+      <div class="pb-block">
+        <h4>${escapeHtml(t('platforms.top_counterparties'))}</h4>
+        ${listHtml(topCps)}
+      </div>
+      <div class="pb-block">
+        <h4>${escapeHtml(t('platforms.daily'))}</h4>
+        <div class="pb-chart-box"><canvas id="${dailyId}"></canvas></div>
+      </div>
+      <div class="pb-block">
+        <h4>${escapeHtml(t('platforms.dow'))}</h4>
+        <div class="pb-chart-box"><canvas id="${dowId}"></canvas></div>
+      </div>
+    </div>
+  </details>`;
+}
+
+function buildPlatformCharts(row) {
+  const TH = currentTheme();
+  const dailyEl = document.getElementById(`plat-daily-${row.id}`);
+  const dowEl = document.getElementById(`plat-dow-${row.id}`);
+  if (!dailyEl || !dowEl) return;
+
+  // Daily timeline — bucketed by state.tz (matches Daily cashflow behavior)
+  const byDay = {};
+  row.txns.forEach(tr => {
+    const k = fmtDate(tr.date);
+    byDay[k] = (byDay[k] || 0) + tr.amount;
+  });
+  const days = Object.keys(byDay).sort();
+  const daily = new Chart(dailyEl, {
+    type: 'line',
+    data: {
+      labels: days,
+      datasets: [{
+        label: t('platforms.daily'),
+        data: days.map(d => byDay[d]),
+        borderColor: TH.expense,
+        backgroundColor: 'rgba(200, 90, 79, 0.12)',
+        borderWidth: 1.5,
+        pointRadius: 0,
+        pointHoverRadius: 3,
+        tension: 0.25,
+        fill: true,
+      }],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { color: TH.grid, drawBorder: false }, ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 6, color: TH.tick } },
+        y: { grid: { color: TH.grid, drawBorder: false }, ticks: { callback: v => '¥' + v.toLocaleString(), color: TH.tick, maxTicksLimit: 4 } },
+      },
+    },
+  });
+
+  // Day-of-week bars
+  const dowKeys = ['dow.Sun', 'dow.Mon', 'dow.Tue', 'dow.Wed', 'dow.Thu', 'dow.Fri', 'dow.Sat'];
+  const dowNames = dowKeys.map(k => t(k));
+  const byDow = [0, 0, 0, 0, 0, 0, 0];
+  row.txns.forEach(tr => { byDow[tzDow(tr.date)] += tr.amount; });
+  const dow = new Chart(dowEl, {
+    type: 'bar',
+    data: {
+      labels: dowNames,
+      datasets: [{
+        data: byDow,
+        backgroundColor: byDow.map((_, i) => i === 0 || i === 6 ? TH.expense : TH.accent),
+        borderWidth: 0,
+      }],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { display: false }, ticks: { color: TH.tick } },
+        y: { grid: { color: TH.grid }, ticks: { callback: v => '¥' + v.toLocaleString(), color: TH.tick, maxTicksLimit: 4 } },
+      },
+    },
+  });
+
+  state.platformCharts[row.id] = { daily, dow };
+}
+
+// ═════════════════════════════════════════════════════════════════════
 // Category chips
 // ═════════════════════════════════════════════════════════════════════
 function renderCategoryChips() {
@@ -1684,6 +2297,8 @@ function initDashboard() {
   }
   renderCategoryChips();
   refresh();
+  // Platforms view is a stable baseline — run ONCE per import, not on filter changes.
+  renderPlatformsSection();
 }
 
 function refresh() {
@@ -1851,6 +2466,46 @@ function bindEvents() {
     const next = state.lang === 'en' ? 'zh' : 'en';
     setLang(next);
   };
+
+  // ── Platform taxonomy editor ───────────────────────────────────────
+  const applyBtn = document.getElementById('platforms-apply-btn');
+  const resetBtn = document.getElementById('platforms-reset-btn');
+  const taxTa = document.getElementById('platforms-taxonomy-json');
+  const editorMsg = document.getElementById('platforms-editor-msg');
+  function setEditorMsg(kind, text) {
+    if (!editorMsg) return;
+    editorMsg.className = 'platforms-editor-msg ' + (kind || '');
+    editorMsg.textContent = text || '';
+    if (text) setTimeout(() => {
+      if (editorMsg.textContent === text) {
+        editorMsg.textContent = '';
+        editorMsg.className = 'platforms-editor-msg';
+      }
+    }, 3500);
+  }
+  if (applyBtn && taxTa) {
+    applyBtn.onclick = () => {
+      let parsed;
+      try { parsed = JSON.parse(taxTa.value); }
+      catch (_) { setEditorMsg('err', t('platforms.invalid_json')); return; }
+      if (!Array.isArray(parsed) || !parsed.every(isValidPlatformEntry)) {
+        setEditorMsg('err', t('platforms.invalid_json'));
+        return;
+      }
+      try { localStorage.setItem(PLATFORM_TAXONOMY_KEY, JSON.stringify(parsed)); } catch (_) {}
+      state.platformTaxonomy = parsed;
+      renderPlatformsSection();
+      setEditorMsg('ok', t('platforms.applied'));
+    };
+  }
+  if (resetBtn) {
+    resetBtn.onclick = () => {
+      try { localStorage.removeItem(PLATFORM_TAXONOMY_KEY); } catch (_) {}
+      state.platformTaxonomy = JSON.parse(JSON.stringify(DEFAULT_PLATFORMS));
+      renderPlatformsSection();
+      setEditorMsg('ok', t('platforms.reset_done'));
+    };
+  }
 }
 
 function setTheme(theme) {
@@ -1863,6 +2518,8 @@ function setTheme(theme) {
   if (state.transactions.length && !document.getElementById('charts-section').classList.contains('hidden')) {
     refresh();
   }
+  // Platforms section: re-render to repaint its charts with new theme colors
+  if (state.transactions.length) renderPlatformsSection();
 }
 
 function setLang(lang) {
@@ -1873,6 +2530,8 @@ function setLang(lang) {
   if (state.transactions.length && !document.getElementById('charts-section').classList.contains('hidden')) {
     refresh();
   }
+  // Platforms section: labels + chart tick labels need re-localizing
+  if (state.transactions.length) renderPlatformsSection();
 }
 
 function debounce(fn, ms) {
