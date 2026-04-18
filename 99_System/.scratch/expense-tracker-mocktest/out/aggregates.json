@@ -1,0 +1,204 @@
+{
+  "period": {
+    "start": "2026-04-05",
+    "end": "2026-04-18",
+    "days": 14
+  },
+  "totals": {
+    "gross_expense": 761.9,
+    "gross_income": 500,
+    "net_expense": 261.9,
+    "txn_count": 14
+  },
+  "by_source": {
+    "alipay": {
+      "expense": 479.1,
+      "count": 7
+    },
+    "wechat": {
+      "expense": 282.8,
+      "count": 6
+    }
+  },
+  "top_categories": [
+    {
+      "name": "餐饮美食",
+      "amount": 402.1,
+      "count": 4,
+      "share": 0.5278
+    },
+    {
+      "name": "商户消费",
+      "amount": 282.8,
+      "count": 6,
+      "share": 0.3712
+    },
+    {
+      "name": "交通出行",
+      "amount": 58.1,
+      "count": 2,
+      "share": 0.0763
+    },
+    {
+      "name": "日用百货",
+      "amount": 18.9,
+      "count": 1,
+      "share": 0.0248
+    }
+  ],
+  "top_counterparties": [
+    {
+      "name": "海底捞",
+      "amount": 256,
+      "count": 1
+    },
+    {
+      "name": "美团外卖",
+      "amount": 163.6,
+      "count": 3
+    },
+    {
+      "name": "屈臣氏",
+      "amount": 89.5,
+      "count": 1
+    },
+    {
+      "name": "星巴克",
+      "amount": 80,
+      "count": 2
+    },
+    {
+      "name": "滴滴出行",
+      "amount": 58.1,
+      "count": 2
+    },
+    {
+      "name": "肯德基",
+      "amount": 52,
+      "count": 1
+    },
+    {
+      "name": "全家便利店",
+      "amount": 34.7,
+      "count": 2
+    },
+    {
+      "name": "高德打车",
+      "amount": 28,
+      "count": 1
+    }
+  ],
+  "day_of_week": [
+    {
+      "dow": 0,
+      "label": "Sun",
+      "expense": 353.8
+    },
+    {
+      "dow": 1,
+      "label": "Mon",
+      "expense": 38
+    },
+    {
+      "dow": 2,
+      "label": "Tue",
+      "expense": 145
+    },
+    {
+      "dow": 3,
+      "label": "Wed",
+      "expense": 22.5
+    },
+    {
+      "dow": 4,
+      "label": "Thu",
+      "expense": 42
+    },
+    {
+      "dow": 5,
+      "label": "Fri",
+      "expense": 97.9
+    },
+    {
+      "dow": 6,
+      "label": "Sat",
+      "expense": 62.7
+    }
+  ],
+  "weekday_vs_weekend": {
+    "weekday_daily_avg": 34.54,
+    "weekend_daily_avg": 104.13
+  },
+  "daily_timeline": [
+    {
+      "date": "2026-04-05",
+      "expense": 97.8,
+      "income": 0
+    },
+    {
+      "date": "2026-04-06",
+      "expense": 38,
+      "income": 0
+    },
+    {
+      "date": "2026-04-07",
+      "expense": 89.5,
+      "income": 0
+    },
+    {
+      "date": "2026-04-08",
+      "expense": 22.5,
+      "income": 0
+    },
+    {
+      "date": "2026-04-09",
+      "expense": 42,
+      "income": 0
+    },
+    {
+      "date": "2026-04-10",
+      "expense": 62.3,
+      "income": 0
+    },
+    {
+      "date": "2026-04-11",
+      "expense": 46.9,
+      "income": 0
+    },
+    {
+      "date": "2026-04-12",
+      "expense": 256,
+      "income": 0
+    },
+    {
+      "date": "2026-04-13",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-04-14",
+      "expense": 55.5,
+      "income": 0
+    },
+    {
+      "date": "2026-04-15",
+      "expense": 0,
+      "income": 500
+    },
+    {
+      "date": "2026-04-16",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-04-17",
+      "expense": 35.6,
+      "income": 0
+    },
+    {
+      "date": "2026-04-18",
+      "expense": 15.8,
+      "income": 0
+    }
+  ]
+}

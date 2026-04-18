@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-lang="both">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Export Guide · Alipay & WeChat Pay CSV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Serif:ital,wght@1,400&display=swap" rel="stylesheet">
+<style>
+:root[data-theme="dark"] {
+  --bg: #0b0c0e;
+  --bg-raised: #121317;
+  --bg-higher: #181a1f;
+  --border: #24262c;
+  --border-soft: #1c1e23;
+  --fg: #e8e4d8;
+  --fg-dim: #a8a59a;
+  --fg-muted: #5c5a53;
+  --accent: #d4a748;
+  --accent-dim: #8a6e30;
+  --expense: #c85a4f;
+  --expense-dim: #6b2e28;
+  --income: #7ba892;
+  --income-dim: #3d5a4c;
+  --neutral: #6c7a8f;
+  --grid: #1a1c21;
+}
+
+:root[data-theme="light"] {
+  --bg: #fdf6e3;
+  --bg-raised: #eee8d5;
+  --bg-higher: #e4dfc9;
+  --border: #ded7be;
+  --border-soft: #eee8d5;
+  --fg: #586e75;
+  --fg-dim: #657b83;
+  --fg-muted: #93a1a1;
+  --accent: #b58900;
+  --accent-dim: #7c5f00;
+  --expense: #dc322f;
+  --expense-dim: #98211f;
+  --income: #859900;
+  --income-dim: #5a6700;
+  --neutral: #6c71c4;
+  --grid: #eee8d5;
+}
+
+:root {
+  --font-sans: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --font-serif: 'IBM Plex Serif', serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 0.3s, color 0.3s;
+}
+
+body {
+  background-image:
+    radial-gradient(ellipse at top left, rgba(212, 167, 72, 0.04) 0%, transparent 40%),
+    radial-gradient(ellipse at bottom right, rgba(200, 90, 79, 0.03) 0%, transparent 40%);
+  background-attachment: fixed;
+}
+
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 40px 96px;
+}
+
+/* ─── HEADER ─── */
+header {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto auto;
+  align-items: baseline;
+  gap: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 48px;
+}
+.mark {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+h1 {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 28px;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+}
+h1 .acc { color: var(--accent); font-style: normal; font-family: var(--font-sans); font-weight: 300; }
+.meta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--fg-muted);
+  letter-spacing: 0.15em;
+  text-align: right;
+  line-height: 1.8;
+}
+.meta .dot { color: var(--accent); }
+
+/* ─── HEADER CONTROLS (theme / lang) ─── */
+.controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.btn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  background: transparent;
+  color: var(--fg);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn:hover { border-color: var(--accent); color: var(--accent); }
+.controls .btn.ghost {
+  padding: 8px 14px;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  border: 1px solid var(--border);
+  color: var(--fg-dim);
+  background: var(--bg-raised);
+}
+.controls .btn.ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.controls .btn .icon {
+  margin-right: 6px;
+  color: var(--accent);
+}
+
+/* ─── SECTION LABELS ─── */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+}
+.section-label .num { color: var(--accent); }
+.section-label .line { flex: 1; height: 1px; background: var(--border); }
+
+section { margin-bottom: 64px; }
+
+/* ─── INTRO ─── */
+.intro {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  padding: 28px 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.intro h2 {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--fg);
+  margin-bottom: 10px;
+}
+.intro p { color: var(--fg-dim); font-size: 13px; }
+
+/* ─── STEPS (bilingual two-column) ─── */
+.step {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  padding: 24px 28px;
+  margin-bottom: 16px;
+  position: relative;
+}
+.step .pane {
+  min-width: 0;
+}
+.step .pane-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border-soft);
+}
+.step ol, .step ul {
+  margin-left: 18px;
+}
+.step li {
+  margin-bottom: 8px;
+  color: var(--fg-dim);
+}
+.step li::marker { color: var(--accent); font-family: var(--font-mono); }
+.step strong { color: var(--fg); font-weight: 500; }
+.step code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background: var(--bg-higher);
+  padding: 1px 6px;
+  border: 1px solid var(--border);
+  color: var(--accent);
+}
+.step .kbd {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background: var(--bg-higher);
+  border: 1px solid var(--border);
+  border-bottom-width: 2px;
+  padding: 1px 6px;
+  color: var(--fg);
+  margin: 0 2px;
+}
+
+.callout {
+  background: var(--bg-higher);
+  border-left: 2px solid var(--accent);
+  padding: 12px 16px;
+  margin-top: 12px;
+  font-size: 12.5px;
+  color: var(--fg-dim);
+}
+.callout.warn { border-left-color: var(--expense); }
+.callout strong { color: var(--fg); }
+
+.path-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 16px 0 10px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border);
+}
+.step:first-of-type .path-label:first-of-type { padding-top: 0; border-top: none; margin-top: 0; }
+
+/* ─── METADATA DL ─── */
+dl.meta-rows {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  margin-top: 20px;
+}
+dl.meta-rows dt,
+dl.meta-rows dd {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-soft);
+  font-size: 12.5px;
+}
+dl.meta-rows dt {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  background: var(--bg-higher);
+  border-right: 1px solid var(--border);
+  white-space: nowrap;
+}
+dl.meta-rows dd { color: var(--fg-dim); }
+dl.meta-rows dd strong { color: var(--fg); font-weight: 500; }
+dl.meta-rows dd code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background: var(--bg-higher);
+  padding: 1px 6px;
+  border: 1px solid var(--border);
+  color: var(--accent);
+}
+dl.meta-rows > *:nth-last-child(-n+2) { border-bottom: none; }
+
+/* meta rows are themselves bilingual grids inside dd */
+.meta-bilingual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* ─── FINISH (§03) ─── */
+.finish {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  padding: 28px 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.finish h3 {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--fg);
+  margin-bottom: 10px;
+}
+.finish ol { margin-left: 18px; }
+.finish li { margin-bottom: 8px; color: var(--fg-dim); }
+.finish li::marker { color: var(--accent); font-family: var(--font-mono); }
+.finish code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background: var(--bg-higher);
+  padding: 1px 6px;
+  border: 1px solid var(--border);
+  color: var(--accent);
+}
+
+/* ─── LANG TOGGLE MECHANISM ─── */
+html[data-lang="en"] [data-lang-pane="zh"] { display: none; }
+html[data-lang="zh"] [data-lang-pane="en"] { display: none; }
+html[data-lang="en"] .step,
+html[data-lang="zh"] .step { grid-template-columns: 1fr; }
+html[data-lang="en"] .intro,
+html[data-lang="zh"] .intro,
+html[data-lang="en"] .finish,
+html[data-lang="zh"] .finish { grid-template-columns: 1fr; }
+html[data-lang="en"] .meta-bilingual,
+html[data-lang="zh"] .meta-bilingual { grid-template-columns: 1fr; }
+
+/* ─── FOOTER ─── */
+footer {
+  margin-top: 80px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--fg-muted);
+}
+footer h4 {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+  margin-bottom: 14px;
+}
+footer ul { list-style: none; margin: 0 0 20px; padding: 0; }
+footer li { margin-bottom: 6px; }
+footer a {
+  color: var(--fg-dim);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--border);
+  transition: color 0.2s;
+  word-break: break-all;
+}
+footer a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.foot-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-soft);
+  color: var(--fg-muted);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-dim); }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .wrap { padding: 24px 20px 60px; }
+  header { grid-template-columns: 1fr; gap: 10px; }
+  .meta { text-align: left; }
+  .controls { justify-content: flex-start; flex-wrap: wrap; }
+  .step,
+  .intro,
+  .finish,
+  .meta-bilingual { grid-template-columns: 1fr !important; }
+  dl.meta-rows { grid-template-columns: 1fr; }
+  dl.meta-rows dt { border-right: none; border-bottom: 1px solid var(--border-soft); }
+}
+
+/* animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeUp 0.5s ease both; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="mark">§ G U I D E</div>
+  <h1>Export Guide <span class="acc">/ 导出指南</span></h1>
+  <div class="meta">
+    <div><span class="dot">●</span> 支付宝 · 微信支付</div>
+    <div>for the ledger dashboard</div>
+  </div>
+  <div class="controls">
+    <button class="btn ghost" id="theme-toggle" title="theme">
+      <span class="icon" id="theme-icon">☾</span><span id="theme-label">Theme</span>
+    </button>
+    <button class="btn ghost" id="lang-toggle" title="language">
+      <span class="icon" id="lang-icon">EN/中</span><span id="lang-label">Both</span>
+    </button>
+  </div>
+</header>
+
+<!-- INTRO -->
+<section>
+  <div class="section-label">
+    <span class="num">§ 00</span> <span>Overview</span> <span class="line"></span>
+  </div>
+  <div class="intro">
+    <div class="pane" data-lang-pane="en">
+      <h2>What you'll do</h2>
+      <p>Request two bill exports — one from Alipay (<code>支付宝</code>), one from WeChat Pay (<code>微信支付</code>) — receive encrypted ZIP files by email, unzip them, and drop the CSVs into this skill's <code>input/</code> folder. The dashboard ingests both formats automatically.</p>
+      <p style="margin-top:10px;">Each platform limits one request to a different time window: Alipay allows up to <strong>1 year</strong>, WeChat Pay only <strong>3 months</strong>. For a longer history, repeat the request with adjacent date ranges.</p>
+    </div>
+    <div class="pane" data-lang-pane="zh">
+      <h2>你要做什么</h2>
+      <p>分别从支付宝和微信支付各申请一次账单导出，收到邮件中的加密 ZIP 后解压，把 CSV 文件放入本技能的 <code>input/</code> 文件夹。仪表板会自动识别两种格式。</p>
+      <p style="margin-top:10px;">两个平台单次可申请的时间范围不同：支付宝 <strong>最长 1 年</strong>，微信支付 <strong>最长 3 个月</strong>。如需更长时间跨度，请按时间段分多次申请。</p>
+    </div>
+  </div>
+</section>
+
+<!-- §01 ALIPAY -->
+<section>
+  <div class="section-label">
+    <span class="num">§ 01</span> <span>Alipay · 支付宝</span> <span class="line"></span>
+  </div>
+
+  <div class="step">
+    <div class="pane" data-lang-pane="en">
+      <div class="pane-label">English</div>
+      <ol>
+        <li>Open the <strong>Alipay</strong> app. Tap the <strong>"我的"</strong> (Me) tab in the bottom navigation.</li>
+        <li>Tap <strong>"账单"</strong> (Bills).</li>
+        <li>Tap the <strong>"⋯"</strong> (more) icon at the top-right corner.</li>
+        <li>Tap <strong>"开具交易流水证明"</strong> (Issue Transaction Flow Certificate).</li>
+        <li>For <em>Application purpose</em>, choose <strong>"用于个人对账"</strong> (For personal reconciliation).
+          <div class="callout warn"><strong>Important:</strong> this option produces the CSV. The other option (<em>"用做证明材料"</em>) produces a sealed PDF that the dashboard can't read.</div>
+        </li>
+        <li>Enter your <strong>payment password</strong> when prompted.</li>
+        <li>Configure the export:
+          <ul style="margin-top:6px;">
+            <li>Transaction type: <strong>"全部交易"</strong> (All transactions)</li>
+            <li>Date range: up to <strong>1 year per request</strong></li>
+            <li>Check <strong>"展示交易对手信息"</strong> (show counterparty info)</li>
+            <li>Check <strong>"展示商品说明信息"</strong> (show item description)</li>
+            <li>Tap <strong>"下一步"</strong> (Next)</li>
+          </ul>
+        </li>
+        <li>Enter your <strong>email address</strong> and tap <strong>"发送"</strong> (Send).</li>
+        <li>Once the email arrives, open the Alipay app and go to <strong>"申请记录"</strong> (Application records) to view the <strong>unzip password</strong>.</li>
+      </ol>
+      <div class="callout">
+        <strong>On the unzip password:</strong> the authoritative source is the "申请记录" view inside the app. Secondary guides claim the password is the last 6 digits of the applicant's ID number, but Alipay's official docs do not confirm this — always read the in-app record.
+      </div>
+    </div>
+    <div class="pane" data-lang-pane="zh">
+      <div class="pane-label">中文</div>
+      <ol>
+        <li>打开 <strong>支付宝</strong> App，点击底部导航栏 <strong>"我的"</strong>。</li>
+        <li>点击 <strong>"账单"</strong>。</li>
+        <li>点击右上角的 <strong>"⋯"</strong> 更多按钮。</li>
+        <li>点击 <strong>"开具交易流水证明"</strong>。</li>
+        <li>"申请用途" 选择 <strong>"用于个人对账"</strong>。
+          <div class="callout warn"><strong>注意：</strong>此选项才会生成 CSV 文件；另一个选项 <em>"用做证明材料"</em> 生成的是带公章的 PDF，仪表板无法读取。</div>
+        </li>
+        <li>按提示输入 <strong>支付密码</strong>。</li>
+        <li>设置导出参数：
+          <ul style="margin-top:6px;">
+            <li>交易类型：<strong>"全部交易"</strong></li>
+            <li>时间范围：<strong>单次最长 1 年</strong></li>
+            <li>勾选 <strong>"展示交易对手信息"</strong></li>
+            <li>勾选 <strong>"展示商品说明信息"</strong></li>
+            <li>点击 <strong>"下一步"</strong></li>
+          </ul>
+        </li>
+        <li>填写 <strong>邮箱地址</strong>，点击 <strong>"发送"</strong>。</li>
+        <li>收到邮件后，回到支付宝 App 进入 <strong>"申请记录"</strong>，查看 <strong>解压密码</strong>。</li>
+      </ol>
+      <div class="callout">
+        <strong>关于解压密码：</strong>以 App 内 "申请记录" 显示为准。坊间常说是 "身份证后六位"，但支付宝官方文档并未确认此说法 — 请以 App 内记录为准。
+      </div>
+    </div>
+  </div>
+
+  <dl class="meta-rows">
+    <dt>Destination<br>发送方式</dt>
+    <dd><div class="meta-bilingual">
+      <div data-lang-pane="en">Email — password-protected ZIP attachment.</div>
+      <div data-lang-pane="zh">邮件发送，附件为加密压缩包。</div>
+    </div></dd>
+
+    <dt>Format<br>文件格式</dt>
+    <dd><div class="meta-bilingual">
+      <div data-lang-pane="en">ZIP → single CSV, <strong>GBK</strong> encoding.</div>
+      <div data-lang-pane="zh">ZIP → 单个 CSV，<strong>GBK</strong> 编码。</div>
+    </div></dd>
+
+    <dt>Time limit<br>时间范围</dt>
+    <dd><div class="meta-bilingual">
+      <div data-lang-pane="en"><strong>1 year per request.</strong> Repeat for longer histories.</div>
+      <div data-lang-pane="zh"><strong>单次最长 1 年。</strong>如需更长时间，分多次申请。</div>
+    </div></dd>
+
+    <dt>Password<br>解压密码</dt>
+    <dd><div class="meta-bilingual">
+      <div data-lang-pane="en"><strong>Displayed in 申请记录</strong> inside the app (authoritative). Secondary sources report last 6 digits of ID number, but Alipay's official docs don't confirm — always read the in-app record.</div>
+      <div data-lang-pane="zh"><strong>以 App 内 "申请记录" 显示为准。</strong>坊间传言是"身份证后六位"，但官方未明确 — 以 App 显示为准。</div>
+    </div></dd>
+  </dl>
+</section>
+
+<!-- §02 WECHAT -->
+<section>
+  <div class="section-label">
+    <span class="num">§ 02</span> <span>WeChat Pay · 微信支付</span> <span class="line"></span>
+  </div>
+
+  <div class="step">
+    <div class="pane" data-lang-pane="en">
+      <div class="pane-label">English</div>
+      <p style="color:var(--fg-dim);margin-bottom:14px;">WeChat's menu layout differs between versions. Try <strong>Path A</strong> first; if you don't see <em>"常见问题"</em>, fall back to <strong>Path B</strong>.</p>
+
+      <div class="path-label">Path A · Official Tencent help (current)</div>
+      <ol>
+        <li>Open <strong>WeChat</strong>. Tap the <strong>"我"</strong> (Me) tab.</li>
+        <li>Tap <strong>"服务"</strong> (Services).</li>
+        <li>Tap <strong>"钱包"</strong> (Wallet).</li>
+        <li>Tap <strong>"账单"</strong> (Bills) in the top-right.</li>
+        <li>Tap <strong>"常见问题"</strong> (FAQ) in the top-right.</li>
+        <li>Tap <strong>"下载账单"</strong> (Download Bill).</li>
+      </ol>
+
+      <div class="path-label">Path B · Newer builds (fallback)</div>
+      <ul>
+        <li><strong>我</strong> <span style="color:var(--accent)">❯</span> <strong>服务</strong> <span style="color:var(--accent)">❯</span> <strong>客服中心</strong> (Customer Service Center) <span style="color:var(--accent)">❯</span> <strong>下载账单</strong></li>
+      </ul>
+
+      <div class="path-label">Both paths converge</div>
+      <ol start="7">
+        <li>Purpose: choose <strong>"用于个人对账"</strong> (For personal reconciliation).
+          <div class="callout warn"><strong>Important:</strong> the other option (<em>"用做证明材料"</em>) produces a PDF with company seal — not usable here.</div>
+        </li>
+        <li>Tap <strong>"自定义时间"</strong> (Custom time). Maximum interval is <strong>3 months per request</strong>.</li>
+        <li>Enter your <strong>email</strong>, tap <strong>"下一步"</strong> (Next), then <strong>"确认邮箱"</strong> (Confirm email).</li>
+        <li>Enter your <strong>payment password</strong>.</li>
+        <li>WeChat emails the encrypted ZIP within 24 hours.
+          <div class="callout"><strong>The unzip password is delivered separately</strong> — as a service notification from the <strong>"微信支付"</strong> official account, inside WeChat. Check there, not in your email.</div>
+        </li>
+      </ol>
+    </div>
+    <div class="pane" data-lang-pane="zh">
+      <div class="pane-label">中文</div>
+      <p style="color:var(--fg-dim);margin-bottom:14px;">微信不同版本菜单结构略有差异。优先尝试 <strong>路径 A</strong>；若看不到 "常见问题"，改走 <strong>路径 B</strong>。</p>
+
+      <div class="path-label">路径 A · 腾讯官方客服（当前版本）</div>
+      <ol>
+        <li>打开 <strong>微信</strong>，点击 <strong>"我"</strong>。</li>
+        <li>点击 <strong>"服务"</strong>。</li>
+        <li>点击 <strong>"钱包"</strong>。</li>
+        <li>点击右上方 <strong>"账单"</strong>。</li>
+        <li>点击右上角 <strong>"常见问题"</strong>。</li>
+        <li>点击 <strong>"下载账单"</strong>。</li>
+      </ol>
+
+      <div class="path-label">路径 B · 新版微信（备选）</div>
+      <ul>
+        <li><strong>我</strong> <span style="color:var(--accent)">❯</span> <strong>服务</strong> <span style="color:var(--accent)">❯</span> <strong>客服中心</strong> <span style="color:var(--accent)">❯</span> <strong>下载账单</strong></li>
+      </ul>
+
+      <div class="path-label">两条路径汇合后</div>
+      <ol start="7">
+        <li>用途选择 <strong>"用于个人对账"</strong>。
+          <div class="callout warn"><strong>注意：</strong>另一个选项 <em>"用做证明材料"</em> 生成的是带公章的 PDF，这里用不了。</div>
+        </li>
+        <li>点击 <strong>"自定义时间"</strong>，<strong>单次最长 3 个月</strong>。</li>
+        <li>填写 <strong>邮箱</strong>，点击 <strong>"下一步"</strong>，再点击 <strong>"确认邮箱"</strong>。</li>
+        <li>输入 <strong>支付密码</strong>。</li>
+        <li>微信会在 24 小时内把加密 ZIP 发到你的邮箱。
+          <div class="callout"><strong>解压密码是单独推送的</strong> — 由微信内 <strong>"微信支付"</strong> 公众号通过服务通知发送。请在微信里查看，不在邮件中。</div>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <dl class="meta-rows">
+    <dt>Destination<br>发送方式</dt>
+    <dd><div class="meta-bilingual">
+      <div data-lang-pane="en">Email (ZIP) + in-app service notification (password).</div>
+      <div data-lang-pane="zh">邮件（ZIP）+ "微信支付" 公众号推送的解压密码。</div>
+    </div></dd>
+
+    <dt>Format<br>文件格式</dt>
+    <dd><div class="meta-bilingual">
+      <div data-lang-pane="en">ZIP → CSV, <strong>UTF-8</strong> encoding.</div>
+      <div data-lang-pane="zh">ZIP → CSV，<strong>UTF-8</strong> 编码。</div>
+    </div></dd>
+
+    <dt>Time limit<br>时间范围</dt>
+    <dd><div class="meta-bilingual">
+      <div data-lang-pane="en"><strong>3 months per request.</strong> Repeat for longer histories.</div>
+      <div data-lang-pane="zh"><strong>单次最长 3 个月。</strong>如需更长时间，分多次申请。</div>
+    </div></dd>
+
+    <dt>Rate limits<br>频率限制</dt>
+    <dd><div class="meta-bilingual">
+      <div data-lang-pane="en">Per secondary source (not officially confirmed): download link valid <strong>3 days</strong>, max <strong>5 downloads</strong>. The 证明材料 PDF variant is capped at <strong>10 requests/day</strong>.</div>
+      <div data-lang-pane="zh">据第三方资料（非官方确认）：下载链接 <strong>3 天</strong> 内有效，最多 <strong>5 次</strong> 下载；证明材料 PDF 每日最多 <strong>10 次</strong> 申请。</div>
+    </div></dd>
+  </dl>
+</section>
+
+<!-- §03 FINISH -->
+<section>
+  <div class="section-label">
+    <span class="num">§ 03</span> <span>Continue in Claude Code</span> <span class="line"></span>
+  </div>
+  <div class="finish">
+    <div class="pane" data-lang-pane="en">
+      <h3>Use this report</h3>
+      <ol>
+        <li>Place the extracted CSV files (after unzipping) into the <code>input/</code> folder.</li>
+        <li>Return to <strong>Claude Code</strong> and invoke the <code>expense-tracker</code> skill again.</li>
+      </ol>
+    </div>
+    <div class="pane" data-lang-pane="zh">
+      <h3>如何继续</h3>
+      <ol>
+        <li>将导出的 CSV 文件（解压后）放入 <code>input/</code> 文件夹。</li>
+        <li>回到 <strong>Claude Code</strong>，再次调用 <code>expense-tracker</code> 技能即可。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <h4>Sources / 参考来源</h4>
+  <ul>
+    <li><a href="https://cschannel.alipay.com/mobile/helpDetail.htm?help_id=553265" target="_blank" rel="noopener">Alipay help (official) · https://cschannel.alipay.com/mobile/helpDetail.htm?help_id=553265</a></li>
+    <li><a href="https://www.xencio.com/cn/project/%E6%94%AF%E4%BB%98%E5%AE%9D-3/" target="_blank" rel="noopener">Alipay guide (Xencio 2024) · https://www.xencio.com/cn/project/支付宝-3/</a></li>
+    <li><a href="https://kf.qq.com/faq/230919ZBVz6n2309193qMvii.html" target="_blank" rel="noopener">WeChat help (腾讯客服) · https://kf.qq.com/faq/230919ZBVz6n2309193qMvii.html</a></li>
+    <li><a href="https://www.xencio.com/cn/%E8%A7%81%E7%9F%A5%E5%8D%9A%E5%AE%A2/%E5%BE%AE%E4%BF%A1%E4%BA%A4%E6%98%93%E6%B5%81%E6%B0%B4%E8%B4%A6%E5%8D%95%E5%AF%BC%E5%87%BA%E5%85%A8%E6%94%BB%E7%95%A5/" target="_blank" rel="noopener">WeChat guide (Xencio 2025) · https://www.xencio.com/cn/见知博客/微信交易流水账单导出全攻略/</a></li>
+  </ul>
+  <div class="foot-bottom">
+    <div>§ GUIDE · EXPENSE-TRACKER · ORBITOS</div>
+    <div>NO DATA LEAVES THIS PAGE</div>
+  </div>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  // ── state ─────────────────────────────────────────────────────────
+  var LANG_ROTATION = ['en', 'zh', 'both'];
+  var THEME_ROTATION = ['dark', 'light'];
+
+  var stTheme = null, stLang = null;
+  try { stTheme = localStorage.getItem('theme'); } catch (_) {}
+  try { stLang = localStorage.getItem('lang'); } catch (_) {}
+
+  // initial theme
+  var theme = (stTheme === 'dark' || stTheme === 'light') ? stTheme : 'dark';
+  applyTheme(theme);
+
+  // initial language
+  //   - shared key with dashboard, which uses 'en' | 'zh' only
+  //   - 'both' is the guide-only default (shows parallel columns)
+  //   - any value not in ['en','zh','both'] falls back to 'both'
+  var lang;
+  if (stLang === 'en' || stLang === 'zh' || stLang === 'both') lang = stLang;
+  else lang = 'both';
+  applyLang(lang);
+
+  // ── handlers ──────────────────────────────────────────────────────
+  var themeBtn = document.getElementById('theme-toggle');
+  if (themeBtn) themeBtn.onclick = function () {
+    var i = THEME_ROTATION.indexOf(theme);
+    theme = THEME_ROTATION[(i + 1) % THEME_ROTATION.length];
+    applyTheme(theme);
+    try { localStorage.setItem('theme', theme); } catch (_) {}
+  };
+
+  var langBtn = document.getElementById('lang-toggle');
+  if (langBtn) langBtn.onclick = function () {
+    var i = LANG_ROTATION.indexOf(lang);
+    lang = LANG_ROTATION[(i + 1) % LANG_ROTATION.length];
+    applyLang(lang);
+    try { localStorage.setItem('lang', lang); } catch (_) {}
+  };
+
+  // ── apply helpers ─────────────────────────────────────────────────
+  function applyTheme(t) {
+    document.documentElement.dataset.theme = t;
+    var icon = document.getElementById('theme-icon');
+    if (icon) icon.textContent = (t === 'dark') ? '☾' : '☀';
+    var lbl = document.getElementById('theme-label');
+    if (lbl) lbl.textContent = (t === 'dark') ? 'Dark' : 'Light';
+  }
+
+  function applyLang(l) {
+    document.documentElement.dataset.lang = l;
+    document.documentElement.lang = (l === 'zh') ? 'zh' : 'en';
+    var icon = document.getElementById('lang-icon');
+    var lbl = document.getElementById('lang-label');
+    if (l === 'en') {
+      if (icon) icon.textContent = 'EN';
+      if (lbl) lbl.textContent = 'English';
+    } else if (l === 'zh') {
+      if (icon) icon.textContent = '中';
+      if (lbl) lbl.textContent = '中文';
+    } else {
+      if (icon) icon.textContent = 'EN/中';
+      if (lbl) lbl.textContent = 'Both';
+    }
+  }
+})();
+</script>
+
+</body>
+</html>

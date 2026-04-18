@@ -5,7 +5,7 @@ description: Use when user asks to analyze, track, summarize, or report on perso
 
 # Objective
 
-Build a self-contained HTML expense dashboard from Alipay / WeChat Pay CSV exports. A Node script parses the CSVs and emits aggregates; Claude reads only the aggregates, writes a short English analysis, and injects it plus the raw transactions JSON into a pre-built template. The final report is a single HTML file.
+Build a self-contained HTML expense dashboard from Alipay / WeChat Pay CSV exports. A Node script parses the CSVs and emits aggregates; Claude reads only the aggregates, writes a short analysis in both English and Chinese, and injects both plus the raw transactions JSON into a pre-built template (the template's language toggle reveals the active pane). The final report is a single HTML file.
 
 # Trigger examples
 
@@ -19,6 +19,15 @@ Build a self-contained HTML expense dashboard from Alipay / WeChat Pay CSV expor
 - If the user gave a path, use it verbatim.
 - Otherwise ask via `AskUserQuestion` with default suggestion `20_Project/Expense Organization/input/`.
 - If the folder does not exist, stop and report the missing path — do not create it.
+
+## 1b. No valid CSVs → open export guide
+- Check the resolved folder non-recursively (matching the parser): does it exist AND contain at least one `.csv` file at the top level? Subdirectories are ignored.
+- If it exists and has ≥1 `.csv`, skip this step — proceed to Step 2.
+- Otherwise (folder missing, empty, or no `.csv` files — including the case where the user explicitly passed a folder that's empty/missing):
+  - Ensure `20_Project/Expense Organization/Reports/` exists — create it if missing.
+  - Copy `assets/guide.html` to `20_Project/Expense Organization/Reports/export-guide.html`, overwriting any existing copy (the source is canonical).
+  - Report the absolute path of the copied guide to the user with a ONE-line message: export Alipay + WeChat bills following the guide, drop the CSVs into the input folder, and re-invoke the skill.
+  - **Halt immediately.** Do NOT run the parser, do NOT write aggregates, do NOT produce a dashboard. The rest of the skill is skipped this run.
 
 ## 2. Create output scaffolding
 - Compute a timestamp `YYYY-MM-DD_HHMM` from the current local time.
@@ -37,8 +46,8 @@ Build a self-contained HTML expense dashboard from Alipay / WeChat Pay CSV expor
 - Read `{scratch-dir}/aggregates.json`.
 - **Do NOT read `transactions.json`** — it contains raw rows and must never enter Claude's context. It will be injected into the template as an opaque string in Step 6.
 
-## 5. Write the analysis HTML
-Produce ~120–180 words of prose plus two small tables based on `aggregates.json`. Use this exact skeleton — semantic HTML only, no inline styles (the template's `.analysis-body` CSS handles layout):
+## 5. Write the analysis HTML (English + Chinese)
+Produce TWO analysis files — one English, one Chinese — each ~120–180 words of prose plus two small tables based on `aggregates.json`. The dashboard's language toggle will swap between them at view time. Use this exact skeleton per language — semantic HTML only, no inline styles (the template's `.analysis-body` CSS handles layout):
 
 ```html
 <div class="analysis-summary">
@@ -56,16 +65,20 @@ Produce ~120–180 words of prose plus two small tables based on `aggregates.jso
 </div>
 ```
 
-Write the result to `{scratch-dir}/analysis.html`.
+- Write the English version to `{scratch-dir}/analysis-en.html`.
+- Write the Chinese version to `{scratch-dir}/analysis-zh.html` — semantically equivalent narrative, same structure, same factual claims. Translate captions and headers: `Top Categories` → `分类占比`, `Top Counterparties` → `高频交易对方`, `Category` → `分类`, `Amount` → `金额`, `Share` → `占比`, `Counterparty` → `交易对方`. Translate the narrative prose itself.
+- **Do NOT translate:** merchant names / counterparty strings (they're already Chinese character data), the `¥` currency symbol (stays), category names (already Chinese in the aggregates).
+- Enforce the 120–180 word ceiling per language (so the Chinese version doesn't inflate due to Chinese's higher information density).
 
-**Forbidden in the analysis:** totals (already shown in the Summary card), period dates (already shown in Summary), anomaly detection, budget advice, recommendations, emoji.
+**Forbidden in both analyses:** totals (already shown in the Summary card), period dates (already shown in Summary), anomaly detection, budget advice, recommendations, emoji.
 
-Keep the tone factual and in English. The template's language toggle only localizes UI chrome — see "Known limitations".
+Keep the tone factual.
 
 ## 6. Assemble the output HTML
 - Read `assets/template.html`.
 - Replace the literal string `__PRELOADED_DATA_JSON__` with the full contents of `{scratch-dir}/transactions.json`. Insert it raw and unescaped — the surrounding `<script type="application/json">` tag makes it safe; do not parse or re-serialize.
-- Replace the literal string `<!-- __CLAUDE_ANALYSIS_HTML__ -->` with the contents of `{scratch-dir}/analysis.html`.
+- Replace the literal string `<!-- __CLAUDE_ANALYSIS_HTML_EN__ -->` with the contents of `{scratch-dir}/analysis-en.html`.
+- Replace the literal string `<!-- __CLAUDE_ANALYSIS_HTML_ZH__ -->` with the contents of `{scratch-dir}/analysis-zh.html`.
 - Write the assembled file to:
   ```
   20_Project/Expense Organization/Reports/{timestamp}_expense-report.html
@@ -83,13 +96,13 @@ Keep the tone factual and in English. The template's language toggle only locali
 # Notes & known limitations
 
 - **Folder is not recursed.** Only CSV files in the top level of the input folder are parsed; subdirectories are ignored.
-- **Analysis prose is English-only at build time.** The dashboard's language toggle switches UI chrome (labels, headings, chart legends) but does not re-translate the analysis narrative Claude wrote.
 - **Raw transactions never enter Claude's context.** This is by design. If the user wants Claude to comment on individual transactions or outliers, they must explicitly load `transactions.json` or the raw CSVs in a separate conversation.
 - **Node 22+ required** for the `GB18030` `TextDecoder` support used when decoding Alipay / WeChat CSV exports.
 - **No deduplication across runs.** Re-running with the same input folder produces a new timestamped report alongside any previous ones.
 
 # Source files
 
-- `assets/template.html` — static dashboard template with two injection seams (`__PRELOADED_DATA_JSON__`, `<!-- __CLAUDE_ANALYSIS_HTML__ -->`). Do not edit per-run.
+- `assets/template.html` — static dashboard template with three injection seams (`__PRELOADED_DATA_JSON__`, `<!-- __CLAUDE_ANALYSIS_HTML_EN__ -->`, `<!-- __CLAUDE_ANALYSIS_HTML_ZH__ -->`). Do not edit per-run.
+- `assets/guide.html` — bilingual export walkthrough shown when no CSVs are found; do not edit per-run.
 - `scripts/build_report.mjs` — Node 22+ ESM CLI, no npm deps. Parses CSVs, emits `transactions.json` and `aggregates.json`.
 - `20_Project/Expense Organization/expense-dashboard.html` — historical reference dashboard that the template was derived from. Do not modify; kept as the source of truth for parsing logic.

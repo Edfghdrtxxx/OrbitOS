@@ -1,0 +1,202 @@
+{
+  "transactions": [
+    {
+      "date": "2026-04-18T02:00:00.000Z",
+      "source": "wechat",
+      "category": "商户消费",
+      "counterparty": "全家便利店",
+      "description": "早餐",
+      "direction": "支出",
+      "amount": 15.8,
+      "method": "零钱",
+      "status": "支付成功",
+      "order_id": "4200001234567890006",
+      "note": ""
+    },
+    {
+      "date": "2026-04-17T10:47:33.000Z",
+      "source": "alipay",
+      "category": "交通出行",
+      "counterparty": "滴滴出行",
+      "description": "快车",
+      "direction": "支出",
+      "amount": 35.6,
+      "method": "余额宝",
+      "status": "交易成功",
+      "order_id": "2026041718473300008",
+      "note": ""
+    },
+    {
+      "date": "2026-04-15T01:30:00.000Z",
+      "source": "alipay",
+      "category": "其他",
+      "counterparty": "工资退款",
+      "description": "退款到账",
+      "direction": "收入",
+      "amount": 500,
+      "method": "余额宝",
+      "status": "交易成功",
+      "order_id": "2026041509300000007",
+      "note": ""
+    },
+    {
+      "date": "2026-04-14T12:45:00.000Z",
+      "source": "wechat",
+      "category": "商户消费",
+      "counterparty": "美团外卖",
+      "description": "晚餐",
+      "direction": "支出",
+      "amount": 55.5,
+      "method": "零钱通",
+      "status": "支付成功",
+      "order_id": "4200001234567890005",
+      "note": ""
+    },
+    {
+      "date": "2026-04-12T12:10:05.000Z",
+      "source": "alipay",
+      "category": "餐饮美食",
+      "counterparty": "海底捞",
+      "description": "火锅聚餐",
+      "direction": "支出",
+      "amount": 256,
+      "method": "招商银行信用卡(1234)",
+      "status": "交易成功",
+      "order_id": "2026041220100500006",
+      "note": ""
+    },
+    {
+      "date": "2026-04-11T07:44:20.000Z",
+      "source": "alipay",
+      "category": "日用百货",
+      "counterparty": "全家便利店",
+      "description": "饮料零食",
+      "direction": "支出",
+      "amount": 18.9,
+      "method": "余额",
+      "status": "交易成功",
+      "order_id": "2026041115442000005",
+      "note": ""
+    },
+    {
+      "date": "2026-04-11T03:15:00.000Z",
+      "source": "wechat",
+      "category": "商户消费",
+      "counterparty": "高德打车",
+      "description": "打车",
+      "direction": "支出",
+      "amount": 28,
+      "method": "零钱",
+      "status": "支付成功",
+      "order_id": "4200001234567890004",
+      "note": ""
+    },
+    {
+      "date": "2026-04-10T05:05:40.000Z",
+      "source": "alipay",
+      "category": "餐饮美食",
+      "counterparty": "美团外卖",
+      "description": "午餐",
+      "direction": "支出",
+      "amount": 62.3,
+      "method": "余额宝",
+      "status": "交易成功",
+      "order_id": "2026041013054000004",
+      "note": ""
+    },
+    {
+      "date": "2026-04-09T10:30:00.000Z",
+      "source": "wechat",
+      "category": "商户消费",
+      "counterparty": "星巴克",
+      "description": "咖啡",
+      "direction": "支出",
+      "amount": 42,
+      "method": "招商银行信用卡(5678)",
+      "status": "支付成功",
+      "order_id": "4200001234567890003",
+      "note": ""
+    },
+    {
+      "date": "2026-04-08T11:22:11.000Z",
+      "source": "alipay",
+      "category": "交通出行",
+      "counterparty": "滴滴出行",
+      "description": "快车",
+      "direction": "支出",
+      "amount": 22.5,
+      "method": "余额宝",
+      "status": "交易成功",
+      "order_id": "2026040819221100003",
+      "note": ""
+    },
+    {
+      "date": "2026-04-07T04:00:00.000Z",
+      "source": "wechat",
+      "category": "商户消费",
+      "counterparty": "屈臣氏",
+      "description": "日用品",
+      "direction": "支出",
+      "amount": 89.5,
+      "method": "零钱通",
+      "status": "支付成功",
+      "order_id": "4200001234567890002",
+      "note": ""
+    },
+    {
+      "date": "2026-04-06T00:15:00.000Z",
+      "source": "alipay",
+      "category": "餐饮美食",
+      "counterparty": "星巴克",
+      "description": "拿铁",
+      "direction": "支出",
+      "amount": 38,
+      "method": "招商银行信用卡(1234)",
+      "status": "交易成功",
+      "order_id": "2026040608150000002",
+      "note": ""
+    },
+    {
+      "date": "2026-04-05T11:20:00.000Z",
+      "source": "wechat",
+      "category": "商户消费",
+      "counterparty": "肯德基",
+      "description": "晚餐套餐",
+      "direction": "支出",
+      "amount": 52,
+      "method": "零钱",
+      "status": "支付成功",
+      "order_id": "4200001234567890001",
+      "note": ""
+    },
+    {
+      "date": "2026-04-05T04:34:56.000Z",
+      "source": "alipay",
+      "category": "餐饮美食",
+      "counterparty": "美团外卖",
+      "description": "午餐外卖",
+      "direction": "支出",
+      "amount": 45.8,
+      "method": "余额宝",
+      "status": "交易成功",
+      "order_id": "2026040512345678901",
+      "note": ""
+    }
+  ],
+  "files": [
+    {
+      "name": "alipay-mock.csv",
+      "source": "alipay",
+      "count": 8,
+      "encoding": "utf-8",
+      "ok": true
+    },
+    {
+      "name": "wechat-mock.csv",
+      "source": "wechat",
+      "count": 6,
+      "encoding": "utf-8-bom",
+      "ok": true
+    }
+  ]
+}
