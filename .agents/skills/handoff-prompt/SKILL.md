@@ -13,7 +13,7 @@ Read `evolution.md` in this skill's folder. Apply any accumulated lessons as add
 
 # Philosophy
 
-The follow-up AI is a **peer, not an intern**. Transfer the mental model, then get out of the way. **Less is more** — if the AI can infer it from the files, omit it. Point to paths; don't summarize contents. Self-check: *"Am I telling the AI what to think, or giving it what it needs to think for itself?"* If the former, cut.
+**Minimal instructions, clear intent.** The follow-up AI is a **peer, not an intern**. Transfer the mental model, then get out of the way. **Less is more** — if the AI can infer it from the files, omit it. Point to paths; don't summarize contents. Self-check: *"Am I telling the AI what to think, or giving it what it needs to think for itself?"* If the former, cut.
 
 # What You Produce
 
@@ -28,8 +28,8 @@ A clipboard-ready outline, **under 20–30 lines** (the principle block at the e
 ## Current State
 [File path pointers. No content summaries.]
 
-## Hard Constraints (only if non-inferable)
-- [Rules the follow-up AI couldn't get from context alone.]
+## Non-document facts (only if such state exists)
+- [Anything non-inferable from the files: decisions the user made, overrides, rejected alternatives, off-repo responsibilities, declared off-limits, environment realities. Write as past-tense state, not imperatives — *"User has declared the server off-limits"*, not *"Do not touch the server"*. The context carries the why; the rule follows from it. Keep a bullet only if omitting it would cause the follow-up AI to re-open a closed question.]
 
 ## Principles of Paramount Importance
 - **Zero Assumptions:** Never guess user intent. If multiple implementations exist or requirements are incomplete, **halt and use the `AskUserQuestion` tool** to gather explicit direction.
