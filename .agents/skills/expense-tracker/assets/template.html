@@ -645,6 +645,23 @@ footer {
       </select>
     </div>
     <div class="filter">
+      <label data-i18n="filter.tz">Timezone</label>
+      <select id="tz-select">
+        <option value="Asia/Shanghai" selected data-i18n="filter.tz.beijing">Beijing (UTC+8)</option>
+        <option value="UTC" data-i18n="filter.tz.utc">UTC</option>
+        <option value="Asia/Tokyo" data-i18n="filter.tz.tokyo">Tokyo (UTC+9)</option>
+        <option value="America/New_York" data-i18n="filter.tz.ny">New York</option>
+        <option value="Europe/London" data-i18n="filter.tz.london">London</option>
+      </select>
+    </div>
+    <div class="filter">
+      <label data-i18n="filter.mode">Mode</label>
+      <select id="net-mode">
+        <option value="gross" selected data-i18n="filter.mode.gross">Gross</option>
+        <option value="net" data-i18n="filter.mode.net">Net (refunds deducted)</option>
+      </select>
+    </div>
+    <div class="filter">
       <label data-i18n="filter.amount">Amount (¥)</label>
       <div class="filter-row">
         <input type="number" id="amt-min" data-i18n-placeholder="filter.amount.min" placeholder="min" min="0" step="0.01">
@@ -801,6 +818,15 @@ const I18N = {
     'toggle.lang.title': 'Toggle language',
     'dow.Sun':'Sun','dow.Mon':'Mon','dow.Tue':'Tue','dow.Wed':'Wed','dow.Thu':'Thu','dow.Fri':'Fri','dow.Sat':'Sat',
     'legend.expense': 'Expense', 'legend.income': 'Income',
+    'filter.tz': 'Timezone',
+    'filter.tz.beijing': 'Beijing (UTC+8)',
+    'filter.tz.utc': 'UTC',
+    'filter.tz.tokyo': 'Tokyo (UTC+9)',
+    'filter.tz.ny': 'New York',
+    'filter.tz.london': 'London',
+    'filter.mode': 'Mode',
+    'filter.mode.gross': 'Gross',
+    'filter.mode.net': 'Net (refunds deducted)',
   },
   zh: {
     'doc.title': '账本 · 个人消费记录仪',
@@ -870,6 +896,15 @@ const I18N = {
     'toggle.theme.title': '切换主题',
     'toggle.lang.title': '切换语言',
     'dow.Sun':'日','dow.Mon':'一','dow.Tue':'二','dow.Wed':'三','dow.Thu':'四','dow.Fri':'五','dow.Sat':'六',
+    'filter.tz': '时区',
+    'filter.tz.beijing': '北京 (UTC+8)',
+    'filter.tz.utc': 'UTC',
+    'filter.tz.tokyo': '东京 (UTC+9)',
+    'filter.tz.ny': '纽约',
+    'filter.tz.london': '伦敦',
+    'filter.mode': '统计模式',
+    'filter.mode.gross': '总额',
+    'filter.mode.net': '净额（扣除退款）',
     'legend.expense': '支出', 'legend.income': '收入',
   }
 };
@@ -926,6 +961,8 @@ const state = {
   charts: {},
   lang: 'en',
   theme: 'dark',
+  tz: 'Asia/Shanghai',     // date-bucketing timezone for charts + range label
+  netMode: 'gross',        // 'gross' = raw expense/income; 'net' = refunds deducted
 };
 
 // ═════════════════════════════════════════════════════════════════════
@@ -1141,14 +1178,56 @@ function applyFilters() {
 // Render
 // ═════════════════════════════════════════════════════════════════════
 const fmtMoney = n => n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-const fmtDate = d => d ? d.toISOString().slice(0, 10) : '—';
-const fmtDateTime = d => d ? `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}` : '—';
+// tz-aware date formatter — buckets by state.tz (default Asia/Shanghai). sv-SE locale gives YYYY-MM-DD.
+const fmtDate = d => d ? d.toLocaleDateString('sv-SE', { timeZone: state.tz }) : '—';
+const fmtDateTime = d => {
+  if (!d) return '—';
+  const date = d.toLocaleDateString('sv-SE', { timeZone: state.tz });
+  const time = d.toLocaleTimeString('en-GB', { timeZone: state.tz, hour12: false, hour: '2-digit', minute: '2-digit' });
+  return `${date} ${time}`;
+};
+const DOW_MAP = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+function tzDow(d) {
+  const wd = new Intl.DateTimeFormat('en-US', { weekday: 'short', timeZone: state.tz }).format(d);
+  return DOW_MAP[wd] ?? 0;
+}
+
+// ─── Refund netting (status-first dedup) ──────────────────────────────
+// 1. Alipay 交易关闭 + 支出 → money never left → exclude from spend.
+// 2. 支出 row status `已退款¥X` (partial) → net = amount - X.
+// 3. 支出 row status `已全额退款` → net = 0 (fully refunded).
+// 4. 支出 otherwise → net = amount.
+// 5. 收入 row with 退款 in category → skip (its offset is already baked into rule 3).
+//    This prevents double-counting when both the 支出 row's status AND the paired
+//    refund income row signal the same refund.
+const REFUND_AMOUNT_RE = /已退款[¥￥]?\s*\(?([\d,]+(?:\.\d+)?)/;
+function netExpenseContribution(tr) {
+  if (tr.direction !== '支出') return 0;
+  if (tr.source === 'alipay' && tr.status === '交易关闭') return 0;
+  if (tr.status === '已全额退款') return 0;
+  const m = REFUND_AMOUNT_RE.exec(tr.status || '');
+  if (m) {
+    const refunded = parseFloat(m[1].replace(/,/g, ''));
+    if (!Number.isNaN(refunded)) return Math.max(0, tr.amount - refunded);
+  }
+  return tr.amount;
+}
+function netIncomeContribution(tr) {
+  if (tr.direction !== '收入') return 0;
+  if ((tr.category || '').includes('退款')) return 0;
+  return tr.amount;
+}
 
 function renderSummary(filtered) {
   const expense = filtered.filter(t => t.direction === '支出');
   const income = filtered.filter(t => t.direction === '收入');
-  const exp = expense.reduce((s, t) => s + t.amount, 0);
-  const inc = income.reduce((s, t) => s + t.amount, 0);
+  const isNet = state.netMode === 'net';
+  const exp = isNet
+    ? filtered.reduce((s, t) => s + netExpenseContribution(t), 0)
+    : expense.reduce((s, t) => s + t.amount, 0);
+  const inc = isNet
+    ? filtered.reduce((s, t) => s + netIncomeContribution(t), 0)
+    : income.reduce((s, t) => s + t.amount, 0);
   const net = exp - inc;
 
   document.getElementById('net-expense').textContent = fmtMoney(net);
@@ -1245,13 +1324,19 @@ function renderCharts(filtered) {
   Chart.defaults.color = TH.tick;
   Chart.defaults.borderColor = TH.grid;
 
-  // Daily cashflow
+  // Daily cashflow — bucketed by state.tz, optionally net-of-refunds
+  const isNet = state.netMode === 'net';
   const byDay = {};
   filtered.forEach(tr => {
     const k = fmtDate(tr.date);
     if (!byDay[k]) byDay[k] = { expense: 0, income: 0 };
-    if (tr.direction === '支出') byDay[k].expense += tr.amount;
-    else if (tr.direction === '收入') byDay[k].income += tr.amount;
+    if (isNet) {
+      byDay[k].expense += netExpenseContribution(tr);
+      byDay[k].income += netIncomeContribution(tr);
+    } else {
+      if (tr.direction === '支出') byDay[k].expense += tr.amount;
+      else if (tr.direction === '收入') byDay[k].income += tr.amount;
+    }
   });
   const days = Object.keys(byDay).sort();
   state.charts.daily = new Chart(document.getElementById('chart-daily'), {
@@ -1278,7 +1363,8 @@ function renderCharts(filtered) {
   // By category (expense only)
   const byCat = {};
   filtered.filter(tr => tr.direction === '支出').forEach(tr => {
-    byCat[tr.category] = (byCat[tr.category] || 0) + tr.amount;
+    const v = isNet ? netExpenseContribution(tr) : tr.amount;
+    if (v > 0) byCat[tr.category] = (byCat[tr.category] || 0) + v;
   });
   const catEntries = Object.entries(byCat).sort((a, b) => b[1] - a[1]).slice(0, 12);
   state.charts.category = new Chart(document.getElementById('chart-category'), {
@@ -1334,7 +1420,8 @@ function renderCharts(filtered) {
   // Top counterparties
   const byCp = {};
   filtered.filter(tr => tr.direction === '支出').forEach(tr => {
-    byCp[tr.counterparty] = (byCp[tr.counterparty] || 0) + tr.amount;
+    const v = isNet ? netExpenseContribution(tr) : tr.amount;
+    if (v > 0) byCp[tr.counterparty] = (byCp[tr.counterparty] || 0) + v;
   });
   const cpEntries = Object.entries(byCp).sort((a, b) => b[1] - a[1]).slice(0, 10);
   state.charts.cp = new Chart(document.getElementById('chart-counterparty'), {
@@ -1358,12 +1445,13 @@ function renderCharts(filtered) {
     },
   });
 
-  // Day of week
+  // Day of week — weekday computed in state.tz so the rhythm matches the user's local calendar
   const dowKeys = ['dow.Sun', 'dow.Mon', 'dow.Tue', 'dow.Wed', 'dow.Thu', 'dow.Fri', 'dow.Sat'];
   const dowNames = dowKeys.map(k => t(k));
   const byDow = [0, 0, 0, 0, 0, 0, 0];
   filtered.filter(tr => tr.direction === '支出').forEach(tr => {
-    byDow[tr.date.getDay()] += tr.amount;
+    const v = isNet ? netExpenseContribution(tr) : tr.amount;
+    if (v > 0) byDow[tzDow(tr.date)] += v;
   });
   state.charts.dow = new Chart(document.getElementById('chart-dow'), {
     type: 'bar',
@@ -1496,6 +1584,20 @@ function bindEvents() {
   };
   document.getElementById('source-filter').onchange = e => {
     state.filters.source = e.target.value;
+    refresh();
+  };
+  document.getElementById('tz-select').onchange = e => {
+    state.tz = e.target.value;
+    // Re-fill date-range inputs so the default labels reflect the new tz
+    const dates = state.transactions.map(tr => tr.date).sort((a, b) => a - b);
+    if (dates.length) {
+      document.getElementById('date-from').value = fmtDate(dates[0]);
+      document.getElementById('date-to').value = fmtDate(dates[dates.length - 1]);
+    }
+    refresh();
+  };
+  document.getElementById('net-mode').onchange = e => {
+    state.netMode = e.target.value;
     refresh();
   };
   document.getElementById('amt-min').oninput = debounce(e => {

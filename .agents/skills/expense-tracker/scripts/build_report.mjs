@@ -368,13 +368,34 @@ function buildAggregates(allTransactions) {
     weekend_daily_avg: uniqueWeekendDates > 0 ? r2(weekendExpenseSum / uniqueWeekendDates) : 0,
   };
 
-  // Daily timeline — one entry per calendar date in the period, including zero days
+  // Daily timeline — one entry per calendar date in the period, including zero days.
+  // expense_net applies status-first refund dedup matching the dashboard's Net toggle:
+  //   - alipay 交易关闭 + 支出 → 0 (money never left)
+  //   - 支出 with `已全额退款` status → 0 (fully refunded)
+  //   - 支出 with `已退款¥X` in status → max(0, amount − X) (partial)
+  //   - 收入 with `退款` in category → skipped (its offset is baked into the 支出 side above)
+  const REFUND_AMOUNT_RE = /已退款[¥￥]?\s*\(?([\d,]+(?:\.\d+)?)/;
+  function netExpenseOf(t) {
+    if (t.direction !== '支出') return 0;
+    if (t.source === 'alipay' && t.status === '交易关闭') return 0;
+    if (t.status === '已全额退款') return 0;
+    const m = REFUND_AMOUNT_RE.exec(t.status || '');
+    if (m) {
+      const refunded = parseFloat(m[1].replace(/,/g, ''));
+      if (!Number.isNaN(refunded)) return Math.max(0, t.amount - refunded);
+    }
+    return t.amount;
+  }
   const dailyMap = new Map();
   for (const t of txns) {
     const k = localDateKey(t.date);
-    const e = dailyMap.get(k) || { expense: 0, income: 0 };
-    if (t.direction === '支出') e.expense += t.amount;
-    else if (t.direction === '收入') e.income += t.amount;
+    const e = dailyMap.get(k) || { expense: 0, income: 0, expense_net: 0 };
+    if (t.direction === '支出') {
+      e.expense += t.amount;
+      e.expense_net += netExpenseOf(t);
+    } else if (t.direction === '收入') {
+      e.income += t.amount;
+    }
     dailyMap.set(k, e);
   }
   const daily_timeline = [];
@@ -383,8 +404,8 @@ function buildAggregates(allTransactions) {
     const stopMs = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate()).getTime();
     while (cur.getTime() <= stopMs) {
       const k = localDateKey(cur);
-      const e = dailyMap.get(k) || { expense: 0, income: 0 };
-      daily_timeline.push({ date: k, expense: r2(e.expense), income: r2(e.income) });
+      const e = dailyMap.get(k) || { expense: 0, income: 0, expense_net: 0 };
+      daily_timeline.push({ date: k, expense: r2(e.expense), income: r2(e.income), expense_net: r2(e.expense_net) });
       cur.setDate(cur.getDate() + 1);
     }
   }
