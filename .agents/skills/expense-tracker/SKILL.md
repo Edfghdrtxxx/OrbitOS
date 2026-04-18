@@ -31,13 +31,13 @@ Personal financial data must never be committed. Before anything else, self-heal
 - Report concisely what was created/added, or state "workspace already configured" when no changes were needed.
 
 ## 1. Resolve the input folder
-- If the user gave a path, use it verbatim.
-- Otherwise **silently default** to `20_Project/Expense Tracker/input/` — do NOT prompt. Fall through to Step 1b so the missing/empty case auto-opens the guide first.
+"Attached" is decided by the current prompt, not disk state. Files left in `input/` from prior runs do NOT count.
+- Prompt has attachments or `@path` refs → use those.
+- Prompt gives an explicit folder path → use it verbatim.
+- Neither → case "not attached"; do NOT silently default to `input/`. Go to Step 1b.
 
-## 1b. No valid CSVs → open export guide, THEN ask
-- Check the resolved folder recursively: does it exist AND contain at least one `.csv` file anywhere beneath it? Nested CSVs are accepted — Step 2a flattens them before the parser runs.
-- If it exists and has ≥1 `.csv`, skip this step — proceed to Step 2.
-- Otherwise (folder missing, empty, or no `.csv` files — including the case where the user explicitly passed a folder that's empty/missing):
+## 1b. No files attached → open export guide, THEN ask
+Enter when Step 1 is "not attached", or when a resolved folder is missing / empty / has no `.csv` recursively.
   1. **Auto-open the guide FIRST** (before any prompt):
      - Copy `assets/guide.html` to `20_Project/Expense Tracker/Reports/export-guide.html`, overwriting any existing copy (the source is canonical). The directory is guaranteed to exist by Step 0.
      - Open it in the user's default browser via Bash: `cmd //c start "" "<absolute-path-to-copied-guide>"` (Git-Bash-on-Windows incantation — `//c` avoids path mangling, the empty `""` satisfies `start`'s title-argument quirk). On non-Windows platforms, substitute `open` (macOS) or `xdg-open` (Linux). Auto-open is authorized — the user explicitly requested this behavior.
