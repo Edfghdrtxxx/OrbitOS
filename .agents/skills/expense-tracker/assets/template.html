@@ -1,0 +1,1695 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ledger · Personal Expense Instrument</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Serif:ital,wght@1,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script id="preloaded-data" type="application/json">__PRELOADED_DATA_JSON__</script>
+<style>
+:root[data-theme="dark"] {
+  --bg: #0b0c0e;
+  --bg-raised: #121317;
+  --bg-higher: #181a1f;
+  --border: #24262c;
+  --border-soft: #1c1e23;
+  --fg: #e8e4d8;
+  --fg-dim: #a8a59a;
+  --fg-muted: #5c5a53;
+  --accent: #d4a748;
+  --accent-dim: #8a6e30;
+  --expense: #c85a4f;
+  --expense-dim: #6b2e28;
+  --income: #7ba892;
+  --income-dim: #3d5a4c;
+  --neutral: #6c7a8f;
+  --grid: #1a1c21;
+}
+
+:root[data-theme="light"] {
+  --bg: #fdf6e3;
+  --bg-raised: #eee8d5;
+  --bg-higher: #e4dfc9;
+  --border: #ded7be;
+  --border-soft: #eee8d5;
+  --fg: #586e75;
+  --fg-dim: #657b83;
+  --fg-muted: #93a1a1;
+  --accent: #b58900;
+  --accent-dim: #7c5f00;
+  --expense: #dc322f;
+  --expense-dim: #98211f;
+  --income: #859900;
+  --income-dim: #5a6700;
+  --neutral: #6c71c4;
+  --grid: #eee8d5;
+}
+
+:root {
+  --font-sans: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --font-serif: 'IBM Plex Serif', serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 0.3s, color 0.3s;
+}
+
+body {
+  background-image:
+    radial-gradient(ellipse at top left, rgba(212, 167, 72, 0.04) 0%, transparent 40%),
+    radial-gradient(ellipse at bottom right, rgba(200, 90, 79, 0.03) 0%, transparent 40%);
+  background-attachment: fixed;
+}
+
+.wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 48px 40px 96px;
+}
+
+/* ─── HEADER ─── */
+header {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: baseline;
+  gap: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 48px;
+}
+.mark {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+h1 {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 28px;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+}
+h1 .acc { color: var(--accent); font-style: normal; font-family: var(--font-sans); font-weight: 300; }
+.meta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--fg-muted);
+  letter-spacing: 0.15em;
+  text-align: right;
+  line-height: 1.8;
+}
+.meta .dot { color: var(--accent); }
+
+/* ─── HEADER CONTROLS (theme / lang) ─── */
+.controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.controls .btn.ghost {
+  padding: 8px 14px;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  border: 1px solid var(--border);
+  color: var(--fg-dim);
+  background: var(--bg-raised);
+}
+.controls .btn.ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.controls .btn .icon {
+  margin-right: 6px;
+  color: var(--accent);
+}
+
+/* ─── SECTION LABELS ─── */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+}
+.section-label .num { color: var(--accent); }
+.section-label .line { flex: 1; height: 1px; background: var(--border); }
+
+section { margin-bottom: 56px; }
+
+/* ─── UPLOAD ─── */
+.upload {
+  border: 1px dashed var(--border);
+  padding: 40px;
+  text-align: center;
+  background: var(--bg-raised);
+  transition: border-color 0.2s, background 0.2s;
+  cursor: pointer;
+  position: relative;
+}
+.upload.drag { border-color: var(--accent); background: rgba(212, 167, 72, 0.04); }
+.upload h2 {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 20px;
+  margin-bottom: 6px;
+  color: var(--fg);
+}
+.upload p { color: var(--fg-dim); font-size: 13px; margin-bottom: 24px; }
+.upload-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  background: transparent;
+  color: var(--fg);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn:hover { border-color: var(--accent); color: var(--accent); }
+.btn.primary { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+.btn.primary:hover { background: transparent; color: var(--accent); }
+.btn.ghost { border-color: transparent; color: var(--fg-dim); }
+.btn.ghost:hover { color: var(--accent); }
+input[type="file"] { display: none; }
+
+.file-status {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+.file-pill {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 6px 12px;
+  background: var(--bg-higher);
+  border: 1px solid var(--border);
+  color: var(--fg-dim);
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+.file-pill.ok { border-color: var(--income-dim); color: var(--income); }
+.file-pill.err { border-color: var(--expense-dim); color: var(--expense); }
+.file-pill .tag { color: var(--accent); font-weight: 500; }
+
+/* ─── SUMMARY ─── */
+.hero {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.hero-cell {
+  background: var(--bg-raised);
+  padding: 28px 32px;
+  position: relative;
+}
+.hero-cell .label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin-bottom: 14px;
+}
+.hero-cell .value {
+  font-family: var(--font-mono);
+  font-weight: 300;
+  font-size: 38px;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--fg);
+}
+.hero-cell.primary .value { font-size: 56px; color: var(--expense); }
+.hero-cell .sub {
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fg-muted);
+}
+.hero-cell .currency {
+  font-size: 0.5em;
+  color: var(--fg-muted);
+  margin-right: 6px;
+  font-weight: 300;
+}
+.hero-cell.income .value { color: var(--income); font-size: 28px; }
+.hero-cell.expense .value { color: var(--expense); font-size: 28px; }
+.hero-cell.count .value { font-size: 28px; color: var(--accent); }
+
+/* ─── ANALYSIS (Claude-injected) ─── */
+.analysis-body {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  padding: 24px;
+  font-family: var(--font-sans);
+  color: var(--fg-dim);
+  line-height: 1.65;
+}
+.analysis-body h1,
+.analysis-body h2,
+.analysis-body h3,
+.analysis-body h4 {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--fg);
+  margin: 18px 0 10px;
+}
+.analysis-body h1 { font-size: 22px; }
+.analysis-body h2 { font-size: 18px; }
+.analysis-body h3 { font-size: 15px; }
+.analysis-body p { margin-bottom: 10px; }
+.analysis-body ul, .analysis-body ol { margin: 8px 0 12px 22px; }
+.analysis-body li { margin-bottom: 4px; }
+.analysis-body code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background: var(--bg-higher);
+  padding: 1px 6px;
+  border: 1px solid var(--border);
+  color: var(--accent);
+}
+.analysis-body strong { color: var(--fg); font-weight: 500; }
+.analysis-body blockquote {
+  border-left: 2px solid var(--accent);
+  padding-left: 14px;
+  margin: 10px 0;
+  color: var(--fg-muted);
+  font-style: italic;
+}
+
+/* ─── FILTERS ─── */
+.filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  padding: 20px;
+}
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.filter label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+.filter input, .filter select {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--fg);
+  padding: 8px 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 300;
+}
+.filter input:focus, .filter select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.filter-row {
+  display: flex;
+  gap: 6px;
+}
+.filter-row input { flex: 1; min-width: 0; }
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-height: 96px;
+  overflow-y: auto;
+  padding: 4px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+}
+.chip {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 3px 8px;
+  background: var(--bg-higher);
+  color: var(--fg-dim);
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  transition: all 0.15s;
+}
+.chip:hover { color: var(--fg); }
+.chip.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+
+/* ─── CHARTS ─── */
+.charts {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+.chart-card {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  padding: 24px;
+  position: relative;
+}
+.chart-card.full { grid-column: 1 / -1; }
+.chart-card h3 {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--fg);
+  margin-bottom: 4px;
+}
+.chart-card .subtitle {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin-bottom: 20px;
+}
+.chart-box { position: relative; height: 280px; }
+.chart-box.tall { height: 340px; }
+
+/* ─── TABLE ─── */
+.tbl-wrap {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  max-height: 480px;
+  overflow-y: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+thead {
+  position: sticky;
+  top: 0;
+  background: var(--bg-higher);
+  z-index: 1;
+}
+th {
+  text-align: left;
+  padding: 14px 16px;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  font-weight: 500;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  user-select: none;
+}
+th:hover { color: var(--accent); }
+th .sort-ind { color: var(--accent); margin-left: 4px; }
+td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border-soft);
+  color: var(--fg-dim);
+  font-weight: 300;
+  vertical-align: top;
+}
+tr:hover td { background: var(--bg-higher); color: var(--fg); }
+td.amt { text-align: right; font-weight: 500; white-space: nowrap; }
+td.amt.expense { color: var(--expense); }
+td.amt.income { color: var(--income); }
+td.amt.neutral { color: var(--neutral); }
+td.src {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+td.src .alipay { color: #4a90e2; }
+td.src .wechat { color: #5cb85c; }
+td.truncate {
+  max-width: 240px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.empty {
+  padding: 80px 40px;
+  text-align: center;
+  color: var(--fg-muted);
+  font-style: italic;
+  font-family: var(--font-serif);
+}
+
+/* ─── FOOTER ─── */
+footer {
+  margin-top: 80px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--fg-muted);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* ─── UTILITY ─── */
+.hidden { display: none !important; }
+.error {
+  background: rgba(200, 90, 79, 0.08);
+  border: 1px solid var(--expense-dim);
+  padding: 16px 20px;
+  color: var(--expense);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  margin-bottom: 24px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-dim); }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .wrap { padding: 24px 20px 60px; }
+  .hero { grid-template-columns: 1fr 1fr; }
+  .hero-cell.primary { grid-column: 1 / -1; }
+  .charts { grid-template-columns: 1fr; }
+  header { grid-template-columns: 1fr; gap: 8px; }
+  .meta { text-align: left; }
+  .controls { justify-content: flex-start; }
+}
+
+/* animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeUp 0.5s ease both; }
+.fade-in:nth-child(2) { animation-delay: 0.05s; }
+.fade-in:nth-child(3) { animation-delay: 0.1s; }
+.fade-in:nth-child(4) { animation-delay: 0.15s; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="mark" data-i18n="brand.mark">§ L E D G E R</div>
+  <h1><span data-i18n="brand.title.prefix">Personal Expense </span><span class="acc" data-i18n="brand.title.accent">Instrument</span></h1>
+  <div class="meta">
+    <div data-i18n="meta.privacy">● client-side · no upload to server</div>
+    <div data-i18n="meta.sources">支付宝 · 微信支付 · unified schema</div>
+  </div>
+  <div class="controls">
+    <button class="btn ghost" id="theme-toggle" title="theme">
+      <span class="icon" id="theme-icon">☾</span><span data-i18n="toggle.theme">Theme</span>
+    </button>
+    <button class="btn ghost" id="lang-toggle" title="language">
+      <span class="icon" id="lang-icon">EN</span><span data-i18n="toggle.lang">Lang</span>
+    </button>
+  </div>
+</header>
+
+<!-- UPLOAD -->
+<section>
+  <div class="section-label">
+    <span class="num">§ 01</span> <span data-i18n="section.import">Import</span> <span class="line"></span>
+  </div>
+  <div class="upload" id="dropzone">
+    <h2 data-i18n="upload.heading">Drop your CSV bills here</h2>
+    <p data-i18n="upload.description_html">Both Alipay (<code>支付宝</code>, GBK) and WeChat Pay (<code>微信支付</code>, UTF-8) are auto-detected.</p>
+    <div class="upload-actions">
+      <label class="btn primary">
+        <input type="file" id="file-input" multiple accept=".csv">
+        <span data-i18n="upload.select">Select files</span>
+      </label>
+      <button class="btn" id="demo-btn" data-i18n="upload.demo">Load demo data</button>
+      <button class="btn ghost hidden" id="clear-btn" data-i18n="upload.clear">Clear</button>
+    </div>
+    <div id="file-status" class="file-status"></div>
+  </div>
+  <div id="error-box"></div>
+</section>
+
+<!-- SUMMARY -->
+<section id="dashboard" class="hidden">
+  <div class="section-label">
+    <span class="num">§ 02</span> <span data-i18n="section.summary">Summary</span> <span class="line"></span>
+  </div>
+  <div class="hero">
+    <div class="hero-cell primary fade-in">
+      <div class="label" data-i18n="hero.net_expense">Net Expense (filtered)</div>
+      <div class="value"><span class="currency">¥</span><span id="net-expense">0.00</span></div>
+      <div class="sub" id="net-range">—</div>
+    </div>
+    <div class="hero-cell expense fade-in">
+      <div class="label" data-i18n="hero.gross_expense">Gross Expense</div>
+      <div class="value"><span class="currency">¥</span><span id="gross-expense">0.00</span></div>
+      <div class="sub"><span id="expense-count">0</span> <span data-i18n="hero.transactions_suffix">transactions</span></div>
+    </div>
+    <div class="hero-cell income fade-in">
+      <div class="label" data-i18n="hero.income">Income</div>
+      <div class="value"><span class="currency">¥</span><span id="gross-income">0.00</span></div>
+      <div class="sub"><span id="income-count">0</span> <span data-i18n="hero.transactions_suffix">transactions</span></div>
+    </div>
+    <div class="hero-cell count fade-in">
+      <div class="label" data-i18n="hero.records">Records</div>
+      <div class="value" id="total-count">0</div>
+      <div class="sub"><span id="alipay-count">0</span> 支付宝 · <span id="wechat-count">0</span> 微信</div>
+    </div>
+  </div>
+</section>
+
+<!-- ANALYSIS (Claude-injected) -->
+<section id="claude-analysis" class="hidden">
+  <div class="section-label">
+    <span class="num">§ 02.5</span>
+    <span data-i18n="section.analysis">Analysis</span>
+    <span class="line"></span>
+  </div>
+  <div class="analysis-body" id="analysis-body">
+    <!-- __CLAUDE_ANALYSIS_HTML__ -->
+  </div>
+</section>
+
+<!-- FILTERS -->
+<section id="filters-section" class="hidden">
+  <div class="section-label">
+    <span class="num">§ 03</span> <span data-i18n="section.filters">Filters</span> <span class="line"></span>
+  </div>
+  <div class="filters">
+    <div class="filter">
+      <label data-i18n="filter.date_range">Date range</label>
+      <div class="filter-row">
+        <input type="date" id="date-from">
+        <input type="date" id="date-to">
+      </div>
+    </div>
+    <div class="filter">
+      <label data-i18n="filter.direction">Direction</label>
+      <select id="direction-filter">
+        <option value="all" data-i18n="filter.direction.all">All</option>
+        <option value="支出" selected data-i18n="filter.direction.expense">Expenses (支出)</option>
+        <option value="收入" data-i18n="filter.direction.income">Income (收入)</option>
+        <option value="不计收支" data-i18n="filter.direction.neutral">Neutral (不计收支)</option>
+      </select>
+    </div>
+    <div class="filter">
+      <label data-i18n="filter.source">Source</label>
+      <select id="source-filter">
+        <option value="all" data-i18n="filter.source.all">Both</option>
+        <option value="alipay" data-i18n="filter.source.alipay">Alipay only</option>
+        <option value="wechat" data-i18n="filter.source.wechat">WeChat only</option>
+      </select>
+    </div>
+    <div class="filter">
+      <label data-i18n="filter.amount">Amount (¥)</label>
+      <div class="filter-row">
+        <input type="number" id="amt-min" data-i18n-placeholder="filter.amount.min" placeholder="min" min="0" step="0.01">
+        <input type="number" id="amt-max" data-i18n-placeholder="filter.amount.max" placeholder="max" min="0" step="0.01">
+      </div>
+    </div>
+    <div class="filter" style="grid-column: 1 / -1;">
+      <label data-i18n="filter.search">Search (counterparty / description)</label>
+      <input type="text" id="search-input" data-i18n-placeholder="filter.search.placeholder" placeholder="e.g. 美团, 星巴克, transfer...">
+    </div>
+    <div class="filter" style="grid-column: 1 / -1;">
+      <label><span data-i18n="filter.categories">Categories</span> <span id="cat-hint" data-i18n="filter.categories.hint" style="color:var(--fg-muted);font-weight:300;text-transform:none;letter-spacing:0">(click to filter · none selected = all)</span></label>
+      <div class="chips" id="category-chips"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CHARTS -->
+<section id="charts-section" class="hidden">
+  <div class="section-label">
+    <span class="num">§ 04</span> <span data-i18n="section.charts">Analysis</span> <span class="line"></span>
+  </div>
+  <div class="charts">
+    <div class="chart-card full">
+      <h3 data-i18n="chart.daily.title">Daily cashflow</h3>
+      <div class="subtitle" data-i18n="chart.daily.subtitle">Expense & income over time</div>
+      <div class="chart-box tall"><canvas id="chart-daily"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3 data-i18n="chart.category.title">Expense by category</h3>
+      <div class="subtitle" data-i18n="chart.category.subtitle">Aggregated, top 12</div>
+      <div class="chart-box tall"><canvas id="chart-category"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3 data-i18n="chart.distribution.title">Distribution</h3>
+      <div class="subtitle" data-i18n="chart.distribution.subtitle">Platform & payment method</div>
+      <div class="chart-box tall"><canvas id="chart-pie"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3 data-i18n="chart.counterparty.title">Top counterparties</h3>
+      <div class="subtitle" data-i18n="chart.counterparty.subtitle">By total expense</div>
+      <div class="chart-box"><canvas id="chart-counterparty"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3 data-i18n="chart.dow.title">Weekly rhythm</h3>
+      <div class="subtitle" data-i18n="chart.dow.subtitle">Expense by day of week</div>
+      <div class="chart-box"><canvas id="chart-dow"></canvas></div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE -->
+<section id="table-section" class="hidden">
+  <div class="section-label">
+    <span class="num">§ 05</span> <span data-i18n="section.transactions">Transactions</span> <span class="line"></span>
+    <button class="btn ghost" id="export-btn" data-i18n="export.btn" style="padding:6px 14px;font-size:10px">↓ Export filtered CSV</button>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th data-sort="date"><span data-i18n="tbl.date">Date</span> <span class="sort-ind">↓</span></th>
+          <th data-sort="source" data-i18n="tbl.src">Src</th>
+          <th data-sort="category" data-i18n="tbl.category">Category</th>
+          <th data-sort="counterparty" data-i18n="tbl.counterparty">Counterparty</th>
+          <th data-sort="description" data-i18n="tbl.description">Description</th>
+          <th data-sort="method" data-i18n="tbl.method">Method</th>
+          <th data-sort="amount" data-i18n="tbl.amount" style="text-align:right">Amount</th>
+        </tr>
+      </thead>
+      <tbody id="tbl-body"></tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <div data-i18n="footer.privacy">Data processed locally in your browser · encoding: GB18030 / UTF-8 · no network transmission of bill data</div>
+  <div data-i18n="footer.version">Ledger v0.1 · for personal reconciliation only</div>
+</footer>
+
+</div>
+
+<script>
+// ═════════════════════════════════════════════════════════════════════
+// I18N
+// ═════════════════════════════════════════════════════════════════════
+const I18N = {
+  en: {
+    'brand.mark': '§ L E D G E R',
+    'brand.title.prefix': 'Personal Expense ',
+    'brand.title.accent': 'Instrument',
+    'meta.privacy': '● client-side · no upload to server',
+    'meta.sources': '支付宝 · 微信支付 · unified schema',
+    'section.import': 'Import',
+    'section.summary': 'Summary',
+    'section.analysis': 'Analysis',
+    'section.filters': 'Filters',
+    'section.charts': 'Analysis',
+    'section.transactions': 'Transactions',
+    'upload.heading': 'Drop your CSV bills here',
+    'upload.description_html': 'Both Alipay (<code>支付宝</code>, GBK) and WeChat Pay (<code>微信支付</code>, UTF-8) are auto-detected.',
+    'upload.select': 'Select files',
+    'upload.demo': 'Load demo data',
+    'upload.clear': 'Clear',
+    'hero.net_expense': 'Net Expense (filtered)',
+    'hero.gross_expense': 'Gross Expense',
+    'hero.income': 'Income',
+    'hero.records': 'Records',
+    'hero.transactions_suffix': 'transactions',
+    'filter.date_range': 'Date range',
+    'filter.direction': 'Direction',
+    'filter.direction.all': 'All',
+    'filter.direction.expense': 'Expenses (支出)',
+    'filter.direction.income': 'Income (收入)',
+    'filter.direction.neutral': 'Neutral (不计收支)',
+    'filter.source': 'Source',
+    'filter.source.all': 'Both',
+    'filter.source.alipay': 'Alipay only',
+    'filter.source.wechat': 'WeChat only',
+    'filter.amount': 'Amount (¥)',
+    'filter.amount.min': 'min',
+    'filter.amount.max': 'max',
+    'filter.search': 'Search (counterparty / description)',
+    'filter.search.placeholder': 'e.g. 美团, 星巴克, transfer…',
+    'filter.categories': 'Categories',
+    'filter.categories.hint': '(click to filter · none selected = all)',
+    'chart.daily.title': 'Daily cashflow',
+    'chart.daily.subtitle': 'Expense & income over time',
+    'chart.category.title': 'Expense by category',
+    'chart.category.subtitle': 'Aggregated, top 12',
+    'chart.distribution.title': 'Distribution',
+    'chart.distribution.subtitle': 'Platform & payment method',
+    'chart.counterparty.title': 'Top counterparties',
+    'chart.counterparty.subtitle': 'By total expense',
+    'chart.dow.title': 'Weekly rhythm',
+    'chart.dow.subtitle': 'Expense by day of week',
+    'tbl.date': 'Date', 'tbl.src': 'Src', 'tbl.category': 'Category',
+    'tbl.counterparty': 'Counterparty', 'tbl.description': 'Description',
+    'tbl.method': 'Method', 'tbl.amount': 'Amount',
+    'tbl.empty': 'No transactions match the current filters',
+    'export.btn': '↓ Export filtered CSV',
+    'footer.privacy': 'Data processed locally in your browser · encoding: GB18030 / UTF-8 · no network transmission of bill data',
+    'footer.version': 'Ledger v0.1 · for personal reconciliation only',
+    'toggle.theme': 'Theme', 'toggle.lang': 'Lang',
+    'dow.Sun':'Sun','dow.Mon':'Mon','dow.Tue':'Tue','dow.Wed':'Wed','dow.Thu':'Thu','dow.Fri':'Fri','dow.Sat':'Sat',
+    'legend.expense': 'Expense', 'legend.income': 'Income',
+  },
+  zh: {
+    'brand.mark': '§ 账 本',
+    'brand.title.prefix': '个人消费 ',
+    'brand.title.accent': '记录仪',
+    'meta.privacy': '● 客户端处理 · 不上传服务器',
+    'meta.sources': '支付宝 · 微信支付 · 统一数据结构',
+    'section.import': '导入',
+    'section.summary': '汇总',
+    'section.analysis': '分析',
+    'section.filters': '筛选',
+    'section.charts': '图表',
+    'section.transactions': '交易明细',
+    'upload.heading': '拖入 CSV 账单',
+    'upload.description_html': '自动识别支付宝（<code>GBK</code>）和微信支付（<code>UTF-8</code>）。',
+    'upload.select': '选择文件',
+    'upload.demo': '加载示例数据',
+    'upload.clear': '清空',
+    'hero.net_expense': '净支出（筛选后）',
+    'hero.gross_expense': '总支出',
+    'hero.income': '收入',
+    'hero.records': '记录数',
+    'hero.transactions_suffix': '笔',
+    'filter.date_range': '时间范围',
+    'filter.direction': '方向',
+    'filter.direction.all': '全部',
+    'filter.direction.expense': '支出',
+    'filter.direction.income': '收入',
+    'filter.direction.neutral': '不计收支',
+    'filter.source': '来源',
+    'filter.source.all': '两者',
+    'filter.source.alipay': '仅支付宝',
+    'filter.source.wechat': '仅微信',
+    'filter.amount': '金额（¥）',
+    'filter.amount.min': '最小',
+    'filter.amount.max': '最大',
+    'filter.search': '搜索（交易对方 / 描述）',
+    'filter.search.placeholder': '如：美团、星巴克、转账……',
+    'filter.categories': '分类',
+    'filter.categories.hint': '（点击筛选 · 不选等于全选）',
+    'chart.daily.title': '每日现金流',
+    'chart.daily.subtitle': '收支随时间变化',
+    'chart.category.title': '按分类支出',
+    'chart.category.subtitle': '聚合，前 12',
+    'chart.distribution.title': '分布',
+    'chart.distribution.subtitle': '平台与支付方式',
+    'chart.counterparty.title': '高频交易对方',
+    'chart.counterparty.subtitle': '按总支出排名',
+    'chart.dow.title': '每周节奏',
+    'chart.dow.subtitle': '按星期支出',
+    'tbl.date': '时间', 'tbl.src': '来源', 'tbl.category': '分类',
+    'tbl.counterparty': '交易对方', 'tbl.description': '说明',
+    'tbl.method': '支付方式', 'tbl.amount': '金额',
+    'tbl.empty': '没有符合筛选条件的记录',
+    'export.btn': '↓ 导出筛选后 CSV',
+    'footer.privacy': '数据在浏览器本地处理 · 编码：GB18030 / UTF-8 · 账单数据不经网络传输',
+    'footer.version': 'Ledger v0.1 · 仅供个人对账',
+    'toggle.theme': '主题', 'toggle.lang': '语言',
+    'dow.Sun':'日','dow.Mon':'一','dow.Tue':'二','dow.Wed':'三','dow.Thu':'四','dow.Fri':'五','dow.Sat':'六',
+    'legend.expense': '支出', 'legend.income': '收入',
+  }
+};
+
+function t(key) {
+  return (I18N[state.lang] && I18N[state.lang][key]) || key;
+}
+
+function applyI18n(lang) {
+  state.lang = lang;
+  document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const val = (I18N[lang] && I18N[lang][key]);
+    if (val == null) return;
+    if (key.endsWith('_html')) el.innerHTML = val;
+    else el.textContent = val;
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    const val = (I18N[lang] && I18N[lang][key]);
+    if (val != null) el.setAttribute('placeholder', val);
+  });
+  // Update lang toggle icon
+  const langIcon = document.getElementById('lang-icon');
+  if (langIcon) langIcon.textContent = lang === 'zh' ? '中' : 'EN';
+}
+
+// ═════════════════════════════════════════════════════════════════════
+// State
+// ═════════════════════════════════════════════════════════════════════
+const state = {
+  transactions: [],        // unified records
+  files: [],               // {name, source, count, ok, error}
+  filters: {
+    dateFrom: null, dateTo: null,
+    direction: '支出',
+    source: 'all',
+    amtMin: null, amtMax: null,
+    search: '',
+    categories: new Set(),
+  },
+  sort: { key: 'date', dir: 'desc' },
+  charts: {},
+  lang: 'en',
+  theme: 'dark',
+};
+
+// ═════════════════════════════════════════════════════════════════════
+// CSV decoding: try UTF-8, fall back to GBK (GB18030)
+// Alipay personal 交易流水 is GBK; WeChat Pay is UTF-8 with BOM
+// ═════════════════════════════════════════════════════════════════════
+async function readFileSmart(file) {
+  const buf = await file.arrayBuffer();
+  const bytes = new Uint8Array(buf);
+  // UTF-8 BOM?
+  if (bytes[0] === 0xEF && bytes[1] === 0xBB && bytes[2] === 0xBF) {
+    return { text: new TextDecoder('utf-8').decode(buf), encoding: 'utf-8-bom' };
+  }
+  // Try UTF-8 strict
+  try {
+    const txt = new TextDecoder('utf-8', { fatal: true }).decode(buf);
+    return { text: txt, encoding: 'utf-8' };
+  } catch (_) {
+    // Fall back to GBK / GB18030
+    try {
+      const txt = new TextDecoder('gb18030').decode(buf);
+      return { text: txt, encoding: 'gb18030' };
+    } catch (e) {
+      throw new Error(`Cannot decode ${file.name}: ${e.message}`);
+    }
+  }
+}
+
+// ═════════════════════════════════════════════════════════════════════
+// Format detection by content signature
+// ═════════════════════════════════════════════════════════════════════
+function detectFormat(text) {
+  const head = text.slice(0, 2000);
+  if (head.includes('支付宝') || head.includes('Alipay')) return 'alipay';
+  if (head.includes('微信支付') || head.includes('微信账单')) return 'wechat';
+  // Fallback: look for column signature
+  if (head.includes('交易分类') && head.includes('收/付款方式')) return 'alipay';
+  if (head.includes('交易类型') && head.includes('支付方式')) return 'wechat';
+  return null;
+}
+
+// ═════════════════════════════════════════════════════════════════════
+// Find the header row index
+// ═════════════════════════════════════════════════════════════════════
+function findDataStart(lines, format) {
+  const sig = format === 'alipay'
+    ? ['交易时间', '交易分类', '金额']
+    : ['交易时间', '交易类型', '金额'];
+  for (let i = 0; i < lines.length && i < 50; i++) {
+    const L = lines[i];
+    if (sig.every(s => L.includes(s))) return i;
+  }
+  return -1;
+}
+
+// ═════════════════════════════════════════════════════════════════════
+// Normalizers
+// ═════════════════════════════════════════════════════════════════════
+function parseAmount(s) {
+  if (s == null) return 0;
+  const cleaned = String(s).replace(/[¥￥,\s]/g, '').trim();
+  const n = parseFloat(cleaned);
+  return isFinite(n) ? n : 0;
+}
+function parseDate(s) {
+  if (!s) return null;
+  const t = String(s).trim();
+  // Common: "YYYY-MM-DD HH:MM:SS" or "YYYY/MM/DD HH:MM"
+  const iso = t.replace(/\//g, '-').replace(' ', 'T');
+  const d = new Date(iso);
+  return isNaN(d) ? null : d;
+}
+function cleanString(s) {
+  if (s == null) return '';
+  return String(s).replace(/^["'\s]+|["'\s]+$/g, '').trim();
+}
+
+function normalizeAlipay(row) {
+  return {
+    date: parseDate(row['交易时间']),
+    source: 'alipay',
+    category: cleanString(row['交易分类']) || '未分类',
+    counterparty: cleanString(row['交易对方']) || '—',
+    description: cleanString(row['商品说明']) || '',
+    direction: cleanString(row['收/支']) || '不计收支',
+    amount: parseAmount(row['金额']),
+    method: cleanString(row['收/付款方式']) || '—',
+    status: cleanString(row['交易状态']) || '',
+    order_id: cleanString(row['交易订单号']) || '',
+    note: cleanString(row['备注']) || '',
+  };
+}
+function normalizeWechat(row) {
+  return {
+    date: parseDate(row['交易时间']),
+    source: 'wechat',
+    category: cleanString(row['交易类型']) || '未分类',
+    counterparty: cleanString(row['交易对方']) || '—',
+    description: cleanString(row['商品']) || '',
+    direction: cleanString(row['收/支']) || '不计收支',
+    amount: parseAmount(row['金额(元)']) || parseAmount(row['金额']),
+    method: cleanString(row['支付方式']) || '—',
+    status: cleanString(row['当前状态']) || '',
+    order_id: cleanString(row['交易单号']) || '',
+    note: cleanString(row['备注']) || '',
+  };
+}
+
+// ═════════════════════════════════════════════════════════════════════
+// File processing
+// ═════════════════════════════════════════════════════════════════════
+async function processFile(file) {
+  const { text, encoding } = await readFileSmart(file);
+  const format = detectFormat(text);
+  if (!format) throw new Error(`Unknown format: ${file.name}. Not recognized as Alipay or WeChat CSV.`);
+
+  const lines = text.split(/\r?\n/);
+  const dataStart = findDataStart(lines, format);
+  if (dataStart < 0) throw new Error(`Cannot find header row in ${file.name}`);
+
+  const csvBody = lines.slice(dataStart).join('\n');
+  const parsed = Papa.parse(csvBody, {
+    header: true,
+    skipEmptyLines: 'greedy',
+    transformHeader: h => h.trim(),
+  });
+
+  const normFn = format === 'alipay' ? normalizeAlipay : normalizeWechat;
+  const records = parsed.data
+    .map(normFn)
+    .filter(r => r.date && r.amount > 0);
+
+  return { records, format, encoding, count: records.length, name: file.name };
+}
+
+async function handleFiles(fileList) {
+  clearError();
+  const files = Array.from(fileList);
+  for (const f of files) {
+    try {
+      const r = await processFile(f);
+      state.files.push({ name: r.name, source: r.format, count: r.count, encoding: r.encoding, ok: true });
+      state.transactions.push(...r.records);
+    } catch (err) {
+      state.files.push({ name: f.name, source: null, count: 0, ok: false, error: err.message });
+      showError(err.message);
+    }
+  }
+  // Dedup by order_id + source + date + amount
+  const seen = new Set();
+  state.transactions = state.transactions.filter(t => {
+    const k = `${t.source}|${t.order_id}|${t.date?.toISOString()}|${t.amount}`;
+    if (seen.has(k)) return false;
+    seen.add(k);
+    return true;
+  });
+  state.transactions.sort((a, b) => b.date - a.date);
+  renderFileStatus();
+  if (state.transactions.length) initDashboard();
+}
+
+function renderFileStatus() {
+  const el = document.getElementById('file-status');
+  el.innerHTML = state.files.map(f => {
+    if (!f.ok) return `<div class="file-pill err">✗ ${f.name} — ${escapeHtml(f.error || 'error')}</div>`;
+    const tag = f.source === 'alipay' ? '支付宝' : '微信';
+    return `<div class="file-pill ok">✓ <span class="tag">${tag}</span> ${f.name} · ${f.count} rows · ${f.encoding}</div>`;
+  }).join('');
+  document.getElementById('clear-btn').classList.toggle('hidden', state.files.length === 0);
+}
+
+function clearAll() {
+  state.transactions = [];
+  state.files = [];
+  state.filters.categories.clear();
+  Object.values(state.charts).forEach(c => c.destroy?.());
+  state.charts = {};
+  document.getElementById('file-status').innerHTML = '';
+  document.getElementById('dashboard').classList.add('hidden');
+  document.getElementById('filters-section').classList.add('hidden');
+  document.getElementById('charts-section').classList.add('hidden');
+  document.getElementById('table-section').classList.add('hidden');
+  document.getElementById('claude-analysis').classList.add('hidden');
+  document.getElementById('clear-btn').classList.add('hidden');
+  clearError();
+}
+
+// ═════════════════════════════════════════════════════════════════════
+// Filtering
+// ═════════════════════════════════════════════════════════════════════
+function applyFilters() {
+  const f = state.filters;
+  return state.transactions.filter(t => {
+    if (f.dateFrom && t.date < f.dateFrom) return false;
+    if (f.dateTo && t.date > f.dateTo) return false;
+    if (f.direction !== 'all' && t.direction !== f.direction) return false;
+    if (f.source !== 'all' && t.source !== f.source) return false;
+    if (f.amtMin != null && t.amount < f.amtMin) return false;
+    if (f.amtMax != null && t.amount > f.amtMax) return false;
+    if (f.categories.size > 0 && !f.categories.has(t.category)) return false;
+    if (f.search) {
+      const s = f.search.toLowerCase();
+      if (!(t.counterparty.toLowerCase().includes(s)
+          || t.description.toLowerCase().includes(s)
+          || t.note.toLowerCase().includes(s)
+          || t.category.toLowerCase().includes(s))) return false;
+    }
+    return true;
+  });
+}
+
+// ═════════════════════════════════════════════════════════════════════
+// Render
+// ═════════════════════════════════════════════════════════════════════
+const fmtMoney = n => n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const fmtDate = d => d ? d.toISOString().slice(0, 10) : '—';
+const fmtDateTime = d => d ? `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}` : '—';
+
+function renderSummary(filtered) {
+  const expense = filtered.filter(t => t.direction === '支出');
+  const income = filtered.filter(t => t.direction === '收入');
+  const exp = expense.reduce((s, t) => s + t.amount, 0);
+  const inc = income.reduce((s, t) => s + t.amount, 0);
+  const net = exp - inc;
+
+  document.getElementById('net-expense').textContent = fmtMoney(net);
+  document.getElementById('gross-expense').textContent = fmtMoney(exp);
+  document.getElementById('gross-income').textContent = fmtMoney(inc);
+  document.getElementById('expense-count').textContent = expense.length;
+  document.getElementById('income-count').textContent = income.length;
+  document.getElementById('total-count').textContent = filtered.length;
+  document.getElementById('alipay-count').textContent = filtered.filter(t => t.source === 'alipay').length;
+  document.getElementById('wechat-count').textContent = filtered.filter(t => t.source === 'wechat').length;
+
+  if (filtered.length) {
+    const dates = filtered.map(t => t.date).sort((a, b) => a - b);
+    document.getElementById('net-range').textContent = `${fmtDate(dates[0])} → ${fmtDate(dates[dates.length-1])}`;
+  } else {
+    document.getElementById('net-range').textContent = '— no data —';
+  }
+}
+
+function renderTable(filtered) {
+  const body = document.getElementById('tbl-body');
+  const { key, dir } = state.sort;
+  const sorted = [...filtered].sort((a, b) => {
+    let va = a[key], vb = b[key];
+    if (key === 'date') { va = va?.getTime() ?? 0; vb = vb?.getTime() ?? 0; }
+    else if (key === 'amount') { va = a.amount; vb = b.amount; }
+    else { va = String(va || ''); vb = String(vb || ''); }
+    if (va < vb) return dir === 'asc' ? -1 : 1;
+    if (va > vb) return dir === 'asc' ? 1 : -1;
+    return 0;
+  });
+  if (sorted.length === 0) {
+    body.innerHTML = `<tr><td colspan="7" class="empty">${escapeHtml(t('tbl.empty'))}</td></tr>`;
+    return;
+  }
+  const rows = sorted.slice(0, 500).map(tr => {
+    const cls = tr.direction === '支出' ? 'expense' : tr.direction === '收入' ? 'income' : 'neutral';
+    const sign = tr.direction === '支出' ? '−' : tr.direction === '收入' ? '+' : ' ';
+    const srcTag = tr.source === 'alipay'
+      ? '<span class="alipay">支付宝</span>'
+      : '<span class="wechat">微信</span>';
+    return `<tr>
+      <td>${fmtDateTime(tr.date)}</td>
+      <td class="src">${srcTag}</td>
+      <td>${escapeHtml(tr.category)}</td>
+      <td class="truncate" title="${escapeHtml(tr.counterparty)}">${escapeHtml(tr.counterparty)}</td>
+      <td class="truncate" title="${escapeHtml(tr.description)}">${escapeHtml(tr.description)}</td>
+      <td class="truncate">${escapeHtml(tr.method)}</td>
+      <td class="amt ${cls}">${sign} ¥${fmtMoney(tr.amount)}</td>
+    </tr>`;
+  }).join('');
+  const footer = sorted.length > 500
+    ? `<tr><td colspan="7" class="empty">Showing first 500 of ${sorted.length} rows — narrow filters to see more</td></tr>`
+    : '';
+  body.innerHTML = rows + footer;
+}
+
+// ═════════════════════════════════════════════════════════════════════
+// Charts — THEME pulls from CSS custom properties at render time
+// ═════════════════════════════════════════════════════════════════════
+function cssv(name) {
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+}
+
+function currentTheme() {
+  return {
+    grid: cssv('--grid'),
+    tick: cssv('--fg-muted'),
+    accent: cssv('--accent'),
+    expense: cssv('--expense'),
+    income: cssv('--income'),
+    neutral: cssv('--neutral'),
+    bgRaised: cssv('--bg-raised'),
+    palette: [
+      cssv('--accent'), cssv('--expense'), cssv('--income'), cssv('--neutral'),
+      '#b87a5c', '#8a7fbf', '#5cb8d4', '#c49e6c', '#8fa86f', '#b8686c',
+      '#6c8fa8', '#a8906c',
+    ],
+  };
+}
+
+function initChartDefaults() {
+  Chart.defaults.font.family = "'IBM Plex Mono', monospace";
+  Chart.defaults.font.size = 10;
+  const th = currentTheme();
+  Chart.defaults.color = th.tick;
+  Chart.defaults.borderColor = th.grid;
+}
+
+function renderCharts(filtered) {
+  Object.values(state.charts).forEach(c => c.destroy?.());
+  state.charts = {};
+  const TH = currentTheme();
+  Chart.defaults.color = TH.tick;
+  Chart.defaults.borderColor = TH.grid;
+
+  // Daily cashflow
+  const byDay = {};
+  filtered.forEach(tr => {
+    const k = fmtDate(tr.date);
+    if (!byDay[k]) byDay[k] = { expense: 0, income: 0 };
+    if (tr.direction === '支出') byDay[k].expense += tr.amount;
+    else if (tr.direction === '收入') byDay[k].income += tr.amount;
+  });
+  const days = Object.keys(byDay).sort();
+  state.charts.daily = new Chart(document.getElementById('chart-daily'), {
+    type: 'bar',
+    data: {
+      labels: days,
+      datasets: [
+        { label: t('legend.expense'), data: days.map(d => byDay[d].expense),
+          backgroundColor: TH.expense, borderWidth: 0, stack: 's1' },
+        { label: t('legend.income'), data: days.map(d => byDay[d].income),
+          backgroundColor: TH.income, borderWidth: 0, stack: 's2' },
+      ],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { labels: { color: TH.tick, boxWidth: 10 } } },
+      scales: {
+        x: { grid: { color: TH.grid, drawBorder: false }, ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 12 } },
+        y: { grid: { color: TH.grid, drawBorder: false }, ticks: { callback: v => '¥' + v.toLocaleString() } },
+      },
+    },
+  });
+
+  // By category (expense only)
+  const byCat = {};
+  filtered.filter(tr => tr.direction === '支出').forEach(tr => {
+    byCat[tr.category] = (byCat[tr.category] || 0) + tr.amount;
+  });
+  const catEntries = Object.entries(byCat).sort((a, b) => b[1] - a[1]).slice(0, 12);
+  state.charts.category = new Chart(document.getElementById('chart-category'), {
+    type: 'bar',
+    data: {
+      labels: catEntries.map(e => e[0]),
+      datasets: [{
+        data: catEntries.map(e => e[1]),
+        backgroundColor: catEntries.map((_, i) => TH.palette[i % TH.palette.length]),
+        borderWidth: 0,
+      }],
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { color: TH.grid }, ticks: { callback: v => '¥' + v.toLocaleString() } },
+        y: { grid: { display: false } },
+      },
+    },
+  });
+
+  // Distribution: pie of source × direction
+  const src = { alipay_e: 0, alipay_i: 0, wechat_e: 0, wechat_i: 0 };
+  filtered.forEach(tr => {
+    if (tr.direction === '支出') src[tr.source + '_e'] += tr.amount;
+    else if (tr.direction === '收入') src[tr.source + '_i'] += tr.amount;
+  });
+  state.charts.pie = new Chart(document.getElementById('chart-pie'), {
+    type: 'doughnut',
+    data: {
+      labels: [
+        `Alipay · ${t('legend.expense')}`,
+        `Alipay · ${t('legend.income')}`,
+        `WeChat · ${t('legend.expense')}`,
+        `WeChat · ${t('legend.income')}`,
+      ],
+      datasets: [{
+        data: [src.alipay_e, src.alipay_i, src.wechat_e, src.wechat_i],
+        backgroundColor: [TH.expense, TH.income, TH.palette[4], TH.palette[8]],
+        borderColor: TH.bgRaised, borderWidth: 2,
+      }],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false, cutout: '60%',
+      plugins: {
+        legend: { position: 'bottom', labels: { color: TH.tick, boxWidth: 10, padding: 10 } },
+      },
+    },
+  });
+
+  // Top counterparties
+  const byCp = {};
+  filtered.filter(tr => tr.direction === '支出').forEach(tr => {
+    byCp[tr.counterparty] = (byCp[tr.counterparty] || 0) + tr.amount;
+  });
+  const cpEntries = Object.entries(byCp).sort((a, b) => b[1] - a[1]).slice(0, 10);
+  state.charts.cp = new Chart(document.getElementById('chart-counterparty'), {
+    type: 'bar',
+    data: {
+      labels: cpEntries.map(e => e[0].length > 18 ? e[0].slice(0, 18) + '…' : e[0]),
+      datasets: [{
+        data: cpEntries.map(e => e[1]),
+        backgroundColor: TH.accent,
+        borderWidth: 0,
+      }],
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { color: TH.grid }, ticks: { callback: v => '¥' + v.toLocaleString() } },
+        y: { grid: { display: false } },
+      },
+    },
+  });
+
+  // Day of week
+  const dowKeys = ['dow.Sun', 'dow.Mon', 'dow.Tue', 'dow.Wed', 'dow.Thu', 'dow.Fri', 'dow.Sat'];
+  const dowNames = dowKeys.map(k => t(k));
+  const byDow = [0, 0, 0, 0, 0, 0, 0];
+  filtered.filter(tr => tr.direction === '支出').forEach(tr => {
+    byDow[tr.date.getDay()] += tr.amount;
+  });
+  state.charts.dow = new Chart(document.getElementById('chart-dow'), {
+    type: 'bar',
+    data: {
+      labels: dowNames,
+      datasets: [{
+        data: byDow,
+        backgroundColor: byDow.map((_, i) => i === 0 || i === 6 ? TH.expense : TH.accent),
+        borderWidth: 0,
+      }],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { display: false } },
+        y: { grid: { color: TH.grid }, ticks: { callback: v => '¥' + v.toLocaleString() } },
+      },
+    },
+  });
+}
+
+// ═════════════════════════════════════════════════════════════════════
+// Category chips
+// ═════════════════════════════════════════════════════════════════════
+function renderCategoryChips() {
+  const cats = [...new Set(state.transactions.map(t => t.category))].sort();
+  const el = document.getElementById('category-chips');
+  el.innerHTML = cats.map(c => {
+    const active = state.filters.categories.has(c);
+    return `<span class="chip ${active ? 'active' : ''}" data-cat="${escapeAttr(c)}">${escapeHtml(c)}</span>`;
+  }).join('');
+  el.querySelectorAll('.chip').forEach(chip => {
+    chip.onclick = () => {
+      const c = chip.dataset.cat;
+      if (state.filters.categories.has(c)) state.filters.categories.delete(c);
+      else state.filters.categories.add(c);
+      chip.classList.toggle('active');
+      refresh();
+    };
+  });
+}
+
+// ═════════════════════════════════════════════════════════════════════
+// Init & refresh
+// ═════════════════════════════════════════════════════════════════════
+function initDashboard() {
+  document.getElementById('dashboard').classList.remove('hidden');
+  document.getElementById('filters-section').classList.remove('hidden');
+  document.getElementById('charts-section').classList.remove('hidden');
+  document.getElementById('table-section').classList.remove('hidden');
+
+  // Reveal analysis section only if the placeholder was replaced
+  const analysisBody = document.getElementById('analysis-body');
+  const placeholderMarker = '__CLAUDE_ANALYSIS_HTML__';
+  if (analysisBody && !analysisBody.innerHTML.includes(placeholderMarker)) {
+    document.getElementById('claude-analysis').classList.remove('hidden');
+  }
+
+  // Set date range defaults based on data
+  const dates = state.transactions.map(t => t.date).sort((a, b) => a - b);
+  if (dates.length) {
+    const min = dates[0], max = dates[dates.length - 1];
+    document.getElementById('date-from').value = fmtDate(min);
+    document.getElementById('date-to').value = fmtDate(max);
+    state.filters.dateFrom = min;
+    state.filters.dateTo = new Date(max.getTime() + 86400000 - 1);
+  }
+  renderCategoryChips();
+  refresh();
+}
+
+function refresh() {
+  const filtered = applyFilters();
+  renderSummary(filtered);
+  renderCharts(filtered);
+  renderTable(filtered);
+}
+
+// ═════════════════════════════════════════════════════════════════════
+// Events
+// ═════════════════════════════════════════════════════════════════════
+function bindEvents() {
+  const fileInput = document.getElementById('file-input');
+  const dropzone = document.getElementById('dropzone');
+
+  fileInput.onchange = e => { if (e.target.files.length) handleFiles(e.target.files); };
+
+  ['dragover', 'dragenter'].forEach(ev => {
+    dropzone.addEventListener(ev, e => {
+      e.preventDefault();
+      dropzone.classList.add('drag');
+    });
+  });
+  ['dragleave', 'drop'].forEach(ev => {
+    dropzone.addEventListener(ev, e => {
+      e.preventDefault();
+      dropzone.classList.remove('drag');
+    });
+  });
+  dropzone.addEventListener('drop', e => {
+    const files = Array.from(e.dataTransfer.files).filter(f => f.name.endsWith('.csv'));
+    if (files.length) handleFiles(files);
+  });
+
+  document.getElementById('demo-btn').onclick = loadDemoData;
+  document.getElementById('clear-btn').onclick = clearAll;
+
+  document.getElementById('date-from').onchange = e => {
+    state.filters.dateFrom = e.target.value ? new Date(e.target.value) : null;
+    refresh();
+  };
+  document.getElementById('date-to').onchange = e => {
+    if (e.target.value) {
+      const d = new Date(e.target.value);
+      d.setHours(23, 59, 59, 999);
+      state.filters.dateTo = d;
+    } else state.filters.dateTo = null;
+    refresh();
+  };
+  document.getElementById('direction-filter').onchange = e => {
+    state.filters.direction = e.target.value;
+    refresh();
+  };
+  document.getElementById('source-filter').onchange = e => {
+    state.filters.source = e.target.value;
+    refresh();
+  };
+  document.getElementById('amt-min').oninput = debounce(e => {
+    state.filters.amtMin = e.target.value ? parseFloat(e.target.value) : null;
+    refresh();
+  }, 250);
+  document.getElementById('amt-max').oninput = debounce(e => {
+    state.filters.amtMax = e.target.value ? parseFloat(e.target.value) : null;
+    refresh();
+  }, 250);
+  document.getElementById('search-input').oninput = debounce(e => {
+    state.filters.search = e.target.value.trim();
+    refresh();
+  }, 200);
+
+  document.querySelectorAll('th[data-sort]').forEach(th => {
+    th.onclick = () => {
+      const key = th.dataset.sort;
+      if (state.sort.key === key) state.sort.dir = state.sort.dir === 'asc' ? 'desc' : 'asc';
+      else { state.sort.key = key; state.sort.dir = 'desc'; }
+      document.querySelectorAll('th[data-sort] .sort-ind').forEach(s => s.remove());
+      const ind = document.createElement('span');
+      ind.className = 'sort-ind';
+      ind.textContent = state.sort.dir === 'asc' ? '↑' : '↓';
+      th.appendChild(ind);
+      renderTable(applyFilters());
+    };
+  });
+
+  document.getElementById('export-btn').onclick = exportFiltered;
+
+  // Theme toggle
+  document.getElementById('theme-toggle').onclick = () => {
+    const next = state.theme === 'dark' ? 'light' : 'dark';
+    setTheme(next);
+  };
+
+  // Language toggle
+  document.getElementById('lang-toggle').onclick = () => {
+    const next = state.lang === 'en' ? 'zh' : 'en';
+    setLang(next);
+  };
+}
+
+function setTheme(theme) {
+  state.theme = theme;
+  document.documentElement.dataset.theme = theme;
+  try { localStorage.setItem('theme', theme); } catch (_) {}
+  const icon = document.getElementById('theme-icon');
+  if (icon) icon.textContent = theme === 'dark' ? '☾' : '☀';
+  // Repaint charts since Chart.js doesn't react to CSS var changes
+  if (state.transactions.length && !document.getElementById('charts-section').classList.contains('hidden')) {
+    refresh();
+  }
+}
+
+function setLang(lang) {
+  applyI18n(lang);
+  try { localStorage.setItem('lang', lang); } catch (_) {}
+  // Re-render charts so labels localize
+  if (state.transactions.length && !document.getElementById('charts-section').classList.contains('hidden')) {
+    refresh();
+  }
+}
+
+function debounce(fn, ms) {
+  let t;
+  return function(...args) { clearTimeout(t); t = setTimeout(() => fn.apply(this, args), ms); };
+}
+
+function exportFiltered() {
+  const rows = applyFilters();
+  if (!rows.length) return;
+  const headers = ['date', 'source', 'direction', 'category', 'counterparty', 'description', 'method', 'amount', 'order_id', 'note'];
+  const csv = [headers.join(',')].concat(
+    rows.map(r => headers.map(h => {
+      let v = h === 'date' ? (r.date ? r.date.toISOString() : '') : (r[h] ?? '');
+      v = String(v).replace(/"/g, '""');
+      return /[",\n]/.test(v) ? `"${v}"` : v;
+    }).join(','))
+  ).join('\n');
+  const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `ledger-filtered-${new Date().toISOString().slice(0, 10)}.csv`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function showError(msg) {
+  const box = document.getElementById('error-box');
+  box.innerHTML = `<div class="error">⚠ ${escapeHtml(msg)}</div>`;
+}
+function clearError() {
+  document.getElementById('error-box').innerHTML = '';
+}
+
+function escapeHtml(s) {
+  return String(s ?? '').replace(/[&<>"']/g, c => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[c]));
+}
+function escapeAttr(s) { return escapeHtml(s); }
+
+// ═════════════════════════════════════════════════════════════════════
+// Demo data — synthetic but realistic
+// ═════════════════════════════════════════════════════════════════════
+function loadDemoData() {
+  clearAll();
+  const now = new Date();
+  const start = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+  const demos = [];
+
+  const alipayCats = ['餐饮美食', '交通出行', '日用百货', '服饰装扮', '数码电器', '学习教育', '医疗健康', '转账红包', '信用借还'];
+  const wechatCats = ['商户消费', '转账', '零钱提现', '红包(群红包)', '扫二维码付款', '二维码收款', '信用卡还款', '理财通申购'];
+  const alipayVendors = ['美团外卖', '星巴克', '滴滴出行', '京东商城', '拼多多', '上海市轨道交通', '叮咚买菜', '天猫超市', '肯德基'];
+  const wechatVendors = ['瑞幸咖啡', '盒马鲜生', '711便利店', '微信红包', '麦当劳', '腾讯视频', '哈啰出行'];
+  const alipayMethods = ['余额宝', '招商银行储蓄卡(7749)', '工商银行信用卡(8821)', '余额', '花呗'];
+  const wechatMethods = ['零钱', '招商银行储蓄卡(7749)', '工商银行信用卡(8821)'];
+
+  const daysInRange = Math.round((now - start) / 86400000);
+  const rng = (min, max) => min + Math.random() * (max - min);
+  const pick = arr => arr[Math.floor(Math.random() * arr.length)];
+
+  // Alipay transactions
+  for (let i = 0; i < 85; i++) {
+    const d = new Date(start.getTime() + Math.random() * daysInRange * 86400000);
+    const isIncome = Math.random() < 0.08;
+    const cat = isIncome ? '转账红包' : pick(alipayCats);
+    demos.push({
+      date: d, source: 'alipay',
+      category: cat,
+      counterparty: pick(alipayVendors),
+      description: isIncome ? '收款' : cat,
+      direction: isIncome ? '收入' : '支出',
+      amount: isIncome ? rng(50, 2000) : rng(10, 500),
+      method: pick(alipayMethods),
+      status: '交易成功', order_id: 'A' + Math.random().toString(36).slice(2, 12), note: '',
+    });
+  }
+  // WeChat transactions
+  for (let i = 0; i < 55; i++) {
+    const d = new Date(start.getTime() + Math.random() * daysInRange * 86400000);
+    const isIncome = Math.random() < 0.12;
+    const cat = isIncome ? '红包(群红包)' : pick(wechatCats);
+    demos.push({
+      date: d, source: 'wechat',
+      category: cat,
+      counterparty: pick(wechatVendors),
+      description: isIncome ? '红包' : cat,
+      direction: isIncome ? '收入' : '支出',
+      amount: isIncome ? rng(5, 200) : rng(8, 300),
+      method: pick(wechatMethods),
+      status: '支付成功', order_id: 'W' + Math.random().toString(36).slice(2, 12), note: '',
+    });
+  }
+  // A couple of neutral transactions
+  for (let i = 0; i < 4; i++) {
+    const d = new Date(start.getTime() + Math.random() * daysInRange * 86400000);
+    demos.push({
+      date: d, source: Math.random() < 0.5 ? 'alipay' : 'wechat',
+      category: '信用借还', counterparty: '信用卡还款', description: '自动还款',
+      direction: '不计收支', amount: rng(500, 5000),
+      method: '招商银行储蓄卡(7749)', status: '成功', order_id: 'N' + i, note: '',
+    });
+  }
+
+  state.transactions = demos.map(d => ({ ...d, amount: Math.round(d.amount * 100) / 100 }));
+  state.transactions.sort((a, b) => b.date - a.date);
+  state.files = [
+    { name: 'demo-alipay.csv', source: 'alipay', count: 85, encoding: 'demo', ok: true },
+    { name: 'demo-wechat.csv', source: 'wechat', count: 55, encoding: 'demo', ok: true },
+  ];
+  renderFileStatus();
+  initDashboard();
+}
+
+// ═════════════════════════════════════════════════════════════════════
+// Preloaded-data hook (populated by the expense-tracker skill)
+// ═════════════════════════════════════════════════════════════════════
+function tryLoadPreloaded() {
+  const el = document.getElementById('preloaded-data');
+  if (!el) return;
+  const raw = el.textContent;
+  if (raw == null) return;
+  const trimmed = raw.trim();
+  // Placeholder unreplaced → act as an empty template
+  if (!trimmed || trimmed === '__PRELOADED_DATA_JSON__') return;
+  let payload;
+  try {
+    payload = JSON.parse(trimmed);
+  } catch (_) {
+    return; // invalid JSON → silent no-op, drop zone still works
+  }
+  if (!payload || !Array.isArray(payload.transactions) || !payload.transactions.length) return;
+  // Restore Date objects — JSON serializes them as strings
+  state.transactions = payload.transactions.map(tr => ({
+    ...tr,
+    date: tr.date ? new Date(tr.date) : null,
+  })).filter(tr => tr.date && !isNaN(tr.date));
+  state.files = Array.isArray(payload.files) ? payload.files : [];
+  state.transactions.sort((a, b) => b.date - a.date);
+  renderFileStatus();
+  if (state.transactions.length) initDashboard();
+}
+
+// ═════════════════════════════════════════════════════════════════════
+// Initial theme / lang from localStorage
+// ═════════════════════════════════════════════════════════════════════
+function bootPrefs() {
+  let theme = 'dark';
+  let lang = 'en';
+  try {
+    const stTheme = localStorage.getItem('theme');
+    if (stTheme === 'light' || stTheme === 'dark') theme = stTheme;
+    const stLang = localStorage.getItem('lang');
+    if (stLang === 'zh' || stLang === 'en') lang = stLang;
+  } catch (_) {}
+  document.documentElement.dataset.theme = theme;
+  state.theme = theme;
+  const themeIcon = document.getElementById('theme-icon');
+  if (themeIcon) themeIcon.textContent = theme === 'dark' ? '☾' : '☀';
+  applyI18n(lang);
+}
+
+// ═════════════════════════════════════════════════════════════════════
+// Boot
+// ═════════════════════════════════════════════════════════════════════
+bootPrefs();
+initChartDefaults();
+bindEvents();
+tryLoadPreloaded();
+</script>
+</body>
+</html>

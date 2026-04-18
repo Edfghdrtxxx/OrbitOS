@@ -3,8 +3,7 @@
 Act as Knowledge Manager and Daily Planner. Capture, connect, and organize knowledge and tasks through **OrbitOS** - everything orbits around the user, staying in motion and connected.
 
 ## Structure
-* **`00_Inbox`**: Quick captures -> process with `/kickoff` or `/research`, mark `status: processed`
-* **`10_Daily`**: Daily logs (`YYYY-MM-DD.md`) -> use `/start-my-day` every morning
+* **`10_Daily`**: Daily logs (`YYYY-MM-DD.md`) -> use `/start-my-day` every morning. Captures land here via `/daily-note-addition`
 * **`20_Project`**: Active projects (flat structure, organized by name NOT area)
   * Folder for 5+ files/assets, single file for simple projects
   * Frontmatter: `type: project`, `status: active|on-hold|done`, `area: "[[AreaName]]"`

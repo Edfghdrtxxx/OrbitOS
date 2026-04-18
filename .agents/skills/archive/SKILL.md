@@ -1,6 +1,6 @@
 ---
 name: archive
-description: Archive completed projects and processed inbox items
+description: Archive completed projects
 ---
 # Step 0 — EVOLVE
 
@@ -9,15 +9,15 @@ Read `evolution.md` in this skill's folder. Apply any accumulated lessons as add
 You are the Vault Archivist for OrbitOS.
 
 # OBJECTIVE
-Help the user archive completed projects and processed inbox items, maintaining clean active spaces while preserving historical records.
+Help the user archive completed projects, maintaining clean active spaces while preserving historical records.
 
 # QUICK REFERENCE — EXECUTION SPINE
 
 > See detailed sections below for full instructions. This checklist is a summary of major phases, NOT a replacement for workflow details, edge case handling, and validation steps.
 
 **Phase 1: Identify Archivable Items**
-1. Launch Agent A (direct-status scan of projects & inbox)
-2. Present findings with 4-option menu
+1. Launch Agent A (direct-status scan of projects)
+2. Present findings with 3-option menu
 
 **Phase 2: Archive**
 3. Confirm user selections
@@ -38,9 +38,8 @@ Help the user archive completed projects and processed inbox items, maintaining 
 Launch a single Explore subagent to scan the vault:
 
 ### Agent A — Direct-status scan
-Prompt: *"Search for archivable items in the OrbitOS vault. Return results as structured lists."*
+Prompt: *"Search for archivable projects in the OrbitOS vault. Return results as a structured list."*
 - Grep `20_Project/` for files with `status: done` in frontmatter. Return each filename and its completion date (from frontmatter or last modified).
-- Grep `00_Inbox/` for files with `status: processed` in frontmatter, or files containing a `[[ProjectName]]` wikilink indicating conversion. Return each filename and what it was processed into.
 
 ### Present findings
 ```
@@ -50,15 +49,10 @@ Prompt: *"Search for archivable items in the OrbitOS vault. Return results as st
 - [[Project1]] - Completed on [date]
 - [[Project2]] - Completed on [date]
 
-**Processed Inbox Items ([N]):**
-- Idea about X - Processed to [[ProjectName]]
-- Note about Y - Processed on [date]
-
 Would you like to:
 1. Archive all of them
-2. Archive projects only
-3. Archive inbox only
-4. Select specific items
+2. Select specific items
+3. Cancel
 ```
 
 ## Step 2: Archive Process
@@ -76,10 +70,6 @@ For each item to be archived:
    - **Single file:** `mv` to `99_System/Archives/Projects/YYYY/ProjectName.md`
    - **Folder:** `mv` to `99_System/Archives/Projects/YYYY/ProjectName/`
    - Organize by year based on completion date
-
-   **For Inbox Items (processed):**
-   - `mv` to `99_System/Archives/Inbox/YYYY/MM/filename.md`
-   - Organize by year and month based on processing date
 
 3. **Update frontmatter in place (Edit tool at the archive location):**
    - Read each file at its new archive path first (required by Edit tool)
@@ -110,10 +100,6 @@ Present completion summary:
 - [[Project1]] → Archives/Projects/2026/Project1/
 - [[Project2]] → Archives/Projects/2026/Project2.md
 
-**Archived [N] inbox items to `99_System/Archives/Inbox/YYYY/MM/`:**
-- idea-note.md → Archives/Inbox/2026/01/ (frontmatter: `status: processed`)
-- quick-capture.md → Archives/Inbox/2026/01/ (frontmatter: `status: processed`)
-
 **Daily Note Updates:**
 - `## Log`: [N] archive entries added
 - `## Related Projects`: [N] projects removed (or marked archived)
@@ -121,13 +107,10 @@ Present completion summary:
 
 **Vault Status:**
 - Active projects: [N]
-- Inbox items: [N]
 - Archived projects (total): [N]
-- Archived inbox items (total): [N]
 
 **Recommendations:**
 - [ ] Review on-hold projects for potential archival
-- [ ] Process remaining inbox items
 - [ ] Clean up orphaned resources (if any found)
 ```
 
@@ -153,28 +136,17 @@ Present completion summary:
 
 ```
 99_System/Archives/
-├── Projects/
-│   ├── 2026/
-│   │   ├── ProjectName/
-│   │   │   ├── ProjectName.md
-│   │   │   └── assets/
-│   │   └── SimpleProject.md
-│   └── 2025/
-│       └── OldProject.md
-└── Inbox/
+└── Projects/
     ├── 2026/
-    │   ├── 01/
-    │   │   └── processed-idea.md
-    │   └── 02/
-    │       └── another-note.md
+    │   ├── ProjectName/
+    │   │   ├── ProjectName.md
+    │   │   └── assets/
+    │   └── SimpleProject.md
     └── 2025/
-        └── 12/
-            └── old-capture.md
+        └── OldProject.md
 ```
 
-**Key Distinction:**
-- **Projects:** Archived by completion year (structured work with outcomes)
-- **Inbox:** Archived by processing year/month (quick captures and ideas)
+Projects are archived by completion year. The `99_System/Archives/Inbox/` tree exists as historical storage for items archived under the deprecated inbox workflow; this skill does not write to it.
 
 # ADDITIONAL FEATURES
 
@@ -202,9 +174,6 @@ Present completion summary:
 - [[Personal_OS_Setup]] - Completed on 2026-01-30
 - [[NYC_Trip_Feb_2026]] - Completed on 2026-02-09
 
-**Processed Inbox Items (1):**
-- Build my personal OS with obsidian and Claude Code.md - Processed to [[Personal_OS_Setup]]
-
 **Daily Note Impact:**
 - `## Related Projects`: [[Personal_OS_Setup]] will be removed
 - `## Priorities`: 1 carryover task found referencing [[Personal_OS_Setup]] — will ask what to do
@@ -213,11 +182,9 @@ Would you like to archive these items?
 (They'll be moved to 99_System/Archives/ but wikilinks will continue to work)
 
 Options:
-1. Archive all (2 projects + 1 inbox item)
-2. Archive projects only
-3. Archive inbox only
-4. Select specific items
-5. Cancel
+1. Archive all (2 projects)
+2. Select specific items
+3. Cancel
 ```
 
 # FOLLOW-UP PROTOCOL

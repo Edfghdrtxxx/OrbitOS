@@ -32,11 +32,7 @@ Help the user start their day by reviewing the last daily note's progress, creat
 
 4. **Investigate Deadlines** — Launch Explore agent **in background** using `agent-prompts/deadline.md` (fill `{today}`, `{cutoff}` = +60 days). Output consumed silently in Step 3 Notes.
 
-5. **Check Inbox**
-   - List files in `00_Inbox/` with `status: pending`
-   - Count items waiting to be processed
-
-6. **Analyze & Prioritize**
+5. **Analyze & Prioritize**
    - Identify time-sensitive items (deadlines, events)
    - Re-read the last daily note as a premise, to find projects not touched in 3+ days (stale)
    - **Stale deferral check**: For each `#Deferred` task, scan the oldest available daily note within the past 7 days. If deferred 5+ consecutive days, flag in Notes section (e.g., "`Task X` deferred 7 days — re-scope, schedule, or drop?")
@@ -88,7 +84,7 @@ Use the AskUserQuestion tool to gather (combine into as few rounds as possible):
      | `[x]` | No `#daily` tag | Remove |
      | `[x]` | Has `#daily` tag | Reset to `[ ]` |
      | `[ ]`/`[x]` | Has `#weekly` tag | Keep as-is; do not reset or remove — managed manually by the user |
-     | (new from Q1/Q4) | — | Add to appropriate section |
+     | (new from Q1) | — | Add to appropriate section |
 
    - **Priorities — keep**: `[ ]` and `[*]` tasks carry over as-is. Do not relocate carried-over tasks
    - **Priorities — remove**: Delete `[x]` tasks without `#daily`
@@ -103,8 +99,8 @@ Use the AskUserQuestion tool to gather (combine into as few rounds as possible):
 ## Step 4: Process New Ideas (from Q4)
 
 For each new idea/task mentioned in Q4:
-1. Check if it exists in projects or inbox
-2. If new, create `00_Inbox/[Brief-Title].md` using the template at `99_System/Templates/Inbox_Template.md`. Set `source: start-my-day` and fill in all applicable fields.
+1. Check whether it already exists in today's note or in an active project — skip duplicates.
+2. For genuinely new items, invoke the `/daily-note-addition` skill (via the Skill tool) with all remaining Q4 items as input. That skill owns placement and section selection — do not write to the daily note yourself at this step.
 
 ## Step 5: Present Summary
 
@@ -113,7 +109,7 @@ Output a short terminal confirmation:
 ```
 Good morning! Your day is ready.
 
-Energy: [level] | Priorities: [N] | Active projects: [N] | Inbox: [N] pending
+Energy: [level] | Priorities: [N] | Active projects: [N]
 Today's note: [[YYYY-MM-DD]]
 
 > Next: /breakdown-tasks → /estimate-time
@@ -130,15 +126,14 @@ Let the reflect skill run generically against the full session. Present its find
 - **Completeness Sanity Check**: After applying delta, verify no `- [ ]` or `- [*]` task from the last note was accidentally removed.
 - **Linking**: Use `[[wikilinks]]` for all projects, concepts, and people throughout the note.
 - **Prioritization**: Time-sensitive items first; flag projects untouched for 3+ days.
-- **Capture**: Immediately create Inbox notes for any new ideas or tasks mentioned by the user.
+- **Capture**: Route any new ideas or tasks mentioned by the user through `/daily-note-addition` (see Step 4).
 - **Next Steps**: Always end by recommending `/breakdown-tasks` and `/estimate-time`.
 
 # EDGE CASES
 
-- **No active projects:** Suggest processing inbox or starting something new
+- **No active projects:** Suggest reviewing on-hold projects or starting something new
 - **No previous daily note:** Fall back to template; remove placeholders, populate all sections fresh
 - **Weekend/Monday:** Note the gap since last daily note
-- **Empty inbox:** Focus on project execution
 - **Today's note already exists:** Already handled in Step 3.1
 
 # TEMPLATE

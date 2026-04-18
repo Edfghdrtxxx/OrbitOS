@@ -5,8 +5,7 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 ## Folder Structure
 
 ```
-00_Inbox/         → Drop anything here. AI processes it later.
-10_Daily/         → Daily logs. /start-my-day generates these.
+10_Daily/         → Daily logs. /start-my-day generates these. Captures land here via /daily-note-addition.
 20_Project/       → Active projects (flat, linked to areas via frontmatter).
 30_Research/      → Deep dives — physics reference notes, supervisor research profiles.
 40_Wiki/          → Atomic concepts — ~195 notes across 9 topic clusters, heavily linked.
@@ -19,12 +18,12 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 
 | When I want to... | I run | What happens |
 |---|---|---|
-| Start my morning | `/start-my-day` | Reviews yesterday, surfaces active projects, processes inbox, generates today's daily note |
+| Start my morning | `/start-my-day` | Reviews yesterday, surfaces active projects, generates today's daily note |
 | Turn an idea into a project | `/kickoff` | Structures it with C.A.P. layout (Context, Actions, Progress), asks clarifying questions |
 | Deep-dive a topic (new ML paper, visa pathway, TPC technique) | `/research <topic>` | Two-agent workflow: researches, then organizes into 30_Research/ and 40_Wiki/ with wikilinks |
 | Get a quick answer without creating notes | `/ask <question>` | Direct answer, optionally saves to wiki |
 | Explore an idea before committing | `/brainstorm` | Interactive session, can optionally become a project |
-| Clean up finished work | `/archive` | Moves completed projects and processed inbox items to 99_System/Archives/ |
+| Clean up finished work | `/archive` | Moves completed projects to 99_System/Archives/ |
 | Catch up on AI news | `/ai-newsletters` | Curates TLDR AI, The Rundown AI into 50_Resources/ |
 | See what's shipping in AI | `/ai-products` | Product Hunt, HN, GitHub, Reddit roundup |
 | Break down complex tasks | `/breakdown-tasks <task>` | Stratified decomposition with estimates and dependencies, inserted into daily note |
