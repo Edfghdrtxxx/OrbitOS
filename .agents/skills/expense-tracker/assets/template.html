@@ -1359,11 +1359,27 @@ const state = {
 // First match wins → declaration order = priority (e.g. 天猫 before 淘宝
 // so Tmall orders don't get swallowed by the generic 淘宝 keyword;
 // 抖音电商 before bare 抖音 would apply the same way if we broadened).
+//
+// Match scope (false-positive fix, 2026-04-18):
+// matchPlatform() tests ONLY the counterparty field — NOT description or
+// note. Description/note routinely carry address strings, item details,
+// memos, and payment-instrument names (e.g. a 携程 booking description
+// "往返机票北京东京"; a 淘天物流 shipping row "闲鱼寄件…"; a P2P transfer
+// with memo "闲鱼转账") that falsely matched bare platform keywords.
+//
+// Keyword entries accept two forms:
+//   • string                  — case-insensitive substring of counterparty
+//   • { eq: '...' }           — counterparty equals this (trimmed, case-ins)
+// Use { eq } for short/ambiguous tokens whose substring form leaks into
+// Chinese place names or compound merchants. E.g. bare "京东" is a
+// substring of "OCE北京东城崇文国瑞城店" (北京·东城 district); we match
+// it only as (i) the multi-char forms 京东商城/金融/支付/白条/到家, or
+// (ii) an exact counterparty of "京东".
 // ═════════════════════════════════════════════════════════════════════
 const DEFAULT_PLATFORMS = [
   { id: 'tmall',       label_en: 'Tmall',        label_zh: '天猫',    keywords: ['天猫', 'tmall'] },
   { id: 'taobao',      label_en: 'Taobao',       label_zh: '淘宝',    keywords: ['淘宝', 'taobao'] },
-  { id: 'jd',          label_en: 'JD.com',       label_zh: '京东',    keywords: ['京东', 'jd.com', 'jingdong'] },
+  { id: 'jd',          label_en: 'JD.com',       label_zh: '京东',    keywords: ['京东商城', '京东金融', '京东支付', '京东白条', '京东到家', { eq: '京东' }, 'jd.com', 'jingdong'] },
   { id: 'pdd',         label_en: 'Pinduoduo',    label_zh: '拼多多',  keywords: ['拼多多', 'pdd', 'pinduoduo'] },
   { id: 'xianyu',      label_en: 'Xianyu',       label_zh: '闲鱼',    keywords: ['闲鱼', 'xianyu', '咸鱼'] },
   { id: 'xiaohongshu', label_en: 'Xiaohongshu',  label_zh: '小红书',  keywords: ['小红书', 'xiaohongshu', 'rednote', '红书'] },
@@ -1392,18 +1408,38 @@ function loadPlatformTaxonomy() {
   }
 }
 function isValidPlatformEntry(e) {
-  return e && typeof e === 'object'
-    && typeof e.id === 'string' && e.id
-    && typeof e.label_en === 'string'
-    && typeof e.label_zh === 'string'
-    && Array.isArray(e.keywords);
+  if (!e || typeof e !== 'object') return false;
+  if (typeof e.id !== 'string' || !e.id) return false;
+  if (typeof e.label_en !== 'string') return false;
+  if (typeof e.label_zh !== 'string') return false;
+  if (!Array.isArray(e.keywords)) return false;
+  // Each keyword must be a non-empty string or a { eq: string } object.
+  for (const kw of e.keywords) {
+    if (typeof kw === 'string') { if (!kw) return false; continue; }
+    if (kw && typeof kw === 'object' && typeof kw.eq === 'string' && kw.eq) continue;
+    return false;
+  }
+  return true;
 }
+// Counterparty-only match. Two keyword forms:
+//   • string      — case-insensitive substring of counterparty
+//   • { eq: '…' } — counterparty equals this (trim + case-insensitive)
+// Description and note are deliberately NOT searched — they carry
+// address strings, item details, and memos that leak false positives
+// across bare Chinese keywords (see comment above DEFAULT_PLATFORMS).
 function matchPlatform(tr, taxonomy) {
-  const hay = ((tr.counterparty || '') + ' ' + (tr.description || '') + ' ' + (tr.note || '')).toLowerCase();
+  const cpRaw = (tr.counterparty || '').toString();
+  const cp = cpRaw.toLowerCase();
+  const cpTrim = cpRaw.trim().toLowerCase();
   for (const p of taxonomy) {
+    if (!p || !Array.isArray(p.keywords)) continue;
     for (const kw of p.keywords) {
       if (!kw) continue;
-      if (hay.includes(String(kw).toLowerCase())) return p.id;
+      if (typeof kw === 'string') {
+        if (cp.includes(kw.toLowerCase())) return p.id;
+      } else if (typeof kw === 'object' && typeof kw.eq === 'string' && kw.eq) {
+        if (cpTrim === kw.eq.trim().toLowerCase()) return p.id;
+      }
     }
   }
   return '__other__';

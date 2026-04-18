@@ -70,7 +70,7 @@ Run `node scripts/xlsx_to_csv.mjs <xlsx> <output.csv>` for every `.xlsx` found a
 - **Do NOT read `transactions.json`** — it contains raw rows and must never enter Claude's context. It will be injected into the template as an opaque string in Step 6.
 
 ## 5. Write the analysis HTML (English + Chinese)
-Produce TWO analysis files — one English, one Chinese — each ~120–180 words of prose plus two small tables based on `aggregates.json`. The dashboard's language toggle will swap between them at view time. Use this exact skeleton per language — semantic HTML only, no inline styles (the template's `.analysis-body` CSS handles layout):
+Produce TWO analysis files — one English, one Chinese — each ~180–240 words of prose plus two small tables and a short tips list, all based on `aggregates.json`. The dashboard's language toggle will swap between them at view time. Use this exact skeleton per language — semantic HTML only, no inline styles (the template's `.analysis-body` CSS handles layout):
 
 ```html
 <div class="analysis-summary">
@@ -85,15 +85,29 @@ Produce TWO analysis files — one English, one Chinese — each ~120–180 word
       <table>…3 rows from top_counterparties: name, amount…</table>
     </div>
   </div>
+  <div class="analysis-tips">
+    <h4>Money Saving Tips</h4>
+    <ul>
+      <li>…tip 1, tied to a concrete top category / counterparty / weekday-weekend pattern in THIS dataset…</li>
+      <li>…tip 2…</li>
+    </ul>
+  </div>
 </div>
 ```
 
 - Write the English version to `{scratch-dir}/analysis-en.html`.
-- Write the Chinese version to `{scratch-dir}/analysis-zh.html` — semantically equivalent narrative, same structure, same factual claims. Translate captions and headers: `Top Categories` → `分类占比`, `Top Counterparties` → `高频交易对方`, `Category` → `分类`, `Amount` → `金额`, `Share` → `占比`, `Counterparty` → `交易对方`. Translate the narrative prose itself.
+- Write the Chinese version to `{scratch-dir}/analysis-zh.html` — semantically equivalent narrative, same structure, same factual claims. Translate captions and headers: `Top Categories` → `分类占比`, `Top Counterparties` → `高频交易对方`, `Category` → `分类`, `Amount` → `金额`, `Share` → `占比`, `Counterparty` → `交易对方`, `Money Saving Tips` → `省钱建议`. Translate the narrative prose and tips themselves.
 - **Do NOT translate:** merchant names / counterparty strings (they're already Chinese character data), the `¥` currency symbol (stays), category names (already Chinese in the aggregates).
-- Enforce the 120–180 word ceiling per language (so the Chinese version doesn't inflate due to Chinese's higher information density).
+- Enforce the 180–240 word ceiling per language (loosened from 120–180 to accommodate the new tips block without cramping the narrative; the tips themselves count toward this budget).
 
-**Forbidden in both analyses:** totals (already shown in the Summary card), period dates (already shown in Summary), anomaly detection, budget advice, recommendations, emoji.
+**Money Saving Tips rules:**
+- 2–4 bullets, short and actionable. Fewer is better than padding.
+- Each tip MUST be anchored on this dataset's actual top categories, top counterparties, or weekday-vs-weekend pattern. Name the category or counterparty the tip addresses (e.g. "美团 accounts for ¥12,750 across 11 orders — cap at ¥800/month" not "spend less on food delivery").
+- No generic advice. "Spend less on coffee" is only acceptable if coffee is an actual top expense.
+- If the top category is a noisy bucket (like 转账 / 转账红包 for interpersonal transfers), acknowledge the data is noisy and suggest a tracking-discipline tip, or skip and write fewer tips.
+- Lead with the tip — no "Based on your data…" preambles.
+
+**Forbidden in both analyses:** totals (already shown in the Summary card), period dates (already shown in Summary), anomaly detection, emoji, exclamation marks, moralizing tone.
 
 Keep the tone factual.
 
