@@ -733,27 +733,31 @@ footer {
 // ═════════════════════════════════════════════════════════════════════
 const I18N = {
   en: {
+    'doc.title': 'Ledger · Personal Expense Instrument',
     'brand.mark': '§ L E D G E R',
     'brand.title.prefix': 'Personal Expense ',
     'brand.title.accent': 'Instrument',
     'meta.privacy': '● client-side · no upload to server',
-    'meta.sources': '支付宝 · 微信支付 · unified schema',
+    'meta.sources': 'Alipay · WeChat Pay · unified schema',
     'section.import': 'Import',
     'section.summary': 'Summary',
     'section.analysis': 'Analysis',
     'section.filters': 'Filters',
-    'section.charts': 'Analysis',
+    'section.charts': 'Charts',
     'section.transactions': 'Transactions',
     'upload.heading': 'Drop your CSV bills here',
     'upload.description_html': 'Both Alipay (<code>支付宝</code>, GBK) and WeChat Pay (<code>微信支付</code>, UTF-8) are auto-detected.',
     'upload.select': 'Select files',
     'upload.demo': 'Load demo data',
     'upload.clear': 'Clear',
+    'platform.alipay': 'Alipay',
+    'platform.wechat': 'WeChat',
     'hero.net_expense': 'Net Expense (filtered)',
     'hero.gross_expense': 'Gross Expense',
     'hero.income': 'Income',
     'hero.records': 'Records',
     'hero.transactions_suffix': 'transactions',
+    'hero.no_data': '— no data —',
     'filter.date_range': 'Date range',
     'filter.direction': 'Direction',
     'filter.direction.all': 'All',
@@ -785,21 +789,28 @@ const I18N = {
     'tbl.counterparty': 'Counterparty', 'tbl.description': 'Description',
     'tbl.method': 'Method', 'tbl.amount': 'Amount',
     'tbl.empty': 'No transactions match the current filters',
+    'tbl.rows_suffix': 'rows',
+    'tbl.truncated': 'Showing first 500 of {n} rows — narrow filters to see more',
+    'file.rows_suffix': 'rows',
+    'file.error_fallback': 'error',
     'export.btn': '↓ Export filtered CSV',
     'footer.privacy': 'Data processed locally in your browser · encoding: GB18030 / UTF-8 · no network transmission of bill data',
     'footer.version': 'Ledger v0.1 · for personal reconciliation only',
     'toggle.theme': 'Theme', 'toggle.lang': 'Lang',
+    'toggle.theme.title': 'Toggle theme',
+    'toggle.lang.title': 'Toggle language',
     'dow.Sun':'Sun','dow.Mon':'Mon','dow.Tue':'Tue','dow.Wed':'Wed','dow.Thu':'Thu','dow.Fri':'Fri','dow.Sat':'Sat',
     'legend.expense': 'Expense', 'legend.income': 'Income',
   },
   zh: {
+    'doc.title': '账本 · 个人消费记录仪',
     'brand.mark': '§ 账 本',
     'brand.title.prefix': '个人消费 ',
     'brand.title.accent': '记录仪',
     'meta.privacy': '● 客户端处理 · 不上传服务器',
     'meta.sources': '支付宝 · 微信支付 · 统一数据结构',
     'section.import': '导入',
-    'section.summary': '汇总',
+    'section.summary': '概览',
     'section.analysis': '分析',
     'section.filters': '筛选',
     'section.charts': '图表',
@@ -809,11 +820,14 @@ const I18N = {
     'upload.select': '选择文件',
     'upload.demo': '加载示例数据',
     'upload.clear': '清空',
+    'platform.alipay': '支付宝',
+    'platform.wechat': '微信',
     'hero.net_expense': '净支出（筛选后）',
     'hero.gross_expense': '总支出',
     'hero.income': '收入',
     'hero.records': '记录数',
     'hero.transactions_suffix': '笔',
+    'hero.no_data': '— 无数据 —',
     'filter.date_range': '时间范围',
     'filter.direction': '方向',
     'filter.direction.all': '全部',
@@ -833,7 +847,7 @@ const I18N = {
     'filter.categories.hint': '（点击筛选 · 不选等于全选）',
     'chart.daily.title': '每日现金流',
     'chart.daily.subtitle': '收支随时间变化',
-    'chart.category.title': '按分类支出',
+    'chart.category.title': '分类占比',
     'chart.category.subtitle': '聚合，前 12',
     'chart.distribution.title': '分布',
     'chart.distribution.subtitle': '平台与支付方式',
@@ -841,14 +855,20 @@ const I18N = {
     'chart.counterparty.subtitle': '按总支出排名',
     'chart.dow.title': '每周节奏',
     'chart.dow.subtitle': '按星期支出',
-    'tbl.date': '时间', 'tbl.src': '来源', 'tbl.category': '分类',
+    'tbl.date': '日期', 'tbl.src': '来源', 'tbl.category': '分类',
     'tbl.counterparty': '交易对方', 'tbl.description': '说明',
     'tbl.method': '支付方式', 'tbl.amount': '金额',
     'tbl.empty': '没有符合筛选条件的记录',
+    'tbl.rows_suffix': '条',
+    'tbl.truncated': '仅显示前 500 条（共 {n} 条）— 请收紧筛选条件查看更多',
+    'file.rows_suffix': '条',
+    'file.error_fallback': '错误',
     'export.btn': '↓ 导出筛选后 CSV',
     'footer.privacy': '数据在浏览器本地处理 · 编码：GB18030 / UTF-8 · 账单数据不经网络传输',
     'footer.version': 'Ledger v0.1 · 仅供个人对账',
     'toggle.theme': '主题', 'toggle.lang': '语言',
+    'toggle.theme.title': '切换主题',
+    'toggle.lang.title': '切换语言',
     'dow.Sun':'日','dow.Mon':'一','dow.Tue':'二','dow.Wed':'三','dow.Thu':'四','dow.Fri':'五','dow.Sat':'六',
     'legend.expense': '支出', 'legend.income': '收入',
   }
@@ -874,9 +894,18 @@ function applyI18n(lang) {
     const val = (I18N[lang] && I18N[lang][key]);
     if (val != null) el.setAttribute('placeholder', val);
   });
+  document.querySelectorAll('[data-i18n-title]').forEach(el => {
+    const key = el.getAttribute('data-i18n-title');
+    const val = (I18N[lang] && I18N[lang][key]);
+    if (val != null) el.setAttribute('title', val);
+  });
+  const docTitle = (I18N[lang] && I18N[lang]['doc.title']);
+  if (docTitle) document.title = docTitle;
   // Update lang toggle icon
   const langIcon = document.getElementById('lang-icon');
   if (langIcon) langIcon.textContent = lang === 'zh' ? '中' : 'EN';
+  // Re-render dynamic UI that embeds localized strings
+  if (typeof renderFileStatus === 'function' && state.files && state.files.length) renderFileStatus();
 }
 
 // ═════════════════════════════════════════════════════════════════════
@@ -1061,9 +1090,9 @@ async function handleFiles(fileList) {
 function renderFileStatus() {
   const el = document.getElementById('file-status');
   el.innerHTML = state.files.map(f => {
-    if (!f.ok) return `<div class="file-pill err">✗ ${f.name} — ${escapeHtml(f.error || 'error')}</div>`;
-    const tag = f.source === 'alipay' ? '支付宝' : '微信';
-    return `<div class="file-pill ok">✓ <span class="tag">${tag}</span> ${f.name} · ${f.count} rows · ${f.encoding}</div>`;
+    if (!f.ok) return `<div class="file-pill err">✗ ${escapeHtml(f.name)} — ${escapeHtml(f.error || t('file.error_fallback'))}</div>`;
+    const tag = f.source === 'alipay' ? t('platform.alipay') : t('platform.wechat');
+    return `<div class="file-pill ok">✓ <span class="tag">${escapeHtml(tag)}</span> ${escapeHtml(f.name)} · ${f.count} ${escapeHtml(t('file.rows_suffix'))} · ${escapeHtml(f.encoding)}</div>`;
   }).join('');
   document.getElementById('clear-btn').classList.toggle('hidden', state.files.length === 0);
 }
@@ -1135,7 +1164,7 @@ function renderSummary(filtered) {
     const dates = filtered.map(t => t.date).sort((a, b) => a - b);
     document.getElementById('net-range').textContent = `${fmtDate(dates[0])} → ${fmtDate(dates[dates.length-1])}`;
   } else {
-    document.getElementById('net-range').textContent = '— no data —';
+    document.getElementById('net-range').textContent = t('hero.no_data');
   }
 }
 
@@ -1159,8 +1188,8 @@ function renderTable(filtered) {
     const cls = tr.direction === '支出' ? 'expense' : tr.direction === '收入' ? 'income' : 'neutral';
     const sign = tr.direction === '支出' ? '−' : tr.direction === '收入' ? '+' : ' ';
     const srcTag = tr.source === 'alipay'
-      ? '<span class="alipay">支付宝</span>'
-      : '<span class="wechat">微信</span>';
+      ? `<span class="alipay">${escapeHtml(t('platform.alipay'))}</span>`
+      : `<span class="wechat">${escapeHtml(t('platform.wechat'))}</span>`;
     return `<tr>
       <td>${fmtDateTime(tr.date)}</td>
       <td class="src">${srcTag}</td>
@@ -1172,7 +1201,7 @@ function renderTable(filtered) {
     </tr>`;
   }).join('');
   const footer = sorted.length > 500
-    ? `<tr><td colspan="7" class="empty">Showing first 500 of ${sorted.length} rows — narrow filters to see more</td></tr>`
+    ? `<tr><td colspan="7" class="empty">${escapeHtml(t('tbl.truncated').replace('{n}', sorted.length))}</td></tr>`
     : '';
   body.innerHTML = rows + footer;
 }
@@ -1283,10 +1312,10 @@ function renderCharts(filtered) {
     type: 'doughnut',
     data: {
       labels: [
-        `Alipay · ${t('legend.expense')}`,
-        `Alipay · ${t('legend.income')}`,
-        `WeChat · ${t('legend.expense')}`,
-        `WeChat · ${t('legend.income')}`,
+        `${t('platform.alipay')} · ${t('legend.expense')}`,
+        `${t('platform.alipay')} · ${t('legend.income')}`,
+        `${t('platform.wechat')} · ${t('legend.expense')}`,
+        `${t('platform.wechat')} · ${t('legend.income')}`,
       ],
       datasets: [{
         data: [src.alipay_e, src.alipay_i, src.wechat_e, src.wechat_i],

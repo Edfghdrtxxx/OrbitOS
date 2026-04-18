@@ -9,23 +9,34 @@ Build a self-contained HTML expense dashboard from Alipay / WeChat Pay CSV expor
 
 # Trigger examples
 
-- "Analyze my alipay and wechat bills from `20_Project/Expense Organization/input/`"
+- "Analyze my alipay and wechat bills from `20_Project/Expense Tracker/input/`"
 - "Build an expense report from this folder: `/path/to/csvs`"
 - "Summarize last month's spending from my bill exports"
 
 # Workflow
 
+## 0. Verify the workspace exists and is git-ignored (auto-fix)
+Personal financial data must never be committed. Before anything else, self-heal the workspace:
+- Ensure `20_Project/Expense Tracker/input/` and `20_Project/Expense Tracker/Reports/` exist. Create any missing directory with `mkdir -p`.
+- Read `.gitignore` at the repo root. If it does NOT already contain an entry that ignores `20_Project/Expense Tracker/` (either the exact line `20_Project/Expense Tracker/`, or a broader pattern that covers it), append this block:
+  ```
+  # Personal financial data — never commit bill CSVs or generated reports
+  20_Project/Expense Tracker/
+  ```
+- As a final safety net, run `git check-ignore -q "20_Project/Expense Tracker/input/.probe"` (after `touch`-ing that probe file); if the exit code is non-zero the folder is NOT being ignored — halt and report the problem instead of continuing. Delete the probe file regardless of outcome.
+- Report concisely what was created/added, or state "workspace already configured" when no changes were needed.
+
 ## 1. Resolve the input folder
 - If the user gave a path, use it verbatim.
-- Otherwise **silently default** to `20_Project/Expense Organization/input/` — do NOT prompt. Fall through to Step 1b so the missing/empty case auto-opens the guide first.
+- Otherwise **silently default** to `20_Project/Expense Tracker/input/` — do NOT prompt. Fall through to Step 1b so the missing/empty case auto-opens the guide first.
 
 ## 1b. No valid CSVs → open export guide, THEN ask
 - Check the resolved folder non-recursively (matching the parser): does it exist AND contain at least one `.csv` file at the top level? Subdirectories are ignored.
 - If it exists and has ≥1 `.csv`, skip this step — proceed to Step 2.
 - Otherwise (folder missing, empty, or no `.csv` files — including the case where the user explicitly passed a folder that's empty/missing):
   1. **Auto-open the guide FIRST** (before any prompt):
-     - Ensure `20_Project/Expense Organization/Reports/` exists — create it if missing.
-     - Copy `assets/guide.html` to `20_Project/Expense Organization/Reports/export-guide.html`, overwriting any existing copy (the source is canonical).
+     - Ensure `20_Project/Expense Tracker/Reports/` exists — create it if missing.
+     - Copy `assets/guide.html` to `20_Project/Expense Tracker/Reports/export-guide.html`, overwriting any existing copy (the source is canonical).
      - Open it in the user's default browser via Bash: `cmd //c start "" "<absolute-path-to-copied-guide>"` (Git-Bash-on-Windows incantation — `//c` avoids path mangling, the empty `""` satisfies `start`'s title-argument quirk). On non-Windows platforms, substitute `open` (macOS) or `xdg-open` (Linux). Auto-open is authorized — the user explicitly requested this behavior.
      - In a ONE-line message, report the absolute path of the copied guide.
   2. **Then ask via `AskUserQuestion`** what to do now, with options like:
@@ -35,7 +46,7 @@ Build a self-contained HTML expense dashboard from Alipay / WeChat Pay CSV expor
 
 ## 2. Create output scaffolding
 - Compute a timestamp `YYYY-MM-DD_HHMM` from the current local time.
-- Ensure `20_Project/Expense Organization/Reports/` exists — create it if missing.
+- Ensure `20_Project/Expense Tracker/Reports/` exists — create it if missing.
 - Create a scratch directory for intermediate JSON at `99_System/.scratch/expense-tracker-{timestamp}/`.
 
 ## 3. Run the parser
@@ -85,7 +96,7 @@ Keep the tone factual.
 - Replace the literal string `<!-- __CLAUDE_ANALYSIS_HTML_ZH__ -->` with the contents of `{scratch-dir}/analysis-zh.html`.
 - Write the assembled file to:
   ```
-  20_Project/Expense Organization/Reports/{timestamp}_expense-report.html
+  20_Project/Expense Tracker/Reports/{timestamp}_expense-report.html
   ```
 
 ## 7. Report to user
@@ -109,4 +120,4 @@ Keep the tone factual.
 - `assets/template.html` — static dashboard template with three injection seams (`__PRELOADED_DATA_JSON__`, `<!-- __CLAUDE_ANALYSIS_HTML_EN__ -->`, `<!-- __CLAUDE_ANALYSIS_HTML_ZH__ -->`). Do not edit per-run.
 - `assets/guide.html` — bilingual export walkthrough shown when no CSVs are found; do not edit per-run.
 - `scripts/build_report.mjs` — Node 22+ ESM CLI, no npm deps. Parses CSVs, emits `transactions.json` and `aggregates.json`.
-- `20_Project/Expense Organization/expense-dashboard.html` — historical reference dashboard that the template was derived from. Do not modify; kept as the source of truth for parsing logic.
+- `20_Project/Expense Tracker/expense-dashboard.html` — historical reference dashboard that the template was derived from. Kept as a parsing-logic reference; prefer not to edit, but modify when genuinely necessary (e.g., to keep it in sync with changes to `assets/template.html`).

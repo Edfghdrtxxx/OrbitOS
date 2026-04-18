@@ -690,28 +690,45 @@ footer a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 (function () {
   'use strict';
 
-  // ── state ─────────────────────────────────────────────────────────
   var LANG_ROTATION = ['en', 'zh', 'both'];
   var THEME_ROTATION = ['dark', 'light'];
+
+  var I18N = {
+    'mark':           { en: '§ G U I D E',                     zh: '§ 指  南',                           both: '§ G U I D E' },
+    'title-main':     { en: 'Export Guide',                    zh: '导出指南',                           both: 'Export Guide' },
+    'title-acc':      { en: '',                                zh: '',                                   both: '/ 导出指南' },
+    'meta-platforms': { en: 'Alipay · WeChat Pay',             zh: '支付宝 · 微信支付',                  both: '支付宝 · 微信支付' },
+    'meta-tagline':   { en: 'for the ledger dashboard',        zh: '用于账单仪表板',                     both: 'for the ledger dashboard' },
+    'theme-title':    { en: 'Theme',                           zh: '主题',                               both: 'Theme' },
+    'lang-title':     { en: 'Language',                        zh: '语言',                               both: 'Language' },
+    'sec-00':         { en: 'Overview',                        zh: '概览',                               both: 'Overview · 概览' },
+    'sec-01':         { en: 'Alipay',                          zh: '支付宝',                             both: 'Alipay · 支付宝' },
+    'sec-02':         { en: 'WeChat Pay',                      zh: '微信支付',                           both: 'WeChat Pay · 微信支付' },
+    'sec-03':         { en: 'Continue in Claude Code',         zh: '回到 Claude Code',                   both: 'Continue in Claude Code' },
+    'pane-label-en':  { en: 'English',                         zh: '英文',                               both: 'English' },
+    'pane-label-zh':  { en: 'Chinese',                         zh: '中文',                               both: '中文' },
+    'foot-sources':   { en: 'Sources',                         zh: '参考来源',                           both: 'Sources / 参考来源' },
+    'src-1-label':    { en: 'Alipay help (official)',          zh: '支付宝帮助中心（官方）',             both: 'Alipay help (official)' },
+    'src-2-label':    { en: 'Alipay guide (Xencio 2024)',      zh: '支付宝导出指南（Xencio 2024）',      both: 'Alipay guide (Xencio 2024)' },
+    'src-3-label':    { en: 'WeChat help (Tencent CS)',        zh: '微信支付帮助（腾讯客服）',           both: 'WeChat help (腾讯客服)' },
+    'src-4-label':    { en: 'WeChat guide (Xencio 2025)',      zh: '微信账单导出指南（Xencio 2025）',    both: 'WeChat guide (Xencio 2025)' },
+    'foot-left':      { en: '§ GUIDE · EXPENSE-TRACKER · ORBITOS', zh: '§ 指南 · 账单助手 · ORBITOS',   both: '§ GUIDE · EXPENSE-TRACKER · ORBITOS' },
+    'foot-right':     { en: 'NO DATA LEAVES THIS PAGE',        zh: '所有数据不离开本页',                 both: 'NO DATA LEAVES THIS PAGE' }
+  };
 
   var stTheme = null, stLang = null;
   try { stTheme = localStorage.getItem('theme'); } catch (_) {}
   try { stLang = localStorage.getItem('lang'); } catch (_) {}
 
-  // initial theme
   var theme = (stTheme === 'dark' || stTheme === 'light') ? stTheme : 'dark';
   applyTheme(theme);
 
-  // initial language
-  //   - shared key with dashboard, which uses 'en' | 'zh' only
-  //   - 'both' is the guide-only default (shows parallel columns)
-  //   - any value not in ['en','zh','both'] falls back to 'both'
+  // shared lang key with dashboard ('en' | 'zh'); 'both' is guide-only default
   var lang;
   if (stLang === 'en' || stLang === 'zh' || stLang === 'both') lang = stLang;
   else lang = 'both';
   applyLang(lang);
 
-  // ── handlers ──────────────────────────────────────────────────────
   var themeBtn = document.getElementById('theme-toggle');
   if (themeBtn) themeBtn.onclick = function () {
     var i = THEME_ROTATION.indexOf(theme);
@@ -728,18 +745,21 @@ footer a:hover { color: var(--accent); border-bottom-color: var(--accent); }
     try { localStorage.setItem('lang', lang); } catch (_) {}
   };
 
-  // ── apply helpers ─────────────────────────────────────────────────
   function applyTheme(t) {
     document.documentElement.dataset.theme = t;
     var icon = document.getElementById('theme-icon');
     if (icon) icon.textContent = (t === 'dark') ? '☾' : '☀';
     var lbl = document.getElementById('theme-label');
-    if (lbl) lbl.textContent = (t === 'dark') ? 'Dark' : 'Light';
+    if (lbl) {
+      if (lang === 'zh') lbl.textContent = (t === 'dark') ? '深色' : '浅色';
+      else lbl.textContent = (t === 'dark') ? 'Dark' : 'Light';
+    }
   }
 
   function applyLang(l) {
     document.documentElement.dataset.lang = l;
     document.documentElement.lang = (l === 'zh') ? 'zh' : 'en';
+
     var icon = document.getElementById('lang-icon');
     var lbl = document.getElementById('lang-label');
     if (l === 'en') {
@@ -751,6 +771,26 @@ footer a:hover { color: var(--accent); border-bottom-color: var(--accent); }
     } else {
       if (icon) icon.textContent = 'EN/中';
       if (lbl) lbl.textContent = 'Both';
+    }
+
+    var textNodes = document.querySelectorAll('[data-i18n]');
+    for (var i = 0; i < textNodes.length; i++) {
+      var key = textNodes[i].getAttribute('data-i18n');
+      var entry = I18N[key];
+      if (entry && entry[l] != null) textNodes[i].textContent = entry[l];
+    }
+    var titleNodes = document.querySelectorAll('[data-i18n-title]');
+    for (var j = 0; j < titleNodes.length; j++) {
+      var tkey = titleNodes[j].getAttribute('data-i18n-title');
+      var tentry = I18N[tkey];
+      if (tentry && tentry[l] != null) titleNodes[j].setAttribute('title', tentry[l]);
+    }
+
+    // re-apply theme label in current language
+    var themeLbl = document.getElementById('theme-label');
+    if (themeLbl) {
+      if (l === 'zh') themeLbl.textContent = (theme === 'dark') ? '深色' : '浅色';
+      else themeLbl.textContent = (theme === 'dark') ? 'Dark' : 'Light';
     }
   }
 })();
