@@ -35,7 +35,7 @@ Personal financial data must never be committed. Before anything else, self-heal
 - Otherwise **silently default** to `20_Project/Expense Tracker/input/` — do NOT prompt. Fall through to Step 1b so the missing/empty case auto-opens the guide first.
 
 ## 1b. No valid CSVs → open export guide, THEN ask
-- Check the resolved folder non-recursively (matching the parser): does it exist AND contain at least one `.csv` file at the top level? Subdirectories are ignored.
+- Check the resolved folder recursively: does it exist AND contain at least one `.csv` file anywhere beneath it? Nested CSVs are accepted — Step 2a flattens them before the parser runs.
 - If it exists and has ≥1 `.csv`, skip this step — proceed to Step 2.
 - Otherwise (folder missing, empty, or no `.csv` files — including the case where the user explicitly passed a folder that's empty/missing):
   1. **Auto-open the guide FIRST** (before any prompt):
@@ -50,6 +50,9 @@ Personal financial data must never be committed. Before anything else, self-heal
 ## 2. Create output scaffolding
 - Compute a timestamp `YYYY-MM-DD_HHMM` from the current local time.
 - Create a scratch directory for intermediate JSON at `99_System/.scratch/expense-tracker-{timestamp}/`. `20_Project/Expense Tracker/Reports/` is guaranteed to exist by Step 0.
+
+## 2a. Flatten nested CSVs to top-level
+The parser is non-recursive by design, but bill ZIPs usually extract into one level of subfolders. Before running, copy every `.csv` found in any subdirectory of the input folder up to the top level. Name copies `_flat_{parent-dirname}__{filename}.csv` to avoid collisions; remember each copied path so Step 8 can delete it. Originals are never moved or modified. Non-`.csv` files in subfolders (e.g., WeChat `.xlsx` from the in-app export) are left alone — the parser will never see them, so they signal the user should re-export as the encrypted-ZIP CSV bill.
 
 ## 3. Run the parser
 - From the skill's directory, invoke:
@@ -101,18 +104,18 @@ Keep the tone factual.
   20_Project/Expense Tracker/Reports/{timestamp}_expense-report.html
   ```
 
-## 7. Report to user
+## 7. Report to user and auto-open
 - One-line summary using the stdout lines from Step 3 (files processed, total rows, period covered).
 - Print the absolute path of the generated report.
-- Offer to open it in the default browser — but do not auto-open.
+- **Auto-open** the report in the user's default browser via Bash: `cmd //c start "" "<absolute-path>"` on Windows (the Git-Bash `//c` + empty-title-arg incantation), `open` on macOS, `xdg-open` on Linux. Auto-open is authorized — the user has accepted this as the default.
 
 ## 8. Clean up
-- After the user acknowledges the report, delete the scratch dir at `99_System/.scratch/expense-tracker-{timestamp}/`.
+- After the user acknowledges the report, delete the scratch dir at `99_System/.scratch/expense-tracker-{timestamp}/` AND remove the flattened CSV copies created in Step 2a (originals untouched).
 - If anything failed mid-run, leave the scratch dir in place for debugging and tell the user where it is.
 
 # Notes & known limitations
 
-- **Folder is not recursed.** Only CSV files in the top level of the input folder are parsed; subdirectories are ignored.
+- **Nested CSVs are auto-flattened.** Step 2a copies any `.csv` from subfolders up to the top of the input folder before parsing, and Step 8 removes the copies. The parser itself remains non-recursive and `.csv`-only — `.xlsx` files are never read.
 - **Raw transactions never enter Claude's context.** This is by design. If the user wants Claude to comment on individual transactions or outliers, they must explicitly load `transactions.json` or the raw CSVs in a separate conversation.
 - **Node 22+ required** for the `GB18030` `TextDecoder` support used when decoding Alipay / WeChat CSV exports.
 - **No deduplication across runs.** Re-running with the same input folder produces a new timestamped report alongside any previous ones.

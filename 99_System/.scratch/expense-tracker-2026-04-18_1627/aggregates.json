@@ -1,0 +1,1990 @@
+{
+  "period": {
+    "start": "2025-04-20",
+    "end": "2026-04-16",
+    "days": 362
+  },
+  "totals": {
+    "gross_expense": 63436.3,
+    "gross_income": 52227.07,
+    "net_expense": 11209.23,
+    "txn_count": 746
+  },
+  "by_source": {
+    "alipay": {
+      "expense": 63436.3,
+      "count": 594
+    },
+    "wechat": {
+      "expense": 0,
+      "count": 0
+    }
+  },
+  "top_categories": [
+    {
+      "name": "转账红包",
+      "amount": 28654.46,
+      "count": 70,
+      "share": 0.4517
+    },
+    {
+      "name": "餐饮美食",
+      "amount": 7872.31,
+      "count": 139,
+      "share": 0.1241
+    },
+    {
+      "name": "交通出行",
+      "amount": 6435.68,
+      "count": 204,
+      "share": 0.1015
+    },
+    {
+      "name": "商业服务",
+      "amount": 5325.15,
+      "count": 7,
+      "share": 0.0839
+    },
+    {
+      "name": "其他",
+      "amount": 2849.29,
+      "count": 15,
+      "share": 0.0449
+    },
+    {
+      "name": "日用百货",
+      "amount": 2724.15,
+      "count": 59,
+      "share": 0.0429
+    },
+    {
+      "name": "教育培训",
+      "amount": 2260,
+      "count": 1,
+      "share": 0.0356
+    },
+    {
+      "name": "酒店旅游",
+      "amount": 2043.42,
+      "count": 7,
+      "share": 0.0322
+    },
+    {
+      "name": "数码电器",
+      "amount": 1359.58,
+      "count": 9,
+      "share": 0.0214
+    },
+    {
+      "name": "文化休闲",
+      "amount": 1029.56,
+      "count": 23,
+      "share": 0.0162
+    }
+  ],
+  "top_counterparties": [
+    {
+      "name": "文桐(ONG BOON TONG)",
+      "amount": 15477.96,
+      "count": 11
+    },
+    {
+      "name": "IZATIE ERDELINA BINTI SHARIZAN(IZATIE ERDELINA BINTI SHARIZAN)",
+      "amount": 6605.5,
+      "count": 3
+    },
+    {
+      "name": "大疆创新",
+      "amount": 4848,
+      "count": 1
+    },
+    {
+      "name": "携程旅行网",
+      "amount": 4089.74,
+      "count": 7
+    },
+    {
+      "name": "支付宝小荷包(??一起环游世界)",
+      "amount": 3000,
+      "count": 1
+    },
+    {
+      "name": "支付宝小荷包(??????恋爱小金库)",
+      "amount": 2750,
+      "count": 52
+    },
+    {
+      "name": "教育部教育考试院",
+      "amount": 2260,
+      "count": 1
+    },
+    {
+      "name": "阪急うめだ本店／メンズ大阪",
+      "amount": 1807.82,
+      "count": 6
+    },
+    {
+      "name": "铁路12306",
+      "amount": 1768.95,
+      "count": 5
+    },
+    {
+      "name": "淘宝闪购",
+      "amount": 1477.54,
+      "count": 84
+    }
+  ],
+  "day_of_week": [
+    {
+      "dow": 0,
+      "label": "Sun",
+      "expense": 14002.71
+    },
+    {
+      "dow": 1,
+      "label": "Mon",
+      "expense": 11097.07
+    },
+    {
+      "dow": 2,
+      "label": "Tue",
+      "expense": 2508.51
+    },
+    {
+      "dow": 3,
+      "label": "Wed",
+      "expense": 4837.64
+    },
+    {
+      "dow": 4,
+      "label": "Thu",
+      "expense": 10752.07
+    },
+    {
+      "dow": 5,
+      "label": "Fri",
+      "expense": 10754.64
+    },
+    {
+      "dow": 6,
+      "label": "Sat",
+      "expense": 9483.66
+    }
+  ],
+  "weekday_vs_weekend": {
+    "weekday_daily_avg": 154.25,
+    "weekend_daily_avg": 228.02
+  },
+  "daily_timeline": [
+    {
+      "date": "2025-04-20",
+      "expense": 218,
+      "income": 0
+    },
+    {
+      "date": "2025-04-21",
+      "expense": 14.9,
+      "income": 0
+    },
+    {
+      "date": "2025-04-22",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-04-23",
+      "expense": 27.67,
+      "income": 0
+    },
+    {
+      "date": "2025-04-24",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-04-25",
+      "expense": 276.67,
+      "income": 0
+    },
+    {
+      "date": "2025-04-26",
+      "expense": 4848,
+      "income": 4800
+    },
+    {
+      "date": "2025-04-27",
+      "expense": 50,
+      "income": 0
+    },
+    {
+      "date": "2025-04-28",
+      "expense": 1.8,
+      "income": 0
+    },
+    {
+      "date": "2025-04-29",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-04-30",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-05-01",
+      "expense": 63.5,
+      "income": 530.8
+    },
+    {
+      "date": "2025-05-02",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-05-03",
+      "expense": 5.5,
+      "income": 0
+    },
+    {
+      "date": "2025-05-04",
+      "expense": 526.79,
+      "income": 0
+    },
+    {
+      "date": "2025-05-05",
+      "expense": 33.93,
+      "income": 0
+    },
+    {
+      "date": "2025-05-06",
+      "expense": 217.42,
+      "income": 0
+    },
+    {
+      "date": "2025-05-07",
+      "expense": 41.15,
+      "income": 0
+    },
+    {
+      "date": "2025-05-08",
+      "expense": 30.84,
+      "income": 0
+    },
+    {
+      "date": "2025-05-09",
+      "expense": 46.51,
+      "income": 0
+    },
+    {
+      "date": "2025-05-10",
+      "expense": 30.87,
+      "income": 0
+    },
+    {
+      "date": "2025-05-11",
+      "expense": 373.91,
+      "income": 0
+    },
+    {
+      "date": "2025-05-12",
+      "expense": 30.53,
+      "income": 0
+    },
+    {
+      "date": "2025-05-13",
+      "expense": 30.92,
+      "income": 0
+    },
+    {
+      "date": "2025-05-14",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-05-15",
+      "expense": 30.62,
+      "income": 0.12
+    },
+    {
+      "date": "2025-05-16",
+      "expense": 30.57,
+      "income": 0
+    },
+    {
+      "date": "2025-05-17",
+      "expense": 41.76,
+      "income": 0
+    },
+    {
+      "date": "2025-05-18",
+      "expense": 148.19,
+      "income": 0
+    },
+    {
+      "date": "2025-05-19",
+      "expense": 48,
+      "income": 0
+    },
+    {
+      "date": "2025-05-20",
+      "expense": 71.39,
+      "income": 0
+    },
+    {
+      "date": "2025-05-21",
+      "expense": 3.3,
+      "income": 0
+    },
+    {
+      "date": "2025-05-22",
+      "expense": 5.99,
+      "income": 0
+    },
+    {
+      "date": "2025-05-23",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-05-24",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-05-25",
+      "expense": 282.68,
+      "income": 0
+    },
+    {
+      "date": "2025-05-26",
+      "expense": 70.88,
+      "income": 0
+    },
+    {
+      "date": "2025-05-27",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-05-28",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-05-29",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-05-30",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-05-31",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-06-01",
+      "expense": 50,
+      "income": 0
+    },
+    {
+      "date": "2025-06-02",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-06-03",
+      "expense": 1.5,
+      "income": 0
+    },
+    {
+      "date": "2025-06-04",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-06-05",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-06-06",
+      "expense": 47.8,
+      "income": 0
+    },
+    {
+      "date": "2025-06-07",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-06-08",
+      "expense": 56.8,
+      "income": 0
+    },
+    {
+      "date": "2025-06-09",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-06-10",
+      "expense": 0,
+      "income": 703.8
+    },
+    {
+      "date": "2025-06-11",
+      "expense": 374.45,
+      "income": 0
+    },
+    {
+      "date": "2025-06-12",
+      "expense": 44,
+      "income": 0
+    },
+    {
+      "date": "2025-06-13",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-06-14",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-06-15",
+      "expense": 50,
+      "income": 0
+    },
+    {
+      "date": "2025-06-16",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-06-17",
+      "expense": 144.42,
+      "income": 0
+    },
+    {
+      "date": "2025-06-18",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-06-19",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-06-20",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-06-21",
+      "expense": 4,
+      "income": 0
+    },
+    {
+      "date": "2025-06-22",
+      "expense": 76,
+      "income": 0
+    },
+    {
+      "date": "2025-06-23",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-06-24",
+      "expense": 6,
+      "income": 0
+    },
+    {
+      "date": "2025-06-25",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-06-26",
+      "expense": 494.9,
+      "income": 0
+    },
+    {
+      "date": "2025-06-27",
+      "expense": 57.9,
+      "income": 0
+    },
+    {
+      "date": "2025-06-28",
+      "expense": 6,
+      "income": 0
+    },
+    {
+      "date": "2025-06-29",
+      "expense": 72.8,
+      "income": 0
+    },
+    {
+      "date": "2025-06-30",
+      "expense": 4,
+      "income": 0
+    },
+    {
+      "date": "2025-07-01",
+      "expense": 82.57,
+      "income": 0
+    },
+    {
+      "date": "2025-07-02",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-07-03",
+      "expense": 35.7,
+      "income": 0
+    },
+    {
+      "date": "2025-07-04",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-07-05",
+      "expense": 127,
+      "income": 0
+    },
+    {
+      "date": "2025-07-06",
+      "expense": 63.5,
+      "income": 0
+    },
+    {
+      "date": "2025-07-07",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-07-08",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-07-09",
+      "expense": 148.58,
+      "income": 0
+    },
+    {
+      "date": "2025-07-10",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-07-11",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-07-12",
+      "expense": 24.5,
+      "income": 0
+    },
+    {
+      "date": "2025-07-13",
+      "expense": 350,
+      "income": 0
+    },
+    {
+      "date": "2025-07-14",
+      "expense": 4,
+      "income": 0
+    },
+    {
+      "date": "2025-07-15",
+      "expense": 32.39,
+      "income": 0
+    },
+    {
+      "date": "2025-07-16",
+      "expense": 34.6,
+      "income": 0
+    },
+    {
+      "date": "2025-07-17",
+      "expense": 3151.33,
+      "income": 3006
+    },
+    {
+      "date": "2025-07-18",
+      "expense": 3500,
+      "income": 3500
+    },
+    {
+      "date": "2025-07-19",
+      "expense": 533.6,
+      "income": 490.9
+    },
+    {
+      "date": "2025-07-20",
+      "expense": 50,
+      "income": 0
+    },
+    {
+      "date": "2025-07-21",
+      "expense": 10,
+      "income": 0
+    },
+    {
+      "date": "2025-07-22",
+      "expense": 30.89,
+      "income": 0
+    },
+    {
+      "date": "2025-07-23",
+      "expense": 33.98,
+      "income": 0
+    },
+    {
+      "date": "2025-07-24",
+      "expense": 1013.9,
+      "income": 1000
+    },
+    {
+      "date": "2025-07-25",
+      "expense": 0,
+      "income": 100
+    },
+    {
+      "date": "2025-07-26",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-07-27",
+      "expense": 50,
+      "income": 0
+    },
+    {
+      "date": "2025-07-28",
+      "expense": 44,
+      "income": 20
+    },
+    {
+      "date": "2025-07-29",
+      "expense": 60.55,
+      "income": 243.9
+    },
+    {
+      "date": "2025-07-30",
+      "expense": 40,
+      "income": 0
+    },
+    {
+      "date": "2025-07-31",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-08-01",
+      "expense": 4326,
+      "income": 4426
+    },
+    {
+      "date": "2025-08-02",
+      "expense": 1250,
+      "income": 1250
+    },
+    {
+      "date": "2025-08-03",
+      "expense": 5107.96,
+      "income": 5057.96
+    },
+    {
+      "date": "2025-08-04",
+      "expense": 4785.5,
+      "income": 4785.5
+    },
+    {
+      "date": "2025-08-05",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-08-06",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-08-07",
+      "expense": 19.17,
+      "income": 0
+    },
+    {
+      "date": "2025-08-08",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-08-09",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-08-10",
+      "expense": 50,
+      "income": 0
+    },
+    {
+      "date": "2025-08-11",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-08-12",
+      "expense": 471.41,
+      "income": 0
+    },
+    {
+      "date": "2025-08-13",
+      "expense": 103,
+      "income": 0
+    },
+    {
+      "date": "2025-08-14",
+      "expense": 6,
+      "income": 0
+    },
+    {
+      "date": "2025-08-15",
+      "expense": 9.88,
+      "income": 79.35
+    },
+    {
+      "date": "2025-08-16",
+      "expense": 4,
+      "income": 0
+    },
+    {
+      "date": "2025-08-17",
+      "expense": 50,
+      "income": 0
+    },
+    {
+      "date": "2025-08-18",
+      "expense": 19,
+      "income": 0
+    },
+    {
+      "date": "2025-08-19",
+      "expense": 10.2,
+      "income": 0
+    },
+    {
+      "date": "2025-08-20",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-08-21",
+      "expense": 62.58,
+      "income": 243.15
+    },
+    {
+      "date": "2025-08-22",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-08-23",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-08-24",
+      "expense": 50,
+      "income": 0
+    },
+    {
+      "date": "2025-08-25",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-08-26",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-08-27",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-08-28",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-08-29",
+      "expense": 34.01,
+      "income": 0
+    },
+    {
+      "date": "2025-08-30",
+      "expense": 329.99,
+      "income": 0
+    },
+    {
+      "date": "2025-08-31",
+      "expense": 50,
+      "income": 0
+    },
+    {
+      "date": "2025-09-01",
+      "expense": 10.99,
+      "income": 445
+    },
+    {
+      "date": "2025-09-02",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-09-03",
+      "expense": 64.87,
+      "income": 0
+    },
+    {
+      "date": "2025-09-04",
+      "expense": 24.4,
+      "income": 0
+    },
+    {
+      "date": "2025-09-05",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-09-06",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-09-07",
+      "expense": 143,
+      "income": 0
+    },
+    {
+      "date": "2025-09-08",
+      "expense": 7.71,
+      "income": 0
+    },
+    {
+      "date": "2025-09-09",
+      "expense": 32.61,
+      "income": 0
+    },
+    {
+      "date": "2025-09-10",
+      "expense": 22.56,
+      "income": 0
+    },
+    {
+      "date": "2025-09-11",
+      "expense": 18.91,
+      "income": 0
+    },
+    {
+      "date": "2025-09-12",
+      "expense": 20.1,
+      "income": 0
+    },
+    {
+      "date": "2025-09-13",
+      "expense": 0.21,
+      "income": 0
+    },
+    {
+      "date": "2025-09-14",
+      "expense": 125.06,
+      "income": 0
+    },
+    {
+      "date": "2025-09-15",
+      "expense": 14.5,
+      "income": 0
+    },
+    {
+      "date": "2025-09-16",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-09-17",
+      "expense": 3.5,
+      "income": 0
+    },
+    {
+      "date": "2025-09-18",
+      "expense": 12.8,
+      "income": 0
+    },
+    {
+      "date": "2025-09-19",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-09-20",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-09-21",
+      "expense": 50,
+      "income": 0
+    },
+    {
+      "date": "2025-09-22",
+      "expense": 0,
+      "income": 30
+    },
+    {
+      "date": "2025-09-23",
+      "expense": 17.33,
+      "income": 0
+    },
+    {
+      "date": "2025-09-24",
+      "expense": 4,
+      "income": 0
+    },
+    {
+      "date": "2025-09-25",
+      "expense": 0.76,
+      "income": 0
+    },
+    {
+      "date": "2025-09-26",
+      "expense": 1.19,
+      "income": 0
+    },
+    {
+      "date": "2025-09-27",
+      "expense": 3,
+      "income": 0
+    },
+    {
+      "date": "2025-09-28",
+      "expense": 50.4,
+      "income": 0
+    },
+    {
+      "date": "2025-09-29",
+      "expense": 2.36,
+      "income": 0
+    },
+    {
+      "date": "2025-09-30",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-10-01",
+      "expense": 556.2,
+      "income": 0
+    },
+    {
+      "date": "2025-10-02",
+      "expense": 6,
+      "income": 0
+    },
+    {
+      "date": "2025-10-03",
+      "expense": 625.13,
+      "income": 0
+    },
+    {
+      "date": "2025-10-04",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-10-05",
+      "expense": 50,
+      "income": 0
+    },
+    {
+      "date": "2025-10-06",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-10-07",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-10-08",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-10-09",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-10-10",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-10-11",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-10-12",
+      "expense": 53,
+      "income": 0
+    },
+    {
+      "date": "2025-10-13",
+      "expense": 61.66,
+      "income": 2000
+    },
+    {
+      "date": "2025-10-14",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-10-15",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-10-16",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-10-17",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-10-18",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-10-19",
+      "expense": 50,
+      "income": 0
+    },
+    {
+      "date": "2025-10-20",
+      "expense": 14.11,
+      "income": 0
+    },
+    {
+      "date": "2025-10-21",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-10-22",
+      "expense": 58.14,
+      "income": 0
+    },
+    {
+      "date": "2025-10-23",
+      "expense": 17,
+      "income": 0
+    },
+    {
+      "date": "2025-10-24",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-10-25",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-10-26",
+      "expense": 50,
+      "income": 0
+    },
+    {
+      "date": "2025-10-27",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-10-28",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-10-29",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-10-30",
+      "expense": 6,
+      "income": 0
+    },
+    {
+      "date": "2025-10-31",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-11-01",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-11-02",
+      "expense": 299.8,
+      "income": 0
+    },
+    {
+      "date": "2025-11-03",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-11-04",
+      "expense": 0,
+      "income": 3000
+    },
+    {
+      "date": "2025-11-05",
+      "expense": 58.48,
+      "income": 0
+    },
+    {
+      "date": "2025-11-06",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-11-07",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-11-08",
+      "expense": 80.14,
+      "income": 0
+    },
+    {
+      "date": "2025-11-09",
+      "expense": 105.31,
+      "income": 0
+    },
+    {
+      "date": "2025-11-10",
+      "expense": 106.69,
+      "income": 0
+    },
+    {
+      "date": "2025-11-11",
+      "expense": 98.19,
+      "income": 0
+    },
+    {
+      "date": "2025-11-12",
+      "expense": 63.12,
+      "income": 0
+    },
+    {
+      "date": "2025-11-13",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-11-14",
+      "expense": 82.69,
+      "income": 0
+    },
+    {
+      "date": "2025-11-15",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-11-16",
+      "expense": 2445.81,
+      "income": 132.59
+    },
+    {
+      "date": "2025-11-17",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-11-18",
+      "expense": 86,
+      "income": 0
+    },
+    {
+      "date": "2025-11-19",
+      "expense": 71.49,
+      "income": 0
+    },
+    {
+      "date": "2025-11-20",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-11-21",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-11-22",
+      "expense": 10,
+      "income": 180
+    },
+    {
+      "date": "2025-11-23",
+      "expense": 383.7,
+      "income": 0
+    },
+    {
+      "date": "2025-11-24",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-11-25",
+      "expense": 98.55,
+      "income": 0
+    },
+    {
+      "date": "2025-11-26",
+      "expense": 52.4,
+      "income": 0
+    },
+    {
+      "date": "2025-11-27",
+      "expense": 36.87,
+      "income": 0
+    },
+    {
+      "date": "2025-11-28",
+      "expense": 55.8,
+      "income": 0
+    },
+    {
+      "date": "2025-11-29",
+      "expense": 185.47,
+      "income": 0
+    },
+    {
+      "date": "2025-11-30",
+      "expense": 88.19,
+      "income": 0
+    },
+    {
+      "date": "2025-12-01",
+      "expense": 73.1,
+      "income": 1600
+    },
+    {
+      "date": "2025-12-02",
+      "expense": 39.81,
+      "income": 0
+    },
+    {
+      "date": "2025-12-03",
+      "expense": 740.91,
+      "income": 0
+    },
+    {
+      "date": "2025-12-04",
+      "expense": 26.58,
+      "income": 0
+    },
+    {
+      "date": "2025-12-05",
+      "expense": 199.5,
+      "income": 0
+    },
+    {
+      "date": "2025-12-06",
+      "expense": 5,
+      "income": 0
+    },
+    {
+      "date": "2025-12-07",
+      "expense": 60,
+      "income": 0
+    },
+    {
+      "date": "2025-12-08",
+      "expense": 31.04,
+      "income": 0
+    },
+    {
+      "date": "2025-12-09",
+      "expense": 15.5,
+      "income": 0
+    },
+    {
+      "date": "2025-12-10",
+      "expense": 609.41,
+      "income": 0
+    },
+    {
+      "date": "2025-12-11",
+      "expense": 17.4,
+      "income": 0
+    },
+    {
+      "date": "2025-12-12",
+      "expense": 40.91,
+      "income": 0
+    },
+    {
+      "date": "2025-12-13",
+      "expense": 71.84,
+      "income": 0
+    },
+    {
+      "date": "2025-12-14",
+      "expense": 93.76,
+      "income": 0
+    },
+    {
+      "date": "2025-12-15",
+      "expense": 26.91,
+      "income": 0
+    },
+    {
+      "date": "2025-12-16",
+      "expense": 26.91,
+      "income": 0
+    },
+    {
+      "date": "2025-12-17",
+      "expense": 520.58,
+      "income": 0
+    },
+    {
+      "date": "2025-12-18",
+      "expense": 97.67,
+      "income": 0
+    },
+    {
+      "date": "2025-12-19",
+      "expense": 38.6,
+      "income": 0
+    },
+    {
+      "date": "2025-12-20",
+      "expense": 18.3,
+      "income": 0
+    },
+    {
+      "date": "2025-12-21",
+      "expense": 228.71,
+      "income": 0
+    },
+    {
+      "date": "2025-12-22",
+      "expense": 22.17,
+      "income": 2000
+    },
+    {
+      "date": "2025-12-23",
+      "expense": 20.76,
+      "income": 0
+    },
+    {
+      "date": "2025-12-24",
+      "expense": 26.91,
+      "income": 0
+    },
+    {
+      "date": "2025-12-25",
+      "expense": 31,
+      "income": 0
+    },
+    {
+      "date": "2025-12-26",
+      "expense": 38.66,
+      "income": 0
+    },
+    {
+      "date": "2025-12-27",
+      "expense": 19.95,
+      "income": 0
+    },
+    {
+      "date": "2025-12-28",
+      "expense": 148.98,
+      "income": 0
+    },
+    {
+      "date": "2025-12-29",
+      "expense": 179.34,
+      "income": 0
+    },
+    {
+      "date": "2025-12-30",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2025-12-31",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-01-01",
+      "expense": 87.12,
+      "income": 0
+    },
+    {
+      "date": "2026-01-02",
+      "expense": 12.03,
+      "income": 0
+    },
+    {
+      "date": "2026-01-03",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-01-04",
+      "expense": 56,
+      "income": 0
+    },
+    {
+      "date": "2026-01-05",
+      "expense": 111.16,
+      "income": 0
+    },
+    {
+      "date": "2026-01-06",
+      "expense": 66.87,
+      "income": 0
+    },
+    {
+      "date": "2026-01-07",
+      "expense": 31.45,
+      "income": 0
+    },
+    {
+      "date": "2026-01-08",
+      "expense": 54.89,
+      "income": 0
+    },
+    {
+      "date": "2026-01-09",
+      "expense": 103,
+      "income": 0
+    },
+    {
+      "date": "2026-01-10",
+      "expense": 133.53,
+      "income": 0
+    },
+    {
+      "date": "2026-01-11",
+      "expense": 101.21,
+      "income": 2
+    },
+    {
+      "date": "2026-01-12",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-01-13",
+      "expense": 9,
+      "income": 0
+    },
+    {
+      "date": "2026-01-14",
+      "expense": 29.35,
+      "income": 0
+    },
+    {
+      "date": "2026-01-15",
+      "expense": 24.8,
+      "income": 0
+    },
+    {
+      "date": "2026-01-16",
+      "expense": 35.9,
+      "income": 0
+    },
+    {
+      "date": "2026-01-17",
+      "expense": 38.85,
+      "income": 0
+    },
+    {
+      "date": "2026-01-18",
+      "expense": 77.69,
+      "income": 0
+    },
+    {
+      "date": "2026-01-19",
+      "expense": 21.14,
+      "income": 0
+    },
+    {
+      "date": "2026-01-20",
+      "expense": 4.21,
+      "income": 0
+    },
+    {
+      "date": "2026-01-21",
+      "expense": 21,
+      "income": 0
+    },
+    {
+      "date": "2026-01-22",
+      "expense": 4.25,
+      "income": 0
+    },
+    {
+      "date": "2026-01-23",
+      "expense": 25.9,
+      "income": 0
+    },
+    {
+      "date": "2026-01-24",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-01-25",
+      "expense": 108.9,
+      "income": 600
+    },
+    {
+      "date": "2026-01-26",
+      "expense": 25.71,
+      "income": 0
+    },
+    {
+      "date": "2026-01-27",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-01-28",
+      "expense": 504.27,
+      "income": 0
+    },
+    {
+      "date": "2026-01-29",
+      "expense": 437,
+      "income": 0
+    },
+    {
+      "date": "2026-01-30",
+      "expense": 48.31,
+      "income": 0
+    },
+    {
+      "date": "2026-01-31",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-02-01",
+      "expense": 50,
+      "income": 0
+    },
+    {
+      "date": "2026-02-02",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-02-03",
+      "expense": 6,
+      "income": 0
+    },
+    {
+      "date": "2026-02-04",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-02-05",
+      "expense": 0.19,
+      "income": 0
+    },
+    {
+      "date": "2026-02-06",
+      "expense": 18.8,
+      "income": 0
+    },
+    {
+      "date": "2026-02-07",
+      "expense": 156.67,
+      "income": 0
+    },
+    {
+      "date": "2026-02-08",
+      "expense": 50,
+      "income": 0
+    },
+    {
+      "date": "2026-02-09",
+      "expense": 1145.8,
+      "income": 0
+    },
+    {
+      "date": "2026-02-10",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-02-11",
+      "expense": 364.82,
+      "income": 0
+    },
+    {
+      "date": "2026-02-12",
+      "expense": 70.49,
+      "income": 0
+    },
+    {
+      "date": "2026-02-13",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-02-14",
+      "expense": 862,
+      "income": 0
+    },
+    {
+      "date": "2026-02-15",
+      "expense": 50,
+      "income": 0
+    },
+    {
+      "date": "2026-02-16",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-02-17",
+      "expense": 67.95,
+      "income": 0
+    },
+    {
+      "date": "2026-02-18",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-02-19",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-02-20",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-02-21",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-02-22",
+      "expense": 154.05,
+      "income": 0
+    },
+    {
+      "date": "2026-02-23",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-02-24",
+      "expense": 524.12,
+      "income": 0
+    },
+    {
+      "date": "2026-02-25",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-02-26",
+      "expense": 50.07,
+      "income": 0
+    },
+    {
+      "date": "2026-02-27",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-02-28",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-03-01",
+      "expense": 220.51,
+      "income": 0
+    },
+    {
+      "date": "2026-03-02",
+      "expense": 38.14,
+      "income": 0
+    },
+    {
+      "date": "2026-03-03",
+      "expense": 51.04,
+      "income": 0
+    },
+    {
+      "date": "2026-03-04",
+      "expense": 93.83,
+      "income": 0
+    },
+    {
+      "date": "2026-03-05",
+      "expense": 4,
+      "income": 0
+    },
+    {
+      "date": "2026-03-06",
+      "expense": 4,
+      "income": 0
+    },
+    {
+      "date": "2026-03-07",
+      "expense": 21.9,
+      "income": 0
+    },
+    {
+      "date": "2026-03-08",
+      "expense": 54,
+      "income": 0
+    },
+    {
+      "date": "2026-03-09",
+      "expense": 4,
+      "income": 0
+    },
+    {
+      "date": "2026-03-10",
+      "expense": 4,
+      "income": 0
+    },
+    {
+      "date": "2026-03-11",
+      "expense": 24.18,
+      "income": 0
+    },
+    {
+      "date": "2026-03-12",
+      "expense": 4,
+      "income": 0
+    },
+    {
+      "date": "2026-03-13",
+      "expense": 4,
+      "income": 0
+    },
+    {
+      "date": "2026-03-14",
+      "expense": 4.2,
+      "income": 0
+    },
+    {
+      "date": "2026-03-15",
+      "expense": 50,
+      "income": 0
+    },
+    {
+      "date": "2026-03-16",
+      "expense": 5.2,
+      "income": 0
+    },
+    {
+      "date": "2026-03-17",
+      "expense": 4,
+      "income": 0
+    },
+    {
+      "date": "2026-03-18",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-03-19",
+      "expense": 4,
+      "income": 0
+    },
+    {
+      "date": "2026-03-20",
+      "expense": 1012,
+      "income": 0
+    },
+    {
+      "date": "2026-03-21",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-03-22",
+      "expense": 50,
+      "income": 0
+    },
+    {
+      "date": "2026-03-23",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-03-24",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-03-25",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-03-26",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-03-27",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-03-28",
+      "expense": 63.38,
+      "income": 0
+    },
+    {
+      "date": "2026-03-29",
+      "expense": 100,
+      "income": 0
+    },
+    {
+      "date": "2026-03-30",
+      "expense": 3000,
+      "income": 10000
+    },
+    {
+      "date": "2026-03-31",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-04-01",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-04-02",
+      "expense": 655.34,
+      "income": 0
+    },
+    {
+      "date": "2026-04-03",
+      "expense": 58.78,
+      "income": 0
+    },
+    {
+      "date": "2026-04-04",
+      "expense": 604,
+      "income": 0
+    },
+    {
+      "date": "2026-04-05",
+      "expense": 628,
+      "income": 0
+    },
+    {
+      "date": "2026-04-06",
+      "expense": 272.8,
+      "income": 0
+    },
+    {
+      "date": "2026-04-07",
+      "expense": 176,
+      "income": 0
+    },
+    {
+      "date": "2026-04-08",
+      "expense": 109.23,
+      "income": 0
+    },
+    {
+      "date": "2026-04-09",
+      "expense": 2260,
+      "income": 0
+    },
+    {
+      "date": "2026-04-10",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-04-11",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-04-12",
+      "expense": 100,
+      "income": 0
+    },
+    {
+      "date": "2026-04-13",
+      "expense": 856,
+      "income": 0
+    },
+    {
+      "date": "2026-04-14",
+      "expense": 0,
+      "income": 0
+    },
+    {
+      "date": "2026-04-15",
+      "expense": 0.21,
+      "income": 2000
+    },
+    {
+      "date": "2026-04-16",
+      "expense": 1842,
+      "income": 0
+    }
+  ]
+}
