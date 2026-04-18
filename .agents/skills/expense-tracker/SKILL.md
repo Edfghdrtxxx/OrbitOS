@@ -39,8 +39,7 @@ Personal financial data must never be committed. Before anything else, self-heal
 - If it exists and has ≥1 `.csv`, skip this step — proceed to Step 2.
 - Otherwise (folder missing, empty, or no `.csv` files — including the case where the user explicitly passed a folder that's empty/missing):
   1. **Auto-open the guide FIRST** (before any prompt):
-     - Ensure `20_Project/Expense Tracker/Reports/` exists — create it if missing.
-     - Copy `assets/guide.html` to `20_Project/Expense Tracker/Reports/export-guide.html`, overwriting any existing copy (the source is canonical).
+     - Copy `assets/guide.html` to `20_Project/Expense Tracker/Reports/export-guide.html`, overwriting any existing copy (the source is canonical). The directory is guaranteed to exist by Step 0.
      - Open it in the user's default browser via Bash: `cmd //c start "" "<absolute-path-to-copied-guide>"` (Git-Bash-on-Windows incantation — `//c` avoids path mangling, the empty `""` satisfies `start`'s title-argument quirk). On non-Windows platforms, substitute `open` (macOS) or `xdg-open` (Linux). Auto-open is authorized — the user explicitly requested this behavior.
      - In a ONE-line message, report the absolute path of the copied guide.
   2. **Then ask via `AskUserQuestion`** what to do now, with options like:
@@ -50,8 +49,7 @@ Personal financial data must never be committed. Before anything else, self-heal
 
 ## 2. Create output scaffolding
 - Compute a timestamp `YYYY-MM-DD_HHMM` from the current local time.
-- Ensure `20_Project/Expense Tracker/Reports/` exists — create it if missing.
-- Create a scratch directory for intermediate JSON at `99_System/.scratch/expense-tracker-{timestamp}/`.
+- Create a scratch directory for intermediate JSON at `99_System/.scratch/expense-tracker-{timestamp}/`. `20_Project/Expense Tracker/Reports/` is guaranteed to exist by Step 0.
 
 ## 3. Run the parser
 - From the skill's directory, invoke:
