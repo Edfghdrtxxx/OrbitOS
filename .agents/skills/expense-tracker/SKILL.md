@@ -52,7 +52,10 @@ Personal financial data must never be committed. Before anything else, self-heal
 - Create a scratch directory for intermediate JSON at `99_System/.scratch/expense-tracker-{timestamp}/`. `20_Project/Expense Tracker/Reports/` is guaranteed to exist by Step 0.
 
 ## 2a. Flatten nested CSVs to top-level
-The parser is non-recursive by design, but bill ZIPs usually extract into one level of subfolders. Before running, copy every `.csv` found in any subdirectory of the input folder up to the top level. Name copies `_flat_{parent-dirname}__{filename}.csv` to avoid collisions; remember each copied path so Step 8 can delete it. Originals are never moved or modified. Non-`.csv` files in subfolders (e.g., WeChat `.xlsx` from the in-app export) are left alone — the parser will never see them, so they signal the user should re-export as the encrypted-ZIP CSV bill.
+The parser is non-recursive by design, but bill ZIPs usually extract into one level of subfolders. Before running, copy every `.csv` found in any subdirectory of the input folder up to the top level. Name copies `_flat_{parent-dirname}__{filename}.csv` to avoid collisions; remember each copied path so Step 8 can delete it. Originals are never moved or modified. `.xlsx` bill exports (WeChat sometimes ships as xlsx) are handled in Step 2b.
+
+## 2b. Convert nested `.xlsx` bills to CSV
+Run `node scripts/xlsx_to_csv.mjs <xlsx> <output.csv>` for every `.xlsx` found anywhere under the input folder, emitting to the top level with the same `_flat_{parent-dirname}__{stem}.csv` convention used in Step 2a. The converter is dependency-free (Node built-ins only — reads the xlsx as a zip via `zlib.inflateRawSync`, parses `sharedStrings.xml` + `sheet1.xml`, and resolves date-formatted cells through `styles.xml` numFmt lookup so `交易时间` emerges as `YYYY-MM-DD HH:MM:SS` rather than an Excel serial number). Track emitted paths alongside Step 2a's copies so Step 8 removes them. If `detectFormat` later rejects a converted file, leave it — the parser will simply skip it with a `✗` line.
 
 ## 3. Run the parser
 - From the skill's directory, invoke:
@@ -115,7 +118,7 @@ Keep the tone factual.
 
 # Notes & known limitations
 
-- **Nested CSVs are auto-flattened.** Step 2a copies any `.csv` from subfolders up to the top of the input folder before parsing, and Step 8 removes the copies. The parser itself remains non-recursive and `.csv`-only — `.xlsx` files are never read.
+- **Nested CSVs are auto-flattened; nested `.xlsx` is auto-converted.** Step 2a stages `.csv` files and Step 2b converts `.xlsx` files to CSV (via `scripts/xlsx_to_csv.mjs`) before parsing; Step 8 removes every staged file. The parser itself remains non-recursive and CSV-only — any non-CSV input passes through the converter first.
 - **Raw transactions never enter Claude's context.** This is by design. If the user wants Claude to comment on individual transactions or outliers, they must explicitly load `transactions.json` or the raw CSVs in a separate conversation.
 - **Node 22+ required** for the `GB18030` `TextDecoder` support used when decoding Alipay / WeChat CSV exports.
 - **No deduplication across runs.** Re-running with the same input folder produces a new timestamped report alongside any previous ones.
@@ -125,4 +128,5 @@ Keep the tone factual.
 - `assets/template.html` — static dashboard template with three injection seams (`__PRELOADED_DATA_JSON__`, `<!-- __CLAUDE_ANALYSIS_HTML_EN__ -->`, `<!-- __CLAUDE_ANALYSIS_HTML_ZH__ -->`). Do not edit per-run.
 - `assets/guide.html` — bilingual export walkthrough shown when no CSVs are found; do not edit per-run.
 - `scripts/build_report.mjs` — Node 22+ ESM CLI, no npm deps. Parses CSVs, emits `transactions.json` and `aggregates.json`.
+- `scripts/xlsx_to_csv.mjs` — Node 22+ ESM CLI, no npm deps. Converts a single `.xlsx` bill export to CSV by reading the xlsx as a zip (via built-in `zlib.inflateRawSync`), parsing the shared-string pool and first worksheet, and resolving date-formatted cells through `styles.xml` numFmt lookup. Invoked once per `.xlsx` in Step 2b.
 - `20_Project/Expense Tracker/expense-dashboard.html` — historical reference dashboard that `assets/template.html` was derived from. Prefer not to edit, but modify when genuinely necessary (e.g., to keep it in sync with changes to `assets/template.html`).
