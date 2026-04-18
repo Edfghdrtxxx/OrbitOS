@@ -1,0 +1,829 @@
+{
+  "tz": "Asia/Shanghai",
+  "period": {
+    "start": "2026-01-01",
+    "end": "2026-04-18",
+    "days": 108
+  },
+  "totals": {
+    "gross_expense": 117449.74,
+    "gross_income": 38457.61,
+    "net_expense": 78992.13,
+    "txn_count": 915
+  },
+  "by_source": {
+    "alipay": {
+      "expense": 23152.39,
+      "count": 229
+    },
+    "wechat": {
+      "expense": 94297.35,
+      "count": 415
+    }
+  },
+  "top_categories": [
+    {
+      "name": "商户消费",
+      "amount": 75947.31,
+      "count": 312,
+      "share": 0.6466
+    },
+    {
+      "name": "转账",
+      "amount": 13030,
+      "count": 15,
+      "share": 0.1109
+    },
+    {
+      "name": "转账红包",
+      "amount": 7071,
+      "count": 18,
+      "share": 0.0602
+    },
+    {
+      "name": "日用百货",
+      "amount": 5635.1,
+      "count": 57,
+      "share": 0.048
+    },
+    {
+      "name": "餐饮美食",
+      "amount": 3219.64,
+      "count": 52,
+      "share": 0.0274
+    },
+    {
+      "name": "交通出行",
+      "amount": 2493.13,
+      "count": 42,
+      "share": 0.0212
+    },
+    {
+      "name": "群收款",
+      "amount": 2343.87,
+      "count": 27,
+      "share": 0.02
+    },
+    {
+      "name": "扫二维码付款",
+      "amount": 2264.6,
+      "count": 37,
+      "share": 0.0193
+    },
+    {
+      "name": "文化休闲",
+      "amount": 1764.8,
+      "count": 31,
+      "share": 0.015
+    },
+    {
+      "name": "酒店旅游",
+      "amount": 1409,
+      "count": 5,
+      "share": 0.012
+    }
+  ],
+  "top_counterparties": [
+    {
+      "name": "北京华夏良子健康管理有限公司朝阳分公司",
+      "amount": 13888,
+      "count": 1
+    },
+    {
+      "name": "久利物业",
+      "amount": 13210,
+      "count": 1
+    },
+    {
+      "name": "美团",
+      "amount": 12750.32,
+      "count": 11
+    },
+    {
+      "name": "携程",
+      "amount": 11344,
+      "count": 1
+    },
+    {
+      "name": "荔枝珍珍(段佳易)",
+      "amount": 7083,
+      "count": 4
+    },
+    {
+      "name": "居然智慧家",
+      "amount": 5999,
+      "count": 1
+    },
+    {
+      "name": "支付宝小荷包(??一起环游世界)",
+      "amount": 5721,
+      "count": 2
+    },
+    {
+      "name": "携程旅行网",
+      "amount": 4263.3,
+      "count": 6
+    },
+    {
+      "name": "小红书",
+      "amount": 3881.91,
+      "count": 23
+    },
+    {
+      "name": "滴滴出行",
+      "amount": 3755.55,
+      "count": 135
+    }
+  ],
+  "day_of_week": [
+    {
+      "dow": 0,
+      "label": "Sun",
+      "expense": 22873.46
+    },
+    {
+      "dow": 1,
+      "label": "Mon",
+      "expense": 2615.91
+    },
+    {
+      "dow": 2,
+      "label": "Tue",
+      "expense": 34966.34
+    },
+    {
+      "dow": 3,
+      "label": "Wed",
+      "expense": 5443.7
+    },
+    {
+      "dow": 4,
+      "label": "Thu",
+      "expense": 23814.98
+    },
+    {
+      "dow": 5,
+      "label": "Fri",
+      "expense": 6192.43
+    },
+    {
+      "dow": 6,
+      "label": "Sat",
+      "expense": 21542.92
+    }
+  ],
+  "weekday_vs_weekend": {
+    "weekday_daily_avg": 948.49,
+    "weekend_daily_avg": 1432.79
+  },
+  "daily_timeline": [
+    {
+      "date": "2026-01-01",
+      "expense": 61.6,
+      "income": 83,
+      "expense_net": 61.6
+    },
+    {
+      "date": "2026-01-02",
+      "expense": 78.6,
+      "income": 75,
+      "expense_net": 78.6
+    },
+    {
+      "date": "2026-01-03",
+      "expense": 108.76,
+      "income": 57,
+      "expense_net": 108.76
+    },
+    {
+      "date": "2026-01-04",
+      "expense": 148.5,
+      "income": 200,
+      "expense_net": 148.5
+    },
+    {
+      "date": "2026-01-05",
+      "expense": 79.7,
+      "income": 0,
+      "expense_net": 79.7
+    },
+    {
+      "date": "2026-01-06",
+      "expense": 7266.2,
+      "income": 0,
+      "expense_net": 7266.2
+    },
+    {
+      "date": "2026-01-07",
+      "expense": 141.64,
+      "income": 15,
+      "expense_net": 141.64
+    },
+    {
+      "date": "2026-01-08",
+      "expense": 46.45,
+      "income": 0,
+      "expense_net": 46.45
+    },
+    {
+      "date": "2026-01-09",
+      "expense": 235.31,
+      "income": 0,
+      "expense_net": 235.31
+    },
+    {
+      "date": "2026-01-10",
+      "expense": 6830.95,
+      "income": 2158,
+      "expense_net": 6775.15
+    },
+    {
+      "date": "2026-01-11",
+      "expense": 259.36,
+      "income": 0,
+      "expense_net": 259.36
+    },
+    {
+      "date": "2026-01-12",
+      "expense": 265.78,
+      "income": 178.4,
+      "expense_net": 87.38
+    },
+    {
+      "date": "2026-01-13",
+      "expense": 627.2,
+      "income": 0,
+      "expense_net": 627.2
+    },
+    {
+      "date": "2026-01-14",
+      "expense": 213.67,
+      "income": 0,
+      "expense_net": 173.67
+    },
+    {
+      "date": "2026-01-15",
+      "expense": 2829.91,
+      "income": 55.8,
+      "expense_net": 2829.91
+    },
+    {
+      "date": "2026-01-16",
+      "expense": 140.54,
+      "income": 0,
+      "expense_net": 140.54
+    },
+    {
+      "date": "2026-01-17",
+      "expense": 543.01,
+      "income": 0,
+      "expense_net": 543.01
+    },
+    {
+      "date": "2026-01-18",
+      "expense": 184.63,
+      "income": 0,
+      "expense_net": 184.63
+    },
+    {
+      "date": "2026-01-19",
+      "expense": 61.62,
+      "income": 0,
+      "expense_net": 61.62
+    },
+    {
+      "date": "2026-01-20",
+      "expense": 779.81,
+      "income": 40,
+      "expense_net": 779.81
+    },
+    {
+      "date": "2026-01-21",
+      "expense": 164.54,
+      "income": 40,
+      "expense_net": 164.54
+    },
+    {
+      "date": "2026-01-22",
+      "expense": 172.48,
+      "income": 19.9,
+      "expense_net": 152.58
+    },
+    {
+      "date": "2026-01-23",
+      "expense": 284.79,
+      "income": 52,
+      "expense_net": 284.79
+    },
+    {
+      "date": "2026-01-24",
+      "expense": 6760.81,
+      "income": 11047.5,
+      "expense_net": 819.81
+    },
+    {
+      "date": "2026-01-25",
+      "expense": 14602.53,
+      "income": 5280,
+      "expense_net": 14602.53
+    },
+    {
+      "date": "2026-01-26",
+      "expense": 310.7,
+      "income": 0,
+      "expense_net": 310.7
+    },
+    {
+      "date": "2026-01-27",
+      "expense": 50,
+      "income": 0.38,
+      "expense_net": 50
+    },
+    {
+      "date": "2026-01-28",
+      "expense": 680.27,
+      "income": 342.68,
+      "expense_net": 680.27
+    },
+    {
+      "date": "2026-01-29",
+      "expense": 166.6,
+      "income": 0,
+      "expense_net": 166.6
+    },
+    {
+      "date": "2026-01-30",
+      "expense": 1151.4,
+      "income": 123.34,
+      "expense_net": 896.4
+    },
+    {
+      "date": "2026-01-31",
+      "expense": 531.27,
+      "income": 214,
+      "expense_net": 531.27
+    },
+    {
+      "date": "2026-02-01",
+      "expense": 50,
+      "income": 219,
+      "expense_net": 50
+    },
+    {
+      "date": "2026-02-02",
+      "expense": 15,
+      "income": 0,
+      "expense_net": 15
+    },
+    {
+      "date": "2026-02-03",
+      "expense": 655.3,
+      "income": 600,
+      "expense_net": 655.3
+    },
+    {
+      "date": "2026-02-04",
+      "expense": 13.4,
+      "income": 5,
+      "expense_net": 13.4
+    },
+    {
+      "date": "2026-02-05",
+      "expense": 478.65,
+      "income": 1.51,
+      "expense_net": 478.65
+    },
+    {
+      "date": "2026-02-06",
+      "expense": 240.01,
+      "income": 0,
+      "expense_net": 240.01
+    },
+    {
+      "date": "2026-02-07",
+      "expense": 240.68,
+      "income": 0,
+      "expense_net": 240.68
+    },
+    {
+      "date": "2026-02-08",
+      "expense": 379.5,
+      "income": 1331,
+      "expense_net": 379.5
+    },
+    {
+      "date": "2026-02-09",
+      "expense": 23.04,
+      "income": 60,
+      "expense_net": 23.04
+    },
+    {
+      "date": "2026-02-10",
+      "expense": 91.18,
+      "income": 0,
+      "expense_net": 91.18
+    },
+    {
+      "date": "2026-02-11",
+      "expense": 472.47,
+      "income": 128,
+      "expense_net": 472.47
+    },
+    {
+      "date": "2026-02-12",
+      "expense": 272.4,
+      "income": 248.5,
+      "expense_net": 272.4
+    },
+    {
+      "date": "2026-02-13",
+      "expense": 56.62,
+      "income": 0,
+      "expense_net": 56.62
+    },
+    {
+      "date": "2026-02-14",
+      "expense": 1025.57,
+      "income": 0,
+      "expense_net": 510.57
+    },
+    {
+      "date": "2026-02-15",
+      "expense": 2233.21,
+      "income": 33,
+      "expense_net": 2233.21
+    },
+    {
+      "date": "2026-02-16",
+      "expense": 309.99,
+      "income": 441.53,
+      "expense_net": 309.99
+    },
+    {
+      "date": "2026-02-17",
+      "expense": 2820.75,
+      "income": 41.46,
+      "expense_net": 2820.75
+    },
+    {
+      "date": "2026-02-18",
+      "expense": 0,
+      "income": 0.98,
+      "expense_net": 0
+    },
+    {
+      "date": "2026-02-19",
+      "expense": 678,
+      "income": 0,
+      "expense_net": 344
+    },
+    {
+      "date": "2026-02-20",
+      "expense": 209.9,
+      "income": 0,
+      "expense_net": 209.9
+    },
+    {
+      "date": "2026-02-21",
+      "expense": 1263.56,
+      "income": 334,
+      "expense_net": 177.84
+    },
+    {
+      "date": "2026-02-22",
+      "expense": 160.64,
+      "income": 0,
+      "expense_net": 160.64
+    },
+    {
+      "date": "2026-02-23",
+      "expense": 473.77,
+      "income": 50,
+      "expense_net": 433.87
+    },
+    {
+      "date": "2026-02-24",
+      "expense": 514.4,
+      "income": 214.12,
+      "expense_net": 468.5
+    },
+    {
+      "date": "2026-02-25",
+      "expense": 2261.59,
+      "income": 0,
+      "expense_net": 2261.59
+    },
+    {
+      "date": "2026-02-26",
+      "expense": 174.75,
+      "income": 48.23,
+      "expense_net": 174.75
+    },
+    {
+      "date": "2026-02-27",
+      "expense": 212.3,
+      "income": 146.6,
+      "expense_net": 203.72
+    },
+    {
+      "date": "2026-02-28",
+      "expense": 2091.17,
+      "income": 1.88,
+      "expense_net": 893.27
+    },
+    {
+      "date": "2026-03-01",
+      "expense": 50,
+      "income": 840.72,
+      "expense_net": 50
+    },
+    {
+      "date": "2026-03-02",
+      "expense": 161.3,
+      "income": 71.25,
+      "expense_net": 161.3
+    },
+    {
+      "date": "2026-03-03",
+      "expense": 246,
+      "income": 0,
+      "expense_net": 246
+    },
+    {
+      "date": "2026-03-04",
+      "expense": 0,
+      "income": 136.68,
+      "expense_net": 0
+    },
+    {
+      "date": "2026-03-05",
+      "expense": 671.24,
+      "income": 84.3,
+      "expense_net": 671.24
+    },
+    {
+      "date": "2026-03-06",
+      "expense": 103.94,
+      "income": 0,
+      "expense_net": 103.94
+    },
+    {
+      "date": "2026-03-07",
+      "expense": 385.12,
+      "income": 111,
+      "expense_net": 385.12
+    },
+    {
+      "date": "2026-03-08",
+      "expense": 720.53,
+      "income": 105.6,
+      "expense_net": 614.93
+    },
+    {
+      "date": "2026-03-09",
+      "expense": 461.36,
+      "income": 50,
+      "expense_net": 461.36
+    },
+    {
+      "date": "2026-03-10",
+      "expense": 144.3,
+      "income": 0,
+      "expense_net": 82.3
+    },
+    {
+      "date": "2026-03-11",
+      "expense": 234.98,
+      "income": 0,
+      "expense_net": 234.98
+    },
+    {
+      "date": "2026-03-12",
+      "expense": 39.67,
+      "income": 56,
+      "expense_net": 39.67
+    },
+    {
+      "date": "2026-03-13",
+      "expense": 340.08,
+      "income": 0,
+      "expense_net": 340.08
+    },
+    {
+      "date": "2026-03-14",
+      "expense": 274.08,
+      "income": 241.5,
+      "expense_net": 274.08
+    },
+    {
+      "date": "2026-03-15",
+      "expense": 2372.98,
+      "income": 0,
+      "expense_net": 2372.98
+    },
+    {
+      "date": "2026-03-16",
+      "expense": 28.94,
+      "income": 0,
+      "expense_net": 28.94
+    },
+    {
+      "date": "2026-03-17",
+      "expense": 182.5,
+      "income": 0,
+      "expense_net": 182.5
+    },
+    {
+      "date": "2026-03-18",
+      "expense": 169.3,
+      "income": 0,
+      "expense_net": 169.3
+    },
+    {
+      "date": "2026-03-19",
+      "expense": 28,
+      "income": 3,
+      "expense_net": 28
+    },
+    {
+      "date": "2026-03-20",
+      "expense": 524.87,
+      "income": 62,
+      "expense_net": 524.87
+    },
+    {
+      "date": "2026-03-21",
+      "expense": 527.21,
+      "income": 131,
+      "expense_net": 527.21
+    },
+    {
+      "date": "2026-03-22",
+      "expense": 560,
+      "income": 50,
+      "expense_net": 560
+    },
+    {
+      "date": "2026-03-23",
+      "expense": 0,
+      "income": 0,
+      "expense_net": 0
+    },
+    {
+      "date": "2026-03-24",
+      "expense": 3816.39,
+      "income": 150,
+      "expense_net": 3816.39
+    },
+    {
+      "date": "2026-03-25",
+      "expense": 0,
+      "income": 0,
+      "expense_net": 0
+    },
+    {
+      "date": "2026-03-26",
+      "expense": 15154.3,
+      "income": 7721,
+      "expense_net": 14537.5
+    },
+    {
+      "date": "2026-03-27",
+      "expense": 600.48,
+      "income": 0,
+      "expense_net": 246.48
+    },
+    {
+      "date": "2026-03-28",
+      "expense": 79.64,
+      "income": 0,
+      "expense_net": 51.64
+    },
+    {
+      "date": "2026-03-29",
+      "expense": 460.2,
+      "income": 0,
+      "expense_net": 460.2
+    },
+    {
+      "date": "2026-03-30",
+      "expense": 121.6,
+      "income": 0,
+      "expense_net": 121.6
+    },
+    {
+      "date": "2026-03-31",
+      "expense": 3313.37,
+      "income": 2168,
+      "expense_net": 3313.37
+    },
+    {
+      "date": "2026-04-01",
+      "expense": 394.97,
+      "income": 0,
+      "expense_net": 394.97
+    },
+    {
+      "date": "2026-04-02",
+      "expense": 791,
+      "income": 616.8,
+      "expense_net": 186
+    },
+    {
+      "date": "2026-04-03",
+      "expense": 278.95,
+      "income": 28,
+      "expense_net": 278.95
+    },
+    {
+      "date": "2026-04-04",
+      "expense": 820.4,
+      "income": 0,
+      "expense_net": 566.4
+    },
+    {
+      "date": "2026-04-05",
+      "expense": 318.5,
+      "income": 0,
+      "expense_net": 318.5
+    },
+    {
+      "date": "2026-04-06",
+      "expense": 73.5,
+      "income": 0,
+      "expense_net": 73.5
+    },
+    {
+      "date": "2026-04-07",
+      "expense": 62.21,
+      "income": 0,
+      "expense_net": 62.21
+    },
+    {
+      "date": "2026-04-08",
+      "expense": 125,
+      "income": 0,
+      "expense_net": 125
+    },
+    {
+      "date": "2026-04-09",
+      "expense": 785.46,
+      "income": 0,
+      "expense_net": 785.46
+    },
+    {
+      "date": "2026-04-10",
+      "expense": 155.27,
+      "income": 0,
+      "expense_net": 155.27
+    },
+    {
+      "date": "2026-04-11",
+      "expense": 49.9,
+      "income": 0,
+      "expense_net": 0
+    },
+    {
+      "date": "2026-04-12",
+      "expense": 372.88,
+      "income": 0,
+      "expense_net": 372.88
+    },
+    {
+      "date": "2026-04-13",
+      "expense": 229.61,
+      "income": 0,
+      "expense_net": 229.61
+    },
+    {
+      "date": "2026-04-14",
+      "expense": 14396.73,
+      "income": 269.06,
+      "expense_net": 14065.67
+    },
+    {
+      "date": "2026-04-15",
+      "expense": 571.87,
+      "income": 602,
+      "expense_net": 571.87
+    },
+    {
+      "date": "2026-04-16",
+      "expense": 1464.47,
+      "income": 1040,
+      "expense_net": 784.47
+    },
+    {
+      "date": "2026-04-17",
+      "expense": 1579.37,
+      "income": 32.87,
+      "expense_net": 1549.7
+    },
+    {
+      "date": "2026-04-18",
+      "expense": 10.79,
+      "income": 0.02,
+      "expense_net": 10.79
+    }
+  ]
+}

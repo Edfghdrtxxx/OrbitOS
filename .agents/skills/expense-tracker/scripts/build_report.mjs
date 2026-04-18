@@ -6,6 +6,7 @@
 
 import { readFileSync, readdirSync, writeFileSync, mkdirSync, statSync } from 'node:fs';
 import { resolve, join, basename, extname } from 'node:path';
+import { netExpenseOf } from './refunds.mjs';
 
 // ═════════════════════════════════════════════════════════════════════
 // CSV decoding: UTF-8 BOM → strict UTF-8 → GB18030 fallback.
@@ -239,21 +240,42 @@ function processFile(filePath) {
 // ═════════════════════════════════════════════════════════════════════
 const r2 = n => Math.round(n * 100) / 100;
 
-// YYYY-MM-DD in local time (matches the browser fmtDate semantics, but the
-// browser used toISOString() which is UTC. For aggregation we use local dates
-// so day-of-week and daily buckets line up with the user's wall clock —
-// transaction records serialize as ISO UTC unchanged.)
-function localDateKey(d) {
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, '0');
-  const day = String(d.getDate()).padStart(2, '0');
-  return `${y}-${m}-${day}`;
+// YYYY-MM-DD in the target timezone (default Asia/Shanghai). sv-SE gives ISO-shaped
+// output via Intl.DateTimeFormat. Day-buckets and DOW classifications must agree
+// with the dashboard's state.tz; calendar-day iteration is done via UTC-millis
+// stepping on pure date triples, which is DST-free regardless of server tz.
+function tzDateKey(d, tz) {
+  return new Intl.DateTimeFormat('sv-SE', {
+    timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit',
+  }).format(d);
+}
+
+const DOW_MAP = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+function tzDow(d, tz) {
+  const wd = new Intl.DateTimeFormat('en-US', { timeZone: tz, weekday: 'short' }).format(d);
+  return DOW_MAP[wd] ?? 0;
+}
+
+// Iterate calendar days (YYYY-MM-DD + DOW) between startKey and endKey inclusive.
+// Uses UTC-millis arithmetic on date triples — tz-invariant, DST-free, no server-tz drift.
+function* iterateKeys(startKey, endKey) {
+  const [sy, sm, sd] = startKey.split('-').map(Number);
+  const [ey, em, ed] = endKey.split('-').map(Number);
+  const startMs = Date.UTC(sy, sm - 1, sd);
+  const endMs = Date.UTC(ey, em - 1, ed);
+  for (let t = startMs; t <= endMs; t += 86400000) {
+    const d = new Date(t);
+    const y = d.getUTCFullYear();
+    const m = String(d.getUTCMonth() + 1).padStart(2, '0');
+    const day = String(d.getUTCDate()).padStart(2, '0');
+    yield { key: `${y}-${m}-${day}`, dow: d.getUTCDay() };
+  }
 }
 
 // ═════════════════════════════════════════════════════════════════════
 // Aggregation — builds the locked aggregates.json shape.
 // ═════════════════════════════════════════════════════════════════════
-function buildAggregates(allTransactions) {
+function buildAggregates(allTransactions, tz) {
   const total_txn_count = allTransactions.length;
   // Exclude neutral transfers for all aggregates except totals.txn_count
   const txns = allTransactions.filter(t => t.direction !== '不计收支');
@@ -277,12 +299,11 @@ function buildAggregates(allTransactions) {
   let period_end = '';
   let days = 0;
   if (startDate && endDate) {
-    period_start = localDateKey(startDate);
-    period_end = localDateKey(endDate);
-    // Days inclusive — count calendar days in the timeline
-    const startMs = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate()).getTime();
-    const endMs = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate()).getTime();
-    days = Math.round((endMs - startMs) / 86400000) + 1;
+    period_start = tzDateKey(startDate, tz);
+    period_end = tzDateKey(endDate, tz);
+    const [sy, sm, sd] = period_start.split('-').map(Number);
+    const [ey, em, ed] = period_end.split('-').map(Number);
+    days = Math.round((Date.UTC(ey, em - 1, ed) - Date.UTC(sy, sm - 1, sd)) / 86400000) + 1;
   }
 
   // By source
@@ -332,11 +353,11 @@ function buildAggregates(allTransactions) {
     .slice(0, 10)
     .map(([name, v]) => ({ name, amount: r2(v.amount), count: v.count }));
 
-  // Day of week — 7 entries, 0=Sun..6=Sat, expense only
+  // Day of week — 7 entries, 0=Sun..6=Sat, expense only (DOW computed in target tz)
   const dowLabels = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   const dowSum = [0, 0, 0, 0, 0, 0, 0];
   for (const t of expenses) {
-    dowSum[t.date.getDay()] += t.amount;
+    dowSum[tzDow(t.date, tz)] += t.amount;
   }
   const day_of_week = dowLabels.map((label, dow) => ({
     dow,
@@ -353,13 +374,9 @@ function buildAggregates(allTransactions) {
   let uniqueWeekdayDates = 0;
   let uniqueWeekendDates = 0;
   if (startDate && endDate) {
-    const cur = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate());
-    const stopMs = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate()).getTime();
-    while (cur.getTime() <= stopMs) {
-      const d = cur.getDay();
-      if (d === 0 || d === 6) uniqueWeekendDates++;
+    for (const { dow } of iterateKeys(period_start, period_end)) {
+      if (dow === 0 || dow === 6) uniqueWeekendDates++;
       else uniqueWeekdayDates++;
-      cur.setDate(cur.getDate() + 1);
     }
   }
 
@@ -369,26 +386,11 @@ function buildAggregates(allTransactions) {
   };
 
   // Daily timeline — one entry per calendar date in the period, including zero days.
-  // expense_net applies status-first refund dedup matching the dashboard's Net toggle:
-  //   - alipay 交易关闭 + 支出 → 0 (money never left)
-  //   - 支出 with `已全额退款` status → 0 (fully refunded)
-  //   - 支出 with `已退款¥X` in status → max(0, amount − X) (partial)
-  //   - 收入 with `退款` in category → skipped (its offset is baked into the 支出 side above)
-  const REFUND_AMOUNT_RE = /已退款[¥￥]?\s*\(?([\d,]+(?:\.\d+)?)/;
-  function netExpenseOf(t) {
-    if (t.direction !== '支出') return 0;
-    if (t.source === 'alipay' && t.status === '交易关闭') return 0;
-    if (t.status === '已全额退款') return 0;
-    const m = REFUND_AMOUNT_RE.exec(t.status || '');
-    if (m) {
-      const refunded = parseFloat(m[1].replace(/,/g, ''));
-      if (!Number.isNaN(refunded)) return Math.max(0, t.amount - refunded);
-    }
-    return t.amount;
-  }
+  // expense_net comes from the shared netExpenseOf (scripts/refunds.mjs) so the
+  // aggregator and verify_aggregates.mjs can't drift out of sync.
   const dailyMap = new Map();
   for (const t of txns) {
-    const k = localDateKey(t.date);
+    const k = tzDateKey(t.date, tz);
     const e = dailyMap.get(k) || { expense: 0, income: 0, expense_net: 0 };
     if (t.direction === '支出') {
       e.expense += t.amount;
@@ -400,17 +402,14 @@ function buildAggregates(allTransactions) {
   }
   const daily_timeline = [];
   if (startDate && endDate) {
-    const cur = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate());
-    const stopMs = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate()).getTime();
-    while (cur.getTime() <= stopMs) {
-      const k = localDateKey(cur);
-      const e = dailyMap.get(k) || { expense: 0, income: 0, expense_net: 0 };
-      daily_timeline.push({ date: k, expense: r2(e.expense), income: r2(e.income), expense_net: r2(e.expense_net) });
-      cur.setDate(cur.getDate() + 1);
+    for (const { key } of iterateKeys(period_start, period_end)) {
+      const e = dailyMap.get(key) || { expense: 0, income: 0, expense_net: 0 };
+      daily_timeline.push({ date: key, expense: r2(e.expense), income: r2(e.income), expense_net: r2(e.expense_net) });
     }
   }
 
   return {
+    tz,
     period: { start: period_start, end: period_end, days },
     totals: {
       gross_expense: r2(gross_expense),
@@ -437,11 +436,19 @@ function die(msg, code = 1) {
 
 function main() {
   const argv = process.argv.slice(2);
-  if (argv.length < 2) {
-    die('usage: node build_report.mjs <csv-folder> <output-dir>');
+  let tz = 'Asia/Shanghai';
+  const positional = [];
+  for (const a of argv) {
+    if (a.startsWith('--tz=')) tz = a.slice(5);
+    else positional.push(a);
   }
-  const csvFolder = resolve(argv[0]);
-  const outDir = resolve(argv[1]);
+  if (positional.length < 2) {
+    die('usage: node build_report.mjs <csv-folder> <output-dir> [--tz=Asia/Shanghai]');
+  }
+  try { new Intl.DateTimeFormat('en-US', { timeZone: tz }); }
+  catch (_) { die(`invalid --tz: ${tz}`); }
+  const csvFolder = resolve(positional[0]);
+  const outDir = resolve(positional[1]);
 
   let folderStat;
   try {
@@ -515,7 +522,7 @@ function main() {
   deduped.sort((a, b) => b.date - a.date);
 
   // Build aggregates (uses deduped set)
-  const aggregates = buildAggregates(deduped);
+  const aggregates = buildAggregates(deduped, tz);
 
   // Build transactions.json payload — date serialized as ISO string
   const transactionsPayload = {

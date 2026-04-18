@@ -955,6 +955,7 @@ const state = {
   files: [],               // {name, source, count, ok, error}
   filters: {
     dateFrom: null, dateTo: null,
+    dateFromUserSet: false, dateToUserSet: false,
     direction: '支出',
     source: 'all',
     amtMin: null, amtMax: null,
@@ -1194,6 +1195,24 @@ const DOW_MAP = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
 function tzDow(d) {
   const wd = new Intl.DateTimeFormat('en-US', { weekday: 'short', timeZone: state.tz }).format(d);
   return DOW_MAP[wd] ?? 0;
+}
+
+// Convert a YYYY-MM-DD string to the UTC instant corresponding to start-of-day
+// (endOfDay=false) or end-of-day (endOfDay=true) in the supplied IANA timezone.
+// Uses a formatToParts round-trip so it works for any tz, DST or not.
+function tzDateBound(yyyyMmDd, tz, endOfDay) {
+  const [y, m, d] = yyyyMmDd.split('-').map(Number);
+  const h = endOfDay ? 23 : 0, mi = endOfDay ? 59 : 0, se = endOfDay ? 59 : 0, ms = endOfDay ? 999 : 0;
+  const guess = Date.UTC(y, m - 1, d, h, mi, se, ms);
+  const parts = new Intl.DateTimeFormat('en-US', {
+    timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false,
+  }).formatToParts(new Date(guess));
+  const find = k => +parts.find(p => p.type === k).value;
+  let tzH = find('hour');
+  if (tzH === 24) tzH = 0;
+  const seen = Date.UTC(find('year'), find('month') - 1, find('day'), tzH, find('minute'), find('second'), ms);
+  return new Date(guess - (seen - guess));
 }
 
 // ─── Refund netting (status-first dedup) ──────────────────────────────
@@ -1581,15 +1600,23 @@ function bindEvents() {
   document.getElementById('clear-btn').onclick = clearAll;
 
   document.getElementById('date-from').onchange = e => {
-    state.filters.dateFrom = e.target.value ? new Date(e.target.value) : null;
+    if (e.target.value) {
+      state.filters.dateFrom = tzDateBound(e.target.value, state.tz, false);
+      state.filters.dateFromUserSet = true;
+    } else {
+      state.filters.dateFrom = null;
+      state.filters.dateFromUserSet = false;
+    }
     refresh();
   };
   document.getElementById('date-to').onchange = e => {
     if (e.target.value) {
-      const d = new Date(e.target.value);
-      d.setHours(23, 59, 59, 999);
-      state.filters.dateTo = d;
-    } else state.filters.dateTo = null;
+      state.filters.dateTo = tzDateBound(e.target.value, state.tz, true);
+      state.filters.dateToUserSet = true;
+    } else {
+      state.filters.dateTo = null;
+      state.filters.dateToUserSet = false;
+    }
     refresh();
   };
   document.getElementById('direction-filter').onchange = e => {
@@ -1602,11 +1629,16 @@ function bindEvents() {
   };
   document.getElementById('tz-select').onchange = e => {
     state.tz = e.target.value;
-    // Re-fill date-range inputs so the default labels reflect the new tz
+    // Only re-fill date-range inputs that are still holding auto-default values;
+    // user-typed bounds are left untouched so the filter doesn't mutate silently.
     const dates = state.transactions.map(tr => tr.date).sort((a, b) => a - b);
     if (dates.length) {
-      document.getElementById('date-from').value = fmtDate(dates[0]);
-      document.getElementById('date-to').value = fmtDate(dates[dates.length - 1]);
+      if (!state.filters.dateFromUserSet) {
+        document.getElementById('date-from').value = fmtDate(dates[0]);
+      }
+      if (!state.filters.dateToUserSet) {
+        document.getElementById('date-to').value = fmtDate(dates[dates.length - 1]);
+      }
     }
     refresh();
   };
