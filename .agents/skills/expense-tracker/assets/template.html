@@ -353,6 +353,67 @@ html[data-lang="zh"] .analysis-pane[data-lang-pane="en"] { display: none; }
   gap: 6px;
 }
 .filter-row input { flex: 1; min-width: 0; }
+/* Search + commit button row: input stretches, button is a fixed pill on the right. */
+.search-row {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+.search-row input { flex: 1; min-width: 0; }
+.search-commit-btn {
+  background: var(--bg-higher);
+  border: 1px solid var(--border);
+  color: var(--fg-dim);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  padding: 0 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.search-commit-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.search-commit-btn:active {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+/* Commit flourish — brief accent border pulse on #search-input when commit fires. */
+@keyframes commitPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(212, 167, 72, 0.55); border-color: var(--accent); }
+  60%  { box-shadow: 0 0 0 6px rgba(212, 167, 72, 0.00); border-color: var(--accent); }
+  100% { box-shadow: 0 0 0 0 rgba(212, 167, 72, 0.00); }
+}
+#search-input.commit-pulse {
+  animation: commitPulse 380ms ease-out;
+}
+/* Table row enter animation — applied for one frame then stripped by JS. */
+#tbl-body tr.row-enter {
+  opacity: 0;
+  transform: translateY(3px);
+}
+#tbl-body tr {
+  transition: opacity 180ms ease-out, transform 180ms ease-out;
+}
+/* Hero numbers crossfade — triggered when Mode or TZ changes. */
+.hero-cell .value.recompute-flash {
+  animation: recomputeFlash 160ms ease-in-out;
+}
+@keyframes recomputeFlash {
+  0%   { opacity: 1; }
+  45%  { opacity: 0.25; }
+  100% { opacity: 1; }
+}
+/* Motion-sensitive users get instant updates — no animations, no transitions. */
+@media (prefers-reduced-motion: reduce) {
+  #search-input.commit-pulse { animation: none; }
+  #tbl-body tr.row-enter { opacity: 1; transform: none; }
+  #tbl-body tr { transition: none; }
+  .hero-cell .value.recompute-flash { animation: none; }
+}
 .search-auto-hint {
   color: var(--fg-muted);
   font-size: 0.72rem;
@@ -681,7 +742,10 @@ footer {
     </div>
     <div class="filter" style="grid-column: 1 / -1;">
       <label data-i18n="filter.search">Search (counterparty / description)</label>
-      <input type="text" id="search-input" data-i18n-placeholder="filter.search.placeholder" placeholder="e.g. 美团, 星巴克, transfer...">
+      <div class="search-row">
+        <input type="text" id="search-input" data-i18n-placeholder="filter.search.placeholder" placeholder="e.g. 美团, 星巴克, transfer...">
+        <button type="button" id="search-commit-btn" class="search-commit-btn" data-i18n="filter.search.apply" data-i18n-title="filter.search.apply.title" title="Apply (Enter)">↵ Apply</button>
+      </div>
       <div id="search-auto-hint" class="search-auto-hint hidden">
         <span class="arr">↳</span><span data-i18n="filter.search.autoHint">Direction auto-expanded to All</span> (<span data-i18n="filter.search.autoRestorePrefix">restore</span> <span id="search-auto-hint-prev" class="prev"></span> <span data-i18n="filter.search.autoRestoreSuffix">on clear</span>)
       </div>
@@ -809,6 +873,8 @@ const I18N = {
     'filter.search.autoHint': 'Direction auto-expanded to All',
     'filter.search.autoRestorePrefix': 'restore',
     'filter.search.autoRestoreSuffix': 'on clear',
+    'filter.search.apply': '↵ Apply',
+    'filter.search.apply.title': 'Apply search (Enter)',
     'filter.categories': 'Categories',
     'filter.categories.hint': '(click to filter · none selected = all)',
     'chart.daily.title': 'Daily cashflow',
@@ -893,6 +959,8 @@ const I18N = {
     'filter.search.autoHint': '方向已自动展开为「全部」',
     'filter.search.autoRestorePrefix': '清空后恢复为',
     'filter.search.autoRestoreSuffix': '',
+    'filter.search.apply': '↵ 应用',
+    'filter.search.apply.title': '应用搜索（回车）',
     'filter.categories': '分类',
     'filter.categories.hint': '（点击筛选 · 不选等于全选）',
     'chart.daily.title': '每日现金流',
@@ -1340,7 +1408,7 @@ function renderTable(filtered) {
     const srcTag = tr.source === 'alipay'
       ? `<span class="alipay">${escapeHtml(t('platform.alipay'))}</span>`
       : `<span class="wechat">${escapeHtml(t('platform.wechat'))}</span>`;
-    return `<tr>
+    return `<tr class="row-enter">
       <td>${fmtDateTime(tr.date)}</td>
       <td class="src">${srcTag}</td>
       <td>${escapeHtml(tr.category)}</td>
@@ -1354,6 +1422,11 @@ function renderTable(filtered) {
     ? `<tr><td colspan="7" class="empty">${escapeHtml(t('tbl.truncated').replace('{n}', sorted.length))}</td></tr>`
     : '';
   body.innerHTML = rows + footer;
+  // Strip the row-enter class on the next frame so the CSS transition fires
+  // opacity/transform from the initial "entered" state to the natural state.
+  requestAnimationFrame(() => {
+    body.querySelectorAll('tr.row-enter').forEach(r => r.classList.remove('row-enter'));
+  });
 }
 
 // ═════════════════════════════════════════════════════════════════════
@@ -1386,6 +1459,18 @@ function initChartDefaults() {
   const th = currentTheme();
   Chart.defaults.color = th.tick;
   Chart.defaults.borderColor = th.grid;
+  // Tangible motion feedback on every filter change: short easeOutQuart tween
+  // on data/scale updates. Respect prefers-reduced-motion (instant update).
+  const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  Chart.defaults.animation = reduced ? false : { duration: 280, easing: 'easeOutQuart' };
+  Chart.defaults.animations = reduced ? false : {
+    colors: { duration: 280, easing: 'easeOutQuart' },
+    numbers: { duration: 280, easing: 'easeOutQuart' },
+  };
+  Chart.defaults.transitions = reduced ? {} : {
+    active: { animation: { duration: 200, easing: 'easeOutQuart' } },
+    resize: { animation: { duration: 0 } },
+  };
 }
 
 function renderCharts(filtered) {
