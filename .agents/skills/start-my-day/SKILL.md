@@ -106,38 +106,6 @@ For each new idea/task mentioned in Q4:
 1. Check if it exists in projects or inbox
 2. If new, create `00_Inbox/[Brief-Title].md` using the template at `99_System/Templates/Inbox_Template.md`. Set `source: start-my-day` and fill in all applicable fields.
 
-## Step 4.5: Inbox Backfill (Auto-Create)
-
-Two-pass inbox backfill: **Pass A** mirrors today's active tasks so every
-item has a triage record; **Pass B** acts as a dropped-task safety net,
-catching items that were in yesterday's note but vanished from today's —
-so accidental drops are never silently lost.
-
-1. **Dispatch a writable sub-agent** — use the Agent tool with the default
-   `general-purpose` subagent type (NOT `Explore`, which is read-only). Pass
-   `agent-prompts/inbox-backfill.md` with these placeholders filled in:
-   - `{today}` — today's date in `YYYY-MM-DD`
-   - `{daily_note_path}` — `10_Daily/<today>.md`
-   - `{previous_daily_note_path}` — path to the most recent daily note
-     *before* today (the same one used as the `cp` source in Step 3.2).
-     Pass empty string if no previous note exists.
-
-   Foreground dispatch — must run *after* Step 4 so Q4 captures are visible
-   to the matcher and don't get duplicated.
-2. The sub-agent owns the full workflow: it scans both notes + inbox +
-   archives, matches with hard-skip-on-ambiguity dedup, and writes the new
-   inbox files via its own Write tool. You do NOT parse spec blocks or write
-   files yourself at this step.
-3. **Parse the sub-agent's final report**:
-   - `NO BACKFILL NEEDED` → set `{backfilled_count} = 0`, skip to Step 5.
-   - Otherwise, sum the Pass A + Pass B creation counts into
-     `{backfilled_count}`. If the report lists dropped-task items (Pass B)
-     or collisions, surface those filenames inline in the Step 5 output so
-     the user knows — especially Pass B, since those flag possible
-     accidental drops worth reviewing.
-4. Trust the sub-agent's report — do not re-verify or re-write. It is
-   authoritative for Step 4.5.
-
 ## Step 5: Present Summary
 
 Output a short terminal confirmation:
@@ -145,13 +113,11 @@ Output a short terminal confirmation:
 ```
 Good morning! Your day is ready.
 
-Energy: [level] | Priorities: [N] | Active projects: [N] | Inbox: [N] pending (+[M] backfilled)
+Energy: [level] | Priorities: [N] | Active projects: [N] | Inbox: [N] pending
 Today's note: [[YYYY-MM-DD]]
 
 > Next: /breakdown-tasks → /estimate-time
 ```
-
-Drop the `(+[M] backfilled)` suffix when `M == 0`.
 
 ## Step 6: Reflect
 
