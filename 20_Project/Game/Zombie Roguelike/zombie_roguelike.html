@@ -188,9 +188,22 @@
     display: grid;
     place-items: center;
     position: relative;
-    overflow: hidden;
+    --dash-fill: 0;
+    transition: transform 0.2s ease;
   }
-  .dash-indicator.ready { background: var(--c-cool); }
+  .dash-indicator.ready {
+    animation: dashReadyPulse 1.2s ease-in-out infinite;
+  }
+  @keyframes dashReadyPulse {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 4px 0 var(--c-dark), 0 0 12px rgba(78,205,196,0.45);
+    }
+    50% {
+      transform: scale(1.05);
+      box-shadow: 0 4px 0 var(--c-dark), 0 0 24px rgba(78,205,196,0.95);
+    }
+  }
   .dash-indicator .key {
     font-family: 'Bangers', 'ZCOOL KuaiLe', 'Noto Sans SC', sans-serif;
     font-size: 18px;
@@ -202,9 +215,17 @@
   }
   .dash-indicator .cool-fill {
     position: absolute;
-    bottom: 0; left: 0; right: 0;
-    background: rgba(78,205,196,0.3);
-    transition: height 0.1s linear;
+    inset: 2px;
+    border-radius: 12px;
+    background: conic-gradient(from -90deg, #4ecdc4 calc(var(--dash-fill) * 1%), rgba(78,205,196,0.15) 0);
+    padding: 4px;
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+    transition: background 0.08s linear;
   }
   /* Wave / transition banner */
   .banner {
@@ -1470,7 +1491,7 @@ class Player {
     // level
     this.level = 1;
     this.xp = 0;
-    this.xpNeeded = 32;
+    this.xpNeeded = 10;
     // regen
     this.regenAcc = 0;
   }
@@ -1635,7 +1656,7 @@ class Player {
     while (this.xp >= this.xpNeeded) {
       this.xp -= this.xpNeeded;
       this.level++;
-      this.xpNeeded = Math.floor(32 * Math.pow(1.6, this.level - 1));
+      this.xpNeeded = Math.floor(10 * Math.pow(1.2, this.level - 1));
       game.pendingLevelUps++;
       leveled = true;
     }
@@ -3110,7 +3131,7 @@ function updateHUD() {
   // Dash indicator
   const cd = p.dashCd / p.dashCdMax;
   const di = $('dashIndicator');
-  $('dashCool').style.height = (cd * 100) + '%';
+  di.style.setProperty('--dash-fill', ((1 - cd) * 100).toFixed(1));
   if (p.dashCd <= 0) di.classList.add('ready');
   else di.classList.remove('ready');
 }
