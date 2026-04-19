@@ -1691,7 +1691,7 @@ const I18N = {
     newLv: (lv) => `NEW · Lv ${lv}`,
     lvUp: (cur, next) => `Lv ${cur} → ${next}`,
     timeS: (s) => `${s}s`,
-    floorNames: ['The Outskirts','Downtown Drift','Mall Panic','Industrial Rot','Final Stand'],
+    floorNames: ['The Outskirts','Downtown Drift','Mall Panic','Industrial Rot','Final Stand','Pandemonium'],
     upgradeNames: {
       dmg: 'Boomstick', rof: 'Hair Trigger', speed: 'Sneakers', hp: 'Tough Skin',
       reload: 'Quick Hands', ammo: 'Extra Clip', double: 'Double Tap', crit: 'Sharpshooter',
@@ -1840,7 +1840,7 @@ const I18N = {
     newLv: (lv) => `新 · ${lv} 级`,
     lvUp: (cur, next) => `${cur} 级 → ${next} 级`,
     timeS: (s) => `${s} 秒`,
-    floorNames: ['城市边缘','闹市惊魂','商场恐慌','锈蚀工厂','最终防线'],
+    floorNames: ['城市边缘','闹市惊魂','商场恐慌','锈蚀工厂','最终防线','混乱之地'],
     upgradeNames: {
       dmg: '霰弹之怒', rof: '扳机狂热', speed: '疾风之鞋', hp: '钢铁皮肤',
       reload: '快手换弹', ammo: '备用弹匣', double: '双发齐射', crit: '神射手',
@@ -2133,6 +2133,7 @@ const FLOORS = [
   { name:'Mall Panic',      bgA:'#A89878', bgB:'#8D7E60', obstacles:['crate','crate','barrel'] },
   { name:'Industrial Rot',  bgA:'#5F6B70', bgB:'#4A5559', obstacles:['barrel','barrel','crate'] },
   { name:'Final Stand',     bgA:'#4A3A56', bgB:'#352741', obstacles:['crate','barrel','car'] },
+  { name:'Pandemonium',     bgA:'#3A1520', bgB:'#24101A', obstacles:['barrel','car','crate','barrel'] },
 ];
 const ROOMS_PER_FLOOR = 6; // 5 combat + 1 boss
 const COMBAT_ROOMS = 5;
@@ -2500,6 +2501,7 @@ const game = {
   superpowers: new Set(),
   phoenixUsed: false,         // Phoenix revive is single-use per run
   pendingSuperPower: false,   // queued between floorClear banner and pick overlay
+  pendingVictory: false,      // final-boss path: victory fires AFTER the pick
   currentSPChoices: [],
   selectedSPChoice: 0,
 };
@@ -5917,7 +5919,7 @@ function generateRoomSpawns(floor, roomIdx, isBoss) {
       if (floor >= 3) variants.push('boss_berserker');
       bossType = choice(variants);
     }
-    spawns.push({ type: bossType, elite: floor === 5, delay: 0 });
+    spawns.push({ type: bossType, elite: floor === FLOORS.length, delay: 0 });
     // Berserker is a solo fight — adding minions trivializes the burst-down
     // mechanic since the player has bigger threats to manage. Necromancer
     // already self-summons. Both should still get a small minion garnish so
@@ -6021,7 +6023,7 @@ function enterRoom(floor, roomIdx) {
   // the infinite trickle kicks in.
   game.bossAddT = 2.5;
 
-  const floorIdx = Math.min(floor-1, 4);
+  const floorIdx = Math.min(floor-1, FLOORS.length - 1);
   if (game.isBossRoom) {
     showBanner(t('bossRoom'), tFloorName(floorIdx));
     sfx('boss');
@@ -6061,24 +6063,30 @@ function clearRoomAndAdvance() {
   game.player.reloading = false;
 
   if (game.isBossRoom) {
-    if (game.floor >= FLOORS.length) {
-      // Victory!
-      game.state = 'victory';
-      showRunEnd(true);
-      return;
+    const isFinalBoss = game.floor >= FLOORS.length;
+    if (isFinalBoss) {
+      showBanner(t('floorClear'), '★ FINAL BOSS DOWN ★');
+    } else {
+      showBanner(t('floorClear'), t('enteringX', tFloorName(game.floor)));
     }
-    // Boss-clear checkpoint: resume at start of next floor.
-    saveCheckpoint(game.floor + 1, 0);
-    showBanner(t('floorClear'), t('enteringX', tFloorName(game.floor)));
     sfx('clear');
     // Game-tick-driven transition — automatically pauses during level-up pre-pause
     // or upgrade choice, since it's only decremented inside the 'playing' state block.
     // Shortened so the super-power pick fires promptly; the pick overlay holds
     // the game in place until the player confirms, so the next-floor enterRoom
-    // runs only AFTER the pick (via resumeFromSuperPower).
+    // (or victory screen, for the final boss) runs only AFTER the pick.
     game.transitionT = 1.2;
-    game.transitionTarget = { floor: game.floor + 1, roomIdx: 0 };
     game.pendingSuperPower = true;
+    if (isFinalBoss) {
+      // Final boss still grants a pick before the victory screen so the player
+      // sees the full pool of 6 picks' worth of choices across a full run.
+      game.transitionTarget = null;
+      game.pendingVictory = true;
+    } else {
+      // Boss-clear checkpoint: resume at start of next floor.
+      saveCheckpoint(game.floor + 1, 0);
+      game.transitionTarget = { floor: game.floor + 1, roomIdx: 0 };
+    }
   } else {
     if (isMidCheckpoint) {
       // Bonus reroll token is part of the mid-floor "brief shop" beat.
@@ -6562,10 +6570,17 @@ function resumeFromSuperPower() {
   hideAllOverlays();
   game.state = 'playing';
   clearInputs();
+  game.transitionT = 0;
+  // Final-boss path: pick happens BEFORE victory screen, so fire victory now.
+  if (game.pendingVictory) {
+    game.pendingVictory = false;
+    game.state = 'victory';
+    showRunEnd(true);
+    return;
+  }
   if (game.transitionTarget) {
     const t = game.transitionTarget;
     game.transitionTarget = null;
-    game.transitionT = 0;
     enterRoom(t.floor, t.roomIdx);
   }
 }
@@ -7101,6 +7116,7 @@ function startRun() {
   game.superpowers = new Set();
   game.phoenixUsed = false;
   game.pendingSuperPower = false;
+  game.pendingVictory = false;
   game.currentSPChoices = [];
   game.selectedSPChoice = 0;
   game.pendingLevelUps = 0;
@@ -7204,6 +7220,7 @@ function continueFromCheckpoint() {
   game.superpowers = new Set(cp.superpowers || []);
   game.phoenixUsed = !!cp.phoenixUsed;
   game.pendingSuperPower = false;
+  game.pendingVictory = false;
   game.currentSPChoices = [];
   game.selectedSPChoice = 0;
   game.bonusRerolls = cp.bonusRerolls || 0;
@@ -7288,14 +7305,18 @@ function loop(now) {
     // during the 1s pre-pause and the upgrade-choice screen).
     if (game.transitionT > 0) {
       game.transitionT -= dt;
-      if (game.transitionT <= 0 && game.transitionTarget) {
+      if (game.transitionT <= 0) {
         // Boss-clear flow: intercept the normal transition to show the super
-        // power pick first. resumeFromSuperPower fires enterRoom after the
-        // player confirms. Fall through to the normal enterRoom otherwise.
+        // power pick first. resumeFromSuperPower fires enterRoom (or the
+        // victory screen, for the final boss) after the player confirms.
         if (game.pendingSuperPower) {
           game.pendingSuperPower = false;
           showSuperPowerChoice();
-        } else {
+        } else if (game.pendingVictory) {
+          game.pendingVictory = false;
+          game.state = 'victory';
+          showRunEnd(true);
+        } else if (game.transitionTarget) {
           const t = game.transitionTarget;
           game.transitionTarget = null;
           enterRoom(t.floor, t.roomIdx);
