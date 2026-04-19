@@ -1790,14 +1790,14 @@ const I18N = {
       dmg:    (l)=>`+18% damage per level\n(now +${18*l}%)`,
       rof:    (l)=>`+13.5% fire rate per level\n(now +${(13.5*l).toFixed(1)}%)`,
       speed:  (l)=>`+9% move speed per level\n(now +${9*l}%)`,
-      hp:     (l)=>`+15 max HP per level\n(heals 15 on pickup)`,
+      hp:     (l)=>`+15% max HP per level (additive)\n(now +${15*l}% of current base HP)`,
       reload: (l)=>`-18% reload time per level\n(now -${Math.round((1-Math.pow(0.82,l))*100)}%)`,
       ammo:   (l)=>`+5 max ammo per level\n(refills on pickup)`,
       double: (l)=>`+1 bullet per shot per level\n(${1+l} shots, ${Math.round((l===1?0.55:Math.max(0.25,0.55-0.06*(l-1)))*100)}% dmg each)`,
       crit:   (l)=>`+9% crit chance per level\n(crits deal 2.5× damage)`,
       pierce: (l)=>`Bullets pierce 2 extra enemies\nper level (now ${2*l})`,
       explode:(l)=>`Bullets explode on hit\n(${70+15*(l-1)}px, ${Math.round((0.6+0.15*(l-1))*100)}% dmg)`,
-      vamp:   (l)=>`Heal ${(1.5*l).toFixed(1)} HP per hit landed`,
+      vamp:   (l)=>`Heal ${(0.5*l).toFixed(1)} HP per hit landed`,
       regen:  (l)=>`Regen ${(0.75*l).toFixed(2)} HP/sec\nwhile combat active`,
       thorns: (l)=>`Touching enemies take\n${(7.5*l).toFixed(1)} damage`,
       eagle:  (l)=>`+18% bullet speed & range\nper level (now +${18*l}%)`,
@@ -1952,14 +1952,14 @@ const I18N = {
       dmg:    (l)=>`每级 +18% 伤害\n(当前 +${18*l}%)`,
       rof:    (l)=>`每级 +13.5% 射速\n(当前 +${(13.5*l).toFixed(1)}%)`,
       speed:  (l)=>`每级 +9% 移动速度\n(当前 +${9*l}%)`,
-      hp:     (l)=>`每级 +15 最大生命\n(选取时回复 15 生命)`,
+      hp:     (l)=>`每级 +15% 最大生命（累加）\n(当前 +${15*l}% 基础生命)`,
       reload: (l)=>`每级 -18% 换弹时间\n(当前 -${Math.round((1-Math.pow(0.82,l))*100)}%)`,
       ammo:   (l)=>`每级 +5 最大弹药\n(选取时弹药补满)`,
       double: (l)=>`每级 +1 发子弹\n(共 ${1+l} 发，每发 ${Math.round((l===1?0.55:Math.max(0.25,0.55-0.06*(l-1)))*100)}% 伤害)`,
       crit:   (l)=>`每级 +9% 暴击率\n(暴击造成 2.5× 伤害)`,
       pierce: (l)=>`子弹每级额外穿透\n2 名敌人 (当前 ${2*l})`,
       explode:(l)=>`子弹命中后爆炸\n(半径 ${70+15*(l-1)}px, ${Math.round((0.6+0.15*(l-1))*100)}% 伤害)`,
-      vamp:   (l)=>`每次命中回复 ${(1.5*l).toFixed(1)} 生命`,
+      vamp:   (l)=>`每次命中回复 ${(0.5*l).toFixed(1)} 生命`,
       regen:  (l)=>`战斗中每秒回复 ${(0.75*l).toFixed(2)} 生命`,
       thorns: (l)=>`碰触你的敌人受到\n${(7.5*l).toFixed(1)} 点伤害`,
       eagle:  (l)=>`每级 +18% 子弹速度与射程\n(当前 +${18*l}%)`,
@@ -2590,11 +2590,11 @@ const UPGRADES = [
   // heavy 6, pierce/thorns/cleaver/swift/blitz/ignite/bleed/plague 5,
   // double/explode/whirl 1.
   { id:'dmg',      name:'Boomstick',     color:'#ff6b6b', icon:'💥', max:null, cls:'shared' },
-  { id:'rof',      name:'Hair Trigger',  color:'#ffbd2e', icon:'⚡',  max:12,  cls:'ranged' },
+  { id:'rof',      name:'Hair Trigger',  color:'#ffbd2e', icon:'⚡',  max:22,  cls:'ranged' },
   { id:'speed',    name:'Sneakers',      color:'#4ecdc4', icon:'👟', max:12,  cls:'shared' },
   { id:'hp',       name:'Tough Skin',    color:'#ff6b6b', icon:'❤️', max:null, cls:'shared' },
-  { id:'reload',   name:'Quick Hands',   color:'#ffbd2e', icon:'⏱️', max:10,  cls:'ranged' },
-  { id:'ammo',     name:'Extra Clip',    color:'#a36841', icon:'📦', max:12,  cls:'ranged' },
+  { id:'reload',   name:'Quick Hands',   color:'#ffbd2e', icon:'⏱️', max:20,  cls:'ranged' },
+  { id:'ammo',     name:'Extra Clip',    color:'#a36841', icon:'📦', max:22,  cls:'ranged' },
   { id:'double',   name:'Double Tap',    color:'#ffbd2e', icon:'🔫', max:5,   cls:'ranged' },
   { id:'crit',     name:'Sharpshooter',  color:'#ff6b6b', icon:'🎯', max:12,  cls:'shared' },
   { id:'pierce',   name:'Piercing Rounds', color:'#7b68ee', icon:'🔩', max:9, cls:'ranged' },
@@ -3021,7 +3021,7 @@ class Player {
     return this._baseSpeed * m * (this.slowT > 0 ? this.slowMul : 1);
   }
   get maxHp() {
-    let base = this._baseMaxHp + 15 * this.u('hp') + 2 * (this.level - 1);
+    let base = (this._baseMaxHp + 2 * (this.level - 1)) * (1 + 0.15 * this.u('hp'));
     let m = 1;
     if (hasSP('sp_juggernaut'))  m *= 1.60;
     if (hasSP('sp_glasscannon')) m *= 0.70;
@@ -3069,7 +3069,7 @@ class Player {
   get explosive()    { return this.u('explode'); }
   get doubleTap()    { return this.u('double'); }
   get xpMul()        { return 1 + 0.105 * this.u('scholar'); }
-  get vampHeal()     { return 1.5 * this.u('vamp'); }
+  get vampHeal()     { return 0.5 * this.u('vamp'); }
   get regenRate()    { return 0.75 * this.u('regen'); }
   get thornsDmg()    { return 7.5 * this.u('thorns'); }
   // DoT: new. Ignite capped at 100% so the extra stacks still help via
@@ -7524,8 +7524,8 @@ function renderStatsPanel(columnsEl) {
   // ---- DEFENSE / MOBILITY ----
   const defenseRows = [
     { label: t('stat_hp'),
-      formula: `${p._baseMaxHp} + 15×${p.u('hp')} + 2×${p.level-1}`,
-      value: `${fmt0(p.hp)} / ${fmt0(p.maxHp)}` },
+      formula: `(${p._baseMaxHp} + 2×${p.level-1}) × (1 + 0.15×${p.u('hp')})`,
+      value: `${Math.floor(p.hp)} / ${Math.floor(p.maxHp)}` },
     { label: t('stat_speed'),
       formula: `${p._baseSpeed} × (1 + 0.09×${p.u('speed')})`,
       value: `${fmt0(p._baseSpeed * (1 + 0.09 * p.u('speed')))} ${t('stat_pxSec')}` },
@@ -7542,7 +7542,7 @@ function renderStatsPanel(columnsEl) {
       formula: `7.5 × ${p.u('thorns')}`,
       value: `${fmt(p.thornsDmg, 1)} ${t('stat_perHit')}` },
     p.vampHeal > 0 && { label: t('stat_vamp'),
-      formula: `1.5 × ${p.u('vamp')}`,
+      formula: `0.5 × ${p.u('vamp')}`,
       value: `${fmt(p.vampHeal, 1)} HP${t('stat_perHit')}` },
   ].filter(Boolean);
 
@@ -7621,7 +7621,7 @@ function updateHUD() {
   if (!game.player) return;
   const p = game.player;
   $('hpFill').style.width = (p.hp / p.maxHp * 100) + '%';
-  $('hpText').textContent = `${Math.ceil(p.hp)}/${p.maxHp}`;
+  $('hpText').textContent = `${Math.floor(p.hp)}/${Math.floor(p.maxHp)}`;
   $('xpFill').style.width = (p.xp / p.xpNeeded * 100) + '%';
   $('xpText').textContent = `${Math.floor(p.xp)}/${p.xpNeeded}`;
   const af = $('ammoFill');
