@@ -639,6 +639,68 @@
   }
   .settings-cog:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--c-dark); }
   .settings-cog:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--c-dark); }
+  /* Appearance picker — reuses lang-card layout but with hot accent */
+  .skin-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    max-width: 760px;
+  }
+  @media (max-width: 720px) {
+    .skin-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  .skin-card {
+    width: 200px;
+    padding: 18px 14px;
+    background: rgba(26,20,40,0.95);
+    border: 5px solid var(--c-dark);
+    box-shadow: 0 8px 0 var(--c-dark), inset 0 4px 0 rgba(255,255,255,0.08);
+    border-radius: 22px;
+    cursor: pointer;
+    transition: transform 0.12s ease, box-shadow 0.12s ease, outline 0.08s ease;
+    text-align: center;
+    font-family: 'Bangers', 'ZCOOL KuaiLe', 'Noto Sans SC', sans-serif;
+    letter-spacing: 3px;
+    color: var(--c-hot);
+    position: relative;
+  }
+  .skin-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 0 var(--c-dark), 0 0 30px var(--c-hot);
+  }
+  .skin-card:active { transform: translateY(2px); box-shadow: 0 4px 0 var(--c-dark); }
+  .skin-card canvas {
+    display: block;
+    margin: 0 auto;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    background: rgba(15,10,26,0.45);
+    border-radius: 14px;
+    border: 3px solid var(--c-dark);
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.08);
+    cursor: pointer;
+  }
+  .skin-card .sname {
+    font-size: 22px;
+    margin-top: 10px;
+    letter-spacing: 3px;
+    line-height: 1;
+  }
+  .skin-card.active {
+    outline: 4px solid var(--c-cool);
+    outline-offset: 3px;
+    box-shadow: 0 14px 0 var(--c-dark), 0 0 40px var(--c-cool);
+    color: var(--c-cool);
+  }
+  .skin-card.active::after {
+    content: '✓';
+    position: absolute;
+    top: 6px; right: 10px;
+    font-family: 'Bangers', 'ZCOOL KuaiLe', 'Noto Sans SC', sans-serif;
+    font-size: 22px;
+    color: var(--c-cool);
+    text-shadow: 2px 2px 0 var(--c-dark);
+  }
 </style>
 </head>
 <body>
@@ -720,6 +782,7 @@
     </div>
     <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center;">
       <button class="btn" id="startBtn" data-i18n="startRun">START RUN</button>
+      <button class="btn hot" id="appearanceBtn" data-i18n="appearance">APPEARANCE</button>
       <button class="btn cool" id="settingsBtn" data-i18n="settings">SETTINGS</button>
     </div>
     <div class="controls">
@@ -774,6 +837,7 @@
     <div class="subtitle cool" data-i18n="paused">PAUSED</div>
     <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center;">
       <button class="btn cool" id="resumeBtn" data-i18n="resume">RESUME</button>
+      <button class="btn hot" id="pauseAppearanceBtn" data-i18n="appearance">APPEARANCE</button>
       <button class="btn" id="pauseSettingsBtn" data-i18n="settings">SETTINGS</button>
       <button class="btn" id="pauseMenuBtn" data-i18n="quitRun">QUIT RUN</button>
     </div>
@@ -795,6 +859,14 @@
     </div>
     <button class="btn" id="settingsBackBtn" data-i18n="back">BACK</button>
   </div>
+
+  <!-- APPEARANCE -->
+  <div class="overlay hidden" id="appearance">
+    <div class="subtitle" data-i18n="appearance">APPEARANCE</div>
+    <div class="subtitle cool" style="font-size: 28px;" data-i18n="chooseAppearance">CHOOSE YOUR OUTFIT</div>
+    <div class="skin-grid" id="skinGrid"></div>
+    <button class="btn" id="appearanceBackBtn" data-i18n="back">BACK</button>
+  </div>
 </div>
 
 <script>
@@ -803,7 +875,8 @@
 // =============================================================
 
 const canvas = document.getElementById('game');
-const ctx = canvas.getContext('2d');
+let ctx = canvas.getContext('2d');
+const mainCtx = ctx;
 const W = canvas.width, H = canvas.height;
 
 // ------------- UTIL --------------------------------------------
@@ -864,8 +937,16 @@ const I18N = {
     intro: 'Survive 5 floors of undead chaos. Every run is different.<br>Level up — pick your build — push deeper — die trying.',
     startRun: 'START RUN',
     settings: 'SETTINGS',
+    appearance: 'APPEARANCE',
+    chooseAppearance: 'CHOOSE YOUR OUTFIT',
     language: 'LANGUAGE',
     back: 'BACK',
+    skin_default:  'SURVIVOR',
+    skin_hazmat:   'HAZMAT',
+    skin_soldier:  'SOLDIER',
+    skin_punk:     'PUNK',
+    skin_scientist:'SCIENTIST',
+    skin_ninja:    'NINJA',
     chooseLanguageBig: 'CHOOSE LANGUAGE',
     move: 'Move', aim: 'Aim', shoot: 'Shoot', reload: 'Reload', dash: 'Dash', pause: 'Pause',
     levelUp: 'LEVEL UP!',
@@ -920,8 +1001,16 @@ const I18N = {
     intro: '在五层亡灵混战中求生，每一次冒险都不一样。<br>升级 — 打造你的 build — 深入险境 — 战至末路。',
     startRun: '开始游戏',
     settings: '设置',
+    appearance: '外观',
+    chooseAppearance: '选择你的装扮',
     language: '语言',
     back: '返回',
+    skin_default:  '幸存者',
+    skin_hazmat:   '防化员',
+    skin_soldier:  '军人',
+    skin_punk:     '朋克',
+    skin_scientist:'科学家',
+    skin_ninja:    '忍者',
     chooseLanguageBig: '选择语言',
     move: '移动', aim: '瞄准', shoot: '射击', reload: '换弹', dash: '冲刺', pause: '暂停',
     levelUp: '升级！',
@@ -1011,6 +1100,8 @@ function applyTranslations() {
     renderChoiceCards();
   }
   refreshLangCardActive();
+  if (typeof refreshSkinCardActive === 'function') refreshSkinCardActive();
+  if (typeof renderSkinCards === 'function') renderSkinCards();
 }
 
 function setLanguage(lang) {
@@ -1028,9 +1119,33 @@ function loadSavedLang() {
   return false;
 }
 
+function loadSavedSkin() {
+  try {
+    const s = localStorage.getItem('zr_skin');
+    if (s) return s;
+  } catch(e) {}
+  return null;
+}
+
+function setSkin(id) {
+  // SKIN_BY_ID may not exist yet at first call — but it's defined right after
+  // the UPGRADES table, so by the time wiring runs, it's available.
+  if (typeof SKIN_BY_ID !== 'undefined' && !SKIN_BY_ID[id]) return;
+  game.skinId = id;
+  try { localStorage.setItem('zr_skin', id); } catch(e) {}
+  refreshSkinCardActive();
+}
+
 function refreshLangCardActive() {
   document.querySelectorAll('.lang-card').forEach(c => {
     if (c.dataset.lang === currentLang) c.classList.add('active');
+    else c.classList.remove('active');
+  });
+}
+
+function refreshSkinCardActive() {
+  document.querySelectorAll('.skin-card').forEach(c => {
+    if (c.dataset.skin === game.skinId) c.classList.add('active');
     else c.classList.remove('active');
   });
 }
@@ -1183,6 +1298,56 @@ const UPGRADES = [
 ];
 const UPG_BY_ID = Object.fromEntries(UPGRADES.map(u => [u.id, u]));
 
+// ------------- PLAYER SKINS ------------------------------------
+// Each skin describes how the Player's draw() routine paints the survivor.
+// Picked from the APPEARANCE overlay; stored in localStorage as 'zr_skin'.
+const SKINS = [
+  {
+    id: 'default',  nameKey: 'skin_default',
+    bodyColor: '#4ecdc4', dashColor: '#7dd3d0', accentColor: '#0f0a1a',
+    legColor: '#2a2f4a', gunColor: '#2a2f4a',
+    headColor: '#ffd2a4', hairColor: '#3b2a1d', hairR: 5,
+    hat: null, accessory: 'strap',
+  },
+  {
+    id: 'hazmat',   nameKey: 'skin_hazmat',
+    bodyColor: '#ffd23f', dashColor: '#fff08a', accentColor: '#7a5a00',
+    legColor: '#c79a00', gunColor: '#3a2f1a',
+    headColor: '#e8eef2', hairColor: '#9aa6b2', hairR: 0,
+    hat: 'gasmask', accessory: 'tape',
+  },
+  {
+    id: 'soldier',  nameKey: 'skin_soldier',
+    bodyColor: '#5a7a3c', dashColor: '#86a861', accentColor: '#2a3818',
+    legColor: '#3d5526', gunColor: '#1a1a1a',
+    headColor: '#e0b48a', hairColor: '#3d2a14', hairR: 4,
+    hat: 'helmet', accessory: 'vest',
+  },
+  {
+    id: 'punk',     nameKey: 'skin_punk',
+    bodyColor: '#2a1a1a', dashColor: '#5e2a2a', accentColor: '#0f0a1a',
+    legColor: '#1a0f0f', gunColor: '#3a2a2a',
+    headColor: '#f0c8a0', hairColor: '#ff3030', hairR: 5,
+    hat: 'mohawk', accessory: 'studs',
+  },
+  {
+    id: 'scientist',nameKey: 'skin_scientist',
+    bodyColor: '#f4f4f0', dashColor: '#ffffff', accentColor: '#9aa6b2',
+    legColor: '#3a4055', gunColor: '#2a2f4a',
+    headColor: '#ffd2a4', hairColor: '#a87b3f', hairR: 5,
+    hat: 'goggles', accessory: 'pocket',
+  },
+  {
+    id: 'ninja',    nameKey: 'skin_ninja',
+    bodyColor: '#1a1428', dashColor: '#3a2a54', accentColor: '#c881ff',
+    legColor: '#0f0a1a', gunColor: '#0f0a1a',
+    headColor: '#1a1428', hairColor: '#0f0a1a', hairR: 0,
+    hat: 'mask', accessory: 'sash',
+  },
+];
+const SKIN_BY_ID = Object.fromEntries(SKINS.map(s => [s.id, s]));
+function getSkin() { return SKIN_BY_ID[game.skinId] || SKINS[0]; }
+
 // ------------- GAME STATE --------------------------------------
 const game = {
   state: 'menu',
@@ -1212,6 +1377,7 @@ const game = {
   levelupPauseT: 0,        // countdown for the 1s freeze before upgrade cards appear
   selectedChoice: 0,
   currentChoices: [],
+  skinId: 'default',
 };
 
 // ------------- COLLISION HELPERS -------------------------------
@@ -1455,42 +1621,180 @@ class Player {
     const legBob = Math.sin(this.walkPhase) * 3;
     const bodyFlash = this.flashT > 0 && (Math.floor(this.flashT*30)%2===0);
     const dashing = this.dashT > 0;
-
-    ctx.save();
-    ctx.translate(x, y);
-    // Legs
-    ctx.fillStyle = '#2a2f4a';
-    ctx.beginPath(); ctx.ellipse(-7, 8+legBob, 6, 10, 0, 0, TAU); ctx.fill();
-    ctx.beginPath(); ctx.ellipse( 7, 8-legBob, 6, 10, 0, 0, TAU); ctx.fill();
-    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
-    ctx.beginPath(); ctx.ellipse(-7, 8+legBob, 6, 10, 0, 0, TAU); ctx.stroke();
-    ctx.beginPath(); ctx.ellipse( 7, 8-legBob, 6, 10, 0, 0, TAU); ctx.stroke();
-
-    ctx.rotate(this.angle);
-    // Gun
-    ctx.fillStyle = '#2a2f4a';
-    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
-    ctx.beginPath(); ctx.rect(10, -4, 24, 8); ctx.fill(); ctx.stroke();
-    ctx.beginPath(); ctx.rect(14, -7, 4, 3); ctx.fill(); ctx.stroke();
-    // Body
-    ctx.fillStyle = bodyFlash ? '#ffffff' : (dashing ? '#7dd3d0' : '#4ecdc4');
-    ctx.beginPath(); ctx.arc(0, 0, this.r, 0, TAU); ctx.fill(); ctx.stroke();
-    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 2.5;
-    ctx.beginPath(); ctx.moveTo(-12, -8); ctx.lineTo(12, 8); ctx.stroke();
-    // Head
-    ctx.fillStyle = bodyFlash ? '#fff' : '#ffd2a4';
-    ctx.beginPath(); ctx.arc(4, 0, 11, 0, TAU); ctx.fill();
-    ctx.lineWidth = 3; ctx.stroke();
-    ctx.fillStyle = '#0f0a1a';
-    ctx.beginPath(); ctx.arc(10, -1, 2, 0, TAU); ctx.fill();
-    ctx.fillStyle = '#3b2a1d';
-    ctx.beginPath(); ctx.arc(0, -7, 5, 0, TAU); ctx.fill(); ctx.stroke();
-    ctx.restore();
-
+    const skin = getSkin();
+    drawPlayerSprite(0, 0, this.r, this.angle, skin, {
+      legBob, bodyFlash, dashing, translateXY: [x, y]
+    });
     // Player HP bar (over head)
     const bw = 44, bh = 6;
     drawHPBar(x - bw/2, y - this.r - 16, bw, bh, this.hp / this.maxHp, '#8fcf3f');
   }
+}
+
+// Self-contained player sprite painter (used both in-game and for skin previews).
+// If `translateXY` is given, ctx is translated to those world coords; otherwise it
+// paints around the current ctx origin (used by preview canvases).
+function drawPlayerSprite(localX, localY, r, angle, skin, opts = {}) {
+  const legBob = opts.legBob || 0;
+  const bodyFlash = !!opts.bodyFlash;
+  const dashing = !!opts.dashing;
+
+  ctx.save();
+  if (opts.translateXY) ctx.translate(opts.translateXY[0], opts.translateXY[1]);
+  else ctx.translate(localX, localY);
+
+  // ----- Legs (always drawn upright, before rotation) -----
+  ctx.fillStyle = skin.legColor;
+  ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
+  ctx.beginPath(); ctx.ellipse(-7, 8+legBob, 6, 10, 0, 0, TAU); ctx.fill(); ctx.stroke();
+  ctx.beginPath(); ctx.ellipse( 7, 8-legBob, 6, 10, 0, 0, TAU); ctx.fill(); ctx.stroke();
+  // boots
+  ctx.fillStyle = '#0f0a1a';
+  ctx.beginPath(); ctx.ellipse(-7, 14+legBob, 6, 4, 0, 0, TAU); ctx.fill();
+  ctx.beginPath(); ctx.ellipse( 7, 14-legBob, 6, 4, 0, 0, TAU); ctx.fill();
+
+  ctx.rotate(angle);
+
+  // ----- Gun -----
+  ctx.fillStyle = skin.gunColor;
+  ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
+  ctx.beginPath(); ctx.rect(10, -4, 24, 8); ctx.fill(); ctx.stroke();
+  ctx.beginPath(); ctx.rect(14, -7, 4, 3); ctx.fill(); ctx.stroke();
+  // muzzle highlight
+  ctx.fillStyle = '#5a5a6a';
+  ctx.fillRect(32, -2, 3, 4);
+
+  // ----- Body -----
+  const baseBody = bodyFlash ? '#ffffff' : (dashing ? skin.dashColor : skin.bodyColor);
+  ctx.fillStyle = baseBody;
+  ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
+  ctx.beginPath(); ctx.arc(0, 0, r, 0, TAU); ctx.fill(); ctx.stroke();
+  // body highlight rim
+  if (!bodyFlash) {
+    ctx.strokeStyle = lighten(skin.bodyColor, 25);
+    ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.arc(0, 0, r-3, -2.6, -1.0); ctx.stroke();
+  }
+
+  // ----- Accessory on torso -----
+  ctx.lineWidth = 2.5;
+  if (skin.accessory === 'strap') {
+    ctx.strokeStyle = skin.accentColor;
+    ctx.beginPath(); ctx.moveTo(-12, -8); ctx.lineTo(12, 8); ctx.stroke();
+  } else if (skin.accessory === 'tape') {
+    // hazmat seal — bright tape band
+    ctx.strokeStyle = '#ff6b6b';
+    ctx.lineWidth = 4;
+    ctx.beginPath(); ctx.moveTo(-r*0.85, 4); ctx.lineTo(r*0.85, 4); ctx.stroke();
+    ctx.lineWidth = 1.5; ctx.strokeStyle = '#0f0a1a';
+    ctx.beginPath(); ctx.moveTo(-r*0.85, 4); ctx.lineTo(r*0.85, 4); ctx.stroke();
+  } else if (skin.accessory === 'vest') {
+    // tactical vest — twin pouches
+    ctx.fillStyle = '#2a3818';
+    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 2;
+    ctx.fillRect(-10, -8, 7, 10); ctx.strokeRect(-10, -8, 7, 10);
+    ctx.fillRect(  3, -8, 7, 10); ctx.strokeRect(  3, -8, 7, 10);
+  } else if (skin.accessory === 'studs') {
+    // punk — leather jacket studs
+    ctx.fillStyle = '#c0c0c8';
+    for (const [sx, sy] of [[-9,-6],[-3,-9],[5,-7],[10,-2],[-10,4],[-2,7],[7,5]]) {
+      ctx.beginPath(); ctx.arc(sx, sy, 1.7, 0, TAU); ctx.fill();
+    }
+    ctx.strokeStyle = '#5a2a2a'; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(-r*0.7, -2); ctx.lineTo(r*0.7, 2); ctx.stroke();
+  } else if (skin.accessory === 'pocket') {
+    // lab coat — collar + pocket
+    ctx.strokeStyle = '#9aa6b2'; ctx.lineWidth = 2.5;
+    ctx.beginPath(); ctx.moveTo(0, -r); ctx.lineTo(0, r*0.6); ctx.stroke();
+    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 1.5;
+    ctx.strokeRect(-11, 1, 7, 7);
+    // tie hint
+    ctx.fillStyle = '#7b68ee';
+    ctx.beginPath(); ctx.moveTo(-2,-r*0.6); ctx.lineTo(2,-r*0.6); ctx.lineTo(0,r*0.4); ctx.closePath(); ctx.fill();
+  } else if (skin.accessory === 'sash') {
+    ctx.strokeStyle = skin.accentColor;
+    ctx.lineWidth = 4;
+    ctx.beginPath(); ctx.moveTo(-r*0.85, -2); ctx.lineTo(r*0.85, 4); ctx.stroke();
+    ctx.lineWidth = 1.5; ctx.strokeStyle = '#0f0a1a';
+    ctx.beginPath(); ctx.moveTo(-r*0.85, -2); ctx.lineTo(r*0.85, 4); ctx.stroke();
+  }
+
+  // ----- Head -----
+  ctx.fillStyle = bodyFlash ? '#fff' : skin.headColor;
+  ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
+  ctx.beginPath(); ctx.arc(4, 0, 11, 0, TAU); ctx.fill(); ctx.stroke();
+  // eye
+  ctx.fillStyle = '#0f0a1a';
+  ctx.beginPath(); ctx.arc(10, -1, 2, 0, TAU); ctx.fill();
+
+  // ----- Hair / hat -----
+  if (skin.hairR > 0 && !skin.hat) {
+    ctx.fillStyle = skin.hairColor;
+    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.arc(0, -7, skin.hairR, 0, TAU); ctx.fill(); ctx.stroke();
+  }
+  if (skin.hat === 'gasmask') {
+    // gas mask: dark goggles wrap + filter snout
+    ctx.fillStyle = '#1a1a1a'; ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.ellipse(4, -2, 11, 7, 0, 0, TAU); ctx.fill(); ctx.stroke();
+    // lenses
+    ctx.fillStyle = '#7be3ff';
+    ctx.beginPath(); ctx.arc(0, -2, 3, 0, TAU); ctx.fill();
+    ctx.beginPath(); ctx.arc(8, -2, 3, 0, TAU); ctx.fill();
+    ctx.fillStyle = '#fff';
+    ctx.beginPath(); ctx.arc(1.2, -3, 0.9, 0, TAU); ctx.fill();
+    ctx.beginPath(); ctx.arc(9.2, -3, 0.9, 0, TAU); ctx.fill();
+    // filter
+    ctx.fillStyle = '#3a3a3a'; ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.rect(11, 2, 6, 5); ctx.fill(); ctx.stroke();
+  } else if (skin.hat === 'helmet') {
+    // soldier helmet dome
+    ctx.fillStyle = '#3d4a26'; ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.arc(4, -4, 12, Math.PI*1.05, Math.PI*1.95); ctx.fill(); ctx.stroke();
+    // strap
+    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.moveTo(-6, 0); ctx.lineTo(14, 0); ctx.stroke();
+    // star
+    ctx.fillStyle = '#ffbd2e';
+    ctx.beginPath(); ctx.arc(6, -7, 1.6, 0, TAU); ctx.fill();
+  } else if (skin.hat === 'mohawk') {
+    // red mohawk spikes
+    ctx.fillStyle = skin.hairColor; ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 2;
+    for (let i = -1; i <= 2; i++) {
+      const sx = 0 + i*3.5;
+      ctx.beginPath();
+      ctx.moveTo(sx-2, -8);
+      ctx.lineTo(sx,   -16);
+      ctx.lineTo(sx+2, -8);
+      ctx.closePath(); ctx.fill(); ctx.stroke();
+    }
+  } else if (skin.hat === 'goggles') {
+    // scientist goggles band across forehead
+    ctx.strokeStyle = '#3a3a3a'; ctx.lineWidth = 4;
+    ctx.beginPath(); ctx.moveTo(-6, -5); ctx.lineTo(13, -5); ctx.stroke();
+    ctx.fillStyle = '#7be3ff'; ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.arc(0, -5, 3, 0, TAU); ctx.fill(); ctx.stroke();
+    ctx.beginPath(); ctx.arc(9, -5, 3, 0, TAU); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = '#fff';
+    ctx.beginPath(); ctx.arc(1.2, -6, 0.9, 0, TAU); ctx.fill();
+    ctx.beginPath(); ctx.arc(10.2, -6, 0.9, 0, TAU); ctx.fill();
+  } else if (skin.hat === 'mask') {
+    // ninja face wrap — covers everything below eyes
+    ctx.fillStyle = '#0f0a1a';
+    ctx.beginPath(); ctx.ellipse(5, 3, 9, 6, 0, 0, TAU); ctx.fill();
+    // headband stripe
+    ctx.fillStyle = skin.accentColor;
+    ctx.fillRect(-7, -7, 22, 3);
+    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 1;
+    ctx.strokeRect(-7, -7, 22, 3);
+    // band tail
+    ctx.fillStyle = skin.accentColor;
+    ctx.beginPath();
+    ctx.moveTo(-7, -7); ctx.lineTo(-15, -2); ctx.lineTo(-13, 2); ctx.lineTo(-7, -4); ctx.closePath();
+    ctx.fill(); ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 1.5; ctx.stroke();
+  }
+
+  ctx.restore();
 }
 
 // ------------- ZOMBIE ------------------------------------------
@@ -1806,19 +2110,84 @@ class Zombie {
     const x = this.x, y = this.y;
     drawShadow(x, y, this.r);
 
-    // Elite aura
+    const now = performance.now();
+
+    // Runner motion-blur trail (drawn underneath everything else)
+    if (this.type === 'runner') {
+      const sp = Math.hypot((this._lastX!=null? x-this._lastX:0), (this._lastY!=null? y-this._lastY:0));
+      this._lastX = x; this._lastY = y;
+      // approximate fast-moving — runners are always fast — paint a couple ghost circles behind
+      const back = Math.cos(this.angle), bsy = Math.sin(this.angle);
+      for (let i = 1; i <= 3; i++) {
+        ctx.globalAlpha = 0.18 - i*0.04;
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(x - back*i*7, y - bsy*i*7, this.r*0.85, 0, TAU);
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+    }
+
+    // Elite aura — animated outline + sparkle ring
     if (this.elite) {
-      const pulse = 0.5 + 0.3*Math.sin(performance.now()/200);
-      ctx.fillStyle = `rgba(200,129,255,${0.15*pulse})`;
-      ctx.beginPath(); ctx.arc(x, y, this.r*1.8, 0, TAU); ctx.fill();
-      ctx.strokeStyle = `rgba(200,129,255,${0.5*pulse})`;
+      const pulse = 0.5 + 0.3*Math.sin(now/200);
+      ctx.fillStyle = `rgba(200,129,255,${0.13*pulse})`;
+      ctx.beginPath(); ctx.arc(x, y, this.r*1.9, 0, TAU); ctx.fill();
+      ctx.strokeStyle = `rgba(200,129,255,${0.55*pulse})`;
       ctx.lineWidth = 2;
-      ctx.beginPath(); ctx.arc(x, y, this.r*1.4, 0, TAU); ctx.stroke();
+      // dashed rotating outline
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(now/600);
+      ctx.setLineDash([6, 5]);
+      ctx.beginPath(); ctx.arc(0, 0, this.r*1.45, 0, TAU); ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.restore();
+      // sparkles
+      for (let i = 0; i < 4; i++) {
+        const a = now/400 + i*Math.PI/2;
+        const sx = x + Math.cos(a)*this.r*1.6;
+        const sy = y + Math.sin(a)*this.r*1.6;
+        ctx.fillStyle = `rgba(238,210,255,${0.6*pulse})`;
+        ctx.beginPath(); ctx.arc(sx, sy, 1.8 + Math.sin(now/180+i), 0, TAU); ctx.fill();
+      }
+    }
+
+    // Exploder pulsing glow — intensifies as fuse runs out
+    if (this.type === 'exploder') {
+      let intensity = 0.18;
+      if (this.fusing) {
+        const base = ZTYPES.exploder.fuse;
+        const left = Math.max(0, this.fuseT) / base; // 1 -> 0
+        const urge = 1 - left;                       // 0 -> 1
+        intensity = 0.25 + 0.55 * urge * (0.5 + 0.5*Math.sin(now/(60 - urge*40)));
+      } else {
+        intensity = 0.18 + 0.1*Math.sin(now/220);
+      }
+      const grad = ctx.createRadialGradient(x, y, 0, x, y, this.r*2.2);
+      grad.addColorStop(0, `rgba(255,189,46,${intensity})`);
+      grad.addColorStop(0.6, `rgba(255,107,107,${intensity*0.5})`);
+      grad.addColorStop(1, 'rgba(255,107,107,0)');
+      ctx.fillStyle = grad;
+      ctx.beginPath(); ctx.arc(x, y, this.r*2.2, 0, TAU); ctx.fill();
+    }
+
+    // Boss menacing aura
+    if (this.type === 'boss') {
+      const pulse = 0.4 + 0.25*Math.sin(now/300);
+      const grad = ctx.createRadialGradient(x, y, this.r*0.6, x, y, this.r*2.1);
+      grad.addColorStop(0, this.elite ? 'rgba(200,129,255,0.18)' : 'rgba(199,56,102,0.16)');
+      grad.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.fillStyle = grad;
+      ctx.beginPath(); ctx.arc(x, y, this.r*2.1, 0, TAU); ctx.fill();
+      ctx.strokeStyle = this.elite ? `rgba(200,129,255,${0.45*pulse})` : `rgba(255,107,107,${0.4*pulse})`;
+      ctx.lineWidth = 3;
+      ctx.beginPath(); ctx.arc(x, y, this.r*1.25, 0, TAU); ctx.stroke();
     }
 
     // Exploder fuse flash
     const fuseFlash = this.type==='exploder' && this.fusing &&
-                     (Math.floor(performance.now()/80) % 2 === 0);
+                     (Math.floor(now/80) % 2 === 0);
 
     ctx.save();
     ctx.translate(x, y);
@@ -1828,24 +2197,144 @@ class Zombie {
 
     // Legs
     const bob = Math.sin(this.walkPhase) * 3;
-    ctx.fillStyle = '#1e3816';
+    const legColor = this.type === 'runner' ? '#162410' : '#1e3816';
+    ctx.fillStyle = legColor;
     ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
-    ctx.beginPath(); ctx.ellipse(-this.r*0.4, this.r*0.7+bob, this.r*0.35, this.r*0.5, 0, 0, TAU); ctx.fill(); ctx.stroke();
-    ctx.beginPath(); ctx.ellipse( this.r*0.4, this.r*0.7-bob, this.r*0.35, this.r*0.5, 0, 0, TAU); ctx.fill(); ctx.stroke();
+    // runners get longer/thinner legs
+    const legW = this.type==='runner' ? this.r*0.28 : this.r*0.35;
+    const legH = this.type==='runner' ? this.r*0.62 : this.r*0.5;
+    ctx.beginPath(); ctx.ellipse(-this.r*0.4, this.r*0.7+bob, legW, legH, 0, 0, TAU); ctx.fill(); ctx.stroke();
+    ctx.beginPath(); ctx.ellipse( this.r*0.4, this.r*0.7-bob, legW, legH, 0, 0, TAU); ctx.fill(); ctx.stroke();
 
     ctx.rotate(this.angle);
-    // Body
+
+    // ----- Body -----
     ctx.fillStyle = bodyColor;
-    ctx.beginPath(); ctx.arc(0, 0, this.r, 0, TAU); ctx.fill(); ctx.stroke();
+    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
+    if (this.type === 'spitter') {
+      // bloated belly — slightly elongated body
+      ctx.beginPath(); ctx.ellipse(0, this.r*0.05, this.r*1.05, this.r*1.1, 0, 0, TAU); ctx.fill(); ctx.stroke();
+    } else if (this.type === 'brute') {
+      // boxy hulking shoulders
+      ctx.beginPath();
+      const w = this.r*1.1, h = this.r*0.95;
+      ctx.moveTo(-w, -h*0.4);
+      ctx.lineTo(-w*0.7, -h);
+      ctx.lineTo( w*0.7, -h);
+      ctx.lineTo( w,  -h*0.4);
+      ctx.lineTo( w*0.95, h*0.6);
+      ctx.lineTo(-w*0.95, h*0.6);
+      ctx.closePath();
+      ctx.fill(); ctx.stroke();
+    } else {
+      ctx.beginPath(); ctx.arc(0, 0, this.r, 0, TAU); ctx.fill(); ctx.stroke();
+    }
 
-    // Shirt stripes
-    ctx.strokeStyle = flash ? '#c8c8c8' : '#3a5a1f';
-    ctx.lineWidth = 3;
-    ctx.beginPath(); ctx.moveTo(-this.r*0.7, -this.r*0.2); ctx.lineTo(this.r*0.3, this.r*0.5); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(-this.r*0.5, this.r*0.3); ctx.lineTo(this.r*0.1, -this.r*0.4); ctx.stroke();
+    // ----- Body details by type -----
+    if (this.type === 'walker') {
+      // tattered shirt — hanging strips + exposed bone hint
+      ctx.strokeStyle = flash ? '#c8c8c8' : '#3a5a1f';
+      ctx.lineWidth = 3;
+      ctx.beginPath(); ctx.moveTo(-this.r*0.7, -this.r*0.2); ctx.lineTo(this.r*0.3, this.r*0.5); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(-this.r*0.5, this.r*0.3); ctx.lineTo(this.r*0.1, -this.r*0.4); ctx.stroke();
+      // tatters at bottom
+      ctx.fillStyle = '#1e3816';
+      ctx.beginPath();
+      ctx.moveTo(-this.r*0.5, this.r*0.6);
+      ctx.lineTo(-this.r*0.3, this.r*0.95);
+      ctx.lineTo(-this.r*0.1, this.r*0.6);
+      ctx.lineTo( this.r*0.1, this.r*0.9);
+      ctx.lineTo( this.r*0.3, this.r*0.6);
+      ctx.closePath(); ctx.fill();
+      // exposed bone (rib) hint
+      ctx.strokeStyle = '#f5e8c8'; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.moveTo(-this.r*0.25, -this.r*0.05); ctx.lineTo(this.r*0.05, -this.r*0.1); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(-this.r*0.25, this.r*0.15); ctx.lineTo(this.r*0.05, this.r*0.10); ctx.stroke();
+    } else if (this.type === 'runner') {
+      // lean torn jersey — diagonal slashes
+      ctx.strokeStyle = flash ? '#c8c8c8' : '#5e8a25';
+      ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.moveTo(-this.r*0.6, -this.r*0.1); ctx.lineTo(this.r*0.4, -this.r*0.4); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(-this.r*0.6, this.r*0.2); ctx.lineTo(this.r*0.5, this.r*0.0); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(-this.r*0.4, this.r*0.5); ctx.lineTo(this.r*0.4, this.r*0.3); ctx.stroke();
+      // bloodied claws hint forward
+      ctx.fillStyle = '#c73866';
+      ctx.beginPath(); ctx.arc(this.r*0.75, this.r*0.0, 2, 0, TAU); ctx.fill();
+    } else if (this.type === 'spitter') {
+      // glowing acid sacs across belly
+      const breathe = 0.85 + 0.15*Math.sin(now/240);
+      ctx.fillStyle = `rgba(143,207,63,${0.6*breathe})`;
+      ctx.beginPath(); ctx.arc(-this.r*0.3, this.r*0.4, 5*breathe, 0, TAU); ctx.fill();
+      ctx.beginPath(); ctx.arc(0,           this.r*0.55, 6*breathe, 0, TAU); ctx.fill();
+      ctx.beginPath(); ctx.arc(this.r*0.3,  this.r*0.4, 5*breathe, 0, TAU); ctx.fill();
+      ctx.fillStyle = '#cedc4e';
+      ctx.beginPath(); ctx.arc(-this.r*0.3, this.r*0.4, 2, 0, TAU); ctx.fill();
+      ctx.beginPath(); ctx.arc(0,           this.r*0.55, 2, 0, TAU); ctx.fill();
+      ctx.beginPath(); ctx.arc(this.r*0.3,  this.r*0.4, 2, 0, TAU); ctx.fill();
+      // dark veins
+      ctx.strokeStyle = '#3a5a1f'; ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.moveTo(-this.r*0.6, this.r*0.0); ctx.quadraticCurveTo(-this.r*0.3, this.r*0.3, 0, this.r*0.55); ctx.stroke();
+    } else if (this.type === 'exploder') {
+      // boil cluster — pulsing red sores
+      const fp = this.fusing ? 1 - Math.max(0, this.fuseT)/ZTYPES.exploder.fuse : 0;
+      const heat = 0.7 + fp*0.4 + 0.15*Math.sin(now/120);
+      ctx.fillStyle = `rgba(255,80,40,${heat})`;
+      ctx.beginPath(); ctx.arc(-this.r*0.35, -this.r*0.1, 4, 0, TAU); ctx.fill();
+      ctx.beginPath(); ctx.arc( this.r*0.0,   this.r*0.35, 5, 0, TAU); ctx.fill();
+      ctx.beginPath(); ctx.arc( this.r*0.35, -this.r*0.05, 4, 0, TAU); ctx.fill();
+      ctx.fillStyle = '#fff6c9';
+      ctx.beginPath(); ctx.arc(-this.r*0.35, -this.r*0.1, 1.5, 0, TAU); ctx.fill();
+      ctx.beginPath(); ctx.arc( this.r*0.0,   this.r*0.35, 1.5, 0, TAU); ctx.fill();
+      ctx.beginPath(); ctx.arc( this.r*0.35, -this.r*0.05, 1.5, 0, TAU); ctx.fill();
+    } else if (this.type === 'brute') {
+      // muscle / armor plates — chest plate + shoulder rivets
+      ctx.fillStyle = flash ? '#d8d8d8' : '#3d5a26';
+      ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(-this.r*0.55, -this.r*0.2);
+      ctx.lineTo( this.r*0.55, -this.r*0.2);
+      ctx.lineTo( this.r*0.4,   this.r*0.35);
+      ctx.lineTo(-this.r*0.4,   this.r*0.35);
+      ctx.closePath(); ctx.fill(); ctx.stroke();
+      // rivets
+      ctx.fillStyle = '#c0c0c8';
+      for (const [rx, ry] of [[-this.r*0.45,-this.r*0.1],[ this.r*0.45,-this.r*0.1],[-this.r*0.3,this.r*0.25],[ this.r*0.3,this.r*0.25]]) {
+        ctx.beginPath(); ctx.arc(rx, ry, 1.7, 0, TAU); ctx.fill();
+      }
+      // arm muscles bulge
+      ctx.fillStyle = bodyColor;
+      ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
+      ctx.beginPath(); ctx.arc(-this.r*0.95, -this.r*0.45, this.r*0.32, 0, TAU); ctx.fill(); ctx.stroke();
+      ctx.beginPath(); ctx.arc( this.r*0.95, -this.r*0.45, this.r*0.32, 0, TAU); ctx.fill(); ctx.stroke();
+    } else if (this.type === 'boss') {
+      // shoulder spikes + chest plate
+      ctx.fillStyle = '#f5e8c8'; ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 2.5;
+      // left shoulder spike
+      ctx.beginPath();
+      ctx.moveTo(-this.r*0.95, -this.r*0.5);
+      ctx.lineTo(-this.r*1.25, -this.r*1.1);
+      ctx.lineTo(-this.r*0.65, -this.r*0.6);
+      ctx.closePath(); ctx.fill(); ctx.stroke();
+      // right shoulder spike
+      ctx.beginPath();
+      ctx.moveTo( this.r*0.95, -this.r*0.5);
+      ctx.lineTo( this.r*1.25, -this.r*1.1);
+      ctx.lineTo( this.r*0.65, -this.r*0.6);
+      ctx.closePath(); ctx.fill(); ctx.stroke();
+      // chest plate
+      ctx.fillStyle = '#2a3a18';
+      ctx.beginPath();
+      ctx.moveTo(-this.r*0.45, -this.r*0.15);
+      ctx.lineTo( this.r*0.45, -this.r*0.15);
+      ctx.lineTo( this.r*0.35,  this.r*0.4);
+      ctx.lineTo(-this.r*0.35,  this.r*0.4);
+      ctx.closePath(); ctx.fill(); ctx.stroke();
+      ctx.strokeStyle = '#5a7a3c'; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.moveTo(-this.r*0.4, this.r*0.05); ctx.lineTo(this.r*0.4, this.r*0.05); ctx.stroke();
+    }
 
-    // Head
-    const hr = this.r * 0.68;
+    // ----- Head -----
+    const hr = this.r * (this.type==='brute' ? 0.55 : this.type==='boss' ? 0.6 : 0.68);
     ctx.fillStyle = flash ? '#ffffff' : lighten(this.color, 12);
     ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
     ctx.beginPath(); ctx.arc(this.r*0.35, 0, hr, 0, TAU); ctx.fill(); ctx.stroke();
@@ -1861,34 +2350,75 @@ class Zombie {
     }
 
     // Eye
+    const eyeR = this.type==='boss' ? hr*0.28 : hr*0.22;
     ctx.fillStyle = this.eye;
-    ctx.beginPath(); ctx.arc(this.r*0.55, -hr*0.25, hr*0.22, 0, TAU); ctx.fill();
+    ctx.beginPath(); ctx.arc(this.r*0.55, -hr*0.25, eyeR, 0, TAU); ctx.fill();
     ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 2; ctx.stroke();
     ctx.fillStyle = '#ffffff';
     ctx.beginPath(); ctx.arc(this.r*0.58, -hr*0.30, hr*0.08, 0, TAU); ctx.fill();
+    // boss gets second glowing eye and eye glow
+    if (this.type === 'boss') {
+      ctx.fillStyle = this.eye;
+      ctx.beginPath(); ctx.arc(this.r*0.15, -hr*0.25, eyeR*0.85, 0, TAU); ctx.fill();
+      ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 2; ctx.stroke();
+      ctx.fillStyle = '#ffffff';
+      ctx.beginPath(); ctx.arc(this.r*0.18, -hr*0.30, hr*0.07, 0, TAU); ctx.fill();
+      // eye glow
+      const pulse = 0.5 + 0.5*Math.sin(now/220);
+      ctx.fillStyle = `rgba(255,189,46,${0.45*pulse})`;
+      ctx.beginPath(); ctx.arc(this.r*0.55, -hr*0.25, eyeR*1.7, 0, TAU); ctx.fill();
+      ctx.beginPath(); ctx.arc(this.r*0.15, -hr*0.25, eyeR*1.5, 0, TAU); ctx.fill();
+    }
 
-    // Boss horns
+    // Boss horns — bigger & curved, plus tiny inner horns
     if (this.type === 'boss') {
       ctx.fillStyle = '#f5e8c8';
       ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
-      ctx.beginPath(); ctx.moveTo(this.r*0.2, -hr*0.8); ctx.lineTo(this.r*0.4, -hr*1.4); ctx.lineTo(this.r*0.55, -hr*0.75); ctx.closePath(); ctx.fill(); ctx.stroke();
-      ctx.beginPath(); ctx.moveTo(this.r*0.55, -hr*0.75); ctx.lineTo(this.r*0.85, -hr*1.2); ctx.lineTo(this.r*0.80, -hr*0.55); ctx.closePath(); ctx.fill(); ctx.stroke();
+      // outer big horn left
+      ctx.beginPath();
+      ctx.moveTo(this.r*0.15, -hr*0.85);
+      ctx.quadraticCurveTo(this.r*0.25, -hr*1.6, this.r*0.5, -hr*1.65);
+      ctx.lineTo(this.r*0.55, -hr*0.8);
+      ctx.closePath(); ctx.fill(); ctx.stroke();
+      // outer big horn right
+      ctx.beginPath();
+      ctx.moveTo(this.r*0.55, -hr*0.8);
+      ctx.quadraticCurveTo(this.r*0.85, -hr*1.55, this.r*1.0, -hr*1.35);
+      ctx.lineTo(this.r*0.85, -hr*0.6);
+      ctx.closePath(); ctx.fill(); ctx.stroke();
+      // tiny secondary spikes
+      ctx.fillStyle = '#d8c098';
+      ctx.beginPath(); ctx.moveTo(this.r*0.32, -hr*0.95); ctx.lineTo(this.r*0.4, -hr*1.2); ctx.lineTo(this.r*0.45, -hr*0.95); ctx.closePath(); ctx.fill(); ctx.stroke();
     }
 
-    // Spitter extra: jaw pouch
+    // Spitter extra: jaw pouch + drool
     if (this.type === 'spitter') {
       ctx.fillStyle = '#ffbd2e';
       ctx.beginPath(); ctx.arc(this.r*0.75, hr*0.35, 5, 0, TAU); ctx.fill();
       ctx.strokeStyle='#0f0a1a'; ctx.lineWidth=2; ctx.stroke();
+      // drool dripping from mouth
+      ctx.fillStyle = '#8fcf3f';
+      const drop = 2 + Math.sin(now/300)*1;
+      ctx.beginPath(); ctx.ellipse(this.r*0.85, hr*0.35 + drop, 1.5, 3, 0, 0, TAU); ctx.fill();
     }
-    // Exploder: glowing fuse
+    // Exploder: glowing fuse — sized by urgency
     if (this.type === 'exploder') {
+      const fp = this.fusing ? 1 - Math.max(0, this.fuseT)/ZTYPES.exploder.fuse : 0;
       ctx.fillStyle = this.fusing ? '#ffffff' : '#ffbd2e';
-      ctx.beginPath(); ctx.arc(0, -this.r*0.7, 4, 0, TAU); ctx.fill();
+      const fr = 4 + fp*3;
+      ctx.beginPath(); ctx.arc(0, -this.r*0.7, fr, 0, TAU); ctx.fill();
       if (this.fusing) {
         ctx.strokeStyle = '#ff6b6b';
         ctx.lineWidth = 3;
-        ctx.beginPath(); ctx.arc(0, -this.r*0.7, 8, 0, TAU); ctx.stroke();
+        ctx.beginPath(); ctx.arc(0, -this.r*0.7, 8 + fp*4, 0, TAU); ctx.stroke();
+        // little spark trail off the fuse
+        if (Math.random() < 0.6 + fp*0.3) {
+          game.particles.push(new Particle(x, y - this.r*0.7, {
+            vx: rand(-30, 30), vy: rand(-50, -10),
+            life: 0.25, r: rand(1.5, 2.8),
+            color: choice(['#ffbd2e','#ff6b6b','#fff6c9']), fade: true,
+          }));
+        }
       }
     }
 
@@ -2468,7 +2998,7 @@ function resumeFromUpgrade() {
 
 // ------------- UI ----------------------------------------------
 const $ = id => document.getElementById(id);
-const overlays = () => ['langSelect','menu','upgradeChoice','runEnd','pause','settings'].map(id => $(id));
+const overlays = () => ['langSelect','menu','upgradeChoice','runEnd','pause','settings','appearance'].map(id => $(id));
 function hideAllOverlays() { overlays().forEach(o => o.classList.add('hidden')); }
 function showOverlay(el) { hideAllOverlays(); el.classList.remove('hidden'); el.classList.add('fade-in'); }
 
@@ -2861,6 +3391,70 @@ $('settingsBackBtn').addEventListener('click', () => {
   showOverlay($(settingsReturnId));
 });
 
+// Appearance overlay: same return-to-where-you-came-from pattern.
+let appearanceReturnId = 'menu';
+function openAppearance(fromId) {
+  appearanceReturnId = fromId;
+  renderSkinCards();
+  showOverlay($('appearance'));
+  refreshSkinCardActive();
+}
+$('appearanceBtn').addEventListener('click', () => openAppearance('menu'));
+$('pauseAppearanceBtn').addEventListener('click', () => openAppearance('pause'));
+$('appearanceBackBtn').addEventListener('click', () => {
+  showOverlay($(appearanceReturnId));
+});
+
+// Build skin cards (with tiny canvas previews) into #skinGrid.
+function renderSkinCards() {
+  const grid = $('skinGrid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  SKINS.forEach(skin => {
+    const card = document.createElement('div');
+    card.className = 'skin-card';
+    card.dataset.skin = skin.id;
+    const cv = document.createElement('canvas');
+    cv.width = 96; cv.height = 96;
+    const label = document.createElement('div');
+    label.className = 'sname';
+    label.textContent = t(skin.nameKey);
+    card.appendChild(cv);
+    card.appendChild(label);
+    card.addEventListener('click', () => {
+      setSkin(skin.id);
+      sfx('pickup');
+    });
+    grid.appendChild(card);
+    drawSkinPreview(cv, skin);
+  });
+  refreshSkinCardActive();
+}
+
+// Render a skin into a small preview canvas.
+// We temporarily swap the global `ctx` so drawPlayerSprite paints into the preview.
+function drawSkinPreview(targetCanvas, skin) {
+  const pctx = targetCanvas.getContext('2d');
+  pctx.clearRect(0, 0, targetCanvas.width, targetCanvas.height);
+  // Soft floor shadow on the preview
+  pctx.fillStyle = 'rgba(15,10,26,0.25)';
+  pctx.beginPath();
+  pctx.ellipse(targetCanvas.width/2, targetCanvas.height*0.78, 22, 6, 0, 0, TAU);
+  pctx.fill();
+  // Hijack the module-level ctx for drawPlayerSprite (it's a `let`)
+  ctx = pctx;
+  ctx.save();
+  ctx.translate(targetCanvas.width/2, targetCanvas.height/2 + 4);
+  // Slight scale-up so the 18-radius sprite fills nicely
+  ctx.scale(1.6, 1.6);
+  drawPlayerSprite(0, 0, 18, -Math.PI/2 + 0.2, skin, {
+    legBob: 0, bodyFlash: false, dashing: false
+  });
+  ctx.restore();
+  // restore main ctx
+  ctx = mainCtx;
+}
+
 // Language card click handlers (both initial language picker and in-settings picker).
 document.querySelectorAll('#langSelectGrid .lang-card').forEach(c => {
   c.addEventListener('click', () => {
@@ -2876,7 +3470,10 @@ document.querySelectorAll('#settingsLangGrid .lang-card').forEach(c => {
 
 // Initial overlay: language picker on first visit, otherwise main menu.
 const hadSavedLang = loadSavedLang();
+const savedSkinId = loadSavedSkin();
+if (savedSkinId && SKIN_BY_ID[savedSkinId]) game.skinId = savedSkinId;
 applyTranslations();
+renderSkinCards();
 showOverlay(hadSavedLang ? $('menu') : $('langSelect'));
 requestAnimationFrame(loop);
 
