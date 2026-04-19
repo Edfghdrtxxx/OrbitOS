@@ -1453,7 +1453,8 @@
       <div class="stat-card"><div class="lbl" data-i18n="upgrades">UPGRADES</div><div class="val" id="endUpgrades">0</div></div>
     </div>
     <div class="summary-upgrades" id="endUpgradeList"></div>
-    <div style="display:flex; gap:16px;">
+    <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center;">
+      <button class="btn cool" id="continueBtn" style="display:none;" data-i18n="continueRun">CONTINUE FROM CHECKPOINT</button>
       <button class="btn hot" id="restartBtn" data-i18n="newRun">NEW RUN</button>
       <button class="btn" id="endMenuBtn" data-i18n="menu">MENU</button>
     </div>
@@ -1660,6 +1661,8 @@ const I18N = {
     dashCap: 'DASH', space: 'SPACE', shift: 'SHIFT', jumpCap: 'JUMP', jump: 'Jump',
     crosshairHint: 'WASD · MOUSE AIM · CLICK ATTACK · SHIFT DASH · SPACE JUMP · ESC PAUSE',
     bossRoom: 'BOSS ROOM', roomClear: 'ROOM CLEAR', floorClear: 'FLOOR CLEAR',
+    checkpoint: 'CHECKPOINT', checkpointFull: 'FULLY HEALED  ·  AMMO REFILLED',
+    continueRun: 'CONTINUE FROM CHECKPOINT',
     chooseYourPath: 'CHOOSE YOUR PATH',
     floorRoom: (f,r) => `FLOOR ${f} · ROOM ${r}`,
     roomClearReward: (hp) => `+${hp} HP  ·  AMMO REFILLED`,
@@ -1725,7 +1728,7 @@ const I18N = {
     tip_ranged:      'Ranged runs keep the classic bullets/reload loop.',
     tip_dash:        'SHIFT dashes. Pick BLITZ DASH to damage zombies you pass through.',
     tip_reroll:      'Not happy with level-up choices? Press F or R (or click REROLL) once per level.',
-    tip_environment: 'Pick an environment for a fresh palette and themed obstacles each floor.',
+    tip_environment: 'Pick an environment to set the background color for your run.',
     tip_appearance:  'CHARACTER APPEARANCE lets you change your survivor\'s outfit.',
     tip_space:       'SPACE = jump (i-frames while airborne). SHIFT = dash.',
     tip_pause:       'Press ESC any time to pause.',
@@ -1807,6 +1810,8 @@ const I18N = {
     dashCap: '冲刺', space: '空格', shift: 'SHIFT', jumpCap: '跳跃', jump: '跳跃',
     crosshairHint: 'WASD · 鼠标瞄准 · 点击攻击 · SHIFT 冲刺 · 空格跳跃 · ESC 暂停',
     bossRoom: 'BOSS 房间', roomClear: '房间清空', floorClear: '楼层完成',
+    checkpoint: '检查点', checkpointFull: '生命已回满  ·  弹药已补满',
+    continueRun: '从检查点继续',
     chooseYourPath: '选择你的道路',
     floorRoom: (f,r) => `第 ${f} 层 · 第 ${r} 间`,
     roomClearReward: (hp) => `+${hp} 生命  ·  弹药已补满`,
@@ -1872,7 +1877,7 @@ const I18N = {
     tip_ranged:      '远程流程保留经典子弹 / 换弹循环。',
     tip_dash:        'SHIFT 冲刺。选择闪电冲刺以伤害穿过的丧尸。',
     tip_reroll:      '对升级选项不满意？每级可按 F 或 R (或点击重抽) 一次。',
-    tip_environment: '选一种环境，换一套配色与每层主题障碍物。',
+    tip_environment: '选一种环境，为整局设定背景颜色。',
     tip_appearance:  '角色外观可以更换幸存者的装扮。',
     tip_space:       '空格 = 跳跃（滞空期间无敌帧）。SHIFT = 冲刺。',
     tip_pause:       '随时按 ESC 暂停。',
@@ -2089,139 +2094,57 @@ const FLOORS = [
   { name:'Industrial Rot',  bgA:'#5F6B70', bgB:'#4A5559', obstacles:['barrel','barrel','crate'] },
   { name:'Final Stand',     bgA:'#4A3A56', bgB:'#352741', obstacles:['crate','barrel','car'] },
 ];
-const ROOMS_PER_FLOOR = 4; // 3 combat + 1 boss
-const COMBAT_ROOMS = 3;
+const ROOMS_PER_FLOOR = 6; // 5 combat + 1 boss
+const COMBAT_ROOMS = 5;
 
 // ------------- THEMES (visual + obstacle layout) ----------------
-// Player picks one at run start. Each theme provides per-floor palette (5 entries) and
-// a per-floor obstacle pool. Optional CSS overlay class is applied to #envOverlay.
+// Player picks one at run start. Each theme provides a single flat background
+// color and a shared obstacle pool used across every floor. Optional CSS
+// overlay class is applied to #envOverlay.
 // Legacy env ids ('default','neon','vhs','vapor') are preserved for localStorage compat.
+const BASIC_OBSTACLES = ['crate','barrel','car'];
 const THEMES = {
   default: {
     id: 'default', nameKey: 'env_default', descKey: 'env_default_desc',
     overlayClass: null,
-    palette: [
-      { bgA:'#8FA876', bgB:'#7B9363' },
-      { bgA:'#7A6F88', bgB:'#5E5571' },
-      { bgA:'#A89878', bgB:'#8D7E60' },
-      { bgA:'#5F6B70', bgB:'#4A5559' },
-      { bgA:'#4A3A56', bgB:'#352741' },
-    ],
-    obstacles: [
-      ['crate','barrel'],
-      ['car','crate','barrel'],
-      ['crate','crate','barrel'],
-      ['barrel','barrel','crate'],
-      ['crate','barrel','car'],
-    ],
+    bg: '#8FA876',
+    obstacles: BASIC_OBSTACLES,
   },
   neon: {
     id: 'neon', nameKey: 'env_neon', descKey: 'env_neon_desc',
     overlayClass: 'neon',
-    palette: [
-      { bgA:'#3a1c4a', bgB:'#2a1438' },
-      { bgA:'#4a1c5a', bgB:'#2e1442' },
-      { bgA:'#5a1c5e', bgB:'#321448' },
-      { bgA:'#3e144e', bgB:'#220a32' },
-      { bgA:'#28083a', bgB:'#160426' },
-    ],
-    obstacles: [
-      ['arcade_cabinet','speaker_stack','crate'],
-      ['arcade_cabinet','speaker_stack','barrel'],
-      ['speaker_stack','arcade_cabinet','crate'],
-      ['speaker_stack','speaker_stack','arcade_cabinet'],
-      ['arcade_cabinet','speaker_stack','barrel'],
-    ],
+    bg: '#3a1c4a',
+    obstacles: BASIC_OBSTACLES,
   },
   vhs: {
     id: 'vhs', nameKey: 'env_vhs', descKey: 'env_vhs_desc',
     overlayClass: 'vhs',
-    palette: [
-      { bgA:'#7a8a82', bgB:'#5f6e68' },
-      { bgA:'#6e7a82', bgB:'#535e64' },
-      { bgA:'#7a7282', bgB:'#5e5663' },
-      { bgA:'#5e6670', bgB:'#444b53' },
-      { bgA:'#404858', bgB:'#2a3140' },
-    ],
-    obstacles: [
-      ['crt_tv','crate','barrel'],
-      ['crt_tv','crate','barrel'],
-      ['crt_tv','crt_tv','crate'],
-      ['crt_tv','barrel','crate'],
-      ['crt_tv','crt_tv','barrel'],
-    ],
+    bg: '#6e7a82',
+    obstacles: BASIC_OBSTACLES,
   },
   vapor: {
     id: 'vapor', nameKey: 'env_vapor', descKey: 'env_vapor_desc',
     overlayClass: 'vapor',
-    palette: [
-      { bgA:'#ff9ec7', bgB:'#c084d8' },
-      { bgA:'#e082c4', bgB:'#9c6cd0' },
-      { bgA:'#b87cd8', bgB:'#7a5cc8' },
-      { bgA:'#8c6ad0', bgB:'#5848a8' },
-      { bgA:'#5a3e8c', bgB:'#3a2660' },
-    ],
-    obstacles: [
-      ['palm_tree','roman_bust','crate'],
-      ['palm_tree','roman_bust','barrel'],
-      ['roman_bust','palm_tree','crate'],
-      ['roman_bust','palm_tree','barrel'],
-      ['palm_tree','roman_bust','car'],
-    ],
+    bg: '#e082c4',
+    obstacles: BASIC_OBSTACLES,
   },
   modern: {
     id: 'modern', nameKey: 'env_modern', descKey: 'env_modern_desc',
     overlayClass: 'modern',
-    palette: [
-      { bgA:'#6e7480', bgB:'#5a6068' },
-      { bgA:'#646a76', bgB:'#50565e' },
-      { bgA:'#5a6068', bgB:'#464c54' },
-      { bgA:'#4e545c', bgB:'#3a4048' },
-      { bgA:'#3a4048', bgB:'#262c34' },
-    ],
-    obstacles: [
-      ['lamp_post','dumpster','car'],
-      ['lamp_post','dumpster','car','crate'],
-      ['dumpster','lamp_post','car','barrel'],
-      ['dumpster','car','lamp_post'],
-      ['car','dumpster','lamp_post','barrel'],
-    ],
+    bg: '#5a6068',
+    obstacles: BASIC_OBSTACLES,
   },
   cyberpunk: {
     id: 'cyberpunk', nameKey: 'env_cyberpunk', descKey: 'env_cyberpunk_desc',
     overlayClass: 'cyberpunk',
-    palette: [
-      { bgA:'#1a1430', bgB:'#0e0a20' },
-      { bgA:'#1e1438', bgB:'#10082a' },
-      { bgA:'#221440', bgB:'#120832' },
-      { bgA:'#180a32', bgB:'#0a0420' },
-      { bgA:'#0e0420', bgB:'#04020e' },
-    ],
-    obstacles: [
-      ['holo_pillar','neon_barricade','crate'],
-      ['holo_pillar','neon_barricade','car'],
-      ['neon_barricade','holo_pillar','crate'],
-      ['holo_pillar','holo_pillar','neon_barricade'],
-      ['neon_barricade','neon_barricade','holo_pillar','car'],
-    ],
+    bg: '#1a1430',
+    obstacles: BASIC_OBSTACLES,
   },
   chiikawa: {
     id: 'chiikawa', nameKey: 'env_chiikawa', descKey: 'env_chiikawa_desc',
     overlayClass: 'chiikawa',
-    palette: [
-      { bgA:'#c4ecbc', bgB:'#a8dca0' },
-      { bgA:'#bce6c4', bgB:'#9cd2ac' },
-      { bgA:'#d4e0bc', bgB:'#bcc8a4' },
-      { bgA:'#a8c8b0', bgB:'#8cb094' },
-      { bgA:'#88a89c', bgB:'#6c8c80' },
-    ],
-    obstacles: [
-      ['mushroom','bush','crate'],
-      ['mushroom','bush','crate'],
-      ['bush','mushroom','barrel'],
-      ['bush','mushroom','crate'],
-      ['mushroom','bush','barrel'],
-    ],
+    bg: '#c4ecbc',
+    obstacles: BASIC_OBSTACLES,
   },
 };
 // Legacy / alias mapping for migrations and safety.
@@ -2230,10 +2153,9 @@ function getTheme(id) {
   const key = THEME_ALIASES[id] || 'default';
   return THEMES[key] || THEMES.default;
 }
-function themeForFloor(floor) {
+function themeForFloor(_floor) {
   const theme = getTheme(game.environment);
-  const idx = Math.min(Math.max(floor, 1) - 1, theme.palette.length - 1);
-  return { theme, palette: theme.palette[idx], obstacles: theme.obstacles[idx] || theme.obstacles[theme.obstacles.length - 1] };
+  return { theme, bg: theme.bg, obstacles: theme.obstacles };
 }
 
 // ------------- ENEMY ARCHETYPES --------------------------------
@@ -2303,8 +2225,13 @@ function enemyStats(type, floor, elite) {
   const bossDmgBonus = isBoss ? 1.1 * Math.pow(1.08, floor - 1) : 1;
   const bossSpdBonus = isBoss ? 1 + 0.06 * (floor - 1) : 1;
   const hpFloorMul = isBoss ? Math.pow(1.18, floor - 1) : Math.pow(1.25, floor - 1);
-  const hpMul  = hpFloorMul * (elite ? 2.0 : 1.0) * bossHpBonus;
-  const dmgMul = Math.pow(1.15, floor - 1) * (elite ? 1.5 : 1.0) * bossDmgBonus;
+  // Per-room scaling inside the current floor: +8% HP, +5% dmg per room index.
+  // Makes late rooms of a floor tangibly meaner without touching floor curves.
+  const roomIdx = Math.max(0, (game && game.roomIdx) || 0);
+  const roomHpMul  = Math.pow(1.08, roomIdx);
+  const roomDmgMul = Math.pow(1.05, roomIdx);
+  const hpMul  = hpFloorMul * roomHpMul  * (elite ? 4.0 : 1.0) * bossHpBonus;
+  const dmgMul = Math.pow(1.15, floor - 1) * roomDmgMul * (elite ? 1.5 : 1.0) * bossDmgBonus;
   return {
     hp: Math.round(base.hp * hpMul),
     damage: Math.round(base.damage * dmgMul),
@@ -2472,6 +2399,10 @@ const game = {
   selectedChoice: 0,
   currentChoices: [],
   rerollAvailable: false,
+  // Saved progression state captured after each boss clear. If the player dies
+  // later, the run-end screen offers a one-tap revive that resumes from the
+  // start of the next floor with these upgrades/level intact.
+  checkpoint: null,
   skinId: 'default',
   playerClass: 'ranged',   // 'ranged' | 'melee' — picked at run start
   environment: 'default',  // visual overlay theme id — picked at run start
@@ -5721,17 +5652,6 @@ function obstacleSize(type) {
   if (type === 'crate')              return { w: randi(80, 180), h: randi(80, 180) };
   if (type === 'barrel')             { const s = randi(90, 130); return { w:s, h:s }; }
   if (type === 'car')                return { w: randi(180, 240), h: randi(90, 130) };
-  if (type === 'arcade_cabinet')     return { w: randi(80, 110),  h: randi(140, 180) };
-  if (type === 'speaker_stack')      return { w: randi(90, 120),  h: randi(150, 200) };
-  if (type === 'crt_tv')             return { w: randi(110, 150), h: randi(100, 130) };
-  if (type === 'palm_tree')          { const s = randi(110, 150); return { w:s, h:s }; }
-  if (type === 'roman_bust')         return { w: randi(90, 120),  h: randi(120, 160) };
-  if (type === 'lamp_post')          return { w: randi(40, 60),   h: randi(170, 220) };
-  if (type === 'dumpster')           return { w: randi(150, 200), h: randi(100, 130) };
-  if (type === 'holo_pillar')        return { w: randi(70, 100),  h: randi(180, 230) };
-  if (type === 'neon_barricade')     return { w: randi(170, 230), h: randi(70, 100) };
-  if (type === 'mushroom')           { const s = randi(90, 130); return { w:s, h:s }; }
-  if (type === 'bush')               return { w: randi(120, 170), h: randi(80, 120) };
   return { w: randi(80, 180), h: randi(80, 180) };
 }
 
@@ -5969,8 +5889,11 @@ function enterRoom(floor, roomIdx) {
 }
 
 function clearRoomAndAdvance() {
-  // Heal on clear
-  const healAmt = game.isBossRoom ? 40 : 15;
+  // Heal on clear. The mid-floor "checkpoint" room (halfway through the combat
+  // rooms) grants a full restore instead of the standard small heal.
+  const midRoomIdx = Math.floor(COMBAT_ROOMS / 2);
+  const isMidCheckpoint = !game.isBossRoom && game.roomIdx === midRoomIdx;
+  const healAmt = game.isBossRoom ? 40 : (isMidCheckpoint ? 9999 : 15);
   game.player.hp = Math.min(game.player.maxHp, game.player.hp + healAmt);
   game.player.ammo = game.player.maxAmmo;
   game.player.reloading = false;
@@ -5982,6 +5905,19 @@ function clearRoomAndAdvance() {
       showRunEnd(true);
       return;
     }
+    // Checkpoint: snapshot progression so the player can revive into the next
+    // floor on death without losing upgrades.
+    game.checkpoint = {
+      floor: game.floor + 1,
+      upgrades: { ...game.upgrades },
+      playerLevel: game.player.level,
+      xp: game.player.xp,
+      xpNeeded: game.player.xpNeeded,
+      kills: game.kills,
+      score: game.score,
+      playerClass: game.playerClass,
+      environment: game.environment,
+    };
     showBanner(t('floorClear'), t('enteringX', tFloorName(game.floor)));
     sfx('clear');
     // Game-tick-driven transition — automatically pauses during level-up pre-pause
@@ -5989,7 +5925,11 @@ function clearRoomAndAdvance() {
     game.transitionT = 2.2;
     game.transitionTarget = { floor: game.floor + 1, roomIdx: 0 };
   } else {
-    showBanner(t('roomClear'), t('roomClearReward', healAmt));
+    if (isMidCheckpoint) {
+      showBanner(t('checkpoint'), t('checkpointFull'));
+    } else {
+      showBanner(t('roomClear'), t('roomClearReward', healAmt));
+    }
     sfx('clear');
     game.transitionT = 1.8;
     game.transitionTarget = { floor: game.floor, roomIdx: game.roomIdx + 1 };
@@ -6683,24 +6623,16 @@ function updateHUD() {
 
 // ------------- RENDER ------------------------------------------
 function drawWorld() {
-  const { palette: theme } = themeForFloor(game.floor);
+  const { bg } = themeForFloor(game.floor);
   const sx = camera.shake ? (Math.random()-0.5)*camera.shake : 0;
   const sy = camera.shake ? (Math.random()-0.5)*camera.shake : 0;
 
   ctx.save();
   ctx.translate(-camera.x + sx, -camera.y + sy);
 
-  // Tile background
-  const tileSize = 80;
-  const startX = Math.floor(camera.x / tileSize) * tileSize;
-  const startY = Math.floor(camera.y / tileSize) * tileSize;
-  for (let x = startX; x < camera.x + W + tileSize; x += tileSize) {
-    for (let y = startY; y < camera.y + H + tileSize; y += tileSize) {
-      const parity = ((x/tileSize) + (y/tileSize)) & 1;
-      ctx.fillStyle = parity ? theme.bgA : theme.bgB;
-      ctx.fillRect(x, y, tileSize, tileSize);
-    }
-  }
+  // Solid per-theme background
+  ctx.fillStyle = bg;
+  ctx.fillRect(camera.x - 4, camera.y - 4, W + 8, H + 8);
   // Speckles
   ctx.fillStyle = 'rgba(255,255,255,0.04)';
   for (let i = 0; i < 120; i++) {
@@ -6868,230 +6800,6 @@ function drawObstacle(o) {
     ctx.fillStyle = '#fff6c9';
     ctx.beginPath(); ctx.arc(x+w-4, y+10, 5, 0, TAU); ctx.fill();
     ctx.beginPath(); ctx.arc(x+w-4, y+h-10, 5, 0, TAU); ctx.fill();
-  } else if (type === 'arcade_cabinet') {
-    ctx.fillStyle = 'rgba(15,10,26,0.4)';
-    ctx.fillRect(x+6, y+h-4, w, 12);
-    ctx.fillStyle = '#2a1840';
-    ctx.fillRect(x, y, w, h);
-    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 4;
-    ctx.strokeRect(x, y, w, h);
-    // screen
-    ctx.fillStyle = '#ff6bc8';
-    ctx.fillRect(x+w*0.12, y+h*0.12, w*0.76, h*0.32);
-    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
-    ctx.strokeRect(x+w*0.12, y+h*0.12, w*0.76, h*0.32);
-    // joystick + buttons
-    ctx.fillStyle = '#4eccda';
-    ctx.beginPath(); ctx.arc(x+w*0.32, y+h*0.62, 5, 0, TAU); ctx.fill();
-    ctx.fillStyle = '#ffbd2e';
-    ctx.beginPath(); ctx.arc(x+w*0.55, y+h*0.62, 4, 0, TAU); ctx.fill();
-    ctx.fillStyle = '#ff5e7e';
-    ctx.beginPath(); ctx.arc(x+w*0.7, y+h*0.62, 4, 0, TAU); ctx.fill();
-    // glow band
-    ctx.fillStyle = '#4eccda';
-    ctx.fillRect(x+w*0.12, y+h*0.78, w*0.76, 4);
-  } else if (type === 'speaker_stack') {
-    ctx.fillStyle = 'rgba(15,10,26,0.4)';
-    ctx.fillRect(x+6, y+h-4, w, 12);
-    ctx.fillStyle = '#1a0f2a';
-    ctx.fillRect(x, y, w, h);
-    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 4;
-    ctx.strokeRect(x, y, w, h);
-    // 3 cones
-    ctx.fillStyle = '#3a2856';
-    for (let i = 0; i < 3; i++) {
-      const cy = y + h*(0.18 + i*0.28);
-      ctx.beginPath(); ctx.arc(x+w/2, cy, Math.min(w,h)*0.14, 0, TAU); ctx.fill();
-      ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
-      ctx.beginPath(); ctx.arc(x+w/2, cy, Math.min(w,h)*0.14, 0, TAU); ctx.stroke();
-      ctx.fillStyle = '#ff6bc8';
-      ctx.beginPath(); ctx.arc(x+w/2, cy, Math.min(w,h)*0.05, 0, TAU); ctx.fill();
-      ctx.fillStyle = '#3a2856';
-    }
-  } else if (type === 'crt_tv') {
-    ctx.fillStyle = 'rgba(15,10,26,0.35)';
-    ctx.fillRect(x+6, y+h-4, w, 12);
-    ctx.fillStyle = '#8a8470';
-    ctx.fillRect(x, y, w, h);
-    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 4;
-    ctx.strokeRect(x, y, w, h);
-    // screen
-    ctx.fillStyle = '#1a2030';
-    ctx.fillRect(x+w*0.1, y+h*0.12, w*0.8, h*0.6);
-    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
-    ctx.strokeRect(x+w*0.1, y+h*0.12, w*0.8, h*0.6);
-    // scanlines
-    ctx.fillStyle = 'rgba(120,200,180,0.18)';
-    for (let i = 0; i < 6; i++) {
-      ctx.fillRect(x+w*0.1, y+h*0.12 + i*(h*0.6/6), w*0.8, 2);
-    }
-    // knobs
-    ctx.fillStyle = '#3a3424';
-    ctx.beginPath(); ctx.arc(x+w*0.25, y+h*0.86, 4, 0, TAU); ctx.fill();
-    ctx.beginPath(); ctx.arc(x+w*0.45, y+h*0.86, 4, 0, TAU); ctx.fill();
-  } else if (type === 'palm_tree') {
-    ctx.fillStyle = 'rgba(15,10,26,0.35)';
-    ctx.beginPath(); ctx.ellipse(x+w/2, y+h+4, w*0.3, 8, 0, 0, TAU); ctx.fill();
-    // trunk
-    ctx.fillStyle = '#7a5530';
-    ctx.fillRect(x+w*0.42, y+h*0.45, w*0.16, h*0.55);
-    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
-    ctx.strokeRect(x+w*0.42, y+h*0.45, w*0.16, h*0.55);
-    // fronds
-    ctx.fillStyle = '#ff6bc8';
-    for (let i = 0; i < 5; i++) {
-      const a = -Math.PI/2 + (i - 2) * 0.7;
-      const fx = x+w/2 + Math.cos(a) * w*0.4;
-      const fy = y+h*0.42 + Math.sin(a) * h*0.32;
-      ctx.beginPath();
-      ctx.moveTo(x+w/2, y+h*0.42);
-      ctx.quadraticCurveTo(x+w/2 + Math.cos(a)*w*0.2, y+h*0.32 + Math.sin(a)*h*0.08, fx, fy);
-      ctx.lineWidth = 8; ctx.strokeStyle = '#7b68ee';
-      ctx.stroke();
-    }
-    ctx.fillStyle = '#ffbd2e';
-    ctx.beginPath(); ctx.arc(x+w/2, y+h*0.45, 5, 0, TAU); ctx.fill();
-  } else if (type === 'roman_bust') {
-    ctx.fillStyle = 'rgba(15,10,26,0.35)';
-    ctx.fillRect(x+6, y+h-4, w, 12);
-    // pedestal
-    ctx.fillStyle = '#d8d0e8';
-    ctx.fillRect(x+w*0.1, y+h*0.65, w*0.8, h*0.35);
-    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 4;
-    ctx.strokeRect(x+w*0.1, y+h*0.65, w*0.8, h*0.35);
-    // head
-    ctx.fillStyle = '#e8e0f4';
-    ctx.beginPath(); ctx.ellipse(x+w/2, y+h*0.34, w*0.32, h*0.32, 0, 0, TAU); ctx.fill();
-    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 4; ctx.stroke();
-    // eye sockets
-    ctx.fillStyle = '#7b68ee';
-    ctx.beginPath(); ctx.arc(x+w*0.42, y+h*0.32, 3, 0, TAU); ctx.fill();
-    ctx.beginPath(); ctx.arc(x+w*0.58, y+h*0.32, 3, 0, TAU); ctx.fill();
-    // mouth
-    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 2;
-    ctx.beginPath(); ctx.moveTo(x+w*0.45, y+h*0.46); ctx.lineTo(x+w*0.55, y+h*0.46); ctx.stroke();
-  } else if (type === 'lamp_post') {
-    ctx.fillStyle = 'rgba(15,10,26,0.35)';
-    ctx.beginPath(); ctx.ellipse(x+w/2, y+h+2, w*0.6, 6, 0, 0, TAU); ctx.fill();
-    // base
-    ctx.fillStyle = '#2a2e36';
-    ctx.fillRect(x+w*0.2, y+h*0.88, w*0.6, h*0.12);
-    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
-    ctx.strokeRect(x+w*0.2, y+h*0.88, w*0.6, h*0.12);
-    // pole
-    ctx.fillStyle = '#3a3e46';
-    ctx.fillRect(x+w*0.42, y+h*0.18, w*0.16, h*0.7);
-    ctx.strokeRect(x+w*0.42, y+h*0.18, w*0.16, h*0.7);
-    // lamp head
-    ctx.fillStyle = '#ffd97a';
-    ctx.fillRect(x, y, w, h*0.18);
-    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 4;
-    ctx.strokeRect(x, y, w, h*0.18);
-    // glow line
-    ctx.fillStyle = 'rgba(255,217,122,0.5)';
-    ctx.fillRect(x-4, y+h*0.18, w+8, 4);
-  } else if (type === 'dumpster') {
-    ctx.fillStyle = 'rgba(15,10,26,0.35)';
-    ctx.fillRect(x+6, y+h+2, w, 10);
-    ctx.fillStyle = '#3a6e44';
-    ctx.fillRect(x, y+h*0.18, w, h*0.82);
-    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 4;
-    ctx.strokeRect(x, y+h*0.18, w, h*0.82);
-    // lid
-    ctx.fillStyle = '#2c5634';
-    ctx.fillRect(x-4, y, w+8, h*0.22);
-    ctx.strokeRect(x-4, y, w+8, h*0.22);
-    // ribs
-    ctx.strokeStyle = '#244426'; ctx.lineWidth = 3;
-    for (let i = 1; i < 4; i++) {
-      const lx = x + w*(i/4);
-      ctx.beginPath(); ctx.moveTo(lx, y+h*0.22); ctx.lineTo(lx, y+h); ctx.stroke();
-    }
-    // graffiti splat
-    ctx.fillStyle = '#ffbd2e';
-    ctx.beginPath(); ctx.arc(x+w*0.3, y+h*0.55, 6, 0, TAU); ctx.fill();
-  } else if (type === 'holo_pillar') {
-    ctx.fillStyle = 'rgba(15,10,26,0.4)';
-    ctx.beginPath(); ctx.ellipse(x+w/2, y+h+4, w*0.55, 8, 0, 0, TAU); ctx.fill();
-    // base
-    ctx.fillStyle = '#1a0f2a';
-    ctx.fillRect(x+w*0.05, y+h*0.85, w*0.9, h*0.15);
-    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 4;
-    ctx.strokeRect(x+w*0.05, y+h*0.85, w*0.9, h*0.15);
-    // holo column (translucent gradient)
-    const grad = ctx.createLinearGradient(x, y, x, y+h*0.85);
-    grad.addColorStop(0, 'rgba(0,220,255,0.05)');
-    grad.addColorStop(0.5, 'rgba(255,0,170,0.55)');
-    grad.addColorStop(1, 'rgba(0,220,255,0.7)');
-    ctx.fillStyle = grad;
-    ctx.fillRect(x+w*0.18, y+h*0.05, w*0.64, h*0.8);
-    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
-    ctx.strokeRect(x+w*0.18, y+h*0.05, w*0.64, h*0.8);
-    // flicker bands
-    const t = (performance.now()/120) | 0;
-    ctx.fillStyle = 'rgba(255,255,255,0.18)';
-    for (let i = 0; i < 4; i++) {
-      const by = y + h*0.1 + ((i*23 + t*7) % (h*0.7));
-      ctx.fillRect(x+w*0.2, by, w*0.6, 2);
-    }
-  } else if (type === 'neon_barricade') {
-    ctx.fillStyle = 'rgba(15,10,26,0.4)';
-    ctx.fillRect(x+6, y+h+2, w, 10);
-    // body
-    ctx.fillStyle = '#2a1830';
-    ctx.fillRect(x, y, w, h);
-    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 4;
-    ctx.strokeRect(x, y, w, h);
-    // neon stripes
-    ctx.fillStyle = '#ff00aa';
-    ctx.fillRect(x+4, y+h*0.2, w-8, 6);
-    ctx.fillStyle = '#00dcff';
-    ctx.fillRect(x+4, y+h*0.45, w-8, 6);
-    ctx.fillStyle = '#ffbd2e';
-    ctx.fillRect(x+4, y+h*0.7, w-8, 6);
-    // hazard chevrons
-    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 2;
-    for (let i = 0; i < 6; i++) {
-      const cx = x + 8 + i*(w-16)/6;
-      ctx.beginPath();
-      ctx.moveTo(cx, y+h-6); ctx.lineTo(cx+8, y+h-14);
-      ctx.stroke();
-    }
-  } else if (type === 'mushroom') {
-    ctx.fillStyle = 'rgba(15,10,26,0.3)';
-    ctx.beginPath(); ctx.ellipse(x+w/2, y+h+2, w*0.45, 6, 0, 0, TAU); ctx.fill();
-    // stem
-    ctx.fillStyle = '#fff5e8';
-    ctx.fillRect(x+w*0.36, y+h*0.45, w*0.28, h*0.55);
-    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 4;
-    ctx.strokeRect(x+w*0.36, y+h*0.45, w*0.28, h*0.55);
-    // cap
-    ctx.fillStyle = '#ff6b9a';
-    ctx.beginPath(); ctx.ellipse(x+w/2, y+h*0.42, w*0.5, h*0.4, 0, Math.PI, 0); ctx.fill();
-    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 4;
-    ctx.beginPath(); ctx.ellipse(x+w/2, y+h*0.42, w*0.5, h*0.4, 0, Math.PI, 0); ctx.stroke();
-    // spots
-    ctx.fillStyle = '#fff5e8';
-    ctx.beginPath(); ctx.arc(x+w*0.35, y+h*0.3, 5, 0, TAU); ctx.fill();
-    ctx.beginPath(); ctx.arc(x+w*0.62, y+h*0.36, 4, 0, TAU); ctx.fill();
-    ctx.beginPath(); ctx.arc(x+w*0.5,  y+h*0.18, 4, 0, TAU); ctx.fill();
-  } else if (type === 'bush') {
-    ctx.fillStyle = 'rgba(15,10,26,0.3)';
-    ctx.beginPath(); ctx.ellipse(x+w/2, y+h+2, w*0.5, 8, 0, 0, TAU); ctx.fill();
-    // 3 puffs
-    ctx.fillStyle = '#7ac06a';
-    ctx.beginPath(); ctx.arc(x+w*0.3, y+h*0.7, h*0.4, 0, TAU); ctx.fill();
-    ctx.beginPath(); ctx.arc(x+w*0.7, y+h*0.7, h*0.4, 0, TAU); ctx.fill();
-    ctx.beginPath(); ctx.arc(x+w*0.5, y+h*0.45, h*0.45, 0, TAU); ctx.fill();
-    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 4;
-    ctx.beginPath(); ctx.arc(x+w*0.3, y+h*0.7, h*0.4, 0, TAU); ctx.stroke();
-    ctx.beginPath(); ctx.arc(x+w*0.7, y+h*0.7, h*0.4, 0, TAU); ctx.stroke();
-    ctx.beginPath(); ctx.arc(x+w*0.5, y+h*0.45, h*0.45, 0, TAU); ctx.stroke();
-    // tiny flowers
-    ctx.fillStyle = '#ffd3e8';
-    ctx.beginPath(); ctx.arc(x+w*0.4, y+h*0.5, 4, 0, TAU); ctx.fill();
-    ctx.fillStyle = '#fff5b0';
-    ctx.beginPath(); ctx.arc(x+w*0.62, y+h*0.62, 3, 0, TAU); ctx.fill();
   }
   ctx.restore();
 }
@@ -7106,6 +6814,7 @@ function startRun() {
   game.powerups = []; game.poisonClouds = []; game.spawnQueue = [];
   game.pendingBooms = [];
   game.kills = 0; game.score = 0;
+  game.checkpoint = null;
   game.upgrades = {};
   game.pendingLevelUps = 0;
   game.transitionT = 0;
@@ -7173,7 +6882,48 @@ function showRunEnd(victory) {
     chip.innerHTML = `<div class="dot" style="background:${u.color}">${u.icon}</div><span>${tUpgradeName(id)} ×${lv}</span>`;
     list.appendChild(chip);
   }
+  // Only offer the checkpoint revive on death (not on victory) and only when
+  // a checkpoint has actually been captured (i.e., at least one boss cleared).
+  const cBtn = $('continueBtn');
+  if (cBtn) cBtn.style.display = (!victory && game.checkpoint) ? '' : 'none';
   showOverlay($('runEnd'));
+}
+
+function continueFromCheckpoint() {
+  const cp = game.checkpoint;
+  if (!cp) return;
+  clearInputs();
+  game.floor = cp.floor;
+  game.roomIdx = 0;
+  game.zombies = []; game.bullets = []; game.ezBullets = [];
+  game.explosions = []; game.particles = []; game.damageNums = [];
+  game.powerups = []; game.poisonClouds = []; game.spawnQueue = [];
+  game.pendingBooms = [];
+  game.kills = cp.kills;
+  game.score = cp.score;
+  game.upgrades = { ...cp.upgrades };
+  game.pendingLevelUps = 0;
+  game.transitionT = 0;
+  game.transitionTarget = null;
+  game.levelupPauseT = 0;
+  game.selectedChoice = 0;
+  game.currentChoices = [];
+  game.playerClass = cp.playerClass;
+  game.environment = cp.environment;
+  game.runStartT = performance.now();
+  game.runTime = 0;
+  game.player = new Player();
+  game.player.level = cp.playerLevel;
+  game.player.xp = cp.xp;
+  game.player.xpNeeded = cp.xpNeeded;
+  game.player.hp = game.player.maxHp;
+  game.player.ammo = game.player.maxAmmo;
+  applyEnvironmentOverlay(game.environment);
+  renderUpgradeStack();
+  updateHUDForClass();
+  enterRoom(game.floor, 0);
+  hideAllOverlays();
+  game.state = 'playing';
 }
 
 function quitToMenu() {
@@ -7335,6 +7085,7 @@ function drawMenuScene() {
 $('startBtn').addEventListener('click', () => { initAudio(); showClassSelect(); });
 $('restartBtn').addEventListener('click', () => { initAudio(); showClassSelect(); });
 $('endMenuBtn').addEventListener('click', () => quitToMenu());
+$('continueBtn').addEventListener('click', () => { initAudio(); continueFromCheckpoint(); });
 $('resumeBtn').addEventListener('click', () => togglePause());
 $('pauseMenuBtn').addEventListener('click', () => quitToMenu());
 
