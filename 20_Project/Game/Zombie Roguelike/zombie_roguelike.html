@@ -1343,6 +1343,7 @@
     </div>
     <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center;">
       <button class="btn" id="startBtn" data-i18n="startRun">START RUN</button>
+      <button class="btn cool" id="checkpointPortalBtn" data-i18n="checkpointPortal">CHECKPOINT PORTAL</button>
       <button class="btn hot" id="appearanceBtn" data-i18n="characterAppearance">CHARACTER APPEARANCE</button>
       <span class="settings-btn-wrap">
         <button class="btn cool" id="settingsBtn" data-i18n="settings">SETTINGS</button>
@@ -1491,6 +1492,7 @@
       </div>
       <div class="pause-buttons">
         <button class="btn cool" id="resumeBtn" data-i18n="resume">RESUME</button>
+        <button class="btn" id="pauseSaveCheckpointBtn" data-i18n="saveCheckpoint">SAVE CHECKPOINT</button>
         <button class="btn hot" id="pauseAppearanceBtn" data-i18n="appearance">APPEARANCE</button>
         <button class="btn" id="pauseSettingsBtn" data-i18n="settings">SETTINGS</button>
         <button class="btn" id="pauseMenuBtn" data-i18n="quitRun">QUIT RUN</button>
@@ -1533,6 +1535,17 @@
       </div>
     </div>
     <input type="checkbox" id="autoFireToggle" style="display:none;">
+    <div class="subtitle cool" style="font-size: 28px;" data-i18n="crazyDave">CRAZY DAVE VOICE</div>
+    <div class="lang-grid" id="settingsCrazyDaveGrid">
+      <div class="lang-card" data-crazydave="off">
+        <div class="flag">🤫</div>
+        <div class="lname" data-i18n="off">OFF</div>
+      </div>
+      <div class="lang-card" data-crazydave="on">
+        <div class="flag">🗣️</div>
+        <div class="lname" data-i18n="on">ON</div>
+      </div>
+    </div>
     <button class="btn" id="settingsBackBtn" data-i18n="back">BACK</button>
   </div>
 
@@ -1605,6 +1618,39 @@ function sfx(name) {
   }
 }
 
+// ------------- CRAZY DAVE VOICE --------------------------------
+// Web Speech API chatter. Plays random lines on a loose timer plus discrete
+// event triggers (boss spawn, room clear, level up). Settings toggle gates
+// everything; localStorage persists the preference.
+const CRAZY_DAVE_LINES = [
+  "Wabby wabbo!", "I'm CRAZY!", "Hiya kids!", "Wub-bub-bub!",
+  "You need pants to fight zombies!", "Blow the house down!",
+  "I found these pants!", "Chocolate! I said chocolate!",
+  "Go go go!", "I'm a cactus!", "Butter!", "My neighbor's a zombie!"
+];
+function speakCrazyDave() {
+  if (!game.crazyDaveEnabled) return;
+  if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
+  const line = CRAZY_DAVE_LINES[Math.floor(Math.random() * CRAZY_DAVE_LINES.length)];
+  try {
+    const u = new SpeechSynthesisUtterance(line);
+    u.rate = 1.35; u.pitch = 1.6; u.volume = 0.9;
+    speechSynthesis.cancel();
+    speechSynthesis.speak(u);
+  } catch {}
+}
+function stopCrazyDave() {
+  try { if ('speechSynthesis' in window) speechSynthesis.cancel(); } catch {}
+}
+// Event-driven line (boss spawn, room clear, level up). Cooldown prevents
+// spam when several events chain.
+function triggerCrazyDaveEvent() {
+  if (!game.crazyDaveEnabled) return;
+  if (game.crazyDaveEventCdT > 0) return;
+  game.crazyDaveEventCdT = 60;
+  speakCrazyDave();
+}
+
 // ------------- I18N --------------------------------------------
 const I18N = {
   en: {
@@ -1634,6 +1680,11 @@ const I18N = {
     level: 'LEVEL', time: 'TIME', upgrades: 'UPGRADES',
     newRun: 'NEW RUN', menu: 'MENU',
     paused: 'PAUSED', resume: 'RESUME', quitRun: 'QUIT RUN',
+    checkpointPortal: 'CHECKPOINT PORTAL',
+    saveCheckpoint: 'SAVE CHECKPOINT',
+    checkpointSaved: 'CHECKPOINT SAVED',
+    noCheckpoint: 'NO CHECKPOINT YET',
+    crazyDave: 'CRAZY DAVE VOICE',
     // Pause stats panel labels
     stats: 'STATS',
     viewStats: '📊 STATS',
@@ -1783,6 +1834,11 @@ const I18N = {
     level: '等级', time: '用时', upgrades: '升级',
     newRun: '再来一局', menu: '主菜单',
     paused: '已暂停', resume: '继续', quitRun: '退出本局',
+    checkpointPortal: '存档传送门',
+    saveCheckpoint: '保存存档',
+    checkpointSaved: '存档已保存',
+    noCheckpoint: '暂无存档',
+    crazyDave: '疯狂戴夫语音',
     // Pause stats panel labels (ZH parity with EN)
     stats: '属性',
     viewStats: '📊 属性',
@@ -2150,42 +2206,49 @@ const THEMES = {
     overlayClass: null,
     bg: '#8FA876',
     obstacles: BASIC_OBSTACLES,
+    tilePattern: { kind: 'doomsday', colors: ['#6e8757', '#5a7245', '#3d4a2e'], spacing: 128 },
   },
   neon: {
     id: 'neon', nameKey: 'env_neon', descKey: 'env_neon_desc',
     overlayClass: 'neon',
     bg: '#3a1c4a',
     obstacles: BASIC_OBSTACLES,
+    tilePattern: { kind: 'circuit', colors: ['#ff3cf0', '#39d0ff', '#57005b'], spacing: 96 },
   },
   vhs: {
     id: 'vhs', nameKey: 'env_vhs', descKey: 'env_vhs_desc',
     overlayClass: 'vhs',
     bg: '#6e7a82',
     obstacles: BASIC_OBSTACLES,
+    tilePattern: { kind: 'scanlines', colors: ['#ffffff', '#000000'], spacing: 6 },
   },
   vapor: {
     id: 'vapor', nameKey: 'env_vapor', descKey: 'env_vapor_desc',
     overlayClass: 'vapor',
     bg: '#e082c4',
     obstacles: BASIC_OBSTACLES,
+    tilePattern: { kind: 'sand', colors: ['#f3a6da', '#b85798', '#ffe0f4'], spacing: 80 },
   },
   modern: {
     id: 'modern', nameKey: 'env_modern', descKey: 'env_modern_desc',
     overlayClass: 'modern',
     bg: '#5a6068',
     obstacles: BASIC_OBSTACLES,
+    tilePattern: { kind: 'doomsday', colors: ['#484d54', '#6a6f76', '#ffb028'], spacing: 144 },
   },
   cyberpunk: {
     id: 'cyberpunk', nameKey: 'env_cyberpunk', descKey: 'env_cyberpunk_desc',
     overlayClass: 'cyberpunk',
     bg: '#1a1430',
     obstacles: BASIC_OBSTACLES,
+    tilePattern: { kind: 'hexGrid', colors: ['#ff2ea8', '#24ffe0', '#2a2047'], spacing: 72 },
   },
   chiikawa: {
     id: 'chiikawa', nameKey: 'env_chiikawa', descKey: 'env_chiikawa_desc',
     overlayClass: 'chiikawa',
     bg: '#c4ecbc',
     obstacles: BASIC_OBSTACLES,
+    tilePattern: { kind: 'sakura', colors: ['#ffc4dd', '#ff8ab7', '#ffffff'], spacing: 96 },
   },
 };
 // Legacy / alias mapping for migrations and safety.
@@ -2197,6 +2260,173 @@ function getTheme(id) {
 function themeForFloor(_floor) {
   const theme = getTheme(game.environment);
   return { theme, bg: theme.bg, obstacles: theme.obstacles };
+}
+
+// --- Per-theme decorative background tiles ---------------------
+// Build each theme's tile pattern once (offscreen canvas) and reuse it as a
+// repeating fill. The result is cached in THEME_PATTERN_CACHE keyed by
+// theme id.
+const THEME_PATTERN_CACHE = Object.create(null);
+function buildThemeTile(theme) {
+  const spec = theme.tilePattern;
+  if (!spec) return null;
+  const size = Math.max(32, spec.spacing || 128);
+  const cvs = (typeof OffscreenCanvas !== 'undefined')
+    ? new OffscreenCanvas(size, size)
+    : (() => { const c = document.createElement('canvas'); c.width = c.height = size; return c; })();
+  const g = cvs.getContext('2d');
+  if (!g) return null;
+  g.clearRect(0, 0, size, size);
+  const [c1, c2, c3] = spec.colors || ['#ffffff','#000000','#888888'];
+  g.globalAlpha = 0.22;
+  switch (spec.kind) {
+    case 'hexGrid': {
+      const r = 18;
+      g.strokeStyle = c1; g.lineWidth = 1.2;
+      for (let y = 0; y < size + r; y += r * 1.5) {
+        for (let x = 0; x < size + r; x += r * Math.sqrt(3)) {
+          const ox = (Math.round(y / (r * 1.5)) % 2) ? (r * Math.sqrt(3) / 2) : 0;
+          g.beginPath();
+          for (let k = 0; k < 6; k++) {
+            const a = Math.PI / 3 * k + Math.PI / 6;
+            const px = x + ox + Math.cos(a) * r;
+            const py = y + Math.sin(a) * r;
+            if (k === 0) g.moveTo(px, py); else g.lineTo(px, py);
+          }
+          g.closePath(); g.stroke();
+        }
+      }
+      g.fillStyle = c2; g.globalAlpha = 0.35;
+      for (let i = 0; i < 8; i++) {
+        g.beginPath(); g.arc(Math.random()*size, Math.random()*size, 1.5, 0, Math.PI*2); g.fill();
+      }
+      break;
+    }
+    case 'scanlines': {
+      g.globalAlpha = 0.10;
+      g.fillStyle = c1;
+      for (let y = 0; y < size; y += 3) g.fillRect(0, y, size, 1);
+      g.globalAlpha = 0.06;
+      g.fillStyle = c2;
+      for (let y = 1; y < size; y += 3) g.fillRect(0, y, size, 1);
+      break;
+    }
+    case 'sand': {
+      for (let i = 0; i < 260; i++) {
+        g.globalAlpha = 0.08 + Math.random() * 0.18;
+        g.fillStyle = Math.random() < 0.5 ? c1 : c3;
+        g.fillRect(Math.random()*size, Math.random()*size, 1.2, 1.2);
+      }
+      g.globalAlpha = 0.15;
+      g.strokeStyle = c2; g.lineWidth = 0.6;
+      for (let i = 0; i < 4; i++) {
+        g.beginPath();
+        g.moveTo(0, (i+1)*(size/5));
+        for (let x = 0; x <= size; x += 8) g.lineTo(x, (i+1)*(size/5) + Math.sin(x*0.12 + i)*3);
+        g.stroke();
+      }
+      break;
+    }
+    case 'cracks': {
+      g.strokeStyle = c2; g.lineWidth = 1.1;
+      g.globalAlpha = 0.28;
+      for (let i = 0; i < 9; i++) {
+        const x0 = Math.random()*size, y0 = Math.random()*size;
+        let x = x0, y = y0;
+        g.beginPath(); g.moveTo(x, y);
+        const segs = 4 + Math.floor(Math.random()*4);
+        for (let s = 0; s < segs; s++) {
+          x += (Math.random()-0.5)*28;
+          y += (Math.random()-0.5)*28;
+          g.lineTo(x, y);
+        }
+        g.stroke();
+      }
+      g.globalAlpha = 0.18;
+      g.fillStyle = c3;
+      for (let i = 0; i < 18; i++) {
+        g.beginPath(); g.arc(Math.random()*size, Math.random()*size, 1 + Math.random()*2, 0, Math.PI*2); g.fill();
+      }
+      break;
+    }
+    case 'circuit': {
+      g.strokeStyle = c1; g.lineWidth = 1.0;
+      g.globalAlpha = 0.30;
+      const step = 16;
+      for (let y = 0; y <= size; y += step) {
+        g.beginPath();
+        let x = 0;
+        g.moveTo(x, y);
+        while (x < size) {
+          const nx = x + step;
+          if (Math.random() < 0.35) { g.lineTo(x, y + step); g.lineTo(nx, y + step); g.lineTo(nx, y); }
+          else g.lineTo(nx, y);
+          x = nx;
+        }
+        g.stroke();
+      }
+      g.fillStyle = c2; g.globalAlpha = 0.4;
+      for (let i = 0; i < 14; i++) { g.beginPath(); g.arc(Math.random()*size, Math.random()*size, 1.8, 0, Math.PI*2); g.fill(); }
+      break;
+    }
+    case 'sakura': {
+      g.globalAlpha = 0.35;
+      for (let i = 0; i < 22; i++) {
+        const x = Math.random()*size, y = Math.random()*size, r = 3 + Math.random()*3;
+        g.fillStyle = Math.random() < 0.7 ? c1 : c2;
+        for (let k = 0; k < 5; k++) {
+          const a = (Math.PI*2/5) * k;
+          g.beginPath(); g.ellipse(x + Math.cos(a)*r, y + Math.sin(a)*r, r*0.7, r*0.45, a, 0, Math.PI*2); g.fill();
+        }
+      }
+      g.globalAlpha = 0.25;
+      g.fillStyle = c3;
+      for (let i = 0; i < 30; i++) { g.beginPath(); g.arc(Math.random()*size, Math.random()*size, 1, 0, Math.PI*2); g.fill(); }
+      break;
+    }
+    case 'doomsday':
+    default: {
+      // Fallback = rubble + hazard stripes. Used by default and modern.
+      g.globalAlpha = 0.22;
+      g.fillStyle = c3;
+      g.save();
+      g.translate(size/2, size/2); g.rotate(-Math.PI/8);
+      for (let x = -size; x < size; x += 22) g.fillRect(x, -size, 6, size*2);
+      g.restore();
+      g.globalAlpha = 0.28;
+      g.strokeStyle = c2; g.lineWidth = 1.1;
+      for (let i = 0; i < 7; i++) {
+        let x = Math.random()*size, y = Math.random()*size;
+        g.beginPath(); g.moveTo(x, y);
+        const segs = 4 + Math.floor(Math.random()*3);
+        for (let s = 0; s < segs; s++) {
+          x += (Math.random()-0.5)*30;
+          y += (Math.random()-0.5)*30;
+          g.lineTo(x, y);
+        }
+        g.stroke();
+      }
+      g.globalAlpha = 0.18;
+      g.fillStyle = c1;
+      for (let i = 0; i < 14; i++) { g.beginPath(); g.arc(Math.random()*size, Math.random()*size, 1.5, 0, Math.PI*2); g.fill(); }
+      break;
+    }
+  }
+  g.globalAlpha = 1;
+  return cvs;
+}
+function getThemePattern(theme) {
+  if (!theme || !theme.tilePattern) return null;
+  let entry = THEME_PATTERN_CACHE[theme.id];
+  if (!entry) {
+    const tile = buildThemeTile(theme);
+    entry = { tile, pattern: null };
+    THEME_PATTERN_CACHE[theme.id] = entry;
+  }
+  if (!entry.pattern && entry.tile) {
+    try { entry.pattern = ctx.createPattern(entry.tile, 'repeat'); } catch { entry.pattern = null; }
+  }
+  return entry.pattern;
 }
 
 // ------------- ENEMY ARCHETYPES --------------------------------
@@ -2257,6 +2487,10 @@ function isBossKind(type) { return BOSS_KINDS.has(type); }
 function enemyStats(type, floor, elite) {
   const base = ZTYPES[type];
   const isBoss = isBossKind(type);
+  // Floor-2+ difficulty spike: flat 2x on HP, damage, and speed (applies to
+  // bosses too). Floor 1 remains the intro floor; floor 2 is where the game
+  // "turns on".
+  const f2Mul = floor >= 2 ? 2 : 1;
   // Bosses get steeper scaling on top of the normal per-floor curve.
   // HP curve softened per review: both boss-path exponents dropped from
   // 1.22/1.25 -> 1.18 so the F5 cliff roughly halves (old ~5.4x, new ~3.0x
@@ -2271,12 +2505,12 @@ function enemyStats(type, floor, elite) {
   const roomIdx = Math.max(0, (game && game.roomIdx) || 0);
   const roomHpMul  = Math.pow(1.08, roomIdx);
   const roomDmgMul = Math.pow(1.05, roomIdx);
-  const hpMul  = hpFloorMul * roomHpMul  * (elite ? 4.0 : 1.0) * bossHpBonus;
-  const dmgMul = Math.pow(1.15, floor - 1) * roomDmgMul * (elite ? 1.5 : 1.0) * bossDmgBonus;
+  const hpMul  = hpFloorMul * roomHpMul  * (elite ? 4.0 : 1.0) * bossHpBonus * f2Mul;
+  const dmgMul = Math.pow(1.15, floor - 1) * roomDmgMul * (elite ? 1.5 : 1.0) * bossDmgBonus * f2Mul;
   return {
     hp: Math.round(base.hp * hpMul),
     damage: Math.round(base.damage * dmgMul),
-    speed: base.speed * bossSpdBonus,
+    speed: base.speed * bossSpdBonus * f2Mul,
     radius: base.radius * (elite ? 1.15 : 1.0),
     score: Math.round(base.score * (elite ? 2.5 : 1.0)),
     xp: Math.round(base.xp * (elite ? 3 : 1.0)),
@@ -2496,6 +2730,9 @@ const game = {
   playerClass: 'ranged',   // 'ranged' | 'melee' — picked at run start
   environment: 'default',  // visual overlay theme id — picked at run start
   autoFire: false,         // settings toggle — auto-fire/auto-swing at nearby enemies
+  crazyDaveEnabled: true,  // settings toggle — Crazy Dave voice lines via Web Speech API
+  crazyDaveRandomT: 30,    // seconds until the next random voice roll
+  crazyDaveEventCdT: 0,    // cooldown before another event-triggered line can fire
   // Super powers — picked from the 12-power pool after each boss clear.
   // Stored as a Set of ids; consulted by Player getters and combat hooks.
   superpowers: new Set(),
@@ -2759,7 +2996,14 @@ class Player {
     if (hasSP('sp_berserker') && this.hp > 0 && this.hp < this.maxHp * 0.5) d *= 1.60;
     return d;
   }
-  get reloadTime()   { return Math.max(0.1, this._baseReload * Math.pow(0.82, this.u('reload'))); }
+  get reloadTime()   {
+    // Linear reload scaling with clip capacity: bigger mags take longer.
+    // Baseline 1.9s at clip 6, +0.15s per additional bullet. The reload
+    // upgrade still multiplies (0.82^level) on top.
+    const clip = this.maxAmmo;
+    const linear = this._baseReload + 0.15 * (clip - this._baseMaxAmmo);
+    return Math.max(0.1, linear * Math.pow(0.82, this.u('reload')));
+  }
   get bulletSpeed()  { return this._baseBulletSpeed * (1 + 0.18 * this.u('eagle')); }
   get bulletLife()   { return this._baseBulletLife * (1 + 0.18 * this.u('eagle')); }
   get critChance() {
@@ -3146,6 +3390,7 @@ class Player {
     if (leveled) {
       sfx('levelup');
       flashXP();
+      triggerCrazyDaveEvent();
       // `{calm:true}` swaps the bouncy banner-in (scale overshoot + rotate
       // wobble, amplified by the 1.4-overshoot bezier) for a calm fade.
       // That bouncy animation on the giant LEVEL UP banner is what reads
@@ -5808,6 +6053,35 @@ function overlapsAny(x, y, w, h, list, pad = 30) {
 }
 
 function generateObstacles(floor, isBoss, roomIdx = 0) {
+  // All collidable terrain stripped — the player must be able to walk to every
+  // corner without needing to jump or dash around cover. Doomsday ambiance is
+  // carried by the per-theme background tile layer instead of physical walls.
+  return [];
+}
+
+// Seed non-collidable hazard clouds for the hazardfield archetype. These damage
+// the player but don't block movement, preserving "random damage landscape is
+// fine" while honoring the no-terrain rule.
+function generateHazards(floor, isBoss, roomIdx = 0) {
+  const archetype = archetypeForRoom(floor, roomIdx, isBoss);
+  if (archetype !== 'hazardfield') return;
+  const puddleCount = randi(2, 4);
+  for (let i = 0; i < puddleCount; i++) {
+    let tries = 0;
+    while (tries++ < 20) {
+      const r = randi(90, 140);
+      const x = randi(200, world.w - 200);
+      const y = randi(200, world.h - 200);
+      if (Math.hypot(x - world.w/2, y - world.h/2) < 260) continue;
+      const c = new PoisonCloud(x, y, r, 999, 0.7, 3);
+      c.maxLife = 1;
+      game.poisonClouds.push(c);
+      break;
+    }
+  }
+}
+
+function _generateObstaclesLegacy_DEPRECATED(floor, isBoss, roomIdx = 0) {
   const { obstacles: pool } = themeForFloor(floor);
   const archetype = archetypeForRoom(floor, roomIdx, isBoss);
   const obs = [];
@@ -5908,6 +6182,11 @@ function generateObstacles(floor, isBoss, roomIdx = 0) {
 
 function generateRoomSpawns(floor, roomIdx, isBoss) {
   const spawns = [];
+  // Floor-2+ flat 2x on count, cap, and spawn cadence.
+  const f2 = floor >= 2 ? 2 : 1;
+  // Per-room +50% total monsters — applies on top of the floor multiplier and
+  // affects every floor. Stagger is unchanged by this multiplier (count only).
+  const roomMul = 1.5;
   if (isBoss) {
     // Boss room: boss + minions (scales per floor). Floor 1 always rolls the
     // classic boss so first-time players get the canonical fight. Floor 2+
@@ -5928,19 +6207,22 @@ function generateRoomSpawns(floor, roomIdx, isBoss) {
     // 8× larger (was 112, now 896). Variant scaling (berserker/necromancer)
     // stays as a multiplier on the doubled base so the relative thinning still
     // applies.
-    let minionCount = Math.min(8 * (4 + floor * 2), 896);
+    let minionCount = Math.min(Math.ceil(8 * (4 + floor * 2) * f2 * roomMul), Math.ceil(896 * f2 * roomMul));
     if (bossType === 'boss_berserker') minionCount = Math.max(2, Math.floor(minionCount * 0.35));
     if (bossType === 'boss_necro')     minionCount = Math.max(3, Math.floor(minionCount * 0.55));
     const pool = enemyPool(floor).filter(t => t !== 'boss' && !BOSS_KINDS.has(t));
     for (let i = 0; i < minionCount; i++) {
       // Stagger halved (175→88ms) for 2× spawn speed; initial delay 600→300.
-      spawns.push({ type: choice(pool), elite: floor >= 3 && Math.random() < 0.15, delay: 300 + i * 88 });
+      // Floor-2+ further halves both (f2=2) so the horde piles in faster.
+      spawns.push({ type: choice(pool), elite: floor >= 3 && Math.random() < 0.15, delay: (300 + i * 88) / f2 });
     }
     return spawns;
   }
   // Normal room: number of enemies scales with floor and room. Count doubled
   // (4× → 8×) and per-type stagger delays halved for 2× spawn speed/density.
-  const baseCount = 8 * (8 + roomIdx * 2 + Math.floor(floor * 2.4));
+  // Floor-2+ doubles count and halves stagger; +50% per-room roomMul stacks on
+  // count across all floors.
+  const baseCount = Math.ceil(8 * (8 + roomIdx * 2 + Math.floor(floor * 2.4)) * f2 * roomMul);
   const pool = enemyPool(floor);
   const eliteChance = floor >= 2 ? 0.10 + floor * 0.03 : 0;
   for (let i = 0; i < baseCount; i++) {
@@ -5948,7 +6230,7 @@ function generateRoomSpawns(floor, roomIdx, isBoss) {
     const elite = (floor >= 2) && Math.random() < eliteChance && !BOSS_KINDS.has(type);
     // Stagger delay halved: faster early, slower for tougher types.
     const baseDelay = type === 'brute' ? 125 : type === 'exploder' ? 88 : type === 'spitter' ? 65 : type === 'runner' ? 45 : 70;
-    spawns.push({ type, elite, delay: i * baseDelay });
+    spawns.push({ type, elite, delay: i * baseDelay / f2 });
   }
   return spawns;
 }
@@ -5970,6 +6252,7 @@ function enterRoom(floor, roomIdx) {
   game.poisonClouds = [];
   game.pendingBooms = [];
   game.obstacles = generateObstacles(floor, game.isBossRoom, roomIdx);
+  generateHazards(floor, game.isBossRoom, roomIdx);
   // Player keeps HP/ammo, but refill ammo a bit
   game.player.ammo = game.player.maxAmmo;
   game.player.reloading = false;
@@ -6027,20 +6310,23 @@ function enterRoom(floor, roomIdx) {
   if (game.isBossRoom) {
     showBanner(t('bossRoom'), tFloorName(floorIdx));
     sfx('boss');
+    triggerCrazyDaveEvent();
   } else {
     showBanner(t('floorRoom', floor, roomIdx+1), tFloorName(floorIdx));
     sfx('wave');
   }
 }
 
+const CHECKPOINT_KEY = 'zr_checkpoint';
 function saveCheckpoint(floor, roomIdx) {
+  const p = game.player;
   game.checkpoint = {
     floor,
     roomIdx,
     upgrades: { ...game.upgrades },
-    playerLevel: game.player.level,
-    xp: game.player.xp,
-    xpNeeded: game.player.xpNeeded,
+    playerLevel: p ? p.level : 1,
+    xp: p ? p.xp : 0,
+    xpNeeded: p ? p.xpNeeded : 20,
     kills: game.kills,
     score: game.score,
     bonusRerolls: game.bonusRerolls,
@@ -6048,7 +6334,50 @@ function saveCheckpoint(floor, roomIdx) {
     environment: game.environment,
     superpowers: [...game.superpowers],
     phoenixUsed: game.phoenixUsed,
+    schemaVersion: 2,
+    player: p ? {
+      hp: p.hp,
+      ammo: p.ammo,
+      reloading: p.reloading,
+      reloadT: p.reloadT,
+      fireCd: p.fireCd,
+      dashCd: p.dashCd,
+      jumpCd: p.jumpCd,
+      swingCd: p.swingCd,
+      iFrames: p.iFrames,
+      slowT: p.slowT,
+      slowMul: p.slowMul,
+    } : null,
   };
+}
+
+function persistCheckpoint() {
+  if (!game.checkpoint) return;
+  try { localStorage.setItem(CHECKPOINT_KEY, JSON.stringify(game.checkpoint)); } catch {}
+  refreshCheckpointPortalBtn();
+}
+
+function loadPersistedCheckpoint() {
+  try {
+    const raw = localStorage.getItem(CHECKPOINT_KEY);
+    if (raw) game.checkpoint = JSON.parse(raw);
+  } catch { game.checkpoint = null; }
+  refreshCheckpointPortalBtn();
+}
+
+function clearPersistedCheckpoint() {
+  try { localStorage.removeItem(CHECKPOINT_KEY); } catch {}
+  game.checkpoint = null;
+  refreshCheckpointPortalBtn();
+}
+
+function refreshCheckpointPortalBtn() {
+  const b = document.getElementById('checkpointPortalBtn');
+  if (!b) return;
+  const has = !!game.checkpoint;
+  b.disabled = !has;
+  b.style.opacity = has ? '1' : '0.4';
+  b.style.cursor = has ? '' : 'not-allowed';
 }
 
 function clearRoomAndAdvance() {
@@ -6085,6 +6414,7 @@ function clearRoomAndAdvance() {
     } else {
       // Boss-clear checkpoint: resume at start of next floor.
       saveCheckpoint(game.floor + 1, 0);
+      persistCheckpoint();
       game.transitionTarget = { floor: game.floor + 1, roomIdx: 0 };
     }
   } else {
@@ -6093,11 +6423,13 @@ function clearRoomAndAdvance() {
       game.bonusRerolls += 1;
       // Save AFTER incrementing so the token survives a revive.
       saveCheckpoint(game.floor, game.roomIdx + 1);
+      persistCheckpoint();
       showBanner(t('checkpoint'), t('checkpointFull'));
     } else {
       showBanner(t('roomClear'), t('roomClearReward', healAmt));
     }
     sfx('clear');
+    triggerCrazyDaveEvent();
     game.transitionT = 1.8;
     game.transitionTarget = { floor: game.floor, roomIdx: game.roomIdx + 1 };
   }
@@ -6752,7 +7084,7 @@ function renderStatsPanel(columnsEl) {
       formula: `1 / ${fmt(p.fireRate, 3)}${t('stat_sec')}`,
       value: `${fmt(1 / Math.max(0.001, p.fireRate), 2)} ${t('stat_shotsSec')}` },
     !isMelee && { label: t('stat_reload'),
-      formula: `${p._baseReload} × 0.82^${p.u('reload')}`,
+      formula: `(${p._baseReload} + 0.15 × ${p.maxAmmo - p._baseMaxAmmo}) × 0.82^${p.u('reload')}`,
       value: `${fmt(p.reloadTime, 2)} ${t('stat_sec')}` },
     { label: t('stat_crit'),
       formula: `0.09 × ${p.u('crit')} → capped at 100%`,
@@ -6919,7 +7251,7 @@ function updateHUD() {
 
 // ------------- RENDER ------------------------------------------
 function drawWorld() {
-  const { bg } = themeForFloor(game.floor);
+  const { bg, theme } = themeForFloor(game.floor);
   const sx = camera.shake ? (Math.random()-0.5)*camera.shake : 0;
   const sy = camera.shake ? (Math.random()-0.5)*camera.shake : 0;
 
@@ -6929,6 +7261,12 @@ function drawWorld() {
   // Solid per-theme background
   ctx.fillStyle = bg;
   ctx.fillRect(camera.x - 4, camera.y - 4, W + 8, H + 8);
+  // Decorative per-theme tile layer (replaces the stripped terrain visually).
+  const themePattern = getThemePattern(theme);
+  if (themePattern) {
+    ctx.fillStyle = themePattern;
+    ctx.fillRect(camera.x - 4, camera.y - 4, W + 8, H + 8);
+  }
   // Speckles
   ctx.fillStyle = 'rgba(255,255,255,0.04)';
   for (let i = 0; i < 120; i++) {
@@ -7240,6 +7578,22 @@ function continueFromCheckpoint() {
   game.player.xpNeeded = cp.xpNeeded;
   game.player.hp = game.player.maxHp;
   game.player.ammo = game.player.maxAmmo;
+  // Schema v2: restore live combat state so mid-room saves land the player
+  // where they paused (HP, ammo, reload-in-flight, cooldowns, debuffs).
+  if (cp.schemaVersion >= 2 && cp.player) {
+    const pp = cp.player;
+    if (typeof pp.hp === 'number')      game.player.hp = clamp(pp.hp, 0, game.player.maxHp);
+    if (typeof pp.ammo === 'number')    game.player.ammo = clamp(pp.ammo, 0, game.player.maxAmmo);
+    if (typeof pp.reloading === 'boolean') game.player.reloading = pp.reloading;
+    if (typeof pp.reloadT === 'number') game.player.reloadT = pp.reloadT;
+    if (typeof pp.fireCd === 'number')  game.player.fireCd = pp.fireCd;
+    if (typeof pp.dashCd === 'number')  game.player.dashCd = pp.dashCd;
+    if (typeof pp.jumpCd === 'number')  game.player.jumpCd = pp.jumpCd;
+    if (typeof pp.swingCd === 'number') game.player.swingCd = pp.swingCd;
+    if (typeof pp.iFrames === 'number') game.player.iFrames = pp.iFrames;
+    if (typeof pp.slowT === 'number')   game.player.slowT = pp.slowT;
+    if (typeof pp.slowMul === 'number') game.player.slowMul = pp.slowMul;
+  }
   applyEnvironmentOverlay(game.environment);
   renderUpgradeStack();
   updateHUDForClass();
@@ -7251,6 +7605,7 @@ function continueFromCheckpoint() {
 function quitToMenu() {
   game.state = 'menu';
   clearInputs();
+  stopCrazyDave();
   game.player = null;
   game.zombies = []; game.bullets = []; game.ezBullets = [];
   game.explosions = []; game.particles = []; game.damageNums = [];
@@ -7275,6 +7630,14 @@ function loop(now) {
     cameraUpdate();
     updateRoomDifficulty(dt);
     applyHowlerBuffs();
+    // Crazy Dave: cooldown for event-triggered lines + periodic random roll
+    // (~every 30s of play, 50% chance to fire). Only advances while playing.
+    if (game.crazyDaveEventCdT > 0) game.crazyDaveEventCdT -= dt;
+    game.crazyDaveRandomT -= dt;
+    if (game.crazyDaveRandomT <= 0) {
+      game.crazyDaveRandomT = 30;
+      if (game.crazyDaveEnabled && Math.random() < 0.5) speakCrazyDave();
+    }
     for (const z of game.zombies) z.update(dt, game.player);
     updatePoisonClouds(dt, game.player);
     updatePendingBooms(dt);
@@ -7423,6 +7786,29 @@ $('continueBtn').addEventListener('click', () => { initAudio(); continueFromChec
 $('resumeBtn').addEventListener('click', () => togglePause());
 $('pauseMenuBtn').addEventListener('click', () => quitToMenu());
 
+// Checkpoint Portal on the main menu: resumes a persisted run if one exists.
+const _checkpointPortalBtn = $('checkpointPortalBtn');
+if (_checkpointPortalBtn) {
+  _checkpointPortalBtn.addEventListener('click', () => {
+    initAudio();
+    loadPersistedCheckpoint();
+    if (game.checkpoint) continueFromCheckpoint();
+    else showBanner(t('noCheckpoint'), '');
+  });
+}
+
+// Pause-menu "Save Checkpoint": captures live run state to localStorage.
+const _pauseSaveBtn = $('pauseSaveCheckpointBtn');
+if (_pauseSaveBtn) {
+  _pauseSaveBtn.addEventListener('click', () => {
+    if (!game.player) return;
+    saveCheckpoint(game.floor, game.roomIdx);
+    persistCheckpoint();
+    refreshCheckpointPortalBtn();
+    showBanner(t('checkpointSaved'), '');
+  });
+}
+
 // Class-select overlay
 function showClassSelect() {
   refreshClassCardActive();
@@ -7495,6 +7881,29 @@ document.querySelectorAll('#settingsAutoFireGrid .lang-card').forEach(c => {
   });
 });
 refreshAutoFireCardActive();
+
+// Crazy Dave voice toggle — default ON.
+game.crazyDaveEnabled = (localStorage.getItem('zr_crazy_dave') !== '0');
+function refreshCrazyDaveCardActive() {
+  document.querySelectorAll('#settingsCrazyDaveGrid .lang-card').forEach(c => {
+    const want = c.dataset.crazydave === 'on';
+    c.classList.toggle('active', want === game.crazyDaveEnabled);
+  });
+}
+document.querySelectorAll('#settingsCrazyDaveGrid .lang-card').forEach(c => {
+  c.addEventListener('click', () => {
+    game.crazyDaveEnabled = (c.dataset.crazydave === 'on');
+    localStorage.setItem('zr_crazy_dave', game.crazyDaveEnabled ? '1' : '0');
+    refreshCrazyDaveCardActive();
+    if (!game.crazyDaveEnabled) stopCrazyDave();
+    sfx('pickup');
+  });
+});
+refreshCrazyDaveCardActive();
+
+// Load any persisted checkpoint so the Checkpoint Portal button reflects
+// availability from first paint.
+loadPersistedCheckpoint();
 
 // Restore saved class / environment picks
 const savedClass = localStorage.getItem('zr_class');
