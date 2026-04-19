@@ -1414,6 +1414,26 @@
     <button class="btn" id="envBackBtn" data-i18n="back">BACK</button>
   </div>
 
+  <!-- SUPER POWER CHOICE (boss bounty) -->
+  <div class="overlay hidden" id="superPowerChoice">
+    <div class="upgrade-title">
+      <div class="lvl-up"><span>SUPER POWER!</span><small>CHOOSE YOUR BOSS BOUNTY — NO REROLL</small></div>
+    </div>
+    <div class="upgrade-choices" id="spChoiceGrid"></div>
+    <button class="btn cool confirm-btn" id="spConfirmBtn" data-i18n="confirm">CONFIRM</button>
+    <div class="choice-footer">
+      <span class="key">&larr; &rarr;</span>
+      <span data-i18n="or">OR</span>
+      <span class="key">1-4</span>
+      <span data-i18n="select">SELECT</span>
+      <span class="sep">&middot;</span>
+      <span class="key">ENTER</span>
+      <span data-i18n="or">OR</span>
+      <span class="key" data-i18n="click">CLICK</span>
+      <span data-i18n="confirm">CONFIRM</span>
+    </div>
+  </div>
+
   <!-- UPGRADE CHOICE -->
   <div class="overlay hidden" id="upgradeChoice">
     <button class="reroll-btn reroll-corner" id="rerollBtn" data-i18n="reroll">🎲 REROLL</button>
@@ -2039,6 +2059,25 @@ addEventListener('keydown', e => {
     if (e.key === ' ' || e.key === 'Tab') e.preventDefault();
     return;
   }
+  // Super power pick (boss bounty): arrows / 1-4 select, Enter confirms.
+  // No reroll — the pick is final.
+  if (game.state === 'superPowerChoice') {
+    if (e.key === 'Enter') { e.preventDefault(); confirmSelectedSuperPower(); return; }
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); changeSPSelection(-1); return; }
+    if (e.key === 'ArrowRight') { e.preventDefault(); changeSPSelection(1);  return; }
+    if (e.key >= '1' && e.key <= '9') {
+      e.preventDefault();
+      const idx = parseInt(e.key) - 1;
+      if (idx < game.currentSPChoices.length && idx !== game.selectedSPChoice) {
+        game.selectedSPChoice = idx;
+        updateSPCardSelection();
+        sfx('pickup');
+      }
+      return;
+    }
+    if (e.key === ' ' || e.key === 'Tab') e.preventDefault();
+    return;
+  }
   // During the 1s pre-pause freeze, ignore all gameplay input
   if (game.state === 'levelup_pending') {
     if (e.key === ' ' || e.key === 'Tab') e.preventDefault();
@@ -2301,6 +2340,51 @@ const UPGRADES = [
 ];
 const UPG_BY_ID = Object.fromEntries(UPGRADES.map(u => [u.id, u]));
 
+// ------------- SUPER POWERS (boss bounties) --------------------
+// Pool of 12. After each boss clear (except the final-floor boss, which
+// ends the run), the player picks 1 of 4 randomly drawn from the pool.
+// Already-picked powers are excluded. NO reroll — the pick is final.
+const SUPERPOWERS = [
+  { id:'sp_juggernaut',  name:'Juggernaut',   icon:'🛡',  color:'#4ecdc4',
+    desc:'+60% max HP (heals). −10% move speed.' },
+  { id:'sp_glasscannon', name:'Glass Cannon', icon:'💥', color:'#ff6b6b',
+    desc:'+70% damage. −30% max HP.' },
+  { id:'sp_berserker',   name:'Berserker',    icon:'🔥', color:'#ff7b28',
+    desc:'Below 50% HP: +60% damage, +30% attack speed.' },
+  { id:'sp_giantslayer', name:'Giant Slayer', icon:'👹', color:'#ffbd2e',
+    desc:'+45% damage vs. bosses.' },
+  { id:'sp_bloodthirst', name:'Bloodthirst',  icon:'🩸', color:'#c73866',
+    desc:'Heal 4% max HP on every kill.' },
+  { id:'sp_marathon',    name:'Marathon',     icon:'👟', color:'#4ecdc4',
+    desc:'+35% move speed.' },
+  { id:'sp_ironwall',    name:'Iron Wall',    icon:'🛡',  color:'#c881ff',
+    desc:'Incoming damage reduced by 25%.' },
+  { id:'sp_sharpshot',   name:'Sharpshot',    icon:'🎯', color:'#ff6b6b',
+    desc:'+25% crit chance. Crit damage 2.5× → 4×.' },
+  { id:'sp_quickdraw',   name:'Quickdraw',    icon:'⚡', color:'#ffbd2e',
+    desc:'+40% attack speed (fire rate / swing).' },
+  { id:'sp_overkill',    name:'Overkill',     icon:'💣', color:'#ff6b6b',
+    desc:'Killing blows erupt — 80 damage, 90px radius.' },
+  { id:'sp_phoenix',     name:'Phoenix',      icon:'🦅', color:'#ffd966',
+    desc:'Revive once per run at 50% HP on death.' },
+  { id:'sp_warlord',     name:'Warlord',      icon:'🏆', color:'#ffd966',
+    desc:'+25% damage, +20% max HP, +15% move speed.' },
+];
+const SP_BY_ID = Object.fromEntries(SUPERPOWERS.map(s => [s.id, s]));
+function hasSP(id) { return game.superpowers && game.superpowers.has(id); }
+// Shared on-kill hook — fires from both Zombie.die() and Zombie.explode() so
+// exploder deaths still count. Keeps SP logic out of the critical-path code.
+function applySuperPowerOnKill(z) {
+  const p = game.player;
+  if (!p) return;
+  if (hasSP('sp_bloodthirst')) {
+    p.hp = Math.min(p.maxHp, p.hp + p.maxHp * 0.04);
+  }
+  if (hasSP('sp_overkill')) {
+    game.explosions.push(new Explosion(z.x, z.y, 90, 80, true));
+  }
+}
+
 // ------------- PLAYER SKINS ------------------------------------
 // Each skin describes how the Player's draw() routine paints the survivor.
 // Picked from the APPEARANCE overlay; stored in localStorage as 'zr_skin'.
@@ -2411,6 +2495,13 @@ const game = {
   playerClass: 'ranged',   // 'ranged' | 'melee' — picked at run start
   environment: 'default',  // visual overlay theme id — picked at run start
   autoFire: false,         // settings toggle — auto-fire/auto-swing at nearby enemies
+  // Super powers — picked from the 12-power pool after each boss clear.
+  // Stored as a Set of ids; consulted by Player getters and combat hooks.
+  superpowers: new Set(),
+  phoenixUsed: false,         // Phoenix revive is single-use per run
+  pendingSuperPower: false,   // queued between floorClear banner and pick overlay
+  currentSPChoices: [],
+  selectedSPChoice: 0,
 };
 
 // ------------- COLLISION HELPERS -------------------------------
@@ -2634,18 +2725,47 @@ class Player {
   u(id) { return game.upgrades[id] || 0; }
   get isMelee()      { return game.playerClass === 'melee'; }
 
-  get speed()        { return this._baseSpeed * (1 + 0.09 * this.u('speed')) * (this.slowT > 0 ? this.slowMul : 1); }
-  get maxHp()        { return this._baseMaxHp + 15 * this.u('hp') + 2 * (this.level - 1); }
+  get speed() {
+    let m = 1 + 0.09 * this.u('speed');
+    if (hasSP('sp_marathon'))   m *= 1.35;
+    if (hasSP('sp_juggernaut')) m *= 0.90;
+    if (hasSP('sp_warlord'))    m *= 1.15;
+    return this._baseSpeed * m * (this.slowT > 0 ? this.slowMul : 1);
+  }
+  get maxHp() {
+    let base = this._baseMaxHp + 15 * this.u('hp') + 2 * (this.level - 1);
+    let m = 1;
+    if (hasSP('sp_juggernaut'))  m *= 1.60;
+    if (hasSP('sp_glasscannon')) m *= 0.70;
+    if (hasSP('sp_warlord'))     m *= 1.20;
+    return base * m;
+  }
   get maxAmmo()      { return this._baseMaxAmmo + 5 * this.u('ammo'); }
-  get fireRate()     { return this._baseFireRate / (1 + 0.135 * this.u('rof')); }
+  get fireRate() {
+    let r = this._baseFireRate / (1 + 0.135 * this.u('rof'));
+    if (hasSP('sp_quickdraw')) r /= 1.40;
+    if (hasSP('sp_berserker') && this.hp > 0 && this.hp < this.maxHp * 0.5) r /= 1.30;
+    return r;
+  }
   // Base damage grows +0.2 per player level (additive to the pre-upgrade base),
   // then the 'dmg' upgrade multiplier stacks on top — same additive-before-
   // multiplier ordering that maxHp uses for its +2/level bonus.
-  get damage()       { return (this._baseDamage + 0.2 * (this.level - 1)) * (1 + 0.18 * this.u('dmg')); }
+  get damage() {
+    let d = (this._baseDamage + 0.2 * (this.level - 1)) * (1 + 0.18 * this.u('dmg'));
+    if (hasSP('sp_glasscannon')) d *= 1.70;
+    if (hasSP('sp_warlord'))     d *= 1.25;
+    if (hasSP('sp_berserker') && this.hp > 0 && this.hp < this.maxHp * 0.5) d *= 1.60;
+    return d;
+  }
   get reloadTime()   { return Math.max(0.1, this._baseReload * Math.pow(0.82, this.u('reload'))); }
   get bulletSpeed()  { return this._baseBulletSpeed * (1 + 0.18 * this.u('eagle')); }
   get bulletLife()   { return this._baseBulletLife * (1 + 0.18 * this.u('eagle')); }
-  get critChance()   { return Math.min(1, 0.09 * this.u('crit')); }
+  get critChance() {
+    let c = 0.09 * this.u('crit');
+    if (hasSP('sp_sharpshot')) c += 0.25;
+    return Math.min(1, c);
+  }
+  get critMul() { return hasSP('sp_sharpshot') ? 4.0 : 2.5; }
   get pierce()       { return 2 * this.u('pierce'); }
   // Explosive/doubleTap/whirlwind: previously max-1 booleans. Raised to max-5
   // so the getters now return stack counts instead of booleans, and consumers
@@ -2665,7 +2785,12 @@ class Player {
   get plagueDps()    { return 6 * this.u('plague'); }
   // New
   get dashCdMax()    { return this._baseDashCdMax * Math.pow(0.775, this.u('swift')); }
-  get swingCdMax()   { return this._baseSwingCdMax * Math.pow(0.88, this.u('swift')); }
+  get swingCdMax() {
+    let c = this._baseSwingCdMax * Math.pow(0.88, this.u('swift'));
+    if (hasSP('sp_quickdraw')) c /= 1.40;
+    if (hasSP('sp_berserker') && this.hp > 0 && this.hp < this.maxHp * 0.5) c /= 1.30;
+    return c;
+  }
   // Swing arc capped at ~288° (1.6π rad) so max-stacked cleaver can't loop
   // past a full circle — beyond that the swing wraps and hits nothing extra.
   get swingArcWidth(){ return Math.min(Math.PI * 1.6, this._baseSwingArc * (1 + 0.3 * this.u('cleaver'))); }
@@ -2897,7 +3022,7 @@ class Player {
       const spread = (Math.random()-0.5) * spreadMag;
       const a = this.angle + spread;
       const isCrit = Math.random() < this.critChance;
-      const dmg = this.damage * perShotMul * (isCrit ? 2.5 : 1.0);
+      const dmg = this.damage * perShotMul * (isCrit ? this.critMul : 1.0);
       game.bullets.push(new Bullet(muzX, muzY, a, this.bulletSpeed, dmg, {
         pierce: this.pierce, explosive: this.explosive,
         life: this.bulletLife, crit: isCrit,
@@ -2948,7 +3073,7 @@ class Player {
       while (ang < -Math.PI) ang += Math.PI * 2;
       if (Math.abs(ang) > arcHalf) continue;
       const isCrit = Math.random() < this.critChance;
-      const dmg = this.swingDmg * dmgMul * (isCrit ? 2.5 : 1.0);
+      const dmg = this.swingDmg * dmgMul * (isCrit ? this.critMul : 1.0);
       z.hurt(dmg, this.x + Math.cos(centerAngle) * (reach*0.6), this.y + Math.sin(centerAngle) * (reach*0.6), true);
       applyOnHitDoT(z, isCrit);
       // Knockback
@@ -2981,6 +3106,7 @@ class Player {
     // running. The player's OWN DoT (none exists in this game) would not be
     // gated here either.
     if (this.z > 0) return;
+    if (hasSP('sp_ironwall')) dmg *= 0.75;
     this.hp = Math.max(0, this.hp - dmg);
     this.iFrames = 0.55;
     this.flashT = 0.25;
@@ -2988,6 +3114,16 @@ class Player {
     flashDamage();
     sfx('hurt');
     if (this.hp <= 0) {
+      // Phoenix revive — single-use per run. Restore to 50% max HP and grant
+      // a long i-frame window so the player doesn't instantly die again.
+      if (hasSP('sp_phoenix') && !game.phoenixUsed) {
+        game.phoenixUsed = true;
+        this.hp = Math.ceil(this.maxHp * 0.5);
+        this.iFrames = 2.0;
+        showBanner('PHOENIX!', 'Revived at 50% HP');
+        sfx('levelup');
+        return;
+      }
       game.state = 'dead';
       clearInputs();
       sfx('gameover');
@@ -4343,6 +4479,7 @@ class Zombie {
   hurt(dmg, bx, by, showNumber=true) {
     const wasAlive = this.hp > 0;
     if (!wasAlive) return false;
+    if (hasSP('sp_giantslayer') && isBossKind(this.type)) dmg *= 1.45;
     this.hp -= dmg;
     this.hitFlash = 0.12;
     // vampire heal: lifesteal-on-hit (per damage event, not per kill)
@@ -4435,6 +4572,7 @@ class Zombie {
     game.kills++;
     game.score += this.score;
     game.player.gainXP(this.xp);
+    applySuperPowerOnKill(this);
     shakeCam(isBossKind(this.type) ? 14 : this.type==='brute' ? 6 : 3);
     sfx('die');
   }
@@ -4457,6 +4595,7 @@ class Zombie {
     game.kills++;
     game.score += this.score;
     game.player.gainXP(this.xp);
+    applySuperPowerOnKill(this);
     sfx('boom');
   }
   draw() {
@@ -5905,6 +6044,8 @@ function saveCheckpoint(floor, roomIdx) {
     bonusRerolls: game.bonusRerolls,
     playerClass: game.playerClass,
     environment: game.environment,
+    superpowers: [...game.superpowers],
+    phoenixUsed: game.phoenixUsed,
   };
 }
 
@@ -5932,8 +6073,12 @@ function clearRoomAndAdvance() {
     sfx('clear');
     // Game-tick-driven transition — automatically pauses during level-up pre-pause
     // or upgrade choice, since it's only decremented inside the 'playing' state block.
-    game.transitionT = 2.2;
+    // Shortened so the super-power pick fires promptly; the pick overlay holds
+    // the game in place until the player confirms, so the next-floor enterRoom
+    // runs only AFTER the pick (via resumeFromSuperPower).
+    game.transitionT = 1.2;
     game.transitionTarget = { floor: game.floor + 1, roomIdx: 0 };
+    game.pendingSuperPower = true;
   } else {
     if (isMidCheckpoint) {
       // Bonus reroll token is part of the mid-floor "brief shop" beat.
@@ -6325,6 +6470,106 @@ function confirmSelectedUpgrade() {
     resumeFromUpgrade();
   }
 }
+// ------------- SUPER POWER PICK (boss bounty) ------------------
+function rollSuperPowerChoices(n=4) {
+  const pool = SUPERPOWERS.filter(p => !game.superpowers.has(p.id));
+  const choices = [];
+  while (choices.length < n && pool.length > 0) {
+    const idx = randi(0, pool.length);
+    choices.push(pool[idx]);
+    pool.splice(idx, 1);
+  }
+  return choices;
+}
+function showSuperPowerChoice() {
+  const choices = rollSuperPowerChoices(4);
+  if (choices.length === 0) {
+    // Pool exhausted — skip and continue the queued room transition.
+    resumeFromSuperPower();
+    return;
+  }
+  game.currentSPChoices = choices;
+  game.selectedSPChoice = 0;
+  renderSPChoiceCards();
+  hideStatsPage();
+  clearInputs();
+  showOverlay($('superPowerChoice'));
+  game.state = 'superPowerChoice';
+  sfx('levelup');
+}
+function renderSPChoiceCards() {
+  const grid = document.getElementById('spChoiceGrid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  game.currentSPChoices.forEach((p, idx) => {
+    const card = document.createElement('div');
+    card.className = 'upgrade-card' + (idx === game.selectedSPChoice ? ' selected' : '');
+    card.style.setProperty('--accent-color', p.color);
+    card.style.userSelect = 'none';
+    card.innerHTML = `
+      <div class="num-badge">${idx+1}</div>
+      <div class="icon">${p.icon}</div>
+      <div class="name">${p.name}</div>
+      <div class="desc">${p.desc}</div>
+      <div class="lvl-pill">SUPER POWER</div>
+    `;
+    card.addEventListener('click', () => {
+      if (game.selectedSPChoice !== idx) {
+        game.selectedSPChoice = idx;
+        updateSPCardSelection();
+      }
+      sfx('pickup');
+    });
+    card.addEventListener('dblclick', (e) => {
+      e.preventDefault();
+      if (game.selectedSPChoice !== idx) {
+        game.selectedSPChoice = idx;
+        updateSPCardSelection();
+      }
+      confirmSelectedSuperPower();
+    });
+    grid.appendChild(card);
+  });
+}
+function updateSPCardSelection() {
+  const grid = document.getElementById('spChoiceGrid');
+  if (!grid) return;
+  Array.from(grid.children).forEach((card, idx) => {
+    if (idx === game.selectedSPChoice) card.classList.add('selected');
+    else card.classList.remove('selected');
+  });
+}
+function changeSPSelection(delta) {
+  const n = game.currentSPChoices.length;
+  if (n === 0) return;
+  game.selectedSPChoice = ((game.selectedSPChoice + delta) % n + n) % n;
+  updateSPCardSelection();
+  sfx('pickup');
+}
+function confirmSelectedSuperPower() {
+  if (game.state !== 'superPowerChoice') return;
+  const p = game.currentSPChoices[game.selectedSPChoice];
+  if (!p) return;
+  game.superpowers.add(p.id);
+  // Juggernaut bumps max HP — heal on pick so the player benefits immediately.
+  if (game.player) {
+    game.player.hp = Math.min(game.player.maxHp, game.player.hp + 999);
+  }
+  renderUpgradeStack();
+  resumeFromSuperPower();
+}
+function resumeFromSuperPower() {
+  hideAllOverlays();
+  game.state = 'playing';
+  clearInputs();
+  if (game.transitionTarget) {
+    const t = game.transitionTarget;
+    game.transitionTarget = null;
+    game.transitionT = 0;
+    enterRoom(t.floor, t.roomIdx);
+  }
+}
+
 function resumeFromUpgrade() {
   hideAllOverlays();
   game.state = 'playing';
@@ -6345,7 +6590,7 @@ function resumeFromUpgrade() {
 
 // ------------- UI ----------------------------------------------
 const $ = id => document.getElementById(id);
-const overlays = () => ['langSelect','menu','classSelect','envSelect','upgradeChoice','runEnd','pause','settings','appearance'].map(id => $(id));
+const overlays = () => ['langSelect','menu','classSelect','envSelect','upgradeChoice','superPowerChoice','runEnd','pause','settings','appearance'].map(id => $(id));
 function hideAllOverlays() { overlays().forEach(o => o.classList.add('hidden')); }
 function showOverlay(el) { hideAllOverlays(); el.classList.remove('hidden'); el.classList.add('fade-in'); }
 
@@ -6420,6 +6665,19 @@ function renderUpgradeStack() {
     chip.title = `${name} — ${lv} / ${maxTxt}`;
     chip.innerHTML = `<div class="dot" style="background:${u.color}">${u.icon}</div><span>${name}</span><span class="lvl">${lv}/${maxTxt}</span>`;
     wrap.appendChild(chip);
+  }
+  // Super-power chips — rendered after upgrade chips so boss bounties are
+  // clearly distinct. The star-lvl pill marks them as unique picks.
+  if (game.superpowers) {
+    for (const id of game.superpowers) {
+      const p = SP_BY_ID[id];
+      if (!p) continue;
+      const chip = document.createElement('div');
+      chip.className = 'upg-chip';
+      chip.title = `${p.name} — ${p.desc}`;
+      chip.innerHTML = `<div class="dot" style="background:${p.color}">${p.icon}</div><span>${p.name}</span><span class="lvl">★</span>`;
+      wrap.appendChild(chip);
+    }
   }
 }
 
@@ -6840,6 +7098,11 @@ function startRun() {
   game.checkpoint = null;
   game.bonusRerolls = 0;
   game.upgrades = {};
+  game.superpowers = new Set();
+  game.phoenixUsed = false;
+  game.pendingSuperPower = false;
+  game.currentSPChoices = [];
+  game.selectedSPChoice = 0;
   game.pendingLevelUps = 0;
   game.transitionT = 0;
   game.transitionTarget = null;
@@ -6906,6 +7169,16 @@ function showRunEnd(victory) {
     chip.innerHTML = `<div class="dot" style="background:${u.color}">${u.icon}</div><span>${tUpgradeName(id)} ×${lv}</span>`;
     list.appendChild(chip);
   }
+  if (game.superpowers) {
+    for (const id of game.superpowers) {
+      const p = SP_BY_ID[id];
+      if (!p) continue;
+      const chip = document.createElement('div');
+      chip.className = 'sum-chip';
+      chip.innerHTML = `<div class="dot" style="background:${p.color}">${p.icon}</div><span>${p.name} ★</span>`;
+      list.appendChild(chip);
+    }
+  }
   // Only offer the checkpoint revive on death (not on victory) and only when
   // a checkpoint has actually been captured (i.e., at least one boss cleared).
   const cBtn = $('continueBtn');
@@ -6928,6 +7201,11 @@ function continueFromCheckpoint() {
   game.kills = cp.kills;
   game.score = cp.score;
   game.upgrades = { ...cp.upgrades };
+  game.superpowers = new Set(cp.superpowers || []);
+  game.phoenixUsed = !!cp.phoenixUsed;
+  game.pendingSuperPower = false;
+  game.currentSPChoices = [];
+  game.selectedSPChoice = 0;
   game.bonusRerolls = cp.bonusRerolls || 0;
   game.pendingLevelUps = 0;
   game.transitionT = 0;
@@ -7011,9 +7289,17 @@ function loop(now) {
     if (game.transitionT > 0) {
       game.transitionT -= dt;
       if (game.transitionT <= 0 && game.transitionTarget) {
-        const t = game.transitionTarget;
-        game.transitionTarget = null;
-        enterRoom(t.floor, t.roomIdx);
+        // Boss-clear flow: intercept the normal transition to show the super
+        // power pick first. resumeFromSuperPower fires enterRoom after the
+        // player confirms. Fall through to the normal enterRoom otherwise.
+        if (game.pendingSuperPower) {
+          game.pendingSuperPower = false;
+          showSuperPowerChoice();
+        } else {
+          const t = game.transitionTarget;
+          game.transitionTarget = null;
+          enterRoom(t.floor, t.roomIdx);
+        }
       }
     }
 
@@ -7163,6 +7449,7 @@ $('envBackBtn').addEventListener('click', () => showClassSelect());
 // Reroll + confirm buttons in level-up overlay
 $('rerollBtn').addEventListener('click', () => rerollChoices());
 $('confirmBtn').addEventListener('click', () => confirmSelectedUpgrade());
+$('spConfirmBtn').addEventListener('click', () => confirmSelectedSuperPower());
 // Level-up: open the independent Stats page layered above the choice overlay.
 $('viewStatsBtn').addEventListener('click', () => showStatsPage('upgradeChoice'));
 $('statsPageCloseBtn').addEventListener('click', () => hideStatsPage());
