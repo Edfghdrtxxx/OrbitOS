@@ -1,51 +1,354 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no"
-    />
-    <meta name="theme-color" content="#0b0d10" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <title>Zombie Roguelike</title>
-    <style>
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        background: #0b0d10;
-        color: #eee;
-        font-family: system-ui, -apple-system, Segoe UI, sans-serif;
-        overflow: hidden;
-        overscroll-behavior: none;
-        touch-action: none;
-        user-select: none;
-        -webkit-user-select: none;
-      }
-      #app {
-        position: fixed;
-        inset: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      canvas#game {
-        background: #14171c;
-        max-width: 100%;
-        max-height: 100%;
-        display: block;
-        image-rendering: pixelated;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="app">
-      <canvas id="game" width="960" height="540"></canvas>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#0b0d10">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Zombie Rogue: Endless Horde</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@700;800;900&family=Noto+Sans+SC:wght@700;800;900&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="stage">
+  <canvas id="game" width="1280" height="720"></canvas>
+  <div class="env-overlay" id="envOverlay"></div>
+
+  <!-- Mobile touch controls (shown only when body.touch) -->
+  <div class="joystick-base" id="joyLeft"><div class="stick" id="joyLeftStick"></div></div>
+  <div class="joystick-base" id="joyRight"><div class="stick" id="joyRightStick"></div></div>
+  <button class="mobile-btn" id="btnJump"  aria-label="Jump">🦘</button>
+  <button class="mobile-btn" id="btnDash"  aria-label="Dash">⚡</button>
+  <button class="mobile-btn btn-sm" id="btnReload" aria-label="Reload">🔄</button>
+  <button class="mobile-btn btn-sm" id="btnPause"  aria-label="Pause">⏸</button>
+  <div class="rotate-prompt" id="rotatePrompt"><div class="icon">📱</div><div data-i18n="rotateHint">ROTATE TO LANDSCAPE</div></div>
+
+  <div id="hud">
+    <!-- Top: Floor/Room/Kills/Score -->
+    <div class="hud-top">
+      <div class="pill"><span class="label" data-i18n="floor">FLOOR</span><span class="value" id="floorText">1</span></div>
+      <div class="pill"><span class="label" data-i18n="room">ROOM</span><span class="value" id="roomText">1/4</span></div>
+      <div class="pill"><span class="label" data-i18n="lvl">LVL</span><span class="value" id="lvlText">1</span></div>
+      <div class="pill"><span class="label" data-i18n="left">LEFT</span><span class="value" id="leftText">0</span></div>
+      <div class="pill"><span class="label" data-i18n="kills">KILLS</span><span class="value" id="killText">0</span></div>
+      <div class="pill"><span class="label" data-i18n="score">SCORE</span><span class="value" id="scoreText">0</span></div>
     </div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+
+    <!-- Bottom: HP / XP / Ammo -->
+    <div class="hud-bottom">
+      <div class="stat-row">
+        <div class="pill">
+          <span class="label" data-i18n="hp">HP</span>
+          <div class="bar"><div class="hp-fill" id="hpFill" style="width:100%"></div></div>
+          <span class="value" id="hpText">100</span>
+        </div>
+        <div class="pill">
+          <span class="label" data-i18n="xp">XP</span>
+          <div class="bar"><div class="xp-fill" id="xpFill" style="width:0%"></div></div>
+          <span class="value" id="xpText">0/15</span>
+        </div>
+        <div class="pill">
+          <span class="label" data-i18n="ammo">AMMO</span>
+          <div class="bar"><div class="ammo-fill" id="ammoFill" style="width:100%"></div></div>
+          <span class="value" id="ammoText">12/12</span>
+        </div>
+        <div class="pill dash-pill" id="dashIndicator">
+          <span class="label" data-i18n="dashCap">DASH</span>
+          <div class="bar"><div class="dash-fill" id="dashCool" style="width:0%"></div></div>
+          <span class="value" data-i18n="shift">SHIFT</span>
+        </div>
+        <div class="pill dash-pill" id="jumpIndicator">
+          <span class="label" data-i18n="jumpCap">JUMP</span>
+          <div class="bar"><div class="dash-fill" id="jumpCool" style="width:0%"></div></div>
+          <span class="value" data-i18n="space">SPACE</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Left: active upgrades -->
+    <div class="upgrade-stack" id="upgradeStack"></div>
+
+    <!-- Top-right: Risk-of-Rain-style difficulty indicator -->
+    <div class="diff-hud hidden" id="diffHud">
+      <div class="dh-label" data-i18n="time">TIME</div>
+      <div class="dh-time" id="dhTime">00:00</div>
+      <div class="dh-tier" id="dhTier">EASY</div>
+      <div class="dh-bar"><div class="dh-fill" id="dhFill"></div></div>
+    </div>
+
+    <!-- Bottom-left: player character level. "Lv N" reads in both EN/ZH. -->
+    <div class="lvl-hud hidden" id="lvlHud">
+      <div class="lh-label" data-i18n="lvl">LVL</div>
+      <div class="lh-value" id="lhValue">Lv 1</div>
+    </div>
+
+    <div class="banner" id="banner"></div>
+    <div class="damage-flash" id="damageFlash"></div>
+    <div class="xp-flash" id="xpFlash"></div>
+    <div class="prepause-flash" id="prepauseFlash"></div>
+    <div class="crosshair-hint" data-i18n="crosshairHint">WASD · MOUSE AIM · CLICK FIRE · R RELOAD · SHIFT DASH · SPACE JUMP · ESC PAUSE</div>
+  </div>
+
+  <!-- LANGUAGE SELECT (first page) -->
+  <div class="overlay" id="langSelect">
+    <div class="title"><span data-i18n="title">ZOMBIE ROGUE</span><small data-i18n="subtitle">ENDLESS HORDE</small></div>
+    <div class="subtitle cool" data-i18n="chooseLanguageBig">CHOOSE LANGUAGE</div>
+    <div class="lang-grid" id="langSelectGrid">
+      <div class="lang-card" data-lang="en">
+        <div class="flag">🇬🇧</div>
+        <div class="lname">ENGLISH</div>
+      </div>
+      <div class="lang-card" data-lang="zh">
+        <div class="flag">🇨🇳</div>
+        <div class="lname">中文</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN MENU -->
+  <div class="overlay hidden" id="menu">
+    <div class="title"><span data-i18n="title">ZOMBIE ROGUE</span><small data-i18n="subtitle">ENDLESS HORDE</small></div>
+    <div data-i18n="intro" data-i18n-html="true" style="text-align:center; max-width:600px; font-weight:800; opacity:0.85; line-height:1.5;">
+      Survive 5 floors of undead chaos. Every run is different.<br>
+      Level up — pick your build — push deeper — die trying.
+    </div>
+    <div style="display:flex; flex-direction:column; gap:16px; align-items:center;">
+      <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center;">
+        <button class="btn" id="startBtn" data-i18n="startRun">START RUN</button>
+        <button class="btn cool" id="checkpointPortalBtn" data-i18n="checkpointPortal">CHECKPOINT PORTAL</button>
+      </div>
+      <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center;">
+        <button class="btn hot" id="appearanceBtn" data-i18n="characterAppearance">CHARACTER APPEARANCE</button>
+        <span class="settings-btn-wrap">
+          <button class="btn cool" id="settingsBtn" data-i18n="settings">SETTINGS</button>
+          <span class="settings-annotation">← 语言/Language</span>
+        </span>
+      </div>
+    </div>
+    <div class="menu-tip" id="menuTip"><span class="tip-label" data-i18n="tipLabel">TIP</span><span id="menuTipText">—</span></div>
+    <div class="controls">
+      <div class="key">WASD<span class="desc" data-i18n="move">Move</span></div>
+      <div class="key">Mouse<span class="desc" data-i18n="aim">Aim</span></div>
+      <div class="key">Click<span class="desc" data-i18n="attack">Attack</span></div>
+      <div class="key">Shift<span class="desc" data-i18n="dash">Dash</span></div>
+      <div class="key">Space<span class="desc" data-i18n="jump">Jump</span></div>
+      <div class="key">ESC<span class="desc" data-i18n="pause">Pause</span></div>
+    </div>
+  </div>
+
+  <!-- CLASS SELECT -->
+  <div class="overlay hidden" id="classSelect">
+    <div class="subtitle cool" data-i18n="chooseClass">CHOOSE YOUR CLASS</div>
+    <div class="class-grid" id="classGrid">
+      <div class="class-card" data-class="ranged">
+        <div class="class-icon">🔫</div>
+        <div class="cname" data-i18n="classRanged">RANGED</div>
+        <div class="cdesc" data-i18n="classRangedDesc">Bullets, reloads, distance.</div>
+      </div>
+      <div class="class-card" data-class="melee">
+        <div class="class-icon">🪓</div>
+        <div class="cname" data-i18n="classMelee">MELEE</div>
+        <div class="cdesc" data-i18n="classMeleeDesc">Click to swing a wide arc.</div>
+      </div>
+    </div>
+    <button class="btn" id="classBackBtn" data-i18n="back">BACK</button>
+  </div>
+
+  <!-- ENVIRONMENT SELECT -->
+  <div class="overlay hidden" id="envSelect">
+    <div class="subtitle hot" data-i18n="chooseEnv">CHOOSE ENVIRONMENT</div>
+    <div class="env-grid" id="envGrid">
+      <div class="env-card env-preview-default" data-env="default">
+        <div class="ename" data-i18n="env_default">CLASSIC</div>
+        <div class="edesc" data-i18n="env_default_desc">Raw, unfiltered carnage.</div>
+      </div>
+      <div class="env-card env-preview-neon" data-env="neon">
+        <div class="ename" data-i18n="env_neon">NEON RAVE</div>
+        <div class="edesc" data-i18n="env_neon_desc">Pink/cyan pulse, party ends in gore.</div>
+      </div>
+      <div class="env-card env-preview-vhs" data-env="vhs">
+        <div class="ename" data-i18n="env_vhs">VHS GLITCH</div>
+        <div class="edesc" data-i18n="env_vhs_desc">Scanlines and chromatic tear.</div>
+      </div>
+      <div class="env-card env-preview-vapor" data-env="vapor">
+        <div class="ename" data-i18n="env_vapor">VAPORWAVE</div>
+        <div class="edesc" data-i18n="env_vapor_desc">Lofi sunset, high mortality.</div>
+      </div>
+      <div class="env-card env-preview-modern" data-env="modern">
+        <div class="ename" data-i18n="env_modern">MODERN CITY</div>
+        <div class="edesc" data-i18n="env_modern_desc">Asphalt and streetlights — the apocalypse downtown.</div>
+      </div>
+      <div class="env-card env-preview-cyberpunk" data-env="cyberpunk">
+        <div class="ename" data-i18n="env_cyberpunk">CYBERPUNK 2077</div>
+        <div class="edesc" data-i18n="env_cyberpunk_desc">Neon megacity, holo-pillars and rain.</div>
+      </div>
+      <div class="env-card env-preview-chiikawa" data-env="chiikawa">
+        <div class="ename" data-i18n="env_chiikawa">CHIIKAWA-VERSE</div>
+        <div class="edesc" data-i18n="env_chiikawa_desc">Pastel meadows. Cute outside, chunky bites inside.</div>
+      </div>
+    </div>
+    <button class="btn" id="envBackBtn" data-i18n="back">BACK</button>
+  </div>
+
+  <!-- SUPER POWER CHOICE (boss bounty) -->
+  <div class="overlay hidden" id="superPowerChoice">
+    <div class="upgrade-title">
+      <div class="lvl-up"><span>SUPER POWER!</span><small>CHOOSE YOUR BOSS BOUNTY — NO REROLL</small></div>
+    </div>
+    <div class="upgrade-choices" id="spChoiceGrid"></div>
+    <button class="btn cool confirm-btn" id="spConfirmBtn" data-i18n="confirm">CONFIRM</button>
+    <div class="choice-footer">
+      <span class="key">&larr; &rarr;</span>
+      <span data-i18n="or">OR</span>
+      <span class="key">1-4</span>
+      <span data-i18n="select">SELECT</span>
+      <span class="sep">&middot;</span>
+      <span class="key">ENTER</span>
+      <span data-i18n="or">OR</span>
+      <span class="key" data-i18n="click">CLICK</span>
+      <span data-i18n="confirm">CONFIRM</span>
+    </div>
+  </div>
+
+  <!-- UPGRADE CHOICE -->
+  <div class="overlay hidden" id="upgradeChoice">
+    <button class="reroll-btn reroll-corner" id="rerollBtn" data-i18n="reroll">🎲 REROLL</button>
+    <button class="btn view-stats-btn" id="viewStatsBtn" data-i18n="viewStats">📊 STATS</button>
+    <div class="upgrade-title">
+      <div class="lvl-up"><span data-i18n="levelUp">LEVEL UP!</span><small id="upgradeLvlSub" data-i18n="chooseYourUpgrade">CHOOSE YOUR UPGRADE</small></div>
+    </div>
+    <div class="upgrade-choices" id="choiceGrid"></div>
+    <button class="btn cool confirm-btn" id="confirmBtn" data-i18n="confirm">CONFIRM</button>
+    <div class="choice-footer">
+      <span class="key">&larr; &rarr;</span>
+      <span data-i18n="or">OR</span>
+      <span class="key">1-4</span>
+      <span data-i18n="select">SELECT</span>
+      <span class="sep">&middot;</span>
+      <span class="key">ENTER</span>
+      <span data-i18n="or">OR</span>
+      <span class="key" data-i18n="click">CLICK</span>
+      <span data-i18n="confirm">CONFIRM</span>
+      <span class="sep">&middot;</span>
+      <span class="key">F</span>
+      <span>/</span>
+      <span class="key">R</span>
+      <span data-i18n="rerollHint">REROLL</span>
+    </div>
+  </div>
+
+  <!-- RUN SUMMARY / GAME OVER / VICTORY -->
+  <div class="overlay hidden" id="runEnd">
+    <div class="subtitle" id="endTitle">YOU DIED</div>
+    <div class="run-summary">
+      <div class="stat-card"><div class="lbl" data-i18n="floor">FLOOR</div><div class="val" id="endFloor">1</div></div>
+      <div class="stat-card hot"><div class="lbl" data-i18n="kills">KILLS</div><div class="val" id="endKills">0</div></div>
+      <div class="stat-card"><div class="lbl" data-i18n="score">SCORE</div><div class="val" id="endScore">0</div></div>
+      <div class="stat-card cool"><div class="lbl" data-i18n="level">LEVEL</div><div class="val" id="endLvl">1</div></div>
+      <div class="stat-card xp"><div class="lbl" data-i18n="time">TIME</div><div class="val" id="endTime">0s</div></div>
+      <div class="stat-card"><div class="lbl" data-i18n="upgrades">UPGRADES</div><div class="val" id="endUpgrades">0</div></div>
+    </div>
+    <div class="summary-upgrades" id="endUpgradeList"></div>
+    <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center;">
+      <button class="btn cool" id="continueBtn" style="display:none;" data-i18n="continueRun">CONTINUE FROM CHECKPOINT</button>
+      <button class="btn hot" id="restartBtn" data-i18n="newRun">NEW RUN</button>
+      <button class="btn" id="endMenuBtn" data-i18n="menu">MENU</button>
+    </div>
+  </div>
+
+  <!-- PAUSE -->
+  <div class="overlay hidden" id="pause">
+    <div class="subtitle cool" data-i18n="paused">PAUSED</div>
+    <div class="pause-body">
+      <!-- STATS: populated by renderStatsPanel() on pause open -->
+      <div class="stats-panel" id="statsPanel" aria-live="polite">
+        <div class="stats-title" data-i18n="stats">STATS</div>
+        <div class="stats-columns" id="statsColumns"></div>
+      </div>
+      <div class="pause-buttons">
+        <button class="btn cool" id="resumeBtn" data-i18n="resume">RESUME</button>
+        <button class="btn" id="pauseSaveCheckpointBtn" data-i18n="saveCheckpoint">SAVE CHECKPOINT</button>
+        <button class="btn hot" id="pauseAppearanceBtn" data-i18n="appearance">APPEARANCE</button>
+        <button class="btn" id="pauseSettingsBtn" data-i18n="settings">SETTINGS</button>
+        <button class="btn" id="pauseMenuBtn" data-i18n="quitRun">QUIT RUN</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKPOINT SLOTS (both load and save mode) -->
+  <div class="overlay hidden" id="checkpointSlots">
+    <div class="subtitle cool" id="checkpointSlotsTitle" data-i18n="checkpointPortal">CHECKPOINT PORTAL</div>
+    <div class="subtitle" id="checkpointSlotsSubtitle" style="font-size: 22px; opacity: 0.8;" data-i18n="chooseLoadSlot">CHOOSE A SLOT TO LOAD</div>
+    <div class="class-grid" id="checkpointSlotGrid"></div>
+    <button class="btn" id="checkpointSlotsBackBtn" data-i18n="back">BACK</button>
+  </div>
+
+  <!-- STATS PAGE (independent overlay; openable from pause or level-up) -->
+  <div class="overlay hidden" id="statsPage">
+    <div class="subtitle cool" data-i18n="stats">STATS</div>
+    <div class="stats-panel stats-page-body" id="statsPageBody" aria-live="polite">
+      <div class="stats-columns" id="statsPageColumns"></div>
+    </div>
+    <button class="btn" id="statsPageCloseBtn" data-i18n="close">CLOSE</button>
+  </div>
+
+  <!-- UPGRADE DETAIL (opened by clicking an active-upgrades chip in the HUD) -->
+  <div class="overlay hidden" id="upgradeDetail">
+    <div class="upgrade-card" id="upgradeDetailCard"></div>
+    <button class="btn" id="upgradeDetailCloseBtn" data-i18n="close">CLOSE</button>
+  </div>
+
+  <!-- SETTINGS -->
+  <div class="overlay hidden" id="settings">
+    <div class="subtitle" data-i18n="settings">SETTINGS</div>
+    <div class="subtitle cool" style="font-size: 32px;" data-i18n="language">LANGUAGE</div>
+    <div class="lang-grid" id="settingsLangGrid">
+      <div class="lang-card" data-lang="en">
+        <div class="flag">🇬🇧</div>
+        <div class="lname">ENGLISH</div>
+      </div>
+      <div class="lang-card" data-lang="zh">
+        <div class="flag">🇨🇳</div>
+        <div class="lname">中文</div>
+      </div>
+    </div>
+    <div class="subtitle cool" style="font-size: 28px;" data-i18n="autoFire">AUTO-FIRE / AUTO-ATTACK</div>
+    <div class="lang-grid" id="settingsAutoFireGrid">
+      <div class="lang-card" data-autofire="off">
+        <div class="flag">❌</div>
+        <div class="lname" data-i18n="off">OFF</div>
+      </div>
+      <div class="lang-card" data-autofire="on">
+        <div class="flag">🎯</div>
+        <div class="lname" data-i18n="on">ON</div>
+      </div>
+    </div>
+    <input type="checkbox" id="autoFireToggle" style="display:none;">
+    <div class="subtitle cool" style="font-size: 28px;" data-i18n="crazyDave">CRAZY DAVE VOICE</div>
+    <div class="lang-grid" id="settingsCrazyDaveGrid">
+      <div class="lang-card" data-crazydave="off">
+        <div class="flag">🤫</div>
+        <div class="lname" data-i18n="off">OFF</div>
+      </div>
+      <div class="lang-card" data-crazydave="on">
+        <div class="flag">🗣️</div>
+        <div class="lname" data-i18n="on">ON</div>
+      </div>
+    </div>
+    <button class="btn" id="settingsBackBtn" data-i18n="back">BACK</button>
+  </div>
+
+  <!-- APPEARANCE -->
+  <div class="overlay hidden" id="appearance">
+    <div class="subtitle" data-i18n="characterAppearance">CHARACTER APPEARANCE</div>
+    <div class="subtitle cool" style="font-size: 28px;" data-i18n="chooseAppearance">CHOOSE YOUR OUTFIT</div>
+    <div class="skin-grid" id="skinGrid"></div>
+    <button class="btn" id="appearanceBackBtn" data-i18n="back">BACK</button>
+  </div>
+</div>
+<script type="module" src="/src/main.ts"></script>
+</body>
 </html>
