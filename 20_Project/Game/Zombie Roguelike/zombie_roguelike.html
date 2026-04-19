@@ -1931,7 +1931,7 @@ class Zombie {
         if (this.chargeT <= 0) this.charging = false;
       } else {
         this.move(dx/d, dy/d, this.speed, dt);
-        if (this.chargeCd <= 0 && d < 600 && d > 90) {
+        if (game.floor >= 4 && this.chargeCd <= 0 && d < 600 && d > 90) {
           this.charging = true;
           this.chargeT = 0.9;
           this.chargeDx = dx/d; this.chargeDy = dy/d;
