@@ -2434,6 +2434,20 @@ function platformAt(x, y) {
   }
   return null;
 }
+// Landing-snap variant: accepts a "grace" margin so a landing that clips the
+// platform edge with the entity's body (but not center) still counts as on-
+// platform. Used on jump landing so the window isn't razor-thin. Returns the
+// nearest platform whose expanded AABB covers (x,y), else null.
+function platformAtWithGrace(x, y, grace) {
+  const obs = game.obstacles;
+  for (let i = 0; i < obs.length; i++) {
+    const o = obs[i];
+    if (o.type !== 'platform') continue;
+    if (x >= o.x - grace && x <= o.x + o.w + grace &&
+        y >= o.y - grace && y <= o.y + o.h + grace) return o;
+  }
+  return null;
+}
 // Same-layer test for combat filtering. Two entities "can interact" if they
 // share a layer string. An airborne entity (z > 0 from a jump) is in transit
 // between layers and temporarily unreachable by contact-style attacks — that's
@@ -2613,10 +2627,22 @@ class Player {
       this.z = Math.sin(frac * Math.PI) * this.jumpPeak;
       if (this.jumpT <= 0) {
         this.z = 0;
-        // Landing: resolve layer. If we land inside a platform footprint we
-        // settle onto that platform (layer id follows); otherwise back to ground.
-        const p = platformAt(this.x, this.y);
-        this.layer = p ? ('platform:' + p.id) : 'ground';
+        // Landing: resolve layer. Generous "grace" based on body radius so a
+        // landing that clips the platform edge (body overlap, not strict
+        // center-in) still settles onto the slab. Snaps the entity fully onto
+        // the footprint so the very next frame's walk-off check stays stable.
+        const grace = this.r;
+        const p = platformAtWithGrace(this.x, this.y, grace);
+        if (p) {
+          this.layer = 'platform:' + p.id;
+          // Snap center into the footprint if grace caught it outside — this
+          // prevents the walk-off check from immediately firing and undoing
+          // the landing on the next frame.
+          this.x = clamp(this.x, p.x + 1, p.x + p.w - 1);
+          this.y = clamp(this.y, p.y + 1, p.y + p.h - 1);
+        } else {
+          this.layer = 'ground';
+        }
         // Landing puff so the touchdown reads.
         for (let i = 0; i < 12; i++) {
           const a = Math.random()*TAU, s = rand(60, 170);
@@ -2630,15 +2656,6 @@ class Player {
       this.z = 0;
     }
     this.jumpCd = Math.max(0, this.jumpCd - dt);
-
-    // Walk-off-edge drop: if we're on a platform but our center has drifted
-    // off its footprint while grounded, fall back to ground layer. Cheap AABB
-    // check against the specific platform we claim to be on.
-    if (this.jumpT <= 0 && this.layer.startsWith('platform:')) {
-      const id = +this.layer.slice(9);
-      const p = platformAt(this.x, this.y);
-      if (!p || p.id !== id) this.layer = 'ground';
-    }
 
     // Regen
     if (this.regenRate > 0 && this.hp < this.maxHp) {
@@ -2752,6 +2769,17 @@ class Player {
     }
     this.iFrames = Math.max(0, this.iFrames - dt);
     this.flashT = Math.max(0, this.flashT - dt);
+
+    // Walk-off-edge drop (end-of-update so it runs AFTER movement this frame).
+    // Only drops if we're grounded (not mid-jump) and our center has exited
+    // the specific platform we claim to be on. Strict center-out rule (no
+    // grace) so players can toe the line safely; once the center crosses,
+    // they fall to ground layer.
+    if (this.jumpT <= 0 && this.layer && this.layer.startsWith('platform:')) {
+      const id = +this.layer.slice(9);
+      const p = platformAt(this.x, this.y);
+      if (!p || p.id !== id) this.layer = 'ground';
+    }
   }
   jump() {
     if (this.jumpT > 0 || this.jumpCd > 0) return;
@@ -3461,24 +3489,24 @@ class Zombie {
       this.z = Math.sin(frac * Math.PI) * this.jumpPeak;
       if (this.jumpT <= 0) {
         this.z = 0;
-        // Landing — resolve actual layer from current footprint. We don't
-        // trust jumpTargetLayer blindly because the player's motion during
-        // our 0.5s air time may have pulled us past our target; whatever
-        // footprint we're in is what we land on.
-        const p = platformAt(this.x, this.y);
-        this.layer = p ? ('platform:' + p.id) : 'ground';
+        // Landing — resolve actual layer from current footprint with a body-
+        // radius grace so edge landings still count. Snap into the footprint
+        // so a single frame of post-landing movement can't immediately eject
+        // us via the walk-off check.
+        const grace = this.r;
+        const p = platformAtWithGrace(this.x, this.y, grace);
+        if (p) {
+          this.layer = 'platform:' + p.id;
+          this.x = clamp(this.x, p.x + 1, p.x + p.w - 1);
+          this.y = clamp(this.y, p.y + 1, p.y + p.h - 1);
+        } else {
+          this.layer = 'ground';
+        }
         this.jumpFromLayer = null;
         this.jumpTargetLayer = null;
       }
     } else {
       this.z = 0;
-      // Walk-off-edge auto-drop: if we claim to be on a platform but have
-      // drifted off its footprint, fall to ground layer. Same rule as player.
-      if (this.layer && this.layer.startsWith('platform:')) {
-        const id = +this.layer.slice(9);
-        const p = platformAt(this.x, this.y);
-        if (!p || p.id !== id) this.layer = 'ground';
-      }
     }
     this.jumpCd = Math.max(0, this.jumpCd - dt);
 
@@ -4170,6 +4198,15 @@ class Zombie {
         player.x += (dx/d) * -30;
         player.y += (dy/d) * -30;
       }
+    }
+
+    // Walk-off-edge drop (end-of-update so it runs AFTER any movement the AI
+    // branch did this frame). Strict center-out rule so zombies can pace the
+    // platform edge without auto-falling; once center crosses, they drop.
+    if (this.jumpT <= 0 && this.layer && this.layer.startsWith('platform:')) {
+      const id = +this.layer.slice(9);
+      const p = platformAt(this.x, this.y);
+      if (!p || p.id !== id) this.layer = 'ground';
     }
   }
   move(vx, vy, spd, dt) {
