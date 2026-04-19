@@ -27,7 +27,9 @@ Help the user start their day by reviewing the last daily note's progress, creat
    - For each active project, note:
      - Current phase and status
      - Pending tasks in Actions section
-     - **plan-stale** = days since project `.md` was last modified (`git log -1 --format="%ai" -- <path>`). Cheap, computed inline.
+     - **plan-stale** = days since any file under the project was last modified. Cheap, computed inline.
+       - Single-file project (`20_Project/Foo.md`): `git log -1 --format="%ai" -- <path>`.
+       - Folder-note project (`20_Project/Foo/Foo.md`): use **folder-wide** max mtime — `git log -1 --format="%ai" -- 20_Project/Foo/` — so sibling-file edits count. Avoids under-reporting for folder-notes like `Japan_Itinerary/`, `MaterThesisPapers/`, `Claude in LISE++/`.
      - Any due dates or time-sensitive items
 
 4. **Investigate Deadlines & Activity-Staleness** — Launch two Explore agents **in parallel in the background** (single message, two tool uses):
@@ -38,7 +40,7 @@ Help the user start their day by reviewing the last daily note's progress, creat
 5. **Analyze & Prioritize**
    - Identify time-sensitive items (deadlines, events)
    - Merge plan-stale (Step 1.3) with activity-stale (Step 1.4 staleness agent). **Effective staleness = `min(plan-stale, activity-stale)`**; if activity-stale is null, fall back to plan-stale.
-   - Flag projects with effective staleness ≥ 3 days in the Notes section.
+   - Flag projects with effective staleness **≥ 4 days** in the Notes section. Projects with effective staleness `< 4` are omitted from the Notes project-stale bullet list (they're fresh — no need to flag). Related Projects still lists all active projects regardless of threshold.
    - **Stale deferral check**: For each `#Deferred` task, scan the oldest available daily note within the past 7 days. If deferred 5+ consecutive days, flag in Notes section (e.g., "`Task X` deferred 7 days — re-scope, schedule, or drop?")
    - Determine logical next steps for each active project
 

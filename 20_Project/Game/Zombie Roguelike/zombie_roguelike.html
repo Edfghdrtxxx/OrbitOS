@@ -897,21 +897,21 @@ const I18N = {
       regen: 'Regeneration', thorns: 'Thorns', eagle: 'Eagle Eye', scholar: 'Scholar',
     },
     upgradeDescs: {
-      dmg:    (l)=>`+25% damage per level\n(now +${25*l}%)`,
-      rof:    (l)=>`+18% fire rate per level\n(now +${18*l}%)`,
-      speed:  (l)=>`+12% move speed per level\n(now +${12*l}%)`,
-      hp:     (l)=>`+20 max HP per level\n(heals 20 on pickup)`,
-      reload: (l)=>`-28% reload time per level\n(now -${Math.round((1-Math.pow(0.72,l))*100)}%)`,
-      ammo:   (l)=>`+6 max ammo per level\n(refills on pickup)`,
-      double: ()=>`Fire TWO bullets per shot\n(slight spread)`,
-      crit:   (l)=>`+12% crit chance per level\n(crits deal 2.5× damage)`,
-      pierce: (l)=>`Bullets pierce ${l} extra enemy\nper level`,
+      dmg:    (l)=>`+12% damage per level\n(now +${12*l}%)`,
+      rof:    (l)=>`+9% fire rate per level\n(now +${9*l}%)`,
+      speed:  (l)=>`+6% move speed per level\n(now +${6*l}%)`,
+      hp:     (l)=>`+10 max HP per level\n(heals 10 on pickup)`,
+      reload: (l)=>`-12% reload time per level\n(now -${Math.round((1-Math.pow(0.88,l))*100)}%)`,
+      ammo:   (l)=>`+3 max ammo per level\n(refills on pickup)`,
+      double: ()=>`Fire TWO bullets per shot\n(each 55% damage, slight spread)`,
+      crit:   (l)=>`+6% crit chance per level\n(crits deal 2.5× damage)`,
+      pierce: (l)=>`Bullets pierce 1 extra enemy\nper level (now ${l})`,
       explode:()=>`Bullets explode on hit\n(60% dmg in small radius)`,
-      vamp:   (l)=>`Heal ${2*l} HP per kill`,
-      regen:  (l)=>`Regen ${l} HP/sec while combat\nactive`,
-      thorns: (l)=>`Touching enemies take\n${10*l} damage`,
-      eagle:  (l)=>`+30% bullet speed & range\nper level`,
-      scholar:(l)=>`+15% XP gain per level`,
+      vamp:   (l)=>`Heal ${l} HP per kill`,
+      regen:  (l)=>`Regen ${(0.5*l).toFixed(1)} HP/sec\nwhile combat active`,
+      thorns: (l)=>`Touching enemies take\n${5*l} damage`,
+      eagle:  (l)=>`+12% bullet speed & range\nper level (now +${12*l}%)`,
+      scholar:(l)=>`+7% XP gain per level\n(now +${7*l}%)`,
     },
   },
   zh: {
@@ -953,21 +953,21 @@ const I18N = {
       regen: '快速回复', thorns: '尖刺反伤', eagle: '鹰眼', scholar: '学者',
     },
     upgradeDescs: {
-      dmg:    (l)=>`每级 +25% 伤害\n(当前 +${25*l}%)`,
-      rof:    (l)=>`每级 +18% 射速\n(当前 +${18*l}%)`,
-      speed:  (l)=>`每级 +12% 移动速度\n(当前 +${12*l}%)`,
-      hp:     (l)=>`每级 +20 最大生命\n(选取时回复 20 生命)`,
-      reload: (l)=>`每级 -28% 换弹时间\n(当前 -${Math.round((1-Math.pow(0.72,l))*100)}%)`,
-      ammo:   (l)=>`每级 +6 最大弹药\n(选取时弹药补满)`,
-      double: ()=>`一次发射两发子弹\n(轻微散布)`,
-      crit:   (l)=>`每级 +12% 暴击率\n(暴击造成 2.5× 伤害)`,
-      pierce: (l)=>`子弹每级额外穿透\n${l} 名敌人`,
+      dmg:    (l)=>`每级 +12% 伤害\n(当前 +${12*l}%)`,
+      rof:    (l)=>`每级 +9% 射速\n(当前 +${9*l}%)`,
+      speed:  (l)=>`每级 +6% 移动速度\n(当前 +${6*l}%)`,
+      hp:     (l)=>`每级 +10 最大生命\n(选取时回复 10 生命)`,
+      reload: (l)=>`每级 -12% 换弹时间\n(当前 -${Math.round((1-Math.pow(0.88,l))*100)}%)`,
+      ammo:   (l)=>`每级 +3 最大弹药\n(选取时弹药补满)`,
+      double: ()=>`一次发射两发子弹\n(每发 55% 伤害，轻微散布)`,
+      crit:   (l)=>`每级 +6% 暴击率\n(暴击造成 2.5× 伤害)`,
+      pierce: (l)=>`子弹每级额外穿透\n1 名敌人 (当前 ${l})`,
       explode:()=>`子弹命中后爆炸\n(小范围 60% 伤害)`,
-      vamp:   (l)=>`每次击杀回复 ${2*l} 生命`,
-      regen:  (l)=>`战斗中每秒回复 ${l} 生命`,
-      thorns: (l)=>`碰触你的敌人受到\n${10*l} 点伤害`,
-      eagle:  (l)=>`每级 +30% 子弹速度与射程`,
-      scholar:(l)=>`每级 +15% 经验获取`,
+      vamp:   (l)=>`每次击杀回复 ${l} 生命`,
+      regen:  (l)=>`战斗中每秒回复 ${(0.5*l).toFixed(1)} 生命`,
+      thorns: (l)=>`碰触你的敌人受到\n${5*l} 点伤害`,
+      eagle:  (l)=>`每级 +12% 子弹速度与射程\n(当前 +${12*l}%)`,
+      scholar:(l)=>`每级 +7% 经验获取\n(当前 +${7*l}%)`,
     },
   },
 };
@@ -1124,14 +1124,14 @@ const ZTYPES = {
   spitter:  { hp: 22,  speed: 78,  damage: 12, radius: 18, color:'#b5d645', eye:'#ffbd2e', score: 18,  xp: 9,  touchCd: 700, minFloor: 2, range: 380, shootCd: 1800 },
   exploder: { hp: 18,  speed: 115, damage: 28, radius: 17, color:'#ff7b5c', eye:'#fff0a0', score: 18,  xp: 10, touchCd: 100, minFloor: 3, fuse: 600, boomR: 95 },
   brute:    { hp: 110, speed: 38,  damage: 22, radius: 32, color:'#5F8C3F', eye:'#ff6b6b', score: 40,  xp: 18, touchCd: 900, minFloor: 2 },
-  boss:     { hp: 1100, speed: 60,  damage: 52, radius: 58, color:'#3D5B2A', eye:'#ffbd2e', score: 320, xp: 140, touchCd: 600, minFloor: 1 },
+  boss:     { hp: 1100, speed: 60,  damage: 16, radius: 58, color:'#3D5B2A', eye:'#ffbd2e', score: 320, xp: 140, touchCd: 600, minFloor: 1 },
 };
 function enemyStats(type, floor, elite) {
   const base = ZTYPES[type];
   const isBoss = type === 'boss';
   // Bosses get steeper scaling on top of the normal per-floor curve.
   const bossHpBonus  = isBoss ? 1.8 * Math.pow(1.22, floor - 1) : 1;
-  const bossDmgBonus = isBoss ? 1.4 * Math.pow(1.12, floor - 1) : 1;
+  const bossDmgBonus = isBoss ? 1.1 * Math.pow(1.08, floor - 1) : 1;
   const bossSpdBonus = isBoss ? 1 + 0.06 * (floor - 1) : 1;
   const hpMul  = Math.pow(1.25, floor - 1) * (elite ? 2.0 : 1.0) * bossHpBonus;
   const dmgMul = Math.pow(1.15, floor - 1) * (elite ? 1.5 : 1.0) * bossDmgBonus;
@@ -1165,36 +1165,21 @@ function enemyPool(floor) {
 // Each upgrade: id, name, desc (can be function(level)), icon (emoji or text), color,
 // maxLevel (null=infinite), apply function or direct stat references.
 const UPGRADES = [
-  { id:'dmg',      name:'Boomstick',     color:'#ff6b6b', icon:'💥',
-    desc:(l)=>`+25% damage per level\n(now +${25*l}%)`, max:null },
-  { id:'rof',      name:'Hair Trigger',  color:'#ffbd2e', icon:'⚡',
-    desc:(l)=>`+18% fire rate per level\n(now +${18*l}%)`, max:5 },
-  { id:'speed',    name:'Sneakers',      color:'#4ecdc4', icon:'👟',
-    desc:(l)=>`+12% move speed per level\n(now +${12*l}%)`, max:5 },
-  { id:'hp',       name:'Tough Skin',    color:'#ff6b6b', icon:'❤️',
-    desc:(l)=>`+20 max HP per level\n(heals 20 on pickup)`, max:null },
-  { id:'reload',   name:'Quick Hands',   color:'#ffbd2e', icon:'⏱️',
-    desc:(l)=>`-28% reload time per level\n(now -${Math.round((1-Math.pow(0.72,l))*100)}%)`, max:3 },
-  { id:'ammo',     name:'Extra Clip',    color:'#a36841', icon:'📦',
-    desc:(l)=>`+6 max ammo per level\n(refills on pickup)`, max:5 },
-  { id:'double',   name:'Double Tap',    color:'#ffbd2e', icon:'🔫',
-    desc:()=>`Fire TWO bullets per shot\n(slight spread)`, max:1 },
-  { id:'crit',     name:'Sharpshooter',  color:'#ff6b6b', icon:'🎯',
-    desc:(l)=>`+12% crit chance per level\n(crits deal 2.5× damage)`, max:4 },
-  { id:'pierce',   name:'Piercing Rounds', color:'#7b68ee', icon:'🔩',
-    desc:(l)=>`Bullets pierce ${l} extra enemy\nper level`, max:3 },
-  { id:'explode',  name:'Explosive Rounds', color:'#ff6b6b', icon:'💣',
-    desc:()=>`Bullets explode on hit\n(60% dmg in small radius)`, max:1 },
-  { id:'vamp',     name:'Vampire',       color:'#c73866', icon:'🩸',
-    desc:(l)=>`Heal ${2*l} HP per kill`, max:null },
-  { id:'regen',    name:'Regeneration',  color:'#8fcf3f', icon:'✚',
-    desc:(l)=>`Regen ${l} HP/sec while combat\nactive`, max:3 },
-  { id:'thorns',   name:'Thorns',        color:'#c881ff', icon:'🌵',
-    desc:(l)=>`Touching enemies take\n${10*l} damage`, max:3 },
-  { id:'eagle',    name:'Eagle Eye',     color:'#4ecdc4', icon:'🦅',
-    desc:(l)=>`+30% bullet speed & range\nper level`, max:3 },
-  { id:'scholar',  name:'Scholar',       color:'#7b68ee', icon:'📘',
-    desc:(l)=>`+15% XP gain per level`, max:3 },
+  { id:'dmg',      name:'Boomstick',     color:'#ff6b6b', icon:'💥', max:null },
+  { id:'rof',      name:'Hair Trigger',  color:'#ffbd2e', icon:'⚡',  max:8 },
+  { id:'speed',    name:'Sneakers',      color:'#4ecdc4', icon:'👟', max:8 },
+  { id:'hp',       name:'Tough Skin',    color:'#ff6b6b', icon:'❤️', max:null },
+  { id:'reload',   name:'Quick Hands',   color:'#ffbd2e', icon:'⏱️', max:6 },
+  { id:'ammo',     name:'Extra Clip',    color:'#a36841', icon:'📦', max:8 },
+  { id:'double',   name:'Double Tap',    color:'#ffbd2e', icon:'🔫', max:1 },
+  { id:'crit',     name:'Sharpshooter',  color:'#ff6b6b', icon:'🎯', max:8 },
+  { id:'pierce',   name:'Piercing Rounds', color:'#7b68ee', icon:'🔩', max:5 },
+  { id:'explode',  name:'Explosive Rounds', color:'#ff6b6b', icon:'💣', max:1 },
+  { id:'vamp',     name:'Vampire',       color:'#c73866', icon:'🩸', max:null },
+  { id:'regen',    name:'Regeneration',  color:'#8fcf3f', icon:'✚',  max:6 },
+  { id:'thorns',   name:'Thorns',        color:'#c881ff', icon:'🌵', max:5 },
+  { id:'eagle',    name:'Eagle Eye',     color:'#4ecdc4', icon:'🦅', max:6 },
+  { id:'scholar',  name:'Scholar',       color:'#7b68ee', icon:'📘', max:6 },
 ];
 const UPG_BY_ID = Object.fromEntries(UPGRADES.map(u => [u.id, u]));
 
@@ -1294,22 +1279,22 @@ class Player {
   }
   u(id) { return game.upgrades[id] || 0; }
 
-  get speed()        { return this._baseSpeed * (1 + 0.12 * this.u('speed')); }
-  get maxHp()        { return this._baseMaxHp + 20 * this.u('hp'); }
-  get maxAmmo()      { return this._baseMaxAmmo + 6 * this.u('ammo'); }
-  get fireRate()     { return this._baseFireRate / (1 + 0.18 * this.u('rof')); }
-  get damage()       { return this._baseDamage * (1 + 0.25 * this.u('dmg')); }
-  get reloadTime()   { return this._baseReload * Math.pow(0.72, this.u('reload')); }
-  get bulletSpeed()  { return this._baseBulletSpeed * (1 + 0.30 * this.u('eagle')); }
-  get bulletLife()   { return this._baseBulletLife * (1 + 0.30 * this.u('eagle')); }
-  get critChance()   { return 0.12 * this.u('crit'); }
+  get speed()        { return this._baseSpeed * (1 + 0.06 * this.u('speed')); }
+  get maxHp()        { return this._baseMaxHp + 10 * this.u('hp'); }
+  get maxAmmo()      { return this._baseMaxAmmo + 3 * this.u('ammo'); }
+  get fireRate()     { return this._baseFireRate / (1 + 0.09 * this.u('rof')); }
+  get damage()       { return this._baseDamage * (1 + 0.12 * this.u('dmg')); }
+  get reloadTime()   { return this._baseReload * Math.pow(0.88, this.u('reload')); }
+  get bulletSpeed()  { return this._baseBulletSpeed * (1 + 0.12 * this.u('eagle')); }
+  get bulletLife()   { return this._baseBulletLife * (1 + 0.12 * this.u('eagle')); }
+  get critChance()   { return 0.06 * this.u('crit'); }
   get pierce()       { return this.u('pierce'); }
   get explosive()    { return this.u('explode') > 0; }
   get doubleTap()    { return this.u('double') > 0; }
-  get xpMul()        { return 1 + 0.15 * this.u('scholar'); }
-  get vampHeal()     { return 2 * this.u('vamp'); }
-  get regenRate()    { return this.u('regen'); }
-  get thornsDmg()    { return 10 * this.u('thorns'); }
+  get xpMul()        { return 1 + 0.07 * this.u('scholar'); }
+  get vampHeal()     { return 1 * this.u('vamp'); }
+  get regenRate()    { return 0.5 * this.u('regen'); }
+  get thornsDmg()    { return 5 * this.u('thorns'); }
 
   update(dt) {
     // Regen
@@ -1405,11 +1390,12 @@ class Player {
     const muzY = this.y + Math.sin(this.angle) * 28;
 
     const shots = this.doubleTap ? 2 : 1;
+    const perShotMul = this.doubleTap ? 0.55 : 1.0;
     for (let i = 0; i < shots; i++) {
       const spread = (Math.random()-0.5) * (this.doubleTap ? 0.14 : 0.06);
       const a = this.angle + spread;
       const isCrit = Math.random() < this.critChance;
-      const dmg = this.damage * (isCrit ? 2.5 : 1.0);
+      const dmg = this.damage * perShotMul * (isCrit ? 2.5 : 1.0);
       game.bullets.push(new Bullet(muzX, muzY, a, this.bulletSpeed, dmg, {
         pierce: this.pierce, explosive: this.explosive,
         life: this.bulletLife, crit: isCrit,
@@ -2386,7 +2372,7 @@ function rollUpgradeChoices(n=3) {
 function applyUpgrade(id) {
   game.upgrades[id] = (game.upgrades[id] || 0) + 1;
   // HP upgrade heals
-  if (id === 'hp') game.player.hp = Math.min(game.player.maxHp, game.player.hp + 20);
+  if (id === 'hp') game.player.hp = Math.min(game.player.maxHp, game.player.hp + 10);
   if (id === 'ammo') game.player.ammo = game.player.maxAmmo;
   renderUpgradeStack();
 }
