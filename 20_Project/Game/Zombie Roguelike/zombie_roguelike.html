@@ -1361,7 +1361,7 @@ const I18N = {
       crit:   (l)=>`+6% crit chance per level\n(crits deal 2.5× damage)`,
       pierce: (l)=>`Bullets pierce 1 extra enemy\nper level (now ${l})`,
       explode:()=>`Bullets explode on hit\n(60% dmg in small radius)`,
-      vamp:   (l)=>`Heal ${l} HP per kill`,
+      vamp:   (l)=>`Heal ${l} HP per hit landed`,
       regen:  (l)=>`Regen ${(0.5*l).toFixed(1)} HP/sec\nwhile combat active`,
       thorns: (l)=>`Touching enemies take\n${5*l} damage`,
       eagle:  (l)=>`+12% bullet speed & range\nper level (now +${12*l}%)`,
@@ -1462,7 +1462,7 @@ const I18N = {
       crit:   (l)=>`每级 +6% 暴击率\n(暴击造成 2.5× 伤害)`,
       pierce: (l)=>`子弹每级额外穿透\n1 名敌人 (当前 ${l})`,
       explode:()=>`子弹命中后爆炸\n(小范围 60% 伤害)`,
-      vamp:   (l)=>`每次击杀回复 ${l} 生命`,
+      vamp:   (l)=>`每次命中回复 ${l} 生命`,
       regen:  (l)=>`战斗中每秒回复 ${(0.5*l).toFixed(1)} 生命`,
       thorns: (l)=>`碰触你的敌人受到\n${5*l} 点伤害`,
       eagle:  (l)=>`每级 +12% 子弹速度与射程\n(当前 +${12*l}%)`,
@@ -2088,6 +2088,11 @@ class Player {
     this._baseBulletSpeed = 700;
     this._baseBulletLife = 0.48;
 
+    // level must be set before hp init — maxHp getter reads this.level
+    this.level = 1;
+    this.xp = 0;
+    this.xpNeeded = 10;
+
     this.hp = this.maxHp;
     this.ammo = this.maxAmmo;
     this.reloading = false;
@@ -2116,10 +2121,7 @@ class Player {
     this.swingHitSet = null;  // zombies already hit this swing
     this.whirlT = 0;          // backstroke timer (whirlwind)
     this.whirlAngle = 0;
-    // level
-    this.level = 1;
-    this.xp = 0;
-    this.xpNeeded = 10;
+    // level fields initialized above (before hp init) so the maxHp getter sees this.level
     // regen
     this.regenAcc = 0;
     // velocity tracking (for AI target prediction)
@@ -3429,8 +3431,13 @@ class Zombie {
   }
   hurt(dmg, bx, by, showNumber=true) {
     const wasAlive = this.hp > 0;
+    if (!wasAlive) return false;
     this.hp -= dmg;
     this.hitFlash = 0.12;
+    // vampire heal: lifesteal-on-hit (per damage event, not per kill)
+    if (game.player && game.player.vampHeal > 0) {
+      game.player.hp = Math.min(game.player.maxHp, game.player.hp + game.player.vampHeal);
+    }
     for (let i = 0; i < 6; i++) {
       const a = Math.random()*TAU;
       const s = rand(100, 280);
@@ -3484,10 +3491,6 @@ class Zombie {
     }
     game.kills++;
     game.score += this.score;
-    // vampire heal
-    if (game.player.vampHeal > 0) {
-      game.player.hp = Math.min(game.player.maxHp, game.player.hp + game.player.vampHeal);
-    }
     game.player.gainXP(this.xp);
     shakeCam(isBossKind(this.type) ? 14 : this.type==='brute' ? 6 : 3);
     sfx('die');
@@ -4556,25 +4559,25 @@ function generateRoomSpawns(floor, roomIdx, isBoss) {
     // Doubled base minion count for denser boss rooms; cap raised to ~28.
     // Variant scaling (berserker/necromancer) stays as a multiplier on the
     // doubled base so the relative thinning still applies.
-    let minionCount = Math.min(2 * (4 + floor * 2), 28);
+    let minionCount = Math.min(4 * (4 + floor * 2), 56);
     if (bossType === 'boss_berserker') minionCount = Math.max(2, Math.floor(minionCount * 0.35));
     if (bossType === 'boss_necro')     minionCount = Math.max(3, Math.floor(minionCount * 0.55));
     const pool = enemyPool(floor).filter(t => t !== 'boss' && !BOSS_KINDS.has(t));
     for (let i = 0; i < minionCount; i++) {
-      spawns.push({ type: choice(pool), elite: floor >= 3 && Math.random() < 0.15, delay: 1200 + i * 350 });
+      spawns.push({ type: choice(pool), elite: floor >= 3 && Math.random() < 0.15, delay: 600 + i * 175 });
     }
     return spawns;
   }
   // Normal room: number of enemies scales with floor and room (doubled for
   // denser combat — delay-stagger pacing untouched, so they still trickle in).
-  const baseCount = 2 * (8 + roomIdx * 2 + Math.floor(floor * 2.4));
+  const baseCount = 4 * (8 + roomIdx * 2 + Math.floor(floor * 2.4));
   const pool = enemyPool(floor);
   const eliteChance = floor >= 2 ? 0.10 + floor * 0.03 : 0;
   for (let i = 0; i < baseCount; i++) {
     const type = choice(pool);
     const elite = (floor >= 2) && Math.random() < eliteChance && !BOSS_KINDS.has(type);
     // Stagger delay: faster early, slower for tougher types
-    const baseDelay = type === 'brute' ? 500 : type === 'exploder' ? 350 : type === 'spitter' ? 260 : type === 'runner' ? 180 : 280;
+    const baseDelay = type === 'brute' ? 250 : type === 'exploder' ? 175 : type === 'spitter' ? 130 : type === 'runner' ? 90 : 140;
     spawns.push({ type, elite, delay: i * baseDelay });
   }
   return spawns;
