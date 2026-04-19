@@ -14,7 +14,7 @@ export const ZTYPES: Record<ZombieTypeId, ZombieArchetype> = {
   spitter:  { hp: 22,  speed: 78,  damage: 12, radius: 18, color:'#b5d645', eye:'#ffbd2e', score: 18,  xp: 9,  touchCd: 700, minFloor: 2, range: 380, shootCd: 1800, projSpeed: 340, leadCap: 0.6 },
   exploder: { hp: 18,  speed: 115, damage: 28, radius: 17, color:'#ff7b5c', eye:'#fff0a0', score: 18,  xp: 10, touchCd: 100, minFloor: 3, fuse: 600, boomR: 95, lowHpFuse: 0.30 },
   brute:    { hp: 110, speed: 38,  damage: 22, radius: 32, color:'#5F8C3F', eye:'#ff6b6b', score: 40,  xp: 18, touchCd: 900, minFloor: 2, chargeRange: 170, chargeWindup: 380, chargeDur: 360, chargeCd: 4200, chargeSpdMul: 2.4, chargeDmgMul: 1.4 },
-  boss:     { hp: 1100, speed: 60,  damage: 16, radius: 58, color:'#3D5B2A', eye:'#ffbd2e', score: 320, xp: 140, touchCd: 600, minFloor: 1 },
+  boss:     { hp: 22000, speed: 1200, damage: 320, radius: 1160, color:'#3D5B2A', eye:'#ffbd2e', score: 6400, xp: 2800, touchCd: 12000, minFloor: 1 },
 
   // ---- new tier-2 regular monsters ----
   // Howler: support caster — buffs nearby zombies (speed/damage) inside auraR,
@@ -40,23 +40,23 @@ export const ZTYPES: Record<ZombieTypeId, ZombieArchetype> = {
   // Necromancer: ranged caster boss. Lower HP than classic. Raises walker
   // minions on a long-ish cooldown; zero charge, zero summon-on-cd of classic.
   // Player must close the distance or burn corpses fast.
-  boss_necro:    { hp: 650, speed: 55,  damage: 14, radius: 50, color:'#4a2d6b', eye:'#a8e34b', score: 320, xp: 140, touchCd: 600, minFloor: 2,
-                   raiseCd: 4000, raiseCount: 3, raiseRange: 360, keepDist: 360 },
+  boss_necro:    { hp: 13000, speed: 1100, damage: 280, radius: 1000, color:'#4a2d6b', eye:'#a8e34b', score: 6400, xp: 2800, touchCd: 12000, minFloor: 2,
+                   raiseCd: 80000, raiseCount: 60, raiseRange: 7200, keepDist: 7200 },
   // Berserker: single big zombie. No summons. Gains +20% speed and +20% damage
   // per 25% HP missing (max +60% at <25% HP). Burst-down or get ran down.
-  boss_berserker:{ hp: 1300, speed: 70, damage: 18, radius: 56, color:'#a13a2a', eye:'#ffe066', score: 360, xp: 160, touchCd: 500, minFloor: 3,
-                   rageStep: 0.20, rageMaxStacks: 3, chargeRange: 220, chargeWindup: 320, chargeDur: 380, chargeCd: 3500, chargeSpdMul: 2.6, chargeDmgMul: 1.5,
+  boss_berserker:{ hp: 26000, speed: 1400, damage: 360, radius: 1120, color:'#a13a2a', eye:'#ffe066', score: 7200, xp: 3200, touchCd: 10000, minFloor: 3,
+                   rageStep: 4.0, rageMaxStacks: 60, chargeRange: 4400, chargeWindup: 6400, chargeDur: 7600, chargeCd: 70000, chargeSpdMul: 52, chargeDmgMul: 30,
                    // Slam: tight radial burst around the boss. Quick 0.5s
                    // telegraph, high damage, short cooldown — punishes hugging.
-                   slamCd: 5200, slamWindup: 520, slamR: 220, slamDmgMul: 1.8,
+                   slamCd: 104000, slamWindup: 10400, slamR: 4400, slamDmgMul: 36,
                    // Quake: field-wide shockwave centered on the player. Longer
                    // 1.1s telegraph with a ground-crack indicator, lower damage,
                    // long cooldown. Jumpable via amendment D i-frames.
-                   quakeCd: 10500, quakeWindup: 1100, quakeR: 180, quakeDmgMul: 1.1 },
+                   quakeCd: 210000, quakeWindup: 22000, quakeR: 3600, quakeDmgMul: 22 },
   // Spitter Queen: 5-shot fan of slightly-homing projectiles every ~3s. Slow
   // walk, demands constant lateral movement. Mid HP, ranged area control.
-  boss_queen:    { hp: 950, speed: 50,  damage: 12, radius: 52, color:'#7bb540', eye:'#ffbd2e', score: 340, xp: 150, touchCd: 600, minFloor: 2,
-                   shootCd: 3000, shotCount: 5, shotSpread: 0.55, projSpeed: 280, projHomeAccel: 110, projHomeDur: 1.0, range: 520 },
+  boss_queen:    { hp: 19000, speed: 1000, damage: 240, radius: 1040, color:'#7bb540', eye:'#ffbd2e', score: 6800, xp: 3000, touchCd: 12000, minFloor: 2,
+                   shootCd: 60000, shotCount: 100, shotSpread: 11, projSpeed: 5600, projHomeAccel: 2200, projHomeDur: 20, range: 10400 },
 };
 
 // All variant ids that should be treated as a "boss" (HP bar, room rules,

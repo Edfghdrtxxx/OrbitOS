@@ -6531,7 +6531,7 @@ function fitCanvas() {
   const pad = touch ? 4 : 40;
   const availW = stage.clientWidth - pad;
   const availH = stage.clientHeight - pad;
-  const ratio = 1280/720;
+  const ratio = 1220/720;
   let w = availW, h = availW / ratio;
   if (h > availH) { h = availH; w = availH * ratio; }
   canvas.style.width = w + 'px';

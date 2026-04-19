@@ -8,8 +8,8 @@ export const TAU = Math.PI * 2;
 export const WORLD_W = 2880;
 export const WORLD_H = 1760;
 
-// ---- Canvas dimensions (src 1257 — `<canvas id="game" width="1280" height="720">`) ----
-export const CANVAS_W = 1280;
+// ---- Canvas dimensions (src 1299 — `<canvas id="game" width="1220" height="720">`) ----
+export const CANVAS_W = 1220;
 export const CANVAS_H = 720;
 
 // ---- Room / floor layout (src 2236–2237, 2244) -------------------------
