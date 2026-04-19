@@ -161,6 +161,17 @@
     gap: 6px;
     /* Dimmed so the upgrade chips don't compete with gameplay focus. */
     opacity: 0.55;
+    /* Allow hover on each chip — the container itself is pointer-thru so it
+       never swallows clicks during combat, but individual chips accept hover. */
+    pointer-events: none;
+  }
+  .upgrade-stack .upg-chip { pointer-events: auto; }
+  /* On pause: full opacity so the player can read/hover counts easily. */
+  .upgrade-stack.paused { opacity: 1; }
+  .upg-chip:hover {
+    border-color: var(--c-accent);
+    transform: translateX(2px);
+    cursor: help;
   }
   .upg-chip {
     background: rgba(15,10,26,0.8);
@@ -2277,31 +2288,35 @@ function enemyPool(floor) {
 // maxLevel (null=infinite), apply function or direct stat references.
 // cls: 'shared' | 'ranged' | 'melee'  — filters the level-up pool per class pick.
 const UPGRADES = [
+  // Max stack counts bumped by +4 across the board (null entries stay
+  // uncapped). Previously: rof/speed/crit/ammo 8, reload/regen/eagle/scholar/
+  // heavy 6, pierce/thorns/cleaver/swift/blitz/ignite/bleed/plague 5,
+  // double/explode/whirl 1.
   { id:'dmg',      name:'Boomstick',     color:'#ff6b6b', icon:'💥', max:null, cls:'shared' },
-  { id:'rof',      name:'Hair Trigger',  color:'#ffbd2e', icon:'⚡',  max:8,   cls:'ranged' },
-  { id:'speed',    name:'Sneakers',      color:'#4ecdc4', icon:'👟', max:8,   cls:'shared' },
+  { id:'rof',      name:'Hair Trigger',  color:'#ffbd2e', icon:'⚡',  max:12,  cls:'ranged' },
+  { id:'speed',    name:'Sneakers',      color:'#4ecdc4', icon:'👟', max:12,  cls:'shared' },
   { id:'hp',       name:'Tough Skin',    color:'#ff6b6b', icon:'❤️', max:null, cls:'shared' },
-  { id:'reload',   name:'Quick Hands',   color:'#ffbd2e', icon:'⏱️', max:6,   cls:'ranged' },
-  { id:'ammo',     name:'Extra Clip',    color:'#a36841', icon:'📦', max:8,   cls:'ranged' },
-  { id:'double',   name:'Double Tap',    color:'#ffbd2e', icon:'🔫', max:1,   cls:'ranged' },
-  { id:'crit',     name:'Sharpshooter',  color:'#ff6b6b', icon:'🎯', max:8,   cls:'shared' },
-  { id:'pierce',   name:'Piercing Rounds', color:'#7b68ee', icon:'🔩', max:5, cls:'ranged' },
-  { id:'explode',  name:'Explosive Rounds', color:'#ff6b6b', icon:'💣', max:1, cls:'ranged' },
+  { id:'reload',   name:'Quick Hands',   color:'#ffbd2e', icon:'⏱️', max:10,  cls:'ranged' },
+  { id:'ammo',     name:'Extra Clip',    color:'#a36841', icon:'📦', max:12,  cls:'ranged' },
+  { id:'double',   name:'Double Tap',    color:'#ffbd2e', icon:'🔫', max:5,   cls:'ranged' },
+  { id:'crit',     name:'Sharpshooter',  color:'#ff6b6b', icon:'🎯', max:12,  cls:'shared' },
+  { id:'pierce',   name:'Piercing Rounds', color:'#7b68ee', icon:'🔩', max:9, cls:'ranged' },
+  { id:'explode',  name:'Explosive Rounds', color:'#ff6b6b', icon:'💣', max:5, cls:'ranged' },
   { id:'vamp',     name:'Vampire',       color:'#c73866', icon:'🩸', max:null, cls:'shared' },
-  { id:'regen',    name:'Regeneration',  color:'#8fcf3f', icon:'✚',  max:6,   cls:'shared' },
-  { id:'thorns',   name:'Thorns',        color:'#c881ff', icon:'🌵', max:5,   cls:'shared' },
-  { id:'eagle',    name:'Eagle Eye',     color:'#4ecdc4', icon:'🦅', max:6,   cls:'ranged' },
-  { id:'scholar',  name:'Scholar',       color:'#7b68ee', icon:'📘', max:6,   cls:'shared' },
+  { id:'regen',    name:'Regeneration',  color:'#8fcf3f', icon:'✚',  max:10,  cls:'shared' },
+  { id:'thorns',   name:'Thorns',        color:'#c881ff', icon:'🌵', max:9,   cls:'shared' },
+  { id:'eagle',    name:'Eagle Eye',     color:'#4ecdc4', icon:'🦅', max:10,  cls:'ranged' },
+  { id:'scholar',  name:'Scholar',       color:'#7b68ee', icon:'📘', max:10,  cls:'shared' },
   // New paths
-  { id:'cleaver',  name:'Cleaver',       color:'#ff9a3c', icon:'🪓', max:5,   cls:'melee' },
-  { id:'whirl',    name:'Whirlwind',     color:'#c881ff', icon:'🌀', max:1,   cls:'melee' },
-  { id:'heavy',    name:'Heavy Strike',  color:'#ff6b6b', icon:'🔨', max:6,   cls:'melee' },
-  { id:'swift',    name:'Swift Steps',   color:'#4ecdc4', icon:'💨', max:5,   cls:'shared' },
-  { id:'blitz',    name:'Blitz Dash',    color:'#ffd966', icon:'⚡', max:5,   cls:'shared' },
+  { id:'cleaver',  name:'Cleaver',       color:'#ff9a3c', icon:'🪓', max:9,   cls:'melee' },
+  { id:'whirl',    name:'Whirlwind',     color:'#c881ff', icon:'🌀', max:5,   cls:'melee' },
+  { id:'heavy',    name:'Heavy Strike',  color:'#ff6b6b', icon:'🔨', max:10,  cls:'melee' },
+  { id:'swift',    name:'Swift Steps',   color:'#4ecdc4', icon:'💨', max:9,   cls:'shared' },
+  { id:'blitz',    name:'Blitz Dash',    color:'#ffd966', icon:'⚡', max:9,   cls:'shared' },
   // DoT build path
-  { id:'ignite',   name:'Ignite',        color:'#ff7b28', icon:'🔥', max:5,   cls:'shared' },
-  { id:'bleed',    name:'Bleeding Edge', color:'#c73866', icon:'🩸', max:5,   cls:'shared' },
-  { id:'plague',   name:'Plague Carrier',color:'#8fcf3f', icon:'☣️', max:5,   cls:'shared' },
+  { id:'ignite',   name:'Ignite',        color:'#ff7b28', icon:'🔥', max:9,   cls:'shared' },
+  { id:'bleed',    name:'Bleeding Edge', color:'#c73866', icon:'🩸', max:9,   cls:'shared' },
+  { id:'plague',   name:'Plague Carrier',color:'#8fcf3f', icon:'☣️', max:9,   cls:'shared' },
 ];
 const UPG_BY_ID = Object.fromEntries(UPGRADES.map(u => [u.id, u]));
 
@@ -2431,6 +2446,49 @@ function collidesObstacle(x, y, r, opts) {
     if (dx*dx + dy*dy < r*r) return true;
   }
   return false;
+}
+
+// Nudge an entity out of any overlapping obstacle (platforms, walls). Used to
+// guarantee spawn points never sit inside a platform — callers set (x,y,r)
+// then call this to resolve any accidental overlap (e.g. summon/raise sites
+// or random spawn points that happened to land on a platform).
+function pushOutOfObstacles(ent, margin) {
+  margin = margin || 0;
+  let safety = 0;
+  while (safety < 40 && collidesObstacle(ent.x, ent.y, ent.r + margin)) {
+    // Find the worst-overlapping obstacle and push along its closest normal.
+    let bestO = null, bestPen = -1, bestDx = 0, bestDy = 0;
+    for (const o of game.obstacles) {
+      if (o.walkOver && o.type === 'gap') continue;
+      const cx = clamp(ent.x, o.x, o.x + o.w);
+      const cy = clamp(ent.y, o.y, o.y + o.h);
+      let dx = ent.x - cx, dy = ent.y - cy;
+      const d = Math.hypot(dx, dy);
+      const pen = (ent.r + margin) - d;
+      if (pen > bestPen) {
+        // Center-inside case: pick the shortest exit axis.
+        if (d < 0.001) {
+          const left = ent.x - o.x, right = (o.x + o.w) - ent.x;
+          const top = ent.y - o.y, bot = (o.y + o.h) - ent.y;
+          const m = Math.min(left, right, top, bot);
+          if (m === left)       { dx = -1; dy =  0; }
+          else if (m === right) { dx =  1; dy =  0; }
+          else if (m === top)   { dx =  0; dy = -1; }
+          else                  { dx =  0; dy =  1; }
+        } else {
+          dx /= d; dy /= d;
+        }
+        bestO = o; bestPen = pen; bestDx = dx; bestDy = dy;
+      }
+    }
+    if (!bestO) break;
+    const step = Math.max(1, bestPen + 0.5);
+    ent.x += bestDx * step;
+    ent.y += bestDy * step;
+    ent.x = clamp(ent.x, ent.r, world.w - ent.r);
+    ent.y = clamp(ent.y, ent.r, world.h - ent.r);
+    safety++;
+  }
 }
 
 // ------------- LAYER MODEL ------------------------------------
@@ -2645,22 +2703,8 @@ class Player {
       this.z = Math.sin(frac * Math.PI) * this.jumpPeak;
       if (this.jumpT <= 0) {
         this.z = 0;
-        // Landing: resolve layer. Generous "grace" based on body radius so a
-        // landing that clips the platform edge (body overlap, not strict
-        // center-in) still settles onto the slab. Snaps the entity fully onto
-        // the footprint so the very next frame's walk-off check stays stable.
-        const grace = this.r;
-        const p = platformAtWithGrace(this.x, this.y, grace);
-        if (p) {
-          this.layer = 'platform:' + p.id;
-          // Snap center into the footprint if grace caught it outside — this
-          // prevents the walk-off check from immediately firing and undoing
-          // the landing on the next frame.
-          this.x = clamp(this.x, p.x + 1, p.x + p.w - 1);
-          this.y = clamp(this.y, p.y + 1, p.y + p.h - 1);
-        } else {
-          this.layer = 'ground';
-        }
+        // Platforms are solid walls — entities never land on them.
+        this.layer = 'ground';
         // Landing puff so the touchdown reads.
         for (let i = 0; i < 12; i++) {
           const a = Math.random()*TAU, s = rand(60, 170);
@@ -3476,6 +3520,23 @@ class Zombie {
     else if (type === 'stalker')  { this.canJump = true;  this.jumpCdMax = 1.8; }
     else if (type === 'bloater')  { this.canJump = false; this.jumpCdMax = 99; }
     else                          { this.canJump = true;  this.jumpCdMax = 2.0; } // walker
+
+    // Flanking AI: non-boss chasers get a persistent small angle offset so a
+    // pack approaches from a spread of vectors instead of single-file funnel.
+    // Range: ~±28° (0.5 rad). Applied in the walker/runner chase branch where
+    // the offset rotates the move vector, decaying to 0 inside commit range so
+    // the last few body-lengths still collapse into a direct rush (prevents
+    // the ring-of-death failure mode where flankers orbit forever).
+    // Bosses, spitters, brutes, bloaters, exploders, howlers, necromancers,
+    // stalkers all have their own movement patterns — flanking only applies
+    // to plain chasers (walker/runner).
+    this.flankOffset = (type === 'walker' || type === 'runner') ? rand(-0.5, 0.5) : 0;
+
+    // Spawn-time safety: if this zombie was placed inside a platform/obstacle
+    // (summon rings, raise sites, fallback spawn points), nudge it out. Keeps
+    // the "no entity overlaps platforms" invariant even when callers don't
+    // pre-validate their spawn coordinates.
+    pushOutOfObstacles(this, 0);
   }
   // Attempt to launch a jump toward (tx, ty), ideally landing on `targetLayer`.
   // Same physics as the player: z rises sinusoidally for jumpDuration. Movement
@@ -3511,19 +3572,8 @@ class Zombie {
       this.z = Math.sin(frac * Math.PI) * this.jumpPeak;
       if (this.jumpT <= 0) {
         this.z = 0;
-        // Landing — resolve actual layer from current footprint with a body-
-        // radius grace so edge landings still count. Snap into the footprint
-        // so a single frame of post-landing movement can't immediately eject
-        // us via the walk-off check.
-        const grace = this.r;
-        const p = platformAtWithGrace(this.x, this.y, grace);
-        if (p) {
-          this.layer = 'platform:' + p.id;
-          this.x = clamp(this.x, p.x + 1, p.x + p.w - 1);
-          this.y = clamp(this.y, p.y + 1, p.y + p.h - 1);
-        } else {
-          this.layer = 'ground';
-        }
+        // Platforms are solid walls — zombies never land on them.
+        this.layer = 'ground';
         this.jumpFromLayer = null;
         this.jumpTargetLayer = null;
       }
@@ -3532,33 +3582,9 @@ class Zombie {
     }
     this.jumpCd = Math.max(0, this.jumpCd - dt);
 
-    // ---- Layer-chase jump AI ----
-    // If the player is on a different layer and we're close enough, try to
-    // jump. We approach the player normally for distance, then hop when our
-    // center is close to the target layer's footprint (platform edge if they're
-    // up, or just over the platform edge if we need to drop down).
-    if (this.canJump && this.jumpT <= 0 && this.jumpCd <= 0 && this.hp > 0) {
-      const playerOnPlat = player.layer && player.layer.startsWith('platform:');
-      const selfOnPlat = this.layer && this.layer.startsWith('platform:');
-      if (playerOnPlat && this.layer !== player.layer) {
-        // Target the platform the player is on. Jump when we're within ~110
-        // px of the platform edge (so the 0.5s arc reaches onto the slab).
-        const pid = +player.layer.slice(9);
-        const p = game.obstacles.find(o => o.type === 'platform' && o.id === pid);
-        if (p) {
-          const cx = clamp(this.x, p.x, p.x + p.w);
-          const cy = clamp(this.y, p.y, p.y + p.h);
-          const edgeD = Math.hypot(this.x - cx, this.y - cy);
-          // Already-aboard fallback handled by landing; if edgeD==0 we're in
-          // the footprint but still grounded (not jumping), so a hop resolves
-          // us onto the platform.
-          if (edgeD < 110) this.tryJump(this.x, this.y, 'platform:' + pid);
-        }
-      } else if (!playerOnPlat && selfOnPlat) {
-        // Player is on ground, we're on a platform — hop off toward them.
-        this.tryJump(this.x, this.y, 'ground');
-      }
-    }
+    // Layer-chase jumping removed — platforms are now solid walls, so there
+    // is no upper layer to chase onto. Zombies still retain tryJump for other
+    // potential uses but the platform-pursuit branch is gone.
 
     // ---- DoT ticks (burn / bleed) ----
     // Tick in 0.5s chunks via accumulator so the damage feel is consistent and
@@ -4145,7 +4171,8 @@ class Zombie {
         sfx('spit');
       }
     } else {
-      // walker / runner: chase, with runner zigzag jitter
+      // walker / runner: chase, with runner zigzag jitter + per-zombie flank
+      // offset so a pack fans out instead of single-filing.
       let spd = this.speed;
       let mvx = dx/d, mvy = dy/d;
       if (this.type === 'walker') spd *= 0.9 + 0.2*Math.sin(this.wobble);
@@ -4167,6 +4194,17 @@ class Zombie {
           const nm = Math.hypot(mvx, mvy) || 1;
           mvx /= nm; mvy /= nm;
         }
+      }
+      // Flanking: rotate the move vector by flankOffset scaled by proximity.
+      // At d>=400 the full offset applies; it decays linearly to 0 by d=120 so
+      // the final rush stays direct (prevents orbit/ring-of-death).
+      if (this.flankOffset) {
+        const falloff = clamp((d - 120) / 280, 0, 1);
+        const a = this.flankOffset * falloff;
+        const ca = Math.cos(a), sa = Math.sin(a);
+        const rx = mvx * ca - mvy * sa;
+        const ry = mvx * sa + mvy * ca;
+        mvx = rx; mvy = ry;
       }
       this.move(mvx, mvy, spd, dt);
     }
@@ -5741,28 +5779,30 @@ function generateRoomSpawns(floor, roomIdx, isBoss) {
     // mechanic since the player has bigger threats to manage. Necromancer
     // already self-summons. Both should still get a small minion garnish so
     // the room isn't empty during the boss telegraphs.
-    // Doubled base minion count for denser boss rooms; cap raised to ~28.
-    // Variant scaling (berserker/necromancer) stays as a multiplier on the
-    // doubled base so the relative thinning still applies.
-    let minionCount = Math.min(4 * (4 + floor * 2), 56);
+    // Minion count + spawn cadence doubled (non-boss only): 8× base with cap
+    // 8× larger (was 112, now 896). Variant scaling (berserker/necromancer)
+    // stays as a multiplier on the doubled base so the relative thinning still
+    // applies.
+    let minionCount = Math.min(8 * (4 + floor * 2), 896);
     if (bossType === 'boss_berserker') minionCount = Math.max(2, Math.floor(minionCount * 0.35));
     if (bossType === 'boss_necro')     minionCount = Math.max(3, Math.floor(minionCount * 0.55));
     const pool = enemyPool(floor).filter(t => t !== 'boss' && !BOSS_KINDS.has(t));
     for (let i = 0; i < minionCount; i++) {
-      spawns.push({ type: choice(pool), elite: floor >= 3 && Math.random() < 0.15, delay: 600 + i * 175 });
+      // Stagger halved (175→88ms) for 2× spawn speed; initial delay 600→300.
+      spawns.push({ type: choice(pool), elite: floor >= 3 && Math.random() < 0.15, delay: 300 + i * 88 });
     }
     return spawns;
   }
-  // Normal room: number of enemies scales with floor and room (doubled for
-  // denser combat — delay-stagger pacing untouched, so they still trickle in).
-  const baseCount = 4 * (8 + roomIdx * 2 + Math.floor(floor * 2.4));
+  // Normal room: number of enemies scales with floor and room. Count doubled
+  // (4× → 8×) and per-type stagger delays halved for 2× spawn speed/density.
+  const baseCount = 8 * (8 + roomIdx * 2 + Math.floor(floor * 2.4));
   const pool = enemyPool(floor);
   const eliteChance = floor >= 2 ? 0.10 + floor * 0.03 : 0;
   for (let i = 0; i < baseCount; i++) {
     const type = choice(pool);
     const elite = (floor >= 2) && Math.random() < eliteChance && !BOSS_KINDS.has(type);
-    // Stagger delay: faster early, slower for tougher types
-    const baseDelay = type === 'brute' ? 250 : type === 'exploder' ? 175 : type === 'spitter' ? 130 : type === 'runner' ? 90 : 140;
+    // Stagger delay halved: faster early, slower for tougher types.
+    const baseDelay = type === 'brute' ? 125 : type === 'exploder' ? 88 : type === 'spitter' ? 65 : type === 'runner' ? 45 : 70;
     spawns.push({ type, elite, delay: i * baseDelay });
   }
   return spawns;
@@ -5905,15 +5945,18 @@ function updateBossAdds(dt) {
   if (!bossAlive) return;
   game.bossAddT -= dt;
   if (game.bossAddT > 0) return;
-  // Cadence: baseline 2.4s, tightens slightly by floor (~0.15s/floor) to
-  // around 1.8s on floor 5. Adds 2 at a time so pressure stays legible.
-  const interval = Math.max(1.6, 2.4 - 0.15 * (game.floor - 1));
+  // Cadence doubled: interval halved (2.4→1.2s base, floor to 0.8s) and adds
+  // per burst doubled (2→4) for 2× density of non-boss adds in boss rooms.
+  const interval = Math.max(0.8, 1.2 - 0.075 * (game.floor - 1));
   game.bossAddT = interval;
   const pool = enemyPool(game.floor).filter(t => t !== 'boss' && !BOSS_KINDS.has(t));
   if (pool.length === 0) return;
-  // Cap total to avoid runaway CPU if player stalls: keep total zombies <= 60.
+  // Cap raised to 960 (8× the prior 120) per user request. Expect FPS drops on
+  // lower-end hardware — separation is still O(n²) and particles/bullets add
+  // further pressure. If framerate collapses, revert this cap or add a spatial
+  // hash to the separation loop.
   const totalZ = game.zombies.length;
-  const toSpawn = Math.min(2, Math.max(0, 60 - totalZ));
+  const toSpawn = Math.min(4, Math.max(0, 960 - totalZ));
   for (let i = 0; i < toSpawn; i++) {
     const type = choice(pool);
     const elite = game.floor >= 3 && Math.random() < 0.12;
@@ -6273,11 +6316,13 @@ function togglePause() {
     game.state = 'paused';
     clearInputs();
     renderStatsPanel();
+    renderUpgradeStack();
     showOverlay($('pause'));
   } else if (game.state === 'paused') {
     game.state = 'playing';
     clearInputs();
     hideAllOverlays();
+    renderUpgradeStack();
   }
 }
 function tryReload() {
@@ -6296,12 +6341,21 @@ function tryJump() {
 function renderUpgradeStack() {
   const wrap = $('upgradeStack');
   wrap.innerHTML = '';
+  // Pause-hover UX: on the paused state the container is brightened (opacity
+  // bump via .paused class) so players can comfortably hover each chip. The
+  // tooltip (title attr) shows `<name> — <lv> / <max | ∞>` so hovering reveals
+  // the exact count. During gameplay the chips remain dimmed but still carry
+  // the tooltip, so mouse-hover also works mid-run.
+  wrap.classList.toggle('paused', game.state === 'paused');
   for (const [id, lv] of Object.entries(game.upgrades)) {
     if (!lv) continue;
     const u = UPG_BY_ID[id];
     const chip = document.createElement('div');
     chip.className = 'upg-chip';
-    chip.innerHTML = `<div class="dot" style="background:${u.color}">${u.icon}</div><span>${tUpgradeName(id)}</span><span class="lvl">${lv}</span>`;
+    const maxTxt = (u.max == null) ? '∞' : u.max;
+    const name = tUpgradeName(id);
+    chip.title = `${name} — ${lv} / ${maxTxt}`;
+    chip.innerHTML = `<div class="dot" style="background:${u.color}">${u.icon}</div><span>${name}</span><span class="lvl">${lv}/${maxTxt}</span>`;
     wrap.appendChild(chip);
   }
 }
