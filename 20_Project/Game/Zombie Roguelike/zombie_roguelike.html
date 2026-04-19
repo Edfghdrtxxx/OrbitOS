@@ -410,6 +410,13 @@
   }
   .reroll-btn:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 6px 0 var(--c-dark), 0 0 22px var(--c-accent); }
   .reroll-btn:disabled { opacity: 0.3; cursor: not-allowed; filter: grayscale(0.8); }
+  .reroll-btn.reroll-corner {
+    position: absolute;
+    top: 24px; left: 24px;
+    margin-top: 0;
+    z-index: 5;
+  }
+  .confirm-btn { margin-top: 4px; }
   /* Environment overlay (fullscreen, above canvas, below HUD) */
   .env-overlay {
     position: absolute;
@@ -453,25 +460,25 @@
     cursor: pointer;
   }
   .settings-toggle input { transform: scale(1.4); cursor: pointer; }
-  /* Upgrade choice cards */
+  /* Upgrade choice cards — sized so 4 fit side-by-side */
   .upgrade-choices {
     display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
+    gap: 14px;
+    flex-wrap: nowrap;
     justify-content: center;
-    max-width: 1100px;
+    max-width: 96vw;
   }
   .upgrade-card {
-    width: 280px; height: 340px;
+    width: 210px; height: 270px;
     background: rgba(26, 20, 40, 0.95);
-    border: 5px solid var(--c-dark);
-    box-shadow: 0 8px 0 var(--c-dark), inset 0 4px 0 rgba(255,255,255,0.08);
-    border-radius: 22px;
-    padding: 24px 20px;
+    border: 4px solid var(--c-dark);
+    box-shadow: 0 6px 0 var(--c-dark), inset 0 3px 0 rgba(255,255,255,0.08);
+    border-radius: 18px;
+    padding: 16px 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
     cursor: pointer;
     transition: transform 0.12s ease, box-shadow 0.12s ease;
     position: relative;
@@ -489,42 +496,42 @@
   }
   @keyframes spin { to { transform: rotate(360deg); } }
   .upgrade-card:hover {
-    transform: translateY(-10px) rotate(-1deg);
-    box-shadow: 0 16px 0 var(--c-dark), 0 0 30px var(--accent-color);
+    transform: translateY(-6px) rotate(-1deg);
+    box-shadow: 0 10px 0 var(--c-dark), 0 0 22px var(--accent-color);
   }
   .upgrade-card.selected {
-    transform: translateY(-14px) scale(1.04);
-    box-shadow: 0 22px 0 var(--c-dark), 0 0 60px var(--accent-color);
-    outline: 4px solid var(--accent-color);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 14px 0 var(--c-dark), 0 0 40px var(--accent-color);
+    outline: 3px solid var(--accent-color);
     outline-offset: 2px;
     animation: selPulse 1.2s ease-in-out infinite;
   }
   @keyframes selPulse {
-    0%, 100% { box-shadow: 0 22px 0 var(--c-dark), 0 0 40px var(--accent-color); }
-    50%      { box-shadow: 0 22px 0 var(--c-dark), 0 0 80px var(--accent-color); }
+    0%, 100% { box-shadow: 0 14px 0 var(--c-dark), 0 0 28px var(--accent-color); }
+    50%      { box-shadow: 0 14px 0 var(--c-dark), 0 0 56px var(--accent-color); }
   }
   .upgrade-card.selected::after {
     content: '';
     position: absolute;
     inset: 0;
-    border-radius: 22px;
-    box-shadow: inset 0 0 0 3px rgba(255,255,255,0.45);
+    border-radius: 18px;
+    box-shadow: inset 0 0 0 2px rgba(255,255,255,0.45);
     pointer-events: none;
   }
   .upgrade-card .num-badge {
     position: absolute;
-    top: 10px; left: 12px;
-    width: 30px; height: 30px;
+    top: 7px; left: 8px;
+    width: 22px; height: 22px;
     background: var(--c-dark);
-    border: 3px solid var(--accent-color);
-    border-radius: 10px;
+    border: 2px solid var(--accent-color);
+    border-radius: 7px;
     display: grid; place-items: center;
     font-family: 'Bangers', 'ZCOOL KuaiLe', 'Noto Sans SC', sans-serif;
-    font-size: 18px;
+    font-size: 13px;
     color: var(--accent-color);
     letter-spacing: 1px;
     z-index: 3;
-    box-shadow: 0 2px 0 var(--c-dark);
+    box-shadow: 0 1px 0 var(--c-dark);
   }
   .upgrade-card.selected .num-badge {
     background: var(--accent-color);
@@ -561,45 +568,51 @@
     100% { opacity: 0; }
   }
   .upgrade-card .icon {
-    width: 90px; height: 90px;
+    width: 64px; height: 64px;
     background: var(--accent-color);
-    border: 4px solid var(--c-dark);
-    border-radius: 20px;
+    border: 3px solid var(--c-dark);
+    border-radius: 14px;
     display: grid; place-items: center;
-    font-size: 48px;
-    box-shadow: inset 0 4px 0 rgba(255,255,255,0.2), 0 4px 0 var(--c-dark);
-    margin-top: 6px;
+    font-size: 34px;
+    box-shadow: inset 0 3px 0 rgba(255,255,255,0.2), 0 3px 0 var(--c-dark);
+    margin-top: 4px;
     line-height: 1;
   }
   .upgrade-card .name {
     font-family: 'Bangers', 'ZCOOL KuaiLe', 'Noto Sans SC', sans-serif;
-    font-size: 30px;
-    letter-spacing: 3px;
+    font-size: 20px;
+    letter-spacing: 2px;
     color: var(--accent-color);
     text-align: center;
     text-shadow: 2px 2px 0 var(--c-dark);
     line-height: 1;
   }
   .upgrade-card .desc {
-    font-size: 14px;
-    line-height: 1.4;
+    font-size: 11px;
+    line-height: 1.35;
     text-align: center;
     opacity: 0.85;
     font-weight: 700;
     flex: 1;
     display: flex;
     align-items: center;
-    padding: 0 4px;
+    padding: 0 2px;
+    white-space: pre-line;
   }
   .upgrade-card .lvl-pill {
     background: var(--c-dark);
-    border: 3px solid var(--accent-color);
-    border-radius: 10px;
-    padding: 4px 12px;
+    border: 2px solid var(--accent-color);
+    border-radius: 7px;
+    padding: 3px 10px;
     font-family: 'Bangers', 'ZCOOL KuaiLe', 'Noto Sans SC', sans-serif;
-    letter-spacing: 2px;
-    font-size: 16px;
+    letter-spacing: 1.5px;
+    font-size: 12px;
     color: var(--accent-color);
+  }
+  /* Narrow viewports: allow wrap to 2×2 */
+  @media (max-width: 900px) {
+    .upgrade-choices { flex-wrap: wrap; max-width: 96vw; }
+    .upgrade-card { width: 44vw; max-width: 210px; }
   }
   .upgrade-title {
     display: flex;
@@ -907,6 +920,45 @@
   @media (orientation: portrait) and (max-width: 900px) {
     body.touch .rotate-prompt { display: flex; }
   }
+  /* --- Landscape phone / short viewport tuning --- */
+  @media (max-height: 560px) {
+    .overlay { padding: 12px 10px; gap: 8px; }
+    .title { font-size: 44px; letter-spacing: 3px; }
+    .title small { font-size: 14px; letter-spacing: 5px; margin-top: 2px; }
+    .subtitle { font-size: 24px; letter-spacing: 3px; text-shadow: 2px 2px 0 var(--c-dark); }
+    .btn { font-size: 18px; padding: 8px 20px; letter-spacing: 2px; border-width: 3px; box-shadow: 0 4px 0 var(--c-dark); }
+    .menu-tip { font-size: 11px; padding: 5px 10px; max-width: 92vw; }
+    [data-i18n="intro"] { display: none; }
+    /* Hide keyboard hints on menu — mobile uses on-screen buttons */
+    #menu .controls { display: none; }
+    /* LEVEL UP! header */
+    .upgrade-title .lvl-up { font-size: 30px; letter-spacing: 3px; }
+    .upgrade-title .lvl-up small { font-size: 12px; letter-spacing: 2px; }
+    /* Upgrade cards shrink further */
+    .upgrade-card { width: 150px; height: 200px; padding: 10px 8px; gap: 4px; border-width: 3px; border-radius: 14px; }
+    .upgrade-card .icon { width: 42px; height: 42px; font-size: 22px; border-width: 2px; border-radius: 10px; }
+    .upgrade-card .name { font-size: 14px; letter-spacing: 1px; }
+    .upgrade-card .desc { font-size: 9px; line-height: 1.25; }
+    .upgrade-card .lvl-pill { font-size: 9px; padding: 2px 6px; border-width: 1px; }
+    .upgrade-card .num-badge { width: 16px; height: 16px; font-size: 10px; border-width: 1px; top: 4px; left: 5px; }
+    .upgrade-choices { gap: 8px; max-width: 98vw; flex-wrap: nowrap; }
+    .choice-footer { font-size: 10px; gap: 4px; }
+    .choice-footer .key { padding: 2px 6px; font-size: 10px; border-width: 2px; }
+    .reroll-btn { font-size: 14px; padding: 5px 12px; border-width: 2px; }
+    .reroll-btn.reroll-corner { top: 10px; left: 10px; }
+    .confirm-btn { font-size: 16px !important; padding: 6px 18px !important; }
+    /* Class / Environment picker */
+    .class-grid, .env-grid { gap: 10px; max-width: 96vw; }
+    .class-card, .env-card { min-width: 130px; padding: 10px 12px; border-width: 3px; border-radius: 12px; gap: 3px; }
+    .class-card .class-icon { font-size: 34px; }
+    .class-card .cname, .env-card .ename { font-size: 18px; letter-spacing: 1.5px; }
+    .class-card .cdesc, .env-card .edesc { font-size: 10px; max-width: 140px; }
+    /* Run-end / pause compactness */
+    .run-summary { gap: 6px; }
+    .stat-card { padding: 6px 10px; }
+    .stat-card .lbl { font-size: 10px; }
+    .stat-card .val { font-size: 22px; }
+  }
 </style>
 </head>
 <body>
@@ -1054,11 +1106,12 @@
 
   <!-- UPGRADE CHOICE -->
   <div class="overlay hidden" id="upgradeChoice">
+    <button class="reroll-btn reroll-corner" id="rerollBtn" data-i18n="reroll">🎲 REROLL</button>
     <div class="upgrade-title">
       <div class="lvl-up"><span data-i18n="levelUp">LEVEL UP!</span><small id="upgradeLvlSub" data-i18n="chooseYourUpgrade">CHOOSE YOUR UPGRADE</small></div>
     </div>
     <div class="upgrade-choices" id="choiceGrid"></div>
-    <button class="reroll-btn" id="rerollBtn" data-i18n="reroll">🎲 REROLL</button>
+    <button class="btn cool confirm-btn" id="confirmBtn" data-i18n="confirm">CONFIRM</button>
     <div class="choice-footer">
       <span class="key">&larr; &rarr;</span>
       <span data-i18n="or">OR</span>
@@ -3973,8 +4026,9 @@ document.querySelectorAll('#envGrid .env-card').forEach(c => {
 });
 $('envBackBtn').addEventListener('click', () => showClassSelect());
 
-// Reroll button in level-up overlay
+// Reroll + confirm buttons in level-up overlay
 $('rerollBtn').addEventListener('click', () => rerollChoices());
+$('confirmBtn').addEventListener('click', () => confirmSelectedUpgrade());
 
 // Auto-fire toggle (two lang-style cards)
 const savedAutoFire = localStorage.getItem('zr_autofire') === '1';
