@@ -4,7 +4,6 @@ const config: CapacitorConfig = {
   appId: 'com.orbitos.zombieroguelike',
   appName: 'Zombie Roguelike',
   webDir: 'dist',
-  bundledWebRuntime: false,
   server: {
     // Allow loading bundled assets from the file system; no remote URL.
     androidScheme: 'https',
@@ -38,10 +37,9 @@ const config: CapacitorConfig = {
       backgroundColor: '#0b0d10',
       overlaysWebView: true,
     },
-    ScreenOrientation: {
-      // Runtime-locked to landscape via @capacitor/screen-orientation in app bootstrap.
-      lockOrientation: 'landscape',
-    },
+    // ScreenOrientation has no static config keys in Capacitor 6 — the plugin
+    // exposes runtime APIs only. Orientation lock is performed via
+    // `ScreenOrientation.lock({ orientation: 'landscape' })` in app bootstrap.
   },
 };
 

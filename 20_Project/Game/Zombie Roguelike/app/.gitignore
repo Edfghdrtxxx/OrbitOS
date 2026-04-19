@@ -7,7 +7,8 @@ dev-dist
 # Tauri (Rust) build artifacts
 src-tauri/target/
 src-tauri/gen/
-src-tauri/Cargo.lock
+# Cargo.lock IS committed for Tauri application crates (binary, not library) —
+# locking transitive deps makes `tauri build` reproducible across contributors.
 
 # Capacitor generated platform projects (require JDK/Xcode to regenerate; treat as build output)
 android/

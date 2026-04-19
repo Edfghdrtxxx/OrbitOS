@@ -171,7 +171,7 @@
   .upg-chip:hover {
     border-color: var(--c-accent);
     transform: translateX(2px);
-    cursor: help;
+    cursor: pointer;
   }
   /* Spark highlight — the single most recently picked chip pulses so the
      player can trace which upgrade they just took without scanning the list. */
@@ -679,6 +679,8 @@
   /* Stats page layers over whatever opened it (pause or upgrade-choice), so
      it needs a higher z-index than normal overlays. */
   #statsPage { z-index: 40; }
+  #upgradeDetail { z-index: 45; }
+  #upgradeDetail .upgrade-card { cursor: default; }
   .confirm-btn { margin-top: 4px; }
   /* Environment overlay (fullscreen, above canvas, below HUD) */
   .env-overlay {
@@ -1535,6 +1537,12 @@
     <button class="btn" id="statsPageCloseBtn" data-i18n="close">CLOSE</button>
   </div>
 
+  <!-- UPGRADE DETAIL (opened by clicking an active-upgrades chip in the HUD) -->
+  <div class="overlay hidden" id="upgradeDetail">
+    <div class="upgrade-card" id="upgradeDetailCard"></div>
+    <button class="btn" id="upgradeDetailCloseBtn" data-i18n="close">CLOSE</button>
+  </div>
+
   <!-- SETTINGS -->
   <div class="overlay hidden" id="settings">
     <div class="subtitle" data-i18n="settings">SETTINGS</div>
@@ -2112,6 +2120,14 @@ function clearInputs() {
   touchAim.active = false;
 }
 addEventListener('keydown', e => {
+  // Upgrade-detail popup: topmost layer. ESC closes; all other keys swallowed
+  // so they don't leak to gameplay / pause / level-up underneath.
+  const detailOpen = !$('upgradeDetail').classList.contains('hidden');
+  if (detailOpen) {
+    if (e.key === 'Escape') { e.preventDefault(); hideUpgradeDetail(); return; }
+    e.preventDefault();
+    return;
+  }
   // Stats page: layered above whatever spawned it (pause/upgradeChoice). ESC
   // closes it; all other keys swallow so they don't leak to the overlay below.
   const statsOpen = !$('statsPage').classList.contains('hidden');
@@ -2595,7 +2611,7 @@ const UPGRADES = [
   { id:'hp',       name:'Tough Skin',    color:'#ff6b6b', icon:'❤️', max:null, cls:'shared' },
   { id:'reload',   name:'Quick Hands',   color:'#ffbd2e', icon:'⏱️', max:20,  cls:'ranged' },
   { id:'ammo',     name:'Extra Clip',    color:'#a36841', icon:'📦', max:22,  cls:'ranged' },
-  { id:'double',   name:'Double Tap',    color:'#ffbd2e', icon:'🔫', max:5,   cls:'ranged' },
+  { id:'double',   name:'Double Tap',    color:'#ffbd2e', icon:'🔫', max:10,  cls:'ranged' },
   { id:'crit',     name:'Sharpshooter',  color:'#ff6b6b', icon:'🎯', max:12,  cls:'shared' },
   { id:'pierce',   name:'Piercing Rounds', color:'#7b68ee', icon:'🔩', max:9, cls:'ranged' },
   { id:'explode',  name:'Explosive Rounds', color:'#ff6b6b', icon:'💣', max:5, cls:'ranged' },
@@ -2608,7 +2624,7 @@ const UPGRADES = [
   { id:'cleaver',  name:'Cleaver',       color:'#ff9a3c', icon:'🪓', max:9,   cls:'melee' },
   { id:'whirl',    name:'Whirlwind',     color:'#c881ff', icon:'🌀', max:5,   cls:'melee' },
   { id:'heavy',    name:'Heavy Strike',  color:'#ff6b6b', icon:'🔨', max:10,  cls:'melee' },
-  { id:'swift',    name:'Swift Steps',   color:'#4ecdc4', icon:'💨', max:9,   cls:'shared' },
+  { id:'swift',    name:'Swift Steps',   color:'#4ecdc4', icon:'💨', max:14,  cls:'shared' },
   { id:'blitz',    name:'Blitz Dash',    color:'#ffd966', icon:'⚡', max:9,   cls:'shared' },
   // DoT build path
   { id:'ignite',   name:'Ignite',        color:'#ff7b28', icon:'🔥', max:9,   cls:'shared' },
@@ -6193,10 +6209,10 @@ class Explosion {
   draw() {
     const p = clamp(this.t / this.life, 0, 1);
     const r = this.radius * (0.3 + p * 0.9);
-    ctx.globalAlpha = (1 - p) * 0.6;
+    ctx.globalAlpha = (1 - p) * 0.1;
     ctx.fillStyle = this.fromPlayer ? '#ffbd2e' : '#ff6b6b';
     ctx.beginPath(); ctx.arc(this.x, this.y, r, 0, TAU); ctx.fill();
-    ctx.globalAlpha = (1 - p) * 0.9;
+    ctx.globalAlpha = (1 - p) * 0.1;
     ctx.strokeStyle = '#fff6c9';
     ctx.lineWidth = 4;
     ctx.beginPath(); ctx.arc(this.x, this.y, r, 0, TAU); ctx.stroke();
@@ -7126,6 +7142,57 @@ function hideStatsPage() {
   sp.classList.add('hidden');
   statsPageReturnTo = null;
 }
+
+// Upgrade-detail popup — opened by clicking any chip in the HUD's active-
+// upgrades column. Pauses gameplay while open (so the player can safely read
+// the entry); on close we restore whatever state the game was in before.
+let upgradeDetailPrevState = null;
+function showUpgradeDetail(id, kind) {
+  const u = kind === 'sp' ? SP_BY_ID[id] : UPG_BY_ID[id];
+  if (!u) return;
+  const cardEl = $('upgradeDetailCard');
+  if (kind === 'sp') {
+    cardEl.style.setProperty('--accent-color', u.color);
+    cardEl.innerHTML = `
+      <div class="icon">${u.icon}</div>
+      <div class="name">${u.name}</div>
+      <div class="desc">${u.desc}</div>
+      <div class="lvl-pill">★</div>
+    `;
+  } else {
+    const lv = game.upgrades[id] || 0;
+    const maxTxt = (u.max == null) ? '∞' : u.max;
+    cardEl.style.setProperty('--accent-color', u.color);
+    cardEl.innerHTML = `
+      <div class="icon">${u.icon}</div>
+      <div class="name">${tUpgradeName(id)}</div>
+      <div class="desc">${tUpgradeDesc(id, lv)}</div>
+      <div class="lvl-pill">${lv} / ${maxTxt}</div>
+    `;
+  }
+  if (game.state === 'playing') {
+    upgradeDetailPrevState = 'playing';
+    game.state = 'paused';
+    clearInputs();
+  } else {
+    upgradeDetailPrevState = null;
+  }
+  const el = $('upgradeDetail');
+  el.classList.remove('hidden');
+  el.classList.add('fade-in');
+}
+function hideUpgradeDetail() {
+  const el = $('upgradeDetail');
+  if (el.classList.contains('hidden')) return;
+  el.classList.add('hidden');
+  // Only restore to 'playing' if nothing else grabbed state while we were up
+  // (e.g. a run-end transition) — otherwise we'd resurrect a dead run.
+  if (upgradeDetailPrevState === 'playing' && game.state === 'paused') {
+    game.state = 'playing';
+    clearInputs();
+  }
+  upgradeDetailPrevState = null;
+}
 function rerollChoices() {
   if (game.state !== 'upgradeChoice') return;
   if (!game.rerollAvailable && game.bonusRerolls <= 0) return;
@@ -7424,6 +7491,7 @@ function renderUpgradeStack() {
     const name = tUpgradeName(id);
     chip.title = `${name} — ${lv} / ${maxTxt}`;
     chip.innerHTML = `<div class="dot" style="background:${u.color}">${u.icon}</div><span>${name}</span><span class="lvl">${lv}/${maxTxt}</span>`;
+    chip.addEventListener('click', () => showUpgradeDetail(id, 'upg'));
     wrap.appendChild(chip);
   }
   // Super-power chips — rendered after upgrade chips so boss bounties are
@@ -7437,6 +7505,7 @@ function renderUpgradeStack() {
       if (lastKey === 'sp:' + id) chip.classList.add('spark');
       chip.title = `${p.name} — ${p.desc}`;
       chip.innerHTML = `<div class="dot" style="background:${p.color}">${p.icon}</div><span>${p.name}</span><span class="lvl">★</span>`;
+      chip.addEventListener('click', () => showUpgradeDetail(id, 'sp'));
       wrap.appendChild(chip);
     }
   }
@@ -8291,6 +8360,11 @@ $('spConfirmBtn').addEventListener('click', () => confirmSelectedSuperPower());
 // Level-up: open the independent Stats page layered above the choice overlay.
 $('viewStatsBtn').addEventListener('click', () => showStatsPage('upgradeChoice'));
 $('statsPageCloseBtn').addEventListener('click', () => hideStatsPage());
+$('upgradeDetailCloseBtn').addEventListener('click', () => hideUpgradeDetail());
+$('upgradeDetail').addEventListener('click', (e) => {
+  // Clicks on the backdrop (not the card or close button) dismiss the popup.
+  if (e.target === $('upgradeDetail')) hideUpgradeDetail();
+});
 
 // Auto-fire toggle (two lang-style cards)
 const savedAutoFire = localStorage.getItem('zr_autofire') === '1';
