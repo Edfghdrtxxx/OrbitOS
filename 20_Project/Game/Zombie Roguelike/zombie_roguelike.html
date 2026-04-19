@@ -2084,7 +2084,8 @@ function cameraUpdate() {
   mouse.worldY = mouse.y + camera.y;
   if (camera.shake > 0.01) camera.shake *= 0.86; else camera.shake = 0;
 }
-function shakeCam(amt) { camera.shake = Math.min(24, camera.shake + amt); }
+const SHAKE_SCALE = 0.3;
+function shakeCam(amt) { camera.shake = Math.min(24 * SHAKE_SCALE, camera.shake + amt * SHAKE_SCALE); }
 
 // ------------- FLOOR THEMES ------------------------------------
 const FLOORS = [
@@ -2399,9 +2400,12 @@ const game = {
   selectedChoice: 0,
   currentChoices: [],
   rerollAvailable: false,
-  // Saved progression state captured after each boss clear. If the player dies
-  // later, the run-end screen offers a one-tap revive that resumes from the
-  // start of the next floor with these upgrades/level intact.
+  // Bonus reroll tokens granted at mid-floor checkpoints; spendable during any
+  // future level-up choice when the per-level reroll has already been used.
+  bonusRerolls: 0,
+  // Saved progression state captured after each boss clear OR mid-floor
+  // checkpoint. If the player dies later, the run-end screen offers a one-tap
+  // revive that resumes at the saved floor/room with upgrades/level intact.
   checkpoint: null,
   skinId: 'default',
   playerClass: 'ranged',   // 'ranged' | 'melee' — picked at run start
@@ -5888,9 +5892,26 @@ function enterRoom(floor, roomIdx) {
   }
 }
 
+function saveCheckpoint(floor, roomIdx) {
+  game.checkpoint = {
+    floor,
+    roomIdx,
+    upgrades: { ...game.upgrades },
+    playerLevel: game.player.level,
+    xp: game.player.xp,
+    xpNeeded: game.player.xpNeeded,
+    kills: game.kills,
+    score: game.score,
+    bonusRerolls: game.bonusRerolls,
+    playerClass: game.playerClass,
+    environment: game.environment,
+  };
+}
+
 function clearRoomAndAdvance() {
   // Heal on clear. The mid-floor "checkpoint" room (halfway through the combat
-  // rooms) grants a full restore instead of the standard small heal.
+  // rooms) grants a full restore, saves a revive checkpoint, and grants a
+  // bonus reroll token redeemable on any future level-up choice.
   const midRoomIdx = Math.floor(COMBAT_ROOMS / 2);
   const isMidCheckpoint = !game.isBossRoom && game.roomIdx === midRoomIdx;
   const healAmt = game.isBossRoom ? 40 : (isMidCheckpoint ? 9999 : 15);
@@ -5905,19 +5926,8 @@ function clearRoomAndAdvance() {
       showRunEnd(true);
       return;
     }
-    // Checkpoint: snapshot progression so the player can revive into the next
-    // floor on death without losing upgrades.
-    game.checkpoint = {
-      floor: game.floor + 1,
-      upgrades: { ...game.upgrades },
-      playerLevel: game.player.level,
-      xp: game.player.xp,
-      xpNeeded: game.player.xpNeeded,
-      kills: game.kills,
-      score: game.score,
-      playerClass: game.playerClass,
-      environment: game.environment,
-    };
+    // Boss-clear checkpoint: resume at start of next floor.
+    saveCheckpoint(game.floor + 1, 0);
     showBanner(t('floorClear'), t('enteringX', tFloorName(game.floor)));
     sfx('clear');
     // Game-tick-driven transition — automatically pauses during level-up pre-pause
@@ -5926,6 +5936,10 @@ function clearRoomAndAdvance() {
     game.transitionTarget = { floor: game.floor + 1, roomIdx: 0 };
   } else {
     if (isMidCheckpoint) {
+      // Bonus reroll token is part of the mid-floor "brief shop" beat.
+      game.bonusRerolls += 1;
+      // Save AFTER incrementing so the token survives a revive.
+      saveCheckpoint(game.floor, game.roomIdx + 1);
       showBanner(t('checkpoint'), t('checkpointFull'));
     } else {
       showBanner(t('roomClear'), t('roomClearReward', healAmt));
@@ -6218,12 +6232,15 @@ function hideStatsPage() {
   statsPageReturnTo = null;
 }
 function rerollChoices() {
-  if (game.state !== 'upgradeChoice' || !game.rerollAvailable) return;
+  if (game.state !== 'upgradeChoice') return;
+  if (!game.rerollAvailable && game.bonusRerolls <= 0) return;
   const fresh = rollUpgradeChoices(4);
   if (fresh.length === 0) return;
   game.currentChoices = fresh;
   game.selectedChoice = 0;
-  game.rerollAvailable = false;
+  // Spend the free per-level reroll first, then fall back to bonus tokens.
+  if (game.rerollAvailable) game.rerollAvailable = false;
+  else game.bonusRerolls = Math.max(0, game.bonusRerolls - 1);
   renderChoiceCards();
   sfx('pickup');
 }
@@ -6233,9 +6250,15 @@ function renderChoiceCards() {
   const grid = document.getElementById('choiceGrid');
   grid.innerHTML = '';
   $('upgradeLvlSub').textContent = t('chooseLevel', game.player.level);
-  // Reroll button state
+  // Reroll button state — enabled if the free per-level reroll is available
+  // OR the player holds one or more bonus tokens from a mid-floor checkpoint.
   const rr = $('rerollBtn');
-  if (rr) rr.disabled = !game.rerollAvailable;
+  if (rr) {
+    const canReroll = game.rerollAvailable || game.bonusRerolls > 0;
+    rr.disabled = !canReroll;
+    const tokens = game.bonusRerolls > 0 ? ` +${game.bonusRerolls}` : '';
+    rr.textContent = `${t('reroll')}${tokens}`;
+  }
   choices.forEach((u, idx) => {
     const currentLv = game.upgrades[u.id] || 0;
     const nextLv = currentLv + 1;
@@ -6815,6 +6838,7 @@ function startRun() {
   game.pendingBooms = [];
   game.kills = 0; game.score = 0;
   game.checkpoint = null;
+  game.bonusRerolls = 0;
   game.upgrades = {};
   game.pendingLevelUps = 0;
   game.transitionT = 0;
@@ -6893,8 +6917,10 @@ function continueFromCheckpoint() {
   const cp = game.checkpoint;
   if (!cp) return;
   clearInputs();
-  game.floor = cp.floor;
-  game.roomIdx = 0;
+  const resumeFloor = cp.floor;
+  const resumeRoom = cp.roomIdx || 0;
+  game.floor = resumeFloor;
+  game.roomIdx = resumeRoom;
   game.zombies = []; game.bullets = []; game.ezBullets = [];
   game.explosions = []; game.particles = []; game.damageNums = [];
   game.powerups = []; game.poisonClouds = []; game.spawnQueue = [];
@@ -6902,6 +6928,7 @@ function continueFromCheckpoint() {
   game.kills = cp.kills;
   game.score = cp.score;
   game.upgrades = { ...cp.upgrades };
+  game.bonusRerolls = cp.bonusRerolls || 0;
   game.pendingLevelUps = 0;
   game.transitionT = 0;
   game.transitionTarget = null;
@@ -6921,7 +6948,7 @@ function continueFromCheckpoint() {
   applyEnvironmentOverlay(game.environment);
   renderUpgradeStack();
   updateHUDForClass();
-  enterRoom(game.floor, 0);
+  enterRoom(resumeFloor, resumeRoom);
   hideAllOverlays();
   game.state = 'playing';
 }
