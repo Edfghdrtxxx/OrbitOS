@@ -159,6 +159,8 @@
     display: flex;
     flex-direction: column;
     gap: 6px;
+    /* Dimmed so the upgrade chips don't compete with gameplay focus. */
+    opacity: 0.55;
   }
   .upg-chip {
     background: rgba(15,10,26,0.8);
@@ -1832,10 +1834,42 @@ const ZTYPES = {
   exploder: { hp: 18,  speed: 115, damage: 28, radius: 17, color:'#ff7b5c', eye:'#fff0a0', score: 18,  xp: 10, touchCd: 100, minFloor: 3, fuse: 600, boomR: 95, lowHpFuse: 0.30 },
   brute:    { hp: 110, speed: 38,  damage: 22, radius: 32, color:'#5F8C3F', eye:'#ff6b6b', score: 40,  xp: 18, touchCd: 900, minFloor: 2, chargeRange: 170, chargeWindup: 380, chargeDur: 360, chargeCd: 4200, chargeSpdMul: 2.4, chargeDmgMul: 1.4 },
   boss:     { hp: 1100, speed: 60,  damage: 16, radius: 58, color:'#3D5B2A', eye:'#ffbd2e', score: 320, xp: 140, touchCd: 600, minFloor: 1 },
+
+  // ---- new tier-2 regular monsters ----
+  // Howler: support caster — buffs nearby zombies (speed/damage) inside auraR.
+  // Glass cannon body, players should priority-kill it. Pulses an aura ring.
+  howler:   { hp: 34,  speed: 55,  damage: 8,  radius: 19, color:'#7bb8e0', eye:'#ffe066', score: 28,  xp: 14, touchCd: 700, minFloor: 2,
+              auraR: 250, auraSpdMul: 1.30, auraDmgMul: 1.20 },
+  // Stalker: nearly invisible until reveal range, then commits to a leap-lunge.
+  // Punishes tunnel-vision. Lower HP, sneak speed bonus when unrevealed.
+  stalker:  { hp: 24,  speed: 95,  damage: 18, radius: 17, color:'#5a4a78', eye:'#ff6b6b', score: 26,  xp: 13, touchCd: 600, minFloor: 3,
+              revealR: 220, sneakAlpha: 0.18, lungeRange: 90, lungeWindup: 350, lungeDur: 220, lungeSpdMul: 2.6, lungeCd: 2400 },
+  // Bloater: fat slow tank. Leaves a lingering poison cloud on death that slows
+  // the player while they stand in it. Forces you to move after the kill.
+  bloater:  { hp: 70,  speed: 34,  damage: 14, radius: 26, color:'#9a7fbf', eye:'#a8e34b', score: 32,  xp: 16, touchCd: 800, minFloor: 3,
+              cloudR: 95, cloudLife: 5.0, cloudSlow: 0.55, cloudDmg: 4 },
+
+  // ---- boss variants ---- all are kind=boss for HP bar / sfx / scoring
+  // Necromancer: ranged caster boss. Lower HP than classic. Raises walker
+  // minions on a long-ish cooldown; zero charge, zero summon-on-cd of classic.
+  // Player must close the distance or burn corpses fast.
+  boss_necro:    { hp: 650, speed: 55,  damage: 14, radius: 50, color:'#4a2d6b', eye:'#a8e34b', score: 320, xp: 140, touchCd: 600, minFloor: 2,
+                   raiseCd: 4000, raiseCount: 3, raiseRange: 360, keepDist: 360 },
+  // Berserker: single big zombie. No summons. Gains +20% speed and +20% damage
+  // per 25% HP missing (max +60% at <25% HP). Burst-down or get ran down.
+  boss_berserker:{ hp: 1300, speed: 70, damage: 18, radius: 56, color:'#a13a2a', eye:'#ffe066', score: 360, xp: 160, touchCd: 500, minFloor: 3,
+                   rageStep: 0.20, rageMaxStacks: 3, chargeRange: 220, chargeWindup: 320, chargeDur: 380, chargeCd: 3500, chargeSpdMul: 2.6, chargeDmgMul: 1.5 },
+  // Spitter Queen: 5-shot fan of slightly-homing projectiles every ~3s. Slow
+  // walk, demands constant lateral movement. Mid HP, ranged area control.
+  boss_queen:    { hp: 950, speed: 50,  damage: 12, radius: 52, color:'#7bb540', eye:'#ffbd2e', score: 340, xp: 150, touchCd: 600, minFloor: 2,
+                   shootCd: 3000, shotCount: 5, shotSpread: 0.55, projSpeed: 280, projHomeAccel: 110, projHomeDur: 1.0, range: 520 },
 };
+// All variant ids that should be treated as a "boss" (HP bar, room rules, sfx).
+const BOSS_KINDS = new Set(['boss', 'boss_necro', 'boss_berserker', 'boss_queen']);
+function isBossKind(type) { return BOSS_KINDS.has(type); }
 function enemyStats(type, floor, elite) {
   const base = ZTYPES[type];
-  const isBoss = type === 'boss';
+  const isBoss = isBossKind(type);
   // Bosses get steeper scaling on top of the normal per-floor curve.
   const bossHpBonus  = isBoss ? 1.8 * Math.pow(1.22, floor - 1) : 1;
   const bossDmgBonus = isBoss ? 1.1 * Math.pow(1.08, floor - 1) : 1;
@@ -1853,13 +1887,18 @@ function enemyStats(type, floor, elite) {
 }
 function enemyPool(floor) {
   const pool = [];
-  // base weights
+  // base weights — index = floor-1 (clamped to 4 = floor 5+)
   const weights = {
     walker:   [4, 4, 3, 3, 2],
     runner:   [2, 3, 3, 3, 3],
     spitter:  [0, 2, 2, 2, 2],
     exploder: [0, 0, 2, 2, 2],
     brute:    [0, 1, 1, 2, 2],
+    // New tier-2s — additive, kept modest so they spice up rooms without
+    // displacing the existing core enemies.
+    howler:   [0, 1, 1, 2, 2],   // priority-target support unit, F2+
+    stalker:  [0, 0, 1, 2, 2],   // ambush picker, F3+
+    bloater:  [0, 0, 1, 1, 2],   // area denial on death, F3+
   };
   for (const [type, w] of Object.entries(weights)) {
     const weight = w[Math.min(4, floor-1)] || 0;
@@ -1974,6 +2013,7 @@ const game = {
   particles: [],
   damageNums: [],
   powerups: [],
+  poisonClouds: [],   // bloater death residue, slows + DOT player on contact
   spawnQueue: [],
   spawnTimer: 0,
   kills: 0,
@@ -2087,11 +2127,16 @@ class Player {
     this.vy = 0;
     this._prevX = this.x;
     this._prevY = this.y;
+    // poison/slow debuff (bloater clouds, plague-style sources). slowT counts
+    // down each frame; while >0, base movement speed is multiplied by slowMul.
+    // Dash speed is intentionally NOT slowed — dash stays a get-out-of-jail tool.
+    this.slowT = 0;
+    this.slowMul = 1;
   }
   u(id) { return game.upgrades[id] || 0; }
   get isMelee()      { return game.playerClass === 'melee'; }
 
-  get speed()        { return this._baseSpeed * (1 + 0.06 * this.u('speed')); }
+  get speed()        { return this._baseSpeed * (1 + 0.06 * this.u('speed')) * (this.slowT > 0 ? this.slowMul : 1); }
   get maxHp()        { return this._baseMaxHp + 10 * this.u('hp') + 2 * (this.level - 1); }
   get maxAmmo()      { return this._baseMaxAmmo + 3 * this.u('ammo'); }
   get fireRate()     { return this._baseFireRate / (1 + 0.09 * this.u('rof')); }
@@ -2127,6 +2172,10 @@ class Player {
       this.vy = this.vy * 0.5 + ivy * 0.5;
     }
     this._prevX = this.x; this._prevY = this.y;
+
+    // Slow/poison debuff tick down. updatePoisonClouds() refreshes this each
+    // frame the player stands in a cloud, so naturally expires when they leave.
+    this.slowT = Math.max(0, this.slowT - dt);
 
     // Regen
     if (this.regenRate > 0 && this.hp < this.maxHp) {
@@ -2186,9 +2235,22 @@ class Player {
       }
     }
 
-    this.angle = touchAim.active
-      ? touchAim.angle
-      : Math.atan2(mouse.worldY - this.y, mouse.worldX - this.x);
+    // Aim: touch overrides everything; held mouse overrides auto-aim (player
+    // intervention); else auto-aim picks nearest zombie when auto-fire is on;
+    // else follow mouse. If auto-aim has no target, keep last angle (no snap).
+    if (touchAim.active) {
+      this.angle = touchAim.angle;
+    } else if (game.autoFire && !mouse.down) {
+      const target = nearestZombie(this, 700);
+      if (target) {
+        const desired = Math.atan2(target.y - this.y, target.x - this.x);
+        // Smoothing: ~12 = responsive but not teleporty. Frame-rate independent.
+        this.angle = lerpAngle(this.angle, desired, 1 - Math.exp(-12 * dt));
+      }
+      // else: keep this.angle as-is (no zombies => don't reset)
+    } else {
+      this.angle = Math.atan2(mouse.worldY - this.y, mouse.worldX - this.x);
+    }
 
     // Combat cooldowns
     this.fireCd = Math.max(0, this.fireCd - dt);
@@ -2402,9 +2464,14 @@ class Player {
       ctx.stroke();
       ctx.restore();
     }
-    // Player HP bar (over head)
-    const bw = 44, bh = 6;
-    drawHPBar(x - bw/2, y - this.r - 16, bw, bh, this.hp / this.maxHp, '#8fcf3f');
+    // Player HP bar (over head). Hidden at full HP so its 1px dark border
+    // doesn't read as a stray black line above the head; also hidden at 0
+    // (death frame) since the bar is meaningless there.
+    const frac = this.hp / this.maxHp;
+    if (frac > 0 && frac < 1) {
+      const bw = 44, bh = 6;
+      drawHPBar(x - bw/2, y - this.r - 16, bw, bh, frac, '#8fcf3f');
+    }
   }
 }
 
@@ -2418,6 +2485,31 @@ function anyZombieInRange(p) {
     if (dx*dx + dy*dy <= r*r) return true;
   }
   return false;
+}
+
+// Nearest living zombie to `p` within `maxRange` (default 700px), or null if none.
+// Used by auto-aim to pick a target each frame. Zombie list is small (<=30) so a
+// linear scan is fine; we compare squared distances to avoid sqrt.
+function nearestZombie(p, maxRange = 700) {
+  if (!game || !game.zombies) return null;
+  const maxSq = maxRange * maxRange;
+  let best = null, bestSq = Infinity;
+  for (const z of game.zombies) {
+    if (z.hp <= 0) continue;
+    const dx = z.x - p.x, dy = z.y - p.y;
+    const d2 = dx*dx + dy*dy;
+    if (d2 <= maxSq && d2 < bestSq) { best = z; bestSq = d2; }
+  }
+  return best;
+}
+
+// Shortest-arc lerp between two angles in radians. `t` in [0,1].
+// Normalizes the delta to [-PI, PI] so we always rotate the short way.
+function lerpAngle(from, to, t) {
+  let d = to - from;
+  while (d > Math.PI) d -= Math.PI * 2;
+  while (d < -Math.PI) d += Math.PI * 2;
+  return from + d * t;
 }
 
 // Self-contained player sprite painter (used both in-game and for skin previews).
@@ -2675,6 +2767,10 @@ class Zombie {
     this.maxHp = stats.hp;
     this.speed = stats.speed;
     this.damage = stats.damage;
+    // Cache the unbuffed base values so applyHowlerBuffs can recompute the
+    // current frame's speed/damage as base*buffMul without compounding.
+    this._baseSpeed = stats.speed;
+    this._baseDamage = stats.damage;
     this.score = stats.score;
     this.xp = stats.xp;
     this.color = base.color;
@@ -2690,13 +2786,60 @@ class Zombie {
     // exploder
     this.fusing = false;
     this.fuseT = 0;
-    // boss
+    // boss (classic) — charge + summon
     this.chargeCd = type === 'boss' ? 10000 : 0;
     this.charging = false;
     this.chargeT = 0;
     this.chargeDx = 0;
     this.chargeDy = 0;
     this.summonCd = type === 'boss' ? 3500 : 0;
+
+    // ---- buff carrier (set externally each tick by howler aura) ----
+    // Multipliers applied THIS frame from any howler(s) the zombie sits in.
+    // Reset to 1 at the top of update() so leaving the aura ends the buff.
+    this.buffSpdMul = 1;
+    this.buffDmgMul = 1;
+
+    // ---- howler ----
+    if (type === 'howler') {
+      this.howlPulse = Math.random() * TAU;
+    }
+    // ---- stalker ----
+    if (type === 'stalker') {
+      this.stalkRevealed = false;
+      this.stalkRevealT = 0;     // counts up after first reveal (for fade-in)
+      this.stalkLungeCd = rand(800, 1800);
+      this.stalkState = 'sneak'; // 'sneak' | 'windup' | 'lunge' | 'recover'
+      this.stalkT = 0;
+      this.stalkDx = 0;
+      this.stalkDy = 0;
+      this.stalkHit = false;
+    }
+    // ---- bloater ---- (state lives on death, not update)
+
+    // ---- boss_necro ----
+    if (type === 'boss_necro') {
+      const b = ZTYPES.boss_necro;
+      this.raiseCd = b.raiseCd * 0.6; // first cast comes a bit sooner
+      this.raiseSpawning = false;
+      this.raiseSpawnT = 0;
+      this.raiseSites = [];
+    }
+    // ---- boss_berserker ----
+    if (type === 'boss_berserker') {
+      this.bruteState = 'walk';
+      this.bruteT = 0;
+      this.bruteCd = rand(1500, 2500);
+      this.bruteDx = 0;
+      this.bruteDy = 0;
+      this.bruteHit = false;
+      this.rageStacks = 0; // recomputed every frame from HP
+    }
+    // ---- boss_queen ----
+    if (type === 'boss_queen') {
+      const b = ZTYPES.boss_queen;
+      this.shootCd = b.shootCd * 0.5; // open with a salvo sooner
+    }
     // runner — perpendicular zigzag jitter, retimed every zigzagPeriod
     if (type === 'runner') {
       this.zigSign = Math.random() < 0.5 ? 1 : -1;
@@ -2723,6 +2866,10 @@ class Zombie {
     this.angle = Math.atan2(dy, dx);
 
     // Behavior by type
+    // (Howler aura buffs are stamped onto this.speed/this.damage as a temporary
+    // multiplier by applyHowlerBuffs() right before this update loop runs;
+    // they're recomputed from _baseSpeed/_baseDamage every frame so they don't
+    // compound and naturally clear when the carrier dies.)
     if (this.type === 'spitter') {
       // keep distance ~280, shoot periodically
       const base = ZTYPES.spitter;
@@ -2908,6 +3055,269 @@ class Zombie {
           this.bruteCd = base.chargeCd;
         }
       }
+    } else if (this.type === 'howler') {
+      // Howler: keeps mid-distance and ambles, but isn't a real combatant — its
+      // value is the aura. Aura visuals + buff propagation are handled in
+      // applyHowlerBuffs() and draw(). Here it just hangs back ~220px so the
+      // player has to choose: dive in to silence it (eat aura damage) or peel
+      // off existing zombies to expose it.
+      this.howlPulse += dt * 2.4;
+      const desiredD = 220;
+      let mx = 0, my = 0;
+      if (d > desiredD + 50) { mx = dx/d; my = dy/d; }
+      else if (d < desiredD - 50) { mx = -dx/d; my = -dy/d; }
+      else { mx = -dy/d; my = dx/d; if ((Math.floor(this.wobble) % 2) === 0) { mx = -mx; my = -my; } }
+      this.move(mx, my, this.speed, dt);
+    } else if (this.type === 'stalker') {
+      // Stalker: low alpha until inside revealR. After reveal, telegraphs a
+      // short windup then lunges 2.6x speed for a brief moment, dealing damage
+      // on contact. Recovery pause after.
+      const base = ZTYPES.stalker;
+      this.stalkLungeCd = Math.max(0, this.stalkLungeCd - dt * 1000);
+      // Reveal check — once revealed, stays revealed until death (no peek-a-boo
+      // toggling that would feel cheap).
+      if (!this.stalkRevealed && d < base.revealR) {
+        this.stalkRevealed = true;
+        this.stalkRevealT = 0;
+        // brief hiss puff so the player notices the unmask
+        for (let i = 0; i < 14; i++) {
+          const a = Math.random()*TAU;
+          game.particles.push(new Particle(this.x, this.y, {
+            vx: Math.cos(a)*rand(60,140), vy: Math.sin(a)*rand(60,140),
+            life: 0.4, r: rand(2,4), color: '#c881ff', fade:true
+          }));
+        }
+        sfx('hit');
+      }
+      if (this.stalkRevealed) this.stalkRevealT += dt;
+
+      if (this.stalkState === 'sneak') {
+        // Approach. Slightly faster while still hidden — ambush vibe.
+        const sneakBoost = this.stalkRevealed ? 1.0 : 1.15;
+        this.move(dx/d, dy/d, this.speed * sneakBoost, dt);
+        if (this.stalkRevealed && d < base.lungeRange + 40 && this.stalkLungeCd <= 0 && hasLineOfSight(this.x, this.y, player.x, player.y, 6)) {
+          this.stalkState = 'windup';
+          this.stalkT = base.lungeWindup;
+          this.stalkDx = dx/d; this.stalkDy = dy/d;
+          this.stalkHit = false;
+          // ring telegraph
+          for (let i = 0; i < 16; i++) {
+            const a = Math.random()*TAU;
+            game.particles.push(new Particle(this.x, this.y, {
+              vx: Math.cos(a)*rand(50,120), vy: Math.sin(a)*rand(50,120),
+              life: 0.35, r: rand(2,4), color:'#ff6b6b', fade:true
+            }));
+          }
+        }
+      } else if (this.stalkState === 'windup') {
+        // root, particles in lunge direction
+        this.stalkT -= dt * 1000;
+        if (Math.random() < 0.7) {
+          const sa = Math.atan2(this.stalkDy, this.stalkDx) + rand(-0.3, 0.3);
+          game.particles.push(new Particle(
+            this.x + Math.cos(sa)*this.r*0.6,
+            this.y + Math.sin(sa)*this.r*0.6,
+            { vx: Math.cos(sa)*rand(30,80), vy: Math.sin(sa)*rand(30,80),
+              life: 0.22, r: rand(2,3), color:'#ffbd2e', fade:true }
+          ));
+        }
+        if (this.stalkT <= 0) {
+          this.stalkState = 'lunge';
+          this.stalkT = base.lungeDur;
+        }
+      } else if (this.stalkState === 'lunge') {
+        this.stalkT -= dt * 1000;
+        this.move(this.stalkDx, this.stalkDy, this.speed * base.lungeSpdMul, dt);
+        if (!this.stalkHit && d < this.r + player.r + 4 && player.iFrames <= 0) {
+          player.hurt(this.damage, this.x, this.y);
+          this.stalkHit = true;
+          this.touchCd = this.touchCdMax;
+        }
+        if (this.stalkT <= 0) {
+          this.stalkState = 'recover';
+          this.stalkT = 260;
+        }
+      } else { // recover
+        this.stalkT -= dt * 1000;
+        this.move(dx/d, dy/d, this.speed * 0.35, dt);
+        if (this.stalkT <= 0) {
+          this.stalkState = 'sneak';
+          this.stalkLungeCd = ZTYPES.stalker.lungeCd;
+        }
+      }
+    } else if (this.type === 'bloater') {
+      // Bloater: just lumbers toward player. The interesting mechanic fires in
+      // die() — a poison cloud the player must clear out of. Slight wobble.
+      const bob = Math.sin(this.walkPhase) * 0.15;
+      this.move(dx/d + bob*(-dy/d), dy/d + bob*(dx/d), this.speed, dt);
+    } else if (this.type === 'boss_necro') {
+      // Necromancer: stays at range, raises walker minions in a circle around
+      // itself. Lower HP than the classic boss — reward burst-down play.
+      // Cast is two-phase so the player can pre-emptively close: when the
+      // cooldown lands, queue spawn sites + start a 0.5s telegraph (raiseSpawnT
+      // counts down). When raiseSpawnT hits 0, the zombies actually appear.
+      const base = ZTYPES.boss_necro;
+      this.raiseCd -= dt * 1000;
+      // Kite — keep the player at ~keepDist. If too close, retreat; if too
+      // far, slowly close. No charge, no sprint.
+      const desiredD = base.keepDist;
+      let mx = 0, my = 0;
+      if (d > desiredD + 60) { mx = dx/d; my = dy/d; }
+      else if (d < desiredD - 30) { mx = -dx/d; my = -dy/d; }
+      else { mx = -dy/d; my = dx/d; if ((Math.floor(this.wobble) % 2) === 0) { mx = -mx; my = -my; } }
+      this.move(mx, my, this.speed, dt);
+
+      // Phase 1: pick spawn sites + telegraph
+      if (this.raiseCd <= 0 && !this.raiseSpawning) {
+        this.raiseCd = base.raiseCd;
+        this.raiseSpawning = true;
+        this.raiseSpawnT = 500; // ms telegraph before minions actually appear
+        const n = base.raiseCount + Math.min(2, Math.floor((game.floor - 2) / 2));
+        this.raiseSites = [];
+        for (let i = 0; i < n; i++) {
+          const a = (i / n) * TAU + Math.random() * 0.4;
+          const sx = this.x + Math.cos(a) * 70;
+          const sy = this.y + Math.sin(a) * 70;
+          let stype = 'walker';
+          if (game.floor >= 4 && Math.random() < 0.30) stype = 'runner';
+          this.raiseSites.push({ x: sx, y: sy, type: stype });
+        }
+        sfx('spit');
+      }
+      // Phase 2: telegraph — burp particles at each site each frame
+      if (this.raiseSpawning) {
+        this.raiseSpawnT -= dt * 1000;
+        for (const s of this.raiseSites) {
+          if (Math.random() < 0.6) {
+            const aa = Math.random() * TAU;
+            game.particles.push(new Particle(s.x, s.y, {
+              vx: Math.cos(aa) * rand(15, 60), vy: Math.sin(aa) * rand(15, 60),
+              life: 0.4, r: rand(3, 5), color: '#a8e34b', fade: true
+            }));
+          }
+        }
+        // Phase 3: spawn — actually pop the zombies
+        if (this.raiseSpawnT <= 0) {
+          for (const s of this.raiseSites) {
+            game.zombies.push(new Zombie(s.x, s.y, s.type, false));
+            for (let j = 0; j < 10; j++) {
+              const aa = Math.random() * TAU;
+              game.particles.push(new Particle(s.x, s.y, {
+                vx: Math.cos(aa) * rand(60, 140), vy: Math.sin(aa) * rand(60, 140),
+                life: 0.4, r: rand(3, 5), color: '#a8e34b', fade: true
+              }));
+            }
+          }
+          this.raiseSpawning = false;
+          this.raiseSites = [];
+          sfx('boss');
+        }
+      }
+    } else if (this.type === 'boss_berserker') {
+      // Berserker: HP-scaling enrage. No summons. Charges like a brute on a
+      // shorter cooldown. Speed/damage multipliers are derived from missing
+      // HP every frame so the buff visibly ramps as the fight progresses.
+      const base = ZTYPES.boss_berserker;
+      const missingFrac = 1 - (this.hp / this.maxHp);
+      // Stacks at 25/50/75% missing HP. Cap at rageMaxStacks. step=0.20 → +60% at low HP.
+      const stacks = Math.min(base.rageMaxStacks, Math.floor(missingFrac / 0.25));
+      this.rageStacks = stacks;
+      const rageMul = 1 + base.rageStep * stacks;
+
+      this.bruteCd = Math.max(0, this.bruteCd - dt * 1000);
+      this.bruteT  = Math.max(0, this.bruteT  - dt * 1000);
+
+      const moveSpd = this.speed * rageMul;
+      const dmgScaled = this.damage * rageMul;
+
+      if (this.bruteState === 'walk') {
+        this.move(dx/d, dy/d, moveSpd, dt);
+        if (d < base.chargeRange && this.bruteCd <= 0 && hasLineOfSight(this.x, this.y, player.x, player.y, 8)) {
+          this.bruteState = 'windup';
+          this.bruteT = base.chargeWindup;
+          this.bruteDx = dx/d; this.bruteDy = dy/d;
+          this.bruteHit = false;
+          // red rage burst — bigger than brute's
+          for (let i = 0; i < 26; i++) {
+            const a = Math.random()*TAU;
+            game.particles.push(new Particle(this.x, this.y, {
+              vx: Math.cos(a)*rand(60,160), vy: Math.sin(a)*rand(60,160),
+              life: 0.5, r: rand(4,7), color:'#ff6b6b', fade:true
+            }));
+          }
+          sfx('boss');
+        }
+      } else if (this.bruteState === 'windup') {
+        if (Math.random() < 0.7) {
+          const sa = Math.atan2(this.bruteDy, this.bruteDx) + rand(-0.4, 0.4);
+          game.particles.push(new Particle(
+            this.x + Math.cos(sa)*this.r*0.7,
+            this.y + Math.sin(sa)*this.r*0.7,
+            { vx: Math.cos(sa)*rand(50,110), vy: Math.sin(sa)*rand(50,110),
+              life: 0.3, r: rand(3,5), color:'#ffbd2e', fade:true }
+          ));
+        }
+        if (this.bruteT <= 0) {
+          this.bruteState = 'dash';
+          this.bruteT = base.chargeDur;
+        }
+      } else if (this.bruteState === 'dash') {
+        this.move(this.bruteDx, this.bruteDy, moveSpd * base.chargeSpdMul, dt);
+        if (!this.bruteHit && d < this.r + player.r + 4 && player.iFrames <= 0) {
+          player.hurt(dmgScaled * base.chargeDmgMul, this.x, this.y);
+          this.bruteHit = true;
+          this.touchCd = this.touchCdMax;
+          player.x += this.bruteDx * 70;
+          player.y += this.bruteDy * 70;
+        }
+        if (this.bruteT <= 0) {
+          this.bruteState = 'recover';
+          this.bruteT = 200;
+        }
+      } else { // recover
+        this.move(dx/d, dy/d, moveSpd * 0.4, dt);
+        if (this.bruteT <= 0) {
+          this.bruteState = 'walk';
+          // Charge cooldown shrinks as rage stacks up
+          this.bruteCd = base.chargeCd * (1 - 0.18 * stacks);
+        }
+      }
+    } else if (this.type === 'boss_queen') {
+      // Spitter Queen: slow walk, fan-shot of slightly-homing projectiles every
+      // ~3s. Demands constant lateral movement to dodge sweeping arcs.
+      const base = ZTYPES.boss_queen;
+      this.shootCd -= dt * 1000;
+      // Loose kite at long range; walk in if too far.
+      const desiredD = 360;
+      let mx, my;
+      if (d > desiredD + 80) { mx = dx/d; my = dy/d; }
+      else { mx = -dy/d; my = dx/d; if ((Math.floor(this.wobble) % 2) === 0) { mx = -mx; my = -my; } }
+      this.move(mx, my, this.speed, dt);
+
+      if (this.shootCd <= 0 && d < base.range && hasLineOfSight(this.x, this.y, player.x, player.y, 6)) {
+        this.shootCd = base.shootCd;
+        const baseAngle = Math.atan2(player.y - this.y, player.x - this.x);
+        const half = base.shotSpread / 2;
+        const step = base.shotCount > 1 ? base.shotSpread / (base.shotCount - 1) : 0;
+        for (let i = 0; i < base.shotCount; i++) {
+          const a = baseAngle - half + step * i;
+          const proj = new ZombieProjectile(this.x, this.y, a, base.projSpeed, this.damage);
+          // Mark as queen projectile — gives it homing for projHomeDur seconds.
+          proj.homeT = base.projHomeDur;
+          proj.homeAccel = base.projHomeAccel;
+          proj.tint = '#a8e34b';
+          game.ezBullets.push(proj);
+        }
+        // muzzle telegraph — sweeping fan of yellow-green particles
+        for (let i = 0; i < 18; i++) {
+          const a = baseAngle + rand(-half, half);
+          game.particles.push(new Particle(this.x, this.y, {
+            vx: Math.cos(a)*rand(80,180), vy: Math.sin(a)*rand(80,180),
+            life: 0.35, r: rand(3,5), color: '#a8e34b', fade: true
+          }));
+        }
+        sfx('spit');
+      }
     } else {
       // walker / runner: chase, with runner zigzag jitter
       let spd = this.speed;
@@ -3027,7 +3437,7 @@ class Zombie {
       game.particles.push(new Particle(bx, by, {
         vx: Math.cos(a)*s, vy: Math.sin(a)*s,
         life: rand(0.2, 0.5), r: rand(3,6),
-        color: this.type==='boss' ? '#ffbd2e' : '#8fcf3f', fade:true, gravity: 200,
+        color: isBossKind(this.type) ? '#ffbd2e' : '#8fcf3f', fade:true, gravity: 200,
       }));
     }
     if (showNumber) {
@@ -3046,14 +3456,23 @@ class Zombie {
   }
   die() {
     // Splat
+    const splatColor = isBossKind(this.type) ? '#ffbd2e'
+                     : this.type === 'bloater' ? '#a8e34b'
+                     : this.type === 'stalker' ? '#c881ff'
+                     : '#8fcf3f';
     for (let i = 0; i < 18; i++) {
       const a = Math.random()*TAU;
       const s = rand(60, 280);
       game.particles.push(new Particle(this.x, this.y, {
         vx: Math.cos(a)*s, vy: Math.sin(a)*s,
         life: rand(0.4, 0.9), r: rand(4,8),
-        color: this.type==='boss' ? '#ffbd2e' : '#8fcf3f', fade: true, gravity: 300,
+        color: splatColor, fade: true, gravity: 300,
       }));
+    }
+    // Bloater: leave a poison cloud that slows + DOTs the player.
+    if (this.type === 'bloater') {
+      const base = ZTYPES.bloater;
+      game.poisonClouds.push(new PoisonCloud(this.x, this.y, base.cloudR, base.cloudLife, base.cloudSlow, base.cloudDmg));
     }
     // Elite drops
     const dropRoll = Math.random();
@@ -3070,7 +3489,7 @@ class Zombie {
       game.player.hp = Math.min(game.player.maxHp, game.player.hp + game.player.vampHeal);
     }
     game.player.gainXP(this.xp);
-    shakeCam(this.type==='boss' ? 14 : this.type==='brute' ? 6 : 3);
+    shakeCam(isBossKind(this.type) ? 14 : this.type==='brute' ? 6 : 3);
     sfx('die');
   }
   explode() {
@@ -3160,18 +3579,67 @@ class Zombie {
       ctx.beginPath(); ctx.arc(x, y, this.r*2.2, 0, TAU); ctx.fill();
     }
 
-    // Boss menacing aura
-    if (this.type === 'boss') {
+    // Boss menacing aura — applies to all boss variants. Color varies per kit:
+    //   classic = red, necromancer = sickly green, berserker = fiery orange-red
+    //   that intensifies with rage stacks, queen = acid green-yellow.
+    if (isBossKind(this.type)) {
       const pulse = 0.4 + 0.25*Math.sin(now/300);
+      let inner, outer;
+      if (this.type === 'boss_necro')      { inner = 'rgba(110,200,90,0.18)';  outer = `rgba(140,255,120,${0.4*pulse})`; }
+      else if (this.type === 'boss_berserker') {
+        const rageBoost = 1 + 0.3 * (this.rageStacks || 0);
+        inner = `rgba(255,80,40,${0.18*rageBoost})`;
+        outer = `rgba(255,107,107,${0.45*pulse*rageBoost})`;
+      }
+      else if (this.type === 'boss_queen') { inner = 'rgba(180,230,90,0.18)';  outer = `rgba(200,255,100,${0.45*pulse})`; }
+      else { inner = this.elite ? 'rgba(200,129,255,0.18)' : 'rgba(199,56,102,0.16)';
+             outer = this.elite ? `rgba(200,129,255,${0.45*pulse})` : `rgba(255,107,107,${0.4*pulse})`; }
       const grad = ctx.createRadialGradient(x, y, this.r*0.6, x, y, this.r*2.1);
-      grad.addColorStop(0, this.elite ? 'rgba(200,129,255,0.18)' : 'rgba(199,56,102,0.16)');
+      grad.addColorStop(0, inner);
       grad.addColorStop(1, 'rgba(0,0,0,0)');
       ctx.fillStyle = grad;
       ctx.beginPath(); ctx.arc(x, y, this.r*2.1, 0, TAU); ctx.fill();
-      ctx.strokeStyle = this.elite ? `rgba(200,129,255,${0.45*pulse})` : `rgba(255,107,107,${0.4*pulse})`;
+      ctx.strokeStyle = outer;
       ctx.lineWidth = 3;
       ctx.beginPath(); ctx.arc(x, y, this.r*1.25, 0, TAU); ctx.stroke();
     }
+
+    // Howler aura — pulsing translucent ring. Drawn for ALL howlers, fading
+    // out at the aura edge so the player can see the buff radius.
+    if (this.type === 'howler') {
+      const base = ZTYPES.howler;
+      const pulse = 0.45 + 0.35 * Math.sin(this.howlPulse);
+      // soft fill
+      const grad = ctx.createRadialGradient(x, y, this.r, x, y, base.auraR);
+      grad.addColorStop(0, 'rgba(123,184,224,0.10)');
+      grad.addColorStop(1, 'rgba(123,184,224,0)');
+      ctx.fillStyle = grad;
+      ctx.beginPath(); ctx.arc(x, y, base.auraR, 0, TAU); ctx.fill();
+      // sweeping ring outline at radius
+      ctx.strokeStyle = `rgba(123,184,224,${0.30 + 0.25*pulse})`;
+      ctx.lineWidth = 2;
+      ctx.setLineDash([8, 6]);
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(this.howlPulse * 0.4);
+      ctx.beginPath(); ctx.arc(0, 0, base.auraR, 0, TAU); ctx.stroke();
+      ctx.restore();
+      ctx.setLineDash([]);
+    }
+
+    // Stalker — translucent veil while unrevealed. Once revealed, fade to full
+    // opacity over ~0.4s so the unmask reads as a hard reveal.
+    let stalkerAlpha = 1;
+    if (this.type === 'stalker') {
+      const base = ZTYPES.stalker;
+      if (!this.stalkRevealed) {
+        // breathing low alpha
+        stalkerAlpha = base.sneakAlpha + 0.05 * Math.sin(now/300);
+      } else {
+        stalkerAlpha = Math.min(1, base.sneakAlpha + this.stalkRevealT * 2.0);
+      }
+    }
+    if (stalkerAlpha < 1) ctx.globalAlpha = stalkerAlpha;
 
     // Exploder fuse flash
     const fuseFlash = this.type==='exploder' && this.fusing &&
@@ -3319,10 +3787,128 @@ class Zombie {
       ctx.closePath(); ctx.fill(); ctx.stroke();
       ctx.strokeStyle = '#5a7a3c'; ctx.lineWidth = 2;
       ctx.beginPath(); ctx.moveTo(-this.r*0.4, this.r*0.05); ctx.lineTo(this.r*0.4, this.r*0.05); ctx.stroke();
+    } else if (this.type === 'boss_necro') {
+      // Necromancer: tattered hooded robe — purple cloak hanging, glowing rune
+      // on the chest. Also a small staff cradle (drawn as a vertical bone bar).
+      ctx.fillStyle = '#2a1a3a'; ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 2.5;
+      // hood overhang
+      ctx.beginPath();
+      ctx.moveTo(-this.r*1.05, -this.r*0.55);
+      ctx.quadraticCurveTo(0, -this.r*1.1, this.r*1.05, -this.r*0.55);
+      ctx.lineTo( this.r*0.85, -this.r*0.1);
+      ctx.lineTo(-this.r*0.85, -this.r*0.1);
+      ctx.closePath(); ctx.fill(); ctx.stroke();
+      // chest rune — glowing acid-green sigil
+      const rp = 0.6 + 0.4 * Math.sin(now/240);
+      ctx.fillStyle = `rgba(168,227,75,${0.35*rp})`;
+      ctx.beginPath(); ctx.arc(0, this.r*0.15, this.r*0.32, 0, TAU); ctx.fill();
+      ctx.fillStyle = '#a8e34b'; ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(0, this.r*0.0);
+      ctx.lineTo(this.r*0.18, this.r*0.18);
+      ctx.lineTo(0, this.r*0.32);
+      ctx.lineTo(-this.r*0.18, this.r*0.18);
+      ctx.closePath(); ctx.fill(); ctx.stroke();
+      // staff (small bone vertical) on the right side
+      ctx.fillStyle = '#f5e8c8'; ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.rect(this.r*1.1, -this.r*0.9, 4, this.r*1.6); ctx.fill(); ctx.stroke();
+      // staff orb
+      ctx.fillStyle = `rgba(168,227,75,${0.85*rp})`;
+      ctx.beginPath(); ctx.arc(this.r*1.12, -this.r*0.95, 6 + rp*2, 0, TAU); ctx.fill();
+    } else if (this.type === 'boss_berserker') {
+      // Berserker: bare-chested, scarred — chest plate is flesh-colored with
+      // diagonal scars. Brighter as rage stacks pile up.
+      const rage = (this.rageStacks || 0) / 3;
+      ctx.fillStyle = `rgb(${Math.round(200 + 40*rage)}, ${Math.round(70 - 30*rage)}, ${Math.round(50 - 20*rage)})`;
+      ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 2.5;
+      ctx.beginPath();
+      ctx.moveTo(-this.r*0.55, -this.r*0.2);
+      ctx.lineTo( this.r*0.55, -this.r*0.2);
+      ctx.lineTo( this.r*0.45,  this.r*0.45);
+      ctx.lineTo(-this.r*0.45,  this.r*0.45);
+      ctx.closePath(); ctx.fill(); ctx.stroke();
+      // scars
+      ctx.strokeStyle = '#5a0a0a'; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.moveTo(-this.r*0.4, -this.r*0.1); ctx.lineTo(this.r*0.3, this.r*0.3); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(-this.r*0.2, this.r*0.0); ctx.lineTo(this.r*0.45, this.r*0.2); ctx.stroke();
+      // arm bulges
+      ctx.fillStyle = bodyColor;
+      ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
+      ctx.beginPath(); ctx.arc(-this.r*1.0, -this.r*0.45, this.r*0.34, 0, TAU); ctx.fill(); ctx.stroke();
+      ctx.beginPath(); ctx.arc( this.r*1.0, -this.r*0.45, this.r*0.34, 0, TAU); ctx.fill(); ctx.stroke();
+      // rage particles when stacks > 0
+      if (rage > 0 && Math.random() < 0.3 * rage) {
+        const aa = -Math.PI/2 + rand(-0.6, 0.6);
+        game.particles.push(new Particle(x, y - this.r*0.5, {
+          vx: Math.cos(aa)*rand(20,60), vy: Math.sin(aa)*rand(40,80),
+          life: 0.5, r: rand(2,4), color:'#ff6b6b', fade:true
+        }));
+      }
+    } else if (this.type === 'boss_queen') {
+      // Spitter Queen: distended acid-belly sacs + crown of small spikes (drawn
+      // with the head). Ellipse body with cluster of glowing pouches.
+      const breathe = 0.85 + 0.15 * Math.sin(now/240);
+      ctx.fillStyle = `rgba(168,227,75,${0.55*breathe})`;
+      for (const [px, py, pr] of [[-this.r*0.45, this.r*0.3, 9], [0, this.r*0.5, 11], [this.r*0.45, this.r*0.3, 9], [-this.r*0.2, this.r*0.0, 6], [this.r*0.2, this.r*0.0, 6]]) {
+        ctx.beginPath(); ctx.arc(px, py, pr*breathe, 0, TAU); ctx.fill();
+      }
+      ctx.fillStyle = '#cedc4e';
+      for (const [px, py] of [[-this.r*0.45, this.r*0.3], [0, this.r*0.5], [this.r*0.45, this.r*0.3]]) {
+        ctx.beginPath(); ctx.arc(px, py, 2.5, 0, TAU); ctx.fill();
+      }
+      // dark veins
+      ctx.strokeStyle = '#3a5a1f'; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.moveTo(-this.r*0.6, this.r*0.0); ctx.quadraticCurveTo(-this.r*0.3, this.r*0.3, 0, this.r*0.55); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo( this.r*0.6, this.r*0.0); ctx.quadraticCurveTo( this.r*0.3, this.r*0.3, 0, this.r*0.55); ctx.stroke();
+    } else if (this.type === 'howler') {
+      // Howler: gaping mouth + glowing throat (it's literally screaming).
+      // Mouth runs across the whole front of the body.
+      ctx.fillStyle = '#1a0a0a';
+      ctx.beginPath(); ctx.ellipse(this.r*0.2, this.r*0.0, this.r*0.55, this.r*0.35, 0, 0, TAU); ctx.fill();
+      ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 2; ctx.stroke();
+      // glowing throat
+      const tp = 0.6 + 0.4*Math.sin(now/180);
+      ctx.fillStyle = `rgba(255,224,102,${0.55*tp})`;
+      ctx.beginPath(); ctx.ellipse(this.r*0.25, 0, this.r*0.35, this.r*0.22, 0, 0, TAU); ctx.fill();
+      // jagged teeth
+      ctx.fillStyle = '#ffffff';
+      for (let i = 0; i < 4; i++) {
+        ctx.beginPath();
+        ctx.moveTo(this.r*0.0 + i*5, -this.r*0.18);
+        ctx.lineTo(this.r*0.02 + i*5, -this.r*0.05);
+        ctx.lineTo(this.r*0.05 + i*5, -this.r*0.18);
+        ctx.closePath(); ctx.fill();
+      }
+    } else if (this.type === 'stalker') {
+      // Stalker: hooded shadow — narrow ribcage suggested by 3 dark bars.
+      ctx.strokeStyle = flash ? '#c8c8c8' : '#3a2a4f';
+      ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.moveTo(-this.r*0.4, -this.r*0.2); ctx.lineTo(this.r*0.4, -this.r*0.2); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(-this.r*0.4, -this.r*0.0); ctx.lineTo(this.r*0.4, -this.r*0.0); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(-this.r*0.4,  this.r*0.2); ctx.lineTo(this.r*0.4,  this.r*0.2); ctx.stroke();
+      // claws hint forward
+      ctx.fillStyle = '#c881ff';
+      ctx.beginPath(); ctx.arc(this.r*0.85, -this.r*0.05, 2, 0, TAU); ctx.fill();
+      ctx.beginPath(); ctx.arc(this.r*0.85,  this.r*0.10, 2, 0, TAU); ctx.fill();
+    } else if (this.type === 'bloater') {
+      // Bloater: big distended bumps + green sores (poison sacs). Cracks across belly.
+      const breathe = 0.85 + 0.15*Math.sin(now/280);
+      ctx.fillStyle = `rgba(168,227,75,${0.55*breathe})`;
+      for (const [px, py, pr] of [[-this.r*0.45, this.r*0.0, 8], [this.r*0.0, this.r*0.45, 10], [this.r*0.45, this.r*0.0, 8], [-this.r*0.15, -this.r*0.4, 6], [this.r*0.3, -this.r*0.35, 7]]) {
+        ctx.beginPath(); ctx.arc(px, py, pr*breathe, 0, TAU); ctx.fill();
+      }
+      ctx.fillStyle = '#cedc4e';
+      for (const [px, py] of [[-this.r*0.45, this.r*0.0], [this.r*0.0, this.r*0.45], [this.r*0.45, this.r*0.0]]) {
+        ctx.beginPath(); ctx.arc(px, py, 2.2, 0, TAU); ctx.fill();
+      }
+      // cracks
+      ctx.strokeStyle = '#5a3a1f'; ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.moveTo(-this.r*0.7, this.r*0.2); ctx.lineTo(this.r*0.7, this.r*0.3); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(-this.r*0.5, -this.r*0.1); ctx.lineTo( this.r*0.6, -this.r*0.2); ctx.stroke();
     }
 
     // ----- Head -----
-    const hr = this.r * (this.type==='brute' ? 0.55 : this.type==='boss' ? 0.6 : 0.68);
+    const hr = this.r * (this.type==='brute' ? 0.55 : isBossKind(this.type) ? 0.6 : 0.68);
     ctx.fillStyle = flash ? '#ffffff' : lighten(this.color, 12);
     ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
     ctx.beginPath(); ctx.arc(this.r*0.35, 0, hr, 0, TAU); ctx.fill(); ctx.stroke();
@@ -3338,27 +3924,32 @@ class Zombie {
     }
 
     // Eye
-    const eyeR = this.type==='boss' ? hr*0.28 : hr*0.22;
+    const eyeR = isBossKind(this.type) ? hr*0.28 : hr*0.22;
     ctx.fillStyle = this.eye;
     ctx.beginPath(); ctx.arc(this.r*0.55, -hr*0.25, eyeR, 0, TAU); ctx.fill();
     ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 2; ctx.stroke();
     ctx.fillStyle = '#ffffff';
     ctx.beginPath(); ctx.arc(this.r*0.58, -hr*0.30, hr*0.08, 0, TAU); ctx.fill();
-    // boss gets second glowing eye and eye glow
-    if (this.type === 'boss') {
+    // Boss kinds get a second glowing eye + an eye-glow halo. Color follows
+    // the variant tint so identity reads at a glance.
+    if (isBossKind(this.type)) {
       ctx.fillStyle = this.eye;
       ctx.beginPath(); ctx.arc(this.r*0.15, -hr*0.25, eyeR*0.85, 0, TAU); ctx.fill();
       ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 2; ctx.stroke();
       ctx.fillStyle = '#ffffff';
       ctx.beginPath(); ctx.arc(this.r*0.18, -hr*0.30, hr*0.07, 0, TAU); ctx.fill();
-      // eye glow
       const pulse = 0.5 + 0.5*Math.sin(now/220);
-      ctx.fillStyle = `rgba(255,189,46,${0.45*pulse})`;
+      const glowRGB = this.type === 'boss_necro'      ? '168,227,75'
+                    : this.type === 'boss_berserker'  ? '255,107,107'
+                    : this.type === 'boss_queen'      ? '206,220,78'
+                    : '255,189,46';
+      ctx.fillStyle = `rgba(${glowRGB},${0.45*pulse})`;
       ctx.beginPath(); ctx.arc(this.r*0.55, -hr*0.25, eyeR*1.7, 0, TAU); ctx.fill();
       ctx.beginPath(); ctx.arc(this.r*0.15, -hr*0.25, eyeR*1.5, 0, TAU); ctx.fill();
     }
 
-    // Boss horns — bigger & curved, plus tiny inner horns
+    // Classic boss horns — only the original boss gets the bone horns. The
+    // new variants are silhouetted differently (hood / crown / berserker).
     if (this.type === 'boss') {
       ctx.fillStyle = '#f5e8c8';
       ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
@@ -3377,6 +3968,42 @@ class Zombie {
       // tiny secondary spikes
       ctx.fillStyle = '#d8c098';
       ctx.beginPath(); ctx.moveTo(this.r*0.32, -hr*0.95); ctx.lineTo(this.r*0.4, -hr*1.2); ctx.lineTo(this.r*0.45, -hr*0.95); ctx.closePath(); ctx.fill(); ctx.stroke();
+    }
+
+    // Necromancer head — pointed hood overlay + glowing eye sockets shadow.
+    if (this.type === 'boss_necro') {
+      ctx.fillStyle = '#2a1a3a'; ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 2.5;
+      ctx.beginPath();
+      ctx.moveTo(this.r*0.0, -hr*1.7);
+      ctx.lineTo(this.r*0.85, -hr*0.55);
+      ctx.lineTo(this.r*0.85, hr*0.0);
+      ctx.lineTo(this.r*0.05, hr*0.0);
+      ctx.closePath(); ctx.fill(); ctx.stroke();
+      // hood inner shadow
+      ctx.fillStyle = 'rgba(0,0,0,0.35)';
+      ctx.beginPath(); ctx.ellipse(this.r*0.4, -hr*0.25, hr*0.55, hr*0.45, 0, 0, TAU); ctx.fill();
+    }
+    // Queen crown — three small spikes across the brow.
+    if (this.type === 'boss_queen') {
+      ctx.fillStyle = '#cedc4e'; ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 2;
+      for (const dx of [-0.1, 0.25, 0.6]) {
+        ctx.beginPath();
+        ctx.moveTo(this.r*dx, -hr*0.7);
+        ctx.lineTo(this.r*(dx+0.08), -hr*1.15);
+        ctx.lineTo(this.r*(dx+0.16), -hr*0.7);
+        ctx.closePath(); ctx.fill(); ctx.stroke();
+      }
+    }
+    // Berserker mohawk-spikes
+    if (this.type === 'boss_berserker') {
+      ctx.fillStyle = '#7a1a1a'; ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 2;
+      for (const dx of [0.1, 0.32, 0.54]) {
+        ctx.beginPath();
+        ctx.moveTo(this.r*dx, -hr*0.6);
+        ctx.lineTo(this.r*(dx+0.05), -hr*1.0);
+        ctx.lineTo(this.r*(dx+0.12), -hr*0.6);
+        ctx.closePath(); ctx.fill(); ctx.stroke();
+      }
     }
 
     // Spitter extra: jaw pouch + drool
@@ -3411,24 +4038,173 @@ class Zombie {
     }
 
     ctx.restore();
+    // Restore alpha after stalker veil
+    if (stalkerAlpha < 1) ctx.globalAlpha = 1;
 
     // HP bar for ALL zombies
-    const bw = this.r * 2, bh = this.type==='boss' ? 8 : 4;
+    const isBoss = isBossKind(this.type);
+    const bw = this.r * 2, bh = isBoss ? 8 : 4;
     const bx = x - bw/2;
-    const by = y - this.r - (this.type==='boss' ? 14 : 10);
-    if (this.type === 'boss') {
-      drawHPBar(bx, by, bw, bh, this.hp / this.maxHp, '#c73866');
-      // Boss name
+    const by = y - this.r - (isBoss ? 14 : 10);
+    if (isBoss) {
+      // Per-variant HP bar tint matches the aura color so boss identity reads
+      // at a glance from across the room.
+      const barColor = this.type === 'boss_necro'      ? '#a8e34b'
+                     : this.type === 'boss_berserker'  ? '#ff6b6b'
+                     : this.type === 'boss_queen'      ? '#cedc4e'
+                     : '#c73866';
+      drawHPBar(bx, by, bw, bh, this.hp / this.maxHp, barColor);
       ctx.font = 'bold 14px Bangers, sans-serif';
       ctx.textAlign = 'center';
       ctx.lineWidth = 4; ctx.strokeStyle = '#0f0a1a';
-      const name = this.elite ? 'ELITE BOSS' : 'BOSS';
+      const variantName = this.type === 'boss_necro'      ? 'NECROMANCER'
+                        : this.type === 'boss_berserker'  ? 'BERSERKER'
+                        : this.type === 'boss_queen'      ? 'SPITTER QUEEN'
+                        : 'BOSS';
+      const name = this.elite ? ('ELITE ' + variantName) : variantName;
       ctx.strokeText(name, x, by - 4);
-      ctx.fillStyle = this.elite ? '#c881ff' : '#ffbd2e';
+      ctx.fillStyle = this.elite ? '#c881ff'
+                    : this.type === 'boss_necro'     ? '#a8e34b'
+                    : this.type === 'boss_berserker' ? '#ff6b6b'
+                    : this.type === 'boss_queen'     ? '#cedc4e'
+                    : '#ffbd2e';
       ctx.fillText(name, x, by - 4);
     } else if (this.hp < this.maxHp || this.elite || this.type === 'brute') {
       drawHPBar(bx, by, bw, bh, this.hp / this.maxHp, this.elite ? '#c881ff' : '#c73866');
     }
+  }
+}
+
+// ------------- HOWLER AURA ------------------------------------
+// Recompute every zombie's effective speed/damage from cached _baseSpeed/_baseDamage
+// before the per-zombie update loop runs. Howlers apply the strongest buff that
+// covers the zombie (no stacking — we take the max so two howlers don't double-buff).
+// Howlers themselves are exempt (they shouldn't self-buff into being scary).
+// Cost: O(N * H) where H = #howlers in room (typically 0-3).
+function applyHowlerBuffs() {
+  // Reset everyone's buffs first.
+  for (const z of game.zombies) {
+    z.buffSpdMul = 1;
+    z.buffDmgMul = 1;
+  }
+  // Collect howlers (cheap pre-pass).
+  const howlers = [];
+  for (const z of game.zombies) {
+    if (z.type === 'howler' && z.hp > 0) howlers.push(z);
+  }
+  if (howlers.length === 0) {
+    // Restore base stats; nothing to buff.
+    for (const z of game.zombies) {
+      z.speed  = z._baseSpeed;
+      z.damage = z._baseDamage;
+    }
+    return;
+  }
+  const base = ZTYPES.howler;
+  const auraR2 = base.auraR * base.auraR;
+  for (const z of game.zombies) {
+    if (z.type === 'howler') continue; // no self/peer buff
+    let bestSpd = 1, bestDmg = 1;
+    for (const h of howlers) {
+      const dx = h.x - z.x, dy = h.y - z.y;
+      if (dx*dx + dy*dy < auraR2) {
+        if (base.auraSpdMul > bestSpd) bestSpd = base.auraSpdMul;
+        if (base.auraDmgMul > bestDmg) bestDmg = base.auraDmgMul;
+      }
+    }
+    z.buffSpdMul = bestSpd;
+    z.buffDmgMul = bestDmg;
+    z.speed  = z._baseSpeed  * bestSpd;
+    z.damage = z._baseDamage * bestDmg;
+  }
+  // Howlers themselves keep base stats.
+  for (const h of howlers) { h.speed = h._baseSpeed; h.damage = h._baseDamage; }
+}
+
+// ------------- POISON CLOUD ------------------------------------
+// Bloater death residue. Persists for cloudLife seconds. While the player is
+// inside the cloud radius: apply slow (refresh slowT each frame so leaving the
+// cloud expires it ~0.2s later) and tick DOT every 0.5s.
+class PoisonCloud {
+  constructor(x, y, radius, life, slowMul, dps) {
+    this.x = x; this.y = y;
+    this.radius = radius;
+    this.life = life;
+    this.maxLife = life;
+    this.slowMul = slowMul;
+    this.dps = dps;
+    this.dotAcc = 0;
+    this.phase = Math.random() * TAU;
+    this.dead = false;
+    // initial puff
+    for (let i = 0; i < 22; i++) {
+      const a = Math.random()*TAU, s = rand(40, 140);
+      game.particles.push(new Particle(x, y, {
+        vx: Math.cos(a)*s, vy: Math.sin(a)*s,
+        life: rand(0.5, 1.0), r: rand(4, 8), color:'#a8e34b', fade:true,
+      }));
+    }
+  }
+}
+function updatePoisonClouds(dt, player) {
+  if (game.poisonClouds.length === 0) return;
+  for (const c of game.poisonClouds) {
+    c.life -= dt;
+    c.phase += dt * 1.4;
+    if (c.life <= 0) { c.dead = true; continue; }
+    // ambient drift particles — sparse so we stay light per frame
+    if (Math.random() < 0.18) {
+      const a = Math.random()*TAU, r = Math.random()*c.radius;
+      game.particles.push(new Particle(c.x + Math.cos(a)*r, c.y + Math.sin(a)*r, {
+        vx: rand(-15, 15), vy: rand(-25, -5),
+        life: rand(0.4, 0.9), r: rand(2, 4), color:'#a8e34b', fade:true,
+      }));
+    }
+    // player overlap
+    const dx = player.x - c.x, dy = player.y - c.y;
+    if (dx*dx + dy*dy < (c.radius + player.r) * (c.radius + player.r)) {
+      // slow refresh — short tail so it expires when you step out
+      player.slowT = Math.max(player.slowT, 0.25);
+      player.slowMul = Math.min(player.slowMul, c.slowMul);
+      // DOT — small ticks every 0.5s. Routed through player.hurt so iframes
+      // and the death pipeline behave consistently. iframes mean a recent
+      // big hit will block the next poison tick — that's fine and merciful.
+      c.dotAcc += dt;
+      while (c.dotAcc >= 0.5) {
+        c.dotAcc -= 0.5;
+        player.hurt(c.dps * 0.5);
+      }
+    }
+  }
+  game.poisonClouds = game.poisonClouds.filter(c => !c.dead);
+  // Reset slowMul if no cloud is currently slowing the player so the slow can
+  // expire cleanly via slowT countdown in player.update().
+  if (player.slowT <= 0) player.slowMul = 1;
+}
+function drawPoisonClouds() {
+  for (const c of game.poisonClouds) {
+    const lifeFrac = c.life / c.maxLife;
+    const alpha = clamp(lifeFrac * 1.2, 0.0, 0.55);
+    // soft fill
+    const grad = ctx.createRadialGradient(c.x, c.y, c.radius*0.2, c.x, c.y, c.radius);
+    grad.addColorStop(0, `rgba(168,227,75,${alpha*0.6})`);
+    grad.addColorStop(0.7, `rgba(120,180,55,${alpha*0.35})`);
+    grad.addColorStop(1, 'rgba(60,90,20,0)');
+    ctx.fillStyle = grad;
+    ctx.beginPath();
+    // wobble the radius slightly so it feels alive
+    const wob = 1 + 0.05*Math.sin(c.phase);
+    ctx.arc(c.x, c.y, c.radius*wob, 0, TAU); ctx.fill();
+    // dashed boundary so the danger zone reads
+    ctx.strokeStyle = `rgba(168,227,75,${alpha*1.2})`;
+    ctx.lineWidth = 2;
+    ctx.setLineDash([6, 5]);
+    ctx.save();
+    ctx.translate(c.x, c.y);
+    ctx.rotate(c.phase * 0.3);
+    ctx.beginPath(); ctx.arc(0, 0, c.radius, 0, TAU); ctx.stroke();
+    ctx.restore();
+    ctx.setLineDash([]);
   }
 }
 
@@ -3510,9 +4286,28 @@ class ZombieProjectile {
     this.damage = damage;
     this.dead = false;
     this.phase = 0;
+    // Optional homing — set externally by Spitter Queen. While homeT > 0, the
+    // projectile gently steers toward the player at homeAccel px/s^2, capping
+    // total speed at its initial magnitude so it doesn't snowball into a
+    // hitscan. Once homeT drains, it flies straight.
+    this.homeT = 0;
+    this.homeAccel = 0;
+    this.tint = null; // override slime color (queen=acid green-yellow)
   }
   update(dt, player) {
     this.phase += dt * 12;
+    if (this.homeT > 0 && this.homeAccel > 0) {
+      this.homeT -= dt;
+      const tx = player.x - this.x, ty = player.y - this.y;
+      const td = Math.hypot(tx, ty) || 1;
+      // accel toward player
+      this.vx += (tx/td) * this.homeAccel * dt;
+      this.vy += (ty/td) * this.homeAccel * dt;
+      // cap to original speed magnitude (assume initial speed ~340; clamp to 380)
+      const sp = Math.hypot(this.vx, this.vy);
+      const maxSp = 380;
+      if (sp > maxSp) { this.vx *= maxSp/sp; this.vy *= maxSp/sp; }
+    }
     this.x += this.vx*dt; this.y += this.vy*dt;
     this.life -= dt;
     if (this.life <= 0) { this.dead = true; return; }
@@ -3521,12 +4316,12 @@ class ZombieProjectile {
     if (dist2(this.x, this.y, player.x, player.y) < (player.r+8)**2) {
       player.hurt(this.damage);
       this.dead = true;
-      // splat
+      const splatColor = this.tint || '#8fcf3f';
       for (let i=0;i<10;i++) {
         const a=Math.random()*TAU, s=rand(40,140);
         game.particles.push(new Particle(this.x, this.y, {
           vx:Math.cos(a)*s, vy:Math.sin(a)*s,
-          life:0.4, r:rand(3,5), color:'#8fcf3f', fade:true,
+          life:0.4, r:rand(3,5), color:splatColor, fade:true,
         }));
       }
     }
@@ -3535,17 +4330,18 @@ class ZombieProjectile {
     const wobble = Math.sin(this.phase) * 2;
     ctx.save();
     ctx.translate(this.x, this.y);
-    // slime ball
-    ctx.fillStyle = '#8fcf3f';
+    const main = this.tint || '#8fcf3f';
+    const inner = this.tint ? '#e3ff7a' : '#cedc4e';
+    ctx.fillStyle = main;
     ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
     ctx.beginPath(); ctx.arc(0, 0, 10 + wobble, 0, TAU); ctx.fill(); ctx.stroke();
-    ctx.fillStyle = '#cedc4e';
+    ctx.fillStyle = inner;
     ctx.beginPath(); ctx.arc(-2, -3, 3, 0, TAU); ctx.fill();
     // drip trail (particles behind)
     if (Math.random() < 0.4) {
       game.particles.push(new Particle(this.x, this.y, {
         vx: rand(-20,20), vy: rand(-20,20),
-        life: 0.4, r: rand(2,4), color:'#8fcf3f', fade:true, gravity: 80,
+        life: 0.4, r: rand(2,4), color: main, fade:true, gravity: 80,
       }));
     }
     ctx.restore();
@@ -3742,22 +4538,41 @@ function generateObstacles(floor, isBoss) {
 function generateRoomSpawns(floor, roomIdx, isBoss) {
   const spawns = [];
   if (isBoss) {
-    // Boss room: boss + minions (scales per floor)
-    spawns.push({ type:'boss', elite: floor === 5, delay: 0 });
-    const minionCount = Math.min(4 + floor * 2, 14);
-    const pool = enemyPool(floor).filter(t => t !== 'boss');
+    // Boss room: boss + minions (scales per floor). Floor 1 always rolls the
+    // classic boss so first-time players get the canonical fight. Floor 2+
+    // rolls between classic and any unlocked variant.
+    let bossType = 'boss';
+    if (floor >= 2) {
+      const variants = ['boss']; // classic always available
+      if (floor >= 2) variants.push('boss_necro', 'boss_queen');
+      if (floor >= 3) variants.push('boss_berserker');
+      bossType = choice(variants);
+    }
+    spawns.push({ type: bossType, elite: floor === 5, delay: 0 });
+    // Berserker is a solo fight — adding minions trivializes the burst-down
+    // mechanic since the player has bigger threats to manage. Necromancer
+    // already self-summons. Both should still get a small minion garnish so
+    // the room isn't empty during the boss telegraphs.
+    // Doubled base minion count for denser boss rooms; cap raised to ~28.
+    // Variant scaling (berserker/necromancer) stays as a multiplier on the
+    // doubled base so the relative thinning still applies.
+    let minionCount = Math.min(2 * (4 + floor * 2), 28);
+    if (bossType === 'boss_berserker') minionCount = Math.max(2, Math.floor(minionCount * 0.35));
+    if (bossType === 'boss_necro')     minionCount = Math.max(3, Math.floor(minionCount * 0.55));
+    const pool = enemyPool(floor).filter(t => t !== 'boss' && !BOSS_KINDS.has(t));
     for (let i = 0; i < minionCount; i++) {
       spawns.push({ type: choice(pool), elite: floor >= 3 && Math.random() < 0.15, delay: 1200 + i * 350 });
     }
     return spawns;
   }
-  // Normal room: number of enemies scales with floor and room
-  const baseCount = 8 + roomIdx * 2 + Math.floor(floor * 2.4);
+  // Normal room: number of enemies scales with floor and room (doubled for
+  // denser combat — delay-stagger pacing untouched, so they still trickle in).
+  const baseCount = 2 * (8 + roomIdx * 2 + Math.floor(floor * 2.4));
   const pool = enemyPool(floor);
   const eliteChance = floor >= 2 ? 0.10 + floor * 0.03 : 0;
   for (let i = 0; i < baseCount; i++) {
     const type = choice(pool);
-    const elite = (floor >= 2) && Math.random() < eliteChance && type !== 'boss';
+    const elite = (floor >= 2) && Math.random() < eliteChance && !BOSS_KINDS.has(type);
     // Stagger delay: faster early, slower for tougher types
     const baseDelay = type === 'brute' ? 500 : type === 'exploder' ? 350 : type === 'spitter' ? 260 : type === 'runner' ? 180 : 280;
     spawns.push({ type, elite, delay: i * baseDelay });
@@ -3777,6 +4592,7 @@ function enterRoom(floor, roomIdx) {
   game.particles = [];
   game.damageNums = [];
   game.powerups = [];
+  game.poisonClouds = [];
   // Player keeps HP/ammo, but refill ammo a bit
   game.player.ammo = game.player.maxAmmo;
   game.player.reloading = false;
@@ -4154,6 +4970,9 @@ function drawWorld() {
   // Obstacles
   for (const o of game.obstacles) drawObstacle(o);
 
+  // Poison clouds (under powerups + entities so they read as ground hazard)
+  drawPoisonClouds();
+
   // Powerups
   for (const p of game.powerups) p.draw();
 
@@ -4471,7 +5290,7 @@ function startRun() {
   game.roomIdx = 0;
   game.zombies = []; game.bullets = []; game.ezBullets = [];
   game.explosions = []; game.particles = []; game.damageNums = [];
-  game.powerups = []; game.spawnQueue = [];
+  game.powerups = []; game.poisonClouds = []; game.spawnQueue = [];
   game.kills = 0; game.score = 0;
   game.upgrades = {};
   game.pendingLevelUps = 0;
@@ -4548,7 +5367,7 @@ function quitToMenu() {
   game.player = null;
   game.zombies = []; game.bullets = []; game.ezBullets = [];
   game.explosions = []; game.particles = []; game.damageNums = [];
-  game.powerups = []; game.spawnQueue = [];
+  game.powerups = []; game.poisonClouds = []; game.spawnQueue = [];
   game.transitionT = 0;
   game.transitionTarget = null;
   game.levelupPauseT = 0;
@@ -4566,7 +5385,9 @@ function loop(now) {
   if (game.state === 'playing') {
     game.player.update(dt);
     cameraUpdate();
+    applyHowlerBuffs();
     for (const z of game.zombies) z.update(dt, game.player);
+    updatePoisonClouds(dt, game.player);
     for (const b of game.bullets) b.update(dt);
     for (const p of game.ezBullets) p.update(dt, game.player);
     for (const e of game.explosions) e.update(dt, game.player);
@@ -4623,7 +5444,10 @@ function loop(now) {
   ctx.fillRect(0, 0, W, H);
   if (game.player) drawWorld();
   else drawMenuScene();
-  drawReticle();
+  // Reticle only matters when the player is aiming with the mouse — if
+  // auto-fire is on, auto-aim picks the target and the reticle is just
+  // visual noise.
+  if (!game.autoFire) drawReticle();
   requestAnimationFrame(loop);
 }
 
