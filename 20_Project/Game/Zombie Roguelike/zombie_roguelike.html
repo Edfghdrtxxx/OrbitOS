@@ -3800,9 +3800,11 @@ class Zombie {
     spawnPlaguePuff(this.x, this.y);
     // Elite affix death effects
     if (this.affix === 'glacial') {
-      // Death pulse: if player is within 160px, freeze/slow them.
+      // Death pulse: if player is within 160px AND grounded, freeze/slow them.
+      // Airborne (jumping) player dodges the debuff entirely — contract is
+      // "airborne = immune to everything", matching the player.hurt z-gate.
       const pdx = game.player.x - this.x, pdy = game.player.y - this.y;
-      if (pdx*pdx + pdy*pdy < 160*160) {
+      if (pdx*pdx + pdy*pdy < 160*160 && game.player.z <= 0) {
         game.player.slowT = Math.max(game.player.slowT, 1.2);
         game.player.slowMul = Math.min(game.player.slowMul, 0.45);
       }
@@ -4494,10 +4496,13 @@ function applyHowlerBuffs() {
     z.buffSpdMul = 1;
     z.buffDmgMul = 1;
   }
-  // Rebuild the player's slow multiplier each frame from scratch; the cloud
-  // pipeline (updatePoisonClouds) will Math.min on top if the player stands in
-  // a poison puddle this frame.
-  if (game.player) game.player.slowMul = 1;
+  // Rebuild the player's slow multiplier each frame ONLY when the slow timer
+  // has already decayed — otherwise we'd wipe out fire-and-forget debuffs
+  // (e.g. the glacial elite death pulse) that expect slowMul to hold for
+  // their slowT window. Howler chill, bloater clouds, etc. all re-apply via
+  // Math.min each frame, so a clean 1 at slowT=0 lets them rebuild from
+  // scratch without stomping active timer-based slows.
+  if (game.player && game.player.slowT <= 0) game.player.slowMul = 1;
   // Collect howlers (cheap pre-pass).
   const howlers = [];
   for (const z of game.zombies) {
