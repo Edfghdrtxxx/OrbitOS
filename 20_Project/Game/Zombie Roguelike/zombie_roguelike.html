@@ -340,6 +340,21 @@
     80%  { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(0deg); }
     100% { opacity: 0; transform: translate(-50%, -50%) scale(1.35) rotate(0deg); }
   }
+  /* Calm variant for the level-up banner: the full banner-in bounce (scale
+     overshoot + rotate wobble, amplified by the 1.4-overshoot bezier) read as
+     a "screen shake" because the level-up banner is the largest on-screen
+     element. Keeps the fade + a mild grow, drops the rotate and the overshoot
+     so the banner just appears calmly. Other banners (difficulty, room clear,
+     boss) are unaffected. */
+  .banner.show.no-shake {
+    animation: banner-in-calm 2.4s ease-out forwards;
+  }
+  @keyframes banner-in-calm {
+    0%   { opacity: 0; transform: translate(-50%, -50%); }
+    12%  { opacity: 1; transform: translate(-50%, -50%); }
+    80%  { opacity: 1; transform: translate(-50%, -50%); }
+    100% { opacity: 0; transform: translate(-50%, -50%); }
+  }
   .damage-flash {
     position: absolute; inset: 0;
     background: radial-gradient(ellipse at center, transparent 50%, var(--c-blood) 120%);
@@ -1380,6 +1395,8 @@
       <span data-i18n="confirm">CONFIRM</span>
       <span class="sep">&middot;</span>
       <span class="key">F</span>
+      <span>/</span>
+      <span class="key">R</span>
       <span data-i18n="rerollHint">REROLL</span>
     </div>
   </div>
@@ -1655,7 +1672,7 @@ const I18N = {
     tip_melee:       'Melee runs replace bullets with a wide click-swing arc.',
     tip_ranged:      'Ranged runs keep the classic bullets/reload loop.',
     tip_dash:        'SHIFT dashes. Pick BLITZ DASH to damage zombies you pass through.',
-    tip_reroll:      'Not happy with level-up choices? Press F (or click REROLL) once per level.',
+    tip_reroll:      'Not happy with level-up choices? Press F or R (or click REROLL) once per level.',
     tip_environment: 'Pick an environment for a fresh palette and themed obstacles each floor.',
     tip_appearance:  'CHARACTER APPEARANCE lets you change your survivor\'s outfit.',
     tip_space:       'SPACE = jump (i-frames while airborne). SHIFT = dash.',
@@ -1799,7 +1816,7 @@ const I18N = {
     tip_melee:       '近战流程用宽挥砍弧取代子弹。',
     tip_ranged:      '远程流程保留经典子弹 / 换弹循环。',
     tip_dash:        'SHIFT 冲刺。选择闪电冲刺以伤害穿过的丧尸。',
-    tip_reroll:      '对升级选项不满意？每级可按 F (或点击重抽) 一次。',
+    tip_reroll:      '对升级选项不满意？每级可按 F 或 R (或点击重抽) 一次。',
     tip_environment: '选一种环境，换一套配色与每层主题障碍物。',
     tip_appearance:  '角色外观可以更换幸存者的装扮。',
     tip_space:       '空格 = 跳跃（滞空期间无敌帧）。SHIFT = 冲刺。',
@@ -1934,7 +1951,7 @@ addEventListener('keydown', e => {
       changeSelection(1);
       return;
     }
-    if (e.key.toLowerCase() === 'f') {
+    if (e.key.toLowerCase() === 'f' || e.key.toLowerCase() === 'r') {
       e.preventDefault();
       rerollChoices();
       return;
@@ -2395,18 +2412,19 @@ const game = {
 
 // ------------- COLLISION HELPERS -------------------------------
 // opts: { airborne: bool, passGaps: bool } — airborne callers (player mid-jump)
-// skip obstacles flagged walkOver:true (gaps, low platforms). passGaps is the
-// same toggle for projectiles (bullets fly, so they always pass gaps — but not
+// skip obstacles flagged walkOver:true (pits/gaps). passGaps is the same
+// toggle for projectiles (bullets fly, so they always pass gaps — but not
 // solid cover). A null/undefined opts behaves like the legacy call (no pass).
-// Platforms carry walkOver:true but are ALWAYS non-blocking for movement (the
-// layer model handles who's standing on one vs underneath) — they're purely a
-// visual/logical elevation cue, never a collision shape.
+// Platforms are SOLID — they collide for every caller regardless of airborne
+// state. Only `gap` obstacles carry walkOver:true under the current design.
 function collidesObstacle(x, y, r, opts) {
   const airborne = opts && opts.airborne;
   const passGaps = opts && opts.passGaps;
   for (const o of game.obstacles) {
-    if (o.type === 'platform') continue;                    // never blocks
-    if ((airborne || passGaps) && o.walkOver) continue;
+    // Gaps are the only walkOver obstacle that airborne/bullet callers pass
+    // over. Platforms carry walkOver:true historically but we explicitly
+    // gate this bypass to gap-type only so platforms stay solid to everyone.
+    if ((airborne || passGaps) && o.walkOver && o.type === 'gap') continue;
     const cx = clamp(x, o.x, o.x + o.w);
     const cy = clamp(y, o.y, o.y + o.h);
     const dx = x - cx, dy = y - cy;
@@ -2942,10 +2960,14 @@ class Player {
     if (leveled) {
       sfx('levelup');
       flashXP();
-      showBanner(t('levelUp'), t('chooseYourPath'));
-      // Full-screen prepause pulse removed on level-up per user request —
-      // the radial purple flash was the "vibration" effect. Keep the XP flash
-      // (subtle edge glow) and the banner; drop only the screen-filling pulse.
+      // `{calm:true}` swaps the bouncy banner-in (scale overshoot + rotate
+      // wobble, amplified by the 1.4-overshoot bezier) for a calm fade.
+      // That bouncy animation on the giant LEVEL UP banner is what reads
+      // as a "screen shake/vibration." Other banners keep the full bounce.
+      showBanner(t('levelUp'), t('chooseYourPath'), { calm: true });
+      // flashPrePause() left disabled from the previous pass; the radial
+      // purple pulse isn't restored here so the level-up feels calmer overall.
+      // Re-enable by uncommenting if the calm banner alone isn't enough feedback.
       // flashPrePause();
     }
   }
@@ -6221,11 +6243,16 @@ const overlays = () => ['langSelect','menu','classSelect','envSelect','upgradeCh
 function hideAllOverlays() { overlays().forEach(o => o.classList.add('hidden')); }
 function showOverlay(el) { hideAllOverlays(); el.classList.remove('hidden'); el.classList.add('fade-in'); }
 
-function showBanner(big, small) {
+function showBanner(big, small, opts) {
   const el = $('banner');
   el.innerHTML = `${big}${small?`<small>${small}</small>`:''}`;
   el.classList.remove('show');
+  el.classList.remove('no-shake');
   void el.offsetWidth;
+  // `opts.calm`/`opts.noShake`: swap the bouncy banner-in for a calmer fade.
+  // Used by the level-up banner where the scale-overshoot + rotate wobble
+  // felt like a screen shake. Other banners keep the full animation.
+  if (opts && (opts.calm || opts.noShake)) el.classList.add('no-shake');
   el.classList.add('show');
 }
 function flashDamage() {
