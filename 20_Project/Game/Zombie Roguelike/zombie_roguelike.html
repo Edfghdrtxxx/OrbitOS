@@ -173,6 +173,20 @@
     transform: translateX(2px);
     cursor: help;
   }
+  /* Spark highlight — the single most recently picked chip pulses so the
+     player can trace which upgrade they just took without scanning the list. */
+  .upg-chip.spark {
+    border-color: #ffd94a;
+    animation: chipSpark 1.4s ease-in-out infinite;
+    box-shadow: 0 0 0 0 rgba(255, 217, 74, 0.65);
+  }
+  .upg-chip.spark .dot {
+    box-shadow: 0 0 10px rgba(255, 217, 74, 0.9);
+  }
+  @keyframes chipSpark {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255, 217, 74, 0.55), 0 0 6px rgba(255, 217, 74, 0.35); }
+    50%      { box-shadow: 0 0 0 4px rgba(255, 217, 74, 0.0), 0 0 14px rgba(255, 217, 74, 0.85); }
+  }
   .upg-chip {
     background: rgba(15,10,26,0.8);
     border: 2px solid var(--c-dark);
@@ -1341,14 +1355,18 @@
       Survive 5 floors of undead chaos. Every run is different.<br>
       Level up — pick your build — push deeper — die trying.
     </div>
-    <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center;">
-      <button class="btn" id="startBtn" data-i18n="startRun">START RUN</button>
-      <button class="btn cool" id="checkpointPortalBtn" data-i18n="checkpointPortal">CHECKPOINT PORTAL</button>
-      <button class="btn hot" id="appearanceBtn" data-i18n="characterAppearance">CHARACTER APPEARANCE</button>
-      <span class="settings-btn-wrap">
-        <button class="btn cool" id="settingsBtn" data-i18n="settings">SETTINGS</button>
-        <span class="settings-annotation">← 语言/Language</span>
-      </span>
+    <div style="display:flex; flex-direction:column; gap:16px; align-items:center;">
+      <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center;">
+        <button class="btn" id="startBtn" data-i18n="startRun">START RUN</button>
+        <button class="btn cool" id="checkpointPortalBtn" data-i18n="checkpointPortal">CHECKPOINT PORTAL</button>
+      </div>
+      <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center;">
+        <button class="btn hot" id="appearanceBtn" data-i18n="characterAppearance">CHARACTER APPEARANCE</button>
+        <span class="settings-btn-wrap">
+          <button class="btn cool" id="settingsBtn" data-i18n="settings">SETTINGS</button>
+          <span class="settings-annotation">← 语言/Language</span>
+        </span>
+      </div>
     </div>
     <div class="menu-tip" id="menuTip"><span class="tip-label" data-i18n="tipLabel">TIP</span><span id="menuTipText">—</span></div>
     <div class="controls">
@@ -1498,6 +1516,14 @@
         <button class="btn" id="pauseMenuBtn" data-i18n="quitRun">QUIT RUN</button>
       </div>
     </div>
+  </div>
+
+  <!-- CHECKPOINT SLOTS (both load and save mode) -->
+  <div class="overlay hidden" id="checkpointSlots">
+    <div class="subtitle cool" id="checkpointSlotsTitle" data-i18n="checkpointPortal">CHECKPOINT PORTAL</div>
+    <div class="subtitle" id="checkpointSlotsSubtitle" style="font-size: 22px; opacity: 0.8;" data-i18n="chooseLoadSlot">CHOOSE A SLOT TO LOAD</div>
+    <div class="class-grid" id="checkpointSlotGrid"></div>
+    <button class="btn" id="checkpointSlotsBackBtn" data-i18n="back">BACK</button>
   </div>
 
   <!-- STATS PAGE (independent overlay; openable from pause or level-up) -->
@@ -1685,6 +1711,14 @@ const I18N = {
     checkpointSaved: 'CHECKPOINT SAVED',
     noCheckpoint: 'NO CHECKPOINT YET',
     crazyDave: 'CRAZY DAVE VOICE',
+    chooseLoadSlot: 'CHOOSE A SLOT TO LOAD',
+    chooseSaveSlot: 'CHOOSE A SLOT TO OVERWRITE',
+    emptySlot: '— EMPTY —',
+    slotLabel: 'SLOT',
+    justNow: 'just now',
+    minAgo: 'min ago',
+    hrAgo: 'hr ago',
+    dayAgo: 'd ago',
     // Pause stats panel labels
     stats: 'STATS',
     viewStats: '📊 STATS',
@@ -1839,6 +1873,14 @@ const I18N = {
     checkpointSaved: '存档已保存',
     noCheckpoint: '暂无存档',
     crazyDave: '疯狂戴夫语音',
+    chooseLoadSlot: '选择要加载的存档',
+    chooseSaveSlot: '选择要覆盖的存档位',
+    emptySlot: '— 空 —',
+    slotLabel: '存档位',
+    justNow: '刚刚',
+    minAgo: '分钟前',
+    hrAgo: '小时前',
+    dayAgo: '天前',
     // Pause stats panel labels (ZH parity with EN)
     stats: '属性',
     viewStats: '📊 属性',
@@ -2726,6 +2768,13 @@ const game = {
   // checkpoint. If the player dies later, the run-end screen offers a one-tap
   // revive that resumes at the saved floor/room with upgrades/level intact.
   checkpoint: null,
+  checkpoints: [],  // ring of up to 3 slots mirrored from localStorage
+  // Boss variants that have spawned earlier in this run. Each new boss layers
+  // the ability casts (summon / raise / slam+quake / fan-shot) from every
+  // earlier variant on top of its own kit — so the final boss effectively has
+  // every prior boss's toolkit plus its own.
+  bossVariantsSeen: [],
+  lastUpgradePickId: null,
   skinId: 'default',
   playerClass: 'ranged',   // 'ranged' | 'melee' — picked at run start
   environment: 'default',  // visual overlay theme id — picked at run start
@@ -3867,6 +3916,45 @@ class Zombie {
       const b = ZTYPES.boss_queen;
       this.shootCd = b.shootCd * 0.5; // open with a salvo sooner
     }
+    // ---- layered boss abilities ----
+    // On boss spawn, carry forward the ability casts of every earlier boss
+    // variant seen in this run (random roll preserved; previous kits layered).
+    // Each extra ability has its own isolated state (prefix x*) so it never
+    // collides with the primary variant's state machine. The set is computed
+    // BEFORE recording this spawn so a boss can't inherit from itself.
+    if (isBossKind(type)) {
+      const seen = Array.isArray(game.bossVariantsSeen) ? game.bossVariantsSeen : [];
+      this.extraAbilities = new Set(seen.filter(v => v !== type && BOSS_KINDS.has(v)));
+      if (this.extraAbilities.has('boss')) {
+        this.xSummonCd = Math.max(2400, 4500 - game.floor * 350) * 0.6;
+      }
+      if (this.extraAbilities.has('boss_necro')) {
+        this.xRaiseCd = ZTYPES.boss_necro.raiseCd * 0.8;
+        this.xRaiseSpawning = false;
+        this.xRaiseSpawnT = 0;
+        this.xRaiseSites = [];
+      }
+      if (this.extraAbilities.has('boss_queen')) {
+        this.xShootCd = ZTYPES.boss_queen.shootCd * 0.7;
+      }
+      if (this.extraAbilities.has('boss_berserker')) {
+        const bb = ZTYPES.boss_berserker;
+        this.xSlamCd = bb.slamCd * 0.9;
+        this.xSlamState = 'idle';
+        this.xSlamT = 0;
+        this.xQuakeCd = bb.quakeCd * 0.9;
+        this.xQuakeState = 'idle';
+        this.xQuakeT = 0;
+        this.xQuakeTargetX = 0;
+        this.xQuakeTargetY = 0;
+      }
+      // Record AFTER computing extras — this variant now joins the layer set
+      // for any future boss encountered this run.
+      if (!seen.includes(type)) {
+        if (!Array.isArray(game.bossVariantsSeen)) game.bossVariantsSeen = [];
+        game.bossVariantsSeen.push(type);
+      }
+    }
     // runner — perpendicular zigzag jitter, retimed every zigzagPeriod
     if (type === 'runner') {
       this.zigSign = Math.random() < 0.5 ? 1 : -1;
@@ -4076,6 +4164,7 @@ class Zombie {
         this.move(dx/d, dy/d, this.speed, dt);
       }
     } else if (this.type === 'boss') {
+      this.tickLayeredBossAbilities(dt, d, player);
       // charges periodically, otherwise walks toward player
       this.chargeCd -= dt * 1000;
       if (this.charging) {
@@ -4290,6 +4379,7 @@ class Zombie {
       const bob = Math.sin(this.walkPhase) * 0.15;
       this.move(dx/d + bob*(-dy/d), dy/d + bob*(dx/d), this.speed, dt);
     } else if (this.type === 'boss_necro') {
+      this.tickLayeredBossAbilities(dt, d, player);
       // Necromancer: stays at range, raises walker minions in a circle around
       // itself. Lower HP than the classic boss — reward burst-down play.
       // Cast is two-phase so the player can pre-emptively close: when the
@@ -4353,6 +4443,7 @@ class Zombie {
         }
       }
     } else if (this.type === 'boss_berserker') {
+      this.tickLayeredBossAbilities(dt, d, player);
       // Berserker: HP-scaling enrage. No summons. Charges like a brute on a
       // shorter cooldown. Speed/damage multipliers are derived from missing
       // HP every frame so the buff visibly ramps as the fight progresses.
@@ -4522,6 +4613,7 @@ class Zombie {
         }
       }
     } else if (this.type === 'boss_queen') {
+      this.tickLayeredBossAbilities(dt, d, player);
       // Spitter Queen: slow walk, fan-shot of slightly-homing projectiles every
       // ~3s. Demands constant lateral movement to dodge sweeping arcs.
       const base = ZTYPES.boss_queen;
@@ -4654,6 +4746,190 @@ class Zombie {
       const id = +this.layer.slice(9);
       const p = platformAt(this.x, this.y);
       if (!p || p.id !== id) this.layer = 'ground';
+    }
+  }
+  // Layered boss abilities: cast blocks inherited from earlier boss variants
+  // this run. Each branch uses isolated x* state so it can't trample the
+  // primary variant's state machine. Only ability casts — movement / charge
+  // is NEVER layered (that's owned by the primary variant).
+  tickLayeredBossAbilities(dt, d, player) {
+    if (!this.extraAbilities || this.extraAbilities.size === 0) return;
+    // ---- classic boss: summon ring of minions on a cooldown ----
+    if (this.extraAbilities.has('boss') && this.type !== 'boss') {
+      this.xSummonCd = (this.xSummonCd || 0) - dt * 1000;
+      if (this.xSummonCd <= 0) {
+        this.xSummonCd = Math.max(2400, 4500 - game.floor * 350);
+        const n = Math.min(6, 1 + game.floor);
+        for (let i = 0; i < n; i++) {
+          const a = Math.random()*TAU;
+          const sx = this.x + Math.cos(a)*60;
+          const sy = this.y + Math.sin(a)*60;
+          let stype = 'runner';
+          if (game.floor >= 3 && Math.random() < 0.35) stype = 'spitter';
+          if (game.floor >= 4 && Math.random() < 0.25) stype = 'exploder';
+          game.zombies.push(new Zombie(sx, sy, stype, false));
+          for (let j = 0; j < 8; j++) {
+            const aa = Math.random()*TAU;
+            game.particles.push(new Particle(sx, sy, {
+              vx:Math.cos(aa)*rand(40,100), vy:Math.sin(aa)*rand(40,100),
+              life:0.4, r:rand(3,5), color:'#c73866', fade:true
+            }));
+          }
+        }
+      }
+    }
+    // ---- necromancer: raise minions in a ring with a short telegraph ----
+    if (this.extraAbilities.has('boss_necro') && this.type !== 'boss_necro') {
+      const base = ZTYPES.boss_necro;
+      this.xRaiseCd -= dt * 1000;
+      if (this.xRaiseCd <= 0 && !this.xRaiseSpawning) {
+        this.xRaiseCd = base.raiseCd;
+        this.xRaiseSpawning = true;
+        this.xRaiseSpawnT = 500;
+        const n = base.raiseCount + Math.min(2, Math.floor((game.floor - 2) / 2));
+        this.xRaiseSites = [];
+        for (let i = 0; i < n; i++) {
+          const a = (i / n) * TAU + Math.random() * 0.4;
+          const sx = this.x + Math.cos(a) * 70;
+          const sy = this.y + Math.sin(a) * 70;
+          let stype = 'walker';
+          if (game.floor >= 4 && Math.random() < 0.30) stype = 'runner';
+          this.xRaiseSites.push({ x: sx, y: sy, type: stype });
+        }
+        sfx('spit');
+      }
+      if (this.xRaiseSpawning) {
+        this.xRaiseSpawnT -= dt * 1000;
+        for (const s of this.xRaiseSites) {
+          if (Math.random() < 0.6) {
+            const aa = Math.random() * TAU;
+            game.particles.push(new Particle(s.x, s.y, {
+              vx: Math.cos(aa) * rand(15, 60), vy: Math.sin(aa) * rand(15, 60),
+              life: 0.4, r: rand(3, 5), color: '#a8e34b', fade: true
+            }));
+          }
+        }
+        if (this.xRaiseSpawnT <= 0) {
+          for (const s of this.xRaiseSites) {
+            game.zombies.push(new Zombie(s.x, s.y, s.type, false));
+            for (let j = 0; j < 10; j++) {
+              const aa = Math.random() * TAU;
+              game.particles.push(new Particle(s.x, s.y, {
+                vx: Math.cos(aa) * rand(60, 140), vy: Math.sin(aa) * rand(60, 140),
+                life: 0.4, r: rand(3, 5), color: '#a8e34b', fade: true
+              }));
+            }
+          }
+          this.xRaiseSpawning = false;
+          this.xRaiseSites = [];
+        }
+      }
+    }
+    // ---- spitter queen: fan-shot of slightly-homing projectiles ----
+    if (this.extraAbilities.has('boss_queen') && this.type !== 'boss_queen') {
+      const base = ZTYPES.boss_queen;
+      this.xShootCd = (this.xShootCd || 0) - dt * 1000;
+      if (this.xShootCd <= 0 && d < base.range && hasLineOfSight(this.x, this.y, player.x, player.y, 6)) {
+        this.xShootCd = base.shootCd;
+        const baseAngle = Math.atan2(player.y - this.y, player.x - this.x);
+        const half = base.shotSpread / 2;
+        const step = base.shotCount > 1 ? base.shotSpread / (base.shotCount - 1) : 0;
+        for (let i = 0; i < base.shotCount; i++) {
+          const a = baseAngle - half + step * i;
+          const proj = new ZombieProjectile(this.x, this.y, a, base.projSpeed, this.damage);
+          proj.homeT = base.projHomeDur;
+          proj.homeAccel = base.projHomeAccel;
+          proj.tint = '#a8e34b';
+          game.ezBullets.push(proj);
+        }
+        for (let i = 0; i < 18; i++) {
+          const a = baseAngle + rand(-half, half);
+          game.particles.push(new Particle(this.x, this.y, {
+            vx: Math.cos(a)*rand(80,180), vy: Math.sin(a)*rand(80,180),
+            life: 0.35, r: rand(3,5), color: '#a8e34b', fade: true
+          }));
+        }
+        sfx('spit');
+      }
+    }
+    // ---- berserker: slam (self-centered AoE) + quake (remote ring) ----
+    // Charge is intentionally omitted — it's movement-coupled and would fight
+    // with the primary variant's own AI.
+    if (this.extraAbilities.has('boss_berserker') && this.type !== 'boss_berserker') {
+      const base = ZTYPES.boss_berserker;
+      this.xSlamCd  = Math.max(0, (this.xSlamCd  || 0) - dt * 1000);
+      this.xQuakeCd = Math.max(0, (this.xQuakeCd || 0) - dt * 1000);
+      // Quake: ring at the player's position at telegraph start. Fires only if
+      // no other extra-ability windup is currently active.
+      if (this.xQuakeState === 'idle' && this.xSlamState === 'idle' && this.xQuakeCd <= 0) {
+        this.xQuakeState = 'windup';
+        this.xQuakeT = base.quakeWindup;
+        this.xQuakeTargetX = player.x;
+        this.xQuakeTargetY = player.y;
+        sfx('boss');
+      }
+      if (this.xQuakeState === 'windup') {
+        this.xQuakeT -= dt * 1000;
+        if (Math.random() < 0.9) {
+          const a = Math.random()*TAU, r = Math.random()*base.quakeR;
+          game.particles.push(new Particle(
+            this.xQuakeTargetX + Math.cos(a)*r,
+            this.xQuakeTargetY + Math.sin(a)*r,
+            { vx: rand(-40,40), vy: rand(-80, -20),
+              life: 0.45, r: rand(2,4), color:'#a13a2a', fade:true, gravity: 140 }
+          ));
+        }
+        if (this.xQuakeT <= 0) {
+          const qdx = player.x - this.xQuakeTargetX, qdy = player.y - this.xQuakeTargetY;
+          if (qdx*qdx + qdy*qdy < base.quakeR * base.quakeR) {
+            player.hurt(this.damage * base.quakeDmgMul, this.xQuakeTargetX, this.xQuakeTargetY);
+          }
+          for (let i = 0; i < 36; i++) {
+            const a = Math.random()*TAU, s = rand(120, 300);
+            game.particles.push(new Particle(this.xQuakeTargetX, this.xQuakeTargetY, {
+              vx: Math.cos(a)*s, vy: Math.sin(a)*s,
+              life: rand(0.35, 0.75), r: rand(4,8), color:'#ff6b6b', fade:true, gravity: 180,
+            }));
+          }
+          shakeCam(14);
+          sfx('hit');
+          this.xQuakeCd = base.quakeCd;
+          this.xQuakeState = 'idle';
+        }
+      }
+      if (this.xSlamState === 'idle' && this.xQuakeState === 'idle' && this.xSlamCd <= 0 && d < base.slamR * 1.4) {
+        this.xSlamState = 'windup';
+        this.xSlamT = base.slamWindup;
+        sfx('boss');
+      }
+      if (this.xSlamState === 'windup') {
+        this.xSlamT -= dt * 1000;
+        if (Math.random() < 0.85) {
+          const a = Math.random()*TAU, r = base.slamR * (0.9 + Math.random()*0.1);
+          game.particles.push(new Particle(
+            this.x + Math.cos(a)*r, this.y + Math.sin(a)*r,
+            { vx: -Math.cos(a)*rand(40,100), vy: -Math.sin(a)*rand(40,100),
+              life: 0.3, r: rand(2,4), color:'#ffbd2e', fade:true }
+          ));
+        }
+        if (this.xSlamT <= 0) {
+          const sdx = player.x - this.x, sdy = player.y - this.y;
+          if (sdx*sdx + sdy*sdy < base.slamR * base.slamR) {
+            player.hurt(this.damage * base.slamDmgMul, this.x, this.y);
+          }
+          for (let i = 0; i < 40; i++) {
+            const a = Math.random()*TAU, s = rand(180, 360);
+            game.particles.push(new Particle(this.x, this.y, {
+              vx: Math.cos(a)*s, vy: Math.sin(a)*s,
+              life: rand(0.3, 0.6), r: rand(4,7), color:'#ff6b6b', fade:true,
+            }));
+          }
+          shakeCam(18);
+          sfx('hit');
+          this.xSlamCd = base.slamCd;
+          this.xSlamState = 'idle';
+        }
+      }
     }
   }
   move(vx, vy, spd, dt) {
@@ -6317,7 +6593,12 @@ function enterRoom(floor, roomIdx) {
   }
 }
 
-const CHECKPOINT_KEY = 'zr_checkpoint';
+// Checkpoint storage: ring buffer of up to 3 slots in localStorage.
+// Each slot holds the full checkpoint object + a savedAt timestamp. The legacy
+// single-key `zr_checkpoint` is auto-migrated to slot 1 on first read.
+const CHECKPOINT_KEY = 'zr_checkpoint';            // legacy, kept for migration only
+const CHECKPOINTS_KEY = 'zr_checkpoints';          // new: array of up to 3 entries
+const CHECKPOINT_SLOTS = 3;
 function saveCheckpoint(floor, roomIdx) {
   const p = game.player;
   game.checkpoint = {
@@ -6334,6 +6615,7 @@ function saveCheckpoint(floor, roomIdx) {
     environment: game.environment,
     superpowers: [...game.superpowers],
     phoenixUsed: game.phoenixUsed,
+    bossVariantsSeen: [...(game.bossVariantsSeen || [])],
     schemaVersion: 2,
     player: p ? {
       hp: p.hp,
@@ -6351,22 +6633,71 @@ function saveCheckpoint(floor, roomIdx) {
   };
 }
 
+// Auto-save: push the current game.checkpoint onto the front of the ring,
+// dropping the oldest. Called from boss-clear and mid-room auto-saves.
 function persistCheckpoint() {
   if (!game.checkpoint) return;
-  try { localStorage.setItem(CHECKPOINT_KEY, JSON.stringify(game.checkpoint)); } catch {}
+  const entry = { ...game.checkpoint, savedAt: Date.now() };
+  const arr = readCheckpointsArray();
+  arr.unshift(entry);
+  while (arr.length > CHECKPOINT_SLOTS) arr.pop();
+  writeCheckpointsArray(arr);
+  game.checkpoints = arr;
   refreshCheckpointPortalBtn();
 }
 
-function loadPersistedCheckpoint() {
+// Manual save: write the current game.checkpoint into a specific slot
+// (0..CHECKPOINT_SLOTS-1). Does NOT reorder — slot identity is preserved so
+// the player's manual save stays where they put it.
+function persistCheckpointToSlot(slotIdx) {
+  if (!game.checkpoint) return;
+  const entry = { ...game.checkpoint, savedAt: Date.now() };
+  const arr = readCheckpointsArray();
+  while (arr.length < CHECKPOINT_SLOTS) arr.push(null);
+  arr[slotIdx] = entry;
+  writeCheckpointsArray(arr);
+  game.checkpoints = arr;
+  refreshCheckpointPortalBtn();
+}
+
+function readCheckpointsArray() {
   try {
-    const raw = localStorage.getItem(CHECKPOINT_KEY);
-    if (raw) game.checkpoint = JSON.parse(raw);
-  } catch { game.checkpoint = null; }
+    const raw = localStorage.getItem(CHECKPOINTS_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed)) return parsed.slice(0, CHECKPOINT_SLOTS);
+    }
+  } catch {}
+  // Migrate legacy single-key format: promote to slot 1 of the new ring.
+  try {
+    const legacy = localStorage.getItem(CHECKPOINT_KEY);
+    if (legacy) {
+      const cp = JSON.parse(legacy);
+      const arr = [{ ...cp, savedAt: Date.now() }];
+      writeCheckpointsArray(arr);
+      try { localStorage.removeItem(CHECKPOINT_KEY); } catch {}
+      return arr;
+    }
+  } catch {}
+  return [];
+}
+function writeCheckpointsArray(arr) {
+  try { localStorage.setItem(CHECKPOINTS_KEY, JSON.stringify(arr)); } catch {}
+}
+
+function loadPersistedCheckpoint() {
+  const arr = readCheckpointsArray();
+  game.checkpoints = arr;
+  // game.checkpoint mirrors the most recent non-null slot so the runEnd
+  // Continue button and Checkpoint Portal enabled state still work.
+  game.checkpoint = arr.find(e => e) || null;
   refreshCheckpointPortalBtn();
 }
 
 function clearPersistedCheckpoint() {
+  try { localStorage.removeItem(CHECKPOINTS_KEY); } catch {}
   try { localStorage.removeItem(CHECKPOINT_KEY); } catch {}
+  game.checkpoints = [];
   game.checkpoint = null;
   refreshCheckpointPortalBtn();
 }
@@ -6374,10 +6705,88 @@ function clearPersistedCheckpoint() {
 function refreshCheckpointPortalBtn() {
   const b = document.getElementById('checkpointPortalBtn');
   if (!b) return;
-  const has = !!game.checkpoint;
+  const has = !!(game.checkpoints && game.checkpoints.some(e => e));
   b.disabled = !has;
   b.style.opacity = has ? '1' : '0.4';
   b.style.cursor = has ? '' : 'not-allowed';
+}
+
+function formatRelativeTime(ts) {
+  if (!ts) return '';
+  const s = Math.max(0, Math.floor((Date.now() - ts) / 1000));
+  if (s < 45) return t('justNow');
+  const m = Math.floor(s / 60);
+  if (m < 60) return `${m} ${t('minAgo')}`;
+  const h = Math.floor(m / 60);
+  if (h < 24) return `${h} ${t('hrAgo')}`;
+  const d = Math.floor(h / 24);
+  return `${d} ${t('dayAgo')}`;
+}
+
+// --- Slot-picker overlay -----------------------------------------
+// One overlay used in two modes:
+//   'load' — click a filled slot to resume the run at that save.
+//   'save' — click any slot (filled or empty) to overwrite it with the
+//            current in-run state. Empty slots are valid targets in save mode.
+let checkpointSlotsMode = 'load';
+function openCheckpointSlots(mode) {
+  checkpointSlotsMode = mode;
+  loadPersistedCheckpoint(); // refresh array before rendering
+  const title = $('checkpointSlotsTitle');
+  const sub   = $('checkpointSlotsSubtitle');
+  if (title) title.textContent = mode === 'save' ? t('saveCheckpoint') : t('checkpointPortal');
+  if (sub)   sub.textContent   = mode === 'save' ? t('chooseSaveSlot') : t('chooseLoadSlot');
+  renderCheckpointSlotGrid();
+  showOverlay($('checkpointSlots'));
+}
+function renderCheckpointSlotGrid() {
+  const grid = $('checkpointSlotGrid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  const arr = game.checkpoints || [];
+  for (let i = 0; i < CHECKPOINT_SLOTS; i++) {
+    const entry = arr[i] || null;
+    const card = document.createElement('div');
+    card.className = 'class-card';
+    card.style.minWidth = '240px';
+    const isEmpty = !entry;
+    const canActivate = checkpointSlotsMode === 'save' || !isEmpty;
+    if (!canActivate) {
+      card.style.opacity = '0.45';
+      card.style.cursor = 'not-allowed';
+    }
+    const label = `${t('slotLabel')} ${i + 1}`;
+    const body = isEmpty
+      ? `<div class="cdesc" style="opacity:0.6;">${t('emptySlot')}</div>`
+      : `<div class="cdesc"><b>${t('floor')} ${entry.floor} · ${t('room')} ${(entry.roomIdx || 0) + 1}</b></div>
+         <div class="cdesc" style="opacity:0.75;">${formatRelativeTime(entry.savedAt)}</div>
+         <div class="cdesc" style="opacity:0.6;">${t('lvl')} ${entry.playerLevel || 1} · ${t('kills')} ${entry.kills || 0}</div>`;
+    card.innerHTML = `<div class="cname">${label}</div>${body}`;
+    if (canActivate) {
+      card.addEventListener('click', () => handleCheckpointSlotClick(i));
+    }
+    grid.appendChild(card);
+  }
+}
+function handleCheckpointSlotClick(slotIdx) {
+  if (checkpointSlotsMode === 'save') {
+    if (!game.player) return;
+    saveCheckpoint(game.floor, game.roomIdx);
+    persistCheckpointToSlot(slotIdx);
+    hideAllOverlays();
+    // Re-show pause overlay since the player was in the pause menu.
+    if (game.state === 'paused') showOverlay($('pause'));
+    showBanner(t('checkpointSaved'), `${t('slotLabel')} ${slotIdx + 1}`);
+    sfx('pickup');
+    return;
+  }
+  // load mode
+  const arr = game.checkpoints || [];
+  const entry = arr[slotIdx];
+  if (!entry) return;
+  game.checkpoint = entry;
+  initAudio();
+  continueFromCheckpoint();
 }
 
 function clearRoomAndAdvance() {
@@ -6676,6 +7085,7 @@ function rollUpgradeChoices(n=4) {
 }
 function applyUpgrade(id) {
   game.upgrades[id] = (game.upgrades[id] || 0) + 1;
+  game.lastUpgradePickId = 'upg:' + id;
   // HP upgrade heals
   if (id === 'hp') game.player.hp = Math.min(game.player.maxHp, game.player.hp + 15);
   if (id === 'ammo') game.player.ammo = game.player.maxAmmo;
@@ -6891,6 +7301,7 @@ function confirmSelectedSuperPower() {
   const p = game.currentSPChoices[game.selectedSPChoice];
   if (!p) return;
   game.superpowers.add(p.id);
+  game.lastUpgradePickId = 'sp:' + p.id;
   // Juggernaut bumps max HP — heal on pick so the player benefits immediately.
   if (game.player) {
     game.player.hp = Math.min(game.player.maxHp, game.player.hp + 999);
@@ -6937,7 +7348,7 @@ function resumeFromUpgrade() {
 
 // ------------- UI ----------------------------------------------
 const $ = id => document.getElementById(id);
-const overlays = () => ['langSelect','menu','classSelect','envSelect','upgradeChoice','superPowerChoice','runEnd','pause','settings','appearance'].map(id => $(id));
+const overlays = () => ['langSelect','menu','classSelect','envSelect','upgradeChoice','superPowerChoice','runEnd','pause','settings','appearance','checkpointSlots'].map(id => $(id));
 function hideAllOverlays() { overlays().forEach(o => o.classList.add('hidden')); }
 function showOverlay(el) { hideAllOverlays(); el.classList.remove('hidden'); el.classList.add('fade-in'); }
 
@@ -7002,11 +7413,13 @@ function renderUpgradeStack() {
   // the exact count. During gameplay the chips remain dimmed but still carry
   // the tooltip, so mouse-hover also works mid-run.
   wrap.classList.toggle('paused', game.state === 'paused');
+  const lastKey = game.lastUpgradePickId;
   for (const [id, lv] of Object.entries(game.upgrades)) {
     if (!lv) continue;
     const u = UPG_BY_ID[id];
     const chip = document.createElement('div');
     chip.className = 'upg-chip';
+    if (lastKey === 'upg:' + id) chip.classList.add('spark');
     const maxTxt = (u.max == null) ? '∞' : u.max;
     const name = tUpgradeName(id);
     chip.title = `${name} — ${lv} / ${maxTxt}`;
@@ -7021,6 +7434,7 @@ function renderUpgradeStack() {
       if (!p) continue;
       const chip = document.createElement('div');
       chip.className = 'upg-chip';
+      if (lastKey === 'sp:' + id) chip.classList.add('spark');
       chip.title = `${p.name} — ${p.desc}`;
       chip.innerHTML = `<div class="dot" style="background:${p.color}">${p.icon}</div><span>${p.name}</span><span class="lvl">★</span>`;
       wrap.appendChild(chip);
@@ -7453,6 +7867,8 @@ function startRun() {
   game.upgrades = {};
   game.superpowers = new Set();
   game.phoenixUsed = false;
+  game.bossVariantsSeen = [];
+  game.lastUpgradePickId = null;
   game.pendingSuperPower = false;
   game.pendingVictory = false;
   game.currentSPChoices = [];
@@ -7557,6 +7973,8 @@ function continueFromCheckpoint() {
   game.upgrades = { ...cp.upgrades };
   game.superpowers = new Set(cp.superpowers || []);
   game.phoenixUsed = !!cp.phoenixUsed;
+  game.bossVariantsSeen = Array.isArray(cp.bossVariantsSeen) ? [...cp.bossVariantsSeen] : [];
+  game.lastUpgradePickId = null;
   game.pendingSuperPower = false;
   game.pendingVictory = false;
   game.currentSPChoices = [];
@@ -7786,26 +8204,39 @@ $('continueBtn').addEventListener('click', () => { initAudio(); continueFromChec
 $('resumeBtn').addEventListener('click', () => togglePause());
 $('pauseMenuBtn').addEventListener('click', () => quitToMenu());
 
-// Checkpoint Portal on the main menu: resumes a persisted run if one exists.
+// Checkpoint Portal on the main menu: opens the 3-slot load picker.
 const _checkpointPortalBtn = $('checkpointPortalBtn');
 if (_checkpointPortalBtn) {
   _checkpointPortalBtn.addEventListener('click', () => {
     initAudio();
     loadPersistedCheckpoint();
-    if (game.checkpoint) continueFromCheckpoint();
-    else showBanner(t('noCheckpoint'), '');
+    const arr = game.checkpoints || [];
+    if (!arr.some(e => e)) { showBanner(t('noCheckpoint'), ''); return; }
+    openCheckpointSlots('load');
   });
 }
 
-// Pause-menu "Save Checkpoint": captures live run state to localStorage.
+// Pause-menu "Save Checkpoint": opens the 3-slot picker in save mode so the
+// player chooses which slot to overwrite.
 const _pauseSaveBtn = $('pauseSaveCheckpointBtn');
 if (_pauseSaveBtn) {
   _pauseSaveBtn.addEventListener('click', () => {
     if (!game.player) return;
-    saveCheckpoint(game.floor, game.roomIdx);
-    persistCheckpoint();
-    refreshCheckpointPortalBtn();
-    showBanner(t('checkpointSaved'), '');
+    loadPersistedCheckpoint();
+    openCheckpointSlots('save');
+  });
+}
+
+// Checkpoint slots overlay — Back button behaviour depends on mode: from
+// 'save' we re-open the pause overlay; from 'load' we return to main menu.
+const _cpSlotsBack = $('checkpointSlotsBackBtn');
+if (_cpSlotsBack) {
+  _cpSlotsBack.addEventListener('click', () => {
+    if (checkpointSlotsMode === 'save' && game.state === 'paused') {
+      showOverlay($('pause'));
+    } else {
+      showOverlay($('menu'));
+    }
   });
 }
 
