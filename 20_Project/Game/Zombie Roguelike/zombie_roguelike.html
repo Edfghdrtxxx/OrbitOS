@@ -188,7 +188,121 @@
     color: var(--c-accent);
     letter-spacing: 1px;
   }
-  /* Right column reserved for future icons */
+  /* Right column: Risk-of-Rain-style difficulty indicator */
+  .diff-hud {
+    position: absolute;
+    top: 3vh;
+    right: 3vh;
+    background: rgba(15, 10, 26, 0.82);
+    border: 2px solid var(--c-dark);
+    box-shadow: 0 3px 0 var(--c-dark), inset 0 2px 0 rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 6px 10px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+    min-width: 116px;
+    font-weight: 900;
+  }
+  .diff-hud.hidden { display: none; }
+  .diff-hud .dh-label {
+    font-size: 7px;
+    opacity: 0.65;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .diff-hud .dh-time {
+    font-family: 'Bangers', 'Courier New', monospace;
+    font-size: 26px;
+    letter-spacing: 2px;
+    line-height: 1;
+    color: #fff;
+    font-variant-numeric: tabular-nums;
+  }
+  .diff-hud .dh-tier {
+    font-family: 'Bangers', 'ZCOOL KuaiLe', 'Noto Sans SC', sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    line-height: 1;
+    text-shadow: 2px 2px 0 var(--c-dark);
+    transition: color 0.2s ease;
+  }
+  .diff-hud .dh-bar {
+    width: 100%;
+    height: 6px;
+    background: #0a0614;
+    border-radius: 4px;
+    border: 2px solid var(--c-dark);
+    overflow: hidden;
+    margin-top: 2px;
+  }
+  .diff-hud .dh-fill {
+    height: 100%;
+    width: 0%;
+    background: #8fcf3f;
+    transition: width 0.18s linear, background-color 0.25s ease;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.25);
+  }
+  .diff-hud.maxed .dh-fill {
+    animation: diffMaxPulse 1.1s ease-in-out infinite;
+  }
+  @keyframes diffMaxPulse {
+    0%, 100% { filter: brightness(0.85); }
+    50%      { filter: brightness(1.35); }
+  }
+  @media (max-height: 560px) {
+    .diff-hud { padding: 4px 8px 6px; min-width: 92px; top: 2vh; right: 2vh; }
+    .diff-hud .dh-time { font-size: 20px; letter-spacing: 1.5px; }
+    .diff-hud .dh-tier { font-size: 13px; letter-spacing: 1.5px; }
+    .diff-hud .dh-bar  { height: 5px; }
+  }
+  /* Bottom-left: player character-level indicator. Mirrors the diff-hud pill
+     aesthetic so it reads as the same HUD family. */
+  .lvl-hud {
+    position: absolute;
+    bottom: 3vh;
+    left: 3vh;
+    background: rgba(15, 10, 26, 0.82);
+    border: 2px solid var(--c-dark);
+    box-shadow: 0 3px 0 var(--c-dark), inset 0 2px 0 rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 4px 12px 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1px;
+    font-weight: 900;
+  }
+  .lvl-hud.hidden { display: none; }
+  .lvl-hud .lh-label {
+    font-size: 7px;
+    opacity: 0.65;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--c-accent);
+  }
+  .lvl-hud .lh-value {
+    font-family: 'Bangers', 'Courier New', monospace;
+    font-size: 28px;
+    letter-spacing: 2px;
+    line-height: 1;
+    color: var(--c-accent);
+    font-variant-numeric: tabular-nums;
+    text-shadow: 2px 2px 0 var(--c-dark);
+  }
+  .lvl-hud.bumped .lh-value {
+    animation: lvlBump 0.45s ease-out;
+  }
+  @keyframes lvlBump {
+    0%   { transform: scale(1); }
+    40%  { transform: scale(1.18); color: #fff; }
+    100% { transform: scale(1); }
+  }
+  @media (max-height: 560px) {
+    .lvl-hud { padding: 3px 10px 5px; bottom: 2vh; left: 2vh; }
+    .lvl-hud .lh-value { font-size: 22px; letter-spacing: 1.5px; }
+  }
   /* Wave / transition banner */
   .banner {
     position: absolute;
@@ -264,6 +378,82 @@
     padding: 40px;
   }
   .overlay.hidden { display: none; }
+  /* Pause stats panel — informational, non-interactive. Sits to the left of
+     the resume/settings/quit buttons when there's room; wraps below on
+     narrow viewports. Monospace-ish for numeric legibility. */
+  .pause-body {
+    display: flex; gap: 28px; flex-wrap: wrap; align-items: flex-start;
+    justify-content: center;
+    width: min(1100px, 96vw);
+  }
+  .pause-buttons {
+    display: flex; flex-direction: column; gap: 12px;
+    min-width: 200px;
+  }
+  .stats-panel {
+    flex: 1 1 640px;
+    max-width: 820px;
+    background: rgba(26, 20, 40, 0.72);
+    border: 2px solid rgba(200, 129, 255, 0.35);
+    border-radius: 12px;
+    padding: 14px 18px 18px;
+    max-height: 72vh;
+    overflow-y: auto;
+    font-family: 'Consolas', 'Menlo', 'Monaco', 'Noto Sans SC', monospace;
+    color: #e5e0f5;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .stats-title {
+    font-family: 'Bangers', 'ZCOOL KuaiLe', 'Noto Sans SC', sans-serif;
+    font-size: 22px; letter-spacing: 3px;
+    color: var(--c-cool);
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  .stats-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 10px 22px;
+  }
+  .stats-group { break-inside: avoid; }
+  .stats-group h4 {
+    margin: 6px 0 4px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--c-accent);
+    text-transform: uppercase;
+    border-bottom: 1px dashed rgba(255, 189, 46, 0.3);
+    padding-bottom: 3px;
+  }
+  .stat-line {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    align-items: baseline;
+    padding: 2px 0;
+  }
+  .stat-line .lbl { color: #b8b0d0; }
+  .stat-line .val { color: #ffffff; text-align: right; font-variant-numeric: tabular-nums; }
+  .stat-line .formula { color: #8a7fa8; font-size: 11px; display: block; }
+  .stats-upgrades {
+    grid-column: 1 / -1;
+    display: flex; flex-wrap: wrap; gap: 6px;
+    padding-top: 4px;
+  }
+  .stats-upgrades .pill-chip {
+    background: rgba(123, 104, 238, 0.18);
+    border: 1px solid rgba(123, 104, 238, 0.4);
+    border-radius: 10px;
+    padding: 2px 8px;
+    font-size: 11px;
+  }
+  @media (max-width: 720px) {
+    .stats-panel { font-size: 11px; padding: 10px 12px; max-height: 60vh; }
+    .stats-title { font-size: 18px; }
+    .stats-columns { grid-template-columns: 1fr; }
+    .pause-buttons { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+  }
   .title {
     font-family: 'Bangers', 'ZCOOL KuaiLe', 'Noto Sans SC', sans-serif;
     font-size: 96px;
@@ -1053,6 +1243,20 @@
     <!-- Left: active upgrades -->
     <div class="upgrade-stack" id="upgradeStack"></div>
 
+    <!-- Top-right: Risk-of-Rain-style difficulty indicator -->
+    <div class="diff-hud hidden" id="diffHud">
+      <div class="dh-label" data-i18n="time">TIME</div>
+      <div class="dh-time" id="dhTime">00:00</div>
+      <div class="dh-tier" id="dhTier">EASY</div>
+      <div class="dh-bar"><div class="dh-fill" id="dhFill"></div></div>
+    </div>
+
+    <!-- Bottom-left: player character level. "Lv N" reads in both EN/ZH. -->
+    <div class="lvl-hud hidden" id="lvlHud">
+      <div class="lh-label" data-i18n="lvl">LVL</div>
+      <div class="lh-value" id="lhValue">Lv 1</div>
+    </div>
+
     <div class="banner" id="banner"></div>
     <div class="damage-flash" id="damageFlash"></div>
     <div class="xp-flash" id="xpFlash"></div>
@@ -1201,11 +1405,18 @@
   <!-- PAUSE -->
   <div class="overlay hidden" id="pause">
     <div class="subtitle cool" data-i18n="paused">PAUSED</div>
-    <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center;">
-      <button class="btn cool" id="resumeBtn" data-i18n="resume">RESUME</button>
-      <button class="btn hot" id="pauseAppearanceBtn" data-i18n="appearance">APPEARANCE</button>
-      <button class="btn" id="pauseSettingsBtn" data-i18n="settings">SETTINGS</button>
-      <button class="btn" id="pauseMenuBtn" data-i18n="quitRun">QUIT RUN</button>
+    <div class="pause-body">
+      <!-- STATS: populated by renderStatsPanel() on pause open -->
+      <div class="stats-panel" id="statsPanel" aria-live="polite">
+        <div class="stats-title" data-i18n="stats">STATS</div>
+        <div class="stats-columns" id="statsColumns"></div>
+      </div>
+      <div class="pause-buttons">
+        <button class="btn cool" id="resumeBtn" data-i18n="resume">RESUME</button>
+        <button class="btn hot" id="pauseAppearanceBtn" data-i18n="appearance">APPEARANCE</button>
+        <button class="btn" id="pauseSettingsBtn" data-i18n="settings">SETTINGS</button>
+        <button class="btn" id="pauseMenuBtn" data-i18n="quitRun">QUIT RUN</button>
+      </div>
     </div>
   </div>
 
@@ -1336,6 +1547,45 @@ const I18N = {
     level: 'LEVEL', time: 'TIME', upgrades: 'UPGRADES',
     newRun: 'NEW RUN', menu: 'MENU',
     paused: 'PAUSED', resume: 'RESUME', quitRun: 'QUIT RUN',
+    // Pause stats panel labels
+    stats: 'STATS',
+    stat_combat: 'COMBAT',
+    stat_defense: 'DEFENSE / MOBILITY',
+    stat_dot: 'DAMAGE OVER TIME',
+    stat_runstate: 'RUN STATE',
+    stat_damage: 'Damage',
+    stat_fireRate: 'Fire rate',
+    stat_reload: 'Reload time',
+    stat_crit: 'Crit chance / damage',
+    stat_pierce: 'Pierce',
+    stat_ammo: 'Ammo',
+    stat_swingDmg: 'Swing damage',
+    stat_swingArc: 'Swing arc',
+    stat_swingCd: 'Swing cooldown',
+    stat_hp: 'HP',
+    stat_speed: 'Move speed',
+    stat_dash: 'Dash',
+    stat_jump: 'Jump',
+    stat_regen: 'Regen',
+    stat_thorns: 'Thorns',
+    stat_vamp: 'Vamp',
+    stat_ignite: 'Ignite',
+    stat_bleed: 'Bleed',
+    stat_plague: 'Plague',
+    stat_floorRoom: 'Floor / Room',
+    stat_difficulty: 'Difficulty',
+    stat_runtime: 'Run time',
+    stat_xp: 'XP',
+    stat_activeUpgrades: 'Active upgrades',
+    stat_none: '(none)',
+    stat_shotsSec: 'sh/s',
+    stat_sec: 's',
+    stat_px: 'px',
+    stat_pxSec: 'px/s',
+    stat_perSec: '/s',
+    stat_perHit: '/hit',
+    stat_melee: '(melee)',
+    stat_ranged: '(ranged)',
     hp: 'HP', xp: 'XP', ammo: 'AMMO',
     reloadingText: 'RELOAD',
     dashCap: 'DASH', space: 'SPACE', shift: 'SHIFT', jumpCap: 'JUMP', jump: 'Jump',
@@ -1441,6 +1691,45 @@ const I18N = {
     level: '等级', time: '用时', upgrades: '升级',
     newRun: '再来一局', menu: '主菜单',
     paused: '已暂停', resume: '继续', quitRun: '退出本局',
+    // Pause stats panel labels (ZH parity with EN)
+    stats: '属性',
+    stat_combat: '战斗',
+    stat_defense: '防御 / 机动',
+    stat_dot: '持续伤害',
+    stat_runstate: '本局状态',
+    stat_damage: '伤害',
+    stat_fireRate: '射速',
+    stat_reload: '换弹时间',
+    stat_crit: '暴击率 / 倍率',
+    stat_pierce: '穿透',
+    stat_ammo: '弹药',
+    stat_swingDmg: '挥砍伤害',
+    stat_swingArc: '挥砍弧度',
+    stat_swingCd: '挥砍冷却',
+    stat_hp: '生命',
+    stat_speed: '移动速度',
+    stat_dash: '冲刺',
+    stat_jump: '跳跃',
+    stat_regen: '回复',
+    stat_thorns: '反伤',
+    stat_vamp: '吸血',
+    stat_ignite: '点燃',
+    stat_bleed: '流血',
+    stat_plague: '瘟疫',
+    stat_floorRoom: '楼层 / 房间',
+    stat_difficulty: '难度',
+    stat_runtime: '用时',
+    stat_xp: '经验',
+    stat_activeUpgrades: '已选升级',
+    stat_none: '（无）',
+    stat_shotsSec: '发/秒',
+    stat_sec: '秒',
+    stat_px: '像素',
+    stat_pxSec: '像素/秒',
+    stat_perSec: '/秒',
+    stat_perHit: '/命中',
+    stat_melee: '（近战）',
+    stat_ranged: '（远程）',
     hp: '生命', xp: '经验', ammo: '弹药',
     reloadingText: '换弹中',
     dashCap: '冲刺', space: '空格', shift: 'SHIFT', jumpCap: '跳跃', jump: '跳跃',
@@ -1559,6 +1848,9 @@ function applyTranslations() {
   if (game && game.state === 'upgradeChoice' && typeof renderChoiceCards === 'function') {
     renderChoiceCards();
   }
+  if (game && game.state === 'paused' && typeof renderStatsPanel === 'function') {
+    renderStatsPanel();
+  }
   refreshLangCardActive();
   if (typeof refreshSkinCardActive === 'function') refreshSkinCardActive();
   if (typeof renderSkinCards === 'function') renderSkinCards();
@@ -1614,6 +1906,16 @@ function refreshSkinCardActive() {
 const keys = Object.create(null);
 const mouse = { x: W/2, y: H/2, worldX: 0, worldY: 0, down: false };
 const touchAim = { active: false, angle: 0 };  // mobile right-stick override
+// Reset all held inputs. Called at every gameplay-state transition that
+// interrupts the `keydown`/`keyup` pairing (pause, level-up freeze, upgrade
+// card, death, run start, window blur). Without this the browser never
+// delivers a `keyup` while an overlay is open, so WASD/mouse stay "pressed"
+// and the player ghosts forward the moment the overlay dismisses.
+function clearInputs() {
+  for (const k in keys) keys[k] = false;
+  mouse.down = false;
+  touchAim.active = false;
+}
 addEventListener('keydown', e => {
   // Upgrade choice: arrows / 1-3 select, Enter confirms, swallow everything else
   if (game.state === 'upgradeChoice') {
@@ -1668,6 +1970,10 @@ addEventListener('keydown', e => {
   if (e.key === 'Escape') togglePause();
 });
 addEventListener('keyup', e => { keys[e.key.toLowerCase()] = false; });
+// Alt-tabbing / minimizing / clicking to another window drops the `keyup`
+// event for any keys currently held. Wipe the input state on blur so the
+// player doesn't return to a window ghost-walking in the last-held direction.
+addEventListener('blur', () => { clearInputs(); });
 canvas.addEventListener('mousemove', e => {
   const r = canvas.getBoundingClientRect();
   mouse.x = (e.clientX - r.left) * (canvas.width / r.width);
@@ -1865,8 +2171,11 @@ const ZTYPES = {
   // means cold: standing close chills you slower, and the howler's buffing
   // allies makes peeling off to kill it a real decision.
   howler:   { hp: 34,  speed: 55,  damage: 12, radius: 19, color:'#7bb8e0', eye:'#ffe066', score: 28,  xp: 14, touchCd: 700, minFloor: 2,
-              auraR: 250, auraSpdMul: 1.30, auraDmgMul: 1.20,
-              chillMul: 0.70 },
+              // Radius tightened 250->200 and chill softened 0.70->0.82 so the
+              // howler is still "priority-target" but no longer dominates room
+              // control when stacked with bloater puddles/glacial pulses.
+              auraR: 200, auraSpdMul: 1.30, auraDmgMul: 1.20,
+              chillMul: 0.82 },
   // Stalker: nearly invisible until reveal range, then commits to a leap-lunge.
   // Punishes tunnel-vision. Lower HP, sneak speed bonus when unrevealed.
   stalker:  { hp: 24,  speed: 95,  damage: 18, radius: 17, color:'#5a4a78', eye:'#ff6b6b', score: 26,  xp: 13, touchCd: 600, minFloor: 3,
@@ -1905,10 +2214,15 @@ function enemyStats(type, floor, elite) {
   const base = ZTYPES[type];
   const isBoss = isBossKind(type);
   // Bosses get steeper scaling on top of the normal per-floor curve.
-  const bossHpBonus  = isBoss ? 1.8 * Math.pow(1.22, floor - 1) : 1;
+  // HP curve softened per review: both boss-path exponents dropped from
+  // 1.22/1.25 -> 1.18 so the F5 cliff roughly halves (old ~5.4x, new ~3.0x
+  // of the base multiplier) while F1-F3 stay close to tuned. Non-boss HP
+  // scaling (1.25) is untouched.
+  const bossHpBonus  = isBoss ? 1.8 * Math.pow(1.18, floor - 1) : 1;
   const bossDmgBonus = isBoss ? 1.1 * Math.pow(1.08, floor - 1) : 1;
   const bossSpdBonus = isBoss ? 1 + 0.06 * (floor - 1) : 1;
-  const hpMul  = Math.pow(1.25, floor - 1) * (elite ? 2.0 : 1.0) * bossHpBonus;
+  const hpFloorMul = isBoss ? Math.pow(1.18, floor - 1) : Math.pow(1.25, floor - 1);
+  const hpMul  = hpFloorMul * (elite ? 2.0 : 1.0) * bossHpBonus;
   const dmgMul = Math.pow(1.15, floor - 1) * (elite ? 1.5 : 1.0) * bossDmgBonus;
   return {
     hp: Math.round(base.hp * hpMul),
@@ -2052,6 +2366,7 @@ const game = {
   damageNums: [],
   powerups: [],
   poisonClouds: [],   // bloater death residue, slows + DOT player on contact
+  pendingBooms: [],   // overload-affix delayed explosions with telegraph window
   spawnQueue: [],
   spawnTimer: 0,
   kills: 0,
@@ -2083,10 +2398,14 @@ const game = {
 // skip obstacles flagged walkOver:true (gaps, low platforms). passGaps is the
 // same toggle for projectiles (bullets fly, so they always pass gaps — but not
 // solid cover). A null/undefined opts behaves like the legacy call (no pass).
+// Platforms carry walkOver:true but are ALWAYS non-blocking for movement (the
+// layer model handles who's standing on one vs underneath) — they're purely a
+// visual/logical elevation cue, never a collision shape.
 function collidesObstacle(x, y, r, opts) {
   const airborne = opts && opts.airborne;
   const passGaps = opts && opts.passGaps;
   for (const o of game.obstacles) {
+    if (o.type === 'platform') continue;                    // never blocks
     if ((airborne || passGaps) && o.walkOver) continue;
     const cx = clamp(x, o.x, o.x + o.w);
     const cy = clamp(y, o.y, o.y + o.h);
@@ -2094,6 +2413,39 @@ function collidesObstacle(x, y, r, opts) {
     if (dx*dx + dy*dy < r*r) return true;
   }
   return false;
+}
+
+// ------------- LAYER MODEL ------------------------------------
+// Every combat entity (player + zombies) carries a `.layer` string:
+//   'ground'          — on the ground plane
+//   'platform:<id>'   — standing on the platform with that id
+// Platforms get a stable id at generation time. An entity becomes a platform's
+// occupant only by LANDING on its footprint mid-jump. Walking off the edge
+// auto-drops back to ground (handled in the move-settle step).
+const PLATFORM_LIFT = 14;      // visual/base z-lift when standing on a platform
+// Returns the platform obstacle (with .id) whose AABB contains (x, y), or null.
+// Cheap AABB check — called per-frame per entity, so no boxed returns.
+function platformAt(x, y) {
+  const obs = game.obstacles;
+  for (let i = 0; i < obs.length; i++) {
+    const o = obs[i];
+    if (o.type !== 'platform') continue;
+    if (x >= o.x && x <= o.x + o.w && y >= o.y && y <= o.y + o.h) return o;
+  }
+  return null;
+}
+// Same-layer test for combat filtering. Two entities "can interact" if they
+// share a layer string. An airborne entity (z > 0 from a jump) is in transit
+// between layers and temporarily unreachable by contact-style attacks — that's
+// the existing i-frame contract; we keep it by treating airborne as a pseudo
+// layer mismatch for contact paths. Projectiles/AoE bypass this (see callers).
+function sameLayer(a, b) {
+  if (!a || !b) return false;
+  // Mid-jump entities are between layers — treat contact as mismatched until
+  // they land and resolve.
+  if ((a.z || 0) > 0 && a.jumpT > 0) return false;
+  if ((b.z || 0) > 0 && b.jumpT > 0) return false;
+  return (a.layer || 'ground') === (b.layer || 'ground');
 }
 // Coarse line-of-sight check: walk a fat ray in fixed steps and reject if any
 // step lands inside an obstacle. Used by spitter AI to gate shots.
@@ -2173,6 +2525,9 @@ class Player {
     this.jumpPeak = 28;       // max apparent elevation in pixels (for shadow offset)
     this.jumpCd = 0;
     this.jumpCdMax = 1.2;
+    // Layer: 'ground' or 'platform:<id>'. Resolved on landing; walking off a
+    // platform edge auto-drops to 'ground' via the move-settle step below.
+    this.layer = 'ground';
     // melee swing
     this.swingCd = 0;
     this._baseSwingCdMax = 0.55;
@@ -2258,6 +2613,10 @@ class Player {
       this.z = Math.sin(frac * Math.PI) * this.jumpPeak;
       if (this.jumpT <= 0) {
         this.z = 0;
+        // Landing: resolve layer. If we land inside a platform footprint we
+        // settle onto that platform (layer id follows); otherwise back to ground.
+        const p = platformAt(this.x, this.y);
+        this.layer = p ? ('platform:' + p.id) : 'ground';
         // Landing puff so the touchdown reads.
         for (let i = 0; i < 12; i++) {
           const a = Math.random()*TAU, s = rand(60, 170);
@@ -2271,6 +2630,15 @@ class Player {
       this.z = 0;
     }
     this.jumpCd = Math.max(0, this.jumpCd - dt);
+
+    // Walk-off-edge drop: if we're on a platform but our center has drifted
+    // off its footprint while grounded, fall back to ground layer. Cheap AABB
+    // check against the specific platform we claim to be on.
+    if (this.jumpT <= 0 && this.layer.startsWith('platform:')) {
+      const id = +this.layer.slice(9);
+      const p = platformAt(this.x, this.y);
+      if (!p || p.id !== id) this.layer = 'ground';
+    }
 
     // Regen
     if (this.regenRate > 0 && this.hp < this.maxHp) {
@@ -2293,10 +2661,13 @@ class Player {
       if (!collidesObstacle(this.x, ny, this.r, airborneOpts)) this.y = ny;
       this.x = clamp(this.x, this.r, world.w - this.r);
       this.y = clamp(this.y, this.r, world.h - this.r);
-      // Blitz Dash: damage zombies passed through (once per dash each)
+      // Blitz Dash: damage zombies passed through (once per dash each).
+      // Same-layer gated — a ground-dash can't blitz zombies standing on a
+      // platform overhead; physically you'd pass beneath them.
       if (this.blitzDmg > 0 && this.blitzHitSet) {
         for (const z of game.zombies) {
           if (z.hp <= 0 || this.blitzHitSet.has(z)) continue;
+          if (!sameLayer(this, z)) continue;
           const d = Math.hypot(z.x - this.x, z.y - this.y);
           if (d < this.r + z.r + 6) {
             z.hurt(this.blitzDmg, this.x, this.y, true);
@@ -2472,6 +2843,9 @@ class Player {
     const arcHalf = this.swingArcWidth / 2;
     for (const z of game.zombies) {
       if (z.hp <= 0) continue;
+      // Melee swing is contact-layer only — can't cleave a zombie perched on
+      // a platform from the ground below.
+      if (!sameLayer(this, z)) continue;
       const dx = z.x - this.x, dy = z.y - this.y;
       const d = Math.hypot(dx, dy);
       if (d > reach + z.r) continue;
@@ -2521,6 +2895,7 @@ class Player {
     sfx('hurt');
     if (this.hp <= 0) {
       game.state = 'dead';
+      clearInputs();
       sfx('gameover');
       showRunEnd(false);
     }
@@ -2540,12 +2915,20 @@ class Player {
       sfx('levelup');
       flashXP();
       showBanner(t('levelUp'), t('chooseYourPath'));
-      flashPrePause();
+      // Full-screen prepause pulse removed on level-up per user request —
+      // the radial purple flash was the "vibration" effect. Keep the XP flash
+      // (subtle edge glow) and the banner; drop only the screen-filling pulse.
+      // flashPrePause();
     }
   }
   draw() {
     const x = this.x, y = this.y;
-    // Shadow stays on the ground; sprite lifts by -z so the jump reads. Shadow
+    // Platform lift: if standing on a platform, render PLATFORM_LIFT px higher
+    // than the ground plane. Jump z stacks on top. Shadow always stays at y
+    // (ground plane) so the lifted sprite reads as elevated.
+    const onPlat = this.layer && this.layer.startsWith('platform:');
+    const baseLift = onPlat ? PLATFORM_LIFT : 0;
+    // Shadow stays on the ground; sprite lifts by -(z + baseLift). Shadow
     // shrinks slightly at peak for extra depth cue.
     const zFrac = Math.max(0, this.z) / Math.max(1, this.jumpPeak);
     ctx.save();
@@ -2558,7 +2941,7 @@ class Player {
     const dashing = this.dashT > 0;
     const skin = getSkin();
     drawPlayerSprite(0, 0, this.r, this.angle, skin, {
-      legBob, bodyFlash, dashing, translateXY: [x, y - this.z]
+      legBob, bodyFlash, dashing, translateXY: [x, y - this.z - baseLift]
     });
     // Melee swing arc visual
     if (this.swingT > 0) {
@@ -2567,7 +2950,7 @@ class Player {
       const reach = this.swingReach;
       const arcHalf = this.swingArcWidth / 2;
       ctx.save();
-      ctx.translate(x, y);
+      ctx.translate(x, y - baseLift);
       ctx.rotate(this.swingAngle);
       // Sweep gradient wedge
       const grad = ctx.createRadialGradient(0, 0, 8, 0, 0, reach);
@@ -2596,7 +2979,7 @@ class Player {
     const frac = this.hp / this.maxHp;
     if (frac > 0 && frac < 1) {
       const bw = 44, bh = 6;
-      drawHPBar(x - bw/2, y - this.r - 16, bw, bh, frac, '#8fcf3f');
+      drawHPBar(x - bw/2, y - this.r - 16 - baseLift, bw, bh, frac, '#8fcf3f');
     }
   }
 }
@@ -3017,11 +3400,115 @@ class Zombie {
       this.bruteDy = 0;
       this.bruteHit = false;    // whether current dash already hit player
     }
+
+    // ---- LAYER + JUMP (per-zombie) ----
+    // Every zombie carries a layer ('ground' or 'platform:<id>') and optional
+    // jump fields so they can pursue the player onto/off of platforms. Bosses
+    // are grounded always (canJump=false); their scripted moves assume a free
+    // field and their telegraphs are too long to mix platform hops in.
+    this.layer = 'ground';
+    this.z = 0;
+    this.jumpT = 0;
+    this.jumpCd = rand(0.5, 1.5); // initial stagger
+    this.jumpDuration = 0.5;
+    this.jumpPeak = 26;
+    this.jumpFromLayer = null;    // layer at takeoff (for combat gating mid-air)
+    this.jumpTargetLayer = null;  // layer we intend to land on
+    // Per-type jump pacing. Runners are springier; brutes lumbering; spitters
+    // prefer to stay at range and rarely jump; bloaters don't bother (they
+    // lumber and explode). Howlers hop to stay near their buffees.
+    if (BOSS_KINDS.has(type)) { this.canJump = false; this.jumpCdMax = 99; }
+    else if (type === 'runner')   { this.canJump = true;  this.jumpCdMax = 1.4; }
+    else if (type === 'brute')    { this.canJump = true;  this.jumpCdMax = 3.5; }
+    else if (type === 'exploder') { this.canJump = true;  this.jumpCdMax = 2.2; }
+    else if (type === 'spitter')  { this.canJump = true;  this.jumpCdMax = 3.2; }
+    else if (type === 'howler')   { this.canJump = true;  this.jumpCdMax = 2.4; }
+    else if (type === 'stalker')  { this.canJump = true;  this.jumpCdMax = 1.8; }
+    else if (type === 'bloater')  { this.canJump = false; this.jumpCdMax = 99; }
+    else                          { this.canJump = true;  this.jumpCdMax = 2.0; } // walker
+  }
+  // Attempt to launch a jump toward (tx, ty), ideally landing on `targetLayer`.
+  // Same physics as the player: z rises sinusoidally for jumpDuration. Movement
+  // during the jump is handled by the normal AI loop with airborne collision
+  // opts; layer resolves on landing from the entity's actual (x,y).
+  tryJump(tx, ty, targetLayer) {
+    if (!this.canJump) return false;
+    if (this.jumpT > 0 || this.jumpCd > 0) return false;
+    this.jumpT = this.jumpDuration;
+    this.jumpCd = this.jumpCdMax;
+    this.jumpFromLayer = this.layer;
+    this.jumpTargetLayer = targetLayer || 'ground';
+    // Takeoff puff — smaller than player's so a crowd jumping doesn't explode
+    // particle count.
+    for (let i = 0; i < 5; i++) {
+      const a = Math.random()*TAU, s = rand(40, 110);
+      game.particles.push(new Particle(this.x, this.y, {
+        vx: Math.cos(a)*s, vy: Math.sin(a)*s * 0.3 + 14,
+        life: 0.28, r: rand(2,4), color:'#c9d9d0', fade:true
+      }));
+    }
+    return true;
   }
   update(dt, player) {
     this.hitFlash = Math.max(0, this.hitFlash - dt);
     this.touchCd = Math.max(0, this.touchCd - dt*1000);
     this.wobble += dt * 3;
+
+    // ---- Jump physics (pseudo-3D elevation, mirrors player.jump) ----
+    if (this.jumpT > 0) {
+      this.jumpT = Math.max(0, this.jumpT - dt);
+      const frac = 1 - this.jumpT / this.jumpDuration;
+      this.z = Math.sin(frac * Math.PI) * this.jumpPeak;
+      if (this.jumpT <= 0) {
+        this.z = 0;
+        // Landing — resolve actual layer from current footprint. We don't
+        // trust jumpTargetLayer blindly because the player's motion during
+        // our 0.5s air time may have pulled us past our target; whatever
+        // footprint we're in is what we land on.
+        const p = platformAt(this.x, this.y);
+        this.layer = p ? ('platform:' + p.id) : 'ground';
+        this.jumpFromLayer = null;
+        this.jumpTargetLayer = null;
+      }
+    } else {
+      this.z = 0;
+      // Walk-off-edge auto-drop: if we claim to be on a platform but have
+      // drifted off its footprint, fall to ground layer. Same rule as player.
+      if (this.layer && this.layer.startsWith('platform:')) {
+        const id = +this.layer.slice(9);
+        const p = platformAt(this.x, this.y);
+        if (!p || p.id !== id) this.layer = 'ground';
+      }
+    }
+    this.jumpCd = Math.max(0, this.jumpCd - dt);
+
+    // ---- Layer-chase jump AI ----
+    // If the player is on a different layer and we're close enough, try to
+    // jump. We approach the player normally for distance, then hop when our
+    // center is close to the target layer's footprint (platform edge if they're
+    // up, or just over the platform edge if we need to drop down).
+    if (this.canJump && this.jumpT <= 0 && this.jumpCd <= 0 && this.hp > 0) {
+      const playerOnPlat = player.layer && player.layer.startsWith('platform:');
+      const selfOnPlat = this.layer && this.layer.startsWith('platform:');
+      if (playerOnPlat && this.layer !== player.layer) {
+        // Target the platform the player is on. Jump when we're within ~110
+        // px of the platform edge (so the 0.5s arc reaches onto the slab).
+        const pid = +player.layer.slice(9);
+        const p = game.obstacles.find(o => o.type === 'platform' && o.id === pid);
+        if (p) {
+          const cx = clamp(this.x, p.x, p.x + p.w);
+          const cy = clamp(this.y, p.y, p.y + p.h);
+          const edgeD = Math.hypot(this.x - cx, this.y - cy);
+          // Already-aboard fallback handled by landing; if edgeD==0 we're in
+          // the footprint but still grounded (not jumping), so a hop resolves
+          // us onto the platform.
+          if (edgeD < 110) this.tryJump(this.x, this.y, 'platform:' + pid);
+        }
+      } else if (!playerOnPlat && selfOnPlat) {
+        // Player is on ground, we're on a platform — hop off toward them.
+        this.tryJump(this.x, this.y, 'ground');
+      }
+    }
 
     // ---- DoT ticks (burn / bleed) ----
     // Tick in 0.5s chunks via accumulator so the damage feel is consistent and
@@ -3220,8 +3707,9 @@ class Zombie {
         }
       } else if (this.bruteState === 'dash') {
         this.move(this.bruteDx, this.bruteDy, this.speed * base.chargeSpdMul, dt);
-        // Damage on contact, once per dash. Keeps it punishing without instakilling.
-        if (!this.bruteHit && d < this.r + player.r + 4 && player.iFrames <= 0) {
+        // Damage on contact, once per dash. Same-layer gated — brute plows
+        // through its own plane only.
+        if (!this.bruteHit && d < this.r + player.r + 4 && player.iFrames <= 0 && sameLayer(this, player)) {
           player.hurt(this.damage * base.chargeDmgMul, this.x, this.y);
           this.bruteHit = true;
           // suppress regular contact damage for a moment so charge + touch don't double-hit
@@ -3315,7 +3803,8 @@ class Zombie {
       } else if (this.stalkState === 'lunge') {
         this.stalkT -= dt * 1000;
         this.move(this.stalkDx, this.stalkDy, this.speed * base.lungeSpdMul, dt);
-        if (!this.stalkHit && d < this.r + player.r + 4 && player.iFrames <= 0) {
+        // Same-layer gated — lunge is a melee pounce.
+        if (!this.stalkHit && d < this.r + player.r + 4 && player.iFrames <= 0 && sameLayer(this, player)) {
           player.hurt(this.damage, this.x, this.y);
           this.stalkHit = true;
           this.touchCd = this.touchCdMax;
@@ -3547,7 +4036,10 @@ class Zombie {
         }
       } else if (this.bruteState === 'dash') {
         this.move(this.bruteDx, this.bruteDy, moveSpd * base.chargeSpdMul, dt);
-        if (!this.bruteHit && d < this.r + player.r + 4 && player.iFrames <= 0) {
+        // Same-layer gated (matches brute charge). Boss stays grounded so this
+        // only ever hits ground players in practice, but the gate keeps the
+        // rule uniform.
+        if (!this.bruteHit && d < this.r + player.r + 4 && player.iFrames <= 0 && sameLayer(this, player)) {
           player.hurt(dmgScaled * base.chargeDmgMul, this.x, this.y);
           this.bruteHit = true;
           this.touchCd = this.touchCdMax;
@@ -3647,12 +4139,12 @@ class Zombie {
     }
 
     // Blazing affix aura — if alive and within 110px, tick a small burn damage
-    // on the player every 0.5s. Independent of contact/iframes so chip damage
-    // accumulates while kiting close. Doesn't stack across multiple blazing
-    // elites (player iframes still gate player.hurt inside).
+    // on the player every 0.5s. Same-layer gated: the blazing aura is a
+    // contact-ish heat field, so a ground player can't be cooked by a blazing
+    // elite perched on a platform.
     if (this.affix === 'blazing') {
       this.blazingAcc += dt;
-      if (d < this.r + 110) {
+      if (d < this.r + 110 && sameLayer(this, player)) {
         while (this.blazingAcc >= 0.5) {
           this.blazingAcc -= 0.5;
           player.hurt(Math.max(2, this.damage * 0.3));
@@ -3662,10 +4154,11 @@ class Zombie {
       }
     }
 
-    // Contact damage — skipped entirely while the player is airborne. This
-    // lets the player jump OVER zombies without taking contact damage or
-    // triggering thorns/knockback (which would read weirdly on a mid-air hit).
-    if (d < this.r + player.r && this.touchCd <= 0 && this.type !== 'exploder' && player.z <= 0) {
+    // Contact damage — gated by layer (same-layer only) + skipped while the
+    // player is airborne. A zombie on a platform cannot body-damage a player
+    // on the ground directly below (they must jump off first). Thorns also
+    // require contact, so they're gated here too.
+    if (d < this.r + player.r && this.touchCd <= 0 && this.type !== 'exploder' && player.z <= 0 && sameLayer(this, player)) {
       player.hurt(this.damage, this.x, this.y);
       this.touchCd = this.touchCdMax;
       // thorns
@@ -3683,12 +4176,15 @@ class Zombie {
     const mag = Math.hypot(vx, vy) || 1;
     const desiredA = Math.atan2(vy, vx);
     let useA = desiredA;
+    // Airborne zombies ignore gaps while mid-jump (same rule as the player).
+    // Platforms were already made non-blocking globally in collidesObstacle.
+    const opts = (this.jumpT > 0) ? { airborne: true } : undefined;
     // Lookahead probe: if an obstacle sits in our path, fan out angles to either
     // side and pick the smallest deflection that clears.
     const lookahead = this.r + 22 + spd * dt * 5;
     const lx = this.x + Math.cos(desiredA) * lookahead;
     const ly = this.y + Math.sin(desiredA) * lookahead;
-    if (collidesObstacle(lx, ly, this.r)) {
+    if (collidesObstacle(lx, ly, this.r, opts)) {
       const offsets = [Math.PI/6, Math.PI/3, Math.PI/2, 2*Math.PI/3, 5*Math.PI/6];
       // Bias toward the previously chosen side so we keep wrapping the same way
       // around an obstacle instead of jittering between sides.
@@ -3699,7 +4195,7 @@ class Zombie {
           const a = desiredA + off * sign;
           const tx = this.x + Math.cos(a) * lookahead;
           const ty = this.y + Math.sin(a) * lookahead;
-          if (!collidesObstacle(tx, ty, this.r)) {
+          if (!collidesObstacle(tx, ty, this.r, opts)) {
             useA = a;
             this._detourSign = sign;
             this._detourT = 0.6;
@@ -3724,8 +4220,8 @@ class Zombie {
     const fy = Math.sin(useA) * mag;
     const nx = this.x + fx * spd * dt;
     const ny = this.y + fy * spd * dt;
-    if (!collidesObstacle(nx, this.y, this.r)) this.x = nx;
-    if (!collidesObstacle(this.x, ny, this.r)) this.y = ny;
+    if (!collidesObstacle(nx, this.y, this.r, opts)) this.x = nx;
+    if (!collidesObstacle(this.x, ny, this.r, opts)) this.y = ny;
     this.x = clamp(this.x, this.r, world.w - this.r);
     this.y = clamp(this.y, this.r, world.h - this.r);
   }
@@ -3817,10 +4313,15 @@ class Zombie {
         }));
       }
     } else if (this.affix === 'overload') {
-      // Small explosion on death — 60% of the exploder's base boom for a
-      // predictable tell since this enemy looked normal up until it popped.
+      // Small explosion on death — schedule with a 0.35s telegraph so the
+      // player has a window to jump/dash out. Damage dropped from 0.9x zombie
+      // damage to 0.7x so a HAHAHA-tier overload isn't a one-shot if caught.
       const boomR = 95 * 0.85;
-      game.explosions.push(new Explosion(this.x, this.y, boomR, Math.max(10, this.damage * 0.9), false));
+      const dmg = Math.max(10, this.damage * 0.7);
+      game.pendingBooms.push({
+        x: this.x, y: this.y, r: boomR, damage: dmg,
+        windup: 0.35, t: 0, dead: false,
+      });
     }
     // Elite drops
     const dropRoll = Math.random();
@@ -3859,6 +4360,11 @@ class Zombie {
   }
   draw() {
     const x = this.x, y = this.y;
+    // Platform lift: visual elevation when this zombie is standing on a slab.
+    // Jump z stacks on top. Shadow stays at y so the lifted body reads.
+    const onPlat = this.layer && this.layer.startsWith('platform:');
+    const baseLift = onPlat ? PLATFORM_LIFT : 0;
+    const lift = (this.z || 0) + baseLift;
     drawShadow(x, y, this.r);
 
     const now = performance.now();
@@ -3916,6 +4422,23 @@ class Zombie {
         ctx.fillStyle = `rgba(238,210,255,${0.6*pulse})`;
         ctx.beginPath(); ctx.arc(sx, sy, 1.8 + Math.sin(now/180+i), 0, TAU); ctx.fill();
       }
+    }
+
+    // Overload pre-death warning: at <=25% HP paint a fast-flickering
+    // yellow-orange outline + expanding warning ring so the player reads
+    // the impending boom early and can position/dodge.
+    if (this.elite && this.affix === 'overload' && this.hp > 0 && this.hp <= this.maxHp * 0.25) {
+      const flick = (Math.floor(now / 90) % 2 === 0);
+      const ringPhase = (now / 600) % 1;
+      const ringR = this.r * (1.1 + ringPhase * 1.6);
+      ctx.strokeStyle = `rgba(255,189,46,${(1 - ringPhase) * 0.65})`;
+      ctx.lineWidth = 3;
+      ctx.setLineDash([8, 5]);
+      ctx.beginPath(); ctx.arc(x, y, ringR, 0, TAU); ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.strokeStyle = flick ? '#ffbd2e' : '#ff7b5c';
+      ctx.lineWidth = 4;
+      ctx.beginPath(); ctx.arc(x, y, this.r + 2, 0, TAU); ctx.stroke();
     }
 
     // Exploder pulsing glow — intensifies as fuse runs out
@@ -4055,7 +4578,7 @@ class Zombie {
                      (Math.floor(now/80) % 2 === 0);
 
     ctx.save();
-    ctx.translate(x, y);
+    ctx.translate(x, y - lift);
 
     const flash = this.hitFlash > 0 || fuseFlash;
     const bodyColor = flash ? '#ffffff' : this.color;
@@ -4454,7 +4977,7 @@ class Zombie {
     const isBoss = isBossKind(this.type);
     const bw = this.r * 2, bh = isBoss ? 8 : 4;
     const bx = x - bw/2;
-    const by = y - this.r - (isBoss ? 14 : 10);
+    const by = y - this.r - (isBoss ? 14 : 10) - lift;
     if (isBoss) {
       // Per-variant HP bar tint matches the aura color so boss identity reads
       // at a glance from across the room.
@@ -4522,6 +5045,10 @@ function applyHowlerBuffs() {
     if (z.type === 'howler') continue; // no self/peer buff
     let bestSpd = 1, bestDmg = 1;
     for (const h of howlers) {
+      // Howler ally-buff is same-layer only — a howler on a platform doesn't
+      // empower ground-level walkers and vice versa. Feels right: aura is
+      // morale, and you have to be standing with your pack.
+      if (!sameLayer(h, z)) continue;
       const dx = h.x - z.x, dy = h.y - z.y;
       if (dx*dx + dy*dy < auraR2) {
         if (base.auraSpdMul > bestSpd) bestSpd = base.auraSpdMul;
@@ -4544,6 +5071,9 @@ function applyHowlerBuffs() {
   if (player) {
     let chilled = false;
     for (const h of howlers) {
+      // Same-layer only — a howler on a platform can't freeze a ground player
+      // standing beneath. Consistent with the ally-buff rule above.
+      if (!sameLayer(h, player)) continue;
       const dx = h.x - player.x, dy = h.y - player.y;
       if (dx*dx + dy*dy < auraR2) { chilled = true; break; }
     }
@@ -4655,6 +5185,46 @@ function drawPoisonClouds() {
     ctx.beginPath(); ctx.arc(0, 0, c.radius, 0, TAU); ctx.stroke();
     ctx.restore();
     ctx.setLineDash([]);
+  }
+}
+
+// ------------- PENDING BOOMS (overload affix) ------------------
+// Death-delayed explosions with a 0.35s telegraph so the player can jump or
+// dash out. Detonates into a real Explosion (which pipes player damage
+// through player.hurt, so jump i-frames dodge it cleanly).
+function updatePendingBooms(dt) {
+  if (game.pendingBooms.length === 0) return;
+  for (const pb of game.pendingBooms) {
+    pb.t += dt;
+    if (pb.t >= pb.windup) {
+      game.explosions.push(new Explosion(pb.x, pb.y, pb.r, pb.damage, false));
+      pb.dead = true;
+    }
+  }
+}
+function drawPendingBooms() {
+  for (const pb of game.pendingBooms) {
+    const p = clamp(pb.t / pb.windup, 0, 1);
+    // expanding telegraph circle — grows toward final radius as windup runs
+    const tr = pb.r * (0.35 + 0.65 * p);
+    ctx.strokeStyle = `rgba(255,189,46,${0.45 + 0.45 * p})`;
+    ctx.lineWidth = 3 + 3 * p;
+    ctx.setLineDash([10, 6]);
+    ctx.beginPath(); ctx.arc(pb.x, pb.y, tr, 0, TAU); ctx.stroke();
+    ctx.setLineDash([]);
+    // inner warning glow
+    const grad = ctx.createRadialGradient(pb.x, pb.y, 2, pb.x, pb.y, tr);
+    grad.addColorStop(0, `rgba(255,107,107,${0.12 + 0.18 * p})`);
+    grad.addColorStop(1, 'rgba(255,107,107,0)');
+    ctx.fillStyle = grad;
+    ctx.beginPath(); ctx.arc(pb.x, pb.y, tr, 0, TAU); ctx.fill();
+    // crosshair
+    ctx.strokeStyle = `rgba(255,230,80,${0.5 + 0.4 * p})`;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(pb.x - 10, pb.y); ctx.lineTo(pb.x + 10, pb.y);
+    ctx.moveTo(pb.x, pb.y - 10); ctx.lineTo(pb.x, pb.y + 10);
+    ctx.stroke();
   }
 }
 
@@ -5020,9 +5590,12 @@ function generateObstacles(floor, isBoss, roomIdx = 0) {
       { x: world.w * 0.70, y: world.h * 0.35 },
       { x: world.w * 0.45, y: world.h * 0.70 },
     ];
-    for (const s of spots) {
+    for (let i = 0; i < spots.length; i++) {
+      const s = spots[i];
       const pw = randi(180, 260), ph = randi(140, 200);
-      obs.push({ x: Math.floor(s.x - pw/2), y: Math.floor(s.y - ph/2), w: pw, h: ph, type: 'platform', walkOver: true });
+      // Stable id per platform within the room — used by entity.layer strings
+      // so "layer === 'platform:2'" uniquely identifies which slab they're on.
+      obs.push({ x: Math.floor(s.x - pw/2), y: Math.floor(s.y - ph/2), w: pw, h: ph, type: 'platform', walkOver: true, id: i });
     }
   } else if (archetype === 'chokepoint') {
     // Two big solid pillars forming a corridor through the middle. Forces
@@ -5151,6 +5724,7 @@ function enterRoom(floor, roomIdx) {
   game.damageNums = [];
   game.powerups = [];
   game.poisonClouds = [];
+  game.pendingBooms = [];
   game.obstacles = generateObstacles(floor, game.isBossRoom, roomIdx);
   // Player keeps HP/ammo, but refill ammo a bit
   game.player.ammo = game.player.maxAmmo;
@@ -5158,10 +5732,40 @@ function enterRoom(floor, roomIdx) {
   // Place player at center
   game.player.x = world.w/2;
   game.player.y = world.h/2;
-  // Push out of any obstacle
-  let safety = 0;
-  while (collidesObstacle(game.player.x, game.player.y, game.player.r + 8) && safety < 20) {
-    game.player.x += 40; safety++;
+  // Reset airborne / mid-dash state so the cross-room boundary can't be used
+  // as a free jump/dash extender or an invuln cheese.
+  game.player.z = 0;
+  game.player.jumpT = 0;
+  game.player.jumpCd = 0;
+  game.player.dashT = 0;
+  game.player.iFrames = 0;
+  // Layer resets to ground — new room spawns the player at center, and even
+  // if center happens to be inside a platform footprint, "start grounded" is
+  // the expected default so the player doesn't spawn mysteriously elevated.
+  game.player.layer = 'ground';
+  // Push out of any obstacle — cycle through 4 cardinal nudges so a pillar
+  // that straddles the center (chokepoint archetype) doesn't trap the player
+  // against the east wall when +x alone can't clear.
+  const nudges = [
+    { dx: 40,  dy: 0   },
+    { dx: 0,   dy: 40  },
+    { dx: -40, dy: 0   },
+    { dx: 0,   dy: -40 },
+  ];
+  let safety = 0, nIdx = 0;
+  while (collidesObstacle(game.player.x, game.player.y, game.player.r + 8) && safety < 80) {
+    const n = nudges[nIdx % nudges.length];
+    const tx = clamp(game.player.x + n.dx, game.player.r + 8, world.w - game.player.r - 8);
+    const ty = clamp(game.player.y + n.dy, game.player.r + 8, world.h - game.player.r - 8);
+    if (tx === game.player.x && ty === game.player.y) {
+      // Hit a world edge in that direction; rotate to the next nudge.
+      nIdx++;
+    } else {
+      game.player.x = tx; game.player.y = ty;
+      // every 20 nudges swap direction so we don't get stuck scraping a wall
+      if (safety > 0 && safety % 20 === 0) nIdx++;
+    }
+    safety++;
   }
   camera.x = game.player.x - W/2;
   camera.y = game.player.y - H/2;
@@ -5298,6 +5902,7 @@ function endRoomCheck() {
 // HP bump only applies at spawn (retroactively scaling live HP would feel
 // unfair or random); damage is rescaled live via the buffSpdMul/buffDmgMul
 // path so it composes with the howler aura buff without clobbering it.
+const DIFFICULTY_TIER_INTERVAL = 30; // seconds of roomT between tier bumps
 const DIFFICULTY_TIERS = [
   { name: 'EASY',    hpMul: 1.00, dmgMul: 1.00, color: '#8fcf3f' },
   { name: 'MEDIUM',  hpMul: 1.15, dmgMul: 1.10, color: '#ffbd2e' },
@@ -5312,7 +5917,7 @@ function difficultyTierName() {
 function updateRoomDifficulty(dt) {
   if (game.roomState !== 'active') return;
   game.roomT += dt;
-  const nextTier = Math.min(DIFFICULTY_TIERS.length - 1, Math.floor(game.roomT / 30));
+  const nextTier = Math.min(DIFFICULTY_TIERS.length - 1, Math.floor(game.roomT / DIFFICULTY_TIER_INTERVAL));
   if (nextTier > game.difficultyTier) {
     const prev = DIFFICULTY_TIERS[game.difficultyTier];
     game.difficultyTier = nextTier;
@@ -5328,6 +5933,61 @@ function updateRoomDifficulty(dt) {
     const label = (currentLang === 'zh') ? '难度：' : 'DIFFICULTY: ';
     showBanner(label + difficultyTierName(), null);
     sfx('levelup');
+  }
+}
+
+// Risk-of-Rain-style persistent difficulty HUD. Shows mm:ss of the current
+// room's elapsed time, a tier name colored by threat, and a progress bar
+// filling toward the next tier bump. At max tier the bar stays full & pulses.
+const DIFFHUD_VISIBLE_STATES = new Set(['playing', 'paused', 'levelup_pending']);
+function updateDifficultyHud() {
+  const el = $('diffHud');
+  if (!el) return;
+  const visible = DIFFHUD_VISIBLE_STATES.has(game.state);
+  if (!visible) { el.classList.add('hidden'); return; }
+  el.classList.remove('hidden');
+  const tIdx = game.difficultyTier | 0;
+  const tier = DIFFICULTY_TIERS[tIdx] || DIFFICULTY_TIERS[0];
+  const secs = Math.max(0, Math.floor(game.roomT));
+  const mm = String(Math.floor(secs / 60)).padStart(2, '0');
+  const ss = String(secs % 60).padStart(2, '0');
+  $('dhTime').textContent = `${mm}:${ss}`;
+  const tierEl = $('dhTier');
+  tierEl.textContent = difficultyTierName();
+  tierEl.style.color = tier.color;
+  const maxed = tIdx >= DIFFICULTY_TIERS.length - 1;
+  let frac;
+  if (maxed) frac = 1;
+  else {
+    const into = game.roomT - tIdx * DIFFICULTY_TIER_INTERVAL;
+    frac = Math.max(0, Math.min(1, into / DIFFICULTY_TIER_INTERVAL));
+  }
+  const fill = $('dhFill');
+  fill.style.width = (frac * 100).toFixed(1) + '%';
+  fill.style.background = tier.color;
+  el.classList.toggle('maxed', maxed);
+}
+
+// Bottom-left player-level indicator. Shares visibility states with the
+// difficulty HUD. Plays a brief scale-bump animation when level changes so
+// the player registers the level-up even without the prepause flash.
+let _lvlHudLast = -1;
+function updateLevelHud() {
+  const el = $('lvlHud');
+  if (!el) return;
+  const visible = DIFFHUD_VISIBLE_STATES.has(game.state) && game.player;
+  if (!visible) { el.classList.add('hidden'); _lvlHudLast = -1; return; }
+  el.classList.remove('hidden');
+  const lv = game.player.level | 0;
+  if (lv !== _lvlHudLast) {
+    $('lhValue').textContent = `Lv ${lv}`;
+    // Only bump on an actual level-up, not on first mount.
+    if (_lvlHudLast !== -1 && lv > _lvlHudLast) {
+      el.classList.remove('bumped');
+      void el.offsetWidth;
+      el.classList.add('bumped');
+    }
+    _lvlHudLast = lv;
   }
 }
 
@@ -5411,6 +6071,7 @@ function showUpgradeChoice() {
   game.selectedChoice = 0;
   game.rerollAvailable = true;
   renderChoiceCards();
+  clearInputs();
   showOverlay($('upgradeChoice'));
   game.state = 'upgradeChoice';
 }
@@ -5502,6 +6163,9 @@ function confirmSelectedUpgrade() {
 function resumeFromUpgrade() {
   hideAllOverlays();
   game.state = 'playing';
+  // Don't restore any pre-interrupt inputs; force the player to re-press
+  // so phantom-movement after a card pick is impossible.
+  clearInputs();
   // If a room transition was queued when level-up interrupted, the ROOM CLEAR
   // banner has already played out behind the upgrade overlay — skip the remaining
   // wait and jump straight to the next room so the player doesn't stare at an
@@ -5543,9 +6207,12 @@ function flashPrePause() {
 function togglePause() {
   if (game.state === 'playing') {
     game.state = 'paused';
+    clearInputs();
+    renderStatsPanel();
     showOverlay($('pause'));
   } else if (game.state === 'paused') {
     game.state = 'playing';
+    clearInputs();
     hideAllOverlays();
   }
 }
@@ -5573,6 +6240,175 @@ function renderUpgradeStack() {
     chip.innerHTML = `<div class="dot" style="background:${u.color}">${u.icon}</div><span>${tUpgradeName(id)}</span><span class="lvl">${lv}</span>`;
     wrap.appendChild(chip);
   }
+}
+
+// Pause stats panel — rebuilt each time the player opens pause so values
+// reflect current level/upgrades/room. Grouped into Combat, Defense/Mobility,
+// DoT (only rows with nonzero chance/dps show), and Run state. Each line has
+// a left label, a right numeric "final" value, and often a small formula line
+// so players can see WHERE the number comes from. Values are computed from
+// the live Player getters so the math matches gameplay exactly.
+function renderStatsPanel() {
+  const panel = $('statsColumns');
+  const titleEl = document.querySelector('#statsPanel .stats-title');
+  if (titleEl) titleEl.textContent = t('stats');
+  if (!panel) return;
+  panel.innerHTML = '';
+  const p = game.player;
+  if (!p) return;
+  const isMelee = p.isMelee;
+  const fmt  = (n, d=2) => (Math.round(n * Math.pow(10, d)) / Math.pow(10, d)).toString();
+  const fmt0 = (n) => Math.round(n).toString();
+  const pct  = (n, d=1) => fmt(n * 100, d) + '%';
+
+  // Build a single "group" <div class="stats-group"> with a heading and rows.
+  function group(titleKey, rows) {
+    const g = document.createElement('div');
+    g.className = 'stats-group';
+    const h = document.createElement('h4');
+    h.textContent = t(titleKey);
+    g.appendChild(h);
+    for (const row of rows) {
+      if (!row) continue;
+      const line = document.createElement('div');
+      line.className = 'stat-line';
+      line.innerHTML =
+        `<div class="lbl">${row.label}${row.formula ? `<span class="formula">${row.formula}</span>` : ''}</div>` +
+        `<div class="val">${row.value}</div>`;
+      g.appendChild(line);
+    }
+    return g;
+  }
+
+  // ---- COMBAT ----
+  const dmgBase = p._baseDamage + 0.2 * (p.level - 1);
+  const dmgMul  = 1 + 0.18 * p.u('dmg');
+  const combatRows = [
+    { label: t('stat_damage'),
+      formula: `(${p._baseDamage} + 0.2×${p.level-1}) × ${fmt(dmgMul,2)}`,
+      value: fmt(p.damage, 2) },
+    // ranged-only stats first — hidden for melee
+    !isMelee && { label: t('stat_fireRate'),
+      formula: `1 / ${fmt(p.fireRate, 3)}${t('stat_sec')}`,
+      value: `${fmt(1 / Math.max(0.001, p.fireRate), 2)} ${t('stat_shotsSec')}` },
+    !isMelee && { label: t('stat_reload'),
+      formula: `${p._baseReload} × 0.82^${p.u('reload')}`,
+      value: `${fmt(p.reloadTime, 2)} ${t('stat_sec')}` },
+    { label: t('stat_crit'),
+      formula: `0.09 × ${p.u('crit')} → capped at 100%`,
+      value: `${pct(p.critChance, 1)} / 2.5×` },
+    !isMelee && { label: t('stat_pierce'),
+      formula: `2 × ${p.u('pierce')}`,
+      value: fmt0(p.pierce) },
+    !isMelee && { label: t('stat_ammo'),
+      formula: `${p._baseMaxAmmo} + 5 × ${p.u('ammo')}`,
+      value: `${fmt0(p.ammo)} / ${fmt0(p.maxAmmo)}` },
+    // melee-only
+    isMelee && { label: `${t('stat_swingDmg')} ${t('stat_melee')}`,
+      formula: `dmg × 1.4 × (1 + 0.375×${p.u('heavy')})`,
+      value: fmt(p.swingDmg, 2) },
+    isMelee && { label: t('stat_swingArc'),
+      formula: `60° × (1 + 0.3×${p.u('cleaver')})`,
+      value: `${fmt(p.swingArcWidth * 180 / Math.PI, 1)}°` },
+    isMelee && { label: t('stat_swingCd'),
+      formula: `${p._baseSwingCdMax} × 0.88^${p.u('swift')}`,
+      value: `${fmt(p.swingCdMax, 2)} ${t('stat_sec')}` },
+  ].filter(Boolean);
+
+  // ---- DEFENSE / MOBILITY ----
+  const defenseRows = [
+    { label: t('stat_hp'),
+      formula: `${p._baseMaxHp} + 15×${p.u('hp')} + 2×${p.level-1}`,
+      value: `${fmt0(p.hp)} / ${fmt0(p.maxHp)}` },
+    { label: t('stat_speed'),
+      formula: `${p._baseSpeed} × (1 + 0.09×${p.u('speed')})`,
+      value: `${fmt0(p._baseSpeed * (1 + 0.09 * p.u('speed')))} ${t('stat_pxSec')}` },
+    { label: t('stat_dash'),
+      formula: `cd ${fmt(p._baseDashCdMax, 2)} × 0.775^${p.u('swift')}, dur ${fmt(p.dashDuration, 2)}${t('stat_sec')}`,
+      value: `${fmt(p.dashCdMax, 2)} ${t('stat_sec')}` },
+    { label: t('stat_jump'),
+      formula: `cd ${fmt(p.jumpCdMax, 2)}${t('stat_sec')}, air ${fmt(p.jumpDuration, 2)}${t('stat_sec')} (i-frames)`,
+      value: `${fmt(p.jumpCdMax, 2)} ${t('stat_sec')}` },
+    p.regenRate > 0 && { label: t('stat_regen'),
+      formula: `0.75 × ${p.u('regen')}`,
+      value: `${fmt(p.regenRate, 2)} HP${t('stat_perSec')}` },
+    p.thornsDmg > 0 && { label: t('stat_thorns'),
+      formula: `7.5 × ${p.u('thorns')}`,
+      value: `${fmt(p.thornsDmg, 1)} ${t('stat_perHit')}` },
+    p.vampHeal > 0 && { label: t('stat_vamp'),
+      formula: `1.5 × ${p.u('vamp')}`,
+      value: `${fmt(p.vampHeal, 1)} HP${t('stat_perHit')}` },
+  ].filter(Boolean);
+
+  // ---- DoT (only nonzero rows) ----
+  const dotRows = [];
+  if (p.igniteChance > 0) dotRows.push({
+    label: t('stat_ignite'),
+    formula: `15% × ${p.u('ignite')} chance, 6 dps, 3s`,
+    value: pct(p.igniteChance, 0),
+  });
+  if (p.bleedDps > 0) dotRows.push({
+    label: t('stat_bleed'),
+    formula: `9 × ${p.u('bleed')} dps on crit, 3s (stacks to 10×)`,
+    value: `${fmt(p.bleedDps, 1)} dps`,
+  });
+  if (p.plagueDps > 0) dotRows.push({
+    label: t('stat_plague'),
+    formula: `6 × ${p.u('plague')} dps, 90px radius, 1.2s`,
+    value: `${fmt(p.plagueDps, 1)} dps`,
+  });
+
+  // ---- RUN STATE ----
+  const runSecs = (performance.now() - game.runStartT) / 1000;
+  const mm = Math.floor(runSecs / 60), ss = Math.floor(runSecs % 60);
+  const tier = (typeof DIFFICULTY_TIERS !== 'undefined' && DIFFICULTY_TIERS[game.difficultyTier]) || null;
+  const tierName = (typeof difficultyTierName === 'function') ? difficultyTierName() : (tier ? tier.name : '-');
+  const runRows = [
+    { label: t('stat_floorRoom'),
+      value: `${game.floor} / ${game.roomIdx+1}/${ROOMS_PER_FLOOR}` },
+    tier && { label: t('stat_difficulty'),
+      formula: `HP ×${fmt(tier.hpMul,2)}  DMG ×${fmt(tier.dmgMul,2)}`,
+      value: tierName },
+    { label: t('stat_runtime'),
+      value: `${mm}:${ss.toString().padStart(2,'0')}` },
+    { label: t('stat_xp'),
+      formula: `next lv at ${p.xpNeeded} XP (lv ${p.level} → ${p.level+1})`,
+      value: `${fmt0(p.xp)} / ${p.xpNeeded}` },
+  ].filter(Boolean);
+
+  panel.appendChild(group('stat_combat',  combatRows));
+  panel.appendChild(group('stat_defense', defenseRows));
+  if (dotRows.length) panel.appendChild(group('stat_dot', dotRows));
+  panel.appendChild(group('stat_runstate', runRows));
+
+  // Active upgrades row spans both columns at the bottom.
+  const activeBox = document.createElement('div');
+  activeBox.className = 'stats-group';
+  activeBox.style.gridColumn = '1 / -1';
+  const ah = document.createElement('h4');
+  ah.textContent = t('stat_activeUpgrades');
+  activeBox.appendChild(ah);
+  const chipWrap = document.createElement('div');
+  chipWrap.className = 'stats-upgrades';
+  const entries = Object.entries(game.upgrades).filter(([, lv]) => lv > 0);
+  if (entries.length === 0) {
+    const none = document.createElement('span');
+    none.className = 'pill-chip';
+    none.textContent = t('stat_none');
+    chipWrap.appendChild(none);
+  } else {
+    for (const [id, lv] of entries) {
+      const u = UPG_BY_ID[id];
+      if (!u) continue;
+      const max = u.max == null ? '∞' : u.max;
+      const chip = document.createElement('span');
+      chip.className = 'pill-chip';
+      chip.textContent = `${u.icon} ${tUpgradeName(id)} ${lv}/${max}`;
+      chipWrap.appendChild(chip);
+    }
+  }
+  activeBox.appendChild(chipWrap);
+  panel.appendChild(activeBox);
 }
 
 function updateHUD() {
@@ -5662,6 +6498,9 @@ function drawWorld() {
 
   // Poison clouds (under powerups + entities so they read as ground hazard)
   drawPoisonClouds();
+  // Overload-affix telegraphs — same ground-layer treatment so the ring
+  // reads as a damage footprint on the floor.
+  drawPendingBooms();
 
   // Powerups
   for (const p of game.powerups) p.draw();
@@ -6035,11 +6874,13 @@ function drawObstacle(o) {
 
 // ------------- GAME FLOW ---------------------------------------
 function startRun() {
+  clearInputs();
   game.floor = 1;
   game.roomIdx = 0;
   game.zombies = []; game.bullets = []; game.ezBullets = [];
   game.explosions = []; game.particles = []; game.damageNums = [];
   game.powerups = []; game.poisonClouds = []; game.spawnQueue = [];
+  game.pendingBooms = [];
   game.kills = 0; game.score = 0;
   game.upgrades = {};
   game.pendingLevelUps = 0;
@@ -6113,10 +6954,12 @@ function showRunEnd(victory) {
 
 function quitToMenu() {
   game.state = 'menu';
+  clearInputs();
   game.player = null;
   game.zombies = []; game.bullets = []; game.ezBullets = [];
   game.explosions = []; game.particles = []; game.damageNums = [];
   game.powerups = []; game.poisonClouds = []; game.spawnQueue = [];
+  game.pendingBooms = [];
   game.transitionT = 0;
   game.transitionTarget = null;
   game.levelupPauseT = 0;
@@ -6138,6 +6981,7 @@ function loop(now) {
     applyHowlerBuffs();
     for (const z of game.zombies) z.update(dt, game.player);
     updatePoisonClouds(dt, game.player);
+    updatePendingBooms(dt);
     for (const b of game.bullets) b.update(dt);
     for (const p of game.ezBullets) p.update(dt, game.player);
     for (const e of game.explosions) e.update(dt, game.player);
@@ -6155,6 +6999,7 @@ function loop(now) {
     game.particles = game.particles.filter(p => !p.dead);
     game.damageNums = game.damageNums.filter(d => d.life > 0);
     game.powerups = game.powerups.filter(p => !p.dead);
+    game.pendingBooms = game.pendingBooms.filter(b => !b.dead);
 
     updateSpawns(dt);
     updateBossAdds(dt);
@@ -6177,6 +7022,7 @@ function loop(now) {
     if (game.pendingLevelUps > 0 && game.state === 'playing') {
       game.state = 'levelup_pending';
       game.levelupPauseT = 1.0;
+      clearInputs();
     }
   }
 
@@ -6189,6 +7035,11 @@ function loop(now) {
       showUpgradeChoice();
     }
   }
+
+  // Persistent difficulty HUD: visibility keyed off game.state, so calling
+  // it every frame correctly shows/hides across playing/paused/menu/etc.
+  updateDifficultyHud();
+  updateLevelHud();
 
   // Render
   ctx.fillStyle = '#0f0a1a';
