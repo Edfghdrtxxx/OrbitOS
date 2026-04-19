@@ -1124,16 +1124,21 @@ const ZTYPES = {
   spitter:  { hp: 22,  speed: 78,  damage: 12, radius: 18, color:'#b5d645', eye:'#ffbd2e', score: 18,  xp: 9,  touchCd: 700, minFloor: 2, range: 380, shootCd: 1800 },
   exploder: { hp: 18,  speed: 115, damage: 28, radius: 17, color:'#ff7b5c', eye:'#fff0a0', score: 18,  xp: 10, touchCd: 100, minFloor: 3, fuse: 600, boomR: 95 },
   brute:    { hp: 110, speed: 38,  damage: 22, radius: 32, color:'#5F8C3F', eye:'#ff6b6b', score: 40,  xp: 18, touchCd: 900, minFloor: 2 },
-  boss:     { hp: 420, speed: 46,  damage: 30, radius: 54, color:'#3D5B2A', eye:'#ffbd2e', score: 180, xp: 80, touchCd: 700, minFloor: 1 },
+  boss:     { hp: 1100, speed: 60,  damage: 52, radius: 58, color:'#3D5B2A', eye:'#ffbd2e', score: 320, xp: 140, touchCd: 600, minFloor: 1 },
 };
 function enemyStats(type, floor, elite) {
   const base = ZTYPES[type];
-  const hpMul  = Math.pow(1.25, floor - 1) * (elite ? 2.0 : 1.0);
-  const dmgMul = Math.pow(1.15, floor - 1) * (elite ? 1.5 : 1.0);
+  const isBoss = type === 'boss';
+  // Bosses get steeper scaling on top of the normal per-floor curve.
+  const bossHpBonus  = isBoss ? 1.8 * Math.pow(1.22, floor - 1) : 1;
+  const bossDmgBonus = isBoss ? 1.4 * Math.pow(1.12, floor - 1) : 1;
+  const bossSpdBonus = isBoss ? 1 + 0.06 * (floor - 1) : 1;
+  const hpMul  = Math.pow(1.25, floor - 1) * (elite ? 2.0 : 1.0) * bossHpBonus;
+  const dmgMul = Math.pow(1.15, floor - 1) * (elite ? 1.5 : 1.0) * bossDmgBonus;
   return {
     hp: Math.round(base.hp * hpMul),
     damage: Math.round(base.damage * dmgMul),
-    speed: base.speed,
+    speed: base.speed * bossSpdBonus,
     radius: base.radius * (elite ? 1.15 : 1.0),
     score: Math.round(base.score * (elite ? 2.5 : 1.0)),
     xp: Math.round(base.xp * (elite ? 3 : 1.0)),
@@ -1255,14 +1260,14 @@ class Player {
     this.r = 18;
     this.angle = 0;
     // base stats
-    this._baseSpeed = 215;
-    this._baseMaxHp = 100;
-    this._baseMaxAmmo = 12;
-    this._baseFireRate = 0.14;
-    this._baseDamage = 14;
-    this._baseReload = 1.0;
-    this._baseBulletSpeed = 900;
-    this._baseBulletLife = 0.7;
+    this._baseSpeed = 158;
+    this._baseMaxHp = 55;
+    this._baseMaxAmmo = 6;
+    this._baseFireRate = 0.28;
+    this._baseDamage = 7;
+    this._baseReload = 1.9;
+    this._baseBulletSpeed = 700;
+    this._baseBulletLife = 0.48;
 
     this.hp = this.maxHp;
     this.ammo = this.maxAmmo;
@@ -1277,13 +1282,13 @@ class Player {
     this.dashT = 0;       // remaining dash duration
     this.dashDx = 0;
     this.dashDy = 0;
-    this.dashDuration = 0.22;
-    this.dashCdMax = 1.4;
-    this.dashSpeed = 620;
+    this.dashDuration = 0.16;
+    this.dashCdMax = 2.9;
+    this.dashSpeed = 480;
     // level
     this.level = 1;
     this.xp = 0;
-    this.xpNeeded = 15;
+    this.xpNeeded = 32;
     // regen
     this.regenAcc = 0;
   }
@@ -1447,7 +1452,7 @@ class Player {
     while (this.xp >= this.xpNeeded) {
       this.xp -= this.xpNeeded;
       this.level++;
-      this.xpNeeded = Math.floor(15 * Math.pow(1.45, this.level - 1));
+      this.xpNeeded = Math.floor(32 * Math.pow(1.6, this.level - 1));
       game.pendingLevelUps++;
       leveled = true;
     }
@@ -1531,12 +1536,12 @@ class Zombie {
     this.fusing = false;
     this.fuseT = 0;
     // boss
-    this.chargeCd = type === 'boss' ? 2500 : 0;
+    this.chargeCd = type === 'boss' ? 1600 : 0;
     this.charging = false;
     this.chargeT = 0;
     this.chargeDx = 0;
     this.chargeDy = 0;
-    this.summonCd = (type === 'boss' && game.floor >= 2) ? 5000 : 0;
+    this.summonCd = type === 'boss' ? 3500 : 0;
   }
   update(dt, player) {
     this.hitFlash = Math.max(0, this.hitFlash - dt);
@@ -1601,36 +1606,40 @@ class Zombie {
       this.chargeCd -= dt * 1000;
       if (this.charging) {
         this.chargeT -= dt;
-        this.move(this.chargeDx, this.chargeDy, 360, dt);
+        this.move(this.chargeDx, this.chargeDy, 480 + game.floor * 20, dt);
         if (this.chargeT <= 0) this.charging = false;
       } else {
         this.move(dx/d, dy/d, this.speed, dt);
-        if (this.chargeCd <= 0 && d < 500 && d > 120) {
+        if (this.chargeCd <= 0 && d < 600 && d > 90) {
           this.charging = true;
-          this.chargeT = 0.7;
+          this.chargeT = 0.9;
           this.chargeDx = dx/d; this.chargeDy = dy/d;
-          this.chargeCd = 3500;
+          this.chargeCd = Math.max(1200, 2200 - game.floor * 150);
           // telegraph burst
-          for (let i = 0; i < 20; i++) {
+          for (let i = 0; i < 28; i++) {
             const a = Math.random()*TAU;
             game.particles.push(new Particle(this.x, this.y, {
-              vx: Math.cos(a)*rand(80,160), vy: Math.sin(a)*rand(80,160),
-              life: 0.4, r: rand(4,7), color:'#ffbd2e', fade:true
+              vx: Math.cos(a)*rand(80,180), vy: Math.sin(a)*rand(80,180),
+              life: 0.45, r: rand(4,8), color:'#ffbd2e', fade:true
             }));
           }
         }
       }
-      // summon on higher floors
+      // summon — active on every floor, scales hard with floor
       if (this.summonCd > 0) {
         this.summonCd -= dt * 1000;
         if (this.summonCd <= 0) {
-          this.summonCd = 6000;
-          const n = Math.min(3, game.floor - 1);
+          this.summonCd = Math.max(2400, 4500 - game.floor * 350);
+          const n = Math.min(6, 1 + game.floor);
           for (let i = 0; i < n; i++) {
             const a = Math.random()*TAU;
             const sx = this.x + Math.cos(a)*60;
             const sy = this.y + Math.sin(a)*60;
-            game.zombies.push(new Zombie(sx, sy, 'runner', false));
+            // Mix in tougher minions on later floors
+            let stype = 'runner';
+            if (game.floor >= 3 && Math.random() < 0.35) stype = 'spitter';
+            if (game.floor >= 4 && Math.random() < 0.25) stype = 'exploder';
+            game.zombies.push(new Zombie(sx, sy, stype, false));
             for (let j = 0; j < 8; j++) {
               const aa = Math.random()*TAU;
               game.particles.push(new Particle(sx, sy, {
@@ -1681,8 +1690,50 @@ class Zombie {
     }
   }
   move(vx, vy, spd, dt) {
-    const nx = this.x + vx * spd * dt;
-    const ny = this.y + vy * spd * dt;
+    const mag = Math.hypot(vx, vy) || 1;
+    const desiredA = Math.atan2(vy, vx);
+    let useA = desiredA;
+    // Lookahead probe: if an obstacle sits in our path, fan out angles to either
+    // side and pick the smallest deflection that clears.
+    const lookahead = this.r + 22 + spd * dt * 5;
+    const lx = this.x + Math.cos(desiredA) * lookahead;
+    const ly = this.y + Math.sin(desiredA) * lookahead;
+    if (collidesObstacle(lx, ly, this.r)) {
+      const offsets = [Math.PI/6, Math.PI/3, Math.PI/2, 2*Math.PI/3, 5*Math.PI/6];
+      // Bias toward the previously chosen side so we keep wrapping the same way
+      // around an obstacle instead of jittering between sides.
+      const sidePref = this._detourSign || (Math.random() < 0.5 ? 1 : -1);
+      let found = false;
+      for (const off of offsets) {
+        for (const sign of [sidePref, -sidePref]) {
+          const a = desiredA + off * sign;
+          const tx = this.x + Math.cos(a) * lookahead;
+          const ty = this.y + Math.sin(a) * lookahead;
+          if (!collidesObstacle(tx, ty, this.r)) {
+            useA = a;
+            this._detourSign = sign;
+            this._detourT = 0.6;
+            found = true;
+            break;
+          }
+        }
+        if (found) break;
+      }
+      if (!found) {
+        // Fully boxed in — fall back to desired direction so axis-slide can at
+        // least scrape along the wall.
+        useA = desiredA;
+      }
+    } else if (this._detourT > 0) {
+      this._detourT -= dt;
+    } else {
+      this._detourSign = 0;
+    }
+
+    const fx = Math.cos(useA) * mag;
+    const fy = Math.sin(useA) * mag;
+    const nx = this.x + fx * spd * dt;
+    const ny = this.y + fy * spd * dt;
     if (!collidesObstacle(nx, this.y, this.r)) this.x = nx;
     if (!collidesObstacle(this.x, ny, this.r)) this.y = ny;
     this.x = clamp(this.x, this.r, world.w - this.r);
@@ -2180,15 +2231,15 @@ function generateRoomSpawns(floor, roomIdx, isBoss) {
   if (isBoss) {
     // Boss room: boss + minions (scales per floor)
     spawns.push({ type:'boss', elite: floor === 5, delay: 0 });
-    const minionCount = Math.min(2 + floor, 8);
-    const pool = enemyPool(floor).filter(t => t !== 'brute' && t !== 'boss');
+    const minionCount = Math.min(4 + floor * 2, 14);
+    const pool = enemyPool(floor).filter(t => t !== 'boss');
     for (let i = 0; i < minionCount; i++) {
-      spawns.push({ type: choice(pool), elite: false, delay: 1500 + i * 500 });
+      spawns.push({ type: choice(pool), elite: floor >= 3 && Math.random() < 0.15, delay: 1200 + i * 350 });
     }
     return spawns;
   }
   // Normal room: number of enemies scales with floor and room
-  const baseCount = 5 + roomIdx + Math.floor(floor * 1.5);
+  const baseCount = 8 + roomIdx * 2 + Math.floor(floor * 2.4);
   const pool = enemyPool(floor);
   const eliteChance = floor >= 2 ? 0.10 + floor * 0.03 : 0;
   for (let i = 0; i < baseCount; i++) {

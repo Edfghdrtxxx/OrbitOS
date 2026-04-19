@@ -27,14 +27,18 @@ Help the user start their day by reviewing the last daily note's progress, creat
    - For each active project, note:
      - Current phase and status
      - Pending tasks in Actions section
-     - Last update date (to identify stale projects 3+ days)
+     - **plan-stale** = days since project `.md` was last modified (`git log -1 --format="%ai" -- <path>`). Cheap, computed inline.
      - Any due dates or time-sensitive items
 
-4. **Investigate Deadlines** — Launch Explore agent **in background** using `agent-prompts/deadline.md` (fill `{today}`, `{cutoff}` = +60 days). Output consumed silently in Step 3 Notes.
+4. **Investigate Deadlines & Activity-Staleness** — Launch two Explore agents **in parallel in the background** (single message, two tool uses):
+   - **Deadline agent** using `agent-prompts/deadline.md` (fill `{today}`, `{cutoff}` = +60 days).
+   - **Staleness agent** using `agent-prompts/staleness.md` (fill `{today}` and `{projects}` with the active-project list from Step 1.3, one per line: `- <ProjectName> (path: <external-path-if-any>)`).
+   Both outputs consumed silently in Step 3 Notes. Wait for both before drafting the daily note.
 
 5. **Analyze & Prioritize**
    - Identify time-sensitive items (deadlines, events)
-   - Re-read the last daily note as a premise, to find projects not touched in 3+ days (stale)
+   - Merge plan-stale (Step 1.3) with activity-stale (Step 1.4 staleness agent). **Effective staleness = `min(plan-stale, activity-stale)`**; if activity-stale is null, fall back to plan-stale.
+   - Flag projects with effective staleness ≥ 3 days in the Notes section.
    - **Stale deferral check**: For each `#Deferred` task, scan the oldest available daily note within the past 7 days. If deferred 5+ consecutive days, flag in Notes section (e.g., "`Task X` deferred 7 days — re-scope, schedule, or drop?")
    - Determine logical next steps for each active project
 
@@ -68,7 +72,7 @@ Use the AskUserQuestion tool to gather (combine into as few rounds as possible):
 > Do NOT reconstruct the note from memory. Copy the previous note verbatim first,
 > then apply only the changes. This prevents accidental task drops.
 
-0. **Wait for deadline agent** from Step 1.4 before proceeding.
+0. **Wait for deadline + staleness agents** from Step 1.4 before proceeding.
 1. **If today's note exists** at `10_Daily/YYYY-MM-DD.md`: read it, then skip to step 3 (apply delta)
 2. **Copy the last daily note using `cp`:** run `cp 10_Daily/<last-date>.md 10_Daily/<today>.md` via the Bash tool. This is the identity copy — the file is duplicated byte-for-byte, no reading or rewriting involved. If no previous note exists, create from template `99_System/Templates/Daily_Note.md` and remove all placeholder tasks before applying delta
 3. **Apply delta** — use the Edit tool to modify only what changes. Touch nothing else:
@@ -94,7 +98,11 @@ Use the AskUserQuestion tool to gather (combine into as few rounds as possible):
    - **Evening Review**: Clear body, keep header
    - **AI Digest**: Remove entire section if present
    - **Notes**: Replace with fresh recommendations. Prepend deadline agent findings as `> [!warning] Upcoming Deadlines` callout (omit source file paths; omit callout if none found).
-   - **Related Projects**: Update statuses
+     - Per-project staleness uses **effective = `min(plan-stale, activity-stale)`**. Reporting format:
+       - Diverged ≥ 7 days: `(M days stale via daily tasks; N days plan-stale)`
+       - Activity-stale only (diverged < 7 days): `(M days stale via daily tasks)`
+       - No activity-stale signal (agent returned null): `(N days stale)` — current behavior
+   - **Related Projects**: Update statuses using the same staleness format as Notes.
 
 ## Step 4: Process New Ideas (from Q4)
 
