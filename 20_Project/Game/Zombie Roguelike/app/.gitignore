@@ -3,3 +3,13 @@ dist
 dev-dist
 .vite
 *.log
+
+# Tauri (Rust) build artifacts
+src-tauri/target/
+src-tauri/gen/
+src-tauri/Cargo.lock
+
+# Capacitor generated platform projects (require JDK/Xcode to regenerate; treat as build output)
+android/
+ios/
+.capacitor/

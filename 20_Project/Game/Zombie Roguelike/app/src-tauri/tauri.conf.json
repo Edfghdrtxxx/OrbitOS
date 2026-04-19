@@ -1,0 +1,46 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Zombie Roguelike",
+  "version": "0.1.0",
+  "identifier": "com.orbitos.zombieroguelike",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devUrl": "http://localhost:5173",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Zombie Roguelike",
+        "width": 960,
+        "height": 540,
+        "minWidth": 640,
+        "minHeight": 360,
+        "resizable": true,
+        "fullscreen": false,
+        "decorations": true,
+        "transparent": false,
+        "center": true,
+        "backgroundColor": "#0b0d10"
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self' tauri:; img-src 'self' data: blob: tauri:; font-src 'self' https://fonts.gstatic.com data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' tauri:; connect-src 'self' ipc: http://ipc.localhost tauri: ws: wss: https://fonts.gstatic.com https://fonts.googleapis.com; worker-src 'self' blob:; manifest-src 'self'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "category": "Game",
+    "shortDescription": "Single-player top-down zombie roguelike.",
+    "longDescription": "Zombie Roguelike desktop build — packages the same Vite PWA bundle via Tauri 2."
+  }
+}

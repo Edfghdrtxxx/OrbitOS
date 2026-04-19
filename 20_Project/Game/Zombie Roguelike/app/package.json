@@ -6,11 +6,28 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview --host"
+    "preview": "vite preview --host",
+    "tauri": "tauri",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "tauri build",
+    "cap:sync": "cap sync",
+    "cap:open:android": "cap open android",
+    "cap:open:ios": "cap open ios"
   },
   "devDependencies": {
+    "@capacitor/cli": "6.2.0",
+    "@tauri-apps/cli": "2.1.0",
     "typescript": "^5.6.3",
     "vite": "^5.4.11",
     "vite-plugin-pwa": "^0.21.1"
+  },
+  "dependencies": {
+    "@capacitor/android": "6.2.0",
+    "@capacitor/core": "6.2.0",
+    "@capacitor/ios": "6.2.0",
+    "@capacitor/status-bar": "6.0.2",
+    "@capacitor/screen-orientation": "6.0.3",
+    "@capacitor/splash-screen": "6.0.3",
+    "@tauri-apps/api": "2.1.1"
   }
 }

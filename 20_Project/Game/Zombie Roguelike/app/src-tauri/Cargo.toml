@@ -1,0 +1,23 @@
+[package]
+name = "zombie-roguelike"
+version = "0.1.0"
+description = "Zombie Roguelike desktop shell (Tauri 2)"
+authors = ["OrbitOS"]
+edition = "2021"
+rust-version = "1.77"
+
+[lib]
+name = "zombie_roguelike_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.0.3", features = [] }
+
+[dependencies]
+tauri = { version = "2.1.1", features = [] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[features]
+# Enabled when bundling release binaries.
+custom-protocol = ["tauri/custom-protocol"]

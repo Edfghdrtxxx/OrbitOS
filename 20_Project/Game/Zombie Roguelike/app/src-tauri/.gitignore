@@ -1,0 +1,9 @@
+# Rust build artifacts
+target/
+Cargo.lock.bak
+
+# Generated icons (keep sources if added later)
+# icons/
+
+# Tauri-generated bundles
+gen/
