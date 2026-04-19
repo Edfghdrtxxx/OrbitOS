@@ -45,7 +45,7 @@
     display: block;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
-    cursor: crosshair;
+    cursor: none;
     box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 0 4px var(--c-dark), 0 0 0 8px var(--c-accent);
     border-radius: 6px;
   }
@@ -372,6 +372,9 @@
   .env-card.env-preview-vhs     { background: repeating-linear-gradient(0deg, rgba(78,205,196,0.18) 0 2px, transparent 2px 4px), rgba(26,20,40,0.95); }
   .env-card.env-preview-vapor   { background: linear-gradient(180deg, rgba(255,107,200,0.3), rgba(123,104,238,0.3)), rgba(26,20,40,0.95); }
   .env-card.env-preview-default { background: rgba(26,20,40,0.95); }
+  .env-card.env-preview-modern    { background: linear-gradient(180deg, rgba(80,90,105,0.55), rgba(40,45,55,0.85)), rgba(26,20,40,0.95); }
+  .env-card.env-preview-cyberpunk { background: linear-gradient(135deg, rgba(255,0,170,0.35), rgba(0,220,255,0.30)), rgba(8,6,20,0.97); }
+  .env-card.env-preview-chiikawa  { background: linear-gradient(180deg, rgba(255,210,235,0.55), rgba(180,235,200,0.55)), rgba(255,250,245,0.92); }
   /* Menu tip rotator */
   .menu-tip {
     margin-top: 4px;
@@ -447,6 +450,33 @@
     background:
       linear-gradient(180deg, rgba(255,107,200,0.18) 0%, rgba(123,104,238,0.1) 50%, rgba(78,205,196,0.18) 100%);
     mix-blend-mode: overlay;
+  }
+  .env-overlay.modern {
+    background:
+      radial-gradient(circle at 20% 25%, rgba(255,200,120,0.10), transparent 45%),
+      radial-gradient(circle at 80% 70%, rgba(255,200,120,0.10), transparent 45%),
+      linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.18));
+    mix-blend-mode: multiply;
+  }
+  .env-overlay.cyberpunk {
+    background:
+      repeating-linear-gradient(90deg, rgba(0,220,255,0.05) 0 2px, transparent 2px 6px),
+      radial-gradient(circle at 30% 40%, rgba(255,0,170,0.22), transparent 55%),
+      radial-gradient(circle at 70% 60%, rgba(0,220,255,0.22), transparent 55%);
+    mix-blend-mode: screen;
+    animation: cyberpunkFlicker 2.4s ease-in-out infinite;
+  }
+  @keyframes cyberpunkFlicker {
+    0%, 100% { filter: hue-rotate(0deg) brightness(1); }
+    45%      { filter: hue-rotate(20deg) brightness(1.08); }
+    50%      { filter: hue-rotate(20deg) brightness(0.85); }
+    55%      { filter: hue-rotate(-10deg) brightness(1.05); }
+  }
+  .env-overlay.chiikawa {
+    background:
+      radial-gradient(circle at 25% 30%, rgba(255,255,255,0.25), transparent 50%),
+      linear-gradient(180deg, rgba(255,225,240,0.18) 0%, rgba(210,240,220,0.18) 100%);
+    mix-blend-mode: soft-light;
   }
   /* Auto-fire toggle in Settings */
   .settings-toggle {
@@ -1100,6 +1130,18 @@
         <div class="ename" data-i18n="env_vapor">VAPORWAVE</div>
         <div class="edesc" data-i18n="env_vapor_desc">Lofi sunset, high mortality.</div>
       </div>
+      <div class="env-card env-preview-modern" data-env="modern">
+        <div class="ename" data-i18n="env_modern">MODERN CITY</div>
+        <div class="edesc" data-i18n="env_modern_desc">Asphalt and streetlights — the apocalypse downtown.</div>
+      </div>
+      <div class="env-card env-preview-cyberpunk" data-env="cyberpunk">
+        <div class="ename" data-i18n="env_cyberpunk">CYBERPUNK 2077</div>
+        <div class="edesc" data-i18n="env_cyberpunk_desc">Neon megacity, holo-pillars and rain.</div>
+      </div>
+      <div class="env-card env-preview-chiikawa" data-env="chiikawa">
+        <div class="ename" data-i18n="env_chiikawa">CHIIKAWA-VERSE</div>
+        <div class="edesc" data-i18n="env_chiikawa_desc">Pastel meadows. Cute outside, chunky bites inside.</div>
+      </div>
     </div>
     <button class="btn" id="envBackBtn" data-i18n="back">BACK</button>
   </div>
@@ -1273,6 +1315,7 @@ const I18N = {
     skin_punk:     'PUNK',
     skin_scientist:'SCIENTIST',
     skin_ninja:    'NINJA',
+    skin_usagi:    'USAGI',
     chooseLanguageBig: 'CHOOSE LANGUAGE',
     move: 'Move', aim: 'Aim', shoot: 'Shoot', reload: 'Reload', dash: 'Dash', pause: 'Pause',
     levelUp: 'LEVEL UP!',
@@ -1333,10 +1376,13 @@ const I18N = {
     classRanged: 'RANGED', classRangedDesc: 'Bullets, reloads, keep your distance.',
     classMelee:  'MELEE',  classMeleeDesc:  'Click to swing a wide arc.',
     chooseEnv: 'CHOOSE ENVIRONMENT',
-    env_default: 'CLASSIC',     env_default_desc: 'Raw, unfiltered carnage.',
-    env_neon:    'NEON RAVE',   env_neon_desc:    'Pink/cyan pulse, party ends in gore.',
-    env_vhs:     'VHS GLITCH',  env_vhs_desc:     'Scanlines and chromatic tear.',
-    env_vapor:   'VAPORWAVE',   env_vapor_desc:   'Lofi sunset, high mortality.',
+    env_default:   'CLASSIC',         env_default_desc:   'Raw, unfiltered carnage.',
+    env_neon:      'NEON RAVE',       env_neon_desc:      'Pink/cyan pulse, party ends in gore.',
+    env_vhs:       'VHS GLITCH',      env_vhs_desc:       'Scanlines and chromatic tear.',
+    env_vapor:     'VAPORWAVE',       env_vapor_desc:     'Lofi sunset, high mortality.',
+    env_modern:    'MODERN CITY',     env_modern_desc:    'Asphalt and streetlights — the apocalypse downtown.',
+    env_cyberpunk: 'CYBERPUNK 2077',  env_cyberpunk_desc: 'Neon megacity, holo-pillars and rain.',
+    env_chiikawa:  'CHIIKAWA-VERSE',  env_chiikawa_desc:  'Pastel meadows. Cute outside, chunky bites inside.',
     reroll: '🎲 REROLL', rerollHint: 'REROLL',
     autoFire: 'AUTO-FIRE / AUTO-ATTACK',
     attack: 'Attack', swing: 'SWING',
@@ -1346,7 +1392,7 @@ const I18N = {
     tip_ranged:      'Ranged runs keep the classic bullets/reload loop.',
     tip_dash:        'SPACE dashes. Pick BLITZ DASH to damage zombies you pass through.',
     tip_reroll:      'Not happy with level-up choices? Press F (or click REROLL) once per level.',
-    tip_environment: 'Pick an environment overlay for a fresh visual vibe — purely cosmetic.',
+    tip_environment: 'Pick an environment for a fresh palette and themed obstacles each floor.',
     tip_appearance:  'CHARACTER APPEARANCE lets you change your survivor\'s outfit.',
     tip_space:       'SPACE = dash. Use it to escape swarms or line up hits.',
     tip_pause:       'Press ESC any time to pause.',
@@ -1370,6 +1416,7 @@ const I18N = {
     skin_punk:     '朋克',
     skin_scientist:'科学家',
     skin_ninja:    '忍者',
+    skin_usagi:    '小兔兔',
     chooseLanguageBig: '选择语言',
     move: '移动', aim: '瞄准', shoot: '射击', reload: '换弹', dash: '冲刺', pause: '暂停',
     levelUp: '升级！',
@@ -1430,10 +1477,13 @@ const I18N = {
     classRanged: '远程', classRangedDesc: '子弹、换弹、保持距离。',
     classMelee:  '近战', classMeleeDesc:  '点击挥砍一个宽弧。',
     chooseEnv: '选择环境',
-    env_default: '经典',      env_default_desc: '原始、无滤镜的残暴。',
-    env_neon:    '霓虹派对',  env_neon_desc:    '粉青脉冲，派对以血腥收场。',
-    env_vhs:     'VHS 故障',  env_vhs_desc:     '扫描线与色差撕裂。',
-    env_vapor:   '蒸汽波',    env_vapor_desc:   'Lofi 日落，高死亡率。',
+    env_default:   '经典',          env_default_desc:   '原始、无滤镜的残暴。',
+    env_neon:      '霓虹派对',      env_neon_desc:      '粉青脉冲，派对以血腥收场。',
+    env_vhs:       'VHS 故障',      env_vhs_desc:       '扫描线与色差撕裂。',
+    env_vapor:     '蒸汽波',        env_vapor_desc:     'Lofi 日落，高死亡率。',
+    env_modern:    '现代都市',      env_modern_desc:    '柏油与街灯——市中心的末日。',
+    env_cyberpunk: '赛博朋克 2077', env_cyberpunk_desc: '霓虹巨城，全息柱与冷雨。',
+    env_chiikawa:  '奇伊卡哇世界',  env_chiikawa_desc:  '粉彩草原。外表可爱，咬合凶猛。',
     reroll: '🎲 重抽', rerollHint: '重抽',
     autoFire: '自动射击 / 自动攻击',
     attack: '攻击', swing: '挥砍',
@@ -1443,7 +1493,7 @@ const I18N = {
     tip_ranged:      '远程流程保留经典子弹 / 换弹循环。',
     tip_dash:        '空格冲刺。选择闪电冲刺以伤害穿过的丧尸。',
     tip_reroll:      '对升级选项不满意？每级可按 F (或点击重抽) 一次。',
-    tip_environment: '选一种环境滤镜换换视觉风格 — 纯装饰。',
+    tip_environment: '选一种环境，换一套配色与每层主题障碍物。',
     tip_appearance:  '角色外观可以更换幸存者的装扮。',
     tip_space:       '空格 = 冲刺。用来逃离尸潮或对齐攻击。',
     tip_pause:       '随时按 ESC 暂停。',
@@ -1629,14 +1679,158 @@ const FLOORS = [
 const ROOMS_PER_FLOOR = 4; // 3 combat + 1 boss
 const COMBAT_ROOMS = 3;
 
+// ------------- THEMES (visual + obstacle layout) ----------------
+// Player picks one at run start. Each theme provides per-floor palette (5 entries) and
+// a per-floor obstacle pool. Optional CSS overlay class is applied to #envOverlay.
+// Legacy env ids ('default','neon','vhs','vapor') are preserved for localStorage compat.
+const THEMES = {
+  default: {
+    id: 'default', nameKey: 'env_default', descKey: 'env_default_desc',
+    overlayClass: null,
+    palette: [
+      { bgA:'#8FA876', bgB:'#7B9363' },
+      { bgA:'#7A6F88', bgB:'#5E5571' },
+      { bgA:'#A89878', bgB:'#8D7E60' },
+      { bgA:'#5F6B70', bgB:'#4A5559' },
+      { bgA:'#4A3A56', bgB:'#352741' },
+    ],
+    obstacles: [
+      ['crate','barrel'],
+      ['car','crate','barrel'],
+      ['crate','crate','barrel'],
+      ['barrel','barrel','crate'],
+      ['crate','barrel','car'],
+    ],
+  },
+  neon: {
+    id: 'neon', nameKey: 'env_neon', descKey: 'env_neon_desc',
+    overlayClass: 'neon',
+    palette: [
+      { bgA:'#3a1c4a', bgB:'#2a1438' },
+      { bgA:'#4a1c5a', bgB:'#2e1442' },
+      { bgA:'#5a1c5e', bgB:'#321448' },
+      { bgA:'#3e144e', bgB:'#220a32' },
+      { bgA:'#28083a', bgB:'#160426' },
+    ],
+    obstacles: [
+      ['arcade_cabinet','speaker_stack','crate'],
+      ['arcade_cabinet','speaker_stack','barrel'],
+      ['speaker_stack','arcade_cabinet','crate'],
+      ['speaker_stack','speaker_stack','arcade_cabinet'],
+      ['arcade_cabinet','speaker_stack','barrel'],
+    ],
+  },
+  vhs: {
+    id: 'vhs', nameKey: 'env_vhs', descKey: 'env_vhs_desc',
+    overlayClass: 'vhs',
+    palette: [
+      { bgA:'#7a8a82', bgB:'#5f6e68' },
+      { bgA:'#6e7a82', bgB:'#535e64' },
+      { bgA:'#7a7282', bgB:'#5e5663' },
+      { bgA:'#5e6670', bgB:'#444b53' },
+      { bgA:'#404858', bgB:'#2a3140' },
+    ],
+    obstacles: [
+      ['crt_tv','crate','barrel'],
+      ['crt_tv','crate','barrel'],
+      ['crt_tv','crt_tv','crate'],
+      ['crt_tv','barrel','crate'],
+      ['crt_tv','crt_tv','barrel'],
+    ],
+  },
+  vapor: {
+    id: 'vapor', nameKey: 'env_vapor', descKey: 'env_vapor_desc',
+    overlayClass: 'vapor',
+    palette: [
+      { bgA:'#ff9ec7', bgB:'#c084d8' },
+      { bgA:'#e082c4', bgB:'#9c6cd0' },
+      { bgA:'#b87cd8', bgB:'#7a5cc8' },
+      { bgA:'#8c6ad0', bgB:'#5848a8' },
+      { bgA:'#5a3e8c', bgB:'#3a2660' },
+    ],
+    obstacles: [
+      ['palm_tree','roman_bust','crate'],
+      ['palm_tree','roman_bust','barrel'],
+      ['roman_bust','palm_tree','crate'],
+      ['roman_bust','palm_tree','barrel'],
+      ['palm_tree','roman_bust','car'],
+    ],
+  },
+  modern: {
+    id: 'modern', nameKey: 'env_modern', descKey: 'env_modern_desc',
+    overlayClass: 'modern',
+    palette: [
+      { bgA:'#6e7480', bgB:'#5a6068' },
+      { bgA:'#646a76', bgB:'#50565e' },
+      { bgA:'#5a6068', bgB:'#464c54' },
+      { bgA:'#4e545c', bgB:'#3a4048' },
+      { bgA:'#3a4048', bgB:'#262c34' },
+    ],
+    obstacles: [
+      ['lamp_post','dumpster','car'],
+      ['lamp_post','dumpster','car','crate'],
+      ['dumpster','lamp_post','car','barrel'],
+      ['dumpster','car','lamp_post'],
+      ['car','dumpster','lamp_post','barrel'],
+    ],
+  },
+  cyberpunk: {
+    id: 'cyberpunk', nameKey: 'env_cyberpunk', descKey: 'env_cyberpunk_desc',
+    overlayClass: 'cyberpunk',
+    palette: [
+      { bgA:'#1a1430', bgB:'#0e0a20' },
+      { bgA:'#1e1438', bgB:'#10082a' },
+      { bgA:'#221440', bgB:'#120832' },
+      { bgA:'#180a32', bgB:'#0a0420' },
+      { bgA:'#0e0420', bgB:'#04020e' },
+    ],
+    obstacles: [
+      ['holo_pillar','neon_barricade','crate'],
+      ['holo_pillar','neon_barricade','car'],
+      ['neon_barricade','holo_pillar','crate'],
+      ['holo_pillar','holo_pillar','neon_barricade'],
+      ['neon_barricade','neon_barricade','holo_pillar','car'],
+    ],
+  },
+  chiikawa: {
+    id: 'chiikawa', nameKey: 'env_chiikawa', descKey: 'env_chiikawa_desc',
+    overlayClass: 'chiikawa',
+    palette: [
+      { bgA:'#c4ecbc', bgB:'#a8dca0' },
+      { bgA:'#bce6c4', bgB:'#9cd2ac' },
+      { bgA:'#d4e0bc', bgB:'#bcc8a4' },
+      { bgA:'#a8c8b0', bgB:'#8cb094' },
+      { bgA:'#88a89c', bgB:'#6c8c80' },
+    ],
+    obstacles: [
+      ['mushroom','bush','crate'],
+      ['mushroom','bush','crate'],
+      ['bush','mushroom','barrel'],
+      ['bush','mushroom','crate'],
+      ['mushroom','bush','barrel'],
+    ],
+  },
+};
+// Legacy / alias mapping for migrations and safety.
+const THEME_ALIASES = { default: 'default', neon: 'neon', vhs: 'vhs', vapor: 'vapor', modern: 'modern', cyberpunk: 'cyberpunk', chiikawa: 'chiikawa' };
+function getTheme(id) {
+  const key = THEME_ALIASES[id] || 'default';
+  return THEMES[key] || THEMES.default;
+}
+function themeForFloor(floor) {
+  const theme = getTheme(game.environment);
+  const idx = Math.min(Math.max(floor, 1) - 1, theme.palette.length - 1);
+  return { theme, palette: theme.palette[idx], obstacles: theme.obstacles[idx] || theme.obstacles[theme.obstacles.length - 1] };
+}
+
 // ------------- ENEMY ARCHETYPES --------------------------------
 // Base stats — floor scaling applies a multiplier. Elite doubles HP & 1.5x damage.
 const ZTYPES = {
   walker:   { hp: 28,  speed: 62,  damage: 10, radius: 20, color:'#8FCF3F', eye:'#c73866', score: 8,   xp: 4,  touchCd: 600, minFloor: 1 },
-  runner:   { hp: 16,  speed: 135, damage: 6,  radius: 16, color:'#CEDE4E', eye:'#6c2a4e', score: 12,  xp: 6,  touchCd: 450, minFloor: 1 },
-  spitter:  { hp: 22,  speed: 78,  damage: 12, radius: 18, color:'#b5d645', eye:'#ffbd2e', score: 18,  xp: 9,  touchCd: 700, minFloor: 2, range: 380, shootCd: 1800 },
-  exploder: { hp: 18,  speed: 115, damage: 28, radius: 17, color:'#ff7b5c', eye:'#fff0a0', score: 18,  xp: 10, touchCd: 100, minFloor: 3, fuse: 600, boomR: 95 },
-  brute:    { hp: 110, speed: 38,  damage: 22, radius: 32, color:'#5F8C3F', eye:'#ff6b6b', score: 40,  xp: 18, touchCd: 900, minFloor: 2 },
+  runner:   { hp: 16,  speed: 135, damage: 6,  radius: 16, color:'#CEDE4E', eye:'#6c2a4e', score: 12,  xp: 6,  touchCd: 450, minFloor: 1, zigzagPeriod: 600, zigzagMag: 0.85 },
+  spitter:  { hp: 22,  speed: 78,  damage: 12, radius: 18, color:'#b5d645', eye:'#ffbd2e', score: 18,  xp: 9,  touchCd: 700, minFloor: 2, range: 380, shootCd: 1800, projSpeed: 340, leadCap: 0.6 },
+  exploder: { hp: 18,  speed: 115, damage: 28, radius: 17, color:'#ff7b5c', eye:'#fff0a0', score: 18,  xp: 10, touchCd: 100, minFloor: 3, fuse: 600, boomR: 95, lowHpFuse: 0.30 },
+  brute:    { hp: 110, speed: 38,  damage: 22, radius: 32, color:'#5F8C3F', eye:'#ff6b6b', score: 40,  xp: 18, touchCd: 900, minFloor: 2, chargeRange: 170, chargeWindup: 380, chargeDur: 360, chargeCd: 4200, chargeSpdMul: 2.4, chargeDmgMul: 1.4 },
   boss:     { hp: 1100, speed: 60,  damage: 16, radius: 58, color:'#3D5B2A', eye:'#ffbd2e', score: 320, xp: 140, touchCd: 600, minFloor: 1 },
 };
 function enemyStats(type, floor, elite) {
@@ -1749,6 +1943,18 @@ const SKINS = [
     headColor: '#1a1428', hairColor: '#0f0a1a', hairR: 0,
     hat: 'mask', accessory: 'sash',
   },
+  {
+    // Usagi — pastel rabbit. Uses warm-dark outlines (not pure black) and
+    // overrides the leg/boot painter via legStyle:'paws'. Head/ears/blush
+    // are drawn by the 'usagi-ears' hat branch; 'usagi-blush' accessory is
+    // a no-op torso branch (the body stays clean white).
+    id: 'usagi',    nameKey: 'skin_usagi',
+    bodyColor: '#FFFDF7', dashColor: '#F8C7CC', accentColor: '#F8C7CC',
+    legColor: '#FFFDF7', gunColor: '#3B2E2A',
+    headColor: '#FFFDF7', hairColor: '#FFFDF7', hairR: 0,
+    hat: 'usagi-ears', accessory: 'usagi-blush',
+    outlineColor: '#3B2E2A', legStyle: 'paws',
+  },
 ];
 const SKIN_BY_ID = Object.fromEntries(SKINS.map(s => [s.id, s]));
 function getSkin() { return SKIN_BY_ID[game.skinId] || SKINS[0]; }
@@ -1798,6 +2004,19 @@ function collidesObstacle(x, y, r) {
     if (dx*dx + dy*dy < r*r) return true;
   }
   return false;
+}
+// Coarse line-of-sight check: walk a fat ray in fixed steps and reject if any
+// step lands inside an obstacle. Used by spitter AI to gate shots.
+function hasLineOfSight(x1, y1, x2, y2, r=4) {
+  const dx = x2 - x1, dy = y2 - y1;
+  const dist = Math.hypot(dx, dy);
+  if (dist < 1) return true;
+  const steps = Math.min(40, Math.max(4, Math.ceil(dist / 18)));
+  const sx = dx / steps, sy = dy / steps;
+  for (let i = 1; i < steps; i++) {
+    if (collidesObstacle(x1 + sx*i, y1 + sy*i, r)) return false;
+  }
+  return true;
 }
 function drawShadow(x, y, r) {
   ctx.fillStyle = 'rgba(15, 10, 26, 0.35)';
@@ -1863,12 +2082,17 @@ class Player {
     this.xpNeeded = 10;
     // regen
     this.regenAcc = 0;
+    // velocity tracking (for AI target prediction)
+    this.vx = 0;
+    this.vy = 0;
+    this._prevX = this.x;
+    this._prevY = this.y;
   }
   u(id) { return game.upgrades[id] || 0; }
   get isMelee()      { return game.playerClass === 'melee'; }
 
   get speed()        { return this._baseSpeed * (1 + 0.06 * this.u('speed')); }
-  get maxHp()        { return this._baseMaxHp + 10 * this.u('hp'); }
+  get maxHp()        { return this._baseMaxHp + 10 * this.u('hp') + 2 * (this.level - 1); }
   get maxAmmo()      { return this._baseMaxAmmo + 3 * this.u('ammo'); }
   get fireRate()     { return this._baseFireRate / (1 + 0.09 * this.u('rof')); }
   get damage()       { return this._baseDamage * (1 + 0.12 * this.u('dmg')); }
@@ -1894,6 +2118,16 @@ class Player {
   get blitzDmg()     { return 8 * this.u('blitz') * (1 + 0.1 * this.u('dmg')); }
 
   update(dt) {
+    // Velocity (smoothed) — used by zombie AI for target leading
+    if (dt > 0) {
+      const ivx = (this.x - this._prevX) / dt;
+      const ivy = (this.y - this._prevY) / dt;
+      // light smoothing so a single-frame stutter doesn't throw off aim
+      this.vx = this.vx * 0.5 + ivx * 0.5;
+      this.vy = this.vy * 0.5 + ivy * 0.5;
+    }
+    this._prevX = this.x; this._prevY = this.y;
+
     // Regen
     if (this.regenRate > 0 && this.hp < this.maxHp) {
       this.regenAcc += dt * this.regenRate;
@@ -2117,6 +2351,7 @@ class Player {
       this.xp -= this.xpNeeded;
       this.level++;
       this.xpNeeded = Math.floor(10 * Math.pow(1.2, this.level - 1));
+      this.hp = Math.min(this.maxHp, this.hp + 2);
       game.pendingLevelUps++;
       leveled = true;
     }
@@ -2192,26 +2427,41 @@ function drawPlayerSprite(localX, localY, r, angle, skin, opts = {}) {
   const legBob = opts.legBob || 0;
   const bodyFlash = !!opts.bodyFlash;
   const dashing = !!opts.dashing;
+  // Per-skin outline override (Usagi uses warm dark; everyone else inherits the
+  // standard near-black so existing skins look identical to before this change).
+  const OUTLINE = skin.outlineColor || '#0f0a1a';
 
   ctx.save();
   if (opts.translateXY) ctx.translate(opts.translateXY[0], opts.translateXY[1]);
   else ctx.translate(localX, localY);
 
   // ----- Legs (always drawn upright, before rotation) -----
-  ctx.fillStyle = skin.legColor;
-  ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
-  ctx.beginPath(); ctx.ellipse(-7, 8+legBob, 6, 10, 0, 0, TAU); ctx.fill(); ctx.stroke();
-  ctx.beginPath(); ctx.ellipse( 7, 8-legBob, 6, 10, 0, 0, TAU); ctx.fill(); ctx.stroke();
-  // boots
-  ctx.fillStyle = '#0f0a1a';
-  ctx.beginPath(); ctx.ellipse(-7, 14+legBob, 6, 4, 0, 0, TAU); ctx.fill();
-  ctx.beginPath(); ctx.ellipse( 7, 14-legBob, 6, 4, 0, 0, TAU); ctx.fill();
+  if (skin.legStyle === 'paws') {
+    // Usagi — tiny rounded white paw stubs, no dark boots.
+    ctx.fillStyle = skin.legColor;
+    ctx.strokeStyle = OUTLINE; ctx.lineWidth = 2.5;
+    ctx.beginPath(); ctx.ellipse(-6, 11+legBob*0.5, 4.5, 5, 0, 0, TAU); ctx.fill(); ctx.stroke();
+    ctx.beginPath(); ctx.ellipse( 6, 11-legBob*0.5, 4.5, 5, 0, 0, TAU); ctx.fill(); ctx.stroke();
+    // tiny pink toe-bean dots
+    ctx.fillStyle = '#F8C7CC';
+    ctx.beginPath(); ctx.arc(-6, 11+legBob*0.5, 1.1, 0, TAU); ctx.fill();
+    ctx.beginPath(); ctx.arc( 6, 11-legBob*0.5, 1.1, 0, TAU); ctx.fill();
+  } else {
+    ctx.fillStyle = skin.legColor;
+    ctx.strokeStyle = OUTLINE; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.ellipse(-7, 8+legBob, 6, 10, 0, 0, TAU); ctx.fill(); ctx.stroke();
+    ctx.beginPath(); ctx.ellipse( 7, 8-legBob, 6, 10, 0, 0, TAU); ctx.fill(); ctx.stroke();
+    // boots
+    ctx.fillStyle = '#0f0a1a';
+    ctx.beginPath(); ctx.ellipse(-7, 14+legBob, 6, 4, 0, 0, TAU); ctx.fill();
+    ctx.beginPath(); ctx.ellipse( 7, 14-legBob, 6, 4, 0, 0, TAU); ctx.fill();
+  }
 
   ctx.rotate(angle);
 
   // ----- Gun -----
   ctx.fillStyle = skin.gunColor;
-  ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
+  ctx.strokeStyle = OUTLINE; ctx.lineWidth = 3;
   ctx.beginPath(); ctx.rect(10, -4, 24, 8); ctx.fill(); ctx.stroke();
   ctx.beginPath(); ctx.rect(14, -7, 4, 3); ctx.fill(); ctx.stroke();
   // muzzle highlight
@@ -2221,7 +2471,7 @@ function drawPlayerSprite(localX, localY, r, angle, skin, opts = {}) {
   // ----- Body -----
   const baseBody = bodyFlash ? '#ffffff' : (dashing ? skin.dashColor : skin.bodyColor);
   ctx.fillStyle = baseBody;
-  ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
+  ctx.strokeStyle = OUTLINE; ctx.lineWidth = 3;
   ctx.beginPath(); ctx.arc(0, 0, r, 0, TAU); ctx.fill(); ctx.stroke();
   // body highlight rim
   if (!bodyFlash) {
@@ -2271,15 +2521,27 @@ function drawPlayerSprite(localX, localY, r, angle, skin, opts = {}) {
     ctx.beginPath(); ctx.moveTo(-r*0.85, -2); ctx.lineTo(r*0.85, 4); ctx.stroke();
     ctx.lineWidth = 1.5; ctx.strokeStyle = '#0f0a1a';
     ctx.beginPath(); ctx.moveTo(-r*0.85, -2); ctx.lineTo(r*0.85, 4); ctx.stroke();
+  } else if (skin.accessory === 'usagi-blush') {
+    // Usagi — no torso gear; the body stays a clean rounded white blob.
+    // (Branch exists so the dispatcher doesn't fall through to a default.)
   }
 
   // ----- Head -----
+  // Usagi gets a fuller round head (no visible neck) and the face is repainted
+  // by the 'usagi-ears' hat branch below — so we skip the default eye dot here
+  // to avoid a stray off-center eye.
+  const isUsagi = skin.hat === 'usagi-ears';
   ctx.fillStyle = bodyFlash ? '#fff' : skin.headColor;
-  ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
-  ctx.beginPath(); ctx.arc(4, 0, 11, 0, TAU); ctx.fill(); ctx.stroke();
-  // eye
-  ctx.fillStyle = '#0f0a1a';
-  ctx.beginPath(); ctx.arc(10, -1, 2, 0, TAU); ctx.fill();
+  ctx.strokeStyle = OUTLINE; ctx.lineWidth = 3;
+  if (isUsagi) {
+    // Slightly larger, centered head — sits flush on the body for a no-neck silhouette.
+    ctx.beginPath(); ctx.arc(0, -2, 13, 0, TAU); ctx.fill(); ctx.stroke();
+  } else {
+    ctx.beginPath(); ctx.arc(4, 0, 11, 0, TAU); ctx.fill(); ctx.stroke();
+    // default single eye
+    ctx.fillStyle = '#0f0a1a';
+    ctx.beginPath(); ctx.arc(10, -1, 2, 0, TAU); ctx.fill();
+  }
 
   // ----- Hair / hat -----
   if (skin.hairR > 0 && !skin.hat) {
@@ -2346,6 +2608,55 @@ function drawPlayerSprite(localX, localY, r, angle, skin, opts = {}) {
     ctx.beginPath();
     ctx.moveTo(-7, -7); ctx.lineTo(-15, -2); ctx.lineTo(-13, 2); ctx.lineTo(-7, -4); ctx.closePath();
     ctx.fill(); ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 1.5; ctx.stroke();
+  } else if (skin.hat === 'usagi-ears') {
+    // Usagi — tall straight pointy ears, dot eyes set wide, blush cheeks,
+    // tiny v-mouth. Ears are ~80% of head height (head r=13, so ear length ~10).
+    // All ear/face geometry is in the rotated frame: "up" (negative y) is the
+    // top of the head as it would appear if the player faced east.
+    const earOutline = OUTLINE;
+    // --- Ears: long thin rounded rectangles, slightly canted outward ---
+    const drawEar = (cx, cy, tilt) => {
+      ctx.save();
+      ctx.translate(cx, cy);
+      ctx.rotate(tilt);
+      // outer ear (white)
+      ctx.fillStyle = bodyFlash ? '#fff' : '#FFFDF7';
+      ctx.strokeStyle = earOutline; ctx.lineWidth = 2.5;
+      ctx.beginPath();
+      ctx.ellipse(0, 0, 2.6, 9.5, 0, 0, TAU);
+      ctx.fill(); ctx.stroke();
+      // inner ear (pink) — narrower oval inset
+      ctx.fillStyle = '#F8C7CC';
+      ctx.beginPath();
+      ctx.ellipse(0, 1, 1.1, 6.5, 0, 0, TAU);
+      ctx.fill();
+      ctx.restore();
+    };
+    // Two ears, sitting on top of the head (head center is (0,-2), top at y≈-15).
+    // Slight outward cant (~12°) gives the silhouette the right "tall pointy" read.
+    drawEar(-4, -16, -0.20);
+    drawEar( 4, -16,  0.20);
+
+    // --- Face: dot eyes set far apart, blush, tiny v-mouth ---
+    // Coordinates relative to head center (0, -2). Eyes flank the centerline.
+    if (!bodyFlash) {
+      // Cheek blush patches first so eyes/mouth sit on top.
+      ctx.fillStyle = '#F8C7CC';
+      ctx.beginPath(); ctx.ellipse(-7, 1, 2.4, 1.6, 0, 0, TAU); ctx.fill();
+      ctx.beginPath(); ctx.ellipse( 7, 1, 2.4, 1.6, 0, 0, TAU); ctx.fill();
+    }
+    // Dot eyes (wider apart than the standard skins' single eye).
+    ctx.fillStyle = '#1A1410';
+    ctx.beginPath(); ctx.arc(-4, -2, 1.6, 0, TAU); ctx.fill();
+    ctx.beginPath(); ctx.arc( 4, -2, 1.6, 0, TAU); ctx.fill();
+    // Tiny v-mouth one row below the eyes.
+    ctx.strokeStyle = '#D89090'; ctx.lineWidth = 1.2; ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(-1.6, 2);
+    ctx.lineTo( 0,   3.2);
+    ctx.lineTo( 1.6, 2);
+    ctx.stroke();
+    ctx.lineCap = 'butt';
   }
 
   ctx.restore();
@@ -2380,12 +2691,26 @@ class Zombie {
     this.fusing = false;
     this.fuseT = 0;
     // boss
-    this.chargeCd = type === 'boss' ? 1600 : 0;
+    this.chargeCd = type === 'boss' ? 10000 : 0;
     this.charging = false;
     this.chargeT = 0;
     this.chargeDx = 0;
     this.chargeDy = 0;
     this.summonCd = type === 'boss' ? 3500 : 0;
+    // runner — perpendicular zigzag jitter, retimed every zigzagPeriod
+    if (type === 'runner') {
+      this.zigSign = Math.random() < 0.5 ? 1 : -1;
+      this.zigT = rand(200, 600);
+    }
+    // brute — telegraphed shoulder-charge state machine
+    if (type === 'brute') {
+      this.bruteState = 'walk'; // 'walk' | 'windup' | 'dash' | 'recover'
+      this.bruteT = 0;          // timer for current state (ms)
+      this.bruteCd = rand(1500, 2500); // initial cooldown so brutes don't all charge instantly
+      this.bruteDx = 0;
+      this.bruteDy = 0;
+      this.bruteHit = false;    // whether current dash already hit player
+    }
   }
   update(dt, player) {
     this.hitFlash = Math.max(0, this.hitFlash - dt);
@@ -2412,15 +2737,24 @@ class Zombie {
         if ((Math.floor(this.wobble) % 2) === 0) { mx = -mx; my = -my; }
       }
       this.move(mx, my, this.speed, dt);
-      if (this.shootCd <= 0 && d < base.range) {
+      // Only shoot if cooldown ready, in range, and clear line of sight to player.
+      if (this.shootCd <= 0 && d < base.range && hasLineOfSight(this.x, this.y, player.x, player.y, 6)) {
         this.shootCd = base.shootCd;
-        // telegraph + shoot
-        const proj = new ZombieProjectile(this.x, this.y, Math.atan2(dy, dx), 340, this.damage);
+        // Lead the target: solve for where the player will be when projectile arrives.
+        // Use the player's smoothed velocity, capped so a sudden direction change
+        // doesn't make the spitter shoot at empty space.
+        const projSpd = base.projSpeed;
+        const t0 = d / projSpd;
+        const leadT = Math.min(base.leadCap, t0);
+        const aimX = player.x + (player.vx || 0) * leadT;
+        const aimY = player.y + (player.vy || 0) * leadT;
+        const aimAngle = Math.atan2(aimY - this.y, aimX - this.x);
+        const proj = new ZombieProjectile(this.x, this.y, aimAngle, projSpd, this.damage);
         game.ezBullets.push(proj);
         sfx('spit');
-        // muzzle slime
+        // muzzle slime — biased along actual aim direction so the visual cue matches the lead
         for (let i = 0; i < 6; i++) {
-          const a = this.angle + rand(-0.3, 0.3);
+          const a = aimAngle + rand(-0.3, 0.3);
           game.particles.push(new Particle(this.x, this.y, {
             vx: Math.cos(a)*rand(60,140), vy: Math.sin(a)*rand(60,140),
             life: 0.3, r: rand(3,5), color: '#8fcf3f', fade:true
@@ -2428,11 +2762,23 @@ class Zombie {
         }
       }
     } else if (this.type === 'exploder') {
-      // sprint toward player; start fuse when close
+      // sprint toward player; start fuse when close OR when nearly dead (commit on low HP)
       const base = ZTYPES.exploder;
-      if (!this.fusing && d < 80) {
+      const lowHp = (this.hp / this.maxHp) <= base.lowHpFuse;
+      if (!this.fusing && (d < 80 || lowHp)) {
         this.fusing = true;
         this.fuseT = base.fuse;
+        // extra telegraph puff when fuse is triggered by low HP at range — players
+        // should see "this thing is committing" before it sprints into them.
+        if (lowHp && d >= 80) {
+          for (let i = 0; i < 10; i++) {
+            const a = Math.random()*TAU;
+            game.particles.push(new Particle(this.x, this.y, {
+              vx: Math.cos(a)*rand(60,140), vy: Math.sin(a)*rand(60,140),
+              life: 0.35, r: rand(3,5), color: '#fff0a0', fade:true
+            }));
+          }
+        }
       }
       if (this.fusing) {
         this.fuseT -= dt * 1000;
@@ -2458,7 +2804,7 @@ class Zombie {
           this.charging = true;
           this.chargeT = 0.9;
           this.chargeDx = dx/d; this.chargeDy = dy/d;
-          this.chargeCd = Math.max(1200, 2200 - game.floor * 150);
+          this.chargeCd = 10000;
           // telegraph burst
           for (let i = 0; i < 28; i++) {
             const a = Math.random()*TAU;
@@ -2494,11 +2840,99 @@ class Zombie {
           }
         }
       }
+    } else if (this.type === 'brute') {
+      // Brute: walk in slowly, then a telegraphed shoulder-charge inside chargeRange.
+      // States: walk -> windup (root in place, particles) -> dash (locked vector, 2.4x speed,
+      // damage on contact) -> recover (brief pause) -> walk.
+      const base = ZTYPES.brute;
+      this.bruteCd = Math.max(0, this.bruteCd - dt * 1000);
+      this.bruteT  = Math.max(0, this.bruteT  - dt * 1000);
+
+      if (this.bruteState === 'walk') {
+        this.move(dx/d, dy/d, this.speed, dt);
+        // Trigger windup if in range, off cooldown, and we have line of sight (no
+        // charging through walls into invisible targets).
+        if (d < base.chargeRange && this.bruteCd <= 0 && hasLineOfSight(this.x, this.y, player.x, player.y, 8)) {
+          this.bruteState = 'windup';
+          this.bruteT = base.chargeWindup;
+          // Lock target vector at windup START — player can dodge by repositioning.
+          this.bruteDx = dx/d; this.bruteDy = dy/d;
+          this.bruteHit = false;
+          // Telegraph burst — orange dust ring around the brute's feet
+          for (let i = 0; i < 18; i++) {
+            const a = Math.random()*TAU;
+            game.particles.push(new Particle(this.x, this.y, {
+              vx: Math.cos(a)*rand(40,110), vy: Math.sin(a)*rand(40,110),
+              life: 0.45, r: rand(3,6), color:'#ff9c4e', fade:true
+            }));
+          }
+          sfx('spit');
+        }
+      } else if (this.bruteState === 'windup') {
+        // Root in place. Continuous rim particles in the charge direction so the
+        // player can read which way it's about to launch.
+        if (Math.random() < 0.6) {
+          const sa = Math.atan2(this.bruteDy, this.bruteDx) + rand(-0.4, 0.4);
+          game.particles.push(new Particle(
+            this.x + Math.cos(sa)*this.r*0.7,
+            this.y + Math.sin(sa)*this.r*0.7,
+            { vx: Math.cos(sa)*rand(40,90), vy: Math.sin(sa)*rand(40,90),
+              life: 0.25, r: rand(2,4), color:'#ffbd2e', fade:true }
+          ));
+        }
+        if (this.bruteT <= 0) {
+          this.bruteState = 'dash';
+          this.bruteT = base.chargeDur;
+        }
+      } else if (this.bruteState === 'dash') {
+        this.move(this.bruteDx, this.bruteDy, this.speed * base.chargeSpdMul, dt);
+        // Damage on contact, once per dash. Keeps it punishing without instakilling.
+        if (!this.bruteHit && d < this.r + player.r + 4 && player.iFrames <= 0) {
+          player.hurt(this.damage * base.chargeDmgMul, this.x, this.y);
+          this.bruteHit = true;
+          // suppress regular contact damage for a moment so charge + touch don't double-hit
+          this.touchCd = this.touchCdMax;
+          // big knockback on charge hit
+          player.x += this.bruteDx * 60;
+          player.y += this.bruteDy * 60;
+        }
+        if (this.bruteT <= 0) {
+          this.bruteState = 'recover';
+          this.bruteT = 220;
+        }
+      } else { // recover
+        // brief pause — almost stationary so player gets a punish window
+        this.move(dx/d, dy/d, this.speed * 0.3, dt);
+        if (this.bruteT <= 0) {
+          this.bruteState = 'walk';
+          this.bruteCd = base.chargeCd;
+        }
+      }
     } else {
-      // walker / runner / brute: chase
+      // walker / runner: chase, with runner zigzag jitter
       let spd = this.speed;
+      let mvx = dx/d, mvy = dy/d;
       if (this.type === 'walker') spd *= 0.9 + 0.2*Math.sin(this.wobble);
-      this.move(dx/d, dy/d, spd, dt);
+      if (this.type === 'runner') {
+        const base = ZTYPES.runner;
+        this.zigT -= dt * 1000;
+        if (this.zigT <= 0) {
+          this.zigSign = -this.zigSign;
+          this.zigT = base.zigzagPeriod * rand(0.7, 1.3);
+        }
+        // Once close enough to start swinging, drop the zigzag so the runner doesn't
+        // dance harmlessly outside touch range.
+        if (d > 90) {
+          // Add a perpendicular component, then renormalize so total speed is unchanged.
+          const px = -dy/d, py = dx/d;
+          const k = base.zigzagMag * this.zigSign;
+          mvx += px * k;
+          mvy += py * k;
+          const nm = Math.hypot(mvx, mvy) || 1;
+          mvx /= nm; mvy /= nm;
+        }
+      }
+      this.move(mvx, mvy, spd, dt);
     }
 
     // walk phase
@@ -3216,12 +3650,9 @@ class Powerup {
     this.r=16;
     this.phase=0;
     this.dead=false;
-    this.life = 14;
   }
   update(dt, player) {
     this.phase += dt*3;
-    this.life -= dt;
-    if (this.life <= 0) this.dead = true;
     if (dist2(this.x, this.y, player.x, player.y) < (this.r+player.r)**2) {
       if (this.type==='health') {
         player.hp = Math.min(player.maxHp, player.hp + 30);
@@ -3269,17 +3700,29 @@ class Powerup {
 
 // ------------- ROOM GENERATION ---------------------------------
 function generateObstacles(floor, isBoss) {
-  const theme = FLOORS[Math.min(floor-1, 4)];
+  const { obstacles: pool } = themeForFloor(floor);
   const count = isBoss ? randi(3, 5) : randi(4, 7);
   const obs = [];
   let tries = 0;
   while (obs.length < count && tries < 200) {
     tries++;
-    const type = choice(theme.obstacles);
+    const type = choice(pool);
     let w, h;
-    if (type === 'crate')       { w = randi(80, 180); h = randi(80, 180); }
-    else if (type === 'barrel') { w = h = randi(90, 130); }
-    else                        { w = randi(180, 240); h = randi(90, 130); }
+    if (type === 'crate')              { w = randi(80, 180); h = randi(80, 180); }
+    else if (type === 'barrel')        { w = h = randi(90, 130); }
+    else if (type === 'car')           { w = randi(180, 240); h = randi(90, 130); }
+    else if (type === 'arcade_cabinet'){ w = randi(80, 110);  h = randi(140, 180); }
+    else if (type === 'speaker_stack') { w = randi(90, 120);  h = randi(150, 200); }
+    else if (type === 'crt_tv')        { w = randi(110, 150); h = randi(100, 130); }
+    else if (type === 'palm_tree')     { w = h = randi(110, 150); }
+    else if (type === 'roman_bust')    { w = randi(90, 120);  h = randi(120, 160); }
+    else if (type === 'lamp_post')     { w = randi(40, 60);   h = randi(170, 220); }
+    else if (type === 'dumpster')      { w = randi(150, 200); h = randi(100, 130); }
+    else if (type === 'holo_pillar')   { w = randi(70, 100);  h = randi(180, 230); }
+    else if (type === 'neon_barricade'){ w = randi(170, 230); h = randi(70, 100); }
+    else if (type === 'mushroom')      { w = h = randi(90, 130); }
+    else if (type === 'bush')          { w = randi(120, 170); h = randi(80, 120); }
+    else                               { w = randi(80, 180); h = randi(80, 180); }
     const x = randi(140, world.w - w - 140);
     const y = randi(140, world.h - h - 140);
     // ensure not too close to center (player spawn) or other obstacles
@@ -3512,14 +3955,24 @@ function renderChoiceCards() {
       <div class="desc">${descText}</div>
       <div class="lvl-pill">${lvlText}</div>
     `;
+    // Single click: only ever selects — never confirms. Confirmation requires
+    // either a double-click on a card or an explicit press of the CONFIRM button
+    // (or the Enter key). This prevents accidental upgrade picks in combat.
+    card.style.userSelect = 'none';
     card.addEventListener('click', () => {
-      if (game.selectedChoice === idx) {
-        confirmSelectedUpgrade();
-      } else {
+      if (game.selectedChoice !== idx) {
         game.selectedChoice = idx;
         updateCardSelection();
-        sfx('pickup');
       }
+      sfx('pickup');
+    });
+    card.addEventListener('dblclick', (e) => {
+      e.preventDefault(); // suppress text-selection from the double-click
+      if (game.selectedChoice !== idx) {
+        game.selectedChoice = idx;
+        updateCardSelection();
+      }
+      confirmSelectedUpgrade();
     });
     grid.appendChild(card);
   });
@@ -3664,7 +4117,7 @@ function updateHUD() {
 
 // ------------- RENDER ------------------------------------------
 function drawWorld() {
-  const theme = FLOORS[Math.min(game.floor-1, 4)];
+  const { palette: theme } = themeForFloor(game.floor);
   const sx = camera.shake ? (Math.random()-0.5)*camera.shake : 0;
   const sy = camera.shake ? (Math.random()-0.5)*camera.shake : 0;
 
@@ -3784,6 +4237,230 @@ function drawObstacle(o) {
     ctx.fillStyle = '#fff6c9';
     ctx.beginPath(); ctx.arc(x+w-4, y+10, 5, 0, TAU); ctx.fill();
     ctx.beginPath(); ctx.arc(x+w-4, y+h-10, 5, 0, TAU); ctx.fill();
+  } else if (type === 'arcade_cabinet') {
+    ctx.fillStyle = 'rgba(15,10,26,0.4)';
+    ctx.fillRect(x+6, y+h-4, w, 12);
+    ctx.fillStyle = '#2a1840';
+    ctx.fillRect(x, y, w, h);
+    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 4;
+    ctx.strokeRect(x, y, w, h);
+    // screen
+    ctx.fillStyle = '#ff6bc8';
+    ctx.fillRect(x+w*0.12, y+h*0.12, w*0.76, h*0.32);
+    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
+    ctx.strokeRect(x+w*0.12, y+h*0.12, w*0.76, h*0.32);
+    // joystick + buttons
+    ctx.fillStyle = '#4eccda';
+    ctx.beginPath(); ctx.arc(x+w*0.32, y+h*0.62, 5, 0, TAU); ctx.fill();
+    ctx.fillStyle = '#ffbd2e';
+    ctx.beginPath(); ctx.arc(x+w*0.55, y+h*0.62, 4, 0, TAU); ctx.fill();
+    ctx.fillStyle = '#ff5e7e';
+    ctx.beginPath(); ctx.arc(x+w*0.7, y+h*0.62, 4, 0, TAU); ctx.fill();
+    // glow band
+    ctx.fillStyle = '#4eccda';
+    ctx.fillRect(x+w*0.12, y+h*0.78, w*0.76, 4);
+  } else if (type === 'speaker_stack') {
+    ctx.fillStyle = 'rgba(15,10,26,0.4)';
+    ctx.fillRect(x+6, y+h-4, w, 12);
+    ctx.fillStyle = '#1a0f2a';
+    ctx.fillRect(x, y, w, h);
+    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 4;
+    ctx.strokeRect(x, y, w, h);
+    // 3 cones
+    ctx.fillStyle = '#3a2856';
+    for (let i = 0; i < 3; i++) {
+      const cy = y + h*(0.18 + i*0.28);
+      ctx.beginPath(); ctx.arc(x+w/2, cy, Math.min(w,h)*0.14, 0, TAU); ctx.fill();
+      ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
+      ctx.beginPath(); ctx.arc(x+w/2, cy, Math.min(w,h)*0.14, 0, TAU); ctx.stroke();
+      ctx.fillStyle = '#ff6bc8';
+      ctx.beginPath(); ctx.arc(x+w/2, cy, Math.min(w,h)*0.05, 0, TAU); ctx.fill();
+      ctx.fillStyle = '#3a2856';
+    }
+  } else if (type === 'crt_tv') {
+    ctx.fillStyle = 'rgba(15,10,26,0.35)';
+    ctx.fillRect(x+6, y+h-4, w, 12);
+    ctx.fillStyle = '#8a8470';
+    ctx.fillRect(x, y, w, h);
+    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 4;
+    ctx.strokeRect(x, y, w, h);
+    // screen
+    ctx.fillStyle = '#1a2030';
+    ctx.fillRect(x+w*0.1, y+h*0.12, w*0.8, h*0.6);
+    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
+    ctx.strokeRect(x+w*0.1, y+h*0.12, w*0.8, h*0.6);
+    // scanlines
+    ctx.fillStyle = 'rgba(120,200,180,0.18)';
+    for (let i = 0; i < 6; i++) {
+      ctx.fillRect(x+w*0.1, y+h*0.12 + i*(h*0.6/6), w*0.8, 2);
+    }
+    // knobs
+    ctx.fillStyle = '#3a3424';
+    ctx.beginPath(); ctx.arc(x+w*0.25, y+h*0.86, 4, 0, TAU); ctx.fill();
+    ctx.beginPath(); ctx.arc(x+w*0.45, y+h*0.86, 4, 0, TAU); ctx.fill();
+  } else if (type === 'palm_tree') {
+    ctx.fillStyle = 'rgba(15,10,26,0.35)';
+    ctx.beginPath(); ctx.ellipse(x+w/2, y+h+4, w*0.3, 8, 0, 0, TAU); ctx.fill();
+    // trunk
+    ctx.fillStyle = '#7a5530';
+    ctx.fillRect(x+w*0.42, y+h*0.45, w*0.16, h*0.55);
+    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
+    ctx.strokeRect(x+w*0.42, y+h*0.45, w*0.16, h*0.55);
+    // fronds
+    ctx.fillStyle = '#ff6bc8';
+    for (let i = 0; i < 5; i++) {
+      const a = -Math.PI/2 + (i - 2) * 0.7;
+      const fx = x+w/2 + Math.cos(a) * w*0.4;
+      const fy = y+h*0.42 + Math.sin(a) * h*0.32;
+      ctx.beginPath();
+      ctx.moveTo(x+w/2, y+h*0.42);
+      ctx.quadraticCurveTo(x+w/2 + Math.cos(a)*w*0.2, y+h*0.32 + Math.sin(a)*h*0.08, fx, fy);
+      ctx.lineWidth = 8; ctx.strokeStyle = '#7b68ee';
+      ctx.stroke();
+    }
+    ctx.fillStyle = '#ffbd2e';
+    ctx.beginPath(); ctx.arc(x+w/2, y+h*0.45, 5, 0, TAU); ctx.fill();
+  } else if (type === 'roman_bust') {
+    ctx.fillStyle = 'rgba(15,10,26,0.35)';
+    ctx.fillRect(x+6, y+h-4, w, 12);
+    // pedestal
+    ctx.fillStyle = '#d8d0e8';
+    ctx.fillRect(x+w*0.1, y+h*0.65, w*0.8, h*0.35);
+    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 4;
+    ctx.strokeRect(x+w*0.1, y+h*0.65, w*0.8, h*0.35);
+    // head
+    ctx.fillStyle = '#e8e0f4';
+    ctx.beginPath(); ctx.ellipse(x+w/2, y+h*0.34, w*0.32, h*0.32, 0, 0, TAU); ctx.fill();
+    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 4; ctx.stroke();
+    // eye sockets
+    ctx.fillStyle = '#7b68ee';
+    ctx.beginPath(); ctx.arc(x+w*0.42, y+h*0.32, 3, 0, TAU); ctx.fill();
+    ctx.beginPath(); ctx.arc(x+w*0.58, y+h*0.32, 3, 0, TAU); ctx.fill();
+    // mouth
+    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(x+w*0.45, y+h*0.46); ctx.lineTo(x+w*0.55, y+h*0.46); ctx.stroke();
+  } else if (type === 'lamp_post') {
+    ctx.fillStyle = 'rgba(15,10,26,0.35)';
+    ctx.beginPath(); ctx.ellipse(x+w/2, y+h+2, w*0.6, 6, 0, 0, TAU); ctx.fill();
+    // base
+    ctx.fillStyle = '#2a2e36';
+    ctx.fillRect(x+w*0.2, y+h*0.88, w*0.6, h*0.12);
+    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
+    ctx.strokeRect(x+w*0.2, y+h*0.88, w*0.6, h*0.12);
+    // pole
+    ctx.fillStyle = '#3a3e46';
+    ctx.fillRect(x+w*0.42, y+h*0.18, w*0.16, h*0.7);
+    ctx.strokeRect(x+w*0.42, y+h*0.18, w*0.16, h*0.7);
+    // lamp head
+    ctx.fillStyle = '#ffd97a';
+    ctx.fillRect(x, y, w, h*0.18);
+    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 4;
+    ctx.strokeRect(x, y, w, h*0.18);
+    // glow line
+    ctx.fillStyle = 'rgba(255,217,122,0.5)';
+    ctx.fillRect(x-4, y+h*0.18, w+8, 4);
+  } else if (type === 'dumpster') {
+    ctx.fillStyle = 'rgba(15,10,26,0.35)';
+    ctx.fillRect(x+6, y+h+2, w, 10);
+    ctx.fillStyle = '#3a6e44';
+    ctx.fillRect(x, y+h*0.18, w, h*0.82);
+    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 4;
+    ctx.strokeRect(x, y+h*0.18, w, h*0.82);
+    // lid
+    ctx.fillStyle = '#2c5634';
+    ctx.fillRect(x-4, y, w+8, h*0.22);
+    ctx.strokeRect(x-4, y, w+8, h*0.22);
+    // ribs
+    ctx.strokeStyle = '#244426'; ctx.lineWidth = 3;
+    for (let i = 1; i < 4; i++) {
+      const lx = x + w*(i/4);
+      ctx.beginPath(); ctx.moveTo(lx, y+h*0.22); ctx.lineTo(lx, y+h); ctx.stroke();
+    }
+    // graffiti splat
+    ctx.fillStyle = '#ffbd2e';
+    ctx.beginPath(); ctx.arc(x+w*0.3, y+h*0.55, 6, 0, TAU); ctx.fill();
+  } else if (type === 'holo_pillar') {
+    ctx.fillStyle = 'rgba(15,10,26,0.4)';
+    ctx.beginPath(); ctx.ellipse(x+w/2, y+h+4, w*0.55, 8, 0, 0, TAU); ctx.fill();
+    // base
+    ctx.fillStyle = '#1a0f2a';
+    ctx.fillRect(x+w*0.05, y+h*0.85, w*0.9, h*0.15);
+    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 4;
+    ctx.strokeRect(x+w*0.05, y+h*0.85, w*0.9, h*0.15);
+    // holo column (translucent gradient)
+    const grad = ctx.createLinearGradient(x, y, x, y+h*0.85);
+    grad.addColorStop(0, 'rgba(0,220,255,0.05)');
+    grad.addColorStop(0.5, 'rgba(255,0,170,0.55)');
+    grad.addColorStop(1, 'rgba(0,220,255,0.7)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(x+w*0.18, y+h*0.05, w*0.64, h*0.8);
+    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 3;
+    ctx.strokeRect(x+w*0.18, y+h*0.05, w*0.64, h*0.8);
+    // flicker bands
+    const t = (performance.now()/120) | 0;
+    ctx.fillStyle = 'rgba(255,255,255,0.18)';
+    for (let i = 0; i < 4; i++) {
+      const by = y + h*0.1 + ((i*23 + t*7) % (h*0.7));
+      ctx.fillRect(x+w*0.2, by, w*0.6, 2);
+    }
+  } else if (type === 'neon_barricade') {
+    ctx.fillStyle = 'rgba(15,10,26,0.4)';
+    ctx.fillRect(x+6, y+h+2, w, 10);
+    // body
+    ctx.fillStyle = '#2a1830';
+    ctx.fillRect(x, y, w, h);
+    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 4;
+    ctx.strokeRect(x, y, w, h);
+    // neon stripes
+    ctx.fillStyle = '#ff00aa';
+    ctx.fillRect(x+4, y+h*0.2, w-8, 6);
+    ctx.fillStyle = '#00dcff';
+    ctx.fillRect(x+4, y+h*0.45, w-8, 6);
+    ctx.fillStyle = '#ffbd2e';
+    ctx.fillRect(x+4, y+h*0.7, w-8, 6);
+    // hazard chevrons
+    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 2;
+    for (let i = 0; i < 6; i++) {
+      const cx = x + 8 + i*(w-16)/6;
+      ctx.beginPath();
+      ctx.moveTo(cx, y+h-6); ctx.lineTo(cx+8, y+h-14);
+      ctx.stroke();
+    }
+  } else if (type === 'mushroom') {
+    ctx.fillStyle = 'rgba(15,10,26,0.3)';
+    ctx.beginPath(); ctx.ellipse(x+w/2, y+h+2, w*0.45, 6, 0, 0, TAU); ctx.fill();
+    // stem
+    ctx.fillStyle = '#fff5e8';
+    ctx.fillRect(x+w*0.36, y+h*0.45, w*0.28, h*0.55);
+    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 4;
+    ctx.strokeRect(x+w*0.36, y+h*0.45, w*0.28, h*0.55);
+    // cap
+    ctx.fillStyle = '#ff6b9a';
+    ctx.beginPath(); ctx.ellipse(x+w/2, y+h*0.42, w*0.5, h*0.4, 0, Math.PI, 0); ctx.fill();
+    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 4;
+    ctx.beginPath(); ctx.ellipse(x+w/2, y+h*0.42, w*0.5, h*0.4, 0, Math.PI, 0); ctx.stroke();
+    // spots
+    ctx.fillStyle = '#fff5e8';
+    ctx.beginPath(); ctx.arc(x+w*0.35, y+h*0.3, 5, 0, TAU); ctx.fill();
+    ctx.beginPath(); ctx.arc(x+w*0.62, y+h*0.36, 4, 0, TAU); ctx.fill();
+    ctx.beginPath(); ctx.arc(x+w*0.5,  y+h*0.18, 4, 0, TAU); ctx.fill();
+  } else if (type === 'bush') {
+    ctx.fillStyle = 'rgba(15,10,26,0.3)';
+    ctx.beginPath(); ctx.ellipse(x+w/2, y+h+2, w*0.5, 8, 0, 0, TAU); ctx.fill();
+    // 3 puffs
+    ctx.fillStyle = '#7ac06a';
+    ctx.beginPath(); ctx.arc(x+w*0.3, y+h*0.7, h*0.4, 0, TAU); ctx.fill();
+    ctx.beginPath(); ctx.arc(x+w*0.7, y+h*0.7, h*0.4, 0, TAU); ctx.fill();
+    ctx.beginPath(); ctx.arc(x+w*0.5, y+h*0.45, h*0.45, 0, TAU); ctx.fill();
+    ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 4;
+    ctx.beginPath(); ctx.arc(x+w*0.3, y+h*0.7, h*0.4, 0, TAU); ctx.stroke();
+    ctx.beginPath(); ctx.arc(x+w*0.7, y+h*0.7, h*0.4, 0, TAU); ctx.stroke();
+    ctx.beginPath(); ctx.arc(x+w*0.5, y+h*0.45, h*0.45, 0, TAU); ctx.stroke();
+    // tiny flowers
+    ctx.fillStyle = '#ffd3e8';
+    ctx.beginPath(); ctx.arc(x+w*0.4, y+h*0.5, 4, 0, TAU); ctx.fill();
+    ctx.fillStyle = '#fff5b0';
+    ctx.beginPath(); ctx.arc(x+w*0.62, y+h*0.62, 3, 0, TAU); ctx.fill();
   }
   ctx.restore();
 }
@@ -3817,9 +4494,10 @@ function startRun() {
 function applyEnvironmentOverlay(envId) {
   const el = $('envOverlay');
   if (!el) return;
-  el.classList.remove('active','neon','vhs','vapor');
-  if (envId && envId !== 'default') {
-    el.classList.add(envId, 'active');
+  el.classList.remove('active','neon','vhs','vapor','modern','cyberpunk','chiikawa');
+  const theme = getTheme(envId);
+  if (theme && theme.overlayClass) {
+    el.classList.add(theme.overlayClass, 'active');
   }
 }
 
@@ -3945,7 +4623,35 @@ function loop(now) {
   ctx.fillRect(0, 0, W, H);
   if (game.player) drawWorld();
   else drawMenuScene();
+  drawReticle();
   requestAnimationFrame(loop);
+}
+
+// Custom aiming reticle (replaces the OS cursor over the canvas).
+function drawReticle() {
+  const x = mouse.x, y = mouse.y;
+  ctx.save();
+  ctx.strokeStyle = '#ff3838';
+  ctx.lineWidth = 2;
+  ctx.lineCap = 'round';
+  // Outer ring
+  ctx.beginPath();
+  ctx.arc(x, y, 14, 0, TAU);
+  ctx.stroke();
+  // Crosshair: 4 short ticks with a center gap
+  const inner = 5, outer = 11;
+  ctx.beginPath();
+  ctx.moveTo(x - outer, y); ctx.lineTo(x - inner, y);
+  ctx.moveTo(x + inner, y); ctx.lineTo(x + outer, y);
+  ctx.moveTo(x, y - outer); ctx.lineTo(x, y - inner);
+  ctx.moveTo(x, y + inner); ctx.lineTo(x, y + outer);
+  ctx.stroke();
+  // Center dot
+  ctx.fillStyle = '#ff3838';
+  ctx.beginPath();
+  ctx.arc(x, y, 1.6, 0, TAU);
+  ctx.fill();
+  ctx.restore();
 }
 
 // Ambient menu scene
@@ -4055,7 +4761,12 @@ refreshAutoFireCardActive();
 const savedClass = localStorage.getItem('zr_class');
 if (savedClass === 'melee' || savedClass === 'ranged') game.playerClass = savedClass;
 const savedEnv = localStorage.getItem('zr_env');
-if (savedEnv) game.environment = savedEnv;
+if (savedEnv && THEMES[savedEnv]) game.environment = savedEnv;
+else if (savedEnv) {
+  // Unknown legacy id — fall back to default but don't overwrite localStorage
+  // (keeps user's previous selection should we add that theme later).
+  game.environment = 'default';
+}
 
 // Menu tip rotator — shows a random tip every ~5s while menu is visible
 const MENU_TIP_KEYS = ['tip_autoFire','tip_melee','tip_ranged','tip_dash','tip_reroll','tip_environment','tip_appearance','tip_space','tip_pause','tip_language'];
