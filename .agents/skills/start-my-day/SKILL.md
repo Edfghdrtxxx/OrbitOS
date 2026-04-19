@@ -99,12 +99,18 @@ Use the AskUserQuestion tool to gather (combine into as few rounds as possible):
    - **Log**: Clear body, keep header
    - **Evening Review**: Clear body, keep header
    - **AI Digest**: Remove entire section if present
-   - **Notes**: Replace with fresh recommendations. Prepend deadline agent findings as `> [!warning] Upcoming Deadlines` callout (omit source file paths; omit callout if none found).
-     - Per-project staleness uses **effective = `min(plan-stale, activity-stale)`**. Reporting format:
-       - Diverged ≥ 7 days: `(M days stale via daily tasks; N days plan-stale)`
-       - Activity-stale only (diverged < 7 days): `(M days stale via daily tasks)`
-       - No activity-stale signal (agent returned null): `(N days stale)` — current behavior
-   - **Related Projects**: Update statuses using the same staleness format as Notes.
+   - **Notes**: Replace with fresh recommendations. Group classifiable items into Obsidian callouts at the top of the section, in this order, then loose bullets below for general context:
+
+     1. `> [!warning] Upcoming Deadlines` — deadline-agent findings (omit source file paths; omit callout entirely if none found).
+     2. `> [!Staleness] Project staleness (≥ 4 days)` — one bullet per flagged project (effective staleness ≥ 4). Below the bullet list, add a parenthetical note naming omitted fresh projects (e.g., `*(FooProject, BarProject omitted — all fresh under the 4-day threshold.)*`). Omit callout entirely if no project meets the threshold.
+     3. `> [!Deferred] Deferred items & bottlenecks` — `#Deferred` re-scope flags, long-running bottleneck tasks, and multi-day carry-overs. Omit callout entirely if nothing qualifies.
+     4. Loose `- ` bullets (no callout): energy/commitments framing, main-focus rationale, inbox triage, `next_review` blanks, day cadence, and any elaboration on deadlines/staleness/deferred that doesn't fit cleanly inside a callout.
+
+     Per-project staleness uses **effective = `min(plan-stale, activity-stale)`**. Reporting format inside the `[!Staleness]` callout and in Related Projects:
+     - Diverged ≥ 7 days: `(M days stale via daily tasks; N days plan-stale)`
+     - Activity-stale only (diverged < 7 days): `(M days stale via daily tasks)`
+     - No activity-stale signal (agent returned null): `(N days stale)` — current behavior
+   - **Related Projects**: Update statuses using the same staleness format as the `[!Staleness]` callout. Related Projects lists all active projects (no 4-day threshold applies here).
 
 ## Step 4: Process New Ideas (from Q4)
 
