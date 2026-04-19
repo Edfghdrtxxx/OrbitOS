@@ -103,7 +103,7 @@ Use the AskUserQuestion tool to gather (combine into as few rounds as possible):
 
      1. `> [!warning] Upcoming Deadlines` — deadline-agent findings (omit source file paths; omit callout entirely if none found).
      2. `> [!Staleness] Project staleness (≥ 4 days)` — one bullet per flagged project (effective staleness ≥ 4). Below the bullet list, add a parenthetical note naming omitted fresh projects (e.g., `*(FooProject, BarProject omitted — all fresh under the 4-day threshold.)*`). Omit callout entirely if no project meets the threshold.
-     3. `> [!Deferred] Deferred items & bottlenecks` — `#Deferred` re-scope flags, long-running bottleneck tasks, and multi-day carry-overs. Omit callout entirely if nothing qualifies.
+     3. `> [!Stuck] Stuck & slow-moving items` — `#Deferred` re-scope flags, long-running bottleneck tasks, and multi-day carry-overs. Label honestly covers all three subcategories (a `#Deferred` tag is not required). Omit callout entirely if nothing qualifies.
      4. Loose `- ` bullets (no callout): energy/commitments framing, main-focus rationale, inbox triage, `next_review` blanks, day cadence, and any elaboration on deadlines/staleness/deferred that doesn't fit cleanly inside a callout.
 
      Per-project staleness uses **effective = `min(plan-stale, activity-stale)`**. Reporting format inside the `[!Staleness]` callout and in Related Projects:

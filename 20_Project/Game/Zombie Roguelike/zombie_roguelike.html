@@ -639,6 +639,34 @@
   }
   .settings-cog:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--c-dark); }
   .settings-cog:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--c-dark); }
+  /* "Language" annotation pointing at the SETTINGS button on the main menu */
+  .settings-btn-wrap {
+    position: relative;
+    display: inline-block;
+  }
+  .settings-annotation {
+    position: absolute;
+    left: calc(100% + 14px);
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    font-family: 'Bangers', 'ZCOOL KuaiLe', 'Noto Sans SC', sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: var(--c-accent);
+    text-shadow: 2px 2px 0 var(--c-dark);
+    background: rgba(15, 10, 26, 0.82);
+    border: 3px solid var(--c-dark);
+    box-shadow: 0 4px 0 var(--c-dark);
+    border-radius: 12px;
+    padding: 6px 12px;
+    pointer-events: none;
+    animation: settingsAnnoBob 1.6s ease-in-out infinite;
+  }
+  @keyframes settingsAnnoBob {
+    0%, 100% { transform: translate(0, -50%); }
+    50%      { transform: translate(-6px, -50%); }
+  }
   /* Appearance picker — reuses lang-card layout but with hot accent */
   .skin-grid {
     display: grid;
@@ -783,7 +811,10 @@
     <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center;">
       <button class="btn" id="startBtn" data-i18n="startRun">START RUN</button>
       <button class="btn hot" id="appearanceBtn" data-i18n="appearance">APPEARANCE</button>
-      <button class="btn cool" id="settingsBtn" data-i18n="settings">SETTINGS</button>
+      <span class="settings-btn-wrap">
+        <button class="btn cool" id="settingsBtn" data-i18n="settings">SETTINGS</button>
+        <span class="settings-annotation">← 语言/Language</span>
+      </span>
     </div>
     <div class="controls">
       <div class="key">WASD<span class="desc" data-i18n="move">Move</span></div>
