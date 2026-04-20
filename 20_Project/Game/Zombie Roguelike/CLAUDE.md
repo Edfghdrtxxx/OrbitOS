@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Single-player top-down zombie roguelike. Vanilla TypeScript + HTML Canvas, no game engine or UI framework. Shipped as a PWA via Vite, with Tauri 2 (desktop) and Capacitor 6 (mobile) wrappers.
+Single-player top-down zombie roguelike. Vanilla TypeScript + HTML Canvas, no game engine or UI framework. Primary distribution is a **single self-contained HTML file** (`dist/index.html`, ~13 MB) built via `vite-plugin-singlefile` — double-click to play, no hosting. Tauri 2 (desktop) and Capacitor 6 (mobile) wrappers are secondary.
 
 ## Source of truth
 
@@ -33,8 +33,10 @@ All commands run from `app/`:
 ## Gotchas
 
 - `tsconfig.json` has `strict`, `noUnusedLocals`, and `noUnusedParameters` — any dead import or unused parameter breaks the build.
-- `vite-plugin-singlefile` is **not yet installed**. `BACKLOG.md` lists it as a prerequisite for the death-replay feature.
-- Primary deploy target is the PWA. Tauri and Capacitor builds pick up web changes automatically unless native APIs are touched.
+- Fonts are inlined from `@fontsource` (Bangers/Nunito Latin + Noto Sans SC/ZCOOL KuaiLe chinese-simplified) via imports in `src/main.ts`. Do **not** re-add Google Fonts CDN `<link>` tags — it would break the offline-playable guarantee.
+- `build.assetsInlineLimit` is set to 100 MB in `vite.config.ts` so that all woff2s get base64-inlined by `vite-plugin-singlefile`. Lowering it will split the build into multiple files.
+- PWA is abandoned (not deferred): `vite-plugin-pwa` is still in devDependencies but no longer wired in. Do not re-enable it.
+- Primary deploy target is the single-file HTML. Tauri and Capacitor builds pick up web changes automatically unless native APIs are touched.
 - `app/dist/` and `app/src-tauri/Cargo.lock` are committed intentionally.
 
 ## Git
