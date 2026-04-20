@@ -1822,12 +1822,12 @@ class Zombie {
     this.fusing = false;
     this.fuseT = 0;
     // boss (classic) — charge + summon
-    this.chargeCd = type === 'boss' ? 10000 : 0;
+    this.chargeCd = type === 'boss' ? 5000 : 0;
     this.charging = false;
     this.chargeT = 0;
     this.chargeDx = 0;
     this.chargeDy = 0;
-    this.summonCd = type === 'boss' ? 3500 : 0;
+    this.summonCd = type === 'boss' ? 2000 : 0;
 
     // ---- floor mechanic (one per floor, applies to every enemy incl. boss) ----
     // F1: death rattle cloud, F2: adrenaline surge on hurt, F3: frenzy below 50% HP,
@@ -1915,6 +1915,21 @@ class Zombie {
     if (isBossKind(type)) {
       const seen = Array.isArray(game.bossVariantsSeen) ? game.bossVariantsSeen : [];
       this.extraAbilities = new Set(seen.filter(v => v !== type && BOSS_KINDS.has(v)));
+      // Boss stat inheritance: each earlier boss variant seen this run adds
+      // +30% to HP and damage so later bosses stack meaningfully harder on top
+      // of the per-floor scaling. Radius, touchCd, and speed are deliberately
+      // left alone — radius stacking blobs the boss over the arena, and
+      // touchCd shortening on top of boosted damage creates one-shots.
+      // Caveat: keys off variant diversity (same as ability layering), so
+      // rolling the same variant on consecutive floors won't stack.
+      const extraCount = this.extraAbilities.size;
+      if (extraCount > 0) {
+        const statMul = 1 + 0.30 * extraCount;
+        this.hp = Math.round(this.hp * statMul);
+        this.maxHp = this.hp;
+        this.damage = Math.round(this.damage * statMul);
+        this._baseDamage = this.damage;
+      }
       if (this.extraAbilities.has('boss')) {
         this.xSummonCd = Math.max(2400, 4500 - game.floor * 350) * 0.6;
       }

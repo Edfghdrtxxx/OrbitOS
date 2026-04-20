@@ -56,7 +56,7 @@ export const ZTYPES: Record<ZombieTypeId, ZombieArchetype> = {
   // Spitter Queen: 5-shot fan of slightly-homing projectiles every ~3s. Slow
   // walk, demands constant lateral movement. Mid HP, ranged area control.
   boss_queen:    { hp: 19000, speed: 50,  damage: 24, radius: 52, color:'#7bb540', eye:'#ffbd2e', score: 6800, xp: 3000, touchCd: 600, minFloor: 2,
-                   shootCd: 60000, shotCount: 100, shotSpread: 11, projSpeed: 5600, projHomeAccel: 2200, projHomeDur: 20, range: 10400 },
+                   shootCd: 4000, shotCount: 100, shotSpread: 11, projSpeed: 5600, projHomeAccel: 2200, projHomeDur: 20, range: 10400 },
 };
 
 // All variant ids that should be treated as a "boss" (HP bar, room rules,
