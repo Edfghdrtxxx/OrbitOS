@@ -708,6 +708,13 @@ const SNAPSHOT_STRIDE = 2;           // snapshot every Nth frame (~30 fps replay
 const SNAPSHOT_CAP = Math.ceil(REPLAY_DURATION_S * 60 / SNAPSHOT_STRIDE); // 240
 const EVENT_LOG_CAP = 20;
 const HIT_HISTORY_CAP = 5;
+
+// Final-boss "checkout" mechanic: the killing blow on the last boss doesn't
+// finalize until the player confirms the super-power pick (the checkout).
+// Boss stays at 1 HP, stops attacking, and is immune to further damage; at
+// checkout we roll for an ABNORMAL DEATH — its final breath catches the
+// player. 15% chance so it's a real tension beat, not a frequent rug-pull.
+const FINAL_BOSS_ABNORMAL_CHANCE = 0.15;
 const replay = {
   snapshots: [],   // array of Snapshot {t, camera, player, zombies, bullets, ezBullets, explosions, powerups, poisonClouds, obstacles}
   events: [],      // array of {t, kind, ...}
@@ -2023,6 +2030,14 @@ class Zombie {
     this.touchCd = Math.max(0, this.touchCd - dt*1000);
     this.wobble += dt * 3;
 
+    // Final-boss checkout freeze: stop all AI/attacks/contact damage until the
+    // player confirms the super-power pick. The hitFlash pulse from hurt()
+    // keeps it visually reading as alive-but-stunned.
+    if (this.pendingCheckout) {
+      this.hitFlash = Math.max(this.hitFlash, 0.3);
+      return;
+    }
+
     // ---- Jump physics (pseudo-3D elevation, mirrors player.jump) ----
     if (this.jumpT > 0) {
       this.jumpT = Math.max(0, this.jumpT - dt);
@@ -3026,6 +3041,18 @@ class Zombie {
             color: choice(['#ff7b28','#ffd966','#ff6b6b']), fade: true, gravity: 120,
           }));
         }
+        sfx('boss');
+        return false;
+      }
+      // Final-boss "checkout" mechanic: on the final floor's boss, the killing
+      // blow doesn't actually kill — boss clamps to 1 HP, stops attacking, goes
+      // invulnerable, and the normal room-clear flow brings up the super-power
+      // pick (the checkout screen). Real fate is decided at checkout confirm.
+      if (isBossKind(this.type) && game.floor >= FLOORS.length && !this.pendingCheckout) {
+        this.hp = 1;
+        this.pendingCheckout = true;
+        this.damage = 0;
+        this.hitFlash = 0.4;
         sfx('boss');
         return false;
       }
@@ -4935,7 +4962,8 @@ function updateBossAdds(dt) {
   // Find a live boss in the current zombies list.
   let bossAlive = false;
   for (const z of game.zombies) {
-    if (isBossKind(z.type) && z.hp > 0) { bossAlive = true; break; }
+    // Pending-checkout bosses are narratively dead — stop trickling adds.
+    if (isBossKind(z.type) && z.hp > 0 && !z.pendingCheckout) { bossAlive = true; break; }
   }
   if (!bossAlive) return;
   game.bossAddT -= dt;
@@ -4998,7 +5026,11 @@ function spawnZombie(type, elite=false) {
 
 function endRoomCheck() {
   if (game.roomState !== 'active') return;
-  if (game.spawnQueue.length === 0 && game.zombies.length === 0) {
+  // Pending-checkout bosses are "narratively dead" — they count as cleared so
+  // the super-power pick (checkout screen) can come up while the boss stays
+  // frozen at 1 HP. Their real fate resolves in finalizeFinalBossCheckout().
+  const liveCount = game.zombies.reduce((n, z) => n + (z.pendingCheckout ? 0 : 1), 0);
+  if (game.spawnQueue.length === 0 && liveCount === 0) {
     game.roomState = 'cleared';
     clearRoomAndAdvance();
   }
@@ -5440,6 +5472,31 @@ function confirmSelectedSuperPower() {
   });
   resumeFromSuperPower();
 }
+// Final-boss "checkout" — decides fate at the moment the player confirms the
+// super-power pick. Rolls FINAL_BOSS_ABNORMAL_CHANCE: on fail the pending boss
+// gets its "final breath" in and abnormal-kills the player; on success we
+// finalize the kill and roll credits. See FINAL_BOSS_ABNORMAL_CHANCE comment.
+function finalizeFinalBossCheckout() {
+  const abnormal = Math.random() < FINAL_BOSS_ABNORMAL_CHANCE;
+  if (abnormal) {
+    const now = (performance.now() - game.runStartT) / 1000;
+    for (const z of game.zombies) {
+      if (z.pendingCheckout) {
+        recordHit(99999, { kind: 'zombie', zombieType: z.type, attackKind: 'final-breath' }, now);
+      }
+    }
+    game.zombies = game.zombies.filter(z => !z.pendingCheckout);
+    game.abnormalDeath = true;
+    game.state = 'dead';
+    sfx('gameover');
+    showRunEnd(false);
+    return;
+  }
+  game.zombies = game.zombies.filter(z => !z.pendingCheckout);
+  game.state = 'victory';
+  showRunEnd(true);
+}
+
 function resumeFromSuperPower() {
   hideAllOverlays();
   game.state = 'playing';
@@ -5448,8 +5505,7 @@ function resumeFromSuperPower() {
   // Final-boss path: pick happens BEFORE victory screen, so fire victory now.
   if (game.pendingVictory) {
     game.pendingVictory = false;
-    game.state = 'victory';
-    showRunEnd(true);
+    finalizeFinalBossCheckout();
     return;
   }
   if (game.transitionTarget) {
@@ -6156,6 +6212,7 @@ function startRun() {
   game.lastUpgradePickId = null;
   game.pendingSuperPower = false;
   game.pendingVictory = false;
+  game.abnormalDeath = false;
   game.currentSPChoices = [];
   game.selectedSPChoice = 0;
   game.pendingLevelUps = 0;
@@ -6208,7 +6265,10 @@ function updateHUDForClass() {
 
 function showRunEnd(victory) {
   game.runTime = (performance.now() - game.runStartT) / 1000;
-  $('endTitle').textContent = victory ? t('victory') : t('youDied');
+  // Abnormal death = final boss got its last breath in at checkout. Mark it
+  // distinctly so the player reads "rare roll went against me", not "I lost".
+  const abnormal = !victory && !!game.abnormalDeath;
+  $('endTitle').textContent = victory ? t('victory') : (abnormal ? 'FINAL BREATH' : t('youDied'));
   $('endTitle').className = 'subtitle ' + (victory ? 'cool' : 'hot');
   $('endFloor').textContent = game.floor;
   $('endKills').textContent = game.kills;
@@ -6353,6 +6413,7 @@ function continueFromCheckpoint() {
   game.lastUpgradePickId = null;
   game.pendingSuperPower = false;
   game.pendingVictory = false;
+  game.abnormalDeath = false;
   game.currentSPChoices = [];
   game.selectedSPChoice = 0;
   game.bonusRerolls = cp.bonusRerolls || 0;
@@ -6477,8 +6538,7 @@ function loop(now) {
           showSuperPowerChoice();
         } else if (game.pendingVictory) {
           game.pendingVictory = false;
-          game.state = 'victory';
-          showRunEnd(true);
+          finalizeFinalBossCheckout();
         } else if (game.transitionTarget) {
           const t = game.transitionTarget;
           game.transitionTarget = null;
