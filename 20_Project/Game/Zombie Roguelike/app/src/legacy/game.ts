@@ -1297,6 +1297,12 @@ class Player {
     // running. The player's OWN DoT (none exists in this game) would not be
     // gated here either.
     if (this.z > 0) return;
+    // Room-clear grace: once no live zombies remain and no spawns are queued,
+    // the fight is functionally over. Block residual damage (exploder self-
+    // detonation on the same frame, projectiles still in flight, delayed
+    // overload booms, F1 death-rattle puffs) so "kill the last monster → die
+    // during ROOM CLEAR transition" can't happen.
+    if (game.spawnQueue.length === 0 && !game.zombies.some(z => z.hp > 0)) return;
     if (hasSP('sp_ironwall')) dmg *= 0.75;
     this.hp = Math.max(0, this.hp - dmg);
     this.iFrames = 0.55;
@@ -1327,7 +1333,7 @@ class Player {
     while (this.xp >= this.xpNeeded) {
       this.xp -= this.xpNeeded;
       this.level++;
-      this.xpNeeded = Math.floor(10 * Math.pow(1.1, this.level - 1));
+      this.xpNeeded = Math.floor(10 * Math.pow(1.06, this.level - 1));
       this.hp = Math.min(this.maxHp, this.hp + 2);
       game.pendingLevelUps++;
       leveled = true;
