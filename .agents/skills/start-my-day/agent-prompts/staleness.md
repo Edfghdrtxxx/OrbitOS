@@ -18,11 +18,16 @@ Count ONLY `- [x]` completed task lines in a daily note as activity.
 - Do NOT count project wikilink mentions in `## Log`, `## Evening Review`, or `## Related Projects` sections.
 - Do NOT count external git commits.
 
-## Classification (strict scope)
+## Classification (strict scope + umbrella projects)
 For each `[x]` task found, judge whether its text specifically references the project's topic or named work.
 - Count only if the task's subject matter clearly maps to the project (e.g., "Duolingo" → Japanese_Language; "GRE Physics" → Fundamental_Knowledge; "Momo vocabulary" → English_Learning).
 - **Do NOT count generic maintenance**: exercise, evening review, `/wiki-review`, `/phrasing-refining`, and other tasks that touch no specific project.
 - **Ambiguous cases: abstain** — don't pick a winner. If a task could plausibly belong to two projects and the text doesn't disambiguate, count it for neither.
+
+### Umbrella projects
+Any `[x]` counting for a sub-project ALSO counts for its umbrella. Record on both (same date, excerpt); umbrella anchor = newest `[x]` across the sub-project set.
+
+- **Japan_Itinerary** (UTokyo / RIKEN pathway) ← Japanese_Language, English_Learning, Fundamental_Knowledge
 
 ## Output format
 Exactly one line per project from the input list, in the same order:
