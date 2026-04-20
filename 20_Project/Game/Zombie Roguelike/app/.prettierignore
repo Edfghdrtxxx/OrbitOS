@@ -1,0 +1,6 @@
+dist
+src-tauri/target
+src-tauri/gen
+android
+ios
+node_modules

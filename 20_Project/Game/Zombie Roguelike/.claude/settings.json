@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "f=$(python -c \"import sys,json;print((json.load(sys.stdin).get('tool_input') or {}).get('file_path',''))\"); case \"$f\" in *Zombie*Roguelike*app*.ts) cd \"D:/obsidian/OrbitOS/20_Project/Game/Zombie Roguelike/app\" && npx tsc --noEmit ;; esac",
+            "timeout": 60,
+            "statusMessage": "tsc --noEmit"
+          }
+        ]
+      }
+    ]
+  }
+}

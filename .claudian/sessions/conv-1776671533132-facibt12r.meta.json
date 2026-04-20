@@ -1,0 +1,24 @@
+{
+  "id": "conv-1776671533132-facibt12r",
+  "providerId": "claude",
+  "title": "Explore critical thinking components",
+  "titleGenerationStatus": "success",
+  "createdAt": 1776671533143,
+  "updatedAt": 1776671561339,
+  "lastResponseAt": 1776671561339,
+  "sessionId": "72f5bd34-b549-4cf4-aba5-6d9edb5d13db",
+  "providerState": {
+    "providerSessionId": "72f5bd34-b549-4cf4-aba5-6d9edb5d13db"
+  },
+  "currentNote": "50_Resources/SelfDevelopment/Stanford_NotebookLM_6_Prompts_Workflow.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 3602,
+    "cacheReadInputTokens": 25790,
+    "contextWindow": 200000,
+    "contextTokens": 29393,
+    "percentage": 15,
+    "contextWindowIsAuthoritative": true
+  }
+}

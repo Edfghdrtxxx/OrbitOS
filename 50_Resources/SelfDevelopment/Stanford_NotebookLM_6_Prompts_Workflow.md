@@ -35,96 +35,54 @@ Thread by **Mayank Vora** (@aiwithmayank) on X — [link](https://x.com/aiwithma
 
 ## 1. The Core Argument Extractor
 
-**Why it matters:** Every book has one central argument everything else serves.
-Most readers finish the whole thing and can't state it in two sentences — they've
-been *present* for the book, not *finished* it.
+**Why it matters:** Every book has one central argument everything else serves. Most readers finish the whole thing and can't state it in two sentences — they've been *present* for the book, not *finished* it.
 
 **Prompt:**
 ```
-Read this entire book and identify the single central argument the author is
-making. Not the topic. The argument — the specific claim they are trying to
-convince me is true. State it in two sentences maximum. Then identify the 3 to 5
-key sub-arguments that support the central claim. For each sub-argument: what
-evidence or reasoning does the author use to support it, and how strong is that
-evidence on a scale of anecdote to empirical proof?
+Read this entire book and identify the single central argument the author is making. Not the topic. The argument — the specific claim they are trying to convince me is true. State it in two sentences maximum. Then identify the 3 to 5 key sub-arguments that support the central claim. For each sub-argument: what
+evidence or reasoning does the author use to support it, and how strong is that evidence on a scale of anecdote to empirical proof?
 ```
 
-**Payoff:** Forces the book down to a claim + load-bearing supports, graded by
-evidence strength.
+**Payoff:** Forces the book down to a claim + load-bearing supports, graded by evidence strength.
 
 ---
 
 ## 2. The Assumption Auditor
 
-**Why it matters:** Every author has a worldview baked into their writing.
-Most assumptions are never stated because they feel like *facts* to the writer.
-Strong books survive this prompt with most of their argument intact; overrated
-ones collapse at assumption two or three. This is how you measure *insight vs. ideology*.
+**Why it matters:** Every author has a worldview baked into their writing. Most assumptions are never stated because they feel like *facts* to the writer. Strong books survive this prompt with most of their argument intact; overrated ones collapse at assumption two or three. This is how you measure *insight vs. ideology*.
 
 **Prompt:**
 ```
-Identify every significant assumption this author makes that they never
-explicitly state or defend. What does the author take for granted about human
-nature, about how organizations work, about what people want, about how change
-happens? For each unstated assumption: is it well-supported by evidence outside
-this book, is it contested by credible thinkers in related fields, or is it
-simply the author's worldview presented as universal truth? Which assumption,
-if wrong, would most undermine the book's central argument?
+Identify every significant assumption this author makes that they never explicitly state or defend. What does the author take for granted about human nature, about how organizations work, about what people want, about how change happens? For each unstated assumption: is it well-supported by evidence outside this book, is it contested by credible thinkers in related fields, or is it simply the author's worldview presented as universal truth? Which assumption, if wrong, would most undermine the book's central argument?
 ```
 
-**Payoff:** Surfaces the book's load-bearing invisible beliefs and identifies
-the single one whose failure would collapse the argument.
+**Payoff:** Surfaces the book's load-bearing invisible beliefs and identifies the single one whose failure would collapse the argument.
 
 ---
 
 ## 3. The Personal Relevance Filter
 
-**Why it matters:** A book written for a general audience contains ideas that
-are highly relevant to your specific situation *and* ideas that are completely
-irrelevant to it. Passive readers absorb both equally and act on neither
-specifically. The same book produces completely different insights depending
-on who reads it and when — this prompt extracts *your* version of the book,
-not the average reader's.
+**Why it matters:** A book written for a general audience contains ideas that are highly relevant to your specific situation *and* ideas that are completely irrelevant to it. Passive readers absorb both equally and act on neither specifically. The same book produces completely different insights depending on who reads it and when — this prompt extracts *your* version of the book, not the average reader's.
 
 **Prompt:**
 ```
-Here is my specific context: [describe your work, your current challenges,
-your goals, and the decisions you're currently facing]. Now filter this entire
-book through that context. Which specific ideas, frameworks, or arguments are
-directly applicable to my situation right now? Which ones are interesting in
-general but don't apply to where I am? For the ideas that are directly
-applicable: what would implementing them look like in my specific context —
-not in the generic examples the author uses, but in my actual situation?
+Here is my specific context: [describe your work, your current challenges, your goals, and the decisions you're currently facing]. Now filter this entire book through that context. Which specific ideas, frameworks, or arguments are directly applicable to my situation right now? Which ones are interesting in general but don't apply to where I am? For the ideas that are directly applicable: what would implementing them look like in my specific context — not in the generic examples the author uses, but in my actual situation?
 ```
 
 **Payoff:** Separates "interesting" from "actionable-for-me-right-now."
 
 > **Note for me (OrbitOS context block to paste into this prompt):**
-> Master's student in Particle & Nuclear Physics at IMP/UCAS; thesis on
-> TPC particle ID using ResNet/ViT + domain adaptation; Japan immigration
-> via UTokyo CNS / RIKEN JRA PhD route (Route B); currently preparing
-> entrance exam + GRE Physics + TOEFL 100+; rejects 996 culture.
+> Master's student in Particle & Nuclear Physics at IMP/UCAS; thesis on TPC particle ID using ResNet/ViT + domain adaptation; Japan immigration via UTokyo CNS / RIKEN JRA PhD route; currently preparing entrance exam + GRE Physics + TOEFL 100+.
 
 ---
 
 ## 4. The Steelman & Counter-Challenger
 
-**Why it matters:** Every book deserves two readings — one charitable, one
-adversarial. Most readers only do the first, which means they adopt ideas
-that haven't been tested. Ideas that survive a steelman challenge are worth
-building on; ideas that collapse under it are worth discarding *before*
-they shape your decisions.
+**Why it matters:** Every book deserves two readings — one charitable, one adversarial. Most readers only do the first, which means they adopt ideas that haven't been tested. Ideas that survive a steelman challenge are worth building on; ideas that collapse under it are worth discarding *before* they shape your decisions.
 
 **Prompt:**
 ```
-First: steelman this book's central argument. Make it as strong as possible —
-stronger than the author made it themselves. Find the best evidence that
-supports it, including evidence the author didn't cite. Now: build the
-strongest possible counter-argument. Who are the most credible thinkers who
-would disagree with this book's central claim and what would they say? What
-real-world evidence exists that cuts against the author's argument? After
-running both: what is your honest assessment of how well this book's argument
-holds up under serious scrutiny?
+First: steelman this book's central argument. Make it as strong as possible — stronger than the author made it themselves. Find the best evidence that supports it, including evidence the author didn't cite. Now: build the strongest possible counter-argument. Who are the most credible thinkers who would disagree with this book's central claim and what would they say? What real-world evidence exists that cuts against the author's argument? After running both: what is your honest assessment of how well this book's argument holds up under serious scrutiny?
 ```
 
 **Payoff:** Runs the adversarial challenge for you so you don't have to hold

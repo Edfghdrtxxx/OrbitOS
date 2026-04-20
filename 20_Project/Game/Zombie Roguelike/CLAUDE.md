@@ -23,6 +23,8 @@ All commands run from `app/`:
 
 - `npm run dev` — Vite dev server on :5173
 - `npm run build` — `tsc` check + `vite build` to `app/dist/`
+- `npm run lint` — ESLint (typescript-eslint, flat config at `eslint.config.js`)
+- `npm run format` — Prettier write (config at `.prettierrc.json`)
 - `npm run tauri:dev` / `tauri:build` — desktop
 - `npm run cap:sync` / `cap:open:android` / `cap:open:ios` — mobile
 
