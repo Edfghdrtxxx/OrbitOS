@@ -250,6 +250,14 @@ addEventListener('keydown', e => {
     e.preventDefault();
     return;
   }
+  // Death replay playback — ESC closes, Space toggles play/pause, Enter restarts.
+  if (game.state === 'deathReplay') {
+    if (e.key === 'Escape') { e.preventDefault(); stopReplayPlayback(); return; }
+    if (e.key === ' ')      { e.preventDefault(); toggleReplayPlayback(); return; }
+    if (e.key === 'Enter')  { e.preventDefault(); restartReplayPlayback(); return; }
+    e.preventDefault();
+    return;
+  }
   // Upgrade choice: arrows / 1-3 select, Enter confirms, swallow everything else
   if (game.state === 'upgradeChoice') {
     if (e.key === 'Enter') {
@@ -688,6 +696,75 @@ const game = {
   currentSPChoices: [],
   selectedSPChoice: 0,
 };
+
+// ------------- DEATH REPLAY + EVENT LOG ------------------------
+// Ring buffer of lightweight world snapshots taken every SNAPSHOT_STRIDE frames
+// while the player is actively playing. On death, showRunEnd renders the last
+// 5 hits + last 20 meaningful events; the ▶ WATCH REPLAY button replays the
+// buffered snapshots on the main canvas. Reset at run start / checkpoint
+// continue so each run starts fresh.
+const REPLAY_DURATION_S = 8;
+const SNAPSHOT_STRIDE = 2;           // snapshot every Nth frame (~30 fps replay at 60 fps game)
+const SNAPSHOT_CAP = Math.ceil(REPLAY_DURATION_S * 60 / SNAPSHOT_STRIDE); // 240
+const EVENT_LOG_CAP = 20;
+const HIT_HISTORY_CAP = 5;
+const replay = {
+  snapshots: [],   // array of Snapshot {t, camera, player, zombies, bullets, ezBullets, explosions, powerups, poisonClouds, obstacles}
+  events: [],      // array of {t, kind, ...}
+  hits: [],        // array of {t, amount, source} — last HIT_HISTORY_CAP
+  frameCounter: 0, // increments every loop; snapshot when % SNAPSHOT_STRIDE === 0
+  playback: {
+    active: false,
+    paused: false,
+    startWall: 0,    // performance.now() reference when playback started
+    pausedAt: 0,     // accumulated paused time (subtract from now-startWall)
+    pauseBegan: 0,   // performance.now() when pause began (0 if not paused)
+    prevState: null, // game.state snapshot to restore on close
+  },
+};
+function replayReset() {
+  replay.snapshots.length = 0;
+  replay.events.length = 0;
+  replay.hits.length = 0;
+  replay.frameCounter = 0;
+  replay.playback.active = false;
+  replay.playback.paused = false;
+}
+// Shallow-clone an entity's own properties so later mutations don't smear the
+// snapshot. Preserve the prototype chain so drawWorld's `e.draw()` call still
+// dispatches to Zombie.prototype.draw / Player.prototype.draw / etc. on the
+// snapshot. `Object.assign({}, e)` would return a plain object with no .draw().
+function cloneEntity(e) {
+  return Object.assign(Object.create(Object.getPrototypeOf(e)), e);
+}
+function recordSnapshot(t) {
+  const snap = {
+    t,
+    camera: { x: camera.x, y: camera.y, shake: camera.shake },
+    player: game.player ? cloneEntity(game.player) : null,
+    zombies: game.zombies.filter(z => z.hp > 0).map(cloneEntity),
+    bullets: game.bullets.filter(b => !b.dead).map(cloneEntity),
+    ezBullets: game.ezBullets.filter(b => !b.dead).map(cloneEntity),
+    explosions: game.explosions.filter(e => !e.dead).map(cloneEntity),
+    powerups: game.powerups.filter(p => !p.dead).map(cloneEntity),
+    poisonClouds: game.poisonClouds.filter(c => !c.dead).map(cloneEntity),
+    obstacles: game.obstacles, // static within a room; safe to share the reference
+    floor: game.floor,
+    roomIdx: game.roomIdx,
+  };
+  replay.snapshots.push(snap);
+  if (replay.snapshots.length > SNAPSHOT_CAP) replay.snapshots.shift();
+}
+function recordEvent(ev) {
+  replay.events.push(ev);
+  if (replay.events.length > EVENT_LOG_CAP) replay.events.shift();
+}
+function recordHit(amount, source, t) {
+  const hit = { t, amount, source: source || { kind: 'unknown' } };
+  replay.hits.push(hit);
+  if (replay.hits.length > HIT_HISTORY_CAP) replay.hits.shift();
+  recordEvent({ t, kind: 'damage', amount, source: hit.source });
+}
 
 // ------------- COLLISION HELPERS -------------------------------
 // opts: { airborne: bool, passGaps: bool } — airborne callers (player mid-jump)
@@ -1288,7 +1365,7 @@ class Player {
       ));
     }
   }
-  hurt(dmg, sourceX, sourceY) {
+  hurt(dmg, sourceX, sourceY, source) {
     if (this.iFrames > 0) return;
     // Airborne jump i-frames: block ALL new damage events while z > 0. This
     // covers contact, projectiles, bloater cloud ticks and elite death pulses
@@ -1310,6 +1387,7 @@ class Player {
     shakeCam(8);
     flashDamage();
     sfx('hurt');
+    recordHit(dmg, source, (performance.now() - game.runStartT) / 1000);
     if (this.hp <= 0) {
       // Phoenix revive — single-use per run. Restore to 50% max HP and grant
       // a long i-frame window so the player doesn't instantly die again.
@@ -2167,7 +2245,7 @@ class Zombie {
         // Damage on contact, once per dash. Same-layer gated — brute plows
         // through its own plane only.
         if (!this.bruteHit && d < this.r + player.r + 4 && player.iFrames <= 0 && sameLayer(this, player)) {
-          player.hurt(this.damage * base.chargeDmgMul, this.x, this.y);
+          player.hurt(this.damage * base.chargeDmgMul, this.x, this.y, { kind: 'zombie', zombieType: this.type, attackKind: 'charge' });
           this.bruteHit = true;
           // suppress regular contact damage for a moment so charge + touch don't double-hit
           this.touchCd = this.touchCdMax;
@@ -2262,7 +2340,7 @@ class Zombie {
         this.move(this.stalkDx, this.stalkDy, this.speed * base.lungeSpdMul, dt);
         // Same-layer gated — lunge is a melee pounce.
         if (!this.stalkHit && d < this.r + player.r + 4 && player.iFrames <= 0 && sameLayer(this, player)) {
-          player.hurt(this.damage, this.x, this.y);
+          player.hurt(this.damage, this.x, this.y, { kind: 'zombie', zombieType: this.type, attackKind: 'lunge' });
           this.stalkHit = true;
           this.touchCd = this.touchCdMax;
         }
@@ -2396,7 +2474,7 @@ class Zombie {
           // moment of impact (and not airborne — player.hurt gates on z>0).
           const qdx = player.x - this.quakeTargetX, qdy = player.y - this.quakeTargetY;
           if (qdx*qdx + qdy*qdy < base.quakeR * base.quakeR) {
-            player.hurt(dmgScaled * base.quakeDmgMul, this.quakeTargetX, this.quakeTargetY);
+            player.hurt(dmgScaled * base.quakeDmgMul, this.quakeTargetX, this.quakeTargetY, { kind: 'zombie', zombieType: this.type, attackKind: 'quake' });
           }
           // Big burst
           for (let i = 0; i < 36; i++) {
@@ -2437,7 +2515,7 @@ class Zombie {
           // Detonate. Player inside ring and grounded → full slam hit.
           const sdx = player.x - this.x, sdy = player.y - this.y;
           if (sdx*sdx + sdy*sdy < base.slamR * base.slamR) {
-            player.hurt(dmgScaled * base.slamDmgMul, this.x, this.y);
+            player.hurt(dmgScaled * base.slamDmgMul, this.x, this.y, { kind: 'zombie', zombieType: this.type, attackKind: 'slam' });
           }
           // Visible shockwave (outward burst + ring of particles).
           for (let i = 0; i < 40; i++) {
@@ -2499,7 +2577,7 @@ class Zombie {
         // only ever hits ground players in practice, but the gate keeps the
         // rule uniform.
         if (!this.bruteHit && d < this.r + player.r + 4 && player.iFrames <= 0 && sameLayer(this, player)) {
-          player.hurt(dmgScaled * base.chargeDmgMul, this.x, this.y);
+          player.hurt(dmgScaled * base.chargeDmgMul, this.x, this.y, { kind: 'zombie', zombieType: this.type, attackKind: 'charge' });
           this.bruteHit = true;
           this.touchCd = this.touchCdMax;
           player.x += this.bruteDx * 70;
@@ -2619,7 +2697,7 @@ class Zombie {
       if (d < this.r + 110 && sameLayer(this, player)) {
         while (this.blazingAcc >= 0.5) {
           this.blazingAcc -= 0.5;
-          player.hurt(Math.max(2, this.damage * 0.3));
+          player.hurt(Math.max(2, this.damage * 0.3), this.x, this.y, { kind: 'zombie', zombieType: this.type, attackKind: 'blazing' });
         }
       } else if (this.blazingAcc > 0.5) {
         this.blazingAcc = 0.5;
@@ -2631,7 +2709,7 @@ class Zombie {
     // on the ground directly below (they must jump off first). Thorns also
     // require contact, so they're gated here too.
     if (d < this.r + player.r && this.touchCd <= 0 && this.type !== 'exploder' && player.z <= 0 && sameLayer(this, player)) {
-      player.hurt(this.damage, this.x, this.y);
+      player.hurt(this.damage, this.x, this.y, { kind: 'zombie', zombieType: this.type, attackKind: 'contact' });
       this.touchCd = this.touchCdMax;
       // thorns
       if (player.thornsDmg > 0) {
@@ -2787,7 +2865,7 @@ class Zombie {
         if (this.xQuakeT <= 0) {
           const qdx = player.x - this.xQuakeTargetX, qdy = player.y - this.xQuakeTargetY;
           if (qdx*qdx + qdy*qdy < base.quakeR * base.quakeR) {
-            player.hurt(this.damage * base.quakeDmgMul, this.xQuakeTargetX, this.xQuakeTargetY);
+            player.hurt(this.damage * base.quakeDmgMul, this.xQuakeTargetX, this.xQuakeTargetY, { kind: 'zombie', zombieType: this.type, attackKind: 'quake' });
           }
           for (let i = 0; i < 36; i++) {
             const a = Math.random()*TAU, s = rand(120, 300);
@@ -2820,7 +2898,7 @@ class Zombie {
         if (this.xSlamT <= 0) {
           const sdx = player.x - this.x, sdy = player.y - this.y;
           if (sdx*sdx + sdy*sdy < base.slamR * base.slamR) {
-            player.hurt(this.damage * base.slamDmgMul, this.x, this.y);
+            player.hurt(this.damage * base.slamDmgMul, this.x, this.y, { kind: 'zombie', zombieType: this.type, attackKind: 'slam' });
           }
           for (let i = 0; i < 40; i++) {
             const a = Math.random()*TAU, s = rand(180, 360);
@@ -3742,7 +3820,7 @@ function applyFloorMechanics(dt) {
         z.corrodeAcc += dt;
         while (z.corrodeAcc >= 0.5) {
           z.corrodeAcc -= 0.5;
-          player.hurt(Math.max(2, z.damage * 0.05), z.x, z.y);
+          player.hurt(Math.max(2, z.damage * 0.05), z.x, z.y, { kind: 'zombie', zombieType: z.type, attackKind: 'corrode' });
         }
       } else {
         z.corrodeAcc = 0;
@@ -3889,7 +3967,7 @@ function updatePoisonClouds(dt, player) {
         c.dotAcc += dt;
         while (c.dotAcc >= 0.5) {
           c.dotAcc -= 0.5;
-          player.hurt(c.dps * 0.5);
+          player.hurt(c.dps * 0.5, c.x, c.y, { kind: 'cloud', attackKind: 'poison' });
         }
       }
     }
@@ -4086,7 +4164,7 @@ class ZombieProjectile {
     if (this.x<0||this.y<0||this.x>world.w||this.y>world.h) { this.dead = true; return; }
     if (collidesObstacle(this.x, this.y, 4, {passGaps:true})) { this.dead = true; return; }
     if (dist2(this.x, this.y, player.x, player.y) < (player.r+8)**2) {
-      player.hurt(this.damage);
+      player.hurt(this.damage, this.x, this.y, { kind: 'projectile' });
       this.dead = true;
       const splatColor = this.tint || '#8fcf3f';
       for (let i=0;i<10;i++) {
@@ -4159,7 +4237,7 @@ class Explosion {
       } else {
         // damage player
         if (dist2(this.x, this.y, player.x, player.y) < (this.radius + player.r)**2) {
-          player.hurt(this.damage);
+          player.hurt(this.damage, this.x, this.y, { kind: 'explosion' });
         }
       }
     }
@@ -4487,6 +4565,12 @@ function generateRoomSpawns(floor, roomIdx, isBoss) {
 }
 
 function enterRoom(floor, roomIdx) {
+  // Event log — record floor change only on floor advance (not per room), and
+  // always record the room enter. runStartT may be 0 on the very first call
+  // before startRun set it, so guard the timestamp to 0 in that case.
+  const evT = game.runStartT ? (performance.now() - game.runStartT) / 1000 : 0;
+  if (floor !== game.floor) recordEvent({ t: evT, kind: 'floor', floor });
+  recordEvent({ t: evT, kind: 'room', floor, room: roomIdx });
   game.floor = floor;
   game.roomIdx = roomIdx;
   game.isBossRoom = (roomIdx === COMBAT_ROOMS);
@@ -4899,6 +4983,17 @@ function spawnZombie(type, elite=false) {
     }));
   }
   game.zombies.push(new Zombie(x, y, type, elite));
+  // Meaningful-only event log: trash spawns are noise, so only elites and
+  // bosses are recorded. Trash dominates the count in late floors otherwise.
+  if (elite || BOSS_KINDS.has(type)) {
+    recordEvent({
+      t: (performance.now() - game.runStartT) / 1000,
+      kind: 'spawn',
+      zombieType: type,
+      elite: !!elite,
+      boss: BOSS_KINDS.has(type),
+    });
+  }
 }
 
 function endRoomCheck() {
@@ -5065,6 +5160,11 @@ function applyUpgrade(id) {
   if (id === 'hp') game.player.hp = Math.min(game.player.maxHp, game.player.hp + 15);
   if (id === 'ammo') game.player.ammo = game.player.maxAmmo;
   renderUpgradeStack();
+  recordEvent({
+    t: (performance.now() - game.runStartT) / 1000,
+    kind: 'upgrade',
+    id,
+  });
 }
 function showUpgradeChoice() {
   const choices = rollUpgradeChoices(4);
@@ -5333,6 +5433,11 @@ function confirmSelectedSuperPower() {
     game.player.hp = Math.min(game.player.maxHp, game.player.hp + 999);
   }
   renderUpgradeStack();
+  recordEvent({
+    t: (performance.now() - game.runStartT) / 1000,
+    kind: 'superpower',
+    id: p.id,
+  });
   resumeFromSuperPower();
 }
 function resumeFromSuperPower() {
@@ -5374,7 +5479,7 @@ function resumeFromUpgrade() {
 
 // ------------- UI ----------------------------------------------
 const $ = id => document.getElementById(id);
-const overlays = () => ['langSelect','menu','classSelect','envSelect','upgradeChoice','superPowerChoice','runEnd','pause','settings','appearance','checkpointSlots'].map(id => $(id));
+const overlays = () => ['langSelect','menu','classSelect','envSelect','upgradeChoice','superPowerChoice','runEnd','pause','settings','appearance','checkpointSlots','deathReplay'].map(id => $(id)).filter(Boolean);
 function hideAllOverlays() { overlays().forEach(o => o.classList.add('hidden')); }
 function showOverlay(el) { hideAllOverlays(); el.classList.remove('hidden'); el.classList.add('fade-in'); }
 
@@ -5708,6 +5813,141 @@ function updateHUD() {
 }
 
 // ------------- RENDER ------------------------------------------
+// ------------- REPLAY PLAYBACK ---------------------------------
+// Drives the ▶ WATCH REPLAY overlay. The main canvas is hijacked for replay
+// rendering: while game.state === 'deathReplay', the main render branch
+// dispatches to drawReplay(), which swaps the live `game.*` arrays for the
+// currently-targeted snapshot, calls drawWorld() for visual fidelity, then
+// restores the saved state. No game updates run during playback because the
+// main loop's `if (game.state === 'playing')` branch is skipped.
+function replayCurrentElapsed() {
+  const pb = replay.playback;
+  if (pb.paused) return pb.pausedAt;
+  return pb.pausedAt + (performance.now() - pb.startWall) / 1000;
+}
+function replayTotalDuration() {
+  const s = replay.snapshots;
+  if (s.length < 2) return 0;
+  return s[s.length - 1].t - s[0].t;
+}
+function startReplayPlayback() {
+  if (!replay.snapshots.length) return;
+  const pb = replay.playback;
+  pb.prevState = game.state;
+  pb.active = true;
+  pb.paused = false;
+  pb.startWall = performance.now();
+  pb.pausedAt = 0;
+  pb.pauseBegan = 0;
+  game.state = 'deathReplay';
+  showOverlay($('deathReplay'));
+  updateReplayPlayPauseBtn();
+}
+function stopReplayPlayback() {
+  const pb = replay.playback;
+  pb.active = false;
+  pb.paused = false;
+  // Restore the runEnd overlay so the player returns to the Game Over summary.
+  game.state = pb.prevState || 'dead';
+  showOverlay($('runEnd'));
+}
+function pauseReplayPlayback() {
+  const pb = replay.playback;
+  if (pb.paused) return;
+  pb.pausedAt += (performance.now() - pb.startWall) / 1000;
+  pb.paused = true;
+}
+function resumeReplayPlayback() {
+  const pb = replay.playback;
+  if (!pb.paused) return;
+  pb.startWall = performance.now();
+  pb.paused = false;
+}
+function toggleReplayPlayback() {
+  if (replay.playback.paused) resumeReplayPlayback();
+  else pauseReplayPlayback();
+  updateReplayPlayPauseBtn();
+}
+function restartReplayPlayback() {
+  const pb = replay.playback;
+  pb.pausedAt = 0;
+  pb.startWall = performance.now();
+  // Leave paused state as-is — if paused, user is still reviewing.
+}
+function updateReplayPlayPauseBtn() {
+  const btn = $('replayPlayPauseBtn');
+  if (!btn) return;
+  btn.textContent = replay.playback.paused ? '▶' : '⏸';
+}
+function drawReplay() {
+  const s = replay.snapshots;
+  if (!s.length) return;
+  const pb = replay.playback;
+  const total = replayTotalDuration();
+  let elapsed = replayCurrentElapsed();
+  // Auto-loop at end so the player can rewatch without clicking restart.
+  if (total > 0 && elapsed >= total) {
+    pb.pausedAt = 0;
+    pb.startWall = performance.now();
+    elapsed = 0;
+  }
+  const targetT = s[0].t + Math.min(total, Math.max(0, elapsed));
+  // Linear scan — snapshots are few (<=240) and monotonically increasing.
+  let snap = s[0];
+  for (let i = 0; i < s.length; i++) {
+    if (s[i].t >= targetT) { snap = s[i]; break; }
+    snap = s[i];
+  }
+  // Swap live game state out; draw snapshot; swap live state back in. Particles
+  // and damage numbers aren't captured (noise + memory), so temporarily empty
+  // those arrays so drawWorld's particle loop has nothing to iterate.
+  const saved = {
+    cx: camera.x, cy: camera.y, cs: camera.shake,
+    player: game.player,
+    zombies: game.zombies,
+    bullets: game.bullets,
+    ezBullets: game.ezBullets,
+    explosions: game.explosions,
+    particles: game.particles,
+    damageNums: game.damageNums,
+    powerups: game.powerups,
+    poisonClouds: game.poisonClouds,
+    obstacles: game.obstacles,
+    floor: game.floor,
+    roomIdx: game.roomIdx,
+  };
+  camera.x = snap.camera.x; camera.y = snap.camera.y; camera.shake = 0;
+  game.player = snap.player;
+  game.zombies = snap.zombies;
+  game.bullets = snap.bullets;
+  game.ezBullets = snap.ezBullets;
+  game.explosions = snap.explosions;
+  game.particles = [];
+  game.damageNums = [];
+  game.powerups = snap.powerups;
+  game.poisonClouds = snap.poisonClouds;
+  game.obstacles = snap.obstacles;
+  game.floor = snap.floor;
+  game.roomIdx = snap.roomIdx;
+  try { drawWorld(); } catch { /* defensive — never crash playback */ }
+  camera.x = saved.cx; camera.y = saved.cy; camera.shake = saved.cs;
+  game.player = saved.player;
+  game.zombies = saved.zombies;
+  game.bullets = saved.bullets;
+  game.ezBullets = saved.ezBullets;
+  game.explosions = saved.explosions;
+  game.particles = saved.particles;
+  game.damageNums = saved.damageNums;
+  game.powerups = saved.powerups;
+  game.poisonClouds = saved.poisonClouds;
+  game.obstacles = saved.obstacles;
+  game.floor = saved.floor;
+  game.roomIdx = saved.roomIdx;
+  // Time indicator in the control bar.
+  const timeEl = $('replayTime');
+  if (timeEl) timeEl.textContent = elapsed.toFixed(1) + ' / ' + total.toFixed(1) + 's';
+}
+
 function drawWorld() {
   const { bg, theme } = themeForFloor(game.floor);
   const sx = camera.shake ? (Math.random()-0.5)*camera.shake : 0;
@@ -5899,6 +6139,7 @@ function drawObstacle(o) {
 // ------------- GAME FLOW ---------------------------------------
 function startRun() {
   clearInputs();
+  replayReset();
   game.floor = 1;
   game.roomIdx = 0;
   game.zombies = []; game.bullets = []; game.ezBullets = [];
@@ -6000,7 +6241,95 @@ function showRunEnd(victory) {
   // a checkpoint has actually been captured (i.e., at least one boss cleared).
   const cBtn = $('continueBtn');
   if (cBtn) cBtn.style.display = (!victory && game.checkpoint) ? '' : 'none';
+  // Cause-of-death panel + Watch-Replay button — death only.
+  const cause = $('deathCause');
+  const replayBtn = $('watchReplayBtn');
+  if (!victory) {
+    populateDeathCause();
+    if (cause) cause.classList.remove('hidden');
+    if (replayBtn) replayBtn.style.display = replay.snapshots.length ? '' : 'none';
+  } else {
+    if (cause) cause.classList.add('hidden');
+    if (replayBtn) replayBtn.style.display = 'none';
+  }
   showOverlay($('runEnd'));
+}
+
+function formatReplayTimestamp(sec) {
+  if (!isFinite(sec) || sec < 0) sec = 0;
+  const m = Math.floor(sec / 60);
+  const s = Math.floor(sec % 60);
+  return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+}
+function describeDamageSource(source) {
+  if (!source || !source.kind) return 'Unknown';
+  if (source.kind === 'zombie') {
+    const zLabel = source.zombieType ? source.zombieType.charAt(0).toUpperCase() + source.zombieType.slice(1) : 'Zombie';
+    return source.attackKind ? `${zLabel} (${source.attackKind})` : zLabel;
+  }
+  if (source.kind === 'cloud')     return 'Poison Cloud';
+  if (source.kind === 'projectile') return 'Projectile';
+  if (source.kind === 'explosion')  return 'Explosion';
+  return 'Unknown';
+}
+function describeEventLine(ev) {
+  switch (ev.kind) {
+    case 'damage':
+      return { cls: 'dmg', text: `-${Math.round(ev.amount)} ${describeDamageSource(ev.source)}` };
+    case 'spawn': {
+      const label = ev.boss ? 'Boss' : (ev.elite ? 'Elite' : 'Spawn');
+      const zt = ev.zombieType ? ev.zombieType.charAt(0).toUpperCase() + ev.zombieType.slice(1) : '';
+      return { cls: 'spawn', text: `${label}: ${zt}`.trim() };
+    }
+    case 'upgrade': {
+      const u = UPG_BY_ID[ev.id];
+      const name = u ? (tUpgradeName(ev.id) || u.name || ev.id) : ev.id;
+      return { cls: 'upgrade', text: `Upgrade: ${name}` };
+    }
+    case 'superpower': {
+      const p = SP_BY_ID[ev.id];
+      return { cls: 'superpower', text: `Super Power: ${p ? p.name : ev.id}` };
+    }
+    case 'floor': return { cls: 'floor', text: `Floor ${ev.floor}` };
+    case 'room':  return { cls: 'room',  text: `Floor ${ev.floor} · Room ${ev.room + 1}` };
+    default:      return { cls: 'event', text: ev.kind };
+  }
+}
+function populateDeathCause() {
+  const hitsEl = $('deathHits');
+  const logEl = $('deathEventLog');
+  if (hitsEl) {
+    hitsEl.innerHTML = '';
+    if (!replay.hits.length) {
+      hitsEl.innerHTML = '<div class="death-hit" style="opacity:0.6;">—</div>';
+    } else {
+      // Render newest first, mark the last one as the killing blow.
+      const hits = replay.hits.slice();
+      for (let i = hits.length - 1; i >= 0; i--) {
+        const h = hits[i];
+        const row = document.createElement('div');
+        row.className = 'death-hit' + (i === hits.length - 1 ? ' killing' : '');
+        row.innerHTML = `<span>${describeDamageSource(h.source)}</span><span>-${Math.round(h.amount)}</span><span class="death-hit-time">${formatReplayTimestamp(h.t)}</span>`;
+        hitsEl.appendChild(row);
+      }
+    }
+  }
+  if (logEl) {
+    logEl.innerHTML = '';
+    if (!replay.events.length) {
+      logEl.innerHTML = '<div class="death-event" style="opacity:0.6;">—</div>';
+    } else {
+      // Newest first so the killing blow is up top.
+      for (let i = replay.events.length - 1; i >= 0; i--) {
+        const ev = replay.events[i];
+        const parts = describeEventLine(ev);
+        const row = document.createElement('div');
+        row.className = 'death-event ' + parts.cls;
+        row.innerHTML = `<span>${parts.text}</span><span class="death-event-time">${formatReplayTimestamp(ev.t)}</span>`;
+        logEl.appendChild(row);
+      }
+    }
+  }
 }
 
 function continueFromCheckpoint() {
@@ -6037,6 +6366,7 @@ function continueFromCheckpoint() {
   game.environment = cp.environment;
   game.runStartT = performance.now();
   game.runTime = 0;
+  replayReset();
   // Preserve the checkpoint's runId so continuing the same run keeps landing
   // in the same slot. Legacy saves (no runId) get a fresh id so their next
   // auto-save doesn't overwrite an unrelated slot.
@@ -6159,6 +6489,13 @@ function loop(now) {
 
     updateHUD();
 
+    // Replay snapshot — take every SNAPSHOT_STRIDE frames while actively playing.
+    // Ring buffer in `replay.snapshots` caps at SNAPSHOT_CAP entries (~8s of play).
+    replay.frameCounter++;
+    if (replay.frameCounter % SNAPSHOT_STRIDE === 0) {
+      recordSnapshot((performance.now() - game.runStartT) / 1000);
+    }
+
     // Level-up pending: trigger the 1-second pre-pause before cards appear.
     if (game.pendingLevelUps > 0 && game.state === 'playing') {
       game.state = 'levelup_pending';
@@ -6185,12 +6522,13 @@ function loop(now) {
   // Render
   ctx.fillStyle = '#0f0a1a';
   ctx.fillRect(0, 0, W, H);
-  if (game.player) drawWorld();
+  if (game.state === 'deathReplay') drawReplay();
+  else if (game.player) drawWorld();
   else drawMenuScene();
   // Reticle only matters when the player is aiming with the mouse — if
   // auto-fire is on, auto-aim picks the target and the reticle is just
-  // visual noise.
-  if (!game.autoFire) drawReticle();
+  // visual noise. Hide during replay playback.
+  if (!game.autoFire && game.state !== 'deathReplay') drawReticle();
   requestAnimationFrame(loop);
 }
 
@@ -6255,6 +6593,17 @@ $('endMenuBtn').addEventListener('click', () => quitToMenu());
 $('continueBtn').addEventListener('click', () => { initAudio(); continueFromCheckpoint(); });
 $('resumeBtn').addEventListener('click', () => togglePause());
 $('pauseMenuBtn').addEventListener('click', () => quitToMenu());
+
+// Death replay buttons — populated in showRunEnd(false). Guard each $() so a
+// missing element (stripped build variant) doesn't crash the wiring block.
+const _watchReplayBtn = $('watchReplayBtn');
+if (_watchReplayBtn) _watchReplayBtn.addEventListener('click', () => startReplayPlayback());
+const _replayPlayPause = $('replayPlayPauseBtn');
+if (_replayPlayPause) _replayPlayPause.addEventListener('click', () => toggleReplayPlayback());
+const _replayRestart = $('replayRestartBtn');
+if (_replayRestart) _replayRestart.addEventListener('click', () => restartReplayPlayback());
+const _replayClose = $('replayCloseBtn');
+if (_replayClose) _replayClose.addEventListener('click', () => stopReplayPlayback());
 
 // Checkpoint Portal on the main menu: opens the 3-slot load picker.
 const _checkpointPortalBtn = $('checkpointPortalBtn');

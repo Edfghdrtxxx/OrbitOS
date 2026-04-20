@@ -249,10 +249,36 @@
       <div class="stat-card"><div class="lbl" data-i18n="upgrades">UPGRADES</div><div class="val" id="endUpgrades">0</div></div>
     </div>
     <div class="summary-upgrades" id="endUpgradeList"></div>
+
+    <!-- Cause of death: last 5 hits + event log + watch-replay button.
+         Populated by showRunEnd() and shown only on death (hidden on victory). -->
+    <div class="death-cause hidden" id="deathCause">
+      <div class="death-col">
+        <div class="death-col-title" data-i18n="lastHits">LAST HITS</div>
+        <div class="death-hits" id="deathHits"></div>
+      </div>
+      <div class="death-col">
+        <div class="death-col-title" data-i18n="eventLog">EVENT LOG</div>
+        <div class="death-eventlog" id="deathEventLog"></div>
+      </div>
+    </div>
+    <button class="btn hot replay-btn" id="watchReplayBtn" data-i18n="watchReplay" style="display:none;">▶ WATCH REPLAY</button>
+
     <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center;">
       <button class="btn cool" id="continueBtn" style="display:none;" data-i18n="continueRun">CONTINUE FROM CHECKPOINT</button>
       <button class="btn hot" id="restartBtn" data-i18n="newRun">NEW RUN</button>
       <button class="btn" id="endMenuBtn" data-i18n="menu">MENU</button>
+    </div>
+  </div>
+
+  <!-- DEATH REPLAY — main #game canvas renders the replay underneath; this
+       overlay only carries the playback controls. -->
+  <div class="overlay hidden replay-overlay" id="deathReplay">
+    <div class="replay-controls">
+      <button class="btn" id="replayPlayPauseBtn" aria-label="Play/Pause">⏸</button>
+      <button class="btn" id="replayRestartBtn" aria-label="Restart">⟲</button>
+      <span class="replay-time" id="replayTime">0.0 / 0.0s</span>
+      <button class="btn" id="replayCloseBtn" aria-label="Close">✕</button>
     </div>
   </div>
 

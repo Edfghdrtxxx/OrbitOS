@@ -1002,6 +1002,91 @@
     font-size: 14px;
     border: 2px solid var(--c-dark);
   }
+  /* Cause-of-death panel on the #runEnd overlay — two columns, left = last 5
+     hits, right = 20 meaningful events. Hidden on victory. */
+  .death-cause {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    max-width: 600px;
+    width: 100%;
+  }
+  .death-cause.hidden { display: none; }
+  .death-col {
+    background: rgba(26,20,40,0.9);
+    border: 3px solid var(--c-dark);
+    box-shadow: 0 4px 0 var(--c-dark);
+    border-radius: 14px;
+    padding: 10px 12px;
+    max-height: 180px;
+    overflow-y: auto;
+  }
+  .death-col-title {
+    font-size: 11px;
+    letter-spacing: 2px;
+    opacity: 0.7;
+    margin-bottom: 6px;
+    color: var(--c-hot);
+  }
+  .death-hits, .death-eventlog {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .death-hit, .death-event {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 3px 4px;
+    border-radius: 4px;
+  }
+  .death-hit { color: #ffb3b3; }
+  .death-hit.killing { background: rgba(199,56,102,0.25); color: #fff; }
+  .death-event.dmg  { color: #ffb3b3; }
+  .death-event.spawn { color: #ff9bd0; }
+  .death-event.upgrade { color: #88e1a1; }
+  .death-event.superpower { color: var(--c-cool); }
+  .death-event.floor, .death-event.room { color: #b8b8ff; opacity: 0.85; }
+  .death-event-time, .death-hit-time {
+    opacity: 0.6;
+    font-family: 'Bangers', 'ZCOOL KuaiLe', 'Noto Sans SC', monospace;
+    letter-spacing: 1px;
+  }
+  .replay-btn { margin-top: 4px; }
+  /* Replay overlay — the main canvas renders the replay; we just show the
+     controls strip centered at the bottom. The overlay itself is transparent so
+     the canvas remains visible. */
+  .replay-overlay {
+    background: transparent !important;
+    pointer-events: none;
+    justify-content: flex-end !important;
+    padding-bottom: 40px;
+  }
+  .replay-controls {
+    pointer-events: auto;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background: rgba(15,10,26,0.88);
+    border: 3px solid var(--c-dark);
+    border-radius: 14px;
+    padding: 8px 14px;
+    box-shadow: 0 4px 0 var(--c-dark);
+  }
+  .replay-controls .btn {
+    padding: 6px 14px;
+    min-width: auto;
+  }
+  .replay-time {
+    font-family: 'Bangers', 'ZCOOL KuaiLe', 'Noto Sans SC', monospace;
+    letter-spacing: 2px;
+    font-size: 14px;
+    opacity: 0.85;
+    min-width: 100px;
+    text-align: center;
+  }
   .fade-in { animation: fadeIn 0.35s ease-out; }
   @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
   .crosshair-hint {
