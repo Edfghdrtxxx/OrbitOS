@@ -85,61 +85,39 @@ Here is my specific context: [describe your work, your current challenges, your 
 First: steelman this book's central argument. Make it as strong as possible — stronger than the author made it themselves. Find the best evidence that supports it, including evidence the author didn't cite. Now: build the strongest possible counter-argument. Who are the most credible thinkers who would disagree with this book's central claim and what would they say? What real-world evidence exists that cuts against the author's argument? After running both: what is your honest assessment of how well this book's argument holds up under serious scrutiny?
 ```
 
-**Payoff:** Runs the adversarial challenge for you so you don't have to hold
-both sides of the argument in your head simultaneously.
+**Payoff:** Runs the adversarial challenge for you so you don't have to hold both sides of the argument in your head simultaneously.
 
 ---
 
 ## 5. The Action Extractor
 
-**Why it matters:** The gap between reading a book and changing anything because
-of it is where most insight goes to die. Authors write principles and give
-examples — they almost never tell you what to do differently on Monday morning.
-A book that produces zero behavior change produced zero value, regardless of
-how many pages you read.
+**Why it matters:** The gap between reading a book and changing anything because of it is where most insight goes to die. Authors write principles and give examples — they almost never tell you what to do differently on Monday morning. A book that produces zero behavior change produced zero value, regardless of how many pages you read.
 
 **Prompt:**
 ```
-Based on this book: generate the 5 most specific, immediately actionable
-changes I could make in the next 30 days based on its core ideas. Not vague
-directional shifts like 'be more strategic' or 'focus on what matters.'
-Specific behavioral changes with a clear trigger, a clear action, and a clear
-way to measure whether I actually did it. Then rank these 5 changes by: how
-much impact they would have if I actually implemented them versus how much
-friction they would create in my current life. Which one should I start with
-tomorrow and what exactly does starting look like?
+Based on this book: generate the 5 most specific, immediately actionable changes I could make in the next 30 days based on its core ideas. Not vague directional shifts like 'be more strategic' or 'focus on what matters.' Specific behavioral changes with a clear trigger, a clear action, and a clear way to measure whether I actually did it. Then rank these 5 changes by: how much impact they would have if I actually implemented them versus how much friction they would create in my current life. Which one should I start with tomorrow and what exactly does starting look like?
 ```
 
-**Payoff:** Converts the book into a trigger → action → measurement checklist,
-ranked by impact/friction, with a single "start tomorrow" commitment.
+**Payoff:** Converts the book into a trigger → action → measurement checklist, ranked by impact/friction, with a single "start tomorrow" commitment.
 
 ---
 
 ## 6. The Permanent Note Builder
 
-**Why it matters:** The last and most important prompt for **long-term compounding**.
-Niklas Luhmann built a system of 90,000 interconnected notes that produced 70
-books and hundreds of papers. His rule: *never capture a quote — always capture
-the idea in your own words, connected to something you already know.*
+**Why it matters:** The last and most important prompt for **long-term compounding**. Niklas Luhmann built a system of 90,000 interconnected notes that produced 70 books and hundreds of papers. His rule: *never capture a quote — always capture the idea in your own words, connected to something you already know.*
 
-Most reading produces highlights that make sense in context and nothing outside
-of it. This prompt produces insights that compound across everything else you know.
+Most reading produces highlights that make sense in context and nothing outside of it. This prompt produces insights that compound across everything else you know.
 That's the whole difference between *consuming* books and *learning* from them.
 
 **Prompt:**
 ```
-Synthesize this entire book into 5 permanent notes I can add to my knowledge
-system. Each note must: state one core idea from the book in my own words as
-if explaining it to someone who hasn't read the book, connect that idea to at
-least one other concept I might already know from a different domain, include
-the single most compelling piece of evidence from the book that supports this
-idea, and end with one open question this idea raises that I haven't seen
-fully answered anywhere. Write each note as a standalone insight that would
-be useful even to someone who never reads this book.
+Synthesize this entire book into 5 permanent notes I can add to my knowledge system. Each note must: state one core idea from the book in my own words as
+if explaining it to someone who hasn't read the book, connect that idea to at least one other concept I might already know from a different domain, include
+the single most compelling piece of evidence from the book that supports this idea, and end with one open question this idea raises that I haven't seen
+fully answered anywhere. Write each note as a standalone insight that would be useful even to someone who never reads this book.
 ```
 
-**Payoff:** Outputs atomic, cross-domain-linked, evidence-anchored, question-
-opening notes — exactly the format [[40_Wiki]] atomic notes are supposed to take.
+**Payoff:** Outputs atomic, cross-domain-linked, evidence-anchored, question- opening notes — exactly the format [[40_Wiki]] atomic notes are supposed to take.
 
 ---
 
