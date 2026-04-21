@@ -4,7 +4,7 @@ tags:
   - english
   - learning
   - academic-writing
-updated: 2026-03-24
+updated: 2026-04-21
 ---
 # English Suggestions
 
@@ -51,6 +51,11 @@ Target: academic English (TOEFL, research emails, papers). Formal words are stre
 | "under the situation" | "under the proper situation" | **in** the right situation — *under* pairs with *conditions/circumstances* | Formal writing |
 | "Just as what X said" | "Just as what Marcus said" | Drop "what": "Just as Marcus said" / "As Marcus noted" | Referencing others' opinions (TOEFL, debate) |
 | "limits" vs "limitations" | "limits of requiring" → "limitations to requiring" | "limits" = numerical caps; "limitations" = shortcomings. Collocation: "limitations **to**" | Discussing disadvantages of a policy |
+| Noun-pile from L1 | "knowledge learning", "customized knowledge review" | Unpack into verb phrases: "learning something", "reviewing custom material" | Describing study/learning activities |
+| Invented adverbs | "remember it retentively" | "retentively" isn't idiomatic — say "make it stick" / "retain the material" | Reaching for formal adverbs from a root word |
+| "Do we have…?" for availability | "Do we have a similar app?" | "Is there…?" / "Does X exist?" — "Do we have" implies shared possession | Asking whether something exists |
+| "similar… just like" redundancy | "a similar app just like MOMO" | Pick one: "a similar app" OR "an app like MOMO" | Comparing products/tools |
+| Dangling "While" opener | "While I am using MOMO. Do we have…?" | "While" needs a contrasting clause — use "I'm currently using…" as a statement | Setting up context before a question |
 
 ## Corrected Collocations
 
