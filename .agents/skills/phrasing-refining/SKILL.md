@@ -24,7 +24,7 @@ Keep notes terse. Focus on: grammar, word choice, collocations, idiom, register,
 
 ## Persistent Suggestions File
 Path: `50_Resources/English/English_Suggestions_Claude.md`
-When the user asks for English learning suggestions, update this file. Keep it **terse and table-driven**:
+**Only when the user explicitly asks for English learning suggestions** (e.g. "update my suggestions", "log this pattern") — update this file. A /phrasing-refining call alone is NOT a request to update this file. Keep it **terse and table-driven**:
 - **Daily Focus** (top, max 3): pattern name + a concrete micro-action tied to real writing contexts. Rotate an item out when its Active Pattern row is removed (mastered) or the user requests it.
 - **Active Patterns** table — columns: Pattern | Latest Example | Fix | Trigger Context (name the specific task or text type; never write "All contexts"). One row per pattern, merge new examples in.
 - **Corrected Collocations** list: `wrong -> right`, deduplicate
