@@ -1812,6 +1812,15 @@ class Zombie {
     this.eye = base.eye;
     this.touchCdMax = base.touchCd;
     this.touchCd = 0;
+    // Boss-only: override for on-touch collision damage + 3s periodic melee
+    // swipe. Non-bosses leave these unset and fall back to `this.damage` for
+    // contact hits (see the contact-damage block below). Damage fields are
+    // scaled by the current difficulty dmgMul so they compose with the tier.
+    this.collisionDmg = base.collisionDmg != null ? Math.round(base.collisionDmg * tier.dmgMul) : null;
+    this.meleePower   = base.meleePower   != null ? Math.round(base.meleePower   * tier.dmgMul) : null;
+    this.meleeCdMax   = base.meleeCd || 0;
+    this.meleeCd      = this.meleeCdMax;
+    this.meleeRange   = base.meleeRange || 0;
     this.walkPhase = Math.random() * TAU;
     this.hitFlash = 0;
     this.angle = 0;
@@ -2043,6 +2052,7 @@ class Zombie {
   update(dt, player) {
     this.hitFlash = Math.max(0, this.hitFlash - dt);
     this.touchCd = Math.max(0, this.touchCd - dt*1000);
+    if (this.meleeCdMax > 0) this.meleeCd = Math.max(0, this.meleeCd - dt*1000);
     this.wobble += dt * 3;
 
     // Final-boss checkout freeze: stop all AI/attacks/contact damage until the
@@ -2734,12 +2744,22 @@ class Zombie {
       }
     }
 
+    // Boss periodic melee swipe — every meleeCdMax (3s), if the player is
+    // within meleeRange and on the same layer, deal meleePower damage. This
+    // is in addition to the on-touch contact hit below, which uses
+    // collisionDmg for bosses.
+    if (this.meleeCdMax > 0 && this.meleeCd <= 0 && this.meleePower != null
+        && d < this.r + this.meleeRange && player.z <= 0 && sameLayer(this, player)) {
+      player.hurt(this.meleePower, this.x, this.y, { kind: 'zombie', zombieType: this.type, attackKind: 'melee' });
+      this.meleeCd = this.meleeCdMax;
+    }
+
     // Contact damage — gated by layer (same-layer only) + skipped while the
     // player is airborne. A zombie on a platform cannot body-damage a player
     // on the ground directly below (they must jump off first). Thorns also
     // require contact, so they're gated here too.
     if (d < this.r + player.r && this.touchCd <= 0 && this.type !== 'exploder' && player.z <= 0 && sameLayer(this, player)) {
-      player.hurt(this.damage, this.x, this.y, { kind: 'zombie', zombieType: this.type, attackKind: 'contact' });
+      player.hurt(this.collisionDmg != null ? this.collisionDmg : this.damage, this.x, this.y, { kind: 'zombie', zombieType: this.type, attackKind: 'contact' });
       this.touchCd = this.touchCdMax;
       // thorns
       if (player.thornsDmg > 0) {

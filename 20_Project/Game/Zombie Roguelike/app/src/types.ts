@@ -236,6 +236,12 @@ export interface ZombieArchetype {
   cloudSlow?: number;
   cloudDmg?: number;
 
+  // boss shared — 3s periodic melee swipe + override for on-touch damage
+  collisionDmg?: number;
+  meleePower?: number;
+  meleeCd?: number;
+  meleeRange?: number;
+
   // boss_necro
   raiseCd?: number;
   raiseCount?: number;
