@@ -1821,6 +1821,9 @@ class Zombie {
     this.meleeCdMax   = base.meleeCd || 0;
     this.meleeCd      = this.meleeCdMax;
     this.meleeRange   = base.meleeRange || 0;
+    // Seconds of residual swing animation after each melee fire — draw() uses
+    // this to drive the arm thrust; decays each frame in update().
+    this._meleeSwingT = 0;
     this.walkPhase = Math.random() * TAU;
     this.hitFlash = 0;
     this.angle = 0;
@@ -2053,6 +2056,7 @@ class Zombie {
     this.hitFlash = Math.max(0, this.hitFlash - dt);
     this.touchCd = Math.max(0, this.touchCd - dt*1000);
     if (this.meleeCdMax > 0) this.meleeCd = Math.max(0, this.meleeCd - dt*1000);
+    if (this._meleeSwingT > 0) this._meleeSwingT = Math.max(0, this._meleeSwingT - dt);
     this.wobble += dt * 3;
 
     // Final-boss checkout freeze: stop all AI/attacks/contact damage until the
@@ -2752,6 +2756,7 @@ class Zombie {
         && d < this.r + this.meleeRange && player.z <= 0 && sameLayer(this, player)) {
       player.hurt(this.meleePower, this.x, this.y, { kind: 'zombie', zombieType: this.type, attackKind: 'melee' });
       this.meleeCd = this.meleeCdMax;
+      this._meleeSwingT = 0.35;
     }
 
     // Contact damage — gated by layer (same-layer only) + skipped while the
@@ -3789,6 +3794,52 @@ class Zombie {
       const drop = 2 + Math.sin(now/300)*1;
       ctx.beginPath(); ctx.ellipse(this.r*0.85, hr*0.35 + drop, 1.5, 3, 0, 0, TAU); ctx.fill();
     }
+    // Boss arms — visible at rest, thrust forward on melee swipe. Drives off
+    // _meleeSwingT (0.35s residual animation set when the swipe fires in
+    // update()). Both hands converge toward +x for a two-fisted slam; the
+    // trailing motion arc appears when the hands are near peak extension.
+    if (isBossKind(this.type) && this.meleeCdMax > 0) {
+      const phase = this._meleeSwingT > 0 ? this._meleeSwingT / 0.35 : 0; // 1 at fire -> 0 at rest
+      const swing = Math.sin((1 - phase) * Math.PI);                      // 0 -> 1 -> 0
+      const shR = { x:  this.r * 0.85, y: -this.r * 0.25 };
+      const shL = { x: -this.r * 0.85, y: -this.r * 0.25 };
+      const restR  = { x:  this.r * 0.95, y:  this.r * 0.30 };
+      const restL  = { x: -this.r * 0.95, y:  this.r * 0.30 };
+      const peakR  = { x:  this.r * 1.30, y: -this.r * 0.10 };
+      const peakL  = { x:  this.r * 1.15, y:  this.r * 0.10 };
+      const handR = { x: restR.x + (peakR.x - restR.x) * swing, y: restR.y + (peakR.y - restR.y) * swing };
+      const handL = { x: restL.x + (peakL.x - restL.x) * swing, y: restL.y + (peakL.y - restL.y) * swing };
+      const armW = this.r * 0.24;
+      const fistR = this.r * 0.19;
+      ctx.lineCap = 'round';
+      // outline pass
+      ctx.strokeStyle = '#0f0a1a';
+      ctx.lineWidth = armW + 3;
+      ctx.beginPath(); ctx.moveTo(shR.x, shR.y); ctx.lineTo(handR.x, handR.y); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(shL.x, shL.y); ctx.lineTo(handL.x, handL.y); ctx.stroke();
+      // body-color fill pass
+      ctx.strokeStyle = bodyColor;
+      ctx.lineWidth = armW;
+      ctx.beginPath(); ctx.moveTo(shR.x, shR.y); ctx.lineTo(handR.x, handR.y); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(shL.x, shL.y); ctx.lineTo(handL.x, handL.y); ctx.stroke();
+      // fists
+      ctx.fillStyle = lighten(this.color, 12);
+      ctx.strokeStyle = '#0f0a1a'; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.arc(handR.x, handR.y, fistR, 0, TAU); ctx.fill(); ctx.stroke();
+      ctx.beginPath(); ctx.arc(handL.x, handL.y, fistR, 0, TAU); ctx.fill(); ctx.stroke();
+      ctx.lineCap = 'butt';
+      // Swing-arc motion streak near the peak of the thrust.
+      if (swing > 0.4) {
+        ctx.strokeStyle = `rgba(255,189,46,${(swing - 0.4) * 1.1})`;
+        ctx.lineWidth = 2;
+        ctx.setLineDash([4, 4]);
+        ctx.beginPath();
+        ctx.arc(this.r * 0.2, 0, this.r * 1.2, -Math.PI * 0.35, Math.PI * 0.35);
+        ctx.stroke();
+        ctx.setLineDash([]);
+      }
+    }
+
     // Exploder: glowing fuse — sized by urgency
     if (this.type === 'exploder') {
       const fp = this.fusing ? 1 - Math.max(0, this.fuseT)/ZTYPES.exploder.fuse : 0;
