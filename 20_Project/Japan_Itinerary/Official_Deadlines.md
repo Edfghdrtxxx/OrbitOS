@@ -4,29 +4,31 @@ type: reference
 status: active
 area: "[[Career]]"
 tags: [japan, phd, utokyo, deadlines, gre, toefl, gsgc]
-last_verified: 2026-04-13
+last_verified: 2026-04-22
 ---
 ## 1. UTokyo Special Selection Application (Oct 2027 enrollment — PRIMARY)
 
 > [!important] D1 entry = **Special Selection** (confirmed 2026-04-13 by Prof. Imai). GSGC ineligible for master's holders. Interview only — no written exam. GSGC is ineligible — see [[DG_GSGC_vs_Special_Selection]] (RESOLVED).
 
-Based on confirmed Oct 2026 cycle, shifted +1 year (**ESTIMATED**):
+> [!success] FY2027 guideline PUBLISHED — exact dates confirmed (checked 2026-04-22)
+> UTokyo admissions page now lists FY2027 Special Selection windows for Oct 2027 enrollment. Previous Oct 2026-cycle shift estimates retired. Source: [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html), fetched 2026-04-22.
 
 | Item | Date/Window | Status | Source |
 |------|------------|--------|--------|
-| Application Period 1 | ~Oct 15–31, 2026 | Estimated | [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html) |
-| Application Period 2 | ~Dec 5–22, 2026 | Estimated | Same |
+| Application Period 1 (Oct 2027 enrollment) | **Oct 15–30, 2026 (JST)** | **VERIFIED** (page fetched 2026-04-22) | [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html) |
+| Application Period 2 (Oct 2027 enrollment) | **Dec 7–22, 2026 (JST)** | **VERIFIED** (page fetched 2026-04-22) | Same |
+| (Informational) Period 1 — April 2027 enrollment | Oct 15–30, 2026 (JST) | VERIFIED — **not applicable** (user targets Oct 2027) | Same |
 | Written Exam | N/A | **N/A — confirmed no written exam** (Imai 2026-04-13) | — |
 | Oral Exam | TBD | **Interview only** — format TBD. CONFIRMED (Imai 2026-04-13) | — |
 | Results (Period 1) | ~End of December | VERIFIED — UTokyo admissions page | [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html) |
 | Results (Period 2) | ~Early March | VERIFIED — UTokyo admissions page | [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html) |
 
 > [!danger] NO deferred or late application
-> The Special Selection page lists **exactly two application windows** per cycle. There is no rolling admission, no spring/summer round, and no mechanism for deferred or late application. The only summer window (Jul–Aug) is exclusively for MEXT Embassy-recommended candidates. **Missing both Period 1 and Period 2 means a full 1-year delay to Oct 2028.**
-> Verified: 2026-03-11. Source: [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html)
+> The Special Selection page lists **exactly two Oct 2027 enrollment windows** per cycle (plus a separate Apr 2027 enrollment window and a MEXT-only Jul–Aug window). There is no rolling admission and no mechanism for deferred or late application. **Missing both Period 1 (Oct 15–30) and Period 2 (Dec 7–22) means a full 1-year delay to Oct 2028.**
+> Verified: 2026-04-22. Source: [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html)
 
-> [!info] Realistic target: **Period 2 (~Dec 5–22, 2026)** — confirmed (Imai 2026-04-13: admission materials before Dec 2026)
-> Given GRE Physics timing (Sep/Oct 2026, scores arrive ~Nov 2026), Period 2 is the natural target. Period 1 (~Oct 31) is feasible only if GRE is taken in the Sep window and scores arrive in time.
+> [!info] Realistic target: **Period 2 (Dec 7–22, 2026)** — confirmed (Imai 2026-04-13: admission materials before Dec 2026)
+> Given GRE Physics timing (Sep/Oct 2026, scores arrive ~Nov 2026), Period 2 is the natural target. Period 1 (closes Oct 30) is feasible only if GRE is taken in the Sep window and scores arrive in time.
 
 **All materials must be submitted within the application window.** This includes:
 - Application forms, CV, research plan / statement of purpose
@@ -39,7 +41,7 @@ Based on confirmed Oct 2026 cycle, shifted +1 year (**ESTIMATED**):
 - Conducted in English: VERIFIED — UTokyo admissions page
 - ⚠️ Request ETS score sends **well before** the application window opens to ensure delivery
 - FY2027 guideline release: late April 2026 — VERIFIED (UTokyo admissions page)
-- FY2027 exact application dates: not yet published #upcoming-confirmation-needed
+- FY2027 exact application dates: **PUBLISHED** (Period 1: Oct 15–30, 2026; Period 2: Dec 7–22, 2026) — VERIFIED 2026-04-22
 
 Exam format CONFIRMED (2026-04-13 Imai meeting): **Interview only — no written exam** for Physics department Special Selection. Previous estimates of written exam (2hr, Zoom oral 40 min) were GSGC-sourced and do not apply. Official selection method is primarily document-based review + interview (VERIFIED — UTokyo admissions page + Imai confirmation).
 
@@ -72,7 +74,7 @@ Same pattern as Section 1, shifted +1 year. Application periods would fall in ~O
 - **Domestic seat scarcity:** Only **two test centers** in mainland China (Beijing, Shanghai) `[UNVERIFIED — single test-taker report, 2025]`. Based on test-taker reports, **only the October window reliably has domestic seats** — September and April availability is unconfirmed. Register immediately when the cycle opens (~Jul 2026). Verify on NEEA portal. See [[GRE_Physics_Prep]] for full logistics.
 
 > [!info] GRE Physics — targeting Sep/Oct 2026 window
-> Apr 2026 window skipped (decision 2026-03-09). Targeting **Sep/Oct 2026** window instead (dates estimated, not yet published by ETS). Scores from Sep/Oct 2026 arrive well before the estimated Special Selection Application Period 2 (~Dec 5–22, 2026). Registration for 2026-27 windows expected to open ~July 2026. China registration via NEEA portal (gre-main.neea.cn).
+> Apr 2026 window skipped (decision 2026-03-09). Targeting **Sep/Oct 2026** window instead (dates estimated, not yet published by ETS). Scores from Sep/Oct 2026 arrive well before the now-verified Special Selection Application Period 2 (**Dec 7–22, 2026**). Registration for 2026-27 windows expected to open ~July 2026. China registration via NEEA portal (gre-main.neea.cn).
 
 ## 4. TOEFL iBT
 
@@ -100,16 +102,16 @@ Same pattern as Section 1, shifted +1 year. Application periods would fall in ~O
 - ETS recommends registering **4 months in advance** for best date selection; closes **5 days** before test (late registration: 2 days before)
 - ~~Register in **April 2026** for a **July–August 2026** exam date~~ → **Done 2026-04-09: booked 2026-08-30** (~4.7 months lead time)
 - ~~Retake possible: if score < 100, retake in Sep–Oct 2026~~ → **Strategy change 2026-04-10:** unconditional two-attempt plan — take TOEFL twice regardless of Attempt #1 score for safety margin
-- **⏰ 2026-06-19 — Register for TOEFL Attempt #2** (target: ~Nov 2026 exam date, pre-Special Selection Period 2 ~Dec 5–22)
+- **⏰ 2026-06-19 — Register for TOEFL Attempt #2** (target: ~Nov 2026 exam date, pre-Special Selection Period 2 Dec 7–22, 2026)
 
 **Plan:** Unconditional two-attempt strategy (updated 2026-04-10):
 - **Attempt #1:** ~~Register Apr 2026, test Jul–Aug 2026.~~ → **Executed: registered 2026-04-09, test 2026-08-30 at STN80118A Beijing.** Score valid through 2028-08-30.
-- **Attempt #2:** Register by **2026-06-19**, target exam ~Nov 2026. Do NOT auto-send to UTokyo at registration — compare both scores, then manually send the better one (code 8002-01) before Period 2 (~Dec 5).
+- **Attempt #2:** Register by **2026-06-19**, target exam ~Nov 2026. Do NOT auto-send to UTokyo at registration — compare both scores, then manually send the better one (code 8002-01) before Period 2 (opens Dec 7, 2026).
 
 **Score delivery to UTokyo:**
 - Select institution code **8002-01** when registering, or send additional score report after test
 - Electronic delivery: **4–8 business days** — request score send **before** application window opens
-- For Period 2 target (~Dec 5): ensure score sent by late Nov 2026 at latest
+- For Period 2 target (opens Dec 7, 2026): ensure score sent by late Nov 2026 at latest
 
 ## 5. Kenkyusei (FALLBACK)
 

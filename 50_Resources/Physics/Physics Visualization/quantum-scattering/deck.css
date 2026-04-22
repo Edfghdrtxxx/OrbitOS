@@ -1,0 +1,128 @@
+/* deck.css — slide-local styling for the quantum-scattering deck */
+
+.slide { padding: 56px 72px 72px 72px; }
+
+.slide h2.title {
+  font-size: 38px; margin: 0 0 4px;
+  border-bottom: 2px solid var(--text-1);
+  padding-bottom: 8px;
+}
+.slide .eq {
+  font-style: italic;
+  font-size: 17px;
+  color: var(--text-2);
+  margin: 4px 0 14px;
+}
+.slide .eq .sym { font-style: normal; }
+
+.canvas-box {
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  padding: 6px;
+}
+.canvas-box canvas { display: block; width: 100%; height: 100%; }
+
+.two-plots {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  flex: 1;
+  min-height: 0;
+}
+.two-plots .canvas-box { min-height: 0; height: 100%; }
+.single-plot {
+  flex: 1;
+  min-height: 0;
+}
+.single-plot .canvas-box { height: 100%; }
+
+/* Slider row */
+.controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px 28px;
+  margin-top: 18px;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+}
+.controls .ctl { display: flex; flex-direction: column; gap: 4px; font-size: 13px; }
+.controls .ctl > .lab {
+  display: flex; justify-content: space-between;
+  color: var(--text-2); font-family: var(--font-sans);
+}
+.controls .ctl > .lab .v {
+  color: var(--text-1); font-family: 'Latin Modern Roman', Georgia, serif; font-style: italic;
+}
+.controls input[type="range"] {
+  -webkit-appearance: none; appearance: none;
+  width: 100%; height: 3px; background: var(--text-3);
+  outline: none; cursor: pointer;
+}
+.controls input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--accent); border: 1px solid var(--text-1);
+}
+.controls input[type="range"]::-moz-range-thumb {
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--accent); border: 1px solid var(--text-1);
+}
+.controls button {
+  font-family: var(--font-sans); font-size: 12px;
+  background: var(--surface); color: var(--text-1);
+  border: 1px solid var(--border-strong);
+  padding: 6px 12px; cursor: pointer;
+}
+.controls button:hover { background: var(--text-1); color: var(--bg); }
+.controls button.on { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* Legend strip for the color coding */
+.legend-strip {
+  display: flex; gap: 18px; font-size: 13px; color: var(--text-2);
+  font-family: 'Latin Modern Roman', Georgia, serif;
+  margin: 8px 0 0;
+}
+.legend-strip .sw {
+  display: inline-block; width: 24px; height: 2px;
+  vertical-align: middle; margin-right: 6px;
+}
+.legend-strip .sw.pot  { background: var(--bad);  height: 3px; }
+.legend-strip .sw.psi  { background: var(--accent); }
+.legend-strip .sw.free { background: var(--good); border-top: 1px dashed var(--good); height: 1px; }
+.legend-strip .sw.tan  { background: #c08500; height: 1px; border-top: 1px dashed #c08500; }
+
+/* Cover slide */
+.cover-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  align-items: center;
+  flex: 1;
+  min-height: 0;
+}
+.cover-grid .mini-plot { aspect-ratio: 4/3; border: 1px solid var(--border-strong); }
+
+/* Synthesis */
+.synth-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+  margin-top: 18px;
+}
+.synth-grid .card-outline {
+  padding: 16px; display: flex; flex-direction: column; gap: 8px;
+  min-height: 180px;
+}
+.synth-grid .card-outline .h {
+  font-weight: 700; font-size: 15px; color: var(--accent);
+  letter-spacing: .05em; text-transform: uppercase;
+  font-family: var(--font-sans);
+}
+.synth-grid .card-outline p { font-size: 14px; margin: 0; color: var(--text-2); }
+.synth-grid .card-outline .eqline {
+  margin-top: auto; font-style: italic; font-size: 13px; color: var(--text-1);
+}
+
+/* Reference list */
+.ref-list { list-style: none; padding: 0; margin: 0; }
+.ref-list li { margin: 6px 0; font-size: 15px; color: var(--text-2); }
+.ref-list li .n { display: inline-block; width: 22px; color: var(--accent); font-weight: 700; }

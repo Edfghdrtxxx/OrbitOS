@@ -66,7 +66,7 @@ This confirms they are separate programs. For someone with an existing master's,
 | V21 | FY2027 guidelines expected late April 2026 | VERIFIED | UTokyo admissions page |
 | UA | Whether Physics dept conducts a written exam as part of Special Selection | VERIFIED — No written exam; interview only | Imai meeting 2026-04-13 |
 | UB | Physics dept oral exam format for Special Selection (duration, presentation, content) | VERIFIED — Interview format (document-based review + interview) | Imai meeting 2026-04-13 |
-| UC | FY2027 exact application dates | UNVERIFIED — not yet published (~late April 2026); admission materials before Dec 2026 confirmed by Imai | Imai meeting 2026-04-13 (partial) |
+| UC | FY2027 exact application dates | **VERIFIED 2026-04-22** — Period 1: Oct 15–30, 2026 (JST); Period 2: Dec 7–22, 2026 (JST); both for Oct 2027 enrollment | [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html) |
 | UD | Whether GRE Physics can waive a written exam component (if one exists) | N/A — No written exam exists to waive | Imai meeting 2026-04-13 |
 | UE | Minimum GRE/TOEFL score cutoffs at Physics dept level (unpublished) | VERIFIED — GRE Physics minimum 900 | Imai meeting 2026-04-13 |
 
@@ -80,7 +80,7 @@ This confirms they are separate programs. For someone with an existing master's,
 3. **Oral exam format:** What is the oral exam format for Special Selection in Physics — duration, presentation requirements, content? — **RESOLVED: Document-based review + interview format.**
 4. **GRE Physics and written exam:** Can GRE Physics waive a written exam component, if one exists? — **RESOLVED: N/A — no written exam exists.**
 5. **Score cutoffs:** Are there unpublished minimum GRE/TOEFL score cutoffs at the Physics dept level? — **RESOLVED: GRE Physics minimum 900.**
-6. **Application cycle:** FY2027 guidelines expected late April 2026 — confirm exact dates when available. — **Partially resolved: materials due before Dec 2026 (Imai). Exact dates still pending official publication.**
+6. **Application cycle:** FY2027 guidelines expected late April 2026 — confirm exact dates when available. — **RESOLVED 2026-04-22: FY2027 guidelines published. Period 1: Oct 15–30, 2026 (JST); Period 2: Dec 7–22, 2026 (JST), both for Oct 2027 enrollment.**
 
 ## Pre-Meeting Questions for [[Prof_Nobuaki_Imai|Imai-san]] (One-on-One) — COMPLETED 2026-04-13
 
@@ -149,7 +149,7 @@ Only relevant if GSGC is ineligible or Imai-san recommends Special Selection.
 > - [ ] **Typical PhD week:** "What does a typical week look like for PhD students in your group — lab time, seminars, beam time rotations, independent work? What language are meetings conducted in?"
 > - [ ] **Chinese peers:** "I noticed Jiatai Li completed his D3 in January 2026 and Qin Hao is currently in the group. Would it be possible to connect with them for practical advice on navigating the group and life at Wako/Hongo as a Chinese student?"
 > - [ ] **Tuition exemption (V4):** "Are international PhD students eligible for UTokyo's tuition exemption? How is income defined — does JRA count?"
-> - [ ] **FY2027 dates (UC):** "When do you expect FY2027 application guidelines to be published — and do you know the exact application dates?" (Expected late April 2026 per UTokyo website) #upcoming-confirmation-needed
+> - [x] **FY2027 dates (UC):** "When do you expect FY2027 application guidelines to be published — and do you know the exact application dates?" — **RESOLVED 2026-04-22 via UTokyo admissions page: Period 1 Oct 15–30, 2026; Period 2 Dec 7–22, 2026 (Oct 2027 enrollment).**
 > - [ ] **Lab visit:** "Is there a student orientation or lab visit opportunity I could attend before enrollment?"
 
 > [!tip] Conversation strategy
