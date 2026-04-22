@@ -36,7 +36,7 @@ Launch a general-purpose agent (`Agent` tool) with the following prompt — subs
 
 ## I1.5 Excalidraw Fallback
 
-When I1 returned the no-images message **and** the concept has depictable structure (flow/chain, comparison between two regimes, timing diagram, measurement pipeline), generate a schematic with the `excalidraw-diagram-generator` skill instead of leaving the section empty.
+When I1 returned the no-images message **or** the concept has depictable structure (flow/chain, comparison between two regimes, timing diagram, measurement pipeline), generate a schematic with the `excalidraw-diagram-generator` skill instead of leaving the section empty.
 
 - Save to `50_Resources/Attachments/` as `{ConceptName}_{descriptor}.excalidraw` (same naming as images).
 - In the JSON, set `"theme": "light"` and `"viewBackgroundColor": "#ffffff"` in `appState` — otherwise the Obsidian plugin auto-inverts under dark themes and the figure renders with a black background.
