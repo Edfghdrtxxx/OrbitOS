@@ -28,6 +28,9 @@ A clipboard-ready outline, **under 20–30 lines** (the principle block at the e
 ## Current State
 [File path pointers. No content summaries.]
 
+## Success Criteria
+- [Outcome-shaped bullets — observable conditions that will be true when the task is complete. Write *"L6 LOW-energy RMSE appears in the summary table"*, not *"add L6 split to eval script"*. Conditions, not actions. Keep 1–3 bullets.]
+
 ## Non-document facts (only if such state exists)
 - [Anything non-inferable from the files: decisions the user made, overrides, rejected alternatives, off-repo responsibilities, declared off-limits, environment realities. Write as past-tense state, not imperatives — *"User has declared the server off-limits"*, not *"Do not touch the server"*. The context carries the why; the rule follows from it. Keep a bullet only if omitting it would cause the follow-up AI to re-open a closed question.]
 
