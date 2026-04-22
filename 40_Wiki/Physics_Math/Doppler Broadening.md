@@ -1,10 +1,17 @@
 ---
 area: "[[Physics]]"
-tags: [gamma-spectroscopy, nuclear-physics, in-beam, review/physics]
+tags:
+  - gamma-spectroscopy
+  - nuclear-physics
+  - in-beam
+  - review/physics
 created: 2026-04-11
 last_reviewed:
 next_review: 2026-04-11
 review_interval: 0
+sr-due: 2026-04-23
+sr-interval: 1
+sr-ease: 230
 ---
 # Doppler Broadening
 
