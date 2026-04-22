@@ -75,7 +75,7 @@ This confirms they are separate programs. For someone with an existing master's,
 > [!success] Resolved (2026-04-13 Imai meeting)
 > These questions were addressed in the one-on-one meeting with Prof. Nobuaki Imai on 2026-04-13. See answers inline in [[Questions_and_Verifiable_Source#Pre-Meeting Questions for Imai-san (One-on-One)|Pre-Meeting Questions]] and updated statuses in the [[Questions_and_Verifiable_Source#Verification Tracker (updated 2026-04-13)|Verification Tracker]].
 
-1. **GSGC entry level:** For someone with an existing master's (graduating June 2027), does GSGC require M1 re-enrollment or is doctoral-level entry possible? — **RESOLVED: GSGC is ineligible for master's holders. Special Selection is the only path.**
+1. **GSGC entry level:** For someone with an existing master's (graduating June 2027), does GSGC require M1 re-enrollment or is doctoral-level entry possible? — **RESOLVED:  Special Selection chosen.**
 2. **Written exam for Special Selection:** Does the Physics department conduct a written exam as part of Special Selection, or is it purely document + oral? — **RESOLVED: No written exam; interview only.**
 3. **Oral exam format:** What is the oral exam format for Special Selection in Physics — duration, presentation requirements, content? — **RESOLVED: Document-based review + interview format.**
 4. **GRE Physics and written exam:** Can GRE Physics waive a written exam component, if one exists? — **RESOLVED: N/A — no written exam exists.**

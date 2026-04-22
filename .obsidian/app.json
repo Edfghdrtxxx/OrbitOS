@@ -15,6 +15,7 @@
     "**/.github/",
     "20_Project/AstrBot/backend/",
     "20_Project/Bilibili-RAG/bilibili-rag/",
-    "20_Project/Marker/data/"
+    "20_Project/Marker/data/",
+    "20_Project/Game/"
   ]
 }
