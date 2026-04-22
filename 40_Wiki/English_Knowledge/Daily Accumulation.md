@@ -23,7 +23,7 @@ self-fulfilling prophecy *(noun phrase)* ::: 自我实现预言
 antagonistic *(adjective)* ::: 对抗的 / 敌对的
 <!--SR:!2026-02-27,3,250!2000-01-01,1,250-->
 sunk-cost trap *(noun phrase)* ::: 沉没成本陷阱
-<!--SR:!2000-01-01,1,250!2026-02-26,2,245-->
+<!--SR:!2000-01-01,1,250!2026-04-23,1,225-->
 populate / popular *(verb/adjective)* ::: 使…有人口；居住于 / 受欢迎的；大众的
 notation *(noun)* ::: 记号法；符号系统；记注
 <!--SR:!2000-01-01,1,250!2026-02-27,3,250-->
@@ -37,7 +37,7 @@ commutativity / commutative / noncommutative *(noun/adjective/adjective)* ::: �
 echelon *(noun)* ::: 阶层 / 梯队 / 等级
 diagonal *(noun/adjective)* ::: 对角线 / 斜的
 tedious *(adjective)* ::: 冗长乏味的 / 令人厌烦的
-<!--SR:!2026-02-25,1,230!2000-01-01,1,250-->
+<!--SR:!2026-04-25,3,250!2000-01-01,1,250-->
 perpendicular vs vertical *(adjective/adjective)* ::: 垂直（数学关系）/ 竖直（方向）
 eigenstate *(noun)* ::: 本征态 / 特征态
 <!--SR:!2026-02-25,1,230!2000-01-01,1,250-->
@@ -48,7 +48,7 @@ conflate *(verb)* ::: 混为一谈 / 混淆
 overhaul *(verb/noun)* ::: 全面检修 / 彻底改造
 substantiate *(verb)* ::: 证实 / 证明
 vocal *(adjective)* ::: 声音的 / 口头的 / 直言不讳的
-<!--SR:!2000-01-01,1,250!2026-02-27,4,270-->
+<!--SR:!2000-01-01,1,250!2026-05-07,15,290-->
 provoke *(verb)* ::: 激怒 / 引发 / 挑衅
 provocative *(adjective)* ::: 挑衅的 / 刺激性的 / 引人深思的
 invoke *(verb)* ::: 援引 / 调用 / 祈求
@@ -373,8 +373,8 @@ Root *-pend-* (hang/weigh) → why does "perpendicular" mean 90°? :: A plumb li
 | eligible | able to be chosen |
 | lecture | a reading aloud |
 
-Root *-lect-* (choose/gather) → connect `neglect` and `select` via the root meaning :: Both from *legere* (to pick): select = pick out; neglect = not pick = ignore
-<!--SR:!2026-02-28,2,230-->
+Root *-lect-* → connect `neglect` and `select` via the root meaning ::  (choose/gather) Both from *legere* (to pick): select = pick out; neglect = not pick = ignore
+<!--SR:!2026-04-23,1,210-->
 
 > **Words already in this note:** `diligent`
 
