@@ -56,7 +56,7 @@ Oct - Dec 2026 ^FnQ04ljY
 TOEFL Score Ready ^A9G4v7RY
 
 1. If score<95, retake available
-2. Window: Sep-Nov 2026. Leave enough time for ETS to deliver the score before Dec 5. ^BUXkZP3k
+2. Window: Sep-Nov 2026. Leave enough time for ETS to deliver the score before Dec 7 (Period 2 opens). ^BUXkZP3k
 
 TOEFL Retake Window, till mid-Nov ^ZO5XGLz6
 
@@ -99,9 +99,9 @@ GRE Register
 ->
 Exam ^Q5hD0acM
 
-Special Selection Application ~ (estimated) Dec 5-22 ^WUzux8Af
+Special Selection Application Period 2: Dec 7-22, 2026 (VERIFIED 2026-04-22) ^WUzux8Af
 
-GSGC Application ~ (estimated) Dec 5-22 ^6p1x0aZi
+GSGC Application (N/A — ineligible for master's holders per Imai 2026-04-13) ^6p1x0aZi
 
 Special Selection Exam ~ Jan-Feb 2027 ^XsN0Kw8T
 
@@ -117,7 +117,7 @@ Submit:
 3. Proof of professor consultation
 4. Research plan, Personal Statement, Statement of Purpose
 5. Academic transcripts, two recommendation letters
-6. Exact date for the publication of official application guidelines: expected in late April 2026 #upcoming-confirmation-needed ^t1KlPf4M
+6. Official FY2027 guidelines PUBLISHED 2026-04-22: Period 1 Oct 15-30, Period 2 Dec 7-22, 2026 (JST) ^t1KlPf4M
 
 1. Selection is primarily document-based (VERIFIED)
 2. Whether Physics Department has written Exam or is purely document + oral is unverified #upcoming-confirmation-needed  ^4VNJr2dl

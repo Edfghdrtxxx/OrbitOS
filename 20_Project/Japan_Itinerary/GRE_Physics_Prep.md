@@ -16,7 +16,7 @@ GRE Physics is **compulsory** for the Special Selection pathway at UTokyo Gradua
 - **Target score: 900+** (practical minimum confirmed by Prof. Imai, 2026-04-13)
 - UTokyo institution code: **7048**
 - UTokyo requires scores **within 2 years** of application start date (stricter than ETS's 5-year validity)
-- **Target window: Sep/Oct 2026** — scores arrive well before Special Selection Application Period 2 (~Dec 2026)
+- **Target window: Sep/Oct 2026** — scores arrive well before Special Selection Application Period 2 (Dec 7–22, 2026, VERIFIED 2026-04-22)
 
 ## Study Plan
 
@@ -113,7 +113,7 @@ Exam: 120 min, continuous timer — restroom breaks do NOT pause the clock
 
 If the Oct 2026 window is missed or score is too low:
 - **Apr 2027 window** is the next opportunity, but scores arrive ~May 2027 — this **delays application to the Oct 2028 cycle**
-- No retake margin exists before the ~Dec 2026 Special Selection Period 2 deadline
+- No retake margin exists before the Special Selection Period 2 deadline (Dec 22, 2026)
 - See [[Official_Deadlines#3. GRE Physics Subject Test]] and [[UTokyo_RIKEN]] for fallback implications
 
 ## Related
