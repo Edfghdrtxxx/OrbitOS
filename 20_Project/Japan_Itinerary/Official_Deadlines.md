@@ -11,20 +11,22 @@ last_verified: 2026-04-22
 > [!important] D1 entry = **Special Selection** (confirmed 2026-04-13 by Prof. Imai). GSGC ineligible for master's holders. Interview only — no written exam. GSGC is ineligible — see [[DG_GSGC_vs_Special_Selection]] (RESOLVED).
 
 > [!success] FY2027 guideline PUBLISHED — exact dates confirmed (checked 2026-04-22)
-> UTokyo admissions page now lists FY2027 Special Selection windows for Oct 2027 enrollment. Previous Oct 2026-cycle shift estimates retired. Source: [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html), fetched 2026-04-22.
+> UTokyo admissions page now lists FY2027 Special Selection windows for Oct 2027 enrollment. Previous Oct 2026-cycle shift estimates retired.
+> - EN source: [UTokyo Special Selection (EN)](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html), fetched 2026-04-22.
+> - JA cross-check: [UTokyo Special Selection (JA)](https://www.s.u-tokyo.ac.jp/ja/admission/graduate.html), fetched 2026-04-22 — dates match (2026年10月15日〜10月30日 and 2026年12月7日〜12月22日 for 2027年10月入学). Status: 公開済み (published). Guidelines embedded in HTML; no separate 募集要項 PDF.
+> - Note (Physics unaffected): 生物科学専攻 cannot apply during Period 2.
 
 | Item | Date/Window | Status | Source |
 |------|------------|--------|--------|
 | Application Period 1 (Oct 2027 enrollment) | **Oct 15–30, 2026 (JST)** | **VERIFIED** (page fetched 2026-04-22) | [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html) |
 | Application Period 2 (Oct 2027 enrollment) | **Dec 7–22, 2026 (JST)** | **VERIFIED** (page fetched 2026-04-22) | Same |
-| (Informational) Period 1 — April 2027 enrollment | Oct 15–30, 2026 (JST) | VERIFIED — **not applicable** (user targets Oct 2027) | Same |
 | Written Exam | N/A | **N/A — confirmed no written exam** (Imai 2026-04-13) | — |
 | Oral Exam | TBD | **Interview only** — format TBD. CONFIRMED (Imai 2026-04-13) | — |
 | Results (Period 1) | ~End of December | VERIFIED — UTokyo admissions page | [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html) |
 | Results (Period 2) | ~Early March | VERIFIED — UTokyo admissions page | [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html) |
 
 > [!danger] NO deferred or late application
-> The Special Selection page lists **exactly two Oct 2027 enrollment windows** per cycle (plus a separate Apr 2027 enrollment window and a MEXT-only Jul–Aug window). There is no rolling admission and no mechanism for deferred or late application. **Missing both Period 1 (Oct 15–30) and Period 2 (Dec 7–22) means a full 1-year delay to Oct 2028.**
+> The Special Selection page lists **exactly two Oct 2027 enrollment windows** per cycle (plus a MEXT-only Jul–Aug window). There is no rolling admission and no mechanism for deferred or late application. **Missing both Period 1 (Oct 15–30) and Period 2 (Dec 7–22) means a full 1-year delay to Oct 2028.**
 > Verified: 2026-04-22. Source: [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html)
 
 > [!info] Realistic target: **Period 2 (Dec 7–22, 2026)** — confirmed (Imai 2026-04-13: admission materials before Dec 2026)
