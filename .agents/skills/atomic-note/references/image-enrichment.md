@@ -34,6 +34,17 @@ Launch a general-purpose agent (`Agent` tool) with the following prompt — subs
 > - If images found (local or downloaded): list each image as `{path} | {license} | {source_url}` for downloaded, or `{path} | local` for pre-existing.
 > - If no suitable schematics found anywhere: return exactly: `No suitable open-license schematics found on Wikimedia Commons. Proceeding with note creation.`
 
+## I1.5 Excalidraw Fallback
+
+When I1 returned the no-images message **and** the concept has depictable structure (flow/chain, comparison between two regimes, timing diagram, measurement pipeline), generate a schematic with the `excalidraw-diagram-generator` skill instead of leaving the section empty.
+
+- Save to `50_Resources/Attachments/` as `{ConceptName}_{descriptor}.excalidraw` (same naming as images).
+- In the JSON, set `"theme": "light"` and `"viewBackgroundColor": "#ffffff"` in `appState` — otherwise the Obsidian plugin auto-inverts under dark themes and the figure renders with a black background.
+- Embed at the readable size: `![[{file}.excalidraw|1000]]` (plugin default is too small).
+- Caption describes what the diagram shows and marks it as author-drawn, not a Commons figure.
+
+Skip for pure-definition topics with no structure or process to depict.
+
 ## I2. View & Confirm Images
 
 **If the subagent returned images:**

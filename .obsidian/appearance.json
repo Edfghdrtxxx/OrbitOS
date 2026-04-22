@@ -5,5 +5,7 @@
   "baseFontSize": 15,
   "baseFontSizeAction": false,
   "nativeMenus": false,
-  "accentColor": ""
+  "accentColor": "",
+  "textFontFamily": "Noto Serif SC,Source Han Serif SC",
+  "interfaceFontFamily": "Source Han Serif SC"
 }

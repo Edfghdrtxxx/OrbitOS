@@ -11,6 +11,14 @@ review_interval: 0
 ---
 # Dead Time
 
+## Schematics
+
+![[Dead_Time_pulse-train.excalidraw|1000]]
+*Pulse-train view of the two canonical models, shown on the same sequence of five arrivals (τ fixed). **Top — non-paralyzable:** each registered event opens a dead window of fixed width τ; arrivals falling inside are simply dropped, and the next arrival after the window is accepted. **Bottom — paralyzable:** every arrival (whether it triggers a record or not) restarts the dead window, so a high-rate cluster fuses into one elongated interval during which the detector is locked out. Registered events (solid green) drop from 3 to 2 between the two models for exactly the same input.*
+
+![[Dead_Time_response-curves.excalidraw|1000]]
+*Measured rate $m$ versus true rate $n$. **Blue — non-paralyzable** ($m = n/(1+n\tau)$) is monotonic and approaches the asymptote $m = 1/\tau$ as $n \to \infty$. **Red — paralyzable** ($m = n\,e^{-n\tau}$) peaks at $n = 1/\tau$ with $m_{\max} = 1/(e\tau) \approx 0.37/\tau$, then **decreases** as the true rate grows — pushing a strong source harder actually reduces the observed count rate, the practical ceiling motivating the two-source method for measuring τ.*
+
 ## Definition
 
 Dead time is the minimum time interval after registering an event during which a detector or its associated electronics cannot record another event, leading to systematic count-rate losses that must be corrected in any quantitative measurement.

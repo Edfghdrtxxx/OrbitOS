@@ -13,13 +13,16 @@ review_interval: 0
 
 ## Schematics
 
-*No open-license schematic of the ΔE-Bρ-TOF technique itself (fragment-separator layout or Z vs A/Q scatter plot) was available on Wikimedia Commons — such figures live in journal-copyrighted papers. The images below illustrate the Bethe–Bloch physics that underlies the ΔE component of the method, not the full PID chain.*
+![[DeltaE-Brho-TOF-Identification_method-schematic.excalidraw|1000]]
+*Measurement chain. A primary beam hits a thin production target; the resulting cocktail of fragments is bent through a dipole magnet. At the dispersive focal plane **F1**, a [[PPAC]] records horizontal position (fixing $B\rho = p/q$) and [[Scintillation Detector|Scint₁]] starts the TOF clock. At the achromatic focal plane **F2**, **Scint₂** stops the clock (giving $\beta = L/(c\,t_{\text{TOF}})$) and a [[MUSIC Detector|MUSIC]] ionisation chamber measures the energy loss $\Delta E$. Combining $B\rho$ with $\beta$ yields $A/Z$; combining $\Delta E$ with $\beta$ yields $Z$ — fully-separated isotopes appear as clusters on the final 2D $Z$-vs-$A/Q$ PID plot.*
+
+*The two figures below illustrate the Bethe–Bloch physics that governs the $\Delta E$ component of the method above — not the full PID chain. Open-license schematics of the complete ΔE-Bρ-TOF apparatus live in journal-copyrighted papers, so the Commons figures here serve only to visualise the underlying stopping-power dependence that makes the $Z$ extraction possible.*
 
 ![[DeltaE-Brho-TOF-Identification_principle.png|1065]]
-*Electronic stopping power of aluminium for protons: pure [[Bethe-Bloch Formula|Bethe]] prediction (red), Bethe with corrections (blue), and experimental data (circles). The ΔE measurement in ΔE-Bρ-TOF exploits exactly this $Z^2/\beta^2$ dependence to extract $Z$ once $\beta$ is fixed by TOF. (CC BY-SA 3.0, [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:StoppingHinAlBethe.png))*
+*Electronic stopping power of aluminium for protons: pure [[Bethe-Bloch Formula|Bethe]] prediction (red), Bethe with corrections (blue), and experimental data (circles). The $\Delta E$ stage of ΔE-Bρ-TOF exploits exactly this $Z^2/\beta^2$ dependence to extract $Z$ once $\beta$ is fixed by TOF. (CC BY-SA 3.0, [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:StoppingHinAlBethe.png))*
 
 ![[DeltaE-Brho-TOF-Identification_graph.png|1067]]
-*Mean excitation potential $I/Z$ vs atomic number $Z$ from ICRU Report 49 — the material-dependent parameter entering the logarithm of the [[Bethe-Bloch Formula|Bethe–Bloch]] expression and therefore the ΔE calibration of the ionisation chamber. (Public domain, [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Mean_Excitation_Potential.png))*
+*Mean excitation potential $I/Z$ vs atomic number $Z$ from ICRU Report 49 — the material-dependent parameter entering the logarithm of the [[Bethe-Bloch Formula|Bethe–Bloch]] expression and therefore the $\Delta E$ calibration of the ionisation chamber. (Public domain, [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Mean_Excitation_Potential.png))*
 
 ## Definition
 
