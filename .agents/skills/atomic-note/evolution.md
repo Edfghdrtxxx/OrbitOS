@@ -1,5 +1,9 @@
 # Evolution Log
 
+## 2026-04-22
+### Lessons
+- Don't remove dangling wikilinks. Obsidian treats unresolved links as placeholders for future atomic notes — this is how the vault's wiki-link candidates grow organically. If [[Link]] points to a file that doesn't exist yet, leave it. Only rewrite a link when it points to a REAL existing file under a different name (e.g. [[Pulse Pileup]] → [[Pile-up]] when Pile-up.md actually exists).
+
 ## 2026-03-15
 ### Lessons
 - When the user provides a source context via `/atomic-note <topic> in <file>`, after creating the note, automatically grep the source file for unlinked mentions of the new topic and offer to insert `[[Topic]]` wikilinks back into that source file. This avoids the user having to manually request backlink insertion as a separate step.
