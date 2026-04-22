@@ -1,6 +1,6 @@
 ---
 area: "[[Physics]]"
-tags: [accelerator-physics, beam-optics]
+tags: [accelerator-physics, beam-optics, review/physics]
 created: 2026-03-13
 last_reviewed:
 next_review: 2026-03-13

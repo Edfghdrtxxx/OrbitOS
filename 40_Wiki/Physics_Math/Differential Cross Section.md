@@ -1,6 +1,6 @@
 ---
 area: "[[Physics]]"
-tags: [nuclear-reactions, scattering]
+tags: [nuclear-reactions, scattering, review/physics]
 created: 2026-03-07
 last_reviewed:
 next_review: 2026-03-07
@@ -16,7 +16,7 @@ The differential cross section $d\sigma/d\Omega$ quantifies the probability of a
 
 - Related to the total cross section by integration: $\sigma = \int (d\sigma/d\Omega)\, d\Omega$
 - In [[Direct Reactions]], the angular distribution shape encodes the transferred orbital angular momentum $\ell$ — different $\ell$ values produce distinct diffraction patterns
-- Experimentally determined from: $\frac{d\sigma}{d\Omega} = \frac{N_{\text{detected}}}{N_{\text{beam}} \cdot n_{\text{target}} \cdot \Delta\Omega \cdot \epsilon}$, where $\epsilon$ is the detection efficiency
+- Experimentally determined from: $$\frac{d\sigma}{d\Omega} = \frac{N_{\text{detected}}}{N_{\text{beam}} \cdot n_{\text{target}} \cdot \Delta\Omega \cdot \epsilon}$$, where $\epsilon$ is the detection efficiency
 - Comparing measured $d\sigma/d\Omega$ with [[DWBA]] predictions is the standard method for extracting [[Spectroscopic Factor|spectroscopic factors]]
 - Must be transformed between lab and center-of-mass frames using the Jacobian $d\sigma/d\Omega_{\text{CM}} = (d\sigma/d\Omega_{\text{lab}}) \cdot |d\Omega_{\text{lab}}/d\Omega_{\text{CM}}|$
 

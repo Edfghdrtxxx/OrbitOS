@@ -1,6 +1,6 @@
 ---
 area: "[[Physics]]"
-tags: [nuclear-physics, reactions, astrophysics]
+tags: [nuclear-physics, reactions, astrophysics, review/physics]
 created: 2026-04-22
 last_reviewed:
 next_review: 2026-04-22
