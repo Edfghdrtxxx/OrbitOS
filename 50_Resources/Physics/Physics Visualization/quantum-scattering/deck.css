@@ -1,52 +1,75 @@
-/* deck.css — slide-local styling for the quantum-scattering deck */
+/* deck.css — slide-local styling for the quantum-scattering deck.
+ * All slides guarantee they fit in the viewport via a strict flex column:
+ *   [title block (fixed)] [plot region (flex:1,min-height:0)] [controls (fixed)]
+ * `justify-content:center` from base.css is overridden to `flex-start` so overflow
+ * clips cleanly at the bottom instead of being cut off at both ends.
+ */
 
-.slide { padding: 56px 72px 72px 72px; }
+.slide {
+  padding: 40px 60px 56px 60px !important;
+  justify-content: flex-start !important;
+  gap: 12px;
+}
+
+.slide > .kicker { flex: 0 0 auto; }
+.slide > .title, .slide > h2.title { flex: 0 0 auto; }
 
 .slide h2.title {
-  font-size: 38px; margin: 0 0 4px;
+  font-size: 32px;
+  line-height: 1.15;
+  margin: 0 0 2px;
   border-bottom: 2px solid var(--text-1);
-  padding-bottom: 8px;
+  padding-bottom: 6px;
 }
-.slide .eq {
-  font-style: italic;
-  font-size: 17px;
+.slide h1.title { font-size: 64px; line-height: 1.02; margin: 0 0 10px; }
+
+.slide .eq, .slide .eq-block {
+  font-size: 15px;
   color: var(--text-2);
-  margin: 4px 0 14px;
+  margin: 0 0 4px;
+  line-height: 1.4;
+  flex: 0 0 auto;
 }
-.slide .eq .sym { font-style: normal; }
+.slide .eq.katex-block, .slide .eq-block {
+  display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center;
+}
+.slide .eq.katex-block > span, .slide .eq-block > span {
+  color: var(--text-2);
+}
+
+/* KaTeX tweaks — match body text size */
+.katex { font-size: 1.02em; }
+.slide .eq .katex { font-size: 1em; }
 
 .canvas-box {
   border: 1px solid var(--border-strong);
   background: var(--surface);
   padding: 6px;
+  min-height: 0;
+  position: relative;
 }
 .canvas-box canvas { display: block; width: 100%; height: 100%; }
 
 .two-plots {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  flex: 1;
+  gap: 14px;
+  flex: 1 1 0;
   min-height: 0;
 }
-.two-plots .canvas-box { min-height: 0; height: 100%; }
-.single-plot {
-  flex: 1;
-  min-height: 0;
-}
-.single-plot .canvas-box { height: 100%; }
+.single-plot { flex: 1 1 0; min-height: 0; display: flex; }
+.single-plot .canvas-box { flex: 1; }
 
-/* Slider row */
 .controls {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 14px 28px;
-  margin-top: 18px;
-  padding: 12px 16px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px 22px;
+  padding: 10px 14px;
   border: 1px solid var(--border);
   background: var(--surface-2);
+  flex: 0 0 auto;
 }
-.controls .ctl { display: flex; flex-direction: column; gap: 4px; font-size: 13px; }
+.controls .ctl { display: flex; flex-direction: column; gap: 3px; font-size: 12.5px; }
 .controls .ctl > .lab {
   display: flex; justify-content: space-between;
   color: var(--text-2); font-family: var(--font-sans);
@@ -57,7 +80,7 @@
 .controls input[type="range"] {
   -webkit-appearance: none; appearance: none;
   width: 100%; height: 3px; background: var(--text-3);
-  outline: none; cursor: pointer;
+  outline: none; cursor: pointer; margin: 2px 0;
 }
 .controls input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none; appearance: none;
@@ -77,14 +100,14 @@
 .controls button:hover { background: var(--text-1); color: var(--bg); }
 .controls button.on { background: var(--accent); color: #fff; border-color: var(--accent); }
 
-/* Legend strip for the color coding */
 .legend-strip {
-  display: flex; gap: 18px; font-size: 13px; color: var(--text-2);
+  display: flex; gap: 16px; font-size: 12.5px; color: var(--text-2);
   font-family: 'Latin Modern Roman', Georgia, serif;
-  margin: 8px 0 0;
+  margin: 4px 0 0;
+  flex: 0 0 auto;
 }
 .legend-strip .sw {
-  display: inline-block; width: 24px; height: 2px;
+  display: inline-block; width: 22px; height: 2px;
   vertical-align: middle; margin-right: 6px;
 }
 .legend-strip .sw.pot  { background: var(--bad);  height: 3px; }
@@ -92,37 +115,58 @@
 .legend-strip .sw.free { background: var(--good); border-top: 1px dashed var(--good); height: 1px; }
 .legend-strip .sw.tan  { background: #c08500; height: 1px; border-top: 1px dashed #c08500; }
 
-/* Cover slide */
+/* =========== Cover slide =========== */
 .cover-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 36px;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 28px;
   align-items: center;
-  flex: 1;
+  flex: 1 1 0;
   min-height: 0;
 }
-.cover-grid .mini-plot { aspect-ratio: 4/3; border: 1px solid var(--border-strong); }
+.cover-grid .cover-text p { font-size: 15px; line-height: 1.6; }
+.cover-grid .mini-plot {
+  border: 1px solid var(--border-strong);
+  height: 100%;
+  min-height: 260px;
+  max-height: 420px;
+  background: var(--surface);
+}
+.cover-grid .mini-plot canvas { width: 100%; height: 100%; display: block; }
 
-/* Synthesis */
+/* =========== Synthesis cards =========== */
 .synth-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
-  margin-top: 18px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+  flex: 1 1 0; min-height: 0;
 }
 .synth-grid .card-outline {
-  padding: 16px; display: flex; flex-direction: column; gap: 8px;
-  min-height: 180px;
+  padding: 14px; display: flex; flex-direction: column; gap: 6px;
+  font-size: 13.5px;
+  overflow: hidden;
 }
 .synth-grid .card-outline .h {
-  font-weight: 700; font-size: 15px; color: var(--accent);
+  font-weight: 700; font-size: 13px; color: var(--accent);
   letter-spacing: .05em; text-transform: uppercase;
   font-family: var(--font-sans);
 }
-.synth-grid .card-outline p { font-size: 14px; margin: 0; color: var(--text-2); }
+.synth-grid .card-outline p {
+  margin: 0; color: var(--text-2);
+  line-height: 1.45;
+}
 .synth-grid .card-outline .eqline {
-  margin-top: auto; font-style: italic; font-size: 13px; color: var(--text-1);
+  margin-top: auto;
+  font-size: 13px; color: var(--text-1);
+  padding-top: 6px;
+  border-top: 1px dotted var(--border);
 }
 
-/* Reference list */
-.ref-list { list-style: none; padding: 0; margin: 0; }
-.ref-list li { margin: 6px 0; font-size: 15px; color: var(--text-2); }
+/* =========== References =========== */
+.ref-list { list-style: none; padding: 0; margin: 0; flex: 0 0 auto; }
+.ref-list li { margin: 4px 0; font-size: 14px; color: var(--text-2); line-height: 1.5; }
 .ref-list li .n { display: inline-block; width: 22px; color: var(--accent); font-weight: 700; }
+
+.method-note {
+  font-size: 14px; color: var(--text-2); max-width: 80ch;
+  line-height: 1.55; flex: 0 0 auto;
+}
+.credit-note { font-size: 12px; color: var(--text-3); flex: 0 0 auto; }

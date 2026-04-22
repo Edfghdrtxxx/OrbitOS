@@ -8,6 +8,19 @@
 <link rel="stylesheet" href="assets/base.css">
 <link rel="stylesheet" id="theme-link" href="assets/themes/academic-paper.css">
 <link rel="stylesheet" href="assets/animations/animations.css">
+<!-- KaTeX for LaTeX math rendering -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$',  right: '$',  display: false},
+      {left: '\\(', right: '\\)', display: false},
+      {left: '\\[', right: '\\]', display: true}
+    ],
+    throwOnError: false
+  });"></script>
 <link rel="stylesheet" href="deck.css">
 </head>
 <body data-themes="academic-paper,minimal-white,editorial-serif" data-theme-base="assets/themes/">
@@ -16,57 +29,58 @@
   <!-- ============ 1. Cover ============ -->
   <section class="slide is-active" data-title="Cover" data-kind="cover">
     <p class="kicker">Interactive Spreadsheet Physics · replayed in the browser</p>
-    <h1 class="h1 anim-fade-up">Scattering by a <br><span class="gradient-text">spherical square well</span></h1>
-    <p class="lede mt-s">Resonances, phase shifts, and the scattering length —
+    <h1 class="h1 title anim-fade-up">Scattering by a <span class="gradient-text">spherical square well</span></h1>
+    <p class="lede">Resonances, phase shifts, and the scattering length —
       five classic <em>Spreadsheet Physics</em> demos, re-computed live from Schrödinger's equation.</p>
-    <div class="cover-grid mt-l">
-      <div>
-        <p class="dim" style="font-size:16px;line-height:1.7;">
-          Adjust <em>D</em>, <em>E</em>, <em>Γ</em>, <em>l</em> with sliders and watch the wavefunction,
-          phase shift, and scattering length respond in real time. Press
-          <span class="pill">→</span> to advance,
+    <div class="cover-grid">
+      <div class="cover-text">
+        <p class="dim">
+          Adjust $D$, $E$, $\Gamma$, $\ell$ with sliders and watch the wavefunction,
+          phase shift, and scattering length respond in real time.
+        </p>
+        <p class="dim">
+          Press <span class="pill">→</span> to advance,
           <span class="pill">T</span> to cycle themes,
-          <span class="pill">S</span> to open speaker view.
+          <span class="pill">S</span> for speaker view.
         </p>
       </div>
-      <div class="mini-plot canvas-box"><canvas data-role="cover"></canvas></div>
+      <div class="mini-plot"><canvas data-role="cover"></canvas></div>
     </div>
     <div class="deck-footer">
-      <span class="dim2">Source: Misner & Cooney — Spreadsheet Physics</span>
+      <span class="dim2">Source: Misner &amp; Cooney — Spreadsheet Physics</span>
       <span class="slide-number" data-current="1" data-total="8"></span>
     </div>
     <aside class="notes">
       This deck re-implements the five Excel demos on scattering by a spherical square well / barrier.
-      Everything you see — wavefunctions, phase shifts, scattering length — is solved live from
-      the radial Schrödinger equation with a leapfrog integrator matching the spreadsheets.
-      Use arrow keys to move forward; sliders on every slide are the live controls. Press S to open presenter view.
+      Everything — wavefunctions, phase shifts, scattering length — is solved live from the radial
+      Schrödinger equation with a leapfrog integrator. Arrow keys to navigate; sliders are live controls.
     </aside>
   </section>
 
   <!-- ============ 2. Partial-wave framework ============ -->
   <section class="slide" data-title="Partial-wave framework" data-kind="partial-wave">
     <p class="kicker">Slide 2 · the framework</p>
-    <h2 class="title">All the physics hides in one number: δₗ(E)</h2>
+    <h2 class="title">All the physics hides in one number: $\delta_\ell(E)$</h2>
     <p class="eq">
-      Asymptotic radial wave function:&nbsp;
-      <span class="mono">u<sub>ℓ</sub>(r) →  sin(kr − ℓπ/2 + δ<sub>ℓ</sub>(E))</span>
+      Asymptotic radial wave: &nbsp;
+      $u_\ell(r) \;\longrightarrow\; \sin\!\left(kr - \tfrac{\ell\pi}{2} + \delta_\ell(E)\right)$
       &nbsp;·&nbsp; cross-section
-      <span class="mono">σ<sub>ℓ</sub>(E) = 4π(2ℓ+1)/k² · sin²δ<sub>ℓ</sub>(E)</span>
+      $\sigma_\ell(E) = \dfrac{4\pi(2\ell+1)}{k^2}\sin^2\delta_\ell(E)$.
     </p>
     <div class="single-plot">
       <div class="canvas-box"><canvas data-role="pw"></canvas></div>
     </div>
     <div class="controls">
       <div class="ctl">
-        <div class="lab"><span>Phase shift  δ</span><span class="v"></span></div>
+        <div class="lab"><span>Phase shift  $\delta$</span><span class="v"></span></div>
         <input type="range" data-p="delta" min="-1.5" max="1.5" step="0.01" value="0.8" data-fmt="f2">
       </div>
       <div class="ctl" style="grid-column: 2 / -1;">
-        <div class="lab"><span>What this shows</span><span></span></div>
-        <div class="dim" style="font-family:var(--font-sans);font-size:13px;line-height:1.5;">
+        <div class="lab"><span>What this shows</span></div>
+        <div class="dim" style="font-family:var(--font-sans);font-size:12.5px;line-height:1.45;">
           A free wave (green, dashed) and a wave that has passed through a scatterer (blue).
-          After the interaction, the two differ only by a constant phase δ — that's the full story
-          of scattering, packaged in one number per partial wave.
+          After the interaction, the two differ only by a constant phase $\delta$ — that is
+          the full story of scattering, packaged in one number per partial wave.
         </div>
       </div>
     </div>
@@ -75,20 +89,19 @@
       <span class="slide-number" data-current="2" data-total="8"></span>
     </div>
     <aside class="notes">
-      Everything we compute for the next four slides is δ(E) or something derived from it.
-      The sign of δ tells you attraction vs repulsion; jumps of π tell you resonances; the
-      low-E slope tells you the scattering length. One number, many faces.
+      Everything computed for the next four slides is $\delta(E)$ or something derived from it.
+      The sign of $\delta$ tells you attraction vs. repulsion; jumps of $\pi$ tell you resonances;
+      the low-$E$ slope tells you the scattering length.
     </aside>
   </section>
 
   <!-- ============ 3. Breit-Wigner resonance ============ -->
   <section class="slide" data-title="Breit-Wigner resonance" data-kind="breit-wigner">
-    <p class="kicker">Slide 3 · source:  Resonance.xls</p>
-    <h2 class="title">A resonance rotates δ by π as E crosses E₀</h2>
+    <p class="kicker">Slide 3 · source: Resonance.xls</p>
+    <h2 class="title">A resonance rotates $\delta$ by $\pi$ as $E$ crosses $E_0$</h2>
     <p class="eq">
-      <span class="sym">δ(E) = δ<sub>bg</sub> + arctan[ (Γ/2) / (E₀ − E) ]</span>
-      &nbsp;·&nbsp;
-      Defaults from the sheet: ℓ = 2, Γ = 0.15, E₀ = 3.
+      $\displaystyle \delta(E) = \delta_{\text{bg}} + \arctan\!\left[\frac{\Gamma/2}{E_0 - E}\right]$
+      &nbsp;·&nbsp; sheet defaults: $\ell = 2$, $\Gamma = 0.15$, $E_0 = 3$.
     </p>
     <div class="two-plots">
       <div class="canvas-box"><canvas data-role="phase"></canvas></div>
@@ -96,19 +109,19 @@
     </div>
     <div class="controls">
       <div class="ctl">
-        <div class="lab"><span>Resonance energy  E₀</span><span class="v"></span></div>
+        <div class="lab"><span>Resonance energy  $E_0$</span><span class="v"></span></div>
         <input type="range" data-p="E0" min="0.3" max="5.5" step="0.05" value="3.0" data-fmt="f2">
       </div>
       <div class="ctl">
-        <div class="lab"><span>Width  Γ</span><span class="v"></span></div>
+        <div class="lab"><span>Width  $\Gamma$</span><span class="v"></span></div>
         <input type="range" data-p="G"  min="0.05" max="2.0" step="0.01" value="0.3" data-fmt="f2">
       </div>
       <div class="ctl">
-        <div class="lab"><span>Background  δ<sub>bg</sub></span><span class="v"></span></div>
+        <div class="lab"><span>Background  $\delta_{\text{bg}}$</span><span class="v"></span></div>
         <input type="range" data-p="bg" min="-1.5" max="1.5" step="0.01" value="0" data-fmt="f2">
       </div>
       <div class="ctl">
-        <div class="lab"><span>Current  E</span><span class="v"></span></div>
+        <div class="lab"><span>Current  $E$</span><span class="v"></span></div>
         <input type="range" data-p="E"  min="0.2" max="6" step="0.01" value="1.0" data-fmt="f2">
       </div>
       <div class="ctl" style="align-self:end;">
@@ -120,20 +133,20 @@
       <span class="slide-number" data-current="3" data-total="8"></span>
     </div>
     <aside class="notes">
-      The left panel is δ(E); the right is sin²(δ−δ_bg), i.e. the shape of the partial-wave cross-section.
-      Shrink Γ to sharpen the resonance. Move δ_bg up or down to show how a non-resonant background
-      hides the peak — crucially, the π jump in δ is still there even when σ looks featureless.
-      Hit "Auto-sweep E" to watch a particle in energy space scanning across the resonance.
+      Left: $\delta(E)$. Right: $\sin^2(\delta-\delta_{\text{bg}})$, the shape of the partial-wave
+      cross-section. Shrink $\Gamma$ to sharpen; raise $\delta_{\text{bg}}$ to see how a non-resonant
+      background hides the peak — crucially, the $\pi$ jump in $\delta$ stays put even when $\sigma$
+      looks featureless.
     </aside>
   </section>
 
   <!-- ============ 4. Square-well phase shift ============ -->
   <section class="slide" data-title="Square-well phase shift" data-kind="well-phase">
-    <p class="kicker">Slide 4 · source:  RadSqWl_PhaseShift.xls</p>
+    <p class="kicker">Slide 4 · source: RadSqWl_PhaseShift.xls</p>
     <h2 class="title">The wavefunction enters with a phase shift and leaves with one</h2>
     <p class="eq">
-      <span class="sym">u″(r) = [ ℓ(ℓ+1)/r² + V(r) − E ] u(r)</span>
-      &nbsp;·&nbsp; V(r) = −D for r &le; W, 0 elsewhere.
+      $\displaystyle u''(r) = \left[\frac{\ell(\ell+1)}{r^2} + V(r) - E\right] u(r)$
+      &nbsp;·&nbsp; $V(r) = -D$ for $r \le W$, else 0.
     </p>
     <div class="two-plots">
       <div class="canvas-box"><canvas data-role="psi"></canvas></div>
@@ -141,48 +154,45 @@
     </div>
     <div class="controls">
       <div class="ctl">
-        <div class="lab"><span>Energy  E</span><span class="v"></span></div>
+        <div class="lab"><span>Energy  $E$</span><span class="v"></span></div>
         <input type="range" data-p="E" min="0.1" max="5" step="0.01" value="1.0" data-fmt="f2">
       </div>
       <div class="ctl">
-        <div class="lab"><span>Well depth  D</span><span class="v"></span></div>
+        <div class="lab"><span>Well depth  $D$</span><span class="v"></span></div>
         <input type="range" data-p="D" min="0" max="12" step="0.05" value="5.0" data-fmt="f2">
       </div>
       <div class="ctl">
-        <div class="lab"><span>Width  W</span><span class="v"></span></div>
+        <div class="lab"><span>Width  $W$</span><span class="v"></span></div>
         <input type="range" data-p="W" min="0.3" max="3" step="0.01" value="1.0" data-fmt="f2">
       </div>
       <div class="ctl">
-        <div class="lab"><span>Angular momentum  ℓ</span><span class="v"></span></div>
+        <div class="lab"><span>Angular momentum  $\ell$</span><span class="v"></span></div>
         <input type="range" data-p="L" min="0" max="3" step="1" value="0" data-fmt="f0">
       </div>
     </div>
     <p class="legend-strip">
-      <span><span class="sw pot"></span>V(r)</span>
-      <span><span class="sw free"></span>free wave  (V=0)</span>
-      <span><span class="sw psi"></span>wavefunction u(r)</span>
+      <span><span class="sw pot"></span>$V(r)$</span>
+      <span><span class="sw free"></span>free wave ($V=0$)</span>
+      <span><span class="sw psi"></span>wavefunction $u(r)$</span>
     </p>
     <div class="deck-footer">
       <span class="dim2">§ 3  ·  spherical square well</span>
       <span class="slide-number" data-current="4" data-total="8"></span>
     </div>
     <aside class="notes">
-      Left: the blue wave is the actual u(r); the green dashed wave is the V=0 reference.
-      Inside the well the wavelength shortens (higher kinetic energy) and outside it shifts
-      by δ. Right: δ₀(E) scanned for the current (D, W, ℓ). Crank D up to see resonance-like
-      steps where a new partial-wave bound state is about to appear. The extraction is a
-      discrete zero-crossing comparison — simple, and matches the sheet to ~1%.
+      Left: blue = actual $u(r)$; green dashed = $V=0$ reference. Inside the well the wavelength
+      shortens (higher kinetic energy); outside it shifts by $\delta$. Right: $\delta_0(E)$ scanned
+      for the current $(D, W, \ell)$.
     </aside>
   </section>
 
   <!-- ============ 5. Scattering length ============ -->
   <section class="slide" data-title="Scattering length" data-kind="scat-length">
-    <p class="kicker">Slide 5 · source:  RadSqWl_Scat_Length.xls</p>
-    <h2 class="title">At E = 0, the tangent's x-intercept <em>is</em> the scattering length</h2>
+    <p class="kicker">Slide 5 · source: RadSqWl_Scat_Length.xls</p>
+    <h2 class="title">At $E = 0$, the tangent's $x$-intercept <em>is</em> the scattering length</h2>
     <p class="eq">
-      Outside the well, at E = 0:&nbsp;
-      <span class="sym">u(r) = C (r − a)</span>
-      &nbsp;·&nbsp; a diverges whenever a bound state is about to form.
+      Outside the well at $E = 0$: &nbsp; $u(r) = C\,(r - a)$ &nbsp;·&nbsp;
+      $a$ diverges whenever a bound state is about to form.
     </p>
     <div class="two-plots">
       <div class="canvas-box"><canvas data-role="psi"></canvas></div>
@@ -190,11 +200,11 @@
     </div>
     <div class="controls">
       <div class="ctl">
-        <div class="lab"><span>Well depth  D</span><span class="v"></span></div>
+        <div class="lab"><span>Well depth  $D$</span><span class="v"></span></div>
         <input type="range" data-p="D" min="0.1" max="12" step="0.02" value="2.0" data-fmt="f2">
       </div>
       <div class="ctl">
-        <div class="lab"><span>Width  W</span><span class="v"></span></div>
+        <div class="lab"><span>Width  $W$</span><span class="v"></span></div>
         <input type="range" data-p="W" min="0.3" max="2" step="0.01" value="1.0" data-fmt="f2">
       </div>
       <div class="ctl" style="align-self:end;">
@@ -202,36 +212,35 @@
       </div>
       <div class="ctl" style="grid-column: 3 / -1;">
         <div class="lab"><span>What to watch</span></div>
-        <div class="dim" style="font-family:var(--font-sans);font-size:13px;line-height:1.5;">
-          Right panel traces <em>a(D)</em>. As D grows, <em>a</em> diverges through ±∞ each time a
-          new bound state forms (zero-crossing of cot kW · kW). Between crossings, <em>a</em> is small.
+        <div class="dim" style="font-family:var(--font-sans);font-size:12.5px;line-height:1.45;">
+          Right panel traces $a(D)$: as $D$ grows, $a$ diverges through $\pm\infty$ each time a
+          new bound state forms (zero-crossing of $\cot kW \cdot kW$). Between crossings, $a$ is small.
         </div>
       </div>
     </div>
     <p class="legend-strip">
-      <span><span class="sw pot"></span>V(r)</span>
-      <span><span class="sw psi"></span>u(r) at E → 0</span>
-      <span><span class="sw tan"></span>tangent → a</span>
+      <span><span class="sw pot"></span>$V(r)$</span>
+      <span><span class="sw psi"></span>$u(r)$ at $E \to 0$</span>
+      <span><span class="sw tan"></span>tangent → $a$</span>
     </p>
     <div class="deck-footer">
       <span class="dim2">§ 4  ·  scattering length</span>
       <span class="slide-number" data-current="5" data-total="8"></span>
     </div>
     <aside class="notes">
-      This is the signature of low-energy scattering: the whole behaviour collapses into a single
-      length a. The slope/intercept construction makes it visually obvious. Slide D up — as the
-      first bound state is about to appear (D ≈ π²/4 for unit W), a shoots to +∞, flips through
-      −∞, and the next branch starts. That's the Efimov/Feshbach/halo-nucleus physics in one animation.
+      The whole low-energy behaviour collapses into one length $a$. Slide $D$ up — as the first
+      bound state is about to appear ($D \approx \pi^2/4$ for unit $W$), $a$ shoots to $+\infty$,
+      flips through $-\infty$, and the next branch starts.
     </aside>
   </section>
 
   <!-- ============ 6. Shell-barrier resonance ============ -->
   <section class="slide" data-title="Barrier resonance" data-kind="barrier-resonance">
-    <p class="kicker">Slide 6 · source:  RadSqBarr_Resn.xls</p>
+    <p class="kicker">Slide 6 · source: RadSqBarr_Resn.xls</p>
     <h2 class="title">A quasi-bound state inside a shell barrier</h2>
     <p class="eq">
-      V(r) = 0 for r &lt; W₁, V = H for W₁ &le; r &le; W₁+B, V = 0 outside. Defaults from the sheet:
-      W₁ = 2, B = 1, H = 5 &rArr; l = 0 resonance at <em>E ≈ 1.617</em>.
+      $V(r) = 0$ for $r &lt; W_1$, $V = H$ for $W_1 \le r \le W_1 + B$, $V = 0$ outside.
+      Sheet defaults: $W_1 = 2$, $B = 1$, $H = 5 \;\Rightarrow\; \ell = 0$ resonance at $E \approx 1.617$.
     </p>
     <div class="two-plots">
       <div class="canvas-box"><canvas data-role="psi"></canvas></div>
@@ -239,23 +248,23 @@
     </div>
     <div class="controls">
       <div class="ctl">
-        <div class="lab"><span>Energy  E</span><span class="v"></span></div>
+        <div class="lab"><span>Energy  $E$</span><span class="v"></span></div>
         <input type="range" data-p="E" min="0.15" max="4.5" step="0.002" value="1.617" data-fmt="f3">
       </div>
       <div class="ctl">
-        <div class="lab"><span>Barrier height  H</span><span class="v"></span></div>
+        <div class="lab"><span>Barrier height  $H$</span><span class="v"></span></div>
         <input type="range" data-p="H" min="1" max="12" step="0.1" value="5.0" data-fmt="f2">
       </div>
       <div class="ctl">
-        <div class="lab"><span>Inner radius  W₁</span><span class="v"></span></div>
+        <div class="lab"><span>Inner radius  $W_1$</span><span class="v"></span></div>
         <input type="range" data-p="W1" min="1" max="4" step="0.05" value="2.0" data-fmt="f2">
       </div>
       <div class="ctl">
-        <div class="lab"><span>Shell thickness  B</span><span class="v"></span></div>
+        <div class="lab"><span>Shell thickness  $B$</span><span class="v"></span></div>
         <input type="range" data-p="B" min="0.2" max="2.5" step="0.05" value="1.0" data-fmt="f2">
       </div>
       <div class="ctl">
-        <div class="lab"><span>Angular momentum  ℓ</span><span class="v"></span></div>
+        <div class="lab"><span>Angular momentum  $\ell$</span><span class="v"></span></div>
         <input type="range" data-p="L" min="0" max="3" step="1" value="0" data-fmt="f0">
       </div>
       <div class="ctl" style="align-self:end;">
@@ -267,45 +276,44 @@
       <span class="slide-number" data-current="6" data-total="8"></span>
     </div>
     <aside class="notes">
-      Exact geometry from the source spreadsheet: a particle lives in the inner cavity 0 &lt; r &lt; W₁,
-      can only escape by tunnelling through a finite-width shell barrier W₁ &le; r &le; W₁+B.
-      At the resonance energy E ≈ 1.617 (for the default W₁=2, B=1, H=5), a half-wavelength just
-      fits the cavity and the inside amplitude surges. Raise H or B and the resonance sharpens —
-      longer lifetime, narrower Γ. This is the radial analogue of α-decay: quasi-bound state,
-      escape rate set by the tunnelling probability through the shell.
+      At the resonance $E \approx 1.617$ a half-wavelength fits the inner cavity and inside amplitude
+      surges. Raise $H$ or $B$ and the resonance sharpens — longer lifetime, narrower $\Gamma$.
+      This is the radial analogue of $\alpha$-decay.
     </aside>
   </section>
 
   <!-- ============ 7. Synthesis ============ -->
   <section class="slide" data-title="Synthesis" data-kind="synthesis">
     <p class="kicker">Slide 7 · putting it together</p>
-    <h2 class="title">One formalism, four faces of δ</h2>
-    <p class="lede">Every demo on the previous four slides is one slice of the S-matrix
-      S(E) = e<sup>2iδ(E)</sup>.  Its <em>poles</em> classify everything we saw.</p>
+    <h2 class="title">One formalism, four faces of $\delta$</h2>
+    <p class="lede" style="font-size:17px;max-width:80ch;">
+      Every demo is one slice of the S-matrix $S(E) = e^{2i\delta(E)}$. Its <em>poles</em>
+      classify everything we saw.
+    </p>
     <div class="synth-grid">
       <div class="card-outline">
         <div class="h">Bound state</div>
-        <p>Pole of S on the positive-imaginary k-axis (E &lt; 0).
-           Wavefunction is normalisable; δ jumps by π as E rises through threshold.</p>
-        <div class="eqline">k = +iκ, &nbsp; E = −κ²</div>
+        <p>Pole of $S$ on the positive-imaginary $k$-axis ($E &lt; 0$).
+           Wavefunction is normalisable; $\delta$ jumps by $\pi$ as $E$ rises through threshold.</p>
+        <div class="eqline">$k = +i\kappa, \quad E = -\kappa^2$</div>
       </div>
       <div class="card-outline">
         <div class="h">Resonance</div>
-        <p>Pole of S in the lower-half k-plane (E = E₀ − iΓ/2).
-           δ rotates by π as E sweeps across E₀ — Slide 3 and Slide 6 show this directly.</p>
-        <div class="eqline">E = E₀ − iΓ/2</div>
+        <p>Pole of $S$ in the lower-half $k$-plane ($E = E_0 - i\Gamma/2$).
+           $\delta$ rotates by $\pi$ as $E$ sweeps across $E_0$ — Slides 3 and 6 show this directly.</p>
+        <div class="eqline">$E = E_0 - i\Gamma/2$</div>
       </div>
       <div class="card-outline">
         <div class="h">Virtual state</div>
-        <p>Pole on negative-imaginary k-axis. Not normalisable, but dominates low-E scattering
-           via a huge negative scattering length.</p>
-        <div class="eqline">k = −iκ</div>
+        <p>Pole on the negative-imaginary $k$-axis. Not normalisable, but dominates low-$E$
+           scattering via a huge negative scattering length.</p>
+        <div class="eqline">$k = -i\kappa$</div>
       </div>
       <div class="card-outline">
         <div class="h">Scattering length</div>
-        <p>Low-E limit: k cot δ₀ = −1/a + (1/2) r₀ k² + …
-           Divergent a when a bound / virtual state sits at threshold (Slide 5).</p>
-        <div class="eqline">a = −lim<sub>k→0</sub> δ₀/k</div>
+        <p>Low-$E$ expansion: $k\cot\delta_0 = -\dfrac{1}{a} + \tfrac{1}{2}\, r_0\, k^2 + \ldots$
+           Divergent $a$ when a bound / virtual state sits at threshold (Slide 5).</p>
+        <div class="eqline">$a = -\lim\limits_{k \to 0} \delta_0 / k$</div>
       </div>
     </div>
     <div class="deck-footer">
@@ -313,41 +321,44 @@
       <span class="slide-number" data-current="7" data-total="8"></span>
     </div>
     <aside class="notes">
-      The point of this slide: every animation we saw is a projection of the same S(E). Resonances are
-      poles; bound states are poles; virtual states are poles; scattering length is the derivative
-      at threshold. Once students see the animations, this becomes concrete instead of formal.
+      Every animation we saw is a projection of the same $S(E)$. Resonances are poles; bound
+      states are poles; virtual states are poles; scattering length is the derivative at threshold.
     </aside>
   </section>
 
   <!-- ============ 8. References ============ -->
   <section class="slide" data-title="References" data-kind="refs">
-    <p class="kicker">Slide 8 · sources & further reading</p>
+    <p class="kicker">Slide 8 · sources and method</p>
     <h2 class="title">Where this came from</h2>
-    <ul class="ref-list mt-l">
+    <ul class="ref-list">
       <li><span class="n">1.</span>
-          <em>Resonance.xls</em> &nbsp;— Breit-Wigner phase shift, ℓ=2, Γ=0.15, E₀=3. (Duplicate: Resonance (1).xls)</li>
+          <em>Resonance.xls</em> — Breit-Wigner phase shift, $\ell=2$, $\Gamma=0.15$, $E_0=3$.
+          (Duplicate: <em>Resonance (1).xls</em>)</li>
       <li><span class="n">2.</span>
-          <em>RadSqBarr_Resn.xls</em> &nbsp;— resonance inside a radial square barrier; leapfrog integrator for Schrödinger.</li>
+          <em>RadSqBarr_Resn.xls</em> — resonance inside a radial square barrier; leapfrog integrator
+          for Schrödinger.</li>
       <li><span class="n">3.</span>
-          <em>RadSqWl_PhaseShift.xls</em> &nbsp;— spherical square well phase shift vs D, E, ℓ.</li>
+          <em>RadSqWl_PhaseShift.xls</em> — spherical square well phase shift vs. $D$, $E$, $\ell$.</li>
       <li><span class="n">4.</span>
-          <em>RadSqWl_Scat_Length.xls</em> &nbsp;— scattering length as tangent intercept at E = 0.</li>
+          <em>RadSqWl_Scat_Length.xls</em> — scattering length as tangent intercept at $E = 0$.</li>
     </ul>
-    <p class="mt-l dim" style="font-size:16px;max-width:80ch;">
-      Method: leapfrog integration of u″(x) = [ℓ(ℓ+1)/x² + V(x) − E] u(x), grid dx = 0.02, xMax = 10–12.
+    <p class="method-note">
+      <strong>Method.</strong> Leapfrog integration of
+      $u''(x) = \left[\ell(\ell+1)/x^2 + V(x) - E\right] u(x)$, grid $dx = 0.02$, $x_{\max} = 10\text{–}12$.
       Phase shift extracted from the last zero crossing; scattering length from the outer tangent line.
-      Units ℏ = 2m = 1 (same as the source spreadsheets).
+      Units $\hbar = 2m = 1$ (same convention as the source spreadsheets).
     </p>
-    <p class="mt-l dim2" style="font-size:13px;">
-      After &ldquo;Spreadsheet Physics&rdquo; (Misner & Cooney) · rendered as live canvases with
-      <code>physics.js</code> + <code>plot.js</code>.
+    <p class="credit-note">
+      After “Spreadsheet Physics” (Misner &amp; Cooney) · rendered as live canvases with
+      <code>physics.js</code> + <code>plot.js</code>; math typeset with KaTeX.
     </p>
     <div class="deck-footer">
       <span class="dim2">end of deck</span>
       <span class="slide-number" data-current="8" data-total="8"></span>
     </div>
     <aside class="notes">
-      Press Home to return to slide 1, O for overview. The deck is fully offline — just open index.html.
+      Press Home to return to slide 1, O for overview. Fully offline — except KaTeX (CDN). Swap the
+      CDN links in the head for local files if you need true offline.
     </aside>
   </section>
 
