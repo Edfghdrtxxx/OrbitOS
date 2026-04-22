@@ -76,6 +76,15 @@ TEXT_EDITS = {
         "the score before Dec 7\n"
         "(Period 2 opens)."
     ),
+    # Spelling: Kenkysei -> Kenkyusei
+    "piA0u4oJ": "Fail -> Kenkyusei",
+    # Kenkyusei tuition typo fix: 173,3400 -> 178,200 (standard UTokyo Research Student rate)
+    "myGiIOlj": (
+        "1. Self-supported application\n"
+        "2. Exam fee: 9,800 JPY\n"
+        "3. Admission: 84,600 JPY\n"
+        "4. Tuition: 178,200 JPY / 6 months"
+    ),
 }
 
 # Opacity dimming for GSGC-archived elements
