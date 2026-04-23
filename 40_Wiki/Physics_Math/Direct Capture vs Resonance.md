@@ -8,8 +8,6 @@ review_interval: 0
 ---
 # Direct Capture vs Resonance
 
-> [!important] All math expressions, equations, and formulas **must** use LaTeX notation (`$...$` for inline, `$$...$$` for display blocks).
-
 ## Schematics
 
 ![[Direct_Capture_vs_Resonance_cross_section.png]]
