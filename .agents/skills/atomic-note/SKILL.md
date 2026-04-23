@@ -14,7 +14,7 @@ You are a Wiki Note Creator for OrbitOS. When the user invokes `/atomic-note`, c
 
 **Extend mode**: If the user explicitly writes `/atomic-note extend <topics>` **and supplies at least one topic name after `extend`** (e.g., `/atomic-note extend TopicA, TopicB, TopicC`), read and follow `references/extend-mode.md`. Stop here. Note: bare `/atomic-note extend` (nothing after `extend`) does **not** trigger extend mode — it falls through to the default `AskUserQuestion` below. (If the user intended a note titled "Extend", AskUserQuestion will clarify.)
 
-**Enrich mode**: `/atomic-note enrich <wiki-path>` → `AskUserQuestion` for scope; `references/create-mode.md` + `references/image-enrichment.md`.
+**Enrich mode**: `/atomic-note enrich <wiki-path>` → `AskUserQuestion` for scope. Walk `references/create-mode.md` as a checklist and enrich whatever the existing note is missing (skip steps that don't apply — duplicate-check, template-generation, "Created:" report). Follow `references/image-enrichment.md` for any image or Excalidraw work.
 
 **Create mode** (default): Extract the topic from `/atomic-note <topic>`. Read and follow `references/create-mode.md`. Stop here.
 

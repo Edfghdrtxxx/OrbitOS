@@ -67,7 +67,13 @@ function convertElement(el, doc, now) {
   const latex = cd.latex;
   if (!latex) return null;
   const display = !!cd.latexDisplay;
-  const color = (el.strokeColor && el.strokeColor !== 'transparent') ? el.strokeColor : '#1e1e1e';
+  // Colour precedence: customData.color (stashed on first render, so re-runs
+  // stay idempotent) > strokeColor (first run from a plain text element) >
+  // near-black default. Without the customData stash, re-runs would silently
+  // turn panel colours black because the image element's strokeColor is
+  // 'transparent' by construction.
+  const color = cd.color
+    || (el.strokeColor && el.strokeColor !== 'transparent' ? el.strokeColor : '#1e1e1e');
   const { pxW, pxH, fileId, dataURL } = renderSVG(latex, display, color);
 
   // Fit aspect-preserved inside the original (x, y, width, height) box.
@@ -85,6 +91,18 @@ function convertElement(el, doc, now) {
   const h = pxH * scale;
   const x = (el.x || 0) + (origW - w) / 2;
   const y = (el.y || 0) + (origH - h) / 2;
+
+  // No-op short-circuit: if the element is already an image with the same
+  // fileId + latex + display, the render is byte-identical. Return the
+  // element unchanged so re-runs don't churn version/timestamp fields and
+  // pollute git history.
+  if (el.type === 'image' && el.fileId === fileId
+      && cd.latexDisplay === display && cd.color === color) {
+    if (!doc.files[fileId]) {
+      doc.files[fileId] = { mimeType: 'image/svg+xml', id: fileId, dataURL, created: now, lastRetrieved: now };
+    }
+    return el;
+  }
 
   if (!doc.files[fileId]) {
     doc.files[fileId] = {
@@ -117,7 +135,7 @@ function convertElement(el, doc, now) {
     fileId,
     scale: [1, 1],
     crop: null,
-    customData: { latex, latexDisplay: display },
+    customData: { latex, latexDisplay: display, color },
   };
 }
 
