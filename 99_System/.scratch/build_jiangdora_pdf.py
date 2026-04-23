@@ -157,7 +157,7 @@ class PathwayDiagram(Flowable):
         ("打磨", "核心能力"),
         ("提升", "职场价值"),
         ("利他", "价值交换"),
-        ("收入", "升级跃迁"),
+        ("收入", "上去"),
     ]
     def __init__(self, width=16*cm):
         super().__init__()
@@ -223,7 +223,7 @@ class PathwayDiagram(Flowable):
         brackets = [
             (0.1*cm,            self.width*0.35, "心态地基"),
             (self.width*0.38,   self.width*0.73, "能力资产"),
-            (self.width*0.76,   self.width - 0.1*cm, "价值变现"),
+            (self.width*0.76,   self.width - 0.1*cm, "钱赚回来"),
         ]
         c.setStrokeColor(RULE)
         c.setLineWidth(0.5)
@@ -256,11 +256,10 @@ class SafetyZoneMatrix(Flowable):
         left = (self.width - (box_w*2 + gap)) / 2
         bot = 1.2*cm
         labels = [
-            # (row, col), label, sub
             ((1,0), "监管看不起", "低敏感度 · 不招惹"),
-            ((1,1), "同行看不见", "差异化 · 避开内卷"),
-            ((0,0), "品牌能看见", "可被商业化承接"),
-            ((0,1), "消费者常看见", "持续触达 · 复访"),
+            ((1,1), "同行看不见", "找到自己的角落"),
+            ((0,0), "品牌能看见", "品牌愿意买单"),
+            ((0,1), "消费者常看见", "用户记得你，会回来"),
         ]
         # axis labels (outer)
         c.setFont(bold_font, 10.5)
@@ -329,12 +328,12 @@ class CirclesDiagram(Flowable):
         c.drawCentredString(cx, cy + 12, "逻辑 · 科学")
         c.setFont(body_font, 9.5)
         c.setFillColor(MUTED)
-        c.drawCentredString(cx, cy - 2, "AI 可高效处理")
+        c.drawCentredString(cx, cy - 2, "AI 擅长的地方")
         c.drawCentredString(cx, cy - 16, "同一 · 矛盾 · 排中 · 因果")
         # outer labels — placed around the ring
         c.setFont(bold_font, 12)
         c.setFillColor(ACCENT)
-        c.drawCentredString(cx, cy + 3.15*cm, "超验领域 · 人的疆域")
+        c.drawCentredString(cx, cy + 3.15*cm, "超验领域 · 人的地盘")
         c.setFont(body_font, 9.5)
         c.setFillColor(SUBINK)
         c.drawString(cx - 3.9*cm, cy + 1.2*cm, "情感")
@@ -373,8 +372,8 @@ class SynthesisMindmap(Flowable):
         c.circle(cx, cy, 1.35*cm, stroke=0, fill=1)
         c.setFillColor(PAPER)
         c.setFont(bold_font, 10)
-        c.drawCentredString(cx, cy + 6, "在不确定中")
-        c.drawCentredString(cx, cy - 6, "寻回确定性")
+        c.drawCentredString(cx, cy + 6, "年轻人的")
+        c.drawCentredString(cx, cy - 6, "工作坐标")
 
         # Three branches
         branches = [
@@ -540,7 +539,7 @@ story.append(Paragraph("JIANG DORA · 100 场职业访谈", styles['cover_kicker
 story.append(AccentRule(1.6*cm, 2.5))
 story.append(Spacer(1, 0.3*cm))
 story.append(Paragraph("三场对话", styles['cover_title']))
-story.append(Paragraph("关于搞钱、资本与 AI 时代的生存", styles['cover_sub']))
+story.append(Paragraph("搞钱、资本、AI 时代", styles['cover_sub']))
 story.append(Spacer(1, 1.2*cm))
 for iv in INTERVIEWS:
     story.append(Paragraph(f"<font color='#C15F3C'>—— {iv['num']}</font>", styles['cover_item_num']))
@@ -569,7 +568,7 @@ for i, iv in enumerate(INTERVIEWS):
     story.append(Spacer(1, 0.4*cm))
 
     # Summary
-    story.append(Paragraph("摘要 · SUMMARY", styles['h2']))
+    story.append(Paragraph("摘要", styles['h2']))
     story.append(Paragraph(esc(iv['summary']), styles['body']))
 
     # Schematic
@@ -579,19 +578,19 @@ for i, iv in enumerate(INTERVIEWS):
     story.append(KeepTogether([chart_flow, caption]))
 
     # Highlights
-    story.append(Paragraph("亮点 · HIGHLIGHTS", styles['h2']))
+    story.append(Paragraph("亮点", styles['h2']))
     for text, ts in iv['highlights']:
         bullet = f"<font color='#C15F3C'>●</font>&nbsp;&nbsp;{esc(text)} &nbsp;<font color='#7A7162'>[{ts}]</font>"
         story.append(Paragraph(bullet, styles['highlight']))
 
     # Questions
-    story.append(Paragraph("核心问答 · QUESTIONS", styles['h2']))
+    story.append(Paragraph("核心问答", styles['h2']))
     for q, a in iv['questions']:
         story.append(Paragraph(f"<font color='#C15F3C'>Q</font>&nbsp;&nbsp;{esc(q)}", styles['q_q']))
         story.append(Paragraph(esc(a), styles['q_a']))
 
     # Terminology
-    story.append(Paragraph("关键术语 · TERMS", styles['h2']))
+    story.append(Paragraph("关键术语", styles['h2']))
     for name, defn in iv['terms']:
         story.append(Paragraph(esc(name), styles['term_name']))
         story.append(Paragraph(esc(defn), styles['term_def']))
