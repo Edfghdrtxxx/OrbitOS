@@ -44,7 +44,15 @@ Produce **guides, playbooks, summaries, internal knowledge-base articles** — a
 
 All three tactics share the same shape: **one unit of effort → many units of exposure**, asynchronously, without requiring extroversion.
 
-## Related
+## Source Timestamps
 
-- [[Anti-Vision]] — the visibility-via-leverage frame fits the "build systems, not performances" stance.
-- Connects to the leverage idea in [[Stanford_NotebookLM_6_Prompts_Workflow]] (one prompt → many insights).
+Jump-back index into the original video (via the BibiGPT URL in frontmatter):
+
+| Section | Timestamp |
+|---|---|
+| Introduction: the "exposure" challenge | 00:00 |
+| Case study: the introverted Staff Engineer | 00:20 |
+| Strategy 1 — public go-to expert | 00:46 |
+| Strategy 2 — scalable workshops | 01:28 |
+| Strategy 3 — traveling documents | 02:04 |
+| Conclusion | 02:45 |
