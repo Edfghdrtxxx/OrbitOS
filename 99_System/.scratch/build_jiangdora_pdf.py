@@ -19,53 +19,42 @@ from reportlab.platypus import (
 
 # ---------- Font registration ----------
 FONT_DIR = "C:/Windows/Fonts"
+CACHE_DIR = "D:/obsidian/OrbitOS/99_System/.scratch"
 
-def try_register(name, path, subfontIndex=None):
-    if not os.path.exists(path):
-        return False
-    try:
-        if subfontIndex is not None:
-            pdfmetrics.registerFont(TTFont(name, path, subfontIndex=subfontIndex))
-        else:
-            pdfmetrics.registerFont(TTFont(name, path))
-        return True
-    except Exception as e:
-        print(f"Failed to register {name} from {path}: {e}")
-        return False
+def flatten_vf(src_path, weight, out_path):
+    """Instantiate a variable font at a specific weight; cache to disk."""
+    if os.path.exists(out_path):
+        return out_path
+    from fontTools.ttLib import TTFont as FTFont
+    from fontTools.varLib.mutator import instantiateVariableFont
+    src = FTFont(src_path)
+    inst = instantiateVariableFont(src, {"wght": weight})
+    inst.save(out_path)
+    return out_path
 
-# Unified Source Han Serif SC family: Regular (via Noto, which IS Source Han Serif) + Heavy
-body_font = None
-for name, path, idx in [
-    ("HanSerif", f"{FONT_DIR}/NotoSerifSC-VF.ttf", None),
-    ("HanSerif", f"{FONT_DIR}/STSONG.TTF", None),  # fallback
-    ("HanSerif", f"{FONT_DIR}/simsun.ttc", 0),      # final fallback
-]:
-    if try_register(name, path, idx):
-        body_font = name
-        break
+# Flatten NotoSerifSC (= Source Han Serif SC) at Regular (400) and Black (900).
+# Both static instances inherit the full glyph coverage of the VF.
+VF_SRC = f"{FONT_DIR}/NotoSerifSC-VF.ttf"
+regular_path = flatten_vf(VF_SRC, 400, f"{CACHE_DIR}/NotoSerifSC-Regular-static.ttf")
+black_path   = flatten_vf(VF_SRC, 900, f"{CACHE_DIR}/NotoSerifSC-Black-static.ttf")
 
-bold_font = None
-for name, path, idx in [
-    ("HanSerifHeavy", f"{FONT_DIR}/Source Han Serif SC Heavy (TrueType).ttf", None),
-    ("HanSerifHeavy", f"{FONT_DIR}/simsunb.ttf", None),  # fallback
-]:
-    if try_register(name, path, idx):
-        bold_font = name
-        break
+pdfmetrics.registerFont(TTFont("HanSerif",      regular_path))
+pdfmetrics.registerFont(TTFont("HanSerifBlack", black_path))
+# Latin italic serif for URL citations (URLs are pure ASCII — safe to use a Latin-only font)
+pdfmetrics.registerFont(TTFont("LatinItalic", f"{FONT_DIR}/BOOKOSI.TTF"))
 
-if body_font is None:
-    raise RuntimeError("Could not register any CJK body font.")
-if bold_font is None:
-    bold_font = body_font
+body_font = "HanSerif"
+bold_font = "HanSerifBlack"
 
-# Tell reportlab that <b> inside body paragraphs should use the Heavy weight
-registerFontFamily('HanSerif',
-                   normal='HanSerif',
-                   bold=bold_font,
-                   italic='HanSerif',
-                   boldItalic=bold_font)
+# Italic slot intentionally mapped back to HanSerif so inline <i> on CJK text
+# stays legible. URLs use <font name="LatinItalic"> explicitly.
+registerFontFamily("HanSerif",
+                   normal="HanSerif",
+                   bold="HanSerifBlack",
+                   italic="HanSerif",
+                   boldItalic="HanSerifBlack")
 
-print(f"Body: {body_font}  |  Display/Heavy: {bold_font}")
+print(f"Body: {body_font} (wght 400)  |  Display: {bold_font} (wght 900)")
 
 # ---------- Anthropic-inspired palette ----------
 PAPER  = HexColor("#F5F1E8")  # warm cream
@@ -343,7 +332,7 @@ class CirclesDiagram(Flowable):
         # outer labels — placed around the ring
         c.setFont(bold_font, 12)
         c.setFillColor(ACCENT)
-        c.drawCentredString(cx, cy + 3.6*cm, "超验领域 · 人的疆域")
+        c.drawCentredString(cx, cy + 3.15*cm, "超验领域 · 人的疆域")
         c.setFont(body_font, 9.5)
         c.setFillColor(SUBINK)
         c.drawString(cx - 3.9*cm, cy + 1.2*cm, "情感")
@@ -352,24 +341,10 @@ class CirclesDiagram(Flowable):
         c.drawRightString(cx + 3.9*cm, cy + 1.2*cm, "形而上学")
         c.drawRightString(cx + 3.9*cm, cy + 0.0*cm, "直觉")
         c.drawRightString(cx + 3.9*cm, cy - 1.2*cm, "宗教体验")
-        # boundary note
-        c.setFont(body_font, 9)
-        c.setFillColor(MUTED)
-        c.drawCentredString(cx, cy - 3.5*cm, "边界模糊 · 哥德尔不完备：系统内必有不可证之真")
         # title
         c.setFillColor(ACCENT)
         c.setFont(bold_font, 10.5)
         c.drawString(0, self.height - 0.3*cm, "图解 · AI 的圆与人的圆：边界之外是人的疆域")
-        # arrow from AI circle outward
-        c.setStrokeColor(ACCENT)
-        c.setLineWidth(0.6)
-        c.saveState()
-        c.setDash(1, 2)
-        c.line(cx + 1.5*cm, cy + 1.5*cm, cx + 2.8*cm, cy + 2.8*cm)
-        c.restoreState()
-        c.setFillColor(ACCENT)
-        c.setFont(body_font, 8.5)
-        c.drawString(cx + 2.9*cm, cy + 2.9*cm, "人类文明 ⊋ 科学")
 
 
 class SynthesisMindmap(Flowable):
@@ -536,7 +511,7 @@ INTERVIEWS = [
             ('逻辑的四个基本规则', '指同一律、矛盾律、排中律和因果律。遵循这些规则是进行有效表达和知识积累的前提，是现代人思维方式的基石。'),
         ],
         'chart': CirclesDiagram,
-        'chart_caption': 'AI 能做的事是一个逻辑闭环的小圆；人的圆更大，边界模糊处正是人独有的疆域',
+        'chart_caption': 'AI 能做的事是逻辑闭环里的一个小圆；人的圆更大，且边界模糊 —— 哥德尔不完备告诉我们：系统内必有不可证之真',
     },
 ]
 
@@ -585,7 +560,10 @@ for i, iv in enumerate(INTERVIEWS):
     story.append(Paragraph(esc(iv['title']), styles['h1']))
     if iv.get('subtitle'):
         story.append(Paragraph(esc(iv['subtitle']), styles['h1_sub']))
-    story.append(Paragraph(f"对话：{esc(iv['guest'])}   ·   {esc(iv['url'])}", styles['meta']))
+    story.append(Paragraph(
+        f"对话：{esc(iv['guest'])}<br/>"
+        f"<font name='LatinItalic'>{esc(iv['url'])}</font>",
+        styles['meta']))
     story.append(AccentRule(2.5*cm, 1.5))
     story.append(Spacer(1, 0.4*cm))
 
