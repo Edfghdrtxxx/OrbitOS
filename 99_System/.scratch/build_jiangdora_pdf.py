@@ -219,18 +219,20 @@ class PathwayDiagram(Flowable):
             c.setFont(body_font, 8.5)
             c.drawCentredString(x + w/2, y + h/2 - 10, bot)
             c.restoreState()
-        # bottom caption segments
-        c.setFont(body_font, 9)
-        c.setFillColor(MUTED)
-        c.drawCentredString(self.width*0.22, 1.7*cm, "心态地基")
-        c.drawCentredString(self.width*0.55, 1.7*cm, "能力资产")
-        c.drawCentredString(self.width*0.87, 1.7*cm, "价值变现")
-        # horizontal brackets
+        # horizontal brackets — define once, reuse to position labels at their true centers
+        brackets = [
+            (0.1*cm,            self.width*0.35, "心态地基"),
+            (self.width*0.38,   self.width*0.73, "能力资产"),
+            (self.width*0.76,   self.width - 0.1*cm, "价值变现"),
+        ]
         c.setStrokeColor(RULE)
         c.setLineWidth(0.5)
-        c.line(0.1*cm, 1.35*cm, self.width*0.35, 1.35*cm)
-        c.line(self.width*0.38, 1.35*cm, self.width*0.73, 1.35*cm)
-        c.line(self.width*0.76, 1.35*cm, self.width - 0.1*cm, 1.35*cm)
+        for x0, x1, _ in brackets:
+            c.line(x0, 1.35*cm, x1, 1.35*cm)
+        c.setFont(body_font, 9)
+        c.setFillColor(MUTED)
+        for x0, x1, label in brackets:
+            c.drawCentredString((x0 + x1) / 2, 1.7*cm, label)
         # title
         c.setFillColor(ACCENT)
         c.setFont(bold_font, 10.5)
@@ -612,10 +614,10 @@ story.append(Spacer(1, 0.4*cm))
 
 synthesis_text = (
     "三场对话放在一起，其实在回答同一个问题：<b>在一个不确定性被放大的时代，"
-    "一个普通年轻人如何找回自己的确定性？</b>钱婧从<i>行动</i>这一面切入——拒绝宏大叙事，"
-    "回到本分，通过持续创造把自己变得更值钱；温义飞从<i>接纳</i>这一面切入——"
+    "一个普通年轻人如何找回自己的确定性？</b>钱婧从<b>行动</b>这一面切入——拒绝宏大叙事，"
+    "回到本分，通过持续创造把自己变得更值钱；温义飞从<b>接纳</b>这一面切入——"
     "看清流量只是中转站、可能性坍缩反而是使命的浮现，与不完美共处是个人风格的起点；"
-    "马兆远则从<i>思维</i>这一面切入——AI 能处理的是逻辑闭环里的小圆，人的疆域在那更大的圆之外，"
+    "马兆远则从<b>思维</b>这一面切入——AI 能处理的是逻辑闭环里的小圆，人的疆域在那更大的圆之外，"
     "逻辑素养加跨行业学习力才是抗震的底盘。"
     "<br/><br/>"
     "<b>行动 · 接纳 · 思维</b>：一个是面向外界的姿态，一个是面向命运的姿态，一个是面向信息的姿态。"
