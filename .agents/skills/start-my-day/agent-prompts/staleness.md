@@ -23,6 +23,7 @@ For each `[x]` task found, judge whether its text specifically references the pr
 - Count only if the task's subject matter clearly maps to the project (e.g., "Duolingo" → Japanese_Language; "GRE Physics" → Fundamental_Knowledge; "Momo vocabulary" → English_Learning).
 - **Do NOT count generic maintenance**: exercise, evening review, `/wiki-review`, `/phrasing-refining`, and other tasks that touch no specific project.
 - **Ambiguous cases: abstain** — don't pick a winner. If a task could plausibly belong to two projects and the text doesn't disambiguate, count it for neither.
+- **Fundamental_Knowledge exception** (overrides the `/wiki-review` generic-maintenance exclusion above): DO count for Fundamental_Knowledge (a) any `[x]` under the `**a2. Fundamental Knowledge**` section header of a daily note (including subtasks); (b) `[x] /wiki-review` when the reviewed Wiki sits in a knowledge-learning cluster (Physics_Math, ComputerScience, Physiologics) — NOT SelfDevelopment/StudyMethodology. These also propagate to the Japan_Itinerary umbrella.
 
 ### Umbrella projects
 Any `[x]` counting for a sub-project ALSO counts for its umbrella. Record on both (same date, excerpt); umbrella anchor = newest `[x]` across the sub-project set.

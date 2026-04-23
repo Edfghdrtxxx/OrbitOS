@@ -11,3 +11,4 @@
 ## 2026-03-13
 ### Lessons
 - Non-enumerated sections (e.g., "Thinking and Planning") that contain reusable working context must not be silently deleted. Migrate actionable insights into Notes before removing the section.
+
