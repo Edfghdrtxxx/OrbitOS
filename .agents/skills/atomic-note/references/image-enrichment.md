@@ -42,6 +42,7 @@ When I1 returned the no-images message **or** the concept has depictable structu
 - In the JSON, set `"theme": "light"` and `"viewBackgroundColor": "#ffffff"` in `appState` — otherwise the Obsidian plugin auto-inverts under dark themes and the figure renders with a black background.
 - Embed at the readable size: `![[{file}.excalidraw|1000]]` (plugin default is too small).
 - Caption describes what the diagram shows and marks it as author-drawn, not a Commons figure.
+- **Math content** (Physics_Math notes, any figure with formulas, Greek letters with sub/superscripts, parity notations, etc.): don't use Unicode text for math — pre-render via `excalidraw-diagram-generator/scripts/render-latex.js`. Tag each mathy text element with `customData: { latex: "<TeX>", latexDisplay: true|false }`, then run the script. See that skill's `scripts/README.md`.
 
 Skip for pure-definition topics with no structure or process to depict.
 

@@ -1,6 +1,64 @@
-# Excalidraw Library Tools
+# Excalidraw Scripts
 
-This directory contains scripts for working with Excalidraw libraries.
+Helper scripts for Excalidraw diagrams. Two groups:
+
+- **`render-latex.js`** — renders LaTeX math inside an `.excalidraw` file to vector SVG.
+- **`split-excalidraw-library.py`, `add-icon-to-diagram.py`, `add-arrow.py`** — work with third-party `.excalidrawlib` icon sets.
+
+## render-latex.js
+
+Converts text elements tagged with `customData.latex` into rendered-LaTeX `image` elements (MathJax → inline SVG → base64 → `files` dict). The rendering is a vector SVG, so it stays crisp at any zoom in Obsidian's Excalidraw plugin. Colour is preserved from the element's original `strokeColor`.
+
+### Prerequisites
+
+- Node.js (tested on v22).
+- One-time install inside this folder (produces `node_modules/`, git-ignored):
+  ```bash
+  cd .agents/skills/excalidraw-diagram-generator/scripts
+  npm install
+  ```
+
+### Authoring a diagram for LaTeX rendering
+
+Write the `.excalidraw` as normal, but on every text element that should become math, add a `customData` object:
+
+```json
+{
+  "type": "text",
+  "text": "σ_DC(E) ∝ S |I|²",          // plain-text fallback (also human-readable)
+  "x": 80, "y": 420, "width": 400, "height": 60,
+  "strokeColor": "#1864ab",              // baked into the rendered SVG
+  "customData": {
+    "latex": "\\sigma_{\\text{DC}}(E) \\;\\propto\\; S_{f}\\,|I_L(E)|^{2}",
+    "latexDisplay": true                 // omit/false for inline labels
+  }
+}
+```
+
+Leave element `id`s, positions, sizes, and colour on the text element itself — the script uses them to place and tint the rendered image.
+
+### Running
+
+```bash
+node .agents/skills/excalidraw-diagram-generator/scripts/render-latex.js <path-to.excalidraw>
+```
+
+The file is edited in place. Each tagged text element is replaced by an `image` element whose `fileId` points into the `files` dict. The image keeps `customData.latex` so re-runs regenerate the SVG deterministically (the rendered SVG is hashed to produce the `fileId`, so identical LaTeX + colour always produces the same `fileId`).
+
+### Display vs inline
+
+- **`latexDisplay: true`** — use for `\frac`, `\sum`, `\begin{aligned}`, etc. MathJax renders at full display size; the image fits (aspect-preserved, centred) inside the original text element's `width × height` box.
+- **`latexDisplay: false`** (or omitted) — use for short labels like `Y^{*}_{f}` or `\gamma\;(J^{\pi}, \Gamma)`. Rendered inline; scaled so the image height matches the text element's height.
+
+### Caveats
+
+- Rendered formulas are **static SVG** inside Excalidraw — not editable as LaTeX in the UI. Use Obsidian Excalidraw's native `Ctrl+Shift+L` equation feature if round-trip editing matters more than scripted reproducibility.
+- The `appState` still needs `"theme": "light"` + `"viewBackgroundColor": "#ffffff"` so Obsidian doesn't auto-invert the figure under a dark theme (the rendered SVG's baked-in colours do not auto-invert).
+- First-time `npm install` pulls ~40 MB; subsequent runs are instant.
+
+## Excalidraw Library Tools
+
+This directory also contains scripts for working with Excalidraw libraries.
 
 ## split-excalidraw-library.py
 

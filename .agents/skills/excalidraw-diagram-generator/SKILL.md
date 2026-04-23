@@ -584,6 +584,25 @@ python scripts/add-arrow.py my-aws-diagram.excalidraw 565 330 650 350 --label "S
 - Inform user they can add icons later or set up libraries for future diagrams
 - The diagram will still be functional and clear, just less visually polished
 
+## LaTeX Math in Diagrams
+
+For diagrams containing physics/math content (Greek letters in proper math italic, fractions, integrals, aligned equations, parity notations like `J^π`, Breit–Wigner kernels, etc.), Unicode in text elements looks wrong next to rendered typography — pre-render via MathJax instead. The skill ships a Node script `scripts/render-latex.js`.
+
+**Workflow:**
+1. Author the `.excalidraw` with normal `text` elements for every label or formula that contains math.
+2. On each, add `customData: { latex: "<TeX>", latexDisplay: true|false }`. Keep a plain-text `text` as fallback. Keep `strokeColor` — it's baked into the rendered SVG so the panel palette survives.
+3. Run (one-time `npm install` in `scripts/` first):
+   ```bash
+   node .agents/skills/excalidraw-diagram-generator/scripts/render-latex.js <path-to.excalidraw>
+   ```
+Each tagged text element is replaced in place by an `image` element whose base64 SVG lives in the `files` dict. Re-runs are deterministic (`fileId` is a hash of the SVG).
+
+**When to use** — any diagram with: physics notation (σ, Γ, ∫, ⟨…⟩, J^π), non-trivial subscripts/superscripts (Y*_f, E_R, Γ_tot), display-mode formulas, aligned multi-line equations.
+
+**When not to use** — pure flowcharts, swimlanes, architecture diagrams. Unicode Greek + super/subscript is fine for a single isolated symbol in an English label.
+
+**Caveat** — rendered LaTeX is a static vector SVG inside Excalidraw; it's **not** editable as LaTeX in the UI. Obsidian Excalidraw's native `Ctrl+Shift+L` equation tool is the round-trip option, but it's UI-only. Use the pre-render pipeline when the AI is the author. See `scripts/README.md` for full details.
+
 ## References
 
 See bundled references for:
@@ -593,8 +612,10 @@ See bundled references for:
 - `templates/relationship-template.json` - Relationship diagram starter
 - `templates/mindmap-template.json` - Mind map starter
 - `scripts/split-excalidraw-library.py` - Tool to split `.excalidrawlib` files
-- `scripts/README.md` - Documentation for library tools
-- `scripts/.gitignore` - Prevents local Python artifacts from being committed
+- `scripts/render-latex.js` - Render LaTeX math in `.excalidraw` files to embedded SVG
+- `scripts/README.md` - Documentation for library + LaTeX tools
+- `scripts/package.json` - Node dependencies (mathjax-full) for `render-latex.js`
+- `scripts/.gitignore` - Ignores Python + Node local artifacts
 
 ## Limitations
 

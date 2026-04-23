@@ -1,0 +1,9 @@
+{
+  "name": "excalidraw-diagram-generator-scripts",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Helper scripts for rendering LaTeX math into .excalidraw diagrams. Install with `npm install` inside this folder before first use of render-latex.js.",
+  "dependencies": {
+    "mathjax-full": "^3.2.2"
+  }
+}
