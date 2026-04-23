@@ -10,6 +10,7 @@ from reportlab.lib.units import cm, mm
 from reportlab.lib.colors import HexColor, Color
 from reportlab.lib.enums import TA_LEFT, TA_JUSTIFY, TA_CENTER
 from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.pdfmetrics import registerFontFamily
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import (
     SimpleDocTemplate, Paragraph, Spacer, PageBreak, Flowable,
@@ -32,22 +33,21 @@ def try_register(name, path, subfontIndex=None):
         print(f"Failed to register {name} from {path}: {e}")
         return False
 
-# Body (serif)
+# Unified Source Han Serif SC family: Regular (via Noto, which IS Source Han Serif) + Heavy
 body_font = None
 for name, path, idx in [
-    ("NotoSerifSC", f"{FONT_DIR}/NotoSerifSC-VF.ttf", None),
-    ("SimSun", f"{FONT_DIR}/simsun.ttc", 0),
+    ("HanSerif", f"{FONT_DIR}/NotoSerifSC-VF.ttf", None),
+    ("HanSerif", f"{FONT_DIR}/STSONG.TTF", None),  # fallback
+    ("HanSerif", f"{FONT_DIR}/simsun.ttc", 0),      # final fallback
 ]:
     if try_register(name, path, idx):
         body_font = name
         break
 
-# Bold (prefer sans or Source Han companion)
 bold_font = None
 for name, path, idx in [
-    ("NotoSansSC", f"{FONT_DIR}/NotoSansSC-VF.ttf", None),
-    ("MSYaHeiBold", f"{FONT_DIR}/msyhbd.ttc", 0),
-    ("SimHei", f"{FONT_DIR}/simhei.ttf", None),
+    ("HanSerifHeavy", f"{FONT_DIR}/Source Han Serif SC Heavy (TrueType).ttf", None),
+    ("HanSerifHeavy", f"{FONT_DIR}/simsunb.ttf", None),  # fallback
 ]:
     if try_register(name, path, idx):
         bold_font = name
@@ -58,7 +58,14 @@ if body_font is None:
 if bold_font is None:
     bold_font = body_font
 
-print(f"Body: {body_font}  |  Bold/Display: {bold_font}")
+# Tell reportlab that <b> inside body paragraphs should use the Heavy weight
+registerFontFamily('HanSerif',
+                   normal='HanSerif',
+                   bold=bold_font,
+                   italic='HanSerif',
+                   boldItalic=bold_font)
+
+print(f"Body: {body_font}  |  Display/Heavy: {bold_font}")
 
 # ---------- Anthropic-inspired palette ----------
 PAPER  = HexColor("#F5F1E8")  # warm cream
