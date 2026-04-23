@@ -293,7 +293,7 @@ class SafetyZoneMatrix(Flowable):
         # corner note
         c.setFont(body_font, 9)
         c.setFillColor(MUTED)
-        c.drawString(0, 0.3*cm, "流量是中转站 · 不是资产。稳健的商业承接 > 一次性爆发。")
+        c.drawString(0, 0.3*cm, "流量是中转站，不是资产。稳健的商业承接，好过一次性爆发。")
 
 
 class CirclesDiagram(Flowable):
@@ -367,7 +367,7 @@ class SynthesisMindmap(Flowable):
         # Title
         c.setFillColor(ACCENT)
         c.setFont(bold_font, 11)
-        c.drawString(0, self.height - 0.3*cm, "合集 · 一条共通的主线")
+        c.drawString(0, self.height - 0.3*cm, "合集 · 三场合着看")
         # center node
         c.setFillColor(ACCENT)
         c.circle(cx, cy, 1.35*cm, stroke=0, fill=1)
@@ -378,19 +378,18 @@ class SynthesisMindmap(Flowable):
 
         # Three branches
         branches = [
-            # (angle_deg, color_tint, title, subtitle, points[])
-            (150, "钱 婧", "行动 · Action",
+            (150, "钱 婧", "行动",
                 ["本分起步：拒绝宏大叙事",
                  "上班是最低成本的锻炼",
                  "利他与公平价值交换"]),
-            (30, "温义飞", "接纳 · Acceptance",
-                ["流量是中转站 · 不是资产",
+            (30, "温义飞", "接纳",
+                ["流量是中转站，不是资产",
                  "可能性坍缩即使命浮现",
-                 "与不完美共存 = 风格"]),
-            (270, "马兆远", "思维 · Thinking",
-                ["逻辑四律 = 思维地基",
-                 "AI 是工具 · 不是神",
-                 "高级外行 · 跨行业学习力"]),
+                 "与不完美共存就是风格"]),
+            (270, "马兆远", "思维",
+                ["逻辑四律是思维地基",
+                 "AI 是工具，不是神",
+                 "高级外行，跨行业学习力"]),
         ]
         import math
         for (angle, guest, title, pts) in branches:
@@ -458,7 +457,7 @@ INTERVIEWS = [
             ('社会化（Socialization）', '在视频语境下，指通过工作、消费与人际交往，获取对真实世界的认知，学会如何在社会规则下通过提供价值换取回报的过程。'),
         ],
         'chart': PathwayDiagram,
-        'chart_caption': '从心态起步到价值跃迁的六步阶梯 — 源自对话中的核心递进逻辑',
+        'chart_caption': '钱婧在对话里给的六步路径：从心态起步，到收入跃迁。',
     },
     {
         'num': '02',
@@ -486,7 +485,7 @@ INTERVIEWS = [
             ('可能性坍缩（Collapse of Possibilities）', '指一个人随着成长和人生目标的明确，原本宽泛的选择路径逐渐变窄。这种收束被视频中解读为个人道路的显现与成熟，而非单纯的失去。'),
         ],
         'chart': SafetyZoneMatrix,
-        'chart_caption': '温义飞给创作者的四象限定位公式 — 在四个视角的交集里，才有可持续商业',
+        'chart_caption': '温义飞给自媒体创作者的四象限定位：四个视角都对得上，生意才稳。',
     },
     {
         'num': '03',
@@ -513,7 +512,7 @@ INTERVIEWS = [
             ('逻辑的四个基本规则', '指同一律、矛盾律、排中律和因果律。遵循这些规则是进行有效表达和知识积累的前提，是现代人思维方式的基石。'),
         ],
         'chart': CirclesDiagram,
-        'chart_caption': 'AI 能做的事是逻辑闭环里的一个小圆；人的圆更大，且边界模糊 —— 哥德尔不完备告诉我们：系统内必有不可证之真',
+        'chart_caption': 'AI 能做的是逻辑闭环里的小圆；人的圆更大，边界模糊。哥德尔早就说过：系统内总有不可证之真。',
     },
 ]
 
@@ -552,7 +551,7 @@ for iv in INTERVIEWS:
     story.append(Paragraph(esc(sub), styles['cover_item_meta']))
 
 story.append(Spacer(1, 1.5*cm))
-story.append(Paragraph("精选自 BibiGPT 对哔哩哔哩节目的整理 · 仅作个人学习留存", styles['tag_line']))
+story.append(Paragraph("整理自 BibiGPT · 个人学习用", styles['tag_line']))
 story.append(PageBreak())
 
 # ---- EACH INTERVIEW ----
@@ -607,21 +606,21 @@ for i, iv in enumerate(INTERVIEWS):
 # ---- FINAL SYNTHESIS ----
 story.append(PageBreak())
 story.append(Paragraph("— 合集 —", styles['section_num']))
-story.append(Paragraph("一条共通的主线", styles['h1']))
-story.append(Paragraph("三场对话 · 一个青年人的坐标系", styles['h1_sub']))
+story.append(Paragraph("三场合着看", styles['h1']))
+story.append(Paragraph("把行动、接纳、思维拼在一起", styles['h1_sub']))
 story.append(AccentRule(2.5*cm, 1.5))
 story.append(Spacer(1, 0.4*cm))
 
 synthesis_text = (
-    "三场对话放在一起，其实在回答同一个问题：<b>在一个不确定性被放大的时代，"
-    "一个普通年轻人如何找回自己的确定性？</b>钱婧从<b>行动</b>这一面切入——拒绝宏大叙事，"
-    "回到本分，通过持续创造把自己变得更值钱；温义飞从<b>接纳</b>这一面切入——"
-    "看清流量只是中转站、可能性坍缩反而是使命的浮现，与不完美共处是个人风格的起点；"
-    "马兆远则从<b>思维</b>这一面切入——AI 能处理的是逻辑闭环里的小圆，人的疆域在那更大的圆之外，"
-    "逻辑素养加跨行业学习力才是抗震的底盘。"
+    "三场对话其实都在回应同一种焦虑：太多东西在变，一个普通年轻人怎么给自己留一块不变的地方。"
     "<br/><br/>"
-    "<b>行动 · 接纳 · 思维</b>：一个是面向外界的姿态，一个是面向命运的姿态，一个是面向信息的姿态。"
-    "三者合起来，就是这本合集试图勾勒的那个坐标系。"
+    "钱婧的答案是“先做”。别被暴富叙事带偏，把本职工作打磨好，在能把握的事情上持续创造，比空想管用得多。"
+    "温义飞更偏“认”：流量不是你的资产，可能性本来就会越收越窄，"
+    "“不完美”不是要修掉的 bug，而是个人风格的起点。"
+    "马兆远退到更底层——AI 能处理的是一个逻辑闭环的小圆，人真正待的地方在那之外，"
+    "靠的是逻辑训练和跨行业学习能力。"
+    "<br/><br/>"
+    "<b>行动、接纳、思维</b>，三种面向不同的姿态——对世界、对命运、对信息——拼起来才是一个能用的坐标。"
 )
 story.append(Paragraph(synthesis_text, styles['body']))
 story.append(Spacer(1, 0.5*cm))
