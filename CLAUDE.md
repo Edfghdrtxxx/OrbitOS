@@ -23,11 +23,10 @@ Skill definitions live in `.agents/skills/<skill-name>/SKILL.md` (symlinked to `
 ## User Context
 - **Education:** Master's student in Particle and Nuclear Physics at Institute of Modern Physics (IMP), CAS (degree via UCAS), expected graduation: June 2027
 - **ML Focus:** Primary: ResNet; Secondary: Vision Transformers (ViT); Other: Domain Adaptation (DANN, MCD)
-- **Physics:** Time Projection Chambers (TPC), direct reactions, particle identification
-- **Tech Interests:** Vibe coding, newest technologies, AI coding assistants (Claude Code, Antigravity, Cursor, Trae)
+- **Physics:** Time Projection Chambers (TPC), particle identification, nuclear structure, nuclear reactions
+- **Tech Interests:** Vibe coding, newest technologies, AI coding assistants (Claude Code, Codex)
 - **Coding Practice:** LeetCode algorithm problems
 - **Values:** Strictly rejects "996" culture; prefers empathetic, reflective quotes on personal growth
-- **Relationship:** Girlfriend works at Huawei Cloud (PaaS technical support)
 
 ### Japan Immigration (top priority after graduation)
 - Finalized pathway: UTokyo CNS / RIKEN JRA, Route B Special Selection (supervisor: Imai, DONUTS). Execution plan: [[UTokyo_RIKEN]].

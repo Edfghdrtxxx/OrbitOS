@@ -16,37 +16,37 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 
 ## How I Use the Commands
 
-| When I want to... | I run | What happens |
-|---|---|---|
-| Start my morning | `/start-my-day` | Reviews yesterday, surfaces active projects, generates today's daily note |
-| Turn an idea into a project | `/kickoff` | Structures it with C.A.P. layout (Context, Actions, Progress), asks clarifying questions |
-| Deep-dive a topic (new ML paper, visa pathway, TPC technique) | `/research <topic>` | Two-agent workflow: researches, then organizes into 30_Research/ and 40_Wiki/ with wikilinks |
-| Get a quick answer without creating notes | `/ask <question>` | Direct answer, optionally saves to wiki |
-| Explore an idea before committing | `/brainstorm` | Interactive session, can optionally become a project |
-| Clean up finished work | `/archive` | Moves completed projects to 99_System/Archives/ |
-| Catch up on AI news | `/ai-newsletters` | Curates TLDR AI, The Rundown AI into 50_Resources/ |
-| See what's shipping in AI | `/ai-products` | Product Hunt, HN, GitHub, Reddit roundup |
-| Break down complex tasks | `/breakdown-tasks <task>` | Stratified decomposition with estimates and dependencies, inserted into daily note |
-| Estimate daily workload | `/estimate-time` | Reasoning-based time estimates for today's tasks at subtask resolution |
-| Create an atomic wiki note | `/atomic-note` | Creates a single-concept note in 40_Wiki/ with auto-linking and wikilink discovery |
-| Hand off work to another session | `/handoff-prompt` | Generates a constraint-based handoff prompt without over-prescribing implementation |
-| Review wiki knowledge | `/wiki-review` | Spaced-repetition review of Wiki notes using forgetting-curve scheduling |
-| Derive a formula step-by-step | `/guide-derivation` | Guided derivation of physics/math formulas with scaffolded steps |
-| Explain a concept simply | `/Feynman-Technique` | Feynman-style explanation as if teaching a 12-year-old |
-| Annotate a confusing note | `/insert-Feynman` | Inserts Feynman explanation callouts directly into the note file |
-| Polish English writing | `/phrasing-refining` | Grammar, idiom, and naturalness review with terse inline corrections |
-| Stress-test an idea | `/idea-debate-team` | Multi-agent debate from distinct lenses to expose blind spots |
-| Self-critique current work | `/reflect` | Adversarial review of current session trajectory |
-| Park a quick thought in today's note | `/daily-note-addition` | Adds flat checkbox captures to the daily note without full triage |
-| Dispatch parallel agents (heavyweight) | `/orchestrate` | Decomposes a task, dispatches sub-agents, reviews, synthesizes results |
-| Dispatch parallel agents (lightweight) | `/dispatch` | Fast sub-agent dispatch — skips decomposition, restatement, and formal review |
-| Extract web page content | `/defuddle` | Clean markdown extraction from URLs, removing clutter |
-| Wrap up my day | `/end-my-day` | Evening review, deferred task identification, wind-down |
-| Create a diagram | `/excalidraw-diagram-generator` | Generates Excalidraw diagrams from natural language |
-| Build an MCP server | `/mcp-builder` | Step-by-step guide for creating MCP servers (Python/Node) |
-| Create a NotebookLM podcast | `/notebooklm` | Full Google NotebookLM API — notebooks, sources, artifacts |
-| Evolve skill definitions | `/evolve-skills` | Persists session lessons into per-skill evolution.md files |
-| Anchor to my game framework | `/anchor-game-framework` | Surfaces identity statement, 1-year goal, daily levers |
+| When I want to...                                             | I run                           | What happens                                                                                 |
+| ------------------------------------------------------------- | ------------------------------- | -------------------------------------------------------------------------------------------- |
+| Start my morning                                              | `/start-my-day`                 | Reviews yesterday, surfaces active projects, generates today's daily note                    |
+| Turn an idea into a project                                   | `/kickoff`                      | Structures it with C.A.P. layout (Context, Actions, Progress), asks clarifying questions     |
+| Deep-dive a topic (new ML paper, visa pathway, TPC technique) | `/research <topic>`             | Two-agent workflow: researches, then organizes into 30_Research/ and 40_Wiki/ with wikilinks |
+| Get a quick answer without creating notes                     | `/ask <question>`               | Direct answer, optionally saves to wiki                                                      |
+| Explore an idea before committing                             | `/brainstorm`                   | Interactive session, can optionally become a project                                         |
+| Clean up finished work                                        | `/archive`                      | Moves completed projects to 99_System/Archives/                                              |
+| Catch up on AI news                                           | `/ai-newsletters`               | Curates TLDR AI, The Rundown AI into 50_Resources/                                           |
+| See what's shipping in AI                                     | `/ai-products`                  | Product Hunt, HN, GitHub, Reddit roundup                                                     |
+| Break down complex tasks                                      | `/breakdown-tasks <task>`       | Stratified decomposition with estimates and dependencies, inserted into daily note           |
+| Estimate daily workload                                       | `/estimate-time`                | Reasoning-based time estimates for today's tasks at subtask resolution                       |
+| Create an atomic wiki note                                    | `/atomic-note`                  | Creates a single-concept note in 40_Wiki/ with auto-linking and wikilink discovery           |
+| Hand off work to another session                              | `/handoff-prompt`               | Generates a constraint-based handoff prompt without over-prescribing implementation          |
+| Review wiki knowledge                                         | `/wiki-review`                  | Spaced-repetition review of Wiki notes using forgetting-curve scheduling                     |
+| Derive a formula step-by-step                                 | `/guide-derivation`             | Guided derivation of physics/math formulas with scaffolded steps                             |
+| Explain a concept simply                                      | `/Feynman-Technique`            | Feynman-style explanation as if teaching a 12-year-old                                       |
+| Annotate a confusing note                                     | `/insert-Feynman`               | Inserts Feynman explanation callouts directly into the note file                             |
+| Polish English writing                                        | `/phrasing-refining`            | Grammar, idiom, and naturalness review with terse inline corrections                         |
+| Stress-test an idea                                           | `/idea-debate-team`             | Multi-agent debate from distinct lenses to expose blind spots                                |
+| Self-critique current work                                    | `/reflect`                      | Adversarial review of current session trajectory                                             |
+| Park a quick thought in today's note                          | `/daily-note-addition`          | Adds flat checkbox captures to the daily note without full triage                            |
+| Dispatch parallel agents (heavyweight)                        | `/orchestrate`                  | Decomposes a task, dispatches sub-agents, reviews, synthesizes results                       |
+| Dispatch parallel agents (lightweight)                        | `/dispatch`                     | Fast sub-agent dispatch — skips decomposition, restatement, and formal review                |
+| Extract web page content                                      | `/defuddle`                     | Clean markdown extraction from URLs, removing clutter                                        |
+| Wrap up my day                                                | `/end-my-day`                   | Evening review, deferred task identification, wind-down                                      |
+| Create a diagram                                              | `/excalidraw-diagram-generator` | Generates Excalidraw diagrams from natural language                                          |
+| Build an MCP server                                           | `/mcp-builder`                  | Step-by-step guide for creating MCP servers (Python/Node)                                    |
+| Create a NotebookLM podcast                                   | `/notebooklm`                   | Full Google NotebookLM API — notebooks, sources, artifacts                                   |
+| Evolve skill definitions                                      | `/evolve-skills`                | Persists session lessons into per-skill evolution.md files                                   |
+| Anchor to my game framework                                   | `/anchor-game-framework`        | Surfaces identity statement, 1-year goal, daily levers                                       |
 
 ## Obsidian Features
 
