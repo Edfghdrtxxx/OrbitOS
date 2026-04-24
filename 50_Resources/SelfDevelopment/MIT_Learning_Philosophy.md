@@ -19,7 +19,7 @@ A CS student at MIT finished his final semester with a 4.0 GPA using a distincti
 He ran three prompts **every single week**, saved as phone shortcuts:
 
 ### Prompt 1 — Weaponize the Material
-> "Here are my notes, the textbook chapter, and last year's past papers. Give me the 3 ways professors trick students on exams with this concept. Then generate a problem that combines it with everything from the last 3 weeks."
+> "Here are my notes, the textbook chapter, and last year's past papers. Give me the 3 ways professors trap students on exams testing these concepts. Then generate problems that combine them with everything from the last 3 weeks."
 
 He wasn't studying the material. He was studying **how the material gets weaponized against you**.
 
