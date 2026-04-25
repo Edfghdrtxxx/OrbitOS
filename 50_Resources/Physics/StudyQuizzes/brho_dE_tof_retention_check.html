@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bρ–ΔE–TOF Retention Check</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['$$', '$$']],
+      processEscapes: true,
+      tags: 'none'
+    },
+    svg: { fontCache: 'global' },
+    startup: {
+      ready: () => { MathJax.startup.defaultReady(); }
+    }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<style>
+  :root {
+    --bg:        #0b0e13;
+    --bg-elev:   #131821;
+    --bg-card:   #161c27;
+    --border:    #283142;
+    --border-soft: #1e2533;
+    --text:      #e7e1cf;
+    --text-mute: #8a8170;
+    --text-dim:  #615a4c;
+    --accent:    #d8a044;
+    --accent-dim:#a87a30;
+    --cyan:      #7cb6c0;
+    --crimson:   #c56c63;
+    --radius:    4px;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg:        #faf7ee;
+      --bg-elev:   #f1ecdd;
+      --bg-card:   #ffffff;
+      --border:    #d6ceb5;
+      --border-soft: #e5ddc6;
+      --text:      #1a1812;
+      --text-mute: #6b614d;
+      --text-dim:  #9c917a;
+      --accent:    #9a6e12;
+      --accent-dim:#6f4f06;
+      --cyan:      #306670;
+      --crimson:   #8a342b;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Spectral', 'Source Serif Pro', Georgia, serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.62;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 32px 96px;
+  }
+
+  /* ───── Header ───── */
+  header.masthead {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 28px;
+    margin-bottom: 40px;
+  }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+    margin: 0 0 14px;
+  }
+
+  h1 {
+    font-family: 'Spectral', serif;
+    font-weight: 500;
+    font-size: 38px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 0 0 12px;
+    color: var(--text);
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
+  }
+
+  .subtitle {
+    font-style: italic;
+    color: var(--text-mute);
+    font-size: 16px;
+    margin: 0 0 24px;
+    max-width: 56ch;
+  }
+
+  .meta-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--text-mute);
+    text-transform: uppercase;
+  }
+  .meta-strip span::before {
+    content: "·  ";
+    color: var(--text-dim);
+  }
+  .meta-strip span:first-child::before { content: ""; }
+
+  /* ───── Reveal-all control ───── */
+  .control-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 18px;
+    background: var(--bg-elev);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    margin: 0 0 56px;
+  }
+  .control-bar p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-mute);
+    font-style: italic;
+  }
+  button.reveal-all {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent-dim);
+    padding: 8px 14px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+  }
+  button.reveal-all:hover {
+    background: var(--accent);
+    color: var(--bg);
+  }
+
+  /* ───── Part headers ───── */
+  .part-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin: 64px 0 32px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .part-header:first-of-type { margin-top: 0; }
+  .part-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .part-header h2 {
+    font-family: 'Spectral', serif;
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: -0.005em;
+    margin: 0;
+    color: var(--text);
+    font-style: italic;
+  }
+
+  /* ───── Problem styling ───── */
+  article.problem {
+    margin: 0 0 56px;
+    scroll-margin-top: 20px;
+  }
+  .problem-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+  .problem-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .problem-title {
+    font-family: 'Spectral', serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 19px;
+    line-height: 1.3;
+    color: var(--text);
+    flex: 1;
+  }
+  .problem-body p {
+    margin: 12px 0;
+  }
+  .problem-body ol.parts,
+  .solution-body ol.parts {
+    list-style: none;
+    counter-reset: part;
+    padding-left: 0;
+    margin: 16px 0;
+  }
+  .problem-body ol.parts > li,
+  .solution-body ol.parts > li {
+    counter-increment: part;
+    padding-left: 34px;
+    position: relative;
+    margin: 14px 0;
+  }
+  .problem-body ol.parts > li::before,
+  .solution-body ol.parts > li::before {
+    content: "(" counter(part, lower-alpha) ")";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .tag-row {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-top: 14px;
+  }
+  .tag-row .tag {
+    color: var(--text-mute);
+  }
+  .tag-row .tag + .tag::before {
+    content: "·  ";
+    color: var(--text-dim);
+  }
+
+  /* ───── Solution (details) ───── */
+  details.solution {
+    margin-top: 22px;
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    background: var(--bg-elev);
+    overflow: hidden;
+    transition: border-color 0.15s ease;
+  }
+  details.solution[open] {
+    border-color: var(--border);
+  }
+  details.solution > summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 12px 18px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    user-select: none;
+    transition: color 0.15s ease;
+  }
+  details.solution > summary::-webkit-details-marker { display: none; }
+  details.solution > summary:hover { color: var(--accent); }
+  details.solution > summary::before {
+    content: "▸";
+    display: inline-block;
+    transition: transform 0.2s ease;
+    color: var(--accent);
+    font-size: 10px;
+  }
+  details.solution[open] > summary::before { transform: rotate(90deg); }
+
+  .solution-body {
+    padding: 4px 22px 22px;
+    border-top: 1px solid var(--border-soft);
+    margin-top: 0;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  .solution-body p:first-child { margin-top: 16px; }
+  .solution-body h4 {
+    font-family: 'Spectral', serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--accent);
+    margin: 20px 0 8px;
+    letter-spacing: 0.01em;
+  }
+
+  .cite {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--text-mute);
+  }
+  .cite a { color: var(--cyan); text-decoration: none; border-bottom: 1px dotted var(--cyan); }
+
+  /* ───── MathJax refinements ───── */
+  mjx-container {
+    color: var(--text) !important;
+  }
+  mjx-container[display="true"] {
+    margin: 18px 0 !important;
+  }
+
+  /* ───── Flash cards ───── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin: 16px 0 32px;
+  }
+  .flip-card {
+    perspective: 1200px;
+    height: 260px;
+    cursor: pointer;
+  }
+  .flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  .flip-card.flipped .flip-inner {
+    transform: rotateY(180deg);
+  }
+  .flip-face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    padding: 20px 18px;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s ease;
+    overflow: hidden;
+  }
+  .flip-card:hover .flip-face { border-color: var(--accent-dim); }
+
+  .flip-front {
+    justify-content: space-between;
+  }
+  .flip-front .card-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .flip-front .card-question {
+    font-family: 'Spectral', serif;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--text);
+    margin: 16px 0;
+  }
+  .flip-front .hint {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  .flip-back {
+    transform: rotateY(180deg);
+    background: var(--bg-elev);
+    border-color: var(--accent-dim);
+    overflow-y: auto;
+  }
+  .flip-back .card-answer {
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--text);
+  }
+  .flip-back .card-answer strong {
+    color: var(--accent);
+    font-weight: 500;
+    font-style: italic;
+  }
+
+  /* ───── References ───── */
+  .references {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text-mute);
+  }
+  .references h3 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 16px;
+    font-weight: 500;
+  }
+  .references ol {
+    padding-left: 22px;
+    margin: 0;
+  }
+  .references li {
+    margin: 6px 0;
+    font-style: italic;
+  }
+  .references li .title { font-style: normal; color: var(--text); }
+
+  /* ───── Utility ───── */
+  .note-box {
+    margin: 14px 0;
+    padding: 12px 16px;
+    border-left: 2px solid var(--accent-dim);
+    background: rgba(216, 160, 68, 0.05);
+    font-size: 15px;
+    font-style: italic;
+    color: var(--text-mute);
+  }
+  .note-box strong { color: var(--accent); font-style: normal; font-weight: 500; }
+
+  @media (max-width: 560px) {
+    .wrap { padding: 28px 18px 64px; }
+    h1 { font-size: 28px; }
+    .control-bar { flex-direction: column; align-items: stretch; }
+    .card-grid { grid-template-columns: 1fr; }
+    .flip-card { height: auto; min-height: 240px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- HEADER                                                    -->
+<!-- ════════════════════════════════════════════════════════ -->
+<header class="masthead">
+  <p class="eyebrow">Retention Check · HIRFL-RIBLL</p>
+  <h1>Bρ–ΔE–TOF <em>Particle Identification</em></h1>
+  <p class="subtitle">A graduate-qualifier-style consolidation exercise. Five derivations, five concept cards. Each item targets at least one of the three classic traps: detector-regime conflation, the Bρ–β–TOF constraint tangle, or the thin-detector ceiling.</p>
+  <div class="meta-strip">
+    <span>10 items</span>
+    <span>~90 minutes</span>
+    <span>closed book</span>
+    <span>solutions hidden by default</span>
+  </div>
+</header>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- REVEAL-ALL                                                -->
+<!-- ════════════════════════════════════════════════════════ -->
+<div class="control-bar">
+  <p>Attempt each problem before revealing its solution. Flashcards flip on click.</p>
+  <button class="reveal-all" id="revealAllBtn" onclick="toggleAllSolutions()">Reveal all solutions</button>
+</div>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- PART I: DERIVATIONS                                       -->
+<!-- ════════════════════════════════════════════════════════ -->
+<div class="part-header">
+  <span class="part-label">Part I</span>
+  <h2>Derivation problems</h2>
+</div>
+
+<!-- ─── PROBLEM 1 ─── -->
+<article class="problem" id="p1">
+  <div class="problem-head">
+    <span class="problem-num">P1</span>
+    <span class="problem-title">The master equation and its two numerical faces</span>
+  </div>
+  <div class="problem-body">
+    <p>Start from the Lorentz force \(\vec{F} = q\vec{v}\times\vec{B}\) for a fully-stripped ion of mass number \(A\) and atomic number \(Z\) executing circular motion in a uniform dipole field \(B\) perpendicular to the velocity.</p>
+    <ol class="parts">
+      <li>Derive the magnetic rigidity in the form
+        $$ B\rho = \frac{\gamma\beta A u c}{Z e} \;=\; \frac{uc}{e}\cdot\frac{\gamma\beta A}{Z}. $$
+        Be explicit about which step requires the <em>relativistic</em> form of momentum and what breaks if the non-relativistic form \(p = mv\) is used.</li>
+      <li>Two numerical forms for the rigidity are encountered in the literature:
+        $$ B\rho\,[\mathrm{T\!\cdot\!m}] = 3.3356\,\frac{p\,[\mathrm{GeV}/c]}{Z}, \qquad B\rho\,[\mathrm{T\!\cdot\!m}] = C\cdot\frac{\gamma\beta A}{Z}. $$
+        Derive the coefficient \(C\) from fundamental constants to four significant figures. Reconcile the two forms — the factor <em>3.3356</em> is not the same quantity as \(C\). State what each number physically is.</li>
+      <li>Suppose the dipole is set to a fixed \(B\rho_0\) and the time of flight between two scintillator planes separated by \(L\) is measured. Show rigorously that \(\mathrm{TOF}\propto A/Z\), not \(Z/A\). Point to the precise algebraic step where the ratio inverts, and name the typical student error at that step.</li>
+    </ol>
+    <div class="tag-row">
+      <span class="tag">targets: trap 2</span>
+      <span class="tag">concepts: Lorentz force, relativistic kinematics, TOF logic</span>
+    </div>
+
+    <details class="solution">
+      <summary>Show worked solution</summary>
+      <div class="solution-body">
+        <h4>(a) Derivation of the master equation</h4>
+        <p>Perpendicular \(\vec{v}\) and \(\vec{B}\) give a centripetal force \(|qvB|\). For circular motion the required centripetal force is \(\dot{p} = p v/\rho\), where \(p\) is the <em>relativistic</em> momentum. This is the essential step: \(\dot{p} = dp/dt\) for circular motion uses the magnitude of \(\vec{p}\), and in special relativity</p>
+        $$ p = \gamma m v = \gamma\beta m c. $$
+        <p>Setting \(qvB = pv/\rho\), the \(v\) cancels cleanly,</p>
+        $$ q B\rho = p = \gamma\beta m c. $$
+        <p>For a fully-stripped ion, \(q = Ze\) and \(m = Au\). Hence</p>
+        $$ B\rho = \frac{\gamma\beta A u c}{Z e} = \frac{uc}{e}\cdot\frac{\gamma\beta A}{Z}. $$
+        <p>If one uses the non-relativistic substitution \(p = mv\), the factor of \(\gamma\) is lost. At RIBLL energies (\(E/A \sim 30\text{–}100\) MeV/u, \(\gamma \sim 1.03\text{–}1.11\)) the error is small but not negligible for \(\sigma_A/A\) at the \(10^{-3}\) level; at FRS energies (\(E/A \sim 1\) GeV/u, \(\gamma \sim 2\)) the non-relativistic form is wrong at the tens-of-percent level.</p>
+
+        <h4>(b) The coefficient \(C\) and what 3.3356 actually is</h4>
+        <p>Plugging in CODATA values:</p>
+        $$ C = \frac{uc}{e} = \frac{(1.66053907\times 10^{-27}\,\mathrm{kg})(2.99792458\times 10^{8}\,\mathrm{m/s})}{1.602176634\times 10^{-19}\,\mathrm{C}} \approx 3.1075\;\mathrm{T\!\cdot\!m}. $$
+        <p>So \(B\rho[\mathrm{T\!\cdot\!m}] \approx 3.107\,(\gamma\beta A/Z)\) for fully-stripped ions.</p>
+        <p>The factor <strong>3.3356</strong> is a different beast. It is the numerical value of \(10^{9}/c\) in SI, i.e., the conversion factor that converts momentum from \(\mathrm{GeV}/c\) to \(\mathrm{T}\!\cdot\!\mathrm{m}\!\cdot\!e\):</p>
+        $$ \frac{10^{9}\,\mathrm{eV}/c}{e} = \frac{10^{9}\,\mathrm{V/s}\cdot\mathrm{m}^{-1}\cdot c^{-1}\cdot s\cdot m}{1} = \frac{10^{9}}{c[\mathrm{m/s}]}\,\mathrm{T\!\cdot\!m} = 3.3356\,\mathrm{T\!\cdot\!m}. $$
+        <p>So the form \(B\rho[\mathrm{T\!\cdot\!m}] = 3.3356\,p[\mathrm{GeV}/c]/Z\) is a pure unit conversion between momentum and rigidity, independent of whether the particle is a proton, a heavy ion, or a muon. The two forms are consistent: \(p[\mathrm{GeV}/c] = \gamma\beta A \cdot (uc^2/\mathrm{GeV}) = 0.93149\,\gamma\beta A\), whence \(3.3356\times 0.93149 \approx 3.1073 = C\). The two numerical coefficients collapse into each other once units are unified.</p>
+        <p class="cite">Reference: S. Y. Lee, <em>Accelerator Physics</em>, 2nd ed., World Scientific (2004), p. 576, which uses the \(p[\mathrm{GeV}/c]\) form.</p>
+
+        <h4>(c) TOF ∝ A/Z, not Z/A</h4>
+        <p>From (a), at fixed \(B\rho_0\):</p>
+        $$ \gamma\beta = \frac{e\,B\rho_0}{uc}\cdot\frac{Z}{A}. $$
+        <p>Hence \(\gamma\beta \propto Z/A\). The ratio <em>Z/A</em> here is unambiguous: larger \(Z/A\) at fixed \(B\rho\) means larger \(\gamma\beta\), i.e., faster ion. Since</p>
+        $$ \mathrm{TOF} = \frac{L}{\beta c}, $$
+        <p>the inversion is now forced: slower ion → longer TOF, so smaller \(\gamma\beta\) → longer TOF. Smaller \(\gamma\beta\) means smaller \(Z/A\), i.e., <em>larger</em> \(A/Z\). Therefore TOF increases with \(A/Z\), i.e., TOF \(\propto A/Z\) in the non-relativistic limit where \(\gamma\approx 1\).</p>
+        <p>The step where students invert the direction: they forget that <em>TOF is the reciprocal of velocity</em>, so the proportionality flips relative to \(\gamma\beta\). They typically write "\(\gamma\beta\propto Z/A\) so TOF \(\propto Z/A\)" — skipping the reciprocal. At relativistic \(\gamma\), one must carry \(\gamma\) separately: \(\gamma\beta = Z/A\times\)(const), and \(\beta = \gamma\beta/\gamma\), so \(\mathrm{TOF}\propto \gamma/\gamma\beta \propto \gamma A/Z\). The γ-factor is what enables the γ⁴ error amplification examined in Problem 2.</p>
+      </div>
+    </details>
+  </div>
+</article>
+
+<!-- ─── PROBLEM 2 ─── -->
+<article class="problem" id="p2">
+  <div class="problem-head">
+    <span class="problem-num">P2</span>
+    <span class="problem-title">The γ⁴ error-propagation trap</span>
+  </div>
+  <div class="problem-body">
+    <p>The standard expression for the relative mass resolution in a Bρ–ΔE–TOF setup is</p>
+    $$ \left(\frac{\sigma_A}{A}\right)^{\!2} \approx \left(\frac{\sigma_{B\rho}}{B\rho}\right)^{\!2} + \gamma^{4}\!\left(\frac{\sigma_{\mathrm{TOF}}}{\mathrm{TOF}}\right)^{\!2} + \left(\frac{\sigma_Z}{Z}\right)^{\!2}. $$
+    <ol class="parts">
+      <li>Starting from the master equation, propagate errors through \(A = (Z e / uc)\cdot B\rho/(\gamma\beta)\). Show explicitly that the TOF term carries the factor \(\gamma^{4}\), identifying where \(\gamma^{3}\) appears from \(d(\gamma\beta)/d\beta\) and where the second \(\gamma\) creeps in from \(\beta = L/(c\cdot\mathrm{TOF})\).</li>
+      <li>A RIBLL setting delivers \(\beta = 0.38\) (\(\gamma \approx 1.081\)), TOF resolution \(\sigma_{\mathrm{TOF}}/\mathrm{TOF} = 10^{-3}\), rigidity resolution \(\sigma_{B\rho}/B\rho = 5\times 10^{-4}\), \(\sigma_Z/Z \approx 10^{-2}\). Compute each term in quadrature and identify the dominant contribution. Then do the same for a hypothetical upgrade to \(\beta = 0.92\) (\(\gamma \approx 2.55\)) with all other uncertainties unchanged.</li>
+      <li>A student argues: "at non-relativistic energies \(\gamma \approx 1\), so the \(\gamma^{4}\) factor is a curiosity and can be dropped." Evaluate this claim at \(\beta = 0.5\) (\(\gamma \approx 1.155\)). Is the approximation safe if the target \(\sigma_A/A\) is \(10^{-3}\)? Show your arithmetic and state the critical \(\gamma\) above which the γ⁴ term dominates a given \(\sigma_{B\rho}/B\rho = 5\times 10^{-4}\) budget.</li>
+    </ol>
+    <div class="tag-row">
+      <span class="tag">targets: trap 2</span>
+      <span class="tag">concepts: error propagation, relativistic kinematics, A-resolution</span>
+    </div>
+
+    <details class="solution">
+      <summary>Show worked solution</summary>
+      <div class="solution-body">
+        <h4>(a) Where γ⁴ comes from</h4>
+        <p>Write \(A = K\cdot B\rho \cdot Z / (\gamma\beta)\) with \(K = e/(uc)\) a constant. In log-differential form (treating \(B\rho, \beta, Z\) as independent),</p>
+        $$ \frac{dA}{A} = \frac{d(B\rho)}{B\rho} - \frac{d(\gamma\beta)}{\gamma\beta} + \frac{dZ}{Z}. $$
+        <p>Using \(\gamma = (1-\beta^2)^{-1/2}\),</p>
+        $$ \frac{d(\gamma\beta)}{d\beta} = \gamma + \beta\cdot\frac{d\gamma}{d\beta} = \gamma + \beta\cdot\gamma^{3}\beta = \gamma(1 + \gamma^{2}\beta^{2}) = \gamma^{3}, $$
+        <p>since \(1+\gamma^{2}\beta^{2} = \gamma^{2}\). Hence</p>
+        $$ \frac{d(\gamma\beta)}{\gamma\beta} = \frac{\gamma^{3}}{\gamma\beta}d\beta = \frac{\gamma^{2}}{\beta}d\beta. $$
+        <p>Now \(\beta = L/(c\cdot\mathrm{TOF})\), so \(d\beta/\beta = -d\mathrm{TOF}/\mathrm{TOF}\) at fixed \(L\). Substituting,</p>
+        $$ \frac{d(\gamma\beta)}{\gamma\beta} = -\gamma^{2}\,\frac{d\mathrm{TOF}}{\mathrm{TOF}}. $$
+        <p>Squaring and adding terms in quadrature for independent errors,</p>
+        $$ \boxed{\;\left(\tfrac{\sigma_A}{A}\right)^{\!2} = \left(\tfrac{\sigma_{B\rho}}{B\rho}\right)^{\!2} + \gamma^{4}\!\left(\tfrac{\sigma_{\mathrm{TOF}}}{\mathrm{TOF}}\right)^{\!2} + \left(\tfrac{\sigma_Z}{Z}\right)^{\!2}.\;} $$
+        <p>The two factors of \(\gamma\) have distinct origins: one from \(d\gamma/d\beta \propto \gamma^{3}\), one from converting \(d\beta\) into \(d\mathrm{TOF}\) while dividing by \(\beta\). Neither is a notational accident.</p>
+
+        <h4>(b) Numerical budgets at two β settings</h4>
+        <p>At \(\beta = 0.38\), \(\gamma = 1.081\), \(\gamma^{4} = 1.366\):</p>
+        <ul>
+          <li>Bρ term: \((5\times 10^{-4})^{2} = 2.5\times 10^{-7}\)</li>
+          <li>TOF term: \(1.366\times (10^{-3})^{2} = 1.366\times 10^{-6}\)</li>
+          <li>Z term: \((10^{-2})^{2} = 10^{-4}\) — dominant, but this is the nominal worst case assuming no independent Z measurement. With a clean MUSIC ΔE, \(\sigma_Z/Z \sim 10^{-3}\) is realistic, reducing this term to \(10^{-6}\).</li>
+        </ul>
+        <p>At \(\beta = 0.92\), \(\gamma = 2.55\), \(\gamma^{4} = 42.3\):</p>
+        <ul>
+          <li>Bρ term: \(2.5\times 10^{-7}\) (unchanged)</li>
+          <li>TOF term: \(42.3\times 10^{-6} = 4.23\times 10^{-5}\) — now dominant even against a clean Z measurement</li>
+        </ul>
+        <p>A factor-of-two upgrade in β has cost a factor of ~30 in the TOF error budget. This is the practical reason FRS-class relativistic spectrometers demand \(\sigma_{\mathrm{TOF}}/\mathrm{TOF}\) at the \(10^{-4}\) level or below.</p>
+
+        <h4>(c) Is γ⁴ ignorable at β = 0.5?</h4>
+        <p>At \(\beta = 0.5\), \(\gamma = 1.1547\), \(\gamma^{4} = 1.778\). Dropping the γ⁴ prefactor is a 78% underestimate of the TOF term. Against a target \(\sigma_A/A = 10^{-3}\), the naive budget \((10^{-3})^{2} = 10^{-6}\) becomes \(1.78\times 10^{-6}\) — moving σ_A/A from \(10^{-3}\) to \(1.33\times 10^{-3}\). For qualification-level accounting this is a real error.</p>
+        <p>Critical γ: the γ⁴ term equals the Bρ term when</p>
+        $$ \gamma^{4}\left(\tfrac{\sigma_{\mathrm{TOF}}}{\mathrm{TOF}}\right)^{\!2} = \left(\tfrac{\sigma_{B\rho}}{B\rho}\right)^{\!2} \Rightarrow \gamma = \left(\tfrac{\sigma_{B\rho}/B\rho}{\sigma_{\mathrm{TOF}}/\mathrm{TOF}}\right)^{\!1/2} = (0.5)^{1/2} \approx 0.707. $$
+        <p>So for the stated resolutions, the TOF term dominates the Bρ term at <em>all</em> γ ≥ 1, i.e., at every realistic energy. The "γ⁴ is a curiosity" intuition is simply wrong.</p>
+      </div>
+    </details>
+  </div>
+</article>
+
+<!-- ─── PROBLEM 3 ─── -->
+<article class="problem" id="p3">
+  <div class="problem-head">
+    <span class="problem-num">P3</span>
+    <span class="problem-title">Why a plastic scintillator cannot separate heavy-ion Z</span>
+  </div>
+  <div class="problem-body">
+    <p>A beamtime proposal suggests replacing an ionization chamber with a 500-µm thick BC-408 plastic scintillator as the ΔE detector for a \(Z\approx 10\text{–}20\) fragment cocktail at \(\beta = 0.35\). The proposer argues: <em>"Since \(-dE/dx\propto Z^{2}/\beta^{2}\) from Bethe–Bloch, light yield scales as \(Z^{2}\), so elements separate cleanly."</em></p>
+    <ol class="parts">
+      <li>State Birks' law for light yield per unit path length and derive the asymptotic forms in the two limits \(kB\cdot|dE/dx|\ll 1\) and \(kB\cdot|dE/dx|\gg 1\). Identify which regime minimum-ionizing particles occupy and which regime heavy ions near the Bragg peak occupy.</li>
+      <li>For \(^{40}\mathrm{Ar}^{18+}\) at \(\beta = 0.35\) in polyvinyltoluene plastic (mean \(Z_m/A_m \approx 0.542\), mean excitation \(I \approx 64.7\,\mathrm{eV}\), density \(\rho = 1.03\,\mathrm{g/cm^{3}}\)), estimate the mass stopping power in \(\mathrm{MeV\!\cdot\!g^{-1}\!\cdot\!cm^{2}}\) using the leading-log Bethe–Bloch form. Take \(K = 0.3071\,\mathrm{MeV\!\cdot\!g^{-1}\!\cdot\!cm^{2}}\). Using \(kB \approx 1.26\times 10^{-2}\,\mathrm{g\!\cdot\!MeV^{-1}\!\cdot\!cm^{-2}}\) (a typical value for BC-408), compute \(kB\cdot|dE/dx|\) and identify the regime.</li>
+      <li>The proposer's argument fails. Pinpoint the failure precisely: is the error in Bethe–Bloch, in Birks' law, or in the conflation of "proportionality" between two different physics contexts? Phrase the failure in the language of the three meanings of <em>proportional</em> in PID detector physics.</li>
+    </ol>
+    <div class="tag-row">
+      <span class="tag">targets: trap 1</span>
+      <span class="tag">concepts: Bethe–Bloch, Birks quenching, detector-regime conflation</span>
+    </div>
+
+    <details class="solution">
+      <summary>Show worked solution</summary>
+      <div class="solution-body">
+        <h4>(a) Birks' law and its asymptotics</h4>
+        <p>Birks' law (Birks, <em>Proc. Phys. Soc. A</em> <strong>64</strong>, 874 (1951); see also Birks, <em>The Theory and Practice of Scintillation Counting</em>, Pergamon 1964, §8) writes the differential light yield as</p>
+        $$ \frac{dL}{dx} = \frac{S\,|dE/dx|}{1 + kB\,|dE/dx|}, $$
+        <p>with \(S\) the absolute scintillation efficiency and \(kB\) the Birks quenching parameter. The two limits:</p>
+        <ul>
+          <li><strong>\(kB|dE/dx|\ll 1\)</strong> (light primaries, minimum-ionizing): \(dL/dx \to S\,|dE/dx|\). Linear in energy deposition. This is the "proportional scintillator" regime for MIPs.</li>
+          <li><strong>\(kB|dE/dx|\gg 1\)</strong> (heavy ions near the Bragg peak): \(dL/dx \to S/kB\). Constant, independent of \(|dE/dx|\) and therefore <em>independent of \(Z\)</em>. Saturation.</li>
+        </ul>
+
+        <h4>(b) Stopping power and Birks factor for ⁴⁰Ar at β = 0.35</h4>
+        <p>At \(\beta = 0.35\), \(\gamma = 1.067\), \(\beta^{2}\gamma^{2} = 0.1225\times 1.139 = 0.1394\). For a heavy projectile, \(T_{\max}\approx 2 m_e c^{2}\beta^{2}\gamma^{2} = 0.1425\,\mathrm{MeV}\). The leading-log bracket is</p>
+        $$ L = \tfrac{1}{2}\ln\!\left[\frac{2 m_e c^{2}\beta^{2}\gamma^{2}\, T_{\max}}{I^{2}}\right] - \beta^{2} \approx \ln\!\left[\frac{2 m_e c^{2}\beta^{2}\gamma^{2}}{I}\right] - \beta^{2}, $$
+        <p>since \(T_{\max}\approx 2m_{e}c^{2}\beta^{2}\gamma^{2}\) for \(M\gg m_{e}\). Numerically,</p>
+        $$ \ln\!\left[\frac{1.425\times 10^{5}\,\mathrm{eV}}{64.7\,\mathrm{eV}}\right] - 0.1225 = \ln(2203) - 0.1225 \approx 7.697 - 0.122 \approx 7.58. $$
+        <p>Neglecting shell and density corrections at this β,</p>
+        $$ \left|\frac{dE}{dx}\right| = K\,\frac{Z_m}{A_m}\,\frac{z^{2}}{\beta^{2}}\,L = 0.3071\times 0.542\times\frac{324}{0.1225}\times 7.58 \approx 3.34\times 10^{3}\,\mathrm{MeV\!\cdot\!g^{-1}\!\cdot\!cm^{2}}. $$
+        <p>Then</p>
+        $$ kB\,\left|\frac{dE}{dx}\right| \approx 1.26\times 10^{-2}\times 3.34\times 10^{3} \approx 42. $$
+        <p>This is deeply in the saturation limit: \(dL/dx \approx S/kB\), essentially <em>independent of Z²/β²</em>. The ⁴⁰Ar ion deposits ~40 times more energy per unit path than it takes to saturate the scintillator.</p>
+
+        <h4>(c) Locating the failure</h4>
+        <p>The error is <em>not</em> in Bethe–Bloch (which correctly gives the huge \(dE/dx\)) and <em>not</em> in Birks' law (which correctly predicts the saturation). The failure is a conflation of the three meanings of "proportional":</p>
+        <ol style="padding-left: 20px;">
+          <li><em>Gas-detector voltage regime</em> — a property one can tune by bias voltage (Knoll 4e, §6). Plastic scintillators have no such knob; the scintillator response is fixed by material physics.</li>
+          <li><em>Material-level linearity</em> of light yield vs. energy deposition — satisfied for MIPs, violated for heavy ions at the Bragg peak.</li>
+          <li><em>Z²-scaling</em> of the <em>primary</em> ionization (or energy loss) — correctly predicted by Bethe–Bloch, but irrelevant once the <em>signal</em> (light yield) has decoupled from \(|dE/dx|\) via Birks saturation.</li>
+        </ol>
+        <p>The proposer pipes "Bethe–Bloch gives Z²" (sense 3) through an implicit "scintillator is proportional" (sense 2) to conclude Z² light output. Sense 2 fails in the heavy-ion regime, so the chain breaks. MUSIC ionization chambers avoid this: the primary ionization is collected as charge with no intermediate scintillation step, so the \(Z^{2}/\beta^{2}\) scaling is preserved up to much higher \(Z\) (Pfützner et al., <em>NIM B</em> <strong>86</strong> (1994) 213).</p>
+      </div>
+    </details>
+  </div>
+</article>
+
+<!-- ─── PROBLEM 4 ─── -->
+<article class="problem" id="p4">
+  <div class="problem-head">
+    <span class="problem-num">P4</span>
+    <span class="problem-title">The ΔE·E invariant: finding the ceiling</span>
+  </div>
+  <div class="problem-body">
+    <p>The ΔE–E telescope "invariant" \(\Delta E\cdot E \approx \mathrm{const}\cdot A Z^{2}\) is a beloved teaching mnemonic. It is also fragile in ways that are easy to miss.</p>
+    <ol class="parts">
+      <li>Starting from \(-dE/dx = k'AZ^{2}/E\) (non-relativistic Bethe–Bloch with log-term absorbed into \(k'\)) and the thin-detector limit \(\Delta E \ll E_{\mathrm{residual}}\), derive \(\Delta E\cdot E \approx k'AZ^{2}\,t\) where \(t\) is the ΔE-detector thickness. Enumerate <em>every</em> approximation you invoke.</li>
+      <li>Equivalently, from the range–energy relation \(R(E) = E^{2}/(2k'AZ^{2})\) (the \(p=2\) Bragg–Kleeman form), derive the generalized identifier \(\mathrm{PID} = (E+\Delta E)^{p} - E^{p}\) and identify the value of \(p\) obtained in the \(p=2\) limit.</li>
+      <li>Experimental fits across wide \(Z\) and \(E\) ranges use \(p \approx 1.73\) (Knoll, <em>Radiation Detection and Measurement</em> 4e, §2.II.D eq. 2.15; originally Butler &amp; Goulding, <em>NIM</em> <strong>127</strong> (1975) 373 and de Saint Simon et al., <em>NIM A</em> <strong>367</strong> (1995) 254). Which of your assumptions in (a) is relaxed to accommodate the empirical \(p\neq 2\)? Is \(p\) a fundamental constant or an effective parameter?</li>
+      <li>Name <em>two</em> physical conditions under which the invariant fails dramatically. Explain each in one paragraph.</li>
+    </ol>
+    <div class="tag-row">
+      <span class="tag">targets: trap 3</span>
+      <span class="tag">concepts: ΔE-E telescope, range-energy, approximations</span>
+    </div>
+
+    <details class="solution">
+      <summary>Show worked solution</summary>
+      <div class="solution-body">
+        <h4>(a) Derivation of the \(p=2\) invariant</h4>
+        <p>In the thin-detector limit, \(-dE/dx\) is approximately constant over the detector thickness \(t\). Using \(-dE/dx = k'AZ^{2}/E\) evaluated at some representative energy \(E\) (typically the incident energy or the residual energy, see (c)),</p>
+        $$ \Delta E \approx \left|\frac{dE}{dx}\right|\cdot t = \frac{k'AZ^{2}}{E}\,t \;\Longrightarrow\; \Delta E\cdot E \approx k'AZ^{2}\,t. $$
+        <p>The approximations invoked: (i) non-relativistic Bethe–Bloch, (ii) logarithmic and shell corrections absorbed into \(k'\) and treated as constants over the relevant \(E\) range, (iii) thin detector \(\Delta E/E \ll 1\), (iv) a single representative \(E\) used for \(dE/dx\) — this is the point where \(E_{\mathrm{residual}}\), \(E_{\mathrm{initial}}\), or a mean is implicitly chosen, (v) full ionic charge \(q = Z\), (vi) no straggling (mean-value substitution for the whole Landau distribution).</p>
+
+        <h4>(b) Generalized identifier via range</h4>
+        <p>The Bragg–Kleeman form \(R(E) = E^{p}/(\mathrm{const}\cdot AZ^{2})\) with \(p=2\) follows directly from integrating \(-dE/dx = k'AZ^{2}/E\) from \(E\) down to zero: \(R(E) = \int_{0}^{E} (E'/k'AZ^{2})dE' = E^{2}/(2k'AZ^{2})\). The ΔE detector absorbs \(R(E+\Delta E) - R(E) = t\) (thickness), so</p>
+        $$ \frac{(E+\Delta E)^{p} - E^{p}}{\mathrm{const}\cdot AZ^{2}} = t \;\Longrightarrow\; (E+\Delta E)^{p} - E^{p} = \mathrm{const}\cdot AZ^{2}\,t. $$
+        <p>Thus \(\mathrm{PID} \equiv (E+\Delta E)^{p} - E^{p}\) isolates \(AZ^{2}\) for any \(p\). At \(p=2\), expand to first order in \(\Delta E/E\): \((E+\Delta E)^{2} - E^{2} = 2E\Delta E + \Delta E^{2} \approx 2E\Delta E\), recovering \(\Delta E\cdot E \propto AZ^{2}\) — the thin-detector limit of the general form. \(p=2\) is therefore the Bragg–Kleeman exponent.</p>
+
+        <h4>(c) Why \(p\approx 1.73\) empirically</h4>
+        <p>The cleanest assumption to identify as "too strong" is (ii) — the treatment of logarithmic terms in Bethe–Bloch as constants. The Bethe log \(\ln(2m_{e}c^{2}\beta^{2}\gamma^{2}/I)\) varies with energy over a broad range, effectively softening the \(1/E\) dependence of \(-dE/dx\) into something closer to \(1/E^{0.73}\). Integrated into the range, this shifts \(R(E) \propto E^{p}\) with \(p\approx 1.7\text{–}1.8\) across a wide \(Z\) band. Butler &amp; Goulding fit \(p\) empirically per detector combination; \(p=1.73\) is a convenient mid-range value for Si–Si and Si–CsI telescopes but it is <em>not</em> universal — it drifts with incident-ion species, energy window, and the specific detector pair. It is an effective parameter, calibrated per experiment.</p>
+
+        <h4>(d) Two breakdown conditions</h4>
+        <p><strong>1. Wide energy acceptance relative to the validity of a single \(p\).</strong> A fixed \(p\) captures range curvature in a narrow \(E/A\) window. Over, say, 20–200 MeV/u, the effective \(p\) drifts by several percent; using one \(p\) across the whole window bends the isotope loci away from their ideal parabolic shape — "real bananas curve." One either locally refits \(p\) or uses a full range table (ATIMA, LISE++).</p>
+        <p><strong>2. Charge-state contamination at intermediate energies.</strong> Assumption (v), \(q = Z\), breaks when H-like and He-like fractions are appreciable. The effective \(Z^{2}\) in \(-dE/dx\) becomes \(q^{2}\), producing ghost loci displaced from the fully-stripped banana. See Problem 5 and Scheidenberger &amp; Geissel, <em>NIM B</em> <strong>135</strong> (1998) 25, for equilibrium charge-state fractions as a function of \(Z\), \(E/A\), and stripper material.</p>
+        <p class="note-box"><strong>Aside.</strong> A third, often-overlooked breakdown: Landau-distributed ΔE in thin absorbers. The mean and peak of the Landau distribution differ substantially (peak is to the left of the mean), so fitting isotope loci to a mean \(\Delta E\) calibration miscalibrates an experiment that actually measures peak \(\Delta E\). For thin Si detectors at heavy-ion energies this can shift \(Z\) assignments by half an element.</p>
+      </div>
+    </details>
+  </div>
+</article>
+
+<!-- ─── PROBLEM 5 ─── -->
+<article class="problem" id="p5">
+  <div class="problem-head">
+    <span class="problem-num">P5</span>
+    <span class="problem-title">Charge-state ghosts parallel to the banana</span>
+  </div>
+  <div class="problem-body">
+    <p>At intermediate energies (\(E/A \sim 100\text{–}400\) MeV/u) after a stripper foil, hydrogen-like and helium-like charge states survive at percent-level fractions. They appear on the ΔE–TOF plane as "ghost" loci displaced from the main banana.</p>
+    <ol class="parts">
+      <li>Two ions pass through the same dipole at the same \(B\rho\): a fully-stripped ion with \((Z, A)\) and charge \(q_{1} = Z e\), and a hydrogen-like ion with \((Z', A')\) and charge \(q_{2} = (Z'-1)e\). Derive the relation between \(A'\) and \(A\) such that the TOF at the downstream detector is identical (so the two ions sit on the same vertical line of the banana plot). Express \(A'\) as a function of \(A, Z, Z'\).</li>
+      <li>In the special case \(Z' = Z\) (same species, different charge state): compute the apparent mass offset \(\Delta A = A' - A\) as a function of \(Z\). Does the offset depend on \(A\)?</li>
+      <li>On the ΔE–TOF plane, does an H-like contaminant of element \(Z\) sit at the same \(\Delta E\) as the fully-stripped banana for \(Z\), or shifted? Justify using \(dE/dx \propto q^{2}/\beta^{2}\) and the fact that the ions share the same \(\beta\) at the ΔE detector.</li>
+      <li>Using equilibrium charge-state fractions tabulated by Scheidenberger &amp; Geissel (<em>NIM B</em> <strong>135</strong> (1998) 25), sketch (qualitatively) how the H-like fraction at \(E/A = 300\) MeV/u through a carbon stripper varies with \(Z\) from \(Z=10\) to \(Z=50\), and identify the \(Z\) range where ghost loci become the dominant PID ambiguity.</li>
+    </ol>
+    <div class="tag-row">
+      <span class="tag">targets: trap 3 · trap 2</span>
+      <span class="tag">concepts: Bρ constraint, charge states, banana topology</span>
+    </div>
+
+    <details class="solution">
+      <summary>Show worked solution</summary>
+      <div class="solution-body">
+        <h4>(a) Same-Bρ condition for two charge states</h4>
+        <p>From \(B\rho = p/q\), equal rigidity means \(p_{1}/q_{1} = p_{2}/q_{2}\). With \(p = \gamma\beta A u c\),</p>
+        $$ \frac{\gamma_{1}\beta_{1} A}{Z} = \frac{\gamma_{2}\beta_{2} A'}{Z'-1}. $$
+        <p>Equal TOF at the downstream detector (same flight length \(L\)) means \(\beta_{1} = \beta_{2}\), hence \(\gamma_{1} = \gamma_{2}\). Thus</p>
+        $$ \frac{A}{Z} = \frac{A'}{Z'-1} \;\Longrightarrow\; \boxed{\;A' = A\cdot\frac{Z'-1}{Z}.\;} $$
+        <p><em>Sanity check.</em> If the H-like ion has the same species (\(Z' = Z\)), one gets \(A' = A\cdot (Z-1)/Z < A\): the H-like ion "looks lighter" than its true mass, because it needs less momentum to satisfy the same Bρ at its reduced charge.</p>
+
+        <h4>(b) Special case \(Z' = Z\)</h4>
+        $$ \Delta A = A' - A = A\cdot\frac{Z-1}{Z} - A = -\frac{A}{Z}. $$
+        <p>The offset depends on both \(A\) and \(Z\), but for a narrow isobar chain \(A/Z\) is slowly varying, so the mass shift is approximately constant within the chain. For \(^{40}\mathrm{Ar}^{17+}\) (\(Z=18\), one electron): \(\Delta A \approx -40/18 \approx -2.2\) — the H-like Ar ghost lies about two mass units below the fully-stripped ⁴⁰Ar locus on the \(A\) axis. For \(^{208}\mathrm{Pb}^{81+}\): \(\Delta A \approx -208/82 \approx -2.54\).</p>
+
+        <h4>(c) Position on the ΔE–TOF plane</h4>
+        <p>The ions share \(\beta\) at the ΔE detector (same TOF, same flight path). Bethe–Bloch for the energy loss at that plane is driven by the <em>instantaneous</em> charge state inside the ΔE detector, which is set by the detector material and thickness — usually stripping to equilibrium again. For a thin gas ΔE detector, the H-like ion typically re-equilibrates, so \(|dE/dx|\) is dominated by the equilibrium \(\bar{q}\) in the detector gas, not the \(q\) in the upstream beam line. Thus to first approximation ΔE is set by the ion species \(Z\), not the pre-detector charge state, and the ghost sits at the same ΔE band — displaced only in TOF. The ghost and the real locus form a pair of <em>parallel bananas</em>, not a randomly-scattered contamination.</p>
+        <p>Caveat: for thin solid-state ΔE detectors where pre-equilibrium charge-state effects persist, the ghost can also shift slightly in ΔE — a subtle effect accounted for in high-precision FRS analyses.</p>
+
+        <h4>(d) H-like fractions vs. Z</h4>
+        <p>From Scheidenberger &amp; Geissel's parameterization (their Eqs. 4–8 and Fig. 2 family, <em>NIM B</em> <strong>135</strong> (1998) 25), for carbon strippers at \(E/A = 300\) MeV/u:</p>
+        <ul>
+          <li>\(Z \lesssim 20\): fully-stripped fraction ≳ 99%. H-like fraction &lt; 1%. Ghost loci negligible.</li>
+          <li>\(Z \sim 20\text{–}40\): H-like fraction climbs from ~1% to ~10%. Ghost loci emerge as visible shadow bananas on the ΔE–TOF plane.</li>
+          <li>\(Z \sim 40\text{–}60\): H-like and He-like fractions both significant; PID ambiguity is dominated by charge-state resolution. Multiple ghost loci per element.</li>
+          <li>\(Z \gtrsim 60\): bare-ion fraction drops below 50%; charge-state multiplicity becomes the principal limitation, requiring either higher \(E/A\) or secondary rigidity selection (e.g., a second dipole after stripping) to disentangle.</li>
+        </ul>
+        <p>For the RIBLL range (typically \(Z \leq 30\) fragments from intermediate-energy projectile fragmentation), ghosts appear but are usually resolvable; the analysis is sensitive but tractable.</p>
+      </div>
+    </details>
+  </div>
+</article>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- PART II: FLASHCARDS                                       -->
+<!-- ════════════════════════════════════════════════════════ -->
+<div class="part-header">
+  <span class="part-label">Part II</span>
+  <h2>Concept cards — click to flip</h2>
+</div>
+
+<div class="card-grid">
+  <div class="flip-card" onclick="this.classList.toggle('flipped')">
+    <div class="flip-inner">
+      <div class="flip-face flip-front">
+        <span class="card-num">C1 · TOF</span>
+        <p class="card-question">Why does TOF "measure β," and not A/Z, without the Bρ constraint?</p>
+        <span class="hint">click to reveal</span>
+      </div>
+      <div class="flip-face flip-back">
+        <div class="card-answer">
+          TOF = L/(βc) is a purely <strong>kinematic</strong> observable — a clock and a distance. Only fixing Bρ imposes γβ = (Bρ·Z)/(uA), which converts β into information about A/Z. Without the magnetic selection, the same β is reached by infinitely many (A, Z, energy) combinations. Bρ is the constraint that turns a velocity into a mass-to-charge ratio.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card" onclick="this.classList.toggle('flipped')">
+    <div class="flip-inner">
+      <div class="flip-face flip-front">
+        <span class="card-num">C2 · Proportional</span>
+        <p class="card-question">Three meanings of "proportional" in PID detectors. Name them.</p>
+        <span class="hint">click to reveal</span>
+      </div>
+      <div class="flip-face flip-back">
+        <div class="card-answer">
+          <strong>(i) Gas-detector regime</strong> — voltage-tunable operating mode between ionization and Geiger, where the collected charge scales with primary ionization (Knoll 4e §6).
+          <strong>(ii) Material-level linearity</strong> — signal vs. energy deposited; broken for plastic scintillators at heavy-ion dE/dx by Birks saturation.
+          <strong>(iii) Z-response</strong> — the primary signal scales as Z² or linearly depending on regime and quenching. These are independent: plastic is "proportional" in sense (ii) for MIPs but saturates for heavy ions.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card" onclick="this.classList.toggle('flipped')">
+    <div class="flip-inner">
+      <div class="flip-face flip-front">
+        <span class="card-num">C3 · β mismatch</span>
+        <p class="card-question">A student uses β from TOF together with ΔE from a downstream chamber. What's the error?</p>
+        <span class="hint">click to reveal</span>
+      </div>
+      <div class="flip-face flip-back">
+        <div class="card-answer">
+          β <strong>decreases</strong> between the TOF plane and the ΔE detector as the ion traverses material (targets, scintillator foils, windows). The γβ entering Bρ = γβAu/Z is the β at the <strong>dipole</strong>, not at the ΔE detector. Proper analysis propagates the initial energy through ATIMA or LISE++ range tables and uses a consistent β per stage.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card" onclick="this.classList.toggle('flipped')">
+    <div class="flip-inner">
+      <div class="flip-face flip-front">
+        <span class="card-num">C4 · p ≈ 1.73</span>
+        <p class="card-question">Where does the empirical exponent p ≈ 1.73 in PID = (E+ΔE)<sup>p</sup> − E<sup>p</sup> come from, and why isn't it 2?</p>
+        <span class="hint">click to reveal</span>
+      </div>
+      <div class="flip-face flip-back">
+        <div class="card-answer">
+          The clean <strong>p = 2</strong> is the Bragg–Kleeman form, following from R(E) ∝ E²/(AZ²) in the non-relativistic Bethe–Bloch limit with log-terms treated as constants. Real range–energy curves deviate because the Bethe log varies with energy; empirical fits across wide Z and E converge near <strong>p ≈ 1.73</strong> (Knoll 4e §2.II.D eq. 2.15; Butler &amp; Goulding 1975). p is detector- and energy-range dependent, not a fundamental constant.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card" onclick="this.classList.toggle('flipped')">
+    <div class="flip-inner">
+      <div class="flip-face flip-front">
+        <span class="card-num">C5 · Ghost loci</span>
+        <p class="card-question">Why do charge-state contaminants form predictable ghosts parallel to the banana, not random noise?</p>
+        <span class="hint">click to reveal</span>
+      </div>
+      <div class="flip-face flip-back">
+        <div class="card-answer">
+          The dipole selects <strong>A/q</strong>, not A/Z. An H-like ion (q = Z−1) at the same Bρ as a bare ion satisfies (Z−1)/A' = Z/A, giving the deterministic mass offset A' = A·(Z−1)/Z. Because A/Z varies slowly within an isotopic chain, ghosts trace a shifted copy of the main locus — not scatter. Scheidenberger &amp; Geissel, <em>NIM B</em> <strong>135</strong> (1998) 25 tabulates the fractions.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- REFERENCES                                                -->
+<!-- ════════════════════════════════════════════════════════ -->
+<div class="references">
+  <h3>Primary sources cited</h3>
+  <ol>
+    <li><span class="title">H. Bethe</span>, <em>Zur Theorie des Durchgangs schneller Korpuskularstrahlen durch Materie</em>, Ann. Phys. <strong>397</strong> (1930) 325. F. Bloch, Ann. Phys. <strong>408</strong> (1933) 285.</li>
+    <li><span class="title">J. B. Birks</span>, <em>Proc. Phys. Soc. A</em> <strong>64</strong> (1951) 874; <em>The Theory and Practice of Scintillation Counting</em>, Pergamon (1964).</li>
+    <li><span class="title">W. R. Leo</span>, <em>Techniques for Nuclear and Particle Physics Experiments</em>, 2nd ed., Springer (1994), §2.3.</li>
+    <li><span class="title">G. F. Knoll</span>, <em>Radiation Detection and Measurement</em>, 4th ed., Wiley (2010), §2.II.D (eq. 2.15) and §6.</li>
+    <li><span class="title">H. Geissel et al.</span>, <em>The GSI projectile fragment separator (FRS): a versatile magnetic system for relativistic heavy ions</em>, NIM B <strong>70</strong> (1992) 286.</li>
+    <li><span class="title">S. Y. Lee</span>, <em>Accelerator Physics</em>, 2nd ed., World Scientific (2004), p. 576 — for Bρ[T·m] = 3.3356 · p[GeV/c]/Z.</li>
+    <li><span class="title">M. Pfützner et al.</span>, <em>Energy-loss measurements with a MUSIC detector</em>, NIM B <strong>86</strong> (1994) 213.</li>
+    <li><span class="title">M. de Saint Simon et al.</span>, NIM A <strong>367</strong> (1995) 254 — empirical ΔE–E exponent fits.</li>
+    <li><span class="title">J. M. Butler and F. S. Goulding</span>, NIM <strong>127</strong> (1975) 373 — original PID = (E+ΔE)<sup>p</sup> − E<sup>p</sup> formulation.</li>
+    <li><span class="title">C. Scheidenberger and H. Geissel</span>, <em>Penetration of relativistic heavy ions through matter</em>, NIM B <strong>135</strong> (1998) 25.</li>
+    <li><span class="title">Particle Data Group</span>, <em>Review of Particle Physics</em>, "Passage of particles through matter" — for modern Bethe–Bloch parameterizations and constants.</li>
+  </ol>
+</div>
+
+</div>
+
+<script>
+  function toggleAllSolutions() {
+    const details = document.querySelectorAll('details.solution');
+    const btn = document.getElementById('revealAllBtn');
+    const anyOpen = Array.from(details).some(d => d.open);
+
+    if (anyOpen) {
+      details.forEach(d => d.open = false);
+      btn.textContent = 'Reveal all solutions';
+    } else {
+      details.forEach(d => d.open = true);
+      btn.textContent = 'Hide all solutions';
+    }
+  }
+
+  // Keep button text in sync when user opens/closes individual details
+  document.querySelectorAll('details.solution').forEach(d => {
+    d.addEventListener('toggle', () => {
+      const details = document.querySelectorAll('details.solution');
+      const btn = document.getElementById('revealAllBtn');
+      const allOpen = Array.from(details).every(x => x.open);
+      const noneOpen = Array.from(details).every(x => !x.open);
+      if (allOpen) btn.textContent = 'Hide all solutions';
+      else if (noneOpen) btn.textContent = 'Reveal all solutions';
+      else btn.textContent = 'Reveal remaining solutions';
+    });
+  });
+</script>
+
+</body>
+</html>
