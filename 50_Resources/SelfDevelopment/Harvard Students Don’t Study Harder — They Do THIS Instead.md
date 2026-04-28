@@ -57,7 +57,7 @@ BibiGPT export for [Harvard Students Don’t Study Harder — They Do THIS Inste
 
 ## Source-Derived Highlights
 
-- The biggest difference between average studying and high-performance studying is not effort, but strategy.
+- The biggest difference between average studying and high-performance studying is not effort, but ==strategy==.
 - The forgetting curve shows that the brain loses a large portion of new information quickly if it is not reviewed.
 - Cramming feels productive in the moment, but most of that information stays in short-term memory and disappears before it becomes useful.
 - Spaced repetition works because reviewing material over increasing intervals signals to the brain that the information matters.
