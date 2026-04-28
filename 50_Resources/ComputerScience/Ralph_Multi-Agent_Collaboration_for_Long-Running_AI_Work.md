@@ -1,3 +1,102 @@
+---
+type: resource
+status: processed
+source_type: video
+platform: BibiGPT / Bilibili
+author: Ralph
+title: Ralph+多智能体协同，让AI长时高品质工作，从原理到实践
+source_url: https://bibigpt.co/video/BV1t9oZBDENp
+topic:
+  - AI agents
+  - Claude Code
+  - multi-agent collaboration
+  - long-running AI work
+tags:
+  - AI-Agent
+  - ClaudeCode
+  - Multi-Agent
+  - Workflow
+created: 2026-04-28
+processed: 2026-04-28
+---
+# Ralph + Multi-Agent Collaboration for Long-Running AI Work
+
+> Source title: Ralph+多智能体协同，让AI长时高品质工作，从原理到实践  
+> Source type: BibiGPT video export  
+> Processing mode: curated source note; original export preserved in appendix.
+
+## Source Card
+
+- **Core subject:** Long-running AI work using context reset, file-based coordination, and multi-agent orchestration.
+- **Main comparison:** Ralph-style `while` loop sessions versus orchestrated [[Multi-Agent Collaboration]].
+- **Primary workflow pattern:** [[Orchestrator Agent]] coordinates planner, developer, and tester agents while keeping its own context clean.
+- **Quality mechanism:** independent testing agents report bugs back to the original developer agent, creating a [[Feedback Loop]].
+- **Context strategy:** split large work into isolated agent sessions and exchange only file paths or local files to reduce context pollution.
+- **Knowledge strategy:** record bug-fix experience so later agents can reuse lessons within the same run.
+
+## Bilingual Digest / 双语摘要
+
+This source explains how long-duration AI work can be made more stable by separating planning, development, testing, and coordination across multiple agents. The central problem is that a single long chat gradually loses usable context and quality declines. Ralph addresses this by repeatedly launching fresh sessions through a loop script. The multi-agent method instead keeps a main orchestrator focused on coordination while specialized sub-agents do the actual work in isolated contexts.
+
+这份资料讨论如何让 AI 更稳定地完成长时任务。核心问题是：单个长对话会逐渐消耗上下文，导致理解负担增加、质量下降。Ralph 的做法是用循环脚本不断启动新会话；多智能体方案则让主会话作为组织智能体，只负责调度，把计划、开发、测试交给独立上下文中的子智能体完成。
+
+The video emphasizes that inter-agent communication should happen through files rather than long chat messages. The orchestrator should receive file paths, not full implementation details, so its context remains small. Testing should be performed by separate agents, and when a bug is found, the same developer agent should continue the fix because it retains the relevant implementation context.
+
+视频强调，智能体之间最好通过本地文件传递信息，而不是在主对话里粘贴大段内容。组织智能体只接收文件路径，不阅读完整成果，从而保持上下文干净。测试应由独立测试智能体完成；发现 bug 后，应回到原来的开发智能体继续修复，因为它保留了开发阶段的上下文。
+
+## Key Ideas / 关键概念
+
+1. **Context isolation / 上下文隔离**  
+   Large work is decomposed into smaller tasks, each handled in a fresh or specialized context.
+
+2. **Orchestration instead of direct execution / 调度优先，而非主会话亲自执行**  
+   The main agent coordinates the workflow and avoids doing implementation work.
+
+3. **File-based handoff / 基于文件的交接**  
+   Agents write plans, outputs, test reports, and logs to files; the orchestrator passes paths around.
+
+4. **Independent verification / 独立验收**  
+   Separate tester agents improve quality compared with self-testing by the developer agent.
+
+5. **Same-agent repair loop / 同一智能体修复闭环**  
+   Bugs should return to the original developer and original tester, preserving relevant context.
+
+6. **Experience retention / 经验沉淀**  
+   Bug-fix lessons are recorded so later work can avoid repeating the same mistakes.
+
+## Related OrbitOS Links
+
+- [[Claude Code]]
+- [[AI Agent]]
+- [[Multi-Agent Collaboration]]
+- [[Orchestrator Agent]]
+- [[Feedback Loop]]
+- [[Context Window]]
+- [[Experience Retention]]
+- [[Long-Running AI Work]]
+- [[Workflow Design]]
+- [[Vibe Coding]]
+
+## Source Outline
+
+- **00:00 — Opening & overview:** the motivation for long-running autonomous AI work.
+- **00:38 — Ralph loop:** using repeated fresh sessions to avoid context exhaustion.
+- **04:22 — Multi-agent collaboration:** replacing a shell-maintained loop with orchestrated sub-agents.
+- **05:06 — Workflow design:** planner, developer, testers, bug-fix loop, and progress logs.
+- **07:24 — Orchestrator prompt:** constraints that keep the orchestrator focused on coordination.
+- **10:09 — Sub-agent prompts:** file handoff, output format, and experience accumulation.
+- **12:30 — Execution & results:** hours-long execution, iterative testing, and final synthesis.
+
+## Retrieval Notes
+
+- Use this note when thinking about [[Claude Code]] workflows for long-running tasks.
+- Use the appendix for the full exported transcript and screenshots.
+- Treat the digest above as source summary, not personal endorsement or implementation decision.
+
+---
+
+## Appendix — Original BibiGPT Export
+
 # 【BibiGPT】AI 一键总结：[Ralph+多智能体协同，让AI长时高品质工作，从原理到实践](https://bibigpt.co/video/BV1t9oZBDENp)
 
 ![](https://i2.hdslb.com/bfs/archive/3d5b7ce09d4a132028e7848aea9c8c699667b72a.jpg)
