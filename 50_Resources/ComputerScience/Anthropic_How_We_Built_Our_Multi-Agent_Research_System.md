@@ -39,7 +39,7 @@ Claude now has Research capabilities that allow it to search across the web, Goo
 
 
 > Source: [Anthropic Engineering — How we built our multi-agent research system](https://www.anthropic.com/engineering/built-multi-agent-research-system)  
-> Publication date: 2025-06-13  
+> Published: Jun 13, 2025
 > Processing mode: faithful source extraction from official Anthropic HTML; original article section order preserved.
 
 The journey of this multi-agent system from prototype to production taught us critical lessons about system architecture, tool design, and prompt engineering. A multi-agent system consists of multiple agents (LLMs autonomously using tools in a loop) working together. Our Research feature involves an agent that plans a research process based on user queries, and then uses tools to create parallel agents that search for information simultaneously. Systems with multiple agents introduce new challenges in agent coordination, evaluation, and reliability.
