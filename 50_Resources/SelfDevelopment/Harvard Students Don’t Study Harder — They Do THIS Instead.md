@@ -53,25 +53,25 @@ The resource is useful as a study-method summary but scientifically uneven. Its 
 
 **Overall verdict:** Keep the workflow; distrust the exact percentages and branding.
 
-| Resource Claim | Research Verdict | Accuracy |
-|---|---|---|
-| Harvard students do not study harder; they study differently. | Good motivational framing, but not a verified Harvard-specific research claim. | Low |
-| Forgetting happens quickly without review. | Strongly supported in memory research; the broad forgetting-curve pattern is real. | High |
-| “50% forgotten in 1 hour, 70% in 24 hours, 25% after a week.” | Exact numbers are overconfident because forgetting depends on material, learner, prior knowledge, and test type. | Medium-low |
-| Cramming is worse than spaced repetition. | Strongly supported by distributed-practice research, including medical-education evidence. | High |
-| Review immediately, after 24 hours, after one week, and after one month. | Reasonable heuristic, but the optimal interval depends on the target retention date. | Medium-high |
-| “Spaced repetition improves retention by up to 200%.” | Directionally plausible, but not safe as a general claim. | Medium-low |
-| Breaks help learning. | Supported for fatigue management and some consolidation effects. | Medium-high |
-| NIH found major learning gains during rest. | Supported mainly in motor-skill learning studies, not as direct proof for all academic studying. | Medium |
-| Brain replays information 20x faster during breaks. | Supported in a specific motor sequence learning context; overgeneralized if applied to all study. | Medium |
-| Pomodoro 25/5 is scientifically optimal. | Useful structure, but exact 25/5 timing is not strongly established as universally optimal. | Medium |
-| Social media breaks interfere with consolidation. | Plausible from attention and cognitive-load perspectives, but stronger than direct evidence. | Medium |
-| Passive rereading/highlighting is weaker than active recall. | Strongly supported by retrieval-practice and testing-effect research. | High |
-| Active recall improves retention. | Strongly supported, including health-professions education evidence. | High |
-| “Active recall raises retention from 29% to 57%, and above 80% with spacing.” | Direction is right, but the exact numbers should not be generalized. | Medium-low |
-| “Students study 40% less with active recall.” | Possible in specific contexts, but not a universal promise. | Low-medium |
-| Desirable difficulty strengthens memory. | Broadly supported when difficulty comes from effortful retrieval and remains manageable. | High |
-| Rewarding yourself uses dopamine anticipation to motivate study. | Dopamine is involved in reward prediction and motivation, but the study-reward framing is simplified. | Medium |
+| Resource Claim                                                                | Research Verdict                                                                                                 | Accuracy    |
+| ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ----------- |
+| Harvard students do not study harder; they study differently.                 | Good motivational framing, but not a verified Harvard-specific research claim.                                   | Low         |
+| Forgetting happens quickly without review.                                    | Strongly supported in memory research; the broad forgetting-curve pattern is real.                               | High        |
+| “50% forgotten in 1 hour, 70% in 24 hours, 25% after a week.”                 | Exact numbers are overconfident because forgetting depends on material, learner, prior knowledge, and test type. | Medium-low  |
+| Cramming is worse than spaced repetition.                                     | Strongly supported by distributed-practice research, including medical-education evidence.                       | High        |
+| Review immediately, after 24 hours, after one week, and after one month.      | Reasonable heuristic, but the optimal interval depends on the target retention date.                             | Medium-high |
+| “Spaced repetition improves retention by up to 200%.”                         | Directionally plausible, but not safe as a general claim.                                                        | Medium-low  |
+| Breaks help learning.                                                         | Supported for fatigue management and some consolidation effects.                                                 | Medium-high |
+| NIH found major learning gains during rest.                                   | Supported mainly in motor-skill learning studies, not as direct proof for all academic studying.                 | Medium      |
+| Brain replays information 20x faster during breaks.                           | Supported in a specific motor sequence learning context; overgeneralized if applied to all study.                | Medium      |
+| Pomodoro 25/5 is scientifically optimal.                                      | Useful structure, but exact 25/5 timing is not strongly established as universally optimal.                      | Medium      |
+| Social media breaks interfere with consolidation.                             | Plausible from attention and cognitive-load perspectives, but stronger than direct evidence.                     | Medium      |
+| Passive rereading/highlighting is weaker than active recall.                  | Strongly supported by retrieval-practice and testing-effect research.                                            | High        |
+| Active recall improves retention.                                             | Strongly supported, including health-professions education evidence.                                             | High        |
+| “Active recall raises retention from 29% to 57%, and above 80% with spacing.” | Direction is right, but the exact numbers should not be generalized.                                             | Medium-low  |
+| “Students study 40% less with active recall.”                                 | Possible in specific contexts, but not a universal promise.                                                      | Low-medium  |
+| Desirable difficulty strengthens memory.                                      | Broadly supported when difficulty comes from effortful retrieval and remains manageable.                         | High        |
+| Rewarding yourself uses dopamine anticipation to motivate study.              | Dopamine is involved in reward prediction and motivation, but the study-reward framing is simplified.            | Medium      |
 
 ## Evidence-Based Interpretation
 
