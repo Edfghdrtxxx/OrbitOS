@@ -76,15 +76,24 @@ def is_artifact(text: str, *, cell=False) -> bool:
     if not t:
         return True
     c = compact(t)
-    if not cell and c in {'I', 'l', '|', 'D', 'eno', 'm', '■', '□', '◇', '●', '★', '◎', 'Q搜索', '搜索', '英画品品一100%', '品十100%'}:
+    if not cell and c in {'I', 'l', '|', 'D', 'eno', 'm', 'CP', '写势', '基本收', '金量设置', '2通度章', '玄薄入复直', '地e', '■', '□', '◇', '●', '★', '◎', 'Q搜索', '搜索', '英画品品一100%', '品十100%'}:
         return True
     if not cell and len(c) <= 2 and symbol_only.fullmatch(t):
+        return True
+    if not cell and re.fullmatch(r'\d{1,3}', c):
         return True
     if not cell and any(p.fullmatch(t) or p.fullmatch(c) for p in artifact_patterns):
         return True
     if not cell and re.search(r'(屏幕|解幕|幕)\s*\d+\s*[-—]\s*\d+\s*[,，]?\s*共\s*\d+\s*个', t):
         return True
     if not cell and re.fullmatch(r'\d{3,}', c):
+        return True
+    if not cell and len(c) <= 16 and re.search(r'[一-鿿]', c) and re.search(r'[A-Za-z0-9]', c):
+        chinese = len(re.findall(r'[一-鿿]', c))
+        latin_digit = len(re.findall(r'[A-Za-z0-9]', c))
+        if chinese <= 6 and latin_digit >= 1 and not re.match(r'^\d+(?:\.\d+)*[\s一-鿿]', t):
+            return True
+    if not cell and re.fullmatch(r'.*[0-9a-fA-F]{8,}.*', c) and len(c) <= 80:
         return True
     if not cell and '搜索' in c and len(c) <= 10:
         return True
@@ -109,10 +118,10 @@ def is_body_start(text: str) -> bool:
 
 def heading_level(text: str):
     t = clean_text(text)
-    if re.match(r'^\d+\s+\S+', t):
+    if re.match(r'^\d+\s+\S+', t) and len(t) <= 28:
         return 2
     match = re.match(r'^(\d+(?:\.\d+){1,4})\s*\S+', t)
-    if match:
+    if match and len(t) <= 45:
         depth = match.group(1).count('.') + 1
         return min(depth + 1, 4)
     return None
@@ -161,6 +170,11 @@ def table_to_markdown(src_table):
         if any(v.strip() for v in vals):
             rows.append(vals)
     if not rows:
+        return []
+    joined = compact(''.join(''.join(r) for r in rows))
+    if len(rows) <= 3 and re.search(r'[℃③②]', joined):
+        return []
+    if len(rows) <= 3 and re.search(r'(BGeser|oonore|蜗|昆多项|靠业能)', joined, re.I):
         return []
     max_cols = max(len(r) for r in rows)
     if max_cols < 2:
