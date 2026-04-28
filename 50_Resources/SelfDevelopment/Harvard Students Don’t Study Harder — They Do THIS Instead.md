@@ -95,17 +95,25 @@ The reliable version of this resource is:
 
 ## Research Sources
 
-- [Distributed practice in verbal recall tasks: A review and quantitative synthesis](https://pubmed.ncbi.nlm.nih.gov/16719566/)
-- [The effect of testing versus restudy on retention: a meta-analytic review of the testing effect](https://pubmed.ncbi.nlm.nih.gov/25150680/)
-- [Test-enhanced learning in health professions education: A systematic review](https://pubmed.ncbi.nlm.nih.gov/29390949/)
-- [The Effectiveness of Spaced Repetition in Medical Education: A Systematic Review and Meta-Analysis](https://pubmed.ncbi.nlm.nih.gov/41601436/)
-- [How short breaks help the brain learn new skills](https://www.nih.gov/news-events/nih-research-matters/how-short-breaks-help-brain-learn-new-skills)
-- [Related Cell Reports paper on replay in human motor cortex](https://pubmed.ncbi.nlm.nih.gov/32375031/)
-- [Replication and Analysis of Ebbinghaus’ Forgetting Curve](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0120644)
-- [Dopaminergic control of motivation and reinforcement learning](https://pubmed.ncbi.nlm.nih.gov/23678129/)
-- [Dopamine in motivational control: rewarding, aversive, and alerting](https://pubmed.ncbi.nlm.nih.gov/21144997/)
-- [Investigating the Effectiveness of Self-Regulated, Pomodoro, and Flowtime Break-Taking Techniques Among Students](https://pubmed.ncbi.nlm.nih.gov/40723645/)
-- [Assessing the efficacy of the Pomodoro technique in enhancing anatomy lesson retention during study sessions](https://pubmed.ncbi.nlm.nih.gov/41107936/)
+### Stronger support for the core study methods
+
+- **Distributed practice / spacing effect — review and quantitative synthesis:** [Distributed practice in verbal recall tasks: A review and quantitative synthesis](https://pubmed.ncbi.nlm.nih.gov/16719566/). Abstract-level conclusion: spacing and lag matter jointly; the best interval grows as the target retention interval grows.
+- **Retrieval practice / testing effect — meta-analysis:** [The effect of testing versus restudy on retention: a meta-analytic review of the testing effect](https://pubmed.ncbi.nlm.nih.gov/25150680/). Abstract-level conclusion: testing improves later retention compared with restudy, especially with recall tests.
+- **Health-professions test-enhanced learning — systematic review:** [Test-enhanced learning in health professions education: A systematic review](https://pubmed.ncbi.nlm.nih.gov/29390949/). Abstract-level conclusion: test-enhanced learning shows consistent positive effects across health-professions settings and outcomes.
+- **Medical-education spaced repetition — systematic review and meta-analysis:** [The Effectiveness of Spaced Repetition in Medical Education: A Systematic Review and Meta-Analysis](https://pubmed.ncbi.nlm.nih.gov/41601436/). Abstract-level conclusion: spaced repetition improves objective test performance in medical education, with more research needed on optimal implementation and long-term outcomes.
+- **Forgetting curve — peer-reviewed replication/analysis:** [Replication and Analysis of Ebbinghaus’ Forgetting Curve](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0120644). Supports the broad forgetting-curve concept, not the video’s exact universal percentages.
+
+### Narrower or more indirect support
+
+- **Short rests and neural replay — NIH article:** [How short breaks help the brain learn new skills](https://www.nih.gov/news-events/nih-research-matters/how-short-breaks-help-brain-learn-new-skills). Useful summary, but the finding concerns motor-skill learning rather than general academic studying.
+- **Human motor-cortex replay during rest — primary study:** [Replay of Learned Neural Firing Sequences during Rest in Human Motor Cortex](https://pubmed.ncbi.nlm.nih.gov/32375031/). Abstract-level conclusion: post-task rest showed stronger replay signals for learned repeated sequences, providing evidence for learning-related replay in human motor cortex.
+- **Dopamine and reward-oriented behavior — computational/modeling account:** [Dopaminergic control of motivation and reinforcement learning](https://pubmed.ncbi.nlm.nih.gov/23678129/). Supports dopamine’s role in motivation and reinforcement learning, but does not directly prove that small study rewards improve academic performance.
+- **Dopamine motivational control — review:** [Dopamine in motivational control: rewarding, aversive, and alerting](https://pubmed.ncbi.nlm.nih.gov/21144997/). Supports a nuanced dopamine role in adaptive behavior; the video’s “hack dopamine” framing is simplified.
+
+### Weaker or mixed support for Pomodoro-specific claims
+
+- **Student break-taking intervention:** [Investigating the Effectiveness of Self-Regulated, Pomodoro, and Flowtime Break-Taking Techniques Among Students](https://pubmed.ncbi.nlm.nih.gov/40723645/). Abstract-level conclusion: no overall between-group differences in fatigue, motivation, productivity, task completion, or flow; Pomodoro did not clearly outperform alternatives.
+- **Pomodoro in anatomy education — scoping review:** [Assessing the efficacy of the Pomodoro technique in enhancing anatomy lesson retention during study sessions](https://pubmed.ncbi.nlm.nih.gov/41107936/). Abstract-level conclusion: reports focus/fatigue benefits, but says no included study directly tested anatomy-course implementation and further long-term research is needed.
 
 ## Source Snapshot
 

@@ -1,0 +1,23 @@
+{
+  "id": "conv-1777369094604-nujvhgnzi",
+  "providerId": "claude",
+  "title": "Can you see the typo",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1777369094604,
+  "updatedAt": 1777369290029,
+  "lastResponseAt": 1777369177032,
+  "sessionId": "b71177fd-81e7-4d3a-a84b-667e939e67d4",
+  "providerState": {
+    "providerSessionId": "b71177fd-81e7-4d3a-a84b-667e939e67d4"
+  },
+  "currentNote": "50_Resources/ComputerScience/Ralph_Multi-Agent_Collaboration_for_Long-Running_AI_Work.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}
