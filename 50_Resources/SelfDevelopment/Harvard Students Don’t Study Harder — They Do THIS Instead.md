@@ -47,7 +47,65 @@ The video argues that high-performing students do not simply study harder; they 
 
 ## Verification Note
 
-The numerical claims in the export, such as “200% retention improvement,” “80% retention,” and “40% less study time,” should be treated as source claims until checked against primary research. The workflow itself is still useful as a practical study-method summary.
+The resource is useful as a study-method summary but scientifically uneven. Its core methods are evidence-aligned, while the exact numerical promises and “Harvard students” framing should be treated as viral-video claims rather than established medical or neuroscience facts.
+
+## Evidence Audit
+
+**Overall verdict:** Keep the workflow; distrust the exact percentages and branding.
+
+| Resource Claim | Research Verdict | Accuracy |
+|---|---|---|
+| Harvard students do not study harder; they study differently. | Good motivational framing, but not a verified Harvard-specific research claim. | Low |
+| Forgetting happens quickly without review. | Strongly supported in memory research; the broad forgetting-curve pattern is real. | High |
+| “50% forgotten in 1 hour, 70% in 24 hours, 25% after a week.” | Exact numbers are overconfident because forgetting depends on material, learner, prior knowledge, and test type. | Medium-low |
+| Cramming is worse than spaced repetition. | Strongly supported by distributed-practice research, including medical-education evidence. | High |
+| Review immediately, after 24 hours, after one week, and after one month. | Reasonable heuristic, but the optimal interval depends on the target retention date. | Medium-high |
+| “Spaced repetition improves retention by up to 200%.” | Directionally plausible, but not safe as a general claim. | Medium-low |
+| Breaks help learning. | Supported for fatigue management and some consolidation effects. | Medium-high |
+| NIH found major learning gains during rest. | Supported mainly in motor-skill learning studies, not as direct proof for all academic studying. | Medium |
+| Brain replays information 20x faster during breaks. | Supported in a specific motor sequence learning context; overgeneralized if applied to all study. | Medium |
+| Pomodoro 25/5 is scientifically optimal. | Useful structure, but exact 25/5 timing is not strongly established as universally optimal. | Medium |
+| Social media breaks interfere with consolidation. | Plausible from attention and cognitive-load perspectives, but stronger than direct evidence. | Medium |
+| Passive rereading/highlighting is weaker than active recall. | Strongly supported by retrieval-practice and testing-effect research. | High |
+| Active recall improves retention. | Strongly supported, including health-professions education evidence. | High |
+| “Active recall raises retention from 29% to 57%, and above 80% with spacing.” | Direction is right, but the exact numbers should not be generalized. | Medium-low |
+| “Students study 40% less with active recall.” | Possible in specific contexts, but not a universal promise. | Low-medium |
+| Desirable difficulty strengthens memory. | Broadly supported when difficulty comes from effortful retrieval and remains manageable. | High |
+| Rewarding yourself uses dopamine anticipation to motivate study. | Dopamine is involved in reward prediction and motivation, but the study-reward framing is simplified. | Medium |
+
+## Evidence-Based Interpretation
+
+The reliable version of this resource is:
+
+> Use spaced repetition, active recall, real breaks, and small rewards. These are evidence-aligned learning strategies. Do not rely on the video’s exact percentages, “Harvard” branding, or broad claims that motor-learning rest studies directly prove all academic-study benefits.
+
+## Practical Accuracy Scores
+
+- **As a study-method note:** 8/10
+- **As a neuroscience or medical-research explanation:** 6/10
+- **As a source for exact statistics:** 4/10
+- **As a claim about what Harvard students specifically do:** 2/10
+
+## Evidence Strength by Method
+
+- **Strong evidence:** [[Spaced Repetition]], distributed practice, [[Active Recall]], retrieval practice, and test-enhanced learning.
+- **Moderate evidence:** structured breaks, Pomodoro-style work blocks, and [[Desirable Difficulty]].
+- **Plausible but simplified:** dopamine reward framing for study motivation.
+- **Weak or marketing-like:** Harvard-specific framing, exact retention percentages, “200% / 80% / 40% less time” claims.
+
+## Research Sources
+
+- [Distributed practice in verbal recall tasks: A review and quantitative synthesis](https://pubmed.ncbi.nlm.nih.gov/16719566/)
+- [The effect of testing versus restudy on retention: a meta-analytic review of the testing effect](https://pubmed.ncbi.nlm.nih.gov/25150680/)
+- [Test-enhanced learning in health professions education: A systematic review](https://pubmed.ncbi.nlm.nih.gov/29390949/)
+- [The Effectiveness of Spaced Repetition in Medical Education: A Systematic Review and Meta-Analysis](https://pubmed.ncbi.nlm.nih.gov/41601436/)
+- [How short breaks help the brain learn new skills](https://www.nih.gov/news-events/nih-research-matters/how-short-breaks-help-brain-learn-new-skills)
+- [Related Cell Reports paper on replay in human motor cortex](https://pubmed.ncbi.nlm.nih.gov/32375031/)
+- [Replication and Analysis of Ebbinghaus’ Forgetting Curve](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0120644)
+- [Dopaminergic control of motivation and reinforcement learning](https://pubmed.ncbi.nlm.nih.gov/23678129/)
+- [Dopamine in motivational control: rewarding, aversive, and alerting](https://pubmed.ncbi.nlm.nih.gov/21144997/)
+- [Investigating the Effectiveness of Self-Regulated, Pomodoro, and Flowtime Break-Taking Techniques Among Students](https://pubmed.ncbi.nlm.nih.gov/40723645/)
+- [Assessing the efficacy of the Pomodoro technique in enhancing anatomy lesson retention during study sessions](https://pubmed.ncbi.nlm.nih.gov/41107936/)
 
 ## Source Snapshot
 
