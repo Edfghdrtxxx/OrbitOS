@@ -3,6 +3,10 @@ name: evolve-skills
 description: Review session context and persist actionable lessons into per-skill evolution.md files. Scriptless — Claude uses native Read/Edit/Write tools directly.
 ---
 
+# Phase 0 — EVOLVE
+
+Read `evolution.md` in this skill's folder. Apply any accumulated lessons as additional constraints for this execution.
+
 # Skill Evolution Manager
 
 Distills session experience — successful approaches, failures, user corrections, and preferences — into persistent, per-skill `evolution.md` files so lessons survive across conversations and skill rewrites.
