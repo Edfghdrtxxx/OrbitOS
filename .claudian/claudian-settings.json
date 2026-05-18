@@ -40,6 +40,7 @@
       "safeMode": "workspace-write",
       "cliPath": "",
       "cliPathsByHost": {},
+      "customModels": "",
       "reasoningSummary": "detailed",
       "environmentVariables": "",
       "environmentHash": "",
@@ -60,10 +61,12 @@
   "savedProviderThinkingBudget": {
     "claude": "high"
   },
+  "savedProviderPermissionMode": {},
   "lastCustomModel": "",
   "maxTabs": 4,
   "tabBarPosition": "input",
   "enableAutoScroll": true,
-  "openInMainTab": false,
+  "deferMathRenderingDuringStreaming": true,
+  "chatViewPlacement": "right-sidebar",
   "hiddenProviderCommands": {}
 }
