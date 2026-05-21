@@ -35,7 +35,7 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 | Explain a concept simply                                      | `/Feynman-Technique`            | Feynman-style explanation as if teaching a 12-year-old                                       |
 | Annotate a confusing note                                     | `/insert-Feynman`               | Inserts Feynman explanation callouts directly into the note file                             |
 | Polish English writing                                        | `/phrasing-refining`            | Grammar, idiom, and naturalness review with terse inline corrections                         |
-| Stress-test an idea                                           | `/idea-debate-team`             | Multi-agent debate from distinct lenses to expose blind spots                                |
+| Stress-test an idea                                           | `/llm-council`                  | Cross-LLM council (Claude + Gemini + GPT) with anonymized peer review and Chairman synthesis |
 | Self-critique current work                                    | `/reflect`                      | Adversarial review of current session trajectory                                             |
 | Park a quick thought in today's note                          | `/daily-note-addition`          | Adds flat checkbox captures to the daily note without full triage                            |
 | Dispatch parallel agents (heavyweight)                        | `/orchestrate`                  | Decomposes a task, dispatches sub-agents, reviews, synthesizes results                       |
@@ -63,7 +63,7 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 
 | Category | Count | Skills |
 |---|---|---|
-| **Daily Workflow** | 8 | `start-my-day`, `end-my-day`, `ask`, `brainstorm`, `breakdown-tasks`, `estimate-time`, `idea-debate-team`, `daily-note-addition` |
+| **Daily Workflow** | 8 | `start-my-day`, `end-my-day`, `ask`, `brainstorm`, `breakdown-tasks`, `estimate-time`, `llm-council`, `daily-note-addition` |
 | **Knowledge Management** | 5 | `kickoff`, `archive`, `atomic-note`, `research`, `wiki-review` |
 | **Obsidian Features** | 5 | `obsidian-markdown`, `obsidian-bases`, `obsidian-cli`, `json-canvas`, `excalidraw-diagram-generator` |
 | **Learning** | 4 | `Feynman-Technique`, `guide-derivation`, `phrasing-refining`, `insert-Feynman` |
