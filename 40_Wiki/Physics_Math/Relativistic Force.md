@@ -64,6 +64,6 @@ Because $\gamma = (1 - v^{2}/c^{2})^{-1/2}$ depends on $\mathbf{v}$, differentia
 ## References
 
 - K. S. Krane, *Introductory Nuclear Physics* (Wiley, 1988) — Appendix on relativistic kinematics.
-- D. J. Griffiths, *Introduction to Electrodynamics*, 4th ed. (Cambridge, 2017) — §12.2.4, relativistic dynamics.
+- D. J. Griffiths, *Introduction to Electrodynamics*, 4th ed. (Pearson, 2013) — §12.2.4, relativistic dynamics.
 - J. D. Jackson, *Classical Electrodynamics*, 3rd ed. (Wiley, 1999) — Ch. 11, special theory of relativity.
 - Wikipedia: [Four-force](https://en.wikipedia.org/wiki/Four-force).

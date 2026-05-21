@@ -21,7 +21,7 @@ sr-ease: 230
 ## Schematics
 
 ![[Energy-Momentum_Relation_schematic.svg]]
-*Minimal mass-shell diagram in the $(p_{1}, p_{0}) = (p, E/c)$ momentum plane (blue $m = 0$, green $m > 0$). The $m = 0$ case is the light cone $p_{0} = \pm |p_{1}|$ — photons live on the diagonals. The $m > 0$ case is the hyperbola $p_{0}^{2} - p_{1}^{2} = (mc)^{2}$, asymptotic to the light cone at large $|p_{1}|$. The red triangle at the bottom marks the forbidden region $p_{0} < |p_{1}|$ (tachyonic / negative invariant mass). (Public domain, Wikimedia Commons)*
+*Minimal mass-shell diagram in the $(p_{1}, p_{0}) = (p, E/c)$ momentum plane (blue $m = 0$, green $m > 0$). The $m = 0$ case is the light cone $p_{0} = \pm |p_{1}|$ — photons live on the diagonals. The $m > 0$ case is the hyperbola $p_{0}^{2} - p_{1}^{2} = (mc)^{2}$, asymptotic to the light cone at large $|p_{1}|$. The red triangle at the bottom marks the **negative-energy half** ($p_{0} < 0$ inside the lower light cone) — classically excluded for ordinary particles, reinterpreted as the antiparticle sector via the Feynman–Stückelberg picture in QFT. (Public domain, Wikimedia Commons)*
 
 ![[Energy-Momentum_Relation_graph.svg]]
 *Mass-shell families in $(p, E)$ space for several invariant masses. Each hyperbola $E^{2} - (pc)^{2} = (mc^{2})^{2}$ is the locus of all 4-momenta accessible to a particle of mass $m$ in any inertial frame — different Lorentz observers slide a given particle along its hyperbola, but cannot move it between them. The asymptotes are the $m = 0$ light cones $E = \pm pc$. (CC0, Wikimedia Commons)*

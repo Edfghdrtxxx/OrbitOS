@@ -40,7 +40,7 @@ where $m$ is the invariant (rest) mass and $\gamma$ is the [[Lorentz Factor]]. I
 ## Examples
 
 - **BigRIPS at RIBF.** Secondary RIB fragments at $\sim 300$ MeV/u carry $\beta \approx 0.65$, $\gamma \approx 1.32$ — relativistic momentum reconstruction is mandatory, with $p \approx 1.32 \cdot m \cdot 0.65 c$ rather than the Newtonian $m \cdot 0.65 c$ (a $32\%$ underestimate from the Newtonian formula).
-- **LHC proton beam at $7\,\mathrm{TeV}$.** $\gamma \approx 7460$, giving $p \approx 7\,\mathrm{TeV}/c$. The Newtonian formula $p = mv$ would yield $\approx 938\,\mathrm{MeV}/c$ — wrong by four orders of magnitude.
+- **[[LHC]] proton beam at $7\,\mathrm{TeV}$.** $\gamma \approx 7460$, giving $p \approx 7\,\mathrm{TeV}/c$. The Newtonian formula $p = mv$ would yield $\approx 938\,\mathrm{MeV}/c$ — wrong by four orders of magnitude.
 
 ## Related Concepts
 
@@ -65,6 +65,6 @@ where $m$ is the invariant (rest) mass and $\gamma$ is the [[Lorentz Factor]]. I
 ## References
 
 - K. S. Krane, *Introductory Nuclear Physics* (Wiley, 1988) — Appendix on relativistic kinematics.
-- D. J. Griffiths, *Introduction to Electrodynamics*, 4th ed. (Cambridge, 2017) — §12.2, relativistic energy and momentum.
+- D. J. Griffiths, *Introduction to Electrodynamics*, 4th ed. (Pearson, 2013) — §12.2, relativistic energy and momentum.
 - W. Rindler, *Relativity: Special, General, and Cosmological*, 2nd ed. (Oxford, 2006) — Ch. 6.
 - Wikipedia: [Momentum § Relativistic momentum](https://en.wikipedia.org/wiki/Momentum#Relativistic).

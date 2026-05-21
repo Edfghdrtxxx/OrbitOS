@@ -42,7 +42,7 @@ where $\gamma$ is the [[Lorentz Factor]]. It is the work–energy theorem's rela
 ## Examples
 
 - **Heavy-ion fragment at $80$ MeV/u.** $^{58}\mathrm{Ni}$ at $K/A = 80$ MeV/u: $K_{\mathrm{tot}} = 58 \times 80 = 4.64$ GeV, $\gamma \approx 1.086$, $\beta \approx 0.385$. Newtonian $\tfrac{1}{2}mv^{2}$ would understate $K$ by about $9\%$ — already non-negligible.
-- **LHC proton at $7$ TeV.** $K \approx 7\,\mathrm{TeV} - 0.938\,\mathrm{GeV} \approx 7\,\mathrm{TeV}$; the rest-mass contribution to $E$ is $\sim 0.013\%$. Fully relativistic — the $K \approx E = pc$ approximation is accurate to four decimal places.
+- **[[LHC]] proton at $7$ TeV.** $K \approx 7\,\mathrm{TeV} - 0.938\,\mathrm{GeV} \approx 7\,\mathrm{TeV}$; the rest-mass contribution to $E$ is $\sim 0.013\%$. Fully relativistic — the $K \approx E = pc$ approximation is accurate to four decimal places.
 
 ## Related Concepts
 
@@ -65,6 +65,6 @@ where $\gamma$ is the [[Lorentz Factor]]. It is the work–energy theorem's rela
 ## References
 
 - K. S. Krane, *Introductory Nuclear Physics* (Wiley, 1988) — Appendix on relativistic kinematics.
-- D. J. Griffiths, *Introduction to Electrodynamics*, 4th ed. (Cambridge, 2017) — §12.2.4, relativistic energy.
+- D. J. Griffiths, *Introduction to Electrodynamics*, 4th ed. (Pearson, 2013) — §12.2.4, relativistic energy.
 - W. Rindler, *Relativity: Special, General, and Cosmological*, 2nd ed. (Oxford, 2006) — Ch. 6.
 - Wikipedia: [Kinetic energy § Relativistic kinetic energy](https://en.wikipedia.org/wiki/Kinetic_energy#Relativistic_kinetic_energy).

@@ -26,7 +26,7 @@ sr-ease: 230
 *Log–log plot of $\gamma$ (left axis) and $1/\gamma$ (right axis) versus $\beta$ (bottom) and $1-\beta$ (top, counting "nines"). On log-log axes the relativistic regime $\beta \to 1$ becomes linear: $\gamma$ grows by one order of magnitude per "nine" added to $\beta$ (e.g. $\beta = 0.99 \Rightarrow \gamma \approx 7.09$; $\beta = 0.9999999 \Rightarrow \gamma \approx 2236$). The plot makes visible the extreme $\gamma$ regimes — LHC protons sit at $\gamma \approx 7460$, around the "$\beta = 0.99999999$" tick. (CC BY-SA 4.0, Wikimedia Commons)*
 
 ![[Lorentz_Factor_diagram.svg]]
-*Pythagorean / geometric interpretation: a right triangle with hypotenuse $1$, one leg $\beta = v/c$, and the other leg $\alpha = 1/\gamma = \sqrt{1-\beta^{2}}$. The identity $1^{2} = \beta^{2} + (1/\gamma)^{2}$ is the same statement as $\gamma = 1/\sqrt{1-\beta^{2}}$, and exposes $1/\gamma$ as the Euclidean complement of $\beta$ on the unit circle — the origin of the trigonometric/hyperbolic substitutions $\beta = \sin\theta = \tanh\eta$ used in [[Lorentz Transformations]]. (CC BY-SA 4.0, Wikimedia Commons)*
+*Pythagorean / geometric interpretation: a right triangle with hypotenuse $1$, one leg $\beta = v/c$, and the other leg $\alpha = 1/\gamma = \sqrt{1-\beta^{2}}$. The identity $1^{2} = \beta^{2} + (1/\gamma)^{2}$ is the same statement as $\gamma = 1/\sqrt{1-\beta^{2}}$. The triangle is the **Euclidean** mnemonic for $\gamma$; the actual [[Lorentz Transformations]] are **hyperbolic** rotations parameterized by rapidity $\eta$ with $\beta = \tanh\eta$, $\gamma = \cosh\eta$, $\gamma\beta = \sinh\eta$ — the trig analogy is geometric only, not the boost itself. (CC BY-SA 4.0, Wikimedia Commons)*
 
 ## Definition
 
@@ -46,7 +46,7 @@ that quantifies how time, length, momentum, and energy of an object moving at ve
 
 - **Time-of-flight measurement → $\gamma$.** A start–stop scintillator pair fixes $\beta$ from $L/(c\,\Delta t)$; $\gamma$ then follows directly. In [[DeltaE-Brho-TOF-Identification]], the trio $(\Delta E, B\rho, \mathrm{TOF})$ collapses to $(Z, A, \gamma)$ through this route.
 - **Cosmic-ray muon survival.** Rest-frame muon lifetime is $\tau_{0} = 2.2\,\mu\mathrm{s}$. A muon with $\beta = 0.998$ has $\gamma \approx 15.8$, extending lab-frame lifetime to $\gamma\tau_{0} \approx 35\,\mu\mathrm{s}$ — long enough for upper-atmosphere muons to reach sea level, a textbook validation of [[Time Dilation]].
-- **Heavy-ion regimes.** $\gamma$ at HIRFL ($\sim 80$ MeV/u, $\beta \approx 0.39$): $\approx 1.09$. At RIBF ($\sim 300$ MeV/u, $\beta \approx 0.65$): $\approx 1.32$. At the LHC (7 TeV/p): $\gamma \approx 7460$.
+- **Heavy-ion regimes.** $\gamma$ at HIRFL ($\sim 80$ MeV/u, $\beta \approx 0.39$): $\approx 1.09$. At RIBF ($\sim 300$ MeV/u, $\beta \approx 0.65$): $\approx 1.32$. At the [[LHC]] (7 TeV/p): $\gamma \approx 7460$.
 
 ## Related Concepts
 
@@ -71,6 +71,6 @@ that quantifies how time, length, momentum, and energy of an object moving at ve
 ## References
 
 - K. S. Krane, *Introductory Nuclear Physics* (Wiley, 1988) — Appendix on relativistic kinematics.
-- D. J. Griffiths, *Introduction to Electrodynamics*, 4th ed. (Cambridge, 2017) — Ch. 12, relativistic mechanics.
+- D. J. Griffiths, *Introduction to Electrodynamics*, 4th ed. (Pearson, 2013) — Ch. 12, relativistic mechanics.
 - W. Rindler, *Relativity: Special, General, and Cosmological*, 2nd ed. (Oxford, 2006) — Ch. 2–3.
 - Wikipedia: [Lorentz factor](https://en.wikipedia.org/wiki/Lorentz_factor).

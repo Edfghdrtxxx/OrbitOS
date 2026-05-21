@@ -80,7 +80,7 @@ and each reduces to its Newtonian counterpart for $v \ll c$.
 ## References
 
 - K. S. Krane, *Introductory Nuclear Physics* (Wiley, 1988) — Appendix on relativistic kinematics.
-- D. J. Griffiths, *Introduction to Electrodynamics*, 4th ed. (Cambridge, 2017) — Ch. 12.
+- D. J. Griffiths, *Introduction to Electrodynamics*, 4th ed. (Pearson, 2013) — Ch. 12.
 - W. Rindler, *Relativity: Special, General, and Cosmological*, 2nd ed. (Oxford, 2006) — Ch. 2–6.
 - J. D. Jackson, *Classical Electrodynamics*, 3rd ed. (Wiley, 1999) — Ch. 11.
 - Wikipedia: [Special relativity](https://en.wikipedia.org/wiki/Special_relativity).
