@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="600" height="324">
+
+<!--		  E=mc²-explication.svg
+	
+		Created February 04, 2013
+		    By Jason Barnabas
+		      For Wikipedia
+	
+		 jtbarnabas(at)yahoo.com		-->
+
+<g fill="#6DCFF6">
+	<rect width="600" height="300" rx="16" ry="16"/>
+</g>
+<g stroke="white" stroke-width="5" stroke-linecap="round">
+	<line x1="210" y1="120" x2="30" y2="50"/>
+	<line x1="200" y1="180" x2="100" y2="230"/>
+	<line x1="340" y1="135" x2="180" y2="50"/>
+	<line x1="330" y1="180" x2="120" y2="230"/>
+	<line x1="385" y1="135" x2="450" y2="50"/>
+	<line x1="370" y1="180" x2="320" y2="230"/>
+</g>
+<g fill="#C7EAFD">
+	<rect x="25" y="35" width="550" height="50"/>
+	<rect x="25" y="215" width="550" height="50"/>
+</g>
+<g text-anchor="middle">
+	<g font-family="Arial">
+		<g font-size="36">
+			<switch><text x="300" y="70" id="trsvg7-eo" systemLanguage="eo"><tspan id="trsvg1-eo">energio | maso | lumrapido</tspan></text><text x="300" y="70" id="trsvg7-lv" systemLanguage="lv"><tspan id="trsvg1-lv">ener&#291;ija | masa | gaismas &#257;trums</tspan></text><text x="300" y="70" id="trsvg7-es" systemLanguage="es"><tspan id="trsvg1-es">energía | masa | velocidad de la luz</tspan></text><text x="300" y="70" id="trsvg7-ja" systemLanguage="ja"><tspan id="trsvg1-ja">&#12456;&#12493;&#12523;&#12462;&#12540; | &#36074;&#37327; | &#20809;&#36895;</tspan></text><text x="300" y="70" id="trsvg7-it" systemLanguage="it"><tspan id="trsvg1-it">energia | massa | velocità della luce</tspan></text><text x="300" y="70" id="trsvg7-fr" systemLanguage="fr"><tspan id="trsvg1-fr">énergie | masse | vit. de la lumière</tspan></text><text x="300" y="70" id="trsvg7"><tspan id="trsvg1">energy | mass | speed of light</tspan></text></switch>
+			<switch><text x="300" y="250" id="trsvg8-eo" systemLanguage="eo"><tspan id="trsvg2-eo">J | kg | 299,792,458 m/s</tspan></text><text x="300" y="250" id="trsvg8-lv" systemLanguage="lv"><tspan id="trsvg2-lv">J | kg | 299 792 458 m/s</tspan></text><text x="300" y="250" id="trsvg8-es" systemLanguage="es"><tspan id="trsvg2-es">J | kg | 299 792 458 m/s</tspan></text><text x="300" y="250" id="trsvg8-ja" systemLanguage="ja"><tspan id="trsvg2-ja">J | kg | 299,792,458 m/s</tspan></text><text x="300" y="250" id="trsvg8-it" systemLanguage="it"><tspan id="trsvg2-it">J | kg | 299.792.458 m/s</tspan></text><text x="300" y="250" id="trsvg8-fr" systemLanguage="fr"><tspan id="trsvg2-fr">J | kg | 299 792 458 m/s</tspan></text><text x="300" y="250" id="trsvg8"><tspan id="trsvg2">J | kg | 299,792,458 m/s</tspan></text></switch>
+		</g>
+		<g font-size="24" fill="white">
+			<switch><text x="300" y="25" id="trsvg9-eo" systemLanguage="eo"><tspan id="trsvg3-eo">valoro</tspan></text><text x="300" y="25" id="trsvg9-lv" systemLanguage="lv"><tspan id="trsvg3-lv">fizik&#257;lais lielums</tspan></text><text x="300" y="25" id="trsvg9-es" systemLanguage="es"><tspan id="trsvg3-es">valor</tspan></text><text x="300" y="25" id="trsvg9-ja" systemLanguage="ja"><tspan id="trsvg3-ja">&#20516;</tspan></text><text x="300" y="25" id="trsvg9-it" systemLanguage="it"><tspan id="trsvg3-it">valore</tspan></text><text x="300" y="25" id="trsvg9-fr" systemLanguage="fr"><tspan id="trsvg3-fr">valeur</tspan></text><text x="300" y="25" id="trsvg9"><tspan id="trsvg3">value</tspan></text></switch>
+			<switch><text x="300" y="290" id="trsvg10-eo" systemLanguage="eo"><tspan id="trsvg4-eo">unuoj</tspan></text><text x="300" y="290" id="trsvg10-lv" systemLanguage="lv"><tspan id="trsvg4-lv">m&#275;rvien&#299;ba</tspan></text><text x="300" y="290" id="trsvg10-es" systemLanguage="es"><tspan id="trsvg4-es">unidades</tspan></text><text x="300" y="290" id="trsvg10-ja" systemLanguage="ja"><tspan id="trsvg4-ja">&#21336;&#20301;</tspan></text><text x="300" y="290" id="trsvg10-it" systemLanguage="it"><tspan id="trsvg4-it">unità</tspan></text><text x="300" y="290" id="trsvg10-fr" systemLanguage="fr"><tspan id="trsvg4-fr">unités</tspan></text><text x="300" y="290" id="trsvg10"><tspan id="trsvg4">units</tspan></text></switch>
+		</g>
+	</g>
+	<g font-style="italic">
+		<switch><text font-size="72" x="300" y="174" id="trsvg11-eo" systemLanguage="eo"><tspan id="trsvg5-eo">E = mc²</tspan></text><text font-size="72" x="300" y="174" id="trsvg11-lv" systemLanguage="lv"><tspan id="trsvg5-lv">E = mc²</tspan></text><text font-size="72" x="300" y="174" id="trsvg11-es" systemLanguage="es"><tspan id="trsvg5-es">E = mc²</tspan></text><text font-size="72" x="300" y="174" id="trsvg11-ja" systemLanguage="ja"><tspan id="trsvg5-ja">E = mc²</tspan></text><text font-size="72" x="300" y="174" id="trsvg11-it" systemLanguage="it"><tspan id="trsvg5-it">E = mc²</tspan></text><text font-size="72" x="300" y="174" id="trsvg11-fr" systemLanguage="fr"><tspan id="trsvg5-fr">E = mc²</tspan></text><text font-size="72" x="300" y="174" id="trsvg11"><tspan id="trsvg5">E = mc²</tspan></text></switch>
+		<switch><text font-size="24" x="300" y="320" id="trsvg12-eo" systemLanguage="eo"><tspan id="trsvg6-eo">c² = 89,875,517,873,681,764 m²/s²</tspan></text><text font-size="24" x="300" y="320" id="trsvg12-lv" systemLanguage="lv"><tspan id="trsvg6-lv">c² = 89 875 517 873 681 764 m²/s²</tspan></text><text font-size="24" x="300" y="320" id="trsvg12-es" systemLanguage="es"><tspan id="trsvg6-es">c² = 89 875 517 873 681 764 m²/s²</tspan></text><text font-size="24" x="300" y="320" id="trsvg12-ja" systemLanguage="ja"><tspan id="trsvg6-ja">c² = 89,875,517,873,681,764 m²/s²</tspan></text><text font-size="24" x="300" y="320" id="trsvg12-it" systemLanguage="it"><tspan id="trsvg6-it">c² = 89.875.517.873.681.764 m²/s²</tspan></text><text font-size="24" x="300" y="320" id="trsvg12-fr" systemLanguage="fr"><tspan id="trsvg6-fr">c² = 89 875 517 873 681 764 m²/s²</tspan></text><text font-size="24" x="300" y="320" id="trsvg12"><tspan id="trsvg6">c² = 89,875,517,873,681,764 m²/s²</tspan></text></switch>
+	</g>
+</g>
+</svg>

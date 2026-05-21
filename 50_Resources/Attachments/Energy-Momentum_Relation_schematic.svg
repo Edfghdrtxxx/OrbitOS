@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="200" height="200" style="shape-rendering:geometricPrecision;" viewBox="-10 -20 30 20" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .m0     {stroke:#0000FF;stroke-width:0.8;fill:none}
+    .m1     {stroke:#00FF00;stroke-width:0.8;fill:none}
+    .axis   {stroke:#666666;stroke-width:0.4;fill:none}
+    .arrow  {fill:#666666;stroke:none}
+    .neg    {fill:#FF0000;stroke:none}
+    text    { font-weight:normal; font-size:3px; fill:#000000; stroke:none; }
+    .mathrm { font-family:serif; }
+    .mvar   { font-family:Nimbus Roman No9 L,serif; font-size:4px; font-style:italic; }
+    .sub    { font-size:2px; font-family:serif; }
+   ]]>
+  </style>
+ </defs>
+ <path class="neg" d="M-10,10 L0,0 L10,10"/>
+ <g id="p1">
+  <line class="axis" x1="-10" y1="0" x2="19.2" y2="0"/> <path class="arrow" d="M18,-1 L20,0 L18,1"/>
+  <text x="15" y="-2.5" class="mvar">p</text><text x="16.4" y="-1.1" class="sub">1</text>
+ </g>
+ <g id="p0">
+  <line class="axis" x1="0" y1="10" x2="0" y2="-22"/> <path class="arrow" d="M-1,-20.5 L0,-22.5 L1,-20.5"/>
+  <text x="1" y="-18.5" class="mvar">p</text><text x="2.4" y="-17.1" class="sub">0</text>
+ </g>
+ <g id="m0">
+  <path class="m0" d="M-10,-10 L0,0 L30,-30"/>
+  <text x="11" y="-8.2" class="mvar" style="fill:#0000FF">m</text>
+  <text x="14.7" y="-8.2" class="mathrm" style="fill:#0000FF">= 0</text>
+ </g>
+ <g id="m1">
+  <path class="m1" d="M-9,-15
+ C-7.5615896377411,-14.1369537826447,-6.24662231395772,-13.479470120753,-5,-13
+ C-3.24298453153129,-12.3242248198197,-1.62186043243266,-12,0,-12
+ C1.62186043243266,-12,3.24298453153129,-12.3242248198197,5,-13
+ C6.24662231395772,-13.479470120753,7.5615896377411,-14.1369537826447,9,-15
+ C11.0273255405408,-16.2163953243245,13.2968992792789,-17.8375194234231,16,-20
+ C20.620981203733,-23.6967849629864,26.451184773094,-28.9132828934673,35,-37"/>
+  <text x="6" y="-20" class="mvar" style="fill:#00FF00">m</text>
+  <text x="9.7" y="-20" class="mathrm" style="fill:#00FF00">&gt; 0</text>
+ </g>
+</svg>

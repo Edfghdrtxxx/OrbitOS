@@ -10,7 +10,13 @@ review_interval: 0
 
 ## Definition
 
-The Bethe-Bloch formula describes the mean rate of [[Ionizing Radiation|ionization]] energy loss ($-\mathrm{d}E/\mathrm{d}x$) of moderately relativistic [[Charged Particle]]s traversing matter, and is the theoretical backbone of [[Particle Identification]] via specific energy loss in detectors such as [[Time Projection Chamber]]s.
+The Bethe-Bloch formula describes the mean rate of [[Ionizing Radiation|ionization]] energy loss ($-\mathrm{d}E/\mathrm{d}x$) of moderately relativistic [[Charged Particle]]s traversing matter, and is the theoretical backbone of [[Particle Identification]] via specific energy loss in detectors such as [[Time Projection Chamber]]s. In its canonical PDG form:
+
+$$
+-\left\langle\frac{\mathrm{d}E}{\mathrm{d}x}\right\rangle = K\, z^{2}\, \frac{Z}{A}\, \frac{1}{\beta^{2}} \left[\, \frac{1}{2} \ln\!\frac{2 m_{e} c^{2}\, \beta^{2} \gamma^{2}\, T_{\max}}{I^{2}} \;-\; \beta^{2} \;-\; \frac{\delta(\beta\gamma)}{2} \,\right]
+$$
+
+with $K = 4\pi N_{A} r_{e}^{2} m_{e} c^{2} \approx 0.307\ \mathrm{MeV\,mol^{-1}\,cm^{2}}$, $z$ the projectile charge in units of $e$, $Z/A$ the target's atomic-to-mass ratio, $\beta\gamma$ the projectile's relativistic velocity, $I$ the [[Mean Excitation Energy]], $T_{\max}$ the maximum kinetic energy transferable to a free electron in a single collision, and $\delta(\beta\gamma)$ the density-effect (Sternheimer) correction.
 
 ## Key Points
 

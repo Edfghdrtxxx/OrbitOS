@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-27 -47 88 110" text-anchor="middle">
+<g fill="none" stroke="#000">
+<path d="M-22.5,40H25V-23ZH21v-4h4M-25-40a2,2 0 1 0 0-.1h1a1,1 0 1 1 0,.1A80,80 0 0 1 57,38a2,2 0 1 0 .1,0"/>
+<path stroke-dasharray="3" d="M-23-37V40m2,0h78"/>
+</g>
+<text>1</text>
+<text y="56">𝛽=𝑣/𝑐</text>
+<text y="15" x="38">𝛼=</text>
+<text y="28" x="39">1/𝛾</text>
+</svg>

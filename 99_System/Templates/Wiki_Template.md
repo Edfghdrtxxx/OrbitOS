@@ -8,7 +8,7 @@ review_interval: 0
 ---
 # [Concept Name]
 
-> [!important] All math expressions, equations, and formulas **must** use LaTeX notation (`$...$` for inline, `$$...$$` for display blocks).
+> [!important] All math expressions, equations, and formulas **must** use LaTeX notation (`$...$` inline, `$$...$$` display). Prefer the canonical academic / textbook form (full PDG-style expression, conventional symbols, standard correction terms) over simplified or pedagogical variants.
 
 ## Schematics
 
