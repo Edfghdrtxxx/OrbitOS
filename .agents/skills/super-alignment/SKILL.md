@@ -1,6 +1,6 @@
 ---
-name: capture-my-thoughts-based-on-file
-description: Read one or more files and iteratively interrogate the user to reach mental alignment, then edit the files so they match the user's true intent. Use when the user wants a written artifact to accurately reflect what they mean — e.g. "capture my thoughts", "make this file match what I actually think", "align this note with my intent".
+name: super-alignment
+description: Read one or more files and iteratively interrogate the user to reach mental alignment, then edit the files so they match the user's true intent. Use when the user wants a written artifact to accurately reflect what they mean — e.g. "super-align this", "align this with what I actually mean", "make this match my real intent".
 ---
 # Phase 0 — EVOLVE
 
