@@ -40,9 +40,9 @@ tags: [utokyo, riken, professor-outreach, phd]
 | 6        | Yasuhiro Sakemi     | Professor (Director) | Fundamental symmetry in heavy elements; laser cooling; EDM search. [^sakemi-lab]                                                                | CNS member list. [^cns-member] | sakemi (email username). [^cns-member] | Not contacted   | **[Scope Mismatch]** Fundamental symmetry focus is outside direct nuclear reaction/structure scope; least direct fit to TPC reaction studies ~~Information of Yasuhiro Sakemi~~ (archived — scope mismatch) | ^bK5vt887 |
 
 ## Outreach Checklist
-- [ ] Confirm top-3 priority targets from the ranked list and begin outreach. [^utokyo-outreach]
-- [ ] Prepare a research-fit statement focused on TPC + direct reactions + ML-PID. [^utokyo-outreach]
-- [ ] Send first-contact emails with CV (target by 2026-04-15 in plan). [^utokyo-outreach]
+- [x] Confirm top-3 priority targets from the ranked list and begin outreach. Completed 2026-03-09 ahead of schedule; Aoi Nori and Nobuaki Imai accepted conditionally, and Imai became primary on 2026-04-13. [^utokyo-outreach]
+- [x] Prepare a research-fit statement focused on TPC + direct reactions + ML-PID. Completed before first contact. [^utokyo-outreach]
+- [x] Send first-contact emails with CV (target by 2026-04-15 in plan). Completed 2026-03-09 ahead of schedule; no longer an overdue deadline. [^utokyo-outreach]
 
 [^utokyo-pathway]: `20_Project/Japan_Itinerary/UTokyo_RIKEN.md:16`
 [^utokyo-alignment]: `20_Project/Japan_Itinerary/UTokyo_RIKEN.md:28`
@@ -59,5 +59,4 @@ tags: [utokyo, riken, professor-outreach, phd]
 [^yako-lab]: https://www.cns.s.u-tokyo.ac.jp/en/education/labs/yako/
 [^gunji-lab]: https://www.cns.s.u-tokyo.ac.jp/en/education/labs/gunji/
 [^sakemi-lab]: https://www.cns.s.u-tokyo.ac.jp/en/education/labs/sakemi/
-
 
