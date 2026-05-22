@@ -24,7 +24,7 @@ Three members, equal weight in Stage 1 and Stage 2:
 1. **Seed.** User states the question/idea. If genuinely ambiguous, ask one clarifying question. Otherwise dive in.
 2. **Frame.** Write a single shared brief: question + relevant context + constraints + what a useful opinion looks like (e.g. "argue a position, name the weakest link, propose a concrete recommendation").
 3. **Member-Claude opinion.** Write your own opinion under a `## Member-Claude` header. Argue a position, don't hedge.
-4. **Relay blocks.** Emit two copy-ready blocks, each in a fenced code block so the user can grab them cleanly:
+4. **Relay blocks.** Emit two fully self-contained, copy-ready blocks, each in a fenced code block so the user can grab it cleanly. The Gemini and GPT blocks must duplicate the full prompt body; never use placeholder shortcuts like `[same prompt body]`.
 
    ````
    ### → Paste into Gemini
@@ -32,17 +32,25 @@ Three members, equal weight in Stage 1 and Stage 2:
    You are one member of a 3-LLM council deliberating on the following question. Give your sharpest, most honest opinion. Argue a position. Name the weakest link in any obvious counter-argument. Finish with one concrete recommendation.
 
    QUESTION:
-   <brief>
+   <filled brief>
 
    CONTEXT:
-   <context bullets>
+   <filled context bullets>
 
    Write 200–400 words. No hedging, no "it depends" without specifying on what.
    ```
 
    ### → Paste into GPT
    ```
-   [same prompt body]
+   You are one member of a 3-LLM council deliberating on the following question. Give your sharpest, most honest opinion. Argue a position. Name the weakest link in any obvious counter-argument. Finish with one concrete recommendation.
+
+   QUESTION:
+   <filled brief>
+
+   CONTEXT:
+   <filled context bullets>
+
+   Write 200–400 words. No hedging, no "it depends" without specifying on what.
    ```
    ````
 
@@ -50,8 +58,8 @@ Three members, equal weight in Stage 1 and Stage 2:
 
 ## Stage 2 — Anonymized Peer Review
 
-1. **Anonymize.** Take all three opinions (Claude / Gemini / GPT) and randomly assign labels **Member A / Member B / Member C**. Keep the mapping internal — do not reveal it to the user or in any relay block until Stage 3.
-2. **Relay pack.** For each non-Claude member, build a review prompt containing the OTHER two anonymized opinions (so Gemini sees the two that aren't its own, similarly for GPT). For Member-Claude, do the equivalent review internally.
+1. **Anonymize.** Take all three opinions (Claude / Gemini / GPT) and randomly assign global labels **Member A / Member B / Member C**. Keep the mapping internal — do not reveal it to the user or in any relay block until Stage 3.
+2. **Relay pack.** For each non-Claude member, build a fully self-contained review prompt containing the OTHER two anonymized opinions while preserving their global labels. Example: if Gemini's own response is mapped to Member B, the Gemini prompt must show only Member A and Member C, and the tasks must ask it to rank **A vs. C**. Do not relabel local pairs as A/B.
 
    ````
    ### → Paste into Gemini (peer review)
@@ -59,17 +67,17 @@ Three members, equal weight in Stage 1 and Stage 2:
    You are one member of a 3-LLM council. Below are two anonymized opinions from your peers on the question you just answered. Identities are hidden on purpose.
 
    QUESTION (reminder):
-   <brief>
+   <filled brief>
 
-   MEMBER A:
-   <text>
+   MEMBER <global label 1>:
+   <filled peer opinion 1>
 
-   MEMBER B:
-   <text>
+   MEMBER <global label 2>:
+   <filled peer opinion 2>
 
    Tasks:
-   1. Rank A vs. B on accuracy. Justify in 1–2 sentences.
-   2. Rank A vs. B on insight (non-obvious framing or implication). Justify in 1–2 sentences.
+   1. Rank Member <global label 1> vs. Member <global label 2> on accuracy. Justify in 1–2 sentences.
+   2. Rank Member <global label 1> vs. Member <global label 2> on insight (non-obvious framing or implication). Justify in 1–2 sentences.
    3. Identify the single strongest flaw across both responses.
    4. State whether either response would change your own original opinion, and why or why not.
 
@@ -78,11 +86,28 @@ Three members, equal weight in Stage 1 and Stage 2:
 
    ### → Paste into GPT (peer review)
    ```
-   [same structure, with the two opinions GPT didn't write]
+   You are one member of a 3-LLM council. Below are two anonymized opinions from your peers on the question you just answered. Identities are hidden on purpose.
+
+   QUESTION (reminder):
+   <filled brief>
+
+   MEMBER <global label 1>:
+   <filled peer opinion 1>
+
+   MEMBER <global label 2>:
+   <filled peer opinion 2>
+
+   Tasks:
+   1. Rank Member <global label 1> vs. Member <global label 2> on accuracy. Justify in 1–2 sentences.
+   2. Rank Member <global label 1> vs. Member <global label 2> on insight (non-obvious framing or implication). Justify in 1–2 sentences.
+   3. Identify the single strongest flaw across both responses.
+   4. State whether either response would change your own original opinion, and why or why not.
+
+   Be ruthless. No politeness padding.
    ```
    ````
 
-3. **Member-Claude review.** Write your own peer review under `## Member-Claude — Peer Review`, in the same format as you asked Gemini/GPT for. Look at the two anonymized opinions that aren't yours. Don't soften.
+3. **Member-Claude review.** Write your own peer review under `## Member-Claude — Peer Review`, in the same format as you asked Gemini/GPT for. Look at the two anonymized opinions that aren't yours, preserve their global labels, and rank those labels directly. Don't soften.
 4. **Wait.** User pastes back Gemini's and GPT's peer reviews.
 
 ## Stage 3 — Chairman Synthesis
@@ -97,7 +122,7 @@ Three members, equal weight in Stage 1 and Stage 2:
 
 # Transcript (always written)
 
-Save to: `D:\obsidian\OrbitOS\20_Project\LLM-Council\YYYY-MM-DD-<topic-slug>.md`
+Save to: `D:\obsidian\OrbitOS\20_Project\LLM-Council\Sessions\YYYY-MM-DD-<topic-slug>.md`
 
 Create the directory if it doesn't exist. Filename slug: kebab-case, ≤ 8 words from the question.
 
