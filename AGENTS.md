@@ -17,6 +17,11 @@ Act as Knowledge Manager and Daily Planner. Capture, connect, and organize knowl
 ## Skill Files
 Skill definitions live in `.agents/skills/<skill-name>/SKILL.md` (symlinked to `.Codex/skills/`). See [[README]] for the full skill catalog (33 skills across 7 categories).
 
+## Memory System
+ - The memory system of this repo comprises Codex's memory system and claude code's  
+ - Codex: `C:\Users\petro\.codex\memories\`
+ - Claude Code: `C:\Users\petro\.claude\projects\D--Something-research-MATE-Automation-V4\memory\<file>.md`
+
 ## Templates
 `Daily_Note.md`, `Project_Template.md`, `Content_Template.md`, `Wiki_Template.md`, `Inbox_Template.md`, `Derivation_Template.md`
 
