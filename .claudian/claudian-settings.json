@@ -19,6 +19,7 @@
     "scrollDownKey": "s",
     "focusInputKey": "i"
   },
+  "requireCommandOrControlEnterToSend": false,
   "locale": "en",
   "providerConfigs": {
     "claude": {
@@ -45,9 +46,21 @@
       "environmentVariables": "",
       "environmentHash": "",
       "installationMethodsByHost": {
-        "petropavlovsk": "native-windows"
+        "device:f00ce84f-08d1-436c-b128-df66e8e10653": "native-windows"
       },
       "wslDistroOverridesByHost": {}
+    },
+    "opencode": {
+      "cliPath": "",
+      "cliPathsByHost": {},
+      "enabled": false,
+      "environmentHash": "",
+      "environmentVariables": "",
+      "modelAliases": {},
+      "preferredThinkingByModel": {},
+      "selectedMode": "",
+      "thinkingOptionsByModel": {},
+      "visibleModels": []
     }
   },
   "settingsProvider": "claude",
