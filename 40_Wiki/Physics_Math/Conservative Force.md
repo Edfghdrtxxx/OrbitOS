@@ -2,9 +2,9 @@
 area: "[[Physics]]"
 tags: [classical-mechanics, forces]
 created: 2026-03-30
-last_reviewed:
-next_review: 2026-03-30
-review_interval: 0
+last_reviewed: 2026-05-24
+next_review: 2026-05-25
+review_interval: 1
 ---
 # Conservative Force
 
