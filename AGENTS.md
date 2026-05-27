@@ -18,9 +18,11 @@ Act as Knowledge Manager and Daily Planner. Capture, connect, and organize knowl
 Skill definitions live in `.agents/skills/<skill-name>/SKILL.md` (symlinked to `.Codex/skills/`). See [[README]] for the full skill catalog (33 skills across 7 categories).
 
 ## Memory System
- - The memory system of this repo comprises Codex's memory system and claude code's  
- - Codex: `C:\Users\petro\.codex\memories\`
- - Claude Code: `C:\Users\petro\.claude\projects\D--Something-research-MATE-Automation-V4\memory\<file>.md`
+- The memory system of this repo comprises Codex's memory system and Claude Code's project memory.
+- Codex: `C:\Users\petro\.codex\memories\`
+- Claude Code: `C:\Users\petro\.claude\projects\<current-project-slug>\memory\<file>.md`
+- For this vault, the current Claude Code memory path is `C:\Users\petro\.claude\projects\D--obsidian-OrbitOS\memory\<file>.md`
+- When an instruction references `memory/<file>.md`, resolve it through these memory roots instead of assuming a repo-local `memory/` folder exists.
 
 ## Templates
 `Daily_Note.md`, `Project_Template.md`, `Content_Template.md`, `Wiki_Template.md`, `Inbox_Template.md`, `Derivation_Template.md`
@@ -35,8 +37,8 @@ Skill definitions live in `.agents/skills/<skill-name>/SKILL.md` (symlinked to `
 
 ### Japan Immigration (top priority after graduation)
 - Finalized pathway: UTokyo CNS / RIKEN JRA, Route B Special Selection (supervisor: Imai, DONUTS). Execution plan: [[UTokyo_RIKEN]].
-- Current pathway state, funding scenarios, exam targets, timeline, and scholarship/housing details live in auto-memory — read `project_japan_itinerary.md` before discussing Japan planning.
-- Japan, visa, university applications, Japanese language, and life-planning questions are high-priority — see `user_japan_priority_topic.md`.
+- Current pathway state, funding scenarios, exam targets, timeline, and scholarship/housing details live in auto-memory - read `project_japan_itinerary.md` before discussing Japan planning.
+- Japan, visa, university applications, Japanese language, and life-planning questions are high-priority - see `user_japan_priority_topic.md`.
 
 ## Rules
 - Projects link to Areas via frontmatter, NOT folder hierarchy
@@ -44,10 +46,9 @@ Skill definitions live in `.agents/skills/<skill-name>/SKILL.md` (symlinked to `
 - Daily notes link to projects; projects track progress in daily notes
 - No empty line after frontmatter `---` (it becomes visible in body)
 - Communicate in English and use English for all template content
-- Flag potential issues proactively: duplicate projects, scheduling conflicts, stale tasks, or missing links — but execute the user's request regardless unless asked to reconsider
+- Flag potential issues proactively: duplicate projects, scheduling conflicts, stale tasks, or missing links - but execute the user's request regardless unless asked to reconsider
 
 ## Principles of Paramount Importance
- - **Zero Assumptions:** Never guess user intent. If multiple implementations exist or requirements are incomplete, **halt and use the `AskUserQuestion` tool** to gather explicit direction.
- - **No Silent Assumptions:** Even when the task is requested, confirm the *method* if it wasn’t specified. Don’t guess the user’s expectations.
- - **Necessity Check (trigger-based):** Load `memory/feedback_necessity_check.md` and apply its five-question check — halt via `AskUserQuestion` if any check fails — when either trigger fires: (a) the change touches structural/system surfaces (skills, AGENTS.md, memory, hooks, vault architecture), or (b) the user floats a modification/refactor idea — a new mechanism, a skill/workflow redesign — invoking their "questioning/interrogative spirit" (they want scrutiny, not agreement). Otherwise stay out of it. Do not sell speculation as an obvious win.
- 
+- **Zero Assumptions:** Never guess user intent. If multiple implementations exist or requirements are incomplete, **halt and use the `AskUserQuestion` tool** to gather explicit direction.
+- **No Silent Assumptions:** Even when the task is requested, confirm the *method* if it was not specified. Do not guess the user's expectations.
+- **Necessity Check (trigger-based):** Load `feedback_necessity_check.md` from the memory roots defined in **Memory System** and apply its five-question check - halt via `AskUserQuestion` if any check fails - when either trigger fires: (a) the change touches structural/system surfaces (skills, AGENTS.md, memory, hooks, vault architecture), or (b) the user floats a modification/refactor idea - a new mechanism, a skill/workflow redesign - invoking their "questioning/interrogative spirit" (they want scrutiny, not agreement). Otherwise stay out of it. Do not sell speculation as an obvious win.
