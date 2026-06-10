@@ -64,19 +64,19 @@ Same pattern as Section 1, shifted +1 year. Application periods would fall in ~O
 | 2025-26 Window 2         | Oct 13–26, 2025                 | Confirmed (past)          | Same                                                                                   |
 | 2025-26 Window 3         | Apr 20–May 3, 2026              | Confirmed                 | Same                                                                                   |
 | Score report (Window 3)  | May 11, 2026                    | Confirmed                 | [ETS Scores](https://www.ets.org/gre/test-takers/subject-tests/scores/get-scores.html) |
-| 2026-27 windows          | ~Sep 2026, ~Oct 2026, ~Apr 2027 | Estimated (not published) | —                                                                                      |
-| Registration for 2026-27 | ~July 2026                      | Estimated                 | —                                                                                      |
+| 2026-27 windows          | ~Sep 2026, ~Oct 2026, ~Apr 2027 | Estimated (ETS had not posted 2026-27 dates as of 2026-06-10) | [ETS Schedule](https://www.ets.org/gre/test-takers/subject-tests/schedule.html)        |
+| Registration for 2026-27 | ~July 2026, via ETS account (`ereg.ets.org`) — NOT NEEA | **Pattern + channel VERIFIED 2026-06-10** — ETS page still lists 2025-26 only ("registration opens July"); live seat search (GRE Physics, Sep–Oct 2026, Beijing & New York) empty → not open anywhere yet, no early window missed | [ETS Schedule](https://www.ets.org/gre/test-takers/subject-tests/schedule.html)        |
 
 **Notes:**
 - Computer-delivered since Sep 2023, 2 hours duration
-- China registration via NEEA: https://gre-main.neea.cn/
+- **Registration channel (VERIFIED 2026-06-10):** Subject Test registers through the **ETS account** (`ereg.ets.org`) worldwide, **including mainland China** — NOT via NEEA. `gre-main.neea.cn` is General-Test-only (its 2025-11-21 batch notice covers 31 General dates for 2026, with no Subject Test in news/FAQ/intro). The NEEA prior-November batch model does NOT apply to the Subject Test — no early China window existed or was missed. At-home testing unavailable in mainland China.
 - Cost: **$175** worldwide (ETS official fee)
 - Retake: once every 14 days
 - ETS validity: 5 years. **UTokyo requirement: within 2 years of application start date** (stricter). VERIFIED — UTokyo admissions page
-- **Domestic seat scarcity:** Only **two test centers** in mainland China (Beijing, Shanghai) `[UNVERIFIED — single test-taker report, 2025]`. Based on test-taker reports, **only the October window reliably has domestic seats** — September and April availability is unconfirmed. Register immediately when the cycle opens (~Jul 2026). Verify on NEEA portal. See [[GRE_Physics_Prep]] for full logistics.
+- **Domestic seat scarcity:** Only **two test centers** in mainland China (Beijing, Shanghai) `[UNVERIFIED — single test-taker report, 2025]`. Based on test-taker reports, **only the October window reliably has domestic seats** — September and April availability is unconfirmed. Register immediately when the cycle opens (~Jul 2026) via the ETS account. Check live availability with the public ETS seat-search widget (no login: [ETS Schedule](https://www.ets.org/gre/test-takers/subject-tests/schedule.html)). See [[GRE_Physics_Prep]] for full logistics.
 
 > [!info] GRE Physics — targeting Sep/Oct 2026 window
-> Apr 2026 window skipped (decision 2026-03-09). Targeting **Sep/Oct 2026** window instead (dates estimated, not yet published by ETS). Scores from Sep/Oct 2026 arrive well before the now-verified Special Selection Application Period 2 (**Dec 7–22, 2026**). Registration for 2026-27 windows expected to open ~July 2026. China registration via NEEA portal (gre-main.neea.cn).
+> Apr 2026 window skipped (decision 2026-03-09). Targeting **Sep/Oct 2026** window instead (dates estimated, not yet published by ETS). Scores from Sep/Oct 2026 arrive well before the now-verified Special Selection Application Period 2 (**Dec 7–22, 2026**). Registration for 2026-27 windows expected to open ~July 2026 via the **ETS account** (`ereg.ets.org`) — NEEA does not handle Subject Tests (VERIFIED 2026-06-10; live ETS seat search empty as of that date, so nothing is open or filling yet and no early window was missed).
 
 ## 4. TOEFL iBT
 

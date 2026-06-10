@@ -49,7 +49,7 @@ Based on weight and common pitfalls:
 | Period | Activity |
 |--------|----------|
 | Now → Jun 2026 | Integrated study via [[Fundamental_Knowledge]] (covers CM, EM, QM, Thermo) |
-| Jul 2026 | Registration opens (2026-27 cycle) — **register immediately** for October window |
+| Jul 2026 | ETS registration opens (2026-27 cycle) — **register immediately** for October window. Channel + timing verified 2026-06-10 (see callout below) |
 | Jul–Sep 2026 | GRE-specific prep: practice tests, Specialized Topics review, Lab Methods review |
 | Sep/Oct 2026 | **Test day** |
 
@@ -58,14 +58,23 @@ Based on weight and common pitfalls:
 
 ## Registration Checklist
 
-- [ ] Monitor NEEA portal (`gre-main.neea.cn`) for 2026-27 cycle opening (~Jul 2026)
+> [!success] Registration channel resolved (VERIFIED 2026-06-10, live check)
+> - GRE **Subject** Test registration runs through your **ETS account** (`ereg.ets.org`) worldwide, **including mainland China** — NOT through NEEA. `gre-main.neea.cn` handles the **General** Test only: its 2025-11-21 batch notice ("2026年GRE报名有关安排", 31 General dates for all of 2026), FAQ, and exam intro contain zero Subject-Test content.
+> - The NEEA prior-November batch model therefore does **not** apply to the Subject Test — **no early China window was missed**.
+> - Live ETS public seat search (2026-06-10, no login needed, via [ETS Schedule](https://www.ets.org/gre/test-takers/subject-tests/schedule.html) widget): GRE Physics, Sep–Oct 2026 → no available dates in **Beijing** *and* **New York** → 2026-27 registration is not open anywhere yet, nothing is filling.
+> - ETS schedule page (fetched 2026-06-10) still lists only 2025-26 dates with "(Registration for the 2025-26 ... will open in July, 2025)" — 2026-27 dates not yet posted; ~Jul 2026 opening is the verified prior-year pattern.
+> - At-home testing is **not available in mainland China** (ETS schedule page) — center-based seats only.
+> - Corroborating secondary source: [新东方 GRE SUB 报名流程](https://liuxue.xdf.cn/blog/beijingqt/blog/2444818.shtml) — "和General GRE Test是相对独立的考试，但报名都同样在ETS官网操作" (ETS account → Register/Find Test Centers, Dates → GRE Subject Test → location → date → pay).
+
+- [ ] Monitor [ETS Subject Test schedule page](https://www.ets.org/gre/test-takers/subject-tests/schedule.html) (public seat-search widget, no login) for 2026-27 cycle opening (~Jul 2026) — do NOT monitor NEEA for Subject seats; it carries General Test only (verified 2026-06-10)
+- [ ] Ensure ETS account is ready before July (Subject registration uses `ereg.ets.org`, not the NEEA ID)
 - [ ] Register for **October window** immediately upon opening — domestic seats are extremely scarce
 - [ ] Confirm UTokyo score report recipient (code **7048**)
 - [ ] Download and print Confirmation Letter before test day
 - [ ] Verify score delivery after window closes (~8-11 days)
 
 > [!danger] October window priority
-> Mainland China has only **two test centers** (Beijing and Shanghai) `[UNVERIFIED — single test-taker report, 2025]`. Based on test-taker reports, **only the October window reliably has domestic seats** — September and April availability is unconfirmed. Do not count on a retake within the same cycle. Verify center list and seat availability on NEEA portal when the 2026-27 cycle opens.
+> Mainland China has only **two test centers** (Beijing and Shanghai) `[UNVERIFIED — single test-taker report, 2025]`. Based on test-taker reports, **only the October window reliably has domestic seats** — September and April availability is unconfirmed. Do not count on a retake within the same cycle. Verify center list and seat availability via the ETS public seat search ([schedule page](https://www.ets.org/gre/test-takers/subject-tests/schedule.html) widget) when the 2026-27 cycle opens.
 
 ## Exam Day Checklist (Beijing Center)
 
