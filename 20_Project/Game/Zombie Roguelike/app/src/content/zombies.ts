@@ -43,24 +43,24 @@ export const ZTYPES: Record<ZombieTypeId, ZombieArchetype> = {
   // Player must close the distance or burn corpses fast.
   boss_necro:    { hp: 13000, speed: 99, damage: 28, radius: 150, color:'#4a2d6b', eye:'#a8e34b', score: 6400, xp: 2800, touchCd: 600, minFloor: 2,
                    collisionDmg: 32, meleePower: 26, meleeCd: 3000, meleeRange: 240,
-                   raiseCd: 80000, raiseCount: 60, raiseRange: 7200, keepDist: 7200 },
+                   raiseCd: 4000, raiseCount: 3, raiseRange: 360, keepDist: 360 },
   // Berserker: single big zombie. No summons. Gains +20% speed and +20% damage
   // per 25% HP missing (max +60% at <25% HP). Burst-down or get ran down.
   boss_berserker:{ hp: 26000, speed: 126, damage: 36, radius: 168, color:'#a13a2a', eye:'#ffe066', score: 7200, xp: 3200, touchCd: 500, minFloor: 3,
                    collisionDmg: 48, meleePower: 55, meleeCd: 3000, meleeRange: 270,
-                   rageStep: 4.0, rageMaxStacks: 60, chargeRange: 220, chargeWindup: 320, chargeDur: 380, chargeCd: 3500, chargeSpdMul: 2.6, chargeDmgMul: 30,
+                   rageStep: 0.20, rageMaxStacks: 3, chargeRange: 220, chargeWindup: 320, chargeDur: 380, chargeCd: 3500, chargeSpdMul: 2.6, chargeDmgMul: 1.5,
                    // Slam: tight radial burst around the boss. Quick 0.5s
                    // telegraph, high damage, short cooldown — punishes hugging.
-                   slamCd: 104000, slamWindup: 10400, slamR: 4400, slamDmgMul: 36,
+                   slamCd: 5200, slamWindup: 520, slamR: 220, slamDmgMul: 1.8,
                    // Quake: field-wide shockwave centered on the player. Longer
                    // 1.1s telegraph with a ground-crack indicator, lower damage,
                    // long cooldown. Jumpable via amendment D i-frames.
-                   quakeCd: 210000, quakeWindup: 22000, quakeR: 3600, quakeDmgMul: 22 },
+                   quakeCd: 10500, quakeWindup: 1100, quakeR: 180, quakeDmgMul: 1.1 },
   // Spitter Queen: 5-shot fan of slightly-homing projectiles every ~3s. Slow
   // walk, demands constant lateral movement. Mid HP, ranged area control.
   boss_queen:    { hp: 19000, speed: 90, damage: 24, radius: 156, color:'#7bb540', eye:'#ffbd2e', score: 6800, xp: 3000, touchCd: 600, minFloor: 2,
                    collisionDmg: 28, meleePower: 30, meleeCd: 3000, meleeRange: 250,
-                   shootCd: 4000, shotCount: 100, shotSpread: 11, projSpeed: 5600, projHomeAccel: 2200, projHomeDur: 20, range: 10400 },
+                   shootCd: 4000, shotCount: 5, shotSpread: 0.55, projSpeed: 280, projHomeAccel: 110, projHomeDur: 1.0, range: 520 },
 };
 
 // All variant ids that should be treated as a "boss" (HP bar, room rules,
