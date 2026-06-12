@@ -2,9 +2,6 @@
 area: "[[Career]]"
 tags: [physics, institute, cas, imp, no-review]
 created: 2026-02-14
-last_reviewed:
-next_review: 2026-03-03
-review_interval: 0
 ---
 # Institute of Modern Physics
 

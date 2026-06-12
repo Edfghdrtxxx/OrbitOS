@@ -6,12 +6,6 @@ tags:
   - astrophysics
   - review/physics
 created: 2026-04-22
-last_reviewed:
-next_review: 2026-04-22
-review_interval: 0
-sr-due: 2026-04-24
-sr-interval: 1
-sr-ease: 230
 ---
 # Direct Capture vs Resonance
 

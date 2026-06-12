@@ -1,7 +1,4 @@
 ---
-last_reviewed:
-next_review: 2026-03-03
-review_interval: 0
 tags: [no-review]
 ---
 # WSL VHDX Compact (Shrink C: Usage)

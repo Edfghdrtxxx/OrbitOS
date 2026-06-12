@@ -6,12 +6,6 @@ tags:
   - relativistic-mechanics
   - review/physics
 created: 2026-05-21
-last_reviewed:
-next_review: 2026-05-21
-review_interval: 0
-sr-due: 2026-05-21
-sr-interval: 1
-sr-ease: 230
 ---
 # Relativistic Total Energy
 

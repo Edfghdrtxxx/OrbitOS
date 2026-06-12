@@ -2,9 +2,6 @@
 area: "[[Career]]"
 tags: [japan, immigration, post-grad, job-hunting, wiki, no-review]
 created: 2026-02-13
-last_reviewed:
-next_review: 2026-03-03
-review_interval: 0
 ---
 # Designated Activities for Job Hunting (Tokutei Katsudo)
 ## Definition

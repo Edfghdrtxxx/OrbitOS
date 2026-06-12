@@ -2,9 +2,6 @@
 area:
 tags: [AI, multi-agent, code-review, LLM-orchestration]
 created: 2026-04-17
-last_reviewed:
-next_review: 2026-04-18
-review_interval: 0
 ---
 # Verification Pooling
 

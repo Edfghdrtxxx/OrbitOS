@@ -2,9 +2,6 @@
 area: "[[Physics]]"
 tags: [nuclear-reactions, scattering, review/physics]
 created: 2026-03-07
-last_reviewed:
-next_review: 2026-03-07
-review_interval: 0
 ---
 # Differential Cross Section
 

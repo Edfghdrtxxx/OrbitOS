@@ -1,10 +1,7 @@
 ---
 area: "[[Physics]]"
-tags: [particle-physics, energy-loss, detector-physics]
+tags: [particle-physics, energy-loss, detector-physics, review/physics]
 created: 2026-03-04
-last_reviewed:
-next_review: 2026-03-04
-review_interval: 0
 ---
 # Bethe-Bloch Formula
 

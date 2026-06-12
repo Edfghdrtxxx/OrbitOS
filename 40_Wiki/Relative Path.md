@@ -2,9 +2,6 @@
 area: "[[Tech]]"
 tags: [coding, networking, paths, no-review]
 created: 2026-03-03
-last_reviewed:
-next_review: 2026-03-03
-review_interval: 0
 ---
 # Relative Path
 

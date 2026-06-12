@@ -5,9 +5,6 @@ tags:
   - nuclear-astrophysics
   - review/physics
 created: 2026-03-14
-last_reviewed:
-next_review: 2026-03-14
-review_interval: 0
 ---
 # Reaction Rate
 ## Schematics
