@@ -1,6 +1,10 @@
 ---
 area: "[[Physics]]"
-tags: [classical-mechanics, rotating-frames, kinematics, review/physics]
+tags:
+  - classical-mechanics
+  - rotating-frames
+  - kinematics
+  - review/physics
 created: 2026-06-12
 ---
 # Fictitious Forces
