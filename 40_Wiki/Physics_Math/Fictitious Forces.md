@@ -5,8 +5,6 @@ created: 2026-06-12
 ---
 # Fictitious Forces
 
-> [!important] All math expressions, equations, and formulas **must** use LaTeX notation (`$...$` inline, `$$...$$` display). Prefer the canonical academic / textbook form (full PDG-style expression, conventional symbols, standard correction terms) over simplified or pedagogical variants.
-
 ## Schematics
 
 ![[Fictitious_Forces_schematic.svg|1000]]
