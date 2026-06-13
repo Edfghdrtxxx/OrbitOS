@@ -12,3 +12,7 @@
 ### Lessons
 - Non-enumerated sections (e.g., "Thinking and Planning") that contain reusable working context must not be silently deleted. Migrate actionable insights into Notes before removing the section.
 
+## 2026-06-13
+### Lessons
+- `[x]` + no `#daily` → Remove is absolute. Don't re-add an identical `[ ]` copy under "add from Q1" — the missing `#daily` tag means the task was a one-off, and resurrecting it bypasses the `#daily` mechanism. "Add from Q1" is for genuinely new actions only.
+
