@@ -21,9 +21,9 @@ Self-check before sending any dispatch prompt: *"Am I telling the agent what to 
 For each unit from Phase 1, spawn a sub-agent via `Agent`:
 
 - **Point, don't summarize:** give file paths, the user's motivation, and hard constraints the agent couldn't infer — omit everything else.
-- **Parallelize where possible:** launch independent units in a single message; serialize dependent ones. For serialized dependencies, relay a concise hand-off pointer (paths + key findings) from agent N into agent N+1's prompt — never the full output. Keeps the dispatcher's context lean.
-- **Prefer dispatching over reading:** keep the dispatcher's context lean. A single small read is fine; dispatch an Explore agent for anything larger.
-- **Pick `subagent_type` when obvious:** Explore for broad codebase reads, Plan for design work, general-purpose otherwise. The type is a dispatcher-level routing choice — never prescribe the HOW inside the prompt itself.
+- **Parallelize where possible:** launch independent units in a single message; serialize dependent ones. Units that edit overlapping files count as dependent — dispatch them sequentially. For serialized dependencies, relay a concise hand-off pointer (paths + key findings) from agent N into agent N+1's prompt — never the full output. Keeps the dispatcher's context lean.
+- **Prefer dispatching over reading:** keep the dispatcher's context lean. A single small read is fine; dispatch a sub-agent for anything larger.
+- **Pick `subagent_type`:** default to general-purpose; use Explore/Plan only when the task genuinely needs their restricted toolset (user's standing preference — see CLAUDE.md). The type is a dispatcher-level routing choice — never prescribe the HOW inside the prompt itself.
 - **Handle failures actively:** retry a transient failure once; surface persistent failures in REPORT without auto-fixing.
 
 Permitted tools: `Agent`, `AskUserQuestion`, `Glob`, `Grep`, `ToolSearch`, `Skill`, `Read` (prefer dispatch; single small reads OK).
@@ -37,4 +37,4 @@ After all sub-agents complete, deliver a consolidated summary:
 
 ## Optional: REVIEW
 
-Triggered when the user signals they want review — **"with review"** is the canonical phrase, close variants qualify. After REPORT, dispatch reviewer agent(s) to audit all changes. Report the reviewer's findings. No auto-fix loop — surface issues for the user to decide.
+Triggered when the user signals they want review — **"with review"** is the canonical phrase, close variants qualify. After REPORT, dispatch reviewer agent(s) to audit all changes. Report the reviewer's findings. No auto-fix loop — surface issues for the user to decide. If the user then requests fixes, continue the original author agent via `SendMessage` (its context is intact) rather than briefing a cold agent.
