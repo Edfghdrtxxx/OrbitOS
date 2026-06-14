@@ -8,8 +8,6 @@ review_interval: 0
 ---
 # R-Squared (Coefficient of Determination)
 
-> [!important] All math expressions, equations, and formulas **must** use LaTeX notation (`$...$` inline, `$$...$$` display). Prefer the canonical academic / textbook form (full PDG-style expression, conventional symbols, standard correction terms) over simplified or pedagogical variants.
-
 ## Schematics
 
 ![[R-Squared_diagram.svg]]
