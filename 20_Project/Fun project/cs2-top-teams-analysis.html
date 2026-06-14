@@ -6,24 +6,25 @@
 <title>CS2 — Top Teams Performance Analysis</title>
 <style>
   :root{
-    --bg:#0a0e14; --bg2:#0f1620; --panel:#131c28; --panel2:#18222f;
-    --line:#22303f; --line2:#2c3d50;
-    --txt:#e6edf3; --muted:#8aa0b4; --dim:#5f7384;
-    --accent:#ff8c1a; --accent2:#19c2c2; --gold:#ffd24a;
-    --green:#37d67a; --red:#ff5d6c; --blue:#4aa8ff;
-    --rising:#37d67a; --stable:#4aa8ff; --declining:#ff5d6c;
-    --shadow:0 10px 30px rgba(0,0,0,.45);
+    --bg:#f6f3ec; --bg2:#eee9df; --panel:#ffffff; --panel2:#f5f1e9;
+    --line:#e4dfd4; --line2:#d6cfc0;
+    --txt:#262119; --muted:#6f6557; --dim:#938977;
+    --accent:#c14a2b; --accent2:#1d6b6b; --gold:#a9791b;
+    --green:#2e8b57; --red:#c0392b; --blue:#2f6fb0;
+    --rising:#2e8b57; --stable:#2f6fb0; --declining:#c0392b;
+    --shadow:0 8px 24px rgba(60,45,20,.08);
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
   body{
     background:
-      radial-gradient(1200px 600px at 80% -10%, rgba(255,140,26,.10), transparent 60%),
-      radial-gradient(900px 500px at -10% 10%, rgba(25,194,194,.08), transparent 55%),
+      radial-gradient(1200px 600px at 80% -10%, rgba(193,74,43,.05), transparent 60%),
+      radial-gradient(900px 500px at -10% 10%, rgba(29,107,107,.05), transparent 55%),
       var(--bg);
     color:var(--txt);
-    font-family:"Segoe UI",Roboto,Helvetica,Arial,system-ui,sans-serif;
-    line-height:1.55; font-size:15px;
+    font-family:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Times New Roman",serif;
+    line-height:1.6; font-size:16px;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
   }
   a{color:var(--accent2);text-decoration:none}
   a:hover{text-decoration:underline}
@@ -48,13 +49,15 @@
   h1 .cs{color:var(--accent)}
   .asof{color:var(--muted);font-size:13px;margin-bottom:14px}
   .asof b{color:var(--txt)}
-  .intro{color:#cfdcea;max-width:980px;margin:0 0 14px}
+  .intro{color:#3a352c;max-width:980px;margin:0 0 14px}
   .majorbox{
     margin-top:12px;border:1px solid var(--line2);border-left:3px solid var(--gold);
-    background:rgba(255,210,74,.05);border-radius:10px;padding:14px 16px;font-size:13.5px;color:#dbe6f0}
+    background:rgba(255,210,74,.05);border-radius:10px;padding:14px 16px;font-size:13.5px;color:#3a352c}
   .majorbox h3{margin:0 0 6px;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--gold)}
   .live{display:inline-block;margin-left:8px;font-size:11px;font-weight:700;color:#fff;
-    background:var(--red);padding:2px 8px;border-radius:20px;animation:pulse 1.8s infinite}
+    background:var(--red);padding:2px 8px 2px 7px;border-radius:20px;animation:pulse 1.8s infinite}
+  .live::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;
+    background:#fff;margin-right:5px;vertical-align:middle}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.55}}
 
   /* Stat strip */
@@ -100,14 +103,16 @@
     padding:14px 16px;border-bottom:1px solid var(--line2);cursor:pointer;user-select:none;white-space:nowrap;
     background:var(--bg2);position:sticky;top:0}
   table.rank th:hover{color:var(--txt)}
-  table.rank th .arw{color:var(--accent);font-size:10px;margin-left:4px}
+  table.rank th .arw{display:inline-block;width:0;height:0;margin-left:5px;vertical-align:middle}
+  table.rank th .arw.asc{border-left:4px solid transparent;border-right:4px solid transparent;border-bottom:6px solid var(--accent)}
+  table.rank th .arw.desc{border-left:4px solid transparent;border-right:4px solid transparent;border-top:6px solid var(--accent)}
   table.rank td{padding:13px 16px;border-bottom:1px solid var(--line);vertical-align:middle}
   table.rank tbody tr{cursor:pointer;transition:background .12s}
   table.rank tbody tr:hover{background:var(--panel2)}
   table.rank tbody tr:last-child td{border-bottom:none}
   .rankcell{display:flex;align-items:center;gap:10px}
   .rankno{font-weight:800;font-size:17px;width:30px;text-align:center;color:var(--txt)}
-  .rankno.top1{color:var(--gold)}.rankno.top2{color:#cfd8e3}.rankno.top3{color:#e0a060}
+  .rankno.top1{color:var(--gold)}.rankno.top2{color:#8a8270}.rankno.top3{color:#a86a2b}
   .tname{font-weight:700}
   .tname small{display:block;color:var(--dim);font-weight:400;font-size:11.5px;margin-top:1px}
   .region-pill{font-size:11.5px;color:var(--muted);background:var(--bg2);border:1px solid var(--line);
@@ -120,7 +125,10 @@
   .trend.rising{color:var(--rising);background:rgba(55,214,122,.12);border:1px solid rgba(55,214,122,.3)}
   .trend.stable{color:var(--stable);background:rgba(74,168,255,.12);border:1px solid rgba(74,168,255,.3)}
   .trend.declining{color:var(--declining);background:rgba(255,93,108,.12);border:1px solid rgba(255,93,108,.3)}
-  .trend .ic{font-size:11px}
+  .trend .ic{display:inline-block;width:0;height:0}
+  .trend.rising .ic{border-left:4px solid transparent;border-right:4px solid transparent;border-bottom:7px solid var(--rising)}
+  .trend.declining .ic{border-left:4px solid transparent;border-right:4px solid transparent;border-top:7px solid var(--declining)}
+  .trend.stable .ic{width:9px;height:2px;background:var(--stable)}
 
   /* Detail card */
   .detail-host{margin-top:18px}
@@ -160,7 +168,7 @@
   .rnick .iglflag{font-size:9px;color:#0a0e14;background:var(--gold);padding:1px 5px;border-radius:4px;margin-left:6px;font-weight:800;vertical-align:middle}
   .rrole{color:var(--muted);font-size:12px}
   .rbench{opacity:.55}
-  .rbench .rnick::after{content:" • bench/sub";font-size:10px;color:var(--dim);font-weight:400}
+  .rbench .rnick::after{content:" (bench/sub)";font-size:10px;color:var(--dim);font-weight:400}
 
   .timeline{list-style:none;margin:0;padding:0}
   .timeline li{position:relative;padding:0 0 14px 20px;border-left:1px solid var(--line2)}
@@ -177,7 +185,7 @@
   .kpbox{background:rgba(25,194,194,.06);border:1px solid rgba(25,194,194,.25);border-radius:12px;padding:14px}
   .kpbox .kpname{font-size:18px;font-weight:800;color:var(--accent2)}
   .kpbox .kprating{font-size:12px;color:var(--gold);margin:4px 0 8px;font-weight:600}
-  .kpbox .kpnote{font-size:12.5px;color:#cfdcea}
+  .kpbox .kpnote{font-size:12.5px;color:#3a352c}
 
   .chips{display:flex;flex-wrap:wrap;gap:7px}
   .chip{font-size:11.5px;padding:5px 10px;border-radius:7px;font-weight:600}
@@ -186,12 +194,13 @@
   .maplabel{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.06em;margin:0 0 6px}
 
   ul.sw{list-style:none;margin:0;padding:0}
-  ul.sw li{position:relative;padding:6px 0 6px 22px;font-size:13px;color:#cfdcea;border-bottom:1px solid rgba(34,48,63,.5)}
+  ul.sw li{position:relative;padding:6px 0 6px 22px;font-size:13px;color:#3a352c;border-bottom:1px solid rgba(34,48,63,.5)}
   ul.sw li:last-child{border-bottom:none}
-  ul.sw.str li::before{content:"▲";position:absolute;left:0;top:6px;color:var(--green);font-size:10px}
-  ul.sw.wk li::before{content:"▼";position:absolute;left:0;top:6px;color:var(--red);font-size:10px}
+  ul.sw li::before{content:"";position:absolute;left:0;top:11px;width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent}
+  ul.sw.str li::before{border-bottom:6px solid var(--green)}
+  ul.sw.wk li::before{border-top:6px solid var(--red)}
 
-  .summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px;font-size:13.5px;color:#dbe6f0}
+  .summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px;font-size:13.5px;color:#3a352c}
   .summary h4{margin-top:0}
   .caveat{margin-top:12px;font-size:12px;color:var(--gold);background:rgba(255,210,74,.06);
     border:1px solid rgba(255,210,74,.25);border-radius:9px;padding:10px 12px}
@@ -223,7 +232,7 @@
       adaptation are decisive, and Swiss-stage bracket positioning keeps the mid-table volatile.
     </p>
     <div class="majorbox">
-      <h3>Major Context <span class="live">● LIVE EVENT</span></h3>
+      <h3>Major Context <span class="live">LIVE EVENT</span></h3>
       <p style="margin:0">
         Most recent <b>completed</b> CS2 Major: <b>StarLadder Budapest Major 2025</b> (Budapest, Hungary; Nov 24 – Dec 14, 2025).
         Winner: <b>Team Vitality</b>, defeating <b>FaZe Clan 3–1</b> in the first-ever best-of-five Major grand final — making
@@ -260,10 +269,10 @@
   <section>
     <div class="sec-head">
       <h2><span>//</span> Top Teams Ranking</h2>
-      <span class="sub">Click any row to open the full team breakdown ↓</span>
+      <span class="sub">Click any row to open the full team breakdown.</span>
     </div>
     <div class="controls">
-      <input type="text" id="search" placeholder="Search team, player, region…" autocomplete="off">
+      <input type="text" id="search" placeholder="Search team, player, region..." autocomplete="off">
       <select id="regionFilter"><option value="">All regions</option></select>
       <select id="trendFilter">
         <option value="">All trends</option>
@@ -437,7 +446,7 @@ const TEAMS = [
   {event:"PGL Cluj-Napoca 2026",placement:"5th-8th (Vitality won the event)",date:"Feb 14-22, 2026"},
   {event:"IEM Kraków 2026",placement:"2nd (lost grand final 3-1 to Vitality)",date:"Feb 8, 2026"},
   {event:"BLAST Rivals Fall 2025",placement:"1st (Champions)",date:"Nov 16, 2025",win:true}],
- keyPlayer:{nick:"molodoy",rating:"KSCERATO/molodoy held form; YEKINDAR slipped 1.14→~1.07; yuurih T-side 1.12→0.87",
+ keyPlayer:{nick:"molodoy",rating:"KSCERATO/molodoy held form; YEKINDAR slipped 1.14 to ~1.07; yuurih T-side 1.12 to 0.87",
   note:"Kazakh AWPer who emerged in under a year as one of the world's most dangerous young snipers; he and KSCERATO 'largely maintained their standards' through FURIA's 2026 dip. At Cologne, YEKINDAR surged to his strongest form all year, but molodoy's aggressive AWPing remains FURIA's most reliable engine and the foundation FalleN is building around for his final year."},
  mapPool:{strong:["Nuke","Dust2","Inferno"],weak:["Overpass","Ancient"]},
  strengths:[
@@ -445,7 +454,7 @@ const TEAMS = [
   "Top-tier AWP firepower in molodoy plus YEKINDAR's aggressive entry presence, giving high individual ceilings that can carry close maps.",
   "Veteran IGL leadership under FalleN with a deep comfort nucleus (Nuke/Dust2/Inferno) and a peaking Cologne run (3-0 group, two 13-6 wins over BetBoom)."],
  weaknesses:[
-  "Individual form regressions in 2026: yuurih's T-side rating cratered (1.12→0.87) and YEKINDAR's opening-duel success fell sharply, dragging T-side WR 49.6%→44.2%.",
+  "Individual form regressions in 2026: yuurih's T-side rating cratered (1.12 to 0.87) and YEKINDAR's opening-duel success fell sharply, dragging T-side WR 49.6% to 44.2%.",
   "Narrowed map-pool flexibility after the de_train removal and erosion of Overpass, reducing veto leverage against top opponents.",
   "Inconsistency through mid-2026 — a string of 4th-8th finishes before Cologne, and a looming transition with FalleN retiring at year's end."],
  summary:"FURIA enter mid-June 2026 ranked ~#5 and, critically, look revitalized: they stormed the IEM Cologne Major group stage 3-0 with \"the best they've looked in months,\" and YEKINDAR re-found his peak just as the biggest event of the year began. That run masks a rocky 2026 in which yuurih's and YEKINDAR's individual slumps and a thinned map pool dropped them to a cluster of 4th-8th finishes after a hot 2025-early-2026 stretch (Kraków final). The fundamentals — molodoy's AWP, the Brazilian core's chemistry, FalleN's leadership — remain intact, so the trajectory hinges on whether the Cologne resurgence is a genuine return to contention or a spike before FalleN's planned end-of-2026 retirement forces a rebuild.",
@@ -600,7 +609,7 @@ const TEAMS = [
 const $ = (s,ctx=document)=>ctx.querySelector(s);
 const $$ = (s,ctx=document)=>[...ctx.querySelectorAll(s)];
 const esc = s => String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const trendIcon = t => t==='rising'?'▲':t==='declining'?'▼':'▬';
+const trendIcon = t => '';
 
 /* ---------- STAT STRIP ---------- */
 (function(){
@@ -673,8 +682,8 @@ function render(){
   $$('th[data-key]').forEach(th=>{
     th.querySelector('.arw')?.remove();
     if(th.dataset.key===state.sortKey){
-      const a=document.createElement('span'); a.className='arw';
-      a.textContent = state.sortDir===1?'▲':'▼'; th.appendChild(a);
+      const a=document.createElement('span'); a.className='arw '+(state.sortDir===1?'asc':'desc');
+      th.appendChild(a);
     }
   });
 
@@ -806,7 +815,9 @@ $('#resetBtn').addEventListener('click',()=>{
 render();
 
 /* ---------- CHARTS (Chart.js with graceful fallback) ---------- */
+let chartsRendered = false;
 function buildFallbacks(){
+  if(chartsRendered) return; chartsRendered = true;
   // Ranking bar fallback
   const rf = $('#rankFallback');
   const maxRank = Math.max(...TEAMS.map(t=>t.rank));
@@ -837,9 +848,11 @@ function buildFallbacks(){
 
 function initCharts(){
   if(typeof Chart==='undefined'){ buildFallbacks(); return; }
-  Chart.defaults.color = '#8aa0b4';
-  Chart.defaults.font.family = "Segoe UI, Roboto, sans-serif";
-  Chart.defaults.borderColor = 'rgba(34,48,63,.7)';
+  if(chartsRendered) return; chartsRendered = true;
+  $('#rankFallback').innerHTML=''; $('#regionFallback').innerHTML='';
+  Chart.defaults.color = '#6f6557';
+  Chart.defaults.font.family = "'Iowan Old Style', Georgia, 'Times New Roman', serif";
+  Chart.defaults.borderColor = 'rgba(0,0,0,.08)';
 
   const trendColor = t => t==='rising'?'#37d67a':t==='declining'?'#ff5d6c':'#4aa8ff';
 
@@ -867,7 +880,7 @@ function initCharts(){
         }}
       },
       scales:{
-        x:{ticks:{callback:v=>'#'+((maxR+1)-v)},title:{display:true,text:'Higher = better rank',color:'#5f7384'},grid:{color:'rgba(34,48,63,.5)'}},
+        x:{ticks:{callback:v=>'#'+((maxR+1)-v)},title:{display:true,text:'Higher = better rank',color:'#938977'},grid:{color:'rgba(0,0,0,.07)'}},
         y:{grid:{display:false}}
       },
       onClick:(e,els)=>{ if(els.length){ selectTeam(sorted[els[0].index].name); } }
@@ -883,7 +896,7 @@ function initCharts(){
     type:'doughnut',
     data:{ labels, datasets:[{ data:labels.map(l=>counts[l]),
       backgroundColor:labels.map((_,i)=>palette[i%palette.length]),
-      borderColor:'#0f1620', borderWidth:2 }] },
+      borderColor:'#ffffff', borderWidth:2 }] },
     options:{
       responsive:true, maintainAspectRatio:false, cutout:'58%',
       plugins:{
