@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CS2 â€” Top Teams Performance Analysis</title>
+<title>CS2 — Top Teams Performance Analysis</title>
 <style>
   :root{
     --bg:#0a0e14; --bg2:#0f1620; --panel:#131c28; --panel2:#18222f;
@@ -160,7 +160,7 @@
   .rnick .iglflag{font-size:9px;color:#0a0e14;background:var(--gold);padding:1px 5px;border-radius:4px;margin-left:6px;font-weight:800;vertical-align:middle}
   .rrole{color:var(--muted);font-size:12px}
   .rbench{opacity:.55}
-  .rbench .rnick::after{content:" â€¢ bench/sub";font-size:10px;color:var(--dim);font-weight:400}
+  .rbench .rnick::after{content:" • bench/sub";font-size:10px;color:var(--dim);font-weight:400}
 
   .timeline{list-style:none;margin:0;padding:0}
   .timeline li{position:relative;padding:0 0 14px 20px;border-left:1px solid var(--line2)}
@@ -188,8 +188,8 @@
   ul.sw{list-style:none;margin:0;padding:0}
   ul.sw li{position:relative;padding:6px 0 6px 22px;font-size:13px;color:#cfdcea;border-bottom:1px solid rgba(34,48,63,.5)}
   ul.sw li:last-child{border-bottom:none}
-  ul.sw.str li::before{content:"â–²";position:absolute;left:0;top:6px;color:var(--green);font-size:10px}
-  ul.sw.wk li::before{content:"â–¼";position:absolute;left:0;top:6px;color:var(--red);font-size:10px}
+  ul.sw.str li::before{content:"▲";position:absolute;left:0;top:6px;color:var(--green);font-size:10px}
+  ul.sw.wk li::before{content:"▼";position:absolute;left:0;top:6px;color:var(--red);font-size:10px}
 
   .summary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px;font-size:13.5px;color:#dbe6f0}
   .summary h4{margin-top:0}
@@ -212,9 +212,9 @@
 <div class="wrap">
 
   <header class="hero">
-    <span class="kick">HLTV World Ranking Â· Esports Intelligence</span>
-    <h1><span class="cs">CS2</span> â€” Top Teams Performance Analysis</h1>
-    <div class="asof">Data as of <b>2026-06-09</b> Â· HLTV World Ranking update for the week of June 9, 2026 Â· reflects results through early June ahead of the IEM Cologne Major playoffs.</div>
+    <span class="kick">HLTV World Ranking · Esports Intelligence</span>
+    <h1><span class="cs">CS2</span> — Top Teams Performance Analysis</h1>
+    <div class="asof">Data as of <b>2026-06-09</b> · HLTV World Ranking update for the week of June 9, 2026 · reflects results through early June ahead of the IEM Cologne Major playoffs.</div>
     <p class="intro">
       The Counter-Strike 2 landscape remains top-heavy. <b>Team Vitality</b>, led by the peerless ZywOo, sit clearly atop
       the world rankings with a commanding points gap to the field. A chasing pack of <b>Spirit</b> (donk), <b>NaVi</b>,
@@ -223,13 +223,13 @@
       adaptation are decisive, and Swiss-stage bracket positioning keeps the mid-table volatile.
     </p>
     <div class="majorbox">
-      <h3>Major Context <span class="live">â— LIVE EVENT</span></h3>
+      <h3>Major Context <span class="live">● LIVE EVENT</span></h3>
       <p style="margin:0">
-        Most recent <b>completed</b> CS2 Major: <b>StarLadder Budapest Major 2025</b> (Budapest, Hungary; Nov 24 â€“ Dec 14, 2025).
-        Winner: <b>Team Vitality</b>, defeating <b>FaZe Clan 3â€“1</b> in the first-ever best-of-five Major grand final â€” making
+        Most recent <b>completed</b> CS2 Major: <b>StarLadder Budapest Major 2025</b> (Budapest, Hungary; Nov 24 – Dec 14, 2025).
+        Winner: <b>Team Vitality</b>, defeating <b>FaZe Clan 3–1</b> in the first-ever best-of-five Major grand final — making
         Vitality the first team to win back-to-back Majors since Astralis in 2019. Currently <b>ongoing</b>: the
-        <b>IEM Cologne Major 2026</b> (Cologne, Germany; $1.25M, 32 teams, June 2â€“21). Playoffs begin <b>June 18</b> and the
-        champion is crowned <b>June 21</b> â€” not yet decided as of June 14. Vitality entered as heavy favorites.
+        <b>IEM Cologne Major 2026</b> (Cologne, Germany; $1.25M, 32 teams, June 2–21). Playoffs begin <b>June 18</b> and the
+        champion is crowned <b>June 21</b> — not yet decided as of June 14. Vitality entered as heavy favorites.
       </p>
     </div>
   </header>
@@ -260,10 +260,10 @@
   <section>
     <div class="sec-head">
       <h2><span>//</span> Top Teams Ranking</h2>
-      <span class="sub">Click any row to open the full team breakdown â†“</span>
+      <span class="sub">Click any row to open the full team breakdown ↓</span>
     </div>
     <div class="controls">
-      <input type="text" id="search" placeholder="Search team, player, regionâ€¦" autocomplete="off">
+      <input type="text" id="search" placeholder="Search team, player, region…" autocomplete="off">
       <select id="regionFilter"><option value="">All regions</option></select>
       <select id="trendFilter">
         <option value="">All trends</option>
@@ -295,7 +295,7 @@
 
   <footer>
     <p><b>Generated 2026-06-14.</b> Built from an HLTV World Ranking snapshot dated 2026-06-09. Counter-Strike rankings,
-    rosters and competitive form are <b>highly volatile</b> â€” they shift week to week with patches, roster moves and the
+    rosters and competitive form are <b>highly volatile</b> — they shift week to week with patches, roster moves and the
     in-progress IEM Cologne Major 2026, whose champion is not yet decided. Some entries carry fact-check "data caveats"
     where source reporting diverged; corrections are reflected inline. Figures and ratings are point-in-time and may be
     superseded. Not affiliated with HLTV, ESL/IEM, or any team.</p>
@@ -309,7 +309,7 @@ const META = {
 };
 const TEAMS = [
 {name:"Team Vitality",rank:1,region:"Europe (France-based, EU/intl)",regionGroup:"Europe",
- igl:"apEX",coach:"XTQZZZ (RÃ©my Quoniam, France)",trend:"stable",
+ igl:"apEX",coach:"XTQZZZ (Rémy Quoniam, France)",trend:"stable",
  roster:[
   {nick:"apEX",realName:"Dan Madesclaire",country:"France",role:"In-Game Leader (IGL) / Entry support"},
   {nick:"ZywOo",realName:"Mathieu Herbaut",country:"France",role:"AWPer / Star player"},
@@ -317,24 +317,24 @@ const TEAMS = [
   {nick:"flameZ",realName:"Shahar Shushan",country:"Israel",role:"Rifler / Entry"},
   {nick:"mezii",realName:"William Merriman",country:"United Kingdom",role:"Rifler / Support"}],
  recentResults:[
-  {event:"IEM Cologne Major 2026 (Stage 3 / Swiss)",placement:"In progress â€” 2-1; beat MOUZ 2-1, lost 1-2 to 9z, reverse-swept FUT",date:"Jun 11-15, 2026",live:true},
+  {event:"IEM Cologne Major 2026 (Stage 3 / Swiss)",placement:"In progress — 2-1; beat MOUZ 2-1, lost 1-2 to 9z, reverse-swept FUT",date:"Jun 11-15, 2026",live:true},
   {event:"IEM Rio 2026",placement:"1st (ZywOo MVP, 31st career MVP)",date:"2026",win:true},
   {event:"PGL Cluj-Napoca 2026",placement:"1st (won all 6 matches; ZywOo 30th MVP)",date:"2026",win:true},
-  {event:"IEM KrakÃ³w 2026",placement:"1st (def. FURIA 3-1; ZywOo career-best 1.59)",date:"Feb 8, 2026",win:true},
+  {event:"IEM Kraków 2026",placement:"1st (def. FURIA 3-1; ZywOo career-best 1.59)",date:"Feb 8, 2026",win:true},
   {event:"StarLadder Budapest Major 2025",placement:"1st (def. FaZe Clan 3-1)",date:"Dec 14, 2025",win:true},
   {event:"BLAST.tv Austin Major 2025",placement:"1st (def. The MongolZ 2-1)",date:"Jun 22, 2025",win:true}],
- keyPlayer:{nick:"ZywOo",rating:"HLTV #1 (2026) Â· KrakÃ³w career-best 1.59 Big Event Â· 31 career MVPs",
-  note:"Mathieu 'ZywOo' Herbaut is in arguably the best form of his career, stacking MVPs at IEM KrakÃ³w, PGL Cluj-Napoca and IEM Rio in 2026 and anchoring Vitality as the clear best AWPer and best overall player in the world. He remains the team's primary win condition and the benchmark every opponent must scheme around."},
+ keyPlayer:{nick:"ZywOo",rating:"HLTV #1 (2026) · Kraków career-best 1.59 Big Event · 31 career MVPs",
+  note:"Mathieu 'ZywOo' Herbaut is in arguably the best form of his career, stacking MVPs at IEM Kraków, PGL Cluj-Napoca and IEM Rio in 2026 and anchoring Vitality as the clear best AWPer and best overall player in the world. He remains the team's primary win condition and the benchmark every opponent must scheme around."},
  mapPool:{strong:["Dust2 (~92% WR)","Inferno (~80% WR)","Mirage","Nuke"],weak:["Anubis (~63% WR)"]},
  strengths:[
-  "World's best individual player in ZywOo â€” a hyper-consistent AWPer with the #1 HLTV ranking and an all-time-record MVP tally far beyond s1mple.",
+  "World's best individual player in ZywOo — a hyper-consistent AWPer with the #1 HLTV ranking and an all-time-record MVP tally far beyond s1mple.",
   "Elite, structured firepower across the lineup: ropz, flameZ and mezii are all top-tier riflers, so opponents cannot key solely on ZywOo.",
   "Veteran tactical backbone from IGL apEX and coach XTQZZZ, turning star talent into a disciplined system with proven big-final composure (incl. reverse-sweep resilience)."],
  weaknesses:[
-  "Vulnerable to high-aggression, unpredictable underdogs in best-of-threes â€” exposed by the shock 1-2 loss to 9z at the Cologne Major.",
+  "Vulnerable to high-aggression, unpredictable underdogs in best-of-threes — exposed by the shock 1-2 loss to 9z at the Cologne Major.",
   "Map-pool depth tails off: dominant on Dust2/Inferno but markedly weaker on Anubis (~63%), a clear ban/pick target.",
-  "Heavy reliance on ZywOo's output â€” when he is contained or the rifle core has an off-series, the margin shrinks."],
- summary:"Vitality remain the undisputed world #1, sitting on the maximum 1,000 HLTV points and a 2026 trophy run (IEM KrakÃ³w, PGL Cluj-Napoca, IEM Rio) built around a peak-form ZywOo and one of the deepest rifle cores in Counter-Strike. They are grinding through IEM Cologne Major 2026 Stage 3 at 2-1: a dominant win over MOUZ but a genuinely shocking 1-2 loss to South American underdog 9z, a rare blemish on an otherwise era-defining stretch. The takeaway is a team still the clear favorite at any event, whose one exploitable seam â€” susceptibility to chaotic, well-prepared underdogs and a thinner Anubis â€” keeps them just short of true invincibility. Verdict: stable at the very top, with a Major title firmly within reach.",
+  "Heavy reliance on ZywOo's output — when he is contained or the rifle core has an off-series, the margin shrinks."],
+ summary:"Vitality remain the undisputed world #1, sitting on the maximum 1,000 HLTV points and a 2026 trophy run (IEM Kraków, PGL Cluj-Napoca, IEM Rio) built around a peak-form ZywOo and one of the deepest rifle cores in Counter-Strike. They are grinding through IEM Cologne Major 2026 Stage 3 at 2-1: a dominant win over MOUZ but a genuinely shocking 1-2 loss to South American underdog 9z, a rare blemish on an otherwise era-defining stretch. The takeaway is a team still the clear favorite at any event, whose one exploitable seam — susceptibility to chaotic, well-prepared underdogs and a thinner Anubis — keeps them just short of true invincibility. Verdict: stable at the very top, with a Major title firmly within reach.",
  caveat:null},
 
 {name:"Natus Vincere (NAVI)",rank:2,region:"Europe / CIS (Ukraine-based)",regionGroup:"Europe / CIS",
@@ -349,21 +349,21 @@ const TEAMS = [
  keyPlayer:{nick:"w0nderful",rating:"~1.31 HLTV (IEM Atlanta 2026; 1.36 playoffs, 1.45 grand final)",
   note:"Ukrainian AWPer and the engine of the lineup. Won his first career HLTV MVP at IEM Atlanta 2026, peaking with a +26 K/D in the 3-0 final vs GamerLegion. Currently NAVI's clearest world-class threat."},
  recentResults:[
-  {event:"IEM Cologne Major 2026 (Stage 3)",placement:"In progress â€” opened 0-2 loss to Team Spirit",date:"June 2026",live:true},
+  {event:"IEM Cologne Major 2026 (Stage 3)",placement:"In progress — opened 0-2 loss to Team Spirit",date:"June 2026",live:true},
   {event:"IEM Atlanta 2026",placement:"1st (Champions, 3-0 vs GamerLegion)",date:"May 2026",win:true},
   {event:"BLAST Rivals Spring 2026",placement:"2nd (runner-up, 0-3 to Vitality in grand final)",date:"May 2026"},
   {event:"ESL Pro League Season 23",placement:"1st (Champions, 3-1 vs Aurora)",date:"2026",win:true}],
  mapPool:{strong:["Nuke (~80% recent WR)","Ancient","Dust2","Inferno","Mirage"],weak:["Overpass (frequent ban)","Anubis (recent CT collapse vs Spirit)"]},
  strengths:[
   "Elite AWP anchor in w0nderful, in career-best form (1.31 rating, first-ever HLTV MVP at IEM Atlanta 2026 incl. 1.45 in the grand final).",
-  "Resilient on opponents' map picks â€” top-2 among elite teams at ~68% win rate on enemy-picked maps in 2026, so not veto-dependent.",
+  "Resilient on opponents' map picks — top-2 among elite teams at ~68% win rate on enemy-picked maps in 2026, so not veto-dependent.",
   "Structured, championship-level system under Aleksib and B1ad3: two 2026 titles (ESL Pro League S23 + IEM Atlanta), with proven big-stage clutch (beat #1 Vitality en route to Atlanta)."],
  weaknesses:[
-  "Still chasing Vitality for #1 â€” lost convincingly (0-3) to them in the BLAST Rivals grand final, showing a ceiling gap.",
+  "Still chasing Vitality for #1 — lost convincingly (0-3) to them in the BLAST Rivals grand final, showing a ceiling gap.",
   "Rough Cologne Major start (0-2 to Spirit, blown CT comeback on Anubis) exposing vulnerability when structured maps are denied.",
   "Firepower can over-rely on w0nderful; when the star AWP is contained, secondary riflers (makazze/iM) are less consistent at carrying."],
  summary:"NAVI sit firmly at HLTV world #2 (711 points, June 2026), the clear best-of-the-rest behind Vitality, with two trophies already this year (ESL Pro League S23 and IEM Atlanta) and a career-defining MVP run from AWPer w0nderful. The Aleksib-led, B1ad3-coached system is structurally sound and resilient even on opponents' maps, but a 0-3 grand-final loss to Vitality at BLAST Rivals and a stumbling 0-2 opener to Spirit at the Cologne Major underline that the gap to #1 and their floor on off-meta maps remain real questions. A title contender at every event, but not yet the favorite.",
- caveat:"BLAST Rivals Spring 2026 is corrected here: the 0-3 to Vitality was the GRAND FINAL â€” NAVI finished 2nd (runner-up), not a vague playoffs exit. ESL Pro League S23 final was 3-1 vs Aurora (not GamerLegion)."},
+ caveat:"BLAST Rivals Spring 2026 is corrected here: the 0-3 to Vitality was the GRAND FINAL — NAVI finished 2nd (runner-up), not a vague playoffs exit. ESL Pro League S23 final was 3-1 vs Aurora (not GamerLegion)."},
 
 {name:"Team Spirit",rank:3,region:"CIS (Russia-based org)",regionGroup:"CIS",
  igl:"magixx",coach:"hally (Sergey Shavayev), with S0tF1k as strat coach",trend:"rising",
@@ -373,7 +373,7 @@ const TEAMS = [
   {nick:"magixx",realName:"Boris Vorobyev",country:"Russia",role:"Rifler / IGL"},
   {nick:"zont1x",realName:"Myroslav Plakhotia",country:"Ukraine",role:"Rifler / Support"},
   {nick:"tN1R",realName:"Andrey Tatarinovich",country:"Belarus",role:"Rifler"}],
- keyPlayer:{nick:"donk",rating:"1.61 (PGL Astana 2026, MVP) Â· 2.27 over 4 maps at Cologne Major Stage 2",
+ keyPlayer:{nick:"donk",rating:"1.61 (PGL Astana 2026, MVP) · 2.27 over 4 maps at Cologne Major Stage 2",
   note:"19-year-old rifler/entry, widely considered the best individual talent in CS2. Won his 11th career MVP at PGL Astana 2026, surpassing NiKo and GeT_RiGhT as the most-awarded rifler in CS history. His Astana 1.61 is the second-highest rating ever by an MVP at a CS2 Big Event."},
  recentResults:[
   {event:"IEM Cologne Major 2026",placement:"Qualified for playoffs (3-0 Stage 3 Swiss: beat NAVI, Aurora, 9z). Playoffs Jun 18-21.",date:"Jun 2026",live:true},
@@ -390,8 +390,8 @@ const TEAMS = [
  weaknesses:[
   "IGL inexperience risk: magixx is still relatively new as the primary caller; the ceiling can hinge on his mid-round calling vs the very best tactical sides in clutch playoff series.",
   "Over-reliance on donk: when he is contained, the team has at times looked beatable, making star-shutdown a viable counter-strategy.",
-  "Map-pool soft spot on Anubis â€” donk himself has criticized it, and it remains their least comfortable active-duty pick and an exploitable veto target."],
- summary:"Team Spirit enter mid-June 2026 as a genuine title favorite at every top event, sitting at world No. 3 on the back of a dominant PGL Astana 2026 win and a flawless Swiss run into the IEM Cologne Major 2026 playoffs. The engine is donk, in career-best form (11th MVP at Astana, a record for a rifler) alongside the rock-solid AWPing of sh1ro. The 2026 rebuild around magixx's IGL'ing has clearly paid off, and the only real questions are whether magixx's leadership holds under playoff pressure and whether opponents can neutralize donk â€” if not, Spirit are arguably the most dangerous team in the world right now.",
+  "Map-pool soft spot on Anubis — donk himself has criticized it, and it remains their least comfortable active-duty pick and an exploitable veto target."],
+ summary:"Team Spirit enter mid-June 2026 as a genuine title favorite at every top event, sitting at world No. 3 on the back of a dominant PGL Astana 2026 win and a flawless Swiss run into the IEM Cologne Major 2026 playoffs. The engine is donk, in career-best form (11th MVP at Astana, a record for a rifler) alongside the rock-solid AWPing of sh1ro. The 2026 rebuild around magixx's IGL'ing has clearly paid off, and the only real questions are whether magixx's leadership holds under playoff pressure and whether opponents can neutralize donk — if not, Spirit are arguably the most dangerous team in the world right now.",
  caveat:"Cologne Major status corrected: 3-0 Stage 3 Swiss qualification is confirmed, but the playoffs (Lanxess Arena) run June 18-21 and have NOT started as of June 14. PGL Astana 2026 prize figure ($1.6M) is unverified."},
 
 {name:"Falcons",rank:4,region:"Middle East / International (Saudi org, EU roster)",regionGroup:"Middle East / Intl",
@@ -403,23 +403,23 @@ const TEAMS = [
   {nick:"TeSeS",realName:"Rene Stensig Madsen",country:"Denmark",role:"Support / Entry"},
   {nick:"kyousuke",realName:"Maksim Lukin",country:"Russia",role:"Rifler / Entry fragger"}],
  recentResults:[
-  {event:"IEM Cologne Major 2026 (Stage 3, Swiss)",placement:"Ongoing â€” 2-1 (beat G2 and Monte, lost to BetBoom)",date:"Jun 2026",live:true},
+  {event:"IEM Cologne Major 2026 (Stage 3, Swiss)",placement:"Ongoing — 2-1 (beat G2 and Monte, lost to BetBoom)",date:"Jun 2026",live:true},
   {event:"CS Asia Championships (CAC) 2026",placement:"2nd (lost grand final to Legacy)",date:"May 2026"},
   {event:"IEM Rio 2026",placement:"3rd (beat Vitality in UB, lost in playoffs)",date:"Apr 2026"},
   {event:"BLAST Bounty Winter 2026 (S1)",placement:"2nd",date:"Feb 2026"},
-  {event:"IEM KrakÃ³w 2026",placement:"7th-8th",date:"Q1 2026"}],
+  {event:"IEM Kraków 2026",placement:"7th-8th",date:"Q1 2026"}],
  keyPlayer:{nick:"m0NESY",rating:"~1.48 avg at IEM Rio 2026 (topped event over ZywOo & donk)",
-  note:"World-class AWPer and the clear focal point of the team. Consistently a top-3 player at every event he attends and the highest-impact piece on Falcons. His individual form is elite and not the problem â€” the team's inability to close out finals is the recurring theme."},
+  note:"World-class AWPer and the clear focal point of the team. Consistently a top-3 player at every event he attends and the highest-impact piece on Falcons. His individual form is elite and not the problem — the team's inability to close out finals is the recurring theme."},
  mapPool:{strong:["Ancient","Inferno","Mirage"],weak:["Overpass (perma-ban)","Anubis (newer to pool since Jan 2026)"]},
  strengths:[
-  "Arguably the deepest individual firepower in CS2: m0NESY (elite AWP) plus NiKo, with kyousuke a high-ceiling young rifler â€” they can out-aim almost any opponent.",
-  "Veteran, proven IGL in karrigan (signed Apr 2026) reuniting with NiKo and ex-Astralis coach zonic â€” a structured tactical brain over raw talent.",
+  "Arguably the deepest individual firepower in CS2: m0NESY (elite AWP) plus NiKo, with kyousuke a high-ceiling young rifler — they can out-aim almost any opponent.",
+  "Veteran, proven IGL in karrigan (signed Apr 2026) reuniting with NiKo and ex-Astralis coach zonic — a structured tactical brain over raw talent.",
   "Reliable map-pool depth around Ancient/Inferno/Mirage and consistent deep runs to finals and semis at nearly every S-tier event."],
  weaknesses:[
-  "Chronic inability to win grand finals â€” roughly seven consecutive S-tier final losses since the m0NESY era, a clear conversion/clutch problem.",
+  "Chronic inability to win grand finals — roughly seven consecutive S-tier final losses since the m0NESY era, a clear conversion/clutch problem.",
   "Roster still settling: karrigan only joined in April 2026, so the system and role distribution are not yet fully bedded in under pressure.",
   "Vulnerable to upsets in BO1/Swiss formats (e.g. the BetBoom loss at Cologne), suggesting inconsistency when they can't course-correct over a series."],
- summary:"Falcons sit at world #4 with one of the most talented rosters in CS2 â€” m0NESY anchoring an AWP-led core alongside NiKo, now structured by veteran IGL karrigan and coach zonic after the April 2026 reshuffle. They reach the latter stages of virtually every tournament, but their defining problem is a brutal run of roughly seven straight S-tier grand-final losses (most recently to Legacy at CAC 2026), framing them as the perennial \"almost-team.\" The karrigan signing was the front office's bet to finally convert talent into trophies; the new system is still settling, so they are stable-to-trending-up, with their Cologne Major run (2-1 in Stage 3) the live test of whether the curse breaks.",
+ summary:"Falcons sit at world #4 with one of the most talented rosters in CS2 — m0NESY anchoring an AWP-led core alongside NiKo, now structured by veteran IGL karrigan and coach zonic after the April 2026 reshuffle. They reach the latter stages of virtually every tournament, but their defining problem is a brutal run of roughly seven straight S-tier grand-final losses (most recently to Legacy at CAC 2026), framing them as the perennial \"almost-team.\" The karrigan signing was the front office's bet to finally convert talent into trophies; the new system is still settling, so they are stable-to-trending-up, with their Cologne Major run (2-1 in Stage 3) the live test of whether the curse breaks.",
  caveat:null},
 
 {name:"FURIA",rank:5,region:"Americas (Brazil)",regionGroup:"Americas",
@@ -428,55 +428,55 @@ const TEAMS = [
   {nick:"FalleN",realName:"Gabriel Toledo",country:"Brazil",role:"IGL / Rifling anchor (ex-AWPer; retiring end of 2026)"},
   {nick:"KSCERATO",realName:"Kaike Cerato",country:"Brazil",role:"Rifler / Star firepower"},
   {nick:"yuurih",realName:"Yuri Boian",country:"Brazil",role:"Rifler / Support-star"},
-  {nick:"YEKINDAR",realName:"Mareks GaÄ¼inskis",country:"Latvia",role:"Entry fragger / Lurker"},
+  {nick:"YEKINDAR",realName:"Mareks Gaļinskis",country:"Latvia",role:"Entry fragger / Lurker"},
   {nick:"molodoy",realName:"Danil Golubenko",country:"Kazakhstan",role:"Primary AWPer"}],
  recentResults:[
   {event:"IEM Cologne Major 2026 (Stage 3 / playoffs)",placement:"Qualified for playoffs via 3-0 bracket (ongoing)",date:"Jun 13, 2026",live:true},
   {event:"PGL Astana 2026",placement:"5th-8th (QF exit vs Falcons 1-2)",date:"May 2026"},
   {event:"IEM Rio 2026",placement:"4th",date:"Apr 2026"},
   {event:"PGL Cluj-Napoca 2026",placement:"5th-8th (Vitality won the event)",date:"Feb 14-22, 2026"},
-  {event:"IEM KrakÃ³w 2026",placement:"2nd (lost grand final 3-1 to Vitality)",date:"Feb 8, 2026"},
+  {event:"IEM Kraków 2026",placement:"2nd (lost grand final 3-1 to Vitality)",date:"Feb 8, 2026"},
   {event:"BLAST Rivals Fall 2025",placement:"1st (Champions)",date:"Nov 16, 2025",win:true}],
- keyPlayer:{nick:"molodoy",rating:"KSCERATO/molodoy held form; YEKINDAR slipped 1.14â†’~1.07; yuurih T-side 1.12â†’0.87",
+ keyPlayer:{nick:"molodoy",rating:"KSCERATO/molodoy held form; YEKINDAR slipped 1.14→~1.07; yuurih T-side 1.12→0.87",
   note:"Kazakh AWPer who emerged in under a year as one of the world's most dangerous young snipers; he and KSCERATO 'largely maintained their standards' through FURIA's 2026 dip. At Cologne, YEKINDAR surged to his strongest form all year, but molodoy's aggressive AWPing remains FURIA's most reliable engine and the foundation FalleN is building around for his final year."},
  mapPool:{strong:["Nuke","Dust2","Inferno"],weak:["Overpass","Ancient"]},
  strengths:[
-  "Elite, settled core (KSCERATO, yuurih, FalleN) with intact chemistry â€” stable trade/flash-assist metrics even during the slump, signaling structural soundness not collapse.",
+  "Elite, settled core (KSCERATO, yuurih, FalleN) with intact chemistry — stable trade/flash-assist metrics even during the slump, signaling structural soundness not collapse.",
   "Top-tier AWP firepower in molodoy plus YEKINDAR's aggressive entry presence, giving high individual ceilings that can carry close maps.",
   "Veteran IGL leadership under FalleN with a deep comfort nucleus (Nuke/Dust2/Inferno) and a peaking Cologne run (3-0 group, two 13-6 wins over BetBoom)."],
  weaknesses:[
-  "Individual form regressions in 2026: yuurih's T-side rating cratered (1.12â†’0.87) and YEKINDAR's opening-duel success fell sharply, dragging T-side WR 49.6%â†’44.2%.",
+  "Individual form regressions in 2026: yuurih's T-side rating cratered (1.12→0.87) and YEKINDAR's opening-duel success fell sharply, dragging T-side WR 49.6%→44.2%.",
   "Narrowed map-pool flexibility after the de_train removal and erosion of Overpass, reducing veto leverage against top opponents.",
-  "Inconsistency through mid-2026 â€” a string of 4th-8th finishes before Cologne, and a looming transition with FalleN retiring at year's end."],
- summary:"FURIA enter mid-June 2026 ranked ~#5 and, critically, look revitalized: they stormed the IEM Cologne Major group stage 3-0 with \"the best they've looked in months,\" and YEKINDAR re-found his peak just as the biggest event of the year began. That run masks a rocky 2026 in which yuurih's and YEKINDAR's individual slumps and a thinned map pool dropped them to a cluster of 4th-8th finishes after a hot 2025-early-2026 stretch (KrakÃ³w final). The fundamentals â€” molodoy's AWP, the Brazilian core's chemistry, FalleN's leadership â€” remain intact, so the trajectory hinges on whether the Cologne resurgence is a genuine return to contention or a spike before FalleN's planned end-of-2026 retirement forces a rebuild.",
- caveat:"Results corrected: FURIA did NOT win PGL Cluj-Napoca 2026 â€” they finished 5th-8th; Vitality won it (Feb 14-22, not March). PGL Astana 2026 was a 5th-8th (QF exit), not a clean 5th."},
+  "Inconsistency through mid-2026 — a string of 4th-8th finishes before Cologne, and a looming transition with FalleN retiring at year's end."],
+ summary:"FURIA enter mid-June 2026 ranked ~#5 and, critically, look revitalized: they stormed the IEM Cologne Major group stage 3-0 with \"the best they've looked in months,\" and YEKINDAR re-found his peak just as the biggest event of the year began. That run masks a rocky 2026 in which yuurih's and YEKINDAR's individual slumps and a thinned map pool dropped them to a cluster of 4th-8th finishes after a hot 2025-early-2026 stretch (Kraków final). The fundamentals — molodoy's AWP, the Brazilian core's chemistry, FalleN's leadership — remain intact, so the trajectory hinges on whether the Cologne resurgence is a genuine return to contention or a spike before FalleN's planned end-of-2026 retirement forces a rebuild.",
+ caveat:"Results corrected: FURIA did NOT win PGL Cluj-Napoca 2026 — they finished 5th-8th; Vitality won it (Feb 14-22, not March). PGL Astana 2026 was a 5th-8th (QF exit), not a clean 5th."},
 
 {name:"Aurora Gaming",rank:6,region:"Europe / Turkey",regionGroup:"Europe / Turkey",
- igl:"MAJ3R",coach:"Fabre (Sezgin KalaycÄ±)",trend:"stable",
+ igl:"MAJ3R",coach:"Fabre (Sezgin Kalaycı)",trend:"stable",
  roster:[
-  {nick:"XANTARES",realName:"Ä°smailcan DÃ¶rtkardeÅŸ",country:"Turkey",role:"Rifler / Entry-fragger"},
-  {nick:"MAJ3R",realName:"Engin KÃ¼peli",country:"Turkey",role:"IGL / Support"},
-  {nick:"Wicadia",realName:"Ali Haydar YalÃ§Ä±n",country:"Turkey",role:"Rifler"},
-  {nick:"woxic",realName:"Ã–zgÃ¼r Eker",country:"Turkey",role:"AWPer"},
+  {nick:"XANTARES",realName:"İsmailcan Dörtkardeş",country:"Turkey",role:"Rifler / Entry-fragger"},
+  {nick:"MAJ3R",realName:"Engin Küpeli",country:"Turkey",role:"IGL / Support"},
+  {nick:"Wicadia",realName:"Ali Haydar Yalçın",country:"Turkey",role:"Rifler"},
+  {nick:"woxic",realName:"Özgür Eker",country:"Turkey",role:"AWPer"},
   {nick:"soulfly",realName:"Caner Kesici",country:"Turkey",role:"Rifler / Support"}],
  recentResults:[
-  {event:"IEM Cologne Major 2026 (Stage 3)",placement:"In progress â€” beat Monte 2-0 and G2 2-0, lost 1-2 to Team Spirit",date:"June 2026",live:true},
+  {event:"IEM Cologne Major 2026 (Stage 3)",placement:"In progress — beat Monte 2-0 and G2 2-0, lost 1-2 to Team Spirit",date:"June 2026",live:true},
   {event:"PGL Astana 2026",placement:"5th-8th (lost 0-2 vs MOUZ)",date:"May 2026"},
   {event:"ESL Pro League Season 23",placement:"2nd (lost 1-3 vs NAVI in final)",date:"March 2026"},
-  {event:"IEM KrakÃ³w 2026",placement:"5th-6th (lost 0-2 vs FURIA)",date:"February 2026"},
+  {event:"IEM Kraków 2026",placement:"5th-6th (lost 0-2 vs FURIA)",date:"February 2026"},
   {event:"BLAST Open Rotterdam 2026",placement:"3rd-4th (0-2 to Vitality in SF)",date:"Early 2026"}],
  keyPlayer:{nick:"Wicadia",rating:"~1.08 overall / 1.06 playoffs in 2026; 1.10 vs Spirit at Cologne",
   note:"Quietly became Aurora's most consistent performer in 2026, outperforming the marquee names in deep events. XANTARES remains the explosive star and former LAN MVP (1.27 avg), but his 2026 playoff form has dipped to ~0.91, so Wicadia is currently carrying the firepower load."},
  mapPool:{strong:["Inferno (~67% WR, 2026)","Anubis (frequent pick at Cologne)","Nuke (pick vs Monte)"],weak:["Nuke when on the back foot (volatile, ~33%)","Dust2 (dropped vs Spirit)"]},
  strengths:[
-  "Elite individual firepower across the lineup â€” XANTARES and woxic give them two world-class duelists/AWP, with Wicadia a third reliable star.",
+  "Elite individual firepower across the lineup — XANTARES and woxic give them two world-class duelists/AWP, with Wicadia a third reliable star.",
   "Strong, settled all-Turkish core with MAJ3R's veteran IGL experience and continuity (no roster churn into mid-2026).",
   "Proven deep-run capability: an ESL Pro League S23 final and consistent top-8 premier placements, plus a clear Inferno comfort pick."],
  weaknesses:[
-  "Closing problem in best-of series â€” they repeatedly lose the back-half of maps (faded late vs Spirit at Cologne) and converted only 2nd at EPL.",
+  "Closing problem in best-of series — they repeatedly lose the back-half of maps (faded late vs Spirit at Cologne) and converted only 2nd at EPL.",
   "Over-reliance on individual skill over structured map control; when star form dips (XANTARES ~0.91 in playoffs) they lack a stable secondary plan.",
-  "Map-pool volatility â€” outside Inferno/Anubis their results swing hard (Nuke can collapse to ~33%), making them readable in vetoes vs top-3 sides."],
- summary:"Aurora sit at HLTV world #6 (June 2026, ~353 points) as the premier all-Turkish lineup, anchored by XANTARES and woxic's firepower with Wicadia emerging as their steadiest carry and MAJ3R steering as IGL. They are a legitimate top-8-to-finalist threat â€” an ESL Pro League S23 runner-up finish proves the ceiling â€” but a recurring inability to close series and over-dependence on individual skill keep them a tier below the very best. At IEM Cologne they are advancing through Stage 3 (wins over Monte and G2, a narrow loss to Spirit), so the trajectory is stable-to-slightly-rising: dangerous on their day, still needing a structural and clutch-execution upgrade.",
+  "Map-pool volatility — outside Inferno/Anubis their results swing hard (Nuke can collapse to ~33%), making them readable in vetoes vs top-3 sides."],
+ summary:"Aurora sit at HLTV world #6 (June 2026, ~353 points) as the premier all-Turkish lineup, anchored by XANTARES and woxic's firepower with Wicadia emerging as their steadiest carry and MAJ3R steering as IGL. They are a legitimate top-8-to-finalist threat — an ESL Pro League S23 runner-up finish proves the ceiling — but a recurring inability to close series and over-dependence on individual skill keep them a tier below the very best. At IEM Cologne they are advancing through Stage 3 (wins over Monte and G2, a narrow loss to Spirit), so the trajectory is stable-to-slightly-rising: dangerous on their day, still needing a structural and clutch-execution upgrade.",
  caveat:"Minor: BLAST Open Rotterdam 2026 is more precisely a 3rd-4th finish (0-2 to Vitality in the semifinal, no bronze match), not a clean 3rd."},
 
 {name:"MOUZ",rank:7,region:"Europe (International)",regionGroup:"Europe",
@@ -494,19 +494,19 @@ const TEAMS = [
   {event:"PGL Astana 2026",placement:"3rd",date:"May 2026"},
   {event:"IEM Rio 2026",placement:"5th-6th",date:"Apr 2026"},
   {event:"PGL Cluj-Napoca 2026",placement:"3rd",date:"Mar 2026"},
-  {event:"IEM KrakÃ³w 2026",placement:"4th",date:"Feb 2026"}],
+  {event:"IEM Kraków 2026",placement:"4th",date:"Feb 2026"}],
  mapPool:{strong:["Mirage","Overpass","Inferno"],weak:["Anubis (permaban)","Ancient","Dust2"]},
  keyPlayer:{nick:"torzsi",rating:"~1.04 AWP rating recently; 2025 HLTV Top 20 player",
   note:"Primary AWPer and the team's clutch threat (notable 1v3 AWP clutches vs Vitality and Spirit in 2026). Form has dipped from his elite 2024-25 peak, with inconsistent AWP impact cited in MOUZ's recent semifinal ceilings. Spinx and xertioN are the other two former Top-20 anchors."},
  strengths:[
   "Deep firepower core: three former HLTV Top-20 players (torzsi, Spinx, xertioN) give a high individual ceiling that can beat anyone on a good day.",
   "Strong, comfortable Mirage/Overpass/Inferno trio that wins vetoes against most opponents.",
-  "Proven big-stage consistency in early 2026 â€” multiple top-4/3rd placements (Cluj, Astana, CS Asia, KrakÃ³w) without falling out of the elite tier."],
+  "Proven big-stage consistency in early 2026 — multiple top-4/3rd placements (Cluj, Astana, CS Asia, Kraków) without falling out of the elite tier."],
  weaknesses:[
   "Mid-2026 roster overhaul (benched Brollan + Jimpphat, added jL on loan, promoted xelex, xertioN as new IGL) means a brand-new system with little chemistry under fire.",
-  "Cannot field their intended lineup at Cologne â€” jL is ineligible under Valve's one-sub rule, forcing benched Brollan back in and undercutting the new structure.",
+  "Cannot field their intended lineup at Cologne — jL is ineligible under Valve's one-sub rule, forcing benched Brollan back in and undercutting the new structure.",
   "Persistent semifinal/3rd-place ceiling: repeatedly reach the final four but rarely close out titles, and torzsi's AWP form has been inconsistent."],
- summary:"MOUZ are a high-firepower top-tier side caught mid-transition. After a disappointing patch they overhauled the roster in May/June 2026 â€” benching Brollan and Jimpphat, loaning jL from NAVI, promoting academy talent xelex, and handing the IGL to xertioN â€” but Valve's one-substitution Major rule means they cannot run that lineup at IEM Cologne, where they sit at a shaky 1-2 on elimination's edge. The raw talent of torzsi, Spinx and xertioN keeps their ceiling among the world's best, yet a recent slide from rank ~3 toward ~7-11, a habitual semifinal wall, and an unsettled, untested system make their immediate trajectory a downward, prove-it phase.",
+ summary:"MOUZ are a high-firepower top-tier side caught mid-transition. After a disappointing patch they overhauled the roster in May/June 2026 — benching Brollan and Jimpphat, loaning jL from NAVI, promoting academy talent xelex, and handing the IGL to xertioN — but Valve's one-substitution Major rule means they cannot run that lineup at IEM Cologne, where they sit at a shaky 1-2 on elimination's edge. The raw talent of torzsi, Spinx and xertioN keeps their ceiling among the world's best, yet a recent slide from rank ~3 toward ~7-11, a habitual semifinal wall, and an unsettled, untested system make their immediate trajectory a downward, prove-it phase.",
  caveat:"Ranking note: HLTV's June 1 2026 ranking has MOUZ at #8 (302 pts); the displayed ~7 is close but the precise HLTV figure is 8. IEM Rio 2026 was a tied 5th-6th."},
 
 {name:"The MongolZ",rank:8,region:"Asia (Mongolia)",regionGroup:"Asia",
@@ -518,25 +518,25 @@ const TEAMS = [
   {nick:"Techno4K",realName:"Sodbayar Munkhbold",country:"Mongolia",role:"Rifler / Lurker"},
   {nick:"cobrazera",realName:"Anarbileg Uuganbayar",country:"Mongolia",role:"Rifler / Entry"}],
  recentResults:[
-  {event:"IEM Cologne Major 2026 (Stage 3)",placement:"In progress â€” 0-1 start (lost BetBoom), then beat NAVI and B8 2-0; net positive",date:"Jun 2026",live:true},
+  {event:"IEM Cologne Major 2026 (Stage 3)",placement:"In progress — 0-1 start (lost BetBoom), then beat NAVI and B8 2-0; net positive",date:"Jun 2026",live:true},
   {event:"CS Asia Championships 2026",placement:"5th-6th (lost 1-2 vs Legacy)",date:"May 2026"},
   {event:"PGL Astana 2026",placement:"9th-11th (group exit, 2-3)",date:"Apr-May 2026"},
   {event:"PGL Bucharest 2026",placement:"3rd-4th",date:"Mar 2026"},
-  {event:"Esports World Cup 2025",placement:"1st (3-0 vs Aurora) â€” $500,000",date:"Aug 2025",win:true},
+  {event:"Esports World Cup 2025",placement:"1st (3-0 vs Aurora) — $500,000",date:"Aug 2025",win:true},
   {event:"BLAST.tv Austin Major 2025",placement:"2nd (lost 1-2 vs Vitality)",date:"Jun 2025"}],
  mapPool:{strong:["Ancient (~69.7% WR)","Dust2 (~61.9% WR)","Mirage (~58.9% WR)","Inferno (~54% WR)"],weak:["Nuke (~45.3% WR, frequent ban)","Anubis (commonly removed)"]},
  keyPlayer:{nick:"mzinho",rating:"~1.16 group-stage avg at BLAST Open Rotterdam; peak 1.85 vs Spirit",
   note:"18-year-old prodigy and the team's firepower engine. High ceiling, capable of single-handedly winning maps (1.85 closeout vs Spirit), but form is volatile match-to-match. When he and 910 (AWP) are both firing, The MongolZ beat anyone."},
  strengths:[
-  "Elite, stable, fully Mongolian core together for years â€” exceptional teamwork and structured bLitz-led defaults that punch above raw individual talent.",
+  "Elite, stable, fully Mongolian core together for years — exceptional teamwork and structured bLitz-led defaults that punch above raw individual talent.",
   "Genuine star firepower in mzinho (18yo) plus a reliable primary AWPer in 910, giving both a clutch X-factor and an anchor.",
-  "Proven big-stage pedigree: EWC 2025 champions and two Major-cycle finals (Austin 2025 2nd, deep Major runs) â€” they don't crumble under tier-1 LAN pressure."],
+  "Proven big-stage pedigree: EWC 2025 champions and two Major-cycle finals (Austin 2025 2nd, deep Major runs) — they don't crumble under tier-1 LAN pressure."],
  weaknesses:[
-  "Inconsistency in 2026 â€” results swung from 3rd at PGL Bucharest to early exits (9th-11th Astana, 5th-6th CS Asia), no recent trophy.",
+  "Inconsistency in 2026 — results swung from 3rd at PGL Bucharest to early exits (9th-11th Astana, 5th-6th CS Asia), no recent trophy.",
   "Star reliance: when mzinho's volatile form dips, the team lacks a second consistent fragger to carry, leading to flat losses to lower-ranked sides.",
   "Thin/exploitable bottom of the map pool (Nuke ~45%) lets prepared opponents funnel them onto uncomfortable maps in the veto."],
  summary:"The MongolZ remain a fixture in the world's top 8-10 on the strength of a long-tenured all-Mongolian core, an EWC 2025 title, and explosive young star mzinho, but 2026 has been a clear cooldown from their 2025 peak. After a strong 3rd at PGL Bucharest they slipped at PGL Astana and CS Asia, and opened the IEM Cologne Major Stage 3 shakily with a loss to BetBoom before recovering with wins over NAVI and B8. Their ceiling is still top-tier when mzinho and 910 click, but the inconsistency and a thin spot at the bottom of the map pool have them trending slightly downward and chasing the elite tier rather than leading it.",
- caveat:"Corrected: The MongolZ DEFEATED NAVI at the Cologne Major (not 'mixed'), and also beat B8 2-0 â€” a net-positive Stage 3, not a struggle. HLTV had them at #9 in June 2026 (the ~8 here is close)."},
+ caveat:"Corrected: The MongolZ DEFEATED NAVI at the Cologne Major (not 'mixed'), and also beat B8 2-0 — a net-positive Stage 3, not a struggle. HLTV had them at #9 in June 2026 (the ~8 here is close)."},
 
 {name:"Legacy",rank:9,region:"Americas (Brazil / South America)",regionGroup:"Americas",
  igl:"arT",coach:"adr (interim since Apr 2026); bobz analyst on loan via Cologne",trend:"rising",
@@ -547,7 +547,7 @@ const TEAMS = [
   {nick:"saadzin",realName:"Guilherme Pacheco",country:"Brazil",role:"Rifler / Support"},
   {nick:"n1ssim",realName:"Vinicius Pereira",country:"Brazil",role:"Rifler / Support (trade)"}],
  recentResults:[
-  {event:"IEM Cologne Major 2026 (Stage 3)",placement:"Still alive at 1-2 â€” beat PARIVISION; lost to MOUZ and NAVI (TYLOO win was Stage 2)",date:"Jun 11-15, 2026",live:true},
+  {event:"IEM Cologne Major 2026 (Stage 3)",placement:"Still alive at 1-2 — beat PARIVISION; lost to MOUZ and NAVI (TYLOO win was Stage 2)",date:"Jun 11-15, 2026",live:true},
   {event:"CS Asia Championships 2026",placement:"1st (beat Falcons 3-1; latto back-to-back MVP)",date:"May 24, 2026",win:true},
   {event:"IEM Atlanta 2026",placement:"3rd (beat BetBoom 2-0 in 3rd-place decider)",date:"May 17, 2026"},
   {event:"BetBoom RUSH B! Summit 2026: Part Three",placement:"1st",date:"Apr 26, 2026",win:true},
@@ -556,14 +556,14 @@ const TEAMS = [
   note:"Bruno 'latto' Rebelatto is the team's clear star and primary firepower, in career-best form. Back-to-back CS Asia Championships MVP (2025 + 2026) with signature performances like a 33-frag Overpass vs TYLOO and a 2.22-rated Ancient closing the grand final vs Falcons. A genuine top-tier CS2 player under coach adr."},
  mapPool:{strong:["Mirage (~79% WR, signature)","Overpass (~67%)","Inferno (~65%)"],weak:["Nuke (clear weakest)","Ancient (~48%, below-average)"]},
  strengths:[
-  "Elite individual firepower in latto, backed by dumau as a strong second star/opener â€” they can win rounds on raw aim when structure breaks down.",
+  "Elite individual firepower in latto, backed by dumau as a strong second star/opener — they can win rounds on raw aim when structure breaks down.",
   "arT's hyper-aggressive IGL style creates chaotic, fast tempo that destabilizes opponents and is hard to anti-strat, suited to the young, mechanical core.",
   "Dominant Mirage (~79%) gives a near-guaranteed map pick and strong veto leverage; two trophies + a top-4 in three months shows real momentum and finals composure."],
  weaknesses:[
-  "Thin and exploitable map pool â€” Nuke and Ancient are both liabilities, letting prepared opponents corner their veto.",
+  "Thin and exploitable map pool — Nuke and Ancient are both liabilities, letting prepared opponents corner their veto.",
   "arT's high-risk, low-economy entry style produces big variance: when the aggression misfires the team can hemorrhage rounds vs disciplined sides.",
-  "Roster still gelling â€” arT only joined Feb 2026 and the coaching setup (adr interim, bobz on loan) is unsettled; a shaky 1-2 at Cologne shows they still stumble vs top European structure."],
- summary:"Legacy are the standout Brazilian success story of 2026: a young, firepower-heavy core (latto, dumau) supercharged by arT's chaotic IGL style, converted into two trophies (CS Asia Championships, BetBoom RUSH B! Summit) and a top-4 at IEM Atlanta inside three months. latto is in career-best, arguably top-5-in-the-world form, and the team is genuinely on the rise around the #7-9 mark. The ceiling is high but the floor is volatile â€” a thin map pool (Nuke/Ancient weak), arT's boom-or-bust aggression, and an unsettled coaching setup leave them vulnerable to disciplined European sides, as their precarious 1-2 run through Cologne Stage 3 underscores.",
+  "Roster still gelling — arT only joined Feb 2026 and the coaching setup (adr interim, bobz on loan) is unsettled; a shaky 1-2 at Cologne shows they still stumble vs top European structure."],
+ summary:"Legacy are the standout Brazilian success story of 2026: a young, firepower-heavy core (latto, dumau) supercharged by arT's chaotic IGL style, converted into two trophies (CS Asia Championships, BetBoom RUSH B! Summit) and a top-4 at IEM Atlanta inside three months. latto is in career-best, arguably top-5-in-the-world form, and the team is genuinely on the rise around the #7-9 mark. The ceiling is high but the floor is volatile — a thin map pool (Nuke/Ancient weak), arT's boom-or-bust aggression, and an unsettled coaching setup leave them vulnerable to disciplined European sides, as their precarious 1-2 run through Cologne Stage 3 underscores.",
  caveat:"Corrected: IEM Atlanta 2026 was a clean 3rd (2-0 over BetBoom in the 3rd-place decider), not a tied 3rd-4th. The TYLOO win came in Cologne STAGE 2; within Stage 3 the only win is PARIVISION. HLTV had Legacy at #7 (June 1, 2026)."},
 
 {name:"PARIVISION",rank:10,region:"CIS / Europe (all-Russian lineup)",regionGroup:"CIS",
@@ -575,24 +575,24 @@ const TEAMS = [
   {nick:"nota",realName:"Emil Moskvitin",country:"Russia",role:"Rifler"},
   {nick:"zweih",realName:"Ivan Gogin",country:"Russia",role:"Rifler"}],
  recentResults:[
-  {event:"IEM Cologne Major 2026 (Stage 3)",placement:"Winless exit â€” lost 1-2 to 9z and 1-2 to Monte",date:"Jun 12, 2026"},
+  {event:"IEM Cologne Major 2026 (Stage 3)",placement:"Winless exit — lost 1-2 to 9z and 1-2 to Monte",date:"Jun 12, 2026"},
   {event:"CS Asia Championships 2026",placement:"Group stage exit (0-2 to The MongolZ)",date:"May 22, 2026"},
   {event:"PGL Bucharest 2026",placement:"5th-8th ($31,250)",date:"Apr 9, 2026"},
   {event:"BLAST Open Spring 2026",placement:"3rd-4th ($40,000)",date:"Mar 28, 2026"},
   {event:"PGL Cluj-Napoca 2026",placement:"2nd (lost 0-3 to Vitality, $100,000)",date:"Feb 22, 2026"},
-  {event:"BLAST Bounty Winter 2026 (Malta)",placement:"1st â€” Champions, 3-0 sweep of Falcons (first major trophy)",date:"Jan 26, 2026",win:true}],
+  {event:"BLAST Bounty Winter 2026 (Malta)",placement:"1st — Champions, 3-0 sweep of Falcons (first major trophy)",date:"Jan 26, 2026",win:true}],
  keyPlayer:{nick:"xiELO",rating:"1.06 Rating 3.0 (252 maps); HLTV No.3 Prospect for 2026",
   note:"20-year-old Russian rifler and the team's breakout star. Broke out at the StarLadder Budapest Major 2025 and starred during the BLAST Bounty Winter title run, anchoring PARIVISION's firepower alongside IGL/AWPer Jame (1.13 Rating 3.0), who remains the strategic backbone."},
- mapPool:{strong:["Dust2 (~68% WR, reliable first pick)","Ancient (~68% WR)","Mirage"],weak:["Nuke (100% ban rate â€” effectively permabanned)"]},
+ mapPool:{strong:["Dust2 (~68% WR, reliable first pick)","Ancient (~68% WR)","Mirage"],weak:["Nuke (100% ban rate — effectively permabanned)"]},
  strengths:[
-  "Elite veto discipline and structured map control under Jame â€” two genuine first-pick maps (Dust2, Ancient ~68%) plus a permabanned Nuke give a clean strategic identity.",
+  "Elite veto discipline and structured map control under Jame — two genuine first-pick maps (Dust2, Ancient ~68%) plus a permabanned Nuke give a clean strategic identity.",
   "Jame provides Major-winning experience, default-heavy disciplined CT setups, and a reliable AWP anchor that lets younger riflers play freely.",
   "High young-talent ceiling: xiELO (No.3 HLTV Prospect) plus 18-year-olds nota and zweih; they dethroned Spirit and beat FURIA/Falcons on LAN to win BLAST Bounty."],
  weaknesses:[
   "Big-stage choking against the very top: lost 0-3 to Vitality in the Cluj final and went completely winless at the Cologne Major.",
   "Roster instability and youth inconsistency: zweih was added only at the end of Dec 2025, and form has swung wildly between a January title and June Major collapse.",
-  "Form is heavily slumping into mid-2026 â€” back-to-back disappointing exits suggest opponents have solved their structured, default-reliant style."],
- summary:"PARIVISION exploded onto tier-1 in early 2026, winning their first-ever trophy at BLAST Bounty Winter (3-0 over Falcons, dethroning Spirit) and reaching the PGL Cluj final, riding Jame's disciplined IGLing and the breakout of young star xiELO. But their 2026 has curved sharply downward: a 0-3 final loss to Vitality, a CS Asia group exit, and a humiliating winless run at the IEM Cologne Major expose a team opponents have learned to read and that crumbles against the absolute elite. They sit around world #10 â€” a structurally sound, high-ceiling young roster that has clearly regressed from its January peak and badly needs to rediscover form on the biggest stages.",
+  "Form is heavily slumping into mid-2026 — back-to-back disappointing exits suggest opponents have solved their structured, default-reliant style."],
+ summary:"PARIVISION exploded onto tier-1 in early 2026, winning their first-ever trophy at BLAST Bounty Winter (3-0 over Falcons, dethroning Spirit) and reaching the PGL Cluj final, riding Jame's disciplined IGLing and the breakout of young star xiELO. But their 2026 has curved sharply downward: a 0-3 final loss to Vitality, a CS Asia group exit, and a humiliating winless run at the IEM Cologne Major expose a team opponents have learned to read and that crumbles against the absolute elite. They sit around world #10 — a structurally sound, high-ceiling young roster that has clearly regressed from its January peak and badly needs to rediscover form on the biggest stages.",
  caveat:null}
 ];
 
@@ -600,7 +600,7 @@ const TEAMS = [
 const $ = (s,ctx=document)=>ctx.querySelector(s);
 const $$ = (s,ctx=document)=>[...ctx.querySelectorAll(s)];
 const esc = s => String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const trendIcon = t => t==='rising'?'â–²':t==='declining'?'â–¼':'â–¬';
+const trendIcon = t => t==='rising'?'▲':t==='declining'?'▼':'▬';
 
 /* ---------- STAT STRIP ---------- */
 (function(){
@@ -674,7 +674,7 @@ function render(){
     th.querySelector('.arw')?.remove();
     if(th.dataset.key===state.sortKey){
       const a=document.createElement('span'); a.className='arw';
-      a.textContent = state.sortDir===1?'â–²':'â–¼'; th.appendChild(a);
+      a.textContent = state.sortDir===1?'▲':'▼'; th.appendChild(a);
     }
   });
 
@@ -724,7 +724,7 @@ function selectTeam(name){
         <div class="dt-rank">#${t.rank}</div>
         <div class="dt-name">${esc(t.name)}<small>${esc(t.region)}</small></div>
         <span class="trend ${t.trend}" style="font-size:13px"><span class="ic">${trendIcon(t.trend)}</span>${t.trend}</span>
-        <button class="closebtn" id="closeDetail" title="Close">Ã—</button>
+        <button class="closebtn" id="closeDetail" title="Close">×</button>
       </div>
       <div class="dt-meta">
         <span>IGL: <b>${esc(t.igl)}</b></span>
@@ -811,7 +811,7 @@ function buildFallbacks(){
   const rf = $('#rankFallback');
   const maxRank = Math.max(...TEAMS.map(t=>t.rank));
   rf.innerHTML = `<div class="nochart" style="text-align:left">
-    <div style="margin-bottom:8px;color:var(--muted);text-align:center">Chart library unavailable â€” text view:</div>
+    <div style="margin-bottom:8px;color:var(--muted);text-align:center">Chart library unavailable — text view:</div>
     ${[...TEAMS].sort((a,b)=>a.rank-b.rank).map(t=>{
       const w = (1-(t.rank-1)/maxRank)*100;
       const col = t.trend==='rising'?'var(--rising)':t.trend==='declining'?'var(--declining)':'var(--stable)';
@@ -828,7 +828,7 @@ function buildFallbacks(){
   const counts = {};
   TEAMS.forEach(t=>counts[t.regionGroup]=(counts[t.regionGroup]||0)+1);
   $('#regionFallback').innerHTML = `<div class="nochart" style="text-align:left">
-    <div style="margin-bottom:8px;color:var(--muted);text-align:center">Chart library unavailable â€” text view:</div>
+    <div style="margin-bottom:8px;color:var(--muted);text-align:center">Chart library unavailable — text view:</div>
     ${Object.entries(counts).sort((a,b)=>b[1]-a[1]).map(([r,c])=>
       `<div style="display:flex;justify-content:space-between;font-size:12px;margin:4px 0;border-bottom:1px solid var(--line);padding:3px 0">
         <span>${esc(r)}</span><b style="color:var(--accent2)">${c}</b></div>`).join('')}
@@ -863,7 +863,7 @@ function initCharts(){
       plugins:{
         legend:{display:false},
         tooltip:{callbacks:{
-          label:(c)=>{ const t=sorted[c.dataIndex]; return `HLTV Rank #${t.rank} Â· ${t.trend}`; }
+          label:(c)=>{ const t=sorted[c.dataIndex]; return `HLTV Rank #${t.rank} · ${t.trend}`; }
         }}
       },
       scales:{
