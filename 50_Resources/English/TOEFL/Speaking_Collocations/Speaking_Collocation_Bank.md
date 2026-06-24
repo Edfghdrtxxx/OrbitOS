@@ -44,7 +44,8 @@ review_guide: "[[Review_Log]]"
   creates two sibling cards per phrase: **cue → phrase** and **phrase → cue**. This trains both
   recognition and live production. Card format verified against the
   [plugin docs](https://stephenmwangi.com/obsidian-spaced-repetition/flashcards/q-and-a-cards/).
-- All cards belong to the deck tag **`#flashcards/toefl/speaking`** (set just below). The plugin
+- All cards belong to the deck tag **`#toefl-speaking`** (set just below), which appears as its own
+  top-level deck in the Spaced Repetition deck list. The plugin
   schedules each card (SM-2) and writes its review data inline as an `<!--SR:...-->` comment.
   No manual review table is needed.
 - **Daily review:** run the plugin command *"Review flashcards"* (or open the deck). Aim ~5/day.
@@ -62,7 +63,7 @@ speaking. ID prefixes: `OPEN` (opening / buying time), `OPIN` (stating an opinio
 
 ## Flashcards
 
-#flashcards/toefl/speaking
+#toefl-speaking
 
 ### OPEN-01 · Opening / buying time
 
