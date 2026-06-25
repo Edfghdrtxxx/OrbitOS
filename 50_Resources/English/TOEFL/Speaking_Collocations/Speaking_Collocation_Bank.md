@@ -100,6 +100,13 @@ speaking. ID prefixes: `OPEN` (opening / buying time), `OPIN` (stating an opinio
 **Phrase:** "So all in all… / That's basically why I…"
 **Model:** *"So all in all, that's why I'd rather travel with one or two close friends than in a big group."*
 
+### CONC-02 · Concluding / lesson learned
+
+**Cue:** You've told a personal story (an achievement, a hard effort) and want to close on what it taught you.
+??
+**Phrase:** "That moment taught me that… — and it's an accomplishment I'm still proud of today."
+**Model:** *"That moment taught me that disciplined, sustained effort really does pay off — and it's an accomplishment I'm still proud of today."*
+
 ### ACAD · General academic / discussion
 
 *(No cards yet — add academic-register phrases here as you collect them, e.g. "the evidence
