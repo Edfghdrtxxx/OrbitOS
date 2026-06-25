@@ -86,6 +86,13 @@ speaking. ID prefixes: `OPEN` (opening / buying time), `OPIN` (stating an opinio
 **Phrase:** "A good example from my own experience is when…"
 **Model:** *"A good example from my own experience is when I joined a study group last year — my grades went up because we kept each other accountable."*
 
+### EXMP-02 · Giving a personal example
+
+**Cue:** You've named an experience and want to spell out *why* it was hard or significant.
+??
+**Phrase:** "What made it so demanding was…"
+**Model:** *"What made it so demanding was juggling lab work and coursework at the same time, with neither giving me any slack."*
+
 ### CONT-01 · Contrast / concession
 
 **Cue:** Acknowledge a counterpoint, then return to your position.
