@@ -9,13 +9,13 @@ review_interval: 0
 
 buffer weeks *(noun phrase)* ::: 缓冲周
 buffer *(noun)* ::: 缓冲
-<!--SR:!2000-01-01,1,250!2026-02-27,3,265-->
+<!--SR:!2000-01-01,1,250!2026-07-05,10,285-->
 screening *(noun)* ::: 筛选
 nominate *(verb)* ::: 提名
 diligent / diligence *(adjective/noun)* ::: 勤奋的 / 勤奋
-<!--SR:!2026-02-25,1,230!2000-01-01,1,250-->
+<!--SR:!2026-06-28,3,250!2000-01-01,1,250-->
 Dirac notation *(noun)* ::: 狄拉克符号
-<!--SR:!2000-01-01,1,250!2026-03-06,8,250-->
+<!--SR:!2000-01-01,1,250!2026-07-23,28,270-->
 due *(adjective)* ::: 预期的 / 应得的 / 到期的
 drain / draining *(verb/adjective)* ::: 消耗 / 令人疲惫的
 <!--SR:!2000-01-01,1,250!2026-02-25,1,230-->
@@ -26,21 +26,21 @@ sunk-cost trap *(noun phrase)* ::: 沉没成本陷阱
 <!--SR:!2000-01-01,1,250!2026-04-23,1,225-->
 populate / popular *(verb/adjective)* ::: 使…有人口；居住于 / 受欢迎的；大众的
 notation *(noun)* ::: 记号法；符号系统；记注
-<!--SR:!2000-01-01,1,250!2026-02-27,3,250-->
+<!--SR:!2000-01-01,1,250!2026-07-06,11,270-->
 hedge *(verb/noun)* ::: 对冲 / 规避风险；树篱
 <!--SR:!2026-02-26,3,250!2000-01-01,1,250-->
 frame / framing *(verb/noun)* ::: 构建表达方式 / 叙事框架
-<!--SR:!2000-01-01,1,250!2026-02-27,3,250-->
+<!--SR:!2000-01-01,1,250!2026-06-27,2,230-->
 blunt *(adjective/verb)* ::: 直率的；使变钝 / 削弱
 span *(verb/noun)* ::: 张成 / 跨度
 commutativity / commutative / noncommutative *(noun/adjective/adjective)* ::: 交换律 / 可交换的 / 非交换的
 echelon *(noun)* ::: 阶层 / 梯队 / 等级
 diagonal *(noun/adjective)* ::: 对角线 / 斜的
 tedious *(adjective)* ::: 冗长乏味的 / 令人厌烦的
-<!--SR:!2026-04-25,3,250!2000-01-01,1,250-->
+<!--SR:!2026-06-27,2,230!2000-01-01,1,250-->
 perpendicular vs vertical *(adjective/adjective)* ::: 垂直（数学关系）/ 竖直（方向）
 eigenstate *(noun)* ::: 本征态 / 特征态
-<!--SR:!2026-02-25,1,230!2000-01-01,1,250-->
+<!--SR:!2026-06-26,1,210!2000-01-01,1,250-->
 coefficients vs factor *(noun, plural / noun)* ::: 系数 / 因子
 homogeneous / non-homogeneous / homogeneous linear constraint *(adjective/adjective/noun phrase)* ::: 齐次的 / 非齐次的 / 齐次线性约束
 foolproof *(adjective)* ::: 万无一失的 / 绝不会出错的
@@ -52,10 +52,10 @@ vocal *(adjective)* ::: 声音的 / 口头的 / 直言不讳的
 provoke *(verb)* ::: 激怒 / 引发 / 挑衅
 provocative *(adjective)* ::: 挑衅的 / 刺激性的 / 引人深思的
 invoke *(verb)* ::: 援引 / 调用 / 祈求
-<!--SR:!2026-02-27,3,250!2000-01-01,1,250-->
+<!--SR:!2026-07-07,12,270!2000-01-01,1,250-->
 evoke *(verb)* ::: 唤起 / 激起 / 引发（情感或记忆）
 advocate *(verb/noun)* ::: 倡导 / 主张；倡导者 / 律师
-<!--SR:!2000-01-01,1,250!2026-02-27,3,250-->
+<!--SR:!2000-01-01,1,250!2026-07-06,11,270-->
 commit / commitment *(verb/noun)* ::: 承诺；致力于；提交 / 承诺；责任；预约
 summit *(noun)* ::: 顶点；山峰；峰会
 
@@ -78,7 +78,7 @@ cortisol *(noun)* ::: 皮质醇（压力激素）
 diligent vs blunt — difference? :: diligent = 勤奋 (hardworking, persistent effort); blunt = 直率/迟钝 (direct in speech / not sharp / reduce an effect)
 provoke vs evoke — difference? :: provoke = 激怒/引发反应 (*pro-* forward: call a reaction forward, often negative); evoke = 唤起情感/记忆 (*e-* out: draw memories or emotions out, neutral)
 overhaul vs tedious — difference? :: overhaul = 全面检修/改造 (verb/noun: a thorough repair or complete change); tedious = 冗长乏味 (adjective: long, slow, boring — describes a feeling)
-<!--SR:!2026-02-27,1,210-->
+<!--SR:!2026-06-28,3,230-->
 commitment vs task — difference? :: commitment = 带有责任或约定的任务 (implies obligation/promise); task = 单纯的工作任务 (just work to be done)
 
 ## Details
@@ -335,7 +335,7 @@ Root *-mit-/-miss-* (send) → match 5 words to prefix meanings :: emit (out), t
 | taxonomy | science of naming/classifying (*taxis* = arrangement) |
 
 Root *-nom-* (name) → what do `anonymous` and `synonym` share? :: Both mean something about names: anonymous = without a name; synonym = same name
-<!--SR:!2026-02-25,1,225-->
+<!--SR:!2026-06-25,1,205-->
 
 > **Words already in this note:** `nominate`
 
