@@ -93,6 +93,13 @@ speaking. ID prefixes: `OPEN` (opening / buying time), `OPIN` (stating an opinio
 **Phrase:** "What made it so demanding was…"
 **Model:** *"What made it so demanding was juggling lab work and coursework at the same time, with neither giving me any slack."*
 
+### EXMP-03 · Giving a personal example
+
+**Cue:** Mid-story, you want to convey the low point — the moment you nearly gave up — before the turnaround.
+??
+**Phrase:** "Honestly, there were times I wasn't sure I'd make it through…"
+**Model:** *"Honestly, there were times I wasn't sure I'd make it through, but I forced myself to take it one step at a time, and that's what got me through."*
+
 ### CONT-01 · Contrast / concession
 
 **Cue:** Acknowledge a counterpoint, then return to your position.
