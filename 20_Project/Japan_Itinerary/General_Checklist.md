@@ -1,7 +1,7 @@
 ---
 title: PhD Track Checklist
 type: checklist
-status: active
+status: on-hold
 area: "[[Career]]"
 tags: [japan, immigration, phd, checklist]
 ---

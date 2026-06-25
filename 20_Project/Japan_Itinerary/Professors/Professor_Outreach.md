@@ -1,7 +1,7 @@
 ---
 title: UTokyo CNS / RIKEN Professor Outreach
 type: note
-status: active
+status: on-hold
 area: "[[Career]]"
 related: "[[UTokyo_RIKEN]]"
 tags: [utokyo, riken, professor-outreach, phd]

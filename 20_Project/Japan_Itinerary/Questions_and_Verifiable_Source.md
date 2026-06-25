@@ -1,7 +1,7 @@
 ---
 title: Questions and Verifiable Sources
 type: reference
-status: active
+status: on-hold
 parent: "[[Japan_Itinerary]]"
 created: 2026-03-10
 ---

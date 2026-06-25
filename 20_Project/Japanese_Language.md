@@ -1,7 +1,7 @@
 ---
 title: Japanese Language Learning
 type: project
-status: active
+status: on-hold
 area: "[[Career]]"
 created: 2026-02-13
 due:

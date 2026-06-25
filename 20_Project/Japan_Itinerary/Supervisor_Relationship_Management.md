@@ -1,7 +1,7 @@
 ---
 title: Supervisor Relationship Management
 type: plan
-status: active
+status: on-hold
 area: "[[Career]]"
 related: "[[UTokyo_RIKEN]]"
 tags: [supervisor, outreach, utokyo, decision-gate, kenkyusei, cns, riken]

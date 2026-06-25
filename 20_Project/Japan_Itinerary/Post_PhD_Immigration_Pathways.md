@@ -1,7 +1,7 @@
 ---
 title: Post-PhD Immigration & Career Pathways
 type: reference
-status: active
+status: on-hold
 created: 2026-03-29
 parent: "[[Japan_Itinerary]]"
 tags: [immigration, career, post-phd, permanent-residency, research]

@@ -1,7 +1,7 @@
 ---
 title: UTokyo CNS / RIKEN JRA — Strategic Roadmap
 type: project
-status: active
+status: on-hold
 area: "[[Career]]"
 tags: [japan, phd, utokyo, riken, nuclear-physics, cns, jra, kenkyusei]
 decision_date: 2026-02-15

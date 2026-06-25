@@ -1,6 +1,6 @@
 ---
 type: project
-status: active
+status: on-hold
 area: null
 ---
 # LLM-Council
