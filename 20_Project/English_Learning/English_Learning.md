@@ -55,7 +55,7 @@ tags: [english, TOEFL, language]
 - [ ] Vocabulary: academic word list + TOEFL high-frequency words via Anki
 - [x] Register for official TOEFL exam date → **booked 2026-08-30 at STN80118A 国试大厦考点, Beijing (registered 2026-04-09)**
 - [ ] Take official exam on **2026-08-30** (Attempt #1)
-- [ ] Register for Attempt #2 by **2026-06-19** — unconditional two-attempt strategy (~Nov 2026 exam)
+- [ ] Register for Attempt #2 by **2026-07-01** — unconditional two-attempt strategy (~Nov 2026 exam)
 - [ ] Take Attempt #2 (~Nov 2026); do NOT auto-send — compare scores, then manually send the better one to UTokyo (code 8002-01) before Period 2 (~Dec 5)
 
 ---
