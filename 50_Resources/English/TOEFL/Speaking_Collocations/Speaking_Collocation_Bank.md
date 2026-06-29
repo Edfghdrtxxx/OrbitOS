@@ -4,7 +4,7 @@ type: resource
 status: active
 area: "[[Self-Development]]"
 created: 2026-06-24
-updated: 2026-06-24
+updated: 2026-06-29
 tags: [english, TOEFL, speaking, collocations, spaced-repetition]
 related:
   - "[[English_Learning]]"
@@ -121,8 +121,12 @@ speaking. ID prefixes: `OPEN` (opening / buying time), `OPIN` (stating an opinio
 **Phrase:** "That moment taught me that… — and it's an accomplishment I'm still proud of today."
 **Model:** *"That moment taught me that disciplined, sustained effort really does pay off — and it's an accomplishment I'm still proud of today."*
 
-### ACAD · General academic / discussion
+### ACAD-01 · General academic / discussion
 
-*(No cards yet — add academic-register phrases here as you collect them, e.g. "the evidence
-suggests…", "one key factor is…", "to put it another way…". Use the same `??` bidirectional
-format so they join the deck.)*
+**Cue:** Single out the one factor that matters most among several — in any topic.
+??
+**Phrase:** "The single most important factor in X is Y."
+**Model:** *"Sufficient, constant exposure to native input is the single most important factor in language acquisition."*
+
+*(Add more academic-register phrases here, e.g. "the evidence suggests…", "to put it
+another way…". Use the same `??` bidirectional format so they join the deck.)*
