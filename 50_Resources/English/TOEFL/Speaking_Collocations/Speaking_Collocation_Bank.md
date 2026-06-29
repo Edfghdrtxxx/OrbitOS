@@ -124,9 +124,5 @@ speaking. ID prefixes: `OPEN` (opening / buying time), `OPIN` (stating an opinio
 ### ACAD-01 · General academic / discussion
 
 **Cue:** Single out the one factor that matters most among several — in any topic.
-??
 **Phrase:** "The single most important factor in X is Y."
 **Model:** *"Sufficient, constant exposure to native input is the single most important factor in language acquisition."*
-
-*(Add more academic-register phrases here, e.g. "the evidence suggests…", "to put it
-another way…". Use the same `??` bidirectional format so they join the deck.)*
