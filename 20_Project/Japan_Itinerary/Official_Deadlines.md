@@ -4,7 +4,7 @@ type: reference
 status: active
 area: "[[Career]]"
 tags: [japan, phd, utokyo, deadlines, gre, toefl, gsgc]
-last_verified: 2026-04-22
+last_verified: 2026-07-01 (GRE windows + seat availability); 2026-04-22 (UTokyo windows)
 ---
 ## 1. UTokyo Special Selection Application (Oct 2027 enrollment — PRIMARY)
 
@@ -64,8 +64,9 @@ Same pattern as Section 1, shifted +1 year. Application periods would fall in ~O
 | 2025-26 Window 2         | Oct 13–26, 2025                 | Confirmed (past)          | Same                                                                                   |
 | 2025-26 Window 3         | Apr 20–May 3, 2026              | Confirmed                 | Same                                                                                   |
 | Score report (Window 3)  | May 11, 2026                    | Confirmed                 | [ETS Scores](https://www.ets.org/gre/test-takers/subject-tests/scores/get-scores.html) |
-| 2026-27 windows          | ~Sep 2026, ~Oct 2026, ~Apr 2027 | Estimated (ETS had not posted 2026-27 dates as of 2026-06-10) | [ETS Schedule](https://www.ets.org/gre/test-takers/subject-tests/schedule.html)        |
-| Registration for 2026-27 | ~July 2026, via ETS account (`ereg.ets.org`) — NOT NEEA | **Pattern + channel VERIFIED 2026-06-10** — ETS page still lists 2025-26 only ("registration opens July"); live seat search (GRE Physics, Sep–Oct 2026, Beijing & New York) empty → not open anywhere yet, no early window missed | [ETS Schedule](https://www.ets.org/gre/test-takers/subject-tests/schedule.html)        |
+| **2026-27 windows**      | **Sep 14–27, 2026** · **Oct 19–Nov 1, 2026** · Apr 19–May 2, 2027 | **PUBLISHED & VERIFIED** (ETS page fetched 2026-07-01) | [ETS Schedule](https://www.ets.org/gre/test-takers/subject-tests/schedule.html)        |
+| Est. score-available     | Sep window → ~Oct 5 · Oct window → ~Nov 9 (pattern: ~8 days after window closes) | Estimated (2026-27 score dates not yet posted) | [ETS Scores](https://www.ets.org/gre/test-takers/subject-tests/scores/get-scores.html) |
+| Registration status (2026-07-01) | **OPEN globally** via ETS account `ereg.ets.org` (NOT NEEA). **Mainland China seats NOT yet loaded** — live widget: Beijing & Shanghai empty for BOTH Sep & Oct windows; New York control had seats (Sep 15/17/22/25 · Oct 20/23/26/27). China Prometric seats release later; **no window missed** — monitor and book the instant they appear. | **VERIFIED via live widget 2026-07-01** | [ETS Schedule](https://www.ets.org/gre/test-takers/subject-tests/schedule.html)        |
 
 **Notes:**
 - Computer-delivered since Sep 2023, 2 hours duration
@@ -75,8 +76,8 @@ Same pattern as Section 1, shifted +1 year. Application periods would fall in ~O
 - ETS validity: 5 years. **UTokyo requirement: within 2 years of application start date** (stricter). VERIFIED — UTokyo admissions page
 - **Domestic seat scarcity:** Only **two test centers** in mainland China (Beijing, Shanghai) `[UNVERIFIED — single test-taker report, 2025]`. Based on test-taker reports, **only the October window reliably has domestic seats** — September and April availability is unconfirmed. Register immediately when the cycle opens (~Jul 2026) via the ETS account. Check live availability with the public ETS seat-search widget (no login: [ETS Schedule](https://www.ets.org/gre/test-takers/subject-tests/schedule.html)). See [[GRE_Physics_Prep]] for full logistics.
 
-> [!info] GRE Physics — targeting Sep/Oct 2026 window
-> Apr 2026 window skipped (decision 2026-03-09). Targeting **Sep/Oct 2026** window instead (dates estimated, not yet published by ETS). Scores from Sep/Oct 2026 arrive well before the now-verified Special Selection Application Period 2 (**Dec 7–22, 2026**). Registration for 2026-27 windows expected to open ~July 2026 via the **ETS account** (`ereg.ets.org`) — NEEA does not handle Subject Tests (VERIFIED 2026-06-10; live ETS seat search empty as of that date, so nothing is open or filling yet and no early window was missed).
+> [!info] GRE Physics — DECISION 2026-07-01: September primary + October retake/fallback
+> Windows now **PUBLISHED** (Sep 14–27 · Oct 19–Nov 1 · Apr 19–May 2, 2027). **Strategy (chosen 2026-07-01):** target the **September window** (scores ~Oct 5 → reach *both* Period 1 and Period 2) and book the instant China seats load; keep the **October window** as a retake (if score <900; 14-day rule allows Sep 27 → Oct retake, still before Period 2) or fallback (if Sep China seats never open). Both windows deliver before Period 2 (Dec 7–22). Registration is **OPEN globally** via `ereg.ets.org`, but **mainland China (Beijing + Shanghai) seats are not loaded yet as of 2026-07-01** — a monitoring/booking cadence is on the calendar. NEEA does not handle Subject Tests.
 
 ## 4. TOEFL iBT
 
@@ -104,11 +105,11 @@ Same pattern as Section 1, shifted +1 year. Application periods would fall in ~O
 - ETS recommends registering **4 months in advance** for best date selection; closes **5 days** before test (late registration: 2 days before)
 - ~~Register in **April 2026** for a **July–August 2026** exam date~~ → **Done 2026-04-09: booked 2026-08-30** (~4.7 months lead time)
 - ~~Retake possible: if score < 100, retake in Sep–Oct 2026~~ → **Strategy change 2026-04-10:** unconditional two-attempt plan — take TOEFL twice regardless of Attempt #1 score for safety margin
-- **⏰ 2026-07-01 — Register for TOEFL Attempt #2** (decision date pushed from 06-19 to wait on the GRE registration timeline, which the two exam dates interact with; target: ~Nov 2026 exam date, pre-Special Selection Period 2 Dec 7–22, 2026)
+- **⏰ 2026-07-01 (DECISION) — TOEFL Attempt #2 HELD, not booked yet.** GRE 2026-27 registration is open globally but **mainland China GRE seats are not loaded yet** (verified 2026-07-01), so the GRE date can't be locked today; since #2's date depends on it, booking is held. **Target: November 2026.** China Nov TOEFL dates (offered): **Nov 8, 14, 22, 28** (all morning). **Book Nov 8 or Nov 14** once the GRE seat is secured — both deliver before Period 2 (Dec 7); **avoid Nov 22/28** (delivery too tight). Register by **Nov 5** (for Nov 8) / **Nov 11** (for Nov 14) — NEEA closes 3 days prior.
 
 **Plan:** Unconditional two-attempt strategy (updated 2026-04-10):
 - **Attempt #1:** ~~Register Apr 2026, test Jul–Aug 2026.~~ → **Executed: registered 2026-04-09, test 2026-08-30 at STN80118A Beijing.** Score valid through 2028-08-30.
-- **Attempt #2:** Register by **2026-07-01** (pushed from 06-19, pending the GRE timeline), target exam ~Nov 2026. Do NOT auto-send to UTokyo at registration — compare both scores, then manually send the better one (code 8002-01) before Period 2 (opens Dec 7, 2026).
+- **Attempt #2 (updated 2026-07-01):** HELD pending GRE seat lock (China GRE seats not yet bookable). Target **Nov 8 or Nov 14, 2026**; register once the GRE seat is secured. Do NOT auto-send to UTokyo at registration — compare both scores, then manually send the better one (code 8002-01) before Period 2 (opens Dec 7, 2026).
 
 **Score delivery to UTokyo:**
 - Select institution code **8002-01** when registering, or send additional score report after test

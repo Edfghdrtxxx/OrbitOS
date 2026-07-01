@@ -316,7 +316,10 @@ Unconditional two-attempt plan — take TOEFL twice regardless of Attempt #1 sco
 | Attempt | Target Date | Action |
 |---|---|---|
 | **#1** | **2026-08-30** | Registered (2026-04-09) at STN80118A Beijing |
-| **#2** | **~Nov 2026** | Register by **2026-07-01**; do NOT auto-send to UTokyo — compare scores first, then manually send the better one (code 8002-01) |
+| **#2** | **Nov 8 or Nov 14, 2026** | **HELD pending GRE seat lock** (see note); book once GRE secured; do NOT auto-send to UTokyo — compare scores first, then manually send the better one (code 8002-01) |
+
+> [!warning] Update 2026-07-01 — Attempt #2 held, not booked
+> The original "register by 2026-07-01" gate was contingent on the GRE timeline. Verified today: GRE 2026-27 registration is open globally but **mainland China GRE seats have not loaded yet**, so the GRE date can't be locked. Since #2's date depends on it, booking is **held**. Nov 2026 China TOEFL dates: **Nov 8, 14, 22, 28** (all morning). **Book Nov 8 or Nov 14** (deliver before Period 2 Dec 7); **avoid Nov 22/28** (too tight). Register by Nov 5 (→Nov 8) / Nov 11 (→Nov 14). Calendar reminders set.
 
 After Attempt #1 (scores available ~Sep 2), use the gap to target specific weaknesses for Attempt #2.
 
