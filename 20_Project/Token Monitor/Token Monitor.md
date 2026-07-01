@@ -2,12 +2,12 @@
 type: project
 status: active
 area: null
-path: C:\Users\petro\token-monitor
+path: D:\token-monitor
 ---
 Live token/cost tray widget (`Javis603/token-monitor`) for Claude Code, Codex, OpenCode, etc. Deployed 2026-07-01 as a local Electron app, **local-only mode** (no hub, no network sync). Codebase lives outside the vault at the `path` above.
 
 ## Run / Stop
-- **Relaunch:** `cd C:\Users\petro\token-monitor; npm start`
+- **Relaunch:** `cd D:\token-monitor; npm start`
 - **Stop:** `Get-Process electron | Stop-Process`  (or tray icon → Quit)
 - Lives in the **system tray** (no taskbar window). Tie-to-session: if launched from a Claude session it dies with it — use the relaunch command to run standalone.
 
