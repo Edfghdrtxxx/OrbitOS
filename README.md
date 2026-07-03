@@ -59,7 +59,7 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 
 ## Skill Categories
 
-33 skills across 7 categories:
+34 skills across 7 categories:
 
 | Category | Count | Skills |
 |---|---|---|
@@ -69,7 +69,7 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 | **Learning** | 4 | `Feynman-Technique`, `guide-derivation`, `phrasing-refining`, `insert-Feynman` |
 | **Content Curation** | 2 | `ai-newsletters`, `ai-products` |
 | **Meta/Utility** | 7 | `orchestrate`, `dispatch`, `reflect`, `evolve-skills`, `handoff-prompt`, `anchor-game-framework`, `defuddle` |
-| **Tools** | 2 | `mcp-builder`, `notebooklm` |
+| **Tools** | 3 | `mcp-builder`, `notebooklm`, `storage-analyzer` |
 
 ## C.A.P. Project Layout
 
@@ -108,4 +108,4 @@ Link liberally. The AI creates connections automatically, but manual links are j
 - **99_System/Prompts/** — 16 AI personas across Finance, Health, General, Learning, and Software Engineering domains.
 - **99_System/Bases/** — 5 Obsidian Bases dashboards (Projects, Projects Archive, Knowledge, Wiki Review, Integrated Sources).
 - **99_System/Game_Framework.md** — Strategic life/goal framework based on Dan Koe's method: anti-vision, vision, identity, priority stack, daily levers.
-- **.agents/skills/** — 33 skill definitions (symlinked to .claude/skills/).
+- **.agents/skills/** — 34 skill definitions (symlinked to .claude/skills/).
