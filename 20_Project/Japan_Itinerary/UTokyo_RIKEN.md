@@ -273,8 +273,9 @@ Core written scope (UTokyo Physics doctoral, 2026-cycle reference):
 - [x] **GRE Physics Subject Test** — compulsory for Special Selection; minimum 900 *(REGISTERED & PAID 2026-07-04)*
 
 > [!success] **GRE Physics registered (2026-07-04)**
-> - **Order:** #26365004, paid Jul 4, 2026 — $175 test + $7 online service fee = $182 (ETS)
-> - **Exam:** Sunday **Nov 1, 2026, 2:00 PM** — GRE Physics Test (Computer), ETS Beijing Test Center (**STN80177D**)
+> - **Order:** #26365004, paid Jul 3, 2026 (ET; Jul 4 Beijing) — $175 test + $7 online service fee = $182 (ETS). **Appointment #: 9631911263841188**
+> - **Exam:** Sunday **Nov 1, 2026, 2:00 PM** — GRE Physics Test (Computer), ETS Beijing Test Center (**STN80177D**), 9th Floor, Dongfang Gongxiao Building, No. 28 Guandongdian, **Chaoyang District**, Beijing — arrive by **13:30** (30 min early; late = fee forfeited)
+> - **Reschedule/cancel deadline: Oct 28, 2026** (no later than 4 days before test; after that, fee forfeited). No personal items in the testing room (phones, watches, wearables). Free official practice book: [ETS Subject Test prep](https://www.ets.org/gre/test-takers/subject-tests/prepare.html); confirmation printable at [ets.org/mygre](https://www.ets.org/mygre)
 > - **Free score recipient:** 7048 (UTokyo Grad School of Science), dept 0808 Physics — changeable until Oct 31, 10pm
 > - **Score timeline:** release ~5 weeks after test ≈ **Dec 6** → arrives inside Period 2 window (Dec 7–22) with thin margin; **no retake possible** before deadline (verified 2026-07-04: zero other fall seats in Beijing / Shanghai / Hong Kong; global fall dates were Sep 15/17/22/25, Oct 20/23/26/27, Nov 1)
 > - **Insurance:** email Graduate School of Science in November flagging possibly-late score arrival (their FAQ provides for this)
