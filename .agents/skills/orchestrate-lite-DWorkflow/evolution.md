@@ -7,3 +7,7 @@ Binding constraints (read in step 0). Terse by design — drop nothing load-bear
 - **Skeptics flag uncertainty**, never assert absence — pair each implementer with a skeptic.
 - **Delegate, never deep-read** — dispatch sub-agents for file contents; read only their output and the final report.
 - **Long jobs run via `Bash run_in_background`** from the orchestrator, never inside a workflow sub-agent (zombie shells on silent death).
+- **Background-agent final reports sometimes fail to relay** (idle notification arrives, report doesn't) — SendMessage the agent asking it to resend to "main"; this works.
+- **Git-Bash mangles leading-slash args** (`/root/...` → Windows path) before python sees them — run remote-path CLIs (gpu_download etc.) through PowerShell or use relative remote paths.
+- **`pkill -f <pattern>` over SSH kills your own session** when the pattern appears in your command line — bracket-escape it (`[r]un_experiment`).
+- **AutoDL gateway force-closes SSH ~6.6h even with keepalive traffic** (idle ones sooner) — remote jobs must be nohup-detached; watchers are best-effort, design for artifact-based completion detection (best_model.pth in log-driven drivers), not exit codes or held connections.

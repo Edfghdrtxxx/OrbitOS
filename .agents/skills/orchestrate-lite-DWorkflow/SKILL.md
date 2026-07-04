@@ -10,6 +10,6 @@ Read `evolution.md` in this skill's folder. Apply any accumulated lessons as add
 
 # Principles
 
-1. Gather context through subagents
+1. Gather context by means of subagents rather than loading files directly into your context window. (I am confident that you will make the appropriate decision.)
 2. Use a dynamic workflow
 3. Raise questions so that we can confirm my intent.

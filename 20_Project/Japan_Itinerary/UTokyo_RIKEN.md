@@ -25,7 +25,7 @@ decision_date: 2026-02-15
 
 > [!success] RESOLVED: Special Selection Confirmed (2026-04-13)
 > GSGC ineligible for master's holders. Special Selection is the sole admission path. Interview only — no written exam. GRE Physics minimum: 900. See [[DG_GSGC_vs_Special_Selection]] (RESOLVED).
-- **Next actions:** (1) Prioritize entrance exam preparation — Route B / Special Selection confirmed, (2) Prepare admission materials before Dec 2026, (3) Register for GRE Physics (compulsory, minimum 900), (4) Confirm Kenkyusei application window (fallback prep), (5) Continue physics + Japanese study.
+- **Next actions:** (1) Prioritize entrance exam preparation — Route B / Special Selection confirmed, (2) Prepare admission materials before Dec 2026, (3) ~~Register for GRE Physics~~ **REGISTERED 2026-07-04** — exam Nov 1, 2026 (see [[#Application Materials]]); prep for minimum 900, (4) Confirm Kenkyusei application window (fallback prep), (5) Continue physics + Japanese study.
 - **Supervisor:** Committed to [[Prof_Nobuaki_Imai|Nobuaki Imai]] (DONUTS group) — confirmed 2026-04-13.
 - **Top risks:** Entrance exam difficulty (High), ~~supervisor acceptance (Medium-High)~~ **mitigated (2026-03-09)**, self-funded budget shortfall for fallback Kenkyusei year (Medium-High).
 - **Rejected alternatives:** MEXT Embassy/CSC (return-service conflict), MEXT University Recommendation (Research Student, dropped 2026-02-17), IPA (requires CAS degree — user wants UTokyo degree).
@@ -270,7 +270,15 @@ Core written scope (UTokyo Physics doctoral, 2026-cycle reference):
 
 - [ ] Research proposal linking IMP thesis → UTokyo CNS / RIKEN topics
 - [ ] TOEFL iBT score → [[English_Learning]] *(registered 2026-04-09; exam **2026-08-30** at STN80118A Beijing; score available ~Sep 2 — see [[TOEFL_Study_Progress]])*
-- [ ] **GRE Physics Subject Test** — compulsory for Special Selection; minimum 900; register early
+- [x] **GRE Physics Subject Test** — compulsory for Special Selection; minimum 900 *(REGISTERED & PAID 2026-07-04)*
+
+> [!success] **GRE Physics registered (2026-07-04)**
+> - **Order:** #26365004, paid Jul 4, 2026 — $175 test + $7 online service fee = $182 (ETS)
+> - **Exam:** Sunday **Nov 1, 2026, 2:00 PM** — GRE Physics Test (Computer), ETS Beijing Test Center (**STN80177D**)
+> - **Free score recipient:** 7048 (UTokyo Grad School of Science), dept 0808 Physics — changeable until Oct 31, 10pm
+> - **Score timeline:** release ~5 weeks after test ≈ **Dec 6** → arrives inside Period 2 window (Dec 7–22) with thin margin; **no retake possible** before deadline (verified 2026-07-04: zero other fall seats in Beijing / Shanghai / Hong Kong; global fall dates were Sep 15/17/22/25, Oct 20/23/26/27, Nov 1)
+> - **Insurance:** email Graduate School of Science in November flagging possibly-late score arrival (their FAQ provides for this)
+> - **Exam-day ID:** Second-Generation Resident ID (二代身份证) — mandatory for residents of China at ETS centers; bring passport as supplemental (ID card carries no signature); registration name must match ID
 - [ ] Letter of Acceptance (Naidaku)
 - [ ] Academic transcripts and degree documents (IMP/CAS/UCAS)
 - [ ] Letters of recommendation
