@@ -272,7 +272,7 @@ Jul 1 ██████████████████████ Sep 15 
 
 > [!success] **Attempt #2 registered exam details (2026-07-04)**
 > - **Exam format:** TOEFL iBT (托福网考)
-> - **Date:** 2026-09-13 (Sunday)
+> - **Date:** 2026-09-13 (Sunday) — test starts **09:00** Beijing time (01:00 UTC, per ETS confirmation email)
 > - **Latest arrival:** 2026-09-13 **08:30** — late arrival = denied entry
 > - **Test center:** STN80118A — 国试大厦考点 (Guoshi Building) — same as Attempt #1
 > - **Address:** 北京市海淀区上地六街一号 (No. 1 Shangdi 6th St., Haidian District, Beijing)
