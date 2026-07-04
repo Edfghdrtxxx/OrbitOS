@@ -55,8 +55,8 @@ tags: [english, TOEFL, language]
 - [ ] Vocabulary: academic word list + TOEFL high-frequency words via Anki
 - [x] Register for official TOEFL exam date → **booked 2026-08-30 at STN80118A 国试大厦考点, Beijing (registered 2026-04-09)**
 - [ ] Take official exam on **2026-08-30** (Attempt #1)
-- [ ] Register for Attempt #2 — **held (2026-07-01) pending GRE seat lock**; target **Nov 8 or Nov 14, 2026**, book once GRE secured (avoid Nov 22/28 — too tight for Period 2)
-- [ ] Take Attempt #2 (~Nov 2026); do NOT auto-send — compare scores, then manually send the better one to UTokyo (code 8002-01) before Period 2 (~Dec 5)
+- [x] Register for Attempt #2 → **booked 2026-09-13 at STN80118A, Beijing (registered 2026-07-04)** — Nov 8/14 plan superseded: GRE Physics locked for Nov 1, so #2 moved earlier to keep Oct–Nov clear for GRE prep
+- [ ] Take Attempt #2 (**2026-09-13**); do NOT auto-send — compare scores, then manually send the better one to UTokyo (code 8002-01) before Period 2 (opens Dec 7)
 
 ---
 
@@ -64,6 +64,7 @@ tags: [english, TOEFL, language]
 
 - 2026-02-13: [[2026-02-13]] - Project initiated, target set: TOEFL 100+, focus on Listening & Speaking
 - 2026-04-09: [[2026-04-09]] - **TOEFL iBT registered** for 2026-08-30 (Sun) at STN80118A 国试大厦考点 (Guoshi Building), Beijing. Metro Line 13 → Qinghe Station. Arrival deadline 08:30. See [[TOEFL_Study_Progress]] for full logistics.
+- 2026-07-04: [[2026-07-04]] - **TOEFL Attempt #2 registered** for 2026-09-13 (Sun), same center STN80118A (arrival by 08:30; ETS registration # pending ≤24h). Booked for September instead of the held Nov 8/14 target to keep Oct–Nov clear for GRE Physics (Nov 1, registered & paid the same day — see [[UTokyo_RIKEN]]).
 
 ---
 

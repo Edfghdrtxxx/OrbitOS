@@ -2,10 +2,11 @@
 type: plan
 status: active
 created: 2026-02-17
-updated: 2026-04-09
+updated: 2026-07-04
 format: TOEFL iBT 2026 (launched Jan 21, 2026)
 target_exam: 2026-08-30
 exam_date: 2026-08-30
+attempt2_exam_date: 2026-09-13
 test_center: STN80118A — 国试大厦考点 (Guoshi Building), 北京市海淀区上地六街一号
 registration_status: registered (2026-04-09); ETS registration # pending (≤24h)
 arrival_deadline: 2026-08-30 08:30 (late arrival = denied entry)
@@ -23,6 +24,7 @@ related:
 
 > [!success] **Exam registered — 2026-08-30 (Sun) at STN80118A 国试大厦考点, Beijing** *(booked 2026-04-09)*
 > Arrive **by 08:30**. See [Test Registration & Logistics](#test-registration--logistics) for full details.
+> **Attempt #2 registered — 2026-09-13 (Sun), same center** *(booked 2026-07-04)*. Arrive by 08:30. ETS registration # pending (≤24h).
 
 > [!warning] **Timeline needs re-baselining to 2026-08-30**
 > The phase dates below were written for a Sep 21 target. The registered exam is **Aug 30 — 22 days earlier**. Phase 3 (Jul 1 – Sep 15) and Phase 4 (Sep 15 – Sep 21) should be compressed accordingly. Check tables, the "Days until exam" tip, the "Integration with UTokyo Timeline" block, and the Weekly Progress Tracker rows. **Not auto-shifted — confirm with user before restructuring phases.**
@@ -52,9 +54,9 @@ Jul 1 ██████████████████████ Sep 15 
 | **2 — Skill Building** | Apr 16 – Jun 30 | 11 | Test strategies, Listening intensive | 88-93 (comparable) |
 | **3 — Test Prep** | Jul 1 – Sep 15 | 11 | Weekly mocks, weakness elimination | band 5.0 / 100+ |
 | **4 — Final Week** | Sep 15 – Sep 21 | 1 | Light review, rest, **exam day** | — |
-| **Attempt #2** | ~Nov 2026 | — | Unconditional second attempt — register by 2026-07-01 | band 5.0 / 100+ |
+| **Attempt #2** | **2026-09-13** | — | REGISTERED 2026-07-04 — same center (STN80118A) | band 5.0 / 100+ |
 
-> **Key milestones:** Mock #1 (Apr ~13) · Mock #2 (Jun ~29) · Mocks #3-7 (weekly Jul–Sep) · **TOEFL Attempt #1 (2026-08-30)** · **Register Attempt #2 (by 2026-07-01)** · **TOEFL Attempt #2 (~Nov 2026)**
+> **Key milestones:** Mock #1 (Apr ~13) · Mock #2 (Jun ~29) · Mocks #3-7 (weekly Jul–Sep) · **TOEFL Attempt #1 (2026-08-30)** · **TOEFL Attempt #2 (2026-09-13 — registered 2026-07-04)**
 
 ## Score Breakdown Target
 
@@ -136,7 +138,7 @@ Jul 1 ██████████████████████ Sep 15 
 | ~~Mid-2026~~ | ~~MEXT University Recommendation~~ → dropped (extremely fierce competition) |
 | Apr-May 2027 | **Kenkyusei formal application window** — TOEFL score is a required document |
 | Aug 30, 2026 | **Attempt #1** — registered at STN80118A Beijing |
-| ~Nov 2026 | **Attempt #2** (unconditional) — register by 2026-07-01; submit better score to UTokyo before Period 2 (~Dec 5) |
+| Sep 13, 2026 | **Attempt #2** — registered 2026-07-04 at STN80118A; compare with #1, send better score to UTokyo before Period 2 (opens Dec 7) |
 
 > [!warning] TOEFL scores are valid for **2 years**. A Sep 2026 score expires Sep 2028 — covers both Kenkyusei and PhD entrance applications.
 
@@ -268,6 +270,16 @@ Jul 1 ██████████████████████ Sep 15 
 > - **ETS registration #:** pending (system generates within 24h; contact NEEA if not issued)
 > - **UTokyo score recipient code:** 8002-01 (single test date — **no MyBest**)
 
+> [!success] **Attempt #2 registered exam details (2026-07-04)**
+> - **Exam format:** TOEFL iBT (托福网考)
+> - **Date:** 2026-09-13 (Sunday)
+> - **Latest arrival:** 2026-09-13 **08:30** — late arrival = denied entry
+> - **Test center:** STN80118A — 国试大厦考点 (Guoshi Building) — same as Attempt #1
+> - **Address:** 北京市海淀区上地六街一号 (No. 1 Shangdi 6th St., Haidian District, Beijing)
+> - **Transit:** Metro Line 13 → 清河 (Qinghe) Station → west plaza exit → walk ~800 m, **enter via east gate**
+> - **ETS registration #:** pending (system generates within 24h; contact NEEA if not issued)
+> - **Before test day:** review the 考点入校/入场要求 (center entry requirements) link in the NEEA confirmation
+
 ### Phase 4: Final Week & Test Day
 
 #### 7 Days Before
@@ -316,10 +328,13 @@ Unconditional two-attempt plan — take TOEFL twice regardless of Attempt #1 sco
 | Attempt | Target Date | Action |
 |---|---|---|
 | **#1** | **2026-08-30** | Registered (2026-04-09) at STN80118A Beijing |
-| **#2** | **Nov 8 or Nov 14, 2026** | **HELD pending GRE seat lock** (see note); book once GRE secured; do NOT auto-send to UTokyo — compare scores first, then manually send the better one (code 8002-01) |
+| **#2** | **2026-09-13** | **REGISTERED 2026-07-04** at STN80118A (same center as #1); do NOT auto-send to UTokyo — compare scores first, then manually send the better one (code 8002-01) |
 
 > [!warning] Update 2026-07-01 — Attempt #2 held, not booked
 > The original "register by 2026-07-01" gate was contingent on the GRE timeline. Verified today: GRE 2026-27 registration is open globally but **mainland China GRE seats have not loaded yet**, so the GRE date can't be locked. Since #2's date depends on it, booking is **held**. Nov 2026 China TOEFL dates: **Nov 8, 14, 22, 28** (all morning). **Book Nov 8 or Nov 14** (deliver before Period 2 Dec 7); **avoid Nov 22/28** (too tight). Register by Nov 5 (→Nov 8) / Nov 11 (→Nov 14). Calendar reminders set.
+
+> [!success] RESOLVED 2026-07-04 — Attempt #2 booked for **Sep 13**, not November
+> GRE Physics seat was locked the same day (**Nov 1, Beijing** — the only fall seat in the region; see [[UTokyo_RIKEN]]). Attempt #2 was registered for **2026-09-13** instead of Nov 8/14, keeping October–November clear for GRE prep. The Nov 8/14 plan and its calendar reminders are **superseded**. Note: the gap between attempts is now 2 weeks (Aug 30 → Sep 13), not 2 months — Attempt #1 scores (~Sep 2–5) leave only ~1 week of targeted adjustment.
 
 After Attempt #1 (scores available ~Sep 2), use the gap to target specific weaknesses for Attempt #2.
 
@@ -382,9 +397,11 @@ Aug 30 2026       ★ TOEFL ATTEMPT #1 ★
     ↓
 Sep 2026          Attempt #1 scores available (~3 days); target weaknesses for Attempt #2
     ↓
-Nov 2026          ★ TOEFL ATTEMPT #2 ★ (unconditional — register by 2026-07-01)
+Sep 13 2026       ★ TOEFL ATTEMPT #2 ★ (registered 2026-07-04)
     ↓
-Nov-Dec 2026      Compare scores → manually send better score to UTokyo (code 8002-01) before Period 2 (~Dec 5)
+Sep-Oct 2026      Compare scores → manually send better score to UTokyo (code 8002-01) before Period 2 (opens Dec 7)
+    ↓
+Nov 1 2026        ★ GRE PHYSICS ★ (Beijing, only regional fall seat — see [[UTokyo_RIKEN]])
     ↓
 Apr-May 2027      Kenkyusei application — TOEFL score submitted
 ```
