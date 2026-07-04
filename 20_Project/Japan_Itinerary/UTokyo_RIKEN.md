@@ -278,7 +278,7 @@ Core written scope (UTokyo Physics doctoral, 2026-cycle reference):
 > - **Free score recipient:** 7048 (UTokyo Grad School of Science), dept 0808 Physics — changeable until Oct 31, 10pm
 > - **Score timeline:** release ~5 weeks after test ≈ **Dec 6** → arrives inside Period 2 window (Dec 7–22) with thin margin; **no retake possible** before deadline (verified 2026-07-04: zero other fall seats in Beijing / Shanghai / Hong Kong; global fall dates were Sep 15/17/22/25, Oct 20/23/26/27, Nov 1)
 > - **Insurance:** email Graduate School of Science in November flagging possibly-late score arrival (their FAQ provides for this)
-> - **Exam-day ID:** Second-Generation Resident ID (二代身份证) — mandatory for residents of China at ETS centers; bring passport as supplemental (ID card carries no signature); registration name must match ID
+> - **Exam-day ID:** bring **BOTH** passport and Second-Generation Resident ID (二代身份证). ETS account was registered with **passport** (name/DOB on account must match it exactly), but ETS's China rule says residents of China present the 二代身份证 as primary ID — carrying both covers every check. Verify passport is valid through Nov 1, 2026. Optional insurance: confirm with GRE Services which document counts as primary for a passport-registered mainland test taker.
 - [ ] Letter of Acceptance (Naidaku)
 - [ ] Academic transcripts and degree documents (IMP/CAS/UCAS)
 - [ ] Letters of recommendation
