@@ -14,6 +14,7 @@
   "sharedEnvironmentVariables": "",
   "envSnippets": [],
   "customContextLimits": {},
+  "customModelAliases": {},
   "keyboardNavigation": {
     "scrollUpKey": "w",
     "scrollDownKey": "s",
@@ -29,8 +30,6 @@
       "loadUserSettings": true,
       "enableChrome": false,
       "enableBangBash": false,
-      "enableOpus1M": false,
-      "enableSonnet1M": false,
       "customModels": "",
       "lastModel": "opus",
       "environmentVariables": "",
@@ -48,7 +47,9 @@
       "installationMethodsByHost": {
         "device:f00ce84f-08d1-436c-b128-df66e8e10653": "native-windows"
       },
-      "wslDistroOverridesByHost": {}
+      "wslDistroOverridesByHost": {},
+      "modelAliases": {},
+      "visibleModels": null
     },
     "opencode": {
       "cliPath": "",
@@ -60,6 +61,18 @@
       "preferredThinkingByModel": {},
       "selectedMode": "",
       "thinkingOptionsByModel": {},
+      "visibleModels": []
+    },
+    "pi": {
+      "cliPath": "",
+      "cliPathsByHost": {},
+      "discoveredModels": [],
+      "enabled": false,
+      "environmentHash": "",
+      "environmentVariables": "",
+      "modelAliases": {},
+      "preferredThinkingByModel": {},
+      "toolMode": "all",
       "visibleModels": []
     }
   },
@@ -77,9 +90,10 @@
   "savedProviderPermissionMode": {},
   "lastCustomModel": "",
   "maxTabs": 4,
-  "tabBarPosition": "input",
   "enableAutoScroll": true,
   "deferMathRenderingDuringStreaming": true,
+  "expandFileEditsByDefault": false,
   "chatViewPlacement": "right-sidebar",
-  "hiddenProviderCommands": {}
+  "hiddenProviderCommands": {},
+  "tabBarPosition": "input"
 }
