@@ -59,7 +59,7 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 
 ## Skill Categories
 
-38 core skills across categories (plus optional `dbs*` pack under `agent/skills/`):
+38 core skills across categories:
 
 | Category | Skills |
 |---|---|
@@ -104,12 +104,11 @@ Link liberally. The AI creates connections automatically, but manual links are j
 
 ## System Files
 
-- **CLAUDE.md** — Single project rules file for Grok Build, Claude Code, and other hosts (vault structure, multi-host memory, Grok tool map pointer).
-- **`.grok/`** — Grok Build project layer: `rules/grok-tool-map.md`, `config.toml` (no skill bridges by design).
+- **CLAUDE.md** — Single project rules file for Grok Build, Claude Code, and other hosts (vault structure, multi-host memory; minimal host-specific rules).
+- **`.grok/`** — Grok Build project layer: `config.toml` (no skill bridges by design; no tool-name maps — trust the model).
 - **99_System/Templates/** — Note templates (Daily, Project, Wiki, Inbox, Content, Derivation).
 - **99_System/Prompts/** — 16 AI personas across Finance, Health, General, Learning, and Software Engineering domains.
 - **99_System/Bases/** — 5 Obsidian Bases dashboards (Projects, Projects Archive, Knowledge, Wiki Review, Integrated Sources).
 - **99_System/memory/** — Portable harness memory promoted into the vault (e.g. necessity-check).
 - **99_System/Game_Framework.md** — Strategic life/goal framework based on Dan Koe's method: anti-vision, vision, identity, priority stack, daily levers.
 - **.agents/skills/** — 38 core skill definitions (symlinked to `.claude/skills/`).
-- **agent/skills/** — Optional dontbesilent (`dbs*`) pack (not auto-bridged into Grok).

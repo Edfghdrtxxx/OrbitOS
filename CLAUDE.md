@@ -2,7 +2,7 @@
 
 Act as Knowledge Manager and Daily Planner. Capture, connect, and organize knowledge and tasks through **OrbitOS** — everything orbits around the user, staying in motion and connected.
 
-This is the **single project rules file** for Grok Build, Claude Code, and other hosts. Grok-only tool mapping lives in `.grok/rules/grok-tool-map.md` (auto-loaded by Grok).
+This is the **single project rules file** for Grok Build, Claude Code, and other hosts. Prefer minimal host-specific rules; trust the model to map host tool names when running skills.
 
 ## Structure
 * **`10_Daily`**: Daily logs (`YYYY-MM-DD.md`) → use `/start-my-day` every morning. Captures land here via `/daily-note-addition`
@@ -17,11 +17,10 @@ This is the **single project rules file** for Grok Build, Claude Code, and other
 * **`99_System`**: Templates/, Prompts/ (16 domain personas), Bases/ (5 Obsidian Bases dashboards), Archives/, Scripts/, `.scratch/` (agent working files), `memory/` (shared harness memory promoted into the vault)
 
 ## Skill Files
-* **OrbitOS core skills (source of truth):** `.agents/skills/<skill-name>/SKILL.md`
-  * Bridged for Claude as `.claude/skills` → `../.agents/skills` (symlink)
-  * Grok discovers `.agents/skills/` and `.claude/skills/` automatically
-* **dontbesilent (`dbs*`) pack:** lives under `agent/skills/` (locked via root `skills-lock.json`) but is **not** exposed to Grok by default — intentional; use only if you explicitly want that pack
-* See [[README]] for the skill catalog (38 core skills)
+* **Canonical path:** `.agents/skills/<skill-name>/SKILL.md` — install and edit only here
+  * Claude: `.claude/skills` → `../.agents/skills` (symlink; never a real directory)
+  * Grok: use `.agents/skills/` only — no parallel `.grok/skills/` copies
+* See [[README]] for the skill catalog (~39 core skills)
 
 ## Vault root (this machine)
 Primary Mac vault path: `/Users/Reid Hu/OrbitOS`
@@ -84,17 +83,3 @@ Skip any related-repo path that does not exist on disk.
 - **Zero Assumptions:** Never guess user intent. If multiple implementations exist or requirements are incomplete, **halt and ask the user** (Grok: `ask_user_question`; Claude/Codex: `AskUserQuestion`) to gather explicit direction.
 - **No Silent Assumptions:** Even when the task is requested, confirm the *method* if it was not specified. Do not guess the user's expectations.
 - **Necessity Check (trigger-based):** Load `feedback_necessity_check.md` via the Memory System search order above and apply its five-question check — halt and ask the user if any check fails — when either trigger fires: (a) the change touches structural/system surfaces (skills, CLAUDE.md, memory, hooks, vault architecture), or (b) the user floats a modification/refactor idea — a new mechanism, a skill/workflow redesign — invoking their "questioning/interrogative spirit" (they want scrutiny, not agreement). Otherwise stay out of it. Do not sell speculation as an obvious win.
-
-## Grok Build compatibility
-Skills under `.agents/skills/` were written primarily for Claude Code. On Grok Build, interpret Claude tool names using the map in `.grok/rules/grok-tool-map.md` (auto-loaded). In short:
-
-| Skill says | On Grok do |
-|---|---|
-| `AskUserQuestion` | `ask_user_question` |
-| `Agent` / Explore / Plan subagents | `spawn_subagent` with role in the prompt |
-| `Skill` / invoke `/skill-name` | Read `.agents/skills/<skill-name>/SKILL.md` and follow it (or spawn a subagent with that body) |
-| `Read` / `Write` / `Edit` / `Glob` / `Grep` / `Bash` | `read_file` / `write` / `search_replace` / `list_dir` / `grep` / `run_terminal_command` |
-| `WebFetch` / `WebSearch` | `web_fetch` / `web_search` |
-| `TodoWrite` / Task* progress tools | `todo_write` (+ scratch files under `99_System/.scratch/` when needed) |
-
-Multi-agent skills (`/orchestrate`, `/dispatch`, `/research`, dual-agent `/kickoff`) are best-effort on Grok via `spawn_subagent`; prefer simpler single-agent paths when the task is small.
