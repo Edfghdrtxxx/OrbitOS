@@ -20,9 +20,8 @@ This is the **single project rules file** for Grok Build, Claude Code, and other
 * **OrbitOS core skills (source of truth):** `.agents/skills/<skill-name>/SKILL.md`
   * Bridged for Claude as `.claude/skills` → `../.agents/skills` (symlink)
   * Grok discovers `.agents/skills/` and `.claude/skills/` automatically
-* **dontbesilent (`dbs*`) pack:** `agent/skills/` (locked via root `skills-lock.json`)
-  * Bridged for Grok as `.grok/skills/<name>` → `../../agent/skills/<name>` when present
-* See [[README]] for the skill catalog (38 core skills + optional dbs pack)
+* **dontbesilent (`dbs*`) pack:** lives under `agent/skills/` (locked via root `skills-lock.json`) but is **not** exposed to Grok by default — intentional; use only if you explicitly want that pack
+* See [[README]] for the skill catalog (38 core skills)
 
 ## Vault root (this machine)
 Primary Mac vault path: `/Users/Reid Hu/OrbitOS`
