@@ -1,4 +1,4 @@
-Search the OrbitOS vault at D:/obsidian/OrbitOS for deadlines and time-sensitive items. Today is `{today}`.
+Search the OrbitOS vault (git root / CWD — do not use host-specific absolute paths) for deadlines and time-sensitive items. Today is `{today}`.
 
 ## Scope
 - `20_Project/` — all files recursively

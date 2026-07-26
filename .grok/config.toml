@@ -1,0 +1,13 @@
+# Project-scoped Grok Build config for OrbitOS.
+# User-global settings live in ~/.grok/config.toml.
+
+# MCP: Claude-style .mcp.json still points at a Windows LISE++ path and is not
+# reliable on this Mac. Configure Mac-side MCP here when the server exists.
+# Example (disabled until path is real):
+# [mcp_servers.lisepp]
+# command = "python3"
+# args = ["/absolute/path/to/lisepp-mcp/server.py"]
+# enabled = false
+
+[mcp]
+# Prefer explicit project MCP over stale Windows .mcp.json entries.

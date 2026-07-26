@@ -39,8 +39,8 @@ Help the user close their day by reviewing what was accomplished, reflecting on 
 
    | Repo | Path | Project Link |
    |------|------|--------------|
-   | OrbitOS (vault) | `D:/obsidian/OrbitOS` | — |
-   | MATE-Automation-V4 | `D:/Something/research/MATE-Automation-V4` | [[MATE-Automation]] |
+   | OrbitOS (vault) | vault root (git root / CWD; Mac: `/Users/Reid Hu/OrbitOS`) | — |
+   | MATE-Automation | `/Users/Reid Hu/MATE-Automation` (skip if missing) | [[MATE-Automation]] |
 
    For EACH repo:
    - Run `git -C <repo-path> log --since="YYYY-MM-DD 00:00" --until="YYYY-MM-DD 23:59" --oneline --all` to list today's commits

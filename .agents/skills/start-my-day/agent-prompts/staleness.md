@@ -6,7 +6,7 @@ Active project list (name + external codebase `path:` frontmatter if present):
 {projects}
 
 ## Scope
-- Read top-level daily notes in `D:/obsidian/OrbitOS/10_Daily/` only (ignore `Archives/`).
+- Read top-level daily notes in `10_Daily/` only (vault-relative; ignore `Archives/`).
 - Scan **newest-first**, starting from yesterday.
 - Window: up to 14 days back. Rationale: covers daily (~1 d) and weekly (~7 d) rituals with headroom. Widen only if the user's rituals become longer-period.
 - **Short-circuit per project:** stop scanning for a given project once its first `[x]` match is found (newest-first → first hit is the most recent).

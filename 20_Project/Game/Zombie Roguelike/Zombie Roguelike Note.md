@@ -9,19 +9,19 @@ Quick command reference for running the project manually. All npm commands run f
 
 ## Setup (first time)
 ```bash
-cd "D:/obsidian/OrbitOS/20_Project/Game/Zombie Roguelike/app"
+cd "20_Project/Game/Zombie Roguelike/app"
 npm install
 ```
 
 ## Development
 ```bash
-cd "D:/obsidian/OrbitOS/20_Project/Game/Zombie Roguelike/app"
+cd "20_Project/Game/Zombie Roguelike/app"
 npm run dev          # -> open http://localhost:5173 in your browser
 ```
 
 ## Build (single-file HTML)
 ```bash
-cd "D:/obsidian/OrbitOS/20_Project/Game/Zombie Roguelike/app"
+cd "20_Project/Game/Zombie Roguelike/app"
 npm run build        # -> app/dist/index.html  (~13 MB, self-contained)
 npm run preview      # -> http://localhost:4173  (Vite default; serves app/dist/)
 ```
@@ -29,14 +29,14 @@ npm run preview      # -> http://localhost:4173  (Vite default; serves app/dist/
 
 ## Lint & Format
 ```bash
-cd "D:/obsidian/OrbitOS/20_Project/Game/Zombie Roguelike/app"
+cd "20_Project/Game/Zombie Roguelike/app"
 npm run lint         # no file output; prints issues to terminal
 npm run format       # rewrites files under app/src/ in place
 ```
 
 ## Desktop (Tauri 2)
 ```bash
-cd "D:/obsidian/OrbitOS/20_Project/Game/Zombie Roguelike/app"
+cd "20_Project/Game/Zombie Roguelike/app"
 npm run tauri:dev    # -> launches a dev window (live reload)
 npm run tauri:build  # -> app/src-tauri/target/release/bundle/
 ```
@@ -46,7 +46,7 @@ npm run tauri:build  # -> app/src-tauri/target/release/bundle/
 
 ## Mobile (Capacitor 6)
 ```bash
-cd "D:/obsidian/OrbitOS/20_Project/Game/Zombie Roguelike/app"
+cd "20_Project/Game/Zombie Roguelike/app"
 # First time only: npx cap add android  &&  npx cap add ios
 npm run cap:sync           # copies app/dist/ into app/android/ and app/ios/
 npm run cap:open:android   # -> opens Android Studio; Build > Build APK(s)

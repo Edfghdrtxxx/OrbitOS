@@ -41,4 +41,4 @@ All commands run from `app/`:
 
 ## Git
 
-This project lives inside the parent OrbitOS vault repo (`D:/obsidian/OrbitOS`). There is no nested `.git` here. Unscoped `git` commands operate on the full vault — always pass explicit paths when staging or diffing project files.
+This project lives inside the parent OrbitOS vault repo (`/Users/Reid Hu/OrbitOS` on Mac; treat vault root as git root on any host). There is no nested `.git` here. Unscoped `git` commands operate on the full vault — always pass explicit paths when staging or diffing project files.

@@ -11,7 +11,13 @@
 
 # Tool configs - ignore local/temp only
 .claude/settings.local.json
+.claude/tmp/
 .gemini/tmp/
+.claudian/sessions/
+99_System/.scratch/
+
+# Dependencies / build junk
+**/node_modules/
 
 # System junk
 .DS_Store
@@ -35,6 +41,7 @@ Thumbs.db
 
 # Large Resources can be found in Internet.
 50_Resources/Physics/literature/
+50_Resources/Physics/Literature/
 
 # Uncompatible files
 50_Resources/Physics/Courseware/*

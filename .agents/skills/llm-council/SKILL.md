@@ -122,7 +122,7 @@ Three members, equal weight in Stage 1 and Stage 2:
 
 # Transcript (always written)
 
-Save to: `D:\obsidian\OrbitOS\20_Project\LLM-Council\Sessions\YYYY-MM-DD-<topic-slug>.md`
+Save to: `20_Project/LLM-Council/Sessions/YYYY-MM-DD-<topic-slug>.md` (vault-relative)
 
 Create the directory if it doesn't exist. Filename slug: kebab-case, ≤ 8 words from the question.
 
@@ -133,8 +133,8 @@ Frontmatter + body structure:
 type: council-session
 date: YYYY-MM-DD
 question: <one-line restatement>
-chairman: Claude
-members: [Claude, Gemini, GPT]
+chairman: host-model
+members: [host-model, Gemini, GPT]
 status: complete
 ---
 # <topic>
