@@ -67,7 +67,7 @@ tags: [physics, mathematics, statistics, fundamentals, PhD-prep]
 
 - [[Masters_Thesis]] - Direct application of physics and statistics knowledge
 - [[MATE-Automation]] - ML and data analysis application
-- [[Fundamental_Learning_Progress]] - Detailed phase plan + UTokyo exam structure notes
+- [[Fundamental_Learning_plan]] - Detailed phase plan + UTokyo exam structure notes
 - [[UTokyo_RIKEN]] - PhD route that sets the exam scope and priorities
 - [[English_Learning]] - Need to discuss these topics fluently in English
 

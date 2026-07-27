@@ -7,14 +7,14 @@ tags:
   - Phase-0
   - foundations
 created: 2026-02-15
-related: "[[Fundamental_Learning_Progress]]"
+related: "[[Fundamental_Learning_plan]]"
 last_reviewed:
 next_review: 2026-03-03
 review_interval: 0
 ---
 # Linear Algebra
 
-> [!info] Phase 0.1 of [[Fundamental_Learning_Progress]]
+> [!info] Phase 0.1 of [[Fundamental_Learning_plan]]
 > These notes build geometric intuition alongside formal definitions. Each concept connects forward to quantum mechanics — eigenvalue problems *are* QM.
 
 ## Topics

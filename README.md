@@ -21,7 +21,7 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 | Start my morning                                              | `/start-my-day`                 | Reviews yesterday, surfaces active projects, generates today's daily note                    |
 | Turn an idea into a project                                   | `/kickoff`                      | Structures it with C.A.P. layout (Context, Actions, Progress), asks clarifying questions     |
 | Deep-dive a topic (new ML paper, visa pathway, TPC technique) | `/research <topic>`             | Two-agent workflow: researches, then organizes into 30_Research/ and 40_Wiki/ with wikilinks |
-| Get a quick answer without creating notes                     | `/ask <question>`               | Direct answer, optionally saves to wiki                                                      |
+| Learn something with guided tutoring                          | `/learn <topic>`                | Diagnose, scaffold, one step per turn; records to `60_Learning_Progress/` + index            |
 | Explore an idea before committing                             | `/brainstorm`                   | Interactive session, can optionally become a project                                         |
 | Clean up finished work                                        | `/archive`                      | Moves completed projects to 99_System/Archives/                                              |
 | Catch up on AI news                                           | `/ai-newsletters`               | Curates TLDR AI, The Rundown AI into 50_Resources/                                           |
@@ -59,14 +59,14 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 
 ## Skill Categories
 
-38 core skills across categories:
+**38** core skills across categories (`ask` archived 2026-07-26 — plain chat covers Q&A; deep study uses `/learn`):
 
 | Category | Skills |
 |---|---|
-| **Daily Workflow** | `start-my-day`, `end-my-day`, `ask`, `brainstorm`, `breakdown-tasks`, `estimate-time`, `llm-council`, `daily-note-addition` |
+| **Daily Workflow** | `start-my-day`, `end-my-day`, `brainstorm`, `breakdown-tasks`, `estimate-time`, `llm-council`, `daily-note-addition` |
 | **Knowledge Management** | `kickoff`, `archive`, `atomic-note`, `research`, `wiki-review` |
 | **Obsidian Features** | `obsidian-markdown`, `obsidian-bases`, `obsidian-cli`, `json-canvas`, `excalidraw-diagram-generator` |
-| **Learning** | `Feynman-Technique`, `guide-derivation`, `phrasing-refining`, `insert-Feynman` |
+| **Learning** | `learn`, `Feynman-Technique`, `guide-derivation`, `phrasing-refining`, `insert-Feynman` |
 | **Meta/Utility** | `orchestrate`, `orchestrate-lite-DWorkflow`, `dispatch`, `reflect`, `evolve-skills`, `handoff-prompt`, `anchor-game-framework`, `super-alignment`, `defuddle` |
 | **Tools** | `mcp-builder`, `notebooklm`, `storage-analyzer`, `expense-tracker`, `markitdown`, `pdf`, `docx` |
 

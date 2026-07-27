@@ -5,10 +5,15 @@ status: active
 area: "[[Self-Development]]"
 created: 2026-06-24
 updated: 2026-06-29
-tags: [english, TOEFL, speaking, collocations, spaced-repetition]
+tags:
+  - english
+  - TOEFL
+  - speaking
+  - collocations
+  - spaced-repetition
 related:
   - "[[English_Learning]]"
-  - "[[TOEFL_Study_Progress]]"
+  - "[[TOEFL_Study_Plan]]"
 exam_format: TOEFL iBT 2026 (effective 2026-01-21)
 purpose: prefab conversational phrases to cut cognitive load in Take-an-Interview
 sr_engine: Obsidian Spaced Repetition plugin (st3v3nmw) — owns scheduling inline

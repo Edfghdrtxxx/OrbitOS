@@ -63,7 +63,7 @@ tags: [english, TOEFL, language]
 ## Progress
 
 - 2026-02-13: [[2026-02-13]] - Project initiated, target set: TOEFL 100+, focus on Listening & Speaking
-- 2026-04-09: [[2026-04-09]] - **TOEFL iBT registered** for 2026-08-30 (Sun) at STN80118A 国试大厦考点 (Guoshi Building), Beijing. Metro Line 13 → Qinghe Station. Arrival deadline 08:30. See [[TOEFL_Study_Progress]] for full logistics.
+- 2026-04-09: [[2026-04-09]] - **TOEFL iBT registered** for 2026-08-30 (Sun) at STN80118A 国试大厦考点 (Guoshi Building), Beijing. Metro Line 13 → Qinghe Station. Arrival deadline 08:30. See [[TOEFL_Study_Plan]] for full logistics.
 - 2026-07-04: [[2026-07-04]] - **TOEFL Attempt #2 registered** for 2026-09-13 (Sun), same center STN80118A (arrival by 08:30; ETS registration # pending ≤24h). Booked for September instead of the held Nov 8/14 target to keep Oct–Nov clear for GRE Physics (Nov 1, registered & paid the same day — see [[UTokyo_RIKEN]]).
 
 ---
@@ -71,7 +71,7 @@ tags: [english, TOEFL, language]
 ## Related
 
 - [[UTokyo_RIKEN]] - TOEFL/English requirements tied to the PhD pathway
-- [[TOEFL_Study_Progress]] - Detailed schedule, milestones, and practice resources
+- [[TOEFL_Study_Plan]] - Detailed schedule, milestones, and practice resources
 - [[Japanese_Language]] - Parallel language learning
 - [[Masters_Thesis]] - Academic English writing synergy
 - [[Fundamental_Knowledge]] - Explaining concepts in English reinforces both projects

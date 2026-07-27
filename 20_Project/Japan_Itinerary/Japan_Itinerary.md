@@ -92,7 +92,7 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 | 1 | **Thesis execution** — document results, define next steps | Ongoing; thesis gate by Jun 2027 | [[Masters_Thesis]] |
 | 2 | **GRE Physics preparation** — minimum score 900; compulsory for Special Selection | Ongoing | [[Fundamental_Knowledge]], [[GRE_Physics_Prep]] |
 | 3 | ~~Supervisor outreach~~ — **DONE** (2026-03-09: accepted; **2026-04-13: committed to Imai / DONUTS group**) | ~~2026-06-30~~ | [[Professor_Outreach]], [[Supervisor_Relationship_Management]] |
-| 4 | TOEFL preparation (target 100+ iBT) | ~~Register by Apr 2026~~ → **Registered 2026-04-09**; exam **2026-08-30** at STN80118A Beijing | [[English_Learning]], [[TOEFL_Study_Progress]] |
+| 4 | TOEFL preparation (target 100+ iBT) | ~~Register by Apr 2026~~ → **Registered 2026-04-09**; exam **2026-08-30** at STN80118A Beijing | [[English_Learning]], [[TOEFL_Study_Plan]] |
 | 5 | Self-funded Kenkyusei budget verification (fallback path) | ASAP | [[UTokyo_RIKEN]] |
 | 6 | Secure Naidaku (Letter of Acceptance) from Imai | TBD | [[Supervisor_Relationship_Management]] |
 | 7 | ~~GSGC vs Special Selection~~ — **RESOLVED** (2026-04-13: Special Selection confirmed; GSGC ineligible) | ~~Pending professor meeting~~ | [[DG_GSGC_vs_Special_Selection]] |

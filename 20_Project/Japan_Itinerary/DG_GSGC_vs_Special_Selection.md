@@ -16,7 +16,7 @@ tags: [decision-gate, utokyo, gsgc, special-selection, phd, entrance-exam]
 # Decision Gate: GSGC vs Special Selection
 
 > [!info] Single source of truth
-> This document is the authoritative reference for the open question of which UTokyo doctoral admission sub-track to pursue. All other vault files should link here rather than duplicating this analysis. See [[Supervisor_Relationship_Management]], [[UTokyo_RIKEN]], [[Official_Deadlines]], [[General_Checklist]], and [[Fundamental_Learning_Progress]] for downstream dependencies.
+> This document is the authoritative reference for the open question of which UTokyo doctoral admission sub-track to pursue. All other vault files should link here rather than duplicating this analysis. See [[Supervisor_Relationship_Management]], [[UTokyo_RIKEN]], [[Official_Deadlines]], [[General_Checklist]], and [[Fundamental_Learning_plan]] for downstream dependencies.
 
 > [!tip] Meeting Prep Quick Reference
 > **Meeting completed 2026-04-13. Questions below are archived for reference.**
@@ -91,7 +91,7 @@ This is not merely a preference — it is a structural eligibility question. The
 
 **Study plan implications:**
 - GRE Physics is compulsory for GSGC
-- If written exam is waived: Phases 5–7 of [[Fundamental_Learning_Progress]] reduce dramatically; freed time redirects to GRE Physics prep
+- If written exam is waived: Phases 5–7 of [[Fundamental_Learning_plan]] reduce dramatically; freed time redirects to GRE Physics prep
 - If written exam is required: 2-hour exam covering CM, QM, EM, Thermo, StatMech — study plan adjusts to broader but shallower coverage
 
 ### Option B: Special Selection
@@ -203,10 +203,10 @@ ELSE IF information remains ambiguous after professor meeting
 
 | Dimension | Impact |
 |---|---|
-| **Study plan** | Phases 5–7 of [[Fundamental_Learning_Progress]] revert to "conversational" level. Phase 0.5 (Complex Analysis) becomes optional. Add GRE Physics Subject Test prep block (target: TBD — no published minimum). Freed ~6-9 hrs/week from Jun–Dec 2026 redirect to GRE drilling. |
+| **Study plan** | Phases 5–7 of [[Fundamental_Learning_plan]] revert to "conversational" level. Phase 0.5 (Complex Analysis) becomes optional. Add GRE Physics Subject Test prep block (target: TBD — no published minimum). Freed ~6-9 hrs/week from Jun–Dec 2026 redirect to GRE drilling. |
 | **Financial** | GSGC scholarship: 180k JPY/month. JRA stacking status determines total income (`[U3]`). If stackable: ~380k/month — highly comfortable. If exclusive: must choose; JRA (200k + Shakai Hoken) likely preferred over GSGC scholarship (180k). |
 | **Timeline** | If entering at D1: Oct 2027 – Sep 2030 (3 years). If forced to M1: Oct 2027 – Sep 2032 (5 years) — unacceptable without compelling reason. Application via Period 2 (~Dec 2026). |
-| **Downstream file updates** | [[Fundamental_Learning_Progress]]: reduce Phases 5–7, add GRE prep block. [[UTokyo_RIKEN#Entrance Exam]]: mark written exam as waived. [[UTokyo_RIKEN#Route B — GSGC Physics]]: update status. [[Official_Deadlines]]: confirm GSGC-specific dates. |
+| **Downstream file updates** | [[Fundamental_Learning_plan]]: reduce Phases 5–7, add GRE prep block. [[UTokyo_RIKEN#Entrance Exam]]: mark written exam as waived. [[UTokyo_RIKEN#Route B — GSGC Physics]]: update status. [[Official_Deadlines]]: confirm GSGC-specific dates. |
 
 ### (b) GSGC Confirmed + Written Exam Required
 
@@ -215,7 +215,7 @@ ELSE IF information remains ambiguous after professor meeting
 | **Study plan** | Study plan mostly stays. Add GRE Physics prep as parallel track. Written exam is 2 hrs (CM, QM, EM, Thermo, StatMech) — shorter and broader than Route A. Slight reduction in Phase depth possible. |
 | **Financial** | Same as (a). |
 | **Timeline** | Same as (a), plus written exam date (~late Jan 2027) becomes a hard scheduling constraint. |
-| **Downstream file updates** | [[Fundamental_Learning_Progress]]: adjust for broader but shallower coverage + GRE prep. [[UTokyo_RIKEN#Route B — GSGC Physics]]: mark written exam required. [[Official_Deadlines]]: add written exam date. |
+| **Downstream file updates** | [[Fundamental_Learning_plan]]: adjust for broader but shallower coverage + GRE prep. [[UTokyo_RIKEN#Route B — GSGC Physics]]: mark written exam required. [[Official_Deadlines]]: add written exam date. |
 
 ### (c) Special Selection Confirmed (GSGC Ineligible or Rejected)
 
@@ -224,7 +224,7 @@ ELSE IF information remains ambiguous after professor meeting
 | **Study plan** | Core physics prep continues. GRE Physics prep continues (required for Special Selection — `[U6 VERIFIED]`). Written exam: **None — interview only** (U7 RESOLVED, Imai meeting 2026-04-13). Overall study plan similar to GSGC scenarios but without the GSGC scholarship safety net. |
 | **Financial** | No GSGC scholarship. Primary funding: RIKEN JRA (200k/month `[UNVERIFIED — JRA amount]`). If JRA not obtained: self-funded PhD — significantly higher financial risk. Tuition exemption (`[V4]`) becomes more critical. Budget aligns with current [[UTokyo_RIKEN#Financials]] PhD section. |
 | **Timeline** | 3-year doctoral: Oct 2027 – Sep 2030. Application windows confirmed same as GSGC (`[U5 VERIFIED]`): Period 1 ~Oct 15-31, Period 2 ~Dec 5-22. |
-| **Downstream file updates** | [[UTokyo_RIKEN]]: remove/archive all GSGC-specific content; update Admission Routes Summary to show Special Selection as sole chosen route. [[Official_Deadlines]]: replace GSGC timeline with Special Selection-specific dates. [[General_Checklist]]: update Target Universities section. [[Fundamental_Learning_Progress]]: adjust if test requirements differ. All files containing "GSGC vs Special Selection" callouts: replace with resolution statement. |
+| **Downstream file updates** | [[UTokyo_RIKEN]]: remove/archive all GSGC-specific content; update Admission Routes Summary to show Special Selection as sole chosen route. [[Official_Deadlines]]: replace GSGC timeline with Special Selection-specific dates. [[General_Checklist]]: update Target Universities section. [[Fundamental_Learning_plan]]: adjust if test requirements differ. All files containing "GSGC vs Special Selection" callouts: replace with resolution statement. |
 
 ### (d) Both Applicable — Apply to Both
 
@@ -293,7 +293,7 @@ If the professor meeting does not fully resolve U1–U5:
 | [[Official_Deadlines]] | Replace "PENDING: GSGC vs Special Selection distinction" callout. Confirm application windows for the chosen track. Remove or archive the unchosen track's timeline. |
 | [[General_Checklist]] | Check off "CRITICAL: Clarify with professors: GSGC vs Special Selection." Update "Target Universities / Labs" danger callout. Update 2026-07-01 monitoring checkpoint status. |
 | [[Supervisor_Relationship_Management]] | Replace the "Decision Gate (PARTIALLY RESOLVED)" danger callout with a link to this document's resolution. Update Decision Gate Impact Matrix reference. |
-| [[Fundamental_Learning_Progress]] | Adjust study plan phases based on whether written exam is waived/required. Adjust GRE Physics prep priority if test requirements differ between tracks. |
+| [[Fundamental_Learning_plan]] | Adjust study plan phases based on whether written exam is waived/required. Adjust GRE Physics prep priority if test requirements differ between tracks. |
 | [[Professor_Outreach]] | Remove `[!question]` callout; update target route statement to reflect confirmed sub-track |
 | This file ([[DG_GSGC_vs_Special_Selection]]) | Change frontmatter `status: open` to `status: resolved`. Add resolution summary. Archive the unchosen option's analysis. |
 
@@ -306,6 +306,6 @@ If the professor meeting does not fully resolve U1–U5:
 - [[Official_Deadlines]] — Application and exam date tracking
 - [[General_Checklist]] — PhD track master checklist
 - [[Supervisor_Relationship_Management]] — Post-contact action tracking and original decision gate matrix
-- [[Fundamental_Learning_Progress]] — Study plan directly affected by this decision
+- [[Fundamental_Learning_plan]] — Study plan directly affected by this decision
 - [[English_Learning]] — TOEFL prep (required for both tracks)
 - [[Professor_Outreach]] — Professor candidate list and outreach tracking

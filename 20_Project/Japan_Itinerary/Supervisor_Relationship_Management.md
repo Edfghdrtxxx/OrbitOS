@@ -24,7 +24,7 @@ created: 2026-02-17
 > - [[Prof_Nori_Aoi|Aoi-san]]'s network remains accessible via same-campus collaboration at CNS
 
 > [!info] Purpose
-> This note manages the **ongoing relationship with accepted UTokyo supervisors** and tracks outstanding action items post-contact. Originally a contact-preparation document (target: late Feb / early Mar 2026), contact succeeded on 2026-03-09. It consolidates every question, verification item, and decision gate remaining to resolve. The outcome directly determines the study plan in [[Fundamental_Learning_Progress]] and the overall execution path in [[UTokyo_RIKEN]].
+> This note manages the **ongoing relationship with accepted UTokyo supervisors** and tracks outstanding action items post-contact. Originally a contact-preparation document (target: late Feb / early Mar 2026), contact succeeded on 2026-03-09. It consolidates every question, verification item, and decision gate remaining to resolve. The outcome directly determines the study plan in [[Fundamental_Learning_plan]] and the overall execution path in [[UTokyo_RIKEN]].
 
 > [!info] Decision Gate: GSGC vs Special Selection
 > Full decision gate analysis: **[[DG_GSGC_vs_Special_Selection]]**
@@ -322,7 +322,7 @@ created: 2026-02-17
 
 - [[UTokyo_RIKEN]] — Primary strategic roadmap
 - [[Professor_Outreach]] — Professor candidate list and outreach tracking
-- [[Fundamental_Learning_Progress]] — 18-month study plan affected by the decision gate
+- [[Fundamental_Learning_plan]] — 18-month study plan affected by the decision gate
 - [[General_Checklist]] — Master checklist for PhD track
 - [[English_Learning]] — TOEFL iBT prep (needed for both Route A and GSGC)
 - [[Japanese_Language]] — Language study (practical question Q11 informs priority)

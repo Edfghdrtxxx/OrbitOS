@@ -52,7 +52,7 @@ pathway: "Primary: Direct PhD D1 via Route B (Oct 2027); Fallback: Kenkyusei (Oc
 
 - [x] ~~Register for TOEFL iBT — **target exam date: July or August 2026**~~ → **Done 2026-04-09: booked 2026-08-30 (Sun) at STN80118A 国试大厦考点, Beijing. Arrival deadline 08:30. ETS registration # pending (≤24h).**
 - [x] Registration must happen in Phase 0; exam prep and sitting are in Phase 1
-- [x] Track in [[English_Learning]] and [[TOEFL_Study_Progress]]
+- [x] Track in [[English_Learning]] and [[TOEFL_Study_Plan]]
 
 ### 0.3 Verification Quick Wins (carried over)
 
@@ -82,7 +82,7 @@ pathway: "Primary: Direct PhD D1 via Route B (Oct 2027); Fallback: Kenkyusei (Oc
 - [ ] **Register for Attempt #2 by 2026-07-01** — unconditional two-attempt strategy
 - [ ] Sit for TOEFL iBT **Attempt #2** (~Nov 2026); do NOT auto-send — compare scores, then manually send the better one to UTokyo (code 8002-01) before Period 2 opens (Dec 7, 2026)
 - [ ] TOEFL scores valid if taken within 2 years of application start date (valid through 2028-08-30)
-- [ ] Track in [[English_Learning]] and [[TOEFL_Study_Progress]]
+- [ ] Track in [[English_Learning]] and [[TOEFL_Study_Plan]]
 
 ### 1.2 GRE Physics Subject Test
 

@@ -216,7 +216,7 @@ Core written scope (UTokyo Physics doctoral, 2026-cycle reference):
 > **Oral exam:** ~30 min, present master's thesis research (only after passing written).
 > **Answers can be written in English** — no Japanese writing barrier.
 
-**Past papers (2015–2025):** saved to `50_Resources/Physics/UTokyo_Past_Exams/` — see [[Fundamental_Learning_Progress]] for full list and topic frequency analysis.
+**Past papers (2015–2025):** saved to `50_Resources/Physics/UTokyo_Past_Exams/` — see [[Fundamental_Learning_plan]] for full list and topic frequency analysis.
 **Unofficial solutions:** [miyake.github.io](https://miyake.github.io/exams/) (2006–2025).
 
 **Official past papers page:** [博士課程 過去問題集](https://www.phys.s.u-tokyo.ac.jp/about/35361/)
@@ -269,7 +269,7 @@ Core written scope (UTokyo Physics doctoral, 2026-cycle reference):
 > [!warning] **Admission materials due before Dec 2026** (confirmed Imai 2026-04-13)
 
 - [ ] Research proposal linking IMP thesis → UTokyo CNS / RIKEN topics
-- [ ] TOEFL iBT score → [[English_Learning]] *(Attempt #1 **2026-08-30**, Attempt #2 **2026-09-13** — both at STN80118A Beijing; compare and manually send the better score, code 8002-01 — see [[TOEFL_Study_Progress]])*
+- [ ] TOEFL iBT score → [[English_Learning]] *(Attempt #1 **2026-08-30**, Attempt #2 **2026-09-13** — both at STN80118A Beijing; compare and manually send the better score, code 8002-01 — see [[TOEFL_Study_Plan]])*
 - [x] **GRE Physics Subject Test** — compulsory for Special Selection; minimum 900 *(REGISTERED & PAID 2026-07-04)*
 
 > [!success] **GRE Physics registered (2026-07-04)**
