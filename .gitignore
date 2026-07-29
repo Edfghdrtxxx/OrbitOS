@@ -46,5 +46,4 @@ Thumbs.db
 # Uncompatible files
 50_Resources/Physics/Courseware/*
 
-# Externally-cloned skills (maintained via their own git)
-.agents/skills/web-access/
+# web-access skill vendored into OrbitOS (was externally-cloned; now tracked)
