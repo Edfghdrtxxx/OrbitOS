@@ -2,7 +2,7 @@
 type: plan
 status: active
 created: 2026-02-13
-revised: 2026-04-22
+revised: 2026-07-29
 target_intake: October 2027
 university: University of Tokyo
 pathway: "Primary: Direct PhD D1 via Route B (Oct 2027); Fallback: Kenkyusei (Oct 2027) → PhD D1 (Oct 2028)"
@@ -26,7 +26,7 @@ pathway: "Primary: Direct PhD D1 via Route B (Oct 2027); Fallback: Kenkyusei (Oc
 | TOEFL iBT Attempt #1 | **2026-08-30** | Target 100+; no MyBest accepted; arrive 08:30 |
 | TOEFL Attempt #2 registered | **by 2026-07-01** | Unconditional two-attempt strategy; exam ~Nov 2026 |
 | TOEFL iBT Attempt #2 | **~Nov 2026** | Do NOT auto-send; compare scores → manually send better one (code 8002-01) before Period 2 opens (Dec 7, 2026) |
-| GRE Physics taken (minimum: 900) | 2026-09 or 2026-10 | Single-shot; minimum 900 confirmed (Imai 2026-04-13); no retake before deadline (~Dec 2026) |
+| GRE Physics taken (minimum: 900) | **2026-11-01** (registered) | Seat **registered & paid 2026-07-04**; single-shot; min 900 (Imai 2026-04-13); no retake before Period 2 (~Dec 2026) — score target still open |
 | Special Selection application submitted | Before Dec 2026 (confirmed Imai meeting 2026-04-13) | Materials due before Dec 2026 |
 | Interview | TBD | No written exam — interview only (confirmed 2026-04-13) |
 | Results announced | TBD | Pass → Direct PhD D1; Fail → Kenkyusei fallback |
@@ -86,31 +86,29 @@ pathway: "Primary: Direct PhD D1 via Route B (Oct 2027); Fallback: Kenkyusei (Oc
 
 ### 1.2 GRE Physics Subject Test
 
-> [!warning] **No retake margin.** The Sep/Oct 2026 window is likely the last viable sitting before the Special Selection application deadline (**Period 2: Dec 7–22, 2026**, VERIFIED 2026-04-22 — see [[Official_Deadlines]]). Treat as single-shot.
+> [!warning] **No retake margin.** Seat locked **Nov 1, 2026** (registered & paid 2026-07-04). Last viable fall sitting before Special Selection **Period 2: Dec 7–22, 2026** (see [[Official_Deadlines]], [[UTokyo_RIKEN]]). Treat as single-shot; score release ~5 weeks after test (thin margin into Period 2).
 
-- [ ] **NOW → Jul 2026:** Study GRE Physics content alongside [[Fundamental_Knowledge]] exam prep (significant overlap in QM, E&M, Classical Mechanics, Thermodynamics/StatMech)
-- [ ] **~Jul 2026:** Monitor NEEA portal (gre-main.neea.cn) for 2026-27 registration opening
-- [ ] Register immediately when 2026-27 cycle opens — target a **Sep or Oct 2026** test date
-  - Fee: **$175**; UTokyo institution code: **7048**
-- [ ] Take GRE Physics in **Sep/Oct 2026**
-- [ ] Confirm score receipt (~8–11 days after window closes) and verify UTokyo received the report
-- [ ] See [[Official_Deadlines#3. GRE Physics Subject Test]] for full schedule, NEEA details, and validity rules
+- [ ] Study GRE Physics content alongside [[Fundamental_Knowledge]] exam prep (significant overlap in QM, E&M, Classical Mechanics, Thermodynamics/StatMech) — through exam day
+- [x] ~~Register for GRE Physics~~ — **REGISTERED & PAID 2026-07-04** (ETS account, not NEEA)
+  - Exam: **Sunday Nov 1, 2026, 2:00 PM** — ETS Beijing (STN80177D); fee **$175**; UTokyo code: **7048**
+- [ ] Take GRE Physics on **Nov 1, 2026** (target minimum **900**)
+- [ ] Confirm score receipt (~5 weeks after test ≈ Dec 6) and verify UTokyo received the report
+- [ ] See [[Official_Deadlines#3. GRE Physics Subject Test]] and [[UTokyo_RIKEN#Application Materials]] for schedule and validity rules
 
-### 1.3 Entrance Exam Preparation (ongoing — ELEVATED PRIORITY)
+### 1.3 Special Selection Prep Gate (ongoing — ELEVATED PRIORITY)
 
-> [!important] Entrance exam is now the **single critical gate**. Supervisor acceptance is secured; everything depends on passing.
+> [!important] **Critical gate for Oct 2027 D1:** GRE Physics (min 900) + TOEFL + application materials + interview. Supervisor acceptance is secured; everything depends on those — **not** a UTokyo written entrance exam.
+>
+> [!success] **Special Selection = interview only, no written exam** (Imai 2026-04-13). Monthly UTokyo 博士課程 過去問題 drills are **not** required for the primary path. Past papers belong to **Route A 一般入試** (archived) and only become relevant if Kenkyusei fallback reopens a written-exam retake — see §4.4 after confirming retake route.
 
-- [ ] Obtain past UTokyo Physics doctoral entrance exams (ask Prof. Aoi/Imai, lab members)
-- [ ] Categorize problems by topic: QM, StatMech, Classical Mechanics, E&M, Thermodynamics
-- [ ] Create a study schedule: dedicate fixed hours per week to exam prep
-- [ ] Core textbooks:
-  - QM: Griffiths or Sakurai
-  - Statistical Mechanics: Pathria or Reif
-  - Classical Mechanics: Goldstein or Landau
-  - E&M: Jackson or Griffiths
-- [ ] Attempt 1 past exam per month starting Sep 2026; score yourself
-- [ ] Identify weak areas and allocate extra time
-- [ ] Track progress in [[Fundamental_Knowledge]]
+**Hard gates (primary path)**
+- [ ] Execute GRE Physics prep through exam day (Nov 1, 2026) — see §1.2 and [[GRE_Physics_Prep]], [[Fundamental_Knowledge]]
+- [ ] Execute TOEFL prep through Attempt #1/#2 — see §1.1 and [[English_Learning]]
+- [ ] Prepare interview readiness: research narrative, SoP/personal statement fluency, ability to defend master's work (document-based review + interview)
+- [ ] Track physics foundations that support GRE + interview depth in [[Fundamental_Knowledge]]
+
+**Optional only (not a deadline; not admission-critical for Special Selection)**
+- [ ] Occasional problem-solving depth (including archived UTokyo past papers) for interview fluency — **not** a monthly cadence requirement; primary written test instrument = **GRE Physics**
 
 ### 1.4 Special Selection Application
 
@@ -134,7 +132,7 @@ pathway: "Primary: Direct PhD D1 via Route B (Oct 2027); Fallback: Kenkyusei (Oc
 
 ### 1.5 Japanese Language (ongoing — LOW PRIORITY)
 
-> [!info] Japanese is **not required** for UTokyo Special Selection admission or the entrance exam. It is a life-quality and immigration asset. Entrance exam prep and TOEFL come first.
+> [!info] Japanese is **not required** for UTokyo Special Selection admission or the interview. It is a life-quality and immigration asset. **GRE Physics + TOEFL + application materials** come first.
 
 - [ ] Continue daily study (target: N4 level by Oct 2027)
 - [ ] Use structured resources (Genki, WaniKani, Anki)
@@ -261,14 +259,16 @@ pathway: "Primary: Direct PhD D1 via Route B (Oct 2027); Fallback: Kenkyusei (Oc
 - [ ] Register at UTokyo as Research Student
 - [ ] Meet supervisor and lab members
 
-### 4.4 Entrance Exam Retake Preparation (primary focus)
+### 4.4 Entrance Exam Retake Preparation (primary focus — **only if Oct 2027 Special Selection fails**)
 
-- [ ] Confirm exam route for next cycle with supervisor
-- [ ] Obtain latest past exams from lab members
-- [ ] Establish daily study routine: 4–6 hours exam prep
-- [ ] Join or form study group
-- [ ] Monthly mock exams
-- [ ] **Do not over-commit to experiments** — exam is the gate
+> [!warning] **Confirm retake route first.** If the next attempt is still **Special Selection**, prep = GRE (if re-sit needed) + TOEFL currency + materials + interview — **not** monthly 一般 過去問. UTokyo doctoral past papers / written mocks apply **only** if retake is **Route A 一般入試** (or another written path).
+
+- [ ] Confirm exam route for next cycle with supervisor (Special Selection vs Regular)
+- [ ] If Regular/written route: obtain latest past exams from lab members; set monthly mock cadence
+- [ ] If Special Selection again: GRE/TOEFL/materials/interview plan (no UTokyo written past-exam requirement)
+- [ ] Establish daily study routine aligned to confirmed route (protect 4–6 h if written retake)
+- [ ] Join or form study group if useful
+- [ ] **Do not over-commit to experiments** — admission retake is the gate
 
 ### 4.5 Lab Integration (secondary)
 
@@ -279,9 +279,8 @@ pathway: "Primary: Direct PhD D1 via Route B (Oct 2027); Fallback: Kenkyusei (Oc
 
 ### 4.6 Entrance Exam Retake
 
-- [ ] Submit exam application for next cycle
-- [ ] Sit for written exam
-- [ ] Sit for oral exam
+- [ ] Submit application for next cycle (route confirmed in §4.4)
+- [ ] Sit for selection components required by that route (Special Selection: docs + interview [+ GRE/TOEFL as needed]; Regular: written + oral if chosen)
 - [ ] **If passed:** proceed to PhD enrollment (Oct 2028)
 - [ ] **If failed:** activate contingency — check Kenkyusei extension; proceed with [[Osaka_University]] application (monitoring already active from first failure)
 

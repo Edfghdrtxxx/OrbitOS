@@ -20,7 +20,7 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 | ------------------------------------------------------------- | ------------------------------- | -------------------------------------------------------------------------------------------- |
 | Start my morning                                              | `/start-my-day`                 | Reviews yesterday, surfaces active projects, generates today's daily note                    |
 | Turn an idea into a project                                   | `/kickoff`                      | Structures it with C.A.P. layout (Context, Actions, Progress), asks clarifying questions     |
-| Deep-dive a topic (new ML paper, visa pathway, TPC technique) | `/research <topic>`             | Two-agent workflow: researches, then organizes into 30_Research/ and 40_Wiki/ with wikilinks |
+| Deep-dive a topic (new ML paper, visa pathway, TPC technique) | `/deep-research` (host)         | Host deep-research / workflow — vault `/research` archived 2026-07-29                        |
 | Learn something with guided tutoring                          | `/learn <topic>`                | Diagnose, scaffold, one step per turn; records to `60_Learning_Progress/` + index            |
 | Explore an idea before committing                             | `/brainstorm`                   | Interactive session, can optionally become a project                                         |
 | Clean up finished work                                        | `/archive`                      | Moves completed projects to 99_System/Archives/                                              |
@@ -38,8 +38,7 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 | Stress-test an idea                                           | `/llm-council`                  | Cross-LLM council (Claude + Gemini + GPT) with anonymized peer review and Chairman synthesis |
 | Self-critique current work                                    | `/reflect`                      | Adversarial review of current session trajectory                                             |
 | Park a quick thought in today's note                          | `/daily-note-addition`          | Adds flat checkbox captures to the daily note without full triage                            |
-| Dispatch parallel agents (heavyweight)                        | `/orchestrate`                  | Decomposes a task, dispatches sub-agents, reviews, synthesizes results                       |
-| Dispatch parallel agents (lightweight)                        | `/dispatch`                     | Fast sub-agent dispatch — skips decomposition, restatement, and formal review                |
+| Coordinate multi-agent work                                   | `/orchestrate-v3`               | Lean fan-out (dispatch-like default) with review-and-iterate on by default                   |
 | Extract web page content                                      | `/defuddle`                     | Clean markdown extraction from URLs, removing clutter                                        |
 | Wrap up my day                                                | `/end-my-day`                   | Evening review, deferred task identification, wind-down                                      |
 | Create a diagram                                              | `/excalidraw-diagram-generator` | Generates Excalidraw diagrams from natural language                                          |
@@ -59,15 +58,15 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 
 ## Skill Categories
 
-**38** core skills across categories (`ask` archived 2026-07-26 — plain chat covers Q&A; deep study uses `/learn`):
+**35** core skills across categories (`ask` archived 2026-07-26 — plain chat for Q&A, `/learn` for deep study; `orchestrate` / `dispatch` / `orchestrate-lite-DWorkflow` / `research` archived 2026-07-29 → `/orchestrate-v3` + host `/deep-research`):
 
 | Category | Skills |
 |---|---|
 | **Daily Workflow** | `start-my-day`, `end-my-day`, `brainstorm`, `breakdown-tasks`, `estimate-time`, `llm-council`, `daily-note-addition` |
-| **Knowledge Management** | `kickoff`, `archive`, `atomic-note`, `research`, `wiki-review` |
+| **Knowledge Management** | `kickoff`, `archive`, `atomic-note`, `wiki-review` |
 | **Obsidian Features** | `obsidian-markdown`, `obsidian-bases`, `obsidian-cli`, `json-canvas`, `excalidraw-diagram-generator` |
 | **Learning** | `learn`, `Feynman-Technique`, `guide-derivation`, `phrasing-refining`, `insert-Feynman` |
-| **Meta/Utility** | `orchestrate`, `orchestrate-lite-DWorkflow`, `dispatch`, `reflect`, `evolve-skills`, `handoff-prompt`, `anchor-game-framework`, `super-alignment`, `defuddle` |
+| **Meta/Utility** | `orchestrate-v3`, `reflect`, `evolve-skills`, `handoff-prompt`, `anchor-game-framework`, `super-alignment`, `defuddle` |
 | **Tools** | `mcp-builder`, `notebooklm`, `storage-analyzer`, `expense-tracker`, `markitdown`, `pdf`, `docx` |
 
 > Note: README previously listed `ai-newsletters` / `ai-products`; those skill folders are not present on disk.

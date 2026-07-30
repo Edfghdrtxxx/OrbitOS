@@ -113,14 +113,14 @@ This is the boss fight because the entrance exam is the gate to everything. The 
 
 > Thesis and entrance exam prep are simultaneous tracks, not a sequential queue. The thesis is the non-negotiable daily anchor; exam prep runs in parallel. Supervisor outreach phase completed (2026-03-09).
 
-> [!info] GRE Physics — Target Window: Sep/Oct 2026
-> Apr 20–May 3, 2026 window exists but is being skipped. **Target: Sep/Oct 2026 window** (registration expected ~July 2026). Fee: $175 worldwide. GRE Physics is compulsory for Route B; results should be available well before the ~Dec 2026 application deadline. Monitor the [NEEA portal](https://gre-main.neea.cn/) for registration opening.
+> [!info] GRE Physics — **Nov 1, 2026 locked**
+> Seat **registered & paid 2026-07-04** for **Nov 1, 2026** (see [[UTokyo_RIKEN]], [[Official_Deadlines]]). Fee: $175; UTokyo code **7048**. GRE Physics is compulsory for Route B (min 900); score release ~5 weeks after test (thin margin into Special Selection Period 2). Registration was via ETS directly, not NEEA.
 
 | Track | Project | Cadence / Deadline |
 |---|---|---|
 | **Daily anchor** | [[Masters_Thesis]] | 2–4 hr block every workday — no exceptions |
 | **Urgent parallel** | [[Japan_Itinerary]] / [[UTokyo_RIKEN]] (Direct PhD Entry — Entrance Exam) | ~~Supervisor Outreach~~ **DONE (2026-03-09)** — Route B chosen; focus on entrance exam prep + GRE Physics for direct PhD Oct 2027; Naidaku pending exam pass |
-| **Ongoing parallel → ELEVATED** | [[Fundamental_Knowledge]] + **GRE Physics** | **Now the critical gate** — entrance exam via Route B + GRE Physics (compulsory); systematic study now; intensify from Sep 2026 |
+| **Ongoing parallel → ELEVATED** | [[Fundamental_Knowledge]] + **GRE Physics** | **Now the critical gate** — Route B + GRE Physics (compulsory, min 900); seat locked **Nov 1, 2026**; systematic study through exam day |
 | **Ongoing parallel** | [[English_Learning]] | TOEFL **registered 2026-04-09**; exam **2026-08-30** at STN80118A Beijing; target 100+ |
 | **Low priority** | [[Japanese_Language]] | N4 by Oct 2027; not required for admission — only when exam prep + TOEFL are on track |
 

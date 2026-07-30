@@ -83,7 +83,7 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 
 > For the canonical priority stack and daily operating model, see [[Game_Framework]].
 
-> [!warning] Physics + math entrance exam readiness is the single highest execution risk post-graduation. Start systematic study now, even at low intensity.
+> [!warning] **GRE Physics (≥900) + TOEFL + materials/interview readiness** is the single highest execution risk for Special Selection (no UTokyo written exam). Keep systematic GRE-aligned study now, even at low intensity.
 
 ### Immediate Priorities (as of 2026-02-15, updated 2026-04-13)
 

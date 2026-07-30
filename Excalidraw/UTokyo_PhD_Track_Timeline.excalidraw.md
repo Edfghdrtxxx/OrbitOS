@@ -100,7 +100,7 @@ Priority professors (UTokyo CNS):
 1. Kentaro Yako - exotic nuclear reactions   2. Taku Gunji - QGP, ALICE TPC
 3. Nobuaki Imai - detector dev   4. H. Yamaguchi - nuclear astro   5. Y. Sakemi - symmetry ^J1Uxp8dP
 
-1 past paper/month (timed, self-scored) — Sep 2026 onward ^Zc2VMQlX
+~~1 past paper/month (timed, self-scored) — Sep 2026 onward~~ STALE: Special Selection = GRE + TOEFL + interview only (no UTokyo written 過去問 cadence). Optional depth only; Route A archive. ^Zc2VMQlX
 
 INTENSIVE PREP during Kenkyusei year ^E20sEggY
 
@@ -112,9 +112,9 @@ DOCTORAL
 ENTRANCE EXAM
 (Aug 2028) ^kW5AttAF
 
-Route A (Regular): 240 min, 4 problems (Math/QM/StatMech/CM+EM, 100 pts each) + TOEFL (100 pts) = 500
-Route B (GSGC / Special Selection): GRE Physics + TOEFL + docs — Route B chosen — sub-track pending (see DG_GSGC_vs_Special_Selection)
-Answers in English OK. Past papers: 50_Resources/Physics/UTokyo_Past_Exams/ ^in0vcxRi
+Route A (Regular): 240 min, 4 problems (Math/QM/StatMech/CM+EM, 100 pts each) + TOEFL (100 pts) = 500 — ARCHIVED
+Route B Special Selection (CHOSEN 2026-04-13): GRE Physics (min 900) + TOEFL + docs + interview only — no written exam. GSGC ineligible.
+Past papers (50_Resources/Physics/UTokyo_Past_Exams/) = Route A only; optional interview depth, not primary-path monthly drill. ^in0vcxRi
 
 Register TOEFL
 (by Apr 2026) ^rNKWKH1w
