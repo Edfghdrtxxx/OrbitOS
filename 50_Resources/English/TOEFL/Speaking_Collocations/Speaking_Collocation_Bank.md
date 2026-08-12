@@ -4,7 +4,7 @@ type: resource
 status: active
 area: "[[Self-Development]]"
 created: 2026-06-24
-updated: 2026-07-30
+updated: 2026-08-07
 tags:
   - flashcards/toefl/speaking
   - english
@@ -34,7 +34,7 @@ reconciled: 2026-07-29
 > 1. `Cmd+P` (Mac) / `Ctrl+P` (Win) → run **`Spaced Repetition: Review flashcards`**  
 >    (or **Review flashcards in this note** while this file is open)
 > 2. Open deck: **`flashcards` → `toefl` → `speaking`**
-> 3. You should see ~19 cards — **one direction only**: scenario → phrase + model
+> 3. You should see ~25 cards — **one direction only**: scenario → phrase + model
 >
 > Do **not** look for this note under `#review` in the sidebar.
 
@@ -121,6 +121,31 @@ Clear opinion marker that bridges into the justification — slightly more forma
 Phrase: The reason I hold this view is that…
 Model: The reason I hold this view is that sufficient face-to-face communication is one of the most important things for personal growth.
 
+### OPIN-04 · Advertising: inform vs manipulate
+
+Debate prompt — does advertising inform consumers or push them to buy things they don't need?
+?
+Phrase: While… does offer…, I align more with the view that…
+Model: While advertising does offer valuable market information, I align more with the view that it manipulates consumer behavior. Marketers strategically employ psychological cues to bypass rational decision-making, triggering impulsive, emotional purchases. Although this ecosystem provides diverse options for customers, the underlying intent often prioritizes profit over genuine consumer needs, subtly steering choices toward what is sold rather than what is needed.
+Collocations: align more with the view that · manipulates consumer behavior · psychological cues · bypass rational decision-making · impulsive, emotional purchases · prioritizes profit over · genuine consumer needs
+
+### OPIN-05 · Mental skills are trainable
+
+Debate prompt — is clutch performance / focus under pressure innate, or can people train it?
+?
+Phrase: …are trainable, not fixed at birth. / Claiming "you can't teach it" just ignores how actual high-level training works.
+Model: Mental skills like focus under pressure are trainable, not fixed at birth. Sports psych research and every serious golf coach show athletes build clutch performance through deliberate practice, visualization, breathing routines, and exposure. Plenty of pros started shaky under the lights and got better. Claiming "you can't teach it" just ignores how actual high-level training works.
+Collocations: focus under pressure · trainable, not fixed at birth · build clutch performance · deliberate practice · under the lights · you can't teach it · high-level training
+
+### OPIN-06 · Accountability / pay no price for being wrong
+
+Debate prompt — experts, bureaucrats, committees, or platforms that decide for others without bearing the cost of mistakes (policy, AI moderation, management, “trust the experts”)
+?
+Phrase: pay no price for being wrong / putting those decisions in the hands of people who…
+Model: It is hard to imagine a more stupid or more dangerous way of making decisions than by putting those decisions in the hands of people who pay no price for being wrong.
+Collocations: hard to imagine a more… way of… · putting decisions in the hands of · pay no price for being wrong · skin in the game
+Note: Classic incentive / accountability line (often linked to Thomas Sowell). Reuse the collocations in your own words; do not drop the full quote as a canned block unless the prompt fits.
+
 ### EXMP-01 · Giving a personal example
 
 You've stated an opinion and need concrete support
@@ -143,7 +168,7 @@ Mid-story low point — nearly gave up — before the turnaround
 ?
 Phrase: Honestly, there were times I wasn't sure I'd make it through…
 Model: Honestly, there were times I wasn't sure I'd make it through, but I forced myself to take it one step at a time, and that's what got me through.
-<!--SR:!2026-08-01,3,250-->
+<!--SR:!2026-08-20,8,250-->
 
 ### EXMP-04 · Mini-story (challenge + method)
 
@@ -166,13 +191,30 @@ Habits, health, or daily routine — concrete personal block
 Phrase: My weekly… consists primarily of… I consider this approach… since…
 Model: My weekly diet consists primarily of lean proteins like beef and chicken. I consider this approach quite healthy since protein is indispensable for both physical growth and cognitive function. A balanced intake ensures my body and mind remain in optimal condition.
 
+### EXMP-07 · Recent purchase that paid off
+
+Interviewer asks about a recent purchase, a useful tool, or something you're glad you bought
+?
+Phrase: The most delightful purchase I've made recently was… What made it such a smart decision was…
+Model: The most delightful purchase I've made recently was subscribing to an AI service. What made it such a smart decision was its incredible utility in streamlining my daily workflows. It essentially acts as a second brain, helping me organize my mind and clarify my intentions. Just last week, when I hit a wall analyzing complex experiment data, this tool proved invaluable in helping me move forward efficiently.
+Collocations: delightful purchase · smart decision · streamlining my daily workflows · acts as a second brain · hit a wall · proved invaluable
+
+### EXMP-08 · In-store vs online shopping
+
+Shopping preference — physical stores vs online platforms; what influences your choice
+?
+Phrase: When it comes to shopping, I firmly prefer… over… My primary motivation is…
+Model: When it comes to shopping, I firmly prefer the tactile experience of traditional brick-and-mortar stores over the convenience of online platforms. My primary motivation is the ability to physically interact with products, which offers a level of assurance that screens simply cannot replicate. For example, last weekend, visiting a local mall allowed me to compare textures and sizes firsthand, leading to a much more confident purchasing decision.
+Collocations: tactile experience · brick-and-mortar stores · primary motivation · a level of assurance · cannot replicate · firsthand · purchasing decision
+<!--SR:!2026-08-13,1,230-->
+
 ### CONT-01 · Contrast / concession
 
 Acknowledge a counterpoint, then return to your position
 ?
 Phrase: That said… / I can see both sides, but…
 Model: Working from home is convenient. That said, I'd still choose an office, because I focus better when other people are around.
-<!--SR:!2026-08-01,2,230-->
+<!--SR:!2026-08-13,1,230-->
 
 ### CONT-02 · Concession openers
 
@@ -180,6 +222,15 @@ Soften a claim or set up a contrast before your main point
 ?
 Phrase: Hardly ever… / Even though…
 Model: Even though online courses are convenient, I hardly ever skip live discussions — that's where the real learning happens for me.
+<!--SR:!2026-08-13,1,230-->
+
+### CONT-03 · Surface plausibility (then push back)
+
+Acknowledge that an idea looks reasonable on the surface — before you qualify or disagree
+?
+Phrase: At first glance, it seems to make some sense.
+Model: At first glance, it seems to make some sense — free online courses should democratize education. That said, without structure and accountability, a lot of people never finish, so the real bottleneck is follow-through, not access.
+Note: Lead-in hedge for concession → pivot (pairs well with CONT-01 *That said…*).
 
 ### CONC-01 · Concluding / wrapping up
 
@@ -201,6 +252,7 @@ Single out the one factor that matters most among several
 ?
 Phrase: The single most important factor in X is Y. / Sufficient, constant exposure to… is the single most important factor in…
 Model: Sufficient, constant exposure to native input is the single most important factor in language acquisition.
+<!--SR:!2026-08-15,3,250-->
 
 ### ACAD-02 · Well-being collocation
 
@@ -255,5 +307,6 @@ Model: Authentic interpersonal interaction is indispensable for holistic self-de
 | 25 | weekly diet / protein | → EXMP-06 |
 | 26–27 | schools / campus research | → [[Writing_Phrase_Bank]] |
 | 28 | Hardly ever, Even though | → CONT-02 |
+
 
 **Only-in-Obsidian (kept):** OPIN-01 (*If you ask me…*), CONT-01 (*That said…*).

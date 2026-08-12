@@ -1,0 +1,172 @@
+{
+  "generated_at": "2026-08-03 14:30:00",
+  "scan_seconds": 38.4,
+  "system": {
+    "os": "macOS",
+    "build": "15.5",
+    "arch": "arm64",
+    "user": "reid",
+    "home": "/Users/reid",
+    "filesystem": "APFS",
+    "disk_name": "Macintosh HD",
+    "disk_total": "512.0 GB",
+    "disk_used": "428.6 GB",
+    "disk_free": "83.4 GB",
+    "purgeable": "12.1 GB",
+    "disks": [
+      {"name": "Macintosh HD", "total": "512.0 GB", "used": "428.6 GB", "free": "83.4 GB"}
+    ]
+  },
+  "top5": [
+    {
+      "rank": 1,
+      "tier": "yellow",
+      "size": "约 48.2 GB",
+      "type": "应用数据",
+      "name": "Bilibili 离线缓存",
+      "path": "~/Library/Containers/com.bilibili.bilibili/Data/Library/.Downloads",
+      "note": "离线视频，可在 App 内管理"
+    },
+    {
+      "rank": 2,
+      "tier": "green",
+      "size": "约 22.4 GB",
+      "type": "开发缓存",
+      "name": "Xcode DerivedData",
+      "path": "~/Library/Developer/Xcode/DerivedData",
+      "note": "可再生构建产物"
+    },
+    {
+      "rank": 3,
+      "tier": "red",
+      "size": "约 18.0 GB",
+      "type": "应用本体",
+      "name": "Adobe Premiere Pro",
+      "path": "/Applications/Adobe Premiere Pro 2024",
+      "note": "建议走正规卸载"
+    },
+    {
+      "rank": 4,
+      "tier": "green",
+      "size": "约 9.6 GB",
+      "type": "开发缓存",
+      "name": "npm / yarn / pnpm cache",
+      "path": "~/.npm · ~/Library/Caches/Yarn",
+      "note": "包管理器缓存"
+    },
+    {
+      "rank": 5,
+      "tier": "yellow",
+      "size": "约 7.3 GB",
+      "type": "下载内容",
+      "name": "Downloads 大文件",
+      "path": "~/Downloads",
+      "note": "安装包与压缩包混杂"
+    }
+  ],
+  "green": [
+    {
+      "name": "Xcode DerivedData",
+      "path": "/Users/reid/Library/Developer/Xcode/DerivedData",
+      "size_estimate": "约 22.4 GB",
+      "kill_processes": ["Xcode"],
+      "trash_paths": ["/Users/reid/Library/Developer/Xcode/DerivedData"],
+      "commands": [
+        {
+          "label": "移到废纸篓（推荐）",
+          "cmd": "osascript -e 'tell application \"Finder\" to delete POSIX file \"/Users/reid/Library/Developer/Xcode/DerivedData\"'"
+        }
+      ]
+    },
+    {
+      "name": "npm / yarn 缓存",
+      "path": "/Users/reid/.npm 与 Yarn cache",
+      "size_estimate": "约 9.6 GB",
+      "kill_processes": [],
+      "trash_paths": [
+        "/Users/reid/.npm/_cacache",
+        "/Users/reid/Library/Caches/Yarn"
+      ],
+      "commands": [
+        {
+          "label": "npm 清理",
+          "cmd": "npm cache clean --force"
+        },
+        {
+          "label": "yarn 清理",
+          "cmd": "yarn cache clean"
+        }
+      ]
+    },
+    {
+      "name": "浏览器缓存（Chrome）",
+      "path": "/Users/reid/Library/Caches/Google/Chrome",
+      "size_estimate": "约 3.1 GB",
+      "kill_processes": ["Google Chrome"],
+      "trash_paths": ["/Users/reid/Library/Caches/Google/Chrome"],
+      "commands": [
+        {
+          "label": "移到废纸篓",
+          "cmd": "osascript -e 'tell application \"Finder\" to delete POSIX file \"/Users/reid/Library/Caches/Google/Chrome\"'"
+        }
+      ]
+    }
+  ],
+  "yellow": [
+    {
+      "name": "Bilibili 离线视频缓存",
+      "path": "/Users/reid/Library/Containers/com.bilibili.bilibili/Data/Library/.Downloads",
+      "size": "约 48.2 GB",
+      "content_profile": "以 .mp4 / 分片缓存为主的离线视频目录，UUID 容器下挂载。",
+      "why_manual": "删除会丢失已缓存剧集；是否还要看是主观决策。",
+      "disposal": "优先在 B 站 App 内「缓存管理」删除；或只清旧剧、保留在追。",
+      "risk": "整目录移废纸篓会清空全部离线内容，无法在 App 外精细挑选单集。",
+      "trash_paths": [
+        "/Users/reid/Library/Containers/com.bilibili.bilibili/Data/Library/.Downloads"
+      ],
+      "open_note": "访达中文件名多为哈希，不适合逐文件挑选。"
+    },
+    {
+      "name": "Downloads 大文件",
+      "path": "/Users/reid/Downloads",
+      "size": "约 7.3 GB",
+      "content_profile": "含 .dmg / .zip / PDF / 旧安装包，混有仍在用的资料。",
+      "why_manual": "无法自动区分「可删安装包」与「要留的文档」。",
+      "disposal": "在访达按大小排序，先清安装包与重复压缩包。",
+      "risk": "误删未备份的个人文件不可恢复（若直接删除）。"
+    }
+  ],
+  "red": [
+    {
+      "name": "Adobe Premiere Pro 2024",
+      "path": "/Applications/Adobe Premiere Pro 2024",
+      "size": "约 18.0 GB",
+      "why_keep": "应用本体在 /Applications；手拖删除易留 Creative Cloud 残留与授权状态异常。",
+      "indirect_release": "用 Adobe Creative Cloud 桌面端卸载，或启动台长按卸载后用 AppCleaner 扫残留。",
+      "auto_reclaim": "否",
+      "app_paths": ["/Applications/Adobe Premiere Pro 2024"]
+    }
+  ],
+  "denied": [
+    "/Users/reid/Library/Application Support/CallHistoryDB"
+  ],
+  "summary": {
+    "overview": "最大可释放项是 B 站离线缓存（约 48 GB，需你决定是否还要看）与 Xcode DerivedData（约 22 GB，可再生）。优先清绿灯开发缓存，再处理橙灯内容。",
+    "tier_stats": {
+      "green": "约 35.1 GB",
+      "yellow": "约 55.5 GB",
+      "red": "约 18.0 GB"
+    },
+    "priority": [
+      "先关 Xcode 后清 DerivedData（约 22 GB）",
+      "清 npm/yarn 缓存（约 9.6 GB）",
+      "在 B 站 App 内审离线缓存（约 48 GB）",
+      "不常用则用 Creative Cloud 卸载 Premiere（约 18 GB）"
+    ],
+    "long_term": [
+      "每月 brew cleanup；Xcode 构建后视情况清 DerivedData",
+      "大媒体优先外置盘 / iCloud，少堆在 Library/Containers",
+      "系统设置 → 通用 → 储存空间，关注「建议」与可清除空间"
+    ]
+  }
+}

@@ -2,7 +2,7 @@
 type: learning-progress
 topic: "Harmonic oscillator"
 area: Quantum Mechanics
-status: active
+status: solid-enough
 created: 2026-07-26
 parent: "[[2026-07-26-2030 Displacement operator]]"
 related: "[[2026-07-26-2113 Ladder operators]]"
@@ -10,7 +10,7 @@ prerequisite: "[[2026-07-26-2126 Time-independent Schrödinger equation]]"
 ---
 # Harmonic oscillator — foundations
 
-**Status:** **solid enough** — Foundation locked. Next: [[2026-07-26-2113 Ladder operators]] → then resume $D(\alpha)$.
+**Status:** **solid enough** — Foundation locked (drill complete). Ladder ops done; resume $D(\alpha)$ when ready.
 
 **Why this note exists:** Prerequisite for the displacement-operator thread. Learner knows Dirac notation and Hermitian operators; does **not** yet have HO ladder structure.
 

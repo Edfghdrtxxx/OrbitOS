@@ -1,0 +1,37 @@
+Slide 1: Open with the cautious headline: TRK6 Cross-Attention still leads the canonical single-seed comparison across 5 methods (TRK5 ResNet, TRK6 CrossAtt, RANSAC, Hough, HC). The three classical baselines are val-only-tuned (see slide 7 for the audit trail) and the val-tuned variants are THE methods labeled simply as RANSAC, Hough, HC. The story did not change; it just got harder to dismiss. Not a multi-seed final claim.
+
+Slide 2: Clarify the label contract. The energy truth is per event and broadcast across valid track slots, which shapes how we should write the claim. Unchanged by the 5-method refresh.
+
+Slide 3: This is the primary quantitative slide. TRK6 is favored on this single-seed/single-split comparison, not universally proven superior. The paired-bootstrap headline cnn_xa minus cnn_resnet = +0.00433 [+0.00426, +0.00440] MeV survives the matrix re-aggregation; TRK6 also strictly beats all three classical baselines (cnn_xa minus RANSAC = -0.97309 MeV; vs Hough = -1.02226; vs HC = -1.16219; all 95% CIs strictly negative). The displayed baseline numbers are the val-tuned-on-val, locked-on-test variants (see slide 7 for the tuning audit trail).
+
+Slide 4: Use this slide to show the energy-dependent pattern. The left figure (F2 refreshed, 5 methods) is the evidence; the right cards are interpretation anchors. The CNN advantage at low energy persists across the full comparison set.
+
+Slide 5: This slide answers whether TRK6 only wins in easy single-track cases. It does not; the gain remains visible across multiplicity (F5 refreshed, 5 methods).
+
+Slide 6: Explain the mechanism carefully. The point is not that TRK6 sees a clipping label, but that images contain partial-track morphology beyond measured length. F3 refreshed to the 5-method version; the clipping-fraction bar is truth-level and shared.
+
+Slide 7: Methodology audit-trail backup. Validation-only hyperparameter sweep on the shared val_indices (180k events): RANSAC inlier_dist_mm=3.0 (val 1.174 MeV / test 1.173, -5.4% vs fixed inlier=5), Hough rho=5/theta=0.5deg/NMS=3x3 (val 1.269 / test 1.269, -0.7% vs fixed rho=3/theta=1/NMS=5x5), HC ward+x_weight=0.0 (val 1.420 / test 1.419, -0.6% vs fixed x_weight=0.5). Selection rule: lowest val RMSE, MAE tiebreak, config_idx tiebreak. All three transferred val->test in the same direction; none regressed. RANSAC val winner is separated from runner-up at 95% CI; Hough/HC val gaps are inside the CI but their test-side opt CIs do NOT overlap the fixed-config RMSEs (opt strictly dominates fixed on test). The 1 MeV gap to TRK6 is therefore not an under-tuning artifact. HC = Hierarchy Cluster (hierarchical clustering), NOT Hough. CI-separability nuance: Hough's and HC's val winners were not statistically separable from their runner-up configs at 95% bootstrap CI (margin inside CI noise) — selection was deterministic by tie-break rule. Their test-side opt RMSE CIs do not overlap the fixed-config RMSE values, so the test-side improvement IS statistically separable even where the val-side runner-up margin wasn't. Source: 08_baseline_optimization.md lines 92-94, 203.
+
+Slide 8: External SoTA per baseline. RANSAC: strongest comparator is Ayyad et al., NIM A 880 (2018) 166 — AT-TPC alphas in He+CO2 90/10, sigma_E ~ 130 keV at 5.5 MeV (sigma_E/E ~ 2.4%). Partially comparable: same alpha regime but different detector geometry and ~5x longer tracks, so it is shown on F2 as a dashed contextual line rather than head-to-head. Hough: strongest comparator is Furuno et al., NIM A 908 (2018) 215 — MAIKo, reports sigma_theta = 1.3 degrees per track but no per-track energy number, so we cite alongside our RMSE not against. HC: strongest comparator is Dalitz, Ayyad, Wilberg, Aymans, Bazin & Mittig, CPC 235 (2019) 159 — AT-TPC, vertex recall 86%/96% (curved/straight) with no keV-scale energy number, so our HC-on-energy RMSE is the first such number. The max(ours, existing) principle resolves to ours for Hough and HC; for RANSAC the Ayyad reference is contextual only. Source: 99_System/.scratch/trk-energy-regression-eval/09_baseline_literature_review.md.
+
+Slide 9: End with the decision request: proceed with a TRK6-centered narrative while retaining the single-seed and provenance caveats. The new framing: even after fair val-only optimization, classical baselines still trail TRK6 by ~1 MeV per-event RMSE. The gap to CNNs is not an artifact of under-tuned baselines.
+
+Slide 10: Transition to appendix. The remaining slides are 5-method backup evidence, not all meant to be presented in sequence.
+
+Slide 11: F1 residual distribution overlay across all 5 methods with Gaussian-fit overlays.
+
+Slide 12: F2 energy-binned RMSE with event-bootstrap CIs, 5 methods.
+
+Slide 13: F3 clipping diagnostic across 5 methods; bars use truth-comparable clipping fraction.
+
+Slide 14: F3.5 conceptual explanation of clipped-track recovery ratio (method-invariant; the cartoon explains why the metric is geometry-derived).
+
+Slide 15: F4 predicted-vs-truth hexbin, 1x5 strip (TRK5 / TRK6 / RANSAC / Hough / HC). Aspect ratio is the native 4.2:1 strip; picture is centered in the slide content area to preserve native aspect (no stretching).
+
+Slide 16: F5 multiplicity-binned RMSE, 5 methods.
+
+Slide 17: F7 pairwise RMSE-difference (upper triangle, CI) and Wilcoxon -log10(p) (lower triangle), 5x5 matrix. Reuses the prior 8.4-inch slide width — readability remains comfortable at the smaller cell count.
+
+Slide 18: F8 residual-vs-truth hexbin, 1x5 strip matching F4.
+
+Slide 19: Per-track-count residual checks for the two CNN energy regressors (TRK5 ResNet and TRK6 CrossAtt). Unchanged by the 5-method refresh because these are CNN-only diagnostics.

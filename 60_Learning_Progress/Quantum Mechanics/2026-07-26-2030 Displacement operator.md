@@ -2,21 +2,20 @@
 type: learning-progress
 topic: "Displacement operator"
 area: Quantum Mechanics
-status: active
+status: next
 created: 2026-07-26
 ---
 # Displacement operator — derivation
 
 **Target form:** $D(\alpha)=e^{\alpha a^\dagger-\alpha^* a}$  
 **Path:** guided derivation from HO ladder operators  
-**Status:** **paused** — missing prerequisites; forked to separate notes
+**Status:** **next / unblocked** — HO + ladder drill-complete; no derivation turns yet after the fork (Turns 1–2 only)
 
-**Prerequisite threads (open these first):**
-- [[2026-07-26-2112 Harmonic oscillator]]
-- [[2026-07-26-2113 Ladder operators]]
+**Prerequisite threads (done):**
+- [[2026-07-26-2112 Harmonic oscillator]] — solid enough
+- [[2026-07-26-2113 Ladder operators]] — drill-complete / solid enough
 
-**Known premises (learner):** Dirac notation, Hermitian operators  
-**Missing:** harmonic-oscillator ladder operators $a$, $a^\dagger$
+**Known premises (learner):** Dirac notation, Hermitian operators, HO spectrum, ladder $a,a^\dagger$ algebra
 
 ---
 

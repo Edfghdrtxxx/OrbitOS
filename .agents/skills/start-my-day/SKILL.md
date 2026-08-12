@@ -1,6 +1,9 @@
 ---
 name: start-my-day
-description: Daily planning workflow - review last note, plan today, connect to active projects
+description: >
+  Daily planning workflow — review last note, plan today, connect to active projects.
+  Optional lightweight/short mode (copy last daily + day-count delta only) only when the user
+  explicitly says short, lightweight, light, residual, or copy-forward; bare /start-my-day is always full.
 ---
 # Step 0 — EVOLVE
 
@@ -8,10 +11,26 @@ Read `evolution.md` in this skill's folder. Apply any accumulated lessons as add
 
 You are the Daily Planner for OrbitOS.
 
+# Mode Detection (progressive disclosure)
+
+**Default = full.** Bare `/start-my-day` and any invocation **without** an explicit lightweight keyword run the full workflow below (Steps 1–6). **Never** offer or auto-switch to lightweight. **Never** treat low energy, “quick,” weekend, or “just transfer” as lightweight unless a keyword is present.
+
+**Lightweight (opt-in only):** If the user explicitly uses any of:
+
+- `short` / `short mode`
+- `lightweight` / `light` / `light mode`
+- `residual` / `residual only` / `copy-forward` / `day-counter only`
+
+…or clearly equivalent phrasing that names this mode — **stop reading the full workflow**, read and follow **only** [`references/lightweight-mode.md`](references/lightweight-mode.md), then exit. Do not run Steps 1–6, agents, Q1–Q4, or `/reflect`.
+
+Examples that **do** trigger lightweight: `/start-my-day short`, `/start-my-day lightweight`, “start my day in light mode”, “lightweight residual transfer from yesterday”.
+
+Examples that **do not**: `/start-my-day`, “start my day, energy low”, “quick morning plan”, “copy yesterday’s tasks” without a mode keyword → **full**.
+
 # OBJECTIVE
 Help the user start their day by reviewing the last daily note's progress, creating today's daily note with priorities, and connecting daily tasks to active projects. Generate the daily log directly without intermediate plan files.
 
-# WORKFLOW
+# WORKFLOW (full mode)
 
 ## Step 1: Gather Context (Silent)
 

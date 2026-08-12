@@ -4,166 +4,439 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>存储分析报告</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#f6f7f9; --card:#ffffff; --ink:#1d2129; --sub:#86909c;
-    --line:#e5e6eb; --green:#00b42a; --yellow:#ff7d00; --red:#f53f3f;
-    --green-bg:#e8ffea; --yellow-bg:#fff7e8; --red-bg:#ffece8;
-    --accent:#165dff; --accent-bg:#e8f3ff;
-    --radius:14px; --shadow:0 1px 3px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.04);
+    --primary:#cc785c;
+    --primary-active:#a9583e;
+    --ink:#141413;
+    --body:#3d3d3a;
+    --body-strong:#252523;
+    --muted:#6c6a64;
+    --muted-soft:#8e8b82;
+    --hairline:#e6dfd8;
+    --hairline-soft:#ebe6df;
+    --canvas:#faf9f5;
+    --surface-soft:#f5f0e8;
+    --surface-card:#efe9de;
+    --surface-cream-strong:#e8e0d2;
+    --surface-dark:#181715;
+    --surface-dark-elevated:#252320;
+    --on-primary:#ffffff;
+    --on-dark:#faf9f5;
+    --on-dark-soft:#a09d96;
+    --success:#5db872;
+    --warning:#d4a017;
+    --error:#c64545;
+    --system:#3d3d3a;
+    --green:var(--success);
+    --yellow:var(--warning);
+    --red:var(--error);
+    --green-bg:rgba(93,184,114,.10);
+    --yellow-bg:rgba(212,160,23,.10);
+    --red-bg:rgba(198,69,69,.08);
+    --radius-xs:4px;
+    --radius-sm:6px;
+    --radius-md:8px;
+    --radius-lg:12px;
+    --radius-xl:16px;
+    --radius-pill:9999px;
+    --font-sans:"Inter","PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,system-ui,sans-serif;
+    --font-mono:"JetBrains Mono","SF Mono",ui-monospace,Menlo,monospace;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:-apple-system,"SF Pro SC","PingFang SC",system-ui,sans-serif;
-    background:var(--bg);color:var(--ink);line-height:1.6;padding:32px 20px 80px;
-    -webkit-font-smoothing:antialiased}
-  .wrap{max-width:1040px;margin:0 auto}
-  header{margin-bottom:28px}
-  h1{font-size:26px;font-weight:700;letter-spacing:-.5px}
-  .meta{color:var(--sub);font-size:13px;margin-top:6px}
+  body{
+    font-family:var(--font-sans);
+    background:var(--canvas);
+    color:var(--ink);
+    font-size:16px;
+    font-weight:400;
+    line-height:1.55;
+    padding:48px 24px 0;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+  .wrap{max-width:960px;margin:0 auto}
 
-  /* disk overview */
-  .overview{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);
-    padding:24px;margin-bottom:24px}
-  .bar{height:16px;border-radius:8px;background:var(--line);overflow:hidden;display:flex;margin:16px 0 12px}
-  .bar i{display:block;height:100%}
-  .bar .used{background:linear-gradient(90deg,#165dff,#4080ff)}
+  /* ── Header ── */
+  header{margin-bottom:48px}
+  .eyebrow{
+    font-size:11px;font-weight:500;letter-spacing:1.6px;text-transform:uppercase;
+    color:var(--muted);margin-bottom:14px;
+  }
+  h1{
+    font-size:40px;font-weight:500;line-height:1.1;letter-spacing:-.8px;
+    color:var(--ink);
+  }
+  .meta{color:var(--muted);font-size:14px;margin-top:12px}
+
+  /* ── Disk overview ── */
+  .overview{
+    background:var(--surface-card);
+    border-radius:var(--radius-xl);
+    padding:36px 36px 32px;
+    margin-bottom:48px;
+  }
+  .stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+    gap:24px 20px;
+    margin-bottom:28px;
+  }
+  .stat .k{
+    font-size:11px;font-weight:500;letter-spacing:1.4px;text-transform:uppercase;
+    color:var(--muted);margin-bottom:8px;
+  }
+  .stat .v{
+    font-size:30px;font-weight:500;line-height:1.1;letter-spacing:-.6px;
+    font-variant-numeric:tabular-nums;color:var(--ink);
+  }
+  .stat .v.free{color:var(--body)}
+
+  /* Composition bar — the hero visual, not the pills */
+  .bar-block{margin:0 0 8px}
+  .bar-label{
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-size:12px;color:var(--muted);font-weight:500;margin-bottom:10px;
+  }
+  .bar-label .hint{font-weight:400;color:var(--muted-soft)}
+  .bar{
+    height:10px;border-radius:var(--radius-pill);
+    background:rgba(20,20,19,.06);overflow:hidden;display:flex;
+  }
+  .bar i{display:block;height:100%;min-width:0}
+  .bar .used{background:var(--body-strong)}
   .bar i.seg-green{background:var(--green)}
   .bar i.seg-yellow{background:var(--yellow)}
   .bar i.seg-red{background:var(--red)}
-  .bar i.seg-blue{background:var(--accent)}
-  .bar i+i{border-left:1.5px solid #fff}
-  .lead{font-size:14px;line-height:1.7;margin-bottom:12px}
-  .stats{display:flex;flex-wrap:wrap;gap:24px}
-  .stat .k{font-size:12px;color:var(--sub)}
-  .stat .v{font-size:18px;font-weight:600;font-variant-numeric:tabular-nums}
-  .sysgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:10px 24px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
-  .sysgrid div{font-size:13px}
-  .sysgrid span{color:var(--sub)}
-  .pills{margin:14px 0 0}
-  .bar-label{font-size:12px;color:var(--sub);margin-bottom:4px}
-  .other-disks{margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
-  .other-disks .label{font-size:12px;color:var(--sub);font-weight:600;margin-bottom:8px}
-  .odisk{display:flex;align-items:center;gap:12px;margin:6px 0;font-size:13px}
-  .odisk-name{width:46px;font-weight:600;font-variant-numeric:tabular-nums}
-  .obar{flex:1;height:10px;border-radius:6px;background:var(--line);overflow:hidden}
-  .obar i{display:block;height:100%;background:linear-gradient(90deg,#165dff,#4080ff)}
-  .odisk-num{color:var(--sub);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .bar i.seg-system{background:var(--system);opacity:.55}
+  .bar i+i{box-shadow:inset 1.5px 0 0 var(--surface-card)}
 
-  /* sections */
-  .sec{margin-bottom:28px}
-  .sec h2{font-size:18px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px}
-  .sec h2 .count{font-size:13px;color:var(--sub);font-weight:500}
-  .sec-actions{margin-left:auto;display:flex;align-items:center;gap:8px}
-  .sec-actions .del-btn{padding:5px 12px;font-size:12px}
-  .sec-status{font-size:12px}
+  /* Tier breakdown — metric cells, not pill chips */
+  .tier-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:0;
+    margin-top:28px;
+    padding-top:4px;
+  }
+  .tier-cell{
+    padding:18px 16px 4px 0;
+    border-top:2px solid transparent;
+    min-width:0;
+  }
+  .tier-cell + .tier-cell{padding-left:16px}
+  .tier-cell.green{border-top-color:var(--green)}
+  .tier-cell.yellow{border-top-color:var(--yellow)}
+  .tier-cell.red{border-top-color:var(--red)}
+  .tier-cell.system{border-top-color:rgba(61,61,58,.35)}
+  .tier-cell .tier-label{
+    font-size:12px;font-weight:500;color:var(--muted);
+    margin-bottom:6px;letter-spacing:.2px;
+  }
+  .tier-cell .tier-value{
+    font-size:20px;font-weight:500;letter-spacing:-.3px;
+    font-variant-numeric:tabular-nums;color:var(--ink);line-height:1.2;
+  }
+  .tier-cell .tier-hint{
+    font-size:12px;color:var(--muted-soft);margin-top:4px;line-height:1.4;
+  }
 
-  /* top5 table */
-  table{width:100%;border-collapse:collapse;background:var(--card);
-    border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
-  th,td{text-align:left;padding:12px 14px;font-size:13px;border-bottom:1px solid var(--line)}
-  th{background:#fafbfc;color:var(--sub);font-weight:600;font-size:12px;white-space:nowrap}
+  .sysgrid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:10px 24px;margin-top:28px;padding-top:22px;
+    border-top:1px solid rgba(20,20,19,.06);
+  }
+  .sysgrid div{font-size:13px;color:var(--body)}
+  .sysgrid span{color:var(--muted-soft);font-weight:500;margin-right:4px}
+
+  .other-disks{margin-top:22px;padding-top:18px;border-top:1px solid rgba(20,20,19,.06)}
+  .other-disks .label{
+    font-size:11px;color:var(--muted);font-weight:500;letter-spacing:1.4px;
+    text-transform:uppercase;margin-bottom:12px;
+  }
+  .odisk{display:flex;align-items:center;gap:12px;margin:8px 0;font-size:13px}
+  .odisk-name{width:48px;font-weight:500;font-variant-numeric:tabular-nums;color:var(--ink)}
+  .obar{flex:1;height:6px;border-radius:var(--radius-pill);background:rgba(20,20,19,.06);overflow:hidden}
+  .obar i{display:block;height:100%;background:var(--body-strong);opacity:.7}
+  .odisk-num{color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap;font-size:12px}
+
+  /* ── Sections ── */
+  .sec{margin-bottom:48px}
+  .sec-head{
+    display:flex;align-items:flex-end;justify-content:space-between;
+    gap:16px;margin-bottom:18px;flex-wrap:wrap;
+  }
+  .sec-head-text{min-width:0;flex:1}
+  .sec-kicker{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:11px;font-weight:500;letter-spacing:1.4px;text-transform:uppercase;
+    color:var(--muted);margin-bottom:8px;
+  }
+  .sec-kicker .swatch{
+    width:10px;height:3px;border-radius:2px;display:inline-block;
+  }
+  .sec-kicker.green .swatch{background:var(--green)}
+  .sec-kicker.yellow .swatch{background:var(--yellow)}
+  .sec-kicker.red .swatch{background:var(--red)}
+  .sec h2{
+    font-size:24px;font-weight:500;line-height:1.25;letter-spacing:-.3px;
+    color:var(--ink);margin:0;
+  }
+  .sec-sub{
+    font-size:14px;color:var(--muted);margin-top:6px;line-height:1.45;
+    font-weight:400;
+  }
+  .sec-meta{
+    font-size:13px;color:var(--muted-soft);font-weight:500;
+    white-space:nowrap;padding-bottom:2px;
+  }
+  .sec-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .sec-actions .del-btn{padding:8px 14px;font-size:13px;height:auto}
+  .sec-status{font-size:13px}
+
+  /* ── Top5 table ── */
+  .table-scroll{
+    overflow-x:auto;border-radius:var(--radius-lg);
+    border:1px solid var(--hairline);background:var(--canvas);
+  }
+  table{width:100%;border-collapse:collapse}
+  th,td{
+    text-align:left;padding:13px 16px;font-size:14px;
+    border-bottom:1px solid var(--hairline-soft);color:var(--body);
+  }
+  th{
+    background:var(--surface-soft);color:var(--muted);font-weight:500;
+    font-size:11px;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;
+  }
   td.type{white-space:nowrap}
-  .table-scroll{overflow-x:auto;border-radius:var(--radius);box-shadow:var(--shadow)}
-  .table-scroll table{min-width:720px;box-shadow:none}
+  .table-scroll table{min-width:720px}
   tr:last-child td{border-bottom:none}
-  td.size{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
-  td.path{font-family:"SF Mono",ui-monospace,monospace;font-size:12px;color:var(--sub);word-break:break-all}
-  .dot{display:inline-block;width:9px;height:9px;border-radius:50%}
-  .dot.green{background:var(--green)} .dot.yellow{background:var(--yellow)} .dot.red{background:var(--red)} .dot.blue{background:var(--accent)}
+  tr:hover td{background:rgba(20,20,19,.015)}
+  td.size{
+    font-weight:500;font-variant-numeric:tabular-nums;white-space:nowrap;
+    color:var(--ink);
+  }
+  td.path{
+    font-family:var(--font-mono);font-size:12px;color:var(--muted-soft);word-break:break-all;
+  }
+  td b{color:var(--ink);font-weight:500}
+  td.rank{color:var(--muted-soft);font-variant-numeric:tabular-nums;width:36px}
+  .tier-tag{
+    display:inline-block;font-size:11px;font-weight:500;letter-spacing:.3px;
+    padding:3px 8px;border-radius:var(--radius-sm);line-height:1.2;white-space:nowrap;
+  }
+  .tier-tag.green{background:var(--green-bg);color:#2f7a42}
+  .tier-tag.yellow{background:var(--yellow-bg);color:#8a6a0a}
+  .tier-tag.red{background:var(--red-bg);color:#9a3030}
 
-  /* item cards */
-  .item{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);
-    margin-bottom:12px;border-left:4px solid var(--line);overflow:hidden}
+  /* ── Item list (rows, not “dot cards”) ── */
+  .item-list{
+    border:1px solid var(--hairline);
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    background:var(--canvas);
+  }
+  .item{
+    border-bottom:1px solid var(--hairline-soft);
+    border-left:3px solid transparent;
+  }
+  .item:last-child{border-bottom:none}
   .item.green{border-left-color:var(--green)}
   .item.yellow{border-left-color:var(--yellow)}
   .item.red{border-left-color:var(--red)}
-  .item-head{display:flex;align-items:center;gap:12px;padding:16px 18px;cursor:pointer;user-select:none}
-  .item-head:hover{background:#fafbfc}
-  .item-name{font-weight:600;font-size:15px;flex:1}
-  .item-badge{font-size:12px;font-weight:600;color:var(--green);background:var(--green-bg);
-    padding:2px 10px;border-radius:20px;white-space:nowrap}
+  .item-head{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:16px 18px 16px 16px;
+    cursor:pointer;user-select:none;
+  }
+  .item-head:hover{background:var(--surface-soft)}
+  .item-name{
+    font-weight:500;font-size:15px;color:var(--ink);line-height:1.35;
+    min-width:0;flex:1;
+  }
+  .item-badge{
+    font-size:11px;font-weight:500;letter-spacing:.4px;
+    color:var(--on-primary);background:var(--primary);
+    padding:4px 10px;border-radius:var(--radius-pill);white-space:nowrap;
+    flex-shrink:0;
+  }
   .item-badge:empty{display:none}
-  .item.cleaned .item-name{text-decoration:line-through;color:var(--sub);font-weight:500}
-  .item.cleaned .item-size{color:var(--sub)}
-  .item.cleaned{opacity:.85}
-  .item-size{font-weight:700;font-variant-numeric:tabular-nums;color:var(--accent)}
-  .chev{color:var(--sub);transition:transform .2s;font-size:12px}
+  .item.cleaned .item-name{text-decoration:line-through;color:var(--muted);font-weight:400}
+  .item.cleaned .item-size{color:var(--muted-soft)}
+  .item.cleaned{opacity:.8}
+  .item-size{
+    font-weight:500;font-variant-numeric:tabular-nums;
+    color:var(--body);font-size:14px;white-space:nowrap;
+    flex-shrink:0;
+  }
+  .chev{
+    color:var(--muted-soft);font-size:10px;line-height:1;
+    transition:transform .18s ease;
+    width:14px;text-align:center;flex-shrink:0;
+  }
   .item.open .chev{transform:rotate(90deg)}
-  .item-body{display:none;padding:0 18px 18px;font-size:14px}
-  .item.open .item-body{display:block}
-  .item-path{font-family:"SF Mono",ui-monospace,monospace;font-size:12px;color:var(--sub);
-    word-break:break-all;margin-bottom:12px;padding:8px 10px;background:#fafbfc;border-radius:8px}
-  .field{margin:10px 0}
-  .field .label{font-size:12px;color:var(--sub);font-weight:600;margin-bottom:3px}
-  .tag{display:inline-block;background:var(--accent-bg);color:var(--accent);
-    font-size:12px;padding:2px 8px;border-radius:6px;margin:2px 4px 2px 0}
-  .risk{background:var(--red-bg);color:var(--red);padding:8px 12px;border-radius:8px;
-    font-size:13px;margin-top:10px}
+  .item-body{
+    display:none;padding:0 18px 20px 16px;
+    font-size:14px;color:var(--body);
+    border-top:1px solid transparent;
+  }
+  .item.open .item-body{
+    display:block;
+    border-top-color:var(--hairline-soft);
+    padding-top:16px;
+    background:linear-gradient(180deg,var(--surface-soft) 0%,var(--canvas) 28px);
+  }
+  .item-path{
+    font-family:var(--font-mono);font-size:12px;color:var(--muted);
+    word-break:break-all;margin-bottom:14px;padding:10px 12px;
+    background:var(--canvas);border-radius:var(--radius-md);
+    border:1px solid var(--hairline);
+  }
+  .field{margin:12px 0}
+  .field .label{
+    font-size:11px;color:var(--muted);font-weight:500;
+    letter-spacing:1.2px;text-transform:uppercase;margin-bottom:6px;
+  }
+  .tag{
+    display:inline-block;background:var(--surface-card);color:var(--body-strong);
+    font-size:12px;font-weight:500;padding:4px 10px;border-radius:var(--radius-pill);
+    margin:2px 6px 2px 0;border:1px solid var(--hairline);
+  }
+  .risk{
+    background:var(--red-bg);color:var(--error);
+    padding:12px 14px;border-radius:var(--radius-md);
+    font-size:13px;margin-top:12px;line-height:1.5;
+  }
 
-  /* command block */
-  .cmd{position:relative;background:#1d2129;color:#e5e6eb;border-radius:10px;
-    padding:14px 14px;margin:8px 0;font-family:"SF Mono",ui-monospace,monospace;
-    font-size:12.5px;line-height:1.7;overflow-x:auto;white-space:pre}
-  .cmd .copy{position:absolute;top:8px;right:8px;background:#2d3138;color:#c9cdd4;
-    border:none;border-radius:6px;padding:4px 10px;font-size:11px;cursor:pointer;
-    font-family:inherit}
-  .cmd .copy:hover{background:#3d424a;color:#fff}
-  .cmd .copy.done{background:var(--green);color:#fff}
-  .cmd-label{font-size:11px;color:var(--sub);margin:10px 0 2px}
+  /* ── Command block ── */
+  .cmd{
+    position:relative;background:var(--surface-dark);color:var(--on-dark);
+    border-radius:var(--radius-lg);padding:16px 18px;margin:8px 0;
+    font-family:var(--font-mono);font-size:12.5px;line-height:1.65;
+    overflow-x:auto;white-space:pre;
+  }
+  .cmd .copy{
+    position:absolute;top:10px;right:10px;
+    background:var(--surface-dark-elevated);color:var(--on-dark);
+    border:1px solid rgba(250,249,245,.08);border-radius:var(--radius-md);
+    padding:6px 12px;font-size:12px;font-weight:500;cursor:pointer;
+    font-family:var(--font-sans);line-height:1;
+  }
+  .cmd .copy:active{background:var(--primary);border-color:var(--primary);color:var(--on-primary)}
+  .cmd .copy.done{background:var(--success);border-color:var(--success);color:#fff}
+  .cmd-label{font-size:12px;color:var(--muted);margin:12px 0 4px;font-weight:500}
 
-  /* one-click delete actions */
+  /* ── Buttons ── */
   .del-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:4px}
-  .del-btn{border:none;border-radius:8px;padding:7px 16px;font-size:13px;font-weight:600;cursor:pointer}
-  .del-btn.trash{background:var(--accent-bg);color:var(--accent)}
-  .del-btn.trash:hover{background:#d4e4ff}
-  .del-btn.danger{background:var(--red-bg);color:var(--red)}
-  .del-btn.danger:hover{background:#ffd4cc}
-  .del-btn.open{background:#f2f3f5;color:var(--ink)}
-  .del-btn.open:hover{background:#e5e6eb}
+  .del-btn{
+    border:none;border-radius:var(--radius-md);
+    padding:10px 18px;font-size:14px;font-weight:500;cursor:pointer;
+    font-family:var(--font-sans);line-height:1;height:40px;
+  }
+  .del-btn.trash{background:var(--primary);color:var(--on-primary)}
+  .del-btn.trash:active{background:var(--primary-active)}
+  .del-btn.danger{
+    background:var(--red-bg);color:var(--error);
+    border:1px solid rgba(198,69,69,.18);
+  }
+  .del-btn.danger:active{background:rgba(198,69,69,.16)}
+  .del-btn.open{
+    background:var(--canvas);color:var(--ink);
+    border:1px solid var(--hairline);
+  }
+  .del-btn.open:active{background:var(--surface-soft)}
   .del-btn:disabled{opacity:.45;cursor:default}
-  .del-status{font-size:13px}
-  .del-status.ok{color:var(--green);font-weight:600}
-  .del-status.err{color:var(--red)}
-  .del-note{font-size:12px;color:var(--sub);line-height:1.6;margin-top:8px}
-  .del-note b{color:var(--ink)}
+  .del-status{font-size:14px;color:var(--body)}
+  .del-status.ok{color:var(--success);font-weight:500}
+  .del-status.err{color:var(--error)}
+  .del-note{font-size:13px;color:var(--muted);line-height:1.6;margin-top:10px}
+  .del-note b{color:var(--body-strong);font-weight:500}
 
-  /* summary */
-  .summary{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}
-  .summary h3{font-size:15px;margin:18px 0 8px} .summary h3:first-child{margin-top:0}
-  .summary ul{padding-left:20px} .summary li{margin:4px 0;font-size:14px}
-  .pill{display:inline-flex;align-items:center;gap:6px;background:#fafbfc;border:1px solid var(--line);
-    border-radius:20px;padding:6px 14px;font-size:13px;margin:4px 8px 4px 0;font-weight:600}
-  .pill b{font-variant-numeric:tabular-nums}
+  /* ── Summary ── */
+  .summary{
+    background:var(--surface-card);border-radius:var(--radius-xl);padding:28px 32px;
+  }
+  .lead{font-size:16px;line-height:1.55;color:var(--body);margin-bottom:14px}
+  .summary ul{padding-left:1.15em;color:var(--body)}
+  .summary li{margin:8px 0;font-size:15px;padding-left:4px}
+  .summary li::marker{color:var(--muted-soft)}
 
-  .note{font-size:12px;color:var(--sub);margin-top:8px}
-  .denied{background:var(--yellow-bg);border:1px solid #ffd591;border-radius:10px;
-    padding:12px 14px;font-size:13px;margin-top:12px}
-  footer{text-align:center;color:var(--sub);font-size:12px;margin-top:40px}
+  .note{font-size:13px;color:var(--muted);margin-top:4px}
+  .denied{
+    background:var(--yellow-bg);
+    border-left:3px solid var(--warning);
+    border-radius:0 var(--radius-md) var(--radius-md) 0;
+    padding:14px 16px;font-size:13px;
+    margin:0 0 48px;color:var(--body-strong);
+  }
+  .denied b{color:var(--ink);font-weight:500;display:block;margin-bottom:6px}
+
+  /* ── Footer ── */
+  footer{
+    margin-top:72px;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);
+    width:100vw;background:var(--surface-dark);color:var(--on-dark-soft);
+    text-align:center;font-size:13px;padding:36px 24px;
+  }
+  footer .footer-inner{max-width:960px;margin:0 auto}
+  footer .footer-mark{
+    color:var(--on-dark);font-weight:500;font-size:13px;margin-bottom:6px;
+    letter-spacing:.2px;
+  }
+
+  @media (max-width:820px){
+    .tier-grid{grid-template-columns:repeat(2,1fr);gap:8px 0}
+    .tier-cell{padding:16px 12px 8px 0}
+    .tier-cell + .tier-cell{padding-left:0}
+    .tier-cell:nth-child(even){padding-left:12px}
+  }
+  @media (max-width:768px){
+    body{padding:28px 16px 0}
+    h1{font-size:30px;letter-spacing:-.5px}
+    .stat .v{font-size:24px}
+    .overview,.summary{padding:24px}
+    .sec h2{font-size:20px}
+    .tier-cell .tier-value{font-size:18px}
+    .item-head{gap:10px;padding:14px 14px 14px 12px}
+    .sec-actions{width:100%}
+  }
+  @media (max-width:420px){
+    .tier-grid{grid-template-columns:1fr}
+    .tier-cell,.tier-cell + .tier-cell,.tier-cell:nth-child(even){padding:14px 0 10px}
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
+    <div class="eyebrow">Storage Analyzer</div>
     <h1>存储分析报告</h1>
     <div class="meta" id="meta"></div>
   </header>
   <div id="app"></div>
-  <footer>storage-analyzer · 只读分析 · 删除命令请自行在终端确认后执行</footer>
 </div>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-mark">storage-analyzer</div>
+    只读分析 · 删除命令请自行在终端确认后执行
+  </div>
+</footer>
 
 <script>
 const DATA = __REPORT_DATA__;
 const DELETE = __DELETE_CONFIG__; // null=静态只读报告；{token,endpoint}=server.py 提供一键删除
-const FM = (DATA.system && /win/i.test(DATA.system.os||'')) ? '资源管理器' : '访达'; // 文件管理器名，按系统
+const FM = (DATA.system && /win/i.test(DATA.system.os||'')) ? '资源管理器' : '访达';
 
 const esc = s => String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-// "约" 已表示估算，去掉冗余的"（估算…）"括号让大小显示更干净专业
 const cleanSize = s => String(s==null?'':s).replace(/[（(]\s*估算[^）)]*[）)]/g, '').trim();
 
+const TIER_LABEL = {green:'可清', yellow:'需判', red:'谨慎'};
+
 function copyBtn(text){
-  const id='c'+Math.random().toString(36).slice(2);
-  // store raw text on element via data attribute (base64 to survive quotes)
   return `<button class="copy" data-cmd="${btoa(unescape(encodeURIComponent(text)))}">复制</button>`;
 }
 
@@ -172,70 +445,6 @@ function cmdBlock(c){
   return `${label}<div class="cmd">${copyBtn(c.cmd)}${esc(c.cmd)}</div>`;
 }
 
-function renderSystem(s, sm){
-  document.getElementById('meta').textContent =
-    `生成于 ${DATA.generated_at}　·　扫描耗时 ${DATA.scan_seconds||'?'}s`;
-  // 已用部分分段：绿(可自动清)+橙(需手动)+红(已识别的不建议动项)+蓝(其他/系统等未归类的已用)，余下灰底为可用
-  const total = parseGB(s.disk_total) || 1;
-  const used = parseGB(s.disk_used);
-  const ts = sm && sm.tier_stats;
-  const g = ts ? parseGB(ts.green) : 0;
-  const y = ts ? parseGB(ts.yellow) : 0;
-  const r = ts ? parseGB(ts.red) : 0;
-  const other = Math.max(0, used - g - y - r); // 既非红黄绿、也未单独列出的已用空间（系统+零碎文件）
-  let bar;
-  if(g > 0 || y > 0 || r > 0){
-    const seg=(v,cls,label)=> v>0?`<i class="${cls}" style="width:${(v/total*100).toFixed(2)}%" title="${label}：约 ${v.toFixed(1)} GB"></i>`:'';
-    bar = seg(g,'seg-green','可自动清')+seg(y,'seg-yellow','需手动')+seg(r,'seg-red','谨慎清理')+seg(other,'seg-blue','系统及其他');
-  } else {
-    bar = `<i class="used" style="width:${(used/total*100).toFixed(2)}%"></i>`;
-  }
-  const fmtGB = v => v>0?`约 ${v.toFixed(1)} GB`:'-';
-  const otherPill = other>0?`<span class="pill"><span class="dot blue"></span>系统及其他 <b>${fmtGB(other)}</b></span>`:'';
-  let pills='';
-  if(sm && sm.tier_stats){
-    pills=`<div class="pills">
-      <span class="pill"><span class="dot green"></span>可自动清 <b>${fmtGB(g)}</b></span>
-      <span class="pill"><span class="dot yellow"></span>需手动 <b>${fmtGB(y)}</b></span>
-      <span class="pill"><span class="dot red"></span>谨慎清理 <b>${fmtGB(r)}</b></span>
-      ${otherPill}
-    </div>`;
-  }
-  // 多盘符（Windows）：主盘用上面的分段条，其余盘紧凑列出
-  const allDisks = s.disks || [];
-  const others = allDisks.filter(d => d.name !== s.disk_name);
-  const barLabel = allDisks.length > 1
-    ? `<div class="bar-label">系统盘 ${esc(s.disk_name||'')} · 已用部分按清理分级着色</div>` : '';
-  const otherDisksBlock = others.length ? `<div class="other-disks">
-      <div class="label">其他磁盘</div>
-      ${others.map(d=>{
-        const u=parseGB(d.used), t=parseGB(d.total)||1;
-        const pct=Math.min(100, u/t*100).toFixed(1);
-        return `<div class="odisk"><span class="odisk-name">${esc(d.name)}</span>
-          <div class="obar"><i style="width:${pct}%"></i></div>
-          <span class="odisk-num">${esc(d.used)} / ${esc(d.total)}</span></div>`;
-      }).join('')}</div>` : '';
-  return `<div class="overview">
-    <div class="stats">
-      <div class="stat"><div class="k">总容量</div><div class="v">${esc(s.disk_total)}</div></div>
-      <div class="stat"><div class="k">已用</div><div class="v">${esc(s.disk_used)}</div></div>
-      <div class="stat"><div class="k">可用</div><div class="v">${esc(s.disk_free)}</div></div>
-      ${s.purgeable?`<div class="stat"><div class="k">可清除(系统)</div><div class="v">${esc(s.purgeable)}</div></div>`:''}
-    </div>
-    ${barLabel}
-    <div class="bar">${bar}</div>
-    ${pills}
-    ${otherDisksBlock}
-    <div class="sysgrid">
-      <div><span>系统　</span>${esc(s.os)} (${esc(s.build)})</div>
-      <div><span>架构　</span>${esc(s.arch)}</div>
-      <div><span>文件系统　</span>${esc(s.filesystem)}</div>
-      <div><span>用户　</span>${esc(s.user)}</div>
-      <div><span>主目录　</span>${esc(s.home)}</div>
-    </div>
-  </div>`;
-}
-// 从 "约 27.8 GB（…）" / "300.3 GB" 这类字符串里取数值，统一换算成 GB
 function parseGB(str){
   if(!str) return 0;
   const m=String(str).match(/([\d.]+)\s*(TB|GB|MB)?/i);
@@ -245,20 +454,128 @@ function parseGB(str){
   return v;
 }
 
+function fmtGB(v){
+  if(!(v>0)) return '—';
+  return v >= 100 ? `${Math.round(v)} GB` : `约 ${v.toFixed(1)} GB`;
+}
+
+function renderSystem(s, sm){
+  document.getElementById('meta').textContent =
+    `生成于 ${DATA.generated_at}  ·  扫描耗时 ${DATA.scan_seconds||'?'}s`;
+
+  const total = parseGB(s.disk_total) || 1;
+  const used = parseGB(s.disk_used);
+  const free = parseGB(s.disk_free);
+  const ts = sm && sm.tier_stats;
+  const g = ts ? parseGB(ts.green) : 0;
+  const y = ts ? parseGB(ts.yellow) : 0;
+  const r = ts ? parseGB(ts.red) : 0;
+  const other = Math.max(0, used - g - y - r);
+  const usedPct = Math.min(100, used/total*100);
+
+  let bar;
+  if(g > 0 || y > 0 || r > 0){
+    const seg=(v,cls,label)=> v>0
+      ? `<i class="${cls}" style="width:${(v/total*100).toFixed(2)}%" title="${label}：${fmtGB(v)}"></i>`
+      : '';
+    bar = seg(g,'seg-green','可自动清')
+        + seg(y,'seg-yellow','需手动')
+        + seg(r,'seg-red','谨慎清理')
+        + seg(other,'seg-system','系统及其他');
+  } else {
+    bar = `<i class="used" style="width:${usedPct.toFixed(2)}%"></i>`;
+  }
+
+  let tiers = '';
+  if(sm && sm.tier_stats){
+    const cells = [
+      {cls:'green',  label:'可自动清', value:g,     hint:'可再生缓存'},
+      {cls:'yellow', label:'需手动',   value:y,     hint:'含用户数据'},
+      {cls:'red',    label:'谨慎清理', value:r,     hint:'建议正规卸载'},
+      {cls:'system', label:'系统及其他', value:other, hint:'日常占用余量'},
+    ];
+    tiers = `<div class="tier-grid">${cells.map(c=>`
+      <div class="tier-cell ${c.cls}">
+        <div class="tier-label">${c.label}</div>
+        <div class="tier-value">${fmtGB(c.value)}</div>
+        <div class="tier-hint">${c.hint}</div>
+      </div>`).join('')}</div>`;
+  }
+
+  const allDisks = s.disks || [];
+  const others = allDisks.filter(d => d.name !== s.disk_name);
+  const barLabel = allDisks.length > 1
+    ? `<div class="bar-label"><span>系统盘 ${esc(s.disk_name||'')}</span><span class="hint">已用按清理分级</span></div>`
+    : `<div class="bar-label"><span>磁盘构成</span><span class="hint">已用 ${usedPct.toFixed(0)}% · 可用 ${fmtGB(free)}</span></div>`;
+
+  const otherDisksBlock = others.length ? `<div class="other-disks">
+      <div class="label">其他磁盘</div>
+      ${others.map(d=>{
+        const u=parseGB(d.used), t=parseGB(d.total)||1;
+        const pct=Math.min(100, u/t*100).toFixed(1);
+        return `<div class="odisk"><span class="odisk-name">${esc(d.name)}</span>
+          <div class="obar"><i style="width:${pct}%"></i></div>
+          <span class="odisk-num">${esc(d.used)} / ${esc(d.total)}</span></div>`;
+      }).join('')}</div>` : '';
+
+  return `<div class="overview">
+    <div class="stats">
+      <div class="stat"><div class="k">总容量</div><div class="v">${esc(s.disk_total)}</div></div>
+      <div class="stat"><div class="k">已用</div><div class="v">${esc(s.disk_used)}</div></div>
+      <div class="stat"><div class="k">可用</div><div class="v free">${esc(s.disk_free)}</div></div>
+      ${s.purgeable?`<div class="stat"><div class="k">可清除</div><div class="v free">${esc(s.purgeable)}</div></div>`:''}
+    </div>
+    <div class="bar-block">
+      ${barLabel}
+      <div class="bar">${bar}</div>
+    </div>
+    ${tiers}
+    ${otherDisksBlock}
+    <div class="sysgrid">
+      <div><span>系统</span>${esc(s.os)} (${esc(s.build)})</div>
+      <div><span>架构</span>${esc(s.arch)}</div>
+      <div><span>文件系统</span>${esc(s.filesystem)}</div>
+      <div><span>用户</span>${esc(s.user)}</div>
+      <div><span>主目录</span>${esc(s.home)}</div>
+    </div>
+  </div>`;
+}
+
 function renderTop5(rows){
   if(!rows||!rows.length) return '';
   const body = rows.map(r=>`<tr>
-    <td>${esc(r.rank)}</td>
-    <td><span class="dot ${esc(r.tier)}"></span></td>
+    <td class="rank">${esc(r.rank)}</td>
+    <td><span class="tier-tag ${esc(r.tier)}">${TIER_LABEL[r.tier]||esc(r.tier)}</span></td>
     <td class="size">${esc(cleanSize(r.size))}</td>
     <td class="type">${esc(r.type)}</td>
     <td><b>${esc(r.name)}</b></td>
     <td class="path">${esc(r.path)}</td>
     <td>${esc(r.note)}</td>
   </tr>`).join('');
-  return `<div class="sec"><h2>占用排行 Top 5</h2>
-    <div class="table-scroll"><table><thead><tr><th>#</th><th>级</th><th>大小</th><th>类型</th><th>项目</th><th>路径</th><th>说明</th></tr></thead>
-    <tbody>${body}</tbody></table></div></div>`;
+  return sectionHead('占用排行', 'Top 5', '按体量排序的主要占用') +
+    `<div class="table-scroll"><table><thead><tr>
+      <th>#</th><th>分级</th><th>大小</th><th>类型</th><th>项目</th><th>路径</th><th>说明</th>
+    </tr></thead><tbody>${body}</tbody></table></div></div>`;
+}
+
+function sectionHead(title, meta, sub, actions, kicker){
+  const kick = kicker
+    ? `<div class="sec-kicker ${esc(kicker.cls)}"><span class="swatch"></span>${esc(kicker.text)}</div>`
+    : '';
+  const subHtml = sub ? `<div class="sec-sub">${esc(sub)}</div>` : '';
+  const metaHtml = meta ? `<div class="sec-meta">${esc(meta)}</div>` : '';
+  const act = actions || '';
+  return `<div class="sec">
+    <div class="sec-head">
+      <div class="sec-head-text">
+        ${kick}
+        <h2>${esc(title)}</h2>
+        ${subHtml}
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+        ${metaHtml}${act}
+      </div>
+    </div>`;
 }
 
 function renderGreen(items){
@@ -269,13 +586,17 @@ function renderGreen(items){
       : `<div class="field"><div class="label">清理前需关闭</div><span class="note">无需关闭任何进程</span></div>`;
     const cmds=(it.commands||[]).map(cmdBlock).join('');
     return card('green', it.name, it.size_estimate, it.path,
-      procs + `<div class="field"><div class="label">清理命令（自行确认后执行）</div>${cmds}</div>` + delBlock(it));
+      procs + `<div class="field"><div class="label">清理命令</div>${cmds}</div>` + delBlock(it));
   }).join('');
-  return section('🟢 可自动清理（纯缓存/临时文件，可再生）', items.length, cards, greenBatchActions(items));
+  return sectionHead(
+    '可自动清理',
+    `${items.length} 项`,
+    '纯缓存与临时文件 · 可再生',
+    greenBatchActions(items),
+    {cls:'green', text:'Safe to clear'}
+  ) + `<div class="item-list">${cards}</div></div>`;
 }
 
-// 分组级批量按钮：绿灯每项都是无条件安全的可再生缓存，给「全部移废纸篓/全部删除」一次清完。
-// 橙灯/红灯需逐项判断，不给批量。仅 server.py 模式且至少一项有 trash_paths 时渲染。
 function greenBatchActions(items){
   if(!DELETE) return '';
   if(!items.some(it => it.trash_paths && it.trash_paths.length)) return '';
@@ -286,7 +607,6 @@ function greenBatchActions(items){
   </span>`;
 }
 
-// 批量处理：收集本组所有未清理项的 trash_paths，确认一次，一次性提交。
 function doBatch(btn, mode){
   const secActions = btn.closest('.sec-actions');
   const sec = btn.closest('.sec');
@@ -319,7 +639,6 @@ function doBatch(btn, mode){
   });
 }
 
-// 一键删除按钮：仅当 server.py 提供了 DELETE 配置、且该项有具体 trash_paths 时渲染
 function delBlock(it){
   if(!DELETE || !it.trash_paths || !it.trash_paths.length) return '';
   const payload = btoa(unescape(encodeURIComponent(JSON.stringify(it.trash_paths))));
@@ -356,7 +675,6 @@ function doDelete(btn, mode){
       status.textContent = mode==='rm' ? '✓ 已删除，空间已释放' : '✓ 已移到废纸篓（访达可恢复，清空后释放空间）';
       status.className='del-status ok';
       wrap.querySelectorAll('.del-btn.trash,.del-btn.danger').forEach(b=>b.remove());
-      // 折叠状态下也能看到：标题行打上徽标 + 整行变灰
       const item = wrap.closest('.item');
       if(item){
         item.classList.add('cleaned');
@@ -385,11 +703,16 @@ function renderYellow(items){
     `<div class="field"><div class="label">内容画像</div>${esc(it.content_profile)}</div>
      <div class="field"><div class="label">为什么需要人工判断</div>${esc(it.why_manual)}</div>
      <div class="field"><div class="label">处置路径</div>${esc(it.disposal)}</div>
-     <div class="risk">⚠️ ${esc(it.risk)}</div>` + yellowActions(it))).join('');
-  return section('🟡 需你参与的手动清理（含用户数据）', items.length, cards);
+     <div class="risk">${esc(it.risk)}</div>` + yellowActions(it))).join('');
+  return sectionHead(
+    '需你参与的手动清理',
+    `${items.length} 项`,
+    '含用户数据 · 请先判断再动手',
+    '',
+    {cls:'yellow', text:'Review first'}
+  ) + `<div class="item-list">${cards}</div></div>`;
 }
 
-// 橙灯操作：打开文件夹（去自己审查删）+ 仅当有核实过的安全子路径时给「移到废纸篓」（只可逆，不直接删）
 function yellowActions(it){
   if(!DELETE) return '';
   const hasTrash = it.trash_paths && it.trash_paths.length;
@@ -415,10 +738,15 @@ function renderRed(items){
     `<div class="field"><div class="label">为什么不建议手删</div>${esc(it.why_keep)}</div>
      <div class="field"><div class="label">卸载 / 释放建议</div>${esc(it.indirect_release)}</div>
      ${it.auto_reclaim?`<div class="field"><div class="label">是否自动回收</div>${esc(it.auto_reclaim)}</div>`:''}` + redActions(it))).join('');
-  return section('🔴 谨慎清理（建议走正规卸载，别手动拖删）', items.length, cards);
+  return sectionHead(
+    '谨慎清理',
+    `${items.length} 项`,
+    '建议走正规卸载 · 不要手动拖删',
+    '',
+    {cls:'red', text:'Handle carefully'}
+  ) + `<div class="item-list">${cards}</div></div>`;
 }
 
-// 红灯操作：只给「在文件管理器里打开并选中该 App」，让用户自己正规卸载（不后台代删，App 需谨慎）
 function redActions(it){
   if(!DELETE || !it.app_paths || !it.app_paths.length) return '';
   return `<div class="field del-actions" data-open="${b64(it.app_paths)}">
@@ -434,7 +762,6 @@ function redActions(it){
 function card(tier,name,size,path,inner){
   return `<div class="item ${tier}">
     <div class="item-head" onclick="this.parentNode.classList.toggle('open')">
-      <span class="dot ${tier}"></span>
       <span class="item-name">${esc(name)}</span>
       <span class="item-badge"></span>
       ${size?`<span class="item-size">${esc(cleanSize(size))}</span>`:''}
@@ -445,33 +772,28 @@ function card(tier,name,size,path,inner){
       ${inner}
     </div></div>`;
 }
-function section(title,count,inner,actions){
-  return `<div class="sec"><h2>${esc(title)} <span class="count">${count} 项</span>${actions||''}</h2>${inner}</div>`;
-}
 
 const sumList=a=>(a&&a.length)?`<ul>${a.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'';
 
-// 执行建议：放在 Top5 之后、三级明细之前（先看处方，再看每项怎么做）
-// 开头用 overview 一句洞察作引子，下面是优先级清单
 function renderPriority(sm){
   if(!sm || (!sm.priority && !sm.overview)) return '';
   const intro = sm.overview?`<p class="lead">${esc(sm.overview)}</p>`:'';
   const body = sm.priority?(Array.isArray(sm.priority)?sumList(sm.priority):`<p>${esc(sm.priority)}</p>`):'';
-  return `<div class="sec"><h2>执行建议</h2><div class="summary">${intro}${body}</div></div>`;
+  return sectionHead('执行建议', '', '先看处方，再下到明细') +
+    `<div class="summary">${intro}${body}</div></div>`;
 }
 
-// 长期优化建议：留在报告最后
 function renderLongTerm(sm){
   if(!sm || !sm.long_term || !sm.long_term.length) return '';
-  return `<div class="sec"><h2>长期优化建议</h2><div class="summary">${sumList(sm.long_term)}</div></div>`;
+  return sectionHead('长期优化', '', '把一次性清理变成习惯') +
+    `<div class="summary">${sumList(sm.long_term)}</div></div>`;
 }
 
 function renderDenied(){
   if(!DATA.denied||!DATA.denied.length) return '';
-  return `<div class="denied"><b>以下目录权限不足未能读取，可能遗漏体量：</b><br>${DATA.denied.map(esc).join('<br>')}</div>`;
+  return `<div class="denied"><b>部分目录未能读取</b>${DATA.denied.map(esc).join('<br>')}</div>`;
 }
 
-// mount
 const app=document.getElementById('app');
 app.innerHTML = renderSystem(DATA.system, DATA.summary)
   + renderTop5(DATA.top5)
@@ -482,7 +804,6 @@ app.innerHTML = renderSystem(DATA.system, DATA.summary)
   + renderDenied()
   + renderLongTerm(DATA.summary);
 
-// copy handlers (delegated)
 document.addEventListener('click', e=>{
   const b=e.target.closest('.copy'); if(!b) return;
   e.stopPropagation();
