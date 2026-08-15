@@ -11,16 +11,16 @@ This is the **single project rules file** for Grok Build, Claude Code, Codex, an
   * Frontmatter: `type: project`, `status: active|on-hold|done`, `area: "[[AreaName]]"`
   * C.A.P. layout: Context (objectives), Actions (phases), Progress (updates)
 * **`30_Research`**: Permanent reference (currently Physics/ only)
-* **`40_Wiki`**: Atomic concepts (~195 notes across 9 topic clusters: Physics_Math, English_Knowledge, Japan_Immigration, AI, ComputerScience, Physiologics, Self-Development, StudyMethodology, ProjectsNotes)
-* **`50_Resources`**: Curated content (Attachments/, NewsLetter/, ProductLaunches/, Physics/, English/, MeetingOutlines/, Design/, and more)
+* **`40_Wiki`**: Atomic concepts (341 notes across 9 topic clusters: Physics_Math, English_Knowledge, Japan_Immigration, AI, ComputerScience, Physiologics, Self-Development, StudyMethodology, ProjectsNotes)
+* **`50_Resources`**: Curated content (Attachments/, Physics/, English/, MeetingOutlines/, Design/, and more)
 * **`90_Plans`**: Execution plans (archived after completion)
-* **`99_System`**: Templates/, Prompts/ (16 domain personas), Bases/ (5 Obsidian Bases dashboards), Archives/, Scripts/, `.scratch/` (agent working files), `memory/` (shared harness memory promoted into the vault)
+* **`99_System`**: Templates/, Prompts/ (16 domain personas), Bases/ (5 Obsidian Bases dashboards), Archives/, `.scratch/` (agent working files), `memory/` (shared harness memory promoted into the vault)
 
 ## Skill Files
 * **Canonical path:** `.agents/skills/<skill-name>/SKILL.md` — install and edit only here
   * Claude: `.claude/skills` → `../.agents/skills` (symlink; never a real directory)
   * Grok: use `.agents/skills/` only — no parallel `.grok/skills/` copies
-* See [[README]] for the skill catalog (**35** core skills; `ask` archived — plain chat for Q&A, `/learn` for deep study; orchestrate-series + `research` archived 2026-07-29 → `/orchestrate-v3` + host `/deep-research`)
+* See [[README]] for the skill catalog (**40** core skills; `ask` archived — plain chat for Q&A, `/learn` for deep study; orchestrate-series + `research` archived 2026-07-29 → `/orchestrate-v3` + host `/deep-research`)
 
 ## Vault root (this machine)
 Primary Mac vault path: `/Users/Reid Hu/OrbitOS`
@@ -82,4 +82,4 @@ Skip any related-repo path that does not exist on disk.
 ## Principles of Paramount Importance
 - **Zero Assumptions:** Never guess user intent. If multiple implementations exist or requirements are incomplete, **halt and ask the user** (Grok: `ask_user_question`; Claude/Codex: `AskUserQuestion`) to gather explicit direction.
 - **No Silent Assumptions:** Even when the task is requested, confirm the *method* if it was not specified. Do not guess the user's expectations.
-- **Necessity Check (trigger-based):** Load `feedback_necessity_check.md` via the Memory System search order above and apply its five-question check — halt and ask the user if any check fails — when either trigger fires: (a) the change touches structural/system surfaces (skills, CLAUDE.md, memory, hooks, vault architecture), or (b) the user floats a modification/refactor idea — a new mechanism, a skill/workflow redesign — invoking their "questioning/interrogative spirit" (they want scrutiny, not agreement). Otherwise stay out of it. Do not sell speculation as an obvious win.
+- **Necessity Check (trigger-based):** Load `feedback_necessity_check.md` via the Memory System search order above and apply its five-question check — halt and ask the user if any check fails — when either trigger fires: (a) the change touches structural/system surfaces (skills, AGENTS.md, memory, hooks, vault architecture), or (b) the user floats a modification/refactor idea — a new mechanism, a skill/workflow redesign — invoking their "questioning/interrogative spirit" (they want scrutiny, not agreement). Otherwise stay out of it. Do not sell speculation as an obvious win.

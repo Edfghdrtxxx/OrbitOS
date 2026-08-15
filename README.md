@@ -8,7 +8,7 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 10_Daily/         → Daily logs. /start-my-day generates these. Captures land here via /daily-note-addition.
 20_Project/       → Active projects (flat, linked to areas via frontmatter).
 30_Research/      → Deep dives — physics reference notes, supervisor research profiles.
-40_Wiki/          → Atomic concepts — ~195 notes across 9 topic clusters, heavily linked.
+40_Wiki/          → Atomic concepts — 341 notes across 9 topic clusters, heavily linked.
 50_Resources/     → Curated feeds, literature, attachments, meeting outlines.
 90_Plans/         → Execution plans, archived when done.
 99_System/        → Templates, prompts, bases dashboards, archives.
@@ -58,16 +58,16 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 
 ## Skill Categories
 
-**35** core skills across categories (`ask` archived 2026-07-26 — plain chat for Q&A, `/learn` for deep study; `orchestrate` / `dispatch` / `orchestrate-lite-DWorkflow` / `research` archived 2026-07-29 → `/orchestrate-v3` + host `/deep-research`):
+**40** core skills across categories (`ask` archived 2026-07-26 — plain chat for Q&A, `/learn` for deep study; `orchestrate` / `dispatch` / `orchestrate-lite-DWorkflow` / `research` archived 2026-07-29 → `/orchestrate-v3` + host `/deep-research`):
 
 | Category | Skills |
 |---|---|
 | **Daily Workflow** | `start-my-day`, `end-my-day`, `brainstorm`, `breakdown-tasks`, `estimate-time`, `llm-council`, `daily-note-addition` |
 | **Knowledge Management** | `kickoff`, `archive`, `atomic-note`, `wiki-review` |
 | **Obsidian Features** | `obsidian-markdown`, `obsidian-bases`, `obsidian-cli`, `json-canvas`, `excalidraw-diagram-generator` |
-| **Learning** | `learn`, `Feynman-Technique`, `guide-derivation`, `phrasing-refining`, `insert-Feynman` |
+| **Learning** | `learn`, `Feynman-Technique`, `guide-derivation`, `phrasing-refining`, `insert-Feynman`, `vocabulary-absorption` |
 | **Meta/Utility** | `orchestrate-v3`, `reflect`, `evolve-skills`, `handoff-prompt`, `anchor-game-framework`, `super-alignment`, `defuddle` |
-| **Tools** | `mcp-builder`, `notebooklm`, `storage-analyzer`, `expense-tracker`, `markitdown`, `pdf`, `docx` |
+| **Tools** | `mcp-builder`, `notebooklm`, `storage-analyzer`, `expense-tracker`, `markitdown`, `pdf`, `docx`, `design-image-claude`, `phone-harness`, `pre-ppt`, `web-access` |
 
 > Note: README previously listed `ai-newsletters` / `ai-products`; those skill folders are not present on disk.
 
@@ -103,11 +103,11 @@ Link liberally. The AI creates connections automatically, but manual links are j
 
 ## System Files
 
-- **CLAUDE.md** — Single project rules file for Grok Build, Claude Code, and other hosts (vault structure, multi-host memory; minimal host-specific rules).
+- **AGENTS.md** — Single project rules file for Grok Build, Claude Code, and other hosts (vault structure, multi-host memory; minimal host-specific rules).
 - **`.grok/`** — Grok Build project layer: `config.toml` (no skill bridges by design; no tool-name maps — trust the model).
 - **99_System/Templates/** — Note templates (Daily, Project, Wiki, Inbox, Content, Derivation).
 - **99_System/Prompts/** — 16 AI personas across Finance, Health, General, Learning, and Software Engineering domains.
 - **99_System/Bases/** — 5 Obsidian Bases dashboards (Projects, Projects Archive, Knowledge, Wiki Review, Integrated Sources).
 - **99_System/memory/** — Portable harness memory promoted into the vault (e.g. necessity-check).
 - **99_System/Game_Framework.md** — Strategic life/goal framework based on Dan Koe's method: anti-vision, vision, identity, priority stack, daily levers.
-- **.agents/skills/** — 38 core skill definitions (symlinked to `.claude/skills/`).
+- **.agents/skills/** — 40 core skill definitions (symlinked to `.claude/skills/`).

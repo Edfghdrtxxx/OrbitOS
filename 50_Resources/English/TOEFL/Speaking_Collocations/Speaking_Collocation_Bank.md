@@ -4,7 +4,7 @@ type: resource
 status: active
 area: "[[Self-Development]]"
 created: 2026-06-24
-updated: 2026-08-07
+updated: 2026-08-14
 tags:
   - flashcards/toefl/speaking
   - english
@@ -34,7 +34,7 @@ reconciled: 2026-07-29
 > 1. `Cmd+P` (Mac) / `Ctrl+P` (Win) → run **`Spaced Repetition: Review flashcards`**  
 >    (or **Review flashcards in this note** while this file is open)
 > 2. Open deck: **`flashcards` → `toefl` → `speaking`**
-> 3. You should see ~25 cards — **one direction only**: scenario → phrase + model
+> 3. You should see ~26 cards — **one direction only**: scenario → phrase + model
 >
 > Do **not** look for this note under `#review` in the sidebar.
 
@@ -208,6 +208,14 @@ Model: When it comes to shopping, I firmly prefer the tactile experience of trad
 Collocations: tactile experience · brick-and-mortar stores · primary motivation · a level of assurance · cannot replicate · firsthand · purchasing decision
 <!--SR:!2026-08-13,1,230-->
 
+### EXMP-09 · Happy childhood memory
+
+Interviewer asks about a happy childhood memory, a school event, or a time you felt content
+?
+Phrase: One of my happiest childhood memories was…
+Model: One of my happiest childhood memories was a classroom party where we shared a birthday cake and played chasing games with my classmates. I felt really happy and content. Our teacher was excited too, and took a lot of photos and videos, which I still look at today to remember that day.
+Collocations: happiest childhood memories · classroom party · shared a birthday cake · played chasing games · happy and content · took a lot of photos and videos · still look at today
+
 ### CONT-01 · Contrast / concession
 
 Acknowledge a counterpoint, then return to your position
@@ -307,6 +315,6 @@ Model: Authentic interpersonal interaction is indispensable for holistic self-de
 | 25 | weekly diet / protein | → EXMP-06 |
 | 26–27 | schools / campus research | → [[Writing_Phrase_Bank]] |
 | 28 | Hardly ever, Even though | → CONT-02 |
-
+| 37 | happiest childhood memories / classroom party | → EXMP-09 |
 
 **Only-in-Obsidian (kept):** OPIN-01 (*If you ask me…*), CONT-01 (*That said…*).

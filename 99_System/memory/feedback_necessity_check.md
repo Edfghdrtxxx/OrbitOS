@@ -1,11 +1,11 @@
 ---
 name: Evaluate change necessity before implementing
-description: Five-question check applied in two trigger contexts — (a) changes to structural/system surfaces (skills, CLAUDE.md, memory, hooks, configs, pipeline architecture) or (b) user-floated modification/refactor ideas (questioning/interrogative spirit). Halt via AskUserQuestion if any check fails.
+description: Five-question check applied in two trigger contexts — (a) changes to structural/system surfaces (skills, AGENTS.md, memory, hooks, configs, pipeline architecture) or (b) user-floated modification/refactor ideas (questioning/interrogative spirit). Halt via AskUserQuestion if any check fails.
 type: feedback
 originSessionId: 401c2b36-2774-44ff-a7c4-f348cc318b01
 ---
-Applied in two trigger contexts (per CLAUDE.md):
-- **(a) Structural/system surfaces:** skills, CLAUDE.md, memory, hooks, configs, vault architecture, training pipeline, openspec specs, plotting infrastructure — any edit that reshapes how the project harness behaves.
+Applied in two trigger contexts (per AGENTS.md):
+- **(a) Structural/system surfaces:** skills, AGENTS.md, memory, hooks, configs, vault architecture, training pipeline, openspec specs, plotting infrastructure — any edit that reshapes how the project harness behaves.
 - **(b) User-floated modification/refactor ideas:** the user proposes a new mechanism, a skill/workflow redesign, or a change to existing design — invoking their "questioning/interrogative spirit." In this mode they want scrutiny, not agreement; a "sounds good, let's do it" response is a failure.
 
 In those contexts, do not jump to implementation. First perform the necessity-check.
@@ -22,6 +22,6 @@ In those contexts, do not jump to implementation. First perform the necessity-ch
 
 If any answer is "no," "unclear," or "I'm assuming" — halt and ask the user (Claude/Codex: `AskUserQuestion`; Grok: `ask_user_question`). Do not sell speculation as obvious. New tool availability, theoretical cleanliness, or "while we're here" opportunity are not by themselves reasons to change working things.
 
-**In scope (within the two triggers):** skill edits, CLAUDE.md changes, memory edits, hook changes, config schema changes, pipeline architecture shifts, new mechanisms/abstractions proposed for any of the above, new tools or MCP servers, workflow/process redesigns, and any "improvement" that isn't fixing a named bug the user reported.
+**In scope (within the two triggers):** skill edits, AGENTS.md changes, memory edits, hook changes, config schema changes, pipeline architecture shifts, new mechanisms/abstractions proposed for any of the above, new tools or MCP servers, workflow/process redesigns, and any "improvement" that isn't fixing a named bug the user reported.
 
 **Out of scope:** ordinary in-task code edits the user explicitly requested, bug fixes for named bugs, training runs, evaluation runs, plotting tasks, paper/thesis writing within existing workflow. The check is for structural surfaces and user-floated ideas — not every line change.

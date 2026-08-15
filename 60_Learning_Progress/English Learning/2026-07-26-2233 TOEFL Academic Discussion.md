@@ -149,3 +149,215 @@ Strong (matches *your* claim):
 > Overall, AI tools matter most because they help students keep learning momentum when they get stuck.
 
 **Question:** Write **one closing sentence** for this post — same impact (learning momentum), no filler, no new reason.
+
+---
+
+### Turn 4 — 2026-08-14 (learner)
+
+> Overall, in my opinion, momentum maintenance is precisely the most significant impact of AI tools on how students learn.
+
+### Tutor
+
+Good instinct — you restated the same impact (momentum) and didn't introduce a new reason. That's the right shape for an AD close. Two things to clean up:
+
+**1. Filler is still there — just wearing different clothes**
+
+| Your phrase | Why it's filler | Fix |
+|-------------|-----------------|-----|
+| "Overall, in my opinion" | Two hedges stacked; "in my opinion" adds nothing (the whole post is your opinion) | "Overall," alone is fine — or drop it entirely |
+| "precisely" | Sounds emphatic but doesn't add meaning here; padding | Cut |
+
+The close should sound *confident*, not *cautious*. One hedge max; zero is better in AD.
+
+**2. "Momentum maintenance" is stiff — and retreats from your own idea**
+
+Your claim was about AI *building* momentum (stuck → unstuck → keep going). "Momentum maintenance" sounds like keeping something that already exists — that's a different, weaker idea. And it's a noun pile (noun + noun) that reads like a report title, not a human sentence.
+
+Stronger pattern — restate the action from your body paragraph:
+
+> Overall, AI tools matter most because they keep students moving when they would otherwise stop.
+
+Or, staying closer to your words:
+
+> Overall, the most significant impact of AI tools is helping students sustain their learning momentum instead of stalling out.
+
+Notice: same impact, one sentence, no "in my opinion / precisely / basically / all in all."
+
+**Your skeleton is now complete.** Let's put the three pieces together. Here is the shape — claim, body, close — as you wrote them across Turns 2–4:
+
+1. **Claim:** The most significant impact is that AI helps students construct their learning momentum more easily.
+2. **Body:** When students are confused on a particular question, it is harder for them to find the right answer without AI tools. With AI, they can upload the question and ask until they genuinely understand, which encourages them to keep studying and builds their learning momentum.
+3. **Close:** *(needs your rewrite — see below)*
+
+**Question:** Rewrite your closing sentence one more time — same impact (momentum), zero filler words, and use a verb (not "momentum maintenance"). One sentence only.
+
+---
+
+### Turn 5 — 2026-08-14 (learner)
+
+> Overall, the most significant impact of AI tools is helping students build and sustain their learning momentum without burning out.
+
+### Tutor
+
+That lands. Let's check it against the rubric:
+
+| Check | Result |
+|-------|--------|
+| One impact (momentum) | ✓ — same thread as claim and body |
+| Verb-driven, not noun pile | ✓ — "build and sustain" instead of "momentum maintenance" |
+| Zero filler | ✓ — no "in my opinion / precisely / basically / all in all" |
+| No new reason | ✓ — restates, doesn't expand |
+| Confident tone | ✓ — one clean "Overall," opener |
+
+One small note: "without burning out" is new — your body paragraph was about **stuck → AI → keep going**, not burnout. It's not wrong, but a rater who reads closely might notice the close promises something the body didn't deliver. Safest fix: either cut "without burning out" or swap it for something your body already showed — e.g. "without stalling out" (which echoes stuck → unstuck). Not a must-fix for AD, but worth knowing.
+
+**Your full skeleton, assembled:**
+
+> The most significant impact is that AI helps students build their learning momentum more easily. When students are confused on a particular question, it is harder for them to find the right answer without AI tools. With AI, they can upload the question and ask until they genuinely understand, which encourages them to keep studying and builds their learning momentum. Overall, the most significant impact of AI tools is helping students build and sustain their learning momentum without stalling out.
+
+That is a complete, scorable AD post — one claim, one developed *why* with a concrete scene, one clean close. From here, the optional next steps from the original scope are:
+
+1. **60-second proofread pass** — catch language nits (prepositions, spelling, article slips) in a timed drill
+2. **BaS (Build a Sentence) micro-drill** — separate skill, separate session
+
+**Question:** Want to do the 60-second proofread pass on the assembled post above, or are you done with this thread for now?
+
+---
+
+### Turn 6 — 2026-08-14 (learner)
+
+> I want you to polish this answer further so that I can collect and memorize it.
+
+### Tutor
+
+Here is your post, polished. Every idea is yours from Turns 2–5; I only fixed language and added the one concrete time detail we discussed in Turn 3.
+
+**Polished version (~105 words):**
+
+> I believe the most significant impact of AI tools on how students learn is that they help students build and sustain their learning momentum. When students get stuck on a particular question, it can be difficult to find the right answer or a clear explanation on their own. With AI tools, however, they can upload the question and keep asking until they genuinely understand it, instead of giving up after one failed attempt. This means they finish the problem the same evening rather than abandoning it for days. Overall, AI tools matter most because they keep students moving forward when they would otherwise stall out.
+
+**What changed and why:**
+
+| Your version | Polished | Why |
+|-------------|----------|-----|
+| "The most significant impact is that AI helps students build their learning momentum more easily" | "I believe the most significant impact… is that they help students build and sustain their learning momentum" | "I believe" directly answers "what do you think"; cut "more easily" (vague); added "sustain" from your close |
+| "confused on a particular question" | "get stuck on a particular question" | "confused on" is non-idiomatic; "stuck on" is natural |
+| "it is harder for them to find the right answer without AI tools" | "it can be difficult to find the right answer or a clear explanation on their own" | Active framing; "on their own" replaces "without AI tools" to avoid repeating "AI tools" three times |
+| *(body ended at "builds their learning momentum")* | "instead of giving up after one failed attempt. This means they finish the problem the same evening rather than abandoning it for days." | **This is the Turn 3 upgrade** — *showing* momentum with a time contrast, not just asserting it |
+| "Overall, the most significant impact of AI tools is helping students build and sustain their learning momentum without burning out" | "Overall, AI tools matter most because they keep students moving forward when they would otherwise stall out." | Varied phrasing (not copy-pasting the opening); "stall out" echoes stuck → unstuck from the body |
+
+**What to actually memorize:**
+
+Don't memorize the words — memorize the **pattern**. Any AD prompt about "most significant X" can use the same skeleton:
+
+1. **Claim (1–2 sentences):** "I believe the most significant [X] is [one thing]."
+2. **Why + scene (bulk of the post):** Without [thing] → problem. With [thing] → concrete action → result. Time contrast to *show* the impact.
+3. **Close (1 sentence):** Restate with varied wording, no filler.
+
+The specific content (AI, momentum, stuck on a question) changes with every prompt. The architecture stays.
+
+---
+
+### Turn 7 — 2026-08-14 (tutor — drill setup)
+
+### Tutor
+
+Five sentences built from the learner's actual error patterns (filler, non-idiomatic phrases, noun piles, wordiness). Mixed types, no labels. Task: rewrite each to sound like a confident person writing in 10 minutes. No answer key given.
+
+**A.** Personally speaking, I firmly align with the perspective that physical exercise has a positive impact on us.
+**B.** Students have the capability of improving their grades by seeking for additional resources online.
+**C.** The reason why I prefer this method is because it gives you feedbacks that are more accurate.
+**D.** So, all in all, that's basically why I think collaboration is the most important skill in the workplace, in my opinion.
+**E.** It is undeniable that the existence of social media is merely a superficial trigger for the reduction of face-to-face communication maintenance among young people.
+
+---
+
+### Turn 8 — 2026-08-14 (learner — first attempts)
+
+> A. I firmly align with the perspective that physical exercise has a positive impact on us.
+> B. Students improve their grades by finding additional resources online.
+> C. The reason that I prefer this method is because it gives you feedbacks that are more accurate.
+> D. That's the reason that I think collaboration is the most important skill in the workplace.
+> E. The existence of social media is merely a superficial trigger for the reduction of interpersonal interaction among yong people.
+
+### Tutor
+
+- **B ✓** — clean. "Seeking for" → "finding," killed "capability of."
+- **A** — cut "Personally speaking" (good), but kept "I firmly align with the perspective that" — the exact stiff phrasing from the original AD post. Guided: replace the first 10 words with something a person would actually say. Two words max before the real content.
+- **C** — caught "why" but missed: (1) "the reason… is because" is redundant (reason + because = double cause); (2) "feedbacks" — is that a word?
+- **D** — filler gone (good). Nudged: "That's the reason that I think" still points backward; a close should restate the claim directly.
+- **E** — cut "It is undeniable that" (good). But four abstract nouns stacked without a verb doing real work (existence, trigger, reduction, interaction). Asked to rewrite with people as subject and verbs doing the work. Flagged "yong" spelling.
+
+---
+
+### Turn 9 — 2026-08-14 (learner — second attempts)
+
+> A. (I don't know how to amend A)
+> C. The reason that I prefer this method is that it gives you feedbacks that are more accurate. (I don't understand the "feedbacks" part)
+> D. Collaboration is the most important skill in the workplace.
+> E. The existence of social media is merely a superficial trigger that makes yong people less maintain interpersonal interactions than before.
+
+### Tutor
+
+- **D ✓** — confident, direct, restates the claim. Nailed it.
+- **A** — genuinely stuck. Gave foothold: "I firmly align with the perspective that" = eight words to say "I think." It's a costume. Pattern: "I _____ physical exercise _____." Fill two blanks.
+- **C** — fixed reason/because → reason/that ✓. Taught uncountable nouns: "feedback" works like "information, advice, research" — no plural. "More accurate feedback" or "feedback that is more accurate."
+- **E** — good instinct adding "makes" (verb), but "makes young people less maintain" — "less" can't go before a verb in English. Parallel: ✗ "Rain makes me less go outside" → ✓ "Rain makes me go outside less." Also: "the existence of" is still deadwood. "Yong" still misspelled.
+
+---
+
+### Turn 10 — 2026-08-14 (learner — pushback on inflation)
+
+> A: However, I think I am justified in doing this because TOEFL entails the diversity of the sentences.
+> C: It gives you feedback that is more accurate.
+> E: Also, I think I am justified in adding "the existence of" because we need the diversity. I should put "less" before "interpersonal": that makes yong people maintain less interpersonal interactions than before.
+
+### Tutor
+
+- **C ✓** — "feedbacks" → "feedback." Fixed.
+- **Pushback on A and E:** Learner believes TOEFL rewards "sentence diversity" — fancy vocabulary = higher score. Directly countered:
+
+TOEFL AD rewards *effective* complexity, not *inflated* complexity. "I firmly align with the perspective that" and "I believe" mean the same thing — the extra words add zero meaning. That's inflation, not range. Real range: "Although I see merit in Ethan's concern, I believe…" — concessive clause that does two jobs (engages classmate + states position). The learner's own post scored ~3/5 with the inflated phrasing; the problem was never vocabulary simplicity.
+
+**Rule:** if you delete the fancy phrase and the meaning doesn't change, it was padding.
+
+- **E word order:** "less" → "fewer" for countable nouns (interactions). Flagged "yong" a third time. Asked to cut "the existence of" and try verbs instead of noun piles.
+
+---
+
+### Turn 11 — 2026-08-14 (learner — third attempts)
+
+> I believe physical exercise improves our mood.
+> Fewer.
+> Young.
+
+### Tutor
+
+- **A ✓** — "I believe" (direct) + "improves our mood" (one verb, one specific thing). But "exerise" — same spelling-error pattern as "perfer" and "yong." Flagged.
+- **Fewer ✓** — countable noun rule correct.
+- **Young ✓** — the missing *u*.
+- Remaining: "has a positive impact on us" still vague — asked for a specific impact with a direct verb. Gave pattern: "I believe physical exercise [verb] [specific thing]." For E: gave scaffold "Social media alone does not explain why young people _____." Fill with a verb.
+
+---
+
+### Turn 12 — 2026-08-14 (learner — final answers)
+
+> I believe physical exercise improves our mood.
+> Social media alone does not explain why young people prefer fewer interpersonal interactions than before.
+
+### Tutor
+
+- **A ✓ — done.** From "I firmly align with the perspective that physical exercise has a positive impact on us" (14 words) → "I believe physical exercise improves our mood" (7 words). Zero meaning lost.
+- **E — big improvement.** Killed "the existence of," used a verb ("prefer"), sentence is readable. Noted that "prefer fewer interpersonal interactions" is still noun-heavy — "interact less in person" does the same job in fewer words. Passable; this is the upgrade, not the fix.
+
+**Drill summary — what transferred:**
+
+| Pattern | Status |
+|---------|--------|
+| Kill filler ("all in all, basically, in my opinion" stacking) | ✓ solid — caught on first attempt |
+| Kill inflation ("I firmly align with the perspective that" → "I believe") | ✓ after pushback — learner initially argued TOEFL wants diversity; accepted effective vs inflated distinction |
+| "The reason… is because" → "the reason… is that" | ✓ caught on first attempt |
+| Uncountable "feedback" (not "feedbacks") | ✓ after explanation (parallel: information, advice) |
+| Less vs fewer (countable nouns) | ✓ |
+| Noun piles → verb-driven sentences | **In progress** — can do with scaffolding, not automatic yet |
+| Spelling vigilance (perfer, yong, exerise) | **Watch** — recurring pattern across sessions |

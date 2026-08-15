@@ -1,7 +1,7 @@
 ---
 type: learning-index
 purpose: Terse cross-agent index of what the learner has solidly learned. Agents running /learn MUST read this first.
-updated: 2026-08-12
+updated: 2026-08-14
 ---
 # Learning Progress — Context Index
 
@@ -79,6 +79,11 @@ Hierarchy: **domain** (`###`) → **thread** (`####`). One table per thread (`It
 |------|--------|
 | TOEFL AD: one-claim opening | Names a single impact that answers the professor (not a list) |
 | TOEFL AD: why = stuck → tool → keep going | Can draft a mini-example chain for “learning momentum” (language polish next) |
+| TOEFL AD: no-filler close | Verb-driven restatement of claim; cut stacked hedges and noun piles on second attempt |
+| Kill inflation vs effective complexity | "I firmly align with the perspective that" → "I believe"; rule: if you delete the fancy phrase and meaning doesn't change, it's padding. Accepted after pushback. |
+| "The reason… is because" → "is that" | Caught on first attempt; reason + because = double cause |
+| Uncountable "feedback" | Like information, advice, research — no plural form |
+| Less vs fewer | Fewer for countable nouns; less for uncountable |
 
 #### Relative words
 
@@ -115,13 +120,28 @@ Hierarchy: **domain** (`###`) → **thread** (`####`). One table per thread (`It
 | Articles: bare count noun after prep | Learner: *at bookstore* → *at the bookstore*; parallel fill; prefer *reception desk* in AmE |
 | Agreement: plural subject → base verb | Learner: *people* plural → *post* (not *posts*); TOEFL option trap with articles |
 
+#### Causal conjunctions (since / as / because)
+
+| Item | Notes |
+|------|--------|
+| Overlap, not nesting | Learner rejected *as 2020*; *since* ⊄ *as* |
+| *since*-time leftover | From a past point until now (*since 2020*) |
+| *as* + noun = role | Learner: *As a physicist…*; *since a student* dead |
+| Why-test: *because* = news | Learner: *because…* answers Why?; fronted *since* = given reason |
+| Why-core: given vs new | Learner: *since* iff reason already on the table; news → *because* (not free emphasis) |
+| *as* + clause: while vs cause | Learner sorted pair; *while* = same time (not persistence) |
+| *as* trap: pick the door | Learner: news-cause → *because*; same time → *while*. Don’t default *as* → *while* |
+
 ## In progress
 
 Only threads with unfinished core work (verified against session notes). Solid-enough items live under **Known solid** only.
 
 | Topic | Status | Notes |
 |-------|--------|--------|
-| TOEFL: Academic Discussion writing | **active** — close next | Session ends mid-skeleton: claim + *why* (stuck→AI→keep going) written; last prompt = **one closing sentence** (no filler) — no learner reply yet. Then optional 60s proofread / BaS later |
+| English: since / as / because | **solid-enough** | Trio locked. Default in writing: *because* when the reason is what you are delivering |
+| TOEFL: Academic Discussion writing | **active** — drill done | Skeleton complete + writing drill done (5 sentences, Turns 7–12). Inflation vs effective complexity accepted after pushback. Noun piles in progress. Optional: 60s proofread on assembled post; BaS separate |
+| English: noun piles → verb-driven | **in progress** | Can rewrite with scaffolding; defaults to noun-heavy structures without prompting. Needs more drill exposure |
+| English: spelling vigilance | **watch** | Recurring pattern: perfer, yong, exerise. Not a knowledge gap — carelessness under speed |
 | QM: displacement operator $D(\alpha)$ | **next** — unblocked | Parent note only has Turns 1–2 (fork to HO/ladder); **no derivation yet**. HO + ladder now drill-complete; resume [[2026-07-26-2030 Displacement operator]] → $D(\alpha)=e^{\alpha a^\dagger-\alpha^* a}$ |
 | Exp. tech NP: radioactive beams / projectile fragmentation | **active** — choose dig | Say-back locked: fragment $v$ ≈ beam; same $v$ $\Rightarrow B\rho\propto A/q$ ($^{11}\mathrm{Be}$/$^{11}\mathrm{C}$ = $3:2$); Goldhaber named as cloud-width driver. Open menu: dig Goldhaber / target / methods, or GRE mini-drill |
 
@@ -140,11 +160,13 @@ Only threads with unfinished core work (verified against session notes). Solid-e
 | Adverb placement mid-position (known solid) | [[2026-08-11-1646 adverb placement]] · `60_Learning_Progress/English Learning/2026-08-11-1646 adverb placement.md` |
 | Collocations and noun logic (known solid) | [[2026-08-11-1805 collocations and noun logic]] · `60_Learning_Progress/English Learning/2026-08-11-1805 collocations and noun logic.md` |
 | Articles in TOEFL responses (known solid) | [[2026-08-12-1615 articles in TOEFL responses]] · `60_Learning_Progress/English Learning/2026-08-12-1615 articles in TOEFL responses.md` |
+| since / as / because (solid-enough) | [[2026-08-14-1618 since-as-because]] · `60_Learning_Progress/English Learning/2026-08-14-1618 since-as-because.md` |
 
 ## Gaps / next
 
-1. TOEFL AD: one closing sentence (learning momentum, no filler); then optional 60s proofread
+1. TOEFL AD: optional 60s proofread pass on assembled post; BaS as separate micro-drill
 2. Displacement operator $D(\alpha)$ — ladder ops drill-complete; resume parent note
 3. (Optional) TOEFL options: 3-item mixed articles+agreement drill if rusty
 4. (Optional) adverb end-OK contrast: place/time at end vs manner mid-position
 5. (Optional) GRE-style HO/ladder mixed set later if rusty before applications
+6. (Optional) *since* + clause time-vs-cause trap (sibling of the *as* both-doors trap)

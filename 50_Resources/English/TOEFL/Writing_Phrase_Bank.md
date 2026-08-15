@@ -4,7 +4,7 @@ type: resource
 status: active
 area: "[[Self-Development]]"
 created: 2026-07-29
-updated: 2026-07-29
+updated: 2026-08-14
 tags:
   - flashcards/toefl/writing
   - english
@@ -92,6 +92,15 @@ Formal campus / research writing — planning and trust
 Phrase: Careful planning and transparent communication protect… and strengthen trust in…
 Model: Careful planning and transparent communication protect participants and strengthen trust in campus research.
 
+### AD-08 · Learning momentum (AI tools)
+
+Academic Discussion — most significant impact of a tool; stuck → keep going instead of stalling
+??
+Phrase: I believe the most significant impact of… is that they help… build and sustain their learning momentum.
+Model: I believe the most significant impact of AI tools on how students learn is that they help students build and sustain their learning momentum. When students get stuck on a particular question, it can be difficult to find the right answer or a clear explanation on their own. With AI tools, however, they can upload the question and keep asking until they genuinely understand it, instead of giving up after one failed attempt. This means they finish the problem the same evening rather than abandoning it for days. Overall, AI tools matter most because they keep students moving forward when they would otherwise stall out.
+Collocations: most significant impact · build and sustain · learning momentum · get stuck on · genuinely understand · giving up after one failed attempt · the same evening rather than · stall out
+Note: Pattern, not a script — claim (most significant X is Y) → without/with scene + time contrast → close in varied wording.
+
 ### EM-01 · Polite approval request
 
 Email — request approval
@@ -140,5 +149,6 @@ indispensable safety net · mitigate … concerns · unforeseen personal emergen
 | 24 | seek your expert guidance | → EM-02 |
 | 26 | schools must guide young people | → AD-06 |
 | 27 | careful planning… campus research | → AD-07 |
+| 38 | AI tools / learning momentum | → AD-08 |
 
 Speaking-side items → [[Speaking_Collocation_Bank]].
