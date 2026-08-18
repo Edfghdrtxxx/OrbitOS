@@ -20,7 +20,7 @@ This is the **single project rules file** for Grok Build, Claude Code, Codex, an
 * **Canonical path:** `.agents/skills/<skill-name>/SKILL.md` — install and edit only here
   * Claude: `.claude/skills` → `../.agents/skills` (symlink; never a real directory)
   * Grok: use `.agents/skills/` only — no parallel `.grok/skills/` copies
-* See [[README]] for the skill catalog (**40** core skills; `ask` archived — plain chat for Q&A, `/learn` for deep study; orchestrate-series + `research` archived 2026-07-29 → `/orchestrate-v3` + host `/deep-research`)
+* See [[README]] for the skill catalog (**40** core skills; `ask` archived — plain chat for Q&A, `/learn` for deep study; orchestrate-series + `research` archived 2026-07-29 → `/orchestrate-v3` + host `/deep-research`; `brainstorm` archived 2026-08-18; `super-alignment` archived 2026-08-18 → `/align`)
 
 ## Vault root (this machine)
 Primary Mac vault path: `/Users/Reid Hu/OrbitOS`
