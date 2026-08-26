@@ -1,5 +1,12 @@
 # Evolution Log
 
+## 2026-08-22
+
+### Lessons
+
+- **Web-agent package:** `99_System/web-skills/learn/SKILL.md` for grok.com skill-link (same layout as website `reflect`: `SKILL.md` only). Pedagogy matches local; I/O is file-backed vs chat-backed. No `show_widget` / `AskUserQuestion`. When evolving a teaching rule here, copy the lesson into that SKILL.md Phase 0 too.
+- **Same family, same note.** If the new miss is a sibling of an existing thread, keep going there — even if that note was closed. Today: TOEFL compound-pairing errors went on the collocations/noun-logic session, not a new dated file with a finer name. Physics prerequisite forks still split.
+
 ## 2026-08-11
 
 ### Lessons

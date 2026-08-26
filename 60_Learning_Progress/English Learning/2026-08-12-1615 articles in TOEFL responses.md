@@ -6,6 +6,9 @@ status: done
 related:
   - "[[2026-08-11-1805 collocations and noun logic]]"
   - "[[2026-08-03-1059 that-which-where]]"
+  - "[[Articles]]"
+  - "[[2026-07-26-2233 TOEFL Academic Discussion]]"
+  - "[[Progress-context]]"
 updated: 2026-08-12
 ---
 # Articles in TOEFL responses

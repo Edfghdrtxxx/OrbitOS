@@ -2,7 +2,7 @@
 name: start-my-day
 description: >
   Daily planning workflow — review last note, plan today, connect to active projects.
-  Optional lightweight/short mode (copy last daily + day-count delta only) only when the user
+  Optional lightweight/short mode (copy last daily + day-count delta + item delta) only when the user
   explicitly says short, lightweight, light, residual, or copy-forward; bare /start-my-day is always full.
 ---
 # Step 0 — EVOLVE

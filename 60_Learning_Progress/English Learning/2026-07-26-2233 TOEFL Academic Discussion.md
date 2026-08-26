@@ -4,7 +4,13 @@ topic: "TOEFL Academic Discussion writing"
 area: English Learning
 status: active
 created: 2026-07-26
-related: "[[toefl-2026-personal-context]]"
+related:
+  - "[[toefl-2026-personal-context]]"
+  - "[[TOEFL_Study_Plan]]"
+  - "[[2026-08-14-1618 since-as-because]]"
+  - "[[2026-08-03-1059 that-which-where]]"
+  - "[[2026-08-12-1615 articles in TOEFL responses]]"
+  - "[[Progress-context]]"
 ---
 # TOEFL Academic Discussion — writing skill
 

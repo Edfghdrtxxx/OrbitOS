@@ -13,3 +13,7 @@
 ## 2026-04-23
 ### Lessons
 - Ask user a series of key questions to gather additional context you need to best write this prompt
+
+## 2026-08-19
+### Lessons
+- With-document: the disk brief must not clone the clipboard prompt. Prompt = mental model (why, pointers, success, facts, principles). Document = residue only (already patched, leftover risk, exact extras, where FINDINGS go). Do not repeat Why / Success / Principles / Non-document facts in the file.

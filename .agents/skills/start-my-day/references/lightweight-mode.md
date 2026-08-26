@@ -1,9 +1,9 @@
-# Lightweight Mode — Residual Day-Counter Transfer
+# Lightweight Mode — Residual Day-Counter + Item Transfer
 
-**Load this file only when Mode Detection selected lightweight.** Do not run the full SKILL.md workflow (no Q1–Q4, no deadline/staleness agents, no priority delta, no Notes rewrite, no `/reflect`).
+**Load this file only when Mode Detection selected lightweight.** Do not run the full SKILL.md workflow (no Q1–Q4, no deadline/staleness agents, no Notes rewrite, no `/reflect`).
 
-> **Identity:** `today = copy(last) + day-count delta only.`  
-> Goal: open a usable daily note in seconds without shrinking content.
+> **Identity:** `today = copy(last) + day-count delta + item delta.`  
+> Goal: open a usable daily note in seconds. Carry the plan forward; clear finished one-offs; reset `#daily` loops.
 
 ---
 
@@ -33,12 +33,12 @@ If no previous note exists → **abort lightweight**; tell the user to run full 
 cp 10_Daily/<last-date>.md 10_Daily/<today>.md
 ```
 
-- If `10_Daily/<today>.md` **already exists**: do **not** overwrite. Read it, report that today already exists, and stop (or offer full-mode delta only if the user asks).
+- If `10_Daily/<today>.md` **already exists**: do **not** overwrite. If the user asked only for item delta, skip to §3b. Otherwise report that today already exists and stop (or offer full-mode delta only if they ask).
 - Copy is byte-for-byte first. **Never** reconstruct the note from memory.
 
-### 3. Apply day-count delta only
+### 3. Apply day-count delta
 
-Edit **only** the fields below. Touch nothing else (tasks, Anchor, Commitments, Main Focus prose, Stuck callout body, Appendix, Log/Evening Review bodies, `[x]` items — all stay).
+Edit the fields below. Then apply §3b. Do not touch Anchor, Commitments, Main Focus/Notes/Stuck prose beyond weekday tokens, Appendix, Log/Evening Review bodies, or `energy`.
 
 | Target | Rule |
 |--------|------|
@@ -50,16 +50,34 @@ Edit **only** the fields below. Touch nothing else (tasks, Anchor, Commitments, 
 | Phrases `in N days` (remaining-time) | → `in (N − g) days` |
 | `N days stale` / `N days stale via daily tasks` | → `N + g` |
 | `N days plan-stale` | → `N + g` |
+| Weekday tokens in residual prose (`Sunday`, `Monday`, …) | → today’s weekday |
+| `weekend <Weekday>` when today is Mon–Fri | drop `weekend `; keep the remapped weekday |
 
 **Do not change** (unless they are pure instances of the rows above):
 
-- Narrative “Monday / weekend gap / last log [[…]]” wording — leave as residual text (optional later pass only if user asks)
+- Last-log `[[YYYY-MM-DD]]` / gap narrative beyond the weekday token
 - GRE info callout calendar facts, fixed exam dates, costs
 - `~8 days after window closes` style pattern descriptions (not live counters)
 - Ranges like `(5–7d)` in prose commentary
-- `energy`, priorities, Related Projects **text** beyond the stale/D-N numbers
+- `energy`, Main Focus / Related Projects **text** beyond stale/D-N numbers and weekday tokens
 
 Prefer a small scripted pass (Python/regex) over hand-editing many lines — reduces accidental drops.
+
+### 3b. Apply item delta (Priorities only)
+
+Same keep/remove/reset table as full-mode Step 3. **Skip the `(new from Q1)` add row.** Scope: `## Priorities` only (not Appendix).
+
+| Task state | Condition | Action |
+|---|---|---|
+| `[ ]` | — | Keep as-is |
+| `[*]` | — | Keep as-is |
+| `[x]` | No `#daily` tag | Remove (parent and its `[x]` children) |
+| `[x]` | Has `#daily` tag | Reset to `[ ]` |
+| `[ ]`/`[x]` | Has `#weekly` tag | Keep as-is; do not reset or remove |
+
+Source of truth for which `[x]` to process is **the last note**, not today's later checkmarks. If today already exists and a `#daily` item was `[ ]`/`[*]` on last but `[x]` on today, leave it `[x]` — that is today's progress.
+
+Do not re-add a removed `[x]` (no `#daily`) as a fresh `[ ]`. Missing `#daily` means one-off.
 
 ### 4. Completeness sanity check (mandatory)
 
@@ -67,18 +85,19 @@ After edits, **diff last note vs today** (or equivalent line/task inventory):
 
 | Check | Must hold |
 |-------|-----------|
-| Line count | equal (or today ≥ last if only digits grew) |
-| Task inventory | same count of `- [ ]` / `- [*]` / `- [x]`; zero tasks only-in-last |
-| Diff classification | every changed line is date/weekday/title **or** day-count numbers only |
+| Open tasks | every `- [ ]` / `- [*]` from last is still present |
+| Removed | only last-note `[x]` with no `#daily` (and their `[x]` children) |
+| Reset | last-note `[x]` `#daily` are `[ ]` on today (unless `#weekly`) |
+| Diff classification | date/weekday/title, day-count numbers, weekday-token swaps, or item-delta checkbox/removal only |
 
-If any open task (`[ ]` / `[*]`) from last is missing → **restore from last note immediately** and re-apply only the day-count delta.
+If any open task (`[ ]` / `[*]`) from last is missing → **restore from last note immediately** and re-apply day-count + item delta.
 
-Report a one-line pass/fail to the user (e.g. `Sanity: 52 tasks retained · 0 unexpected diffs`).
+Report a one-line pass/fail to the user (e.g. `Sanity: 48 open retained · 4 one-offs removed · 4 dailies reset`).
 
 ### 5. Present summary (short)
 
 ```
-Lightweight start ready (day-counter transfer only).
+Lightweight start ready (day-counter + item delta).
 
 Source: [[last-date]] → [[today]]  |  gap: g day(s)
 Today's note: [[YYYY-MM-DD]]
@@ -93,16 +112,17 @@ Today's note: [[YYYY-MM-DD]]
 ## Anti-patterns
 
 - Inferring lightweight from low energy, “quick morning,” or weekend — **explicit keywords only** (gate is in SKILL.md)
-- Running priority delta (`[x]` remove/reset) “while we’re here”
-- Rebuilding Notes/Related Projects from agents
+- Skipping item delta (leaving yesterday’s `[x]` frozen on today)
+- Q1 adds, Notes rewrite, Log/Evening clear, or agents “while we’re here”
 - Overwriting an existing today note
 - Hard-coding `+1` when gap `g > 1` (multi-day skip must use `g`)
+- Resetting a `#daily` `[x]` that was still open on last — that is today’s progress, not leftover yesterday
 
 ## Edge cases
 
 | Case | Action |
 |------|--------|
 | No last note | Abort → full mode |
-| Today already exists | Do not `cp`; report; stop unless user requests full delta |
+| Today already exists | Do not `cp`. If the user asks only for item delta, apply §3b against last-note `[x]` and stop. Otherwise report and stop unless they request full-mode delta |
 | Multi-day gap (`g ≥ 2`) | Still lightweight if requested; apply `±g` to counters; mention gap in summary |
 | User adds “also set energy / main focus” in same message | Apply those **named** field edits only; still skip Q1–Q4 agents unless they ask for full mode |

@@ -16,3 +16,8 @@
 ### Lessons
 - `[x]` + no `#daily` → Remove is absolute. Don't re-add an identical `[ ]` copy under "add from Q1" — the missing `#daily` tag means the task was a one-off, and resurrecting it bypasses the `#daily` mechanism. "Add from Q1" is for genuinely new actions only.
 
+## 2026-08-18
+### Lessons
+- Lightweight is residual planning, not a frozen photocopy. After the day-count bump, apply the Priorities item delta (`[x]` no `#daily` → remove; `[x]` `#daily` → reset to `[ ]`; `[ ]`/`[*]`/`#weekly` stay). Day-count-only left yesterday's completions frozen on today. Still skip Q1–Q4, agents, Notes rewrite, and `/reflect`.
+- Remap leftover weekday tokens in residual prose (`high-energy Sunday`, `weekend Sunday`) to today; drop `weekend` on Mon–Fri. Leaving them made a Tuesday note still read as Sunday (2026-08-18).
+

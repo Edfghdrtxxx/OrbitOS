@@ -32,6 +32,7 @@ A verb form ending in **-ing** that functions as a **noun** in a sentence. Despi
 - [[Infinitive]]
 - [[Present Participle]]
 - [[Verb Patterns]]
+- [[2026-08-15-1435 gerunds]]
 
 ## References
 

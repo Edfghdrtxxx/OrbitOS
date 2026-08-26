@@ -44,3 +44,7 @@ A clipboard-ready outline, **under 20–30 lines** (the principle block at the e
 These apply not only to the follow-up AI receiving the handoff, **but also to you while drafting it**:
 - **Zero Assumptions:** Never guess user intent. If multiple implementations exist or requirements are incomplete, **halt and use the `AskUserQuestion` tool** to gather explicit direction.
 - **No Silent Assumptions:** Even when the task is requested, confirm the *method* if it wasn't specified.
+
+# Arguments
+- When the user invokes this skill with the argument "with brief document" or any semantically equivalent phrase, produce a concise document that enables a subsequent AI to continue your work seaminglessly. 
+- Brief document path: '/Users/Reid Hu/MATE-Automation/99_System/Handoff documents/<topic>/<topic.md>'
