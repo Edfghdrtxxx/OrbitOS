@@ -84,6 +84,8 @@ Only **two centers** in mainland China: **Beijing** and **Shanghai** `[UNVERIFIE
 - [[English_Learning|TOEFL]]
 - [[Fundamental_Knowledge]]
 - [[GRE_Physics_Prep]]
+- [[Physics_GRE]]
+- [[PGRE-Philosophy]]
 
 ## References
 

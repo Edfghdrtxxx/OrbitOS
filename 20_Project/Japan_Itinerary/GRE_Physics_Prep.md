@@ -40,6 +40,7 @@ Confirmation letter: printable at [ets.org/mygre](https://www.ets.org/mygre). Fr
 ### Resources
 
 - **Primary textbook:** *Conquering the GRE Physics*, [[GRE_Physics_Practice_Book.pdf]]
+- **Item philosophy:** [[PGRE-Philosophy]] (how ETS items are built; briefing for drill-generating agents). Project docs: [[Physics_GRE]]
 - **Interactive Visualizer Suite:** Integrated in Physics GRE Prep Studio (`#/formulas` Visualizer Lab + in-card on "Show answer") & standalone at `50_Resources/Physics/StudyQuizzes/formula_recall_interactive_visualizers.html`. Live 2D physics simulations, vector dynamics, and limiting case checks for all due formula cards.
 - **Supplementary:** Past ETS practice tests (available on ETS website)
 - **Overlap:** Physics fundamentals track in [[Fundamental_Knowledge]] covers most GRE content areas — coordinate study to avoid duplication
