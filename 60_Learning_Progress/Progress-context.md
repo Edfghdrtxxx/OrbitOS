@@ -93,7 +93,11 @@ Session: [[2026-07-26-2233 TOEFL Academic Discussion]] (thread still active)
 | TOEFL AD: why = stuck → tool → keep going | Can draft a mini-example chain for “learning momentum” (language polish next) |
 | TOEFL AD: no-filler close | Verb-driven restatement of claim; cut stacked hedges and noun piles on second attempt |
 | Kill inflation vs effective complexity | "I firmly align with the perspective that" → "I believe"; rule: if you delete the fancy phrase and meaning doesn't change, it's padding. Accepted after pushback. |
+| "I share [Name]'s perspective that..." | Stance opening: `that + clause` (not `regarding + noun phrase`); noun `perspective` (not adverb) |
+| Transitions: additive vs contrast | `First... Furthermore` for supporting reasons; avoid `On the other hand` unless contrasting two sides |
+| Mechanism verbs vs noun piles | Concrete actions (*pinpoint logical gaps*, *narrow down a research question*) replace empty abstractions (*supply essential resources*, *study quality*) |
 | "The reason… is because" → "is that" | Caught on first attempt; reason + because = double cause |
+| Relative clause agreement | Check noun directly before `which/that` (singular `feedback/environment` $\to$ singular verb; plural $\to$ plural) |
 | Uncountable "feedback" | Like information, advice, research — no plural form |
 | Less vs fewer | Fewer for countable nouns; less for uncountable |
 
@@ -202,6 +206,29 @@ Session: [[2026-08-25-1451 along-alongside]]
 | *alongside* ≠ simultaneous | Textbook sits *alongside* the account — neighbor on the shelf. *along with* can also be at the same time |
 | Mixed unlabeled 6/6 | Length / neighbor / bag all named; static *along* and moving *alongside* both held |
 
+#### Academic email requests and collocations
+
+Session: [[2026-08-26-1505 academic email requests]]
+
+| Item | Notes |
+|------|--------|
+| Request collocations: *approve* / *grant* / *accommodate* | Transitive with *a request*; rejected *consent a request* |
+| Polite conditional: *appreciate it* vs *be grateful* | Verb *appreciate* takes dummy *it*; adjective *grateful* needs *be*, drops *it* |
+| Schedule clash: *a scheduling conflict has arisen* | Present perfect for situational conflicts; *arisen* / *come up* collocations |
+| Prerequisite vs indispensable | *prerequisite* / *required for* for institutional conditions; *indispensable* for vital persons/tools |
+| Proposal elaboration | Substantive justification (*fits all members' schedules and ensures full team participation*) |
+
+#### beyond
+
+Session: [[2026-08-27-1012 beyond]]
+
+| Item | Notes |
+|------|--------|
+| Perspective: *past* vs *beyond* | Learner: *past* = moving/traveler viewpoint along a path; *beyond* = domain/boundary viewpoint looking into the outer space |
+| Abstract limits: *beyond* + [Noun] | Learner: *beyond repair* = outside the domain of fixability |
+| *Besides* vs *Beyond* | Learner: *Besides* = flat addition ($A+B$ list item); *Beyond* = surpassing baseline / stepping to a higher tier |
+| Mixed drill 5/5 | Physics, spatial checkpoint (*past*), theoretical framework (*beyond SM*), capability (*beyond grasp*), threshold (*beyond 50 µA*) |
+
 ## In progress
 
 Only threads with unfinished core work (verified against session notes). Solid-enough items live under **Known solid** only.
@@ -231,6 +258,8 @@ Only threads with unfinished core work (verified against session notes). Solid-e
 | Gerunds / -ing jobs | [[2026-08-15-1435 gerunds]] · `60_Learning_Progress/English Learning/2026-08-15-1435 gerunds.md` |
 | Prepositions *at* / *on* / *in* | [[2026-08-19-1555 prepositions]] · `60_Learning_Progress/English Learning/2026-08-19-1555 prepositions.md` |
 | along / alongside | [[2026-08-25-1451 along-alongside]] · `60_Learning_Progress/English Learning/2026-08-25-1451 along-alongside.md` |
+| Academic email requests / collocations | [[2026-08-26-1505 academic email requests]] · `60_Learning_Progress/English Learning/2026-08-26-1505 academic email requests.md` |
+| beyond | [[2026-08-27-1012 beyond]] · `60_Learning_Progress/English Learning/2026-08-27-1012 beyond.md` |
 
 ### Active / next
 
