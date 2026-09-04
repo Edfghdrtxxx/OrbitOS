@@ -88,7 +88,7 @@ tags: [japan, immigration, phd, checklist]
 
 - [x] 2026-04-15: first supervisor outreach emails sent (2026-03-09: completed ahead of schedule — Aoi Nori & Nobuaki Imai accepted, conditional on entrance exam)
 - [x] 2026-07-01: GSGC vs Special Selection — RESOLVED ahead of schedule (2026-04-13). Special Selection confirmed.
-- [ ] 2026-09-01: UTokyo GSGC guideline release check
+- [x] 2026-09-01: ~~UTokyo GSGC guideline release check~~ — **SUPERSEDED** (GSGC ineligible per 2026-04-13 Imai meeting; Special Selection confirmed)
 - [ ] 2026-10-15 / 2026-12-05: UTokyo cycle window checks
 - [ ] 2027-01-15: if no Oct 2027 call posted, email Graduate School Office
 - [ ] ~~Monitor Osaka IPC/non-IPC official calls from April 2026 onward~~ → **DEFERRED** (cold standby; reactivate only if UTokyo entrance exam fails on first attempt)

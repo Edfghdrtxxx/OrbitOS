@@ -2,8 +2,9 @@
 type: learning-progress
 topic: "TOEFL Academic Discussion writing"
 area: English Learning
-status: active
+status: solid-enough
 created: 2026-07-26
+updated: 2026-08-28
 related:
   - "[[toefl-2026-personal-context]]"
   - "[[TOEFL_Study_Plan]]"

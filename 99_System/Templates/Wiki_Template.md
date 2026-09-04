@@ -2,9 +2,6 @@
 area:
 tags: []
 created: {{date:YYYY-MM-DD}}
-last_reviewed:
-next_review:
-review_interval: 0
 ---
 # [Concept Name]
 

@@ -1,11 +1,12 @@
 ---
 type: learning-index
 purpose: Terse cross-agent index of what the learner has solidly learned. Agents running /learn MUST read this first.
-updated: 2026-08-25
+updated: 2026-09-03
 ---
 # Learning Progress — Context Index
 
 > Analogy of MEMORY.md: short durable pointers only. Full dialogue lives in session notes under `60_Learning_Progress/<topic>/`.
+> Retention checks live in [[Retention-context]] (`/retention`). This file is the learning index only.
 > **Update rule:** after a turn advances understanding, add/move one-line entries. Prefer moving **In progress → Known solid** when the learner states/uses it correctly.
 
 ## Known solid
@@ -85,7 +86,7 @@ Session: [[2026-08-07-1538 Radioactive beams projectile fragmentation]] (thread 
 
 #### TOEFL Academic Discussion
 
-Session: [[2026-07-26-2233 TOEFL Academic Discussion]] (thread still active)
+Session: [[2026-07-26-2233 TOEFL Academic Discussion]]
 
 | Item | Notes |
 |------|--------|
@@ -100,6 +101,28 @@ Session: [[2026-07-26-2233 TOEFL Academic Discussion]] (thread still active)
 | Relative clause agreement | Check noun directly before `which/that` (singular `feedback/environment` $\to$ singular verb; plural $\to$ plural) |
 | Uncountable "feedback" | Like information, advice, research — no plural form |
 | Less vs fewer | Fewer for countable nouns; less for uncountable |
+
+#### TOEFL listening paraphrase
+
+Session: [[2026-08-27-2255 TOEFL distinct outcomes paraphrase]]
+
+| Item | Notes |
+|------|--------|
+| Too broad = mixed category, not long survey | Learner: long survey + only depression → Park would not object |
+| Noun overlap ≠ take the option | Learner: reject “well focused” + the four nouns because the judgment is wrong |
+| Keep if judgment matches (no AND with word overlap) | Learner: would keep “distinct outcomes” now; first miss was decode, not AND |
+| *outcome* = thing the study measures | Learner stated; dropped the *or* |
+| *outcome* ≠ *objective* | Learner: depression = outcome; objective = the aim (test whether sleep affects it) |
+
+#### TOEFL detail & EXCEPT traps (General vs. Specific)
+
+Session: [[2026-09-02-1400 TOEFL general vs specific details]]
+
+| Item | Notes |
+|------|--------|
+| One-Way Street: Specific (text) $\to$ General (option) | Valid paraphrase/generalization (e.g. *Buddhism* $\to$ *religious ideas*) |
+| One-Way Street: General (text) $\to$ Specific (option) | Invalid trap / over-specification (e.g. *technology* $\to$ *transportation technology*) |
+| Unsupported modifiers in detail options | Option adds unmentioned qualifiers (*new*, *mass-produced*, specific sub-types) to general passage nouns |
 
 #### Relative words
 
@@ -137,6 +160,8 @@ Sessions: [[2026-08-11-1805 collocations and noun logic]] · [[2026-08-15-1050 T
 | Compound pairing: lock object first | Prompt names the object → build that chunk; leftovers fill the other job. Learner: *backup copies* then *cloud folder*; *lab manuals* then *chemistry course*. Trap is trading classifiers |
 | Frozen compound ≠ 的-reshuffle | English two-word campus chunks are vocabulary. Chinese 实验/课程/手册 + 的 feels commutative; *course manuals* is the reshuffle. Learner named this as the cause |
 | Question over decoy PP | Office/person/place in the question picks the noun; a location phrase can pull a vivid wrong noun. Learner: housing office → *roommate problem*, not hallway-*printer* |
+| Compound: [container] + [activity/event] | Learner: *seminar discussion* (seminar is venue container, discussion is head event); matches *class/group/panel discussion* |
+| Modifier typing: hierarchical vs source | Learner: *main claim* / *central thesis* takes hierarchical qualifiers; *textual evidence* / *empirical data* takes source/grounding qualifiers |
 | Search results ≠ research results | Catalog hit-list the filters narrow; learner restated: items a list shows you, not a finding. Slip was *research* for *search* |
 | Complete-word: job before stem | Name the slot’s job; reject letter-close academic first-arrivals (*respect*, *tangent*, *data*). Timed: a job-fail guess scores the same as blank |
 | *remarkably* + adjective | Adverb neighbor → adj: *remarkably innovative*, not the noun. Learner stated |
@@ -229,15 +254,65 @@ Session: [[2026-08-27-1012 beyond]]
 | *Besides* vs *Beyond* | Learner: *Besides* = flat addition ($A+B$ list item); *Beyond* = surpassing baseline / stepping to a higher tier |
 | Mixed drill 5/5 | Physics, spatial checkpoint (*past*), theoretical framework (*beyond SM*), capability (*beyond grasp*), threshold (*beyond 50 µA*) |
 
+#### appeal / appeal to
+
+Session: [[2026-08-27-1641 appeal]]
+
+| Item | Notes |
+|------|--------|
+| Subject picks verb job | Person-subject → request; thing-subject → attract. Neighbor nouns (*request*) do not pick |
+| *to* person / *for* goal | *appeal to the committee*; *appeal for extra beam time*. Packed: *appeal to X for Y* |
+| Noun petition vs pull | *file a formal appeal* / *her appeal was rejected* vs *lost its appeal* / *the appeal of X* |
+| *appeals to* not *attracts to* | *The idea appeals to me* |
+| Intransitive *appeal* | *decided to appeal* = formal challenge, not attract |
+
+#### TOEFL best campus reply
+
+Session: [[2026-08-29-2046 TOEFL best campus reply]]
+
+| Item | Notes |
+|------|--------|
+| Rank replies; possible still loses | Not "would a friend say this?" |
+| Stuck / required → pack channels | Q3: one door (another section) loses to stack (sections + second waitlist + department appeal) |
+| Comprehensive ≠ type-wide rule | Learner stated Q3 extras; rejected promoting pack-more onto Q4 |
+| Opportunity + nerves → good news + named office | Q4: *That is exciting* + writing center; hedge *before deciding whether you are ready* = empathy with doubt |
+| *coaches* as verb | *The writing center coaches symposium talks* = that office trains you for those presentations |
+
+
+#### TOEFL listening best response
+
+Session: [[2026-09-01-1030 TOEFL listening choose best response]]
+
+| Item | Notes |
+|------|--------|
+| Alternative question ($A \text{ or } B$) | Rejects bare *I would* / *Yes*; requires choice or indifference (*Whatever's more convenient*) |
+| Presupposition defeat vs subject shift | Response attacks hidden premise (*He usually takes the bus* / *She doesn't teach that section*) rather than irrelevant subject shift (*I don't have a car* / *I didn't take the exam*) |
+| Single event vs frequency/routine | Specific-event prompt (*tomorrow / tonight*) rejects frequency/habit answer (*two times a week / every evening*); takes indirect conflict excuse (*I have a project to finish*) |
+| Counter-question as response | Inquiry into speaker's intention (*Did you want to go for a swim?* for *Isn't the pool open today?*) stands alone without mental *Yes/No* completion |
+| Speaker role / register | Institutional service transactions (*take reservations*) cannot be spoken between friends/colleagues |
+
+#### would rather ... than
+
+Session: [[2026-09-03-0819 would rather than]]
+
+| Item | Notes |
+|------|--------|
+| Parallel bare verbs: would rather [do A] than [do B] | Strips -ing and to on both sides of than; modal would governs both |
+| Ellipsis: omit shared verb across than | eat Italian food than Japanese food (drops second eat) |
+| prefer ... to vs. would rather ... than | prefer hires to + gerunds/nouns; would rather hires than + bare verbs |
+| prefer to [do A] rather than [(do) B] | Infinitives with prefer hire rather than (not to or bare than) |
+| Preposition retention for disambiguation | talk to Alex than to Maria (keeps to to mark Maria as object, avoiding subject confusion) |
+| Negation syntax: would rather not [verb] | not placed after rather (never wouldn't rather); preferred action goes into Slot A |
+| Quasi-negation in than: implicit "not" | Learner formulation: than marks discarded option; Slot A = desired, Slot B = rejected |
 ## In progress
 
 Only threads with unfinished core work (verified against session notes). Solid-enough items live under **Known solid** only.
 
-| Topic | Status | Notes |
-|-------|--------|--------|
-| TOEFL: Academic Discussion writing | **active** — drill done | Skeleton + 5-sentence drill done. Still open in [[2026-07-26-2233 TOEFL Academic Discussion]]: noun piles → verb-driven (scaffolded, not automatic); spelling watch (`perfer`, `yong`, `exerise`). Optional: 60s proofread; BaS separate |
-| QM: displacement operator $D(\alpha)$ | **next** — unblocked | Parent note only has Turns 1–2 (fork to HO/ladder); **no derivation yet**. Resume [[2026-07-26-2030 Displacement operator]] → $D(\alpha)=e^{\alpha a^\dagger-\alpha^* a}$ |
+| Topic                                                      | Status                  | Notes                                                                                                                                                                                                                                                                                               |
+| ---------------------------------------------------------- | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| QM: displacement operator $D(\alpha)$                      | **next** — unblocked    | Parent note only has Turns 1–2 (fork to HO/ladder); **no derivation yet**. Resume [[2026-07-26-2030 Displacement operator]] → $D(\alpha)=e^{\alpha a^\dagger-\alpha^* a}$                                                                                                                           |
 | Exp. tech NP: radioactive beams / projectile fragmentation | **active** — choose dig | Say-back locked: fragment $v$ ≈ beam; same $v$ $\Rightarrow B\rho\propto A/q$ ($^{11}\mathrm{Be}$/$^{11}\mathrm{C}$ = $3:2$); Goldhaber named as cloud-width driver. Open menu: dig Goldhaber / target / methods, or GRE mini-drill. [[2026-08-07-1538 Radioactive beams projectile fragmentation]] |
+| TOEFL: main purpose (campus message) | **active** — method | Strip-out locked (sticker can drop; remainder still a mail). Package = one job; option may name stickers as *and its conditions*. Confirm-bundle vs isolated *your* next. [[2026-08-29-1018 TOEFL main purpose]] |
 
 ## Session notes
 
@@ -249,6 +324,7 @@ Only threads with unfinished core work (verified against session notes). Solid-e
 | TISE | [[2026-07-26-2126 Time-independent Schrödinger equation]] · `60_Learning_Progress/Quantum Mechanics/2026-07-26-2126 Time-independent Schrödinger equation.md` |
 | Harmonic oscillator | [[2026-07-26-2112 Harmonic oscillator]] · `60_Learning_Progress/Quantum Mechanics/2026-07-26-2112 Harmonic oscillator.md` |
 | Ladder operators | [[2026-07-26-2113 Ladder operators]] · `60_Learning_Progress/Quantum Mechanics/2026-07-26-2113 Ladder operators.md` |
+| TOEFL: Academic Discussion writing | [[2026-07-26-2233 TOEFL Academic Discussion]] · `60_Learning_Progress/English Learning/2026-07-26-2233 TOEFL Academic Discussion.md` |
 | that / which / where | [[2026-08-03-1059 that-which-where]] · `60_Learning_Progress/English Learning/2026-08-03-1059 that-which-where.md` |
 | Adverb placement mid-position | [[2026-08-11-1646 adverb placement]] · `60_Learning_Progress/English Learning/2026-08-11-1646 adverb placement.md` |
 | Collocations and noun logic | [[2026-08-11-1805 collocations and noun logic]] · `60_Learning_Progress/English Learning/2026-08-11-1805 collocations and noun logic.md` |
@@ -260,6 +336,12 @@ Only threads with unfinished core work (verified against session notes). Solid-e
 | along / alongside | [[2026-08-25-1451 along-alongside]] · `60_Learning_Progress/English Learning/2026-08-25-1451 along-alongside.md` |
 | Academic email requests / collocations | [[2026-08-26-1505 academic email requests]] · `60_Learning_Progress/English Learning/2026-08-26-1505 academic email requests.md` |
 | beyond | [[2026-08-27-1012 beyond]] · `60_Learning_Progress/English Learning/2026-08-27-1012 beyond.md` |
+| appeal / appeal to | [[2026-08-27-1641 appeal]] · `60_Learning_Progress/English Learning/2026-08-27-1641 appeal.md` |
+| TOEFL: distinct outcomes paraphrase | [[2026-08-27-2255 TOEFL distinct outcomes paraphrase]] · `60_Learning_Progress/English Learning/2026-08-27-2255 TOEFL distinct outcomes paraphrase.md` |
+| TOEFL: best campus reply | [[2026-08-29-2046 TOEFL best campus reply]] · `60_Learning_Progress/English Learning/2026-08-29-2046 TOEFL best campus reply.md` |
+| TOEFL: listening best response | [[2026-09-01-1030 TOEFL listening choose best response]] · `60_Learning_Progress/English Learning/2026-09-01-1030 TOEFL listening choose best response.md` |
+| TOEFL: general vs specific traps | [[2026-09-02-1400 TOEFL general vs specific details]] · `60_Learning_Progress/English Learning/2026-09-02-1400 TOEFL general vs specific details.md` |
+| would rather ... than | [[2026-09-03-0819 would rather than]] · `60_Learning_Progress/English Learning/2026-09-03-0819 would rather than.md` |
 
 ### Active / next
 
@@ -267,18 +349,22 @@ Only threads with unfinished core work (verified against session notes). Solid-e
 |--------|------|
 | Displacement operator (next) | [[2026-07-26-2030 Displacement operator]] · `60_Learning_Progress/Quantum Mechanics/2026-07-26-2030 Displacement operator.md` |
 | Radioactive beams / projectile fragmentation (active) | [[2026-08-07-1538 Radioactive beams projectile fragmentation]] · `60_Learning_Progress/Nuclear Physics/2026-08-07-1538 Radioactive beams projectile fragmentation.md` |
-| TOEFL Academic Discussion (active) | [[2026-07-26-2233 TOEFL Academic Discussion]] · `60_Learning_Progress/English Learning/2026-07-26-2233 TOEFL Academic Discussion.md` |
+| TOEFL: main purpose (campus message) | [[2026-08-29-1018 TOEFL main purpose]] · `60_Learning_Progress/English Learning/2026-08-29-1018 TOEFL main purpose.md` |
 
 ## Gaps / next
 
-1. TOEFL AD: noun piles → verb-driven still needs unprompted drill; spelling watch; optional 60s proofread; BaS separate — [[2026-07-26-2233 TOEFL Academic Discussion]]
-2. Displacement operator $D(\alpha)$ — ladder ops drill-complete; resume [[2026-07-26-2030 Displacement operator]]
-3. (Optional) complete-word transfer: *assign*/*dates*, *food* — [[2026-08-15-1050 TOEFL complete-word forms]]
-4. (Optional) gerunds: *forget*/*try*; hire-set drill — [[2026-08-15-1435 gerunds]]
-5. (Optional) TOEFL options: 3-item mixed articles+agreement drill if rusty
-6. (Optional) adverb end-OK contrast: place/time at end vs manner mid-position
-7. (Optional) GRE-style HO/ladder mixed set later if rusty before applications
-8. (Optional) *since* + clause time-vs-cause trap (sibling of the *as* both-doors trap) — [[2026-08-14-1618 since-as-because]]
-9. (Optional) prepositions: reopen only if rusty — [[2026-08-19-1555 prepositions]]
-10. (Optional) compound-pairing mixed drill if rusty — [[2026-08-11-1805 collocations and noun logic]]
-11. (Optional) *along* / *alongside* mixed unlabeled if rusty — [[2026-08-25-1451 along-alongside]]
+1. Displacement operator $D(\alpha)$ — ladder ops drill-complete; resume [[2026-07-26-2030 Displacement operator]]
+2. (Optional) complete-word transfer: *assign*/*dates*, *food* — [[2026-08-15-1050 TOEFL complete-word forms]]
+3. (Optional) gerunds: *forget*/*try*; hire-set drill — [[2026-08-15-1435 gerunds]]
+4. (Optional) TOEFL options: 3-item mixed articles+agreement drill if rusty
+5. (Optional) adverb end-OK contrast: place/time at end vs manner mid-position
+6. (Optional) GRE-style HO/ladder mixed set later if rusty before applications
+7. (Optional) *since* + clause time-vs-cause trap (sibling of the *as* both-doors trap) — [[2026-08-14-1618 since-as-because]]
+8. (Optional) prepositions: reopen only if rusty — [[2026-08-19-1555 prepositions]]
+9. (Optional) compound-pairing mixed drill if rusty — [[2026-08-11-1805 collocations and noun logic]]
+10. (Optional) *along* / *alongside* mixed unlabeled if rusty — [[2026-08-25-1451 along-alongside]]
+11. (Optional) TOEFL paraphrase: reopen *outcome* / *too broad* only if decode fails under the clock — [[2026-08-27-2255 TOEFL distinct outcomes paraphrase]]
+12. (Optional) *appeal*: *for* + goal-noun (*help*); verb *appeals to* vs noun *the appeal of* — [[2026-08-27-1641 appeal]]
+13. (Optional) TOEFL AD: 60s proofread pass / BaS micro-drill if needed later — [[2026-07-26-2233 TOEFL Academic Discussion]]
+14. (Optional) TOEFL best campus reply: 2-item unlabeled check if rusty — [[2026-08-29-2046 TOEFL best campus reply]]
+15. (Optional) TOEFL detail & EXCEPT: over-specification vs valid generalization check if rusty — [[2026-09-02-1400 TOEFL general vs specific details]]

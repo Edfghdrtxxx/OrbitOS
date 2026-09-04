@@ -32,6 +32,18 @@ The detector is not a perfect rectangle — it contains a central hole at one en
 - **Split rows (46–47):** the last two rows (indices 3680 to 3791) are split into two segments. Each contains only 56 pads (28 left + 28 right).
 - **Hole dimensions:** the gap in the last two rows spans Y ≈ −4.88 to +4.15. This likely accommodates a beam pipe or exit window at the far end of the detector (Z ≈ 28.3 to 29.57).
 
+## Actions
+
+### Parked until 2026-11-02
+
+> [!note] Agent instruction
+> Do not copy these into daily notes before 2026-11-02. On the first plan day on/after that date, propose which of these become weekly rows.
+
+- The data analysis workflow of ATTPC (In Antigravity) (~ 50 mins)
+- Bridge the gap between Claude Code and LISE++, and another [Energy Loss simulation tool](https://catima.readthedocs.io/en/latest) (~ 120 mins)
+	- Learn how to build a MCP first
+	- Refer to the philosophy and methodology in [Notebooklm-py](https://github.com/teng-lin/notebooklm-py)
+
 ## Progress
 
 ### 2026-04-17 — Energy regression ($E_3$) spec-mode, day 3

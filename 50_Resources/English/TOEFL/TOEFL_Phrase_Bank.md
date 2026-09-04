@@ -4,7 +4,7 @@ type: resource
 status: active
 area: "[[Self-Development]]"
 created: 2026-06-24
-updated: 2026-08-25
+updated: 2026-08-28
 aliases:
   - Speaking_Collocation_Bank
   - Writing_Phrase_Bank
@@ -32,7 +32,7 @@ source_of_truth: true
 apple_notes_title: "English Sentence Material Accumulation"
 google_drive_doc: "English Sentence Material Accumulation"
 google_drive_id: 1-wEPWA8HTciU4OOJnPEEzH5fAgt_nN2OSHOcRJA8Dfg
-reconciled: 2026-08-25
+reconciled: 2026-08-27
 ---
 # TOEFL Phrase Bank
 
@@ -43,13 +43,13 @@ reconciled: 2026-08-25
 > 1. `Cmd+P` (Mac) / `Ctrl+P` (Win) → run **`Spaced Repetition: Review flashcards`**  
 >    (or **Review flashcards in this note** while this file is open)
 > 2. Select your targeted deck:
->    - **`flashcards` → `toefl`** (48 cards, one-way `?`: scenario/cue → phrase, model & collocations)
+>    - **`flashcards` → `toefl`** (50 cards, one-way `?`: scenario/cue → phrase, model & collocations)
 >
 > Do **not** look for this note under `#review` in the sidebar.
 
 > [!info] Structure & Inbox Alignment
 > **Canonical copy:** this file (1:1 unified with Google Doc *English Sentence Material Accumulation*).
-> - **Unified Bank:** Merged speaking and writing material (48 cards). One-way (`?`) scenario → phrase + model to free up working memory and internalize natural collocations.
+> - **Unified Bank:** Merged speaking and writing material (50 cards). One-way (`?`) scenario → phrase + model to free up working memory and internalize natural collocations.
 > - Review guide: [[Review_Log]].
 
 ---
@@ -102,6 +102,7 @@ Mid-story low point — nearly gave up — before the turnaround
 ?
 Phrase: Honestly, there were times I wasn't sure I'd make it through…
 Model: Honestly, there were times I wasn’t sure I’d make it through, but I forced myself to take it one step at a time, and that’s what got me through.
+<!--SR:!2026-09-08,8,250-->
 
 ### TOEFL-07 · Concluding a preference
 
@@ -109,6 +110,7 @@ Wrapping up an answer or landing a preference cleanly
 ?
 Phrase: So all in all, that's basically why I'd rather… than…
 Model: So all in all, that’s basically why I’d rather travel with one or two close friends than in a big group.
+<!--SR:!2026-09-04,2,250-->
 
 ### TOEFL-08 · Concluding / lesson learned
 
@@ -151,6 +153,7 @@ Academic debate — distinguishing surface causes from core student motivation (
 ?
 Phrase: The existence of… is merely a superficial trigger; genuinely motivated students remain committed to…
 Model: The existence of recordings is merely a superficial trigger; genuinely motivated students remain committed to attending live sessions regardless of available resources.
+<!--SR:!2026-09-11,11,270-->
 
 ### TOEFL-14 · Upgrading value claims
 
@@ -173,12 +176,18 @@ Academic Discussion — highlighting secondary benefits beyond the primary polic
 Phrase: Beyond mitigating… concerns, … provide an indispensable safety net for…
 Model: Beyond mitigating truancy concerns, recordings provide an indispensable safety net for students encountering unforeseen personal emergencies, ensuring no critical learning opportunity is lost.
 
-### TOEFL-17 · Formal approval request
+### TOEFL-17 · Email: Formal approval request & rescheduling
 
-Formal email opening — requesting an instructor's or supervisor's approval
+Formal email — requesting approval to reschedule a slot due to a prerequisite conflict
 ?
-Phrase: I am writing to respectfully request your approval for… / of…
-Model: Dear Prof. Santos, I am writing to respectfully request your approval for taking an advanced seminar next semester.
+Phrase: I am writing to respectfully request your approval for… / approve/grant this request / However, a scheduling conflict has arisen because… / We would like to propose [Day] at [Time] as an alternative time.
+Model: Dear Prof. Santos,
+
+I am writing to respectfully request your approval for rescheduling our presentation. However, a scheduling conflict has arisen because I have an essential appointment, which is a prerequisite for my study abroad plan. We would like to propose Tuesday at 2:00 PM as an alternative time. This slot gives me sufficient time to return from my appointment and allows our group to deliver the presentation smoothly. I would greatly appreciate it if you could grant our request. Thank you for your time and understanding.
+
+Yours sincerely,
+Reid Hu
+Collocations: respectfully request your approval · approve/grant this request · scheduling conflict has arisen · prerequisite for · propose Tuesday at 2:00 PM as an alternative time · deliver the presentation smoothly · greatly appreciate it if you could grant our request
 
 ### TOEFL-18 · Context setting / Given that
 
@@ -217,6 +226,7 @@ Online vs in-person communication, interpersonal skills, and personal growth
 ?
 Phrase: Authentic interpersonal interaction is indispensable for holistic self-development, as it cultivates… that screens cannot replicate.
 Model: Authentic interpersonal interaction is indispensable for holistic self-development, as it cultivates empathy and communication skills that screens cannot replicate.
+<!--SR:!2026-09-12,10,270-->
 
 ### TOEFL-23 · Seeking expert guidance
 
@@ -224,6 +234,7 @@ Formal email opening — consulting a professor or advisor for resources/directi
 ?
 Phrase: I am writing to seek your expert guidance regarding resources for…
 Model: Dear Dr. Imai, I am writing to seek your expert guidance regarding resources for preparing the entrance examination.
+<!--SR:!2026-09-04,2,190-->
 
 ### TOEFL-24 · Narrative: Healthy lifestyle & nutrition
 
@@ -239,6 +250,7 @@ Academic debate — educational institutions guiding students' lifestyle / healt
 ?
 Phrase: As integral components of societal education, schools must…
 Model: As integral components of societal education, schools must guide young people toward better lifestyle choices.
+<!--SR:!2026-09-04,1,210-->
 
 ### TOEFL-26 · Research integrity and communication
 
@@ -246,6 +258,7 @@ Campus research ethics, planning, and maintaining participant trust
 ?
 Phrase: Careful planning and transparent communication protect… and strengthen trust in…
 Model: Careful planning and transparent communication protect participants and strengthen trust in campus research.
+<!--SR:!2026-09-06,4,190-->
 
 ### TOEFL-27 · Concession openers (Hardly ever / Even though)
 
@@ -272,7 +285,7 @@ Collocations: valuable market information · align more with the view that · ma
 ### TOEFL-30 · Debate: Trainable mental skills vs innate talent
 
 Debate prompt — is focus under pressure innate or trainable through deliberate practice?
-?
+
 Phrase: …are trainable, not fixed at birth. / Claiming "you can't teach it" just ignores how actual high-level training works.
 Model: Mental skills like focus under pressure are trainable, not fixed at birth. Sports psych research and every serious golf coach show athletes build clutch performance through deliberate practice, visualization, breathing routines, and exposure. Plenty of pros started shaky under the lights and got better. Claiming "you can't teach it" just ignores how actual high-level training works.
 Collocations: focus under pressure · trainable, not fixed at birth · build clutch performance · deliberate practice · under the lights · high-level training
@@ -280,7 +293,7 @@ Collocations: focus under pressure · trainable, not fixed at birth · build clu
 ### TOEFL-31 · Accountability / Pay no price for being wrong
 
 Policy / governance debate — decision-makers who bear no consequences for errors
-?
+
 Phrase: It is hard to imagine a more stupid or more dangerous way of making decisions than by putting those decisions in the hands of people who pay no price for being wrong.
 Model: It is hard to imagine a more stupid or more dangerous way of making decisions than by putting those decisions in the hands of people who pay no price for being wrong.
 Collocations: hard to imagine a more… way of · putting decisions in the hands of · pay no price for being wrong · skin in the game
@@ -290,8 +303,9 @@ Collocations: hard to imagine a more… way of · putting decisions in the hands
 Useful purchase, technological tool, or something that streamlined your workflow
 ?
 Phrase: The most delightful purchase I've made recently was… What made it such a smart decision was…
-Model: The most delightful purchase I've made recently was subscribing to an AI service. What made it such a smart decision was its incredible utility in streamlining my daily workflows. It essentially acts as a second brain, helping me organize my mind and clarify my intentions. Just last week, when I hit a wall analyzing complex experiment data, this tool proved invaluable in helping me move forward efficiently.
+Model: The most delightful purchase I've made recently was subscribing to an AI service. What made it such a smart decision was its incredible utility in streamlining my daily workflows. It essentially acts as a second brain, helping me organize my mind and clarify my intentions. Just last week, when I hit a wall analyzing complex experiment data during a particle physics project, this tool proved invaluable in helping me move forward efficiently.
 Collocations: delightful purchase · smart decision · streamlining my daily workflows · acts as a second brain · clarify my intentions · hit a wall · proved invaluable
+<!--SR:!2026-09-04,1,170-->
 
 ### TOEFL-33 · Narrative: In-store vs online shopping
 
@@ -307,11 +321,12 @@ Acknowledging the opposing side before returning firmly to your stance
 ?
 Phrase: That said… / I can see both sides, but…
 Model: Working from home is convenient. That said, I'd still choose an office, because I focus better when other people are around.
+<!--SR:!2026-09-13,11,270-->
 
 ### TOEFL-35 · Surface plausibility hedge
 
 Acknowledging an idea looks plausible on the surface before pointing out flaws
-?
+
 Phrase: At first glance, it seems to make some sense.
 Model: At first glance, it seems to make some sense — free online courses should democratize education. That said, without structure and accountability, a lot of people never finish, so the real bottleneck is follow-through, not access.
 
@@ -320,8 +335,9 @@ Model: At first glance, it seems to make some sense — free online courses shou
 Happy childhood memory, memorable school celebration, or nostalgic event
 ?
 Phrase: One of my happiest childhood memories was… where the air was filled with laughter as…
-Model: One of my happiest childhood memories was a classroom party where the air was filled with laughter as we shared a birthday cake and played chasing games. I felt genuinely happy and content. Our teacher, who was equally caught up in the atmosphere, meticulously took a lot of photos and videos, which I still look at today to remember that day.
-Collocations: happiest childhood memories · air was filled with laughter · shared a birthday cake · played chasing games · genuinely happy and content · caught up in the atmosphere · meticulously took photos
+Model: One of my happiest childhood memories was a classroom party where the air was filled with laughter as we shared a birthday cake and played chasing games. I felt genuinely happy and content. Our teacher was excited too and meticulously took a lot of photos and videos, which I still look at today to remember that day.
+Collocations: happiest childhood memories · air was filled with laughter · shared a birthday cake · played chasing games · genuinely happy and content · was excited too · meticulously took a lot of photos and videos
+<!--SR:!2026-09-10,10,270-->
 
 ### TOEFL-37 · AI impact: Building learning momentum
 
@@ -354,6 +370,7 @@ Debate prompt — keeping foundational subjects at the core of school curricula
 Phrase: I strongly advocate for maintaining… at the core of curricula.
 Model: I strongly advocate for maintaining traditional subjects like mathematics and literature at the core of curricula.
 Collocations: strongly advocate for · maintaining traditional subjects · at the core of curricula
+<!--SR:!2026-09-09,7,250-->
 
 ### TOEFL-41 · Narrative: Value of teamwork & collaboration
 
@@ -362,6 +379,7 @@ Teamwork, group collaboration, or working with a project partner
 Phrase: One instance that really highlighted the value of teamwork for me occurred during…
 Model: One instance that really highlighted the value of teamwork for me occurred during a particle physics project. By brainstorming ideas with my partner, we uncovered perspectives I had completely overlooked, which significantly improved the depth and quality of our final presentation.
 Collocations: highlighted the value of teamwork · particle physics project · brainstorming ideas · uncovered perspectives · completely overlooked · depth and quality
+<!--SR:!2026-09-05,2,190-->
 
 ### TOEFL-42 · Narrative: Big city living / Urban infrastructure
 
@@ -412,9 +430,10 @@ Collocations: Dear Prof. · Yours sincerely · Course Student
 
 Advocating for required writing workshops / structured academic skill training
 ?
-Phrase: I strongly advocate mandatory writing workshops every semester because they save students time and provide…
-Model: I strongly advocate mandatory writing workshops every semester because they save students time and provide instant feedback from teachers. Specifically speaking, these workshops have experienced instructors and various essential resources that can significantly improve our writing skills. For example, last semester, attending a mandatory writing workshop allowed me to compare my writing with the teacher's feedback immediately, which gave me confidence that other methods cannot simply replicate.
-Collocations: strongly advocate · mandatory writing workshops · save students time · provide instant feedback · experienced instructors · essential resources · significantly improve · compare my writing with · gave me confidence · cannot simply replicate
+Phrase: I strongly advocate mandatory writing workshops every semester because they save students time by providing instant, targeted feedback from teachers.
+Model: I strongly advocate mandatory writing workshops every semester because they save students time by providing instant, targeted feedback from teachers. Specifically speaking, these workshops have highly experienced instructors and various essential resources that can significantly improve our writing skills. For example, last semester, attending a mandatory writing workshop allowed me to compare my writing with the teacher's feedback immediately, which gave me confidence that other methods cannot simply replicate.
+Collocations: strongly advocate · mandatory writing workshops · save students time · instant, targeted feedback · highly experienced instructors · essential resources · significantly improve · compare my writing with · gave me confidence · cannot simply replicate
+<!--SR:!2026-09-03,1,190-->
 
 ### TOEFL-48 · Debate: Instant feedback vs written comments
 
@@ -423,5 +442,21 @@ Preference for live/instant feedback over delayed written comments
 Phrase: I strongly support instant feedback rather than written feedback because it saves students time and lets us…
 Model: I strongly support instant feedback rather than written feedback because it saves students time and lets us fix mistakes on the spot. Specifically speaking, we can ask the teacher a follow-up question right away instead of waiting days for comments. For example, last semester, getting instant feedback in a writing workshop allowed me to revise my thesis immediately, which gave me clarity that written comments alone could not match.
 Collocations: strongly support · instant feedback rather than written feedback · saves students time · fix mistakes on the spot · ask a follow-up question right away · waiting days for comments · revise my thesis immediately · gave me clarity · could not match
+
+### TOEFL-49 · Academic conferences: Identifying logical gaps
+
+Benefits of one-on-one writing conferences or supervisor feedback on academic arguments
+?
+Phrase: During conferences, instructors can point out logical gaps in an argument and suggest clearer ways to structure paragraphs. For instance, when I struggled with…
+Model: During conferences, instructors can point out logical gaps in an argument and suggest clearer ways to structure paragraphs. For instance, when I struggled with framing my research question last semester, a ten-minute meeting with my supervisor immediately clarified the issue and helped me reorganize my introductory paragraphs.
+Collocations: point out logical gaps · structure paragraphs · framing my research question · immediately clarified the issue · reorganize my introductory paragraphs
+
+### TOEFL-50 · Narrative: Meeting a friend & technological proficiency
+
+Story of meeting a close friend through academic/tech debate and mastering AI tools
+?
+Phrase: I actually met my closest friend while… He urged me to achieve rapid proficiency, a challenge that fundamentally transformed my outlook.
+Model: I actually met my closest friend while debating the impact of AI tools. He urged me to achieve rapid proficiency, a challenge that fundamentally transformed my outlook. Today, I recognize that mastering these technologies is indispensable not only for seamlessly navigating academic literature but also for generating distinct perspectives in problem-solving.
+Collocations: debating the impact of · rapid proficiency · fundamentally transformed my outlook · indispensable not only for… but also for · seamlessly navigating academic literature · generating distinct perspectives
 
 ---

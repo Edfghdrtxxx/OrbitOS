@@ -312,7 +312,7 @@ renumbers ids resets card progress (known limitation).
 
 ## 5. Review plan (data: `js/data-plan.js`)
 
-Jul 13 → Oct 28, 2026 · **intensive ~15–17 h/week** · three phases:
+Jul 13 → Nov 1, 2026 · **intensive ~15–17 h/week** · three phases:
 
 1. **Foundation Pass (W1–W9, Jul 13–Sep 13)** — one deep pass over all 9 topics in
    exam-weight order (CM, CM, EM, EM, OW, TS, QM, QM+AP, AP+SR), building a formula
@@ -320,8 +320,8 @@ Jul 13 → Oct 28, 2026 · **intensive ~15–17 h/week** · three phases:
 2. **Second Pass & Practice Tests (W10–W13, Sep 14–Oct 11)** — finish LM+ST, then fast
    re-sweeps; one full released ETS exam per week (GR8677 → GR9277 → GR9677 → GR0177),
    timed, on paper; miss-classification feeds a weak-topic list.
-3. **Sharpen & Taper (W14–W16, Oct 12–28)** — data-driven drilling of the 3 weakest
-   topics, GR1777 + final mock, memorization sweep, logistics, taper. Exam Wednesday Oct 28.
+3. **Sharpen & Taper (W14–W16, Oct 12–Nov 1)** — data-driven drilling of the 3 weakest
+   topics, GR1777 + final mock, memorization sweep, logistics, taper. Reschedule deadline Oct 28; Exam Sunday Nov 1.
 
 Weeks render as collapsible cards; the current week auto-opens; checking tasks grants XP once.
 

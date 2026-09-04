@@ -29,7 +29,7 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 | Estimate daily workload                                       | `/estimate-time`                | Reasoning-based time estimates for today's tasks at subtask resolution                       |
 | Create an atomic wiki note                                    | `/atomic-note`                  | Creates a single-concept note in 40_Wiki/ with auto-linking and wikilink discovery           |
 | Hand off work to another session                              | `/handoff-prompt`               | Generates a constraint-based handoff prompt without over-prescribing implementation          |
-| Review wiki knowledge                                         | `/wiki-review`                  | Spaced-repetition review of Wiki notes using forgetting-curve scheduling                     |
+| Re-test learned knowledge                                     | `/retention`                    | Quiz Progress-context threads; log in Retention-context. Replaces `/wiki-review`             |
 | Derive a formula step-by-step                                 | `/guide-derivation`             | Guided derivation of physics/math formulas with scaffolded steps                             |
 | Explain a concept simply                                      | `/Feynman-Technique`            | Feynman-style explanation as if teaching a 12-year-old                                       |
 | Annotate a confusing note                                     | `/insert-Feynman`               | Inserts Feynman explanation callouts directly into the note file                             |
@@ -59,14 +59,14 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 
 ## Skill Categories
 
-**40** core skills across categories (`ask` archived 2026-07-26 — plain chat for Q&A, `/learn` for deep study; `orchestrate` / `dispatch` / `orchestrate-lite-DWorkflow` / `research` archived 2026-07-29 → `/orchestrate-v3` + host `/deep-research`; `brainstorm` archived 2026-08-18; `super-alignment` archived 2026-08-18 → `/align`):
+**40** core skills across categories (`ask` archived 2026-07-26 — plain chat for Q&A, `/learn` for deep study; `orchestrate` / `dispatch` / `orchestrate-lite-DWorkflow` / `research` archived 2026-07-29 → `/orchestrate-v3` + host `/deep-research`; `brainstorm` archived 2026-08-18; `super-alignment` archived 2026-08-18 → `/align`; `memo-api` + `markji-card-syntax` archived 2026-09-01):
 
 | Category | Skills |
 |---|---|
 | **Daily Workflow** | `start-my-day`, `end-my-day`, `breakdown-tasks`, `estimate-time`, `llm-council`, `daily-note-addition` |
-| **Knowledge Management** | `kickoff`, `archive`, `atomic-note`, `wiki-review` |
+| **Knowledge Management** | `kickoff`, `archive`, `atomic-note` |
 | **Obsidian Features** | `obsidian-markdown`, `obsidian-bases`, `obsidian-cli`, `json-canvas`, `excalidraw-diagram-generator` |
-| **Learning** | `learn`, `Feynman-Technique`, `guide-derivation`, `phrasing-refining`, `insert-Feynman`, `vocabulary-absorption` |
+| **Learning** | `learn`, `retention`, `Feynman-Technique`, `guide-derivation`, `phrasing-refining`, `insert-Feynman`, `vocabulary-absorption` |
 | **Meta/Utility** | `orchestrate-v3`, `reflect`, `elon-musk`, `evolve-skills`, `handoff-prompt`, `anchor-game-framework`, `align`, `defuddle` |
 | **Tools** | `mcp-builder`, `notebooklm`, `storage-analyzer`, `expense-tracker`, `markitdown`, `pdf`, `docx`, `design-image-claude`, `phone-harness`, `pre-ppt`, `web-access` |
 

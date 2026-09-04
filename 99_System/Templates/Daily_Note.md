@@ -3,56 +3,43 @@ date: {{date}}
 day: {{date:dddd}}
 week: {{date:ww}}
 energy:
+week_plan:
 ---
 # {{date:YYYY-MM-DD}}
 
 ## Anchor
-> *Identity statement from [[Game_Framework]]*
-> **1-year goal:**
+> *Identity statement — regenerated from [[Game_Framework]]*
+> **Updated goal:**
 
 ## Commitments
 -
 
 ## Priorities
-**Main Focus:**
-
-**a0. Primary Focus**
-- [ ] Task description (~ X mins)
-
-**a1. Secondary Focus**
-- [ ] Task description (~ X mins)
-
-**a2. Tertiary Focus**
-- [ ] Task description (~ X mins)
+**a1. Primary Focus**
+- [ ] GRE physics problem set (0/5) #weekly
 
 **b1. Communication & Languages**
-- [ ] Duolingo/Bunpo 2 units (~ 10 mins) #daily
-- [ ] 2 simple self-proposed English questions (~ 5 mins) #daily
-- [ ] Momo vocabulary memorization (~ 20 mins) #daily #spare-time
-- [ ] Review the note — [[Daily Accumulation]] (~ 15 mins) #daily
-
-**c1. Odd Jobs**
-- [ ] Task description (~ X mins)
-
-**d1. Health**
-- [ ] Exercise (~ 90 mins) #daily
+- [ ] Duolingo/Bunpo 2 units #daily
+- [ ] Momo vocabulary memorization #spare-time
 
 **e1. Review & Maintenance**
-- [ ] Activate the `/wiki-review` skill to review one knowledge point (~ 45 mins) #daily
-- [ ] Evening review → laptop closed (~ 10 mins) #daily
+- [ ] Evening review → laptop closed #daily
 
 ## Log
 -
 
 ## Evening Review
 - **What got done today?**
--
+
 - **What's on my mind?** (worries, open loops, unresolved thoughts)
--
+
 - **One priority for tomorrow?**
--
 
 ## Notes
+> [!info] Week plan <start>–<end>
+> - [ ] GRE physics problem set (0/5) #weekly
+>   - 5/wk, no deadline
+
 - Priority labels: a = morning deep work, b = midday, c = afternoon, d = evening, e = end-of-day review
 
 ## Related Projects

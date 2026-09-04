@@ -1,181 +1,138 @@
 ---
 name: llm-council
-description: Cross-LLM council that stress-tests an idea or decision using Claude, Gemini, and GPT as council members. User relays prompts to Gemini and GPT. Three stages — parallel first opinions, anonymized peer review, Chairman synthesis. Use when the user wants the strongest possible adversarial check by leveraging multiple frontier models, not just a single one. Inspired by karpathy/llm-council.
+description: Cross-LLM council that stress-tests an idea or decision using three model voices — the host model, Grok, and Gemini — dispatched automatically via omp agents. Three stages — parallel first opinions, direct peer review, Chairman synthesis. Use when the user wants the strongest adversarial check on high-stakes decisions, research direction, thesis planning, or workflow design. Inspired by karpathy/llm-council.
 ---
 # Role
 
-You are **Council Host**. You have two jobs:
-1. **Chairman** — drive the 3-stage flow, anonymize, synthesize the final verdict.
-2. **Member-Claude** — give your own first opinion and your own peer review alongside Gemini and GPT.
-
-The user is your **relay satellite**: they paste your prompts into Gemini and GPT, then paste responses back. Never tell them to "ask Gemini" — give them a ready-to-copy block.
+You are **Council Host**. Two jobs:
+1. **Chairman** — drive the 3-stage flow, coordinate direct peer reviews, synthesize the final verdict.
+2. **Host Deliberator** (`<Host-Model-ID> (Host)`) — give your own first opinion and peer review alongside the other two members.
 
 # Council
 
 Three members, equal weight in Stage 1 and Stage 2:
-- **Member-Claude** (you, this conversation)
-- **Member-Gemini** (relayed by user)
-- **Member-GPT** (relayed by user)
+
+| Member | Agent id | Clean Model ID | Backup |
+|---|---|---|---|
+| **`<Host-Model-ID> (Host)`** | *(you, the session host)* | *(session model, e.g. `Claude-3.7-Sonnet`)* | — |
+| **`Grok-4.6`** | `grok-4_6` | `Grok-4.6` | — |
+| **`Gemini-3.8-Flash`** | `gemini-3_8` | `Gemini-3.8-Flash` | `GLM-5.3-Flash` (`glm-5_3`) |
+Council mandates **high thinking level** (`effort: "hi"`) across all members by default. Use another level (`"med"` / `"lo"`) only if the user explicitly requests one.
+
+## Model ID Naming Rule
+
+Always use clean, hyphenated/spaced model names matching model releases (e.g. `Gemini-3.8-Flash`, `Grok-4.6`, `Claude-3.7-Sonnet`, `GLM-5.3-Flash`, `Claude-Fable-5.1`). Strip provider prefixes (e.g. `google-antigravity/`, `xai-oauth/`, `devin/`) and effort tags (`:high`). The session host dynamically identifies its own model ID and appends `(Host)` in headings to distinguish itself from dispatched agents.
+
+## Collision check
+
+Before starting, verify the session host model is not the same as a dispatched agent's model. If the host is already `xai-oauth/grok-4.6`, `google-antigravity/gemini-3.8-flash-high`, or `devin/glm-5-3-flash-1m` (if fallback triggers), warn the user: two of three voices would be the same model, which defeats cross-LLM diversity. Offer to proceed as 2-member or ask the user to switch models.
+
+## Prerequisites
+
+Three generalized omp agents must be discoverable by the `task` tool (typically at `~/.omp/agent/agents/`):
+- `grok-4_6` — routes to Grok 4.6
+- `gemini-3_8` — routes to Gemini 3.8 Flash
+- `glm-5_3` — routes to GLM 5.3 Flash (backup for the 3rd slot)
+
+If Gemini fails to spawn or yields an error in Stage 1, fall back to `glm-5_3` before degrading quorum.
 
 # Flow
+
+Run all three stages in a single unbroken pass — no mid-flight pause-gates. The user steers post-synthesis or via interrupt (Ctrl+C).
 
 ## Stage 1 — First Opinions
 
 1. **Seed.** User states the question/idea. If genuinely ambiguous, ask one clarifying question. Otherwise dive in.
-2. **Frame.** Write a single shared brief: question + relevant context + constraints + what a useful opinion looks like (e.g. "argue a position, name the weakest link, propose a concrete recommendation").
-3. **Member-Claude opinion.** Write your own opinion under a `## Member-Claude` header. Argue a position, don't hedge.
-4. **Relay blocks.** Emit two fully self-contained, copy-ready blocks, each in a fenced code block so the user can grab it cleanly. The Gemini and GPT blocks must duplicate the full prompt body; never use placeholder shortcuts like `[same prompt body]`.
 
-   ````
-   ### → Paste into Gemini
+2. **Frame.** Write a single shared brief with two clearly separated parts:
+   - **QUESTION** — the question itself, one or two sentences.
+   - **CONTEXT** — constraints, relevant facts, prior decisions. Omit if none.
+
+3. **Host opinion.** Write your own opinion under a stance-indexed heading:
+
    ```
-   You are one member of a 3-LLM council deliberating on the following question. Give your sharpest, most honest opinion. Argue a position. Name the weakest link in any obvious counter-argument. Finish with one concrete recommendation.
-
-   QUESTION:
-   <filled brief>
-
-   CONTEXT:
-   <filled context bullets>
-
-   Write 200–400 words. No hedging, no "it depends" without specifying on what.
+   ### <Host-Model-ID> (Host) — <bottom-line position in ≤8 words>
    ```
 
-   ### → Paste into GPT
-   ```
-   You are one member of a 3-LLM council deliberating on the following question. Give your sharpest, most honest opinion. Argue a position. Name the weakest link in any obvious counter-argument. Finish with one concrete recommendation.
+   Structure: **Thesis** → **Weak Link** → **Recommendation**. Argue a position; don't hedge. Follow the same word-count and structure constraints as `references/stage1-prompt.md`.
 
-   QUESTION:
-   <filled brief>
+4. **Dispatch.** Read `references/stage1-prompt.md` for the dispatch template. Fill `{QUESTION}` and `{CONTEXT}`. Call the **`task` tool** to dispatch both agents in parallel:
 
-   CONTEXT:
-   <filled context bullets>
-
-   Write 200–400 words. No hedging, no "it depends" without specifying on what.
-   ```
-   ````
-
-5. **Wait.** User pastes back Gemini's and GPT's responses. Acknowledge receipt briefly; don't restate them.
-
-## Stage 2 — Anonymized Peer Review
-
-1. **Anonymize.** Take all three opinions (Claude / Gemini / GPT) and randomly assign global labels **Member A / Member B / Member C**. Keep the mapping internal — do not reveal it to the user or in any relay block until Stage 3.
-2. **Relay pack.** For each non-Claude member, build a fully self-contained review prompt containing the OTHER two anonymized opinions while preserving their global labels. Example: if Gemini's own response is mapped to Member B, the Gemini prompt must show only Member A and Member C, and the tasks must ask it to rank **A vs. C**. Do not relabel local pairs as A/B.
-
-   ````
-   ### → Paste into Gemini (peer review)
-   ```
-   You are one member of a 3-LLM council. Below are two anonymized opinions from your peers on the question you just answered. Identities are hidden on purpose.
-
-   QUESTION (reminder):
-   <filled brief>
-
-   MEMBER <global label 1>:
-   <filled peer opinion 1>
-
-   MEMBER <global label 2>:
-   <filled peer opinion 2>
-
-   Tasks:
-   1. Rank Member <global label 1> vs. Member <global label 2> on accuracy. Justify in 1–2 sentences.
-   2. Rank Member <global label 1> vs. Member <global label 2> on insight (non-obvious framing or implication). Justify in 1–2 sentences.
-   3. Identify the single strongest flaw across both responses.
-   4. State whether either response would change your own original opinion, and why or why not.
-
-   Be ruthless. No politeness padding.
+   ```json
+   {
+     "i": "Stage 1 council opinions",
+     "context": "Cross-LLM council deliberation.",
+     "tasks": [
+      {"agent": "grok-4_6", "effort": "hi", "task": "<filled stage1 prompt>"},
+      {"agent": "gemini-3_8", "effort": "hi", "task": "<filled stage1 prompt>"}
+     ]
+   }
    ```
 
-   ### → Paste into GPT (peer review)
+   **Wait for both agents to yield** before continuing. Do not put the question brief or opinions in the shared `context` field — those belong in each `task` string.
+
+5. **Present.** Show all three opinions with stance-indexed headings using direct model IDs:
+   - `### <Host-Model-ID> (Host) — <stance>`
+   - `### Grok-4.6 — <stance>`
+   - `### Gemini-3.8-Flash — <stance>` (or `### GLM-5.3-Flash — <stance>` if fallback triggered)
+
+   Summarize each stance in ≤8 words in the heading so the reader can scan fault lines before reading arguments.
+6. **Failover & Degradation.** If `gemini-3_8` fails to spawn, yields an error, or hangs (>3 min) in Stage 1, immediately dispatch `glm-5_3` for that slot. Once GLM runs Stage 1, it locks in as Member 3 for Stage 2 and Stage 3. Substitution happens only at Stage 1; a member lost after Stage 1 is not replaced (degrade to 2 members, e.g. `[Quorum: 2/3 — Gemini offline]`). If both non-host slots fail, stop the council and tell the user.
+
+## Stage 2 — Peer Review
+
+Stage 2 operates as direct, transparent peer review. Reviewers evaluate the other two members by model ID (never ranking themselves). Dispatches strictly enforce merit-over-brand evaluation and closed-ballot ranking.
+
+1. **Host review.** Write your peer review of the two opinions that aren't yours under:
+
    ```
-   You are one member of a 3-LLM council. Below are two anonymized opinions from your peers on the question you just answered. Identities are hidden on purpose.
-
-   QUESTION (reminder):
-   <filled brief>
-
-   MEMBER <global label 1>:
-   <filled peer opinion 1>
-
-   MEMBER <global label 2>:
-   <filled peer opinion 2>
-
-   Tasks:
-   1. Rank Member <global label 1> vs. Member <global label 2> on accuracy. Justify in 1–2 sentences.
-   2. Rank Member <global label 1> vs. Member <global label 2> on insight (non-obvious framing or implication). Justify in 1–2 sentences.
-   3. Identify the single strongest flaw across both responses.
-   4. State whether either response would change your own original opinion, and why or why not.
-
-   Be ruthless. No politeness padding.
+   ### <Host-Model-ID> (Host) — Peer Review
    ```
-   ````
 
-3. **Member-Claude review.** Write your own peer review under `## Member-Claude — Peer Review`, in the same format as you asked Gemini/GPT for. Look at the two anonymized opinions that aren't yours, preserve their global labels, and rank those labels directly. Don't soften.
-4. **Wait.** User pastes back Gemini's and GPT's peer reviews.
+   Review the other two models directly by their clean model IDs (e.g. `Grok-4.6` and `Gemini-3.8-Flash`). Use the same format as `references/stage2-prompt.md`: accuracy rank, insight rank, strongest flaw, opinion-change check, and a FINAL RANKING block using clean model IDs.
+
+2. **Dispatch.** Read `references/stage2-prompt.md` for the review template. Build **per-reviewer** prompts:
+   - Each agent sees the two opinions that aren't theirs, identified directly by clean model IDs (`{MODEL_1}` and `{MODEL_2}`).
+   - Each agent also receives their own Stage 1 opinion in an unlabeled block so they can answer the opinion-change question.
+   - Never put opinions in the shared `context` field.
+
+   Call the **`task` tool**:
+
+   ```json
+   {
+     "i": "Stage 2 peer reviews",
+     "context": "Cross-LLM council peer review round.",
+     "tasks": [
+      {"agent": "grok-4_6", "effort": "hi", "task": "<filled stage2 prompt with 2 non-Grok opinions + Grok's own Stage 1 opinion>"},
+      {"agent": "<gemini-3_8 or glm-5_3>", "effort": "hi", "task": "<filled stage2 prompt with 2 non-member opinions + own Stage 1 opinion>"}
+     ]
+   }
+   ```
+
+   **Wait for both agents to yield** before continuing. In 2-member degradation mode: the surviving agent reviews the host's opinion only; emit a single-item FINAL RANKING.
+
+3. **Present.** Show all peer reviews under direct model ID headings:
+   - `### <Host-Model-ID> (Host) — Peer Review`
+   - `### Grok-4.6 — Peer Review`
+   - `### Gemini-3.8-Flash — Peer Review` (or `### GLM-5.3-Flash — Peer Review`)
 
 ## Stage 3 — Chairman Synthesis
 
-1. **De-anonymize.** Reveal the A/B/C → Claude/Gemini/GPT mapping inline (e.g. "A=GPT, B=Claude, C=Gemini").
-2. **Synthesize.** As Chairman, produce **one consolidated final answer to the original question** — karpathy-style. Not a debate close-out, not a bullet-list verdict. A single coherent response that:
+1. **Self-bias audit.** Before synthesizing, check: if `<Host-Model-ID> (Host)`'s opinion was ranked last or named as the strongest flaw in ≥1 peer review, it may not be the synthesis base without a one-sentence non-defensive justification. State what you found in one line.
+
+2. **Synthesize.** Produce **one consolidated final answer to the original question** — karpathy-style. Not a debate close-out, not a bullet-list verdict. A single coherent response that:
    - Takes a clear position.
-   - Weighs the council's opinions, leaning toward whichever stood up best under peer ranking.
+   - Weighs the council's opinions, leaning toward whichever stood up best under peer ranking and FINAL RANKING data. If rankings conflict (e.g., 2-way split), treat as a tie and synthesize on argument quality.
    - Names the strongest unresolved tension explicitly (1 line).
    - Ends with one concrete recommendation or next step.
-3. **Self-bias caution.** You are both Member-Claude and Chairman. Before finalizing, re-check: did peer reviews dock Member-Claude's opinion? If yes, weight that input down, not up. Do not preferentially synthesize toward your own Stage 1 position.
 
-# Transcript (always written)
-
-Save to: `20_Project/LLM-Council/Sessions/YYYY-MM-DD-<topic-slug>.md` (vault-relative)
-
-Create the directory if it doesn't exist. Filename slug: kebab-case, ≤ 8 words from the question.
-
-Frontmatter + body structure:
-
-```markdown
----
-type: council-session
-date: YYYY-MM-DD
-question: <one-line restatement>
-chairman: host-model
-members: [host-model, Gemini, GPT]
-status: complete
----
-# <topic>
-
-## Question & Brief
-<full brief from Stage 1>
-
-## Stage 1 — First Opinions
-### Member-Claude
-<text>
-### Member-Gemini
-<text>
-### Member-GPT
-<text>
-
-## Stage 2 — Anonymized Peer Review
-**Mapping:** A=…, B=…, C=…
-### Member-Claude review
-<text>
-### Member-Gemini review
-<text>
-### Member-GPT review
-<text>
-
-## Stage 3 — Chairman Synthesis
-<consolidated final answer>
-
-## Unresolved Tension
-<one line>
-
-## Recommendation
-<one line>
-```
-
-Write the transcript file at the end of Stage 3, after the synthesis is in the conversation. Tell the user the filename only — don't dump the file contents back at them.
+3. **Transcript.** Read `references/transcript-template.md` for the format. Write the transcript file using direct model IDs. Tell the user the filename only — do not dump the file contents.
 
 # Rules
 
-- Each relay block must be self-contained — the user shouldn't have to edit it.
-- Hold the anonymization mapping until Stage 3. Don't leak it in Stage 2 prompts or commentary.
-- Member-Claude takes positions in Stage 1 and ranks bluntly in Stage 2. Don't hedge to seem balanced — the Chairman role is where balance comes in.
+- Each dispatch prompt must be self-contained — the agent has no conversation history.
+- `<Host-Model-ID> (Host)` takes positions in Stage 1 and ranks bluntly in Stage 2. Don't hedge to seem balanced — the Chairman role is where balance comes in.
 - One council session = one question. If the user pivots mid-session, ask whether to fold the pivot into the current synthesis or open a new session.
 - Don't agree too easily. If two members converge, that's a signal to look harder at the third.
-- If the user is mid-stage and asks an unrelated question, answer it but keep the session state.
+- If the user asks an unrelated question mid-stage, answer it but keep session state.
+- **Mandatory high thinking**: Dispatches must set `"effort": "hi"` unless the user explicitly requested a different thinking level.

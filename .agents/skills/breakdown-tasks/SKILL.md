@@ -3,6 +3,10 @@ name: breakdown-tasks
 description: Decompose a single already-identified task or goal into a stratified subtask tree with time estimates and blocker markers, so the user can see the full scope before starting and track progress granularly. Use when the user points at one thing they need broken down — distinct from `/daily-note-addition`, which is the flat-capture path for parking multiple loose independent ideas without decomposition.
 ---
 
+# Phase 0 — EVOLVE
+
+Read `evolution.md` in this skill's folder. Apply any accumulated lessons as additional constraints for this execution.
+
 # OBJECTIVE
 
 Decompose tasks into a stratified checkbox hierarchy with contextual time estimates and dependency markers.
@@ -23,16 +27,17 @@ If input is ambiguous (unclear scope, multiple interpretations, missing constrai
 
 ```
 - [ ] **Task** (~total estimate)
-  - [ ] Subtask 1 (~Xm)
-    - [ ] Sub-subtask 1a (~Ym)
-    - [ ] Sub-subtask 1b (~Zm)
-  - [ ] Subtask 2 (~Wm) `[blocked by: Subtask 1]`
+	- [ ] Subtask 1 (~Xm)
+		- [ ] Sub-subtask 1a (~Ym)
+		- [ ] Sub-subtask 1b (~Zm)
+	- [ ] Subtask 2 (~Wm) `[blocked by: Subtask 1]`
 ```
 
 - **Depth:** 2–4 levels — match complexity, don't force depth
 - **Estimates:** Every leaf gets minutes (nearest 5m); parents show sum; `~?` for uncertain. Use contextual reasoning, never keyword heuristics.
 - **Dependencies:** `` `[blocked by: X]` `` only for genuine blocking relationships
 - **Leaf size:** 10–60 minutes. Longer → decompose further.
+- **Indentation:** Always indent nested subtasks with a literal Tab (`\t`) per nesting level to ensure proper hierarchy rendering in Obsidian.
 
 ## Step 4: Deliver
 

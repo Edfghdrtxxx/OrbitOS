@@ -1,11 +1,29 @@
 # Evolution Log
 
-## 2026-08-22
+## 2026-09-02
 
 ### Lessons
 
-- **Web-agent package:** `99_System/web-skills/learn/SKILL.md` for grok.com skill-link (same layout as website `reflect`: `SKILL.md` only). Pedagogy matches local; I/O is file-backed vs chat-backed. No `show_widget` / `AskUserQuestion`. When evolving a teaching rule here, copy the lesson into that SKILL.md Phase 0 too.
-- **Same family, same note.** If the new miss is a sibling of an existing thread, keep going there — even if that note was closed. Today: TOEFL compound-pairing errors went on the collocations/noun-logic session, not a new dated file with a finer name. Physics prerequisite forks still split.
+- **Full drill prompts in session notes (never stubs):** When issuing drill batches, the complete verbatim drill text (passages, questions, options, instructions) must be written directly into the session note under the Tutor turn. Never use placeholders/stubs like `*(Drill Batch 1 issued in chat)*`—the session note is the primary self-contained record.
+
+## 2026-08-29
+
+### Lessons
+
+- **AskQuestion letters are not a record.** If the learner answers grill-me / AskQuestion with option letters only (`Option A + B`), the session note must store the **full option wording** those letters pointed at — at the question turn and in the learner block. Letters alone are not recoverable by a later agent.
+
+## 2026-08-28
+
+### User Preferences
+- **Drills: weak-spot loop.** Several turns; re-weight toward misses; close with 2–3 error-prone *patterns* (not item scores or a word list). One-question tutoring rhythm yields during drills.
+
+## 2026-08-27
+
+### Lessons
+
+- **Images → Context verbatim.** If the learner attaches images, record the complete corresponding content in the session note's Context section: transcribe all readable item text (question, chosen answer, correct answer, WHY/explanation, and any other on-screen copy). Do not paraphrase the screenshot.
+- **Images → describe what transcription misses.** If transcription cannot fully capture the image, describe the remaining targeted content: layout, marks (e.g. red incorrect vs green correct), and any non-textual cue the learner is pointing at. Do not invent wording that is not visible.
+
 
 ## 2026-08-11
 

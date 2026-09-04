@@ -78,6 +78,7 @@ Skip any related-repo path that does not exist on disk.
 - No empty line after frontmatter `---` (it becomes visible in body)
 - Communicate in English and use English for all template content
 - Flag potential issues proactively: duplicate projects, scheduling conflicts, stale tasks, or missing links — but execute the user's request regardless unless asked to reconsider
+- **Desktop & Host Automation (Background by Default):** Never invoke `win.raise()` or `{ delivery: "foreground" }` on desktop windows unless explicitly requested. Input dispatches must use `delivery: "background"` or AX actions (`el.press()`, `el.setValue()`) without stealing active window focus or moving the pointer.
 
 ## Principles of Paramount Importance
 - **Zero Assumptions:** Never guess user intent. If multiple implementations exist or requirements are incomplete, **halt and ask the user** (Grok: `ask_user_question`; Claude/Codex: `AskUserQuestion`) to gather explicit direction.

@@ -3,6 +3,10 @@ name: daily-note-addition
 description: Park one or more loose ideas into today's daily note as flat checkbox captures. Use when the user has thoughts — a new todo, a research angle, a thing to remember — they want filed under today's execution plan rather than triaged to the inbox or the current project note. This is the lightweight flat-capture path, distinct from `/breakdown-tasks`.
 ---
 
+# Phase 0 — EVOLVE
+
+Read `evolution.md` in this skill's folder. Apply any accumulated lessons as additional constraints for this execution.
+
 # Objective
 
 Pin one or more ideas to today's daily note as actionable checkboxes under the bucket that best fits each idea's domain. Stay terse — this is a capture tool, not a planning session.
@@ -17,17 +21,23 @@ Pin one or more ideas to today's daily note as actionable checkboxes under the b
 ## 2. Split the input
 - One bullet per idea. Split on blank lines or sentence breaks when the user gives several thoughts at once.
 - Preserve the user's wording; fix only obvious typos. Do not paraphrase or expand — this is capture, not rewriting.
-
+- **Multi-section ideas:** If an idea explicitly contains multiple distinct sections or sub-steps (e.g. "4 sections respectively"), decompose it into a parent checkbox with nested sub-checkboxes for each section/step.
+- **Practice tasks (Auto-feedback loop):** When an idea represents active generative practice, testing, problem sets, or drafting (e.g. TOEFL sections, GRE physics problems, LeetCode, speaking/writing output), pair execution with an automatic debrief subtask under a parent checkbox whose estimate sums all subtasks:
+  - **Standalone drill:** parent with 2 nested subtasks: `	- [ ] <Drill execution> (~ X mins)` and `	- [ ] <Debrief task> (~ Y mins)`.
+  - **Multi-section drill:** paired execution + debrief subtasks per section under the parent.
+  - **Phrasing by modality:** "Error analysis & answer review" (tests/drills/problems), "Critique & phrasing refinement" (speaking/writing), "Solution review & edge cases" (coding).
+  - **Skip guardrail:** skip debrief generation if the input already specifies review/debrief or matching feedback already exists.
 ## 3. Classify each idea
 You already read the note in Step 1 — use the **actual bucket headings and existing bullets inside them** as your classification signal. Match each idea to the bucket whose headline and contents are the closest semantic fit. Trust the note, not a fixed table: bucket labels, focus, and ordering shift from day to day.
 
 If no bucket is a clean fit, append the idea to the last bucket in the Priorities section and flag the weak match in Step 6's report so the user can move it.
 
 ## 4. Format the bullet
-`- [ ] <idea text> (~ X mins)`
+`- [ ] <idea text> (~ X mins)` (or parent checkbox with tab-indented sub-checkboxes `	- [ ] <subtask> (~ Y mins)` for multi-section or practice-debrief tasks, with parent estimate summing subtasks)
 
 - **Estimate:** rough `~ X mins` (nearest 5m) when scope is obvious; `(~?)` otherwise. Reason contextually, never from keywords.
 - **Wikilink:** when an idea clearly ties to a project already referenced in the note's `## Related Projects` section (or a project wikilinked elsewhere in the note), weave that `[[ProjectName]]` into the bullet text naturally — not tacked on at the end. Pull the project names from the note you just read, not from memory.
+- **Nested subtask indentation:** Always use a Tab (`\t`) per nesting level for indented sub-checkboxes (e.g. `\t- [ ]`), matching Obsidian list hierarchy.
 
 ## 5. Insert
 For each bullet, find where the chosen bucket's content ends in the note you read in Step 1 — wherever its items give way to a clearly different section. **Derive that boundary from the note's actual structure, not a fixed marker** — the same principle as Step 3 classification. Append the new bullet as the bucket's final item using `Edit` with a multi-line anchor drawn from the note's real surrounding content; if the bucket has nested sub-checkboxes, the anchor should span the last top-level item through the closing boundary so the match is unique in the file.

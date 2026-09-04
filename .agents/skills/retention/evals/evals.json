@@ -1,0 +1,23 @@
+{
+  "skill_name": "retention",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "/retention",
+      "expected_output": "Read Progress-context.md and Retention-context.md. Queue max 5: Open (weak/fail) first, then Known solid threads with no Log row (oldest session first). Ask which. Do not scan 40_Wiki, do not ask full vs quick, do not pull In progress.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "prompt": "/retention appeal",
+      "expected_output": "Load the appeal thread and session note. Pipeline: reconstruct → 2–3 traps → 3–4 mixed items. On a miss, instant correction + one sibling, then resume. End with hold/weak/fail by remaining pattern; write a Log row. Do not switch into /learn.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "/wiki-review",
+      "expected_output": "Same as /retention. Do not run the old wiki scan or update wiki last_reviewed fields.",
+      "files": []
+    }
+  ]
+}

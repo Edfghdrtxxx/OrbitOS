@@ -13,7 +13,7 @@ source: TOEFL practice errors (take place / noun-slot shuffle / compound pairing
 ---
 # Collocations and Noun Logic
 
-**Status:** **solid-enough** (closed 2026-08-22; reopen for mixed drills)
+**Status:** **solid-enough** (re-closed 2026-09-03)
 
 ## Context
 From TOEFL practice (marked Incorrect, Medium):
@@ -355,4 +355,131 @@ You used both on new cases today. Session closed on these two. Mixed judgment se
 - Locked: compound pairing (lock prompt object; leftovers fill the other chunk; no classifier trade). Transfer: *backup copies / cloud folder*; *lab manuals / chemistry course*.
 - Locked: Chinese 的-reshuffle named by learner as the cause.
 - Locked: question over decoy PP (*housing office* selects *roommate problem*; hallway-*printer* is the decoy).
-- Status: **solid-enough**. Thread can reopen for mixed drills.
+- Status: **reopened** (2026-09-03 TOEFL hard sentence assembly).
+
+---
+
+## 2026-09-03 — TOEFL Sentence Assembly (3 Incorrect, Hard)
+
+### Context (Screenshots Transcribed)
+
+1. **Item 2 (Hard)**
+   - **Tags:** Articles, Adjective Placement, Discussion Skills
+   - **Context:** *How should I respond to a classmate politely?*
+   - **Your Answer:** `a respectful reply connects your main point to their main idea` [Red mark: Incorrect]
+   - **Correct Answer:** `A respectful reply connects your main idea to their main point` [Green mark: Correct]
+   - **Grammar Focus:** Articles, Adjective Placement, Discussion Skills
+
+2. **Item 5 (Hard)**
+   - **Tags:** Compound Nouns, Adjective Placement, Seminar Vocabulary
+   - **Context:** *Why did you mark pages before class?*
+   - **Your Answer:** `margin notes help students find important passages during the discussion seminar` [Red mark: Incorrect]
+   - **Correct Answer:** `Margin notes help students find important passages during the seminar discussion` [Green mark: Correct]
+   - **Grammar Focus:** Compound Nouns, Adjective Placement, Seminar Vocabulary
+
+3. **Item 9 (Hard)**
+   - **Tags:** Possessives, Past Simple, Academic Evidence
+   - **Context:** *Why was your comment persuasive?*
+   - **Your Answer:** `my comment linked the main evidence to the textual claim` [Red mark: Incorrect]
+   - **Correct Answer:** `My comment linked the textual evidence to the main claim` [Green mark: Correct]
+   - **Grammar Focus:** Possessives, Past Simple, Academic Evidence
+
+### Turn 20 — 2026-09-03 (learner)
+
+> Question 5: I hesitated becasue I was not sure it should be "discussion seminar or seminar discussion"
+> Question 9: I felt weird about "textual claim" from my instinct, but I was not able to identify where it came from.
+
+### Tutor
+
+All three errors come from the exact same mechanism: **the 4-word tile shuffle** (`[Mod A, Mod B] × [Noun A, Noun B]`). When words are presented in a bank, the mind pairs them grammatically without checking institutional collocations or head-noun logic.
+
+#### 1. Question 9: Why your instinct rejected "textual claim"
+Your instinct was completely right. "Textual claim" feels wrong for two structural reasons:
+
+1. **Source vs. Proposition:**
+   - **Evidence** is extracted directly from the physical text (quotes, lines, data). Hence, **textual evidence** is a frozen academic chunk (answers: *Where did the evidence come from?*).
+   - A **claim** is a conceptual proposition or argument asserted by a thinker/author. Texts don't make claims; authors do. A claim doesn't have a "textual" quality in academic discourse.
+2. **Modifier Types:**
+   - *Claim* takes **hierarchical qualifiers**: **main claim**, sub-claim, central claim, counter-claim.
+   - *Evidence* takes **source / quality qualifiers**: **textual evidence**, empirical evidence, compelling evidence.
+
+Once you lock in the frozen institutional pair **textual evidence**, the leftover modifier and noun form **main claim** automatically:
+$$\text{textual evidence} \longleftrightarrow \text{main claim}$$
+
+#### 2. Question 5: "Seminar discussion" vs. "Discussion seminar"
+Compound nouns follow the rule: **`[Modifier] + [Head Noun]`**.
+
+- The **Head Noun** (final word) is *the core activity or entity occurring*.
+- The **Modifier** (first word) specifies *what kind* or *what venue*.
+
+Look at the sentence: *"...find important passages during the [ ______ ]"*.
+What is the actual activity happening in time that you do something "during"?
+The students are having a **discussion** (head noun). Where / in what format? In a **seminar** (modifier) $\rightarrow$ **seminar discussion**.
+
+Why "discussion seminar" fails:
+1. A "seminar" is already an interactive discussion class by definition. Calling a course a "discussion seminar" is redundant.
+2. It follows the standard academic event pattern where *discussion* is the head: *class discussion*, *group discussion*, *panel discussion*, *seminar discussion*.
+
+#### 3. Question 2: "Your main idea to their main point"
+The exact same shuffle happened here:
+- In academic discourse, when a classmate speaks, they raise a specific **point** (*"to address their point"*, *"their main point"*).
+- When you respond, you state your overarching thesis or perspective (**your main idea**) and anchor it to what they just said (**their main point**).
+
+---
+
+### Quick Check
+
+You have the 4 tiles: `{empirical, central}` and `{thesis, data}`.
+How do you pair them to fill:
+*"The researcher supported the [ ______ ] with [ ______ ]."*?
+
+### Turn 21 — 2026-09-03 (learner)
+
+> So bascially, evidence implies that this is the highest hierarchiy, so no "textual evidence" exists. While claims are distinctive. There are several levels of claims.
+> The same understnding problem of seminar. It already implies the meaning of discussion. So we use discuss as the head noun to emphasize that this is the discussion section in a seminar. Discussion is a subset of seminar. [fullset noun ] + [subset noun]
+> Furthermore, an idea a more underlying word, while a point is word that can be conveyed directly from communication. Hence the points are more superificial ones, which are raised by others.
+> Quick Check: The researcher supported the central thesis with empirical data.
+
+### Tutor
+
+**Quick Check:** 100% correct. *Central thesis* (hierarchical argument) + *empirical data* (source-based evidence).
+
+Two mental models you nailed, and one critical slip to untangle:
+
+1. **Seminar Discussion (Nailed):**
+   Your `[Container/Full-set] + [Activity/Subset]` model is spot-on. The seminar is the environment; the discussion is the concrete communicative event occurring inside it.
+
+2. **Idea vs. Point (Nailed):**
+   Exactly. An **idea** is your broad, conceptual perspective (deeper/underlying stance). A **point** is a discrete, localized conversational contribution raised by a speaker. You link your overarching idea to their specific point.
+
+3. **Evidence vs. Claim (Untangling the slip):**
+   Watch what you typed: *"so no 'textual evidence' exists."* You meant: **"no 'textual claim' exists."**
+   *Textual evidence* **does** exist—it was the correct answer!
+   
+   Also, calibrate the hierarchy direction:
+   - **Claims** sit at the top of the hierarchy: you have a **main claim** (overarching thesis) supported by sub-claims.
+   - **Evidence** sits at the base as support. It does not have an internal hierarchy of "main vs. secondary" in academic conventions; it is classified by its **source/nature** (*textual evidence*, *empirical evidence*, *documentary evidence*).
+   - Therefore:
+     $$\text{Hierarchical Modifier} \longrightarrow \text{Claim / Thesis / Argument } (\text{main, central, primary})$$
+     $$\text{Source / Grounding Modifier} \longrightarrow \text{Evidence / Data / Material } (\text{textual, empirical, archival})$$
+
+### Turn 22 — 2026-09-03 (learner)
+
+> Anything else before session close?
+
+### Tutor
+
+Just one mechanical test-taking takeaway:
+- **Initial Capitalization as an anchor:** In sentence-assembly exercises, check the capital letter (`A`, `Margin`, `My`). That tile is guaranteed to be Slot 1, instantly reducing the remaining search space.
+
+Conceptual trio locked:
+1. **Container + Activity:** `[Venue/Container] + [Head Event]` $\to$ *seminar discussion*, *panel discussion*.
+2. **Modifier Typing:** Hierarchical (*main claim / central thesis*) vs. Source (*textual evidence / empirical data*).
+3. **Discourse Roles:** Broad stance (*your main idea*) connects to specific conversational contribution (*their main point*).
+
+## Session close — 2026-09-03
+- Locked: `[Container] + [Activity]` compound logic (*seminar discussion*).
+- Locked: Hierarchical modifier $\to$ Claim/Thesis vs. Source modifier $\to$ Evidence/Data (*textual evidence to the main claim*).
+- Locked: Discourse asymmetry: *your main idea* to *their main point*.
+- Locked: Capitalized tile serves as hard left-boundary anchor.
+- Status: **solid-enough**.
