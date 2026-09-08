@@ -1,4 +1,11 @@
 {
   "version": 1,
-  "skills": {}
+  "skills": {
+    "kun": {
+      "source": "kunchenguid/kun",
+      "sourceType": "github",
+      "skillPath": "skills/kun/SKILL.md",
+      "computedHash": "346dd6161da92b983c7bb06d082776b5472424a839b844973658867ec86ab0f3"
+    }
+  }
 }

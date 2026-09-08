@@ -37,7 +37,7 @@ week_plan:
 
 ## Notes
 > [!info] Week plan <start>–<end>
-> - [ ] GRE physics problem set (0/5) #weekly
+> - GRE physics problem set (0/5) #weekly
 >   - 5/wk, no deadline
 
 - Priority labels: a = morning deep work, b = midday, c = afternoon, d = evening, e = end-of-day review

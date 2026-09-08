@@ -1,29 +1,35 @@
 ---
 title: TOEFL iBT Listen-and-Repeat — 10-Day Sprint
 type: project
-status: active
+status: processed
+archived: 2026-09-07
+archived-in: "[[2026-09-07]]"
 area: "[[Self-Development]]"
 created: 2026-09-03
-due: 2026-09-13
-priority: high
+due:
+priority: low
 tags: [toefl, speaking, listen-repeat, exam-prep]
 ---
 # TOEFL iBT Listen-and-Repeat — 10-Day Sprint
 
+> [!warning] **Sprint stopped 2026-09-07 — Day 4/10**
+> TOEFL Attempt #2 (2026-09-13) was **退考 (canceled via NEEA) 2026-09-06**: Attempt #1 (2026-08-30) already hit band 5.0 / 100/120 (C1). Days 5–10 and the Day 4/7/9 scored mocks will not run. Technique cards and the daily protocol below are **kept** for future speaking drills; the Parked-until-2026-11-02 mocks stay parked.
+
 ## Context
 
-**Objective:** In 10 days (exam 2026-09-13), raise redesigned TOEFL iBT "Listen and Repeat" performance by fixing the working-memory encoding failure on long (12–16 word) sentences — hold and reproduce sentences 5–7 near-verbatim without losing the opening clause.
+**Objective:** In 10 days (exam 2026-09-13), raise redesigned TOEFL iBT "Listen and Repeat" performance by fixing the working-memory encoding failure on long (12–16 word) sentences — hold and reproduce sentences 5–7 near-verbatim without losing the opening clause. *(Superseded 2026-09-06: Attempt #2 退考 — objective archived, sprint halted Day 4/10.)*
 
 **Root-cause diagnosis (LLM-Council 2026-09-03, corrected):** The failure is NOT hearing/decoding and NOT subvocal rehearsal. It is **primacy decay from no semantic scaffold** — raw acoustic memory decays in 2–4s and cannot hold a 4–5s sentence, so the beginning evaporates before the beep. Fix = store 2–4 units of *meaning*, regenerate the words. Council transcript: [[2026-09-03-toefl-listen-repeat-method]].
 
 **Success Metrics:**
+*(Moot 2026-09-07: sprint halted Day 4/10 — Attempt #2 退考 2026-09-06. None of these metrics were measured; kept for record only.)*
 - [ ] Day 10 (exam eve): 13–16-word items hold the first clause with no pause/restart
 - [ ] PrepEx AI-scored L&R Content ≥ 4/5 per sentence, fluency not collapsing on s6–7
 - [ ] Zero "freeze" events (skip-and-finish reflex installed) in the final mock
 - [ ] Dropped **content** words → near-zero; only function words (a/the) tolerated
 
 **Key Constraints:**
-- Timeline: 10 days, exam 2026-09-13. 50 min/day (distributed practice — spacing beats a 7-day cram for memory consolidation).
+- Timeline: 10 days, ~~exam 2026-09-13~~ → 退考 2026-09-06 (sprint halted Day 4/10). 50 min/day (distributed practice — spacing beats a 7-day cram for memory consolidation).
 - Resources: PrepEx AI **Pro** (unlimited scored L&R sets). Mic + Chrome.
 - Dependencies: none blocking.
 
@@ -93,17 +99,17 @@ Store the *meaning* of each group; at the beep, regenerate the actual words from
 - [*] Days 2–3: Blocks 1–3 on catalog sets 1–4 (short/medium; stay at/just past the 11–13 wall) (~ 50 mins/day) — Day 2 completed (2026-09-04)
 - [ ] Identify recurring content drop patterns by end of Day 3
 ### Phase 2: Days 4–7 — Push the wall
-- [ ] **Day 4: full PrepEx AI-scored mock** (7 sentences) — baseline number, log Content/Fluency per sentence
-- [ ] Days 4–7: Blocks on catalog sets 5–7 + hard items (14–18 words); drill **dual-register** on s6–7
-- [ ] **Day 7: full PrepEx AI-scored mock** — mid-point trend check vs Day 4
-- [ ] Every session: attack the error-log's top recurring drop pattern, not random sentences
-- [ ] Verify "never-freeze" — count freeze events, drive toward zero
+- [ ] **Day 4: full PrepEx AI-scored mock** (7 sentences) — baseline number, log Content/Fluency per sentence — *not run: sprint halted Day 4/10 (Attempt #2 退考 2026-09-06)*
+- [ ] Days 4–7: Blocks on catalog sets 5–7 + hard items (14–18 words); drill **dual-register** on s6–7 — *not run: sprint halted Day 4/10 (Attempt #2 退考 2026-09-06)*
+- [ ] **Day 7: full PrepEx AI-scored mock** — mid-point trend check vs Day 4 — *not run: sprint halted Day 4/10 (Attempt #2 退考 2026-09-06)*
+- [ ] Every session: attack the error-log's top recurring drop pattern, not random sentences — *not run: sprint halted Day 4/10 (Attempt #2 退考 2026-09-06)*
+- [ ] Verify "never-freeze" — count freeze events, drive toward zero — *not run: sprint halted Day 4/10 (Attempt #2 退考 2026-09-06)*
 
 ### Phase 3: Days 8–10 — Simulate & taper
-- [ ] **Day 9: full PrepEx AI-scored mock** — final trend point (3 mocks: D4→D7→D9, trend not absolute scale)
-- [ ] Days 8–9: pure Block-3 conditions all session (one-play + beep), no study-mode replays
-- [ ] Day 10 (exam eve): light taper — 2 full mocks max, confirm success metrics, rest voice
-- [ ] Exam day (2026-09-13): chunk → dual-register → never freeze → content words verbatim
+- [ ] **Day 9: full PrepEx AI-scored mock** — final trend point (3 mocks: D4→D7→D9, trend not absolute scale) — *not run: sprint halted Day 4/10 (Attempt #2 退考 2026-09-06)*
+- [ ] Days 8–9: pure Block-3 conditions all session (one-play + beep), no study-mode replays — *not run: sprint halted Day 4/10 (Attempt #2 退考 2026-09-06)*
+- [ ] Day 10 (exam eve): light taper — 2 full mocks max, confirm success metrics, rest voice — *not run: sprint halted Day 4/10 (Attempt #2 退考 2026-09-06)*
+- [x] ~~Exam day (2026-09-13): chunk → dual-register → never freeze → content words verbatim~~ — canceled: Attempt #2 退考 2026-09-06, exam not taken.
 
 ### Parked until 2026-11-02
 
@@ -124,6 +130,7 @@ Store the *meaning* of each group; at the beep, regenerate the actual words from
 - 2026-09-03: [[2026-09-03]] - Project initiated. Task facts confirmed (7 sentences, once, beep, 0–5). LLM-Council locked core method = meaning-anchored chunking + 10-min shadow warm-up; corrected root cause to primacy decay. PrepEx surveyed (3 scouts); Pro confirmed → daily scored audits. grill-me locked all decision branches.
 - 2026-09-03: Exam date corrected to 2026-09-13 (was 09-10). Replanned 7→10 days: distributed the same 50-min/day protocol across 10 days (spacing effect for memory consolidation), added a 3rd scored-mock checkpoint (Day 4 → Day 7 → Day 9) for a 3-point trend, kept exam-eve taper.
 - 2026-09-04: [[2026-09-04]] - Day 2 drill completed. Finished 4 packs (sets 1–4), each drilled 2× using meaning-anchored chunking and strict never-freeze rule.
+- 2026-09-07: [[2026-09-07]] - **Sprint stopped at Day 4/10** — TOEFL Attempt #2 (2026-09-13) 退考 via NEEA on 2026-09-06 after Attempt #1 (2026-08-30) hit 100/120 (C1). Technique cards (chunking, dual-register, never-freeze) retained for future speaking drills; Parked-until-2026-11-02 section unchanged.
 ---
 
 ## Related

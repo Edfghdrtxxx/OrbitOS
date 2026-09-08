@@ -1,17 +1,17 @@
 ---
 type: plan
-status: active
+status: done
 created: 2026-02-17
-updated: 2026-07-04
+updated: 2026-09-07
 format: TOEFL iBT 2026 (launched Jan 21, 2026)
 target_exam: 2026-08-30
 exam_date: 2026-08-30
-attempt2_exam_date: 2026-09-13
+attempt2_exam_date: 2026-09-13 (退考 2026-09-06 — not taken)
 test_center: STN80118A — 国试大厦考点 (Guoshi Building), 北京市海淀区上地六街一号
 registration_status: registered (2026-04-09); ETS registration # pending (≤24h)
 arrival_deadline: 2026-08-30 08:30 (late arrival = denied entry)
 target_score: band 5.0 (comparable 100+/120)
-current_estimate: 70-85 (old scale)
+current_estimate: achieved — band 5.0 / 100/120 (C1) on 2026-08-30
 daily_time: 1-1.5 hours
 weakest_section: Listening
 related:
@@ -22,9 +22,9 @@ related:
 ---
 # TOEFL iBT Study Plan — Target Band 5.0 (100+)
 
-> [!success] **Exam registered — 2026-08-30 (Sun) at STN80118A 国试大厦考点, Beijing** *(booked 2026-04-09)*
-> Arrive **by 08:30**. See [Test Registration & Logistics](#test-registration--logistics) for full details.
-> **Attempt #2 registered — 2026-09-13 (Sun), same center** *(booked 2026-07-04)*. Arrive by 08:30. ETS registration # pending (≤24h).
+> [!success] **PLAN COMPLETE — Attempt #1: band 5.0 / 100/120 (C1) on 2026-08-30 (single sitting: R 5.0 · L 4.5 · S 4.5 · W 5.0)**
+> **Attempt #2 (2026-09-13): 退考 (canceled via NEEA) 2026-09-06** — #1 already hit the 100+/C1 target, no retake needed.
+> Remaining action only: send the Attempt #1 score (single test date, **no MyBest**) to UTokyo (code 8002-01) by late Nov, before Period 2 (opens Dec 7).
 
 > [!warning] **Timeline needs re-baselining to 2026-08-30**
 > The phase dates below were written for a Sep 21 target. The registered exam is **Aug 30 — 22 days earlier**. Phase 3 (Jul 1 – Sep 15) and Phase 4 (Sep 15 – Sep 21) should be compressed accordingly. Check tables, the "Days until exam" tip, the "Integration with UTokyo Timeline" block, and the Weekly Progress Tracker rows. **Not auto-shifted — confirm with user before restructuring phases.**
@@ -54,9 +54,9 @@ Jul 1 ██████████████████████ Sep 15 
 | **2 — Skill Building** | Apr 16 – Jun 30 | 11 | Test strategies, Listening intensive | 88-93 (comparable) |
 | **3 — Test Prep** | Jul 1 – Sep 15 | 11 | Weekly mocks, weakness elimination | band 5.0 / 100+ |
 | **4 — Final Week** | Sep 15 – Sep 21 | 1 | Light review, rest, **exam day** | — |
-| **Attempt #2** | **2026-09-13** | — | REGISTERED 2026-07-04 — same center (STN80118A) | band 5.0 / 100+ |
+| **Attempt #2** | **2026-09-13** | — | ~~REGISTERED 2026-07-04~~ → **退考 (canceled via NEEA) 2026-09-06 — not taken** | — |
 
-> **Key milestones:** Mock #1 (Apr ~13) · Mock #2 (Jun ~29) · Mocks #3-7 (weekly Jul–Sep) · **TOEFL Attempt #1 (2026-08-30)** · **TOEFL Attempt #2 (2026-09-13 — registered 2026-07-04)**
+> **Key milestones:** Mock #1 (Apr ~13) · Mock #2 (Jun ~29) · Mocks #3-7 (weekly Jul–Sep) · **TOEFL Attempt #1 (2026-08-30) — band 5.0 / 100/120 (C1)** · ~~TOEFL Attempt #2 (2026-09-13)~~ → 退考 2026-09-06
 
 ## Score Breakdown Target
 
@@ -71,9 +71,9 @@ Jul 1 ██████████████████████ Sep 15 
 > [!note] During the 2026-2028 transition, ETS provides both the new band score (1-6) and a comparable 0-120 total score. Per-section comparable values (/30) in the table above are rough estimates — ETS may only provide a total comparable score, not per-section. UTokyo applications may reference either scale — confirm with the admissions office which they accept.
 
 > [!tip] Current Status
-> **Phase:** 1 — Foundation
-> **Week:** 3 of 31 (Mar 3, 2026)
-> **Days until exam:** ~200 (target Sep 21, 2026)
+> **Status:** ✅ Plan complete — Attempt #1 (2026-08-30): **band 5.0 / 100/120 (C1)**, R 5.0 · L 4.5 · S 4.5 · W 5.0
+> **Attempt #2:** 退考 (canceled via NEEA) 2026-09-06 — not needed
+> **Remaining:** send Attempt #1 score (single date, no MyBest) to UTokyo (8002-01) by late Nov
 
 ---
 
@@ -138,7 +138,7 @@ Jul 1 ██████████████████████ Sep 15 
 | ~~Mid-2026~~ | ~~MEXT University Recommendation~~ → dropped (extremely fierce competition) |
 | Apr-May 2027 | **Kenkyusei formal application window** — TOEFL score is a required document |
 | Aug 30, 2026 | **Attempt #1** — registered at STN80118A Beijing |
-| Sep 13, 2026 | **Attempt #2** — registered 2026-07-04 at STN80118A; compare with #1, send better score to UTokyo before Period 2 (opens Dec 7) |
+| ~~Sep 13, 2026~~ | ~~**Attempt #2** — registered 2026-07-04 at STN80118A; compare with #1, send better score to UTokyo~~ → **退考 (canceled via NEEA) 2026-09-06 — #1 already hit 100/C1; send the #1 score to UTokyo before Period 2 (opens Dec 7)** |
 
 > [!warning] TOEFL scores are valid for **2 years**. A Sep 2026 score expires Sep 2028 — covers both Kenkyusei and PhD entrance applications.
 
@@ -270,7 +270,7 @@ Jul 1 ██████████████████████ Sep 15 
 > - **ETS registration #:** pending (system generates within 24h; contact NEEA if not issued)
 > - **UTokyo score recipient code:** 8002-01 (single test date — **no MyBest**)
 
-> [!success] **Attempt #2 registered exam details (2026-07-04)**
+> [!success] **Attempt #2 registered exam details (2026-07-04) — 退考 (canceled via NEEA) 2026-09-06, exam not taken** — details below kept for record only; no action required.
 > - **Exam format:** TOEFL iBT (托福网考)
 > - **Date:** 2026-09-13 (Sunday) — test starts **09:00** Beijing time (01:00 UTC, per ETS confirmation email)
 > - **Latest arrival:** 2026-09-13 **08:30** — late arrival = denied entry
@@ -323,12 +323,12 @@ Jul 1 ██████████████████████ Sep 15 
 
 ## Two-Attempt Strategy (updated 2026-04-10)
 
-Unconditional two-attempt plan — take TOEFL twice regardless of Attempt #1 score for safety margin.
+Unconditional two-attempt plan — take TOEFL twice regardless of Attempt #1 score for safety margin. *(Superseded 2026-09-06: Attempt #2 退考 after #1 hit band 5.0 / 100/120 (C1) — see table below.)*
 
 | Attempt | Target Date | Action |
 |---|---|---|
 | **#1** | **2026-08-30** | Registered (2026-04-09) at STN80118A Beijing |
-| **#2** | **2026-09-13** | **REGISTERED 2026-07-04** at STN80118A (same center as #1); do NOT auto-send to UTokyo — compare scores first, then manually send the better one (code 8002-01) |
+| **#2** | **2026-09-13** | ~~REGISTERED 2026-07-04~~ → **退考 (canceled via NEEA) 2026-09-06 — not taken.** #1 hit band 5.0 / 100/120 (C1), so no retake; send the #1 score (single date, no MyBest) to UTokyo (code 8002-01) by late Nov |
 
 > [!warning] Update 2026-07-01 — Attempt #2 held, not booked
 > The original "register by 2026-07-01" gate was contingent on the GRE timeline. Verified today: GRE 2026-27 registration is open globally but **mainland China GRE seats have not loaded yet**, so the GRE date can't be locked. Since #2's date depends on it, booking is **held**. Nov 2026 China TOEFL dates: **Nov 8, 14, 22, 28** (all morning). **Book Nov 8 or Nov 14** (deliver before Period 2 Dec 7); **avoid Nov 22/28** (too tight). Register by Nov 5 (→Nov 8) / Nov 11 (→Nov 14). Calendar reminders set.
@@ -336,7 +336,7 @@ Unconditional two-attempt plan — take TOEFL twice regardless of Attempt #1 sco
 > [!success] RESOLVED 2026-07-04 — Attempt #2 booked for **Sep 13**, not November
 > GRE Physics seat was locked the same day (**Nov 1, Beijing** — the only fall seat in the region; see [[UTokyo_RIKEN]]). Attempt #2 was registered for **2026-09-13** instead of Nov 8/14, keeping October–November clear for GRE prep. The Nov 8/14 plan and its calendar reminders are **superseded**. Note: the gap between attempts is now 2 weeks (Aug 30 → Sep 13), not 2 months — Attempt #1 scores (~Sep 2–5) leave only ~1 week of targeted adjustment.
 
-After Attempt #1 (scores available ~Sep 2), use the gap to target specific weaknesses for Attempt #2.
+~~After Attempt #1 (scores available ~Sep 2), use the gap to target specific weaknesses for Attempt #2.~~ → **Moot: Attempt #2 was 退考 2026-09-06 after #1 hit 100/C1.**
 
 > [!note] You can retake TOEFL after a **3-day waiting period**. A focused 2-month gap between attempts (Aug 30 → ~Nov) is optimal.
 
@@ -395,11 +395,11 @@ Jul 2026          Phase 3 begins — test preparation
     ↓
 Aug 30 2026       ★ TOEFL ATTEMPT #1 ★
     ↓
-Sep 2026          Attempt #1 scores available (~3 days); target weaknesses for Attempt #2
+Sep 2026          Attempt #1 scores available (~3 days); ~~target weaknesses for Attempt #2~~ → moot: Attempt #2 退考 2026-09-06 (#1 already hit 100/C1)
     ↓
-Sep 13 2026       ★ TOEFL ATTEMPT #2 ★ (registered 2026-07-04)
+~~Sep 13 2026       ★ TOEFL ATTEMPT #2 ★ (registered 2026-07-04)~~ → 退考 2026-09-06 (not needed — #1 hit 100/C1)
     ↓
-Sep-Oct 2026      Compare scores → manually send better score to UTokyo (code 8002-01) before Period 2 (opens Dec 7)
+Sep-Nov 2026      Send Attempt #1 score (single date, no MyBest) to UTokyo (code 8002-01) by late Nov, before Period 2 (opens Dec 7)
     ↓
 Nov 1 2026        ★ GRE PHYSICS ★ (Beijing, only regional fall seat — see [[UTokyo_RIKEN]])
     ↓

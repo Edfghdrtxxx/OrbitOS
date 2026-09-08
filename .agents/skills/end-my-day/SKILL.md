@@ -84,6 +84,8 @@ Log highlights: [any entries from the Log section]
 
 ### 2b. Confirmation Round (Single AskUserQuestion Call)
 
+Show the Step 2a summary in the user-visible message first; do not ask until that summary is on screen.
+
 Use ONE AskUserQuestion call with up to 4 questions:
 
 **Question 1 (Task Check):** "Here's what I gathered. Are all tasks marked correctly, and is anything missing?"
@@ -96,6 +98,7 @@ Use ONE AskUserQuestion call with up to 4 questions:
 
 **Question 3 (Tomorrow):** "One priority for tomorrow?"
 - Options based on incomplete tasks + "Something else"
+- Ask independently — do not default Q3 from session framing (e.g. a stated "primary concern")
 
 **MANDATORY:** After Question 1 is resolved, re-read the daily note to pick up any external edits before writing the Evening Review. This is non-optional even if the user says "Looks good."
 

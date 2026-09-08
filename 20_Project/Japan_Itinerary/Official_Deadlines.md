@@ -4,7 +4,7 @@ type: reference
 status: active
 area: "[[Career]]"
 tags: [japan, phd, utokyo, deadlines, gre, toefl, gsgc]
-last_verified: 2026-07-04 (GRE Nov 1 seat locked + TOEFL #2 booked); 2026-07-01 (GRE windows calendar); 2026-04-22 (UTokyo windows)
+last_verified: 2026-09-07 (TOEFL #2 退考; GRE a-block starts Sep 7); 2026-07-04 (GRE Nov 1 seat locked); 2026-07-01 (GRE windows calendar); 2026-04-22 (UTokyo windows)
 ---
 ## 1. UTokyo Special Selection Application (Oct 2027 enrollment — PRIMARY)
 
@@ -109,17 +109,16 @@ Same pattern as Section 1, shifted +1 year. Application periods would fall in ~O
 **Registration logistics:**
 - ETS recommends registering **4 months in advance** for best date selection; closes **5 days** before test (late registration: 2 days before)
 - ~~Register in **April 2026** for a **July–August 2026** exam date~~ → **Done 2026-04-09: booked 2026-08-30** (~4.7 months lead time)
-- ~~Retake possible: if score < 100, retake in Sep–Oct 2026~~ → **Strategy change 2026-04-10:** unconditional two-attempt plan — take TOEFL twice regardless of Attempt #1 score for safety margin
-- ~~**2026-07-01 — TOEFL Attempt #2 HELD** pending GRE seat lock (target Nov 8/14).~~ → **Superseded 2026-07-04:** GRE locked for Nov 1, so #2 booked **earlier** (Sep 13) to keep Oct–Nov clear for GRE prep. See [[English_Learning]].
+- ~~Retake possible: if score < 100, retake in Sep–Oct 2026~~ → ~~**Strategy change 2026-04-10:** unconditional two-attempt plan — take TOEFL twice regardless of Attempt #1 score for safety margin~~ → **Closed 2026-09-07:** two-attempt strategy closed
+- ~~**2026-07-01 — TOEFL Attempt #2 HELD** pending GRE seat lock (target Nov 8/14).~~ → ~~**Superseded 2026-07-04:** GRE locked for Nov 1, so #2 booked **earlier** (Sep 13) to keep Oct–Nov clear for GRE prep.~~ → **Closed 2026-09-07:** Attempt #2 退考 2026-09-06 (NEEA). No live Sep 13 exam.
 
-**Plan:** Unconditional two-attempt strategy (updated 2026-04-10; dates locked 2026-07-04):
-- **Attempt #1:** ~~Register Apr 2026, test Jul–Aug 2026.~~ → **Executed: registered 2026-04-09, test 2026-08-30 at STN80118A Beijing.** Score valid through 2028-08-30.
-- **Attempt #2:** **REGISTERED 2026-07-04** — test **2026-09-13 (Sun)** at STN80118A Beijing (same center; arrival by 08:30). Booked September instead of the held Nov 8/14 target so Oct–Nov stay clear for GRE Physics (Nov 1). Do NOT auto-send to UTokyo at registration — compare both scores, then manually send the better one (code 8002-01) before Period 2 (opens Dec 7, 2026). Full logistics → [[English_Learning]] / [[TOEFL_Study_Plan]].
+**Plan:** Two-attempt strategy **closed 2026-09-07**.
+- **Attempt #1:** ~~Register Apr 2026, test Jul–Aug 2026.~~ → **Executed 2026-08-30** at STN80118A Beijing. Single sitting, overall **5.0/6 = 100/120 C1** (R 5.0 L 4.5 S 4.5 W 5.0). Score valid through 2028-08-30. **This is the score to send** (code 8002-01, single date, no MyBest).
+- **Attempt #2:** ~~**REGISTERED 2026-07-04** — test **2026-09-13 (Sun)** at STN80118A Beijing. Compare both scores, then manually send the better one.~~ → **退考 2026-09-06 (NEEA).** No second sitting.
 
 **Score delivery to UTokyo:**
-- Select institution code **8002-01** when registering, or send additional score report after test
-- Electronic delivery: **4–8 business days** — request score send **before** application window opens
-- For Period 2 target (opens Dec 7, 2026): ensure score sent by late Nov 2026 at latest
+- Request official send of Attempt #1 to institution code **8002-01** (single date, no MyBest)
+- Electronic delivery: **4–8 business days** — request score send **by late Nov 2026** (before Period 2 opens Dec 7)
 
 ## 5. Kenkyusei (FALLBACK)
 

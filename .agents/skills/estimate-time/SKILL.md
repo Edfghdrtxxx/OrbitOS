@@ -17,7 +17,7 @@ Analyze today's daily plan and provide total time estimates at task resolution. 
 
 ## Step 1: Load Context (Silent)
 
-1. Read `10_Daily/YYYY-MM-DD.md` — extract all `- [ ]` and `- [*]` (in-progress) tasks and subtasks. **Exclude** any task tagged `#Deferred` or `#spare-time` from the active workload.
+1. Read `10_Daily/YYYY-MM-DD.md` — extract all `- [ ]` and `- [*]` (in-progress) tasks and subtasks. **Exclude** any task tagged `#Deferred` or `#spare-time` from the active workload. **Exclude** any line under `## Notes` (weekly summary bullets) even if it contains a checkbox — these are summaries, not tasks.
 2. Read referenced active projects in `20_Project/` — check for **Deadlines** and **Milestones** (urgency/rigor).
 
 ## Step 2: Estimate & Buffer
@@ -35,7 +35,7 @@ Analyze today's daily plan and provide total time estimates at task resolution. 
 ## Step 3: Capacity Check & Update
 
 1. Default capacity: **10 productive hours (600 min)**.
-2. **Update Daily Note (Silent):** Append `(~ X mins)` directly to each task line: `- [ ] Task Name (~ 45 mins)`.
+2. **Update Daily Note (Silent):** Append `(~ X mins)` directly to each task line: `- [ ] Task Name (~ 45 mins)`. Never write estimates to, sum, or edit excluded `## Notes` lines.
 3. **Present Results (Structured):** Use the exact sections below, in this order. If a section is empty, write `None`.
    - **Totals**
      - Raw Total Time (mins)

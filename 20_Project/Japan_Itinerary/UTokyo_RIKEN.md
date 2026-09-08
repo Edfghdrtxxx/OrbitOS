@@ -269,7 +269,7 @@ Personal savings: 100–200k CNY (≈ 2–4M JPY). Comfortable at upper range; d
 > [!warning] **Admission materials due before Dec 2026** (confirmed Imai 2026-04-13)
 
 - [ ] Research proposal linking IMP thesis → UTokyo CNS / RIKEN topics
-- [ ] TOEFL iBT score → [[English_Learning]] *(Attempt #1 **2026-08-30**, Attempt #2 **2026-09-13** — both at STN80118A Beijing; compare and manually send the better score, code 8002-01 — see [[TOEFL_Study_Plan]])*
+- [ ] TOEFL iBT score → [[English_Learning]] *(Attempt #1 **2026-08-30** single sitting, overall 5.0/6 = 100/120 C1, R 5.0 L 4.5 S 4.5 W 5.0 — **this is the score to send**, code 8002-01, single date, no MyBest. Attempt #2 退考 2026-09-06 (NEEA). Request send to 8002-01 by late Nov.)*
 - [x] **GRE Physics Subject Test** — compulsory for Special Selection; minimum 900 *(REGISTERED & PAID 2026-07-04)*
 
 > [!success] **GRE Physics registered (2026-07-04)**

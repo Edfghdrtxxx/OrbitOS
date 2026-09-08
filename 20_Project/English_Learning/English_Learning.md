@@ -12,12 +12,12 @@ tags: [english, TOEFL, language]
 
 ## Context
 
-**Objective:** Achieve TOEFL 100+ to support UTokyo/RIKEN PhD application and Japan immigration. Primary weaknesses: Listening and Speaking. ^e42861
+**Objective:** ~~Achieve TOEFL 100+~~ → **TOEFL 100/C1 locked** (Attempt #1, 2026-08-30 — see Progress). Remaining use of this project is **interview English maintenance**: daily Momo + collocations practice. ^e42861
 
 **Success Metrics:**
-- [ ] TOEFL iBT total score ≥ 100
-- [ ] Listening section ≥ 25
-- [ ] Speaking section ≥ 23
+- [x] TOEFL iBT total score ≥ 100 → **band 5.0 / 100/120 (C1), Attempt #1 2026-08-30**
+- [ ] Listening section ≥ 25 — Attempt #1 Listening band 4.5 (missed the personal 5.0 target; no official /30 comparable provided)
+- [x] Speaking section ≥ 23 — band 4.5 met the 4.5+ plan target (no official /30 comparable provided)
 - [ ] Comfortable understanding native-speed academic lectures without subtitles
 
 **Key Constraints:**
@@ -54,9 +54,10 @@ tags: [english, TOEFL, language]
 - [ ] Reading & Writing maintenance — practice integrated writing (listening + writing)
 - [ ] Vocabulary: academic word list + TOEFL high-frequency words via Anki
 - [x] Register for official TOEFL exam date → **booked 2026-08-30 at STN80118A 国试大厦考点, Beijing (registered 2026-04-09)**
-- [ ] Take official exam on **2026-08-30** (Attempt #1)
+- [x] Take official exam on **2026-08-30** (Attempt #1) → **overall band 5.0 / 100/120 (C1): R 5.0 · L 4.5 · S 4.5 · W 5.0**
 - [x] Register for Attempt #2 → **booked 2026-09-13 at STN80118A, Beijing (registered 2026-07-04)** — Nov 8/14 plan superseded: GRE Physics locked for Nov 1, so #2 moved earlier to keep Oct–Nov clear for GRE prep
-- [ ] Take Attempt #2 (**2026-09-13**); do NOT auto-send — compare scores, then manually send the better one to UTokyo (code 8002-01) before Period 2 (opens Dec 7)
+- [x] Attempt #2 (**2026-09-13**) → **退考 (canceled via NEEA) 2026-09-06** — Attempt #1 already hit 100/C1, no retake needed
+- [ ] Send Attempt #1 score (single test date 2026-08-30 — **no MyBest**) to UTokyo (code 8002-01) by late Nov, before Period 2 (opens Dec 7)
 
 ---
 
@@ -65,6 +66,7 @@ tags: [english, TOEFL, language]
 - 2026-02-13: [[2026-02-13]] - Project initiated, target set: TOEFL 100+, focus on Listening & Speaking
 - 2026-04-09: [[2026-04-09]] - **TOEFL iBT registered** for 2026-08-30 (Sun) at STN80118A 国试大厦考点 (Guoshi Building), Beijing. Metro Line 13 → Qinghe Station. Arrival deadline 08:30. See [[TOEFL_Study_Plan]] for full logistics.
 - 2026-07-04: [[2026-07-04]] - **TOEFL Attempt #2 registered** for 2026-09-13 (Sun), same center STN80118A (arrival by 08:30; ETS registration # pending ≤24h). Booked for September instead of the held Nov 8/14 target to keep Oct–Nov clear for GRE Physics (Nov 1, registered & paid the same day — see [[UTokyo_RIKEN]]).
+- 2026-09-07: [[2026-09-07]] - **TOEFL Attempt #1 (2026-08-30, single sitting): overall band 5.0 / 100/120 (C1) — R 5.0 · L 4.5 · S 4.5 · W 5.0.** Attempt #2 (2026-09-13) 退考 via NEEA on 2026-09-06 — no retake needed. Remaining action: send the #1 score (single date, no MyBest) to 8002-01 by late Nov. Project stays **active** for interview English maintenance (Momo + collocations).
 
 ---
 

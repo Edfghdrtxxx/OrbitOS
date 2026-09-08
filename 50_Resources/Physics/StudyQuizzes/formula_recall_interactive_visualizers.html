@@ -312,6 +312,53 @@
   margin-bottom: 0.45rem;
 }
 
+.viz-step-item {
+  margin-bottom: 0.75rem;
+}
+
+.viz-step-math {
+  margin: 0.3rem 0;
+  text-align: center;
+  overflow-x: auto;
+}
+
+.viz-step-desc {
+  color: var(--ink-2, #6c6a64);
+  font-size: 0.88rem;
+  margin-top: 0.25rem;
+}
+
+.viz-limit-item {
+  margin-bottom: 0.75rem;
+  background: var(--surface, #faf9f5);
+  border: 1px solid var(--line, #e6dfd8);
+  border-radius: 6px;
+  padding: 0.65rem 0.85rem;
+}
+
+.viz-limit-head {
+  font-size: 0.88rem;
+  margin-bottom: 0.3rem;
+}
+
+.viz-limit-cond {
+  color: var(--ink-2, #6c6a64);
+  font-weight: 400;
+  margin-left: 0.35rem;
+}
+
+.viz-limit-math {
+  margin: 0.3rem 0;
+  text-align: center;
+  overflow-x: auto;
+}
+
+.viz-limit-desc {
+  color: var(--ink-2, #6c6a64);
+  font-size: 0.86rem;
+  margin-top: 0.25rem;
+}
+
 .viz-trap-card {
   background: rgba(204, 120, 92, 0.08);
   border: 1px solid rgba(204, 120, 92, 0.25);
@@ -665,12 +712,90 @@ window.PGRE.visualizers = window.PGRE.visualizers || {};
       renderMathInElement(el, {
         delimiters: [
           { left: "$$", right: "$$", display: true },
-          { left: "$", right: "$", display: false }
+          { left: "\\[", right: "\\]", display: true },
+          { left: "$", right: "$", display: false },
+          { left: "\\(", right: "\\)", display: false }
         ],
         throwOnError: false
       });
     }
   }
+  function formatDisplayMath(tex) {
+    if (!tex) return "";
+    var s = String(tex).trim();
+    if ((s.startsWith("$$") && s.endsWith("$$")) || (s.startsWith("\\[") && s.endsWith("\\]"))) {
+      return s;
+    }
+    var singleDollarMatch = s.match(/^\$([^$]+)\$$/);
+    if (singleDollarMatch) {
+      return "$$" + singleDollarMatch[1].trim() + "$$";
+    }
+    if (s.includes("$")) {
+      return s;
+    }
+    return "$$" + s + "$$";
+  }
+
+  function formatInlineMath(tex) {
+    if (!tex) return "";
+    var s = String(tex).trim();
+    if (s.includes("$") || s.includes("\\(") || s.includes("\\[")) {
+      return s;
+    }
+    if (/[\\=]/.test(s) || (/^[a-zA-Z0-9_^*+-/=<>\s,.:;()]+$/.test(s) && /[=<>]/.test(s))) {
+      return "$" + s + "$";
+    }
+    return s;
+  }
+
+  function formatDerivations(steps) {
+    if (!steps || !steps.length) return "<p>Derivation details available in formula reference.</p>";
+    return steps.map(function(s, idx) {
+      if (typeof s === "string") return "<li>" + s + "</li>";
+      var title = s.title || ("Step " + (s.step || (idx + 1)));
+      var formula = s.formula || s.latex;
+      var text = s.text || s.explanation || s.description || "";
+      var h = "<li class=\"viz-step-item\">";
+      h += "<strong>" + esc(title) + "</strong>";
+      if (formula) h += "<div class=\"viz-step-math\">" + formatDisplayMath(formula) + "</div>";
+      if (text) h += "<div class=\"viz-step-desc\">" + text + "</div>";
+      h += "</li>";
+      return h;
+    }).join("");
+  }
+
+  function formatLimitingCases(limits) {
+    if (!limits || !limits.length) return "<p>Standard physical limits apply.</p>";
+    return limits.map(function(l) {
+      if (typeof l === "string") return "<li class=\"viz-limit-item\">" + formatInlineMath(l) + "</li>";
+      var name = l.name || l.case || "";
+      var cond = l.condition || "";
+      var formula = l.result || l.formula || l.implication;
+      var text = l.explanation || l.description || "";
+
+      var head = "";
+      if (name && cond && name !== cond) {
+        var cleanCond = cond.trim();
+        var alreadyInName = name.indexOf(cleanCond) !== -1 ||
+          (name.indexOf("$") !== -1 && name.toLowerCase().replace(/[\s\\]/g, "").indexOf(cleanCond.toLowerCase().replace(/[\s\\]/g, "")) !== -1);
+        head = "<strong>" + esc(formatInlineMath(name)) + "</strong>";
+        if (!alreadyInName) {
+          head += " <span class=\"viz-limit-cond\">(" + esc(formatInlineMath(cond)) + ")</span>";
+        }
+      } else {
+        var title = name || cond || "Limiting Case";
+        head = "<strong>" + esc(formatInlineMath(title)) + "</strong>";
+      }
+
+      var h = "<li class=\"viz-limit-item\">";
+      h += "<div class=\"viz-limit-head\">" + head + "</div>";
+      if (formula) h += "<div class=\"viz-limit-math\">" + formatDisplayMath(formula) + "</div>";
+      if (text) h += "<div class=\"viz-limit-desc\">" + text + "</div>";
+      h += "</li>";
+      return h;
+    }).join("");
+  }
+
 
   // --- INLINE VISUALIZER (Embeds directly inside flashcard back on "Show answer") ---
   window.PGRE.renderInlineVisualizer = function(cardId, containerEl) {
@@ -684,8 +809,8 @@ window.PGRE.visualizers = window.PGRE.visualizers || {};
     wrap.className = "viz-inline-container";
     wrap.id = "viz-inline-container";
 
-    var derivationItems = (viz.derivationSteps || []).map(function(s) { return "<li>" + s + "</li>"; }).join("");
-    var limitItems = (viz.limitingCases || []).map(function(l) { return "<li>" + l + "</li>"; }).join("");
+    var derivationItems = formatDerivations(viz.derivationSteps);
+    var limitItems = formatLimitingCases(viz.limitingCases);
     var trapItems = (viz.greTraps || []).map(function(t, idx) {
       return "<div class=\"viz-trap-card\"><div class=\"viz-trap-title\">Exam Pitfall " + (idx + 1) + "</div><div>" + t + "</div></div>";
     }).join("");
@@ -872,8 +997,8 @@ window.PGRE.visualizers = window.PGRE.visualizers || {};
     backdrop.id = "viz-modal-backdrop";
 
     var topicBadge = viz.topic ? ("<span class=\"viz-topic-badge\">" + esc(viz.topic) + "</span>") : "";
-    var derivationItems = (viz.derivationSteps || []).map(function(s) { return "<li>" + s + "</li>"; }).join("");
-    var limitItems = (viz.limitingCases || []).map(function(l) { return "<li>" + l + "</li>"; }).join("");
+    var derivationItems = formatDerivations(viz.derivationSteps);
+    var limitItems = formatLimitingCases(viz.limitingCases);
     var trapItems = (viz.greTraps || []).map(function(t, idx) {
       return "<div class=\"viz-trap-card\"><div class=\"viz-trap-title\">Exam Pitfall " + (idx + 1) + "</div><div>" + t + "</div></div>";
     }).join("");
@@ -5688,12 +5813,12 @@ In the **Rotating Frame** (where the turntable appears stationary), the exact sa
       {
         step: 1,
         latex: '\\mathbf{r} = \\mathbf{r}_{\\text{CM}} + \\mathbf{r}\'',
-        explanation: 'Set up coordinates relative to the Center of Mass, such that \\int \\mathbf{r}\' dm = \\mathbf{0}.'
+        explanation: 'Set up coordinates relative to the Center of Mass, such that $\\int \\mathbf{r}\' dm = \\mathbf{0}$.'
       },
       {
         step: 2,
         latex: 'I_P = \\int |\\mathbf{r}\' - \\mathbf{d}|^2 dm = \\int (r\'^2 - 2\\mathbf{r}\' \\cdot \\mathbf{d} + d^2) dm',
-        explanation: 'Expand the squared perpendicular distance from a new parallel axis shifted by vector \\mathbf{d}.'
+        explanation: 'Expand the squared perpendicular distance from a new parallel axis shifted by vector $\\mathbf{d}$.'
       },
       {
         step: 3,
