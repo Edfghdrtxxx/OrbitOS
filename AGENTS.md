@@ -5,52 +5,77 @@ Act as Knowledge Manager and Daily Planner. Capture, connect, and organize knowl
 This is the **single project rules file** for Grok Build, Claude Code, Codex, and other hosts. Prefer minimal host-specific rules; trust the model to map host tool names when running skills.
 
 ## Structure
-* **`10_Daily`**: Daily logs (`YYYY-MM-DD.md`) → use `/start-my-day` every morning. Captures land here via `/daily-note-addition`
-* **`20_Project`**: Active projects (flat structure, organized by name NOT area)
-  * Folder for 5+ files/assets, single file for simple projects
-  * Frontmatter: `type: project`, `status: active|on-hold|done`, `area: "[[AreaName]]"`
-  * C.A.P. layout: Context (objectives), Actions (phases), Progress (updates)
-* **`30_Research`**: Permanent reference (currently Physics/ only)
-* **`40_Wiki`**: Atomic concepts (341 notes across 9 topic clusters: Physics_Math, English_Knowledge, Japan_Immigration, AI, ComputerScience, Physiologics, Self-Development, StudyMethodology, ProjectsNotes)
-* **`50_Resources`**: Curated content (Attachments/, Physics/, English/, MeetingOutlines/, Design/, and more)
-* **`90_Plans`**: Execution plans (archived after completion)
-* **`99_System`**: Templates/, Prompts/ (16 domain personas), Bases/ (5 Obsidian Bases dashboards), Archives/, `.scratch/` (agent working files), `memory/` (shared harness memory promoted into the vault)
+
+- `00_Inbox`: Ingestion and raw triage (completed items archive to `99_System/Archives/Inbox/`)
+- `10_Daily`: Daily logs (`YYYY-MM-DD.md`) → use `/start-my-day` every morning. Captures land here via `/daily-note-addition`
+- `20_Project`: Active projects (flat structure, organized by name NOT area)
+  - Folder for 5+ files/assets, single file for simple projects
+  - Frontmatter: `type: project`, `status: active|on-hold|done`, `area: "[[AreaName]]"`
+  - C.A.P. layout: Context (objectives), Actions (phases), Progress (updates)
+- `30_Research`: Permanent reference (`Physics/`, `Physiologics/`)
+- `40_Wiki`: Atomic concepts (clusters: Physics_Math, English_Knowledge, Japan_Immigration, AI, ComputerScience, Physiologics, Self-Development, StudyMethodology, ProjectsNotes)
+- `50_Resources`: Curated content (Attachments/, Physics/, English/, ComputerScience/, SelfDevelopment/, PaperWriting/, Design/, and more)
+- `60_Learning_Progress`: Learning threads, derivations, and retention trackers → used by `/learn` and `/retention`
+- `70_Presentations`: Academic talk decks, group-meeting slides, and defense presentations
+- `90_Plans`: Execution plans (archived after completion)
+- `99_System`: Templates/, Prompts/ (domain personas), Bases/ (Obsidian Bases dashboards), Archives/, `.scratch/` (agent working files), `memory/` (shared harness memory promoted into the vault)
 
 ## Skill Files
-* **Canonical path:** `.agents/skills/<skill-name>/SKILL.md` — install and edit only here
-  * Claude: `.claude/skills` → `../.agents/skills` (symlink; never a real directory)
-  * Grok: use `.agents/skills/` only — no parallel `.grok/skills/` copies
-* See [[README]] for the skill catalog (**40** core skills; `ask` archived — plain chat for Q&A, `/learn` for deep study; orchestrate-series + `research` archived 2026-07-29 → `/orchestrate-v3` + host `/deep-research`; `brainstorm` archived 2026-08-18; `super-alignment` archived 2026-08-18 → `/align`)
+
+- **Canonical path:** `.agents/skills/<skill-name>/SKILL.md` — install and edit only here
+  - Claude: `.claude/skills` → `../.agents/skills` (symlink; never a real directory)
+  - Grok: use `.agents/skills/` only — no parallel `.grok/skills/` copies
+- See [[README]] for the skill catalog (**39** core skills; `ask` archived — plain chat for Q&A, `/learn` for deep study; orchestrate-series + `research` archived 2026-07-29 → `/orchestrate-v3` + host `/deep-research`; `brainstorm` archived 2026-08-18; `super-alignment` archived 2026-08-18 → `/align`; `guide-derivation` archived 2026-09-08 → `/learn`)
 
 ## Vault root (this machine)
-Primary Mac vault path: `/Users/Reid Hu/OrbitOS`
 
-When a skill or prompt still mentions `D:/obsidian/OrbitOS` or other host-specific roots, treat them as **the current vault root** (git root / CWD), never as a literal Windows path.
+Two roots, never mixed:
+
+- **Vault:** `/Users/Reid Hu/OrbitOS` (git root / CWD). `/Users/Reid Hu` is the project parent, not home.
+- **Host home:** `/Users/leyi`. Expand `~` and `$HOME` to this path only. Any host-local `~/...` path lives here.
+
+Pass absolute `/Users/leyi/...` paths to tools; do not pass a literal `~`. Do not look under `/Users/Reid Hu` for host-local dirs. A same-named directory inside the vault is project config, not `$HOME`.
 
 ## Memory System
+
 Harness auto-memory is **host-local and not fully portable**. Resolve `memory/<file>.md` in this order:
 
 1. **Vault-tracked (preferred, portable):** `99_System/memory/<file>.md`
-2. **Grok Build (experimental):** `~/.grok/memory/` and the project-scoped dir under it (enable with `[memory] enabled = true` in `~/.grok/config.toml` or `/memory on`)
-3. **Claude Code (this Mac):** `~/.claude/projects/-Users-Reid-Hu-OrbitOS/memory/<file>.md`
-4. **Codex (this Mac):** `~/.codex/memories/`
-5. **Legacy Windows (other device only — do not assume present):**
-   * Codex: `C:\\Users\\petro\\.codex\\memories\\`
-   * Claude: `C:\\Users\\petro\\.claude\\projects\\D--obsidian-OrbitOS\\memory\\`
+2. **Grok Build (experimental):** `/Users/leyi/.grok/memory/` and the project-scoped dir under it (enable with `[memory] enabled = true` in `/Users/leyi/.grok/config.toml` or `/memory on`)
+3. **Claude Code (this Mac):** `/Users/leyi/.claude/projects/-Users-Reid-Hu-OrbitOS/memory/<file>.md`
+4. **Codex (this Mac):** `/Users/leyi/.codex/memories/`
 
 If a referenced memory file is missing after the full search, **say so** and fall back to vault notes — do not invent state.
 
-### Known vault fallbacks for missing auto-memory
-| Referenced memory file | Vault fallback |
-|---|---|
-| `project_japan_itinerary.md` | [[Japan_Itinerary]], [[UTokyo_RIKEN]], `20_Project/Japan_Itinerary/` |
-| `user_japan_priority_topic.md` | Japan section under User Context below + Japan project notes |
-| `feedback_necessity_check.md` | `99_System/memory/feedback_necessity_check.md` |
+### Vault memory index
+
+Read the matching file from `99_System/memory/` on trigger.
+
+
+| File                                      | Trigger                                               |
+| ----------------------------------------- | ----------------------------------------------------- |
+| `preference_omp_computer_no_interrupt.md` | omp `computer` / desktop Eval                         |
+| `chrome_region_gating_pipeline.md`        | Chrome region/availability error                      |
+| `preference_copy_source_over_recall.md`   | existing on-disk source, export, or selection         |
+| `feedback_necessity_check.md`             | AGENTS.md, skills, memory, hooks, or floated redesign |
+| `feedback_skill_md_terse.md`              | writing or editing SKILL.md                           |
+| `user_background.md`                      | MATE, TPC/PID, or physics+ML paper/slides/notes       |
+| `feedback_investigate_over_ask.md`        | about to ask on a discoverable/checkable point        |
+| `preference_visualization_light_theme.md` | images, plots, HTML reports, decks                    |
+| `project_japan_itinerary.md`              | Japan deadlines, funding, timeline, or checklist      |
+
+### Writing memories
+
+- Don't create or edit a memory unless the user asks to remember or save something, or confirms a file and trigger you propose.
+- Respect the layering: always-on invariants belong in `## Rules`, skill lessons in `evolution.md`, and facts in wiki or project notes. This directory is strictly for triggered preferences and feedback.
+- Write to `99_System/memory/<file>.md` and add a row to the index table; never write to host-local directories. Base triggers on observable cues (a tool, path, topic, or error), and edit existing files in place for the same trigger class.
 
 ## Templates
+
 `Daily_Note.md`, `Project_Template.md`, `Content_Template.md`, `Wiki_Template.md`, `Inbox_Template.md`, `Derivation_Template.md`
 
 ## User Context
+
 - **Education:** Master's student in Particle and Nuclear Physics at Institute of Modern Physics (IMP), CAS (degree via UCAS), expected graduation: June 2027
 - **ML Focus:** Primary: ResNet; Secondary: Vision Transformers (ViT); Other: Domain Adaptation (DANN, MCD)
 - **Physics:** Time Projection Chambers (TPC), particle identification, nuclear structure, nuclear reactions
@@ -59,28 +84,36 @@ If a referenced memory file is missing after the full search, **say so** and fal
 - **Values:** Strictly rejects "996" culture; prefers empathetic, reflective quotes on personal growth
 
 ### Japan Immigration (top priority after graduation)
+
 - Finalized pathway: UTokyo CNS / RIKEN JRA, Route B Special Selection (supervisor: Imai, DONUTS). Execution plan: [[UTokyo_RIKEN]].
 - Before discussing Japan planning, read vault notes under `20_Project/Japan_Itinerary/` (especially [[Japan_Itinerary]] and [[UTokyo_RIKEN]]). If host auto-memory files exist, read those too and reconcile with the vault.
 - Japan, visa, university applications, Japanese language, and life-planning questions are high-priority.
 
 ## Related repos on this Mac
-| Repo | Path | Notes |
-|------|------|--------|
-| OrbitOS (vault) | `/Users/Reid Hu/OrbitOS` | This repo |
+
+
+| Repo            | Path                             | Notes                                                  |
+| --------------- | -------------------------------- | ------------------------------------------------------ |
+| OrbitOS (vault) | `/Users/Reid Hu/OrbitOS`         | This repo                                              |
 | MATE-Automation | `/Users/Reid Hu/MATE-Automation` | Research codebase; optional for `/end-my-day` git scan |
+| Physics GRE     | `/Users/Reid Hu/Physics GRE`     | Prep Studio; optional for `/end-my-day` git scan       |
+
 
 Skip any related-repo path that does not exist on disk.
 
 ## Rules
+
 - Projects link to Areas via frontmatter, NOT folder hierarchy
 - Use wikilinks `[[NoteName]]` liberally
 - Daily notes link to projects; projects track progress in daily notes
 - No empty line after frontmatter `---` (it becomes visible in body)
 - Communicate in English and use English for all template content
 - Flag potential issues proactively: duplicate projects, scheduling conflicts, stale tasks, or missing links — but execute the user's request regardless unless asked to reconsider
-- **Desktop & Host Automation (Background by Default):** Never invoke `win.raise()` or `{ delivery: "foreground" }` on desktop windows unless explicitly requested. Input dispatches must use `delivery: "background"` or AX actions (`el.press()`, `el.setValue()`) without stealing active window focus or moving the pointer.
+- **Desktop & Host Automation (Background by Default):** Never invoke `win.raise()` or `{ delivery: "foreground" }` on desktop windows unless explicitly requested. Input dispatches must use `delivery: "background"` or AX actions (`el.press()`, `el.setValue()`) without stealing active window focus or moving the pointer. **omp computer-use:** load `99_System/memory/preference_omp_computer_no_interrupt.md`.
 
 ## Principles of Paramount Importance
+
 - **Zero Assumptions:** Never guess user intent. If multiple implementations exist or requirements are incomplete, **halt and ask the user** (Grok: `ask_user_question`; Claude/Codex: `AskUserQuestion`) to gather explicit direction.
 - **No Silent Assumptions:** Even when the task is requested, confirm the *method* if it was not specified. Do not guess the user's expectations.
 - **Necessity Check (trigger-based):** Load `feedback_necessity_check.md` via the Memory System search order above and apply its five-question check — halt and ask the user if any check fails — when either trigger fires: (a) the change touches structural/system surfaces (skills, AGENTS.md, memory, hooks, vault architecture), or (b) the user floats a modification/refactor idea — a new mechanism, a skill/workflow redesign — invoking their "questioning/interrogative spirit" (they want scrutiny, not agreement). Otherwise stay out of it. Do not sell speculation as an obvious win.
+
