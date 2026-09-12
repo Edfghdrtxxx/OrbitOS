@@ -32,7 +32,6 @@ A canonical transformation is a change of coordinates $(q, p) \to (Q, P)$ in [[P
 ## Related Concepts
 
 - [[Hamilton-Jacobi Equation]]
-- [[Euler-Lagrange-Equation]]
 - [[Harmonic Oscillator]]
 - [[Angular Momentum]]
 - [[Hilbert Space]]

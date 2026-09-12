@@ -37,7 +37,7 @@ A non-conservative force is a force for which the work done on a particle depend
 - [[Bethe-Bloch Formula]] — describes the mean energy loss per unit path length
 - [[Linear Energy Transfer]]
 - [[Potential Energy Surface]] — exists only for [[Conservative Force|conservative forces]]
-- [[Euler-Lagrange-Equation]] — generalized to include non-conservative forces via the Rayleigh dissipation function
+- Euler-Lagrange equation — generalized to include non-conservative forces via the Rayleigh dissipation function
 - [[Lorentz Force]] — magnetic component $q\mathbf{v}\times\mathbf{B}$ does zero work (always perpendicular to velocity), making it neither conservative nor dissipative
 
 ## References

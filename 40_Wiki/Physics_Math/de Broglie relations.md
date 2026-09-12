@@ -35,7 +35,7 @@ so the **de Broglie wavelength** is $\lambda = h/p$ (and the reduced wavelength 
 ## Key Points
 
 - **Matter as wave.** Louis de Broglie (1924) extended the photon relations of Planck and Einstein to *all* free particles — electrons, neutrons, nuclei, atoms — completing [[Wave-Particle Duality]].
-- **Angular form as QM premise.** $E=\hbar\omega$ and $p=\hbar k$ are the starting point for writing free-particle plane waves $\Psi \propto e^{i(kx-\omega t)}$ and for deriving the [[Schrodinger-Equation]] from the classical energy $E=p^{2}/2m+V$ via the [[Hamilton-Jacobi Equation]] / eikonal analogy.
+- **Angular form as QM premise.** $E=\hbar\omega$ and $p=\hbar k$ are the starting point for writing free-particle plane waves $\Psi \propto e^{i(kx-\omega t)}$ and for deriving the Schrödinger equation from the classical energy $E=p^{2}/2m+V$ via the [[Hamilton-Jacobi Equation]] / eikonal analogy.
 - **Wavelength vs momentum.** Heavier or faster particles have shorter $\lambda$; macroscopic $p$ makes $\lambda$ unobservably small. In nuclear and particle physics one often quotes the reduced wavelength $\bar\lambda=\hbar/p$ (e.g. in [[Breit-Wigner-Resonance-Formula]] cross-section formulas).
 - **Phase vs group velocity.** For a free-particle dispersion $E(p)$, the group velocity $v_g=\partial\omega/\partial k$ equals the classical particle velocity, while the phase velocity $v_p=\omega/k$ generally does not — a localized particle is a [[Wave Packet]], not a pure plane wave.
 - **Not a dynamical law.** The relations fix the *kinematics* of the matter wave; the actual time evolution is governed by the Schrödinger (or Dirac/Klein–Gordon) equation, and interference/diffraction experiments test the wavelength assignment.
@@ -47,7 +47,6 @@ so the **de Broglie wavelength** is $\lambda = h/p$ (and the reduced wavelength 
 
 ## Related Concepts
 
-- [[Schrodinger-Equation]]
 - [[Hamilton-Jacobi Equation]]
 - [[Photoelectric Effect]]
 - [[Compton Scattering]]

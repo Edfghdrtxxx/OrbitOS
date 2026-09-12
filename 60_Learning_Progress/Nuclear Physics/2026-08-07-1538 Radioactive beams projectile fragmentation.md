@@ -3,7 +3,7 @@ type: learning-session
 topic: Radioactive beams — projectile fragmentation (Exp. Techniques NP Ch. 10)
 source: "[[ExperimentTechniquesNP_Chapter10-11]]"
 status: active
-updated: 2026-08-11
+updated: 2026-09-09
 ---
 # Radioactive beams — projectile fragmentation
 
@@ -160,3 +160,81 @@ So $^{11}\mathrm{Be}$ is stiffer by $3:2$ — dipole + slits can put one species
 3. Map onward: separation methods / achromatic delivery (§II.B.2–3)  
 4. GRE-style mini-drill on what you have  
 5. Stop here for now
+
+---
+
+## Turn 5 — Figure 2: relative momentum widths and relativistic kinematics (2026-09-09)
+
+**User:**
+> I don't understand the figure 2 in page 4 of 50_Resources/Physics/Courses/ExperimentTechniquesNP_Chapter10-11.pdf
+
+**Tutor:**
+
+Figure 2 in [ExperimentTechniquesNP_Chapter10-11.pdf](file:///Users/Reid%20Hu/OrbitOS/50_Resources/Physics/Courses/ExperimentTechniquesNP_Chapter10-11.pdf#page=4) (page 346 of the text) is comparing how the **longitudinal** vs. **transverse** momentum spread of projectile fragments scales as you ramp up primary beam energy.
+
+---
+
+### 1. Decoding the Axes and Labels
+
+- **Horizontal axis ($E/A$):** Beam kinetic energy per nucleon in $\mathrm{MeV}/\mathrm{nucleon}$, plotted logarithmically from $10^1$ ($10~\mathrm{MeV}$) to $10^4$ ($10{,}000~\mathrm{MeV} = 10~\mathrm{GeV}$).
+- **Vertical axis:** **Relative momentum width** in the laboratory frame:
+  - **Top panel:** $\sigma(P_\parallel)/P$ (parallel / longitudinal spread relative to total momentum).
+  - **Bottom panel:** $\sigma(P_t)/P$ (transverse spread relative to total momentum).
+- **Labels ($20 \rightarrow 12$, $70 \rightarrow 55$, etc.):** The fragmentation reaction $A_p \rightarrow A_F$ (projectile mass number $\rightarrow$ fragment mass number).
+
+---
+
+### 2. The Core Mechanism: Why do the two panels behave completely differently at high energy?
+
+In the projectile rest frame, nucleons possess random Fermi motion. By Goldhaber’s formula (Eq. 1):
+
+$$\sigma(P_\parallel^0) \approx \sigma_0 \sqrt{\frac{A_F(A_p - A_F)}{A_p - 1}}, \quad \sigma_0 \approx 90~\mathrm{MeV}/c$$
+
+This intrinsic rest-frame spread is essentially constant across beam energies. The total lab momentum of the fragment is:
+
+$$P \approx A_F \gamma \beta m_u c$$
+
+where $\beta = v/c$ and $\gamma = 1/\sqrt{1-\beta^2}$.
+
+#### Top Panel ($\sigma(P_\parallel)/P$ — Parallel Momentum):
+When boosting along the beam axis ($z$), both the longitudinal momentum spread and the mean momentum undergo a Lorentz boost by $\gamma$:
+
+$$\sigma(P_\parallel^{\mathrm{lab}}) \approx \gamma\,\sigma(P_\parallel^0)$$
+
+Taking the ratio to find the relative width:
+
+$$\frac{\sigma(P_\parallel^{\mathrm{lab}})}{P} \approx \frac{\gamma\,\sigma(P_\parallel^0)}{\gamma \beta A_F m_u c} = \frac{\sigma(P_\parallel^0)}{\beta A_F m_u c}$$
+
+Notice that **$\gamma$ cancels out completely**:
+- At low energies ($E/A < 100~\mathrm{MeV}$), $\beta \propto \sqrt{E}$, so $\sigma(P_\parallel)/P$ decreases as $1/\sqrt{E}$.
+- At relativistic energies ($E/A \gtrsim 1~\mathrm{GeV}$), velocity saturates at the speed of light ($\beta \rightarrow 1$). Once $\beta \approx 1$, the denominator cannot grow any further.
+- **Result:** The curves in the top panel **level off into a flat horizontal plateau** at $\sim 1\text{--}2\%$.
+
+#### Bottom Panel ($\sigma(P_t)/P$ — Transverse Momentum):
+Transverse momentum is perpendicular to the boost direction, so it is **Lorentz invariant**:
+
+$$\sigma(P_t^{\mathrm{lab}}) = \sigma(P_t^0)$$
+
+There is **no $\gamma$ in the numerator**. Therefore:
+
+$$\frac{\sigma(P_t^{\mathrm{lab}})}{P} \approx \frac{\sigma(P_t^0)}{\gamma \beta A_F m_u c} \propto \frac{1}{\gamma \beta}$$
+
+- At low energies, Coulomb scattering and deflections widen $\sigma(P_t^0)$ (the empirical $\sigma_1$ term in Eq. 2), making the curve steep.
+- At relativistic energies ($\beta \approx 1$), $\gamma \propto E$ continues to grow without bound.
+- Thus, $\sigma(P_t)/P \propto 1/\gamma \propto 1/E$. On a log-log plot, this is a straight line sloping downward with slope $-1$.
+- **Result:** It **never flattens out**; it keeps plunging.
+
+---
+
+### 3. Physical Significance for Radioactive Ion Beams
+
+Notice that in the small-angle approximation, the laboratory emission angle of a fragment is:
+
+$$\theta_{\mathrm{lab}} \approx \frac{P_t}{P} \quad \implies \quad \sigma_\theta \approx \frac{\sigma(P_t)}{P}$$
+
+The bottom panel is literally plotting the **angular opening cone** of the secondary beam. Because $\sigma(P_t)/P \propto 1/\gamma$, the fragments are Lorentz-beamed into an increasingly needle-thin forward cone at high energies, allowing nearly $100\%$ of the produced fragments to fit inside the finite angular acceptance aperture of the magnetic separator.
+
+---
+
+**Check (one step):**  
+Look at the vertical ordering of the three curves in either panel (e.g. $20 \rightarrow 12$ vs. $70 \rightarrow 55$). From Goldhaber's mass factor $\sqrt{\frac{A_F(A_p - A_F)}{A_p - 1}}$, why does $70 \rightarrow 55$ have a much smaller relative width $\sigma/P$ (sitting lower on the graph) than $20 \rightarrow 12$?

@@ -23,9 +23,9 @@ pathway: "Primary: Direct PhD D1 via Route B (Oct 2027); Fallback: Kenkyusei (Oc
 | ~~Supervisor acceptance~~ | ~~2026-06-30~~ | **DONE** (2026-03-09) — conditional on exam |
 | Sub-track clarified (GSGC vs Special Selection) | 2026-04-30 (backstop: 2026-07-01) | **COMPLETED (2026-04-13)** — Special Selection confirmed |
 | TOEFL iBT registered | ~~2026-04 (by Apr 30)~~ | **DONE (2026-04-09)** — booked 2026-08-30 at STN80118A Beijing |
-| TOEFL iBT Attempt #1 | **2026-08-30** | Target 100+; no MyBest accepted; arrive 08:30 |
-| TOEFL Attempt #2 registered | **by 2026-07-01** | Unconditional two-attempt strategy; exam ~Nov 2026 |
-| TOEFL iBT Attempt #2 | **~Nov 2026** | Do NOT auto-send; compare scores → manually send better one (code 8002-01) before Period 2 opens (Dec 7, 2026) |
+| TOEFL iBT Attempt #1 | **2026-08-30** | **DONE — 100/120 C1** (R 5.0, L 4.5, S 4.5, W 5.0); no MyBest accepted |
+| ~~TOEFL Attempt #2 registered~~ | ~~by 2026-07-01~~ | **RETIRED** — booked then 退考 2026-09-06 (NEEA); single-attempt strategy |
+| ~~TOEFL iBT Attempt #2~~ | ~~Nov 2026~~ | **RETIRED 2026-09-06** — send Attempt #1 score to UTokyo (code 8002-01) before Period 2 opens (Dec 7, 2026) |
 | GRE Physics taken (minimum: 900) | **2026-11-01** (registered) | Seat **registered & paid 2026-07-04**; single-shot; min 900 (Imai 2026-04-13); no retake before Period 2 (~Dec 2026) — score target still open |
 | Special Selection application submitted | Before Dec 2026 (confirmed Imai meeting 2026-04-13) | Materials due before Dec 2026 |
 | Interview | TBD | No written exam — interview only (confirmed 2026-04-13) |
@@ -76,13 +76,13 @@ pathway: "Primary: Direct PhD D1 via Route B (Oct 2027); Fallback: Kenkyusei (Oc
 
 > Registration complete (Phase 0.2, done 2026-04-09). **Exam booked: 2026-08-30 at STN80118A Beijing.**
 
-- [ ] UTokyo requires single test date score (no MyBest); aim for 100+
-- [ ] Focused prep: 2–3 months before exam date (peak window: Jun–Aug 2026)
-- [ ] Sit for TOEFL iBT **Attempt #1** on **2026-08-30** (booked 2026-04-09 — arrive by 08:30)
-- [ ] **Register for Attempt #2 by 2026-07-01** — unconditional two-attempt strategy
-- [ ] Sit for TOEFL iBT **Attempt #2** (~Nov 2026); do NOT auto-send — compare scores, then manually send the better one to UTokyo (code 8002-01) before Period 2 opens (Dec 7, 2026)
-- [ ] TOEFL scores valid if taken within 2 years of application start date (valid through 2028-08-30)
-- [ ] Track in [[English_Learning]] and [[TOEFL_Study_Plan]]
+- [x] UTokyo requires single test date score (no MyBest); aim for 100+ — **met: 100/120 C1**
+- [x] Focused prep: 2–3 months before exam date (peak window: Jun–Aug 2026)
+- [x] Sit for TOEFL iBT **Attempt #1** on **2026-08-30** — **DONE: overall 5.0/6 = 100/120 C1** (R 5.0, L 4.5, S 4.5, W 5.0)
+- [x] ~~**Register for Attempt #2 by 2026-07-01**~~ — Attempt #2 booked then **退考 2026-09-06** (NEEA); single-attempt strategy stands
+- [x] ~~Sit for TOEFL iBT **Attempt #2**~~ — **retired 2026-09-06**; send Attempt #1 score to UTokyo (code 8002-01) before Period 2 opens (Dec 7, 2026)
+- [x] TOEFL scores valid if taken within 2 years of application start date (valid through 2028-08-30)
+- [x] Track in [[English_Learning]] and [[TOEFL_Study_Plan]]
 
 ### 1.2 GRE Physics Subject Test
 

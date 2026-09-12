@@ -63,6 +63,7 @@ Read the matching file from `99_System/memory/` on trigger.
 | `feedback_investigate_over_ask.md`        | about to ask on a discoverable/checkable point        |
 | `preference_visualization_light_theme.md` | images, plots, HTML reports, decks                    |
 | `project_japan_itinerary.md`              | Japan deadlines, funding, timeline, or checklist      |
+| `personal_context.md`                     | life/career tradeoffs: family, relationship, lock mechanics, post-PhD endgame |
 
 ### Writing memories
 

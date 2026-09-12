@@ -1,5 +1,12 @@
 # Evolution Log
 
+## 2026-09-09
+### Lessons
+- Late-invocation close of yesterday: git `--until` must be *now*, not yesterday 23:59. After-midnight commits (Physics GRE website, 01:03) belong to the day being closed.
+
+### Fixes
+- Surface unlisted repo work even when the daily note has no matching checkbox — do not drop it just because the commit timestamp crossed midnight.
+
 ## 2026-09-07
 ### Lessons
 - A session-framing "primary concern" is not tomorrow's priority and not automatic carry-over. Ask Q3 independently; do not default Q3 from that framing.

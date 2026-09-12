@@ -18,7 +18,7 @@ aliases: ["Physics GRE", "Physics_GRE"]
 - **Route B Gate:** Compulsory for Special Selection — minimum 900 per Prof. Imai. Registered & paid 2026-07-04, order #26365004, appointment #9631911263841188. Full registration detail → [[UTokyo_RIKEN]].
 - **Timeline Margin:** Score release ~5 weeks after the test → lands inside Special Selection Period 2 (Dec 7–22) with thin margin. Reschedule/cancel deadline: 2026-10-28.
 - **Sole a-block Sep 7 – Nov 1:** This is the primary deep work block. See [[Daily_Note_Map]] for how daily rows surface.
-- **Honest Capacity Note:** Two rows × ~65 min × 6 days × 8 weeks ≈ **52 h**, vs the typical **80–150 h** needed for a rusty-breadth 900. The plan below protects pace and consistency; it cannot manufacture hours. The Oct 4 diagnostic is the primary data checkpoint.
+- **Honest Capacity Note:** From **2026-09-14**, weekly load is **15–17 h scheduled** via 5× ~100 min timed + 6× ~50 min formula + 2× ~50 min extra ≈ **16 h/wk** (hedge). ~7 remaining weeks ≈ **110 h** scheduled, vs typical **80–150 h** for rusty-breadth 900. Week 0 (Sep 7–13) was the thinner 5×60 / 6×30 / 2×30 rows. Oct 4 diagnostic is the primary data checkpoint.
 
 **Success Metrics:**
 - [ ] Oct 4 full diagnostic test completed and scored (accuracy baseline ≥ 70–75%) → [[Diagnostics-Oct04]]
@@ -50,10 +50,9 @@ aliases: ["Physics GRE", "Physics_GRE"]
 - **`04_Diagnostics_&_Errors/`**: [[Diagnostics-Oct04]], [[Rehearsal-Oct25]], [[Misses-Log]] (missed problem pattern registry)
 - **`05_Resources/`**: [[Practice Resources]], [[Reference-Guides]] (released exams and local server setup)
 
-### 2. Weekly Rows (Locked Defaults)
-- [ ] GRE Physics — 25-item timed set from current topic + log misses (0/5) #weekly
-- [ ] GRE formula recall 20 (0/6) #weekly
-- [ ] GRE extra — weak-topic review / error-log rework (0/2) #weekly
+- [ ] GRE Physics — 25-item timed set from current topic + log misses (~ 100 mins) (0/5) #weekly
+- [ ] GRE formula recall 20 (~ 50 mins) (0/6) #weekly
+- [ ] GRE extra — weak-topic review / error-log rework (~ 50 mins) (0/2) #weekly
 
 ---
 
@@ -63,3 +62,4 @@ aliases: ["Physics GRE", "Physics_GRE"]
 - **2026-08-26:** Prep Studio docs and philosophy extracted from 7 released ETS forms.
 - **2026-09-06:** TOEFL Attempt #1 scored 100 / C1 locked; Attempt #2 canceled; GRE pivot unlocked.
 - **2026-09-07:** GRE Physics Prep launched as sole morning a-block. Full consolidation into numbered directory taxonomy and 35 topic sets established.
+- **2026-09-11:** Syllabus rewritten: live calendar Mon 2026-09-14 → Nov 1; 15–17 h/wk via padded 5+6+2; W2–W3 absorb optics; W7 taper (Sets 32–33 new only). Canonical: [[8-Week-Syllabus]].

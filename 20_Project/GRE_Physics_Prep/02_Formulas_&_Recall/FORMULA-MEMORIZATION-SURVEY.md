@@ -1,6 +1,6 @@
 # Formula-Memorization Improvement Survey
 
-*2026-07-16 — a 6-agent survey of Anki (+FSRS), Quizlet, Memrise, Brainscape, RemNote, SuperMemo, Mochi, Isaac Physics, Brilliant, Khan Academy, and the learning-science literature, cross-checked against a code audit of this app's formula module. 57 raw findings were deduplicated into the 12 recommendations below, ranked by impact-per-effort for a solo learner memorizing 334 formulas before the 2026-10-28 exam. Constraints respected: offline, no accounts, no external services, no AI, vanilla JS + KaTeX + localStorage.*
+*2026-07-16 — a 6-agent survey of Anki (+FSRS), Quizlet, Memrise, Brainscape, RemNote, SuperMemo, Mochi, Isaac Physics, Brilliant, Khan Academy, and the learning-science literature, cross-checked against a code audit of this app's formula module. 57 raw findings were deduplicated into the 12 recommendations below, ranked by impact-per-effort for a solo learner memorizing 334 formulas before the 2026-11-01 exam. Constraints respected: offline, no accounts, no external services, no AI, vanilla JS + KaTeX + localStorage.*
 
 *Status 2026-07-16: ALL 12 recommendations implemented and E2E-verified (see DESIGN.md §4b for the shipped contracts). #4 shipped without the optional symbolic-equivalence parser; #12 shipped as conservative auto-cloze (skip-rather-than-garble) without the tile-assembly variant.*
 

@@ -4,11 +4,12 @@ description: |
   Use this skill when the user wants intellectual understanding — learning how or why something works, not getting a task done or soliciting Claude's judgment.
   
   Trigger for:
-  - Explicit learning requests: teach, explain, ELI5, walk me through, quiz me, flashcards, "I'm rusty on"; definitions ("what is X"); reconstruct / reinvent / "why was this invented"
+  - Explicit learning requests: teach, explain, ELI5, walk me through, quiz me, flashcards, "I'm rusty on"; definitions ("what is X"); reconstruct / reinvent / "why was this invented"; derive a formula/theorem/physical law
   - Terse concept names implying "help me understand this": "Galois theory," "transformers, from scratch"
   - Confusion signals: "won't stick," "keep mixing these up," "not getting it"
   - Learning-path questions: prerequisites, sequencing, what to study before X
   - Conceptual questions about mechanisms, causes, or dynamics
+  - Derivation requests: "derive X", "walk me through the derivation", archived `/guide-derivation`
   
   Don't trigger for:
   - Tasks: coding, writing, calculation, translation, factual lookup, news updates
@@ -110,6 +111,12 @@ Good tutors shift fluidly between several moves. *Guided discovery* — leading 
 Load `references/drills.md` **only** when the learner asked for drills or practice. Do not load it otherwise.
 
 During drills, the one-question tutoring rhythm **yields**: batch items, re-weight later turns toward misses, and close by naming **2–3 error-prone patterns** (not a word list). Details in `references/drills.md`.
+
+### Derivation tutoring
+
+Load `references/derivation.md` **only** when the target is deriving a formula, theorem, or physical law. Do not load it otherwise.
+
+Tutoring stays in `60_Learning_Progress/`. Compile a complete note to `30_Research/` only when the derivation is finished — never a live Step-1 scaffold. No Quick/Learn mode menu.
 
 ### Context reconstruction (not the default)
 

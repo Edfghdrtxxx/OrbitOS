@@ -3,7 +3,7 @@ title: GRE Physics Checkpoints & Exam Policy
 type: reference
 status: active
 area: "[[Japan_Itinerary]]"
-updated: 2026-09-07
+updated: 2026-09-11
 tags: [gre, physics, checkpoints]
 ---
 # GRE Physics Checkpoints & Exam Commitments
@@ -20,6 +20,8 @@ tags: [gre, physics, checkpoints]
   - ID Required: Both passport AND Second-Generation Resident ID (二代身份证)
   - Target: **≥ 900** (Route B Special Selection threshold per Prof. Imai; approx. raw score 52–56 / 70).
 
+Weekly load from 2026-09-14: **15–17 h** scheduled (5× ~100 min + 6× ~50 min + 2× ~50 min). Oct 4 / Oct 25 are dated checkpoints, not extra weekly rows. Full calendar → [[8-Week-Syllabus]].
+
 ## Decision Escalation Rule
-- If the **Oct 4 Diagnostic** score falls significantly short of target pacing, re-evaluate daily block allocation.
-- The block remains strictly protected: do not inflate with non-GRE topics; preserve consistency over volume.
+- If the **Oct 4 Diagnostic** score falls significantly short of target pacing, re-evaluate daily block allocation (hours may go up; topic order stays).
+- The GRE a-block remains strictly protected: do not inflate with non-GRE topics; preserve consistency over volume.

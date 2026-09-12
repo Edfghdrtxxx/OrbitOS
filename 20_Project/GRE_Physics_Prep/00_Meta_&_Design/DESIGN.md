@@ -230,7 +230,7 @@ grade is pushed to `study.history`; a "Back" control (or ←) opens a view-only 
 cards (older/newer/Resume).
 
 **Session mechanics (Study mode only; Match/Type/Quiz commit `gradeCard` directly — no steps).**
-- **Exam-date cap (F3):** `settings.examDate` (default `2026-10-28`, editable via the Today card's
+- **Exam-date cap (F3):** `settings.examDate` (default `2026-11-01`, editable via the Today card's
   date input). `srs.examCap()` = `max(1, min(days−1, ceil(0.2·days)))`, null when the date is
   invalid/past (capping silently off). `nextIntervals` clamps hard/good/easy to the cap (Again
   stays 0), so grade-button previews match reality. **Final pass** (`srs.finalPassActive()`, active

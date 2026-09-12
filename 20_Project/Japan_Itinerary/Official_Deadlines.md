@@ -21,7 +21,7 @@ last_verified: 2026-09-07 (TOEFL #2 退考; GRE a-block starts Sep 7); 2026-07-0
 | Application Period 1 (Oct 2027 enrollment) | **Oct 15–30, 2026 (JST)** | **VERIFIED** (page fetched 2026-04-22) | [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html) |
 | Application Period 2 (Oct 2027 enrollment) | **Dec 7–22, 2026 (JST)** | **VERIFIED** (page fetched 2026-04-22) | Same |
 | Written Exam | N/A | **N/A — confirmed no written exam** (Imai 2026-04-13) | — |
-| Oral Exam | TBD | **Interview only** — format TBD. CONFIRMED (Imai 2026-04-13) | — |
+| Oral Exam | TBD — Physics has **no published date/format** | **Interview only** (Imai 2026-04-13). Official 要項: interview is department-optional. Record: [[UTokyo_Special_Selection_Interview]] |
 | Results (Period 1) | ~End of December | VERIFIED — UTokyo admissions page | [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html) |
 | Results (Period 2) | ~Early March | VERIFIED — UTokyo admissions page | [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html) |
 
@@ -45,7 +45,7 @@ last_verified: 2026-09-07 (TOEFL #2 退考; GRE a-block starts Sep 7); 2026-07-0
 - FY2027 guideline release: late April 2026 — VERIFIED (UTokyo admissions page)
 - FY2027 exact application dates: **PUBLISHED** (Period 1: Oct 15–30, 2026; Period 2: Dec 7–22, 2026) — VERIFIED 2026-04-22
 
-Exam format CONFIRMED (2026-04-13 Imai meeting): **Interview only — no written exam** for Physics department Special Selection. Previous estimates of written exam (2hr, Zoom oral 40 min) were GSGC-sourced and do not apply. Official selection method is primarily document-based review + interview (VERIFIED — UTokyo admissions page + Imai confirmation).
+Exam format CONFIRMED (2026-04-13 Imai meeting): **Interview only — no written exam** for Physics department Special Selection. Previous estimates of written exam (2hr, Zoom oral 40 min) were GSGC-sourced and do not apply. Official selection method is primarily document-based review; interview is department-optional on the 要項 (Physics protocol unpublished as of 2026-09-09). Full record: [[UTokyo_Special_Selection_Interview]].
 
 **Required:** GRE Physics (code 7048) + TOEFL (code 8002-01, single date, no MyBest). VERIFIED — UTokyo admissions page. GRE Physics practical minimum: **900** (confirmed by Imai-san, 2026-04-13). No published TOEFL minimum.
 

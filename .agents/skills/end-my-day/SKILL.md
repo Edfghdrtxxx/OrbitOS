@@ -41,9 +41,10 @@ Help the user close their day by reviewing what was accomplished, reflecting on 
    |------|------|--------------|
    | OrbitOS (vault) | vault root (git root / CWD; Mac: `/Users/Reid Hu/OrbitOS`) | — |
    | MATE-Automation | `/Users/Reid Hu/MATE-Automation` (skip if missing) | [[MATE-Automation]] |
+   | Physics GRE | `/Users/Reid Hu/Physics GRE` (skip if missing) | [[GRE_Physics_Prep]] |
 
    For EACH repo:
-   - Run `git -C <repo-path> log --since="YYYY-MM-DD 00:00" --until="YYYY-MM-DD 23:59" --oneline --all` to list today's commits
+   - Run `git -C <repo-path> log --since="YYYY-MM-DD 00:00" --until="<UNTIL>" --oneline --all` to list today's commits. `<UNTIL>` is `YYYY-MM-DD 23:59` on a same-calendar close, or *now* when closing yesterday after midnight (after-midnight commits belong to the day being closed).
    - Run `git -C <repo-path> diff --stat HEAD~N..HEAD` (where N = number of today's commits) to get a file-level change summary — skip if no commits today
    - If the repo path doesn't exist or isn't a git repo, note it silently and skip (don't error out)
 

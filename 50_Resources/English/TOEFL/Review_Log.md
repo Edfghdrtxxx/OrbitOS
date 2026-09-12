@@ -7,7 +7,7 @@ created: 2026-06-24
 updated: 2026-08-22
 tags: [english, TOEFL, speaking, writing, spaced-repetition, review]
 related:
-  - "[[TOEFL_Phrase_Bank]]"
+  - "[[Phrase_Bank]]"
 sr_engine: Obsidian Spaced Repetition plugin (st3v3nmw)
 review_target_per_day: 5
 ---
@@ -15,7 +15,7 @@ review_target_per_day: 5
 
 > [!info] Scheduling is owned by the plugin
 > The **Obsidian Spaced Repetition** plugin (st3v3nmw) schedules every card in
-> [[TOEFL_Phrase_Bank]] (SM-2 or FSRS) and writes review data as an
+> [[Phrase_Bank]] (SM-2 or FSRS) and writes review data as an
 > `<!--SR:...-->` comment next to the card. Do not edit those comments by hand.
 >
 > Bank note: [[TOEFL_Phrase_Bank]] contains both **Speaking** (`#flashcards/toefl/speaking`)
@@ -71,7 +71,7 @@ Do **not** use `??` in the speaking bank — that would spawn reverse siblings (
 1. Install **Spaced Repetition** (Stephen Mwangi / st3v3nmw): Settings → Community plugins.
 2. Leave **Flashcard tags** at default `#flashcards` (or ensure it remains).
 3. Leave separators at defaults: `::` · `:::` · `?` · `??`.
-4. Open [[TOEFL_Phrase_Bank]] once so the vault cache sees the tags.
+4. Open [[Phrase_Bank]] once so the vault cache sees the tags.
 5. Command palette → **Spaced Repetition: Review flashcards** → select deck:
    - **`flashcards` → `toefl` → `speaking`** for oral practice (~5/day).
    - **`flashcards` → `toefl` → `writing`** for written / email practice.
@@ -104,6 +104,7 @@ Ask Claude: *"Generate a Take-an-Interview prompt and a model answer that natura
 
 *(Free-text only — not for scheduling. Newest at top.)*
 
+- 2026-09-09 — Added TOEFL-51/52 (UTokyo Special Selection spoken models: master's research; why CNS/OEDO-SHARAQ). Gemini-3.8-Flash first pass, then shortened to bank Phrase frames. Source: [[UTokyo_Special_Selection_Interview]].
 - 2026-08-22 — Unified Speaking & Writing banks into single note [[TOEFL_Phrase_Bank]] with dual subdecks (`#flashcards/toefl/speaking` [33 cards] and `#flashcards/toefl/writing` [14 cards]); consolidated 46-item reconcile log.
 - 2026-08-21 — Synchronized EXMP-09 (childhood memory); added EXMP-15 (big city living / urban convenience).
 - 2026-08-20 — Reconciled Google Doc *English Sentence Material Accumulation* → vault: OPIN-07, EXMP-10–14, writing EM-04. Drive MCP read-only; local corrections not pushed back.

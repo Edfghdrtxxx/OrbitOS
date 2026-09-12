@@ -3,13 +3,13 @@ title: GRE Physics Formula Recall Decks & Routine
 type: reference
 status: active
 area: "[[Japan_Itinerary]]"
-updated: 2026-09-07
+updated: 2026-09-11
 tags: [gre, physics, formulas]
 ---
 # GRE Physics Formula Recall Decks & Cadence
 
 ## Daily Recall Target
-- **Volume:** 20 formulas / session (~30 mins) `(0/6) #weekly`.
+- **Volume:** 20 formulas / session (~50 mins, hedge from 2026-09-14) `(0/6) #weekly`.
 - **Methodology:** SM-2 spaced repetition via Prep Studio (`view-formulas.js` and `formula-checkin.js`) or manual flashcards.
 - **Reference Doc:** [[FORMULA-MEMORIZATION-SURVEY]]
 

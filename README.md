@@ -21,7 +21,7 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 | Start my morning                                              | `/start-my-day`                 | Reviews yesterday, surfaces active projects, generates today's daily note                    |
 | Turn an idea into a project                                   | `/kickoff`                      | Structures it with C.A.P. layout (Context, Actions, Progress), asks clarifying questions     |
 | Deep-dive a topic (new ML paper, visa pathway, TPC technique) | `/deep-research` (host)         | Host deep-research / workflow — vault `/research` archived 2026-07-29                        |
-| Learn something with guided tutoring                          | `/learn <topic>`                | Diagnose, scaffold, one step per turn; records to `60_Learning_Progress/` + index            |
+| Learn something with guided tutoring                          | `/learn <topic>`                | Diagnose, scaffold, one step per turn; records to `60_Learning_Progress/` + index; compile finished derivations to `30_Research/` |
 | Clean up finished work                                        | `/archive`                      | Moves completed projects to 99_System/Archives/                                              |
 | Catch up on AI news                                           | `/ai-newsletters`               | Curates TLDR AI, The Rundown AI into 50_Resources/                                           |
 | See what's shipping in AI                                     | `/ai-products`                  | Product Hunt, HN, GitHub, Reddit roundup                                                     |
@@ -30,7 +30,6 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 | Create an atomic wiki note                                    | `/atomic-note`                  | Creates a single-concept note in 40_Wiki/ with auto-linking and wikilink discovery           |
 | Hand off work to another session                              | `/handoff-prompt`               | Generates a constraint-based handoff prompt without over-prescribing implementation          |
 | Re-test learned knowledge                                     | `/retention`                    | Quiz Progress-context threads; log in Retention-context. Replaces `/wiki-review`             |
-| Derive a formula step-by-step                                 | `/guide-derivation`             | Guided derivation of physics/math formulas with scaffolded steps                             |
 | Explain a concept simply                                      | `/Feynman-Technique`            | Feynman-style explanation as if teaching a 12-year-old                                       |
 | Annotate a confusing note                                     | `/insert-Feynman`               | Inserts Feynman explanation callouts directly into the note file                             |
 | Polish English writing                                        | `/phrasing-refining`            | Grammar, idiom, and naturalness review with terse inline corrections                         |
@@ -59,14 +58,14 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 
 ## Skill Categories
 
-**40** core skills across categories (`ask` archived 2026-07-26 — plain chat for Q&A, `/learn` for deep study; `orchestrate` / `dispatch` / `orchestrate-lite-DWorkflow` / `research` archived 2026-07-29 → `/orchestrate-v3` + host `/deep-research`; `brainstorm` archived 2026-08-18; `super-alignment` archived 2026-08-18 → `/align`; `memo-api` + `markji-card-syntax` archived 2026-09-01):
+**39** core skills across categories (`ask` archived 2026-07-26 — plain chat for Q&A, `/learn` for deep study; `orchestrate` / `dispatch` / `orchestrate-lite-DWorkflow` / `research` archived 2026-07-29 → `/orchestrate-v3` + host `/deep-research`; `brainstorm` archived 2026-08-18; `super-alignment` archived 2026-08-18 → `/align`; `memo-api` + `markji-card-syntax` archived 2026-09-01; `guide-derivation` archived 2026-09-08 → `/learn`):
 
 | Category | Skills |
 |---|---|
 | **Daily Workflow** | `start-my-day`, `end-my-day`, `breakdown-tasks`, `estimate-time`, `llm-council`, `daily-note-addition` |
 | **Knowledge Management** | `kickoff`, `archive`, `atomic-note` |
 | **Obsidian Features** | `obsidian-markdown`, `obsidian-bases`, `obsidian-cli`, `json-canvas`, `excalidraw-diagram-generator` |
-| **Learning** | `learn`, `retention`, `Feynman-Technique`, `guide-derivation`, `phrasing-refining`, `insert-Feynman`, `vocabulary-absorption` |
+| **Learning** | `learn`, `retention`, `Feynman-Technique`, `phrasing-refining`, `insert-Feynman`, `vocabulary-absorption` |
 | **Meta/Utility** | `orchestrate-v3`, `reflect`, `elon-musk`, `evolve-skills`, `handoff-prompt`, `anchor-game-framework`, `align`, `defuddle` |
 | **Tools** | `mcp-builder`, `notebooklm`, `storage-analyzer`, `expense-tracker`, `markitdown`, `pdf`, `docx`, `design-image-claude`, `phone-harness`, `pre-ppt`, `web-access` |
 
@@ -111,4 +110,4 @@ Link liberally. The AI creates connections automatically, but manual links are j
 - **99_System/Bases/** — 5 Obsidian Bases dashboards (Projects, Projects Archive, Knowledge, Wiki Review, Integrated Sources).
 - **99_System/memory/** — Portable harness memory promoted into the vault (e.g. necessity-check).
 - **99_System/Game_Framework.md** — Strategic life/goal framework based on Dan Koe's method: anti-vision, vision, identity, priority stack, daily levers.
-- **.agents/skills/** — 40 core skill definitions (symlinked to `.claude/skills/`).
+- **.agents/skills/** — 39 core skill definitions (symlinked to `.claude/skills/`).

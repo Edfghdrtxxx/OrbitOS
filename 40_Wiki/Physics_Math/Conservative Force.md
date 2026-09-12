@@ -40,7 +40,6 @@ A conservative force is a force for which the work done in moving a particle bet
 - [[Potential Energy Surface]]
 - [[Canonical Transformation]]
 - [[Hamilton-Jacobi Equation]]
-- [[Euler-Lagrange-Equation]]
 - [[Angular Momentum]] — conserved quantity in central conservative force fields
 
 ## References

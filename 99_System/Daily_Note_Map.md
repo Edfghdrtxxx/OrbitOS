@@ -38,7 +38,7 @@ Mode is the user's choice: bare `/start-my-day` is always full; lightweight runs
 Sunday preferred. Due when `week_plan` is absent or ≥ 7 days old — including missed Sundays. Full mode asks you to (1) correct last week's counts and (2) accept or adjust each row's N. Lightweight defers the review unchanged.
 Corrections do not require a new plan. Acceptance advances `week_plan` and starts counts at zero, except for today's work assigned by you to the new week; confirm its starting counts before rollover. Declining keeps the current plan with any explicit corrections. Missed days carry forward; catch-up never stacks.
 
-Keep useful target explanations, e.g. `4/wk → ~40 sets by 2026-11-01; plan needs 36` ([[GRE_Physics_Prep]] → [[UTokyo_RIKEN]]); habits may read `5/wk, no deadline`.
+Keep useful target explanations, e.g. `5/wk timed through W6; W7 taper 2 new sets` ([[GRE_Physics_Prep]] → [[8-Week-Syllabus]]); habits may read `6/wk, no deadline`.
 
 ## If I disappear for days
 Nothing breaks. Today's note is generated from the latest earlier note — no back-fill, no "you missed N days". A missed Sunday only delays plan day.

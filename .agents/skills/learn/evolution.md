@@ -1,5 +1,11 @@
 # Evolution Log
 
+## 2026-09-08
+
+### Lessons
+
+- **Derivation compile is not live scaffolding.** `/guide-derivation` archived into `/learn`. Tutoring stays in `60_Learning_Progress/`. Write `30_Research/` only when the derivation is complete (boxed result + validity + pitfalls). No Quick/Learn mode menu. Details in `references/derivation.md`.
+
 ## 2026-09-02
 
 ### Lessons

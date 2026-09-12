@@ -28,7 +28,7 @@ Apply this table only to a new copy’s Priorities, top to bottom; leave Appendi
 |---|---|
 | `#weekly` | Keep; reset `[x]` to `[ ]`, preserve `(n/N)` |
 | `#daily` | Keep; reset `[x]` to `[ ]` |
-| Child under `#weekly` | Ephemeral daily target: remove if `[x]`; keep in place if `[ ]` or `[*]`. Full mode injects a new child only when the parent has no existing child. |
+| Child under `#weekly` | Ephemeral daily target: remove if `[x]`; keep in place if `[ ]` or `[*]`. Both modes inject a new child only when the parent has no surviving child (full: Learning Target scout; lightweight: local decks — [lightweight mode](references/lightweight-mode.md)). |
 | Other `[x]` | Remove, or keep unchanged if any descendant must survive |
 | `[ ]` or `[*]` | Keep in place |
 Never delete a retained child with its parent, or resurrect a finished one-off as a new task.
@@ -78,7 +78,7 @@ Follow Shared rules; use wikilinks and create no intermediate plan files.
 - Set energy, commitments and Main Focus from the answers; add genuinely new next actions in their topic sections.
 - For the primary learning/exam block (e.g. `a1. GRE Physics Prep`), inject the concrete objectives proposed by the Learning Target subagent as indented child checkboxes directly beneath the stable `#weekly` parent rows in `## Priorities`.
   - Stable parent rows preserve `(n/N) #weekly` rollover and week-plan alignment.
-  - Indented child checkboxes provide concrete daily execution targets (e.g. `Set 01: Kinematics & Newton's Laws (Q1–25)`, specific formula recall batch, and targeted error rework).
+  - Indented child checkboxes provide concrete daily execution targets (e.g. `Set 03: Oscillations & Harmonic Motion (Q1–25)`, specific formula recall batch, and targeted error rework). Hedged parent `~ mins` from 2026-09-14: timed ~100, formula ~50, extra ~50.
   - Gated injection: on a new copy, inject only under weekly parents that do not already carry an uncompleted child from yesterday; never replace a surviving uncompleted child, inject duplicates, or inject under rows that have reached `(N/N)`; never inject on repeat same-day runs.
 - Keep Anchor unchanged; a separate skill owns it.
 - On a new copy only, after the shared transfer check, empty Log and Evening Review (keep only their `##` headings); remove AI Digest if present.

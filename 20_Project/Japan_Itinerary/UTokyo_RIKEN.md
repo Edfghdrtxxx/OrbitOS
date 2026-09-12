@@ -108,9 +108,9 @@ decision_date: 2026-02-15
 
 ### Doctoral Entrance — Route B (Special Selection, Confirmed 2026-04-13)
 
-- [ ] Confirm Special Selection interview / schedule details from official 2027/2028 cycle pages `[V6]`
+- [ ] Confirm Special Selection interview / schedule details from official 2027/2028 cycle pages `[V6]` — current record: [[UTokyo_Special_Selection_Interview]] (2026-09-09: Physics protocol still unpublished)
   - ~~**Regular Physics route (ARCHIVED):** written exam (Aug), oral exam (Jan)~~
-  - **Special Selection (Route B; confirmed 2026-04-13):** Interview only, no written exam. Admission materials before Dec 2026 (Period 2: Dec 7–22, 2026 realistic).
+  - **Special Selection (Route B; confirmed 2026-04-13):** Interview only, no written exam. Admission materials before Dec 2026 (Period 2: Dec 7–22, 2026 realistic). Recheck Physics pages Nov 2026.
 - [ ] Only attempt April 2028 entry if **all** conditions met by Dec 2027: supervisor approval, confirmed eligibility, admission readiness for the **confirmed** retake route. Otherwise, default to Oct 2028.
 
 ### JRA Application (timing route-dependent)

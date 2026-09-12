@@ -156,8 +156,11 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 | [[DG_GSGC_vs_Special_Selection]] | Decision gate: GSGC vs Special Selection sub-track (status: **RESOLVED** — Special Selection confirmed 2026-04-13) |
 | [[GRE_Physics_Seat_Logistics]] | GRE Physics seat logistics & registration checklist (study project hub: [[GRE_Physics_Prep]]) |
 | [[Questions_and_Verifiable_Source]] | Tracks claims against official sources; flags discrepancies and open questions for professor meetings |
+| [[UTokyo_Special_Selection_Interview]] | Physics Special Selection interview: official vs unpublished vs analog (compiled 2026-09-09) |
 | [[Plan_2026-02-15_UTokyo_Oct2027_Application]] | Concrete execution plan for UTokyo Oct 2027 application (in `90_Plans/`) |
 | [[UTokyo_RIKEN_Mind_Map.png]] | Visual mindmap of the UTokyo CNS / RIKEN JRA pathway |
+| [[Post_PhD_Immigration_Pathways]] | Post-PhD immigration: Japan HSP, Europe, Canada (academic default) |
+| [[US_Firms_Tokyo_Physics_PhD]] | US firms in Tokyo for a physics PhD — four jobs, named people, 2025–26 wages (compiled 2026-09-11) |
 
 ### Professors
 

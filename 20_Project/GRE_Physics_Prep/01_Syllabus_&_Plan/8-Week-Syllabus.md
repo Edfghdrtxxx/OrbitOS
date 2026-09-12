@@ -5,31 +5,51 @@ status: active
 area: "[[Japan_Itinerary]]"
 start: 2026-09-07
 due: 2026-11-01
+updated: 2026-09-11
 tags: [gre, physics, syllabus]
 ---
-# GRE Physics 8-Week Syllabus & Plan (ETS Computer Exam Blueprint)
+# GRE Physics Syllabus & Plan (ETS Computer Exam Blueprint)
 
 > [!info] Live Exam Format (Since Sept 2023)
-> The GRE Physics Subject Test is **computer-delivered: 70 questions in 120 minutes (2 hours)**. Scaled score range: 200–990.
-> Raw target for **≥900**: approximately **52–56 / 70** correct (depending on form-specific ETS scaling curves).
+> Computer-delivered: **70 questions in 120 minutes**. Scaled score 200–990.
+> Raw target for **≥900**: approximately **52–56 / 70**.
+> Exam: **Sun 2026-11-01, 14:00**, STN80177D Beijing. Free score recipient **7048**.
 
-## 8-Week Topic Schedule
+> [!warning] Rewrite lock (2026-09-11)
+> Live calendar starts **Mon 2026-09-14**. Week 0 (Sep 7–13) is historical, not replayed.
+> Weekly load: **15–17 h scheduled** via the same **5+6+2** rows with hedged minutes:
+> **5× ~100 min** timed + **6× ~50 min** formula + **2× ~50 min** extra ≈ **16 h**.
+> Extra row is misses-first. Hard cap **5 new timed sets/week** except W7 taper.
+> Prep Studio (`/Users/Reid Hu/Physics GRE`) is the drill app, not a second calendar. Its `#/plan` view is generated from this file via `tools/build-plan.js` (not a second calendar).
 
-| Week | Dates | Official ETS Weight | Target Topic Focus | Target Sets | Primary Source Materials |
-|---|---|---|---|---|---|
-| **0** | Sep 7–13 | 20% (~14 Qs) | Classical Mechanics Lead-in | Sets 01–05 | Kahn Ch. 1, Prep Studio CM Bank, GR8677/9277 drills |
-| **1** | Sep 14–20 | 20% (~14 Qs) | Classical Mechanics Wrap & Advanced | Sets 06–07 + CM review | Kahn Ch. 1 + Prep Studio CM Bank |
-| **2** | Sep 21–27 | 18% (~13 Qs) | Electromagnetism I (Electrostatics, Circuits, Magnetism) | Sets 08–10 | Kahn Ch. 2 + EM Bank |
-| **3** | Sep 28–Oct 4 | 18% (~13 Qs) | Electromagnetism II & Diagnostics | Sets 11–13 + **Oct 4: Diagnostic #1** | Kahn Ch. 2 + Released Form |
-| **4** | Oct 5–11 | 10% + 8% (~13 Qs) | Thermo / StatMech + Optics / Waves | Sets 14–20 | Kahn Ch. 3 & 4 |
-| **5** | Oct 12–18 | 13% (~9 Qs) | Quantum Mechanics | Sets 21–25 | Kahn Ch. 5 (5.1–5.6) |
-| **6** | Oct 19–25 | 10% + 6% (~11 Qs) | Atomic Physics & Special Relativity | Sets 26–30 + **Oct 25: 70Q Rehearsal** | Kahn Ch. 5 (5.7) & Ch. 6 + 2024 Practice Book |
-| **7** | Oct 26–Nov 1 | 6% + 9% (~10 Qs) | Lab Methods & Specialized Topics; Taper | Sets 31–35 + Formula Polish | Kahn Ch. 7 & 8 + Prep Studio Capstone |
+## Week 0 (historical, Sep 7–13)
+- Assigned: CM Sets 01–05. **Set 01 done 2026-09-08.** Set 02 open as of 2026-09-11.
+- Do not restart Week 0 on or after Sep 14.
 
-## Drill Set Methodology
-- **35 Topic Sets:** 25 items each (composite practice sets drawn from Kahn end-of-chapter problems, Prep Studio question bank, and released ETS drill items).
-- **Formula Recall:** 20 formulas/day × 6 days/week = 120 card reviews/week via [[Formula-Recall-Decks]].
-- **Error Rework:** 2 sessions/week focused on logging root error patterns into [[Misses-Log]].
-- **Diagnostics:**
-  - Oct 4: Diagnostic #1 (released ETS form, volume baseline).
-  - Oct 25: Full Rehearsal #2 (official 70Q/120min computer practice form under exam conditions).
+## Carry rule (Set 02)
+- If Set 02 is still `[ ]` on **2026-09-14**: it is the first timed child. W1 timed becomes **02–06**. Set **07** goes to extra rows in W1–W2 (only if misses are empty) — not a 6th timed set.
+- If Set 02 is done before Sep 14: W1 timed is **03–07** as in the table.
+
+## Live schedule (Sep 14 – Nov 1)
+
+| Week | Dates | ETS focus | Timed sets (≤5 new) | Checkpoints / notes |
+|---|---|---|---|---|
+| **1** | Sep 14–20 | CM 20% | **03–07** (or **02–06** if 02 carried) | Kahn Ch. 1, Prep Studio CM Bank |
+| **2** | Sep 21–27 | EM 18% + Optics 8% | EM **08–10** + Optics **14–15** | Kahn Ch. 2 + Ch. 3 |
+| **3** | Sep 28–Oct 4 | EM + Optics | EM **11–13** + Optics **16** (4 timed) | **Sun Oct 4:** paper diagnostic GR0177/GR0877 replaces the 5th timed |
+| **4** | Oct 5–11 | Thermo 10% | **17–20** + 1 thermo review slot | Kahn Ch. 4. Optics not parked (done in W2–W3) |
+| **5** | Oct 12–18 | QM 13% | **21–25** | Kahn Ch. 5.1–5.6 |
+| **6** | Oct 19–25 | Atomic 10% + SR 6% | **26–29** (4 timed) | Kahn Ch. 5.7 & Ch. 6. **Sun Oct 25:** 70Q/120 computer rehearsal (2024 Practice Book) replaces the 5th timed. Extra light that day. Set **30** (nuclear properties) → extras after misses. |
+| **7** | Oct 26–Nov 1 | Lab 6% + Specialized 9% | **2 new:** Set **32** Error Analysis, Set **33** Particle/conservation. Other weekday timed slots = replay of the latest miss-heavy set, else replay **32**. **Timed child = none Fri–Sun.** | Fri logistics/formula; Sat sleep/travel; Sun exam. Deferred new: **30, 31, 34, 35** → extras after misses, else after 2026-11-01 |
+
+## Drill contract
+- **35 Topic Sets** still exist; W7 does not finish 31–35 as new timed work.
+- **Formula Recall:** 20 formulas/session × 6 days/week via [[Formula-Recall-Decks]]. Hedged **~50 min**.
+- **Error Rework:** 2× ~50 min/week into [[Misses-Log]]. Misses-first; only then leftover sets (07 if carried; 30; 31/34/35).
+- **Diagnostics (dated, not extra weekly rows):**
+  - Oct 4: volume diagnostic, ETS paper GR0177/GR0877.
+  - Oct 25: full rehearsal, 70Q/120 computer, official 2024 Practice Book.
+- Parent `#weekly` rows on daily notes should read **~100 min / ~50 min / ~50 min** from the Sep 14 week rollover. Topic-set files that still say ~60 min are superseded by this hedge.
+
+## start-my-day
+Canonical Learning Target input. Week boundaries and set lists above override older examples (Week 0 = Set 01, Week 1 = Set 06).
