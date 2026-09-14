@@ -4,7 +4,7 @@ type: resource
 status: active
 area: "[[Self-Development]]"
 created: 2026-06-24
-updated: 2026-09-09
+updated: 2026-09-12
 aliases:
   - Speaking_Collocation_Bank
   - Writing_Phrase_Bank
@@ -66,6 +66,7 @@ You've given a preference or claim and need a crisp "why" without stalling
 Phrase: That is precisely why I… / That is precisely the reason that I…
 Model: Face-to-face conversation builds empathy in a way screens never can — that is precisely why I prefer meeting friends in person.
 Note: Prefer "precisely why" for speech; "the reason that" is slightly more formal. Avoid "the reason why" (mildly redundant).
+<!--SR:!2026-09-16,4,270-->
 
 ### TOEFL-02 · Demanding experience / sheer volume
 
@@ -235,12 +236,12 @@ Formal email opening — consulting a professor or advisor for resources/directi
 ?
 Phrase: I am writing to seek your expert guidance regarding resources for…
 Model: Dear Dr. Imai, I am writing to seek your expert guidance regarding resources for preparing the entrance examination.
-<!--SR:!2026-09-13,4,190-->
+<!--SR:!2026-09-25,11,210-->
 
 ### TOEFL-24 · Narrative: Healthy lifestyle & nutrition
 
 Diet, health habits, or personal wellness routine
-?
+
 Phrase: My weekly… consists primarily of… I consider this approach… since…
 Model: My weekly diet consists primarily of lean proteins like beef and chicken. I consider this approach quite healthy since protein is indispensable for both physical growth and cognitive function. A balanced intake ensures my body and mind remain in optimal condition.
 Collocations: consists primarily of · lean proteins · indispensable for · physical growth · cognitive function · balanced intake · optimal condition
@@ -251,7 +252,7 @@ Academic debate — educational institutions guiding students' lifestyle / healt
 ?
 Phrase: As integral components of societal education, schools must…
 Model: As integral components of societal education, schools must guide young people toward better lifestyle choices.
-<!--SR:!2026-09-13,1,170-->
+<!--SR:!2026-09-16,2,190-->
 
 ### TOEFL-26 · Research integrity and communication
 
@@ -307,7 +308,7 @@ Useful purchase, technological tool, or something that streamlined your workflow
 Phrase: The most delightful purchase I've made recently was… What made it such a smart decision was…
 Model: The most delightful purchase I've made recently was subscribing to an AI service. What made it such a smart decision was its incredible utility in streamlining my daily workflows. It essentially acts as a second brain, helping me organize my mind and clarify my intentions. Just last week, when I hit a wall analyzing complex experiment data during a particle physics project, this tool proved invaluable in helping me move forward efficiently.
 Collocations: delightful purchase · smart decision · streamlining my daily workflows · acts as a second brain · clarify my intentions · hit a wall · proved invaluable
-<!--SR:!2026-09-13,1,150-->
+<!--SR:!2026-09-16,2,170-->
 
 ### TOEFL-33 · Narrative: In-store vs online shopping
 
@@ -323,7 +324,7 @@ Acknowledging the opposing side before returning firmly to your stance
 ?
 Phrase: That said… / I can see both sides, but…
 Model: Working from home is convenient. That said, I'd still choose an office, because I focus better when other people are around.
-<!--SR:!2026-09-13,11,270-->
+<!--SR:!2026-10-14,30,270-->
 
 ### TOEFL-35 · Surface plausibility hedge
 
@@ -364,6 +365,7 @@ Teacher, mentor, or supervisor who made a lasting impact on your development
 Phrase: The educator who left the deepest impression on me was… That rigorous push transformed my perspective…
 Model: The educator who left the deepest impression on me was my graduate supervisor, who insisted I master English proficiency rapidly. That rigorous push transformed my perspective; I now realize that linguistic fluency is indispensable for seamlessly reading academic literature and engaging in high-level discourse with global researchers.
 Collocations: left the deepest impression · graduate supervisor · insisted I master · rigorous push · transformed my perspective · linguistic fluency · indispensable for · seamlessly reading academic literature · high-level discourse
+<!--SR:!2026-09-15,3,250-->
 
 ### TOEFL-40 · Curriculum debate: Core traditional subjects
 
@@ -435,7 +437,7 @@ Advocating for required writing workshops / structured academic skill training
 Phrase: I strongly advocate mandatory writing workshops every semester because they save students time by providing instant, targeted feedback from teachers.
 Model: I strongly advocate mandatory writing workshops every semester because they save students time by providing instant, targeted feedback from teachers. Specifically speaking, these workshops have highly experienced instructors and various essential resources that can significantly improve our writing skills. For example, last semester, attending a mandatory writing workshop allowed me to compare my writing with the teacher's feedback immediately, which gave me confidence that other methods cannot simply replicate.
 Collocations: strongly advocate · mandatory writing workshops · save students time · instant, targeted feedback · highly experienced instructors · essential resources · significantly improve · compare my writing with · gave me confidence · cannot simply replicate
-<!--SR:!2026-09-13,2,190-->
+<!--SR:!2026-09-19,5,210-->
 
 ### TOEFL-48 · Debate: Instant feedback vs written comments
 

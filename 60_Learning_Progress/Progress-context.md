@@ -1,7 +1,7 @@
 ---
 type: learning-index
 purpose: Terse cross-agent index of what the learner has solidly learned. Agents running /learn MUST read this first.
-updated: 2026-09-09
+updated: 2026-09-14
 ---
 # Learning Progress — Context Index
 
@@ -89,6 +89,25 @@ Session: [[2026-09-10-1522 Bernoulli equation]] (thread still active)
 - **Horizontal Venturi, $R_2=R_1/2$:** $v_2=4v_1$; $\Delta P=P_1-P_2=\frac{15}{2}\rho v_1^2$
 - **Piezometer:** $h=(P-P_{\mathrm{atm}})/(\rho g)$; taller on the wide (high-$P$) side, not the throat; $\Delta h=15 v_1^2/(2g)$
 - **Trap:** $P=C-\rho g y$ is “higher point, lower $P$” along a filled column — not the rise height of an open standpipe
+
+#### E&M — capacitors
+
+Session: [[2026-09-14-0828 Capacitance]] · parent [[2026-09-14-0816 Capacitor energy]]
+
+- **C is geometry:** doubling $q$ leaves $C$ unchanged; $V$ doubles
+- **Charging work:** $U_C=\int_0^Q (q/C)\,\mathrm{d}q = Q^2/(2C)=\frac12 C V^2$ via $Q=CV$
+- **Plates apart:** isolated ($Q$ fixed) $U_C$ up; battery ($V$ fixed) $U_C$ down
+- **Form choice:** $Q$ stuck $\to Q^2/(2C)$; $V$ stuck $\to \frac12 C V^2$
+- **Double the gap:** isolated $U\to 2U$; battery $U\to U/2$
+- **QV trap:** work is $\frac12 QV$, not $QV$; $V$ is not constant while charging
+
+#### CM — constrained sliding
+
+Session: [[2026-09-14-1657 Tangential acceleration on a curve]]
+
+- Frictionless track: $a_t=g\sin\theta$ ($N$ has no tangential piece)
+- $\tan\theta=y'$; GRE trap is $g\tan\theta$ (option C on $y=x^2/4$)
+- $y=x^2/4$, $+y$ down: $a_t=gx/\sqrt{x^2+4}$ (D)
 
 ### English
 
@@ -321,8 +340,10 @@ Only threads with unfinished core work (verified against session notes). Solid-e
 | QM: displacement operator $D(\alpha)$                      | **next** — unblocked    | Parent note only has Turns 1–2 (fork to HO/ladder); **no derivation yet**. Resume [[2026-07-26-2030 Displacement operator]] → $D(\alpha)=e^{\alpha a^\dagger-\alpha^* a}$                                                                                                                           |
 | Exp. tech NP: radioactive beams / projectile fragmentation | **active** — Fig. 2 kinematics | Say-back locked: fragment $v$ ≈ beam; same $v$ $\Rightarrow B\rho\propto A/q$ ($^{11}\mathrm{Be}$/$^{11}\mathrm{C}$ = $3:2$); Goldhaber named as cloud-width driver. Turn 5: exploring Fig. 2 (relativistic kinematics of $\sigma(P_\parallel)/P$ plateau vs $\sigma(P_t)/P$ falloff). [[2026-08-07-1538 Radioactive beams projectile fragmentation]] |
 | TOEFL: main purpose (campus message) | **active** — method | Strip-out locked (sticker can drop; remainder still a mail). Package = one job; option may name stickers as *and its conditions*. Confirm-bundle vs isolated *your* next. [[2026-08-29-1018 TOEFL main purpose]] |
-| Bead on a rotating hoop | **active** — mechanism & stability | Learner exploring rotating-frame force projection, linear stability around $\theta=0$, and $U_{\text{eff}}$ bifurcation. [[2026-09-08-1247 Bead on a rotating hoop]] |
+| Bead on a rotating hoop | **active** — $F_{\mathrm{cf}}$ sign | Geometry of $mg\sin\theta$ vs $F_{\mathrm{cf}}\cos\theta$ given. Next: small-$\theta$ centrifugal piece — restore or unbind? [[2026-09-08-1247 Bead on a rotating hoop]] |
 | Fluid dynamics: Bernoulli & continuity | **paused** — after Item 1 | Parent [[2026-09-10-1501 Fluid continuity equation]] still paused. Child [[2026-09-10-1522 Bernoulli equation]]: derivation + Venturi/piezometer locked. Open: Torricelli, viscous uniform-pipe ΔP, four assumptions from the learner, parent r^4 coupling. Next pass: book/GRE mixed fluids, not another Socratic Venturi |
+| Capacitor energy (U_C) | **active** — Drill Batch 1 Item 3 | Items 1–2 locked. Item 3: parallel share. [[2026-09-14-0816 Capacitor energy]] |
+| Capacitance (two conductors) | **paused** — picture usable | Learner: $C$ stays, $V$ doubles. Resume energy parent. [[2026-09-14-0828 Capacitance]] |
 
 ## Session notes
 
@@ -352,6 +373,7 @@ Only threads with unfinished core work (verified against session notes). Solid-e
 | TOEFL: listening best response | [[2026-09-01-1030 TOEFL listening choose best response]] · `60_Learning_Progress/English Learning/2026-09-01-1030 TOEFL listening choose best response.md` |
 | TOEFL: general vs specific traps | [[2026-09-02-1400 TOEFL general vs specific details]] · `60_Learning_Progress/English Learning/2026-09-02-1400 TOEFL general vs specific details.md` |
 | would rather ... than | [[2026-09-03-0819 would rather than]] · `60_Learning_Progress/English Learning/2026-09-03-0819 would rather than.md` |
+| Tangential accel on a curve | [[2026-09-14-1657 Tangential acceleration on a curve]] · `60_Learning_Progress/Classical Mechanics/2026-09-14-1657 Tangential acceleration on a curve.md` |
 
 ### Active / next
 
@@ -363,6 +385,8 @@ Only threads with unfinished core work (verified against session notes). Solid-e
 | Bead on a rotating hoop (active) | [[2026-09-08-1247 Bead on a rotating hoop]] · `60_Learning_Progress/Classical Mechanics/2026-09-08-1247 Bead on a rotating hoop.md` |
 | Bernoulli equation (active) | [[2026-09-10-1522 Bernoulli equation]] · `60_Learning_Progress/Classical Mechanics/2026-09-10-1522 Bernoulli equation.md` |
 | Fluid continuity equation (paused) | [[2026-09-10-1501 Fluid continuity equation]] · `60_Learning_Progress/Classical Mechanics/2026-09-10-1501 Fluid continuity equation.md` |
+| Capacitor energy (active) | [[2026-09-14-0816 Capacitor energy]] · `60_Learning_Progress/Electrodynamics/2026-09-14-0816 Capacitor energy.md` |
+| Capacitance (paused) | [[2026-09-14-0828 Capacitance]] · `60_Learning_Progress/Electrodynamics/2026-09-14-0828 Capacitance.md` |
 
 ## Gaps / next
 

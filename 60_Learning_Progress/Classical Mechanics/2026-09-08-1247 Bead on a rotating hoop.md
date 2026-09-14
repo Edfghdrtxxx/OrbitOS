@@ -84,3 +84,38 @@ $$k_{\text{eff}} = m(g - \omega^2 R)$$
 **Question:**
 
 Notice how both forces scale linearly with $\theta$ near the bottom ($\sin\theta\cos\theta \approx \theta$). Looking at the geometry of the circular hoop, **why does the centrifugal force's projection along the wire pick up a factor of $\cos\theta$, while gravity's projection picks up $\sin\theta$?**
+
+### Turn 2 — 2026-09-14 (learner)
+
+> You were saying this but I interrupted you:
+>
+> The hoop session only has Turn 1. The unanswered question is:
+> The centrifugal force is horizontal (outward from the center), so its direction is always perpendicular to the vertical. The tangent line is tilted by θ from the horizontal, which means the angle between the centrifugal force (horizontal) and the tangent is exactly θ. Therefore the component along the wire is F_c cosθ.
+>
+> Gravity is vertical, and the tangent is tilted by θ from the horizontal, so the angle between gravity and the tangent is 90° – θ. That gives the component mg sinθ.
+>
+> That’s why you see cosθ for the centrifugal term and sinθ for gravity: the two forces are in perpendicular directions, and the 90° difference in their angles to the tangent flips the trig functions.
+>
+> Moreover, you need to activate daily note addition to record this session. I want to trace every effort I have made.
+
+### Tutor
+
+Curve item is closed (D). That geometry is the answer to Turn 1's question — same $mg\sin\theta$ along the tangent as on the track; hoop $\theta$ (from the downward vertical) *is* the tangent's tilt from the horizontal on a circle.
+
+```
+                    rotation axis
+                         |
+                    O    |
+                   /     |
+              R   / θ    |          F_cf →  (horizontal)
+                 /       |
+                * bead   |
+               /  ê_θ    v mg
+              /   (tangent; tilt θ from horizontal)
+```
+
+$F_{\mathrm{cf}}$ is horizontal, so the angle to $\hat e_\theta$ is $\theta$ $\Rightarrow$ $F_{\mathrm{cf}}\cos\theta$. Gravity is vertical, so the angle to $\hat e_\theta$ is $90^\circ-\theta$ $\Rightarrow$ $mg\sin\theta$.
+
+The centrifugal *magnitude* is not $m\omega^2 R$. The distance to the axis is $r=R\sin\theta$, so $F_{\mathrm{cf}}=m\omega^2 R\sin\theta$. Combined with the $\cos\theta$ projection that is $m\omega^2 R\sin\theta\cos\theta$.
+
+For small $\theta$, $\sin\theta\cos\theta\approx\theta$. Does that centrifugal piece restore toward the bottom, or push the bead *up* the wire?
