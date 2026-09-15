@@ -1,35 +1,45 @@
-# STATUS — Windows ↔ Mac baton
+﻿# STATUS — Windows ↔ Mac baton
 
 **Updated:** 2026-09-15 (Windows agent)  
 **Repo:** `Edfghdrtxxx/OrbitOS` · branch `main`
 
-## Baton holder: **Human** (manual Drive upload), then **Windows agent**
+## Baton holder: **Mac agent** (after `git pull`)
 
-### Decision (Windows session)
-- **`github_repo_forJob` EXCLUDED** from Drive pack — user: obsolete (2026-09-15).
-- CDP web-access upload fleet **blocked** (Chrome remote-debugging Allow dropped).
-- New plan: **one local package → human manual drag to Drive → Windows subagents organize/verify**.
+### Greenlight from Windows
 
-### Package ready on Windows
-Path:
-`D:\obsidian\OrbitOS\99_System\.scratch\windows-sale-prep\Windows_PC_Sale_202609_UPLOAD\`
+Manual Drive upload **received and inventoried**. User-confirmed **intentional** filtering of stale items (no re-upload).
 
-Contains: `01_documents`, `02_media_photos_ID`, `03_C_Downloads_keep`, `04_录音`, `05_ExpenseTracker_input`, `07_WPS_working_uniques`  
-(~117 MB total; **no** `06_forJob`)
+```
+DRIVE PERSONAL PACK UPLOADED — AWAITING MAC SPOT-VERIFY
+```
 
-### Human upload steps
-1. Sign into Drive as **`edfghdrtxxx@gmail.com` only**
-2. Open: https://drive.google.com/drive/folders/1fsARSKmyDDnoKO2wL4xzsmWAxXk1sHRG
-3. Drag folders `01`–`05` and `07` into that parent
-4. Tell Windows agent: **manual upload finished**
+### What is on Drive (`edfghdrtxxx`)
 
-### Then Windows will
-- Dispatch subagents to verify contents / fix nesting
-- Write `DRIVE_UPLOAD_RECEIPTS.md` → commit + push
-- Human tells Mac to pull + spot-open samples
+Parent: https://drive.google.com/drive/folders/1fsARSKmyDDnoKO2wL4xzsmWAxXk1sHRG
 
-### Still not wipe-safe
-TeamViewer/Autodesk/D: wipe/MATE selective→IMP/WSL/password rotate remain after Drive verify.
+| Pack | Status |
+|------|--------|
+| `01_documents` | **189 files — complete** |
+| `02_media_photos_ID` | **8 files — complete** |
+| `03_C_Downloads_keep` | Curated subset (Gemini_Chats + 出签信 + 简历-hzh + 膝盖) — extras filtered on purpose |
+| `05_ExpenseTracker_input` | **4 bill trees — complete** |
+| `04_录音` / `07` resumes / `06_forJob` | **Intentionally omitted** |
 
-### Drive parent id
-`Windows_PC_Sale_202609` = `1fsARSKmyDDnoKO2wL4xzsmWAxXk1sHRG`
+Full receipts: `DRIVE_UPLOAD_RECEIPTS.md`  
+Inventory detail: `drive-verify-report.md`
+
+### Mac must do next
+
+1. `git pull`
+2. Spot-open Passport / admission / 出签信 / one Expense file from Drive
+3. Edit this STATUS with either:
+   - `DRIVE PERSONAL PACK VERIFIED`
+   - or blockers
+4. Commit + push → human tells Windows
+
+### Still not wipe-safe (unchanged blockers)
+
+- MATE selective runs/data → IMP (not this fleet)
+- TeamViewer / ToDesk / Autodesk / Steam logout
+- Dual-volume wipe (C: reset alone insufficient)
+- WSL skim or accept-loss; rotate MATE server passwords in private git
