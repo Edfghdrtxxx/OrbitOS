@@ -9,6 +9,10 @@ Windows sizes from handoff + 2026-04-12 Imai path maps. **No live Windows mount.
 
 **Out of scope (user-confirmed):** WeChat/QQ chat DBs · Chrome bookmarks/passwords (Sync) · SSH keys/API tokens (Mac already works; destroy Windows copies).
 
+**Decision (2026-09-14, Windows session):** User declared **AFTPC** (`AFTPC_V3_MultiAgentVersion`, stale ex-project of MATE-Automation) **not worth synchronizing** — little impact on current progress. Treat entire AFTPC tree (git history, `dataset/`, `outputs/`, LegacyBackup, architecture) as **accept-loss / abandon on wipe**. NST proof already on Drive remains optional offline pull only — not a Windows export blocker.
+
+**Decision (2026-09-14, keep-set):** Keep personal `documents` + `github_repo_forJob`. Selective keep: paper-cited MATE `runs` + named `data` subset + ViT `D:\outputs`. Landing preference: cloud-first via Google Drive **and** (user reminder) **two MATE remote server contexts** — Drive is not the only store; server inventory in progress under Windows sale-prep.
+
 **Prior notes:** No dedicated sale-prep checklist existed on Mac. Closest Windows maps:  
 `70_Presentations/711_imai-meeting-presentation-20260413/{05_code_repos,06_figures_outputs,07_presentations_docs}.md`
 
@@ -26,11 +30,8 @@ Windows sizes from handoff + 2026-04-12 Imai path maps. **No live Windows mount.
 | **P0** | `D:\Something\documents\` IDs/visa scans (~0.1 GB) | **MISSING** | **MISSING** | Cloud-copy entire folder (Drive is empty of this pack) |
 | **P0** | CNS `Invitation - ZhiHeng_Hu.pdf`, `CoE_nimai.pdf` | **MISSING** | **MISSING** (exact-title empty) | Cloud-copy from Windows `visa_ZhiHeng\` |
 | **P0** | `github_repo_forJob` (~14 GB, **no remote**) | **MISSING** | **MISSING** | Full copy off Windows (ext/cloud); optional private git |
-| **P0** | AFTPC git unpushed / “Back up” | Unknown | N/A | Windows: push all or `git bundle --all` |
-| **P0** | AFTPC NST `NST-2025-0958_Proof_hi.pdf` | **MISSING** on Mac | **HIT** — Google AI Studio `1CjXlCtik0gj5lMoHXDDpwSaFO-OZe0AZ` | Drive covers cloud; optional pull to Mac |
-| **P0** | AFTPC `Physics_Informed_LegacyBackup/` + architecture | **MISSING** | **MISSING** | Still must cloud from Windows |
-| **P0** | AFTPC `dataset/` Garfield (~46 GB) | **MISSING** | **MISSING** (impossible at 1 GB Drive) | Copy-or-document-loss; not regenerable from Mac/Drive |
-| **P1** | AFTPC `outputs/` + code tree | **MISSING** | **MISSING** | Selective after git safe |
+| **OK (abandon)** | AFTPC entire tree (git / dataset / outputs / LegacyBackup) | N/A | NST proof HIT only | **User accept-loss 2026-09-14** — do not sync |
+| **OK (optional)** | AFTPC NST proof PDF | Mac miss | **HIT** on Drive | Optional Mac pull; not a wipe blocker |
 | **P1** | MATE `data/` ~180 GB | Mac 23 MB only | **MISSING** | Selective H5 list |
 | **P1** | MATE paper `runs/` EXP1–7 / TRK1–4 | PARTIAL (EXP8 only) | **MISSING** | Keep Windows until copied/abandoned |
 | **P1** | Coursework PPT pack (CNS/group_meeting/ChannelScaling/…) | Mac missing tree | **HIT** under Drive `60_Presentations/` | PPT pack largely clouded; still diff Windows listing for extras |
@@ -234,17 +235,14 @@ Drive scouts: reports in `90_Plans/Windows_PC_Sale/DRIVE_SCOUT_*.md`.
 ### P0 — blockers
 - [ ] `documents\` (IDs/visa) on Mac **or** Drive and opened once  
 - [ ] CNS `Invitation - ZhiHeng_Hu.pdf` + `CoE_nimai.pdf` on Mac **or** Drive  
-- [ ] AFTPC: all commits pushed **or** `git bundle --all` saved  
-- [x] AFTPC NST proof PDF **present** on Drive (`1CjXlCtik0gj5lMoHXDDpwSaFO-OZe0AZ`)  
-- [ ] User opened/downloaded NST proof once (confirm readable offline or on Drive)  
-- [ ] AFTPC `thesis/Physics_Informed_LegacyBackup/` (+ architecture) clouded — **still open**  
-- [ ] `github_repo_forJob` full tree (or bundle) off Windows  
-- [ ] AFTPC `dataset/` decision: **copied / accept loss** (regenerate only with Windows Garfield evidence)  
+- [x] AFTPC git / LegacyBackup / dataset / outputs — **abandon** (user 2026-09-14: stale ex-project, not worth sync)  
+- [x] AFTPC NST proof PDF **present** on Drive (`1CjXlCtik0gj5lMoHXDDpwSaFO-OZe0AZ`) — optional Mac pull only  
+- [ ] `github_repo_forJob` full tree (or bundle) off Windows **or** explicit abandon  
 
 ### P1 — science continuity
 - [ ] Paper-cited MATE `runs` (EXP1–7, TRK1–4, TRK-comparison, …) copied or abandoned  
 - [ ] ViT `D:\outputs` decision  
-- [ ] Selective AFTPC `outputs/` copied or abandoned  
+- [x] Selective AFTPC `outputs/` — **abandon** with AFTPC tree  
 - [ ] MATE `data/` subset decision  
 - [x] Named coursework PPT files **found** on Drive `60_Presentations/`  
 - [ ] Windows `ML_in_Data_Analysis\` dir listing **diffed** vs Drive 601–615 (catch extras)  
