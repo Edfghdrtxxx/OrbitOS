@@ -50,7 +50,7 @@ aliases: ["Physics GRE", "Physics_GRE"]
 - **`04_Diagnostics_&_Errors/`**: [[Diagnostics-Oct04]], [[Rehearsal-Oct25]], [[Misses-Log]] (missed problem pattern registry)
 - **`05_Resources/`**: [[Practice Resources]], [[Reference-Guides]] (released exams and local server setup)
 
-- [ ] GRE Physics — 25-item timed set from current topic + log misses (~ 100 mins) (0/5) #weekly
+- [ ] GRE Physics — timed Studio pack from current topic + log misses (~ 100 mins) (0/5) #weekly
 - [ ] GRE formula recall 20 (~ 50 mins) (0/6) #weekly
 - [ ] GRE extra — weak-topic review / error-log rework (~ 50 mins) (0/2) #weekly
 

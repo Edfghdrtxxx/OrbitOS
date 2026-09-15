@@ -1,7 +1,7 @@
 ---
 type: learning-index
 purpose: Terse cross-agent index of what the learner has solidly learned. Agents running /learn MUST read this first.
-updated: 2026-09-14
+updated: 2026-09-15
 ---
 # Learning Progress — Context Index
 
@@ -331,6 +331,18 @@ Session: [[2026-09-03-0819 would rather than]]
 | Preposition retention for disambiguation | talk to Alex than to Maria (keeps to to mark Maria as object, avoiding subject confusion) |
 | Negation syntax: would rather not [verb] | not placed after rather (never wouldn't rather); preferred action goes into Slot A |
 | Quasi-negation in than: implicit "not" | Learner formulation: than marks discarded option; Slot A = desired, Slot B = rejected |
+
+#### TOEFL main purpose (campus message)
+
+Session: [[2026-08-29-1018 TOEFL main purpose]] — **closed 2026-09-15** (TOEFL complete; no further active work)
+
+| Item | Notes |
+|------|--------|
+| Strip-out test | Sticker can drop; remainder still a complete mail → sticker, not package |
+| Package = one job | Speech-act of the mail; green option may also name stickers as *and its conditions* / *and the ID rule* |
+| Confirm-family bundle | *[whose] + [booked thing] + [lock-in verb]* (*is confirmed/reserved*); isolated *your* with no lock-in stays a sticker |
+| Job-to-job gate | Same words + wrong job → reject; different words + same job → take (paraphrase gate on purpose) |
+
 ## In progress
 
 Only threads with unfinished core work (verified against session notes). Solid-enough items live under **Known solid** only.
@@ -339,11 +351,11 @@ Only threads with unfinished core work (verified against session notes). Solid-e
 | ---------------------------------------------------------- | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | QM: displacement operator $D(\alpha)$                      | **next** — unblocked    | Parent note only has Turns 1–2 (fork to HO/ladder); **no derivation yet**. Resume [[2026-07-26-2030 Displacement operator]] → $D(\alpha)=e^{\alpha a^\dagger-\alpha^* a}$                                                                                                                           |
 | Exp. tech NP: radioactive beams / projectile fragmentation | **active** — Fig. 2 kinematics | Say-back locked: fragment $v$ ≈ beam; same $v$ $\Rightarrow B\rho\propto A/q$ ($^{11}\mathrm{Be}$/$^{11}\mathrm{C}$ = $3:2$); Goldhaber named as cloud-width driver. Turn 5: exploring Fig. 2 (relativistic kinematics of $\sigma(P_\parallel)/P$ plateau vs $\sigma(P_t)/P$ falloff). [[2026-08-07-1538 Radioactive beams projectile fragmentation]] |
-| TOEFL: main purpose (campus message) | **active** — method | Strip-out locked (sticker can drop; remainder still a mail). Package = one job; option may name stickers as *and its conditions*. Confirm-bundle vs isolated *your* next. [[2026-08-29-1018 TOEFL main purpose]] |
 | Bead on a rotating hoop | **active** — $F_{\mathrm{cf}}$ sign | Geometry of $mg\sin\theta$ vs $F_{\mathrm{cf}}\cos\theta$ given. Next: small-$\theta$ centrifugal piece — restore or unbind? [[2026-09-08-1247 Bead on a rotating hoop]] |
 | Fluid dynamics: Bernoulli & continuity | **paused** — after Item 1 | Parent [[2026-09-10-1501 Fluid continuity equation]] still paused. Child [[2026-09-10-1522 Bernoulli equation]]: derivation + Venturi/piezometer locked. Open: Torricelli, viscous uniform-pipe ΔP, four assumptions from the learner, parent r^4 coupling. Next pass: book/GRE mixed fluids, not another Socratic Venturi |
 | Capacitor energy (U_C) | **active** — Drill Batch 1 Item 3 | Items 1–2 locked. Item 3: parallel share. [[2026-09-14-0816 Capacitor energy]] |
 | Capacitance (two conductors) | **paused** — picture usable | Learner: $C$ stays, $V$ doubles. Resume energy parent. [[2026-09-14-0828 Capacitance]] |
+| Boundary condition on normal E | **active** — Turn 1 open | Origin from Gauss pillbox and jump across sheet vs conductor. [[2026-09-15-0916 Boundary condition on normal E]] |
 
 ## Session notes
 
@@ -373,6 +385,7 @@ Only threads with unfinished core work (verified against session notes). Solid-e
 | TOEFL: listening best response | [[2026-09-01-1030 TOEFL listening choose best response]] · `60_Learning_Progress/English Learning/2026-09-01-1030 TOEFL listening choose best response.md` |
 | TOEFL: general vs specific traps | [[2026-09-02-1400 TOEFL general vs specific details]] · `60_Learning_Progress/English Learning/2026-09-02-1400 TOEFL general vs specific details.md` |
 | would rather ... than | [[2026-09-03-0819 would rather than]] · `60_Learning_Progress/English Learning/2026-09-03-0819 would rather than.md` |
+| TOEFL: main purpose (campus message) | [[2026-08-29-1018 TOEFL main purpose]] · `60_Learning_Progress/English Learning/2026-08-29-1018 TOEFL main purpose.md` |
 | Tangential accel on a curve | [[2026-09-14-1657 Tangential acceleration on a curve]] · `60_Learning_Progress/Classical Mechanics/2026-09-14-1657 Tangential acceleration on a curve.md` |
 
 ### Active / next
@@ -381,12 +394,12 @@ Only threads with unfinished core work (verified against session notes). Solid-e
 |--------|------|
 | Displacement operator (next) | [[2026-07-26-2030 Displacement operator]] · `60_Learning_Progress/Quantum Mechanics/2026-07-26-2030 Displacement operator.md` |
 | Radioactive beams / projectile fragmentation (active) | [[2026-08-07-1538 Radioactive beams projectile fragmentation]] · `60_Learning_Progress/Nuclear Physics/2026-08-07-1538 Radioactive beams projectile fragmentation.md` |
-| TOEFL: main purpose (campus message) | [[2026-08-29-1018 TOEFL main purpose]] · `60_Learning_Progress/English Learning/2026-08-29-1018 TOEFL main purpose.md` |
 | Bead on a rotating hoop (active) | [[2026-09-08-1247 Bead on a rotating hoop]] · `60_Learning_Progress/Classical Mechanics/2026-09-08-1247 Bead on a rotating hoop.md` |
 | Bernoulli equation (active) | [[2026-09-10-1522 Bernoulli equation]] · `60_Learning_Progress/Classical Mechanics/2026-09-10-1522 Bernoulli equation.md` |
 | Fluid continuity equation (paused) | [[2026-09-10-1501 Fluid continuity equation]] · `60_Learning_Progress/Classical Mechanics/2026-09-10-1501 Fluid continuity equation.md` |
 | Capacitor energy (active) | [[2026-09-14-0816 Capacitor energy]] · `60_Learning_Progress/Electrodynamics/2026-09-14-0816 Capacitor energy.md` |
 | Capacitance (paused) | [[2026-09-14-0828 Capacitance]] · `60_Learning_Progress/Electrodynamics/2026-09-14-0828 Capacitance.md` |
+| Boundary condition on normal E (active) | [[2026-09-15-0916 Boundary condition on normal E]] · `60_Learning_Progress/Electrodynamics/2026-09-15-0916 Boundary condition on normal E.md` |
 
 ## Gaps / next
 
@@ -405,3 +418,4 @@ Only threads with unfinished core work (verified against session notes). Solid-e
 13. (Optional) TOEFL AD: 60s proofread pass / BaS micro-drill if needed later — [[2026-07-26-2233 TOEFL Academic Discussion]]
 14. (Optional) TOEFL best campus reply: 2-item unlabeled check if rusty — [[2026-08-29-2046 TOEFL best campus reply]]
 15. (Optional) TOEFL detail & EXCEPT: over-specification vs valid generalization check if rusty — [[2026-09-02-1400 TOEFL general vs specific details]]
+16. (Optional) TOEFL main purpose: confirm-bundle vs isolated *your* only if rusty — [[2026-08-29-1018 TOEFL main purpose]]

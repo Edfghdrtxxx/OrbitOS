@@ -2,11 +2,13 @@
 type: learning-session
 topic: English Learning
 subtopic: TOEFL main purpose (message / announcement)
-status: active
+status: closed
 related:
   - "[[Progress-context]]"
   - "[[2026-08-27-2255 TOEFL distinct outcomes paraphrase]]"
-updated: 2026-08-29
+updated: 2026-09-15
+closed: 2026-09-15
+closed_reason: TOEFL complete — no further active work; method parked under Known solid
 ---
 # TOEFL: main purpose of a message
 

@@ -5,7 +5,7 @@ status: active
 area: "[[Japan_Itinerary]]"
 start: 2026-09-07
 due: 2026-11-01
-updated: 2026-09-12
+updated: 2026-09-15
 tags: [gre, physics, syllabus]
 ---
 # GRE Physics Syllabus & Plan (ETS Computer Exam Blueprint)
@@ -21,6 +21,8 @@ tags: [gre, physics, syllabus]
 > **5× ~100 min** timed + **6× ~50 min** formula + **2× ~50 min** extra ≈ **16 h**.
 > Extra row is misses-first. Hard cap **5 new timed sets/week** except W7 taper.
 > Prep Studio (`/Users/Reid Hu/Physics GRE`) is the drill app, not a second calendar. Its `#/plan` view is generated from this file via `tools/build-plan.js` (not a second calendar).
+>
+> Timed sets **01–35** are Studio-primary packs (`js/data-packs.js`): each has an explicit practice-pool `ids` list and honest `n` (`n` = that list’s length). Thin themes stay short (e.g. pack **07** fluids n=4, pack **24** hydrogen n=5). Launch a pack with `PGRE.launchPack('03')` → `#/practice/custom`. Vault titles and daily children cite pack id + `n`.
 
 ## Week 0 (historical, Sep 7–13)
 - Assigned: CM Sets 01–05. **Set 01 done 2026-09-08.** Set 02 open as of 2026-09-11.
@@ -57,7 +59,7 @@ Book Sample Exams 1–3 (Prep Studio `cpg-exams`) are **optional extras**, not c
 Do not schedule GR8677 or GR9277 as mocks (`ets-drill`, already in the daily pool). GR0177/GR0877 were the Oct 4 paper diagnostic — do not re-sit as computer mocks.
 
 ## Drill contract
-- **35 Topic Sets** still exist; W7 does not finish 31–35 as new timed work.
+- **35 Studio packs** still exist (honest `n` each; see [[01_Classical_Mechanics]] and siblings). W7 does not finish 31–35 as new timed work.
 - **Formula Recall:** 20 formulas/session × 6 days/week via [[Formula-Recall-Decks]]. Hedged **~50 min**.
 - **Error Rework:** 2× ~50 min/week into [[Misses-Log]]. Misses-first; only then leftover sets (07 if carried; 30; 31/34/35).
 - **Diagnostics (dated, not extra weekly rows):**

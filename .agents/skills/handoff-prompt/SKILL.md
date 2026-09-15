@@ -47,4 +47,4 @@ These apply not only to the follow-up AI receiving the handoff, **but also to yo
 
 # Arguments
 - When the user invokes this skill with the argument "with brief document" or any semantically equivalent phrase, produce a concise document that enables a subsequent AI to continue your work seaminglessly. 
-- Brief document path: '/Users/Reid Hu/MATE-Automation/99_System/Handoff documents/<topic>/<topic.md>'
+- Brief document path: project-scoped `99_System/Handoff documents/<topic>/<topic.md>` under the repo that owns the work (e.g. Physics GRE Prep Studio, MATE-Automation, OrbitOS). Never default to an unrelated repo.

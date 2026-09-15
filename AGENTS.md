@@ -25,7 +25,7 @@ This is the **single project rules file** for Grok Build, Claude Code, Codex, an
 - **Canonical path:** `.agents/skills/<skill-name>/SKILL.md` — install and edit only here
   - Claude: `.claude/skills` → `../.agents/skills` (symlink; never a real directory)
   - Grok: use `.agents/skills/` only — no parallel `.grok/skills/` copies
-- See [[README]] for the skill catalog (**39** core skills; `ask` archived — plain chat for Q&A, `/learn` for deep study; orchestrate-series + `research` archived 2026-07-29 → `/orchestrate-v3` + host `/deep-research`; `brainstorm` archived 2026-08-18; `super-alignment` archived 2026-08-18 → `/align`; `guide-derivation` archived 2026-09-08 → `/learn`)
+- See [[README]] for the skill catalog (**40** core skills; `ask` archived — plain chat for Q&A, `/learn` for deep study; orchestrate-series + `research` archived 2026-07-29 → `/orchestrate-v3` + host `/deep-research`; `brainstorm` archived 2026-08-18; `super-alignment` archived 2026-08-18 → `/align`; `guide-derivation` archived 2026-09-08 → `/learn`)
 
 ## Vault root (this machine)
 
@@ -64,6 +64,9 @@ Read the matching file from `99_System/memory/` on trigger.
 | `preference_visualization_light_theme.md` | images, plots, HTML reports, decks                    |
 | `project_japan_itinerary.md`              | Japan deadlines, funding, timeline, or checklist      |
 | `personal_context.md`                     | life/career tradeoffs: family, relationship, lock mechanics, post-PhD endgame |
+| `preference_clear_temp_files.md`          | install, pipeline/gate, smoke test, scratch, or leftover temps |
+| `project_physics_gre.md`                  | Physics GRE website, Prep Studio, GRE drill/timed-set platform, or `/Users/Reid Hu/Physics GRE` |
+| `preference_lavish_interviews.md`         | multi-option / jargon user interview, or about to host-Ask for those |
 
 ### Writing memories
 
@@ -114,7 +117,8 @@ Skip any related-repo path that does not exist on disk.
 
 ## Principles of Paramount Importance
 
-- **Zero Assumptions:** Never guess user intent. If multiple implementations exist or requirements are incomplete, **halt and ask the user** (Grok: `ask_user_question`; Claude/Codex: `AskUserQuestion`) to gather explicit direction.
+- **Zero Assumptions:** Never guess user intent. If multiple implementations exist or requirements are incomplete, **halt and interview the user** (channel: **User interviews** below).
 - **No Silent Assumptions:** Even when the task is requested, confirm the *method* if it was not specified. Do not guess the user's expectations.
-- **Necessity Check (trigger-based):** Load `feedback_necessity_check.md` via the Memory System search order above and apply its five-question check — halt and ask the user if any check fails — when either trigger fires: (a) the change touches structural/system surfaces (skills, AGENTS.md, memory, hooks, vault architecture), or (b) the user floats a modification/refactor idea — a new mechanism, a skill/workflow redesign — invoking their "questioning/interrogative spirit" (they want scrutiny, not agreement). Otherwise stay out of it. Do not sell speculation as an obvious win.
+- **User interviews (Lavish-first):** Prefer a Lavish page (`/lavish`, `npx -y lavish-axi`) when the choice is multi-option **or** needs jargon/stakes briefing. **Premise:** do not assume the user knows your terms, layout, or prior context — glossary + consequences on the page. Host Ask (`ask_user_question` / `AskUserQuestion`) only as **fallback** if Lavish cannot run, or for **1-bit** missing input with no jargon. Still investigate before asking (`feedback_investigate_over_ask`). Load `preference_lavish_interviews.md` on trigger.
+- **Necessity Check (trigger-based):** Load `feedback_necessity_check.md` via the Memory System search order above and apply its five-question check — halt and interview if any check fails — when either trigger fires: (a) the change touches structural/system surfaces (skills, AGENTS.md, memory, hooks, vault architecture), or (b) the user floats a modification/refactor idea — a new mechanism, a skill/workflow redesign — invoking their "questioning/interrogative spirit" (they want scrutiny, not agreement). Otherwise stay out of it. Do not sell speculation as an obvious win.
 

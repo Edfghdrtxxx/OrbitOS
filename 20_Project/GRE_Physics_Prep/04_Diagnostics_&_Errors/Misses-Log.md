@@ -9,7 +9,7 @@ tags: [gre, physics, error-log, misses]
 # GRE Physics Error Log & Misses Registry
 
 > [!note] Rework Rule
-> Every missed problem from daily 25-item sets or diagnostic tests must be reworked from scratch.
+> Every missed problem from daily Studio packs or diagnostic tests must be reworked from scratch.
 > Log the root error pattern under the appropriate category:
 > 1. Conceptual gap (did not know the underlying law)
 > 2. Calculation / sign error (algebra or arithmetic slip)

@@ -6,6 +6,12 @@
       "sourceType": "github",
       "skillPath": "skills/kun/SKILL.md",
       "computedHash": "346dd6161da92b983c7bb06d082776b5472424a839b844973658867ec86ab0f3"
+    },
+    "lavish": {
+      "source": "kunchenguid/lavish-axi",
+      "sourceType": "github",
+      "skillPath": "skills/lavish/SKILL.md",
+      "computedHash": "5ff18ff1fb92bda3049037e08d1f7db31f7667bc90635677c37dcf620fd0c1a4"
     }
   }
 }

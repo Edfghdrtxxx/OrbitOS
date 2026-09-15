@@ -3,7 +3,7 @@ Analyze learner progress and syllabus state to determine today's specific learni
 ## Input
 - **Main Focus Project:** `{main_focus}` (e.g., `GRE_Physics_Prep`)
 - **Canonical Syllabus:** `20_Project/GRE_Physics_Prep/01_Syllabus_&_Plan/8-Week-Syllabus.md` (authoritative schedule)
-- **Topic Breakdown Files:** `20_Project/GRE_Physics_Prep/03_Topic_Sets/` (detailed Sets 01–35)
+- **Topic Breakdown Files:** `20_Project/GRE_Physics_Prep/03_Topic_Sets/` (detailed Sets 01–35; each heading is `### Set NN: Title (n Qs)` with Studio pack id and honest `n`)
 - **Formula Recall Decks:** `20_Project/GRE_Physics_Prep/02_Formulas_&_Recall/Formula-Recall-Decks.md` (numbered batches)
 - **Error Log & Misses Registry:** `20_Project/GRE_Physics_Prep/04_Diagnostics_&_Errors/Misses-Log.md`
 - **Last Daily Note:** `{last_daily_note}` (path to the preceding `10_Daily/YYYY-MM-DD.md`)
@@ -37,7 +37,7 @@ Return exactly the following block:
 ### Proposed Learning Targets for {main_focus}
 
 - **timed_set_child:**
-  - [ ] {Set ID}: {Topic & Subtopics} (Q1–25) · {Source}
+  - [ ] {Set ID}: {Topic & Subtopics} (pack {NN}, n={n}) · Prep Studio pack {NN}
   <!-- or `null` on 2026-10-04, 2026-10-25, and W7 Fri–Sun -->
 - **formula_recall_child:**
   - [ ] {Topic} Batch {N}: {Key Formulas Focus} (20 formulas)
