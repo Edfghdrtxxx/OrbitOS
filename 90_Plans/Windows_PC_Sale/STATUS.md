@@ -1,52 +1,65 @@
 # STATUS — Windows ↔ Mac baton
 
-**Updated:** 2026-09-15 (Windows agent)  
-**Repo:** `Edfghdrtxxx/OrbitOS` · branch `main`
+**Updated:** 2026-09-15 (Mac agent)  
+**Repo:** `Edfghdrtxxx/OrbitOS` · branch `main`  
+**Pull base:** `cb727fc` → this commit (greenlight)
 
-## Baton holder: **Mac agent** (after `git pull`)
+## Baton holder: **Windows agent** (after `git pull`)
 
-Windows is **waiting**. Do **not** start the Google Drive upload fleet until Mac returns greenlight.
+Mac finished pre-Drive confirmation. Full map: **`DRIVE_UPLOAD_GREENLIGHT.md`**.
 
-### Mac must do next
+### Greenlight
 
-1. `git pull` in OrbitOS.
-2. Read `AGENT_BRIDGE.md`, then this file, then `handoff-mac-before-drive-upload.md`.
-3. Confirm and write back (edit this `STATUS.md` + optional `DRIVE_UPLOAD_GREENLIGHT.md`):
-   - Canonical Drive account (`edfghdrtxxx` only?)
-   - **Target folder map**: each residual → Drive parent folder name + id
-   - **Skip list**: already on Mac/Drive (no re-upload)
-   - forJob layout (tree vs archive) + Mac disk headroom for ~14 GB
-   - Secrets: memoranda passwords already in a manager? (prefer no raw Drive dump)
-4. End with either:
-   - `SAFE FOR WINDOWS TO START DRIVE UPLOAD FLEET`
-   - or a blocker list
-5. **Commit + push**, then human tells Windows to pull.
+```
+SAFE FOR WINDOWS TO START DRIVE UPLOAD FLEET
+```
 
-### Drive-bound residuals Windows will upload (after greenlight)
+### Canonical account
+- **`edfghdrtxxx@gmail.com` only** (do not use `pom.085…`)
 
-Organized to respect existing Drive structure (Mac specifies parents):
+### Target folder map (create on My Drive)
 
-1. `D:\Something\documents\`
-2. `D:\Something\media\photos\` (ID/证件照)
-3. C: Downloads keep-set + `Documents\录音`
-4. Expense Tracker `input\` bills (sensitive)
-5. `github_repo_forJob` (~14.4 GB)
-6. Small WPS/working uniques only if Mac skip-list says missing
+**Parent:** `Windows_PC_Sale_202609/` (new top-level; write folder id into upload receipts)
 
-### Out of scope for Drive fleet
+| Child | Windows source |
+|-------|----------------|
+| `01_documents` | `D:\Something\documents\` |
+| `02_media_photos_ID` | `D:\Something\media\photos\` |
+| `03_C_Downloads_keep` | C: Downloads keep-set (出签/dzfp/简历-hzh/Gemini_Chats/… — see greenlight §2b) |
+| `04_录音` | `C:\Users\petro\Documents\录音\` |
+| `05_ExpenseTracker_input` | Expense Tracker `input\` bills (**private**) |
+| `06_github_repo_forJob` | full tree mirror (~14.4 GB); exclude venv/node_modules; optional `forJob.bundle` |
+| `07_WPS_working_uniques` | gaps only after WPS cloud check + `D:\working\` diff |
 
-- MATE selective data/runs → IMP  
-- ViT → **already on IMP** (both runs verified)  
-- AFTPC / WeChat / QQ / Windows SSH → abandon  
+### Skip list (no re-upload)
+- NST proof (Drive AI Studio)  
+- `60_Presentations/` named PPT pack  
+- Literature ML PDFs already on Drive  
+- Corpy CV PDF twin  
+- OrbitOS vault / MATE code (git)  
+- ViT → IMP already · MATE science → IMP · AFTPC/WeChat/QQ/SSH → abandon  
+- **No** memoranda plaintext password dumps to Drive  
 
-### Windows already done (for context)
+### forJob + Mac disk
+- Layout: **folder tree** under `06_…` (not sole zip)  
+- Mac free space: **~273 GB** — can pull ~14 GB later  
 
-- Overnight wipe-safety: **NOT wipe-safe yet** (`OVERNIGHT_WIPE_SAFETY_REPORT.md`)
-- ViT on IMP: `huzh_2022/windows_pc_sale_202609/outputs_ViT/` (1.2G + 394M)
-- Decisions locked: AFTPC abandon; personal→Drive/Mac; forJob→Drive; MATE→IMP; AutoDL off unless needed
+### Secrets
+- Prefer password-manager migration for memoranda; destroy Windows copies  
+- Do not upload MATE server context password files to Drive  
+
+### Windows must do next
+1. `git pull` OrbitOS.  
+2. Read `DRIVE_UPLOAD_GREENLIGHT.md`.  
+3. Create Drive folder tree → run upload fleet.  
+4. Write `DRIVE_UPLOAD_RECEIPTS.md` (ids + sizes) → **commit + push**.  
+5. Human tells Mac to pull + spot-open documents + one forJob path before any wipe.
+
+### Still not wipe-safe
+Overnight report stands: TeamViewer/ToDesk, Autodesk, D: wipe, MATE selective→IMP, WSL skim, password rotate — **after** Drive receipts verified.
 
 ---
 
-## When Windows holds the baton again
-
-After Mac push with greenlight + folder map, Windows will: pull → dispatch `/web-access` Drive upload subagents → commit upload receipts → push.
+## Prior (Windows, 2026-09-15)
+- ViT on IMP verified; AFTPC abandon; personal+forJob→Drive; MATE→IMP  
+- Was waiting on Mac folder map — **cleared**
