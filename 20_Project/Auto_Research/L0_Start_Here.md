@@ -28,20 +28,16 @@ The PM / context agent owns the big picture (goal, state, next action, disclosur
 
 ## Current state (2026-09-21)
 
-- Outer state: `active: EXP3 cheapest-first, seed 1 training`.
-- Remote training window: **Authorized until 2026-10-06 00:00 AM**; **Hard Freeze** thereafter.
-- Dual-channel $(80\times48\times2)$ is the sole input invariant.
-- AutoDL 176 **on** (Reid 开机). Host `3187449845-e1386a94`, SSH `:43812`. Sequential only.
-- Cap **16.0** h. Spent: Z-01 **114 s** + seed 42 **166.3 min** + seed 0 **205.4 min** ≈ **6.2 h**. Remainder ~9.8 h. Seed 1 in flight.
-- EXP3 seed 42: eval **0.95908**, val **0.95904**, $\alpha$ recall **0.8484**.
-- EXP3 seed 0 **complete**: eval/val **0.95448**, $\alpha$ recall **0.8472**, best epoch 30, early-stop 36. Run `20260921_092858`.
-- Seed 1 launched **2026-09-21 12:56:13** at `.../EXP3-ResNet-HC-100k-seed1/20260921_125613/`. Gate unmeasured until seed 1 `run_complete.json`.
+- Outer state: `active: EXP3 ResNet+Raw seed 0; night chain live`.
+- Raw seed 42 **complete**: eval **0.89248**, val **0.8924**, $\alpha$ recall **0.6356** (paper 93.5% / 76.6%). Wall 293.5 min. Early-stop epoch 19.
+- Night chain launched Raw seed 0 at 23:17. Then 1, then XA-HC ×3, XA-Raw ×3.
+- Do not clip Z-01. Do not train F/G/H. Sequential only.
 
 ## Next action
 
-1. Let seed 1 finish. Sequential only. Do not start another train.
-2. Then std of `{42,0,1}` val acc. If $>0.5$ pp, stop EXP3.
-3. Do not clip Z-01. Do not train F/G/H. Do not skip cheapest-first.
+1. Leave 176 on. Do not relaunch.
+2. Morning: pull remaining `run_complete.json`.
+3. Do not clip Z-01. Do not train F/G/H.
 
 ## Disclosure instructions
 

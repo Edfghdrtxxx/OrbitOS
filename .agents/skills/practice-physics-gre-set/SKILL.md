@@ -2,12 +2,13 @@
 name: practice-physics-gre-set
 description: >
   Launch today's Physics GRE timed Studio pack (zero chip-picking), or log a
-  finished pack from a Studio agent receipt / natural “done”.
-  Use when the user runs /practice-physics-gre-set, asks to start / open / do /
-  launch today's GRE timed set or pack, or says they finished / are done with a
-  pack / wants to log GRE set results (optionally with pasted receipt JSON).
-  Do NOT use for formula recall, pgre-formula-receipt, “Copy status for agent”,
-  or formula-application drills — those are not timed packs.
+  finished pack from a Studio agent receipt / natural “done”. After a
+  formula-receipt Halt, Other / strengthen-from-receipt → custom set from
+  uploaded hard/lapse cards (not a catalog pack). Use when the user runs
+  /practice-physics-gre-set, asks to start/open/do/launch today's GRE timed
+  set or pack, or says they finished / are done / wants to log GRE set
+  results. Do NOT auto-launch from formula recall, pgre-formula-receipt, or
+  “Copy status for agent”. Formula SRS (`#/formulas`) is not this skill.
   Never automatically trigger or read this skill without the user's explicit
   instruction.
 ---
@@ -16,19 +17,20 @@ description: >
 Read `evolution.md` in this skill's folder. Apply lessons as extra constraints.
 
 # Gate schema
-Classify the **user message** before Launch or Log. First matching row wins. Do not skip this table.
+Classify the **user message** before Launch, Log, or Custom. First matching row wins. Do not skip this table.
 
 | If | Route |
 |---|---|
 | `"kind":"pgre-formula-receipt"` / `pgre-formula-receipt` / **Copy status for agent** | **Halt** |
 | Formula-recall status dump (`recalledToday`, `overallStatus`, `allLearnedCards`, or summary `# Formula Recall`) and no `pgre-agent-receipt` | **Halt** |
+| Other / strengthen-from-receipt / custom set from uploaded formula content (formula receipt in this chat) | **Custom** |
 | `pgre-agent-receipt` JSON, `/practice-physics-gre-set log`, done/finished pack, `incomplete-misses` | **Log** |
 | Launch wording **and** `pgre-agent-receipt` | **Log** (receipt wins) |
 | Informational pack lookup (“what is pack 03”, “what is pack NN”) | **Stop** — do not launch |
 | `/practice-physics-gre-set` with no formula payload, or timed pack/set launch wording (“timed pack”, “timed set”, “GRE pack”, “launch/start/open pack NN”, “open/start today’s pack”) with or without named pack id | **Launch** |
 | Ambiguous practice wording (“activate”, “start practice”, “let’s practice GRE”) or host practice injection (excluding `/start-my-day` and ambient GRE chat) with no formula payload and no pack receipt | **Launch** (default = succession pack) |
 
-**Halt** — do not launch, log, or invent a drill:
+**Halt** — do not launch, log, or invent a drill **on that turn**:
 1. Read today's daily GRE children (timed pack, formula recall, extra).
 2. Report then stop:
 ```
@@ -40,29 +42,50 @@ In process:
 - extra: <child text or none>
 Pick one: timed pack · extra child · formula recall · other
 ```
-3. Never open `#/practice/pack/NN` or `#/practice/custom`. Never tick vault.
+3. On the Halt turn: never open `#/practice/pack/NN` or `#/practice/custom`. Never tick vault. Other / strengthen-from-receipt → **Custom**.
 
-**Not this skill:** formula SRS (`#/formulas`), formula-application drills, extra/misses rework, `/start-my-day`.
+**Not this skill:** formula SRS (`#/formulas`), extra/misses rework, `/start-my-day`. Receipt-derived custom practice is Custom, not formula SRS.
 
 # Objective
-Two modes, one skill:
+Two modes plus one Halt follow-up:
 
 1. **Launch** — open today's timed pack on the existing Prep Studio origin. User clicks Start/Resume. Agent never does.
 2. **Log** — after the set, ingest a **Studio agent receipt** (primary) and write vault: tick daily child + parent counts, Log line, Misses-Log rows. Show receipt, write immediately (no second ask). End with a **next-step suggestion**.
+3. **Custom** — after Halt, receipt-derived ids on `#/practice/custom`. Does not close the timed child.
 
 **Close invariant:** no timed pack is **fully closed** in the vault without either (a) `kind: pgre-agent-receipt` backing W2 + W3, or (b) an **explicit** user override labeled `incomplete-misses`. Practiced ≠ logged. Never invent scores.
 
 # Trigger only
 - Launch: explicit start/open/do/launch of today's GRE timed set or pack, or `/practice-physics-gre-set` (no `log` arg).
 - Log: natural “done” / “finished pack” / “log GRE set” / paste of `kind: pgre-agent-receipt` JSON, `/practice-physics-gre-set log`, or explicit `incomplete-misses`.
+- Custom: Other / strengthen-from-receipt after a formula receipt in this chat.
 - **Never** auto-launch from `/start-my-day`, ambient GRE chat, “what is pack 03”, formula recall / `pgre-formula-receipt` / “Copy status for agent”.
 - **Never** park waiting for a ~100 min set.
 - This skill does **not** gate `/end-my-day` / `/start-my-day` (sister lock). Evening may still `[x]` a timed child; on next log, treat bare `[x]` without W2/W3 as not logged.
 
 # Mode routing
-Launch vs Log is the Gate schema above. A Halt row never becomes Launch.
+Launch vs Log vs Custom is the Gate schema above. A Halt row never becomes Launch. Other / strengthen-from-receipt after Halt → Custom.
 
 ---
+# Custom workflow (formula-receipt Other)
+
+Only when this chat already has a `pgre-formula-receipt` (or dump) and the user picks Other / strengthen-from-receipt / customized set from that upload.
+
+1. Do **not** `PGRE.launchPack` or pick `PGRE.PACKS` / `data-packs.js`.
+2. Cards: receipt `recalled` / `recalledToday` with `lastGrade` hard|again or `grades` containing those. Skip easy/good-only.
+3. Map each card → one unique practice-pool id (`PGRE.allQuestions()`, skip `ets-exam` / `cpg-exam`): score topic match + subtopic/stem terms from card name/front. Drop weak matches. Empty map → stop; do not fall back to a catalog pack.
+4. Same origin/tab as Launch §2 + §4a/4b. `sessionStorage.removeItem('pgre-practice-session')`. Write `pgre-quiz-config` `{ ids, label: 'Formula strengthen · <receipt date> hard recall · n=N' }`. Hash `#/practice/custom` (filled config, not empty). `PGRE.route()` if already on that hash.
+5. Verify ~1s: that label, n, rich store. Stop at start gate / Question 1 of n. Never click Start/Resume.
+6. Report then stop:
+```
+Custom · Formula strengthen · <date> · n=<n>
+Opened on existing tab: <href>
+Store: cards=<c> mistakes=<m> bytes=<b> origin=<…>
+Ready: user clicks Resume/Start (or already Q1 of n)
+After the set: summary → “Copy agent receipt” → paste or say “done”
+Timed daily child left [ ] — custom/extra receipts do not close it
+```
+
 
 # Launch workflow
 
@@ -110,7 +133,7 @@ Pick **richest** (bytes, then cards+mistakes+attempts). Tie → prefer practice/
 Open one new tab on the origin that holds progress (this machine usually `file:///Users/Reid%20Hu/Physics%20GRE/index.html#/practice/pack/NN`).
 
 ### Forbidden substitutes
-Bare `/`, empty custom quiz, chip-picking, headless practice surface, wrong origin, clicking Start/Resume for the user.
+Bare `/`, empty custom quiz, chip-picking, catalog pack / `launchPack` as a stand-in for receipt Custom, headless practice surface, wrong origin, clicking Start/Resume for the user.
 
 ## 5. Launch report and stop
 ```
@@ -175,7 +198,7 @@ Target pack NN = succession child (`[ ]` or `[*]` timed pack; else user-named). 
      return null
    })()
    ```
-   Order when NN known: `pgre-state-v1.packReceipts[NN]` (valid `pgre-agent-receipt` + score.n>0) → else `lastAgentReceipt` / `localStorage['pgre-agent-receipt']` **only if** their `pack` matches NN (or their legacy unlabeled receipt has no Learn purpose and no `packReceipts[NN]`). Learn receipts use `pgre-learn-drill-receipt` and are never timed-pack evidence. **Never** use a different-NN last/mirror receipt. Missing keys → skip, not error.
+   Order when NN known: `pgre-state-v1.packReceipts[NN]` (valid `pgre-agent-receipt` + score.n>0) → else `lastAgentReceipt` / `localStorage['pgre-agent-receipt']` **only if** their `pack` matches NN (or their legacy unlabeled receipt has no Learn purpose and no `packReceipts[NN]`). Learn receipts use `pgre-learn-drill-receipt` and are never timed-pack evidence. **Never** use a different-NN last/mirror receipt. Unlabeled last/mirror whose ids/label are a custom/formula-strengthen set (not `PACKS[NN]`) is not evidence for NN. Missing keys → skip, not error.
 4. **Else stop.** Offer exactly these — do **not** silent-`[x]`:
    - paste `kind: pgre-agent-receipt` JSON (Copy agent receipt on summary), or
    - explicit `incomplete-misses` override, or
@@ -199,7 +222,7 @@ Reject (do not close):
 
 Perfect: `correct === n` && `missQids = []` → W3 none is OK.
 
-`pack`: two-digit when present; else infer from `label` / daily child / `ids` vs `PGRE.PACKS`. Prefer today's succession child; receipt pack ≠ open child → honor receipt pack, note mismatch.
+`pack`: two-digit when present; else infer from `label` / daily child / `ids` vs `PGRE.PACKS`. Prefer today's succession child; receipt pack ≠ open child → honor receipt pack, note mismatch. Unlabeled custom / formula-strengthen / ids not in `PACKS[NN]` → not timed-child evidence (no W1).
 
 `completedAt` / `durationMin` optional — include in W2 when present.
 
@@ -214,6 +237,7 @@ Override path: print `incomplete-misses` (no invented score) then write.
 **`[x]` + parent +1 ONLY from a validated receipt or explicit `incomplete-misses`.**
 
 - Find the daily timed pack child (`pack NN` / Set NN).
+- Custom/unlabeled receipt, or `pack`/ids that are not today's timed child → no W1 tick, no parent bump.
 - Receipt → `- [x] · logged <correct>/<n> (<pct>%)` (short `- [x]` OK if W2+W3 land this turn).
 - Override → `- [x] · incomplete-misses`.
 - Parent `(k/N)` → `(k+1/N)` only when this child **newly** flips to `[x]` from `[ ]` or `[*]`. Never double-bump. If parent reaches N/N, mark parent `[x]` if that is the house convention; else stay consistent with other dailies.
@@ -231,6 +255,10 @@ Override:
 - GRE pack NN · <label or Set NN> · incomplete-misses · origin <file|localhost|…>
 ```
 Idempotent: same pack + same score/override line → skip. Logged close **requires** W2. Do not `[x]` without it.
+Custom/extra (no timed pack id) — W2 only, no W1:
+```
+- GRE custom · <label> · <correct>/<n> (<pct>%) · origin <file|localhost|…>
+```
 
 ### W3 — Misses-Log (vault only)
 File: `20_Project/GRE_Physics_Prep/04_Diagnostics_&_Errors/Misses-Log.md`.
@@ -240,6 +268,7 @@ Receipt, one row **per miss qid** (no unlabeled stubs). Skip if **Date + qid** a
 ```
 | YYYY-MM-DD | Pack NN / <qid> | <topic or —> | - | - | [ ] |
 ```
+- Custom: `| YYYY-MM-DD | Custom / <qid> | <topic or —> | - | - | [ ] |`
 - Perfect (`missQids = []`) → W3 none OK.
 - Override → **one** row labeled `incomplete-misses` (not a pending/TBD stub):
   ```
@@ -275,4 +304,4 @@ Stop.
 - `file://` clipboard failure in Studio → user may paste from on-screen fallback `<pre>`; agent still accepts paste (v1 JSON included).
 - Non-macOS → same tab-reuse via platform browser automation.
 - Historical packs closed `[x]` without receipt (e.g. pack 03) are **not** recovered here; log mode may reopen today’s bare `[x]` to `[*]` or take override, but do not invent old miss qids.
-- Formula receipt / “Copy status for agent” / formula-recall dump → Gate **Halt**. Do not launch. List in-process GRE children; wait. Ambiguous “activate” / “start practice” with no formula payload → **Launch** succession pack (do not interview).
+- Formula receipt / “Copy status for agent” / formula-recall dump → Gate **Halt**. Do not launch on that turn. List in-process GRE children; wait. Follow-up Other / strengthen-from-receipt → **Custom** (never succession pack, never `data-packs.js`). Ambiguous “activate” / “start practice” with no formula payload → **Launch** succession pack (do not interview).

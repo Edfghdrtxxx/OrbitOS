@@ -27,3 +27,9 @@
 - Reject `correct < n` with missing/empty/`length !== n-correct` `missQids`. Perfect: `correct===n` && `missQids=[]` → W3 none OK. No unlabeled W3 stubs.
 - Vocab: vault **Misses-Log** vs Studio **Mistake book** (`#/mistakes`) — this skill writes only Misses-Log; next-step must not conflate.
 - Sister skills (`end-my-day`, `start-my-day`) are **not** yet gated (skill-only lock). Evening can still tick a timed child; this skill repairs on next log.
+
+### Formula-receipt Other (2026-09-21)
+- **Fault:** After formula-receipt Halt, Other / “strengthen from this receipt” launched catalog pack 13 from `data-packs.js`.
+- **Fix:** That path is a receipt-derived custom set: map hard/lapse cards → practice-pool ids, write `sessionStorage['pgre-quiz-config']` `{ids, label}` (not `PGRE.launchPack`, not an existing pack file), route `#/practice/custom` on the richest Prep tab. Still no chip-picking, no empty custom, no Start click.
+- **User:** customized set based on the uploaded content; don’t pick the existing file.
+

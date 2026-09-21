@@ -143,6 +143,28 @@ Session: [[2026-09-20-1803 Electric displacement D and linear dielectrics]]
 - **Conductor electrostatic invariants:** 5 invariants locked and recorded to Prep Studio formula card `cpgf-2.15a` via Grok 4.6 ($\mathbf{E}=\mathbf{0}, \rho=0, V=\text{const}, \mathbf{E}=\frac{\sigma}{\epsilon_0}\hat{\mathbf{n}}, E_\parallel=0$, cavity shielding).
 - **Pillbox flux vs superposition:** Isolated sheet flux passes through two faces ($2ES = \sigma S/\epsilon_0 \implies E=\sigma/(2\epsilon_0)$); conductor forces $\mathbf{E}_{\text{in}}=\mathbf{0}$, channeling all flux through one face ($1ES = \sigma S/\epsilon_0 \implies E=\sigma/\epsilon_0$) (handwritten derivation verified).
 - **Spherical dielectric shell & bound charge:** $D(r) = \frac{Q}{4\pi r^2}, E(r) = \frac{Q}{4\pi\epsilon_0 K r^2}, \mathbf{P}(r) = \frac{K-1}{K}\frac{Q}{4\pi r^2}\hat{\mathbf{r}}$; inner bound surface charge $Q_{b,\text{inner}} = -\frac{K-1}{K}Q$ (negative sign from inward normal $\hat{\mathbf{n}}=-\hat{\mathbf{r}}$ / screening) (handwritten derivation verified).
+
+#### E&M — spherical coordinates (volume integral)
+
+Session: [[2026-09-21-1447 Volume integral of rho from div E]]
+
+- **$r$ vs $s$:** spherical $r$ = origin-to-point; cylindrical $s$ = axis-to-point
+- **Replacement triple:** $(r,\theta,\phi)$, not leftover $(x,y)$ plus $\theta$ (trap reworked)
+- **$\theta$ landmarks:** north $\theta=0$, equator $\theta=\pi/2$, south $\theta=\pi$
+- **$z=r\cos\theta$:** north / equator / south landmarks all match
+- **Spherical edges:** $\mathrm{d}r$, $r\mathrm{d}\theta$, $r\sin\theta\,\mathrm{d}\phi$ (trap reworked: not $(r, r\mathrm{d}\theta, r\sin\theta\phi)$)
+- **Volume element:** $\mathrm{d}^3 r=r^2\sin\theta\,\mathrm{d}r\,\mathrm{d}\theta\,\mathrm{d}\phi$ (handwritten product verified)
+- **GRE move:** $\rho\propto z$ odd on a sphere symmetric about $z=0$ $\implies Q=0$ (no triple slog)
+- **Hemisphere transfer:** upper hemisphere has no negative $\rho$ to cancel $\implies Q\neq 0$ (verified)
+
+#### E&M — series reactance and voltage budget
+
+Session: [[2026-09-21-0933 AC maximum power transfer]]
+
+- **Voltage budget:** series $L$ takes $V_L = L\mathrm{d}I/\mathrm{d}t \neq 0$ while $I$ oscillates; $V = V_R + V_L$; $I = V_R/R$ drops even though $L$ dissipates no average heat (verified)
+- **$L$ scales the cut:** bigger $L$, same oscillating $I$ $\implies$ larger $|V_L| = |\mathcal{E}| = L|\mathrm{d}I/\mathrm{d}t|$ (stated)
+- **Lenz / harder push:** $\mathrm{d}I/\mathrm{d}t > 0 \implies \mathcal{E}$ opposes the increase; the source covers an extra drop (stated)
+
 #### CM — constrained sliding
 
 Session: [[2026-09-14-1657 Tangential acceleration on a curve]]
@@ -180,7 +202,9 @@ Only threads with unfinished core work (verified against session notes).
 - **Capacitance (two conductors):** [paused] Geometry invariant solid ($C$ fixed, $V$ doubles); resume energy parent $\to$ [[2026-09-14-0828 Capacitance]].
 - **Boundary condition on normal E:** [active] Turn 1 Gauss pillbox sheet vs conductor jump $\to$ [[2026-09-15-0916 Boundary condition on normal E]].
 - **Circular orbit and effective potential:** [active] Stability for $F \propto -1/r^n$ ($n < 3$) locked; orbital mechanics drills $\to$ [[2026-09-18-1705 Circular orbit and effective potential]].
-- **E&M: AC maximum power transfer:** [active] Turn 5 — extra series $R$ $\to$ $I$ down; "no heat $\Rightarrow$ $|I|$ unchanged" trap; voltage-budget carrier $\to$ [[2026-09-21-0933 AC maximum power transfer]].
+- **E&M: AC maximum power transfer:** [active] Turn 9 — back-emf $\implies$ harder push locked; asking whether cancelling leftover $L$ with load $C$ raises $|I|$ $\to$ [[2026-09-21-0933 AC maximum power transfer]].
+- **E&M: magnetic energy of a square-cross-section toroid:** [active] Turn 2 — GRE clock ≠ slog or memorize; still locating cylindrical $s$ $\to$ [[2026-09-21-2048 Magnetic energy of a square-cross-section toroid]]
+
 
 ## Archived domains
 

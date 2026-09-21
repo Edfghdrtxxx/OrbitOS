@@ -21,11 +21,11 @@ tags:
 2. State the conjugate-match condition $Z_\ell = Z_g^*$ and why, with $R_\ell$ already fixed at $R_g$, only $X_\ell = -X_g$ remains.
 3. Distinguish the trap $X_\ell = 0$ (purely resistive *load*) from a purely resistive *loop*.
 
-**Active 2026-09-21.** Turn 5: "no heat $\Rightarrow$ $|I|$ unchanged" is wrong. Voltage-budget carrier ($V = V_R + V_L$).
+**Active 2026-09-21.** Turn 9: back-emf $\implies$ source pushes harder (locked). Next: can a load $C$ cancel leftover generator $L$?
 
 ### Prior context
-- **Already computable:** Extra series $R$ lowers $I$ (harder fight). $P = I_{\mathrm{rms}}^2 R_\ell$.
-- **What broke:**
+- **Already computable:** Extra series $R$ lowers $I$. Series $L$ claims $V_L=|\mathcal{E}|$; $V=V_R+V_L$; $I=V_R/R$ drops. Bigger $L$, larger cut. $\mathrm{d}I/\mathrm{d}t>0$ $\implies$ source pushes harder (Lenz). $P=I_{\mathrm{rms}}^2 R_\ell$.
+- **What broke:** $I = V_{\mathrm{source}}/R$ treats the whole source as dropped on $R$. Series $L$ takes a voltage share without heat.
 - **New object had to:**
 
 ---
@@ -132,3 +132,53 @@ That mapping is the miss: no heat does not mean no effect on $I$. The "fight = h
 You already have $\mathcal{E} = -L\,\mathrm{d}I/\mathrm{d}t$. While $I$ oscillates, that voltage is not zero. Kirchhoff: the source is spent on $V_R$ *and* $V_L$. Current through the resistor is $I = V_R / R$, not $V_{\mathrm{source}}/R$.
 
 If $V_L$ takes a cut of a fixed source, is $V_R$ smaller or the same — and therefore does $|I|$ go down or stay?
+
+### Turn 6 — 2026-09-21 (learner)
+
+> So what you mean is that it does not directly take effect on the current. Instead it takes effect on the voltage and consequently the current drops, right?
+> The VR smaller, R fixed, therefore I goes down
+
+### Tutor
+
+Yes. Same $I$ everywhere in series — $L$ does not siphon current off. It claims a voltage cut, so $V_R$ is smaller than the source, and $I = V_R/R$ drops.
+
+The generator already has some reactive drop $X_g \neq 0$ in series. $R_\ell$ is locked. You choose $X_\ell$. If you set the load reactance to *cancel* that generator drop (opposite sign, same size), does $|I|$ get larger than with leftover uncancelled reactance, or stay the same?
+
+### Turn 7 — 2026-09-21 (learner)
+
+> My choice is guessed, so don't take it into account.
+> Wait, wait, wait, I have got confused. What is reactance? Is it X? You have jumped a leap.
+
+### Tutor
+
+Guess dropped. The cancel question is parked — that was a leap.
+
+Yes: reactance is written $X$. It is not heat and not a second current. It is just the name for how strong that no-heat voltage cut is — the $V_L$ (or $V_C$) share we already have.
+
+You already know $V_L = L\,\mathrm{d}I/\mathrm{d}t$. Bigger $L$, same oscillating $I$: is that voltage cut larger or smaller?
+
+### Turn 8 — 2026-09-21 (learner)
+
+> Does the impedance Z reflect the entire characteristic of the circuit or only a part of the component? I mean, I have noticed that Z impedance could be consisted of different parts of reactance and resistance.
+> Furthermore, I only know the self-induced emf epsilon equals -L times di over dt. What is the relation between this self-induced emf and the voltage of the inductor?
+> If the L is bigger, which is the coefficient of self-induction, the voltage card is larger.
+
+### Tutor
+
+Yes: bigger $L$, larger voltage cut. That cut *is* the emf you already have: $|V_L| = |\mathcal{E}| = L|\mathrm{d}I/\mathrm{d}t|$. The minus in $\mathcal{E} = -L\,\mathrm{d}I/\mathrm{d}t$ is Lenz (opposes the change). Kirchhoff's $+L\,\mathrm{d}I/\mathrm{d}t$ is the source paying against that back-emf.
+
+$Z$ is voltage-per-current for whatever box you draw — one component or several in series. $R$ is the heat piece; $X$ is this no-heat cut. The $R+jX$ formula stays parked.
+
+When current through $L$ is increasing ($\mathrm{d}I/\mathrm{d}t > 0$), $\mathcal{E}$ opposes the increase. Does the source then have to push harder, or easier?
+
+### Turn 9 — 2026-09-21 (learner)
+
+> The source then has to push harder because EMF opposes the increase.
+
+### Tutor
+
+Right. Back-emf means the source covers an extra drop whenever $I$ is changing.
+
+The generator already has some $L$ you cannot remove, so that extra drop is sitting in the loop. You *can* put a capacitor in the load. $C$ stores energy in $\mathbf{E}$ the way $L$ stores it in $\mathbf{B}$, and the two voltage cuts enter Kirchhoff with opposite character — they can cancel in the sum.
+
+If the net no-heat cut shrinks toward zero, the whole source lands on $R$. Does $|I|$ get larger, or stay the same?
