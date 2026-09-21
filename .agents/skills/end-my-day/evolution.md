@@ -1,5 +1,15 @@
 # Evolution Log
 
+## 2026-09-15
+### Lessons
+- Unlisted git work must become daily-note `[x]` items after Q1 — surfacing in the summary/Evening Review prose alone drops the day-of-record for `/start-my-day`.
+- Working-tree dirty state counts: scan `status` + `diff --stat` / `--cached`, not commits only. Physics GRE pack-launch work had zero commits and was nearly missed.
+
+### Fixes
+- Step 1: multi-repo working-tree scan beside today's commits.
+- Step 2b: mandatory unlisted-git write-back as grouped `[x]` Priorities bullets after Q1.
+- Rules: allow Q1 fixes + git-capture bullets + Evening Review only.
+
 ## 2026-09-09
 ### Lessons
 - Late-invocation close of yesterday: git `--until` must be *now*, not yesterday 23:59. After-midnight commits (Physics GRE website, 01:03) belong to the day being closed.

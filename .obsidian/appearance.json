@@ -1,11 +1,15 @@
 {
   "theme": "moonstone",
-  "cssTheme": "Primary",
+  "cssTheme": "ITS Theme",
   "showViewHeader": true,
   "baseFontSize": 15,
   "baseFontSizeAction": false,
   "nativeMenus": false,
-  "accentColor": "",
+  "accentColor": "#9109c3",
   "textFontFamily": "Noto Serif SC,Source Han Serif SC",
-  "interfaceFontFamily": "Source Han Serif SC"
+  "interfaceFontFamily": "Source Han Serif SC",
+  "enabledCssSnippets": [
+    "task-strikethrough",
+    "task-numbered-inline"
+  ]
 }

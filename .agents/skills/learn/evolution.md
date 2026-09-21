@@ -1,5 +1,32 @@
 # Evolution Log
 
+
+## 2026-09-21
+
+### Lessons
+- **GRE miss + Guessed + no Progress-context hit = no prior.** Do not open from DC-MPT, conjugate match, Thevenin, or any unlisted theorem. Do not treat the clicked option as a reasoned misconception until the learner states a reason. Diagnose the floor (series $I$, $P=I^2 R$) or split the missing foundation (e.g. impedance) into a child note.
+- **Terminal paths every turn.** 2026-09-21 incident: Turn 1 dumped tutor prose in chat and assumed DC-MPT. After the session note is written, the terminal is the list of edited paths only — never the tutor reply, never a paraphrase of the check question. The 2026-09-20 "first turn" wording is not a loophole.
+
+## 2026-09-20
+
+### User Preferences
+- **No response repetition in terminal:** The progress note under `60_Learning_Progress/` is the primary surface containing the full tutor prose, derivations, and context. Once the turn's response is written to the local note file, do not repeat it in the terminal — **every turn, not only the first.** Chat is the list of edited note paths only. Never tutor prose, never a paraphrase of the check question.
+
+## 2026-09-19
+
+### Lessons
+- **Daily note sync on solid/locked knowledge:** The moment knowledge is considered solid or locked (understanding verified, drill completed, or trap reworked), immediately update today's daily note (`10_Daily/YYYY-MM-DD.md`)—tick completed tasks/subtasks, append performed drills, and write a one-line summary under `## Log`—without waiting for user prompting.
+
+## 2026-09-18
+
+### Lessons
+- **Turn brevity & anti-lecture cap:** Keep explanation turns strictly to 1–2 short paragraphs or a compact bullet pair answering only the immediate question, ending with exactly one check question. Compound prompts must never trigger multi-section essays or monograph dumps.
+
+## 2026-09-17
+
+### Lessons
+- **Trap logging mandatory on missteps:** Whenever the learner falls into an exam trap, calculation slip, or flawed conceptual assumption during practice or reasoning, record it immediately into `60_Learning_Progress/Trap-Log.md` with the exact trap, correct invariant, and rework status. Subsequent agents must check `Trap-Log.md` alongside `Progress-context.md` to avoid repeating pitfalls and to re-test these specific vulnerabilities.
+
 ## 2026-09-08
 
 ### Lessons

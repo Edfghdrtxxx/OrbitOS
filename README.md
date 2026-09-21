@@ -18,7 +18,7 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 
 | When I want to...                                             | I run                           | What happens                                                                                 |
 | ------------------------------------------------------------- | ------------------------------- | -------------------------------------------------------------------------------------------- |
-| Start today's GRE Physics timed pack                         | `/practice-physics-gre-set`     | Reads today's a0 pack child, serves Prep Studio, opens `#/practice/pack/NN` |
+| Start today's GRE Physics timed pack                         | `/practice-physics-gre-set`     | Resolves today's a0 pack, reuses the live rich Prep tab (same origin as progress), launches `#/practice/pack/NN` |
 | Turn an idea into a project                                   | `/kickoff`                      | Structures it with C.A.P. layout (Context, Actions, Progress), asks clarifying questions     |
 | Deep-dive a topic (new ML paper, visa pathway, TPC technique) | `/deep-research` (host)         | Host deep-research / workflow — vault `/research` archived 2026-07-29                        |
 | Learn something with guided tutoring                          | `/learn <topic>`                | Diagnose, scaffold, one step per turn; records to `60_Learning_Progress/` + index; compile finished derivations to `30_Research/` |
@@ -33,12 +33,13 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 | Explain a concept simply                                      | `/Feynman-Technique`            | Feynman-style explanation as if teaching a 12-year-old                                       |
 | Annotate a confusing note                                     | `/insert-Feynman`               | Inserts Feynman explanation callouts directly into the note file                             |
 | Polish English writing                                        | `/phrasing-refining`            | Grammar, idiom, and naturalness review with terse inline corrections                         |
-| Stress-test an idea                                           | `/llm-council`                  | Cross-LLM council (Claude + Gemini + GPT) with anonymized peer review and Chairman synthesis |
+| Stress-test an idea (`/llm-council` only)                     | `/llm-council`                  | Explicit invoke only. Host + Grok + Gemini council; peer review + Chairman synthesis         |
 | Self-critique current work                                    | `/reflect`                      | Adversarial review of current session trajectory                                             |
 | First-principles discussion or critique                       | `/elon-musk`                    | Elon-flavored thinking partner — discussion, critique, The Algorithm when a draft needs it   |
 | Confirm what I actually mean                                  | `/align`                        | Bidirectional steelman; optional file write-back (think from context, read before writing)   |
 | Park a quick thought in today's note                          | `/daily-note-addition`          | Adds flat checkbox captures to the daily note without full triage                            |
-| Coordinate multi-agent work                                   | `/orchestrate-v3`               | Lean fan-out (dispatch-like default) with review-and-iterate on by default                   |
+| Coordinate multi-agent work (pure-PM via tmux)                | `/tmux-orchestrator`                  | Orchestrator delegates only; tmux workers + sentinel wake; assess → dispatch → review → report |
+| Orchestrate a judgment task (analyze, rank, decide, ship)     | `/orchestrate-trust-taste`      | Subagents gather evidence; main owns judgment and taste; reproduce before ranking; lock with AC; end-to-end review |
 | Extract web page content                                      | `/defuddle`                     | Clean markdown extraction from URLs, removing clutter                                        |
 | Wrap up my day                                                | `/end-my-day`                   | Evening review, deferred task identification, wind-down                                      |
 | Create a diagram                                              | `/excalidraw-diagram-generator` | Generates Excalidraw diagrams from natural language                                          |
@@ -58,7 +59,7 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 
 ## Skill Categories
 
-**40** core skills across categories (`ask` archived 2026-07-26 — plain chat for Q&A, `/learn` for deep study; `orchestrate` / `dispatch` / `orchestrate-lite-DWorkflow` / `research` archived 2026-07-29 → `/orchestrate-v3` + host `/deep-research`; `brainstorm` archived 2026-08-18; `super-alignment` archived 2026-08-18 → `/align`; `memo-api` + `markji-card-syntax` archived 2026-09-01; `guide-derivation` archived 2026-09-08 → `/learn`):
+Skills live under `.agents/skills/` (see folder listing; includes aliases such as `wiki-review`). Category table below is the navigational index — not a closed census. Archives: `ask` 2026-07-26; orchestrate family + `research` 2026-07-29; `orchestrate-v3` 2026-09-15 → `/tmux-orchestrator`; `brainstorm` / `super-alignment` 2026-08-18 → `/align`; `memo-api` + `markji-card-syntax` 2026-09-01; `guide-derivation` 2026-09-08 → `/learn`; `pre-ppt` 2026-09-16 → `/academic-ppt` (build-then-iterate):
 
 | Category | Skills |
 |---|---|
@@ -66,8 +67,8 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 | **Knowledge Management** | `kickoff`, `archive`, `atomic-note` |
 | **Obsidian Features** | `obsidian-markdown`, `obsidian-bases`, `obsidian-cli`, `json-canvas`, `excalidraw-diagram-generator` |
 | **Learning** | `learn`, `retention`, `Feynman-Technique`, `phrasing-refining`, `insert-Feynman`, `vocabulary-absorption` |
-| **Meta/Utility** | `orchestrate-v3`, `reflect`, `elon-musk`, `evolve-skills`, `handoff-prompt`, `anchor-game-framework`, `align`, `defuddle` |
-| **Tools** | `mcp-builder`, `notebooklm`, `storage-analyzer`, `expense-tracker`, `markitdown`, `pdf`, `docx`, `design-image-claude`, `phone-harness`, `pre-ppt`, `web-access` |
+| **Meta/Utility** | `reflect`, `elon-musk`, `evolve-skills`, `handoff-prompt`, `anchor-game-framework`, `align`, `defuddle`, `orchestrate-trust-taste` |
+| **Tools** | `mcp-builder`, `notebooklm`, `storage-analyzer`, `expense-tracker`, `markitdown`, `pdf`, `docx`, `design-image-claude`, `phone-harness`, `academic-ppt`, `web-access`, `tmux-orchestrator` |
 
 > Note: README previously listed `ai-newsletters` / `ai-products`; those skill folders are not present on disk.
 
@@ -110,4 +111,4 @@ Link liberally. The AI creates connections automatically, but manual links are j
 - **99_System/Bases/** — 5 Obsidian Bases dashboards (Projects, Projects Archive, Knowledge, Wiki Review, Integrated Sources).
 - **99_System/memory/** — Portable harness memory promoted into the vault (e.g. necessity-check).
 - **99_System/Game_Framework.md** — Strategic life/goal framework based on Dan Koe's method: anti-vision, vision, identity, priority stack, daily levers.
-- **.agents/skills/** — 40 core skill definitions (symlinked to `.claude/skills/`).
+- **.agents/skills/** — skill definitions (symlinked to `.claude/skills/`). Index: Skill Categories above; authoritative set = directory listing.

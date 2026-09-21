@@ -37,7 +37,7 @@ Each timed set is a **Prep Studio pack** (`js/data-packs.js`): explicit practice
 - **Subtopics:** Simple harmonic oscillators (springs, pendulums, torsional), small oscillations around equilibria, damped oscillations ($Q$-factor, overdamped/underdamped), driven oscillations & resonance.
 - **Source:** Prep Studio pack 03 (Kahn Ch. 1 §1.7 + mixed review + ETS drills).
 - **Target Pace:** ~100 min.
-- **Log / Status:** `[ ] Open`
+- **Log / Status:** `[x] Done 2026-09-15` — user-confirmed at evening close; no agent receipt this session (scores/misses TBD)
 
 ### Set 04: Central Forces & Orbital Mechanics (11 Qs)
 - **Studio pack:** `04` · n = 11

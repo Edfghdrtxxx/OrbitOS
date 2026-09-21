@@ -1,0 +1,296 @@
+{
+  "eq_er": {
+    "wIn": 6.656,
+    "hIn": 1.6044,
+    "wPx": 1997,
+    "hPx": 482
+  },
+  "eq_vr": {
+    "wIn": 7.856,
+    "hIn": 1.33,
+    "wPx": 2357,
+    "hPx": 399
+  },
+  "eq_eq2": {
+    "wIn": 3.6919,
+    "hIn": 0.2301,
+    "wPx": 1108,
+    "hPx": 70
+  },
+  "eq_sigma": {
+    "wIn": 8.056,
+    "hIn": 1.6576,
+    "wPx": 2417,
+    "hPx": 498
+  },
+  "eq_sigma_note": {
+    "wIn": 0.3767,
+    "hIn": 0.1886,
+    "wPx": 113,
+    "hPx": 57
+  },
+  "eq_fe": {
+    "wIn": 8.856,
+    "hIn": 1.5097,
+    "wPx": 2657,
+    "hPx": 453
+  },
+  "eq_veb": {
+    "wIn": 4.8307,
+    "hIn": 0.2564,
+    "wPx": 1450,
+    "hPx": 77
+  },
+  "eq_qcancel": {
+    "wIn": 5.7022,
+    "hIn": 0.2065,
+    "wPx": 1711,
+    "hPx": 62
+  },
+  "lead_vcm": {
+    "wIn": 8.1494,
+    "hIn": 0.2219,
+    "wPx": 2445,
+    "hPx": 67
+  },
+  "kine_fusion_b": {
+    "wIn": 2.511,
+    "hIn": 0.4088,
+    "wPx": 754,
+    "hPx": 123
+  },
+  "kine_beam_b": {
+    "wIn": 2.5911,
+    "hIn": 0.409,
+    "wPx": 778,
+    "hPx": 123
+  },
+  "chip_theta": {
+    "wIn": 0.1394,
+    "hIn": 0.1557,
+    "wPx": 42,
+    "hPx": 47
+  },
+  "chip_omega": {
+    "wIn": 0.1929,
+    "hIn": 0.1586,
+    "wPx": 58,
+    "hPx": 48
+  },
+  "chip_eps": {
+    "wIn": 0.1376,
+    "hIn": 0.116,
+    "wPx": 42,
+    "hPx": 35
+  },
+  "focus_theta_d": {
+    "wIn": 2.7053,
+    "hIn": 0.409,
+    "wPx": 812,
+    "hPx": 123
+  },
+  "focus_omega_d": {
+    "wIn": 2.6696,
+    "hIn": 0.4088,
+    "wPx": 801,
+    "hPx": 123
+  },
+  "focus_eps_d": {
+    "wIn": 2.5475,
+    "hIn": 0.3756,
+    "wPx": 765,
+    "hPx": 113
+  },
+  "hdr_aq": {
+    "wIn": 1.8672,
+    "hIn": 0.2229,
+    "wPx": 561,
+    "hPx": 67
+  },
+  "body_mass_sep": {
+    "wIn": 3.9843,
+    "hIn": 1.7217,
+    "wPx": 1196,
+    "hPx": 517
+  },
+  "body_charge": {
+    "wIn": 4.0175,
+    "hIn": 1.2199,
+    "wPx": 1206,
+    "hPx": 366
+  },
+  "power_allq_b": {
+    "wIn": 2.6488,
+    "hIn": 0.5781,
+    "wPx": 795,
+    "hPx": 174
+  },
+  "power_iso_b": {
+    "wIn": 2.68,
+    "hIn": 0.6117,
+    "wPx": 804,
+    "hPx": 184
+  },
+  "power_beam_b": {
+    "wIn": 2.5129,
+    "hIn": 0.4088,
+    "wPx": 754,
+    "hPx": 123
+  },
+  "ship_wien_b": {
+    "wIn": 2.5654,
+    "hIn": 0.5653,
+    "wPx": 770,
+    "hPx": 170
+  },
+  "ship_current_b": {
+    "wIn": 2.7661,
+    "hIn": 0.5832,
+    "wPx": 830,
+    "hPx": 175
+  },
+  "dar_exb_h": {
+    "wIn": 1.0978,
+    "hIn": 0.1522,
+    "wPx": 330,
+    "hPx": 46
+  },
+  "dar_exb_b": {
+    "wIn": 2.5262,
+    "hIn": 0.3793,
+    "wPx": 758,
+    "hPx": 114
+  },
+  "hdr_lu": {
+    "wIn": 5.93,
+    "hIn": 0.2858,
+    "wPx": 1779,
+    "hPx": 86
+  },
+  "cap_lu": {
+    "wIn": 2.2808,
+    "hIn": 0.1749,
+    "wPx": 685,
+    "hPx": 53
+  },
+  "lu_flight_h": {
+    "wIn": 1.4003,
+    "hIn": 0.1885,
+    "wPx": 421,
+    "hPx": 57
+  },
+  "lu_proton_h": {
+    "wIn": 1.6289,
+    "hIn": 0.1881,
+    "wPx": 489,
+    "hPx": 57
+  },
+  "lu_proton_b": {
+    "wIn": 3.7553,
+    "hIn": 0.3754,
+    "wPx": 1127,
+    "hPx": 113
+  },
+  "lu_alpha_b": {
+    "wIn": 3.4729,
+    "hIn": 0.409,
+    "wPx": 1042,
+    "hPx": 123
+  },
+  "lu_half_h": {
+    "wIn": 0.9544,
+    "hIn": 0.2081,
+    "wPx": 287,
+    "hPx": 63
+  },
+  "cap_hs": {
+    "wIn": 3.1703,
+    "hIn": 0.1749,
+    "wPx": 952,
+    "hPx": 53
+  },
+  "cap_mn": {
+    "wIn": 3.1011,
+    "hIn": 0.1749,
+    "wPx": 931,
+    "hPx": 53
+  },
+  "mn_drip_b": {
+    "wIn": 3.7185,
+    "hIn": 0.4246,
+    "wPx": 1116,
+    "hPx": 128
+  },
+  "row_rms_w": {
+    "wIn": 1.8633,
+    "hIn": 0.1785,
+    "wPx": 559,
+    "hPx": 54
+  },
+  "row_rms_n": {
+    "wIn": 2.5582,
+    "hIn": 0.1787,
+    "wPx": 768,
+    "hPx": 54
+  },
+  "row_rf_n": {
+    "wIn": 1.9644,
+    "hIn": 0.1787,
+    "wPx": 590,
+    "hPx": 54
+  },
+  "row_frag_w": {
+    "wIn": 1.9183,
+    "hIn": 0.1679,
+    "wPx": 576,
+    "hPx": 51
+  },
+  "ship_cond_b": {
+    "wIn": 2.6199,
+    "hIn": 0.3793,
+    "wPx": 786,
+    "hPx": 114
+  },
+  "dar_gamma_h": {
+    "wIn": 1.3243,
+    "hIn": 0.1801,
+    "wPx": 398,
+    "hPx": 55
+  },
+  "dar_gamma_b": {
+    "wIn": 2.6728,
+    "hIn": 0.5344,
+    "wPx": 802,
+    "hPx": 161
+  },
+  "hs_ungated_b": {
+    "wIn": 2.3579,
+    "hIn": 0.3501,
+    "wPx": 708,
+    "hPx": 106
+  },
+  "hs_daughter_b": {
+    "wIn": 2.7656,
+    "hIn": 0.3501,
+    "wPx": 830,
+    "hPx": 106
+  },
+  "mn_tag_b": {
+    "wIn": 2.6725,
+    "hIn": 0.409,
+    "wPx": 802,
+    "hPx": 123
+  },
+  "mn_why_b": {
+    "wIn": 3.3336,
+    "hIn": 0.3754,
+    "wPx": 1001,
+    "hPx": 113
+  },
+  "contrib_decay": {
+    "wIn": 6.9931,
+    "hIn": 0.2206,
+    "wPx": 2098,
+    "hPx": 67
+  }
+}

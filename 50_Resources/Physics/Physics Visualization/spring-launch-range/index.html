@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spring-launched ball — range at launch height</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@5.5.19/daisyui.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@5.5.19/themes.css">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.2.4/dist/index.global.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  :root {
+    --ink: #1a1a1a;
+    --muted: #5b6472;
+    --line: #94a3b8;
+    --ground: #334155;
+    --spring: #0f766e;
+    --spring-coil: #14b8a6;
+    --ball: #dc2626;
+    --traj: #2563eb;
+    --angle: #7c3aed;
+    --d-mark: #ea580c;
+    --x-mark: #059669;
+    --guide: #cbd5e1;
+    --card: #ffffff;
+    --page: #f8fafc;
+  }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--page);
+    color: var(--ink);
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  .wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem 2.5rem;
+  }
+  .kicker {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--muted);
+    margin: 0 0 0.4rem;
+  }
+  h1 {
+    font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 0.75rem;
+  }
+  .problem {
+    color: var(--muted);
+    font-size: 1.02rem;
+    line-height: 1.55;
+    margin: 0 0 1.25rem;
+    max-width: 62ch;
+  }
+  .figure-card {
+    background: var(--card);
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    padding: 1rem 0.75rem 0.5rem;
+    box-shadow: 0 1px 2px rgb(15 23 42 / 4%), 0 8px 24px rgb(15 23 42 / 5%);
+  }
+  .figure-card svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .caption {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem 1.1rem;
+    padding: 0.85rem 0.85rem 0.35rem;
+    font-size: 0.86rem;
+    color: var(--muted);
+  }
+  .cap {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .swatch {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 999px;
+    flex: none;
+  }
+  .grid-notes {
+    display: grid;
+    gap: 0.85rem;
+    margin-top: 1.25rem;
+  }
+  @media (min-width: 780px) {
+    .grid-notes { grid-template-columns: 1fr 1fr; }
+  }
+  .note {
+    background: var(--card);
+    border: 1px solid #e2e8f0;
+    border-radius: 0.9rem;
+    padding: 1rem 1.05rem 1.05rem;
+  }
+  .note h2 {
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 0.55rem;
+    font-weight: 700;
+  }
+  .note p, .note li {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #334155;
+  }
+  .note ol {
+    margin: 0;
+    padding-left: 1.15rem;
+    display: grid;
+    gap: 0.45rem;
+  }
+  .answer {
+    margin-top: 1rem;
+    border: 1px solid #a7f3d0;
+    background: linear-gradient(180deg, #ecfdf5, #ffffff);
+    border-radius: 0.9rem;
+    padding: 1rem 1.1rem;
+  }
+  .answer .label {
+    font-size: 0.75rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #047857;
+    margin: 0 0 0.35rem;
+  }
+  .answer .eq {
+    font-size: 1.35rem;
+    margin: 0.15rem 0 0.35rem;
+  }
+  .answer .why {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+    align-items: end;
+    margin: 0.9rem 0.85rem 0.2rem;
+  }
+  .ctl {
+    flex: 1 1 140px;
+    min-width: 120px;
+  }
+  .ctl label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-bottom: 0.25rem;
+  }
+  .ctl input[type="range"] {
+    width: 100%;
+    accent-color: #2563eb;
+  }
+  .play-row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <p class="kicker">Classical mechanics · projectile + Hooke</p>
+    <h1>Spring-launched ball returning to launch height</h1>
+    <p class="problem">
+      A ball of mass $m$ is launched at $45^\circ$ from the horizontal by a spring of spring constant $k$
+      depressed by a displacement $d$. What horizontal distance $x$ does the ball travel before returning
+      to its height at launch?
+    </p>
+
+    <section class="figure-card" aria-label="Scenario diagram">
+      <svg id="scene" viewBox="0 0 920 420" role="img" aria-labelledby="fig-title fig-desc">
+        <title id="fig-title">Ball launched at 45 degrees by a compressed spring</title>
+        <desc id="fig-desc">
+          Inclined spring launcher at 45 degrees, ball of mass m leaving the spring,
+          parabolic trajectory, and horizontal range x back to the launch height.
+        </desc>
+
+        <defs>
+          <marker id="arrowHead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="context-stroke"/>
+          </marker>
+          <marker id="arrowHeadBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+          </marker>
+          <marker id="arrowHeadOrange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#ea580c"/>
+          </marker>
+          <marker id="arrowHeadGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#059669"/>
+          </marker>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#f8fafc"/>
+            <stop offset="100%" stop-color="#eef2ff"/>
+          </linearGradient>
+          <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="1.5" stdDeviation="1.4" flood-color="#0f172a" flood-opacity="0.12"/>
+          </filter>
+        </defs>
+
+        <!-- background -->
+        <rect x="0" y="0" width="920" height="420" rx="12" fill="url(#sky)"/>
+
+        <!-- ground -->
+        <g id="ground">
+          <line x1="40" y1="320" x2="880" y2="320" stroke="var(--ground)" stroke-width="3"/>
+          <path d="M40 320 L40 340 L880 340 L880 320" fill="#e2e8f0" opacity="0.55"/>
+          <!-- hatch -->
+          <g stroke="#94a3b8" stroke-width="1.2" opacity="0.7">
+            <line x1="70" y1="320" x2="55" y2="340"/>
+            <line x1="110" y1="320" x2="95" y2="340"/>
+            <line x1="150" y1="320" x2="135" y2="340"/>
+            <line x1="190" y1="320" x2="175" y2="340"/>
+            <line x1="230" y1="320" x2="215" y2="340"/>
+            <line x1="270" y1="320" x2="255" y2="340"/>
+            <line x1="310" y1="320" x2="295" y2="340"/>
+            <line x1="350" y1="320" x2="335" y2="340"/>
+            <line x1="390" y1="320" x2="375" y2="340"/>
+            <line x1="430" y1="320" x2="415" y2="340"/>
+            <line x1="470" y1="320" x2="455" y2="340"/>
+            <line x1="510" y1="320" x2="495" y2="340"/>
+            <line x1="550" y1="320" x2="535" y2="340"/>
+            <line x1="590" y1="320" x2="575" y2="340"/>
+            <line x1="630" y1="320" x2="615" y2="340"/>
+            <line x1="670" y1="320" x2="655" y2="340"/>
+            <line x1="710" y1="320" x2="695" y2="340"/>
+            <line x1="750" y1="320" x2="735" y2="340"/>
+            <line x1="790" y1="320" x2="775" y2="340"/>
+            <line x1="830" y1="320" x2="815" y2="340"/>
+            <line x1="870" y1="320" x2="855" y2="340"/>
+          </g>
+        </g>
+
+        <!-- launch height guide (ball center path y = 187.8) -->
+        <line id="launch-height" x1="120" y1="187.8" x2="780" y2="187.8"
+              stroke="var(--guide)" stroke-width="1.5" stroke-dasharray="6 5"/>
+        <text x="786" y="192" fill="var(--muted)" font-size="12" font-family="ui-sans-serif, system-ui, sans-serif">launch height</text>
+
+        <!-- wall / fixed end of spring -->
+        <g id="wall" transform="translate(78,250) rotate(-45)">
+          <rect x="-18" y="-34" width="18" height="68" rx="2" fill="#475569"/>
+          <g stroke="#94a3b8" stroke-width="1.5">
+            <line x1="-18" y1="-28" x2="-34" y2="-18"/>
+            <line x1="-18" y1="-14" x2="-34" y2="-4"/>
+            <line x1="-18" y1="0" x2="-34" y2="10"/>
+            <line x1="-18" y1="14" x2="-34" y2="24"/>
+            <line x1="-18" y1="28" x2="-34" y2="38"/>
+          </g>
+        </g>
+
+        <!-- spring (compressed), oriented 45° -->
+        <g id="spring-group" transform="translate(78,250) rotate(-45)">
+          <!-- rail / barrel hint -->
+          <line x1="0" y1="0" x2="118" y2="0" stroke="#cbd5e1" stroke-width="10" stroke-linecap="round" opacity="0.55"/>
+          <!-- coil: compressed zigzag -->
+          <path id="spring-coil"
+                d="M0 0
+                   L8 -12 L16 12 L24 -12 L32 12 L40 -12 L48 12 L56 -12 L64 12 L72 -12 L80 12 L88 0"
+                fill="none" stroke="var(--spring-coil)" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+          <!-- natural-length ghost (uncompressed tip) -->
+          <line id="natural-end" x1="88" y1="-22" x2="88" y2="22" stroke="var(--d-mark)" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.9"/>
+          <!-- compressed tip / plunger -->
+          <line id="plunger" x1="88" y1="-16" x2="88" y2="16" stroke="var(--spring)" stroke-width="4" stroke-linecap="round"/>
+        </g>
+
+        <!-- compression d: free length mark vs depressed tip along 45° axis -->
+        <g id="compression-d">
+          <line x1="158.5" y1="143.5" x2="181.5" y2="166.5" stroke="var(--d-mark)" stroke-width="1.8"/>
+          <line x1="148.5" y1="210.5" x2="178.5" y2="180.5" stroke="var(--d-mark)" stroke-width="1.6" marker-start="url(#arrowHeadOrange)" marker-end="url(#arrowHeadOrange)"/>
+          <circle cx="140.2" cy="187.8" r="2.2" fill="var(--d-mark)"/>
+          <circle cx="169.9" cy="158.1" r="2.2" fill="var(--d-mark)"/>
+          <line x1="140.2" y1="187.8" x2="148.5" y2="210.5" stroke="var(--d-mark)" stroke-width="1" opacity="0.7"/>
+          <line x1="169.9" y1="158.1" x2="178.5" y2="180.5" stroke="var(--d-mark)" stroke-width="1" opacity="0.7"/>
+          <text x="176" y="205" fill="var(--d-mark)" font-size="18" font-weight="700" font-style="italic" font-family="Times New Roman, Times, serif">d</text>
+        </g>
+
+        <!-- angle arc at launch point -->
+        <g id="angle">
+          <path d="M 168 187.8 A 28 28 0 0 0 140.2 160" fill="none" stroke="var(--angle)" stroke-width="2"/>
+          <text x="172" y="168" fill="var(--angle)" font-size="16" font-weight="700" font-family="ui-sans-serif, system-ui, sans-serif">45°</text>
+          <line x1="140.2" y1="187.8" x2="210" y2="187.8" stroke="var(--angle)" stroke-width="1.3" stroke-dasharray="4 3" opacity="0.85"/>
+        </g>
+
+        <!-- velocity vector at launch -->
+        <g id="velocity">
+          <line x1="140.2" y1="187.8" x2="195" y2="133" stroke="var(--traj)" stroke-width="2.4" marker-end="url(#arrowHeadBlue)"/>
+          <text x="198" y="128" fill="var(--traj)" font-size="16" font-weight="700" font-style="italic" font-family="Times New Roman, Times, serif">v</text>
+        </g>
+
+        <!-- parabolic trajectory (returns to launch height) -->
+        <path id="trajectory"
+              d="M 140.2 187.8
+                 C 280 48, 560 48, 700.2 187.8"
+              fill="none" stroke="var(--traj)" stroke-width="2.6"/>
+        <circle cx="420.2" cy="78" r="3.5" fill="var(--traj)"/>
+        <text x="428" y="72" fill="var(--traj)" font-size="12" font-family="ui-sans-serif, system-ui, sans-serif">apex</text>
+
+        <!-- landing point -->
+        <circle cx="700.2" cy="187.8" r="4" fill="var(--x-mark)"/>
+
+        <!-- horizontal range x, dimensioned below the flight line -->
+        <g id="range-x">
+          <line x1="140.2" y1="187.8" x2="140.2" y2="268" stroke="var(--x-mark)" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.65"/>
+          <line x1="700.2" y1="187.8" x2="700.2" y2="268" stroke="var(--x-mark)" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.65"/>
+          <line x1="140.2" y1="268" x2="700.2" y2="268" stroke="var(--x-mark)" stroke-width="2.2" marker-start="url(#arrowHeadGreen)" marker-end="url(#arrowHeadGreen)"/>
+          <text x="410" y="292" fill="var(--x-mark)" font-size="22" font-weight="700" font-style="italic" font-family="Times New Roman, Times, serif">x</text>
+        </g>
+
+        <!-- ball at launch (leaving spring) -->
+        <g id="ball-launch" filter="url(#soft)">
+          <circle cx="140.2" cy="187.8" r="14" fill="var(--ball)"/>
+          <circle cx="135" cy="182" r="4" fill="#fecaca" opacity="0.9"/>
+          <text x="122" y="162" fill="var(--ink)" font-size="16" font-weight="700" font-style="italic" font-family="Times New Roman, Times, serif">m</text>
+        </g>
+
+        <!-- ghost balls along trajectory -->
+        <g id="ghosts" fill="var(--ball)" opacity="0.22">
+          <circle cx="250" cy="110" r="10"/>
+          <circle cx="420.2" cy="78" r="10"/>
+          <circle cx="590" cy="110" r="10"/>
+          <circle cx="700.2" cy="187.8" r="10"/>
+        </g>
+
+        <!-- labels: k near spring -->
+        <text x="64" y="214" fill="var(--spring)" font-size="18" font-weight="700" font-style="italic" font-family="Times New Roman, Times, serif">k</text>
+
+        <!-- g arrow -->
+        <g id="gravity" transform="translate(820, 96)">
+          <line x1="0" y1="0" x2="0" y2="42" stroke="var(--ink)" stroke-width="2" marker-end="url(#arrowHead)"/>
+          <text x="10" y="28" fill="var(--ink)" font-size="16" font-style="italic" font-family="Times New Roman, Times, serif">g</text>
+        </g>
+
+        <!-- legend title -->
+        <text x="40" y="36" fill="var(--ink)" font-size="15" font-weight="700" font-family="ui-sans-serif, system-ui, sans-serif">Scenario</text>
+        <text x="40" y="56" fill="var(--muted)" font-size="12.5" font-family="ui-sans-serif, system-ui, sans-serif">spring depressed by d · launch angle 45° · range x at same height</text>
+      </svg>
+
+      <div class="controls">
+        <div class="ctl">
+          <label><span>compression $d$ (visual)</span><span id="dVal">1.0</span></label>
+          <input id="dSlider" type="range" min="0.5" max="1.5" step="0.05" value="1.0">
+        </div>
+        <div class="ctl">
+          <label><span>play trajectory</span><span id="tVal">idle</span></label>
+          <div class="play-row">
+            <button id="playBtn" class="btn btn-primary btn-sm" type="button">Play</button>
+            <button id="resetBtn" class="btn btn-ghost btn-sm" type="button">Reset</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="caption">
+        <span class="cap"><span class="swatch" style="background:var(--spring-coil)"></span> spring $k$, compressed by $d$</span>
+        <span class="cap"><span class="swatch" style="background:var(--ball)"></span> ball mass $m$</span>
+        <span class="cap"><span class="swatch" style="background:var(--traj)"></span> free-flight parabola</span>
+        <span class="cap"><span class="swatch" style="background:var(--x-mark)"></span> horizontal range $x$</span>
+      </div>
+    </section>
+
+    <div class="grid-notes">
+      <article class="note">
+        <h2>Energy → launch speed</h2>
+        <p>Ideal release: stored spring energy becomes kinetic energy of the ball.</p>
+        <p style="margin-top:0.55rem">$$\tfrac12 k d^2 = \tfrac12 m v^2 \quad\Rightarrow\quad v = d\sqrt{\frac{k}{m}}$$</p>
+      </article>
+      <article class="note">
+        <h2>Projectile range at $45^\circ$</h2>
+        <p>Launch at height $y_0$, return to $y_0$:</p>
+        <p>$$x = \frac{v^2\sin 2\theta}{g}$$</p>
+        <p style="margin-top:0.45rem">With $\theta=45^\circ$, $\sin 90^\circ=1$, so $x=v^2/g$.</p>
+      </article>
+    </div>
+
+    <section class="answer">
+      <p class="label">Horizontal distance</p>
+      <p class="eq">$$x = \dfrac{k d^{2}}{m g}$$</p>
+      <p class="why">
+        Substitute $v=d\sqrt{k/m}$ into $x=v^2/g$:
+        $x = k d^2/(m g)$.
+        At $45^\circ$ this is the level-return range (and the maximum over angle).
+      </p>
+    </section>
+  </main>
+
+  <script>
+  (() => {
+    const ball = document.querySelector('#ball-launch');
+    const traj = document.querySelector('#trajectory');
+    const playBtn = document.querySelector('#playBtn');
+    const resetBtn = document.querySelector('#resetBtn');
+    const tVal = document.querySelector('#tVal');
+    const dSlider = document.querySelector('#dSlider');
+    const dVal = document.querySelector('#dVal');
+
+    // Trajectory: M 140.2 187.8 C 280 48, 560 48, 700.2 187.8
+    const P0 = { x: 140.2, y: 187.8 };
+    const P1 = { x: 280, y: 48 };
+    const P2 = { x: 560, y: 48 };
+    const P3 = { x: 700.2, y: 187.8 };
+
+    function bezier(t, a, b, c, d) {
+      const u = 1 - t;
+      return u*u*u*a + 3*u*u*t*b + 3*u*t*t*c + t*t*t*d;
+    }
+    function point(t) {
+      return {
+        x: bezier(t, P0.x, P1.x, P2.x, P3.x),
+        y: bezier(t, P0.y, P1.y, P2.y, P3.y)
+      };
+    }
+
+    let raf = null;
+    let start = null;
+    const duration = 2200;
+
+    function setBall(t) {
+      const p = point(t);
+      const c = ball.querySelector('circle');
+      const shine = ball.querySelectorAll('circle')[1];
+      const label = ball.querySelector('text');
+      c.setAttribute('cx', p.x);
+      c.setAttribute('cy', p.y);
+      shine.setAttribute('cx', p.x - 5.2);
+      shine.setAttribute('cy', p.y - 5.8);
+      label.setAttribute('x', p.x - 18);
+      label.setAttribute('y', p.y - 26);
+    }
+
+    function resetBall() {
+      if (raf) cancelAnimationFrame(raf);
+      raf = null;
+      start = null;
+      setBall(0);
+      tVal.textContent = 'idle';
+      traj.style.opacity = '1';
+    }
+
+    function frame(ts) {
+      if (!start) start = ts;
+      const t = Math.min(1, (ts - start) / duration);
+      setBall(t);
+      tVal.textContent = (t * 100).toFixed(0) + '%';
+      if (t < 1) raf = requestAnimationFrame(frame);
+      else tVal.textContent = 'landed';
+    }
+
+    playBtn.addEventListener('click', () => {
+      if (raf) cancelAnimationFrame(raf);
+      start = null;
+      setBall(0);
+      raf = requestAnimationFrame(frame);
+    });
+    resetBtn.addEventListener('click', resetBall);
+
+    dSlider.addEventListener('input', () => {
+      const v = Number(dSlider.value);
+      dVal.textContent = v.toFixed(2);
+      const g = document.querySelector('#compression-d');
+      g.style.transformOrigin = '140px 188px';
+      g.style.transform = `scale(${0.75 + 0.5 * (v - 0.5)})`;
+    });
+  })();
+  </script>
+</body>
+</html>

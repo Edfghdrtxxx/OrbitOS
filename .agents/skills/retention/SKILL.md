@@ -22,7 +22,7 @@ Read both first:
 
 1. `60_Learning_Progress/Progress-context.md`
 2. `60_Learning_Progress/Retention-context.md` — if missing, create Open / Hold / Log; do not invent history
-3. Matching session note (Progress-context **Session notes**)
+3. Matching session note (resolved from each thread's inline `Session: [[...]]` link)
 
 # Queue
 
@@ -33,7 +33,7 @@ Else max **5**, then ask which:
 1. **Open** (weak / fail)
 2. **Never-checked** — Known solid with no Log row, oldest session date first
 
-Skip **In progress**. Gaps / optional only if asked.
+Skip **In progress**.
 
 # Session (one pipeline, no modes)
 

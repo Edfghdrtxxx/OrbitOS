@@ -37,3 +37,7 @@
 ## 2026-09-08
 ### Lessons
 - omp subagents that end a turn in plain text then `yield` with no data get `exit 1` even though the report is in the previous turn. Dispatch read-only agents as `scout` with `outputSchema`; on that wrapper failure, read `history://<id>` instead of re-dispatching.
+
+## 2026-09-15
+### Lessons
+- Daily appendix **Agent: Prep Studio pack launch** must not hardcode `http://localhost:8000/#/practice/pack/NN`. Progress is per origin; rich store on this machine is often `file://…/Physics GRE/index.html`. Carry-forward via `cp` preserves the appendix — keep it pointing at `/practice-physics-gre-set` (live-tab / same-origin rules), not a fixed http URL.

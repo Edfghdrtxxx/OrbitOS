@@ -1,6 +1,6 @@
 ---
 name: Evaluate change necessity before implementing
-description: Five-question check applied in two trigger contexts — (a) changes to structural/system surfaces (skills, AGENTS.md, memory, hooks, configs, pipeline architecture) or (b) user-floated modification/refactor ideas (questioning/interrogative spirit). Halt via Lavish-first interview (Ask fallback) if any check fails.
+description: Five-question check applied in two trigger contexts — (a) changes to structural/system surfaces (skills, AGENTS.md, memory, hooks, configs, pipeline architecture) or (b) user-floated modification/refactor ideas (questioning/interrogative spirit). Halt via Interview API (Ask fallback) if any check fails.
 type: feedback
 originSessionId: 401c2b36-2774-44ff-a7c4-f348cc318b01
 ---
@@ -20,7 +20,7 @@ In those contexts, do not jump to implementation. First perform the necessity-ch
 4. **Does the new pattern add cognitive load?** More decisions, more failure modes, more config knobs, more docs to remember. Weigh this against the concrete payoff.
 5. **Is there a concrete use-case?** Name a specific situation — who, when, doing what — where the new approach beats the existing one. If only hypotheticals come to mind, pause.
 
-If any answer is "no," "unclear," or "I'm assuming" — halt and interview the user (Lavish-first per AGENTS.md **User interviews**; Ask only as fallback or 1-bit no-jargon input). Do not sell speculation as obvious. New tool availability, theoretical cleanliness, or "while we're here" opportunity are not by themselves reasons to change working things.
+If any answer is "no," "unclear," or "I'm assuming" — halt and interview the user (Interview API per AGENTS.md **User interviews** / `preference_interview_api.md`; Ask only as fallback or 1-bit no-jargon input). Do not sell speculation as obvious. New tool availability, theoretical cleanliness, or "while we're here" opportunity are not by themselves reasons to change working things.
 
 **In scope (within the two triggers):** skill edits, AGENTS.md changes, memory edits, hook changes, config schema changes, pipeline architecture shifts, new mechanisms/abstractions proposed for any of the above, new tools or MCP servers, workflow/process redesigns, and any "improvement" that isn't fixing a named bug the user reported.
 

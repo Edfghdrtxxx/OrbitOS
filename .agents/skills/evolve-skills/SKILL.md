@@ -1,15 +1,15 @@
 ---
 name: evolve-skills
-description: Review session context and persist actionable lessons into per-skill evolution.md files. Scriptless — Claude uses native Read/Edit/Write tools directly.
+description: On /evolve, propose fault/fix and user-captured lessons for confirmation, then append to per-skill evolution.md. Never write evolution without the user's explicit OK.
 ---
 
 # Phase 0 — EVOLVE
 
 Read `evolution.md` in this skill's folder. Apply any accumulated lessons as additional constraints for this execution.
 
-# Skill Evolution Manager
+# Evolve skills
 
-Distills session experience — successful approaches, failures, user corrections, and preferences — into persistent, per-skill `evolution.md` files so lessons survive across conversations and skill rewrites.
+Capture only what should survive the next rewrite: **faults/fixes** and **lessons the user captured**. Not a session diary.
 
 ## Trigger
 
@@ -19,20 +19,17 @@ Distills session experience — successful approaches, failures, user correction
 
 ### 1. Review
 
-Scan the current conversation context for:
-- **Skills invoked** this session
-- **Pain points** — errors, wrong output, user corrections, workarounds
-- **Wins** — approaches that worked well, efficient patterns
-- **User preferences** expressed (style, format, workflow choices)
+From this conversation, list candidates tied to skills actually used:
+- **Faults / fixes** — wrong output, broken steps, corrections that changed behavior
+- **User-captured lessons** — lasting guidance the user stated (“always…”, “never…”, “from now on…”)
 
-### 2. Extract & Confirm
+Skip: vague wins, speculative polish, preferences already in `SKILL.md` / references.
 
-Present findings to the user via `AskUserQuestion`:
-- Which skills to evolve (multiSelect)
-- What lessons to record per skill
-- User confirms or edits before anything is written
+### 2. Confirm
 
-**Do not persist anything without explicit user confirmation.**
+Show the shortlist (skill → lesson bullets). User picks, edits, or rejects.
+
+**Write nothing until they confirm.** Interview API / host Ask when the choice set needs it; plain confirm is enough for a small list.
 
 ### 3. Persist
 
@@ -49,7 +46,8 @@ For each confirmed skill:
    Read `evolution.md` in this skill's folder. Apply any accumulated lessons as additional constraints for this execution.
    ```
 
-5. **Write** using native Write/Edit tools (no scripts, no JSON intermediaries)
+5. **Write** with Edit/Write only (no scripts, no JSON side channel)
+6. If a lesson conflicts with the skill body/references, **propose** those edits and wait for a separate OK — don’t silently rewrite the skill
 
 ## evolution.md Format
 
@@ -67,17 +65,13 @@ For each confirmed skill:
 - [fix text]
 ```
 
-Only include subsections (Lessons / User Preferences / Fixes) that have content. Omit empty subsections.
+Only subsections with content. Dated headings; append, don’t reshape history.
 
 ## Rules
 
-- Always confirm with the user before writing any file
-- Deduplicate against existing entries — never record the same lesson twice
-- Inject the read-instruction into the target SKILL.md only if it's missing
-- Only record **actionable, specific** lessons — not vague observations
-- If multiple skills were used in a session, evolve each one in turn
-
-
-## Principles of Paramount Importance
- - **Zero Assumptions:** Never guess user intent. If multiple implementations exist or requirements are incomplete, **halt and use the `AskUserQuestion` tool** to gather explicit direction.
- - **No Silent Assumptions:** Even when the task is requested, confirm the *method* if it wasn’t specified. Don’t guess the user’s expectation.
+- Confirm before any write
+- Scope = faults/fixes + user-captured lessons only (matches AGENTS.md)
+- Deduplicate; actionable and specific — no mood or play-by-play
+- Inject the Phase 0 read-instruction into the target `SKILL.md` only if missing
+- Multi-skill session → one confirmed batch, then persist each
+- Never treat a mid-task preference tweak as an auto-lesson

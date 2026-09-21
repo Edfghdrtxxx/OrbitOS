@@ -16,6 +16,7 @@
 .claudian/sessions/
 99_System/.scratch/
 .lavish/
+.omp-tmp/
 
 
 # Dependencies / build junk

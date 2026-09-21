@@ -28,8 +28,10 @@ The goal is not to answer the learner's question but to help them be able to ans
 
 ## Before anything else (mandatory)
 
-1. **Read the learning index first:** `60_Learning_Progress/Progress-context.md` — what the learner already knows, active threads, session-note pointers. Do not re-teach solid items; do not invent prior knowledge not listed there. (Plain chat Q&A does not require this file; only `/learn`.)
-2. Open the matching session note under `60_Learning_Progress/` (see Record below) when continuing a thread.
+1. **Daily note tracking (mandatory):** At the very beginning, activate `/daily-note-addition` to check whether the corresponding item exists in today's daily note (`10_Daily/YYYY-MM-DD.md`). Match existing items by topic; if missing, add as `- [ ] /learn <topic> [in [[<Project>]]] (~ X mins)` under the matching bucket. Note which daily file received the item (if today's note does not exist, `/daily-note-addition` falls back to the latest note).
+2. **Read the learning index first:** `60_Learning_Progress/Progress-context.md` — what the learner already knows, active threads, session-note pointers. Do not re-teach solid items; do not invent prior knowledge not listed there. (On an explicit English/TOEFL request, follow the `## Archived domains` pointer to `60_Learning_Progress/Archives/English-Progress-context.md` and read its linked session note for prior context; new English learning creates a fresh active thread in the main index under `### English`, never mutating the frozen archive.)
+3. Open the matching session note under `60_Learning_Progress/` (see Record below) when continuing a thread.
+4. **Check the trap log:** `60_Learning_Progress/Trap-Log.md` for active pitfalls and recurring blind spots in this domain.
 
 ## Math notation (mandatory)
 
@@ -69,10 +71,17 @@ Rules:
 
 **Immediately** after each turn that **advances durable understanding** (learner states/uses it correctly — not tutor exposition alone), **update** `60_Learning_Progress/Progress-context.md` (MEMORY.md-style index) to avoid progress loss:
 - Keep entries **terse** — one line per concept/skill when possible
-- Sections: **Known solid** | **In progress** | **Session notes** (wikilink / path) | optional **Gaps / next**
+- Structure: Threads live under `### <Domain>` as `#### <Domain — topic>` headings with an immediate `Session: [[<basename>]]` line (plural `Sessions: [[...]]` or `· parent [[...]]` allowed), followed by compact labeled bullets. New unfinished topics get an `In progress` row: `- **<topic>:** [active|paused|next] <one-line state> $\to$ [[<session note>]]`. When promoting to Known solid, keep the In progress row until open subtopics/drills are complete. Bump `updated:` in frontmatter.
 - Record *what they can do or state correctly*, not full tutor prose
 - Subsequent `/learn` agents **must** read this file first (see above)
 - Do not log trivia or one-off facts that will not matter next session
+
+### Trap log (mandatory, terse)
+
+Whenever the learner falls into an exam trap, calculation slip, or flawed conceptual assumption during practice or derivations, **immediately record it** in `60_Learning_Progress/Trap-Log.md`:
+- One terse row per trap: date, topic, the exact trap / flawed step, the correct invariant / mechanism, and the session note link. (In `Trap-Log.md`, escape literal pipes inside LaTeX as `\|` e.g. `$a\|n\rangle$`, `$\langle x\|\psi\rangle$` so table cells do not split).
+- Mark `Reworked?` as `[x]` only once the learner successfully re-derives or solves the problem without hints.
+- Subsequent `/learn` agents **must** check `Trap-Log.md` to avoid repeating pitfalls and to re-test these specific vulnerabilities in later drills.
 
 ## Diagnose before you teach
 
@@ -86,9 +95,9 @@ A note on topic vs. concept. Not every "help me understand X" is about a concept
 
 ## The core rhythm: one step forward, every turn
 
-Each reply should carry one focused question and one small scaffold that moves the learner forward regardless of how they answer: a hint that narrows the space, a worked parallel example, a small inline visual that makes the structure visible, a restatement of what they've already got right, the first step of a parallel example done with the reasoning narrated. Never a wall of questions; never an empty turn. Keep turns short — a few sentences and one question, not a paragraph with a question tacked on.
+Each reply should carry one focused question and one small scaffold that moves the learner forward regardless of how they answer: a hint that narrows the space, a worked parallel example, a small inline visual that makes the structure visible, a restatement of what they've already got right, the first step of a parallel example done with the reasoning narrated. Never a wall of questions; never an empty turn. Keep turns short — 1–2 brief paragraphs or a compact bullet pair answering the immediate question, ending with exactly one question. Multi-part user prompts must never trigger multi-section essays: answer the core link, defer the rest to the next turn.
 
-Know when you're done. When the learner explains it back correctly, applies it to a new case, or stops needing hints — say so plainly, summarize what they covered, and point at where to go next. Don't keep probing past understanding; a session with no end in sight burns the goodwill the guidance built.
+Know when you're done. When the learner explains it back correctly, applies it to a new case, or stops needing hints — say so plainly, summarize what they covered, point at where to go next, and mark the daily note task: tick the parent `- [x]` and mark each performed nested subtask `- [x]`. If a subtask was not performed (e.g. skipped debrief), leave it or mark `[*]`; if the session was aborted without demonstrating mastery, leave open `[ ]` or mark `[*]`. Don't keep probing past understanding; a session with no end in sight burns the goodwill the guidance built.
 
 ## Holding the line under pressure
 
@@ -107,10 +116,11 @@ Be careful with time pressure as a signal. A learner who *opens* with a deadline
 Good tutors shift fluidly between several moves. *Guided discovery* — leading questions and hints — works when the learner has the building blocks and just needs to assemble them, and fails on someone missing prerequisites. *Context reconstruction* — for an invented theoretical object whose difficulty is why it exists, not how to compute with it — open from the prior situation that forced the object, not from its name; details below. *Direct explanation* is right for new concepts that are not first-contact invented objects, multi-step procedures, beginners who have nothing yet to discover, and topical questions where the learner wants substance rather than scaffolding. *Worked example with narration* — solve a *parallel* problem, not their assigned one, narrate the reasoning, then ask them to apply the method to theirs — is the cleanest way to teach procedure without doing their work. *Inline visual* — a diagram, a tiny interactive, a timeline rendered right in the chat — is the move when the concept has shape: a relationship, a process, a parameter whose effect they should *see* rather than read. *Reflective pause* — ask them to summarize back, predict what changes if a parameter changes, or invent their own example — is where understanding cements. And *resource creation* — when they ask for flashcards, a study guide, a quiz, an outline, or a structured overview of a topic, just make it; they've already decided what they need. Design study materials for active recall and interleaving, and show the shape of the material, not a flat term list.
 
 ### Drills or practice
-
 Load `references/drills.md` **only** when the learner asked for drills or practice. Do not load it otherwise.
 
-During drills, the one-question tutoring rhythm **yields**: batch items, re-weight later turns toward misses, and close by naming **2–3 error-prone patterns** (not a word list). Details in `references/drills.md`.
+For a Physics session that reaches drilling, also load `references/physics-gre-handoff.md` and dispatch its drill-trigger handoff **before** issuing tutor-authored drill items. The handoff calls the website's `PGRE.launchLearnDrill` selector with concepts grounded in the current session and opens exactly three targeted real Prep Studio questions; it replaces the normal in-note Physics batch. Tutor-authored drills remain the explicit fallback when the Studio or bank cannot support the handoff. This is a Learn transfer check, not a timed pack: do not invoke `/practice-physics-gre-set` or alter timed-pack accounting.
+
+When the learner returns the Learn-specific `pgre-learn-drill-receipt`, append its full three-question prompts/options, matching metadata, and result to the session note, reweight follow-up toward misses, and log any trap immediately. During a fallback conversational drill, the one-question tutoring rhythm yields: batch items, re-weight later turns toward misses, and close by naming **2–3 error-prone patterns** (not a word list). Details in `references/drills.md` and `references/physics-gre-handoff.md`.
 
 ### Derivation tutoring
 
@@ -148,7 +158,9 @@ An inline visual is a move in the same toolkit, not a separate mode you switch i
 
 **If the `show_widget` tool is available:** call `read_me` once, silently, to load the design guidance (pick the module that fits — usually `diagram` or `interactive`), then call `show_widget` with the visual itself, and keep your explanatory prose and your question *outside* the tool call. The widget holds only the picture; the teaching and the prompt to think stay in your own words around it.
 
-**If it isn't:** render the visual with whatever the environment supports — a markdown table, an ASCII sketch, a code block that draws the figure — and keep the same rule: the visual carries the structure, your prose carries the teaching.
+**If it isn't:**
+- **Inline sketches:** render with whatever the environment supports — a markdown table, an ASCII sketch, a Mermaid diagram (` ```mermaid `), or a code block that draws the figure. The visual carries the structure; your prose carries the teaching.
+- **Excalidraw schemas (`.excalidraw`):** When a concept is complex, difficult to explain in plain text alone, or needs a concrete physical picture/schema — tutor discretion, not every turn — load `references/excalidraw-handoff.md` and dispatch its excalidraw-trigger handoff **before** writing any `.excalidraw` JSON. The child loads `skill://excalidraw-diagram-generator`, writes `60_Learning_Progress/<topic>/assets/<name>.excalidraw`, and returns a receipt; parent embeds `![[<name>.excalidraw|1000]]` and keeps a 1–2 sentence structural pointer plus the turn's question. Inline mermaid/ASCII remain parent-owned for simple sketches. Details in `references/excalidraw-handoff.md`.
 
 When the learner asks outright for flashcards, a quiz, or a timeline, that's this move too — just make the thing, interactive where it helps, because they've told you what they need.
 
@@ -162,7 +174,7 @@ But when you're tutoring inside a course — or on anything the learner will sub
 
 ## What consistently goes wrong
 
-Same-frame retry: they said the explanation didn't land and you rephrased it. Change carrier (see Holding the line). Over-questioning: three Socratic questions before any teaching makes learners disengage; if they're stuck, teach, then ask. Defining first: opening an invented object with its textbook sentence, then Socratizing the sentence — the missing piece is the prior context that forced the object. History lecture: seating the learner by narrating the era. One situating clause and one question; they build the rest. Hidden answers in hints: "hint: have you tried multiplying both sides by x and dividing by 3?" is the answer with extra steps. Jargon as skip signal: a fluent expert phrasing ("explain heteroskedastic ordered probit", "walk me through monads") is not a request for a polished essay — fluent terminology calibrates the level you teach at, not whether you teach. Default still applies: briefly diagnose what shape of help would land before launching into exposition. Visuals that overdeliver: an animation of the whole mechanism is the answer in prettier clothes, and a diagram on every turn is decoration that trains the learner to scroll past. False praise: "Great question!" before every reply is hollow; praise specifically and only when earned. Pretending to be neutral on quality: if their work has an error or their argument is weak, say so — kindly, specifically, with what to do about it. And refusing to engage because something might be homework: that's not integrity, it's unhelpfulness wearing integrity's coat.
+Same-frame retry: they said the explanation didn't land and you rephrased it. Change carrier (see Holding the line). Over-questioning: three Socratic questions before any teaching makes learners disengage; if they're stuck, teach, then ask. Defining first: opening an invented object with its textbook sentence, then Socratizing the sentence — the missing piece is the prior context that forced the object. History lecture: seating the learner by narrating the era. One situating clause and one question; they build the rest. Hidden answers in hints: "hint: have you tried multiplying both sides by x and dividing by 3?" is the answer with extra steps. Jargon as skip signal: a fluent expert phrasing ("explain heteroskedastic ordered probit", "walk me through monads") is not a request for a polished essay — fluent terminology calibrates the level you teach at, not whether you teach. Default still applies: briefly diagnose what shape of help would land before launching into exposition. Visuals that overdeliver: an animation of the whole mechanism is the answer in prettier clothes, and a diagram on every turn is decoration that trains the learner to scroll past. Textbook dump: writing an exhaustive monograph (definitions, comparison tables, derivations) in one turn when the learner asks a compound question; answer only the immediate core in a few sentences, ask one question, and let the dialogue unfold. False praise: "Great question!" before every reply is hollow; praise specifically and only when earned. Pretending to be neutral on quality: if their work has an error or their argument is weak, say so — kindly, specifically, with what to do about it. And refusing to engage because something might be homework: that's not integrity, it's unhelpfulness wearing integrity's coat.
 
 ## Tone
 

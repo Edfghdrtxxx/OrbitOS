@@ -1,0 +1,48 @@
+# PPT-Design — Velocity Filters
+
+## 1. Context
+- Occasion / stakes: Learning Group Presentation
+- Audience / what they already know: IMP nuclear physics Master's/PhD learning group. They know basic fusion kinematics vaguely; may not know Wien/velocity filters or SHIP.
+- Duration: ~20 min → slide budget: ~10 content slides (heuristic ~2–3 min/slide)
+- Language: Plain academic English
+
+## 2. Story
+- **Core conclusion (one sentence):** Velocity filters separate fusion evaporation residues strictly by velocity (center-of-mass vs. beam) without mass or charge dispersion, achieving extreme sensitivity that requires downstream decay spectroscopy for isotope identification.
+- **Empowerment promise** (spoken in the first minute): By the end of this talk, you will understand why having *no* mass resolution is actually a superpower, and how devices like SHIP isolate a single superheavy atom from a billion billion background projectiles.
+- **Fence** (what this could be confused with, and how it differs): Not recoil mass separators (which split yields across charge states); not radio-frequency (RF) separators (which require pulsed beams); not relativistic fragment separators (which operate at high energy with degraders).
+- **Cut list** (deliberately excluded, and why): Early mass spectrograph history, relativistic projectile fragmentation, gas-filled separator details, and second-order aberration matrices (Fig. 16 kept only in reserve). Excluded to keep cognitive load strictly on velocity filter physics and payoffs.
+
+## 3. Narrative spine
+- **Beginning (The Kinematic Signature):** Complete fusion creates a massive velocity mismatch between the compound nucleus (traveling at center-of-mass velocity) and the unreacted beam.
+- **Middle 1 (The Superpower):** Classical mass separators cripple yield by splitting heavy ions across many charge states. Pure velocity filters transmit all charge states simultaneously. (Cycle point 1: *Because velocity filters do not disperse by mass or charge, we capture 100% of the charge states...*)
+- **Middle 2 (The Architecture):** To survive intense beams, SHIP uses separated fields to deflect the primary beam before it can strike the condenser plates.
+- **Middle 3 (The Payoffs):** Extreme beam suppression enables picobarn discoveries, but the lack of mass dispersion means we must deduce the isotope later. (Cycle point 2: *Because the filter didn't measure mass during flight, we use genetic decay chains at the focal plane...*)
+- **End (The Landscape):** Velocity filters dominate low-energy symmetric fusion, whereas mass separators and gas-filled systems serve different regimes. (Cycle point 3: *Velocity filters win by ignoring mass to maximize transmission...*)
+
+## 4. Slide plan
+| # | Title (full sentence) | Purpose (delete-test justification) | Elements (each will be spoken to) | Layout hint | Notes seed (逐字稿 kernel) |
+|---|---|---|---|---|---|
+| 1 | Velocity Filters | States title and context. | Title, subtitle (Exp. Techniques NP Ch. 11 §III.B), Date (16 Sep, 2026), Author. | Title slide | Welcome to the learning group. Today we cover Section III.B of Chapter 11 on velocity filters. I will show you why ignoring mass is a superpower for finding superheavy elements. |
+| 2 | Outline | Maps the journey. | 1. Kinematic signature, 2. Zero dispersion advantage, 3. Instrument architectures, 4. Physics payoffs, 5. Separation landscape. | Bullet list | We will start with the kinematic motivation, explain the advantage of zero dispersion, look at how SHIP is built, and finish with real discoveries. |
+| 3 | 1. Why separate by velocity? | Transitions to section 1. | Highlighted section 1. | Outline highlight | Let's begin with why velocity is the perfect observable for fusion. |
+| 4 | Complete fusion creates a massive velocity mismatch. | Establishes the physical basis for velocity separation. | Kinematic equations ($E_r$, $\Delta v$), contrast between $v_{cm}$ and $v_{beam}$. | Text + Equation | When a projectile fuses completely with a target, the compound nucleus absorbs all the momentum. It recoils at the center-of-mass velocity, which is significantly slower than the unreacted beam. |
+| 5 | Evaporation residues are kinematically focused into a narrow forward cone. | Explains why transmission can be so high. | Forward cone solid angle ($< 5$ msr), momentum spread equation. | Text + Equation | Because the heavy compound nucleus carries huge forward momentum, evaporating a few light neutrons barely kicks it off axis. They are tightly focused forward. |
+| 6 | 2. How does zero dispersion give an advantage? | Transitions to section 2. | Highlighted section 2. | Outline highlight | So we know they have a unique velocity. But why only measure velocity? |
+| 7 | Mass separators cripple yield by splitting heavy ions across charge states. | Explains the problem velocity filters solve. | Description of A/q dispersion, charge state distribution ($q \sim 20 \pm 3$). | Two columns | A standard mass separator uses magnetic and electric fields to disperse by A/q. But heavy ions emerge in about 20 different charge states. You only capture one or two, losing 80% of your yield. |
+| 8 | Pure velocity filters transmit all charge states and isotopes simultaneously. | Delivers the core conclusion. | Electric and magnetic force balance ($v = E/B$), primary beam suppression figures ($> 10^{16}$). | Core text | In a pure velocity filter, the deflection condition is independent of charge. All charge states of the chosen velocity pass through, giving near 100% transmission and rejecting a billion billion beam particles. |
+| 9 | 3. How are velocity filters built? | Transitions to section 3. | Highlighted section 3. | Outline highlight | How do we actually build a device to handle this intense unreacted beam? |
+| 10 | SHIP uses separated fields to protect its condenser plates. | Explains the engineering reality of high beam currents. | Fig. 12 (SHIP schematic), condenser-first explanation. | Image + Sidebar | This is SHIP at GSI. Notice it is not a crossed-field Wien filter. The electric condenser comes first. It deflects the primary beam away immediately, so the beam never strikes and melts the plates. |
+| 11 | The Daresbury separator employs crossed fields and energy refocusing. | Contrasts SHIP with a different valid approach. | Fig. 15 (Daresbury layout), crossed-field description. | Image + Sidebar | In contrast, Daresbury uses crossed E and B fields, followed by a magnetic spectrometer to refocus the energy spread. |
+| 12 | 4. What discoveries rely on this sensitivity? | Transitions to section 4. | Highlighted section 4. | Outline highlight | What can we discover with such extreme beam suppression? |
+| 13 | SHIP identified the first ground-state proton emitter by implanting residues into silicon. | Proves the utility for exotic decay at the proton drip line. | Fig. 13 (151Lu spectrum), 1.23 MeV peak, escape bump. | Image + Text | Because SHIP separates in under 2 microseconds, we can implant short-lived residues into silicon. Here is the first ground-state proton decay from Lutetium-151, cleanly isolated from the alpha background. |
+| 14 | Genetic decay-chain tagging isolated Element 108 from just three atoms. | Shows the ultimate extreme sensitivity. | Fig. 14 (Element 108 gating), 4-tier coincidence cascade. | Image + Sidebar | Out of 0.6 quintillion projectiles over 10 days, SHIP made just three atoms of Element 108. Because SHIP doesn't measure mass, we prove the isotope by watching it alpha-decay step-by-step into known daughters. |
+| 15 | Recoil-gamma tagging reveals nuclear structure at the proton drip line. | Proves the utility of prompt coincidence. | Fig. 17 (49Mn spectrum), prompt gamma coincidence. | Image + Text | At Daresbury, they surround the target with gamma detectors. By only looking at gammas that are in coincidence with a recoil arriving at the focal plane, the massive background vanishes. |
+| 16 | 5. Where do velocity filters fit in the landscape? | Transitions to section 5. | Highlighted section 5. | Outline highlight | Finally, let's put velocity filters in context with other devices. |
+| 17 | Velocity filters occupy a unique niche for low-energy fusion. | The Fence: clarifies when NOT to use this. | Comparison table/text: vs RMS, vs RF, vs FRS, vs Gas-filled. | Comparison table | Velocity filters are perfect for Coulomb-barrier fusion where you need extreme transmission. If you need mass resolution upfront, use an RMS. If you have relativistic energies, use a fragment separator. |
+| 18 | Contributions | Leaves the audience with the main takeaways. | 1. Velocity-based separation yields zero charge dispersion. 2. Separated-field engineering protects against beam melting. 3. Enables picobarn sensitivity via decay tagging. | Bullet list | To summarize: velocity filters ignore mass to achieve 100% charge-state transmission; SHIP's separated fields survive microampere beams; and this extreme sensitivity makes single-atom discoveries possible. |
+
+## 5. Handoff to build script
+- Theme: `pptxgenjs` with Learning Group deep blue theme (`#174994`).
+- Output folder: `70_Presentations/717_Learning Group-20260916/`
+- Tool: Do NOT use `/html-ppt`. Use a Node script patterned exactly after `70_Presentations/716_Learning Group-20260805/build_pf_pptx.js`.
+- Constraints for the author: Match the rhythmic section-highlight outline style; use `pres.layout = "LAYOUT_16x9"`; employ `addSectionOutline(slide, highlightIndex)` logic; keep on-slide text minimal and rely on speaker notes. Figures should be imported from the paths specified in the source brief. No HTML/JS slide presentation should be generated at this stage, only the PPTX building script.

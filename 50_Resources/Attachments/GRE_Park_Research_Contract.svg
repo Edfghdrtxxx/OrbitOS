@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 620" width="1100" height="620" role="img" aria-labelledby="title desc">
+  <title id="title">GRE Park + Research Contract</title>
+  <desc id="desc">Phase G GRE-only until exam, park lift exam plus one day, Phase N NIM A chores first, Q7 re-ask, named-later work parked.</desc>
+  <rect width="1100" height="620" fill="#faf8f4"/>
+  <text x="40" y="42" font-family="ui-serif, Georgia, serif" font-size="22" fill="#1e1e1e">GRE Park + Research Contract</text>
+  <text x="40" y="64" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#5c5852">Locked 2026-09-18 · GRE sole a-block through exam · no auto-research runner</text>
+
+  <!-- Phase G -->
+  <rect x="36" y="88" width="300" height="250" rx="10" fill="#f8ecec" stroke="#1e1e1e" stroke-width="1.6"/>
+  <text x="52" y="116" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e1e1e">Phase G · now → 2026-11-01</text>
+  <text x="52" y="142" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#1e1e1e">GRE is the sole a-block (15–17 h/wk)</text>
+  <text x="52" y="162" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#1e1e1e">Target ≥900 · STN80177D</text>
+  <text x="52" y="182" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#1e1e1e">Oct 4 / 11 / 18 / 25 diagnostics</text>
+  <text x="52" y="214" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" fill="#8a2f2f">Forbidden (zero exception)</text>
+  <text x="52" y="236" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#1e1e1e">no runner / catalog / fleet</text>
+  <text x="52" y="256" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#1e1e1e">no MATE or main.tex edits</text>
+  <text x="52" y="276" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#1e1e1e">no Zenodo / ATTPC download</text>
+  <text x="52" y="308" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#5c5852">RIB optional ≤1×/wk · glance ≤1×/day</text>
+
+  <line x1="336" y1="213" x2="384" y2="213" stroke="#1e1e1e" stroke-width="1.6"/>
+  <polygon points="384,213 372,207 372,219" fill="#1e1e1e"/>
+
+  <!-- Gate -->
+  <rect x="388" y="108" width="250" height="210" rx="10" fill="#f4f1ea" stroke="#1e1e1e" stroke-width="1.6"/>
+  <text x="404" y="136" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e1e1e">Park lift = exam + 1</text>
+  <text x="404" y="164" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#1e1e1e">Default 2026-11-02</text>
+  <text x="404" y="188" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#1e1e1e">If ETS reschedules, lift and</text>
+  <text x="404" y="208" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#1e1e1e">Q7 trigger shift by same delta</text>
+  <text x="404" y="240" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#1e1e1e">Owner: first /start-my-day</text>
+  <text x="404" y="260" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#1e1e1e">on/after lift · one N0 row</text>
+
+  <line x1="638" y1="213" x2="686" y2="213" stroke="#1e1e1e" stroke-width="1.6"/>
+  <polygon points="686,213 674,207 674,219" fill="#1e1e1e"/>
+
+  <!-- Phase N -->
+  <rect x="690" y="88" width="370" height="250" rx="10" fill="#eef2f4" stroke="#1e1e1e" stroke-width="1.6"/>
+  <text x="706" y="116" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e1e1e">Phase N · NIM A chores first</text>
+  <text x="706" y="142" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#1e1e1e">N0 re-read locks (15 min)</text>
+  <text x="706" y="162" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#1e1e1e">N1 packaging README / elsarticle</text>
+  <text x="706" y="182" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#1e1e1e">N2 P1 funding: wait-on-human, continue</text>
+  <text x="706" y="202" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#1e1e1e">N3 CPU-only figure audit · no AutoDL</text>
+  <text x="706" y="222" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#1e1e1e">N4 honesty patches (ask first)</text>
+  <text x="706" y="242" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#1e1e1e">N5 Overleaf only if git healthy + P1 ok</text>
+  <text x="706" y="262" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#1e1e1e">N6 stop — no Zenodo / ATTPC / thesis</text>
+  <text x="706" y="294" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#5c5852">Agent never advances a step without you in session</text>
+
+  <!-- Q7 diamond -->
+  <polygon points="220,430 360,370 500,430 360,490" fill="#faf8f4" stroke="#1e1e1e" stroke-width="1.6"/>
+  <text x="360" y="424" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" fill="#1e1e1e">Q7 re-ask</text>
+  <text x="360" y="444" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#1e1e1e">2026-11-15 or 中期 notice</text>
+  <text x="360" y="518" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#5c5852">Not pre-decided. Stop N-expansion. Do not assume 中期 pivot.</text>
+
+  <line x1="840" y1="338" x2="840" y2="368" stroke="#1e1e1e" stroke-width="1.6"/>
+  <polygon points="840,368 834,356 846,356" fill="#1e1e1e"/>
+
+  <!-- Named later -->
+  <rect x="560" y="372" width="500" height="210" rx="10" fill="#faf8f4" stroke="#1e1e1e" stroke-width="1.6" stroke-dasharray="6 4"/>
+  <text x="576" y="400" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e1e1e">Named later — not first on Nov 2</text>
+  <text x="576" y="428" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#1e1e1e">中期 packet (Nov–Dec) · after Q7 if still OPEN</text>
+  <text x="576" y="450" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#1e1e1e">A-block claim audit</text>
+  <text x="576" y="472" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#1e1e1e">Zenodo 3473953 public sim test</text>
+  <text x="576" y="494" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#1e1e1e">ATTPC high-fid sim (not a MATE drop-in)</text>
+  <text x="576" y="516" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#1e1e1e">Angular / RANSAC leftovers · thesis chapters</text>
+  <text x="576" y="548" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#5c5852">Unpark only when Phase N is done, or you re-order.</text>
+</svg>

@@ -26,7 +26,7 @@ On a new copy only, after the shared transfer check:
   - Formula recall: if the parent has no surviving child, the next authored batch in `Formula-Recall-Decks.md` after yesterday’s completed child; if the deck ends, recycle Batch 1 and report it — never invent a batch name.
   - Extra / misses: keep a surviving child; if none and the parent is not `(N/N)`, rework the current or last timed set into [[Misses-Log]] (misses-first; leftover 07/30/31/34/35 only if misses are empty).
   - Never replace a surviving `[ ]` / `[*]` child, inject duplicates, inject under `(N/N)`, or inject on a repeat same-day run.
-  - On a **new copy**, if GRE parent rows still say `~ 60 mins` / `~ 30 mins`, rewrite those durations to `~ 100 mins` (timed) and `~ 50 mins` (formula and extra). Do not wait for a full-mode week-plan accept.
+  - On a **new copy**, normalize GRE parent `~ mins` to timed **~ 100**, formula **~ 60**, extra **~ 50** when they still show other hedges (e.g. timed `~ 60`/`~ 30`, formula `~ 50`/`~ 30`, extra `~ 30`). Do not wait for a full-mode week-plan accept.
 
 ## 3. Carry the week
 Preserve `(n/N)` and `week_plan`, even across missed Sundays; do not infer counts or start a new plan.
@@ -35,4 +35,5 @@ If review is due, mention it in the summary and leave it for full mode.
 
 ## 4. Finish
 Run the shared retention check; report source → today, gap, retained tasks, any injected GRE children, and any due review or conflict.
+At the end of the response, output the user's primary concern recorded in the previous daily note's Evening Review (`**What's on my mind?**`).
 Offer `/start-my-day` for a full replan; recommend `/breakdown-tasks` → `/estimate-time`.

@@ -13,7 +13,7 @@ Analyze learner progress and syllabus state to determine today's specific learni
 1. **Identify Active Curriculum Window:**
    - Read `8-Week-Syllabus.md` (authoritative). `{today}` before 2026-09-14 is Week 0 (historical). From 2026-09-14 use the live table: W1 Sep 14–20, W2 Sep 21–27, W3 Sep 28–Oct 4, W4 Oct 5–11, W5 Oct 12–18, W6 Oct 19–25, W7 Oct 26–Nov 1.
    - Timed sets for that week are the IDs in that row, not a global 01→35 sequence. W1 default **03–07**; if Set 02 is still open on 2026-09-14, W1 is **02–06** and Set 07 is extras-only.
-   - Hedged parent durations from Sep 14: timed **~100 min**, formula **~50 min**, extra **~50 min**. On week rollover, parent `#weekly` `~ mins` should match. Do not follow Prep Studio `js/data-plan.js` as a calendar (it is generated from this syllabus).
+   - Hedged parent durations from Sep 14: timed **~100 min**, formula **~60 min**, extra **~50 min**. On week rollover, parent `#weekly` `~ mins` should match. Do not follow Prep Studio `js/data-plan.js` as a calendar (it is generated from this syllabus).
 2. **Determine Previous Completion & Next Set:**
    - **Check 1 (Primary): Preceding Daily Note:** Look at the child task under the timed set `#weekly` row in `{last_daily_note}`.
      - If yesterday's child task was completed (`- [x] Set NN`), advance to the next set **in this week's syllabus list** (not NN+1 if that ID is not in the week).

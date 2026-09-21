@@ -25,7 +25,7 @@ This is the **single project rules file** for Grok Build, Claude Code, Codex, an
 - **Canonical path:** `.agents/skills/<skill-name>/SKILL.md` — install and edit only here
   - Claude: `.claude/skills` → `../.agents/skills` (symlink; never a real directory)
   - Grok: use `.agents/skills/` only — no parallel `.grok/skills/` copies
-- See [[README]] for the skill catalog (**40** core skills; `ask` archived — plain chat for Q&A, `/learn` for deep study; orchestrate-series + `research` archived 2026-07-29 → `/orchestrate-v3` + host `/deep-research`; `brainstorm` archived 2026-08-18; `super-alignment` archived 2026-08-18 → `/align`; `guide-derivation` archived 2026-09-08 → `/learn`)
+- See [[README]] for the skill catalog (directory under `.agents/skills/`; `ask` archived — plain chat for Q&A, `/learn` for deep study; orchestrate-series + `research` archived 2026-07-29; `orchestrate-v3` archived 2026-09-15 → `/tmux-orchestrator` (pure-PM); `brainstorm` archived 2026-08-18; `super-alignment` archived 2026-08-18 → `/align`; `guide-derivation` archived 2026-09-08 → `/learn`; `pre-ppt` archived 2026-09-16 → `/academic-ppt`)
 
 ## Vault root (this machine)
 
@@ -56,7 +56,7 @@ Read the matching file from `99_System/memory/` on trigger.
 | ----------------------------------------- | ----------------------------------------------------- |
 | `preference_omp_computer_no_interrupt.md` | omp `computer` / desktop Eval                         |
 | `chrome_region_gating_pipeline.md`        | Chrome region/availability error                      |
-| `preference_copy_source_over_recall.md`   | existing on-disk source, export, or selection         |
+| `preference_applying_delta_over_direct_rewrite.md` | path already exists; Write/full-replace/regenerate; derive from source/export/selection; about to rebuild body from recall |
 | `feedback_necessity_check.md`             | AGENTS.md, skills, memory, hooks, or floated redesign |
 | `feedback_skill_md_terse.md`              | writing or editing SKILL.md                           |
 | `user_background.md`                      | MATE, TPC/PID, or physics+ML paper/slides/notes       |
@@ -66,7 +66,8 @@ Read the matching file from `99_System/memory/` on trigger.
 | `personal_context.md`                     | life/career tradeoffs: family, relationship, lock mechanics, post-PhD endgame |
 | `preference_clear_temp_files.md`          | install, pipeline/gate, smoke test, scratch, or leftover temps |
 | `project_physics_gre.md`                  | Physics GRE website, Prep Studio, GRE drill/timed-set platform, or `/Users/Reid Hu/Physics GRE` |
-| `preference_lavish_interviews.md`         | multi-option / jargon user interview, or about to host-Ask for those |
+| `preference_interview_api.md`             | multi-option / jargon user interview, or about to host-Ask for those — main: payload+dispatch only; never skill://lavish or skill://web-access; child fail → host Ask |
+| `genesis_papers.md`                       | 创世级, genesis papers, STAGE 1 鸟瞰主线, groundbreaking paper |
 
 ### Writing memories
 
@@ -76,7 +77,7 @@ Read the matching file from `99_System/memory/` on trigger.
 
 ## Templates
 
-`Daily_Note.md`, `Project_Template.md`, `Content_Template.md`, `Wiki_Template.md`, `Inbox_Template.md`, `Derivation_Template.md`
+`Daily_Note.md`, `Project_Template.md`, `Content_Template.md`, `Wiki_Template.md`, `Inbox_Template.md`, `Derivation_Template.md`, `Interview_API_Payload.md`
 
 ## User Context
 
@@ -86,6 +87,7 @@ Read the matching file from `99_System/memory/` on trigger.
 - **Tech Interests:** Vibe coding, newest technologies, AI coding assistants (Grok Build, Claude Code, Codex)
 - **Coding Practice:** LeetCode algorithm problems
 - **Values:** Strictly rejects "996" culture; prefers empathetic, reflective quotes on personal growth
+- **Physics GRE literature (core prep book):** [[Conquering the Physics GRE (Yoni Kahn)]] — vault path `50_Resources/Physics/GRE/Conquering the Physics GRE (Yoni Kahn)/Conquering the Physics GRE (Yoni Kahn).md` (PDF sibling in `50_Resources/Physics/GRE/`). Primary textbook for GRE Physics Subject Test prep; pair with project [[GRE_Physics_Prep]] and Prep Studio (`/Users/Reid Hu/Physics GRE`).
 
 ### Japan Immigration (top priority after graduation)
 
@@ -114,11 +116,14 @@ Skip any related-repo path that does not exist on disk.
 - Communicate in English and use English for all template content
 - Flag potential issues proactively: duplicate projects, scheduling conflicts, stale tasks, or missing links — but execute the user's request regardless unless asked to reconsider
 - **Desktop & Host Automation (Background by Default):** Never invoke `win.raise()` or `{ delivery: "foreground" }` on desktop windows unless explicitly requested. Input dispatches must use `delivery: "background"` or AX actions (`el.press()`, `el.setValue()`) without stealing active window focus or moving the pointer. **omp computer-use:** load `99_System/memory/preference_omp_computer_no_interrupt.md`.
+- **Skill `evolution.md`:** Only real faults/fixes, or lessons you explicitly capture. Never self-author an entry — wait for a direct ask or a confirmed `/evolve`. If the preference already lives in the skill body, skip the lesson.
+
 
 ## Principles of Paramount Importance
 
 - **Zero Assumptions:** Never guess user intent. If multiple implementations exist or requirements are incomplete, **halt and interview the user** (channel: **User interviews** below).
 - **No Silent Assumptions:** Even when the task is requested, confirm the *method* if it was not specified. Do not guess the user's expectations.
-- **User interviews (Lavish-first):** Prefer a Lavish page (`/lavish`, `npx -y lavish-axi`) when the choice is multi-option **or** needs jargon/stakes briefing. **Premise:** do not assume the user knows your terms, layout, or prior context — glossary + consequences on the page. Host Ask (`ask_user_question` / `AskUserQuestion`) only as **fallback** if Lavish cannot run, or for **1-bit** missing input with no jargon. Still investigate before asking (`feedback_investigate_over_ask`). Load `preference_lavish_interviews.md` on trigger.
+- **User interviews (Interview API):** Multi-option **or** jargon/stakes briefing → halt and dispatch subagent `agent: "lavish-interview"` with a structured `local://interview-*.md` payload (`preference_interview_api.md`, template `99_System/Templates/Interview_API_Payload.md`). Main MUST NOT load `skill://lavish` or `skill://web-access`, write interview HTML, run CLI/poll/CDP, or reopen the Lavish session — specialist owns that (child autoloads lavish → web-access). **Child failure:** do **not** load those skills to diagnose/recover — fall back to host **Ask** (internal interview tool) with the same decision shape. **Premise:** do not assume the user knows your terms, layout, or prior context; the interview agent must carry intent + big picture onto the page. Host Ask also for **1-bit** missing input with no jargon. Still investigate first (`feedback_investigate_over_ask`).
+- **Delta over rewrite (trigger-based):** Load `preference_applying_delta_over_direct_rewrite.md` via the Memory System search order above and apply its gate **before** the write path when any trigger fires: (a) target path already on disk (including skill/note “refresh” or full `Write` replace), (b) deriving from a source/export/selection, or (c) about to rebuild a full body from recall. Base = bytes on disk → `cp`/Read then surgical `edit`. Full `Write` only for a true new path or an explicit clean-slate ask. Otherwise stay on `edit`.
 - **Necessity Check (trigger-based):** Load `feedback_necessity_check.md` via the Memory System search order above and apply its five-question check — halt and interview if any check fails — when either trigger fires: (a) the change touches structural/system surfaces (skills, AGENTS.md, memory, hooks, vault architecture), or (b) the user floats a modification/refactor idea — a new mechanism, a skill/workflow redesign — invoking their "questioning/interrogative spirit" (they want scrutiny, not agreement). Otherwise stay out of it. Do not sell speculation as an obvious win.
 

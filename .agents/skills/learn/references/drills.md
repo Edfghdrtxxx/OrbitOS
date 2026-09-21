@@ -2,7 +2,7 @@
 
 Load **only** when the learner asked for drills or practice. Not first-contact teaching. Not flashcards, study guides, or other resource creation.
 
-**Aim** (in order): this session's misses → open `Progress-context.md` items for this thread → Physics leftover slots: GRE-weighted topics for the area.
+**Aim** (in order): this session's misses → open `## In progress` rows for this thread → Physics leftover slots: remaining GRE-weighted topics for the area (from `In progress` + unreworked `Trap-Log.md` items).
 
 **Shape**
 - Mixed judgment — no labeled sections.

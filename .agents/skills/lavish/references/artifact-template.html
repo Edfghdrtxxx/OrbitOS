@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+  Lavish artifact template (vault). Claude taste + Excalidraw whiteboard.
+  Fill every {{PLACEHOLDER}}. Leave zero raw "{{" before open.
+  Cut whole optional SECTION blocks (do not leave empty shells).
+
+  Markers
+    {{SCREAMING_SNAKE}}  string or HTML slot
+    SECTION comments: SECTION: id ... /SECTION: id  (KEEP or CUT whole block)
+    REPEAT comments: REPEAT: id ... /REPEAT: id  (clone, then strip markers)
+
+  Theme (vault)
+    Always data-theme="light". Cream canvas (Claude), not Daisy luxury/dark.
+    Tokens from design-image-claude DESIGN-claude.md (cream, coral, warm ink).
+
+  Diagrams (Kun / lavish-axi)
+    Static figures: hand-authored inline SVG in main-content (diagram playbook).
+    Architecture / pipeline: SECTION whiteboard is ON by default — subject Mermaid in
+    div.mermaid + SECTION mermaid-runtime. Agents rewrite caption + mermaid body to the
+    real system before open; never leave mustache tokens in the caption.
+    Open modes:
+      - Double-click / file open: Mermaid SVG only (no Excalidraw).
+      - npx -y lavish-axi <file>: host embeds Excalidraw (Click to edit, Queue feedback,
+        Fullscreen). Do not fake that chrome in HTML.
+    After whiteboard edits, agent updates the Mermaid source (authoritative).
+
+  Prototypes (custom interactive HTML — default)
+    SECTION prototype is OFF by default (CUT unless the artifact shows a mock).
+    Default fill: custom interactive HTML (or sandboxed iframe) in {{PROTOTYPE_CONTENT}}
+    / {{VARIANT_CONTENT}} that changes visible state on user input so reviewers can try
+    the flow. Not a static plate. Screenshots only when the surface cannot run in-page.
+    Optional: reuse data-proto-* hooks + __lavishTemplate helpers, or copy the cuttable
+    SECTION proto-shell-starter. REPEAT: prototype-variant for A/B (each still interactive).
+    Stage chrome is decorative only; never fake Lavish host Send chrome.
+
+  Send path (input / interview)
+    Local select, then Queue answer, then Chrome "Send to Agent".
+    Queue ≠ delivered. In-page buttons stay Queue…; chrome #send POSTs.
+    Do NOT call sendQueuedPrompts() unless user asked to skip the wait.
+    One send pattern for the whole session.
+
+  Before open
+    1. Replace placeholders; cut unused SECTIONs; strip REPEAT markers.
+    2. npx -y lavish-axi <this-file>
+    3. CDP-verify the tab (skill web-access); then poll.
+-->
+<title>{{DOC_TITLE}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ── Claude design tokens (DESIGN-claude.md) ── */
+  :root {
+    color-scheme: light;
+    --primary: #cc785c;
+    --primary-active: #a9583e;
+    --primary-disabled: #e6dfd8;
+    --ink: #141413;
+    --body: #3d3d3a;
+    --body-strong: #252523;
+    --muted: #6c6a64;
+    --muted-soft: #8e8b82;
+    --hairline: #e6dfd8;
+    --hairline-soft: #ebe6df;
+    --canvas: #faf9f5;
+    --surface-soft: #f5f0e8;
+    --surface-card: #efe9de;
+    --surface-cream-strong: #e8e0d2;
+    --surface-dark: #181715;
+    --surface-dark-elevated: #252320;
+    --on-primary: #ffffff;
+    --on-dark: #faf9f5;
+    --on-dark-soft: #a09d96;
+    --accent-teal: #5db8a6;
+    --success: #5db872;
+    --warning: #d4a017;
+    --error: #c64545;
+
+    --font-display: "Cormorant Garamond", "Tiempos Headline", Garamond, "Times New Roman", serif;
+    --font-sans: Inter, StyreneB, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+    --r-sm: 6px;
+    --r-md: 8px;
+    --r-lg: 12px;
+    --r-xl: 16px;
+    --r-pill: 9999px;
+
+    --shadow-rare: 0 1px 3px rgba(20, 20, 19, 0.08);
+  }
+
+  /* layout-safety (lavish-axi design) */
+  *, *::before, *::after { box-sizing: border-box; }
+  ::selection { background: color-mix(in srgb, var(--primary) 22%, var(--canvas)); }
+  :where(.grid, .flex) > * { min-width: 0; }
+  :where(p, h1, h2, h3, h4, h5, h6, li, dd, blockquote, figcaption, td, th, .pill, .label) {
+    overflow-wrap: anywhere;
+  }
+  :where(img, svg, video, canvas, iframe) { max-width: 100%; height: auto; }
+
+  html, body {
+    margin: 0;
+    min-height: 100%;
+    background: var(--canvas);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--primary); text-underline-offset: 2px; }
+  a:active { color: var(--primary-active); }
+
+  .wrap {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    padding: 24px 20px 96px;
+  }
+  @media (min-width: 900px) {
+    .wrap { padding: 40px 32px 120px; }
+  }
+
+  /* sticky send strip */
+  .send-strip {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: color-mix(in srgb, var(--canvas) 92%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .send-strip-inner {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 14px;
+    font-size: 13px;
+    color: var(--body);
+  }
+  @media (min-width: 900px) {
+    .send-strip-inner { padding-inline: 32px; }
+  }
+
+  /* type */
+  .display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: var(--ink);
+    margin: 0;
+  }
+  h1.display { font-size: clamp(2rem, 4vw, 2.75rem); letter-spacing: -0.03em; }
+  h2.display { font-size: clamp(1.35rem, 2.2vw, 1.75rem); }
+  h3.section-title {
+    font-family: var(--font-sans);
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--ink);
+  }
+  .lede {
+    margin: 12px 0 0;
+    max-width: 62ch;
+    color: var(--body);
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .meta {
+    font-size: 13px;
+    color: var(--muted-soft);
+  }
+  .kicker {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .fine {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+
+  /* chips / pills */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: var(--r-pill);
+    background: var(--surface-card);
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 500;
+    border: 0;
+  }
+  .pill-coral {
+    background: var(--primary);
+    color: var(--on-primary);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .pill-outline {
+    background: transparent;
+    border: 1px solid var(--hairline);
+  }
+  .status-chip {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: var(--r-pill);
+    background: var(--surface-soft);
+    color: var(--muted);
+    border: 1px solid var(--hairline);
+    transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+  }
+  .status-chip[data-state="queued"] {
+    background: color-mix(in srgb, var(--success) 18%, var(--canvas));
+    color: color-mix(in srgb, var(--success) 70%, var(--ink));
+    border-color: color-mix(in srgb, var(--success) 35%, var(--hairline));
+  }
+  .mono {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0;
+  }
+  kbd {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: var(--r-sm);
+    border: 1px solid var(--hairline);
+    background: var(--surface-soft);
+    color: var(--body-strong);
+  }
+
+  /* cards */
+  .stack { display: flex; flex-direction: column; gap: 28px; }
+  .card {
+    background: var(--surface-card);
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-lg);
+    padding: 28px 28px 24px;
+    box-shadow: var(--shadow-rare);
+  }
+  .card-canvas {
+    background: var(--canvas);
+    border: 1px solid var(--hairline);
+  }
+  .card-dark {
+    background: var(--surface-dark);
+    color: var(--on-dark);
+  }
+  .card-dark .fine,
+  .card-dark .kicker,
+  .card-dark .meta { color: var(--on-dark-soft); }
+  .card-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .card-head p { margin: 6px 0 0; }
+
+  .grid-2 {
+    display: grid;
+    gap: 20px;
+  }
+  @media (min-width: 720px) {
+    .grid-2 { grid-template-columns: 1fr 1fr; }
+  }
+  .grid-options {
+    display: grid;
+    gap: 16px;
+  }
+  @media (min-width: 720px) {
+    .grid-options { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 1100px) {
+    .grid-options { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .field-label {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 6px;
+  }
+  .prose-slot {
+    color: var(--body);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .prose-slot > :first-child { margin-top: 0; }
+  .prose-slot > :last-child { margin-bottom: 0; }
+
+  /* glossary */
+  details.glossary {
+    background: var(--canvas);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-lg);
+    padding: 4px 18px 8px;
+  }
+  details.glossary > summary {
+    cursor: pointer;
+    list-style: none;
+    font-weight: 500;
+    padding: 14px 0;
+    transition: color 140ms ease;
+  }
+  details.glossary > summary:hover { color: var(--primary-active); }
+  details.glossary > summary::-webkit-details-marker { display: none; }
+  details.glossary > summary::after {
+    content: "▾";
+    float: right;
+    color: var(--muted-soft);
+  }
+  details.glossary[open] > summary::after { content: "▴"; }
+  .term-grid {
+    display: grid;
+    gap: 12px;
+    padding-bottom: 12px;
+  }
+  @media (min-width: 640px) {
+    .term-grid { grid-template-columns: 1fr 1fr; }
+  }
+  .term {
+    background: var(--surface-soft);
+    border-radius: var(--r-md);
+    padding: 12px 14px;
+  }
+  .term dt { font-weight: 500; color: var(--ink); }
+  .term dd { margin: 4px 0 0; font-size: 14px; color: var(--body); }
+
+  /* whiteboard (Kun): figure + .mermaid only; host adds Excalidraw */
+  figure.wb {
+    margin: 0;
+    padding: 20px 22px;
+    background: var(--canvas);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-lg);
+  }
+  .wb-caption {
+    margin: 0 0 14px;
+    font-size: 15px;
+    color: var(--body);
+    max-width: 62ch;
+  }
+  figure.wb .mermaid {
+    display: flex;
+    justify-content: center;
+    overflow: auto;
+  }
+  figure.wb .mermaid:not([data-processed]) {
+    justify-content: flex-start;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    color: var(--muted);
+  }
+  figure.wb .mermaid svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* prototype stage — interactive demo frame (not Lavish host chrome) */
+  .proto-stage {
+    margin-top: 16px;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-lg);
+    background: var(--surface-soft);
+    overflow: hidden;
+  }
+  .proto-chrome {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--hairline-soft);
+    background: var(--surface-cream-strong);
+  }
+  .proto-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--muted-soft) 55%, var(--surface-cream-strong));
+  }
+  .proto-url {
+    flex: 1;
+    min-width: 0;
+    margin-left: 6px;
+    padding: 4px 10px;
+    border-radius: var(--r-pill);
+    background: var(--canvas);
+    border: 1px solid var(--hairline-soft);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .proto-live {
+    flex-shrink: 0;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--success) 70%, var(--ink));
+    background: color-mix(in srgb, var(--success) 16%, var(--canvas));
+    border: 1px solid color-mix(in srgb, var(--success) 30%, var(--hairline));
+    border-radius: var(--r-pill);
+    padding: 3px 8px;
+  }
+  .proto-viewport {
+    min-height: 260px;
+    padding: 18px 20px 20px;
+    background: var(--canvas);
+    color: var(--body);
+  }
+  .proto-viewport > :first-child { margin-top: 0; }
+  .proto-viewport > :last-child { margin-bottom: 0; }
+  .proto-app {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-height: 220px;
+  }
+  .proto-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .proto-tabs {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 4px;
+    border-radius: var(--r-pill);
+    background: var(--surface-soft);
+    border: 1px solid var(--hairline-soft);
+  }
+  .proto-tab {
+    appearance: none;
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1;
+    padding: 8px 12px;
+    border-radius: var(--r-pill);
+    background: transparent;
+    color: var(--muted);
+    transition: background-color 140ms ease, color 140ms ease;
+  }
+  .proto-tab:hover { color: var(--ink); }
+  .proto-tab[aria-selected="true"] {
+    background: var(--canvas);
+    color: var(--ink);
+    box-shadow: var(--shadow-rare);
+  }
+  .proto-tab:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 22%, transparent);
+  }
+  .proto-state {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--muted);
+    padding: 4px 10px;
+    border-radius: var(--r-pill);
+    border: 1px solid var(--hairline);
+    background: var(--surface-soft);
+  }
+  .proto-panel[hidden] { display: none !important; }
+  .proto-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    animation: protoIn 160ms ease;
+  }
+  @keyframes protoIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: none; }
+  }
+  .proto-steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+  .proto-step-dot {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--hairline);
+    background: var(--surface-soft);
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .proto-step-dot[data-active="true"] {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--on-primary);
+  }
+  .proto-step-dot[data-done="true"] {
+    background: color-mix(in srgb, var(--success) 18%, var(--canvas));
+    border-color: color-mix(in srgb, var(--success) 40%, var(--hairline));
+    color: color-mix(in srgb, var(--success) 70%, var(--ink));
+  }
+  .proto-log {
+    margin: 0;
+    padding: 10px 12px;
+    border-radius: var(--r-md);
+    background: var(--surface-dark);
+    color: var(--on-dark);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    line-height: 1.45;
+    max-height: 88px;
+    overflow: auto;
+  }
+  .proto-log .ok { color: var(--accent-teal); }
+  .proto-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .proto-variants {
+    display: grid;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  @media (min-width: 900px) {
+    .proto-variants.cols-2 { grid-template-columns: 1fr 1fr; }
+  }
+  .proto-variant-label {
+    margin: 0 0 8px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* option cards */
+  .option {
+    background: var(--canvas);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-lg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+  }
+  .option.recommended {
+    border-color: color-mix(in srgb, var(--primary) 45%, var(--hairline));
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--primary) 25%, transparent);
+  }
+  .option h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .option p { margin: 0; font-size: 14px; color: var(--body); }
+  .option dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4px 12px;
+    font-size: 13px;
+  }
+  .option dt { color: var(--muted); }
+  .option dd { margin: 0; color: var(--body-strong); }
+
+  /* forms */
+  fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .choice {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 12px 14px;
+    border-radius: var(--r-md);
+    border: 1px solid var(--hairline);
+    background: var(--canvas);
+    cursor: pointer;
+    transition: border-color 140ms ease, background-color 140ms ease;
+  }
+  .choice:hover {
+    border-color: color-mix(in srgb, var(--primary) 35%, var(--hairline));
+  }
+  .choice:has(input:focus-visible) {
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 15%, transparent);
+  }
+  .choice:has(input:checked) {
+    border-color: color-mix(in srgb, var(--primary) 50%, var(--hairline));
+    background: color-mix(in srgb, var(--primary) 8%, var(--canvas));
+  }
+  .choice input {
+    margin-top: 3px;
+    accent-color: var(--primary);
+  }
+  .choice .label-text { display: flex; flex-direction: column; gap: 2px; }
+  .choice .label-text strong { font-weight: 500; color: var(--ink); }
+  .choice .label-text span { font-size: 13px; color: var(--muted); }
+
+  .input, .textarea, select.input {
+    width: 100%;
+    font: inherit;
+    font-size: 14px;
+    color: var(--ink);
+    background: var(--canvas);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-md);
+    padding: 10px 14px;
+    outline: none;
+    transition: border-color 140ms ease, box-shadow 140ms ease;
+  }
+  .input::placeholder, .textarea::placeholder { color: var(--muted-soft); }
+  .input:focus, .textarea:focus, select.input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 15%, transparent);
+  }
+  .textarea { min-height: 112px; resize: vertical; line-height: 1.5; }
+  .input-sm { padding: 7px 10px; font-size: 13px; }
+
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .btn {
+    appearance: none;
+    border: 0;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    height: 40px;
+    padding: 0 20px;
+    border-radius: var(--r-md);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 140ms ease, border-color 140ms ease, box-shadow 140ms ease;
+  }
+  .btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 25%, transparent);
+  }
+  .btn:disabled {
+    background: var(--primary-disabled);
+    color: var(--muted);
+    cursor: not-allowed;
+  }
+  .btn-primary {
+    background: var(--primary);
+    color: var(--on-primary);
+  }
+  .btn-primary:hover:not(:disabled) {
+    background: color-mix(in srgb, var(--primary) 88%, var(--ink));
+  }
+  .btn-primary:active:not(:disabled) { background: var(--primary-active); }
+  .btn-secondary {
+    background: var(--canvas);
+    color: var(--ink);
+    border: 1px solid var(--hairline);
+  }
+  .btn-secondary:hover:not(:disabled) {
+    border-color: color-mix(in srgb, var(--ink) 25%, var(--hairline));
+    background: var(--surface-soft);
+  }
+  .btn-sm { height: 34px; padding: 0 14px; font-size: 13px; }
+
+  /* findings table */
+  .table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-lg);
+    background: var(--canvas);
+  }
+  table.findings {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  table.findings th,
+  table.findings td {
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--hairline-soft);
+    vertical-align: top;
+  }
+  table.findings th {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: var(--surface-soft);
+  }
+  table.findings tr:last-child td { border-bottom: 0; }
+  table.findings tbody tr { transition: background-color 120ms ease; }
+  table.findings tbody tr:hover { background: var(--surface-soft); }
+  .disp {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .disp label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--body-strong);
+  }
+  .disp input { accent-color: var(--primary); }
+
+  footer.page-foot {
+    margin-top: 8px;
+    padding-top: 20px;
+    border-top: 1px solid var(--hairline);
+    font-size: 13px;
+    color: var(--muted-soft);
+  }
+  footer.page-foot strong { color: var(--muted); font-weight: 500; }
+
+  .sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0);
+    white-space: nowrap; border: 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- SECTION: send-strip — KEEP for input/interview; CUT for read-only review -->
+<div class="send-strip" role="note">
+  <div class="send-strip-inner">
+    <span class="pill pill-coral">How to send</span>
+    <span>
+      Select locally → <strong>Queue answer</strong> → Chrome
+      <kbd>Send to Agent</kbd>
+      <span class="meta">(pills only while queued · page never auto-sends)</span>
+    </span>
+  </div>
+</div>
+<!-- /SECTION: send-strip -->
+
+<main class="wrap stack">
+
+  <!-- ── Header ─────────────────────────────────────────── -->
+  <header>
+    <div class="eyebrow">
+      <span class="pill pill-outline">{{ARTIFACT_KIND}}</span>
+      <!-- ARTIFACT_KIND: interview | plan | comparison | review | findings | prototype -->
+      <span class="meta">{{SESSION_META}}</span>
+      <!-- SESSION_META optional — CUT span if unused -->
+    </div>
+    <h1 class="display">{{PAGE_TITLE}}</h1>
+    <p class="lede">{{PURPOSE}}</p>
+  </header>
+
+  <!-- SECTION: context — KEEP for interviews / high-stakes; CUT if pure dump -->
+  <section class="card" aria-labelledby="ctx-heading">
+    <h2 id="ctx-heading" class="section-title">Context</h2>
+    <div class="grid-2" style="margin-top: 16px;">
+      <div>
+        <p class="field-label">Why this page</p>
+        <p class="fine" style="color: var(--body); font-size: 15px;">{{CONTEXT_WHY}}</p>
+      </div>
+      <div>
+        <p class="field-label">After you send</p>
+        <p class="fine" style="color: var(--body); font-size: 15px;">{{STAKES}}</p>
+      </div>
+    </div>
+  </section>
+  <!-- /SECTION: context -->
+
+  <!-- SECTION: glossary — KEEP when jargon needs definitions; CUT when empty -->
+  <details class="glossary" open>
+    <summary>Glossary</summary>
+    <dl class="term-grid">
+      <!-- REPEAT: glossary-row -->
+      <div class="term">
+        <dt>{{TERM}}</dt>
+        <dd>{{TERM_DEF}}</dd>
+      </div>
+      <!-- /REPEAT: glossary-row -->
+    </dl>
+  </details>
+  <!-- /SECTION: glossary -->
+
+  <!-- SECTION: whiteboard — architecture / pipeline via Mermaid → Lavish Excalidraw.
+       Rewrite caption + mermaid body to the SUBJECT before open. CUT only if no diagram. -->
+  <figure class="wb">
+    <figcaption class="wb-caption">Architecture / pipeline — replace stages with the subject system</figcaption>
+    <div class="mermaid">
+flowchart TB
+  subgraph L1["Layer 1 — rename"]
+    A["Component A"]
+    B["Component B"]
+  end
+  subgraph L2["Layer 2 — rename"]
+    C["Component C"]
+    D["Component D"]
+  end
+  subgraph L3["Layer 3 — rename"]
+    E["Component E"]
+  end
+  A --> C
+  B --> C
+  C --> D
+  D --> E
+  E --> A
+    </div>
+  </figure>
+  <!-- /SECTION: whiteboard -->
+
+  <!-- SECTION: main-content — plan prose, tables, static SVG. CUT if decisions-only. -->
+  <section class="card" aria-labelledby="main-heading">
+    <h2 id="main-heading" class="section-title">{{MAIN_HEADING}}</h2>
+    <div class="prose-slot" style="margin-top: 14px;">
+      {{MAIN_CONTENT}}
+      <!-- Prefer concrete behavior. Static diagrams = inline SVG with stable ids + <title>. -->
+    </div>
+  </section>
+  <!-- /SECTION: main-content -->
+
+  <!-- SECTION: prototype — custom INTERACTIVE HTML demo. CUT unless needed.
+       Default: write real tryable UI in {{PROTOTYPE_CONTENT}}. Must change state on input.
+       Screenshots only when the real surface cannot run in-page. -->
+  <section class="card" aria-labelledby="proto-heading">
+    <div class="card-head">
+      <div>
+        <h2 id="proto-heading" class="section-title">{{PROTOTYPE_TITLE}}</h2>
+        <p class="fine" style="margin-top: 8px; max-width: 62ch;">{{PROTOTYPE_BLURB}}</p>
+      </div>
+      <span class="pill pill-outline">{{PROTOTYPE_KIND}}</span>
+      <!-- PROTOTYPE_KIND default: interactive — screenshot only if blocked -->
+    </div>
+
+    <!-- Single stage — CUT .proto-variants below if only one demo -->
+    <div class="proto-stage">
+      <div class="proto-chrome">
+        <span class="proto-dot" aria-hidden="true"></span>
+        <span class="proto-dot" aria-hidden="true"></span>
+        <span class="proto-dot" aria-hidden="true"></span>
+        <span class="proto-url">{{PROTOTYPE_URL_LABEL}}</span>
+        <span class="proto-live">Interactive</span>
+      </div>
+      <div class="proto-viewport">
+        {{PROTOTYPE_CONTENT}}
+        <!-- Custom interactive HTML or <iframe sandbox="allow-scripts …">.
+             Reviewers must be able to click and see state change.
+             Optional: data-proto-root + data-proto-tab/action (helpers auto-bind).
+             Optional starter: copy markup from SECTION proto-shell-starter, then cut it. -->
+      </div>
+    </div>
+
+    <!-- OPTIONAL multi-variant grid — CUT if unused; else CUT the single stage above.
+         Each variant = its own interactive HTML (unique ids if using data-proto-root). -->
+    <div class="proto-variants cols-2">
+      <!-- REPEAT: prototype-variant -->
+      <div>
+        <p class="proto-variant-label">{{VARIANT_LABEL}}</p>
+        <div class="proto-stage">
+          <div class="proto-chrome">
+            <span class="proto-dot" aria-hidden="true"></span>
+            <span class="proto-dot" aria-hidden="true"></span>
+            <span class="proto-dot" aria-hidden="true"></span>
+            <span class="proto-url">{{VARIANT_URL_LABEL}}</span>
+            <span class="proto-live">Interactive</span>
+          </div>
+          <div class="proto-viewport">
+            {{VARIANT_CONTENT}}
+          </div>
+        </div>
+      </div>
+      <!-- /REPEAT: prototype-variant -->
+    </div>
+
+    <p class="fine" style="margin-top: 12px;">{{PROTOTYPE_CAPTION}}</p>
+    <!-- PROTOTYPE_CAPTION optional — CUT <p> if unused -->
+  </section>
+  <!-- /SECTION: prototype -->
+
+  <!-- SECTION: proto-shell-starter — OPTIONAL recipe only. CUT from shipped artifacts.
+       Copy into {{PROTOTYPE_CONTENT}} when a quick tab/step shell helps; then delete this section.
+       Prefer subject-specific custom HTML over shipping this starter unchanged. -->
+  <template id="proto-shell-starter">
+    <div class="proto-app" data-proto-root="{{PROTOTYPE_ROOT_ID}}">
+      <div class="proto-toolbar">
+        <div class="proto-tabs" role="tablist" aria-label="{{PROTOTYPE_TABLIST_LABEL}}">
+          <!-- REPEAT: proto-tab -->
+          <button
+            type="button"
+            class="proto-tab"
+            role="tab"
+            id="tab-{{PROTOTYPE_ROOT_ID}}-{{TAB_ID}}"
+            data-proto-tab="{{TAB_ID}}"
+            aria-controls="panel-{{PROTOTYPE_ROOT_ID}}-{{TAB_ID}}"
+            aria-selected="{{TAB_SELECTED}}"
+          >{{TAB_LABEL}}</button>
+          <!-- /REPEAT: proto-tab -->
+        </div>
+        <span class="proto-state" data-proto-state>ready</span>
+      </div>
+      <!-- REPEAT: proto-panel -->
+      <div
+        class="proto-panel"
+        role="tabpanel"
+        id="panel-{{PROTOTYPE_ROOT_ID}}-{{TAB_ID}}"
+        data-proto-panel="{{TAB_ID}}"
+        {{PANEL_HIDDEN_ATTR}}
+      >
+        <p class="field-label" style="margin:0;">{{PANEL_KICKER}}</p>
+        <p style="margin:0; color:var(--ink); font-weight:500;">{{PANEL_TITLE}}</p>
+        <p class="fine" style="margin:0;">{{PANEL_BODY}}</p>
+        {{PANEL_EXTRA_HTML}}
+      </div>
+      <!-- /REPEAT: proto-panel -->
+      <div class="proto-steps" aria-label="Flow steps" data-proto-steps>
+        <!-- REPEAT: proto-step -->
+        <span class="proto-step-dot" data-proto-step="{{STEP_N}}" data-active="{{STEP_ACTIVE}}" data-done="{{STEP_DONE}}">{{STEP_N}}</span>
+        <!-- /REPEAT: proto-step -->
+      </div>
+      <pre class="proto-log" data-proto-log><span class="ok">›</span> Try controls — local state until Queue feedback.</pre>
+      <div class="proto-actions">
+        <button type="button" class="btn btn-secondary btn-sm" data-proto-action="prev">Back</button>
+        <button type="button" class="btn btn-primary btn-sm" data-proto-action="next">Next step</button>
+        <button type="button" class="btn btn-secondary btn-sm" data-proto-action="toggle">{{TOGGLE_LABEL}}</button>
+        <button type="button" class="btn btn-secondary btn-sm" data-proto-action="reset">Reset</button>
+      </div>
+    </div>
+  </template>
+  <!-- /SECTION: proto-shell-starter -->
+
+  <!-- SECTION: comparison — KEEP when choosing among options; CUT otherwise.
+       Mark exactly one recommended. Align When/Cost/Risk/Revert across cards. -->
+  <section aria-labelledby="cmp-heading">
+    <div class="card-head" style="margin-bottom: 14px;">
+      <div>
+        <h2 id="cmp-heading" class="section-title">{{COMPARISON_TITLE}}</h2>
+        <p class="fine" style="margin-top: 6px;">{{COMPARISON_DECISION}}</p>
+      </div>
+    </div>
+    <div class="grid-options">
+      <!-- REPEAT: option-card -->
+      <article class="option {{OPTION_RECOMMENDED_CLASS}}">
+        <!-- OPTION_RECOMMENDED_CLASS: "recommended" on the preferred card, else empty -->
+        <div style="display:flex; flex-wrap:wrap; gap:8px; align-items:center;">
+          <h3>{{OPTION_NAME}}</h3>
+          {{OPTION_BADGE}}
+          <!-- e.g. <span class="pill pill-coral">Recommended</span> -->
+        </div>
+        <p>{{OPTION_SUMMARY}}</p>
+        <dl>
+          <dt>When</dt><dd>{{OPTION_WHEN}}</dd>
+          <dt>Cost</dt><dd>{{OPTION_COST}}</dd>
+          <dt>Risk</dt><dd>{{OPTION_RISK}}</dd>
+          <dt>Revert</dt><dd>{{OPTION_REVERT}}</dd>
+        </dl>
+      </article>
+      <!-- /REPEAT: option-card -->
+    </div>
+  </section>
+  <!-- /SECTION: comparison -->
+
+  <!-- SECTION: decisions — one form per question; radios stay local until Queue -->
+  <section class="stack" aria-labelledby="decisions-heading" style="gap: 16px;">
+    <h2 id="decisions-heading" class="section-title">Decisions</h2>
+
+    <!-- REPEAT: question-card -->
+    <form
+      class="card card-canvas"
+      data-lavish-question="{{QUESTION_ID}}"
+      data-status-target="status-{{QUESTION_ID}}"
+      onsubmit="return window.__lavishTemplate.queueChoice(event)"
+    >
+      <div class="card-head">
+        <div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; align-items:center;">
+            <span class="pill mono">{{QUESTION_ID}}</span>
+            <h3 class="section-title">{{QUESTION_TITLE}}</h3>
+          </div>
+          <p class="fine" style="margin-top: 8px; max-width: 62ch;">{{QUESTION_PROMPT}}</p>
+        </div>
+        <span id="status-{{QUESTION_ID}}" class="status-chip" data-state="local" aria-live="polite">Local selection</span>
+      </div>
+
+      <fieldset>
+        <legend class="sr-only">{{QUESTION_TITLE}}</legend>
+        <!-- REPEAT: choice-row -->
+        <label class="choice">
+          <input
+            type="radio"
+            name="{{QUESTION_ID}}"
+            value="{{CHOICE_VALUE}}"
+            data-label="{{CHOICE_LABEL}}"
+            onchange="window.__lavishTemplate.markLocal(event)"
+          >
+          <span class="label-text">
+            <strong>{{CHOICE_LABEL}}</strong>
+            <span>{{CHOICE_BLURB}}</span>
+          </span>
+        </label>
+        <!-- /REPEAT: choice-row -->
+      </fieldset>
+
+      <!-- Optional note — CUT label+input if unused -->
+      <label style="display:block; margin-top: 14px;">
+        <span class="field-label">Note (optional)</span>
+        <input class="input input-sm" type="text" name="note" placeholder="Constraint, exception, or link…" oninput="window.__lavishTemplate.markLocal(event)">
+      </label>
+
+      <div class="actions">
+        <button type="submit" class="btn btn-primary btn-sm">Queue this answer</button>
+      </div>
+    </form>
+    <!-- /REPEAT: question-card -->
+  </section>
+  <!-- /SECTION: decisions -->
+
+  <!-- SECTION: findings — Fix|Leave batch; all findings one page; queue once -->
+  <section class="card" aria-labelledby="findings-heading">
+    <div class="card-head">
+      <div>
+        <h2 id="findings-heading" class="section-title">{{FINDINGS_TITLE}}</h2>
+        <p class="fine" style="margin-top: 8px;">{{FINDINGS_BLURB}}</p>
+      </div>
+      <span id="status-findings" class="status-chip" data-state="local" aria-live="polite">Local selection</span>
+    </div>
+
+    <form
+      data-lavish-question="findings"
+      data-status-target="status-findings"
+      onsubmit="return window.__lavishTemplate.queueFindings(event)"
+    >
+      <div class="table-wrap">
+        <table class="findings">
+          <thead>
+            <tr>
+              <th style="width:4.5rem;">ID</th>
+              <th>Finding</th>
+              <th style="width:7.5rem;">Disposition</th>
+              <th style="width:30%;">Note</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- REPEAT: finding-row -->
+            <tr data-finding-id="{{FINDING_ID}}">
+              <td class="mono">{{FINDING_ID}}</td>
+              <td>
+                <div style="font-weight:500; color:var(--ink);">{{FINDING_LABEL}}</div>
+                <div class="fine">{{FINDING_DETAIL}}</div>
+              </td>
+              <td>
+                <div class="disp">
+                  <label>
+                    <input type="radio" name="disp-{{FINDING_ID}}" value="fix" checked onchange="window.__lavishTemplate.markLocal(event)">
+                    Fix
+                  </label>
+                  <label>
+                    <input type="radio" name="disp-{{FINDING_ID}}" value="leave" onchange="window.__lavishTemplate.markLocal(event)">
+                    Leave
+                  </label>
+                </div>
+              </td>
+              <td>
+                <input class="input input-sm" type="text" name="note-{{FINDING_ID}}" placeholder="Optional" oninput="window.__lavishTemplate.markLocal(event)">
+              </td>
+            </tr>
+            <!-- /REPEAT: finding-row -->
+          </tbody>
+        </table>
+      </div>
+      <div class="actions">
+        <button type="submit" class="btn btn-primary btn-sm">Queue dispositions</button>
+      </div>
+    </form>
+  </section>
+  <!-- /SECTION: findings -->
+
+  <!-- SECTION: freeform -->
+  <section class="card card-canvas" aria-labelledby="notes-heading">
+    <div class="card-head">
+      <h2 id="notes-heading" class="section-title">Freeform notes</h2>
+      <span id="status-notes" class="status-chip" data-state="local" aria-live="polite">Local draft</span>
+    </div>
+    <form
+      data-lavish-question="notes"
+      data-status-target="status-notes"
+      data-local-label="Local draft"
+      onsubmit="return window.__lavishTemplate.queueNotes(event)"
+    >
+      <textarea class="textarea" name="notes" placeholder="{{NOTES_PLACEHOLDER}}" oninput="window.__lavishTemplate.markLocal(event)"></textarea>
+      <div class="actions">
+        <button type="submit" class="btn btn-secondary btn-sm">Queue notes</button>
+      </div>
+    </form>
+  </section>
+  <!-- /SECTION: freeform -->
+
+  <footer class="page-foot">
+    <p>
+      Chrome owns send: <strong>Send to Agent</strong> and <strong>Send &amp; End</strong>.
+      Conversation pills appear only while prompts are queued. This page never auto-sends.
+    </p>
+    <p style="margin-top: 6px;">{{FOOTER_META}}</p>
+  </footer>
+</main>
+
+<!-- SECTION: mermaid-runtime — required with whiteboard (Kun design mermaid_cdn_snippet).
+     file:// shows Mermaid only; lavish-axi promotes rendered .mermaid to Excalidraw. -->
+<script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.15.0/dist/mermaid.esm.min.mjs";
+
+  const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  const paint = document.createElement("canvas").getContext("2d");
+  function toRgba(color) {
+    paint.clearRect(0, 0, 1, 1);
+    paint.fillStyle = "#000";
+    paint.fillStyle = color;
+    paint.fillRect(0, 0, 1, 1);
+    return paint.getImageData(0, 0, 1, 1).data;
+  }
+  function compositeRgba(foreground, background) {
+    const foregroundAlpha = foreground[3] / 255;
+    const backgroundAlpha = background[3] / 255;
+    const alpha = foregroundAlpha + backgroundAlpha * (1 - foregroundAlpha);
+    if (alpha === 0) return [0, 0, 0, 0];
+    return [
+      (foreground[0] * foregroundAlpha + background[0] * backgroundAlpha * (1 - foregroundAlpha)) / alpha,
+      (foreground[1] * foregroundAlpha + background[1] * backgroundAlpha * (1 - foregroundAlpha)) / alpha,
+      (foreground[2] * foregroundAlpha + background[2] * backgroundAlpha * (1 - foregroundAlpha)) / alpha,
+      alpha * 255,
+    ];
+  }
+  function pageIsDark() {
+    const root = document.documentElement;
+    const rootBackground = toRgba(getComputedStyle(root).backgroundColor);
+    const bodyBackground = document.body ? toRgba(getComputedStyle(document.body).backgroundColor) : [0, 0, 0, 0];
+    const [r, g, b, a] = compositeRgba(bodyBackground, rootBackground);
+    if (a > 0) {
+      return (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255 < 0.5;
+    }
+    const colorScheme = getComputedStyle(root).colorScheme;
+    if (colorScheme.includes("dark") && !colorScheme.includes("light")) return true;
+    if (colorScheme.includes("light") && !colorScheme.includes("dark")) return false;
+    return darkQuery.matches;
+  }
+
+  const diagrams = [...document.querySelectorAll(".mermaid")].map((el) => ({ el, src: el.innerHTML }));
+  if (diagrams.length) {
+    let applied;
+    let rendering = false;
+    let queued = false;
+    function queueRender() {
+      queued = true;
+      if (rendering) return;
+      void render();
+    }
+    async function render() {
+      rendering = true;
+      try {
+        while (queued) {
+          queued = false;
+          const theme = pageIsDark() ? "dark" : "default";
+          if (theme === applied) continue;
+          mermaid.initialize({ startOnLoad: false, theme, securityLevel: "strict" });
+          for (const { el, src } of diagrams) {
+            el.removeAttribute("data-processed");
+            el.innerHTML = src;
+          }
+          try {
+            await mermaid.run({ nodes: diagrams.map((d) => d.el) });
+          } catch (error) {
+            console.error("Mermaid diagram render failed:", error);
+            return;
+          }
+          applied = theme;
+        }
+      } finally {
+        rendering = false;
+        if (queued) queueRender();
+      }
+    }
+
+    if (document.readyState === "complete") queueRender();
+    else window.addEventListener("load", queueRender, { once: true });
+    const themeObserver = new MutationObserver(queueRender);
+    for (const el of [document.documentElement, document.body]) {
+      if (!el) continue;
+      themeObserver.observe(el, {
+        attributes: true,
+        attributeFilter: ["data-theme", "class", "style"],
+      });
+    }
+    // Theme only — not every form control change.
+    darkQuery.addEventListener("change", queueRender);
+  }
+</script>
+<!-- /SECTION: mermaid-runtime -->
+
+<script>
+/* Local vs queued chips + one queuePrompt per submit.
+   Safe if window.lavish missing (direct file open): alert, no throw. */
+window.__lavishTemplate = (() => {
+  function lavish() {
+    return window.lavish || null;
+  }
+
+  function setStatus(id, state, label) {
+    if (!id) return;
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.dataset.state = state;
+    el.textContent = label;
+  }
+  function markLocal(event) {
+    const form = event.target.closest("form");
+    if (!form) return;
+    const label = form.dataset.localLabel || "Local selection";
+    setStatus(form.dataset.statusTarget, "local", label);
+  }
+
+  function requireLavish() {
+    const api = lavish();
+    if (!api || typeof api.queuePrompt !== "function") {
+      alert("Lavish runtime not available. Open via: npx -y lavish-axi <file>");
+      return null;
+    }
+    return api;
+  }
+
+  function queueChoice(event) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const qid = form.getAttribute("data-lavish-question") || "choice";
+    const fd = new FormData(form);
+    const choice = fd.get(qid);
+    if (!choice) {
+      alert("Pick an option before queueing.");
+      return false;
+    }
+    const input = form.querySelector(`input[name="${CSS.escape(qid)}"][value="${CSS.escape(String(choice))}"]`);
+    const label = (input && input.dataset.label) || String(choice);
+    const note = (fd.get("note") || "").toString().trim();
+    const api = requireLavish();
+    if (!api) return false;
+
+    const prompt = note
+      ? `Decision ${qid}: ${label}. Note: ${note}`
+      : `Decision ${qid}: ${label}`;
+
+    api.queuePrompt(prompt, {
+      tag: "choice",
+      text: `${qid}: ${label}`,
+      element: form,
+      queueKey: qid,
+      data: { question: qid, answer: String(choice), label, note: note || null },
+    });
+    setStatus(form.dataset.statusTarget, "queued", "Queued — click Send to Agent in Lavish chrome");
+    return false;
+  }
+
+  function queueFindings(event) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const rows = [...form.querySelectorAll("tr[data-finding-id]")];
+    const items = rows.map((row) => {
+      const id = row.getAttribute("data-finding-id");
+      const labelEl = row.querySelector("td:nth-child(2) div");
+      const label = labelEl ? labelEl.textContent.trim() : id;
+      const disp = form.querySelector(`input[name="disp-${CSS.escape(id)}"]:checked`);
+      const noteEl = form.querySelector(`input[name="note-${CSS.escape(id)}"]`);
+      return {
+        id,
+        label,
+        disposition: disp ? disp.value : "leave",
+        note: noteEl && noteEl.value.trim() ? noteEl.value.trim() : null,
+      };
+    });
+    if (!items.length) {
+      alert("No findings to queue.");
+      return false;
+    }
+    const api = requireLavish();
+    if (!api) return false;
+
+    const fixCount = items.filter((i) => i.disposition === "fix").length;
+    api.queuePrompt(
+      `Apply findings dispositions. Account for every submitted ID before reporting completion. Fix=${fixCount}, Leave=${items.length - fixCount}.`,
+      {
+        tag: "tracked-batch",
+        text: `Findings: ${fixCount} fix / ${items.length - fixCount} leave`,
+        element: form,
+        queueKey: "findings",
+        data: { items },
+      },
+    );
+    setStatus(form.dataset.statusTarget, "queued", "Queued — click Send to Agent in Lavish chrome");
+    return false;
+  }
+
+  function queueNotes(event) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const fd = new FormData(form);
+    const notes = (fd.get("notes") || "").toString().trim();
+    if (!notes) {
+      alert("Write a note before queueing.");
+      return false;
+    }
+    const api = requireLavish();
+    if (!api) return false;
+    api.queuePrompt(notes, {
+      tag: "notes",
+      text: notes.length > 80 ? notes.slice(0, 77) + "…" : notes,
+      element: form,
+      queueKey: "notes",
+      data: { notes },
+    });
+    setStatus(form.dataset.statusTarget, "queued", "Queued — click Send to Agent in Lavish chrome");
+    return false;
+  }
+  function protoLog(root, message) {
+    const log = root.querySelector("[data-proto-log]");
+    if (!log) return;
+    const line = document.createElement("div");
+    line.innerHTML = `<span class="ok">›</span> ${message}`;
+    log.appendChild(line);
+    log.scrollTop = log.scrollHeight;
+  }
+
+  function protoSetState(root, text) {
+    const el = root.querySelector("[data-proto-state]");
+    if (el) el.textContent = text;
+  }
+
+  function protoActivateTab(root, tabId) {
+    const tabs = [...root.querySelectorAll("[data-proto-tab]")];
+    const panels = [...root.querySelectorAll("[data-proto-panel]")];
+    if (!tabs.length) return;
+    const id = tabId || tabs[0].getAttribute("data-proto-tab");
+    tabs.forEach((tab) => {
+      const on = tab.getAttribute("data-proto-tab") === id;
+      tab.setAttribute("aria-selected", on ? "true" : "false");
+    });
+    panels.forEach((panel) => {
+      const on = panel.getAttribute("data-proto-panel") === id;
+      panel.hidden = !on;
+    });
+    root.dataset.activeTab = id;
+    protoSetState(root, `tab:${id}`);
+  }
+
+  function protoRenderSteps(root) {
+    const steps = [...root.querySelectorAll("[data-proto-step]")];
+    if (!steps.length) return;
+    const max = steps.length;
+    let cur = Number(root.dataset.step || "1");
+    if (!Number.isFinite(cur) || cur < 1) cur = 1;
+    if (cur > max) cur = max;
+    root.dataset.step = String(cur);
+    steps.forEach((dot) => {
+      const n = Number(dot.getAttribute("data-proto-step"));
+      dot.dataset.active = n === cur ? "true" : "false";
+      dot.dataset.done = n < cur ? "true" : "false";
+    });
+    protoSetState(root, `step ${cur}/${max}`);
+  }
+
+  function protoAction(root, action) {
+    const steps = [...root.querySelectorAll("[data-proto-step]")];
+    const max = Math.max(steps.length, 1);
+    let cur = Number(root.dataset.step || "1");
+    if (action === "next") {
+      cur = Math.min(max, cur + 1);
+      root.dataset.step = String(cur);
+      protoRenderSteps(root);
+      protoLog(root, `Next → step ${cur}/${max}`);
+      return;
+    }
+    if (action === "prev") {
+      cur = Math.max(1, cur - 1);
+      root.dataset.step = String(cur);
+      protoRenderSteps(root);
+      protoLog(root, `Back → step ${cur}/${max}`);
+      return;
+    }
+    if (action === "toggle") {
+      const on = root.dataset.toggle === "1" ? "0" : "1";
+      root.dataset.toggle = on;
+      root.dataset.step = root.dataset.step || "1";
+      protoSetState(root, on === "1" ? "toggle:on" : "toggle:off");
+      protoLog(root, on === "1" ? "Toggle on" : "Toggle off");
+      root.classList.toggle("is-toggled", on === "1");
+      return;
+    }
+    if (action === "reset") {
+      root.dataset.step = "1";
+      root.dataset.toggle = "0";
+      root.classList.remove("is-toggled");
+      const firstTab = root.querySelector("[data-proto-tab]");
+      if (firstTab) protoActivateTab(root, firstTab.getAttribute("data-proto-tab"));
+      protoRenderSteps(root);
+      const log = root.querySelector("[data-proto-log]");
+      if (log) {
+        log.innerHTML = `<span class="ok">›</span> Reset — try the controls again.`;
+      }
+      protoSetState(root, "ready");
+    }
+  }
+
+  function bindPrototype(root) {
+    if (!root || root.dataset.protoBound === "1") return;
+    root.dataset.protoBound = "1";
+    root.dataset.step = root.dataset.step || "1";
+    root.dataset.toggle = root.dataset.toggle || "0";
+    const selected = root.querySelector('[data-proto-tab][aria-selected="true"]')
+      || root.querySelector("[data-proto-tab]");
+    if (selected) protoActivateTab(root, selected.getAttribute("data-proto-tab"));
+    protoRenderSteps(root);
+
+    root.addEventListener("click", (event) => {
+      const tab = event.target.closest("[data-proto-tab]");
+      if (tab && root.contains(tab)) {
+        event.preventDefault();
+        const id = tab.getAttribute("data-proto-tab");
+        protoActivateTab(root, id);
+        protoLog(root, `Tab → ${id}`);
+        return;
+      }
+      const btn = event.target.closest("[data-proto-action]");
+      if (btn && root.contains(btn)) {
+        event.preventDefault();
+        protoAction(root, btn.getAttribute("data-proto-action"));
+      }
+    });
+  }
+
+  function bindAllPrototypes(scope) {
+    const rootList = (scope || document).querySelectorAll("[data-proto-root]");
+    rootList.forEach((root) => bindPrototype(root));
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => bindAllPrototypes(document), { once: true });
+  } else {
+    bindAllPrototypes(document);
+  }
+
+  return {
+    markLocal,
+    queueChoice,
+    queueFindings,
+    queueNotes,
+    bindPrototype,
+    bindAllPrototypes,
+    protoActivateTab,
+    protoAction,
+  };
+})();
+</script>
+</body>
+</html>

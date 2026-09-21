@@ -28,8 +28,7 @@ At the end of the session, ask the learner if they want to record the results. I
 2. Write drill content and results into the session note.
 3. Update `60_Learning_Progress/Progress-context.md`:
    - **Known solid**: words the learner used correctly across all stages
-   - **In progress**: words with partial recall or collocation errors
-   - **Gaps / next**: error-prone patterns surfaced in Stage 4
+   - **In progress** (or `Trap-Log.md` for error patterns): words with partial recall or collocation errors, and error-prone patterns surfaced in Stage 4
 
 Keep the record terse. One line per entry. Do not log words that were trivially easy.
 

@@ -78,7 +78,7 @@ Follow Shared rules; use wikilinks and create no intermediate plan files.
 - Set energy, commitments and Main Focus from the answers; add genuinely new next actions in their topic sections.
 - For the primary learning/exam block (e.g. `a1. GRE Physics Prep`), inject the concrete objectives proposed by the Learning Target subagent as indented child checkboxes directly beneath the stable `#weekly` parent rows in `## Priorities`.
   - Stable parent rows preserve `(n/N) #weekly` rollover and week-plan alignment.
-  - Indented child checkboxes provide concrete daily execution targets (e.g. `Set 03: Oscillations & Harmonic Motion (pack 03, n=8)`, specific formula recall batch, and targeted error rework). Hedged parent `~ mins` from 2026-09-14: timed ~100, formula ~50, extra ~50. Cite the Studio pack id and honest `n`.
+  - Indented child checkboxes provide concrete daily execution targets (e.g. `Set 03: Oscillations & Harmonic Motion (pack 03, n=8)`, specific formula recall batch, and targeted error rework). Hedged parent `~ mins` from 2026-09-14: timed ~100, formula ~60, extra ~50. Cite the Studio pack id and honest `n`.
   - Gated injection: on a new copy, inject only under weekly parents that do not already carry an uncompleted child from yesterday; never replace a surviving uncompleted child, inject duplicates, or inject under rows that have reached `(N/N)`; never inject on repeat same-day runs.
 - Keep Anchor unchanged; a separate skill owns it.
 - On a new copy only, after the shared transfer check, empty Log and Evening Review (keep only their `##` headings); remove AI Digest if present.
@@ -94,3 +94,4 @@ Follow Shared rules; use wikilinks and create no intermediate plan files.
 ## 4. Finish
 Run the shared retention check; report today’s link, energy, priority/project counts and any gap or due review.
 Run `/reflect`, present its findings without acting on them, and recommend `/breakdown-tasks` → `/estimate-time`.
+At the end of the response, output the user's primary concern recorded in the previous daily note's Evening Review (`**What's on my mind?**`).
