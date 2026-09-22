@@ -127,3 +127,10 @@ Skip any related-repo path that does not exist on disk.
 - **Delta over rewrite (trigger-based):** Load `preference_applying_delta_over_direct_rewrite.md` via the Memory System search order above and apply its gate **before** the write path when any trigger fires: (a) target path already on disk (including skill/note “refresh” or full `Write` replace), (b) deriving from a source/export/selection, or (c) about to rebuild a full body from recall. Base = bytes on disk → `cp`/Read then surgical `edit`. Full `Write` only for a true new path or an explicit clean-slate ask. Otherwise stay on `edit`.
 - **Necessity Check (trigger-based):** Load `feedback_necessity_check.md` via the Memory System search order above and apply its five-question check — halt and interview if any check fails — when either trigger fires: (a) the change touches structural/system surfaces (skills, AGENTS.md, memory, hooks, vault architecture), or (b) the user floats a modification/refactor idea — a new mechanism, a skill/workflow redesign — invoking their "questioning/interrogative spirit" (they want scrutiny, not agreement). Otherwise stay out of it. Do not sell speculation as an obvious win.
 
+
+## Maintaining this file
+
+Keep this file for knowledge useful to almost every future agent session in this project.
+Do not repeat what the codebase already shows; point to the authoritative file or command instead.
+Prefer rewriting or pruning existing entries over appending new ones.
+When updating this file, preserve this bar for all agents and keep entries concise.

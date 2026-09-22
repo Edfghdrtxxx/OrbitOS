@@ -54,7 +54,13 @@ Help the user close their day by reviewing what was accomplished, reflecting on 
    - Cross-reference git activity with daily note tasks — match commits/diffs to tasks where possible (e.g., a commit mentioning "thesis" or MATE maps to thesis-related tasks)
    - Identify any git work that has NO corresponding task in the daily note (these are "unlisted accomplishments" to surface to the user **and** write back after confirmation — see Step 2b write-back)
 
-**The goal of Step 1 is to build a rich, auto-generated picture of the day from two sources (daily note + git) so Step 2 only needs lightweight confirmation from the user.**
+### Step 1.6 — Scan Physics GRE Study Activity
+- Read `http://127.0.0.1:4789/pgre-status` or the durable fallback `/Users/leyi/.orbitos/pgre-status.json`; never POST or modify studio state
+- Accept only a valid snapshot for the day being closed; otherwise record `studio status unavailable` and continue
+- Collect streak, minutes studied vs daily target, questions answered/correct, today's session/pack and exam results, formula cards reviewed/due, mistakes added, and recent log lines
+- Treat confirmed study activity with no matching daily-note task as an unlisted accomplishment for Step 2b
+
+**The goal of Step 1 is to build a rich, auto-generated picture of the day from three sources (daily note + git + Physics GRE studio) so Step 2 only needs lightweight confirmation from the user.**
 
 ## Step 2: Present & Reflect (Interactive — Lightweight)
 
@@ -62,7 +68,7 @@ The hard work is done in Step 1. Step 2 presents the auto-generated summary and 
 
 ### 2a. Present the Day Summary
 
-Output a structured summary to the terminal combining both sources:
+Output a structured summary to the terminal combining all three sources:
 
 ```
 📋 Today's Summary (auto-generated)
@@ -81,6 +87,16 @@ From git:
     • [commit summary 1] — [files changed]
   [If unlisted work found]: ⚡ Not in daily note: [description]
 
+From Physics GRE studio:
+  Streak: [current] days (best: [best])
+  Study: [minutesStudied] / [dailyTargetMin] min
+  Questions: [correct] / [answered] correct
+  Sessions/exams: [today's pack/session and exam results, or none]
+  Formula cards: [reviewed] reviewed / [due] due
+  Mistakes added: [count]
+  Recent: [recent log lines]
+  [If no valid snapshot]: studio status unavailable
+
 Log highlights: [any entries from the Log section]
 ```
 
@@ -91,9 +107,9 @@ Show the Step 2a summary in the user-visible message first; do not ask until tha
 Use ONE AskUserQuestion call with up to 4 questions:
 
 **Question 1 (Task Check):** "Here's what I gathered. Are all tasks gathered correctly, and is anything missing?"
-- Options: "Looks good, and capture the tasks from git" / "Need to update tasks" / Other
+- Options: "Looks good, and capture unlisted work" / "Need to update tasks" / Other
 - If updates needed: apply changes, re-read daily note, refresh lists before proceeding
-- **Unlisted git write-back (mandatory when ⚡ items exist):** after Q1 is resolved, create concise `[x]` bullets under Priorities (prefer `**c1. Odd Jobs**` or a short `**Captured from git**` block above it) for each confirmed unlisted cluster — skills, repo feature work, plan batons, etc. Group by theme; no invented time estimates; use `[[wikilinks]]` for projects. Skip clusters the user explicitly rejects. This is how the day-of-record matches git reality for `/start-my-day` later.
+- **Unlisted activity write-back (mandatory when ⚡ items exist):** after Q1 is resolved, create concise `[x]` bullets under Priorities (prefer `**c1. Odd Jobs**` or a short `**Captured activity**` block above it) for each confirmed unlisted git or Physics GRE studio cluster — skills, repo feature work, finished study packs, etc. Group by theme; no invented time estimates; use `[[wikilinks]]` for projects. Skip clusters the user explicitly rejects.
 
 **Question 2 (Reflections):** "Anything on your mind? Worries, open loops, or thoughts to capture?"
 - Free text
@@ -112,7 +128,7 @@ Using the Edit tool, fill the Evening Review section in today's daily note:
 ```markdown
 ## Evening Review
 - **What got done today?**
-- [Merge auto-generated summary (completed tasks + git activity) with any additions from the user's confirmation. Use wikilinks for projects. Keep it concise — bullet points, not paragraphs.]
+- [Merge auto-generated summary (completed tasks + git activity + confirmed Physics GRE study activity) with any additions from the user's confirmation. Use wikilinks for projects. Keep it concise — bullet points, not paragraphs.]
 - **What's on my mind?** (worries, open loops, unresolved thoughts)
 - [User's response from Q2]
 - **One priority for tomorrow?**
