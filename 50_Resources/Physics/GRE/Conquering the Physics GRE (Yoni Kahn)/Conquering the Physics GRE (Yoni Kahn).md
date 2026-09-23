@@ -1,4 +1,4 @@
-![](_page_0_Picture_3.jpeg)
+![](assets/_page_0_Picture_3.jpeg)
 
 ### **Conquering the Physics GRE**
 
@@ -22,7 +22,7 @@ Princeton University, New Jersey
 
 Fermilab, Batavia, Illinois
 
-![](_page_3_Picture_6.jpeg)
+![](assets/_page_3_Picture_6.jpeg)
 
 University Printing House, Cambridge CB2 8BS, United Kingdom
 
@@ -62,7 +62,7 @@ Chapter openings image credit: OktalStudio/DigitalVision Vectors/Getty Images
 
 Cambridge University Press has no responsibility for the persistence or accuracy of URLs for external or third-party internet websites referred to in this publication and does not guarantee that any content on such websites is, or will remain, accurate or appropriate.
 
-![](_page_5_Figure_0.jpeg)
+![](assets/_page_5_Figure_0.jpeg)
 
 ## **CONTENTS**
 
@@ -210,7 +210,7 @@ Cambridge University Press has no responsibility for the persistence or accuracy
 |         | 7.5.2<br>Types of Lasers                                                                                   | 142               |            | Subject Index                                                              | 276               |
 |         | 7.5.3<br>Interferometers                                                                                   | 143               |            | Problems Index                                                             | 280               |
 
-![](_page_9_Picture_0.jpeg)
+![](assets/_page_9_Picture_0.jpeg)
 
 # **PREFACE**
 
@@ -242,7 +242,7 @@ We are thankful to the many people who have made this revised edition possible, 
 
 Yoni Kahn and Adam Anderson
 
-![](_page_11_Picture_0.jpeg)
+![](assets/_page_11_Picture_0.jpeg)
 
 # **HOW TO USE THIS BOOK**
 
@@ -257,7 +257,7 @@ Studying for the GRE can be overwhelming! This book is long because it contains 
 
 Best of luck studying!
 
-![](_page_12_Picture_0.jpeg)
+![](assets/_page_12_Picture_0.jpeg)
 
 ## **RESOURCES**
 
@@ -282,7 +282,7 @@ There are also several useful websites containing information related to the Phy
 - www.physicsgre.com: A web forum for discussion of issues related to the GRE, and the grad school application process in general. Highly recommended: one of us (Y.K.) met several future colleagues on this forum before meeting them in person.
 - www.aps.org/careers/guidance/webinars/gre-strategies.cfm: A webinar on Physics GRE preparation given by one of us (Y.K.) for the American Physical Society, drawing on strategies discussed in this book.
 
-![](_page_15_Picture_0.jpeg)
+![](assets/_page_15_Picture_0.jpeg)
 
 # 1 Classical Mechanics
 
@@ -304,7 +304,7 @@ For the block not to accelerate perpendicular to the ramp, we need the perpendic
 
 $$\mu mg\cos\theta = mg\sin\theta \implies \mu = \tan\theta.$$
 
-![](_page_16_Picture_2.jpeg)
+![](assets/_page_16_Picture_2.jpeg)
 
 **Figure 1.1** Free-body diagram of forces for a block on an inclined ramp.
 
@@ -326,11 +326,11 @@ Our physical intuition tells us that *T*1/*g* = 5 kg and *T*2/*g* = 20 kg, since
 
 Let's check the intuition by doing a full free-body analysis. In order to treat both cases at once, call the mass of the top block *m*<sup>1</sup> and that of the bottom block *m*2, as in Fig. 1.2. The forces on the two blocks are illustrated in Fig. 1.3. *F* is the force applied by the experimenter. Notice how the string tension acts up on the bottom block but down on the top block, and that the magnitude of *T* is the same for both blocks. For the purposes of the GRE, this is the *definition* of a massless string: it carries the same tension at every point. Setting the acceleration of *m*<sup>2</sup> equal to zero, since it is stationary, let's solve for *T*: *T* − *m*2*g* = 0, so indeed, *T* = *m*2*g*, the weight of the bottom block, and our intuition is correct. In this case it wasn't even necessary to consider the forces on the top block, a convenient time-saver!
 
-![](_page_17_Figure_2.jpeg)
+![](assets/_page_17_Figure_2.jpeg)
 
 #### **1.1.3 Blocks in Contact**
 
-![](_page_17_Picture_4.jpeg)
+![](assets/_page_17_Picture_4.jpeg)
 
 **Figure 1.4** Typical setups for blocks moving together with friction.
 
@@ -340,7 +340,7 @@ There are two standard setups for these kinds of problems, illustrated in Fig. 1
 
 1. A block of mass 5 kg is positioned on an inclined plane at angle 45◦. A force of 10 N is applied to the block, parallel to the ground. If the coefficient of kinetic friction is 0.5, which of the following is closest to the acceleration of the block? Assume there is no static friction.
 
-![](_page_17_Picture_9.jpeg)
+![](assets/_page_17_Picture_9.jpeg)
 
 - (A) <sup>√</sup>2 m/s2 up the ramp
 - (B) <sup>√</sup>2 m/s2 down the ramp
@@ -348,7 +348,7 @@ There are two standard setups for these kinds of problems, illustrated in Fig. 1
 - (D) 5√2 m/s2 down the ramp
 - (E) 25√2 m/s2 down the ramp
 
-![](_page_17_Figure_15.jpeg)
+![](assets/_page_17_Figure_15.jpeg)
 
 - 2. Three blocks of masses *m*, 2*m*, and 3*m* are suspended from the ceiling using ropes, as shown in the diagram. Which of the following correctly describes the tension in the three rope segments, labeled *T*1, *T*2, and *T*3?
   - (A) *T*<sup>1</sup> < *T*<sup>2</sup> < *T*<sup>3</sup>
@@ -376,7 +376,7 @@ the same answer as before. Plugging in the numbers, we find μ ≈ 0.14.
 - (D) *T*<sup>1</sup> = *T*<sup>2</sup> > *T*<sup>3</sup>
 - (E) *T*<sup>1</sup> > *T*<sup>2</sup> > *T*<sup>3</sup>
 
-![](_page_18_Picture_14.jpeg)
+![](assets/_page_18_Picture_14.jpeg)
 
 3. Two blocks of masses *M* and *m* are oriented as shown in the diagram. The block *M* moves on a surface with coefficient of kinetic friction μ1, and the coefficient of static friction between the two blocks is μ2. What is the minimum force *F* which must be applied to *M* such that *m* remains stationary relative to *M*?
 
@@ -401,7 +401,7 @@ A two-line derivation of this formula uses the work–energy theorem, reviewed i
 
 For problems involving reference frames, just solve the problem in one frame, and then transform to the frame that the problem is asking about. For example, consider the situation in Fig. 1.5: a ball is thrown out of a car moving at constant velocity. Ignoring air resistance, in the frame of the car, the ball moves directly perpendicular to the road. In the frame of an observer at rest, the car is moving forwards, so the motion
 
-![](_page_19_Picture_9.jpeg)
+![](assets/_page_19_Picture_9.jpeg)
 
 **Figure 1.5** A ball thrown out of a moving car, in the frame of a stationary bystander.
 
@@ -429,7 +429,7 @@ While uniform circular motion is perhaps the most common example, it is certainl
 
 Suppose an astronaut is on a rocket that is moving vertically at constant speed *u*. When the rocket is at a height *h*, the astronaut throws a ball horizontally out of the rocket with velocity *w*, as shown in Fig. 1.6. What is the speed of the ball when it hits the ground?
 
-![](_page_20_Figure_4.jpeg)
+![](assets/_page_20_Figure_4.jpeg)
 
 **Figure 1.6** A ball is thrown horizontally at velocity *w* out of a rocket moving vertically upwards at constant velocity *u*.
 
@@ -545,7 +545,7 @@ Note the signs: the force on the satellite is directed *towards* the Earth, or i
 
 A block slides down a frictionless quarter-circle ramp of radius *R*, as shown in Fig. 1.7. How fast is it traveling when it reaches the bottom?
 
-![](_page_23_Picture_4.jpeg)
+![](assets/_page_23_Picture_4.jpeg)
 
 **Figure 1.7** Block sliding down a quarter-circle ramp.
 
@@ -585,7 +585,7 @@ A cylinder of mass *m* and radius *r*, and a sphere of mass *M* and radius *R*, 
 - (D) never
 - (E) always
 
-![](_page_24_Picture_11.jpeg)
+![](assets/_page_24_Picture_11.jpeg)
 
 **Figure 1.8** Ball or cylinder rolling down an inclined ramp.
 
@@ -627,7 +627,7 @@ But the problem we've solved is entirely typical of GRE problems, and illustrate
 
 #### **1.3.5 Problems: Energy**
 
-![](_page_25_Picture_15.jpeg)
+![](assets/_page_25_Picture_15.jpeg)
 
 The following three questions refer to the diagram: a pinball machine launch ramp consisting of a spring of force constant *k* and a 30◦ ramp of length *L*.
 
@@ -684,7 +684,7 @@ Like linear momentum problems, the game here is always to write the angular mome
 
 A ball of mass *M* strikes another ball of mass *m* initially at rest. The ball of mass *M* scatters at an angle θ relative to its initial direction. Suppose the ball of mass *M* initially has speed *V*, and both balls have a final speed *v*. What is the scattering angle φ of the ball of mass *m*, as defined in Fig. 1.9?
 
-![](_page_27_Figure_4.jpeg)
+![](assets/_page_27_Figure_4.jpeg)
 
 **Figure 1.9** Collision of two balls in two dimensions.
 
@@ -738,7 +738,7 @@ $$I = mr^2, (1.23)$$
 
 which accounts for the fact that, at fixed rotational frequency, the particle will have a higher linear velocity at higher radii. Thankfully, the moment of inertia of a system of many particles is just the sum of the individual moments of inertia,
 
-![](_page_28_Picture_12.jpeg)
+![](assets/_page_28_Picture_12.jpeg)
 
 **Figure 1.10** A penny is rotated about two axes *X*1 and *X*2. The moments of inertia for rotation about each axis are related by the parallel axis theorem.
 
@@ -762,7 +762,7 @@ where *r* is the distance between the CM axis and the parallel axis. For instanc
 
 Consider a rod of mass *<sup>M</sup>* and length *<sup>L</sup>* whose density varies quadratically, <sup>ρ</sup>(*x*) <sup>=</sup> *Ax*2, where *<sup>A</sup>* is a constant and *<sup>x</sup>* is the distance from the left end of the rod, as shown in Fig. 1.11. What is the position of the center of mass of the rod?
 
-![](_page_29_Figure_4.jpeg)
+![](assets/_page_29_Figure_4.jpeg)
 
 **Figure 1.11** A rod of length *L* with a position-dependent density ρ(*x*).
 
@@ -810,7 +810,7 @@ In particular, for a single mass *m* at position **r**, the center of mass is ju
   - (D) (*R*<sup>2</sup> <sup>+</sup> *<sup>r</sup>*2)ω0/*R*<sup>2</sup>
   - (E) ω<sup>0</sup>
 
-![](_page_30_Picture_2.jpeg)
+![](assets/_page_30_Picture_2.jpeg)
 
 - 4. A small puck of mass *M* is attached to a massless string that drops through a hole in a platform, as shown in the diagram above. The puck rotates at radius *R* when the tension in the string is *T*. The string is pulled downwards until the radius of rotation is *r* < *R*. What is the change in energy of the puck when the radius is decreased? You may assume the puck is a point mass.
   - (A) (1/2)*TR*(*R*2/*r*<sup>2</sup> <sup>−</sup> 1)
@@ -863,7 +863,7 @@ $$T = \frac{1}{2}m(\dot{x}^2 + \dot{y}^2) = \frac{1}{2}m(\ell^2\cos^2\theta\,\do
 
 Not surprisingly, we reproduce exactly the expression for the rotational kinetic energy of a point mass, <sup>1</sup> <sup>2</sup> *<sup>I</sup>*ω2.
 
-![](_page_31_Picture_10.jpeg)
+![](assets/_page_31_Picture_10.jpeg)
 
 **Figure 1.12** A mass *m* on the end of a rigid rod of length *l* that rotates about a pivot.
 
@@ -950,7 +950,7 @@ Incidentally, this tells you that if the Lagrangian is independent of *q*, so is
 
 #### **1.5.4 Problems: Lagrangians and Hamiltonians**
 
-![](_page_33_Picture_8.jpeg)
+![](assets/_page_33_Picture_8.jpeg)
 
 The following four questions all refer to a mass *m* suspended from a rigid massless rod of length *l*, but free to rotate otherwise (a spherical pendulum). One can take generalized coordinates θ and φ as shown in the figure.
 
@@ -1044,7 +1044,7 @@ which is conserved if *U*(*r*) is time independent. The most interesting part of
 
 Three representative orbit energies are marked, *E*1, *E*2, and *E*3. An orbit with energy *E*<sup>1</sup> > 0 is unbound: the body comes in from infinity, "strikes" the centrifugal barrier, and "reflects" back out to infinity. An orbit with energy *E*<sup>2</sup> is bound, and has two "turning points," with a minimum distance *r*<sup>1</sup> and a maximum distance *r*2; the body is always stuck between them.
 
-![](_page_35_Figure_2.jpeg)
+![](assets/_page_35_Figure_2.jpeg)
 
 **Figure 1.13** Effective potential with some representative orbit energies.
 
@@ -1079,7 +1079,7 @@ $$\implies \frac{l}{m} dt = r^2 d\phi.$$
 
 The expression on the right-hand side is precisely the area element in polar coordinates (up to a factor of 2), and *l*/*m* is constant, so integrating both sides gives us the second law.
 
-![](_page_35_Figure_20.jpeg)
+![](assets/_page_35_Figure_20.jpeg)
 
 **Figure 1.14** Areal sections illustrating Kepler's second law.
 
@@ -1110,7 +1110,7 @@ Like the first law, the statement that *k* is the same for all planets is only t
   - (E) I and III
 - 3. An asteroid of mass *m* orbits the Sun (mass *M*) on a parabolic trajectory. Which of the following relates its distance of closest approach *d* to its orbital velocity *v* at the point of closest approach? You may assume *m* is negligibly small compared to *M*.
 
-![](_page_36_Picture_22.jpeg)
+![](assets/_page_36_Picture_22.jpeg)
 
 - (A) *<sup>d</sup>* <sup>=</sup> *GM v*2
 - (B) *<sup>d</sup>* <sup>=</sup> <sup>2</sup>*GM v*2
@@ -1191,7 +1191,7 @@ In many cases, this machinery is overkill, especially as most GRE problems are d
 
 Two blocks of mass *m* are coupled to each other and to two walls by springs of spring constant *k*, as shown in Fig. 1.15. What are the normal modes of the system?
 
-![](_page_38_Figure_4.jpeg)
+![](assets/_page_38_Figure_4.jpeg)
 
 **Figure 1.15** Two blocks and three springs.
 
@@ -1312,7 +1312,7 @@ $$m\ddot{x}_2 = -\frac{k}{2}x_2,$$
 
 giving an effective spring constant of *k*/2.
 
-![](_page_40_Figure_18.jpeg)
+![](assets/_page_40_Figure_18.jpeg)
 
 **Figure 1.16** Springs in series and parallel.
 
@@ -1368,7 +1368,7 @@ $$\frac{v^2}{2} + gz + \frac{p}{\rho} = \text{constant}, \tag{1.49}$$
 
 where *v* is the velocity of the fluid, *g* is gravitational acceleration, *z* is the height of a point along the streamline, *p* is the
 
-![](_page_41_Figure_33.jpeg)
+![](assets/_page_41_Figure_33.jpeg)
 
 **Figure 1.17** General setup for the Bernoulli equation, describing a fluid traveling through a pipe of variable size and height. Dashed lines represent streamlines.
 
@@ -1399,7 +1399,7 @@ If we know the pressure and velocity in the first part of the pipe, we can now c
 
 $$p_2 = \frac{\rho v_1^2}{2} \left( 1 - \frac{a^4}{b^4} \right) + p_1.$$
 
-![](_page_42_Picture_15.jpeg)
+![](assets/_page_42_Picture_15.jpeg)
 
 **Figure 1.18** Fluid flows through two horizontal segments of square pipe, with side lengths *a* and *b*.
 
@@ -1425,7 +1425,7 @@ where ρ is the density of water (or whatever fluid the block is floating in). Y
 
 For example, suppose you blow all the air out of your lungs and sink to the bottom of a pool. How much do you weigh underwater? Suppose you weigh 60 kg and your volume is 50 L. You are displacing 50 kg of water, so there is about 500 N of buoyant force pushing up on you. But your weight is 600 N, so your net weight is only 100 N. Quite an effective weight-loss program!
 
-![](_page_43_Picture_11.jpeg)
+![](assets/_page_43_Picture_11.jpeg)
 
 **Figure 1.19** Example of buoyant forces. A block floating in water displaces a mass ρ*V* of water, whose gravitational force pushes up against the weight of the block.
 
@@ -1465,7 +1465,7 @@ $$\implies F = \left(\mu_1 + \frac{1}{\mu_2}\right)(m+M)g.$$
 
 The limiting cases check out: if μ<sup>2</sup> → 0, *F* → ∞ since a vanishing frictional force between the two blocks means that they slip no matter what, and if μ<sup>1</sup> → ∞, *F* → ∞
 
-![](_page_44_Picture_7.jpeg)
+![](assets/_page_44_Picture_7.jpeg)
 
 **Figure 1.20** Solution for block problem 3.
 
@@ -1722,7 +1722,7 @@ $$p_b - p_t = \rho g(y_t - y_b) + \frac{1}{2}\rho(v_t^2 - v_b^2).$$
 
 Plugging in *yt* <sup>−</sup>*yb* <sup>=</sup> 10 m, <sup>ρ</sup> <sup>=</sup> 1000 kg/m3, *<sup>g</sup>* <sup>=</sup> 10 m/s2, *vt* <sup>=</sup> 1 m/s, and *vb* <sup>=</sup> 2 m/s, we find the result 9.85×104 Pa.
 
-![](_page_49_Picture_0.jpeg)
+![](assets/_page_49_Picture_0.jpeg)
 
 # 2 Electricity and Magnetism
 
@@ -1795,7 +1795,7 @@ There are always problems on the GRE that involve simply solving for the electri
 - 1. **Figure out the "symmetry" of the problem:** Should the electric field point radially outward from a single point (spherical symmetry), radially outward from a central axis (cylindrical symmetry), or away from a plane (planar symmetry)? This can usually be deduced from the shape of the charge configuration.
 - 2. **Find a Gaussian surface:** Visualize a "Gaussian" surface *S* such that the electric field **E** is always either (a) perpendicular to *S* with constant magnitude, or (b) parallel to *S* – this is where the symmetry is important, as you usually *guess* where this surface is, based on the symmetry of the problem.
 
-![](_page_51_Picture_2.jpeg)
+![](assets/_page_51_Picture_2.jpeg)
 
 **Figure 2.1** Example of a Gaussian surface over which the electric field from the charged line λ is both constant and perpendicular.
 
@@ -1834,11 +1834,11 @@ $$V(\mathbf{r}) = \frac{q}{4\pi\epsilon_0 r},\tag{2.12}$$
 
 known as the Coulomb potential.
 
-![](_page_52_Picture_2.jpeg)
+![](assets/_page_52_Picture_2.jpeg)
 
 **Figure 2.2** Electric dipole.
 
-![](_page_52_Picture_4.jpeg)
+![](assets/_page_52_Picture_4.jpeg)
 
 **Figure 2.3** Gaussian pillbox for calculating the field of an infinite charged sheet.
 
@@ -1858,7 +1858,7 @@ $$\mathbf{E} = \frac{\sigma}{2\epsilon_0}\hat{\mathbf{n}},\tag{2.13}$$
 
 where **n**ˆ is a unit normal pointing away from the plane. This particular result shows up so often that it's best to memorize it, so we've given it an equation number. You'll see below in
 
-![](_page_52_Picture_14.jpeg)
+![](assets/_page_52_Picture_14.jpeg)
 
 **Figure 2.4** Cylindrical Gaussian surface for calculating the field of an infinite line charge.
 
@@ -1888,7 +1888,7 @@ Let's say that we have a continuous surface surrounded by vacuum, and we zoom in
 
 Find the electric field created by a solid sphere of radius *a* with charge density ρ(*r*) = α*r* and a spherical cavity of radius *b* at its center (Fig. 2.5).
 
-![](_page_53_Picture_4.jpeg)
+![](assets/_page_53_Picture_4.jpeg)
 
 **Figure 2.5** A spherically symmetric charge distribution with a cavity at the center.
 
@@ -1914,7 +1914,7 @@ $$\mathbf{E} = \frac{\alpha (a^4 - b^4)}{4\epsilon_0 r^2} \hat{\mathbf{r}}.$$
 
 Notice that the electric field is everywhere continuous: at *r* = *b* our expression for the field in the region *b* < *r* < *a* gives 0, as did our argument for the field in the region *r* < *b*. Similarly, at *r* = *a*, both expressions give <sup>α</sup>(*a*<sup>4</sup> <sup>−</sup> *<sup>b</sup>*4)/(40*a*2) for the magnitude of the field. As we will see in Section 2.1.5, the continuity of **<sup>E</sup>** is due to the fact that there are no surface charges in this problem, only volume charge densities.
 
-![](_page_54_Picture_2.jpeg)
+![](assets/_page_54_Picture_2.jpeg)
 
 **Figure 2.6** Parallel and perpendicular components of **E** at a boundary.
 
@@ -1965,7 +1965,7 @@ The examples that we have discussed so far have been simplified by totally spher
 
 As an example of a problem involving conductors, consider the simple example of a thick, uncharged, conducting shell of inner radius *r*<sup>1</sup> and outer radius *r*2, with a point charge *q* in the center, shown in Fig. 2.7. Further suppose that the potential at infinity is zero, *V*(*r* = ∞) = 0. What is the potential everywhere in space?
 
-![](_page_55_Picture_4.jpeg)
+![](assets/_page_55_Picture_4.jpeg)
 
 **Figure 2.7** Conducting shell with point charge *q* at center.
 
@@ -2003,7 +2003,7 @@ $$Q_{\rm enc}=0.$$
 
 Since there is a charge *q* at the center, the charge on the inner surface of the conductor must be −*q*. This charge is said to be *induced* by the charge at the center. Since the conductor has zero net charge, there must be a corresponding charge of +*q* uniformly distributed on the outer surface of the conductor. This gives us exactly the field structure we have shown.
 
-![](_page_56_Figure_2.jpeg)
+![](assets/_page_56_Figure_2.jpeg)
 
 **Figure 2.8** Setup for the method of images.
 
@@ -2032,7 +2032,7 @@ where *qi* is the charge of each point charge and *V*(**r***i*) is the potential
 
 Consider a point charge at the center of a thin, grounded, conducting, spherical shell of radius *a* (Fig. 2.9(a)). The shell is removed and taken to infinity (Fig. 2.9(b)). How much work is done during this process?
 
-![](_page_57_Picture_4.jpeg)
+![](assets/_page_57_Picture_4.jpeg)
 
 **Figure 2.9** Change in energy due to a conducting shell.
 
@@ -2069,7 +2069,7 @@ $$Q = CV. (2.19)$$
 
 You'll often hear the statement "*C* only depends on the geometry of the problem." All this means is that the proportionality
 
-![](_page_58_Picture_2.jpeg)
+![](assets/_page_58_Picture_2.jpeg)
 
 **Figure 2.10** Parallel-plate capacitor.
 
@@ -2105,7 +2105,7 @@ You should become intimately familiar with capacitors: they are completely defin
   - (D) *q*2/(0*d*2)
   - (E) 0
 
-![](_page_58_Picture_24.jpeg)
+![](assets/_page_58_Picture_24.jpeg)
 
 - 2. A cylindrical wire of charge of radius *a* and charge per unit length λ is at the center of a thin cylindrical conducting shell of radius *b*. What is the capacitance per unit length of this configuration?
   - (A) ∞
@@ -2150,7 +2150,7 @@ $$\nabla \times \mathbf{B} = \mu_0 \mathbf{J}$$
 
 The first equation is simply the statement that there are no magnetic monopoles, which is true in general, not just
 
-![](_page_59_Picture_27.jpeg)
+![](assets/_page_59_Picture_27.jpeg)
 
 **Figure 2.11** Example of a curve enclosing a current as in Ampère's law.
 
@@ -2197,7 +2197,7 @@ $$|\mathbf{B}| \oint_C dl = \mu_0 I_{\text{enc}},$$
 
 where *L* is the length of the curve *C* (for example, 2π*r* for an Amperian loop at a distance *r* from a current-carrying wire). This method relies crucially on being able to choose a path along which the magnetic field is constant, which is why it
 
-![](_page_60_Picture_16.jpeg)
+![](assets/_page_60_Picture_16.jpeg)
 
 **Figure 2.12** Calculating magnetic field from the Biot–Savart law.
 
@@ -2216,7 +2216,7 @@ As in the case of electrostatics, there are a few magnetostatic configurations t
 
 <sup>3</sup> This form of the equation assumes that the current is confined to a wire and has constant magnitude *I*, which can be pulled outside the integral. As far as we know this will always be the case for GRE problems.
 
-![](_page_61_Picture_2.jpeg)
+![](assets/_page_61_Picture_2.jpeg)
 
 **Figure 2.13** Circular Amperian loop for calculating the magnetic field of an infinite wire.
 
@@ -2237,11 +2237,11 @@ A common generalization is a thick wire with a volume current density that chang
 
 Various symmetry arguments, which you can find in Griffiths, tell you that the field must point along the axis of the cylinder and be constant inside. If there are *n* turns
 
-![](_page_61_Picture_12.jpeg)
+![](assets/_page_61_Picture_12.jpeg)
 
 **Figure 2.14** Rectangular Amperian loop for calculating the magnetic field of a solenoid.
 
-![](_page_61_Picture_14.jpeg)
+![](assets/_page_61_Picture_14.jpeg)
 
 **Figure 2.15** Example of a toroid. The dashed circle inside the toroid is a typical Amperian curve which can be used to solve for the magnetic field inside the toroid.
 
@@ -2273,7 +2273,7 @@ where **K** is the surface current density and **n**ˆ is a unit vector pointing
 
 A good mnemonic to remember these equations is to notice that they're sort of the reverse of the analogous electrostatic
 
-![](_page_62_Picture_10.jpeg)
+![](assets/_page_62_Picture_10.jpeg)
 
 **Figure 2.16** Parallel and perpendicular components of **B** at a boundary where surface current **K** flows along the boundary.
 
@@ -2308,7 +2308,7 @@ Amusingly, the formula for the cyclotron radius remains the same even at relativ
 
 #### **2.2.7 Problems: Magnetostatics**
 
-![](_page_63_Picture_6.jpeg)
+![](assets/_page_63_Picture_6.jpeg)
 
 - 1. A wire consists of a half circle whose ends extend perpendicular to the circle as shown above. If current *I* flows downward through the wire, what is the magnitude of the magnetic field at the center of the circle?
   - (A) μ0*I*/(4*a*2)
@@ -2317,7 +2317,7 @@ Amusingly, the formula for the cyclotron radius remains the same even at relativ
   - (D) 0
   - (E) μ0*I*/(4π*a*)
 
-![](_page_63_Picture_13.jpeg)
+![](assets/_page_63_Picture_13.jpeg)
 
 - 2. Two circular loops of wire, both with radius *a*, are oriented parallel to the *xy*-plane with their centers at (0, 0, −*d*) and (0, 0, *d*), where *d a*. If both wires carry clockwise currents, which best describes the direction of the force from the loop at *z* = *d* on electrons in the loop at *z* = −*d*?
   - (A) Radially inward
@@ -2333,7 +2333,7 @@ Amusingly, the formula for the cyclotron radius remains the same even at relativ
   - (D) μ0*I*2/(2π*d*), repulsive
   - (E) μ0*I*2/(2π*d*2), attractive
 
-![](_page_63_Picture_26.jpeg)
+![](assets/_page_63_Picture_26.jpeg)
 
 - 4. What is the magnetic energy stored in a toroid of wire with a square cross section of side length *a*, *N* total winds, inner radius *R*, and current *I*?
   - (A) <sup>μ</sup>0*N*2*I*2*<sup>a</sup>* 4π ln-*R* + *a R*
@@ -2369,7 +2369,7 @@ $$\int (\nabla \times \mathbf{E}) \cdot d\mathbf{S} = \oint_C \mathbf{E} \cdot d
 
 where *<sup>B</sup>* = *<sup>S</sup>* **B** · *d***S** is the magnetic flux through the (not closed!) surface *S* with boundary *C* (a *closed* curve). In most cases of interest, the curve *C* is a loop of current such as a wire. The surface *S* can be any surface with *C* as the boundary; see Fig. 2.17 for an example. The middle term of this expression is just the electric potential around the loop (up to a sign), and the right-hand side is the change in magnetic flux. This expression is telling us that a changing magnetic flux through a loop of wire sets up a potential (and therefore a current) through the wire, much like a battery would. The electric potential in this context is often called by the unfortunate name *electromotive force* (emf) and denoted by *E*. Most
 
-![](_page_64_Picture_9.jpeg)
+![](assets/_page_64_Picture_9.jpeg)
 
 **Figure 2.17** Example geometry described by Faraday's law. A wire along a curve *C* encloses a surface S, through which a changing magnetic flux *B* penetrates. A segment of the wire contains a resistor, across which there is a voltage or emf *E* in response to a changing magnetic flux. Note that the sign of the voltage must obey Lenz's law: the current induced by the emf must generate a magnetic field that opposes the external change in flux.
 
@@ -2433,7 +2433,7 @@ $$U_L = \frac{1}{2}LI^2. {(2.47)}$$
   - (D) μ0*aN*/2
   - (E) μ0*R*2*N*/(8*a*)
 
-![](_page_65_Picture_26.jpeg)
+![](assets/_page_65_Picture_26.jpeg)
 
 - 3. A rod of mass *m* and resistance *R* is attached to frictionless rails in the presence of a magnetic field of magnitude *B* pointing out of the page, as shown in the diagram above. The rod and rails form a closed electrical circuit. If the rod is launched from *x* = 0 with velocity *v*<sup>0</sup> to the right, at what time *t* is the velocity of the rod *v*0/*e*? Assume that the rails have negligible resistance and neglect the self-inductance of the circuit.
   - (A) *my*/(*R*2*B*2)
@@ -2463,7 +2463,7 @@ where **d** is the vector *from* the negative *to* the positive charge.4 The dip
 
 $$\mathbf{p} = \sum_i q_i \mathbf{d}_i.$$
 
-![](_page_66_Picture_12.jpeg)
+![](assets/_page_66_Picture_12.jpeg)
 
 **Figure 2.18** Two charges of opposite sign have a dipole moment proportional to their charge and the displacement **d** between them. The direction of the dipole moment points from the negative charge to the positive charge.
 
@@ -2533,7 +2533,7 @@ where **p** is defined by (2.49). While this discussion only dealt with the scal
   - (D) 2*E*
   - (E) 4*E*
 
-![](_page_67_Picture_23.jpeg)
+![](assets/_page_67_Picture_23.jpeg)
 
 - 2. Suppose that a current loop of area *a* carrying current *i*, with moment of inertia *I* is placed in a uniform magnetic field of magnitude *B*. The normal to the loop is initially misaligned from the direction of the magnetic field by a small angle θ. When the loop is released, what is the period of oscillation?
   - (A) 2π *I*/(*iaB*)
@@ -2581,7 +2581,7 @@ This is a common way to increase the capacitance of a capacitor.
   - (D) <sup>1</sup> 2 *C V*2
   - (E) *<sup>C</sup> V*2
 
-![](_page_68_Picture_22.jpeg)
+![](assets/_page_68_Picture_22.jpeg)
 
 - 2. A thin slab of material of area *A* and thickness *d* carries uniform polarization **P**, as shown in the diagram. What is the magnitude of the electric field just above the slab, assuming *<sup>d</sup>*<sup>2</sup> *<sup>A</sup>*?
   - (A) |**P**|/(20)
@@ -2625,7 +2625,7 @@ $$\mathbf{S} = \frac{1}{\mu_0} (\mathbf{E} \times \mathbf{B}), \tag{2.63}$$
 
 which gives the flux of energy of the wave (energy per unit area per unit time, or power per unit area). This expression
 
-![](_page_69_Figure_14.jpeg)
+![](assets/_page_69_Figure_14.jpeg)
 
 **Figure 2.19** Vectors describing propagation and component fields for an electromagnetic wave. The wave propagates in the direction **k**, the electric field **E** is proportional to the vector **n**, and the magnetic field **B** is proportional to the vector **k** × **n**.
 
@@ -2696,7 +2696,7 @@ where *m*<sup>0</sup> is the average magnetic dipole moment. The only other chan
 
 Depending on the flavor of your undergraduate education, your knowledge of circuits might be a little rusty. One of us actually never learned circuits in an undergraduate course, possibly because they were deemed too practical and not of fundamental importance! Apparently the GRE does not share this opinion, so it behooves you learn this material
 
-![](_page_71_Picture_2.jpeg)
+![](assets/_page_71_Picture_2.jpeg)
 
 **Figure 2.20** Symbols for three fundamental circuit elements.
 
@@ -2798,7 +2798,7 @@ $$\omega_0 = \frac{1}{\sqrt{LC}}. (2.85)$$
 
 #### **2.7.5 Problems: Circuits**
 
-![](_page_72_Picture_20.jpeg)
+![](assets/_page_72_Picture_20.jpeg)
 
 - 1. What is the equivalent resistance of the network above, if all resistors have resistance *R*?
   - (A) *R*
@@ -3038,7 +3038,7 @@ $$\exp\left(-\frac{2t}{RC}\right) = \frac{1}{2},$$
 
 $$t = \frac{RC \ln 2}{2}.$$
 
-![](_page_77_Picture_0.jpeg)
+![](assets/_page_77_Picture_0.jpeg)
 
 # 3 Optics and Waves
 
@@ -3166,7 +3166,7 @@ There are two very common types of applications of polarization that show up on 
 
 ● **Malus's law.** Suppose we have a device, called a polarization filter or polarizer, for which all light exiting the device is polarized in a certain direction **n**ˆ <sup>0</sup> (Fig. 3.1). Then for incident light of intensity *I*0, which is polarized at an angle θ
 
-![](_page_80_Picture_9.jpeg)
+![](assets/_page_80_Picture_9.jpeg)
 
 **Figure 3.1** Polarized light of intensity *I*0 is incident on a polarizer. If the light is polarized at an angle θ with respect to the polarizer axis **n**ˆ 0, then the light emerging from the polarizer will have an intensity *I*<sup>0</sup> cos<sup>2</sup> θ according to Malus's law, and it will be polarized in the direction **n**ˆ 0.
 
@@ -3182,7 +3182,7 @@ $$\theta_B = \arctan\left(\frac{n_2}{n_1}\right). \tag{3.11}$$
 
 By the same reasoning, light polarized *parallel* to the incident plane incident at θ*<sup>B</sup>* will not be reflected at all. The polarization properties of reflected light are what make Polaroid sunglasses useful: even if the incident angle is not exactly θ*B*, the reflected light will still be mostly polarized in one direction, so sunglasses whose polarization filters are perpendicular to this direction will block most of the reflected light, reducing glare off a road or off water. Indeed, picturing this scenario helps to make concrete the rather abstract and confusing term "incident plane." If the surface is a flat road, the normal will be a vertical line pointing towards the sky, and if the light beam is coming right
 
-![](_page_81_Picture_2.jpeg)
+![](assets/_page_81_Picture_2.jpeg)
 
 **Figure 3.2** Unpolarized light travels in a medium with index *n*1 and reflects off an interface with a medium of index *n*2. If the angle of incidence (relative to normal incidence) is Brewster's angle θ*B*, then the reflected light will emerge linearly polarized in a direction perpendicular to the page.
 
@@ -3237,11 +3237,11 @@ Here, *m* is any integer, positive, negative or zero. Conventions differ, but th
 
 <sup>3</sup> In Fig. 3.3, <sup>θ</sup> is measured from the top slit, but in the limit *<sup>L</sup> <sup>d</sup>*, <sup>θ</sup> is the same whether it is measured from the top slit, the bottom slit, or between the two slits. This is *always* the approximation that will be used in double-slit interference, and is known as the Fraunhofer or far-field regime.
 
-![](_page_82_Figure_2.jpeg)
+![](assets/_page_82_Figure_2.jpeg)
 
 **Figure 3.3** The interference pattern produced behind a double slit has a maximum when *d* sin θ is an integer multiple of the wavelength λ and a minimum when *d* sin θ is a half-integer multiple of the wavelength.
 
-![](_page_82_Picture_4.jpeg)
+![](assets/_page_82_Picture_4.jpeg)
 
 **Figure 3.4** Double-slit interference arises because of the difference in path lengths *d* sin θ between light passing through each slit. The path-length differences produce interference maxima and minima as a function of the angle θ relative to the horizontal.
 
@@ -3270,7 +3270,7 @@ but the total phase of the wave in the medium increases by
 
 $$\delta_2 = \frac{2\pi d}{\lambda/n} = \frac{2\pi nd}{\lambda}.$$
 
-![](_page_83_Figure_2.jpeg)
+![](assets/_page_83_Figure_2.jpeg)
 
 **Figure 3.5** The diffraction pattern produced behind a single slit has a minimum when *a* sin θ is an integer multiple of the wavelength λ.
 
@@ -3294,7 +3294,7 @@ To actually derive these from Maxwell's equations takes an unwieldy amount of al
 
 There are now two sources of phase shift: a geometric one, due to the difference in optical path length 2*dn*<sup>2</sup> from traversing the thickness of the film twice (the dashed segment in the diagram), and a possible additional phase shift depending on the arrangement of indices of refraction according to rules (3.19) and (3.20). When there are additional phase shifts like
 
-![](_page_83_Figure_13.jpeg)
+![](assets/_page_83_Figure_13.jpeg)
 
 **Figure 3.6** Example of reflection off a thin film. If *n*2 > 1, the light reflecting off the first interface will experience a phase shift of π, but light reflecting off the second interface will have no phase shift. The light reflecting off each interface can interfere either constructively or destructively depending on the thickness *d* of the film.
 
@@ -3322,11 +3322,11 @@ $$d \sin \theta = n\lambda/2$$
 
 where θ is the angle of the incident x-rays with respect to the plane of the crystal. The only new things to remember in this formula are the factor of 2, which has the same origin as the path-length difference 2*dn*<sup>2</sup> in thin-film
 
-![](_page_84_Picture_13.jpeg)
+![](assets/_page_84_Picture_13.jpeg)
 
 **Figure 3.7** Light diffracting through a circular aperture of diameter *D* will exhibit an interference minimum at *D* sin θ = 1.22λ. If two objects are separated by an angle θ, this provides a condition, called the Rayleigh criterion, for whether the objects can be resolved through the aperture. At the Rayleigh criterion, the diffraction minimum of the first object coincides with the central maximum for the second object, as shown by the dashed lines on the right. The observed pattern is the sum of the two diffraction patterns, shown by the solid line on the right, which shows that two objects are just barely distinguishable.
 
-![](_page_84_Picture_15.jpeg)
+![](assets/_page_84_Picture_15.jpeg)
 
 **Figure 3.8** X-rays incident on a crystal with interatomic spacing *d*, at an angle θ relative to the horizontal will experience constructive and destructive interference, known as Bragg diffraction. The x-rays that scatter off the second layer of atoms will travel a total distance 2*d* sin θ longer than x-rays that scatter off the first layer. This path difference produces interference in the outgoing x-rays.
 
@@ -3342,7 +3342,7 @@ The basic instruments of geometric optics are lenses, which bend (refract) light
 
 <sup>4</sup> Why x-rays, as opposed to some other kind of light? Simply because the plane spacing *d* for most crystals of interest is comparable to the wavelength of x-rays.
 
-![](_page_85_Picture_2.jpeg)
+![](assets/_page_85_Picture_2.jpeg)
 
 **Figure 3.9** Definition of angles used in reflection and refraction problems.
 
@@ -3398,7 +3398,7 @@ $$\iff$$
 
 Both *s* and *s* can be positive or negative depending on the situation. The image distance *s* is positive if the image is *real* (formed by the intersection of actual light rays), but negative if the image is *virtual* (formed on the opposite side of the optical
 
-![](_page_86_Picture_2.jpeg)
+![](assets/_page_86_Picture_2.jpeg)
 
 **Figure 3.10** Geometry of typical lens and mirror problems, showing raytracing and definitions of common variables. The location of the image of a converging lens in (a) is given by finding the intersection of two lines: (1) draw a line from the top of the object through the center of the lens, and (2) draw a line intersecting the focal point and the point on the lens directly in front the object. The point where these lines intersects is the top of the image. The image of a spherical concave mirror in (b) is given by an analogous procedure, except that the rays reflect off the mirror rather than pass through as they did in the case of the lens. For a spherical concave mirror, the focal length is given by *f* = *R*/2.
 
@@ -3434,7 +3434,7 @@ Note that (3.32) *only* applies if the receiver and source are moving *directly*
 
 Like any other kind of wave, sound waves involve oscillations. Unlike light waves, which involve oscillating electric and magnetic fields, sound waves involve *pressure* oscillations in a gaseous medium (usually air). Additionally, they are *longitudinal* waves, which means that the pressure oscillations
 
-![](_page_87_Picture_8.jpeg)
+![](assets/_page_87_Picture_8.jpeg)
 
 **Figure 3.11** Snapshot at a single point in time of a *pressure* standing wave in a pipe with two ends open (a) or one end open (b). The point at the open end always must have a fixed pressure because it is open to the outside, which has constant pressure. Note that, confusingly, some references will draw similar figures to represent a snapshot of *particle displacement* in the wave. In that case, closed ends look like nodes, because the end of the pipe is fixed, and open ends look like antinodes. In either case, however, the wavelengths of the fundamental and its harmonics are the same.
 
@@ -3542,7 +3542,7 @@ Which of the following statements are true?
   - (D) A virtual image must be inverted.
   - (E) None of the above.
 
-![](_page_89_Figure_29.jpeg)
+![](assets/_page_89_Figure_29.jpeg)
 
 - 14. A converging lens of focal length 6 cm is placed 12 cm to the left of a concave spherical mirror of radius of curvature 6 cm, as shown in the diagram. An object is placed 3 cm to the right of the lens, in between the mirror and the lens. Which of the following describes the image(s) of the object formed by the lens in this configuration?
   - (A) One real image
@@ -3593,7 +3593,7 @@ Note that this is independent of λ!
 
 9. A – Let *n* = 1.5 be the index of refraction of the soap. At the front boundary, we have *n* > *n*air so there is a phase shift of π. At the back boundary, *n*air < *n* so there is no phase shift. The optical path length is 2*nd*, where
 
-![](_page_90_Picture_12.jpeg)
+![](assets/_page_90_Picture_12.jpeg)
 
 **Figure 3.12** Solution for problem 11.
 
@@ -3635,7 +3635,7 @@ is inverted, leading us to suspect choice C. However, in a more general configur
 $$\frac{f}{f_0} = \frac{210}{200} = \frac{350}{350 - v_s}$$
  $\implies v_s = 16.7 \text{ m/s}.$ 
 
-![](_page_92_Picture_0.jpeg)
+![](assets/_page_92_Picture_0.jpeg)
 
 # 4 Thermodynamics and Statistical Mechanics
 
@@ -3792,9 +3792,9 @@ $$k_B T \sim \hbar \omega \implies T \sim 1000 \text{ K}$$
 
 So vibrational degrees of freedom freeze out first; at room temperature, the equipartition theorem still applies to translational and rotational degrees of freedom, and the internal energy is (5/2)*kBT*. At very low temperatures, if the substance still exists as a gas once rotational degrees of freedom have frozen out, all that is left are the energy states associated with the translational part of the Hamiltonian, or the free particle states. From quantum mechanics we know that such states form a continuum down to low energies. So, at low temperatures, the equipartition theorem will continue to apply to the three translational degrees of freedom and the diatomic gas will have an internal energy approximately equal to (3/2)*kBT*, the same as for a monoatomic ideal gas. This situation is conveniently summarized in Fig. 4.1, where the temperature axis is logarithmic.
 
-![](_page_96_Figure_2.jpeg)
+![](assets/_page_96_Figure_2.jpeg)
 
-![](_page_96_Figure_3.jpeg)
+![](assets/_page_96_Figure_3.jpeg)
 
 **Figure 4.1** A sketch of specific heat *CV* of a diatomic gas as a function of temperature. Note the plateaus at (5/2)*kBT* and (7/2)*kBT* corresponding to the "unfreezing" of rotational and vibrational degrees of freedom, respectively.
 
@@ -3963,7 +3963,7 @@ $$e = 1 - \frac{T_C}{T_H},\tag{4.37}$$
 
 which is in fact the efficiency of the idealized Carnot cycle. The Carnot cycle consists of four steps. First, the gas undergoes reversible isothermal expansion at the hot temperature *TH*. Entropy increases from *S*<sup>1</sup> to *S*<sup>2</sup> during this process. Next, the gas expands adiabatically at constant entropy until it has temperature *TC*. The gas then is compressed at constant temperature *TC*, and entropy decreases from *S*<sup>2</sup> back to *S*1. Finally, the gas is compressed adiabatically,
 
-![](_page_100_Figure_2.jpeg)
+![](assets/_page_100_Figure_2.jpeg)
 
 **Figure 4.2** An example of a Carnot cycle in the *T*–*S*-plane.
 
@@ -3979,7 +3979,7 @@ A similar example with a *P*–*V* diagram is shown in Fig. 4.3. This diagram co
 
 It is important to note that the areas are *signed* quantities: if you reverse the direction of the closed path bounding the area in question, you flip the sign of the area, and hence the sign of the work. This is often a crucial distinction, since it tells you whether the system is doing work on its surroundings, or vice versa. You can determine this sign with a right-hand type rule, but it's just as easy to use physical reasoning: the gas does positive work as it expands, and for a given volume change *V*, it does more work at higher pressure. So, imagining a rectangle in the *P*–*V*-plane, the gas does positive net work when the upper horizontal edge is traversed left-to-right, and the bottom edge is traversed right-to-left. A similar analysis holds for *T*–*S* diagrams, so, to summarize,
 
-![](_page_100_Figure_10.jpeg)
+![](assets/_page_100_Figure_10.jpeg)
 
 **Figure 4.3** An example of a cycle in the *P*–*V*-plane. The work done is the signed area enclosed by the curve.
 
@@ -4136,7 +4136,7 @@ assume that *kBT* - *k*/*m*, where *m* is the mass of the molecule and *k* is th
 
 (E) The change in entropy depends on the temperature of the gas.
 
-![](_page_103_Figure_38.jpeg)
+![](assets/_page_103_Figure_38.jpeg)
 
 - 10. The *P*–*V* diagram above illustrates the Sargent cycle for an ideal gas. Paths 1–2 and 3–4 are reversible adiabatic, path 2–3 is at constant volume, and path 4–1 is at constant pressure. If *Ti* denotes the temperature at point *i*, which temperature is hottest?
   - (A) *T*<sup>1</sup>
@@ -4237,7 +4237,7 @@ This just adds a constant term to the log of the partition function: ln *ZN* = *
 
 $$\langle N \rangle = \int_0^\mu A e^{-\kappa \epsilon} d\epsilon = \frac{A}{\kappa} \left( 1 - e^{-\kappa \mu} \right).$$
 
-![](_page_106_Picture_0.jpeg)
+![](assets/_page_106_Picture_0.jpeg)
 
 # 5 Quantum Mechanics and Atomic Physics
 
@@ -4507,7 +4507,7 @@ In other words, we can simultaneously diagonalize *O*ˆ and the Hamiltonian, and
   - (D) |*ab*| 1/2
   - (E) 0
 
-![](_page_112_Figure_25.jpeg)
+![](assets/_page_112_Figure_25.jpeg)
 
 - 4. The wavefunction shown in the diagram above represents one of the excited states of the harmonic oscillator. What is the energy of the state?
   - (A) ω/2
@@ -4744,7 +4744,7 @@ We could also get *E* (up to the factor of 1/2) from an identical dimensional an
 
 The finite square well is similar to the infinite square well, except the potential well has finite depth. For what follows
 
-![](_page_117_Figure_11.jpeg)
+![](assets/_page_117_Figure_11.jpeg)
 
 **Figure 5.1** Sketch of the wavefunction for a bound state of the finite square well.
 
@@ -5549,7 +5549,7 @@ Thus *<sup>L</sup>* <sup>∼</sup> *<sup>r</sup>*1/2, and from *<sup>L</sup>*<su
 - 5. C This is a straightforward application of Wien's law. Solving for *<sup>T</sup>*, we get *<sup>T</sup>* <sup>=</sup> (2.9 <sup>×</sup> <sup>10</sup>−3K · m)/λmax, and approximating Wien's constant by 3 and the wavelength by 1 mm, we get *T* ≈ 3 K. (Even without any knowledge of Wien's constant, we could have eliminated choice E since the universe certainly isn't at room temperature.) By the way, questions on the CMB are fairly likely to appear on the GRE in some form, so it's worth remembering both the wavelength and the temperature if you can.
 - 6. A Treating the space heater as a blackbody, the power (energy per unit time) is proportional to the fourth power of temperature. So doubling the temperature increases the power by a factor of 16, and for a constant desired energy, this means the time taken to deliver this energy will decrease by a factor of 16.
 
-![](_page_137_Picture_0.jpeg)
+![](assets/_page_137_Picture_0.jpeg)
 
 # 6 Special Relativity
 
@@ -6044,7 +6044,7 @@ $$\frac{3}{8} \frac{mv^4}{c^2} = 27 \text{ pJ},$$
 
 which is choice A. Even without doing an exact Taylor expansion, we could have reasoned as follows: since the velocity is small, the difference is likely to be *extremely* small, which means it is suppressed by powers of *c*. The only quantities with units of energy are *mv*3/*c* and *mv*4/*c*2, which correspond roughly to choices C and A, respectively. Odd powers of*c* are rare in quantities involving energy, so we might make an educated guess towards choice A.
 
-![](_page_148_Picture_0.jpeg)
+![](assets/_page_148_Picture_0.jpeg)
 
 # 7 Laboratory Methods
 
@@ -6173,7 +6173,7 @@ $$Z_{\text{tot}}^{-1} = Z_1^{-1} + Z_2^{-1} + \dots + Z_n^{-1}$$
 
 These formulas contain all the usual formulas for resistors, capacitors, and inductors in series, as well as all the information about phase lag in RLC circuits, in one convenient package.
 
-![](_page_151_Picture_12.jpeg)
+![](assets/_page_151_Picture_12.jpeg)
 
 **Figure 7.1** Example circuit diagrams for high- and low-pass filters.
 
@@ -6200,15 +6200,15 @@ The most complicated circuit we can make from just the three basic elements is a
 - **Diode.** This device uses properties of semiconductors to ensure that *current can only flow in one direction*. In a circuit diagram, the triangle in Fig. 7.2(a) points in the direction current is allowed to flow. However, no current can flow at all until a minimum *bias voltage* is applied across the diode – typically this is about 0.7 V for a silicon diode. Apart from that bias voltage, the voltage drop across a diode is approximately independent of the current. Uses of diodes include turning an alternating current into a direct current (this is known as a rectifier circuit) and to reroute current away from sensitive electrical components (if the voltage surges, the diode starts conducting, resulting in an almost short circuit if the voltage is high enough).
 - **Op-amp.** Short for operational amplifier, this device has two inputs and one output. The output voltage is proportional to the difference between the two input voltages,
 
-![](_page_152_Picture_7.jpeg)
+![](assets/_page_152_Picture_7.jpeg)
 
 **Figure 7.2** Symbols for two common advanced circuit elements: diodes and op-amps.
 
-![](_page_152_Figure_10.jpeg)
+![](assets/_page_152_Figure_10.jpeg)
 
 **Figure 7.3** Waveform characteristic of clipping.
 
-![](_page_152_Picture_12.jpeg)
+![](assets/_page_152_Picture_12.jpeg)
 
 **Figure 7.4** Circuit diagram symbols for basic logic gates.
 
@@ -6231,7 +6231,7 @@ For two inputs *A* and *B*, AND outputs *A* · *B*, while OR outputs *A* + *B*. 
 | 1 | 0 | 1      |
 | 1 | 1 | 1      |
 
-![](_page_153_Picture_4.jpeg)
+![](assets/_page_153_Picture_4.jpeg)
 
 **Figure 7.5** Circuit diagram symbol for a NOT gate.
 
@@ -6255,7 +6255,7 @@ This section is based largely on the excellent book by Knoll, mentioned in the R
 
 A useful general concept when dealing with subatomic particle interactions is the *cross section* (Fig. 7.6). Imagine that you're shooting a stream of bullets at a bowling ball of
 
-![](_page_153_Picture_16.jpeg)
+![](assets/_page_153_Picture_16.jpeg)
 
 **Figure 7.6** The effective scattering cross section of a ball of radius *R* for incoming particles is the projected area of the ball in the plane perpendicular to the direction of the incoming particles.
 
@@ -6325,9 +6325,9 @@ For some reason, questions about names and properties of lasers have become incr
 
 Here's a nontechnical outline of how a generic laser works. Start with a quantum-mechanical system (the *medium*) with at least two energy levels, a ground state and an excited state. The medium could consist of free atoms, organic molecules, or any number of more exotic substances, several of which will be discussed below. Using some external power source
 
-![](_page_156_Figure_2.jpeg)
+![](assets/_page_156_Figure_2.jpeg)
 
-![](_page_156_Figure_3.jpeg)
+![](assets/_page_156_Figure_3.jpeg)
 
 **Figure 7.7** Energy levels for three and four-level lasers. The solid arrows represent fast decays, and the dashed arrows represent slow decays which result in laser light.
 
@@ -6359,7 +6359,7 @@ An interferometer is a device that takes advantage of the wave properties of lig
   - (A) a photon with energy 10 keV
   - (B) a neutron with kinetic energy 1 MeV
 
-![](_page_157_Picture_10.jpeg)
+![](assets/_page_157_Picture_10.jpeg)
 
 **Figure 7.8** Michelson–Morley interferometer.
 
@@ -6405,13 +6405,13 @@ $$\frac{1}{1/\sigma_A + 1/\sigma_B}$$
   - (D) NAND
   - (E) NOT
 
-![](_page_158_Figure_12.jpeg)
+![](assets/_page_158_Figure_12.jpeg)
 
 6. The circuit diagram on the left above is driven by an alternating-current generator, whose input voltage *V*in is shown as a function of time in the plot on the right. Which of the following best represents the shape of the output voltage *V*out?
 
-![](_page_158_Figure_14.jpeg)
+![](assets/_page_158_Figure_14.jpeg)
 
-![](_page_158_Figure_15.jpeg)
+![](assets/_page_158_Figure_15.jpeg)
 
 - 7. A student holding a Geiger counter near a radioactive sample hears five clicks in a 10-second time window. Based on this measurement, what is the probability of hearing exactly one click in a subsequent 10-second time window?
   - (A) *e*−<sup>5</sup>
@@ -6468,7 +6468,7 @@ which is closest to B. We have used here the approximation of π = 3: a convenie
 - 9. C If the central maximum becomes a minimum, the path length has shifted by half a wavelength, so we solve *L* = λ/2 with λ = 1000 nm to find *L* = 500 nm. Then *L*/*<sup>L</sup>* <sup>=</sup> <sup>10</sup>−10, choice C. This is roughly how the LIGO detector works; the sensitivity is increased by reflecting the light many times to increase the effective arm length, and by shifting the baseline path length by λ/2 so that destructive interference occurs in the absence of gravitational waves, allowing a small amount of light to serve as a signal.
 - 10. D This is a tricky bit of trivia that may show up on the GRE. Semiconductor lasers create laser light by electron– hole recombination, with the energy of the photon on the order of the band gap. Ultraviolet light corresponds to photon energies of 3–100 eV. You can remember this from the fact that the *n* = 2 to *n* = 1 transition in hydrogen is in the ultraviolet, with an energy of 13.6 eV<sup>×</sup> <sup>1</sup> <sup>−</sup> <sup>1</sup> 22 = 10.2 eV. This is also related to the 2014 Nobel Prize, see Section 8.4.
 
-![](_page_160_Picture_0.jpeg)
+![](assets/_page_160_Picture_0.jpeg)
 
 # 8 Specialized Topics
 
@@ -6534,7 +6534,7 @@ On firmer experimental footing is the discovery that *neutrinos have mass*. This
 
 An ideal crystal is constructed by the infinite repetition of identical structural units in space. In the simplest crystals the structural unit is a single atom, as in copper, silver, gold, iron, aluminum, and the alkali metals. But for other materials the smallest structural unit may contain many atoms or molecules. For simplicity, we'll call this unit an "atom" in
 
-![](_page_164_Picture_2.jpeg)
+![](assets/_page_164_Picture_2.jpeg)
 
 **Figure 8.1** Common crystal lattices.
 
@@ -6792,7 +6792,7 @@ and any time the quantum-mechanical ground state does not respect a symmetry tha
 - den, eliminating E. C is forbidden both because the mass difference between *N*<sup>3</sup> and *N*<sup>1</sup> is lighter than the mass of an alpha particle (about 4 MeV), and because alpha emission must reduce the mass number of the nucleus by 4. D is forbidden by charge conservation since *N*<sup>3</sup> → *N*<sup>2</sup> is effectively a proton converting into a neutron, which must be accompanied by emission of a positively charged particle. This leaves A and B. It turns out that positron emission is forbidden for a somewhat subtle reason: the mass difference of the atoms *mN*<sup>3</sup> − *mN*<sup>2</sup> must be greater than 2*me* ≈ 1 MeV, because after the emission of a positron with mass *me*, *N*<sup>2</sup> is an ion *N*<sup>−</sup> <sup>2</sup> with an extra electron. It must shed this extra electron to transition to the neutral atomic state with mass *mN*<sup>2</sup> , so the transition *N*<sup>3</sup> → *N*<sup>2</sup> actually requires the emission of *two* particles of mass *me* (plus neutrinos, which are effectively massless). This leaves only choice A.
 - 14. D You are unlikely to encounter any complex analysis on the GRE, but because the Specialized Topics description includes "mathematical methods," we included this problem as an example of a basic math fact you might have to know. Cauchy's theorem tells you the value of this integral is 2π*i*.
 
-![](_page_173_Picture_0.jpeg)
+![](assets/_page_173_Picture_0.jpeg)
 
 # 9 Special Tips and Tricks for the Physics GRE
 
@@ -6890,7 +6890,7 @@ What exactly constitutes a "limiting case," of course, depends on the problem. S
 
 Consider the classic problem of a wheel of mass *M* and radius *R* up against a ledge of height *h*, shown in Fig. 9.1. What horizontal force *F* do you have to apply at the axle to roll the wheel up over the ledge? (Try this problem yourself before reading the rest of the discussion.)
 
-![](_page_176_Picture_4.jpeg)
+![](assets/_page_176_Picture_4.jpeg)
 
 **Figure 9.1** A wheel being pushed up a ledge.
 
@@ -7036,7 +7036,7 @@ $$x_0 e^{-\frac{b}{2m}t} \cos\left(\sqrt{\frac{k}{m} - \frac{b^2}{4m^2}}t\right)
 - 4. D Since the answer choices resemble a "which power of 2" problem, we know we are not interested in the constants that appear in the formula for the Fermi energy, so this is a good candidate for "derive, don't memorize." Electrons in a metal fill up a Fermi sphere with radius *pF* and volume proportional to *p*<sup>3</sup> *F*. The total number of electrons is proportional to the density <sup>ρ</sup>, so *pF* <sup>∝</sup> <sup>ρ</sup>1/3. The Fermi energy is *EF* <sup>=</sup> *<sup>p</sup>*<sup>2</sup> *<sup>F</sup>*/2*me*, so *EF* <sup>∝</sup> <sup>ρ</sup>2/3, which is the relation we need to solve this problem. If the density is increased by a factor of 8, the Fermi energy is increased by a factor of 82/<sup>3</sup> <sup>=</sup> 4, which gives choice D.
 - 5. E A direct solution of this problem by solving the second-order differential equation for a damped harmonic oscillator would be a time sink. Instead, we can use limiting cases and dimensional analysis. A useful limit to take is *b* → 0, the case of an undamped oscillator. In that case, we know that the amplitude should be constant and the angular frequency should be ω = *k*/*m*. Only choice E satisfies those criteria. Even if you didn't remember that formula for ω, choices A, C, and D have incorrect units in the exponentials and trig functions. B has correct units, but the fact that it is independent of *b* is suspicious, since as *b* → 0 the amplitude should stay constant.
 
-![](_page_181_Picture_0.jpeg)
+![](assets/_page_181_Picture_0.jpeg)
 
 Sample Exams and Solutions
 
@@ -7139,7 +7139,7 @@ Sample Exams and Solutions
   - (D) <sup>2</sup>*<sup>l</sup>* 2 *mk*
   - (E) <sup>2</sup>*<sup>l</sup>* 2 3*mk*
 
-![](_page_186_Figure_20.jpeg)
+![](assets/_page_186_Figure_20.jpeg)
 
 - 10. Two identical disks shown in the figure above, each of thickness *h*, radius *R*, and mass *M*, are rigidly attached at a point on their edges. What is the moment of inertia of the pair of disks about an axis *X*, perpendicular to the plane of the disks, which passes through the point where the disks are connected?
   - (A) *MR*<sup>2</sup>
@@ -7212,7 +7212,7 @@ $$\psi(x) = \sqrt{\frac{2}{L}} \sin \frac{2\pi x}{L}.$$
   - (D) 0.21 mm
   - (E) 0.30 mm
 
-![](_page_188_Picture_8.jpeg)
+![](assets/_page_188_Picture_8.jpeg)
 
 Questions 20 and 21 refer to a particle of mass *m*, confined to the surface of a torus with central radius *a* and cross-sectional radius *b*, oriented such that the Earth's gravitational field points perpendicular to the plane of the circle of radius *a*. Letting φ and θ be the angular coordinates on the circles of radii *a* and *b*, respectively, a Lagrangian for this system is
 
@@ -7238,7 +7238,7 @@ $$L = \frac{1}{2}m(a+b\cos\theta)^2\dot{\phi}^2 + \frac{1}{2}mb^2\dot{\theta}^2 
   - (D) <sup>2</sup>*<sup>L</sup>*
   - *R* (E) 0
 
-![](_page_188_Picture_29.jpeg)
+![](assets/_page_188_Picture_29.jpeg)
 
 - 23. A straight wire carrying current *I* passes through the center of a circular wire carrying current *i*. If the circular loop of wire has radius R, what is the tension on the circular wire due to the field produced by the straight wire?
   - (A) <sup>μ</sup>0*iI* 2π*R*<sup>2</sup>
@@ -7247,7 +7247,7 @@ $$L = \frac{1}{2}m(a+b\cos\theta)^2\dot{\phi}^2 + \frac{1}{2}mb^2\dot{\theta}^2 
   - (D) <sup>μ</sup>0*iI* 2π*R*
   - (E) 0
 
-![](_page_189_Figure_2.jpeg)
+![](assets/_page_189_Figure_2.jpeg)
 
 - 24. A uniform cylinder of height *h* and radius *r* is placed on a flat surface and tipped at an angle θ from the vertical. Find θ<sup>0</sup> such that, when the cylinder is released from θ > θ0, it falls over.
   - (A) arctan(2*r*/*h*)
@@ -7274,7 +7274,7 @@ $$L = \frac{1}{2}m(a+b\cos\theta)^2\dot{\phi}^2 + \frac{1}{2}mb^2\dot{\theta}^2 
   - (D) proportional to *E*<sup>3</sup>
   - 0 (E) proportional to *E*<sup>4</sup> 0
 
-![](_page_189_Figure_27.jpeg)
+![](assets/_page_189_Figure_27.jpeg)
 
 - 28. In the optical arrangement shown above, converging lenses A and B both have focal length 5 cm. An object is placed 2 cm to the left of lens A. Where is the image of the object located?
   - (A) 5 cm to the right of B
@@ -7361,7 +7361,7 @@ Which of the following must be true?
   - (D) 1/3
   - (E) 3/2
 
-![](_page_191_Picture_8.jpeg)
+![](assets/_page_191_Picture_8.jpeg)
 
 - 39. Two circular loops of wire of radii *a* and *b* are oriented concentrically in the same plane, and they each carry a current *I* circulating in opposite directions, as shown in the figure above. What is the magnetic field at the center of the loops?
   - (A) <sup>μ</sup>0*<sup>I</sup>* 2 1 *<sup>a</sup>* <sup>−</sup> <sup>1</sup> *b* , pointed out of the page
@@ -7397,7 +7397,7 @@ where *a*, *b*,*c* are real positive constants. What are the possible results of
   - (D) |**B**| <sup>2</sup> *dV*
   - (E) (**E** · **B**) *dV*
 
-![](_page_191_Picture_38.jpeg)
+![](assets/_page_191_Picture_38.jpeg)
 
 - 43. A beam of nonrelativistic protons (mass *m*, charge *q*) of velocity *v* enters a region of length *L* with an electric field *E* perpendicular to the direction of the beam. At the end of the region of length *L* is a circular target of radius *R*. Assuming that the diameter of the beam is much smaller than *R*, what is the minimum electric field *E* needed to deflect all protons before they strike the target?
   - (A) *mLv*<sup>2</sup> 2*qR*<sup>2</sup>
@@ -7422,7 +7422,7 @@ where *a*, *b*,*c* are real positive constants. What are the possible results of
   - (D) *PV*7/<sup>5</sup>
   - (E) *PV*9/<sup>7</sup>
 
-![](_page_192_Picture_17.jpeg)
+![](assets/_page_192_Picture_17.jpeg)
 
 - 46. A string of length *L* and negligible mass is completely wound around a solid cylinder of uniform density, of mass *M* and radius *R*, and it has a small weight of mass *m* attached to its end. If the weight is released from rest under the influence of gravity, what is its velocity when the string is entirely unwound?
   - (A) <sup>4</sup>*mgL M* + 2*m*
@@ -7481,7 +7481,7 @@ where *a*, *b*,*c* are real positive constants. What are the possible results of
   - (D) Electron–positron annihilation
   - (E) Supernovae
 
-![](_page_193_Figure_26.jpeg)
+![](assets/_page_193_Figure_26.jpeg)
 
 - 55. A soldier can fire a cannon horizontally from the top of a 250 m cliff. He wants to hit an enemy encampment at a 420 m horizontal distance from the cliff. What must the initial velocity of his cannonball be in order to strike the encampment, neglecting air resistance?
   - (A) 22.4 m/s
@@ -7496,7 +7496,7 @@ where *a*, *b*,*c* are real positive constants. What are the possible results of
   - (D) 11*v*/10
   - (E) 3*v*/2
 
-![](_page_193_Picture_39.jpeg)
+![](assets/_page_193_Picture_39.jpeg)
 
 - 57. Consider the circuit shown in the diagram. When switch *S* is open, the current through the 10 k resistor is *I*1. After switch *S* is closed, the current through the same resistor is *I*2. What is *I*2/*I*1?
   - (A) 1/4
@@ -7505,7 +7505,7 @@ where *a*, *b*,*c* are real positive constants. What are the possible results of
   - (D) 15/14
   - (E) 2
 
-![](_page_194_Picture_2.jpeg)
+![](assets/_page_194_Picture_2.jpeg)
 
 - 58. A rod of length *d* and mass *M* is attached to a pivot and suspended at an angle α from the vertical using a support wire, as shown in the diagram. A lump of clay of mass *m* is fired at the end of the rod with a velocity *v*. Just before the clay makes contact with the rod, the wire is cut. Assuming the clay and rod stick together after collision, what is the angular velocity in radians of the rod–clay system? (You may treat the lump of clay as a point mass.)
   - (A) *mv* cos <sup>α</sup> (*M* + *m*)*d*
@@ -7514,7 +7514,7 @@ where *a*, *b*,*c* are real positive constants. What are the possible results of
   - (D) <sup>3</sup>*mv* (*M* + 3*m*)*d*
   - (E) <sup>3</sup>*mv Md*
 
-![](_page_194_Picture_9.jpeg)
+![](assets/_page_194_Picture_9.jpeg)
 
 - 59. A square loop of wire of side length *L*, containing a load resistor *R*, is oriented perpendicular to the *xy*-plane and rotates about the *z*-axis at angular frequency ω in the presence of a uniform magnetic field **B** = *B*0**x**ˆ, as shown in the diagram. If *L* = 10 cm, *B*<sup>0</sup> = 2 tesla, and *R* = 100.0 , what must ω be so that the average power dissipated in the resistor is 0.5 W?
   - (A) 25 rad/s
@@ -7610,7 +7610,7 @@ $$\left[\left[\left[L_{x},L_{y}\right],L_{x}\right],L_{x}\right]$$
   - (D) The Pauli exclusion principle does not apply to systems at low temperature.
   - (E) Electrons are not fermions.
 
-![](_page_196_Picture_27.jpeg)
+![](assets/_page_196_Picture_27.jpeg)
 
 - 73. A hoop of radius *R* rotates at constant angular velocity . A small bead of mass *m* is attached to the hoop, with a frictional force on the bead proportional to the difference in velocity between the bead and edge of the hoop, *F* = *k*(*R* − *R*ω), where ω is the angular velocity of the bead. If the bead begins at angular velocity ω0, which of the following describes its subsequent motion?
   - (A) <sup>ω</sup>(*t*) <sup>=</sup> <sup>ω</sup>0*e*−*kt*/*<sup>m</sup>*
@@ -7619,7 +7619,7 @@ $$\left[\left[\left[L_{x},L_{y}\right],L_{x}\right],L_{x}\right]$$
   - (D) <sup>ω</sup>(*t*) <sup>=</sup> (1 <sup>−</sup> *<sup>e</sup>*−*kt*/*m*)
   - (E) <sup>ω</sup>(*t*) <sup>=</sup> <sup>−</sup> ( <sup>−</sup> <sup>ω</sup>0)*e*−*kt*/*<sup>m</sup>*
 
-![](_page_196_Picture_34.jpeg)
+![](assets/_page_196_Picture_34.jpeg)
 
 - 74. Consider a cylinder of radius *R*, mass *M*, and density <sup>ρ</sup>(*r*) <sup>=</sup> *Ar*<sup>α</sup> that starts at rest and rolls without slipping down an inclined plane of height *h* at an angle θ. Assuming no rolling friction, the final velocity of the cylinder at the bottom depends ONLY on
   - (A) θ and α
@@ -7678,7 +7678,7 @@ $$\frac{e^{\epsilon/2kT} + e^{-\epsilon/2kT}}{2 + e^{\epsilon/2kT} + e^{-\epsilo
 (E) 
 $$\frac{1 + e^{\epsilon/2kT} + e^{-\epsilon/2kT}}{2 + e^{\epsilon/2kT} + e^{-\epsilon/2kT}}$$
 
-![](_page_198_Picture_2.jpeg)
+![](assets/_page_198_Picture_2.jpeg)
 
 - 82. The diagram above illustrates a system consisting of a block of mass *m* hanging from a spring of spring constant *k*, with another block of mass *m* hanging from the first block by another spring of spring constant *k*. What is the total energy of this system?
   - (A) <sup>1</sup> <sup>2</sup>*m*(*y*˙<sup>1</sup> <sup>2</sup> + ˙*y*<sup>2</sup> 2) <sup>+</sup> <sup>1</sup> <sup>2</sup> *<sup>k</sup>*(*y*<sup>2</sup> <sup>1</sup> + (*y*<sup>2</sup> − *y*1) 2) <sup>−</sup> *mg*(*y*<sup>1</sup> <sup>+</sup> *<sup>y</sup>*2)
@@ -7715,7 +7715,7 @@ $$\frac{1 + e^{\epsilon/2kT} + e^{-\epsilon/2kT}}{2 + e^{\epsilon/2kT} + e^{-\ep
   - (D) I and II
   - (E) I and III
 
-![](_page_198_Figure_36.jpeg)
+![](assets/_page_198_Figure_36.jpeg)
 
 - 87. The figure above shows the total cross section for photon scattering on a Pb atom as well as the cross sections for several individual process. Why does curve *b* drop quickly near 1 MeV?
   - (A) Penetration depth of low-energy photons is small.
@@ -7737,7 +7737,7 @@ $$\frac{1 + e^{\epsilon/2kT} + e^{-\epsilon/2kT}}{2 + e^{\epsilon/2kT} + e^{-\ep
   - (D) *<sup>B</sup>*0(*y*2**x**<sup>ˆ</sup> <sup>+</sup> *<sup>z</sup>***y**ˆ)
   - (E) *<sup>B</sup>*0(*x*2**y**<sup>ˆ</sup> <sup>+</sup> *<sup>y</sup>***z**ˆ)
 
-![](_page_199_Picture_14.jpeg)
+![](assets/_page_199_Picture_14.jpeg)
 
 - 90. Consider a charge configuration consisting of a ball of charge *Q* surrounded by a thin conducting shell of radius *a*. The conductor initially has no net charge, but is then connected to ground (the potential at infinity). What is the change in energy of the configuration?
   - (A) <sup>−</sup> *<sup>Q</sup>*<sup>2</sup> 4π0*a*
@@ -7783,7 +7783,7 @@ $$\ddot{q} = \frac{2\bar{A}}{B}q$$
 
 $$(E) \ \ddot{q} = -\frac{2B}{A}q$$
 
-![](_page_200_Picture_2.jpeg)
+![](assets/_page_200_Picture_2.jpeg)
 
 - 95. A toroidal solenoid of radius *R* and cross-sectional radius*r R* has *N* winds and carries current *R*. The volume enclosed by the torus is 2π2*Rr*2. What is the energy stored in the toroidal solenoid?
   - (A) 0
@@ -7895,7 +7895,7 @@ What is the expectation value of the position of this particle?
   - (D) straight line
   - (E) logarithmic spiral
 
-![](_page_203_Picture_15.jpeg)
+![](assets/_page_203_Picture_15.jpeg)
 
 - 3. A massless rope of length *l*, attached to a fixed pivot at one end and with a mass *m* at the other end, is held horizontally and then released, as shown in the diagram. When the mass is at its lowest point, the tension in the rope is
   - (A) 0
@@ -7939,7 +7939,7 @@ What is the expectation value of the position of this particle?
   - (D) 1*s* <sup>2</sup> 2*s* <sup>2</sup> 2*p*<sup>5</sup>
   - (E) 1*s* <sup>2</sup> 2*s* <sup>2</sup> 2*p*<sup>6</sup>
 
-![](_page_204_Picture_8.jpeg)
+![](assets/_page_204_Picture_8.jpeg)
 
 - 9. In the circuit shown in the diagram, the capacitor is initially charged, and the switch is closed at *t* = 0. Assuming all circuit elements have negligible resistance, the peak magnitude of the current is achieved at
   - (A) *<sup>t</sup>* <sup>=</sup> <sup>π</sup> 4 *L C*
@@ -7948,7 +7948,7 @@ What is the expectation value of the position of this particle?
   - (D) *<sup>t</sup>* <sup>=</sup> <sup>π</sup> 2 √ *LC*
   - (E) *<sup>t</sup>* <sup>=</sup> <sup>π</sup> 2 <sup>√</sup>*LC*
 
-![](_page_204_Figure_15.jpeg)
+![](assets/_page_204_Figure_15.jpeg)
 
 Questions 10 and 11 refer to the *P*–*V* diagram of an ideal gas undergoing the Brayton cycle. Steps A and C are isentropic, and steps B and D are isobaric.
 
@@ -7965,7 +7965,7 @@ Questions 10 and 11 refer to the *P*–*V* diagram of an ideal gas undergoing th
   - (D) ionized
   - (E) heteronuclear
 
-![](_page_205_Figure_2.jpeg)
+![](assets/_page_205_Figure_2.jpeg)
 
 - 12. The oscilloscope trace shown in the diagram is an example of
   - (A) frequency modulation
@@ -8058,19 +8058,19 @@ for a particle of mass *m* is
   - (D) vibrons
   - (E) rotons
 
-![](_page_207_Figure_2.jpeg)
+![](assets/_page_207_Figure_2.jpeg)
 
 22. Shown in the diagram are two concentric thin spherical shells of radii *R* and 2*R*, the outer one carrying charge +3*Q* and the inner one carrying charge −*Q*. Setting the electric potential equal to zero at infinity, which of the following graphs best represents the electric potential as a function of *r*, the distance from the center of the shells?
 
-![](_page_207_Figure_4.jpeg)
+![](assets/_page_207_Figure_4.jpeg)
 
-![](_page_207_Figure_5.jpeg)
+![](assets/_page_207_Figure_5.jpeg)
 
-![](_page_207_Figure_6.jpeg)
+![](assets/_page_207_Figure_6.jpeg)
 
-![](_page_207_Figure_7.jpeg)
+![](assets/_page_207_Figure_7.jpeg)
 
-![](_page_207_Figure_8.jpeg)
+![](assets/_page_207_Figure_8.jpeg)
 
 - 23. The force-carrying particle responsible for binding the quarks in the proton is called the
   - (A) photon
@@ -8117,7 +8117,7 @@ $$\omega = \sqrt{\frac{n_e e^2 m^*}{\epsilon_0}}$$
 (E) 
 $$\omega = \sqrt{\frac{n_e e^2}{m^* \epsilon_0}}$$
 
-![](_page_208_Picture_35.jpeg)
+![](assets/_page_208_Picture_35.jpeg)
 
 - 28. A planet of mass *m* orbits a star of mass *M* in an elliptical orbit with semimajor axis *a*, as shown in the diagram. The distance of closest approach to the star is *a*/4. Assuming *m M*, the ratio of the planet's speed at perigee (when the planet is closest to the star) to the planet's speed at apogee (when the planet is furthest away from the star) is
   - (A) 1/4
@@ -8164,7 +8164,7 @@ A delta-function perturbation *V*(*x*) = δ(*x*) is added to the harmonic oscill
   - (D) −2*R*
   - (E) 0
 
-![](_page_209_Picture_31.jpeg)
+![](assets/_page_209_Picture_31.jpeg)
 
 - 33. A particle of charge +*q* is placed at the point (0, 0, *d*), between an infinite grounded conducting plate at *z* = 0 and a stationary charge −*q* at (0, 0, 2*d*), as shown in the diagram. What is the force on the charge +*q*?
   - (A) <sup>−</sup> *<sup>q</sup>*<sup>2</sup> <sup>8</sup>π0*d*<sup>2</sup> **<sup>z</sup>**<sup>ˆ</sup>
@@ -8209,7 +8209,7 @@ $$\ddot{q} = \frac{1}{2AL}\cos(q/L - \omega t)$$
 (E) 
 $$\ddot{q} = -\frac{1}{AL}\cos(q/L - \omega t)$$
 
-![](_page_210_Picture_16.jpeg)
+![](assets/_page_210_Picture_16.jpeg)
 
 37. A particle of mass *m* is constrained to move on a cone of opening angle α, oriented as shown in the diagram. The Hamiltonian for this system is given by
 
@@ -8273,7 +8273,7 @@ $$\dot{p}_z = -\frac{p_\theta^2}{mz} \cot^2 \alpha + mg; \dot{z} = -\frac{p_z}{m
   - (D) 2*ip*ˆ
   - (E) 2*i*-
 
-![](_page_211_Picture_14.jpeg)
+![](assets/_page_211_Picture_14.jpeg)
 
 - 44. A block of mass 2 kg slides down a ramp in the shape of a quarter-circle of radius 2 m, as shown in the diagram. If the block reaches the bottom of the ramp with velocity 4 m/s, then, ignoring air resistance, the work done by friction during the slide down the ramp is most nearly
   - (A) 0 J
@@ -8307,7 +8307,7 @@ $$\dot{p}_z = -\frac{p_\theta^2}{mz} \cot^2 \alpha + mg; \dot{z} = -\frac{p_z}{m
   - (D) The mean lifetime of the proton
   - (E) The binding energy of the proton
 
-![](_page_212_Picture_2.jpeg)
+![](assets/_page_212_Picture_2.jpeg)
 
 - 49. Student A, of mass 100 kg, stands 2 meters from the center of a circular platform which is free to rotate on frictionless bearings. Student B, not standing on the platform, tosses student A a baseball of mass 0.09 kg, which reaches student A with a velocity of 20 m/s directed perpendicular to the line joining student A and the center of the platform. If the platform has moment of inertia 200 kg·m2, what is its approximate angular velocity after student A catches the baseball?
   - (A) 0.006 rad/s
@@ -8335,7 +8335,7 @@ $$\dot{p}_z = -\frac{p_\theta^2}{mz} \cot^2 \alpha + mg; \dot{z} = -\frac{p_z}{m
   - (D) Absolute zero can never be reached in experiments.
   - (E) The entropy of a system can be nonzero at absolute zero.
 
-![](_page_212_Picture_27.jpeg)
+![](assets/_page_212_Picture_27.jpeg)
 
 53. Questions 53 and 54 refer to the diagram above, with charges *q*, *q*, and 2*q* placed at the corners of an equilateral triangle of side length *L*, and the **x**ˆ- and **y**ˆ-axes oriented as shown. What is the electric field at the center of the triangle?
 
@@ -8362,7 +8362,7 @@ $$\frac{q}{4\pi\epsilon_0 L^2}(\hat{\mathbf{x}} + \sqrt{3}\hat{\mathbf{y}})$$
   - (D) 18,000 kJ
   - (E) 24,000 kJ
 
-![](_page_213_Figure_8.jpeg)
+![](assets/_page_213_Figure_8.jpeg)
 
 - 56. A brick of mass *m* falls onto a massless spring with spring constant *k* from a height *h* above it. What is the maximum distance the spring will be compressed from its equilibrium length?
   - (A) *mg k*
@@ -8371,7 +8371,7 @@ $$\frac{q}{4\pi\epsilon_0 L^2}(\hat{\mathbf{x}} + \sqrt{3}\hat{\mathbf{y}})$$
   - (D) *mg k* 1 + 2*kh mg*
   - (E) *mg k* 1 + 1 + 2*kh mg*
 
-![](_page_213_Figure_15.jpeg)
+![](assets/_page_213_Figure_15.jpeg)
 
 - 57. Three weights are suspended from a ceiling using massless ropes, as shown in the diagram. The tensions in the ropes are *T*1, *T*2, and *T*3. What is *T*1/*T*3?
   - (A) 0.25
@@ -8391,21 +8391,21 @@ What is the expectation value of the particle's *z*component of orbital angular 
 - (D) <sup>−</sup>3-/π
 - (E) 3-/π
 
-![](_page_214_Figure_2.jpeg)
+![](assets/_page_214_Figure_2.jpeg)
 
 59. The strong nuclear force binding an alpha particle to a nucleus can be modeled by the potential shown in the diagram. Which of the following plots best illustrates the radial wavefunction of an alpha particle with energy *E* that tunnels out of the nucleus in alpha decay?
 
-![](_page_214_Figure_4.jpeg)
+![](assets/_page_214_Figure_4.jpeg)
 
-![](_page_214_Figure_5.jpeg)
+![](assets/_page_214_Figure_5.jpeg)
 
-![](_page_214_Figure_6.jpeg)
+![](assets/_page_214_Figure_6.jpeg)
 
-![](_page_214_Figure_7.jpeg)
+![](assets/_page_214_Figure_7.jpeg)
 
-![](_page_214_Figure_8.jpeg)
+![](assets/_page_214_Figure_8.jpeg)
 
-![](_page_215_Picture_2.jpeg)
+![](assets/_page_215_Picture_2.jpeg)
 
 - 60. A coherent beam of monochromatic light of wavelength 500 nm is directed towards two very thin slits separated by a distance 4 mm. Far behind the slits is a screen covering an angular region of 60◦, as shown in the diagram. Approximately how many bright interference bands are visible on the screen?
   - (A) 0
@@ -8439,7 +8439,7 @@ What is the expectation value of the particle's *z*component of orbital angular 
   - (D) strange quark
   - (E) pion
 
-![](_page_215_Picture_33.jpeg)
+![](assets/_page_215_Picture_33.jpeg)
 
 - 65. Blocks of masses *M*1, *M*2, and *M*<sup>3</sup> are arranged on a frictionless inclined plane at angle α as shown in the diagram. The pulley at the top of the plane is frictionless and massless, and the system is in static equilibrium. What is α in terms of *M*1, *M*2, and *M*3?
   - (A) tan−<sup>1</sup> *M*<sup>3</sup> *M*1
@@ -8448,7 +8448,7 @@ What is the expectation value of the particle's *z*component of orbital angular 
   - (D) cos−<sup>1</sup> *M*1+*M*<sup>2</sup> *M*3
   - (E) cos−<sup>1</sup> *M*<sup>3</sup> *M*1+*M*<sup>2</sup>
 
-![](_page_216_Figure_2.jpeg)
+![](assets/_page_216_Figure_2.jpeg)
 
 - 66. A 5 V battery supplies the emf for the circuit shown in the diagram, where all resistors are 5 . What current flows through the circuit? (You may assume the wires are resistanceless and the battery has negligible internal resistance.)
   - (A) 0.2 A
@@ -8490,7 +8490,7 @@ where *N* is a normalization constant. What is the expectation value of *Sx*, th
   - (D) sin *kx* cos ω*t*
   - (E) ω*t* sin2 *kx*
 
-![](_page_216_Figure_32.jpeg)
+![](assets/_page_216_Figure_32.jpeg)
 
 - 70. A converging lens A and a diverging lens B, both with focal length 10 cm, are arranged so that the midpoint between the lenses F coincides with both lenses' foci. An object is placed 12.5 cm to the left of A. Which of the following gives the correct position and orientation of the image?
   - (A) 5 cm to the right of A, inverted
@@ -8512,7 +8512,7 @@ where *N* is a normalization constant. What is the expectation value of *Sx*, th
   - (D) seismic noise
   - (E) solar flares
 
-![](_page_217_Picture_14.jpeg)
+![](assets/_page_217_Picture_14.jpeg)
 
 - 73. A point mass *m* is attached with a massless rod of length *l* to a pivot of mass *M*, which is free to slide along a frictionless bar. Letting *x* be the position of the pivot and θ the angle of the rod, what is a possible Lagrangian for this system?
   - (A) *<sup>L</sup>* <sup>=</sup> <sup>1</sup> <sup>2</sup>*Mx*˙<sup>2</sup> <sup>+</sup> <sup>1</sup> <sup>2</sup>*ml*2θ˙<sup>2</sup> <sup>−</sup> *mgl* cos <sup>θ</sup>
@@ -8521,7 +8521,7 @@ where *N* is a normalization constant. What is the expectation value of *Sx*, th
   - (D) *<sup>L</sup>* <sup>=</sup> <sup>1</sup> <sup>2</sup> (*M*+*m*)*x*˙2<sup>+</sup> <sup>1</sup> <sup>2</sup>*ml*2θ˙2+2*mlx*˙θ˙ sin <sup>θ</sup> <sup>−</sup>*mgl* cos <sup>θ</sup>
   - (E) *<sup>L</sup>* <sup>=</sup> <sup>1</sup> <sup>2</sup>*Mx*˙2<sup>+</sup> <sup>1</sup> <sup>2</sup>*ml*2θ˙<sup>2</sup> sin<sup>2</sup> <sup>θ</sup>+*mlx*˙θ˙ cos2 <sup>θ</sup>−*mgl* cos <sup>θ</sup>
 
-![](_page_217_Picture_21.jpeg)
+![](assets/_page_217_Picture_21.jpeg)
 
 - 74. A pipe has cross-sectional area *A*<sup>1</sup> at one point, but subsequently narrows to a cross-sectional area *A*2. If the pressure of an incompressible fluid of density ρ flowing toward the narrow end is *p* in the first region, and its velocity is *v*, what is the pressure in the second narrow region?
   - (A) *p*
@@ -8541,7 +8541,7 @@ What is the probability the particle will be found between *r* = *a* and *r* = 2
 - (D) 1/ √2
 - (E) 1
 
-![](_page_218_Figure_2.jpeg)
+![](assets/_page_218_Figure_2.jpeg)
 
 - 76. The diagram above shows plots of components of velocity *vx* and *vy* versus time *t*, with identical scales on both plots. Gravity acts in the −ˆ**y**-direction. Ignoring air resistance, these plots could represent which of the following scenarios?
   - (A) A ball dropped from the top of a high building
@@ -8565,15 +8565,15 @@ What is the probability the particle will be found between *r* = *a* and *r* = 2
 
 79. A positively charged particle *q* is traveling at constant (nonrelativistic) velocity in the +ˆ**z**-direction and passes through the center of a loop of wire lying in the *xy*-plane, at *t* = 0. Which of the following plots best illustrates (*t*), the electric flux through the loop as a function of *t*? Assume that the normal to the loop is parallel to the velocity vector of the charge.
 
-![](_page_219_Figure_3.jpeg)
+![](assets/_page_219_Figure_3.jpeg)
 
-![](_page_219_Figure_4.jpeg)
+![](assets/_page_219_Figure_4.jpeg)
 
-![](_page_219_Figure_5.jpeg)
+![](assets/_page_219_Figure_5.jpeg)
 
-![](_page_219_Figure_6.jpeg)
+![](assets/_page_219_Figure_6.jpeg)
 
-![](_page_219_Figure_7.jpeg)
+![](assets/_page_219_Figure_7.jpeg)
 
 - 80. For an ideal gas in a container of fixed volume, the most probable speed of the gas molecules as a function of pressure *P* is proportional to
   - (A) *P*−1/<sup>2</sup>
@@ -8651,7 +8651,7 @@ What is the probability the particle will be found between *r* = *a* and *r* = 2
   - (D) 1/2
   - (E) not determinable from the information given
 
-![](_page_221_Picture_32.jpeg)
+![](assets/_page_221_Picture_32.jpeg)
 
 - 92. An electron is ejected from a metal sheet in the direction normal to the sheet with kinetic energy of 10 eV. A uniform electric field of 100 V/m is applied normal to the sheet, as shown in the diagram. What is the maximum height above the sheet achieved by the electron? You may ignore the effects of gravity.
   - (A) 1 mm
@@ -8685,7 +8685,7 @@ In the center-of-momentum frame, what is the minimum speed of the electron for t
 - (D) 1 − *m*<sup>2</sup> *<sup>e</sup>*/*m*<sup>2</sup> μ *c*
 - (E) This process can occur at any speed.
 
-![](_page_222_Picture_16.jpeg)
+![](assets/_page_222_Picture_16.jpeg)
 
 - 96. What is the time constant of the circuit shown in the diagram?
   - (A) 2 s
@@ -8726,7 +8726,7 @@ $$\frac{\mu_0 K}{2} \hat{\mathbf{x}}$$
 (E) 
 $$-\frac{\mu_0 K}{2}\hat{\mathbf{y}} \text{ for } z < 0, \frac{\mu_0 K}{2}\hat{\mathbf{y}} \text{ for } z > 0$$
 
-![](_page_222_Picture_41.jpeg)
+![](assets/_page_222_Picture_41.jpeg)
 
 - 100. A sphere of radius 20 cm and mass 45 g is placed atop a ramp of height 0.75 m and inclination angle 30◦. If the ramp were frictionless, the sphere would slide down the ramp in a time *t*. With friction, the sphere would roll without slipping down the ramp, and reach the bottom in a time *t* . What is *t* /*t*?
   - (A) <sup>√</sup>2/<sup>5</sup>
@@ -8762,7 +8762,7 @@ Rest mass of the electron *me* <sup>=</sup> 9.11 <sup>×</sup> <sup>10</sup>−<
 
 **Directions**: Each of the questions or incomplete statements below is followed by five suggested answers or completions. Select the one that is best in each case and then fill in the corresponding space on the answer sheet.
 
-![](_page_225_Figure_3.jpeg)
+![](assets/_page_225_Figure_3.jpeg)
 
 - 1. A bath of water has a hole in the bottom of one side, as shown in the figure. At what horizontal distance *x* from the edge of the bath does the draining water land? Neglect effects due to viscosity and surface tension.
   - (A) 2*hy*
@@ -8818,7 +8818,7 @@ Rest mass of the electron *me* <sup>=</sup> 9.11 <sup>×</sup> <sup>10</sup>−<
   - (D) 8ω
   - (E) 16ω
 
-![](_page_226_Picture_17.jpeg)
+![](assets/_page_226_Picture_17.jpeg)
 
 - 8. A person stands at the center of a frictionless disk of radius *R* rotating at angular velocity ω, and pushes a puck radially outwards at velocity *v*. What is the angle θ between the point on the edge of the disk where the puck was aimed and the point on the edge of the disk where the puck actually arrives?
   - (A) *v*/(ω*R*)
@@ -8874,7 +8874,7 @@ Rest mass of the electron *me* <sup>=</sup> 9.11 <sup>×</sup> <sup>10</sup>−<
   - (D) I and III
   - (E) I, II, and III
 
-![](_page_227_Picture_17.jpeg)
+![](assets/_page_227_Picture_17.jpeg)
 
 - 16. A horizontal tube has a wide section of cross-sectional area *A*<sup>1</sup> and a narrow section with cross-sectional area *A*2, as shown in the diagram. If an incompressible fluid of density ρ moves with velocity *v* through the wide part of the horizontal tube, what is the velocity of the fluid in the narrow section of the tube?
   - (A) *v*
@@ -8902,7 +8902,7 @@ Rest mass of the electron *me* <sup>=</sup> 9.11 <sup>×</sup> <sup>10</sup>−<
   - (D) <sup>√</sup> *kT*
   - (E) <sup>√</sup>4*<sup>R</sup>*
 
-![](_page_228_Picture_2.jpeg)
+![](assets/_page_228_Picture_2.jpeg)
 
 - 20. A metal bar is pulled at constant velocity *v***x**ˆ along two metal rails a distance *d* apart connected by a resistor of resistance *R*, as shown in the diagram. There is a constant magnetic field, pointing into the page, of magnitude *B*. At time *T*, how much energy has been dissipated in the resistor thus far, as a function of *T*?
   - (A) <sup>2</sup>*BvdT R*
@@ -8941,7 +8941,7 @@ $$\sqrt{\frac{1}{LC} - \left(\frac{1}{RC}\right)^2}$$
   - (D) 429 Hz
   - (E) 205 Hz
 
-![](_page_229_Picture_2.jpeg)
+![](assets/_page_229_Picture_2.jpeg)
 
 - 24. A current loop of radius *a* carrying current *I* is centered at the origin and lies in the *xy*-plane. Another loop, carrying current *i I*, and of radius *b a*, is centered at the origin and lies in the *xz*-plane. What is the torque on the smaller loop about its center?
   - (A) <sup>μ</sup>0π*iIb*<sup>2</sup> *a*
@@ -8956,33 +8956,33 @@ $$\sqrt{\frac{1}{LC} - \left(\frac{1}{RC}\right)^2}$$
   - (D) 2
   - (E) 4
 
-![](_page_229_Picture_15.jpeg)
+![](assets/_page_229_Picture_15.jpeg)
 
 26. A ball of uniform charge density and radius *a* is surrounded by a conducting shell of inner radius *b* and outer radius *c*. Which could be the potential as a function of radius?
 
-![](_page_229_Picture_17.jpeg)
+![](assets/_page_229_Picture_17.jpeg)
 
-![](_page_229_Picture_18.jpeg)
+![](assets/_page_229_Picture_18.jpeg)
 
-![](_page_229_Picture_19.jpeg)
+![](assets/_page_229_Picture_19.jpeg)
 
-![](_page_229_Picture_20.jpeg)
+![](assets/_page_229_Picture_20.jpeg)
 
-![](_page_229_Picture_21.jpeg)
+![](assets/_page_229_Picture_21.jpeg)
 
-![](_page_230_Picture_2.jpeg)
+![](assets/_page_230_Picture_2.jpeg)
 
 27. A charged capacitor is in series with a resistor and inductor, as in the diagram. Which of the following could be a graph of the current when the switch is closed?
 
-![](_page_230_Picture_4.jpeg)
+![](assets/_page_230_Picture_4.jpeg)
 
-![](_page_230_Picture_5.jpeg)
+![](assets/_page_230_Picture_5.jpeg)
 
-![](_page_230_Picture_6.jpeg)
+![](assets/_page_230_Picture_6.jpeg)
 
-![](_page_230_Picture_7.jpeg)
+![](assets/_page_230_Picture_7.jpeg)
 
-![](_page_230_Picture_8.jpeg)
+![](assets/_page_230_Picture_8.jpeg)
 
 - 28. A beam of electrons (mass *m* and charge *q*) with uniform velocity enters a region of constant magnetic field *B* perpendicular to the beam direction. Assuming that the electrons are able to follow a circular path completely within the field, how long does it take for the beam to make one complete revolution?
   - (A) 2π*m*/(*qB*)
@@ -8997,7 +8997,7 @@ $$\sqrt{\frac{1}{LC} - \left(\frac{1}{RC}\right)^2}$$
   - (D) 1.8◦
   - (E) 0.9◦
 
-![](_page_230_Picture_21.jpeg)
+![](assets/_page_230_Picture_21.jpeg)
 
 30. A charge *Q* is brought to a distance *d* from the center of a grounded conducting sphere of radius *R*. What is the electric potential at a distance *x* > *R* from the center of the sphere along the axis between the charge and the sphere?
 
@@ -9085,7 +9085,7 @@ Which of the following must be violated?
   - (D) *<sup>v</sup>*<sup>1</sup> <sup>+</sup> *<sup>v</sup>*<sup>2</sup> 1 + *v*1*v*2/*c*<sup>2</sup>
   - (E) <sup>|</sup>*v*<sup>1</sup> <sup>−</sup> *<sup>v</sup>*2<sup>|</sup> 1 − *v*1*v*2/*c*<sup>2</sup>
 
-![](_page_232_Picture_8.jpeg)
+![](assets/_page_232_Picture_8.jpeg)
 
 - 40. Consider the network of resistors with resistance *r*, shown in the figure. What is the equivalent resistance between terminals A and B?
   - (A) *r*/3
@@ -9118,7 +9118,7 @@ where *Y<sup>m</sup> <sup>l</sup>* (θ, φ) are the spherical harmonics?
   - (D) All states have real-valued wavefunctions in the *x* basis.
   - (E) None of the above.
 
-![](_page_232_Picture_35.jpeg)
+![](assets/_page_232_Picture_35.jpeg)
 
 - 44. A mass *m* moves at speed *v* perpendicular to a rod of uniform density, mass *M*, and length *L* on a frictionless table. Suppose *m M*. If the mass collides with the end of the rod and sticks to it, at what angular speed does the rod begin to rotate? (You may treat the mass *m* as a point particle.)
   - (A) <sup>3</sup>*mv* 2*ML*
@@ -9321,7 +9321,7 @@ in the ground state of the infinite square well of size *L*, centered on *x* = 0
   - (D) μ0*N*2π*R*2/
   - (E) μ0*N*2*R*2/
 
-![](_page_236_Figure_8.jpeg)
+![](assets/_page_236_Figure_8.jpeg)
 
 - 70. Two converging lenses of focal length *f* /2 are placed in series, separated by a distance *d*. The object is placed a distance 2*f* to the left of the left lens, and the image is upright and located a distance *f* to the right of the right lens. What is *d*?
   - (A) (2/3)*f*
@@ -9330,7 +9330,7 @@ in the ground state of the infinite square well of size *L*, centered on *x* = 0
   - (D) 3*f*
   - (E) 9*f*
 
-![](_page_236_Picture_15.jpeg)
+![](assets/_page_236_Picture_15.jpeg)
 
 - 71. Two masses *m* are connected by springs with spring constants *k* and a massless rigid rod, as shown in the diagram. What is the frequency of oscillation of the system?
   - (A) 3*k*/*m*
@@ -9411,7 +9411,7 @@ Which of the following is true?
   - (D) 6.67 m
   - (E) 3.00 m
 
-![](_page_237_Picture_30.jpeg)
+![](assets/_page_237_Picture_30.jpeg)
 
 - 82. A dowel of radius *R*, mass *M*, and uniform mass density rolls without slipping down a ramp of length *L* and height *h*. What is its speed at the bottom of the ramp?
   - (A) 2*gh*
@@ -9511,7 +9511,7 @@ Which of the following is true?
   - (D) Hyperbolic
   - (E) The answer cannot be determined from the information given.
 
-![](_page_239_Picture_38.jpeg)
+![](assets/_page_239_Picture_38.jpeg)
 
 - 97. A square parallel-plate capacitor has side lengths *a* and separation *d* between the plates. A constant voltage *V*<sup>0</sup> is applied between the plates. A block of dielectric material of dielectric constant κ and the same area and thickness as the capacitor is slowly inserted into the capacitor. What is the change in energy stored in the capacitor by the time the dielectric is fully inserted?
   - (A) 0
@@ -9949,7 +9949,7 @@ $$\gamma m_{\pi} = \frac{m_K}{2} \implies E = \frac{m_K^2}{2m_{\pi}}$$
 
 Since *mK* > 2*m*<sup>π</sup> for the decay to be kinematically allowed, we have *E* > *mK*, which passes a useful sanity check. Restoring a factor of *c*2, we conclude that E is correct.
 
-![](_page_252_Picture_8.jpeg)
+![](assets/_page_252_Picture_8.jpeg)
 
 66. C – For a half-open pipe, the open end must be a pressure node, because the air inside and outside the pipe is at atmospheric pressure, hence it is a displacement antinode. On the other hand, the air at the closed end cannot go anywhere, so it is a displacement node. The allowable wavelengths λ in a half-open pipe of length *L* are then given by the constraint that *L* = λ (1/4 + *n*/2), for non-negative integers *n*. This implies that
 
@@ -10548,7 +10548,7 @@ Taking square roots to get *z* gives choice C.
 
 10. A – A bandpass filter only allows signals to propagate that are between two frequencies (not to be confused with high-pass or low-pass filter, which are only onesided). Intuitively, inductors suppress high-frequency signals because voltages are high for fast oscillations and capacitors suppress low-frequency ones because of excessive charge buildup. It therefore is most reasonable that a bandpass filter would require both an inductor and a capacitor. Choice A is the only option that has both of these circuit elements. (Note however that both high-pass and low-pass filters can be made with either RL or RC circuits, and stringing two of these circuits together would give a bandpass filter, but this requires more circuit elements than allowed by the answer choices.)
 
-![](_page_269_Figure_9.jpeg)
+![](assets/_page_269_Figure_9.jpeg)
 
 - 11. A The effective potential is shown in the figure above. Since a circular orbit is at a fixed radius, *E*cir corresponds to an energy at the minimum of the effective potential. An elliptical orbit is at a variable radius but is still bound, so *E*ell corresponds to an energy above the minimum of the effective potential but less than zero. Finally, a hyperbolic orbit is unbound at all radii (even at *r* → ∞), so *E*hyp > 0. Putting it all together, we find that *E*cir < *E*ell < *E*hyp.
 - 12. C Electrons are fermions, and so at zero temperature they cannot all collect in the ground state. Instead, they fill out the so-called Fermi sphere, and the energy of electrons at the boundary is called the Fermi energy, choice C. In a pinch, if you only remembered that electrons are fermions, you might be able to guess that the answer had something to do with Fermi.
@@ -10737,7 +10737,7 @@ It is critical to understand the notation here. This equation holds for a body A
 
 Equivalently, we can think of everything in the reference frame of B. Then *u* is the velocity of the planet relative to B, *v* is the velocity of A relative to the planet. and *s* is the velocity of A relative to B. Making the
 
-![](_page_273_Picture_2.jpeg)
+![](assets/_page_273_Picture_2.jpeg)
 
 identification *u* = −*v*2, *v* = *v*1, we obtain the same result.
 
@@ -11127,7 +11127,7 @@ $$E' = \frac{hc}{\lambda'} = \frac{hc}{\lambda(1 + v/c)} \approx \frac{hc}{\lamb
 
 so the energy shift is *Ev*/*c*. In fact, this is what we might have expected from using the nonrelativistic Doppler shift expression with wave speed *c*. Note that the sign of β or *v* doesn't matter here since all we care about is the magnitude of the energy difference.
 
-![](_page_281_Picture_0.jpeg)
+![](assets/_page_281_Picture_0.jpeg)
 
 ## **REFERENCES**
 
@@ -11150,7 +11150,7 @@ so the energy shift is *Ev*/*c*. In fact, this is what we might have expected fr
 - S.T. Thornton and J.B. Marion, *Classical Dynamics of Particles and Systems*, 5th edn (Belmont: Brooks/Cole-Thomson Learning, 2004).
 - R.K. Wangsness, *Electromangetic Fields*, 2nd edn (Hoboken: John Wiley & Sons, 1986).
 
-![](_page_282_Picture_0.jpeg)
+![](assets/_page_282_Picture_0.jpeg)
 
 # **EQUATION INDEX**
 
@@ -12438,7 +12438,7 @@ $$\frac{\lambda_0}{\lambda_T} = \frac{a(\text{today})}{a(T)} \qquad \text{(p. 15
 $$z(T) = \frac{\lambda_0}{\lambda_T} - 1$$
  (p. 152)
 
-![](_page_290_Picture_0.jpeg)
+![](assets/_page_290_Picture_0.jpeg)
 
 # **SUBJECT INDEX**
 
@@ -12636,7 +12636,7 @@ electric potential of, 52
 | Snell's law, 55, 70–71                              | magnetic dipole, 53                             | Z boson, 146, 154                              |
 | solenoid, 47, 51                                    | transient effects, 58                           | Zeeman effect, 116–117                         |
 
-![](_page_294_Picture_0.jpeg)
+![](assets/_page_294_Picture_0.jpeg)
 
 ## **PROBLEMS INDEX**
 
@@ -12749,4 +12749,4 @@ equipartition theorem, 90, 230, 261
 | Rydberg formula, 121                           | cylindrical, 254                                 | x-ray, 254                              |
 |                                                |                                                  |                                         |
 
-![](_page_297_Figure_8.jpeg)
+![](assets/_page_297_Figure_8.jpeg)
