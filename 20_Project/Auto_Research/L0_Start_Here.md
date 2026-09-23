@@ -26,18 +26,20 @@ First window (`z01_then_exp3`): attempt a **≤2 GPU-hour** Z-01 smoke first —
 
 The PM / context agent owns the big picture (goal, state, next action, disclosure) and **delegates code and execution by default**. Do **not** silently launch or execute research: no AutoDL, IMP, WebAccess, Zenodo download, GPU power-on, training, probe connection, or server mutation. Live launch still needs a separate four-value point-of-risk confirmation (exact host, campaign ID, data root, cap). **C-09 is `code-path mitigated / operational authorization unresolved` — not closed.** Do not read tracked plaintext credential documents. Do not treat an interview waiver request, or the env-only SSH seam, as access authorization.
 
-## Current state (2026-09-21)
+## Current state (2026-09-23)
 
-- Outer state: `active: EXP3 ResNet+Raw seed 0; night chain live`.
-- Raw seed 42 **complete**: eval **0.89248**, val **0.8924**, $\alpha$ recall **0.6356** (paper 93.5% / 76.6%). Wall 293.5 min. Early-stop epoch 19.
-- Night chain launched Raw seed 0 at 23:17. Then 1, then XA-HC ×3, XA-Raw ×3.
+- Outer state: `active: EXP3 CrossAtt+Raw seed 0; recovery continuation live`.
+- AutoDL 176 **on**. XA-HC seeds 42/0/1 completed and recorded.
+- XA-Raw seed 42 training completed at 294.5 min. Original evaluation guard failed at computed **0.87116** vs checkpoint **0.87100** (diff **0.00016**); recovery evaluation completed with $\alpha$ recall **0.5482** and preserved original weights.
+- XA-Raw seed 0 is now training after verified recovery; seed 1 follows sequentially.
 - Do not clip Z-01. Do not train F/G/H. Sequential only.
 
 ## Next action
 
-1. Leave 176 on. Do not relaunch.
-2. Morning: pull remaining `run_complete.json`.
-3. Do not clip Z-01. Do not train F/G/H.
+1. Leave 176 on while XA-Raw seeds 0/1 run.
+2. Pull completed manifests/metrics; do not relaunch.
+3. Record the XA-Raw cell after seed 1; document the seed-42 evaluation recovery.
+4. Do not clip Z-01. Do not train F/G/H.
 
 ## Disclosure instructions
 

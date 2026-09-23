@@ -1,7 +1,7 @@
 ---
 type: learning-index
 purpose: Terse cross-agent index of what the learner has solidly learned. Agents running /learn MUST read this first.
-updated: 2026-09-21
+updated: 2026-09-22
 ---
 # Learning Progress — Context Index
 
@@ -190,6 +190,12 @@ Session: [[2026-09-19-1609 Pendulum angular vs linear displacement]]
 - **Hanging vs inverted coupling:** Hanging pendulum gravity restores ($+mg/L$ stiffness $\implies k_{\text{tot}} = k + mg/L$, frequency increases); inverted pendulum gravity destabilizes ($-mg/L$ stiffness $\implies k_{\text{tot}} = k - mg/L$, stable $\iff k > mg/L$, topples to ground if $k < mg/L$) (trap reworked).
 - **Physical pendulum discrete mass scaling:** $\omega^2 = \frac{\tau_{\text{restoring}}}{I_{\text{pivot}}} = \frac{g\sum m_i x_i}{\sum m_i x_i^2} = \frac{M_{\text{tot}} g d_{\text{CM}}}{I_{\text{pivot}}}$; moving mass toward pivot shrinks $I$ ($\propto x^2$) faster than torque ($\propto x$), increasing frequency; verified via $\sqrt{2}$ and $\sqrt{6/5}$ without formula memorization (trap reworked).
 
+#### CM — rolling without slipping
+
+Session: [[2026-09-22-2235 Rolling sphere launch energy]] (thread still active)
+
+- **Solid sphere KE:** $T=\frac12 mv^2+\frac12 I\omega^2=\frac{7}{10}mv^2$ via $I=\frac25 mR^2$, $\omega=v/R$; $R$ cancels — coefficient universal (verified)
+
 ## In progress
 
 Only threads with unfinished core work (verified against session notes).
@@ -204,6 +210,7 @@ Only threads with unfinished core work (verified against session notes).
 - **Circular orbit and effective potential:** [active] Stability for $F \propto -1/r^n$ ($n < 3$) locked; orbital mechanics drills $\to$ [[2026-09-18-1705 Circular orbit and effective potential]].
 - **E&M: AC maximum power transfer:** [active] Turn 9 — back-emf $\implies$ harder push locked; asking whether cancelling leftover $L$ with load $C$ raises $|I|$ $\to$ [[2026-09-21-0933 AC maximum power transfer]].
 - **E&M: magnetic energy of a square-cross-section toroid:** [active] Turn 2 — GRE clock ≠ slog or memorize; still locating cylindrical $s$ $\to$ [[2026-09-21-2048 Magnetic energy of a square-cross-section toroid]]
+- **CM: rolling sphere launch energy (pinball ramp):** [active] Turn 2 — $T=\frac{7}{10}mv^2$ derived correctly; now energy conservation $\to$ launch speed $\to$ [[2026-09-22-2235 Rolling sphere launch energy]].
 
 
 ## Archived domains
