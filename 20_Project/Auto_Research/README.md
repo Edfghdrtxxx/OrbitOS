@@ -4,14 +4,14 @@ This project keeps the campaign lead files at the project root and all migrated 
 
 ## Record index
 
-- [[docs/README|Auto-research records and area index]]
-- [[docs/00_Campaign/README|Campaign record]]
-- [[docs/10_Mechanism/README|Mechanism and representation]]
-- [[docs/20_Capacity_Statistics/README|Capacity, power, and evaluation]]
-- [[docs/30_Data_Integrity/README|Data integrity and contamination]]
-- [[docs/40_Manuscript_Provenance/README|Manuscript and provenance audits]]
-- [[docs/50_Comparisons/README|Comparisons and controls]]
-- [[docs/60_Tooling/README|Tooling]]
+- [[docs/README|Auto-research records and area index]] — Progressive-disclosure entry point and complete chapter index.
+- [[docs/00_Campaign/README|Campaign record]] — Operational logs, lead session handles, and watch states for EXP3.
+- [[docs/10_Mechanism/README|Mechanism and representation]] — Attention sink findings, capacity critiques, and representation comparisons.
+- [[docs/20_Capacity_Statistics/README|Capacity, power, and evaluation]] — Statistical power, GPU budget ladders, seed evidence, and evaluation splits.
+- [[docs/30_Data_Integrity/README|Data integrity and contamination]] — Label blast radiuses, carbon contamination audits, and code verification.
+- [[docs/40_Manuscript_Provenance/README|Manuscript and provenance audits]] — Claim ledgers, figure provenance, methods audit, and related work.
+- [[docs/50_Comparisons/README|Comparisons and controls]] — Traditional-method baselines, 3He/4He control studies, and transfer checks.
+- [[docs/60_Tooling/README|Tooling]] — Automation utilities, test scripts, and operational tooling.
 
 ## Lead files
 
