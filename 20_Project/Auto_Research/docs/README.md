@@ -36,6 +36,7 @@ All migrated EXP3 records live below this directory. Each chapter retains its so
 - [[30_Data_Integrity/fm-ar-exp2-contam|EXP2 carbon contamination (`fm-ar-exp2-contam`)]]
 - [[30_Data_Integrity/fm-ar-label-blast|Label-map blast radius (`fm-ar-label-blast`)]]
 - [[30_Data_Integrity/fm-ar-results-audit|Results audit (`fm-ar-results-audit`)]]
+- [[40_Manuscript_Provenance/fm-ar-bib-fixsheet|Bib fix sheet for references.bib (`fm-ar-bib-fixsheet`)]]
 - [[40_Manuscript_Provenance/fm-ar-claims-ledger|Claim-by-claim evidence ledger (`fm-ar-claims-ledger`)]]
 - [[40_Manuscript_Provenance/fm-ar-closing-check|Closing-document statement check (`fm-ar-closing-check`)]]
 - [[40_Manuscript_Provenance/fm-ar-figure-provenance|Figure provenance audit (`fm-ar-figure-provenance`)]]
@@ -290,6 +291,14 @@ Individual chapter section files split for progressive disclosure. Each file pre
 - [[20_Capacity_Statistics/fm-ar-nimpsim-cost/04-4-files-to-stage|4. Files to stage (`20_Capacity_Statistics/fm-ar-nimpsim-cost/04-4-files-to-stage.md`)]]
 - [[20_Capacity_Statistics/fm-ar-nimpsim-cost/05-5-commands-run|5. Commands run (`20_Capacity_Statistics/fm-ar-nimpsim-cost/05-5-commands-run.md`)]]
 - [[20_Capacity_Statistics/fm-ar-nimpsim-cost/06-6-caveats|6. Caveats (`20_Capacity_Statistics/fm-ar-nimpsim-cost/06-6-caveats.md`)]]
+- [[40_Manuscript_Provenance/fm-ar-bib-fixsheet/01-1-cited-fabricated-unverifiable-entries-replacements|1. Cited fabricated / unverifiable entries — replacements (`40_Manuscript_Provenance/fm-ar-bib-fixsheet/01-1-cited-fabricated-unverifiable-entries-replacements.md`)]]
+- [[40_Manuscript_Provenance/fm-ar-bib-fixsheet/02-2-wrong-doi-wrong-title-missing-doi-stale-entries-corrected|2. Wrong-DOI / wrong-title / missing-DOI / stale entries — corrected BibTeX (`40_Manuscript_Provenance/fm-ar-bib-fixsheet/02-2-wrong-doi-wrong-title-missing-doi-stale-entries-corrected.md`)]]
+- [[40_Manuscript_Provenance/fm-ar-bib-fixsheet/03-3-uncited-dead-entries-delete-list|3. Uncited dead entries — delete list (`40_Manuscript_Provenance/fm-ar-bib-fixsheet/03-3-uncited-dead-entries-delete-list.md`)]]
+- [[40_Manuscript_Provenance/fm-ar-bib-fixsheet/04-4-identifier-additions-needed-for-verify-bib-py-to-pass|4. Identifier additions needed for `verify_bib.py` to pass (`40_Manuscript_Provenance/fm-ar-bib-fixsheet/04-4-identifier-additions-needed-for-verify-bib-py-to-pass.md`)]]
+- [[40_Manuscript_Provenance/fm-ar-bib-fixsheet/05-5-summary-of-all-main-tex-citation-edits|5. Summary of all `main.tex` citation edits (`40_Manuscript_Provenance/fm-ar-bib-fixsheet/05-5-summary-of-all-main-tex-citation-edits.md`)]]
+- [[40_Manuscript_Provenance/fm-ar-bib-fixsheet/06-6-verify-bib-py-result-on-the-fully-patched-copy|6. `verify_bib.py` result on the fully patched copy (`40_Manuscript_Provenance/fm-ar-bib-fixsheet/06-6-verify-bib-py-result-on-the-fully-patched-copy.md`)]]
+- [[40_Manuscript_Provenance/fm-ar-bib-fixsheet/07-7-what-i-did|7. What I did (`40_Manuscript_Provenance/fm-ar-bib-fixsheet/07-7-what-i-did.md`)]]
+- [[40_Manuscript_Provenance/fm-ar-bib-fixsheet/08-8-captain-hold-inventory|8. Captain-hold inventory (`40_Manuscript_Provenance/fm-ar-bib-fixsheet/08-8-captain-hold-inventory.md`)]]
 
 ## Metadata and checks
 

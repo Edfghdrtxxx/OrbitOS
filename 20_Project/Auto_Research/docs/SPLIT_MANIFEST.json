@@ -1173,6 +1173,46 @@
      "title": "6. Caveats"
     }
    ]
+  },
+  {
+   "overview": "40_Manuscript_Provenance/fm-ar-bib-fixsheet.md",
+   "source_sha256": "34c381049328350f1ecad00a7bf6f521619c9e664f40259382676301ef0036c0",
+   "source_bytes": 14900,
+   "prefix_sha256": "25dda5537f5835cec7ce27e007d648e1914277c62ef6bdc9fe8b27734ab9447e",
+   "section_files": [
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-bib-fixsheet/01-1-cited-fabricated-unverifiable-entries-replacements.md",
+     "title": "1. Cited fabricated / unverifiable entries — replacements"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-bib-fixsheet/02-2-wrong-doi-wrong-title-missing-doi-stale-entries-corrected.md",
+     "title": "2. Wrong-DOI / wrong-title / missing-DOI / stale entries — corrected BibTeX"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-bib-fixsheet/03-3-uncited-dead-entries-delete-list.md",
+     "title": "3. Uncited dead entries — delete list"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-bib-fixsheet/04-4-identifier-additions-needed-for-verify-bib-py-to-pass.md",
+     "title": "4. Identifier additions needed for `verify_bib.py` to pass"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-bib-fixsheet/05-5-summary-of-all-main-tex-citation-edits.md",
+     "title": "5. Summary of all `main.tex` citation edits"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-bib-fixsheet/06-6-verify-bib-py-result-on-the-fully-patched-copy.md",
+     "title": "6. `verify_bib.py` result on the fully patched copy"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-bib-fixsheet/07-7-what-i-did.md",
+     "title": "7. What I did"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-bib-fixsheet/08-8-captain-hold-inventory.md",
+     "title": "8. Captain-hold inventory"
+    }
+   ]
   }
  ]
 }

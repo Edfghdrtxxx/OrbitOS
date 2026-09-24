@@ -105,3 +105,16 @@ Science state lives in the vault (`/Users/Reid Hu/OrbitOS/20_Project/Auto_Resear
   - The locked prereg is untouched. MATE main is at 7ee09e0.
   - Dispatched fm-ar-docs-file5 (SWE-2 medium: file log entries from 22:30 onward plus the nimpsim-cost report into docs).
   - Running: lead, bib-fixsheet, docs-file5.
+- 2026-09-24 23:05: bib-fixsheet report (data/fm-ar-bib-fixsheet/report.md plus a paste-ready fixes.bib). Every replacement ID was verified live against Crossref and arXiv.
+  - main.tex edits for the author to apply:
+    - L190: He2020ResNetSmall -> \cite{ResNet,He2016Identity}, reworded to "small-image ResNet configuration".
+    - L211: Li2023CrossAttention -> \cite{Attention,Perez2018FiLM}.
+    - L313: Koch2021 -> NaturePhysicsReview + Jain2019Attention, with an attention-is-not-mechanism caveat.
+    - L248: Jadon2020Loss -> Szegedy2016LabelSmoothing.
+    - L526: Adam -> AdamW.
+    - L475: add Arokiaraj2025GMM in §6.5.
+  - Bib changes:
+    - Corrected 12 entries, including three the audit missed: the Bradt2021 first author is Solli, the Bradt2017 title was wrong, and Guo2026 now has final vol/pages 1088:171506.
+    - Deleted 11 entries and added 5 (45 -> 39 entries).
+  - verify_bib.py on the patched copy gives 41/42 ok. The only flag is DBSCAN, for which no DOI exists.
+  - Routed to lead (queued). No captain call; the author amends the manuscript personally. docs-file5 steered to also file this report.
