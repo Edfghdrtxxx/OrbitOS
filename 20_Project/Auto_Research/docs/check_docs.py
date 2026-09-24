@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Read-only checks for the Auto_Research docs index and wikilinks."""
+"""Read-only checks for the Auto_Research docs index, wikilinks, and verbatim split reconstruction."""
 from pathlib import Path
 import hashlib
 import json

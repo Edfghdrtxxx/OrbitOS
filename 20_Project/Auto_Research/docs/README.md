@@ -44,6 +44,8 @@ All migrated EXP3 records live below this directory. Each chapter retains its so
 
 ## Split chapter sections
 
+Individual chapter section files split for progressive disclosure. Each file preserves its corresponding source report passage verbatim and links back to its parent chapter overview.
+
 - [[10_Mechanism/fm-ar-attn-sink/01-tl-dr|TL;DR (`10_Mechanism/fm-ar-attn-sink/01-tl-dr.md`)]]
 - [[10_Mechanism/fm-ar-attn-sink/02-1-where-token-50-sits|1. Where token 50 sits (`10_Mechanism/fm-ar-attn-sink/02-1-where-token-50-sits.md`)]]
 - [[10_Mechanism/fm-ar-attn-sink/03-2-does-a-constant-query-fixed-keys-force-a-fixed-map-the-math|2. Does a constant query + fixed keys force a fixed map? — the math (`10_Mechanism/fm-ar-attn-sink/03-2-does-a-constant-query-fixed-keys-force-a-fixed-map-the-math.md`)]]
