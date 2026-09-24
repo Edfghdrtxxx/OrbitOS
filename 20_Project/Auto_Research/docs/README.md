@@ -21,7 +21,9 @@ All migrated EXP3 records live below this directory. Each chapter retains its so
 - [[10_Mechanism/fm-ar-feature-norm|Physics-feature scaling (`fm-ar-feature-norm`)]]
 - [[10_Mechanism/fm-ar-hc-vs-raw|HC versus Raw mechanism (`fm-ar-hc-vs-raw`)]]
 - [[10_Mechanism/fm-ar-mechanism|Unified mechanism model (`fm-ar-mechanism`)]]
+- [[10_Mechanism/fm-ar-maxh-confound|Max|h| trivial-observable confound (`fm-ar-maxh-confound`)]]
 - [[10_Mechanism/fm-ar-ood-leakage|OOD leakage audit (`fm-ar-ood-leakage`)]]
+- [[20_Capacity_Statistics/fm-ar-d14-bign|D1–D4 at n≈8000 feasibility and patch (`fm-ar-d14-bign`)]]
 - [[20_Capacity_Statistics/fm-ar-d14-power|D1–D4 power and interpretation (`fm-ar-d14-power`)]]
 - [[20_Capacity_Statistics/fm-ar-gpu-ladder|GPU budget ladder (`fm-ar-gpu-ladder`)]]
 - [[20_Capacity_Statistics/fm-ar-gpu-plan-draft|Ranked experiment plan draft (`fm-ar-gpu-plan-draft`)]]
@@ -265,6 +267,22 @@ Individual chapter section files split for progressive disclosure. Each file pre
 - [[60_Tooling/fm-ar-docs-refine/05-5-verification-evidence|5. Verification Evidence (`60_Tooling/fm-ar-docs-refine/05-5-verification-evidence.md`)]]
 - [[60_Tooling/fm-ar-docs-refine/06-6-captain-hold-lifecycle-gate|6. Captain-Hold Lifecycle Gate (`60_Tooling/fm-ar-docs-refine/06-6-captain-hold-lifecycle-gate.md`)]]
 - [[60_Tooling/fm-ar-docs-refine/07-7-conclusion-and-recommendation|7. Conclusion and Recommendation (`60_Tooling/fm-ar-docs-refine/07-7-conclusion-and-recommendation.md`)]]
+
+- [[10_Mechanism/fm-ar-maxh-confound/01-1-what-the-caches-contain-and-whether-rows-join-to-events|1. What the caches contain, and whether rows join to events (`10_Mechanism/fm-ar-maxh-confound/01-1-what-the-caches-contain-and-whether-rows-join-to-events.md`)]]
+- [[10_Mechanism/fm-ar-maxh-confound/02-2-local-observables-what-could-and-could-not-be-computed|2. Local observables — what could and could not be computed (`10_Mechanism/fm-ar-maxh-confound/02-2-local-observables-what-could-and-could-not-be-computed.md`)]]
+- [[10_Mechanism/fm-ar-maxh-confound/03-3-does-the-0-90-claim-survive|3. Does the 0.90 claim survive? (`10_Mechanism/fm-ar-maxh-confound/03-3-does-the-0-90-claim-survive.md`)]]
+- [[10_Mechanism/fm-ar-maxh-confound/04-4-manuscript-implication-finding-only-captain-edits|4. Manuscript implication (finding only — captain edits) (`10_Mechanism/fm-ar-maxh-confound/04-4-manuscript-implication-finding-only-captain-edits.md`)]]
+- [[10_Mechanism/fm-ar-maxh-confound/05-5-cheapest-decisive-check-on-the-gpu-box-exact-command|5. Cheapest decisive check on the GPU box (exact command) (`10_Mechanism/fm-ar-maxh-confound/05-5-cheapest-decisive-check-on-the-gpu-box-exact-command.md`)]]
+- [[10_Mechanism/fm-ar-maxh-confound/06-6-commands-run-local|6. Commands run (local) (`10_Mechanism/fm-ar-maxh-confound/06-6-commands-run-local.md`)]]
+- [[10_Mechanism/fm-ar-maxh-confound/07-7-limitations|7. Limitations (`10_Mechanism/fm-ar-maxh-confound/07-7-limitations.md`)]]
+- [[20_Capacity_Statistics/fm-ar-d14-bign/01-0-verdict-up-front|0. Verdict up front (`20_Capacity_Statistics/fm-ar-d14-bign/01-0-verdict-up-front.md`)]]
+- [[20_Capacity_Statistics/fm-ar-d14-bign/02-1-what-exists-where-evidence|1. What exists where (evidence) (`20_Capacity_Statistics/fm-ar-d14-bign/02-1-what-exists-where-evidence.md`)]]
+- [[20_Capacity_Statistics/fm-ar-d14-bign/03-2-exact-command-for-a-cpu-capable-box-box-176-or-autodl|2. Exact command for a CPU-capable box (box 176 or AutoDL) (`20_Capacity_Statistics/fm-ar-d14-bign/03-2-exact-command-for-a-cpu-capable-box-box-176-or-autodl.md`)]]
+- [[20_Capacity_Statistics/fm-ar-d14-bign/04-3-proposed-patch-verified-locally-do-not-commit-from-this-sc|3. Proposed patch (verified locally — do not commit from this scout) (`20_Capacity_Statistics/fm-ar-d14-bign/04-3-proposed-patch-verified-locally-do-not-commit-from-this-sc.md`)]]
+- [[20_Capacity_Statistics/fm-ar-d14-bign/05-4-analytic-answer-to-the-verdict-question-n-8000-k-5-cv|4. Analytic answer to the verdict question (n=8000, k=5 CV) (`20_Capacity_Statistics/fm-ar-d14-bign/05-4-analytic-answer-to-the-verdict-question-n-8000-k-5-cv.md`)]]
+- [[20_Capacity_Statistics/fm-ar-d14-bign/06-5-doc-manuscript-implications-findings-only-no-edits-made|5. Doc/manuscript implications (findings only — no edits made) (`20_Capacity_Statistics/fm-ar-d14-bign/06-5-doc-manuscript-implications-findings-only-no-edits-made.md`)]]
+- [[20_Capacity_Statistics/fm-ar-d14-bign/07-6-what-i-did|6. What I did (`20_Capacity_Statistics/fm-ar-d14-bign/07-6-what-i-did.md`)]]
+- [[20_Capacity_Statistics/fm-ar-d14-bign/08-7-captain-hold-inventory|7. Captain-hold inventory (`20_Capacity_Statistics/fm-ar-d14-bign/08-7-captain-hold-inventory.md`)]]
 
 ## Metadata and checks
 
