@@ -42,6 +42,7 @@ All migrated EXP3 records live below this directory. Each chapter retains its so
 - [[50_Comparisons/fm-ar-hehe-control|3He/4He control audit (`fm-ar-hehe-control`)]]
 - [[50_Comparisons/fm-ar-transfer|Bidirectional transfer comparisons (`fm-ar-transfer`)]]
 - [[60_Tooling/fm-ar-docs-refine|Docs-migration phrasing refinement (`fm-ar-docs-refine`)]]
+- [[60_Tooling/fm-ar-pack-drycheck|EXP3 pack dry-check (`fm-ar-pack-drycheck`)]]
 
 ## Split chapter sections
 
