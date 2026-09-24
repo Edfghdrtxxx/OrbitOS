@@ -12,3 +12,4 @@ Reports on the EXP3 mechanism hypotheses, attention/query behavior, feature scal
 - [[fm-ar-mechanism|Unified mechanism model]] — Pre-registers unified M1–M4 architecture models and empirical falsification criteria.
 - [[fm-ar-maxh-confound|Max|h| trivial-observable confound]] — Tests whether the EXP8 penultimate max|h| OOD signal is a deposition-scale proxy rather than novelty detection.
 - [[fm-ar-ood-leakage|OOD leakage audit]] — Evaluates whether zero-physics tests measure out-of-distribution model sensitivity rather than valid ablations.
+- [[fm-ar-prereg-scorecard|EXP3 preregistration scorecard]] — Deterministic scorer verdicts on every landed battery: formal selection_bias misses, pending conditions rows, off-lock band-reads, and the seed-dependent HC physics-magnitude finding.

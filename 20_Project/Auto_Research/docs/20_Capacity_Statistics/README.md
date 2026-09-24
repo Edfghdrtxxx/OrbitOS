@@ -13,3 +13,4 @@ Reports on the H1 decision table, statistical power, GPU budget, seed evidence, 
 - [[fm-ar-referee|Hostile-referee attack ranking]] — Catalogs potential peer-review vulnerabilities, methodology critiques, and decisive counter-experiments.
 - [[fm-ar-seed-evidence|Seed-robust evidence]] — Aggregates multi-seed variance statistics across EXP3 configurations to verify stability.
 - [[fm-ar-test-split|Held-out evaluation protocol]] — Defines strict held-out test splits and evaluation procedures prior to final compute spend.
+- [[fm-ar-paired-writeup|Paired statistics writeup]] — Reproduces every paired number in the manuscript from raw CSVs and adds per-channel dFTR CIs, the 9-channel McNemar family, TRK5/TRK6 per-bin stats, and paired MAE for CNN-vs-classical pairs.

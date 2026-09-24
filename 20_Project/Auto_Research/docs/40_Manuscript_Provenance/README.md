@@ -12,3 +12,4 @@ Reports tracing manuscript claims to artifacts, methods, figures, related work, 
 - [[fm-ar-figure-provenance|Figure provenance audit]] — Maps draft figures and plots back to generation scripts and input run data.
 - [[fm-ar-methods-audit|Methods versus code]] — Audits manuscript text descriptions against actual PyTorch model and data loading implementations.
 - [[fm-ar-related-work|Related-work and novelty audit]] — Verifies literature citations, DOI correctness, and prior-art positioning.
+- [[fm-ar-amend-package|Manuscript amendment package]] — One line-ordered amendment list for `main.tex` (26 rows: 13 must-fix, 9 should-fix, 4 optional) plus the ordered references.bib checklist and hedge-pending-check claims.
