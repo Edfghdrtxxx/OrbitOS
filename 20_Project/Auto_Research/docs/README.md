@@ -41,6 +41,7 @@ All migrated EXP3 records live below this directory. Each chapter retains its so
 - [[50_Comparisons/fm-ar-comparisons|Traditional-method comparison inventory (`fm-ar-comparisons`)]]
 - [[50_Comparisons/fm-ar-hehe-control|3He/4He control audit (`fm-ar-hehe-control`)]]
 - [[50_Comparisons/fm-ar-transfer|Bidirectional transfer comparisons (`fm-ar-transfer`)]]
+- [[60_Tooling/fm-ar-docs-refine|Docs-migration phrasing refinement (`fm-ar-docs-refine`)]]
 
 ## Split chapter sections
 
@@ -255,6 +256,14 @@ Individual chapter section files split for progressive disclosure. Each file pre
 - [[50_Comparisons/fm-ar-transfer/07-6-open-questions-for-the-lead|6. Open questions for the lead (`50_Comparisons/fm-ar-transfer/07-6-open-questions-for-the-lead.md`)]]
 - [[50_Comparisons/fm-ar-transfer/08-7-evidence-index|7. Evidence index (`50_Comparisons/fm-ar-transfer/08-7-evidence-index.md`)]]
 - [[50_Comparisons/fm-ar-transfer/09-8-captain-facing-inventory|8. Captain-facing inventory (`50_Comparisons/fm-ar-transfer/09-8-captain-facing-inventory.md`)]]
+
+- [[60_Tooling/fm-ar-docs-refine/01-1-executive-summary|1. Executive Summary (`60_Tooling/fm-ar-docs-refine/01-1-executive-summary.md`)]]
+- [[60_Tooling/fm-ar-docs-refine/02-2-scope-and-boundaries|2. Scope and Boundaries (`60_Tooling/fm-ar-docs-refine/02-2-scope-and-boundaries.md`)]]
+- [[60_Tooling/fm-ar-docs-refine/03-3-review-chronology-and-collaboration|3. Review Chronology and Collaboration (`60_Tooling/fm-ar-docs-refine/03-3-review-chronology-and-collaboration.md`)]]
+- [[60_Tooling/fm-ar-docs-refine/04-4-summary-of-suggestions-and-dispositions|4. Summary of Suggestions and Dispositions (`60_Tooling/fm-ar-docs-refine/04-4-summary-of-suggestions-and-dispositions.md`)]]
+- [[60_Tooling/fm-ar-docs-refine/05-5-verification-evidence|5. Verification Evidence (`60_Tooling/fm-ar-docs-refine/05-5-verification-evidence.md`)]]
+- [[60_Tooling/fm-ar-docs-refine/06-6-captain-hold-lifecycle-gate|6. Captain-Hold Lifecycle Gate (`60_Tooling/fm-ar-docs-refine/06-6-captain-hold-lifecycle-gate.md`)]]
+- [[60_Tooling/fm-ar-docs-refine/07-7-conclusion-and-recommendation|7. Conclusion and Recommendation (`60_Tooling/fm-ar-docs-refine/07-7-conclusion-and-recommendation.md`)]]
 
 ## Metadata and checks
 
