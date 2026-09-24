@@ -27,6 +27,7 @@ All migrated EXP3 records live below this directory. Each chapter retains its so
 - [[20_Capacity_Statistics/fm-ar-d14-power|D1–D4 power and interpretation (`fm-ar-d14-power`)]]
 - [[20_Capacity_Statistics/fm-ar-gpu-ladder|GPU budget ladder (`fm-ar-gpu-ladder`)]]
 - [[20_Capacity_Statistics/fm-ar-gpu-plan-draft|Ranked experiment plan draft (`fm-ar-gpu-plan-draft`)]]
+- [[20_Capacity_Statistics/fm-ar-nimpsim-cost|NimpSim Option B cost settlement (`fm-ar-nimpsim-cost`)]]
 - [[20_Capacity_Statistics/fm-ar-referee|Hostile-referee attack ranking (`fm-ar-referee`)]]
 - [[20_Capacity_Statistics/fm-ar-seed-evidence|Seed-robust evidence (`fm-ar-seed-evidence`)]]
 - [[20_Capacity_Statistics/fm-ar-test-split|Held-out evaluation protocol (`fm-ar-test-split`)]]
@@ -283,6 +284,12 @@ Individual chapter section files split for progressive disclosure. Each file pre
 - [[20_Capacity_Statistics/fm-ar-d14-bign/06-5-doc-manuscript-implications-findings-only-no-edits-made|5. Doc/manuscript implications (findings only — no edits made) (`20_Capacity_Statistics/fm-ar-d14-bign/06-5-doc-manuscript-implications-findings-only-no-edits-made.md`)]]
 - [[20_Capacity_Statistics/fm-ar-d14-bign/07-6-what-i-did|6. What I did (`20_Capacity_Statistics/fm-ar-d14-bign/07-6-what-i-did.md`)]]
 - [[20_Capacity_Statistics/fm-ar-d14-bign/08-7-captain-hold-inventory|7. Captain-hold inventory (`20_Capacity_Statistics/fm-ar-d14-bign/08-7-captain-hold-inventory.md`)]]
+- [[20_Capacity_Statistics/fm-ar-nimpsim-cost/01-1-provenance-of-the-two-estimates|1. Provenance of the two estimates (`20_Capacity_Statistics/fm-ar-nimpsim-cost/01-1-provenance-of-the-two-estimates.md`)]]
+- [[20_Capacity_Statistics/fm-ar-nimpsim-cost/02-2-evidence-derived-cost|2. Evidence-derived cost (`20_Capacity_Statistics/fm-ar-nimpsim-cost/02-2-evidence-derived-cost.md`)]]
+- [[20_Capacity_Statistics/fm-ar-nimpsim-cost/03-3-does-it-fit-no-cheapest-ways-to-make-it-fit|3. Does it fit? No — cheapest ways to make it fit (`20_Capacity_Statistics/fm-ar-nimpsim-cost/03-3-does-it-fit-no-cheapest-ways-to-make-it-fit.md`)]]
+- [[20_Capacity_Statistics/fm-ar-nimpsim-cost/04-4-files-to-stage|4. Files to stage (`20_Capacity_Statistics/fm-ar-nimpsim-cost/04-4-files-to-stage.md`)]]
+- [[20_Capacity_Statistics/fm-ar-nimpsim-cost/05-5-commands-run|5. Commands run (`20_Capacity_Statistics/fm-ar-nimpsim-cost/05-5-commands-run.md`)]]
+- [[20_Capacity_Statistics/fm-ar-nimpsim-cost/06-6-caveats|6. Caveats (`20_Capacity_Statistics/fm-ar-nimpsim-cost/06-6-caveats.md`)]]
 
 ## Metadata and checks
 
