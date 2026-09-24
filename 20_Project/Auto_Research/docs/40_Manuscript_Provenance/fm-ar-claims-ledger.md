@@ -1,4 +1,4 @@
-> Origin: `fm-ar-claims-ledger` scout report; recorded 2026-09-24.
+> Origin: `fm-ar-claims-ledger` scout report; recorded 2026-09-24. Updated by the post-16:53 delta: [[40_Manuscript_Provenance/fm-ar-claims-refresh|fm-ar-claims-refresh]].
 
 <!-- SOURCE-PREFIX-START -->
 # fm-ar-claims-ledger — claim-by-claim evidence ledger for the manuscript

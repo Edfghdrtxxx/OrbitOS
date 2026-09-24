@@ -118,3 +118,35 @@ Science state lives in the vault (`/Users/Reid Hu/OrbitOS/20_Project/Auto_Resear
     - Deleted 11 entries and added 5 (45 -> 39 entries).
   - verify_bib.py on the patched copy gives 41/42 ok. The only flag is DBSCAN, for which no DOI exists.
   - Routed to lead (queued). No captain call; the author amends the manuscript personally. docs-file5 steered to also file this report.
+- 2026-09-24 23:20: merged OrbitOS #8 (https://github.com/Edfghdrtxxx/OrbitOS/pull/8).
+  - Filed log entries 22:30-23:05, the nimpsim-cost report into 20_Capacity_Statistics, and the bib-fixsheet report into 40_Manuscript_Provenance, both split into sections.
+  - Vault fast-forwarded to 38ab07e, no overlap.
+  - Dispatched fm-ar-claims-refresh (SWE-2 high scout: refresh the 16:53 claims ledger with every finding since, and score the landed D5/D6 readouts against the locked prereg).
+  - Dispatched fm-ar-bib-allowlist (SWE-2 medium ship: an explicit, reason-required exemption in verify_bib.py for DOI-less entries such as DBSCAN, so a clean bib exits 0).
+  - Running: lead (polling D6 on the box), claims-refresh, bib-allowlist.
+- 2026-09-24 23:35: merged MATE #36 (https://github.com/Edfghdrtxxx/MATE-Automation-V4/pull/36).
+  - verify_bib.py accepts `verify = {no-identifier: <reason>}` on entries with no DOI/arXiv ID. It reports them as `exempt` in a visible summary count. An empty reason still fails, and entries with an identifier are still verified. 24 tests pass.
+  - The author applies the DBSCAN exemption in references.bib personally. MATE main is at cfebb35.
+  - Captain, verbatim: "Let's don't take GPU time into account for now - I need to discuss on the reimbursement of computing with my graduate supervisor first."
+    - This supersedes the 24 GPU-h allowance. GPU-session prep is on hold.
+    - fm-ar-queue-drycheck is filed but blocked behind the deferred reserve choice (fm-ar-gpu-reserve-choice).
+    - The lead was told (queued). The nudge check was retargeted to CPU-only threads.
+  - Dispatched fm-ar-cpu-agenda (SWE-2 high scout: inventory what runs on the Mac and rank the open questions answerable with no GPU).
+  - Running: lead (polling D6), claims-refresh, cpu-agenda.
+- 2026-09-24 23:45: claims-refresh report (data/fm-ar-claims-refresh/report.md). It updates all 32 ledger claims with evidence from after 16:53, and scores the landed D6 batteries against the locked prereg.
+  - All three landed batteries (s0 XA-Raw triton, lf XA-Raw 4He, HC s42) are off the locked s42 XA-Raw triton checkpoint (A0 0.8715), so the formal scorer verdict is not_comparable. The missing piece is D6 on s42-Raw-triton, about 30 min CPU on box 176.
+  - Band-reads:
+    - These missed every locked rival band: scaled_cls (0.4095 s0 / 0.1935 lf), centered_q (-39.1pp s0), zero_ch0 (-6.9pp) and selection_bias (final gap -0.0306, worse than the best-epoch -0.0213).
+    - permuted/mean_cls hit all rivals and do not discriminate.
+    - cls_drop_without_norm_gain did not fire.
+  - Reading: on Raw the head uses unnormalized physics as a magnitude-dependent static bias. On HC it ignores physics (scaled_cls 0.954). The R3b gate is not met.
+  - New manuscript lines:
+    - L359: the forest caption names a nonexistent null-channel row.
+    - L79: "consistently improves" is contradicted on Raw.
+    - L53/L67: the novelty claim is overstated.
+    - L323-332: max|h| wording guidance.
+    - Plus the bib lines.
+  - Correction: D6 runs are CPU jobs on box 176, not GPU.
+  - Routed to lead (queued). No captain call.
+  - Dispatched fm-ar-docs-file6 (SWE-2 medium: file log entries from 23:20 onward plus the claims-refresh report into docs).
+  - Running: lead, cpu-agenda, docs-file6.

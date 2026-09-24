@@ -1213,6 +1213,54 @@
      "title": "8. Captain-hold inventory"
     }
    ]
+  },
+  {
+   "overview": "40_Manuscript_Provenance/fm-ar-claims-refresh.md",
+   "source_sha256": "43c243e451d324310da51068caf023300203db4bf5dbb9d95c4e7f3316f2ce62",
+   "source_bytes": 27939,
+   "prefix_sha256": "4ad015dccdd7f843754adf1b1f736bba25ad794d4db5ccf378a615b84fc62317",
+   "section_files": [
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-claims-refresh/01-0-what-changed-since-16-53-one-screen.md",
+     "title": "0. What changed since 16:53 — one screen"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-claims-refresh/02-1-updated-ledger-tier-1-wrong-or-void-as-written.md",
+     "title": "1. Updated ledger — TIER 1 (wrong or void as written)"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-claims-refresh/03-2-updated-ledger-tier-2-unsettled-pending-a-named-check.md",
+     "title": "2. Updated ledger — TIER 2 (unsettled pending a named check)"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-claims-refresh/04-3-prereg-scoring-landed-d5-d6-readouts-vs-exp3-mechanism-pre.md",
+     "title": "3. Prereg scoring — landed D5/D6 readouts vs `exp3_mechanism_prereg_2026-09-24.yaml`"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-claims-refresh/05-4-updated-ledger-tier-3-verified-to-stand-no-action.md",
+     "title": "4. Updated ledger — TIER 3 (verified to stand; no action)"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-claims-refresh/06-5-updated-ledger-tier-4-partial-disclosure-gaps.md",
+     "title": "5. Updated ledger — TIER 4 (partial / disclosure gaps)"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-claims-refresh/07-6-new-manuscript-claims-lines-the-new-findings-touch.md",
+     "title": "6. New manuscript claims/lines the new findings touch"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-claims-refresh/08-7-pending-checks-updated-table.md",
+     "title": "7. Pending checks — updated table"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-claims-refresh/09-8-what-i-did.md",
+     "title": "8. What I did"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-claims-refresh/10-9-captain-hold-inventory.md",
+     "title": "9. Captain-hold inventory"
+    }
+   ]
   }
  ]
 }
