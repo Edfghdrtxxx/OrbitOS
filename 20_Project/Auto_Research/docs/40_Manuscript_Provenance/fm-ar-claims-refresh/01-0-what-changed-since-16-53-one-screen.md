@@ -1,0 +1,21 @@
+<!-- Verbatim source section; overview: [[../fm-ar-claims-refresh]] -->
+<!-- SOURCE-BODY-START -->
+## 0. What changed since 16:53 — one screen
+
+| # | New evidence (time) | What it settles or changes |
+|---|---|---|
+| 1 | **D6 battery landed on 3 checkpoints** (`counterfactual_battery_d5.json`, synced 19:36–21:51; closing doc §10b–10d) | `permuted_cls`/`mean_cls` ≈ original on all 3 → **physics is a static bias, not event content** (OOD-artifact reading confirmed). `scaled_cls` collapses on Raw (0.4095 s0, 0.1935 lf) but **not** on HC (0.954) → magnitude-driven on Raw only. `centered_q` −39pp (s0) / −6.8pp (lf) / −6.6pp (HC) → the Izz≈170 query DC is load-bearing. **No landed battery is on the prereg's locked checkpoint** (s42 XA-Raw triton) — formal scorer verdict: not_comparable; band-reads in §3. |
+| 2 | **maxh-confound report (20:02)** | The "max\|h\| flags unseen carbon at AUROC 0.90" claim **does not survive**: seen channel A scores 0.906/0.903 vs the same negatives; unseen-vs-all-seen drops to 0.67/0.58; F/G/H pairwise ≈0.50. If max\|h\| wording is added near `main.tex:323-332`, do not phrase it as OOD detection. Proxy-vs-learned undecidable locally; join script shipped (PR #33). |
+| 3 | **bib-fixsheet report + fixes.bib (21:51)** | Paste-ready corrections for **3 fabricated/unverifiable cited entries** (`He2020ResNetSmall` L190, `Li2023CrossAttention` L211, `Koch2021` L313), **2 miscited** (`Jadon2020Loss` L248 → Szegedy2016; `Adam` L526 → AdamW), 12 corrected entries (incl. `Kuchera2019` wrong DOI → RADFET paper), 11 deletions, 5 additions. `verify_bib.py` on patched copy: 41/42 ok (only `DBSCAN` has no DOI in existence). |
+| 4 | **nimpsim-cost report (21:45)** | Option B (`V4HeHe_RNMod_NimpSim_160k`) = **~20–35 GPU-h (range 10–50)**, not the README's underived 4–6 h. Does **not** fit the ~9.5 h reserve → the settling check for claims 1/7/10 moves to a future session; R3a is the recommended reserve. |
+| 5 | **d14-power (17:25) + d14-bign (20:03)** | D1–D4 at n=500: **underpowered, H1b unresolved** — D2 = majority baseline *exactly* (0.792 = 198/250); D4 errors concentrated (28 shared vs 5.5 expected, P≈1.7e-17), not "diffuse". n≈8000 rerun needs the GPU box (no torch/checkpoints/H5 on Mac); k-fold patch + runbook shipped (PR #32). |
+| 6 | **related-work (17:55) + closing-sync (18:04)** | Novelty claim L53/L67 **overstated** (Kuchera2019 uses physics-derived features; Dalitz 2018 uncited). L79 "consistently improves" **contradicted** on Raw. Every failure mode is precedented/citable (Hessel&Lee, Darcet, Geirhos, ReAct). Lead docs: 4 stale lines, "test acc" mislabel, §10a overclaim. |
+| 7 | **figure-provenance (17:07)** | **0/12 manuscript figures** touch EXP3/EXP2/EXP1/V6 data — the label bug reaches no figure. Caption risks: `attention_overlay` Bragg framing (claim 9), EXP8 forest caption's **nonexistent "null channel" row** (L359), `_legacy/v6_*.pdf` must not be reinstated before the Windows label check. |
+| 8 | **pack-drycheck (19:28)** | All CPU-checkable Rung-1/reserve/NimpSim paths pass; one break found and fixed: prereg `rn_mod_nimpsim` match `rn-mod`→`rnmod` (PR #29). |
+| 9 | **PRs #21–#35 merged** (live checkout `fc9869c`) | Tooling only — no new training results. Includes: #21/#22 memory+probe fixes, #23 EXP2 clean rescore script, #24 verify_bib.py, #25 pairing guard, #27/#28/#30 activation-OOD scorer+figure, #31 **windows_visit_checks.py** (one-command V6 label + EXP2 rescore kit), #32 k-fold H1 diagnostics, #33 max\|h\| observable join, #34 GPU session queue, #35 Option B cost correction. Direct commits: D6 s0 (`544effb`), D6 lf (`ffd456d`), D6 HC (`fc9869c`), Z01 degenerate (`0c8ae81`). |
+| 10 | **Z01 publisher-test eval** (closing doc §17) | LogReg-moments arm **degenerate**: predicts all class 0 (acc 0.5025, bal 0.5000) — test-set charge scale is 37σ off train. Same OOD-magnitude pathology as the EXP8 carbon leak. Kuchera-baseline context for claim 24 unchanged. |
+| 11 | **Not landed:** Rung 1 (R1/R2a/R2b never ran — GPU session pending), `act-ood` report (in flight, no report.md), e23 EXP8 battery, predump paired stats, map-level `permuted_q` (Check A), angle-baseline report, lf `data_split.json` re-pull (still 0 bytes). | Claims 8, 11, 12, 13, 14, 15, 16, 17, 26 keep their settling checks. |
+
+---
+
+<!-- SOURCE-BODY-END -->
