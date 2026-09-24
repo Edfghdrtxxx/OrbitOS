@@ -10,4 +10,5 @@ Reports on the EXP3 mechanism hypotheses, attention/query behavior, feature scal
 - [[fm-ar-feature-norm|Physics-feature scaling]] — Assesses effects of unstandardized versus standardized physics inputs on cross-attention performance.
 - [[fm-ar-hc-vs-raw|HC versus Raw mechanism]] — Identifies DBSCAN clustering and denoising as the core driver of HC separation gains over Raw.
 - [[fm-ar-mechanism|Unified mechanism model]] — Pre-registers unified M1–M4 architecture models and empirical falsification criteria.
+- [[fm-ar-maxh-confound|Max|h| trivial-observable confound]] — Tests whether the EXP8 penultimate max|h| OOD signal is a deposition-scale proxy rather than novelty detection.
 - [[fm-ar-ood-leakage|OOD leakage audit]] — Evaluates whether zero-physics tests measure out-of-distribution model sensitivity rather than valid ablations.

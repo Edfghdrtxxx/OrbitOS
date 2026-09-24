@@ -4,6 +4,7 @@ Reports on the H1 decision table, statistical power, GPU budget, seed evidence, 
 
 ## Contents
 
+- [[fm-ar-d14-bign|D1–D4 at n≈8000 feasibility and patch]] — Establishes the n=8000 k-fold run cannot execute locally; ships a verified CV/hypergeometric/RSS patch, exact box command, and analytic MDE.
 - [[fm-ar-d14-power|D1–D4 power and interpretation]] — Assesses statistical power and decision thresholds for capacity diagnostic criteria D1–D4.
 - [[fm-ar-gpu-ladder|GPU budget ladder]] — Consolidated training ladders, estimated runtimes, and execution priorities within the approved GPU budget.
 - [[fm-ar-gpu-plan-draft|Ranked experiment plan draft]] — Proposes phased training sequence and resource allocation across candidate compute rounds.

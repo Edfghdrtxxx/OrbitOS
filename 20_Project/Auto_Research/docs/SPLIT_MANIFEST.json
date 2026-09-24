@@ -1065,6 +1065,84 @@
           "title": "7. Conclusion and Recommendation"
         }
       ]
-    }
+    },
+    
+     {
+      "overview": "10_Mechanism/fm-ar-maxh-confound.md",
+      "source_sha256": "9b6c44af93971a505a1d1f3a4cadbfaa84ab02777970c448cd7f2bd7c659fb94",
+      "source_bytes": 14782,
+      "prefix_sha256": "4c9e25db8c5ed4520b696866b126b1fd111c6a0ef1346c1df1f399f19ced1bb0",
+      "section_files": [
+       {
+        "path": "10_Mechanism/fm-ar-maxh-confound/01-1-what-the-caches-contain-and-whether-rows-join-to-events.md",
+        "title": "1. What the caches contain, and whether rows join to events"
+       },
+       {
+        "path": "10_Mechanism/fm-ar-maxh-confound/02-2-local-observables-what-could-and-could-not-be-computed.md",
+        "title": "2. Local observables \u2014 what could and could not be computed"
+       },
+       {
+        "path": "10_Mechanism/fm-ar-maxh-confound/03-3-does-the-0-90-claim-survive.md",
+        "title": "3. Does the 0.90 claim survive?"
+       },
+       {
+        "path": "10_Mechanism/fm-ar-maxh-confound/04-4-manuscript-implication-finding-only-captain-edits.md",
+        "title": "4. Manuscript implication (finding only \u2014 captain edits)"
+       },
+       {
+        "path": "10_Mechanism/fm-ar-maxh-confound/05-5-cheapest-decisive-check-on-the-gpu-box-exact-command.md",
+        "title": "5. Cheapest decisive check on the GPU box (exact command)"
+       },
+       {
+        "path": "10_Mechanism/fm-ar-maxh-confound/06-6-commands-run-local.md",
+        "title": "6. Commands run (local)"
+       },
+       {
+        "path": "10_Mechanism/fm-ar-maxh-confound/07-7-limitations.md",
+        "title": "7. Limitations"
+       }
+      ]
+     },
+     {
+      "overview": "20_Capacity_Statistics/fm-ar-d14-bign.md",
+      "source_sha256": "d252d2ac26d01337e76c4aaaca87c4bdfb161c807c43bee3ec6720243fef6ea6",
+      "source_bytes": 21151,
+      "prefix_sha256": "6996886632a1ec15e27024895cef4a84c2a60f2ad3d4031f4e106780497ff631",
+      "section_files": [
+       {
+        "path": "20_Capacity_Statistics/fm-ar-d14-bign/01-0-verdict-up-front.md",
+        "title": "0. Verdict up front"
+       },
+       {
+        "path": "20_Capacity_Statistics/fm-ar-d14-bign/02-1-what-exists-where-evidence.md",
+        "title": "1. What exists where (evidence)"
+       },
+       {
+        "path": "20_Capacity_Statistics/fm-ar-d14-bign/03-2-exact-command-for-a-cpu-capable-box-box-176-or-autodl.md",
+        "title": "2. Exact command for a CPU-capable box (box 176 or AutoDL)"
+       },
+       {
+        "path": "20_Capacity_Statistics/fm-ar-d14-bign/04-3-proposed-patch-verified-locally-do-not-commit-from-this-sc.md",
+        "title": "3. Proposed patch (verified locally \u2014 do not commit from this scout)"
+       },
+       {
+        "path": "20_Capacity_Statistics/fm-ar-d14-bign/05-4-analytic-answer-to-the-verdict-question-n-8000-k-5-cv.md",
+        "title": "4. Analytic answer to the verdict question (n=8000, k=5 CV)"
+       },
+       {
+        "path": "20_Capacity_Statistics/fm-ar-d14-bign/06-5-doc-manuscript-implications-findings-only-no-edits-made.md",
+        "title": "5. Doc/manuscript implications (findings only \u2014 no edits made)"
+       },
+       {
+        "path": "20_Capacity_Statistics/fm-ar-d14-bign/07-6-what-i-did.md",
+        "title": "6. What I did"
+       },
+       {
+        "path": "20_Capacity_Statistics/fm-ar-d14-bign/08-7-captain-hold-inventory.md",
+        "title": "7. Captain-hold inventory"
+       }
+      ]
+     }
+    
   ]
 }
