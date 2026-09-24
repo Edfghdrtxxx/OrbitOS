@@ -167,3 +167,22 @@ Science state lives in the vault (`/Users/Reid Hu/OrbitOS/20_Project/Auto_Resear
   - Routed to lead (queued). No captain call.
   - Dispatched fm-ar-docs-file7 (SWE-2 medium: file log entries from 23:55 onward plus the bib-additions report into docs).
   - Running: lead, cpu-agenda, docs-file7.
+- 2026-09-25 00:25: cpu-agenda report (data/fm-ar-cpu-agenda/report.md).
+  - What runs locally:
+    - A CPU-torch venv works on the Mac (M4, 16 GB): XA inference 18 ev/s, ResNet 29 ev/s, faster than box 176's 2 GB cgroup.
+    - Training is infeasible at ~100 h/run.
+    - Local runs/ is 722 MB and holds EXP8 checkpoints and predictions, TRK5/6 and baseline regression predictions, and the battery JSONs. No EXP3 checkpoints or H5 files are local.
+  - New local paired numbers:
+    - EXP8 seen ABCD: XA-RN +0.03pp (p=0.76).
+    - EXP8 F/G/H: -7.2/-7.4/-6.7pp (p≈0).
+    - EXP8 val 75k: +0.21pp [+0.07,+0.35] (p=0.004).
+    - TRK5 vs TRK6: XA MAE 0.0093 vs 0.0137 MeV (Wilcoxon p≈0), with XA winning every energy bin.
+    - Formal scorer: selection_bias = miss x6.
+  - The biggest unlock is ~250 MB copied from box 176, which would score threshold_sweep and the A0-locked D6 conditions locally:
+    - B1: the 12 predictions_paired.csv files.
+    - B2: the s42 XA-Raw triton ckpt, a 2000-event val NPZ, and physics_feature_stats.json.
+  - Routed to lead (queued) with that copy request. The lead owns box 176.
+  - The proposed closing-doc revision PR is left to the lead's call.
+  - Dispatched fm-ar-amend-package (SWE-2 high scout: one consolidated, line-ordered manuscript amendment list with severities; no edits).
+  - Dispatched fm-ar-paired-writeup (SWE-2 high scout: paired significance for EXP8 per channel, TRK5/6 per energy bin, and CNN vs classical baselines, with a reproducible script).
+  - Running: lead, docs-file7, amend-package, paired-writeup.
