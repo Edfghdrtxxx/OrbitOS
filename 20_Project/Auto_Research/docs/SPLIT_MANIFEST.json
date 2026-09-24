@@ -1,1148 +1,1218 @@
 {
-  "format": 1,
-  "description": "Hashes and section paths for verbatim report reconstruction.",
-  "reports": [
+ "format": 1,
+ "description": "Hashes and section paths for verbatim report reconstruction.",
+ "reports": [
+  {
+   "overview": "10_Mechanism/fm-ar-attn-sink.md",
+   "source_sha256": "221dee9795744c46505ba014d13508922866d930b9c601c05c3594912ab8106c",
+   "source_bytes": 16195,
+   "prefix_sha256": "1eeabafb4924722558a935bfad77a8810829876788c82f408ba412ff64dceece",
+   "section_files": [
     {
-      "overview": "10_Mechanism/fm-ar-attn-sink.md",
-      "source_sha256": "221dee9795744c46505ba014d13508922866d930b9c601c05c3594912ab8106c",
-      "source_bytes": 16195,
-      "prefix_sha256": "1eeabafb4924722558a935bfad77a8810829876788c82f408ba412ff64dceece",
-      "section_files": [
-        {
-          "path": "10_Mechanism/fm-ar-attn-sink/01-tl-dr.md",
-          "title": "TL;DR"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-attn-sink/02-1-where-token-50-sits.md",
-          "title": "1. Where token 50 sits"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-attn-sink/03-2-does-a-constant-query-fixed-keys-force-a-fixed-map-the-math.md",
-          "title": "2. Does a constant query + fixed keys force a fixed map? — the math"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-attn-sink/04-3-does-the-bragg-focus-claim-survive.md",
-          "title": "3. Does the Bragg-focus claim survive?"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-attn-sink/05-4-literature-grounding.md",
-          "title": "4. Literature grounding"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-attn-sink/06-5-cheapest-cpu-checks-for-box-176-ranked.md",
-          "title": "5. Cheapest CPU checks for box 176 (ranked)"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-attn-sink/07-6-data-hygiene-flags-for-the-lead.md",
-          "title": "6. Data hygiene flags for the lead"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-attn-sink/08-7-open-questions-need-lead-box-resources.md",
-          "title": "7. Open questions (need lead/box resources)"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-attn-sink/09-appendix-evidence-index.md",
-          "title": "Appendix — evidence index"
-        }
-      ]
+     "path": "10_Mechanism/fm-ar-attn-sink/01-tl-dr.md",
+     "title": "TL;DR"
     },
     {
-      "overview": "40_Manuscript_Provenance/fm-ar-claims-ledger.md",
-      "source_sha256": "daed6bb98a0227b04a7089e61dd87af618088cd1505a13f132bb8a25f31fb1b8",
-      "source_bytes": 31374,
-      "prefix_sha256": "27ac789db2eb58372a370175fee5d7b1e3021971743c051e2b627b08121a84c3",
-      "section_files": [
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-claims-ledger/01-1-headline-for-the-captain.md",
-          "title": "1. Headline for the captain"
-        },
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-claims-ledger/02-2-claim-by-claim-ledger.md",
-          "title": "2. Claim-by-claim ledger"
-        },
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-claims-ledger/03-3-conflicts-between-scout-reports-resolved-by-re-verification.md",
-          "title": "3. Conflicts between scout reports — resolved by re-verification"
-        },
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-claims-ledger/04-4-claims-the-manuscript-does-not-make-but-the-evidence-now-suppo.md",
-          "title": "4. Claims the manuscript does NOT make but the evidence now supports"
-        },
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-claims-ledger/05-5-pending-checks-that-settle-the-unsettled-claims.md",
-          "title": "5. Pending checks that settle the unsettled claims"
-        },
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-claims-ledger/06-6-what-i-did-and-verified-myself.md",
-          "title": "6. What I did and verified myself"
-        },
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-claims-ledger/07-7-captain-hold-inventory.md",
-          "title": "7. Captain-hold inventory"
-        }
-      ]
+     "path": "10_Mechanism/fm-ar-attn-sink/02-1-where-token-50-sits.md",
+     "title": "1. Where token 50 sits"
     },
     {
-      "overview": "40_Manuscript_Provenance/fm-ar-closing-check.md",
-      "source_sha256": "e4d789cc958fe879a376e711992d3dc423cfa0c75b832793c569f9c3ab0555d3",
-      "source_bytes": 23830,
-      "prefix_sha256": "ba8af46a643a98b6e5bd2a96f2c76b75637e5e0896297acabbc357b19e90fbb3",
-      "section_files": [
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-closing-check/01-headline.md",
-          "title": "Headline"
-        },
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-closing-check/02-statement-by-statement-table-ordered-by-how-much-each-would-misl.md",
-          "title": "Statement-by-statement table (ordered by how much each would mislead a reader)"
-        },
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-closing-check/03-claims-the-closing-doc-should-add.md",
-          "title": "Claims the closing doc should add"
-        },
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-closing-check/04-minor-stale-items-one-line-each.md",
-          "title": "Minor / stale items (one line each)"
-        },
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-closing-check/05-what-i-verified-on-disk-myself.md",
-          "title": "What I verified on disk myself"
-        },
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-closing-check/06-recommendation.md",
-          "title": "Recommendation"
-        },
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-closing-check/07-captain-hold-inventory.md",
-          "title": "Captain-hold inventory"
-        }
-      ]
+     "path": "10_Mechanism/fm-ar-attn-sink/03-2-does-a-constant-query-fixed-keys-force-a-fixed-map-the-math.md",
+     "title": "2. Does a constant query + fixed keys force a fixed map? — the math"
     },
     {
-      "overview": "30_Data_Integrity/fm-ar-closing-sync.md",
-      "source_sha256": "18a14b0edba762dca2f66f90adf02edd4ca392c87229e68f62a98971c60f9cdf",
-      "source_bytes": 27937,
-      "prefix_sha256": "3e5540588f4832ad5f04218419dacd600098e60f8b83f37fc1bc8122e75974e2",
-      "section_files": [
-        {
-          "path": "30_Data_Integrity/fm-ar-closing-sync/01-1-headline.md",
-          "title": "1. Headline"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-closing-sync/02-2-statement-by-statement-table-doc-a-exp3closinganalysis2026-09-.md",
-          "title": "2. Statement-by-statement table — Doc A (`EXP3_closing_analysis_2026-09-24.md`)"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-closing-sync/03-3-statement-by-statement-table-doc-b-exp3campaignnarrativedraft-.md",
-          "title": "3. Statement-by-statement table — Doc B (`EXP3_campaign_narrative_draft.md`)"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-closing-sync/04-4-statement-by-statement-table-doc-c-exp3resultsinterpretationpr.md",
-          "title": "4. Statement-by-statement table — Doc C (`EXP3_results_interpretation_predraft.md`)"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-closing-sync/05-5-conclusions-the-reports-establish-that-none-of-the-three-docs-.md",
-          "title": "5. Conclusions the reports establish that none of the three docs records"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-closing-sync/06-6-cross-report-conflicts-noticed-resolved-by-the-reports-themsel.md",
-          "title": "6. Cross-report conflicts noticed (resolved by the reports themselves)"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-closing-sync/07-7-recommendation.md",
-          "title": "7. Recommendation"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-closing-sync/08-8-what-i-did.md",
-          "title": "8. What I did"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-closing-sync/09-9-captain-hold-inventory.md",
-          "title": "9. Captain-hold inventory"
-        }
-      ]
+     "path": "10_Mechanism/fm-ar-attn-sink/04-3-does-the-bragg-focus-claim-survive.md",
+     "title": "3. Does the Bragg-focus claim survive?"
     },
     {
-      "overview": "30_Data_Integrity/fm-ar-code-audit.md",
-      "source_sha256": "d6e842a6460a977ac37caf5071c1389350b6bceff6e372a143564f6952a65cbf",
-      "source_bytes": 16642,
-      "prefix_sha256": "2ea151c48119d2c014e8430ddb55a1280ff2ab9b6009982cefd55b77059f48ec",
-      "section_files": [
-        {
-          "path": "30_Data_Integrity/fm-ar-code-audit/01-method-and-evidence.md",
-          "title": "Method and evidence"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-code-audit/02-confirmed-correctness-bugs-ranked.md",
-          "title": "Confirmed correctness bugs, ranked"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-code-audit/03-what-i-verified-clean.md",
-          "title": "What I verified clean"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-code-audit/04-exp3-artifact-inventory.md",
-          "title": "EXP3 artifact inventory"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-code-audit/05-seed-summaries-accuracy.md",
-          "title": "Seed summaries (accuracy)"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-code-audit/06-per-event-pairing-and-cpu-feasibility.md",
-          "title": "Per-event pairing and CPU feasibility"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-code-audit/07-additional-seed-evidence-from-surviving-counterfactual-artifacts.md",
-          "title": "Additional seed evidence from surviving counterfactual artifacts"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-code-audit/08-paper-claim-verdicts-and-minimum-further-runs.md",
-          "title": "Paper claim verdicts and minimum further runs"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-code-audit/09-completion-status.md",
-          "title": "Completion status"
-        }
-      ]
+     "path": "10_Mechanism/fm-ar-attn-sink/05-4-literature-grounding.md",
+     "title": "4. Literature grounding"
     },
     {
-      "overview": "20_Capacity_Statistics/fm-ar-d14-power.md",
-      "source_sha256": "87807c14fd5bf7249218643dc7b3a9bec60a1d4b48699b75ebac7708ac9ce6e3",
-      "source_bytes": 13570,
-      "prefix_sha256": "06ae170885ebe47a9fbbf38d4b05e1566b836ae1703d8ec0ce40334facfa5b45",
-      "section_files": [
-        {
-          "path": "20_Capacity_Statistics/fm-ar-d14-power/01-0-reconstructed-ground-truth-exact-not-estimated.md",
-          "title": "0. Reconstructed ground truth (exact, not estimated)"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-d14-power/02-1-confidence-intervals-and-branch-resolution.md",
-          "title": "1. Confidence intervals and branch resolution"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-d14-power/03-2-probe-protocol-not-cross-validated-single-50-50-split.md",
-          "title": "2. Probe protocol: not cross-validated — single 50/50 split"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-d14-power/04-3-d2-vs-majority-the-lead-s-comparison-is-right-in-spirit-wrong-.md",
-          "title": "3. D2 vs majority: the lead's comparison is right in spirit, wrong in number — and the correction strengthens it"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-d14-power/05-4-minimum-n-per-diagnostic-and-the-2-gb-memory-model.md",
-          "title": "4. Minimum n per diagnostic, and the 2 GB memory model"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-d14-power/06-5-verdict-on-the-lead-s-h1b-conclusion.md",
-          "title": "5. Verdict on the lead's H1b conclusion"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-d14-power/07-6-recommended-follow-up-ships-clear-small.md",
-          "title": "6. Recommended follow-up ships (clear, small)"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-d14-power/08-evidence-index.md",
-          "title": "Evidence index"
-        }
-      ]
+     "path": "10_Mechanism/fm-ar-attn-sink/06-5-cheapest-cpu-checks-for-box-176-ranked.md",
+     "title": "5. Cheapest CPU checks for box 176 (ranked)"
     },
     {
-      "overview": "10_Mechanism/fm-ar-difficulty.md",
-      "source_sha256": "4d88db6682cc20d89b1eb6100e2281fee73de605ebd0dc92510756dff6bfd63d",
-      "source_bytes": 11416,
-      "prefix_sha256": "f555631871cc0bcc5bac1873cb724bfbf84edddaa5d821d1595496b2f67e0d71",
-      "section_files": [
-        {
-          "path": "10_Mechanism/fm-ar-difficulty/01-1-what-exists-on-disk-and-what-doesn-t.md",
-          "title": "1. What exists on disk (and what doesn't)"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-difficulty/02-2-definitions.md",
-          "title": "2. Definitions"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-difficulty/03-3-exp3-per-isotope-reconstruction-validated.md",
-          "title": "3. EXP3 per-isotope reconstruction (validated)"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-difficulty/04-4-exp8-pair-table-both-arms.md",
-          "title": "4. EXP8 pair table (both arms)"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-difficulty/05-5-verdict-and-paper-implications.md",
-          "title": "5. Verdict and paper implications"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-difficulty/06-6-open-questions-for-the-lead.md",
-          "title": "6. Open questions for the lead"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-difficulty/07-7-reproduction.md",
-          "title": "7. Reproduction"
-        }
-      ]
+     "path": "10_Mechanism/fm-ar-attn-sink/07-6-data-hygiene-flags-for-the-lead.md",
+     "title": "6. Data hygiene flags for the lead"
     },
     {
-      "overview": "30_Data_Integrity/fm-ar-exp2-contam.md",
-      "source_sha256": "aceac75cb406afc21c59d1d83e82a1f1830b1a3b11b4f1fc756b64e2ef885ee8",
-      "source_bytes": 17855,
-      "prefix_sha256": "4c912107920bd158534450dd1d028409f84ef3e3b8c6528ca78976d8c03fa758",
-      "section_files": [
-        {
-          "path": "30_Data_Integrity/fm-ar-exp2-contam/01-0-tl-dr.md",
-          "title": "0. TL;DR"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-exp2-contam/02-1-which-exp2-runs-are-affected-which-files-per-class-counts-posi.md",
-          "title": "1. Which EXP2 runs are affected, which files, per-class counts, positive class"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-exp2-contam/03-2-is-the-carbon-trivially-separable-contaminated-vs-clean-accura.md",
-          "title": "2. Is the carbon trivially separable? Contaminated vs clean accuracy"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-exp2-contam/04-3-every-place-exp2-numbers-are-quoted.md",
-          "title": "3. Every place EXP2 numbers are quoted"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-exp2-contam/05-4-cheapest-honest-repair.md",
-          "title": "4. Cheapest honest repair"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-exp2-contam/06-5-reproduction.md",
-          "title": "5. Reproduction"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-exp2-contam/07-6-open-items-for-the-lead-non-blocking.md",
-          "title": "6. Open items for the lead (non-blocking)"
-        }
-      ]
+     "path": "10_Mechanism/fm-ar-attn-sink/08-7-open-questions-need-lead-box-resources.md",
+     "title": "7. Open questions (need lead/box resources)"
     },
     {
-      "overview": "10_Mechanism/fm-ar-feature-norm.md",
-      "source_sha256": "79425bf77e3b4902ccfdb38f501a0946605406a1b81f8558c2f3426017de3964",
-      "source_bytes": 18795,
-      "prefix_sha256": "a2ede15931f79c9cecab55120e97fe842ccaf943a69c4fec094acc24509e17d5",
-      "section_files": [
-        {
-          "path": "10_Mechanism/fm-ar-feature-norm/01-1-exact-code-path-file-line-worktree-head.md",
-          "title": "1. Exact code path (file:line, worktree HEAD)"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-feature-norm/02-2-feature-scale-table-measured.md",
-          "title": "2. Feature scale table (measured)"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-feature-norm/03-3-what-the-scale-does-inside-the-trained-head-exp8-xa-checkpoint.md",
-          "title": "3. What the scale does inside the trained head (EXP8 XA checkpoint, measured)"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-feature-norm/04-4-asymmetry-worth-flagging-z01-baseline-does-standardize.md",
-          "title": "4. Asymmetry worth flagging: Z01 baseline DOES standardize"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-feature-norm/05-5-manuscript-discrepancy-for-the-lead-captain-owns-10papers-thes.md",
-          "title": "5. Manuscript discrepancy (for the lead; captain owns `10_Papers-Thesis/`)"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-feature-norm/06-6-verdict-is-scale-a-plausible-contributor-to-the-xa-raw-deficit.md",
-          "title": "6. Verdict: is scale a plausible contributor to the XA-Raw deficit?"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-feature-norm/07-7-cheapest-cpu-diagnostics-for-box-176-ranked-all-inference-only.md",
-          "title": "7. Cheapest CPU diagnostics for box 176 (ranked, all inference-only, no retraining)"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-feature-norm/08-8-open-questions-for-the-lead-not-blocking.md",
-          "title": "8. Open questions for the lead (not blocking)"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-feature-norm/09-9-reproduction.md",
-          "title": "9. Reproduction"
-        }
-      ]
+     "path": "10_Mechanism/fm-ar-attn-sink/09-appendix-evidence-index.md",
+     "title": "Appendix — evidence index"
+    }
+   ]
+  },
+  {
+   "overview": "40_Manuscript_Provenance/fm-ar-claims-ledger.md",
+   "source_sha256": "daed6bb98a0227b04a7089e61dd87af618088cd1505a13f132bb8a25f31fb1b8",
+   "source_bytes": 31374,
+   "prefix_sha256": "27ac789db2eb58372a370175fee5d7b1e3021971743c051e2b627b08121a84c3",
+   "section_files": [
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-claims-ledger/01-1-headline-for-the-captain.md",
+     "title": "1. Headline for the captain"
     },
     {
-      "overview": "40_Manuscript_Provenance/fm-ar-figure-provenance.md",
-      "source_sha256": "b7bb192590674f13f026a219a851d126355f4809679d52e4903c494d818e7997",
-      "source_bytes": 20004,
-      "prefix_sha256": "7c784c2a4db0477bdb931fe1f7f8a2c69d07328640c4b89d4c3d62dbd27fcabe",
-      "section_files": [
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-figure-provenance/01-0-headline.md",
-          "title": "0. Headline"
-        },
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-figure-provenance/02-1-figure-ledger-ordered-by-referee-risk.md",
-          "title": "1. Figure ledger, ordered by referee risk"
-        },
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-figure-provenance/03-2-coverage-check-every-referenced-figure-accounted-for.md",
-          "title": "2. Coverage check — every referenced figure accounted for"
-        },
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-figure-provenance/04-3-findings-figures-cross-map-the-negative-result.md",
-          "title": "3. Findings → figures cross-map (the negative result)"
-        },
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-figure-provenance/05-4-what-i-ran-evidence.md",
-          "title": "4. What I ran (evidence)"
-        },
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-figure-provenance/06-5-recommendations-findings-only-captain-amends.md",
-          "title": "5. Recommendations (findings only — captain amends)"
-        },
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-figure-provenance/07-6-captain-hold-inventory.md",
-          "title": "6. Captain-hold inventory"
-        }
-      ]
+     "path": "40_Manuscript_Provenance/fm-ar-claims-ledger/02-2-claim-by-claim-ledger.md",
+     "title": "2. Claim-by-claim ledger"
     },
     {
-      "overview": "20_Capacity_Statistics/fm-ar-gpu-ladder.md",
-      "source_sha256": "17fc136d6eedfdc50fff615e66c08af8ee299a8efe6dfebf04a0518d7b9dc8d0",
-      "source_bytes": 23483,
-      "prefix_sha256": "7a899bc9596b176bf3d02089ef4dc5842adebd5a6eabbff767efbb0755947ab7",
-      "section_files": [
-        {
-          "path": "20_Capacity_Statistics/fm-ar-gpu-ladder/01-1-1-measured-cost-basis-from-run-log-training-complete-in-n-seco.md",
-          "title": "1.1 Measured cost basis (from `run.log` \"Training complete in N seconds\", all on the same AutoDL box)"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-gpu-ladder/02-1-2-consolidated-de-duplicated-gpu-run-list-every-proposal-acros.md",
-          "title": "1.2 Consolidated, de-duplicated GPU run list (every proposal across the five reports)"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-gpu-ladder/03-1-3-the-ladder.md",
-          "title": "1.3 The ladder"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-gpu-ladder/04-1-4-prerequisites-consolidated.md",
-          "title": "1.4 Prerequisites consolidated"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-gpu-ladder/05-1-5-cost-estimate-disagreements-flagged.md",
-          "title": "1.5 Cost-estimate disagreements (flagged)"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-gpu-ladder/06-1-6-recommendation-one-paragraph.md",
-          "title": "1.6 Recommendation (one paragraph)"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-gpu-ladder/07-2-1-run-inventory-re-verified-today-live-checkout.md",
-          "title": "2.1 Run inventory (re-verified today, live checkout)"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-gpu-ladder/08-2-2-paired-statistics-what-is-computable.md",
-          "title": "2.2 Paired statistics — what is computable"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-gpu-ladder/09-2-3-local-cpu-inference-feasibility-no-three-independent-blocker.md",
-          "title": "2.3 Local CPU inference feasibility — NO (three independent blockers, all verified today)"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-gpu-ladder/10-2-4-verdict-per-paper-claim.md",
-          "title": "2.4 Verdict per paper claim"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-gpu-ladder/11-2-5-minimum-further-runs-to-close-each-gap.md",
-          "title": "2.5 Minimum further runs to close each gap"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-gpu-ladder/12-open-questions-for-the-lead-non-blocking.md",
-          "title": "Open questions for the lead (non-blocking)"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-gpu-ladder/13-reproduction.md",
-          "title": "Reproduction"
-        }
-      ]
+     "path": "40_Manuscript_Provenance/fm-ar-claims-ledger/03-3-conflicts-between-scout-reports-resolved-by-re-verification.md",
+     "title": "3. Conflicts between scout reports — resolved by re-verification"
     },
     {
-      "overview": "20_Capacity_Statistics/fm-ar-gpu-plan-draft.md",
-      "source_sha256": "5d654c623be69ca39b4c34bbb9991d25f43572bcacd0c28cfac150a206d8f760",
-      "source_bytes": 13195,
-      "prefix_sha256": "83da479747d17d16af8a20db764f223a9772ca2a1d735eea621c32185fcef49a",
-      "section_files": [
-        {
-          "path": "20_Capacity_Statistics/fm-ar-gpu-plan-draft/01-0-two-facts-that-changed-since-the-scout-reports-were-written-ve.md",
-          "title": "0. Two facts that changed since the scout reports were written (verified today)"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-gpu-plan-draft/02-1-gpu-hour-basis-measured-not-estimated.md",
-          "title": "1. GPU-hour basis (measured, not estimated)"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-gpu-plan-draft/03-2-what-the-cpu-box-closes-now-0-gpu-h-do-these-before-alongside-.md",
-          "title": "2. What the CPU box closes NOW (0 GPU-h) — do these before/alongside any GPU spend"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-gpu-plan-draft/04-3-ranked-gpu-experiment-set.md",
-          "title": "3. Ranked GPU experiment set"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-gpu-plan-draft/05-4-gap-claim-closer-map-checklist-for-the-lead.md",
-          "title": "4. Gap → claim → closer map (checklist for the lead)"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-gpu-plan-draft/06-5-open-questions-for-the-lead-non-blocking.md",
-          "title": "5. Open questions for the lead (non-blocking)"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-gpu-plan-draft/07-6-commands-used-reproduction.md",
-          "title": "6. Commands used (reproduction)"
-        }
-      ]
+     "path": "40_Manuscript_Provenance/fm-ar-claims-ledger/04-4-claims-the-manuscript-does-not-make-but-the-evidence-now-suppo.md",
+     "title": "4. Claims the manuscript does NOT make but the evidence now supports"
     },
     {
-      "overview": "10_Mechanism/fm-ar-hc-vs-raw.md",
-      "source_sha256": "48c3eb0d8256a1e82d25359c842491d3302f4323a4a5e759280a8db219eb9be0",
-      "source_bytes": 14296,
-      "prefix_sha256": "368d0d7ff74606729a1d92d80cf14737e85176c329b2daaf6e2a798016dca428",
-      "section_files": [
-        {
-          "path": "10_Mechanism/fm-ar-hc-vs-raw/01-1-what-hc-does-to-the-event-vs-raw-code-trace.md",
-          "title": "1. What HC does to the event vs Raw — code trace"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-hc-vs-raw/02-2-what-the-input-audit-measured-20doc-audits-2026-09-23raw-hc-in.md",
-          "title": "2. What the input audit measured (`20_doc/audits/2026-09-23_raw-hc-input-audit.json`, 20k events/file × 5 files, paired)"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-hc-vs-raw/03-3-candidate-mechanisms-evidence-for-against.md",
-          "title": "3. Candidate mechanisms — evidence for/against"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-hc-vs-raw/04-4-mechanism-verdict.md",
-          "title": "4. Mechanism verdict"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-hc-vs-raw/05-5-paper-ready-sentence.md",
-          "title": "5. Paper-ready sentence"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-hc-vs-raw/06-6-cheapest-discriminating-cpu-check-on-box-176.md",
-          "title": "6. Cheapest discriminating CPU check on box 176"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-hc-vs-raw/07-7-commands-evidence-index.md",
-          "title": "7. Commands / evidence index"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-hc-vs-raw/08-8-open-questions-for-the-lead-non-blocking.md",
-          "title": "8. Open questions for the lead (non-blocking)"
-        }
-      ]
+     "path": "40_Manuscript_Provenance/fm-ar-claims-ledger/05-5-pending-checks-that-settle-the-unsettled-claims.md",
+     "title": "5. Pending checks that settle the unsettled claims"
     },
     {
-      "overview": "50_Comparisons/fm-ar-hehe-control.md",
-      "source_sha256": "b6770380e7d0ec68343470bb47944b0b51dcd674f783112aa466f470b43d910b",
-      "source_bytes": 17345,
-      "prefix_sha256": "6a6b7ede96506cfda92865ca95fdf3d365f5f7f6cfac3e1d5bd4b2845146e8c9",
-      "section_files": [
-        {
-          "path": "50_Comparisons/fm-ar-hehe-control/01-part-1-the-mislabeled-5-5-decomposition.md",
-          "title": "PART 1 — The mislabeled §5.5 decomposition"
-        },
-        {
-          "path": "50_Comparisons/fm-ar-hehe-control/02-part-2-exp3-seed-robust-evidence-from-on-disk-artifacts.md",
-          "title": "PART 2 — EXP3 seed-robust evidence from on-disk artifacts"
-        },
-        {
-          "path": "50_Comparisons/fm-ar-hehe-control/03-3-open-questions-for-the-lead-non-blocking.md",
-          "title": "3. Open questions for the lead (non-blocking)"
-        },
-        {
-          "path": "50_Comparisons/fm-ar-hehe-control/04-4-reproduction.md",
-          "title": "4. Reproduction"
-        }
-      ]
+     "path": "40_Manuscript_Provenance/fm-ar-claims-ledger/06-6-what-i-did-and-verified-myself.md",
+     "title": "6. What I did and verified myself"
     },
     {
-      "overview": "30_Data_Integrity/fm-ar-label-blast.md",
-      "source_sha256": "6ce20e4e1995f91d0982e6e7d2e3bd0eb520c9c82d30796a733092ca95a30e01",
-      "source_bytes": 21061,
-      "prefix_sha256": "6f4958e53ec20d473d335d97c01c1fd6582983af7793deb5f96b913532ccb126",
-      "section_files": [
-        {
-          "path": "30_Data_Integrity/fm-ar-label-blast/01-1-1-the-core-finding-two-garfield-label-conventions-exist-in-the.md",
-          "title": "1.1 The core finding: two Garfield label conventions exist in the wild"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-label-blast/02-1-2-result-by-result-verdict-table.md",
-          "title": "1.2 Result-by-result verdict table"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-label-blast/03-1-3-new-finding-exp2-s-he-he-runs-are-vs-rest-with-carbon-in-the.md",
-          "title": "1.3 New finding: EXP2's \"³He/⁴He\" runs are α-vs-rest **with carbon in the negative class**"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-label-blast/04-1-4-the-one-unsettled-question-windows-file-label-values-at-v6-e.md",
-          "title": "1.4 The one unsettled question: Windows-file label values at V6/EXP1 run time"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-label-blast/05-1-5-manuscript-numbers-at-risk-main-tex-read-only.md",
-          "title": "1.5 Manuscript numbers at risk (`main.tex`, read-only)"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-label-blast/06-1-6-reconciliation-note-for-the-methods-audit.md",
-          "title": "1.6 Reconciliation note for the methods audit"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-label-blast/07-2-1-run-inventory-re-verified-today-matches-referee-b-1.md",
-          "title": "2.1 Run inventory (re-verified today; matches referee B.1)"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-label-blast/08-2-2-local-cpu-inference-infeasible-3-independent-blockers.md",
-          "title": "2.2 Local CPU inference: infeasible (3 independent blockers)"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-label-blast/09-2-3-seed-statistics-recomputed-independently-n-25-000-val-run.md",
-          "title": "2.3 Seed statistics (recomputed independently; n=25,000 val/run)"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-label-blast/10-2-4-new-diagnostic-this-report-per-species-errors-rn-hc-s42-n-25.md",
-          "title": "2.4 New diagnostic this report: per-species errors, RN-HC-s42 (n=25,000)"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-label-blast/11-2-5-verdict-per-paper-claim-triton-task-semantics.md",
-          "title": "2.5 Verdict per paper claim (triton-task semantics)"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-label-blast/12-2-6-minimum-further-runs-to-close-each-gap.md",
-          "title": "2.6 Minimum further runs to close each gap"
-        }
-      ]
+     "path": "40_Manuscript_Provenance/fm-ar-claims-ledger/07-7-captain-hold-inventory.md",
+     "title": "7. Captain-hold inventory"
+    }
+   ]
+  },
+  {
+   "overview": "40_Manuscript_Provenance/fm-ar-closing-check.md",
+   "source_sha256": "e4d789cc958fe879a376e711992d3dc423cfa0c75b832793c569f9c3ab0555d3",
+   "source_bytes": 23830,
+   "prefix_sha256": "ba8af46a643a98b6e5bd2a96f2c76b75637e5e0896297acabbc357b19e90fbb3",
+   "section_files": [
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-closing-check/01-headline.md",
+     "title": "Headline"
     },
     {
-      "overview": "10_Mechanism/fm-ar-mechanism.md",
-      "source_sha256": "415471c8700b94c8a34380620484ee5700d1c49427ff2f7a028bbe727186df5d",
-      "source_bytes": 25124,
-      "prefix_sha256": "913c4575c6dc098ae12771c4c56c3c00e71ebbf7f6d2869f44b490529eb96ba2",
-      "section_files": [
-        {
-          "path": "10_Mechanism/fm-ar-mechanism/01-1-evidence-boundary-and-commands.md",
-          "title": "1. Evidence boundary and commands"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-mechanism/02-2-smallest-mechanism-set-that-explains-the-evidence.md",
-          "title": "2. Smallest mechanism set that explains the evidence"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-mechanism/03-3-dated-preregistration-locked-2026-09-24.md",
-          "title": "3. Dated preregistration (locked 2026-09-24)"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-mechanism/04-4-exp3-artifact-inventory-live-checkout.md",
-          "title": "4. EXP3 artifact inventory (live checkout)"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-mechanism/05-5-seed-statistics-and-paired-evidence.md",
-          "title": "5. Seed statistics and paired evidence"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-mechanism/06-6-minimum-further-work-and-cost.md",
-          "title": "6. Minimum further work and cost"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-mechanism/07-7-single-result-that-would-most-damage-this-model.md",
-          "title": "7. Single result that would most damage this model"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-mechanism/08-8-open-questions-for-firstmate-lead-not-blockers.md",
-          "title": "8. Open questions for firstmate/lead (not blockers)"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-mechanism/09-9-reproducibility-index.md",
-          "title": "9. Reproducibility index"
-        }
-      ]
+     "path": "40_Manuscript_Provenance/fm-ar-closing-check/02-statement-by-statement-table-ordered-by-how-much-each-would-misl.md",
+     "title": "Statement-by-statement table (ordered by how much each would mislead a reader)"
     },
     {
-      "overview": "40_Manuscript_Provenance/fm-ar-methods-audit.md",
-      "source_sha256": "775ca3ac9635c9e6709145a148f6afbdb5a9377f14ce94a0b932df08e083cb7c",
-      "source_bytes": 31910,
-      "prefix_sha256": "4b5e377036acaac123add070a1c32dd68d4d98c79c84320840496ad107d949ae",
-      "section_files": [
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-methods-audit/01-1-claim-by-claim-table.md",
-          "title": "1. Claim-by-claim table"
-        },
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-methods-audit/02-2-prioritized-mismatches-for-the-captain.md",
-          "title": "2. Prioritized mismatches for the captain"
-        },
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-methods-audit/03-3-verified-clean-highlights-no-action-needed.md",
-          "title": "3. Verified-clean highlights (no action needed)"
-        },
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-methods-audit/04-4-open-questions-for-the-lead-not-blocking.md",
-          "title": "4. Open questions for the lead (not blocking)"
-        },
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-methods-audit/05-5-reproduction.md",
-          "title": "5. Reproduction"
-        }
-      ]
+     "path": "40_Manuscript_Provenance/fm-ar-closing-check/03-claims-the-closing-doc-should-add.md",
+     "title": "Claims the closing doc should add"
     },
     {
-      "overview": "10_Mechanism/fm-ar-ood-leakage.md",
-      "source_sha256": "7f997709ccd1b98c5833388c1961b8fc1a7250185653bb7da76c3af39d8d1bdb",
-      "source_bytes": 20094,
-      "prefix_sha256": "3b5bfe95517d92c605f4ec0f44f4f75f84678570850088d211801d85a521edbe",
-      "section_files": [
-        {
-          "path": "10_Mechanism/fm-ar-ood-leakage/01-1-data-used-all-read-only-under-users-reid-hu-mate-automation-ru.md",
-          "title": "1. Data used (all read-only under `/Users/Reid Hu/MATE-Automation/runs`)"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-ood-leakage/02-2-leakage-per-unseen-isotope-per-arm.md",
-          "title": "2. Leakage per unseen isotope, per arm"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-ood-leakage/03-3-confidence-and-entropy-leaked-vs-correctly-routed-same-channel.md",
-          "title": "3. Confidence and entropy: leaked vs correctly-routed (same channel)"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-ood-leakage/04-4-cross-arm-event-level-test-the-decisive-table.md",
-          "title": "4. Cross-arm event-level test (the decisive table)"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-ood-leakage/05-5-rejection-rules-auroc-per-arm.md",
-          "title": "5. Rejection rules: AUROC per arm"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-ood-leakage/06-6-mechanism-where-the-leak-is-manufactured.md",
-          "title": "6. Mechanism: where the leak is manufactured"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-ood-leakage/07-7-paper-ready-framing-paragraph.md",
-          "title": "7. Paper-ready framing paragraph"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-ood-leakage/08-8-cheapest-box-side-experiment-to-confirm-ranked.md",
-          "title": "8. Cheapest box-side experiment to confirm (ranked)"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-ood-leakage/09-9-ood-literature-to-cite.md",
-          "title": "9. OOD literature to cite"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-ood-leakage/10-10-open-questions-for-the-lead-not-blocking.md",
-          "title": "10. Open questions for the lead (not blocking)"
-        },
-        {
-          "path": "10_Mechanism/fm-ar-ood-leakage/11-11-reproduction.md",
-          "title": "11. Reproduction"
-        }
-      ]
+     "path": "40_Manuscript_Provenance/fm-ar-closing-check/04-minor-stale-items-one-line-each.md",
+     "title": "Minor / stale items (one line each)"
     },
     {
-      "overview": "20_Capacity_Statistics/fm-ar-referee.md",
-      "source_sha256": "5992558a93d3c811eb6cdceb661cc1c1e99dbe04ce007205367099d67f6cc750",
-      "source_bytes": 29267,
-      "prefix_sha256": "aba81d59ce45ea4f257502b66f5af9d3ac1b118f30117e1b0524757cefcf398c",
-      "section_files": [
-        {
-          "path": "20_Capacity_Statistics/fm-ar-referee/01-a1-every-headline-number-is-the-wrong-task-the-label-bug.md",
-          "title": "A1. Every headline number is the wrong task — the label bug"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-referee/02-a2-zerocls-collapse-may-be-an-ood-artifact-not-information-depen.md",
-          "title": "A2. `zero_cls` collapse may be an OOD artifact, not information dependence"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-referee/03-a3-the-permutedq-test-is-underpowered-on-raw-h3-refuted-is-reall.md",
-          "title": "A3. The `permuted_q` test is underpowered on Raw — \"H3 refuted\" is really an HC result"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-referee/04-a4-battery-statistics-n-2000-unrecorded-subset-val-set-reuse.md",
-          "title": "A4. Battery statistics: n=2000, unrecorded subset, val-set reuse"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-referee/05-a5-the-xa-raw-deficit-may-be-an-optimization-artifact-not-capaci.md",
-          "title": "A5. The XA-Raw deficit may be an optimization artifact, not capacity"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-referee/06-a6-the-deficit-concentrates-in-minority-recall-threshold-class-b.md",
-          "title": "A6. The deficit concentrates in minority recall — threshold/class-balance confound"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-referee/07-a7-capacity-confound-68-dim-head-input-vs-512-dim-gap-is-not-a-c.md",
-          "title": "A7. Capacity confound: 68-dim head input vs 512-dim GAP is not a controlled comparison"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-referee/08-a8-physics-features-are-unnormalized-and-the-manuscript-says-the.md",
-          "title": "A8. Physics features are unnormalized — and the manuscript says they are standardized"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-referee/09-a9-no-traditional-baseline-on-the-classification-task-doctrine-v.md",
-          "title": "A9. No traditional baseline on the classification task — doctrine violation"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-referee/10-a10-attention-mechanism-claims-rest-on-single-seed-ad-hoc-unrepr.md",
-          "title": "A10. Attention-mechanism claims rest on single-seed, ad-hoc, unreproduced evals"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-referee/11-a11-the-s0-anomaly-interpretation-is-fragile-and-the-closing-doc.md",
-          "title": "A11. The s0-anomaly interpretation is fragile — and the closing doc's \"does not replicate\" is wrong"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-referee/12-a12-no-held-out-test-set-val-doubles-as-model-selection-and-repo.md",
-          "title": "A12. No held-out test set — val doubles as model-selection and reporting set"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-referee/13-b-1-run-inventory-re-verified-2026-09-24-live-checkout.md",
-          "title": "B.1 Run inventory (re-verified 2026-09-24, live checkout)"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-referee/14-b-2-local-cpu-inference-feasibility-no-three-independent-blocker.md",
-          "title": "B.2 Local CPU inference feasibility — NO (three independent blockers)"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-referee/15-b-3-seed-statistics-triton-task-n-25-000-val-run-recomputed.md",
-          "title": "B.3 Seed statistics — triton task, n=25,000 val/run (recomputed)"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-referee/16-b-4-paired-comparisons-same-seed-n-25-000.md",
-          "title": "B.4 Paired comparisons (same-seed, n=25,000)"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-referee/17-b-5-verdict-per-paper-claim.md",
-          "title": "B.5 Verdict per paper claim"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-referee/18-b-6-what-changed-since-the-earlier-scouts-verified-today.md",
-          "title": "B.6 What changed since the earlier scouts (verified today)"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-referee/19-b-7-minimum-further-runs-to-close-each-gap.md",
-          "title": "B.7 Minimum further runs to close each gap"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-referee/20-b-8-commands-used-reproduction.md",
-          "title": "B.8 Commands used (reproduction)"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-referee/21-b-9-open-questions-for-the-lead-non-blocking.md",
-          "title": "B.9 Open questions for the lead (non-blocking)"
-        }
-      ]
+     "path": "40_Manuscript_Provenance/fm-ar-closing-check/05-what-i-verified-on-disk-myself.md",
+     "title": "What I verified on disk myself"
     },
     {
-      "overview": "40_Manuscript_Provenance/fm-ar-related-work.md",
-      "source_sha256": "95b668af1c4c53942b887f1fbe3f408cfb8f4318dab0234a8bc413763e536695",
-      "source_bytes": 25586,
-      "prefix_sha256": "6354d3ffe3884ce67af0541be4051a69824c7203ad4ba2e34db4e325eac4568d",
-      "section_files": [
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-related-work/01-0-headline.md",
-          "title": "0. Headline"
-        },
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-related-work/02-1-claim-by-claim-verdicts-novelty-related-work-framing.md",
-          "title": "1. Claim-by-claim verdicts (novelty & related-work framing)"
-        },
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-related-work/03-2-bib-integrity-fabricated-and-broken-entries-highest-referee-ri.md",
-          "title": "2. Bib integrity — fabricated and broken entries (highest referee risk)"
-        },
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-related-work/04-3-missing-citations-a-referee-would-expect.md",
-          "title": "3. Missing citations a referee would expect"
-        },
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-related-work/05-4-prior-papers-reporting-the-same-negative-mechanisms-reframing-.md",
-          "title": "4. Prior papers reporting the same negative mechanisms (reframing ammunition)"
-        },
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-related-work/06-5-suggested-framing-sentences-at-most-the-captain-writes-the-ame.md",
-          "title": "5. Suggested framing sentences (at most — the captain writes the amendment)"
-        },
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-related-work/07-6-what-i-did-and-verified.md",
-          "title": "6. What I did and verified"
-        },
-        {
-          "path": "40_Manuscript_Provenance/fm-ar-related-work/08-7-captain-hold-inventory.md",
-          "title": "7. Captain-hold inventory"
-        }
-      ]
+     "path": "40_Manuscript_Provenance/fm-ar-closing-check/06-recommendation.md",
+     "title": "Recommendation"
     },
     {
-      "overview": "30_Data_Integrity/fm-ar-results-audit.md",
-      "source_sha256": "c7945a0b9f87302a23d1acb2ba2973334d5f3b1396ada99ed3501fa4d9003523",
-      "source_bytes": 23126,
-      "prefix_sha256": "c526eb6acd05411ea9a0118967a4ce4a03bc786ffda88bf3c11bac1dab2d2dbd",
-      "section_files": [
-        {
-          "path": "30_Data_Integrity/fm-ar-results-audit/01-1-closing-doc-20doc-exp3closinganalysis2026-09-24-md.md",
-          "title": "1. Closing doc `20_doc/EXP3_closing_analysis_2026-09-24.md`"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-results-audit/02-2-recording-doc-20doc-experiment-recordings-2026-09-23exp3-xa-ra.md",
-          "title": "2. Recording doc `20_doc/Experiment Recordings/2026-09-23_exp3-xa-raw-cell.md`"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-results-audit/03-3-20doc-paper-paperanchor-md-read-only.md",
-          "title": "3. `20_doc/paper/paper_anchor.md` (read-only)"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-results-audit/04-4-cross-cutting-flags.md",
-          "title": "4. Cross-cutting flags"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-results-audit/05-5-prioritized-corrections-for-the-lead.md",
-          "title": "5. Prioritized corrections for the lead"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-results-audit/06-6-open-questions-need-lead-box-access.md",
-          "title": "6. Open questions (need lead/box access)"
-        },
-        {
-          "path": "30_Data_Integrity/fm-ar-results-audit/07-appendix-commands-used.md",
-          "title": "Appendix — commands used"
-        }
-      ]
+     "path": "40_Manuscript_Provenance/fm-ar-closing-check/07-captain-hold-inventory.md",
+     "title": "Captain-hold inventory"
+    }
+   ]
+  },
+  {
+   "overview": "30_Data_Integrity/fm-ar-closing-sync.md",
+   "source_sha256": "18a14b0edba762dca2f66f90adf02edd4ca392c87229e68f62a98971c60f9cdf",
+   "source_bytes": 27937,
+   "prefix_sha256": "3e5540588f4832ad5f04218419dacd600098e60f8b83f37fc1bc8122e75974e2",
+   "section_files": [
+    {
+     "path": "30_Data_Integrity/fm-ar-closing-sync/01-1-headline.md",
+     "title": "1. Headline"
     },
     {
-      "overview": "20_Capacity_Statistics/fm-ar-seed-evidence.md",
-      "source_sha256": "c4aec64678a3a065b012f81326b3023894771df8be2a24d39e4fce1119053488",
-      "source_bytes": 15115,
-      "prefix_sha256": "a761a2fb26290ad807e1204f8f5184346ccd50b450ee87f1710cbefa7486d76c",
-      "section_files": [
-        {
-          "path": "20_Capacity_Statistics/fm-ar-seed-evidence/01-1-run-inventory-users-reid-hu-mate-automation-runs-exp3.md",
-          "title": "1. Run inventory (`/Users/Reid Hu/MATE-Automation/runs/EXP3-*`)"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-seed-evidence/02-2-feasibility-of-local-cpu-inference-no.md",
-          "title": "2. Feasibility of local CPU inference — NO"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-seed-evidence/03-3-seed-statistics-triton-task-n-25-000-val-per-run.md",
-          "title": "3. Seed statistics — triton task, n=25,000 val per run"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-seed-evidence/04-4-verdict-per-paper-claim.md",
-          "title": "4. Verdict per paper claim"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-seed-evidence/05-5-the-seed-variance-trap-for-the-writeup.md",
-          "title": "5. The seed-variance trap (for the writeup)"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-seed-evidence/06-6-minimum-runs-to-close-each-gap.md",
-          "title": "6. Minimum runs to close each gap"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-seed-evidence/07-7-commands-used-reproduction.md",
-          "title": "7. Commands used (reproduction)"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-seed-evidence/08-8-open-questions-for-the-lead-not-blocking.md",
-          "title": "8. Open questions for the lead (not blocking)"
-        }
-      ]
+     "path": "30_Data_Integrity/fm-ar-closing-sync/02-2-statement-by-statement-table-doc-a-exp3closinganalysis2026-09-.md",
+     "title": "2. Statement-by-statement table — Doc A (`EXP3_closing_analysis_2026-09-24.md`)"
     },
     {
-      "overview": "20_Capacity_Statistics/fm-ar-test-split.md",
-      "source_sha256": "ea4b55ea47b6ea426dcce4b737ac7238e050871531627bf554aec6bd6ced157d",
-      "source_bytes": 22251,
-      "prefix_sha256": "397c7d1c50672c378f5d55aa3223826cb3cfdbe5846a08860d2ffbe274074541",
-      "section_files": [
-        {
-          "path": "20_Capacity_Statistics/fm-ar-test-split/01-headline.md",
-          "title": "Headline"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-test-split/02-1-r1-confirm-refute-held-out-splits-across-the-campaign.md",
-          "title": "1. R1 confirm/refute — held-out splits across the campaign"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-test-split/03-2-selection-bias-magnitude-pr-9-tooling-neighbor-epoch-analysis.md",
-          "title": "2. Selection-bias magnitude (PR#9 tooling + neighbor-epoch analysis)"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-test-split/04-3-rung-1-options-cost-pairing-effect-mechanism.md",
-          "title": "3. Rung-1 options — cost, pairing effect, mechanism"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-test-split/05-4-recommendation.md",
-          "title": "4. Recommendation"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-test-split/06-5-manuscript-doc-findings-file-line-suggested-wording-no-edits-m.md",
-          "title": "5. Manuscript / doc findings (file:line, suggested wording — no edits made)"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-test-split/07-6-what-i-ran-evidence.md",
-          "title": "6. What I ran (evidence)"
-        },
-        {
-          "path": "20_Capacity_Statistics/fm-ar-test-split/08-captain-hold-inventory.md",
-          "title": "Captain-hold inventory"
-        }
-      ]
+     "path": "30_Data_Integrity/fm-ar-closing-sync/03-3-statement-by-statement-table-doc-b-exp3campaignnarrativedraft-.md",
+     "title": "3. Statement-by-statement table — Doc B (`EXP3_campaign_narrative_draft.md`)"
     },
     {
-      "overview": "50_Comparisons/fm-ar-transfer.md",
-      "source_sha256": "6e861b6db1539eae031c05bf051d4c7127caaca48dcadc36055c030300e09e54",
-      "source_bytes": 15735,
-      "prefix_sha256": "a5213ea4a8ece559e46d540f7b824303e2476aeff271d70c7e259970169e01c8",
-      "section_files": [
-        {
-          "path": "50_Comparisons/fm-ar-transfer/01-verdict.md",
-          "title": "Verdict"
-        },
-        {
-          "path": "50_Comparisons/fm-ar-transfer/02-1-literature-inventory-what-exists-with-public-data-code.md",
-          "title": "1. Literature inventory: what exists with public data/code"
-        },
-        {
-          "path": "50_Comparisons/fm-ar-transfer/03-2-what-each-direction-requires.md",
-          "title": "2. What each direction requires"
-        },
-        {
-          "path": "50_Comparisons/fm-ar-transfer/04-3-local-cpu-work-performed-deliverable-numbers.md",
-          "title": "3. Local CPU work performed (deliverable numbers)"
-        },
-        {
-          "path": "50_Comparisons/fm-ar-transfer/05-4-ranked-plan.md",
-          "title": "4. Ranked plan"
-        },
-        {
-          "path": "50_Comparisons/fm-ar-transfer/06-5-fairness-caveats-consolidated.md",
-          "title": "5. Fairness caveats (consolidated)"
-        },
-        {
-          "path": "50_Comparisons/fm-ar-transfer/07-6-open-questions-for-the-lead.md",
-          "title": "6. Open questions for the lead"
-        },
-        {
-          "path": "50_Comparisons/fm-ar-transfer/08-7-evidence-index.md",
-          "title": "7. Evidence index"
-        },
-        {
-          "path": "50_Comparisons/fm-ar-transfer/09-8-captain-facing-inventory.md",
-          "title": "8. Captain-facing inventory"
-        }
-      ]
+     "path": "30_Data_Integrity/fm-ar-closing-sync/04-4-statement-by-statement-table-doc-c-exp3resultsinterpretationpr.md",
+     "title": "4. Statement-by-statement table — Doc C (`EXP3_results_interpretation_predraft.md`)"
     },
     {
-      "overview": "60_Tooling/fm-ar-docs-refine.md",
-      "source_sha256": "3769fe9d3305423540f4d6e987c18f83dd9f9d77d9b5e96b982929ea4a87efbe",
-      "source_bytes": 10996,
-      "prefix_sha256": "d4a9a9f4c264de080910ab576002d1a16706d50d5e509765b57aeb081ab980f5",
-      "section_files": [
-        {
-          "path": "60_Tooling/fm-ar-docs-refine/01-1-executive-summary.md",
-          "title": "1. Executive Summary"
-        },
-        {
-          "path": "60_Tooling/fm-ar-docs-refine/02-2-scope-and-boundaries.md",
-          "title": "2. Scope and Boundaries"
-        },
-        {
-          "path": "60_Tooling/fm-ar-docs-refine/03-3-review-chronology-and-collaboration.md",
-          "title": "3. Review Chronology and Collaboration"
-        },
-        {
-          "path": "60_Tooling/fm-ar-docs-refine/04-4-summary-of-suggestions-and-dispositions.md",
-          "title": "4. Summary of Suggestions and Dispositions"
-        },
-        {
-          "path": "60_Tooling/fm-ar-docs-refine/05-5-verification-evidence.md",
-          "title": "5. Verification Evidence"
-        },
-        {
-          "path": "60_Tooling/fm-ar-docs-refine/06-6-captain-hold-lifecycle-gate.md",
-          "title": "6. Captain-Hold Lifecycle Gate"
-        },
-        {
-          "path": "60_Tooling/fm-ar-docs-refine/07-7-conclusion-and-recommendation.md",
-          "title": "7. Conclusion and Recommendation"
-        }
-      ]
+     "path": "30_Data_Integrity/fm-ar-closing-sync/05-5-conclusions-the-reports-establish-that-none-of-the-three-docs-.md",
+     "title": "5. Conclusions the reports establish that none of the three docs records"
     },
-    
-     {
-      "overview": "10_Mechanism/fm-ar-maxh-confound.md",
-      "source_sha256": "9b6c44af93971a505a1d1f3a4cadbfaa84ab02777970c448cd7f2bd7c659fb94",
-      "source_bytes": 14782,
-      "prefix_sha256": "4c9e25db8c5ed4520b696866b126b1fd111c6a0ef1346c1df1f399f19ced1bb0",
-      "section_files": [
-       {
-        "path": "10_Mechanism/fm-ar-maxh-confound/01-1-what-the-caches-contain-and-whether-rows-join-to-events.md",
-        "title": "1. What the caches contain, and whether rows join to events"
-       },
-       {
-        "path": "10_Mechanism/fm-ar-maxh-confound/02-2-local-observables-what-could-and-could-not-be-computed.md",
-        "title": "2. Local observables \u2014 what could and could not be computed"
-       },
-       {
-        "path": "10_Mechanism/fm-ar-maxh-confound/03-3-does-the-0-90-claim-survive.md",
-        "title": "3. Does the 0.90 claim survive?"
-       },
-       {
-        "path": "10_Mechanism/fm-ar-maxh-confound/04-4-manuscript-implication-finding-only-captain-edits.md",
-        "title": "4. Manuscript implication (finding only \u2014 captain edits)"
-       },
-       {
-        "path": "10_Mechanism/fm-ar-maxh-confound/05-5-cheapest-decisive-check-on-the-gpu-box-exact-command.md",
-        "title": "5. Cheapest decisive check on the GPU box (exact command)"
-       },
-       {
-        "path": "10_Mechanism/fm-ar-maxh-confound/06-6-commands-run-local.md",
-        "title": "6. Commands run (local)"
-       },
-       {
-        "path": "10_Mechanism/fm-ar-maxh-confound/07-7-limitations.md",
-        "title": "7. Limitations"
-       }
-      ]
-     },
-     {
-      "overview": "20_Capacity_Statistics/fm-ar-d14-bign.md",
-      "source_sha256": "d252d2ac26d01337e76c4aaaca87c4bdfb161c807c43bee3ec6720243fef6ea6",
-      "source_bytes": 21151,
-      "prefix_sha256": "6996886632a1ec15e27024895cef4a84c2a60f2ad3d4031f4e106780497ff631",
-      "section_files": [
-       {
-        "path": "20_Capacity_Statistics/fm-ar-d14-bign/01-0-verdict-up-front.md",
-        "title": "0. Verdict up front"
-       },
-       {
-        "path": "20_Capacity_Statistics/fm-ar-d14-bign/02-1-what-exists-where-evidence.md",
-        "title": "1. What exists where (evidence)"
-       },
-       {
-        "path": "20_Capacity_Statistics/fm-ar-d14-bign/03-2-exact-command-for-a-cpu-capable-box-box-176-or-autodl.md",
-        "title": "2. Exact command for a CPU-capable box (box 176 or AutoDL)"
-       },
-       {
-        "path": "20_Capacity_Statistics/fm-ar-d14-bign/04-3-proposed-patch-verified-locally-do-not-commit-from-this-sc.md",
-        "title": "3. Proposed patch (verified locally \u2014 do not commit from this scout)"
-       },
-       {
-        "path": "20_Capacity_Statistics/fm-ar-d14-bign/05-4-analytic-answer-to-the-verdict-question-n-8000-k-5-cv.md",
-        "title": "4. Analytic answer to the verdict question (n=8000, k=5 CV)"
-       },
-       {
-        "path": "20_Capacity_Statistics/fm-ar-d14-bign/06-5-doc-manuscript-implications-findings-only-no-edits-made.md",
-        "title": "5. Doc/manuscript implications (findings only \u2014 no edits made)"
-       },
-       {
-        "path": "20_Capacity_Statistics/fm-ar-d14-bign/07-6-what-i-did.md",
-        "title": "6. What I did"
-       },
-       {
-        "path": "20_Capacity_Statistics/fm-ar-d14-bign/08-7-captain-hold-inventory.md",
-        "title": "7. Captain-hold inventory"
-       }
-      ]
-     }
-    
-  ]
+    {
+     "path": "30_Data_Integrity/fm-ar-closing-sync/06-6-cross-report-conflicts-noticed-resolved-by-the-reports-themsel.md",
+     "title": "6. Cross-report conflicts noticed (resolved by the reports themselves)"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-closing-sync/07-7-recommendation.md",
+     "title": "7. Recommendation"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-closing-sync/08-8-what-i-did.md",
+     "title": "8. What I did"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-closing-sync/09-9-captain-hold-inventory.md",
+     "title": "9. Captain-hold inventory"
+    }
+   ]
+  },
+  {
+   "overview": "30_Data_Integrity/fm-ar-code-audit.md",
+   "source_sha256": "d6e842a6460a977ac37caf5071c1389350b6bceff6e372a143564f6952a65cbf",
+   "source_bytes": 16642,
+   "prefix_sha256": "2ea151c48119d2c014e8430ddb55a1280ff2ab9b6009982cefd55b77059f48ec",
+   "section_files": [
+    {
+     "path": "30_Data_Integrity/fm-ar-code-audit/01-method-and-evidence.md",
+     "title": "Method and evidence"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-code-audit/02-confirmed-correctness-bugs-ranked.md",
+     "title": "Confirmed correctness bugs, ranked"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-code-audit/03-what-i-verified-clean.md",
+     "title": "What I verified clean"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-code-audit/04-exp3-artifact-inventory.md",
+     "title": "EXP3 artifact inventory"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-code-audit/05-seed-summaries-accuracy.md",
+     "title": "Seed summaries (accuracy)"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-code-audit/06-per-event-pairing-and-cpu-feasibility.md",
+     "title": "Per-event pairing and CPU feasibility"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-code-audit/07-additional-seed-evidence-from-surviving-counterfactual-artifacts.md",
+     "title": "Additional seed evidence from surviving counterfactual artifacts"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-code-audit/08-paper-claim-verdicts-and-minimum-further-runs.md",
+     "title": "Paper claim verdicts and minimum further runs"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-code-audit/09-completion-status.md",
+     "title": "Completion status"
+    }
+   ]
+  },
+  {
+   "overview": "20_Capacity_Statistics/fm-ar-d14-power.md",
+   "source_sha256": "87807c14fd5bf7249218643dc7b3a9bec60a1d4b48699b75ebac7708ac9ce6e3",
+   "source_bytes": 13570,
+   "prefix_sha256": "06ae170885ebe47a9fbbf38d4b05e1566b836ae1703d8ec0ce40334facfa5b45",
+   "section_files": [
+    {
+     "path": "20_Capacity_Statistics/fm-ar-d14-power/01-0-reconstructed-ground-truth-exact-not-estimated.md",
+     "title": "0. Reconstructed ground truth (exact, not estimated)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-d14-power/02-1-confidence-intervals-and-branch-resolution.md",
+     "title": "1. Confidence intervals and branch resolution"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-d14-power/03-2-probe-protocol-not-cross-validated-single-50-50-split.md",
+     "title": "2. Probe protocol: not cross-validated — single 50/50 split"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-d14-power/04-3-d2-vs-majority-the-lead-s-comparison-is-right-in-spirit-wrong-.md",
+     "title": "3. D2 vs majority: the lead's comparison is right in spirit, wrong in number — and the correction strengthens it"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-d14-power/05-4-minimum-n-per-diagnostic-and-the-2-gb-memory-model.md",
+     "title": "4. Minimum n per diagnostic, and the 2 GB memory model"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-d14-power/06-5-verdict-on-the-lead-s-h1b-conclusion.md",
+     "title": "5. Verdict on the lead's H1b conclusion"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-d14-power/07-6-recommended-follow-up-ships-clear-small.md",
+     "title": "6. Recommended follow-up ships (clear, small)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-d14-power/08-evidence-index.md",
+     "title": "Evidence index"
+    }
+   ]
+  },
+  {
+   "overview": "10_Mechanism/fm-ar-difficulty.md",
+   "source_sha256": "4d88db6682cc20d89b1eb6100e2281fee73de605ebd0dc92510756dff6bfd63d",
+   "source_bytes": 11416,
+   "prefix_sha256": "f555631871cc0bcc5bac1873cb724bfbf84edddaa5d821d1595496b2f67e0d71",
+   "section_files": [
+    {
+     "path": "10_Mechanism/fm-ar-difficulty/01-1-what-exists-on-disk-and-what-doesn-t.md",
+     "title": "1. What exists on disk (and what doesn't)"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-difficulty/02-2-definitions.md",
+     "title": "2. Definitions"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-difficulty/03-3-exp3-per-isotope-reconstruction-validated.md",
+     "title": "3. EXP3 per-isotope reconstruction (validated)"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-difficulty/04-4-exp8-pair-table-both-arms.md",
+     "title": "4. EXP8 pair table (both arms)"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-difficulty/05-5-verdict-and-paper-implications.md",
+     "title": "5. Verdict and paper implications"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-difficulty/06-6-open-questions-for-the-lead.md",
+     "title": "6. Open questions for the lead"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-difficulty/07-7-reproduction.md",
+     "title": "7. Reproduction"
+    }
+   ]
+  },
+  {
+   "overview": "30_Data_Integrity/fm-ar-exp2-contam.md",
+   "source_sha256": "aceac75cb406afc21c59d1d83e82a1f1830b1a3b11b4f1fc756b64e2ef885ee8",
+   "source_bytes": 17855,
+   "prefix_sha256": "4c912107920bd158534450dd1d028409f84ef3e3b8c6528ca78976d8c03fa758",
+   "section_files": [
+    {
+     "path": "30_Data_Integrity/fm-ar-exp2-contam/01-0-tl-dr.md",
+     "title": "0. TL;DR"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-exp2-contam/02-1-which-exp2-runs-are-affected-which-files-per-class-counts-posi.md",
+     "title": "1. Which EXP2 runs are affected, which files, per-class counts, positive class"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-exp2-contam/03-2-is-the-carbon-trivially-separable-contaminated-vs-clean-accura.md",
+     "title": "2. Is the carbon trivially separable? Contaminated vs clean accuracy"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-exp2-contam/04-3-every-place-exp2-numbers-are-quoted.md",
+     "title": "3. Every place EXP2 numbers are quoted"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-exp2-contam/05-4-cheapest-honest-repair.md",
+     "title": "4. Cheapest honest repair"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-exp2-contam/06-5-reproduction.md",
+     "title": "5. Reproduction"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-exp2-contam/07-6-open-items-for-the-lead-non-blocking.md",
+     "title": "6. Open items for the lead (non-blocking)"
+    }
+   ]
+  },
+  {
+   "overview": "10_Mechanism/fm-ar-feature-norm.md",
+   "source_sha256": "79425bf77e3b4902ccfdb38f501a0946605406a1b81f8558c2f3426017de3964",
+   "source_bytes": 18795,
+   "prefix_sha256": "a2ede15931f79c9cecab55120e97fe842ccaf943a69c4fec094acc24509e17d5",
+   "section_files": [
+    {
+     "path": "10_Mechanism/fm-ar-feature-norm/01-1-exact-code-path-file-line-worktree-head.md",
+     "title": "1. Exact code path (file:line, worktree HEAD)"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-feature-norm/02-2-feature-scale-table-measured.md",
+     "title": "2. Feature scale table (measured)"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-feature-norm/03-3-what-the-scale-does-inside-the-trained-head-exp8-xa-checkpoint.md",
+     "title": "3. What the scale does inside the trained head (EXP8 XA checkpoint, measured)"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-feature-norm/04-4-asymmetry-worth-flagging-z01-baseline-does-standardize.md",
+     "title": "4. Asymmetry worth flagging: Z01 baseline DOES standardize"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-feature-norm/05-5-manuscript-discrepancy-for-the-lead-captain-owns-10papers-thes.md",
+     "title": "5. Manuscript discrepancy (for the lead; captain owns `10_Papers-Thesis/`)"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-feature-norm/06-6-verdict-is-scale-a-plausible-contributor-to-the-xa-raw-deficit.md",
+     "title": "6. Verdict: is scale a plausible contributor to the XA-Raw deficit?"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-feature-norm/07-7-cheapest-cpu-diagnostics-for-box-176-ranked-all-inference-only.md",
+     "title": "7. Cheapest CPU diagnostics for box 176 (ranked, all inference-only, no retraining)"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-feature-norm/08-8-open-questions-for-the-lead-not-blocking.md",
+     "title": "8. Open questions for the lead (not blocking)"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-feature-norm/09-9-reproduction.md",
+     "title": "9. Reproduction"
+    }
+   ]
+  },
+  {
+   "overview": "40_Manuscript_Provenance/fm-ar-figure-provenance.md",
+   "source_sha256": "b7bb192590674f13f026a219a851d126355f4809679d52e4903c494d818e7997",
+   "source_bytes": 20004,
+   "prefix_sha256": "7c784c2a4db0477bdb931fe1f7f8a2c69d07328640c4b89d4c3d62dbd27fcabe",
+   "section_files": [
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-figure-provenance/01-0-headline.md",
+     "title": "0. Headline"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-figure-provenance/02-1-figure-ledger-ordered-by-referee-risk.md",
+     "title": "1. Figure ledger, ordered by referee risk"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-figure-provenance/03-2-coverage-check-every-referenced-figure-accounted-for.md",
+     "title": "2. Coverage check — every referenced figure accounted for"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-figure-provenance/04-3-findings-figures-cross-map-the-negative-result.md",
+     "title": "3. Findings → figures cross-map (the negative result)"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-figure-provenance/05-4-what-i-ran-evidence.md",
+     "title": "4. What I ran (evidence)"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-figure-provenance/06-5-recommendations-findings-only-captain-amends.md",
+     "title": "5. Recommendations (findings only — captain amends)"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-figure-provenance/07-6-captain-hold-inventory.md",
+     "title": "6. Captain-hold inventory"
+    }
+   ]
+  },
+  {
+   "overview": "20_Capacity_Statistics/fm-ar-gpu-ladder.md",
+   "source_sha256": "17fc136d6eedfdc50fff615e66c08af8ee299a8efe6dfebf04a0518d7b9dc8d0",
+   "source_bytes": 23483,
+   "prefix_sha256": "7a899bc9596b176bf3d02089ef4dc5842adebd5a6eabbff767efbb0755947ab7",
+   "section_files": [
+    {
+     "path": "20_Capacity_Statistics/fm-ar-gpu-ladder/01-1-1-measured-cost-basis-from-run-log-training-complete-in-n-seco.md",
+     "title": "1.1 Measured cost basis (from `run.log` \"Training complete in N seconds\", all on the same AutoDL box)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-gpu-ladder/02-1-2-consolidated-de-duplicated-gpu-run-list-every-proposal-acros.md",
+     "title": "1.2 Consolidated, de-duplicated GPU run list (every proposal across the five reports)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-gpu-ladder/03-1-3-the-ladder.md",
+     "title": "1.3 The ladder"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-gpu-ladder/04-1-4-prerequisites-consolidated.md",
+     "title": "1.4 Prerequisites consolidated"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-gpu-ladder/05-1-5-cost-estimate-disagreements-flagged.md",
+     "title": "1.5 Cost-estimate disagreements (flagged)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-gpu-ladder/06-1-6-recommendation-one-paragraph.md",
+     "title": "1.6 Recommendation (one paragraph)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-gpu-ladder/07-2-1-run-inventory-re-verified-today-live-checkout.md",
+     "title": "2.1 Run inventory (re-verified today, live checkout)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-gpu-ladder/08-2-2-paired-statistics-what-is-computable.md",
+     "title": "2.2 Paired statistics — what is computable"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-gpu-ladder/09-2-3-local-cpu-inference-feasibility-no-three-independent-blocker.md",
+     "title": "2.3 Local CPU inference feasibility — NO (three independent blockers, all verified today)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-gpu-ladder/10-2-4-verdict-per-paper-claim.md",
+     "title": "2.4 Verdict per paper claim"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-gpu-ladder/11-2-5-minimum-further-runs-to-close-each-gap.md",
+     "title": "2.5 Minimum further runs to close each gap"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-gpu-ladder/12-open-questions-for-the-lead-non-blocking.md",
+     "title": "Open questions for the lead (non-blocking)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-gpu-ladder/13-reproduction.md",
+     "title": "Reproduction"
+    }
+   ]
+  },
+  {
+   "overview": "20_Capacity_Statistics/fm-ar-gpu-plan-draft.md",
+   "source_sha256": "5d654c623be69ca39b4c34bbb9991d25f43572bcacd0c28cfac150a206d8f760",
+   "source_bytes": 13195,
+   "prefix_sha256": "83da479747d17d16af8a20db764f223a9772ca2a1d735eea621c32185fcef49a",
+   "section_files": [
+    {
+     "path": "20_Capacity_Statistics/fm-ar-gpu-plan-draft/01-0-two-facts-that-changed-since-the-scout-reports-were-written-ve.md",
+     "title": "0. Two facts that changed since the scout reports were written (verified today)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-gpu-plan-draft/02-1-gpu-hour-basis-measured-not-estimated.md",
+     "title": "1. GPU-hour basis (measured, not estimated)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-gpu-plan-draft/03-2-what-the-cpu-box-closes-now-0-gpu-h-do-these-before-alongside-.md",
+     "title": "2. What the CPU box closes NOW (0 GPU-h) — do these before/alongside any GPU spend"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-gpu-plan-draft/04-3-ranked-gpu-experiment-set.md",
+     "title": "3. Ranked GPU experiment set"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-gpu-plan-draft/05-4-gap-claim-closer-map-checklist-for-the-lead.md",
+     "title": "4. Gap → claim → closer map (checklist for the lead)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-gpu-plan-draft/06-5-open-questions-for-the-lead-non-blocking.md",
+     "title": "5. Open questions for the lead (non-blocking)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-gpu-plan-draft/07-6-commands-used-reproduction.md",
+     "title": "6. Commands used (reproduction)"
+    }
+   ]
+  },
+  {
+   "overview": "10_Mechanism/fm-ar-hc-vs-raw.md",
+   "source_sha256": "48c3eb0d8256a1e82d25359c842491d3302f4323a4a5e759280a8db219eb9be0",
+   "source_bytes": 14296,
+   "prefix_sha256": "368d0d7ff74606729a1d92d80cf14737e85176c329b2daaf6e2a798016dca428",
+   "section_files": [
+    {
+     "path": "10_Mechanism/fm-ar-hc-vs-raw/01-1-what-hc-does-to-the-event-vs-raw-code-trace.md",
+     "title": "1. What HC does to the event vs Raw — code trace"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-hc-vs-raw/02-2-what-the-input-audit-measured-20doc-audits-2026-09-23raw-hc-in.md",
+     "title": "2. What the input audit measured (`20_doc/audits/2026-09-23_raw-hc-input-audit.json`, 20k events/file × 5 files, paired)"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-hc-vs-raw/03-3-candidate-mechanisms-evidence-for-against.md",
+     "title": "3. Candidate mechanisms — evidence for/against"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-hc-vs-raw/04-4-mechanism-verdict.md",
+     "title": "4. Mechanism verdict"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-hc-vs-raw/05-5-paper-ready-sentence.md",
+     "title": "5. Paper-ready sentence"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-hc-vs-raw/06-6-cheapest-discriminating-cpu-check-on-box-176.md",
+     "title": "6. Cheapest discriminating CPU check on box 176"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-hc-vs-raw/07-7-commands-evidence-index.md",
+     "title": "7. Commands / evidence index"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-hc-vs-raw/08-8-open-questions-for-the-lead-non-blocking.md",
+     "title": "8. Open questions for the lead (non-blocking)"
+    }
+   ]
+  },
+  {
+   "overview": "50_Comparisons/fm-ar-hehe-control.md",
+   "source_sha256": "b6770380e7d0ec68343470bb47944b0b51dcd674f783112aa466f470b43d910b",
+   "source_bytes": 17345,
+   "prefix_sha256": "6a6b7ede96506cfda92865ca95fdf3d365f5f7f6cfac3e1d5bd4b2845146e8c9",
+   "section_files": [
+    {
+     "path": "50_Comparisons/fm-ar-hehe-control/01-part-1-the-mislabeled-5-5-decomposition.md",
+     "title": "PART 1 — The mislabeled §5.5 decomposition"
+    },
+    {
+     "path": "50_Comparisons/fm-ar-hehe-control/02-part-2-exp3-seed-robust-evidence-from-on-disk-artifacts.md",
+     "title": "PART 2 — EXP3 seed-robust evidence from on-disk artifacts"
+    },
+    {
+     "path": "50_Comparisons/fm-ar-hehe-control/03-3-open-questions-for-the-lead-non-blocking.md",
+     "title": "3. Open questions for the lead (non-blocking)"
+    },
+    {
+     "path": "50_Comparisons/fm-ar-hehe-control/04-4-reproduction.md",
+     "title": "4. Reproduction"
+    }
+   ]
+  },
+  {
+   "overview": "30_Data_Integrity/fm-ar-label-blast.md",
+   "source_sha256": "6ce20e4e1995f91d0982e6e7d2e3bd0eb520c9c82d30796a733092ca95a30e01",
+   "source_bytes": 21061,
+   "prefix_sha256": "6f4958e53ec20d473d335d97c01c1fd6582983af7793deb5f96b913532ccb126",
+   "section_files": [
+    {
+     "path": "30_Data_Integrity/fm-ar-label-blast/01-1-1-the-core-finding-two-garfield-label-conventions-exist-in-the.md",
+     "title": "1.1 The core finding: two Garfield label conventions exist in the wild"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-label-blast/02-1-2-result-by-result-verdict-table.md",
+     "title": "1.2 Result-by-result verdict table"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-label-blast/03-1-3-new-finding-exp2-s-he-he-runs-are-vs-rest-with-carbon-in-the.md",
+     "title": "1.3 New finding: EXP2's \"³He/⁴He\" runs are α-vs-rest **with carbon in the negative class**"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-label-blast/04-1-4-the-one-unsettled-question-windows-file-label-values-at-v6-e.md",
+     "title": "1.4 The one unsettled question: Windows-file label values at V6/EXP1 run time"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-label-blast/05-1-5-manuscript-numbers-at-risk-main-tex-read-only.md",
+     "title": "1.5 Manuscript numbers at risk (`main.tex`, read-only)"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-label-blast/06-1-6-reconciliation-note-for-the-methods-audit.md",
+     "title": "1.6 Reconciliation note for the methods audit"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-label-blast/07-2-1-run-inventory-re-verified-today-matches-referee-b-1.md",
+     "title": "2.1 Run inventory (re-verified today; matches referee B.1)"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-label-blast/08-2-2-local-cpu-inference-infeasible-3-independent-blockers.md",
+     "title": "2.2 Local CPU inference: infeasible (3 independent blockers)"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-label-blast/09-2-3-seed-statistics-recomputed-independently-n-25-000-val-run.md",
+     "title": "2.3 Seed statistics (recomputed independently; n=25,000 val/run)"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-label-blast/10-2-4-new-diagnostic-this-report-per-species-errors-rn-hc-s42-n-25.md",
+     "title": "2.4 New diagnostic this report: per-species errors, RN-HC-s42 (n=25,000)"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-label-blast/11-2-5-verdict-per-paper-claim-triton-task-semantics.md",
+     "title": "2.5 Verdict per paper claim (triton-task semantics)"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-label-blast/12-2-6-minimum-further-runs-to-close-each-gap.md",
+     "title": "2.6 Minimum further runs to close each gap"
+    }
+   ]
+  },
+  {
+   "overview": "10_Mechanism/fm-ar-mechanism.md",
+   "source_sha256": "415471c8700b94c8a34380620484ee5700d1c49427ff2f7a028bbe727186df5d",
+   "source_bytes": 25124,
+   "prefix_sha256": "913c4575c6dc098ae12771c4c56c3c00e71ebbf7f6d2869f44b490529eb96ba2",
+   "section_files": [
+    {
+     "path": "10_Mechanism/fm-ar-mechanism/01-1-evidence-boundary-and-commands.md",
+     "title": "1. Evidence boundary and commands"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-mechanism/02-2-smallest-mechanism-set-that-explains-the-evidence.md",
+     "title": "2. Smallest mechanism set that explains the evidence"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-mechanism/03-3-dated-preregistration-locked-2026-09-24.md",
+     "title": "3. Dated preregistration (locked 2026-09-24)"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-mechanism/04-4-exp3-artifact-inventory-live-checkout.md",
+     "title": "4. EXP3 artifact inventory (live checkout)"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-mechanism/05-5-seed-statistics-and-paired-evidence.md",
+     "title": "5. Seed statistics and paired evidence"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-mechanism/06-6-minimum-further-work-and-cost.md",
+     "title": "6. Minimum further work and cost"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-mechanism/07-7-single-result-that-would-most-damage-this-model.md",
+     "title": "7. Single result that would most damage this model"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-mechanism/08-8-open-questions-for-firstmate-lead-not-blockers.md",
+     "title": "8. Open questions for firstmate/lead (not blockers)"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-mechanism/09-9-reproducibility-index.md",
+     "title": "9. Reproducibility index"
+    }
+   ]
+  },
+  {
+   "overview": "40_Manuscript_Provenance/fm-ar-methods-audit.md",
+   "source_sha256": "775ca3ac9635c9e6709145a148f6afbdb5a9377f14ce94a0b932df08e083cb7c",
+   "source_bytes": 31910,
+   "prefix_sha256": "4b5e377036acaac123add070a1c32dd68d4d98c79c84320840496ad107d949ae",
+   "section_files": [
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-methods-audit/01-1-claim-by-claim-table.md",
+     "title": "1. Claim-by-claim table"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-methods-audit/02-2-prioritized-mismatches-for-the-captain.md",
+     "title": "2. Prioritized mismatches for the captain"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-methods-audit/03-3-verified-clean-highlights-no-action-needed.md",
+     "title": "3. Verified-clean highlights (no action needed)"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-methods-audit/04-4-open-questions-for-the-lead-not-blocking.md",
+     "title": "4. Open questions for the lead (not blocking)"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-methods-audit/05-5-reproduction.md",
+     "title": "5. Reproduction"
+    }
+   ]
+  },
+  {
+   "overview": "10_Mechanism/fm-ar-ood-leakage.md",
+   "source_sha256": "7f997709ccd1b98c5833388c1961b8fc1a7250185653bb7da76c3af39d8d1bdb",
+   "source_bytes": 20094,
+   "prefix_sha256": "3b5bfe95517d92c605f4ec0f44f4f75f84678570850088d211801d85a521edbe",
+   "section_files": [
+    {
+     "path": "10_Mechanism/fm-ar-ood-leakage/01-1-data-used-all-read-only-under-users-reid-hu-mate-automation-ru.md",
+     "title": "1. Data used (all read-only under `/Users/Reid Hu/MATE-Automation/runs`)"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-ood-leakage/02-2-leakage-per-unseen-isotope-per-arm.md",
+     "title": "2. Leakage per unseen isotope, per arm"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-ood-leakage/03-3-confidence-and-entropy-leaked-vs-correctly-routed-same-channel.md",
+     "title": "3. Confidence and entropy: leaked vs correctly-routed (same channel)"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-ood-leakage/04-4-cross-arm-event-level-test-the-decisive-table.md",
+     "title": "4. Cross-arm event-level test (the decisive table)"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-ood-leakage/05-5-rejection-rules-auroc-per-arm.md",
+     "title": "5. Rejection rules: AUROC per arm"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-ood-leakage/06-6-mechanism-where-the-leak-is-manufactured.md",
+     "title": "6. Mechanism: where the leak is manufactured"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-ood-leakage/07-7-paper-ready-framing-paragraph.md",
+     "title": "7. Paper-ready framing paragraph"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-ood-leakage/08-8-cheapest-box-side-experiment-to-confirm-ranked.md",
+     "title": "8. Cheapest box-side experiment to confirm (ranked)"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-ood-leakage/09-9-ood-literature-to-cite.md",
+     "title": "9. OOD literature to cite"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-ood-leakage/10-10-open-questions-for-the-lead-not-blocking.md",
+     "title": "10. Open questions for the lead (not blocking)"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-ood-leakage/11-11-reproduction.md",
+     "title": "11. Reproduction"
+    }
+   ]
+  },
+  {
+   "overview": "20_Capacity_Statistics/fm-ar-referee.md",
+   "source_sha256": "5992558a93d3c811eb6cdceb661cc1c1e99dbe04ce007205367099d67f6cc750",
+   "source_bytes": 29267,
+   "prefix_sha256": "aba81d59ce45ea4f257502b66f5af9d3ac1b118f30117e1b0524757cefcf398c",
+   "section_files": [
+    {
+     "path": "20_Capacity_Statistics/fm-ar-referee/01-a1-every-headline-number-is-the-wrong-task-the-label-bug.md",
+     "title": "A1. Every headline number is the wrong task — the label bug"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-referee/02-a2-zerocls-collapse-may-be-an-ood-artifact-not-information-depen.md",
+     "title": "A2. `zero_cls` collapse may be an OOD artifact, not information dependence"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-referee/03-a3-the-permutedq-test-is-underpowered-on-raw-h3-refuted-is-reall.md",
+     "title": "A3. The `permuted_q` test is underpowered on Raw — \"H3 refuted\" is really an HC result"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-referee/04-a4-battery-statistics-n-2000-unrecorded-subset-val-set-reuse.md",
+     "title": "A4. Battery statistics: n=2000, unrecorded subset, val-set reuse"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-referee/05-a5-the-xa-raw-deficit-may-be-an-optimization-artifact-not-capaci.md",
+     "title": "A5. The XA-Raw deficit may be an optimization artifact, not capacity"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-referee/06-a6-the-deficit-concentrates-in-minority-recall-threshold-class-b.md",
+     "title": "A6. The deficit concentrates in minority recall — threshold/class-balance confound"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-referee/07-a7-capacity-confound-68-dim-head-input-vs-512-dim-gap-is-not-a-c.md",
+     "title": "A7. Capacity confound: 68-dim head input vs 512-dim GAP is not a controlled comparison"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-referee/08-a8-physics-features-are-unnormalized-and-the-manuscript-says-the.md",
+     "title": "A8. Physics features are unnormalized — and the manuscript says they are standardized"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-referee/09-a9-no-traditional-baseline-on-the-classification-task-doctrine-v.md",
+     "title": "A9. No traditional baseline on the classification task — doctrine violation"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-referee/10-a10-attention-mechanism-claims-rest-on-single-seed-ad-hoc-unrepr.md",
+     "title": "A10. Attention-mechanism claims rest on single-seed, ad-hoc, unreproduced evals"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-referee/11-a11-the-s0-anomaly-interpretation-is-fragile-and-the-closing-doc.md",
+     "title": "A11. The s0-anomaly interpretation is fragile — and the closing doc's \"does not replicate\" is wrong"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-referee/12-a12-no-held-out-test-set-val-doubles-as-model-selection-and-repo.md",
+     "title": "A12. No held-out test set — val doubles as model-selection and reporting set"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-referee/13-b-1-run-inventory-re-verified-2026-09-24-live-checkout.md",
+     "title": "B.1 Run inventory (re-verified 2026-09-24, live checkout)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-referee/14-b-2-local-cpu-inference-feasibility-no-three-independent-blocker.md",
+     "title": "B.2 Local CPU inference feasibility — NO (three independent blockers)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-referee/15-b-3-seed-statistics-triton-task-n-25-000-val-run-recomputed.md",
+     "title": "B.3 Seed statistics — triton task, n=25,000 val/run (recomputed)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-referee/16-b-4-paired-comparisons-same-seed-n-25-000.md",
+     "title": "B.4 Paired comparisons (same-seed, n=25,000)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-referee/17-b-5-verdict-per-paper-claim.md",
+     "title": "B.5 Verdict per paper claim"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-referee/18-b-6-what-changed-since-the-earlier-scouts-verified-today.md",
+     "title": "B.6 What changed since the earlier scouts (verified today)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-referee/19-b-7-minimum-further-runs-to-close-each-gap.md",
+     "title": "B.7 Minimum further runs to close each gap"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-referee/20-b-8-commands-used-reproduction.md",
+     "title": "B.8 Commands used (reproduction)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-referee/21-b-9-open-questions-for-the-lead-non-blocking.md",
+     "title": "B.9 Open questions for the lead (non-blocking)"
+    }
+   ]
+  },
+  {
+   "overview": "40_Manuscript_Provenance/fm-ar-related-work.md",
+   "source_sha256": "95b668af1c4c53942b887f1fbe3f408cfb8f4318dab0234a8bc413763e536695",
+   "source_bytes": 25586,
+   "prefix_sha256": "6354d3ffe3884ce67af0541be4051a69824c7203ad4ba2e34db4e325eac4568d",
+   "section_files": [
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-related-work/01-0-headline.md",
+     "title": "0. Headline"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-related-work/02-1-claim-by-claim-verdicts-novelty-related-work-framing.md",
+     "title": "1. Claim-by-claim verdicts (novelty & related-work framing)"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-related-work/03-2-bib-integrity-fabricated-and-broken-entries-highest-referee-ri.md",
+     "title": "2. Bib integrity — fabricated and broken entries (highest referee risk)"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-related-work/04-3-missing-citations-a-referee-would-expect.md",
+     "title": "3. Missing citations a referee would expect"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-related-work/05-4-prior-papers-reporting-the-same-negative-mechanisms-reframing-.md",
+     "title": "4. Prior papers reporting the same negative mechanisms (reframing ammunition)"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-related-work/06-5-suggested-framing-sentences-at-most-the-captain-writes-the-ame.md",
+     "title": "5. Suggested framing sentences (at most — the captain writes the amendment)"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-related-work/07-6-what-i-did-and-verified.md",
+     "title": "6. What I did and verified"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-related-work/08-7-captain-hold-inventory.md",
+     "title": "7. Captain-hold inventory"
+    }
+   ]
+  },
+  {
+   "overview": "30_Data_Integrity/fm-ar-results-audit.md",
+   "source_sha256": "c7945a0b9f87302a23d1acb2ba2973334d5f3b1396ada99ed3501fa4d9003523",
+   "source_bytes": 23126,
+   "prefix_sha256": "c526eb6acd05411ea9a0118967a4ce4a03bc786ffda88bf3c11bac1dab2d2dbd",
+   "section_files": [
+    {
+     "path": "30_Data_Integrity/fm-ar-results-audit/01-1-closing-doc-20doc-exp3closinganalysis2026-09-24-md.md",
+     "title": "1. Closing doc `20_doc/EXP3_closing_analysis_2026-09-24.md`"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-results-audit/02-2-recording-doc-20doc-experiment-recordings-2026-09-23exp3-xa-ra.md",
+     "title": "2. Recording doc `20_doc/Experiment Recordings/2026-09-23_exp3-xa-raw-cell.md`"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-results-audit/03-3-20doc-paper-paperanchor-md-read-only.md",
+     "title": "3. `20_doc/paper/paper_anchor.md` (read-only)"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-results-audit/04-4-cross-cutting-flags.md",
+     "title": "4. Cross-cutting flags"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-results-audit/05-5-prioritized-corrections-for-the-lead.md",
+     "title": "5. Prioritized corrections for the lead"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-results-audit/06-6-open-questions-need-lead-box-access.md",
+     "title": "6. Open questions (need lead/box access)"
+    },
+    {
+     "path": "30_Data_Integrity/fm-ar-results-audit/07-appendix-commands-used.md",
+     "title": "Appendix — commands used"
+    }
+   ]
+  },
+  {
+   "overview": "20_Capacity_Statistics/fm-ar-seed-evidence.md",
+   "source_sha256": "c4aec64678a3a065b012f81326b3023894771df8be2a24d39e4fce1119053488",
+   "source_bytes": 15115,
+   "prefix_sha256": "a761a2fb26290ad807e1204f8f5184346ccd50b450ee87f1710cbefa7486d76c",
+   "section_files": [
+    {
+     "path": "20_Capacity_Statistics/fm-ar-seed-evidence/01-1-run-inventory-users-reid-hu-mate-automation-runs-exp3.md",
+     "title": "1. Run inventory (`/Users/Reid Hu/MATE-Automation/runs/EXP3-*`)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-seed-evidence/02-2-feasibility-of-local-cpu-inference-no.md",
+     "title": "2. Feasibility of local CPU inference — NO"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-seed-evidence/03-3-seed-statistics-triton-task-n-25-000-val-per-run.md",
+     "title": "3. Seed statistics — triton task, n=25,000 val per run"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-seed-evidence/04-4-verdict-per-paper-claim.md",
+     "title": "4. Verdict per paper claim"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-seed-evidence/05-5-the-seed-variance-trap-for-the-writeup.md",
+     "title": "5. The seed-variance trap (for the writeup)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-seed-evidence/06-6-minimum-runs-to-close-each-gap.md",
+     "title": "6. Minimum runs to close each gap"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-seed-evidence/07-7-commands-used-reproduction.md",
+     "title": "7. Commands used (reproduction)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-seed-evidence/08-8-open-questions-for-the-lead-not-blocking.md",
+     "title": "8. Open questions for the lead (not blocking)"
+    }
+   ]
+  },
+  {
+   "overview": "20_Capacity_Statistics/fm-ar-test-split.md",
+   "source_sha256": "ea4b55ea47b6ea426dcce4b737ac7238e050871531627bf554aec6bd6ced157d",
+   "source_bytes": 22251,
+   "prefix_sha256": "397c7d1c50672c378f5d55aa3223826cb3cfdbe5846a08860d2ffbe274074541",
+   "section_files": [
+    {
+     "path": "20_Capacity_Statistics/fm-ar-test-split/01-headline.md",
+     "title": "Headline"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-test-split/02-1-r1-confirm-refute-held-out-splits-across-the-campaign.md",
+     "title": "1. R1 confirm/refute — held-out splits across the campaign"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-test-split/03-2-selection-bias-magnitude-pr-9-tooling-neighbor-epoch-analysis.md",
+     "title": "2. Selection-bias magnitude (PR#9 tooling + neighbor-epoch analysis)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-test-split/04-3-rung-1-options-cost-pairing-effect-mechanism.md",
+     "title": "3. Rung-1 options — cost, pairing effect, mechanism"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-test-split/05-4-recommendation.md",
+     "title": "4. Recommendation"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-test-split/06-5-manuscript-doc-findings-file-line-suggested-wording-no-edits-m.md",
+     "title": "5. Manuscript / doc findings (file:line, suggested wording — no edits made)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-test-split/07-6-what-i-ran-evidence.md",
+     "title": "6. What I ran (evidence)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-test-split/08-captain-hold-inventory.md",
+     "title": "Captain-hold inventory"
+    }
+   ]
+  },
+  {
+   "overview": "50_Comparisons/fm-ar-transfer.md",
+   "source_sha256": "6e861b6db1539eae031c05bf051d4c7127caaca48dcadc36055c030300e09e54",
+   "source_bytes": 15735,
+   "prefix_sha256": "a5213ea4a8ece559e46d540f7b824303e2476aeff271d70c7e259970169e01c8",
+   "section_files": [
+    {
+     "path": "50_Comparisons/fm-ar-transfer/01-verdict.md",
+     "title": "Verdict"
+    },
+    {
+     "path": "50_Comparisons/fm-ar-transfer/02-1-literature-inventory-what-exists-with-public-data-code.md",
+     "title": "1. Literature inventory: what exists with public data/code"
+    },
+    {
+     "path": "50_Comparisons/fm-ar-transfer/03-2-what-each-direction-requires.md",
+     "title": "2. What each direction requires"
+    },
+    {
+     "path": "50_Comparisons/fm-ar-transfer/04-3-local-cpu-work-performed-deliverable-numbers.md",
+     "title": "3. Local CPU work performed (deliverable numbers)"
+    },
+    {
+     "path": "50_Comparisons/fm-ar-transfer/05-4-ranked-plan.md",
+     "title": "4. Ranked plan"
+    },
+    {
+     "path": "50_Comparisons/fm-ar-transfer/06-5-fairness-caveats-consolidated.md",
+     "title": "5. Fairness caveats (consolidated)"
+    },
+    {
+     "path": "50_Comparisons/fm-ar-transfer/07-6-open-questions-for-the-lead.md",
+     "title": "6. Open questions for the lead"
+    },
+    {
+     "path": "50_Comparisons/fm-ar-transfer/08-7-evidence-index.md",
+     "title": "7. Evidence index"
+    },
+    {
+     "path": "50_Comparisons/fm-ar-transfer/09-8-captain-facing-inventory.md",
+     "title": "8. Captain-facing inventory"
+    }
+   ]
+  },
+  {
+   "overview": "60_Tooling/fm-ar-docs-refine.md",
+   "source_sha256": "3769fe9d3305423540f4d6e987c18f83dd9f9d77d9b5e96b982929ea4a87efbe",
+   "source_bytes": 10996,
+   "prefix_sha256": "d4a9a9f4c264de080910ab576002d1a16706d50d5e509765b57aeb081ab980f5",
+   "section_files": [
+    {
+     "path": "60_Tooling/fm-ar-docs-refine/01-1-executive-summary.md",
+     "title": "1. Executive Summary"
+    },
+    {
+     "path": "60_Tooling/fm-ar-docs-refine/02-2-scope-and-boundaries.md",
+     "title": "2. Scope and Boundaries"
+    },
+    {
+     "path": "60_Tooling/fm-ar-docs-refine/03-3-review-chronology-and-collaboration.md",
+     "title": "3. Review Chronology and Collaboration"
+    },
+    {
+     "path": "60_Tooling/fm-ar-docs-refine/04-4-summary-of-suggestions-and-dispositions.md",
+     "title": "4. Summary of Suggestions and Dispositions"
+    },
+    {
+     "path": "60_Tooling/fm-ar-docs-refine/05-5-verification-evidence.md",
+     "title": "5. Verification Evidence"
+    },
+    {
+     "path": "60_Tooling/fm-ar-docs-refine/06-6-captain-hold-lifecycle-gate.md",
+     "title": "6. Captain-Hold Lifecycle Gate"
+    },
+    {
+     "path": "60_Tooling/fm-ar-docs-refine/07-7-conclusion-and-recommendation.md",
+     "title": "7. Conclusion and Recommendation"
+    }
+   ]
+  },
+  {
+   "overview": "10_Mechanism/fm-ar-maxh-confound.md",
+   "source_sha256": "9b6c44af93971a505a1d1f3a4cadbfaa84ab02777970c448cd7f2bd7c659fb94",
+   "source_bytes": 14782,
+   "prefix_sha256": "4c9e25db8c5ed4520b696866b126b1fd111c6a0ef1346c1df1f399f19ced1bb0",
+   "section_files": [
+    {
+     "path": "10_Mechanism/fm-ar-maxh-confound/01-1-what-the-caches-contain-and-whether-rows-join-to-events.md",
+     "title": "1. What the caches contain, and whether rows join to events"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-maxh-confound/02-2-local-observables-what-could-and-could-not-be-computed.md",
+     "title": "2. Local observables — what could and could not be computed"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-maxh-confound/03-3-does-the-0-90-claim-survive.md",
+     "title": "3. Does the 0.90 claim survive?"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-maxh-confound/04-4-manuscript-implication-finding-only-captain-edits.md",
+     "title": "4. Manuscript implication (finding only — captain edits)"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-maxh-confound/05-5-cheapest-decisive-check-on-the-gpu-box-exact-command.md",
+     "title": "5. Cheapest decisive check on the GPU box (exact command)"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-maxh-confound/06-6-commands-run-local.md",
+     "title": "6. Commands run (local)"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-maxh-confound/07-7-limitations.md",
+     "title": "7. Limitations"
+    }
+   ]
+  },
+  {
+   "overview": "20_Capacity_Statistics/fm-ar-d14-bign.md",
+   "source_sha256": "d252d2ac26d01337e76c4aaaca87c4bdfb161c807c43bee3ec6720243fef6ea6",
+   "source_bytes": 21151,
+   "prefix_sha256": "6996886632a1ec15e27024895cef4a84c2a60f2ad3d4031f4e106780497ff631",
+   "section_files": [
+    {
+     "path": "20_Capacity_Statistics/fm-ar-d14-bign/01-0-verdict-up-front.md",
+     "title": "0. Verdict up front"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-d14-bign/02-1-what-exists-where-evidence.md",
+     "title": "1. What exists where (evidence)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-d14-bign/03-2-exact-command-for-a-cpu-capable-box-box-176-or-autodl.md",
+     "title": "2. Exact command for a CPU-capable box (box 176 or AutoDL)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-d14-bign/04-3-proposed-patch-verified-locally-do-not-commit-from-this-sc.md",
+     "title": "3. Proposed patch (verified locally — do not commit from this scout)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-d14-bign/05-4-analytic-answer-to-the-verdict-question-n-8000-k-5-cv.md",
+     "title": "4. Analytic answer to the verdict question (n=8000, k=5 CV)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-d14-bign/06-5-doc-manuscript-implications-findings-only-no-edits-made.md",
+     "title": "5. Doc/manuscript implications (findings only — no edits made)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-d14-bign/07-6-what-i-did.md",
+     "title": "6. What I did"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-d14-bign/08-7-captain-hold-inventory.md",
+     "title": "7. Captain-hold inventory"
+    }
+   ]
+  },
+  {
+   "overview": "20_Capacity_Statistics/fm-ar-nimpsim-cost.md",
+   "source_sha256": "f27735a8d6d2dd11626ae174bea3c0ed09a67d7ee516f845e3991c69a503dff3",
+   "source_bytes": 11903,
+   "prefix_sha256": "0804dca6a49d019dad7ecf4fa3339df10ea8c5f61149143419d763b5ad28ccac",
+   "section_files": [
+    {
+     "path": "20_Capacity_Statistics/fm-ar-nimpsim-cost/01-1-provenance-of-the-two-estimates.md",
+     "title": "1. Provenance of the two estimates"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-nimpsim-cost/02-2-evidence-derived-cost.md",
+     "title": "2. Evidence-derived cost"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-nimpsim-cost/03-3-does-it-fit-no-cheapest-ways-to-make-it-fit.md",
+     "title": "3. Does it fit? No — cheapest ways to make it fit"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-nimpsim-cost/04-4-files-to-stage.md",
+     "title": "4. Files to stage"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-nimpsim-cost/05-5-commands-run.md",
+     "title": "5. Commands run"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-nimpsim-cost/06-6-caveats.md",
+     "title": "6. Caveats"
+    }
+   ]
+  },
+  {
+   "overview": "40_Manuscript_Provenance/fm-ar-bib-fixsheet.md",
+   "source_sha256": "34c381049328350f1ecad00a7bf6f521619c9e664f40259382676301ef0036c0",
+   "source_bytes": 14900,
+   "prefix_sha256": "25dda5537f5835cec7ce27e007d648e1914277c62ef6bdc9fe8b27734ab9447e",
+   "section_files": [
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-bib-fixsheet/01-1-cited-fabricated-unverifiable-entries-replacements.md",
+     "title": "1. Cited fabricated / unverifiable entries — replacements"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-bib-fixsheet/02-2-wrong-doi-wrong-title-missing-doi-stale-entries-corrected.md",
+     "title": "2. Wrong-DOI / wrong-title / missing-DOI / stale entries — corrected BibTeX"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-bib-fixsheet/03-3-uncited-dead-entries-delete-list.md",
+     "title": "3. Uncited dead entries — delete list"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-bib-fixsheet/04-4-identifier-additions-needed-for-verify-bib-py-to-pass.md",
+     "title": "4. Identifier additions needed for `verify_bib.py` to pass"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-bib-fixsheet/05-5-summary-of-all-main-tex-citation-edits.md",
+     "title": "5. Summary of all `main.tex` citation edits"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-bib-fixsheet/06-6-verify-bib-py-result-on-the-fully-patched-copy.md",
+     "title": "6. `verify_bib.py` result on the fully patched copy"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-bib-fixsheet/07-7-what-i-did.md",
+     "title": "7. What I did"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-bib-fixsheet/08-8-captain-hold-inventory.md",
+     "title": "8. Captain-hold inventory"
+    }
+   ]
+  }
+ ]
 }

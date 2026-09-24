@@ -89,3 +89,32 @@ Science state lives in the vault (`/Users/Reid Hu/OrbitOS/20_Project/Auto_Resear
 - 2026-09-24 21:50: d14-bign report: D1-D4 at n=8000 cannot run on the Mac (no torch; both EXP3 best_model.pth files and the Garfield_Raw H5 files exist only on the GPU box). The report has the exact box command, a verified k-fold/hypergeometric/peak-RSS patch, and an analytic MDE of ≈1pp at n=8000. Stride-3 at n=8000 is not a superset of the n=500 events; --max-events 12500 is. Routed to lead (queued). Promoted in place to commit the patch plus a runbook. Running: lead, maxh-confound (ship), d14-bign (ship).
 - 2026-09-24 22:00: merged MATE #32 (exp3_h1_diagnostics.py: --cv-folds stratified k-fold with out-of-fold paired stats, Wilson *_ci95 per probe, D4 hypergeom_p_ge_both, --report-peak-rss; runbook 20_doc/workflows/exp3_h1_diagnostics_bign_runbook.md; default --cv-folds 0 is backward compatible; 17 tests). main b128f26. Dispatched fm-ar-gpu-queue (SWE-2 high, docs only: one ordered GPU-session queue with GPU-h totals against the 24 GPU-h cap). Running: lead, maxh-confound (ship), gpu-queue.
 - 2026-09-24 22:10: merged MATE #33 scripts/analysis/exp8_maxh_observable_join.py (torch-free GPU-box join of cached max|h| to per-event observables sum_q/n_hit/extents/max_pix/physics features; per-observable AUROC, Spearman, residual max|h| AUROC after OLS; proxy/learned/inconclusive verdict from named thresholds; exits 2 when data/exp8 is absent; runbook 20_doc/workflows/exp8_maxh_observable_join.md; 10 tests). main b2632d9. Routed #32/#33 to lead (queued). Dispatched fm-ar-docs-file4 (SWE-2 medium: file log entries 21:25 onward plus the maxh-confound and d14-bign reports into docs). Running: lead, gpu-queue, docs-file4.
+- 2026-09-24 22:30: merged MATE #34 20_doc/workflows/gpu_session_queue.md, one ordered queue for a 24 GPU-h session. Jobs 1-3 run CPU-only at 0 GPU-h: the D1-D4 n≈8000 re-run, the EXP8 cache refresh, then the max|h| observable join. Job 4 is Rung 1 R1+R2a+R2b at 14.5 billed GPU-h through the ledger. Job 5 is one reserve with the remaining ~9.5 h: R3a ~7.1, R3b ~6.5, or NimpSim Option B at 4-6 h per its README but 12-18 h per the prereg (unverified; NimpSim H5 not staged on any box, likely needs a transfer from IMP; billed by hand). Total 21.6 ≤ 24 with R3a. Cross-linked from the runbooks. Merged OrbitOS #7 (filed log entries 21:25-22:10 plus the maxh-confound and d14-bign reports, split into sections; check_docs OK on 272 files; vault fast-forwarded with no overlap). Both were cleaned up before merging (a zsh word-splitting slip), and the captain approved a direct head-pinned merge. MATE main 0ae4798. Dispatched fm-ar-bib-fixsheet (SWE-2 high scout: live-verified replacement BibTeX and suggested wording for the fabricated, unverifiable and wrong-DOI entries; findings only) and fm-ar-nimpsim-cost (SWE-2 high scout: settle the NimpSim Option B cost of 4-6 vs 12-18 GPU-h from recorded run evidence, and list the H5 files to stage). Running: lead, bib-fixsheet, nimpsim-cost.
+- 2026-09-24 22:45: nimpsim-cost report: NimpSim Option B (V4HeHe_RNMod_NimpSim_160k_seed42) needs ~20-35 GPU-h, with a range of 10-50. It does NOT fit the ~9.5 h reserve.
+  - Neither earlier estimate has a derivation: README 4-6 h (#13), and prereg 12-18 h (#15, transcribed verbatim, self-flagged unverified).
+  - Basis: bs 32 / FP32 / legacy_v4 aug / 160k train gives 5,000 train steps/epoch vs EXP3's 782. The published 96.1% run's best epoch was 78. Anchors on the 3080 Ti box: XA-Raw ~895 s/epoch, RN-Raw ~500 s/epoch (implied).
+  - The largest swing is the unverified NimpSim H5 compression.
+  - Cheapest fits: workers 8 + per_file_limit 50000 (~8-12 h, off headline scale), or bs 128 + AMP (breaks the protocol match).
+  - Files to stage: NimpSim/{3He,4He}_100k.h5, ~3.07 GB each uncompressed, from IMP.
+  - Routed to lead (queued). The reserve choice is filed as a captain call (fm-ar-gpu-reserve-choice); R3a is recommended.
+  - Dispatched fm-ar-nimpsim-costfix (SWE-2 medium, direct-PR ship, docs only: correct the Option B cost in 20_doc/nimpsim_reserve/README.md and gpu_session_queue.md; the locked prereg stays untouched).
+  - Running: lead, bib-fixsheet, nimpsim-costfix.
+- 2026-09-24 22:55: merged MATE #35 (https://github.com/Edfghdrtxxx/MATE-Automation-V4/pull/35). Docs only:
+  - 20_doc/nimpsim_reserve/README.md now gives the Option B cost as ~20-35 GPU-h (range 10-50), with a derivation from file:line anchors, the cheapest fitting variants, and a recommendation not to launch it this session.
+  - The 5a row in gpu_session_queue.md now says it does not fit; fall back to 5b (R3a) and schedule Option B first in a future ~35 h session.
+  - The locked prereg is untouched. MATE main is at 7ee09e0.
+  - Dispatched fm-ar-docs-file5 (SWE-2 medium: file log entries from 22:30 onward plus the nimpsim-cost report into docs).
+  - Running: lead, bib-fixsheet, docs-file5.
+- 2026-09-24 23:05: bib-fixsheet report (data/fm-ar-bib-fixsheet/report.md plus a paste-ready fixes.bib). Every replacement ID was verified live against Crossref and arXiv.
+  - main.tex edits for the author to apply:
+    - L190: He2020ResNetSmall -> \cite{ResNet,He2016Identity}, reworded to "small-image ResNet configuration".
+    - L211: Li2023CrossAttention -> \cite{Attention,Perez2018FiLM}.
+    - L313: Koch2021 -> NaturePhysicsReview + Jain2019Attention, with an attention-is-not-mechanism caveat.
+    - L248: Jadon2020Loss -> Szegedy2016LabelSmoothing.
+    - L526: Adam -> AdamW.
+    - L475: add Arokiaraj2025GMM in §6.5.
+  - Bib changes:
+    - Corrected 12 entries, including three the audit missed: the Bradt2021 first author is Solli, the Bradt2017 title was wrong, and Guo2026 now has final vol/pages 1088:171506.
+    - Deleted 11 entries and added 5 (45 -> 39 entries).
+  - verify_bib.py on the patched copy gives 41/42 ok. The only flag is DBSCAN, for which no DOI exists.
+  - Routed to lead (queued). No captain call; the author amends the manuscript personally. docs-file5 steered to also file this report.
