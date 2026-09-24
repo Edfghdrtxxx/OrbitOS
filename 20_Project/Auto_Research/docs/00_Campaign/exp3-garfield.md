@@ -150,3 +150,20 @@ Science state lives in the vault (`/Users/Reid Hu/OrbitOS/20_Project/Auto_Resear
   - Routed to lead (queued). No captain call.
   - Dispatched fm-ar-docs-file6 (SWE-2 medium: file log entries from 23:20 onward plus the claims-refresh report into docs).
   - Running: lead, cpu-agenda, docs-file6.
+- 2026-09-24 23:55: merged OrbitOS #9 (https://github.com/Edfghdrtxxx/OrbitOS/pull/9).
+  - Filed log entries 23:20-23:45 and the claims-refresh report into docs.
+  - Vault fast-forwarded to 3be348f, no overlap.
+  - Dispatched fm-ar-bib-additions (SWE-2 high scout: verified add-on BibTeX and citation points for the §6.5 L475 methods refs, L76/L53/L67 related work, L387 transfer, and the failure-mode precedents; verify_bib on the fully patched copy).
+  - Running: lead, cpu-agenda, bib-additions.
+- 2026-09-25 00:15: bib-additions report (data/fm-ar-bib-additions/report.md plus a paste-ready additions.bib). 12 new entries, each verified live against Crossref or arXiv, with no key collisions.
+  - L475: FischlerBolles1981, DudaHart1972, Dalitz2019 (CPC 235:159), Tarasov2008LISE, Hubert1990.
+  - L76: Fortino2022, Li2025PointCloud.
+  - L387: Wheeler2026Transfer.
+  - L381: HesselLee2020.
+  - L332: Geirhos2020Shortcut, plus Darcet2024Registers and Sun2021ReAct as conditional future-work cites.
+  - The L53/L67 novelty sentence needs narrowing; no citation fixes it as written.
+  - verify_bib on the merged bib (fix sheet + additions + DBSCAN exemption): exit 0, with 53 ok, 1 exempt and 0 uncited.
+  - Correction to the fix sheet: references.bib has 48 entries, not 45. The post-merge count is 54.
+  - Routed to lead (queued). No captain call.
+  - Dispatched fm-ar-docs-file7 (SWE-2 medium: file log entries from 23:55 onward plus the bib-additions report into docs).
+  - Running: lead, cpu-agenda, docs-file7.
