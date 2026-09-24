@@ -1293,43 +1293,170 @@
      "title": "6. Captain-hold inventory"
     }
    ]
+  },
+  {
+   "overview": "20_Capacity_Statistics/fm-ar-cpu-agenda.md",
+   "source_sha256": "99a02e702ec83b24d6190f37ee777217873cb0411a49e7742b0340a8b7bf446c",
+   "source_bytes": 23279,
+   "prefix_sha256": "1be8660df4b7b199ae828c1a0a2fbe3f3c42276737c37fe9e7223c6be7b04088",
+   "section_files": [
+    {
+     "path": "20_Capacity_Statistics/fm-ar-cpu-agenda/01-1-what-this-mac-can-run-verified-not-assumed.md",
+     "title": "1. What this Mac can run — verified, not assumed"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-cpu-agenda/02-2-open-questions-classified.md",
+     "title": "2. Open questions, classified"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-cpu-agenda/03-3-ranked-cpu-only-now-agenda-top-5.md",
+     "title": "3. Ranked CPU-only-now agenda (top 5)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-cpu-agenda/04-4-weaker-but-honest-cpu-substitutes-flagged.md",
+     "title": "4. Weaker-but-honest CPU substitutes — flagged"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-cpu-agenda/05-5-what-i-ran-and-verified-myself.md",
+     "title": "5. What I ran and verified myself"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-cpu-agenda/06-6-recommendation.md",
+     "title": "6. Recommendation"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-cpu-agenda/07-7-captain-hold-inventory.md",
+     "title": "7. Captain-hold inventory"
+    }
+   ]
+  },
+  {
+   "overview": "40_Manuscript_Provenance/fm-ar-amend-package.md",
+   "prefix_sha256": "20f8a93592e3e86165f50e5a1010f9964dd6c4a93a65befeff6fa1beeb2b9573",
+   "section_files": [
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-amend-package/01-0-one-screen-summary.md",
+     "title": "0. One-screen summary"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-amend-package/02-1-amendment-list-ordered-by-main-tex-line-number.md",
+     "title": "1. Amendment list — ordered by `main.tex` line number"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-amend-package/03-2-where-the-reports-disagree-reconciled.md",
+     "title": "2. Where the reports disagree — reconciled"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-amend-package/04-3-bibliography-ordered-checklist.md",
+     "title": "3. Bibliography — ordered checklist"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-amend-package/05-4-open-claims-hedge-don-t-fix-pending-named-checks.md",
+     "title": "4. Open claims — hedge, don't fix (pending named checks)"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-amend-package/06-5-what-i-did.md",
+     "title": "5. What I did"
+    },
+    {
+     "path": "40_Manuscript_Provenance/fm-ar-amend-package/07-6-captain-hold-inventory.md",
+     "title": "6. Captain-hold inventory"
+    }
+   ],
+   "source_bytes": 42788,
+   "source_sha256": "65729b3a29547d50e8eeb5b2b52a592fe14f6bc3a18914af1b83c20941a86cef"
+  },
+  {
+   "overview": "10_Mechanism/fm-ar-prereg-scorecard.md",
+   "prefix_sha256": "6f17117da1677257664aebe3d94f5f384df8bd68e701a09318c4fa3cbb06622d",
+   "section_files": [
+    {
+     "path": "10_Mechanism/fm-ar-prereg-scorecard/01-0-headline.md",
+     "title": "0. Headline"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-prereg-scorecard/02-1-commands-run-verbatim-and-artifacts.md",
+     "title": "1. Commands run (verbatim) and artifacts"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-prereg-scorecard/03-2-row-by-row-scorecard.md",
+     "title": "2. Row-by-row scorecard"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-prereg-scorecard/04-3-disagreements-with-the-claims-refresh-hand-reads.md",
+     "title": "3. Disagreements with the claims-refresh hand-reads"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-prereg-scorecard/05-4-a5-selection-premium-table-all-12-exp3-runs-verified.md",
+     "title": "4. A5 — selection-premium table, all 12 EXP3 runs (verified)"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-prereg-scorecard/06-5-manuscript-lines-each-result-bears-on.md",
+     "title": "5. Manuscript lines each result bears on"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-prereg-scorecard/07-6-scorer-assessment-bugs-limitations-worth-shipping.md",
+     "title": "6. Scorer assessment — bugs, limitations, worth shipping?"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-prereg-scorecard/08-7-what-i-did.md",
+     "title": "7. What I did"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-prereg-scorecard/09-8-recommendations.md",
+     "title": "8. Recommendations"
+    },
+    {
+     "path": "10_Mechanism/fm-ar-prereg-scorecard/10-9-captain-hold-inventory.md",
+     "title": "9. Captain-hold inventory"
+    }
+   ],
+   "source_bytes": 27427,
+   "source_sha256": "42d4160d6cd9762a019c0ef4c4a69028543984c8311ad83090d3fcaf381a8199"
+  },
+  {
+   "overview": "20_Capacity_Statistics/fm-ar-paired-writeup.md",
+   "prefix_sha256": "1d568873d9923dd83086122574a6a4251ac51f8dd5917b41bd0d81cd47a3bc92",
+   "section_files": [
+    {
+     "path": "20_Capacity_Statistics/fm-ar-paired-writeup/01-0-headline-correction-to-the-brief-s-premise.md",
+     "title": "0. Headline correction to the brief's premise"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-paired-writeup/02-1-method.md",
+     "title": "1. Method"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-paired-writeup/03-2-alignment-verification-done-before-any-statistic.md",
+     "title": "2. Alignment verification (done before any statistic)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-paired-writeup/04-3-exp8-certified-pair-auditfix-d570d34-01-seed-42.md",
+     "title": "3. EXP8 (certified pair, `auditfix_d570d34_01`, seed 42)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-paired-writeup/05-4-trk5-cnn-resnet-vs-trk6-cnn-xa-event-level-equal.md",
+     "title": "4. TRK5 (cnn_resnet) vs TRK6 (cnn_xa) — event-level equal-weight estimator"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-paired-writeup/06-5-cnn-vs-classical-baselines-shared-events.md",
+     "title": "5. CNN vs classical baselines (shared events)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-paired-writeup/07-6-manuscript-mapping-verbatim-quotes-suggested-sketches.md",
+     "title": "6. Manuscript mapping (verbatim quotes + suggested sketches)"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-paired-writeup/08-7-ship-recommendation.md",
+     "title": "7. Ship recommendation"
+    },
+    {
+     "path": "20_Capacity_Statistics/fm-ar-paired-writeup/09-8-reproduction-script-verbatim.md",
+     "title": "8. Reproduction script (verbatim)"
+    }
+   ],
+   "source_bytes": 41235,
+   "source_sha256": "ae5dcb3f1b9d5da4146138b833d0eee138d4ed2d886b5ea441bfcef41f007888"
   }
-,
- {
-  "overview": "20_Capacity_Statistics/fm-ar-cpu-agenda.md",
-  "source_sha256": "99a02e702ec83b24d6190f37ee777217873cb0411a49e7742b0340a8b7bf446c",
-  "source_bytes": 23279,
-  "prefix_sha256": "1be8660df4b7b199ae828c1a0a2fbe3f3c42276737c37fe9e7223c6be7b04088",
-  "section_files": [
-   {
-    "path": "20_Capacity_Statistics/fm-ar-cpu-agenda/01-1-what-this-mac-can-run-verified-not-assumed.md",
-    "title": "1. What this Mac can run — verified, not assumed"
-   },
-   {
-    "path": "20_Capacity_Statistics/fm-ar-cpu-agenda/02-2-open-questions-classified.md",
-    "title": "2. Open questions, classified"
-   },
-   {
-    "path": "20_Capacity_Statistics/fm-ar-cpu-agenda/03-3-ranked-cpu-only-now-agenda-top-5.md",
-    "title": "3. Ranked CPU-only-now agenda (top 5)"
-   },
-   {
-    "path": "20_Capacity_Statistics/fm-ar-cpu-agenda/04-4-weaker-but-honest-cpu-substitutes-flagged.md",
-    "title": "4. Weaker-but-honest CPU substitutes — flagged"
-   },
-   {
-    "path": "20_Capacity_Statistics/fm-ar-cpu-agenda/05-5-what-i-ran-and-verified-myself.md",
-    "title": "5. What I ran and verified myself"
-   },
-   {
-    "path": "20_Capacity_Statistics/fm-ar-cpu-agenda/06-6-recommendation.md",
-    "title": "6. Recommendation"
-   },
-   {
-    "path": "20_Capacity_Statistics/fm-ar-cpu-agenda/07-7-captain-hold-inventory.md",
-    "title": "7. Captain-hold inventory"
-   }
-  ]
- }
  ]
 }
