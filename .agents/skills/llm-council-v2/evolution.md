@@ -6,3 +6,4 @@
 
 ### User Preferences
 - Subagents must survey primary sources in the first place; chairman compression is not a substitute.
+- Chairman must carry the same members over the whole session. Carefully discussiong on crucial decisions with those partners is mandatory.

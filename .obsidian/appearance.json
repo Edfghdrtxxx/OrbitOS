@@ -10,6 +10,7 @@
   "interfaceFontFamily": "Source Han Serif SC",
   "enabledCssSnippets": [
     "task-strikethrough",
-    "task-numbered-inline"
+    "task-numbered-inline",
+    "task-star-taiji"
   ]
 }

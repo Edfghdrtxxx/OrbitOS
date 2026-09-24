@@ -1,7 +1,7 @@
 ---
 type: learning-index
 purpose: Terse cross-agent index of what the learner has solidly learned. Agents running /learn MUST read this first.
-updated: 2026-09-22
+updated: 2026-09-23
 ---
 # Learning Progress — Context Index
 
@@ -211,6 +211,7 @@ Only threads with unfinished core work (verified against session notes).
 - **E&M: AC maximum power transfer:** [active] Turn 9 — back-emf $\implies$ harder push locked; asking whether cancelling leftover $L$ with load $C$ raises $|I|$ $\to$ [[2026-09-21-0933 AC maximum power transfer]].
 - **E&M: magnetic energy of a square-cross-section toroid:** [active] Turn 2 — GRE clock ≠ slog or memorize; still locating cylindrical $s$ $\to$ [[2026-09-21-2048 Magnetic energy of a square-cross-section toroid]]
 - **CM: rolling sphere launch energy (pinball ramp):** [active] Turn 2 — $T=\frac{7}{10}mv^2$ derived correctly; now energy conservation $\to$ launch speed $\to$ [[2026-09-22-2235 Rolling sphere launch energy]].
+- **Math: determinant equations / eigenvalues:** [active] Turn 1 — diagnosing floor (expansion mechanics vs $\det(M-\lambda I)=0$ setup) $\to$ [[2026-09-23-1713 Determinant equations]].
 
 
 ## Archived domains

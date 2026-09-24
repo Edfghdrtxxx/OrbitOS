@@ -65,6 +65,7 @@ Read the matching file from `99_System/memory/` on trigger.
 | `project_japan_itinerary.md`              | Japan deadlines, funding, timeline, or checklist      |
 | `personal_context.md`                     | life/career tradeoffs: family, relationship, lock mechanics, post-PhD endgame |
 | `preference_clear_temp_files.md`          | install, pipeline/gate, smoke test, scratch, or leftover temps |
+| `preference_e2e_over_unit_tests.md`      | deciding regression coverage for behavior or user-flow changes |
 | `project_physics_gre.md`                  | Physics GRE website, Prep Studio, GRE drill/timed-set platform, or `/Users/Reid Hu/Physics GRE` |
 | `preference_interview_api.md`             | multi-option / jargon user interview, or about to host-Ask for those — main: payload+dispatch only; never skill://lavish or skill://web-access; child fail → host Ask |
 | `genesis_papers.md`                       | 创世级, genesis papers, STAGE 1 鸟瞰主线, groundbreaking paper |
