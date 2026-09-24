@@ -37,6 +37,7 @@ All migrated EXP3 records live below this directory. Each chapter retains its so
 - [[30_Data_Integrity/fm-ar-label-blast|Label-map blast radius (`fm-ar-label-blast`)]]
 - [[30_Data_Integrity/fm-ar-results-audit|Results audit (`fm-ar-results-audit`)]]
 - [[40_Manuscript_Provenance/fm-ar-bib-fixsheet|Bib fix sheet for references.bib (`fm-ar-bib-fixsheet`)]]
+- [[40_Manuscript_Provenance/fm-ar-bib-additions|Bib additions sheet for references.bib (`fm-ar-bib-additions`)]]
 - [[40_Manuscript_Provenance/fm-ar-claims-ledger|Claim-by-claim evidence ledger (`fm-ar-claims-ledger`)]]
 - [[40_Manuscript_Provenance/fm-ar-claims-refresh|Claims-ledger delta since 16:53 (`fm-ar-claims-refresh`)]]
 - [[40_Manuscript_Provenance/fm-ar-closing-check|Closing-document statement check (`fm-ar-closing-check`)]]
@@ -310,6 +311,12 @@ Individual chapter section files split for progressive disclosure. Each file pre
 - [[40_Manuscript_Provenance/fm-ar-bib-fixsheet/06-6-verify-bib-py-result-on-the-fully-patched-copy|6. `verify_bib.py` result on the fully patched copy (`40_Manuscript_Provenance/fm-ar-bib-fixsheet/06-6-verify-bib-py-result-on-the-fully-patched-copy.md`)]]
 - [[40_Manuscript_Provenance/fm-ar-bib-fixsheet/07-7-what-i-did|7. What I did (`40_Manuscript_Provenance/fm-ar-bib-fixsheet/07-7-what-i-did.md`)]]
 - [[40_Manuscript_Provenance/fm-ar-bib-fixsheet/08-8-captain-hold-inventory|8. Captain-hold inventory (`40_Manuscript_Provenance/fm-ar-bib-fixsheet/08-8-captain-hold-inventory.md`)]]
+- [[40_Manuscript_Provenance/fm-ar-bib-additions/01-1-candidate-by-candidate-the-sentence-each-would-support-and|1. Candidate-by-candidate: the sentence each would support, and the verdict (`40_Manuscript_Provenance/fm-ar-bib-additions/01-1-candidate-by-candidate-the-sentence-each-would-support-and.md`)]]
+- [[40_Manuscript_Provenance/fm-ar-bib-additions/02-2-full-bibtex-live-verification|2. Full BibTeX + live verification (`40_Manuscript_Provenance/fm-ar-bib-additions/02-2-full-bibtex-live-verification.md`)]]
+- [[40_Manuscript_Provenance/fm-ar-bib-additions/03-3-citation-points-and-suggested-sentences-as-applied-to-the-|3. Citation points and suggested sentences (as applied to the patched copy) (`40_Manuscript_Provenance/fm-ar-bib-additions/03-3-citation-points-and-suggested-sentences-as-applied-to-the-.md`)]]
+- [[40_Manuscript_Provenance/fm-ar-bib-additions/04-4-merged-bib-verify-bib-py-result|4. Merged bib + `verify_bib.py` result (`40_Manuscript_Provenance/fm-ar-bib-additions/04-4-merged-bib-verify-bib-py-result.md`)]]
+- [[40_Manuscript_Provenance/fm-ar-bib-additions/05-5-what-i-did|5. What I did (`40_Manuscript_Provenance/fm-ar-bib-additions/05-5-what-i-did.md`)]]
+- [[40_Manuscript_Provenance/fm-ar-bib-additions/06-6-captain-hold-inventory|6. Captain-hold inventory (`40_Manuscript_Provenance/fm-ar-bib-additions/06-6-captain-hold-inventory.md`)]]
 
 ## Metadata and checks
 

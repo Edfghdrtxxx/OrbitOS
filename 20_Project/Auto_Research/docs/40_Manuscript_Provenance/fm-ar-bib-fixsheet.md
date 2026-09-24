@@ -1,4 +1,4 @@
-> Origin: `fm-ar-bib-fixsheet` scout report; recorded 2026-09-24. Companion paste-ready BibTeX: `fixes.bib` (firstmate data dir `fm-ar-bib-fixsheet/`, not copied into the vault).
+> Origin: `fm-ar-bib-fixsheet` scout report; recorded 2026-09-24. Companion paste-ready BibTeX: `fixes.bib` (firstmate data dir `fm-ar-bib-fixsheet/`, not copied into the vault). Related: [[40_Manuscript_Provenance/fm-ar-bib-additions|Bib additions sheet for references.bib]].
 
 <!-- SOURCE-PREFIX-START -->
 # fm-ar-bib-fixsheet — ready-to-apply bib fix sheet for `references.bib`
