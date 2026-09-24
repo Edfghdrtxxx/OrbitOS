@@ -1,5 +1,6 @@
 > Origin: `fm-ar-claims-ledger` scout report; recorded 2026-09-24.
 
+<!-- SOURCE-PREFIX-START -->
 # fm-ar-claims-ledger — claim-by-claim evidence ledger for the manuscript
 
 **Date:** 2026-09-24 · **Worker:** fm-ar-claims-ledger (scout) · **Scope:** read-only on live checkout `/Users/Reid Hu/MATE-Automation` (`runs/` read in place). No manuscript file touched; no box-176/AutoDL/IMP/Windows contact. Deliverable is this ledger only — the captain amends `10_Papers-Thesis/` himself.
@@ -12,140 +13,18 @@
 
 ---
 
-## 1. Headline for the captain
+<!-- SOURCE-PREFIX-END -->
 
-The manuscript is already heavily hedged (confound disclosures, single-seed caveats, indicative-comparison warnings), and the entire §6 reconstruction section plus the §5.7 EXP8 section verify **exactly** against local artifacts. The residual risk concentrates in §5:
+<!-- Original report body is reconstructed from the prefix and linked verbatim sections below. -->
+## Contents
 
-1. **§5.5's two "controlled experiments" ran on the wrong task** — they are Garfield_HC α-vs-Nonα, not NimpSim ³He/⁴He — so the flagship 96.1% margin was never decomposed, and the second experiment's numbers are inflated ~1.2 pp by carbon-contaminated validation negatives.
-2. **V6 Table 4 may be the same triton-vs-rest label bug** that poisoned 11/12 EXP3 runs — unsettled, decidable in ~1 min of h5py on the Windows box.
-3. **Two methods sentences are flatly false:** physics features are *not* standardized (they enter raw, and that raw scale is now a measured mechanism), and the Table 2 caption's "V4 baselines report final-epoch values" is wrong (all models used best-epoch checkpoints).
-4. The V6 "+1.6 pp on Raw" cross-attention advantage is **contradicted at matched size** by EXP3 (XA −1.3/−2.1 pp on Raw, McNemar-guaranteed significant) — the manuscript's own hedge ("confounded by dataset size") understates this: the confound is now measured, not hypothetical.
+- [[40_Manuscript_Provenance/fm-ar-claims-ledger/01-1-headline-for-the-captain|1. Headline for the captain]]
+- [[40_Manuscript_Provenance/fm-ar-claims-ledger/02-2-claim-by-claim-ledger|2. Claim-by-claim ledger]]
+- [[40_Manuscript_Provenance/fm-ar-claims-ledger/03-3-conflicts-between-scout-reports-resolved-by-re-verification|3. Conflicts between scout reports — resolved by re-verification]]
+- [[40_Manuscript_Provenance/fm-ar-claims-ledger/04-4-claims-the-manuscript-does-not-make-but-the-evidence-now-suppo|4. Claims the manuscript does NOT make but the evidence now supports]]
+- [[40_Manuscript_Provenance/fm-ar-claims-ledger/05-5-pending-checks-that-settle-the-unsettled-claims|5. Pending checks that settle the unsettled claims]]
+- [[40_Manuscript_Provenance/fm-ar-claims-ledger/06-6-what-i-did-and-verified-myself|6. What I did and verified myself]]
+- [[40_Manuscript_Provenance/fm-ar-claims-ledger/07-7-captain-hold-inventory|7. Captain-hold inventory]]
 
----
-
-## 2. Claim-by-claim ledger
-
-Ordered by how much each would mislead a referee. `L` = main.tex line. Suggested wording is at most a sketch — the captain writes the amendment.
-
-### TIER 1 — wrong or void as written
-
-| # | Loc | Claim (verbatim or compressed) | Status | Deciding evidence | Settling check | Suggested fix sketch |
-|---|-----|-------------------------------|--------|-------------------|----------------|----------------------|
-| 1 | L369 | "on the $^{3}$He/$^{4}$He task … the cross-attention model and the bare ResNet-18 reach 95.80\% and 95.77\% … architecture effect of $+0.024$ pp … roughly 99\% is data scale and about 1\% is architecture … the decomposition shows how little of [the 96.1% headline's] margin over a matched ResNet is architectural" | **wrong (task mislabeled)** | fm-ar-methods-audit M2; fm-ar-hehe-control Part 1: the 95.80/95.77 pair is EXP1-XA-HC-100k vs V6-RN-HC on **Garfield_HC α-vs-Nonα** (`task_type "3He_4He"` = label 4 → class 0 = α-vs-rest, `src/run_experiment.py:618-629`). No matched XA-vs-RN exists on NimpSim ³He/⁴He at any size. | NimpSim Option A/B (Rung-1 alternative, ~10–18 GPU-h; needs `3He_100k.h5`/`4He_100k.h5` staged — presence on box 176 unverified; Option B additionally needs augmentation wired, currently a silent no-op at `dataset.py:587-588`) | Relabel to "α-vs-Nonα on Garfield_HC" and state explicitly that the NimpSim ³He/⁴He margin is un-decomposed and confounded (≥6 factors: data 160k-vs-40k, backbone modified-vs-standard, ImageNet init, augmentation, warmup, LS/clip, head depth). |
-| 2 | L381 | "on the $^{3}$He/$^{4}$He task the ordering was the same (96.98\%, 96.94\%, and 95.80\%), although the cross-attention entry there was evaluated on a smaller validation set and is not fully controlled" | **inflated ~1.2 pp + task mislabeled + caveat wrong** | fm-ar-exp2-contam §1–2: EXP2-Gated/Concat-3He4He globbed **7 files** (5 light species + 13C/14C written into `Garfield_HC/` hours earlier) → val = 35k with 10k near-free carbon events. Clean-subset estimate ≈ **95.7–95.8%** for all three mechanisms — a tie, not an ordering. The "smaller validation set" caveat is wrong twice: size (25k vs 35k) *and* undisclosed composition + asymmetric training pools (EXP2 trained on 28.6% carbon). | exp2-contam Option A: zero-compute `predictions.csv`×`data_split.json` join on the Windows box (~5 min) → exact clean-subset metrics. Fallback: box-176 CPU re-eval (~1–3 CPU-h). | Drop the arm (the clean 13C/14C row already carries the fusion claim), or: "on the α-vs-rest task the three mechanisms were statistically indistinguishable (≈95.7–95.8% on the five light species; the originally reported 96.9% figures included ¹³C/¹⁴C events in the validation pool)". |
-| 3 | L170, L207 | "physics features are normalized in the same way" / "These four features are standardized using training-set statistics before fusion" | **wrong** | fm-ar-methods-audit M1; fm-ar-feature-norm §1,§5: features enter **raw** (`dataset.py:472-475` "NOT normalized, Req-7.2"; `normalization.py:24-27`; `normalization_stats.json` covers ch0/ch1 only). Legacy published runs identical (S1 spec D-PHYS-NORM, S3 spec:254). Consequence measured: Izz≈170 contributes a ~386-norm DC to the query and fixes 108/128 hidden ReLU signs on the EXP8 XA checkpoint. | None needed to fix the text — the fact is established. A `scaled_cls` battery condition (box-176 CPU, ~30 min) decides whether the *deficit* is a scale artifact; a normalized-physics retrain (~5 GPU-h) is gated on that readout. | "physics features enter the network unnormalized (raw float32)". Optionally note the measured consequence — it reframes §5's mechanism story. |
-| 4 | L255 (Table 2 caption) | "the V4 baselines listed here report final-epoch values" | **wrong** | fm-ar-methods-audit M3: legacy code loads `best_model.pth` (best val acc) for **all** models incl. baselines (S3 spec D-CKPT-RN `spec.md:428`; S4 spec:205,219). | None — spec-documented fact. | Delete the clause or replace with "all models report best-epoch validation values". |
-| 5 | L248 | "the V4 baselines use no label smoothing and gradient clipping 1.0" | **wrong for 1 of 3 baselines** | fm-ar-methods-audit #23: V4-CC-RN used LS 0.05 + clip 0.5 (CrossAtt protocol; S2 spec:510, S3 spec:165 documented protocol violation). | None. | Scope the sentence: "the V4 HeHe and p/d/t baselines use no label smoothing and gradient clipping 1.0" (CC-RN's protocol is already disclosed in the next sentence). |
-| 6 | L526, L531 (App A) | "All runs share the AdamW optimizer … a 5-epoch linear warmup" | **wrong for 2 baselines** | fm-ar-methods-audit M5: V4-HeHe-RN and V4-pdt-RN have `warmup_epochs: 0` (S2 spec:509, S3 spec:226). | None. | "All cross-attention, V6, and reconstruction runs share …" or footnote the two exceptions. |
-| 7 | L263 + L190 (implicit) | Table 2 "Baseline ResNet-18" 91.9% presented against §4.1's modified backbone | **inflated (undisclosed architecture mismatch)** | fm-ar-methods-audit M4: the ³He/⁴He baseline is a **standard** ResNet-18 (7×7/s2 conv1, maxpool, `pretrained_backbone: false`, 1-layer head, lr 1e-4, bs 64, 50 ep, warmup 0, 10k norm samples) — not the modified backbone, not ImageNet-initialized (S3 spec:119-128; S2 spec:509,648). | NimpSim Option B run 1 (RN-modified @160k, ~4–6 GPU-h) isolates the architecture effect at headline scale. | Disclose in Table 2 caption or §5.2: "the ³He/⁴He baseline is a standard ResNet-18 (unmodified backbone, no ImageNet init, single-layer head)". |
-| 8 | L298 | "Cross-attention in turn outperforms the bare ResNet-18 by $+0.8$ pp on HC data and $+1.6$ pp on Raw data, the larger advantage on noisy inputs indicating that the MoI features are most valuable when image quality is degraded" | **inflated — the mechanism claim is now contradicted at matched size** | fm-ar-referee C11/B.4; fm-ar-hehe-control §2c: EXP3 matched-size/protocol runs show XA−RN = **−1.33/−2.13 pp on Raw** (McNemar-guaranteed p≤1.5e-5 / 4.5e-12) and ≈0 on HC — sign-flipped vs V6's +1.6 pp. The V6 Raw advantage was data-scale confound (400k vs 100k), as the caption admits — but "most valuable when image quality is degraded" asserts a mechanism the matched data refutes (on the triton diagnostic task; untested on true 4He). | Rung-1 GPU runs (RN-Raw-lf + XA-HC-lf + RN-HC-lf, ~11.2 GPU-h) give the true-4He 2×2; until then the sentence should not assert the direction. | Keep the confound hedge, drop or invert the mechanism clause: "the larger *apparent* advantage on noisy inputs is confounded with dataset size; at matched size the cross-attention arm does not outperform ResNet-18 on Raw (EXP3 diagnostic, triton-vs-rest task)". |
-| 9 | L313 + Fig. caption L319 | "elevated attention near the track termination where the Bragg peak occurs. This behavior is physically consistent with isotope discrimination" | **inflated (causal framing refuted; spatial fact single-seed, single-representation)** | fm-ar-attn-sink §3; fm-ar-referee A10: on HC the attention collapses to a fixed sink token (87% argmax on token 50, f_Bragg ≤0.02, 3/3 seeds); on Raw f_Bragg≈0.47 is seed-42-only and the map is **image-driven** — `permuted_q` Δ=0 on 6/6 checkpoints proves the physics query does not steer it. The figure is a real ¹³C/¹⁴C event (verified provenance comment L315) but the "physically consistent" framing invites the refuted reading. | Check A (box-176 CPU, ~5 min): map-level `permuted_q` + per-event argmax persistence on XA-Raw-s42 + XA-HC-s42; exp4 metrics on XA-Raw-s0/lf (~1 CPU-h) for a second seed. | "The attention map concentrates on the high-z end of the track in this example; counterfactual tests (§5.x) show the map is driven by image content, not by the physics query." |
-| 10 | L53 (abstract), L503 | "reaches 96.1\% $^{3}$He/$^{4}$He accuracy and 89.7\% for $^{13}$C/$^{14}$C---gains of 4.2 and 6.9 percentage points" | **inflated (numbers stand; "gains" unattributable)** | Numbers verified as legacy-run facts (fm-ar-label-blast §1.2: V4 NimpSim rows CLEAN — per-file classes, unaffected by label bug). But the +4.2/+6.9 pp margins are confounded by ≥6 factors (items 1, 7 above); §5.2 already says "indicative". The abstract states them unqualified. | Same as #1 (NimpSim Option B). | Keep numbers; qualify "gains" — e.g. "improvements of 4.2 and 6.9 percentage points over baselines trained under different conditions (Section 5.2)". |
-
-### TIER 2 — unsettled pending a named check
-
-| # | Loc | Claim | Status | Deciding evidence | Settling check |
-|---|-----|-------|--------|-------------------|----------------|
-| 11 | L282-291 (Table 4), L295, L503 | V6 2×2: CrossAtt+HC 96.6%/0.946/87.4%/ep21; ResNet+HC 95.8/0.931/84.4/20; CrossAtt+Raw 95.1/0.921/84.1/8; ResNet+Raw 93.5/0.893/76.6/17; "α vs Nonα" task identity; α-recall column; "96.6% α vs Nonα" in conclusion | **unverified — hinges on Windows-file label values at Feb-2026 run time** | fm-ar-label-blast §1.4: two Garfield label conventions exist. Box-176 files measured OLD-mapped (`t=4`); Windows files carry `label_map_version='openspec_v6'` attr (4He=4) but the attr is not proof of values. If Windows files were OLD-mapped at V6 run time, Table 4 is triton-vs-rest — same bug as EXP3. **Nuance:** comparative XA-vs-RN and HC-vs-Raw deltas survive either way (both arms share the task); only task identity + α-recall are at risk. | **Windows check (~1 min):** `h5py` unique labels on the `t` and `4He` files in `D:\...\Garfield_HC\`. `t`→4 = OLD → V6 buggy; `t`→2 = v6 → then join the V6 run's `predictions.csv`×`data_split.json` to confirm run-time mapping. Tiebreaker: `relabel_garfield_v6_labels.py` mtime vs V6 run stamps (2026-02-02/04). |
-| 12 | L295 | "The primary error mode is $\alpha \to \text{Non}\alpha$ misclassification, consistent with $^{3}$He being the species closest to $\alpha$ in stopping power" | **unverified (plausible mechanism, no per-species breakdown exists)** | No V6 per-species confusion survives; the ³He-closeness argument is inference from Z²A ordering. EXP3's per-species join (fm-ar-label-blast §2.4) shows on the triton task the dominant confusion is d→t — i.e., nearest-Z²A-neighbor confusion is real, which supports but does not prove the α→³He claim. | Per-species breakdown of the V6 predictions.csv on the Windows box (same join method as label-blast §2.4). |
-| 13 | L428 | "The RANSAC-based conventional analysis of MATE simulation data reports $\sigma_\theta \approx 3.6^{\circ}, 1.25^{\circ}, 0.7^{\circ}$ at comparable ranges" + CNN σ_θ 1.57/0.77/0.45° (XA), 1.70/0.90/0.59° (RN) | **unverified (literature overlay, not same-sample; CNN σ values not in local artifacts)** | fm-ar-comparisons §1: the traditional anchor is a digitized MATEROOT Fig. 8 curve with ±15–20% x-placement uncertainty — already disclosed in-text. CNN σ_θ values trace to box-side eval artifacts (methods-audit #50, U). | fm-ar-angle-baseline worker (in flight): in-house RANSAC/Hough angle baseline pinned to TRK3-v2 split → same-sample comparison. |
-| 14 | L481 | "RANSAC reached $R^2 = 0.878$ on the raw 3D point cloud against $0.848$ on the converted representation" | **unverified (internal-study artifact, not locally re-derivable)** | fm-ar-methods-audit #48: `run_baseline_rawpoints.py` exists; numbers consistent with `20_doc/audits/F4_classical_asymmetry_pipeline_audit.md` but raw artifacts on box. | Re-run `run_baseline_rawpoints.py` on box 176 / IMP server (CPU, torch-free). |
-| 15 | L555-557 (App B), L569-570 (App C) | p/d/t per-class metrics; V6 per-class metrics | **unverified (legacy artifacts; App C also inherits #11's task-identity question)** | fm-ar-methods-audit #52: consistent with headline accuracies; not locally re-derivable. | Same Windows check as #11 for App C; legacy run artifacts for App B. |
-| 16 | L589-591 (App D) | Energy-stratified angle MAE 1.544/1.367, 0.769/0.616, 0.664/0.515; <1° fractions | **unverified locally (internally consistent with overall MAE)** | fm-ar-methods-audit #51: TRK3_v2/TRK4_v2 eval artifacts live on box. | Sync TRK3/4-v2 metrics.json from AutoDL. |
-| 17 | L407-418 (Table 7), L426 | Angle MAE 0.832° [0.830,0.835] vs 0.992° [0.989,0.995]; <1° 72.9% vs 65.3%; energy-dependent gain 11.5%→22.4% | **stands for headline MAE; stratification unverified locally** | fm-ar-methods-audit #41: TRK3-v2 0.9922°, TRK4-v2 0.8324° confirmed via `20_doc/workflows/baseline_angle_regression.md:71-72`. CI/percentile/energy-stratified cells are box artifacts. | Same as #16. |
-
-### TIER 3 — verified to stand (spot-checked; no action)
-
-| Loc | Claim | Verification |
-|-----|-------|--------------|
-| L328-352, Table 5, Fig. forest | All EXP8 numbers: recalls 0.923/0.911 (RN), 0.924/0.909 (XA), acc 0.924, ECE 0.044/0.048, B-prec 0.867/0.866, n=59,928; per-channel FTR incl. pooled 0.0378 vs 0.1087, Δ+0.0709, counts 32,598/11,338 | fm-ar-methods-audit #37-38 verified every cell vs `runs/EXP8-*/eval_exp8/metrics.json`; I re-verified the split is a true 70/15/15 test split (`data_split.json`: test_indices n=75,000). **Stands.** |
-| L399-463, Tables 6-7 | All §6 reconstruction numbers: 180k/450k, multiplicity 99.9983%/99.9994% (McNemar p=0.48), energy table 10/10 cells, 36 missing events/classical, clipping ratios 2.095/2.828, estimator definition, LISE++/Hubert 96:4 table, Bonferroni 0.05/21 | fm-ar-methods-audit #39-49 verified vs `runs/*/seed42/metrics.json`; I re-verified all 10 energy-table cells + TRK5/6 RMSE/MAE myself (§3). **Stands.** |
-| L107, L152-156 | Dataset descriptions: 7 species ×10⁵; TRK 1.2M/12-strata; broadcast-energy + ULP spread; 70/15/15 stratified splits | fm-ar-methods-audit #2,5,6,7. **Stands.** |
-| L190-228 | Architecture: modified ResNet-18, MoI formulas incl. log-compressed M, 64-d Q/K/V, 4 heads, 0.0 attn dropout, 68-d fused input, dropout 0.3, V6 d_phys∈[1,6] | fm-ar-methods-audit #16,18,20,21. **Stands.** |
-| L309 | Negative result: 6-feature vector, −0.06 pp HeHe, +0.39 pp CC | fm-ar-methods-audit #35 (S5 spec:59-86). **Stands** — but see §4 note on framing. |
-| L538-541 (Table 6) | Training-config cells | fm-ar-methods-audit #25. **Stands** (caption's "all runs share" caveat = item 6). |
-| L424 | Dropout 0.3→0.05 + wd 1e-5 improved ResNet MAE 1.112°→0.992° | fm-ar-methods-audit #42 (configs `_meta.hp_changes`). **Stands.** |
-| L477, L485 | LM-RANSAC descriptive-only exclusion; vertex-anchored variants excluded | fm-ar-methods-audit #47. **Stands.** |
-| L489 | Clipping K=1 scope, ratios 2.095/2.828 | fm-ar-methods-audit #49 + my re-check of TRK5/6 metrics.json. **Stands.** |
-| L383, L495 | Single-seed caveats | Honest and consistent with anchor policy. **Stands.** |
-
-### TIER 4 — partial / disclosure gaps (lower referee risk)
-
-| # | Loc | Claim | Status | Evidence |
-|---|-----|-------|--------|----------|
-| 18 | L166, L170 | "each hit is assigned to the nearest pad center"; "pads within the central beam-hole region are masked"; Ch0 "pad-wise sum of log(1+q)"; Ch1 "the mean of x_norm" | **partially wrong — unconditional wording, but Garfield_Raw differs on all four points** | fm-ar-methods-audit M6: Garfield_Raw used floor binning (no triangular mapping), no hole mask, `log1p(Σq)` not `Σlog1p(q)`, charge-weighted Ch1 mean (S1 spec:236,243,297-303,329,346). L142 discloses the Ch1 difference; §3.2's unconditional phrasing contradicts it. All V6/EXP1-3/EXP2 results run on Garfield data. |
-| 19 | L144 | "The resulting Garfield++ datasets comprise five particle species" | **incomplete** | fm-ar-methods-audit M7: 13C/14C Garfield_HC files exist and fed EXP2 (`configs/EXP2_*_13C14C.yaml`). Scope to the V5/V6 production or acknowledge the additions. |
-| 20 | L248 | "all reported accuracies refer to the held-out validation sets" | **stands but incomplete disclosure** | fm-ar-referee A12: for the §5 classification tasks there is **no test split** — val doubles as early-stopping and best-checkpoint-selection set (80/20 only). Selection bias is small and arm-symmetric but undisclosed. (EXP8 §5.7 and TRK §6 do have true test splits — verified.) One sentence suffices. |
-| 21 | L238 | TRK heads: "a Smooth-L1 (Huber) criterion … in radians for angles (β=0.0175 rad) and in MeV for energies" | **minor omission** | fm-ar-methods-audit #22: energy β=0.05 MeV (`configs/TRK5.yaml`) never stated. |
-| 22 | L371-377 + Fig. | Generalization-gap figure (20k baseline vs 160k XA) | **stands as hedged** — correctly labeled "overfitting-behavior diagnostic rather than a controlled architecture comparison" | fm-ar-methods-audit; figure regenerated from real history files (L373 comment). No action. |
-| 23 | L516 | "This work was supported by [NEED to clarify later]" | **placeholder** | Obvious, but it is in the ledger because a referee sees it. |
-| 24 | L387 | "the approach should carry over to other AT-TPC configurations" | **unsupported (plausible, untested)** | fm-ar-transfer: the only public AT-TPC dataset (Kuchera Zenodo 3473953) cannot host the physics-informed arm — no independent physics vector exists in 2D projections; direction-B transfer can only ever test the generic backbone (and saturates at 1.00). Portability claim is reasonable but has zero evidence behind it. |
-| 25 | L146 | "the Garfield++ datasets are used to study noise robustness in the V6 ablation on the α vs. Nonα task" | **stands — and is the correct task name** | Note the contrast: §2.4 names the task correctly (α vs Nonα) while §5.5 calls the same task "³He/⁴He" (items 1-2). Internal consistency argues for the §2.4 name everywhere. |
-| 26 | L176 | "~100% signal retention on clean NimpSim events" (DBSCAN) | **unverified (documented, not re-derived)** | fm-ar-methods-audit #14: implementation server-side; consistent with S1/S4 specs. |
-| 27 | L94 | Gas 95% He/5% CO₂ @ 500 mbar; geometry; 3840 channels | **stands (geometry verified; gas/pressure are sim inputs)** | fm-ar-methods-audit #1. |
-| 28 | L111-115 + Table 1 | Z²A ordering, ΔA/A separations (100/50/33/7.7%) | **stands** | fm-ar-difficulty §5: Z²A ordering validated on EXP8 pair-confusion data (ρ=−0.70 seen pairs; same-class TV ρ≈+0.72-0.74 vs Δ(A/Z) +0.06 on XA). One outlier: p–t easiest despite small Z²A gap — hedge "orders" not "determines". |
-| 29 | L142 | Garfield post-processor: charge-weighted Ch1 mean; ENC 800 e⁻ ≈ σ 0.027 MeV | **stands** | fm-ar-methods-audit #3; measured σ≈0.028 (`20_doc/EXP3_garfield_noise_robustness_analysis.md:19`). |
-| 30 | L204 | MoI computed from log-compressed Ch0; M = Σ log-compressed charge | **stands** | fm-ar-methods-audit #18. |
-| 31 | L332 | "single-seed measurements … bound rather than overturn" | **stands** | Consistent with anchor policy. |
-| 32 | L507 | "strengthens the case for the minimal 4-feature physics vector" | **stands with a caveat** | The negative result is real, but the feature-norm finding (unnormalized Izz≈170 DC dominating the head) suggests the 4-feature vector's *scaling*, not just its dimensionality, is the open design question. Optional nuance. |
-
----
-
-## 3. Conflicts between scout reports — resolved by re-verification
-
-| Contested item | Reports in conflict | My re-verification (commands run today) | Resolution |
-|---|---|---|---|
-| Label-fix `counterfactual_battery.json` — buggy (0.7005) or corrected (0.9275)? | attn-sink §6, mechanism §4, seed-evidence §8, gpu-plan-draft Q1, results-audit F2 all flag the local JSON as **possibly buggy**; referee B.1 and closing-check R13 say **corrected** | `cat runs/EXP3-XA-Raw-100k-label-fix-seed42/20260923_154749/counterfactual_battery.json` → `original 0.9275, zero_q 0.8065, permuted_q 0.9275, zero_cls 0.1935, zero_both 0.5235` | **Corrected file is on disk.** The "+9.2 pp zero_q sign flip" is retracted (zero_q = −12.1 pp on 4He). Newer reports (referee, closing-check) win; the older flags are stale. |
-| McNemar bound tightness on the Raw deficit | referee/seed-evidence: χ²≥nΔ² → p≤0.035 (s0), p≤7.5e-4 (s42); gpu-ladder/hehe-control: worst-case bounds using actual error counts → p≤1.5e-5 / 4.5e-12 | Recomputed Δ from metrics.json: s0 0.87572−0.88904 = −1.332 pp; s42 0.87116−0.89248 = −2.132 pp | **gpu-ladder's tighter bounds are newer and better-evidenced** (use real error counts, not just accuracies). Both agree: guaranteed-significant. |
-| "test acc 0.92136" for the label-fix run | gpu-plan-draft §0 says "test acc"; closing-check R1 says it's **validation** accuracy | `metrics.json` → `best_val_acc: 0.9214, accuracy: 0.92136`; `data_split.json` `test_size: 0.2` (80/20, no third split) | **Validation accuracy.** No held-out test set exists for EXP3-classification runs. (EXP8/TRK do have test splits — verified `test_indices` n=75,000 / 180,000.) |
-| XA-Raw training cost | seed-evidence "7–14 h" vs gpu-plan/referee "4.9–5.6 h" | `run.log` "Training complete in 17669.3 s" = 4.91 h; run-dir wall span ~13.7 h | Both true: **4.9 h train, ~13.7 h billed wall** (eval+queue inside job). gpu-ladder's resolution (budget ~7 h billed for Raw cells) is the usable figure. |
-| EXP2 "smaller validation set" | methods-audit #34: "smaller validation set is wrong — same 25k val"; exp2-contam §1: EXP2 val = **35k** (7 files) | exp2-contam's CM arithmetic: 35,000 = 0.2×7×25k (implementation_log.md:151-153) | **exp2-contam is newer and correct**: EXP1-XA val = 25k, EXP2-3He4He val = 35k with 10k carbon. The manuscript's "smaller validation set" is technically true (25k < 35k) but the real problem is composition, not size. |
-| EXP4 sink stats (token-50 444/512, max-weight 0.52, entropy) | recording doc quotes them; results-audit F4/Q4 + referee A10: **not in any synced artifact** | `exp4_attention_metrics.json` (4 files) contain only f_Bragg + attn_charge_corr | **Unreproduced ad-hoc eval.** The manuscript does not quote these numbers — keep it that way until Check A runs. |
-| s42-HC zero_cls delta sign | closing doc said −0.1 pp; results-audit §12: **+0.1 pp** | `counterfactual_battery.json` XA-HC-s42: zero_cls 0.954 > original 0.953 | **+0.1 pp** (results-audit correct; sign error already fixed in the revised closing doc per closing-check R26). |
-
----
-
-## 4. Claims the manuscript does NOT make but the evidence now supports
-
-Ordered by value to the paper. All are scout-verified findings with no current manuscript home.
-
-1. **The physics query carries no event-specific signal** — `permuted_q` Δ=0 on 6/6 checkpoints (both representations, both tasks; fm-ar-referee C5). Caveats: on Raw the query is ~constant by construction (Izz≈170 DC; weak test there — strong evidence is HC + corrected 4He); n=2000 bounds effects at <~0.2% of predictions. This is the campaign's most seed-robust mechanism fact and directly sharpens the L313/L319 attention framing.
-2. **On HC the attention collapses to a fixed sink token** (87% argmax on token 50, an edge-adjacent near-empty block — not the beam hole; f_Bragg ≤0.02, 3/3 seeds; fm-ar-attn-sink). The honest architecture description: **single-query attention pooling + parallel physics concat** — the cross-modal routing is vestigial in the attention branch at this scale.
-3. **Unnormalized physics is an unbounded linear side-channel** — measured: Izz≈170 fixes 108/128 hidden ReLU signs; carbon OOD events inflate hidden activations ~4×; the leak direction is 58% inside the physics weight-column span (fm-ar-feature-norm §3, fm-ar-ood-leakage §6). This unifies the EXP8 carbon leak, the `zero_cls` collapse, and the `permuted_q` invariance under one mechanism — and it is the same fact that makes L170/L207's "standardized" claim wrong.
-4. **The HC−Raw gap is image-side denoising, proven by the physics-free arm** — ResNet (no physics exposure) gains +6.5 pp on HC; DBSCAN removes ~94% of pads (1,956→113/3,840); Raw Ch0 track is below the σ≈0.028 noise floor while Ch1 retains the track (+35% at HC pads) (fm-ar-hc-vs-raw). The manuscript's "+1.5/+2.3 pp HC gains" (L298) currently lacks this mechanism.
-5. **A true-4He result exists:** XA-Raw label-fix s42 = 0.92136 val acc, α-recall 0.7254 (verified on disk today). Single-seed, no comparator — but it is the only EXP3 number legally quotable as 4He.
-6. **Z²A ordering validated on data** (fm-ar-difficulty): seen-pair confusion orders by relZ²A (ρ=−0.70) not Δ(A/Z) (+0.05); same-class TV distance ρ≈+0.72-0.74 — the physics prior structures the latent space, not just the boundary. Supports Table 1's framing with real evidence.
-7. **Penultimate activation magnitude detects OOD where softmax fails** — max|h| AUROC ≈0.90 on both arms vs confidence-based detection at/below chance (fm-ar-ood-leakage §5b). A concrete, citable (ReAct-family) fix direction for the §5.7 leak.
-8. **The Raw deficit survives balanced accuracy** (−2.7/−4.6 pp; fm-ar-referee §B.4) — it is not purely a threshold artifact, though a joint threshold sweep is still unrun (and the sweep script has a verdict-logic bug, code-audit §2).
-9. **EXP8's seen-channel parity is a real result worth stating plainly:** on seen channels the two arms are statistically identical (Δ ≤0.3 pp per channel) — the arms differ *only* on far-OOD inputs. The manuscript reports this but does not draw the conclusion: the physics pathway's cost is exclusively extrapolative.
-10. **Kuchera transfer context** (fm-ar-transfer): the only public AT-TPC dataset saturates CNNs (our ResNet18 val 1.0000; published CNN 1.00); honest traditional-baseline anchor on it is flattened-pixel LR 0.9215, not the moments-LR 0.70. Relevant if the paper cites Kuchera as the nearest prior method (L76 already does).
-
----
-
-## 5. Pending checks that settle the unsettled claims
-
-| Check | Where | Cost | Settles |
-|---|---|---|---|
-| Windows h5py label check (`t` file: 4=OLD→V6 buggy, 2=v6) + V6 `predictions.csv`×split join | Windows box | ~1–5 min | #11 (V6 Table 4 task identity), #15 App C |
-| EXP2 Option A: predictions×split join, drop carbon (idx <50,000) | Windows box | ~5 min | #2 exact clean-subset numbers |
-| Rung-1 GPU: RN-Raw-lf + XA-HC-lf + RN-HC-lf s42 | AutoDL | ~11.2 GPU-h | #8 direction on true 4He; the campaign's central claim |
-| NimpSim Option A (matched XA/RN @100k) or B (RN-mod@160k) | AutoDL + data staging (`3He/4He_100k.h5` location unverified) | ~10–18 GPU-h | #1, #7, #10 — the real ³He/⁴He decomposition |
-| Box-176 CPU chains (in flight): `predump_chain` (paired stats), `d5/d6` (`permuted_cls`/`mean_cls`/`scaled_cls` + histograms), `diag_chain` (D1–D4), `e23` (EXP8 clipped/zero/permuted physics) | box 176 | ~4–7 CPU-h | #9 mechanism wording; every "load-bearing" sentence; OOD-leak mechanism confirmation |
-| `exp4_attention_metrics.py` on XA-Raw-s0 + XA-Raw-lf; map-level `permuted_q` | box 176 | ~1 CPU-h | #9 second seed; map-invariance upgrade |
-| fm-ar-angle-baseline (in flight): RANSAC/Hough angle baseline on TRK3-v2 split | IMP/CPU | in flight | #13 same-sample angle comparison |
-| Re-pulls: 0-byte `data_split.json` ×2 (XA-Raw-s0, XA-Raw-lf), XA-Raw-lf `run.log` | box 176 sync | minutes | pairing for the lf run; cost calibration |
-| Test-split question | n/a — answered | — | EXP3 classification has no test split (80/20 val doubles as selection set); EXP8 and TRK have true test splits. Only a disclosure sentence is needed (#20). |
-
-**Code bugs that gate pending results** (fm-ar-code-audit — fix before quoting): `exp3_threshold_sweep.py` can emit a false "calibration" verdict (marginal vs joint threshold); `paired_stats.align_pair` silently drops label-mismatched events and accepts duplicate event IDs; `src/baselines/kuchera.py` hard-codes the same `{4:0}` triton map while naming class 0 "Alpha (4He)".
-
----
-
-## 6. What I did and verified myself
-
-- Read `main.tex` (all 606 lines, incl. full text of truncated lines), `supplementary.tex`, `paper_anchor.md`, and all 20 completed scout reports.
-- Re-verified against `runs/` artifacts: all 12 EXP3 `metrics.json` (accuracies/recalls match every scout table); the label-fix battery JSON (corrected version — resolves the F2 conflict); EXP8 `data_split.json` (true test split, n=75,000); TRK5/6 + five baseline `metrics.json` (all 10 energy-table cells exact: XA 0.0219/0.0103, RN 0.0264/0.0147, RANSAC 0.4827/0.3338, Hough-opt 0.4935/0.3362, Hough 0.5234/0.3574, HC-opt 0.7197/0.5474, HC 0.7375/0.5652).
-- Confirmed no EXP1/EXP2/V6/V4/TRK1-4 run artifacts exist locally — those claims are marked unverified rather than guessed.
-
-## 7. Captain-hold inventory
-
-No new captain-owned decision surfaced. The GPU-budget call this ledger feeds (Rung 0/1/2/3) is already held as `fm-ar-gpu-budget` per gpu-ladder's inventory. Manuscript amendment is the captain's own declared task — this report is its input, not a new gate. Completion gate: `complete --none`.
+<!-- ORIGINAL-BODY-SHA256: daed6bb98a0227b04a7089e61dd87af618088cd1505a13f132bb8a25f31fb1b8 -->
+<!-- ORIGINAL-BODY-BYTES: 31374 -->

@@ -1,0 +1,12 @@
+<!-- Verbatim source section; overview: [[../fm-ar-test-split]] -->
+<!-- SOURCE-BODY-START -->
+## Headline
+
+1. **R1 confirmed for EXP3 — and refined.** Every EXP3 run (12 run dirs on disk) is an 80/20 train/val split with **no held-out test set**; `metrics.json:accuracy` is computed by `evaluate_model` on `val_loader` — the same 25k events that drove best-epoch selection and early stopping. **But R1's "anywhere in the campaign" is too broad:** EXP8 and all TRK runs use a real 70/15/15 three-way split with `test_indices` recorded in `data_split.json`, and EXP8's seen-channel test set was actually evaluated (`eval_exp8/metrics.json`, 75k events). EXP1/EXP2 and the published V4/V6 runs are 80/20 val-only like EXP3.
+2. **Selection bias is small and measurable for free:** `scripts/analysis/exp3_selection_bias.py` (PR#9) over all 12 EXP3 histories gives best-val − final-val gaps of **0.21–1.74pp, mean 0.71pp**; the label-fix run's gap is **0.216pp**. A sharper "best vs. neighbor epochs" measure gives 0.03–2.1pp. For paired XA-vs-RN deltas the bias is arm-symmetric and largely cancels.
+3. **The cheapest honest protocol already exists in the data:** `per_file_limit: 25000` subsamples 25k of each 100k-event HDF5 file via a deterministic seeded `rs.choice` (`src/data/dataset.py:45-99`). The **75k unused events per file (375k per representation) are a true held-out pool** — never trained on, never validated on, never seen by normalization stats — shared identically by every seed-42 run on the same file set, including the existing XA-Raw label-fix run. Re-evaluating checkpoints on it is CPU-feasible (the counterfactual battery already ran on box-176 CPU) and needs ~50 lines of glue, not new infrastructure.
+4. **Recommendation: option (a) + (d).** Keep the Rung-1 configs exactly as merged (80/20, seed 42 — this makes the new runs' val sets *identical* to the label-fix run's, preserving paired val statistics), and add a CPU held-out evaluation of all four seed-42 checkpoints on the unused-event pool. Zero GPU hours, zero config changes, and it produces the campaign's first true held-out numbers — for the existing 0.92136 run as well as the three new arms. Options (b) and (c) are strictly worse: both break or confound pairing with the label-fix run, and (b) still needs the same eval harness (d) provides, because `run_experiment.py` never evaluates `test_indices`.
+
+---
+
+<!-- SOURCE-BODY-END -->

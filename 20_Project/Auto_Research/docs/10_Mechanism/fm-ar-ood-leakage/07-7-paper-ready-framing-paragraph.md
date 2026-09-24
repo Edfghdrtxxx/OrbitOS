@@ -1,0 +1,7 @@
+<!-- Verbatim source section; overview: [[../fm-ar-ood-leakage]] -->
+<!-- SOURCE-BODY-START -->
+## 7. Paper-ready framing paragraph
+
+> On the unseen-channel task, the physics-informed arm rejects interpolation-OOD ⁴He at the same rate as the generic CNN but leaks far-OOD carbon recoils into the proton class at 8.0–8.5% versus 1.4–1.6% — a 5× false-target penalty concentrated entirely in the physics pathway. Event-level pairing shows the leaked events are not proton-like in image space (the physics-free arm assigns them *below-median* proton probability and rejects 90%); instead, the unnormalized physics features — moment-of-inertia components and total charge — act as an unbounded linear side-channel into the classification head, and out-of-distribution feature magnitudes inflate the head's activations roughly four-fold beyond the training range, pushing a confident tail across the proton boundary. Confidence- and entropy-based rejection cannot detect these leaks (AUROC ≈ 0.5, and the leaked events are *more* confident than correctly rejected ones), whereas an activation-magnitude score separates them at AUROC ≈ 0.9. The physics prior therefore improves in-distribution discrimination at the cost of a new, confident failure mode under distribution shift — a fused-feature analogue of the classic OOD-extrapolation pathology — and motivates either feature clipping/normalization or an activation-space rejection stage before the physics-informed classifier can be deployed on unlabeled data.
+
+<!-- SOURCE-BODY-END -->

@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Read-only checks for the Auto_Research docs index and wikilinks."""
 from pathlib import Path
+import hashlib
+import json
 import re, sys
 
 ROOT = Path(__file__).resolve().parent
@@ -34,6 +36,48 @@ for source in sorted(ROOT.rglob("*.md")):
             candidates.extend(ROOT.rglob(t.name + ".md"))
         if not any(c.exists() and c.is_file() for c in candidates):
             errors.append(f"broken wikilink in {source.relative_to(ROOT)}: [[{raw}]]")
+
+# Rebuild every split report from its overview prefix and verbatim section files.
+manifest_path = ROOT / "SPLIT_MANIFEST.json"
+if not manifest_path.exists():
+    errors.append("missing split manifest: SPLIT_MANIFEST.json")
+else:
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        for record in manifest.get("reports", []):
+            overview = ROOT / record["overview"]
+            overview_body = overview.read_bytes()
+            try:
+                prefix = overview_body.split(b"<!-- SOURCE-PREFIX-START -->\n", 1)[1].split(
+                    b"<!-- SOURCE-PREFIX-END -->", 1
+                )[0]
+            except (IndexError, ValueError):
+                errors.append(f"missing source prefix markers: {record['overview']}")
+                continue
+            rebuilt = prefix
+            for section in record["section_files"]:
+                section_path = ROOT / section["path"]
+                if not section_path.exists():
+                    errors.append(f"missing split section: {section['path']}")
+                    continue
+                section_body = section_path.read_bytes()
+                try:
+                    source_part = section_body.split(b"<!-- SOURCE-BODY-START -->\n", 1)[1].split(
+                        b"<!-- SOURCE-BODY-END -->", 1
+                    )[0]
+                except (IndexError, ValueError):
+                    errors.append(f"missing source section markers: {section['path']}")
+                    continue
+                rebuilt += source_part
+            digest = hashlib.sha256(rebuilt).hexdigest()
+            if digest != record["source_sha256"] or len(rebuilt) != record["source_bytes"]:
+                errors.append(
+                    f"split reconstruction mismatch: {record['overview']} "
+                    f"(expected {record['source_sha256']}/{record['source_bytes']}, "
+                    f"got {digest}/{len(rebuilt)})"
+                )
+    except (OSError, json.JSONDecodeError, KeyError, TypeError) as exc:
+        errors.append(f"invalid split manifest: {exc}")
 
 if errors:
     print("FAIL")
