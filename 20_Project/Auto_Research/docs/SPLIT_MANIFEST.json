@@ -1294,5 +1294,42 @@
     }
    ]
   }
+,
+ {
+  "overview": "20_Capacity_Statistics/fm-ar-cpu-agenda.md",
+  "source_sha256": "99a02e702ec83b24d6190f37ee777217873cb0411a49e7742b0340a8b7bf446c",
+  "source_bytes": 23279,
+  "prefix_sha256": "1be8660df4b7b199ae828c1a0a2fbe3f3c42276737c37fe9e7223c6be7b04088",
+  "section_files": [
+   {
+    "path": "20_Capacity_Statistics/fm-ar-cpu-agenda/01-1-what-this-mac-can-run-verified-not-assumed.md",
+    "title": "1. What this Mac can run — verified, not assumed"
+   },
+   {
+    "path": "20_Capacity_Statistics/fm-ar-cpu-agenda/02-2-open-questions-classified.md",
+    "title": "2. Open questions, classified"
+   },
+   {
+    "path": "20_Capacity_Statistics/fm-ar-cpu-agenda/03-3-ranked-cpu-only-now-agenda-top-5.md",
+    "title": "3. Ranked CPU-only-now agenda (top 5)"
+   },
+   {
+    "path": "20_Capacity_Statistics/fm-ar-cpu-agenda/04-4-weaker-but-honest-cpu-substitutes-flagged.md",
+    "title": "4. Weaker-but-honest CPU substitutes — flagged"
+   },
+   {
+    "path": "20_Capacity_Statistics/fm-ar-cpu-agenda/05-5-what-i-ran-and-verified-myself.md",
+    "title": "5. What I ran and verified myself"
+   },
+   {
+    "path": "20_Capacity_Statistics/fm-ar-cpu-agenda/06-6-recommendation.md",
+    "title": "6. Recommendation"
+   },
+   {
+    "path": "20_Capacity_Statistics/fm-ar-cpu-agenda/07-7-captain-hold-inventory.md",
+    "title": "7. Captain-hold inventory"
+   }
+  ]
+ }
  ]
 }
