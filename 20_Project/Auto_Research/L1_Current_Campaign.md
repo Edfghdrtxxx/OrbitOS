@@ -34,6 +34,7 @@ Do not spend the EXP3 reserve on Z-01 search. Do not claim Z-01 angle or energy 
 | EXP3 publication goal | Seed-variance on CrossAtt/ResNet × HC/Raw (3×4, conditional cheapest-first gate) so single-run paper numbers are not the only evidence |
 | Direction lock | first window `z01_then_exp3`; council `strategic_gates` **complete for Z-01 design**; route `imp_then_autodl`; recording `labelled_hypotheses` |
 | Outer state | `stopped 2026-09-24 at captain's call — AutoDL closed; EXP3 label-fix 2×2 incomplete (XA-Raw-lf killed ep~13, val_acc 0.9214); see [[L0_Start_Here]]` |
+| Science state (2026-09-24) | Counterfactual battery on 5 triton checkpoints: **query poisoning refuted** (permuted_q Δ=0 all seeds); classifier physics load-bearing on Raw (zero_cls → 0.19–0.41), redundant on HC (0.95+); deficit is downstream of routing — H1 capacity vs redundancy-crowding, decision table pre-registered in `EXP3_closing_analysis_2026-09-24.md` §10 |
 | GPU budget | **0.0 / 16.0** cumulative; planned split ≤2.0 Z-01 + ~14.0 EXP3 |
 | v0 CLI | `validate` / `plan` / `digest` only; no subprocess launch |
 | Input contract (Z-01) | `attpc_sim_npy_v0` (`exp8_hdf5_v1` is illegal on Z-01 `.npy`) |
