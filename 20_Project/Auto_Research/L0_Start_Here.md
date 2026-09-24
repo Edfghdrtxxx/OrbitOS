@@ -37,6 +37,7 @@ The PM / context agent owns the big picture (goal, state, next action, disclosur
 - **Mechanism (unresolved):** XA-Raw deficit −2.1pp vs RN-Raw on triton task. Ranked: H1 capacity bottleneck (64-dim attended + 68-feature head vs 512-dim GAP) > H2 noisy direct physics > H3 query poisoning > H4 label residue. Independent researcher report: `/Users/Reid Hu/firstmate/data/fm-researcher-exp3/report.md`. Council verdict: `99_System/.scratch/exp3-schedule-council/verdict.md`.
 - **Tooling left behind (untested on box):** counterfactual battery `scripts/analysis/exp3_counterfactual_battery.py` + `physics_query_override`/`classifier_physics_override` hooks; `query_mode: learned` (latent query); paired-Δ ablation waiter; EXP4 metrics script. All committed, local master pushed through `ad240f7`.
 - Docs: `20_doc/EXP3_campaign_narrative_draft.md`, `EXP3_results_interpretation_predraft.md` (seed-0 filled), `EXP3_garfield_noise_robustness_analysis.md`.
+- Closing analysis (measured vs pending, dynamics, EXP4 numbers, resume fire-order): `20_doc/EXP3_closing_analysis_2026-09-24.md`.
 - Campaign id `exp3-garfield`; fleet record `/Users/Reid Hu/firstmate/data/auto-research-exp3.md`.
 
 ## Next action
