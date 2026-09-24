@@ -22,6 +22,10 @@ for path in sorted(ROOT.rglob("*")):
 # Resolve Obsidian wikilinks found inside docs/.
 for source in sorted(ROOT.rglob("*.md")):
     body = source.read_text(encoding="utf-8")
+    # Ignore fenced code blocks and inline code spans: literal [[...]] examples
+    # inside them are quoted text, not navigation links.
+    body = re.sub(r"```.*?```", "", body, flags=re.S)
+    body = re.sub(r"`[^`\n]*`", "", body)
     for raw in re.findall(r"\[\[([^\]]+)\]\]", body):
         target = raw.split("|", 1)[0].split("#", 1)[0].strip()
         if not target or target.startswith("http"):
@@ -48,9 +52,10 @@ else:
             overview = ROOT / record["overview"]
             overview_body = overview.read_bytes()
             try:
-                prefix = overview_body.split(b"<!-- SOURCE-PREFIX-START -->\n", 1)[1].split(
-                    b"<!-- SOURCE-PREFIX-END -->", 1
-                )[0]
+                # Markers are line-anchored; a literal marker quoted inside a
+                # verbatim body (e.g. in backticks) must not end the section.
+                prefix = re.split(b"^<!-- SOURCE-PREFIX-START -->$\\n", overview_body, 1, flags=re.M)[1]
+                prefix = re.split(b"^<!-- SOURCE-PREFIX-END -->$", prefix, 1, flags=re.M)[0]
             except (IndexError, ValueError):
                 errors.append(f"missing source prefix markers: {record['overview']}")
                 continue
@@ -62,9 +67,8 @@ else:
                     continue
                 section_body = section_path.read_bytes()
                 try:
-                    source_part = section_body.split(b"<!-- SOURCE-BODY-START -->\n", 1)[1].split(
-                        b"<!-- SOURCE-BODY-END -->", 1
-                    )[0]
+                    source_part = re.split(b"^<!-- SOURCE-BODY-START -->$\\n", section_body, 1, flags=re.M)[1]
+                    source_part = re.split(b"^<!-- SOURCE-BODY-END -->$", source_part, 1, flags=re.M)[0]
                 except (IndexError, ValueError):
                     errors.append(f"missing source section markers: {section['path']}")
                     continue

@@ -11,7 +11,7 @@ This project keeps the campaign lead files at the project root and all migrated 
 - [[docs/30_Data_Integrity/README|Data integrity and contamination]] — Label blast radiuses, carbon contamination audits, and code verification.
 - [[docs/40_Manuscript_Provenance/README|Manuscript and provenance audits]] — Claim ledgers, figure provenance, methods audit, and related work.
 - [[docs/50_Comparisons/README|Comparisons and controls]] — Traditional-method baselines, 3He/4He control studies, and transfer checks.
-- [[docs/60_Tooling/README|Tooling]] — Automation utilities, test scripts, and operational tooling.
+- [[docs/60_Tooling/README|Tooling]] — Automation utilities, test scripts, operational tooling, and the docs-migration refinement record.
 
 ## Lead files
 

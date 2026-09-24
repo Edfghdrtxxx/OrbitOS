@@ -1029,6 +1029,42 @@
           "title": "8. Captain-facing inventory"
         }
       ]
+    },
+    {
+      "overview": "60_Tooling/fm-ar-docs-refine.md",
+      "source_sha256": "3769fe9d3305423540f4d6e987c18f83dd9f9d77d9b5e96b982929ea4a87efbe",
+      "source_bytes": 10996,
+      "prefix_sha256": "d4a9a9f4c264de080910ab576002d1a16706d50d5e509765b57aeb081ab980f5",
+      "section_files": [
+        {
+          "path": "60_Tooling/fm-ar-docs-refine/01-1-executive-summary.md",
+          "title": "1. Executive Summary"
+        },
+        {
+          "path": "60_Tooling/fm-ar-docs-refine/02-2-scope-and-boundaries.md",
+          "title": "2. Scope and Boundaries"
+        },
+        {
+          "path": "60_Tooling/fm-ar-docs-refine/03-3-review-chronology-and-collaboration.md",
+          "title": "3. Review Chronology and Collaboration"
+        },
+        {
+          "path": "60_Tooling/fm-ar-docs-refine/04-4-summary-of-suggestions-and-dispositions.md",
+          "title": "4. Summary of Suggestions and Dispositions"
+        },
+        {
+          "path": "60_Tooling/fm-ar-docs-refine/05-5-verification-evidence.md",
+          "title": "5. Verification Evidence"
+        },
+        {
+          "path": "60_Tooling/fm-ar-docs-refine/06-6-captain-hold-lifecycle-gate.md",
+          "title": "6. Captain-Hold Lifecycle Gate"
+        },
+        {
+          "path": "60_Tooling/fm-ar-docs-refine/07-7-conclusion-and-recommendation.md",
+          "title": "7. Conclusion and Recommendation"
+        }
+      ]
     }
   ]
 }
