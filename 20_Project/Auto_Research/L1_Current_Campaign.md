@@ -1,7 +1,7 @@
 ---
 title: Auto-Research L1 — Current Campaign
 type: plan
-status: active
+status: stopped
 created: 2026-09-19
 revised: 2026-09-19
 parent: "[[L0_Start_Here]]"
@@ -33,7 +33,7 @@ Do not spend the EXP3 reserve on Z-01 search. Do not claim Z-01 angle or energy 
 | Z-01 frozen arms | **A** CPU LogReg on `[Ixx,Iyy,Ixy,M]`; **B** generic `ModifiedResNet18` image-only. No fused/cross-attention |
 | EXP3 publication goal | Seed-variance on CrossAtt/ResNet × HC/Raw (3×4, conditional cheapest-first gate) so single-run paper numbers are not the only evidence |
 | Direction lock | first window `z01_then_exp3`; council `strategic_gates` **complete for Z-01 design**; route `imp_then_autodl`; recording `labelled_hypotheses` |
-| Outer state | `blocked: awaiting direct read-only IMP inventory authorization` (Z-01 design locked) |
+| Outer state | `stopped 2026-09-24 at captain's call — AutoDL closed; EXP3 label-fix 2×2 incomplete (XA-Raw-lf killed ep~13, val_acc 0.9214); see [[L0_Start_Here]]` |
 | GPU budget | **0.0 / 16.0** cumulative; planned split ≤2.0 Z-01 + ~14.0 EXP3 |
 | v0 CLI | `validate` / `plan` / `digest` only; no subprocess launch |
 | Input contract (Z-01) | `attpc_sim_npy_v0` (`exp8_hdf5_v1` is illegal on Z-01 `.npy`) |
