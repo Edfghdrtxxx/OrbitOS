@@ -38,7 +38,7 @@ The PM / context agent owns the big picture (goal, state, next action, disclosur
 - **Tooling left behind (untested on box):** counterfactual battery `scripts/analysis/exp3_counterfactual_battery.py` + `physics_query_override`/`classifier_physics_override` hooks; `query_mode: learned` (latent query); paired-Δ ablation waiter; EXP4 metrics script. All committed, local master pushed through `ad240f7`.
 - Docs: `20_doc/EXP3_campaign_narrative_draft.md`, `EXP3_results_interpretation_predraft.md` (seed-0 filled), `EXP3_garfield_noise_robustness_analysis.md`.
 - Closing analysis (measured vs pending, dynamics, EXP4 numbers, resume fire-order): `20_doc/EXP3_closing_analysis_2026-09-24.md`.
-- Campaign id `exp3-garfield`; fleet record `/Users/Reid Hu/firstmate/data/auto-research-index.md`.
+- Campaign id `exp3-garfield`; fleet record `/Users/leyi/.treehouse/firstmate-9c174d/2/firstmate/data/auto-research-index.md`.
 
 ## Next action
 
