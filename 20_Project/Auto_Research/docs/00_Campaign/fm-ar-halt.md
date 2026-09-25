@@ -28,5 +28,5 @@
 - [[00_Campaign/fm-ar-halt/04-4-repo-checkout-state|4. Repo/checkout state]]
 - [[00_Campaign/fm-ar-halt/05-5-artifact-map|5. Artifact map]]
 
-<!-- ORIGINAL-BODY-SHA256: 2f267c89b7923d3430ad4d0f2a5834edb8e4e2780b0c92fab08c718457c28b60 -->
-<!-- ORIGINAL-BODY-BYTES: 10113 -->
+<!-- ORIGINAL-BODY-SHA256: ad66d5f80d4063e6b7086273c2448e22c9c9f8e46a6d4b7412062d703be101f0 -->
+<!-- ORIGINAL-BODY-BYTES: 9871 -->

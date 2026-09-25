@@ -22,6 +22,7 @@ All migrated EXP3 records live below this directory. Each chapter retains its so
 - [[00_Campaign/fm-ar-jump-net|Jump host down — Mac-side network diagnosis (`fm-ar-jump-net`)]]
 - [[00_Campaign/fm-ar-jump-route|IMP route history, alternatives, and captain procedure (`fm-ar-jump-route`)]]
 - [[00_Campaign/fm-ar-box-evac|Box-176 evacuation, cancelled by captain (`fm-ar-box-evac`)]]
+- [[00_Campaign/fm-ar-cpu-box|CPU-box session on box 176 — halt pending items run (`fm-ar-cpu-box`)]]
 - [[00_Campaign/where-things-live|Where things live — campaign index (`00_Campaign/where-things-live`)]]
 - [[10_Mechanism/fm-ar-attn-sink|Attention-sink interpretation (`fm-ar-attn-sink`)]]
 - [[10_Mechanism/fm-ar-capacity-critique|Pre-registered capacity critique (`fm-ar-capacity-critique`)]]
@@ -342,6 +343,12 @@ Individual chapter section files split for progressive disclosure. Each file pre
 - [[00_Campaign/fm-ar-halt/03-3-pending-list-ordered|3. Pending list (ordered) (`00_Campaign/fm-ar-halt/03-3-pending-list-ordered.md`)]]
 - [[00_Campaign/fm-ar-halt/04-4-repo-checkout-state|4. Repo/checkout state (`00_Campaign/fm-ar-halt/04-4-repo-checkout-state.md`)]]
 - [[00_Campaign/fm-ar-halt/05-5-artifact-map|5. Artifact map (`00_Campaign/fm-ar-halt/05-5-artifact-map.md`)]]
+- [[00_Campaign/fm-ar-cpu-box/01-1-results-d6-s42-battery-diag-s0-redump-x5|1. Results — D6-s42 battery, diag-s0, redump ×5 (all VERIFY-OK) (`00_Campaign/fm-ar-cpu-box/01-1-results-d6-s42-battery-diag-s0-redump-x5.md`)]]
+- [[00_Campaign/fm-ar-cpu-box/02-2-paired-stats-chain-verify-fail-pairing-guard|2. paired_stats — chain VERIFY-FAIL (pairing guard) (`00_Campaign/fm-ar-cpu-box/02-2-paired-stats-chain-verify-fail-pairing-guard.md`)]]
+- [[00_Campaign/fm-ar-cpu-box/03-3-paired-stats-rerun-heldout-lf|3. paired_stats rerun + heldout_lf (VERIFY-OK) (`00_Campaign/fm-ar-cpu-box/03-3-paired-stats-rerun-heldout-lf.md`)]]
+- [[00_Campaign/fm-ar-cpu-box/04-4-prereg-scorer-local|4. Prereg scorer (local) (`00_Campaign/fm-ar-cpu-box/04-4-prereg-scorer-local.md`)]]
+- [[00_Campaign/fm-ar-cpu-box/05-5-mac-artifact-custody|5. Mac artifact custody (`00_Campaign/fm-ar-cpu-box/05-5-mac-artifact-custody.md`)]]
+- [[00_Campaign/fm-ar-cpu-box/06-6-state-at-handoff|6. State at handoff (`00_Campaign/fm-ar-cpu-box/06-6-state-at-handoff.md`)]]
 
 ## Metadata and checks
 
