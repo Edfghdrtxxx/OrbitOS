@@ -1460,8 +1460,8 @@
   },
   {
    "overview": "00_Campaign/fm-ar-halt.md",
-   "source_sha256": "2f267c89b7923d3430ad4d0f2a5834edb8e4e2780b0c92fab08c718457c28b60",
-   "source_bytes": 10113,
+   "source_sha256": "ad66d5f80d4063e6b7086273c2448e22c9c9f8e46a6d4b7412062d703be101f0",
+   "source_bytes": 9871,
    "prefix_sha256": "5dd17c021f175fadf77d7776bee065dc5b79cca8486ef97fd667906e77ac7585",
    "section_files": [
     {
@@ -1649,6 +1649,38 @@
    ],
    "source_bytes": 14147,
    "source_sha256": "821324d7d6ef8712a5f4d1148ecb610dc3869ab6e852dc04126bdf0590bc3866"
+  },
+  {
+   "overview": "00_Campaign/fm-ar-cpu-box.md",
+   "source_sha256": "5d583a0c902797e4d5fbe9c22a6c5a2dad764c9003fd188e23ec2c14085bbc8d",
+   "source_bytes": 6272,
+   "prefix_sha256": "1ce044bc8e4dfce983b31a974ff5087cf11ba8b48bd764c1b1d57de47a0a23e0",
+   "section_files": [
+    {
+     "path": "00_Campaign/fm-ar-cpu-box/01-1-results-d6-s42-battery-diag-s0-redump-x5.md",
+     "title": "1. Results \u2014 D6-s42 battery, diag-s0, redump \u00d75 (all VERIFY-OK)"
+    },
+    {
+     "path": "00_Campaign/fm-ar-cpu-box/02-2-paired-stats-chain-verify-fail-pairing-guard.md",
+     "title": "2. paired_stats \u2014 chain VERIFY-FAIL (pairing guard)"
+    },
+    {
+     "path": "00_Campaign/fm-ar-cpu-box/03-3-paired-stats-rerun-heldout-lf.md",
+     "title": "3. paired_stats rerun + heldout_lf (VERIFY-OK)"
+    },
+    {
+     "path": "00_Campaign/fm-ar-cpu-box/04-4-prereg-scorer-local.md",
+     "title": "4. Prereg scorer (local)"
+    },
+    {
+     "path": "00_Campaign/fm-ar-cpu-box/05-5-mac-artifact-custody.md",
+     "title": "5. Mac artifact custody"
+    },
+    {
+     "path": "00_Campaign/fm-ar-cpu-box/06-6-state-at-handoff.md",
+     "title": "6. State at handoff"
+    }
+   ]
   }
  ]
 }
