@@ -7,7 +7,7 @@ This project keeps the campaign lead files at the project root and all migrated 
 ## Record index
 
 - [[docs/README|Auto-research records and area index]] — Progressive-disclosure entry point and complete chapter index.
-- [[docs/00_Campaign/README|Campaign record]] — Operational logs, lead session handles, watch states for EXP3, and the 2026-09-25 halt/resume chapter.
+- [[docs/00_Campaign/README|Campaign record]] — Operational logs, lead session handles, watch states for EXP3, the 2026-09-25 halt/resume chapter, the blocked IMP resume attempt, the cancelled box-176 evacuation, and the where-things-live index.
 - [[docs/10_Mechanism/README|Mechanism and representation]] — Attention sink findings, capacity critiques, and representation comparisons.
 - [[docs/20_Capacity_Statistics/README|Capacity, power, and evaluation]] — Statistical power, GPU budget ladders, seed evidence, and evaluation splits.
 - [[docs/30_Data_Integrity/README|Data integrity and contamination]] — Label blast radiuses, carbon contamination audits, and code verification.
