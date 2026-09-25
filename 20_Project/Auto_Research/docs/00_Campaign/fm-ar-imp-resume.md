@@ -16,6 +16,8 @@
 
 **IMP resume attempt BLOCKED at connectivity — no jobs run.** The captain's "Resume on IMP" order (pending CPU jobs only) could not start: no IMP host is reachable through any documented path. Nothing was staged, run, or modified on IMP or box 176. The pending queue is unchanged from the halt report.
 
+**Follow-up diagnosis (2026-09-25):** [[00_Campaign/fm-ar-jump-net|fm-ar-jump-net]] confirms the jump host `210.77.75.12` is down (all ports, 4+ networks; "accepted but silent" was a FlClash TUN artifact); [[00_Campaign/fm-ar-jump-route|fm-ar-jump-route]] ranks the routes — best is direct `172.17.116.64:22` from the institute internal network.
+
 ## Contents
 
 - [[00_Campaign/fm-ar-imp-resume/01-1-what-was-tried-all-failed-at-before-ssh-banner|1. What was tried (all failed at/before SSH banner)]]
