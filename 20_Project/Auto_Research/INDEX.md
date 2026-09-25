@@ -17,7 +17,7 @@ updated: 2026-09-20
 
 | Document | Role | Description |
 |---|---|---|
-| **[[L0_Start_Here]]** | **The Single Active Compass** | Current state, live campaign ID, host state (`active`), and immediate next action. |
+| **[[L0_Start_Here]]** | **The Single Active Compass** | Current state, live campaign ID, host state (`PAUSED 2026-09-25` — resume via [[docs/00_Campaign/fm-ar-halt]]), and immediate next action. |
 | **[[CHECKPOINT_2026-09-20]]** | **Handoff Checkpoint Packet** | Ratified invariants, locked GRE window (till Oct 6), server lifecycle, and resume guide. |
 | **[[L1_Current_Campaign]]** | **Active Campaign Specs** | In-flight parameters, frozen arm configs, and active blockers. |
 

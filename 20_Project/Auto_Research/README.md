@@ -2,10 +2,12 @@
 
 This project keeps the campaign lead files at the project root and all migrated auto-research records in [`docs/`](docs/). Start with the docs index for the progressive-disclosure map, then open the focused chapter that contains the full source report.
 
+**The EXP3/Auto-Research campaign is PAUSED as of 2026-09-25** (temporary halt). Resume point: [[docs/00_Campaign/fm-ar-halt]] — ordered pending list and artifact map.
+
 ## Record index
 
 - [[docs/README|Auto-research records and area index]] — Progressive-disclosure entry point and complete chapter index.
-- [[docs/00_Campaign/README|Campaign record]] — Operational logs, lead session handles, and watch states for EXP3.
+- [[docs/00_Campaign/README|Campaign record]] — Operational logs, lead session handles, watch states for EXP3, and the 2026-09-25 halt/resume chapter.
 - [[docs/10_Mechanism/README|Mechanism and representation]] — Attention sink findings, capacity critiques, and representation comparisons.
 - [[docs/20_Capacity_Statistics/README|Capacity, power, and evaluation]] — Statistical power, GPU budget ladders, seed evidence, and evaluation splits.
 - [[docs/30_Data_Integrity/README|Data integrity and contamination]] — Label blast radiuses, carbon contamination audits, and code verification.
