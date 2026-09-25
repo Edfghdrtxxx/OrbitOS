@@ -1457,6 +1457,34 @@
    ],
    "source_bytes": 41235,
    "source_sha256": "ae5dcb3f1b9d5da4146138b833d0eee138d4ed2d886b5ea441bfcef41f007888"
+  },
+  {
+   "overview": "00_Campaign/fm-ar-halt.md",
+   "source_sha256": "2f267c89b7923d3430ad4d0f2a5834edb8e4e2780b0c92fab08c718457c28b60",
+   "source_bytes": 10113,
+   "prefix_sha256": "5dd17c021f175fadf77d7776bee065dc5b79cca8486ef97fd667906e77ac7585",
+   "section_files": [
+    {
+     "path": "00_Campaign/fm-ar-halt/01-1-events-since-2026-09-25-03-55-real-clock.md",
+     "title": "1. Events since 2026-09-25 03:55 (real clock)"
+    },
+    {
+     "path": "00_Campaign/fm-ar-halt/02-2-final-state-of-experiment-lines.md",
+     "title": "2. Final state of experiment lines"
+    },
+    {
+     "path": "00_Campaign/fm-ar-halt/03-3-pending-list-ordered.md",
+     "title": "3. Pending list (ordered)"
+    },
+    {
+     "path": "00_Campaign/fm-ar-halt/04-4-repo-checkout-state.md",
+     "title": "4. Repo/checkout state"
+    },
+    {
+     "path": "00_Campaign/fm-ar-halt/05-5-artifact-map.md",
+     "title": "5. Artifact map"
+    }
+   ]
   }
  ]
 }

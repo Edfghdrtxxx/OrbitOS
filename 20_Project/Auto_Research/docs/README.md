@@ -2,6 +2,8 @@
 
 All migrated EXP3 records live below this directory. Each chapter retains its source report body and carries an origin line; area pages provide the progressive-disclosure overview and table of contents.
 
+**The EXP3/Auto-Research campaign is PAUSED as of 2026-09-25** (temporary halt). Resume point: [[00_Campaign/fm-ar-halt]] — ordered pending list and artifact map.
+
 ## Areas
 
 - [[00_Campaign/README|00 Campaign record]] — Operational logs, lead session handles, GPU-free transition, and campaign watch states.
@@ -15,6 +17,7 @@ All migrated EXP3 records live below this directory. Each chapter retains its so
 ## Every chapter
 
 - [[00_Campaign/exp3-garfield|EXP3 Garfield campaign record (`exp3-garfield`)]]
+- [[00_Campaign/fm-ar-halt|EXP3/Auto-Research temporary halt report (`fm-ar-halt`)]]
 - [[10_Mechanism/fm-ar-attn-sink|Attention-sink interpretation (`fm-ar-attn-sink`)]]
 - [[10_Mechanism/fm-ar-capacity-critique|Pre-registered capacity critique (`fm-ar-capacity-critique`)]]
 - [[10_Mechanism/fm-ar-difficulty|Per-isotope-pair difficulty (`fm-ar-difficulty`)]]
@@ -328,6 +331,11 @@ Individual chapter section files split for progressive disclosure. Each file pre
 - [[40_Manuscript_Provenance/fm-ar-bib-additions/04-4-merged-bib-verify-bib-py-result|4. Merged bib + `verify_bib.py` result (`40_Manuscript_Provenance/fm-ar-bib-additions/04-4-merged-bib-verify-bib-py-result.md`)]]
 - [[40_Manuscript_Provenance/fm-ar-bib-additions/05-5-what-i-did|5. What I did (`40_Manuscript_Provenance/fm-ar-bib-additions/05-5-what-i-did.md`)]]
 - [[40_Manuscript_Provenance/fm-ar-bib-additions/06-6-captain-hold-inventory|6. Captain-hold inventory (`40_Manuscript_Provenance/fm-ar-bib-additions/06-6-captain-hold-inventory.md`)]]
+- [[00_Campaign/fm-ar-halt/01-1-events-since-2026-09-25-03-55-real-clock|1. Events since 2026-09-25 03:55 (real clock) (`00_Campaign/fm-ar-halt/01-1-events-since-2026-09-25-03-55-real-clock.md`)]]
+- [[00_Campaign/fm-ar-halt/02-2-final-state-of-experiment-lines|2. Final state of experiment lines (`00_Campaign/fm-ar-halt/02-2-final-state-of-experiment-lines.md`)]]
+- [[00_Campaign/fm-ar-halt/03-3-pending-list-ordered|3. Pending list (ordered) (`00_Campaign/fm-ar-halt/03-3-pending-list-ordered.md`)]]
+- [[00_Campaign/fm-ar-halt/04-4-repo-checkout-state|4. Repo/checkout state (`00_Campaign/fm-ar-halt/04-4-repo-checkout-state.md`)]]
+- [[00_Campaign/fm-ar-halt/05-5-artifact-map|5. Artifact map (`00_Campaign/fm-ar-halt/05-5-artifact-map.md`)]]
 
 ## Metadata and checks
 
