@@ -6,7 +6,7 @@ Paths only; canonical content is in the linked docs, not copied here.
 
 - Campaign log: `20_Project/Auto_Research/docs/00_Campaign/exp3-garfield.md` — full operational log through 2026-09-25 11:16.
 - Halt chapter (resume point): `20_Project/Auto_Research/docs/00_Campaign/fm-ar-halt.md` — ordered pending list and artifact map.
-- Firstmate campaign record: `/Users/Reid Hu/firstmate/data/auto-research-index.md` — firstmate's fleet-handle index only; canonical content is here in docs.
+- Firstmate campaign record: `/Users/leyi/.treehouse/firstmate-9c174d/2/firstmate/data/auto-research-index.md` — firstmate's fleet-handle index only; canonical content is here in docs.
 
 ## Servers and their roles (captain decisions, 2026-09-25)
 
