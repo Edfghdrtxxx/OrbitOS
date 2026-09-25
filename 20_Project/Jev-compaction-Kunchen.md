@@ -41,7 +41,7 @@ tags: [project, OMP, compaction, Jev, TypeSafe]
 
 ## Related
 - [[2026-09-19]]
-- [[Reid_Bench]]
+- [[Reid_Bench(AI conclusion)]]
 
 ## Notes
 - **X Post / Metering:** The referenced X post contains no API key or redemption token; it announces free Jev metering through Vercel AI Gateway, which is incompatible with native compact-adviser’s hardcoded TypeSafe System One endpoint and `TYPESAFE_API_KEY`.

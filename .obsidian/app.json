@@ -4,7 +4,7 @@
   "readableLineLength": false,
   "alwaysUpdateLinks": true,
   "trashOption": "local",
-  "newFileLocation": "root",
+  "newFileLocation": "current",
   "attachmentFolderPath": "50_Resources/Attachments",
   "userIgnoreFilters": [
     "node_modules",
