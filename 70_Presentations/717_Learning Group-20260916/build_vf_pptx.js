@@ -1,7 +1,7 @@
 /**
  * Velocity Filters — Learning Group deck
  * Source: Exp. Techniques NP Ch. 11 §III.B
- * Style: deep blue #174994, white content, Learning Group footer
+ * Style: deep navy #0F2F5C, white content, Learning Group footer
  * Patterned after 716_Learning Group-20260805/build_pf_pptx.js
  *
  * Adaptations from PPT-Design.md:
@@ -23,9 +23,9 @@ const EQ_META = require("./assets/eq/meta.json");
 const FONT = "Times New Roman";
 
 const C = {
-  blue: "174994",
+  blue: "0F2F5C",
   blueDark: "0F2F5C",
-  blueMid: "164994",
+  blueMid: "0F2F5C",
   white: "FFFFFF",
   offWhite: "F7F9FC",
   ink: "1A2332",
@@ -160,40 +160,48 @@ pres.theme = { headFontFace: FONT, bodyFontFace: FONT };
 // ─────────────────────────────────────────────
 {
   const s = pres.addSlide();
-  s.background = { color: C.offWhite };
+  s.background = { color: C.blueDark };
+
+  s.addText("LEARNING GROUP", {
+    x: 0.6, y: 0.40, w: 3.2, h: 0.28,
+    fontSize: 12, fontFace: FONT, bold: true, color: "A8C4E8", charSpacing: 1.6, margin: 0,
+  });
 
   s.addShape(pres.shapes.RECTANGLE, {
-    x: 0, y: 0, w: 3.6, h: 0.72,
-    fill: { color: C.blueMid }, line: { color: C.blueMid },
+    x: 6.15, y: 0.25, w: 3.45, h: 0.92,
+    fill: { color: "173E73", transparency: 8 },
+    line: { color: "C7D9EC", transparency: 42, width: 0.8 },
   });
-  s.addText("Learning  ·  Group", {
-    x: 0.2, y: 0.15, w: 3.2, h: 0.42,
-    fontSize: 16, fontFace: FONT, bold: true, color: C.white, margin: 0,
-  });
-
   s.addImage({
-    path: path.join(ASSETS, "imp_logo.jpeg"),
-    x: 5.85, y: 0.02, w: 3.95, h: 0.7,
+    path: path.join(ASSETS, "imp_mark_white.png"),
+    x: 6.34, y: 0.39, w: 0.58, h: 0.62,
+  });
+  s.addText("Institute of Modern Physics\nChinese Academy of Sciences", {
+    x: 7.08, y: 0.40, w: 2.25, h: 0.52,
+    fontSize: 11.5, fontFace: FONT, color: C.white, bold: true,
+    margin: 0, breakLine: false, fit: "shrink", valign: "mid",
   });
 
-  s.addShape(pres.shapes.RECTANGLE, {
-    x: 0, y: 1.05, w: 10, h: 3.55,
-    fill: { color: C.blue }, line: { color: C.blue },
+  // Cropped SHIP separator/focal-plane schematic, traced from Fig. 12 on
+  // printed p. 397 of Experiment Techniques NP Ch. 10–11.
+  s.addImage({
+    path: path.join(ASSETS, "ship_fig12_rubbing_separator.png"),
+    x: 5.55, y: 3.02, w: 3.85, h: 2.55,
   });
 
   s.addText("Velocity Filters\nfor heavy-ion fusion products", {
-    x: 0.5, y: 1.55, w: 9, h: 1.6,
-    fontSize: 36, fontFace: FONT, bold: true, color: C.white,
-    align: "center", margin: 0,
+    x: 0.58, y: 1.18, w: 6.35, h: 1.55,
+    fontSize: 34, fontFace: FONT, bold: true, color: C.white,
+    align: "left", margin: 0,
   });
 
   s.addText("Zhiheng Hu", {
-    x: 0.5, y: 3.35, w: 9, h: 0.4,
-    fontSize: 18, fontFace: FONT, color: C.white, align: "center", margin: 0,
+    x: 0.6, y: 3.72, w: 6.35, h: 0.4,
+    fontSize: 18, fontFace: FONT, color: C.white, align: "left", margin: 0,
   });
   s.addText("16 Sep, 2026  ·  Exp. Techniques NP Ch. 11 §III.B", {
-    x: 0.5, y: 3.8, w: 9, h: 0.35,
-    fontSize: 13, fontFace: FONT, color: "A8C4E8", align: "center", margin: 0,
+    x: 0.6, y: 4.18, w: 6.35, h: 0.35,
+    fontSize: 13, fontFace: FONT, color: "A8C4E8", align: "left", margin: 0,
   });
 
   s.addNotes("Welcome to the learning group. Today we cover Section III.B of Chapter 11 on velocity filters. I will show you why a filter that ignores mass is the most sensitive way to find superheavy elements.");

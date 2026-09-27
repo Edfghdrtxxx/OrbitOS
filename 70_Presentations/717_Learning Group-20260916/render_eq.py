@@ -206,18 +206,19 @@ SPECS = [
     dict(
         name="eq_sigma",
         body=r"""
-\begin{minipage}{7.8in}
+\begin{minipage}{4.7in}
 \centering
-\vspace*{0.50in}
+\vspace*{0.32in}
 
-{\fontsize{20}{24}\selectfont\color[HTML]{0F2F5C}$\ibox{sr}{\sigma_r} / \ibox{pr}{p_r} = \sqrt{\sum \ibox{pi}{p_i}^{2} / 3}\,/\, \ibox{pp}{p_p}$}
+{\fontsize{20}{24}\selectfont\color[HTML]{0F2F5C}$\dfrac{\ibox{sr}{\sigma_r}\rule[-10pt]{0pt}{0pt}}{\rule{0pt}{17pt}\ibox{pr}{p_r}} = \dfrac{\sqrt{\dfrac{\sum_n \ibox{pi}{p_i}^{2}}{3}}\rule[-5pt]{0pt}{0pt}}{\rule{0pt}{17pt}\ibox{pp}{p_p}}$}
 
-\vspace{0.50in}
+\vspace{0.02in}
 \end{minipage}
 \begin{tikzpicture}[remember picture, overlay]
   \annleft{sr}{residue momentum spread}
-  \annabove{pr}{residue momentum}
-  \annbelow{pi}{evaporated-particle\\momentum}
+  \annleft{pr}{residue momentum}
+  \node[ilab, anchor=south] (piA) at ([yshift=22pt]pi.north) {evaporated-particle momentum};
+  \draw[iarr] (piA.south) -- (pi.north);
   \annright{pp}{projectile momentum}
 \end{tikzpicture}
 """,
@@ -270,6 +271,19 @@ SPECS = [
         color="5F6B73",
         width=9.1,
         align="center",
+    ),
+    # ── slide 7: charge-state penalty ────────────────────────
+    dict(name="s7_sort_b", body=r"Electric and magnetic fields send each $A/q$ to its own focal-plane position.", pt=12, color="1A2332", width=3.7),
+    dict(name="s7_five_b", body=r"Heavy recoils leave the target with $q \approx 20$, spread over about five states.", pt=12, color="1A2332", width=3.7),
+    dict(name="s7_qbar_b", body=r"For an unknown superheavy, even $\bar{q}$ is uncertain: the separator may sit on the wrong peak.", pt=12, color="1A2332", width=3.7),
+    dict(name="s7_axis", body=r"ionic charge $q$", pt=12, color="5F6B73", italic=True, border=1),
+    dict(name="cap_s7", body=r"Schematic  ·  one residue species spread over about five charge states (Ch.~11 §III.A)", pt=10, color="8A96A0", border=1),
+    # ── stakes ───────────────────────────────────────────────
+    dict(
+        name="stakes_stat",
+        body=r"$6\times10^{17}$ projectiles \;$\longrightarrow$\; 3 atoms of element 108",
+        pt=24,
+        color="0F2F5C",
     ),
     # ── leads ────────────────────────────────────────────────
     dict(
@@ -354,12 +368,10 @@ Heavy recoils ($Z \gg 1$) leave the target in many ionic charge states.
     dict(
         name="body_charge",
         body=r"""
-\textbf{$q \sim 20 \pm 3$ for heavy ions}
+\textbf{$q \approx 20$ for heavy ions}
 
 \vspace{0.35em}
-Intensity is split across $\approx 5$ charge states.
-
-Transmission per state falls to $10\%$--$20\%$.
+Intensity is split across about five charge states.
 
 \vspace{0.35em}
 \textit{For an unknown superheavy, even the mean charge state $\bar{q}$ is uncertain --- you may tune to the wrong peak.}

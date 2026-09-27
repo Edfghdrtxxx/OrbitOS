@@ -1,7 +1,7 @@
 ---
 type: learning-index
 purpose: Terse cross-agent index of what the learner has solidly learned. Agents running /learn MUST read this first.
-updated: 2026-09-23
+updated: 2026-09-27
 ---
 # Learning Progress — Context Index
 
@@ -44,6 +44,18 @@ Session: [[2026-07-26-2112 Harmonic oscillator]]
 - **Equal-weight probabilities:** For $|\psi\rangle = \frac{1}{\sqrt{2}}(|E_1\rangle + |E_2\rangle)$, $P(E_1) = \frac{1}{2}$.
 - **Expectation value vs probability:** $\langle\hat{H}\rangle \neq P(E_1)$ (distinct mathematical types); $\langle\hat{H}\rangle = \sum_i P(E_i)E_i$.
 - **Two-level expectation:** For $E_1 = \hbar\omega, E_2 = 3\hbar\omega$ with equal weights, $\langle\hat{H}\rangle = 2\hbar\omega$.
+
+#### QM — expansion coefficients and expectation value
+
+Session: [[2026-09-27-2235 Expectation value in an eigenbasis]] (thread still active)
+
+- **Projection coefficient:** acting with $\langle f_k|$ on $|\Psi\rangle=\sum_n c_n|f_n\rangle$ gives $c_k=\langle f_k|\Psi\rangle$; orthogonality kills $n\neq k$, normalization makes the survivor exactly $c_k$ (handwritten derivation verified)
+- **Sandwich derivation (card 5.6):** $\langle\Psi|\hat A|\Psi\rangle=\sum_k\lambda_k|c_k|^2$ via linearity of $\hat A$, dagger conjugating scalars ($c^*$ from the bra), separate dummy indices $j,k$, and a $\delta_{jk}$ collapse (handwritten derivation verified)
+- **Born weight:** matching $\sum_k\lambda_k|c_k|^2$ to $\sum_k P(\lambda_k)\lambda_k$ gives $P(\lambda_k)=|c_k|^2$, so $\sum_k|c_k|^2=1$ (stated)
+- **Normalization:** $\langle\Psi|\Psi\rangle=\sum_k|c_k|^2$ (squared length, Pythagoras); unnormalized $|f_1\rangle+2|f_2\rangle$ gives 5, so $c'=\frac{1}{\sqrt5},\frac{2}{\sqrt5}$ (handwritten verified)
+- **Completeness:** substituting $c_k=\langle f_k|\Psi\rangle$ into the expansion gives $\sum_k|f_k\rangle\langle f_k|=\hat 1$ (stated)
+- **Position form (card 5.5):** insert $\hat 1=\int|x\rangle\langle x|\,\mathrm{d}x$; conjugate symmetry gives $\langle f_n|x\rangle=f_n^*(x)$, so $c_n=\int f_n^*(x)\,\Psi(x,t)\,\mathrm{d}x$; $f_n$ has no $t$ (stated after hint)
+- **Same $\hat H$, new state:** readings stay $E_1,E_2$; only probabilities move ($\frac12,\frac12\to\frac15,\frac45$) (stated, numeric)
 
 #### QM — harmonic oscillator
 
@@ -192,9 +204,12 @@ Session: [[2026-09-19-1609 Pendulum angular vs linear displacement]]
 
 #### CM — rolling without slipping
 
-Session: [[2026-09-22-2235 Rolling sphere launch energy]] (thread still active)
+Session: [[2026-09-22-2235 Rolling sphere launch energy]] (closed 2026-09-27)
 
 - **Solid sphere KE:** $T=\frac12 mv^2+\frac12 I\omega^2=\frac{7}{10}mv^2$ via $I=\frac25 mR^2$, $\omega=v/R$; $R$ cancels — coefficient universal (verified)
+- **Why two KE parts:** carry at $v_{\text{cm}}$ + spin about CM; $\frac12 I\omega^2=\sum\frac12 m_i\omega^2 r_i^2$; contact point $v=0$, top $2v$; same decomposition as parallel-axis ($I_P=\frac75 mR^2$ reproduces $\frac{7}{10}$) (verified)
+- **Static friction, no slip:** contact point at rest $\implies$ zero work; reroutes translation $\to$ rotation; $mgh$ converts entirely (verified)
+- **Ramp launch:** $v=\sqrt{2gh/(1+I/mR^2)}$; solid $\sqrt{10gh/7}$, shell $\sqrt{6gh/5}$; smaller $I/mR^2$ wins the race (verified)
 
 ## In progress
 
@@ -210,8 +225,8 @@ Only threads with unfinished core work (verified against session notes).
 - **Circular orbit and effective potential:** [active] Stability for $F \propto -1/r^n$ ($n < 3$) locked; orbital mechanics drills $\to$ [[2026-09-18-1705 Circular orbit and effective potential]].
 - **E&M: AC maximum power transfer:** [active] Turn 9 — back-emf $\implies$ harder push locked; asking whether cancelling leftover $L$ with load $C$ raises $|I|$ $\to$ [[2026-09-21-0933 AC maximum power transfer]].
 - **E&M: magnetic energy of a square-cross-section toroid:** [active] Turn 2 — GRE clock ≠ slog or memorize; still locating cylindrical $s$ $\to$ [[2026-09-21-2048 Magnetic energy of a square-cross-section toroid]]
-- **CM: rolling sphere launch energy (pinball ramp):** [active] Turn 2 — $T=\frac{7}{10}mv^2$ derived correctly; now energy conservation $\to$ launch speed $\to$ [[2026-09-22-2235 Rolling sphere launch energy]].
 - **Math: determinant equations / eigenvalues:** [active] Turn 1 — diagnosing floor (expansion mechanics vs $\det(M-\lambda I)=0$ setup) $\to$ [[2026-09-23-1713 Determinant equations]].
+- **QM: expectation value in an eigenbasis:** [active] Turn 12 — derivation chain for cards `cpgf-5.5` + `5.6` (expand → project $c_m$ → position form → Born weight → sandwich); retention weak, learner wants picture before memorizing; links 1, 2, 5 derived by hand (Turn 4); link 4 (normalization) done Turn 7; all five links done Turn 10 (card 5.5 conjugate after hint); Turn 12: numeric carrier landed on readings; root was calling $\langle\hat H\rangle$ a possible energy (trap logged); mirror check (same state, new $\hat B$) open $\to$ [[2026-09-27-2235 Expectation value in an eigenbasis]].
 
 
 ## Archived domains

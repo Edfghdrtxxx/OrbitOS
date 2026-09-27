@@ -52,3 +52,28 @@ Premise: success is determined by ability to speak, ability to write, and qualit
 **Delivery-only (not deck design):** ~11am, well-lit room sized to the crowd, case the room beforehand; eye contact, body to the room.
 
 Sources: MIT OCW course + transcript (ocw.mit.edu/courses/res-tll-005-how-to-speak-january-iap-2018/), corroborated by published lecture notes.
+
+## Alon — premise titles (Molecular Cell 36, 165, 2009)
+
+- Whole talk = one **premise**: a full sentence (subject, verb, object). It decides what gets in; cool but unrelated material goes out.
+- Each slide title = that slide's own premise sentence. Avoid question titles and fragments. Two premises → two slides.
+- Remember how much the audience does not know; a clear introduction is an act of care.
+- Arc (Aristotle's two wonders): wonder at the phenomenon → tension as the gap is described → "so that is what the answer looks like."
+- Fold audience questions into the next version of the talk.
+
+## Minto — SCQA opening (The Pyramid Principle)
+
+- **S**ituation (what the audience already accepts) → **C**omplication (what breaks it) → **Q**uestion (the one it raises) → **A**nswer (the talk).
+- S + C = the stakes; Q = the first-glance question.
+
+## Parker & Stone / Olson — "but" and "therefore" (NYU 2011; *Houston, We Have a Narrative*, 2015)
+
+- Beats joined by "and then" are a list; beats joined by "but" or "therefore" are a story.
+- ABT = And (setup) → But (problem) → Therefore (answer). Works at sentence, slide, and talk scale.
+
+## Synthesis (ours, not any single source)
+
+- Open with SCQA: a stakes page (S + C), then the first-glance question as outline item 1.
+- Outline items = the audience's questions, each raised by the previous answer (a but/therefore link). Content slide titles = premise-sentence answers (Alon). Questions live on section dividers, never on content titles.
+
+Sources: [Alon 2009](https://www.cell.com/molecular-cell/fulltext/S1097-2765(09)00742-4) · [SCQA overview](https://modelthinkers.com/mental-model/minto-pyramid-scqa) · [Parker & Stone, NYU 2011](https://speakola.com/arts/matt-stone-trey-parker-nyu-writing-class-2014) · [ABT (NCSE)](https://ncse.ngo/and-therefore-randy-olson-and-art-science-storytelling-part-1)

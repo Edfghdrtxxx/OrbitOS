@@ -19,3 +19,6 @@
 
 ## 2026-09-17d
 - Humanize: single [[Registers]] file + short README; gold-only exemplars; skills cite Registers (Gemini synthesis adopted).
+
+## 2026-09-27
+- Inline-slash Eq. 5 (`/3` next to `/p_p`) misread → stacked `\dfrac` rule in `latex-eq.md`; struts keep in-eq boxes off the bar.

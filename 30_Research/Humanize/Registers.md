@@ -25,6 +25,20 @@ Natural prose beside a formula or figure (concept layer when a symbol gloss is n
 - **Residue:** heavy remnant of the compound nucleus after it evaporates a few light particles.
 - **\(E_r = (A_p/A_c) E_p\):** the residue’s kinetic energy under full momentum transfer: motion at \(v_{\mathrm{cm}}\), slower than the beam.
 
+## Outline questions
+
+The audience's own questions on outline slides.
+
+- Name the exact cost; do not overstate it.
+- Keep the question open; no verdict words (*superior*, *better*).
+
+### Examples
+
+**Velocity Filters — the mass trade-off**
+
+- ✗ *Why give up measuring mass?* — sounds as if mass is never known.
+- ✓ *The filter does not measure mass in flight.* — names the one step skipped; mass is recovered later by decay spectroscopy.
+
 ## Other surfaces
 
 Add new `##` sections here as audits land (takeaways, captions, mail, etc.). No separate files per category.

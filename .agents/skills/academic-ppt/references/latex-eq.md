@@ -54,6 +54,7 @@ Display equations = `addImage` via `addEq`. No Cambria / ASCII `E_r =` heroes **
 - Prefer TikZ/`tikzmark` for in-eq boxes; concept aside may be TikZ text, a small LaTeX minipage in the eq PNG, or pptxgenjs text in the accent card.
 - First eq-heavy slide sets the pattern; later slides annotate **new** symbols the same way; add a concept aside only when the audience would still ask “what is this physically?”
 - Do not leave bare \(E_r=(A_p/A_c)E_p\) with no in-eq callouts.
+- Ratios in display eqs: stacked `\dfrac`, never inline `/` (e.g. `…/3 / p_p` reads as one denominator). Add `\rule` struts so in-eq boxes clear the fraction bar.
 
 ## What counts as math (when pipeline on)
 

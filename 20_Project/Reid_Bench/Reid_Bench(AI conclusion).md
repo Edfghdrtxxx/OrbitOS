@@ -12,57 +12,58 @@ tags: [project, eval, llm, harness]
 
 ## Context
 
-**Objective:** Decide whether switching a model×harness costs rework on Reid's actual work, using a private incident-sourced gold set — not public leaderboards.
+> [!important] Source of truth
+> [[Benchmark Idea from Reid]] (written by Reid) defines the dimensions and evidence principles. This note is only the AI-derived execution plan; where they conflict, Reid's note wins.
+
+**Objective:** Compare model×harness combinations on the eight dimensions in [[Benchmark Idea from Reid]], combining Reid's own judgment with external signals. External signals are weighted by how hard they are to game.
 
 **Success Metrics:**
-- [ ] Provenance-complete cases exist (original prompt + gold artifact, or the case does not exist)
-- [ ] Each frozen case has `prompt.md`, gold or oracle, and `pass.md` with 5–8 binary checks (scripted where the check catches the failure)
-- [ ] Must-pass set is derived from incidents that historically cost a revert or a wrong physics number
-- [ ] One scored run exists for a new model×harness drop (Grok Build / Claude Code / Codex)
+- [ ] Each dimension has its evidence sources named (Reid's judgment, external signals, or both)
+- [ ] External sources listed, preferring niche or informal rankings (e.g., 屎山代码争霸赛) over widely known benchmarks that providers can overfit
+- [ ] One comparison exists for a new model×harness drop (Grok Build / Claude Code / Codex)
 
 **Key Constraints:**
-- Timeline: Collect gold this week if provenance exists; run on the next notable model drop. Not an a-block vs [[GRE_Physics_Prep]] through 2026-11-01.
-- Resources: Manual afternoon per run. No skill, no dashboard, no Elo, no LLM-as-judge, no eval platform.
+- Timeline: Run on the next notable model drop. Not an a-block vs [[GRE_Physics_Prep]] through 2026-11-01.
+- Energy: Reid's focus is research and study. No building a full private benchmark from scratch.
+- Resources: No skill, no dashboard, no Elo, no LLM-as-judge, no eval platform.
 - Unit of evaluation: (model × harness), not base-model API chat.
-- Coverage target (do not invent cases to fill): OrbitOS vault edit; [[MATE-Automation]] with an independent physics number; GRE/derivation with a gold result; Japan-application prose with a factual checklist.
-- Oracle rule: scripts (diff scope, convention grep, independent numeric tolerance) where they catch the failure. GRE/Japan use a pinned binary rubric, not vibes and not a five-line grep that drops the error. Unresolved: rubric vs drop those buckets until an oracle exists.
-- Do not reconstruct the reverted 7-file skill rewrite from memory if the original prompt is gone — contaminated.
+- Mixed evidence is deliberate: never drop external signals (Reid's taste is still developing) or Reid's judgment (he receives the deliverables).
+- Own cases (optional, one evidence source among several): real incidents from OrbitOS, [[MATE-Automation]], GRE/derivations, or Japan-application prose, only when the original prompt and a gold artifact exist. Do not reconstruct the reverted 7-file skill rewrite from memory if the original prompt is gone — contaminated.
 
-Council lock: [[2026-09-11-reid-bench-establish]].
+Original council lock (2026-09-11, superseded 2026-09-26 by [[Benchmark Idea from Reid]]): [[2026-09-11-reid-bench-establish]].
 
 ---
 
 ## Actions
 
-### Phase 1: Provenance harvest
+### Phase 1: Map evidence
 
-- [ ] Mine real incidents (OrbitOS, MATE, GRE, Japan) for original prompt + gold artifact
-- [ ] Drop any case that requires reconstructing the prompt from memory
-- [ ] Mark must-pass: historical revert or wrong physics number only
+- [ ] For each dimension in [[Benchmark Idea from Reid]], name its evidence sources (Reid's judgment, external signals, or both)
+- [ ] List external sources per dimension and note how exposed each is to provider overfitting
 
-### Phase 2: Freeze case contracts
+### Phase 2: Own evidence (lightweight)
 
-- [ ] For each kept incident: `prompt.md`, gold or oracle, `pass.md` (5–8 binary checks)
-- [ ] Script the checks that actually catch the failure; pin a rubric for prose/narrative
-- [ ] Cases live under `20_Project/Reid_Bench/cases/` when the first one is frozen — not before
+- [ ] Collect Reid's judgments from normal research and study work, with no extra build effort
+- [ ] Optional: keep real incidents with an original prompt and gold artifact as cases under `20_Project/Reid_Bench/cases/` — create the folder with the first case, not before
 
-### Phase 3: First run
+### Phase 3: First comparison
 
-- [ ] On the next notable model drop, run frozen cases in the actual harness
-- [ ] Binary per case; keep or switch by rework cost, not rank
-- [ ] New real miss → candidate case (bench restocks from work)
+- [ ] On the next notable model drop, combine external signals with Reid's judgment per dimension
+- [ ] Where Reid's judgment and public consensus disagree, record it rather than averaging it away
 
 ---
 
 ## Progress
 
 - 2026-09-11: [[2026-09-11]] — Project initiated. Council (quorum 2/3, Grok-4.6 Host + GLM-5.3-Flash): gold folder first, no platform. Transcript [[2026-09-11-reid-bench-establish]].
+- 2026-09-26: [[2026-09-26]] — Re-aligned to [[Benchmark Idea from Reid]] as the source of truth. Dropped the "private gold set only, no public leaderboards" design; evidence is now Reid's judgment plus game-resistant external signals.
 
 ---
 
 ## Related
 
-- [[2026-09-11-reid-bench-establish]] — council that locked the design
+- [[Benchmark Idea from Reid]] — source of truth (dimensions and evidence principles)
+- [[2026-09-11-reid-bench-establish]] — original council lock (superseded)
 - [[LLM-Council]] — workflow that produced the lock
 - [[Harness Engineering]] — why the unit is model×harness
 - [[Cognitive Load in LLMs]] — why no dashboard/skill until gold exists
@@ -74,6 +75,6 @@ Council lock: [[2026-09-11-reid-bench-establish]].
 
 ## Notes
 
-- Public benches (MMLU, SWE-bench, Arena) average other people's tasks. Rankings reverse on this mix.
-- A five-line script that would pass the agent that caused a revert is not an oracle.
+- Widely known benchmarks and rankings (e.g., Artificial Analysis, Terminal-Bench, Arena) are exposed to provider overfitting. Use them, but weight niche or informal rankings higher.
+- For optional own cases: a five-line script that would pass the agent that caused a revert is not an oracle.
 - Intended case layout (create per case, not as empty scaffold): `cases/<id>/{prompt.md, gold or oracle, pass.md}`.

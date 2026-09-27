@@ -1,0 +1,2 @@
+- mate-automation [direct-PR +yolo] - MATE automation (added 2026-09-21)
+- orbitos [direct-PR +yolo] - OrbitOS (added 2026-09-21)

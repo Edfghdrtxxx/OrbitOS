@@ -169,6 +169,8 @@ Wind-down protocol:
 - You did enough today. Rest well.
 ```
 
+Then append **Skill-required** (Important Rules).
+
 ## Step 6: Commit and Push OrbitOS
 
 Stage, commit, and push all vault changes in OrbitOS (`/Users/Reid Hu/OrbitOS`):
@@ -185,6 +187,7 @@ Stage, commit, and push all vault changes in OrbitOS (`/Users/Reid Hu/OrbitOS`):
 - **Linking**: Use `[[wikilinks]]` for any projects or concepts mentioned in the review.
 - **Tone**: Warm but brief. This is wind-down time, not planning time.
 - **No planning**: Do not suggest new tasks or reorganize priorities. That's for `/start-my-day`.
+- **Final-response transparency:** After the wind-down protocol, end the last user-visible message with a **Skill-required** list of close actions this skill mandated and this run executed. Always include OrbitOS commit+push (Step 6) with hash or skip reason. Typical set: Evening Review, archive sweep, reflect, OrbitOS commit+push.
 
 # EDGE CASES
 
