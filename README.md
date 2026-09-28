@@ -33,7 +33,7 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 | Explain a concept simply                                      | `/Feynman-Technique`            | Feynman-style explanation as if teaching a 12-year-old                                       |
 | Annotate a confusing note                                     | `/insert-Feynman`               | Inserts Feynman explanation callouts directly into the note file                             |
 | Polish English writing                                        | `/phrasing-refining`            | Grammar, idiom, and naturalness review with terse inline corrections                         |
-| Stress-test an idea (`/llm-council` only)                     | `/llm-council`                  | Explicit invoke only. Host + Grok + Gemini council; peer review + Chairman synthesis         |
+| Stress-test an idea (`/llm-council-v2` only)                  | `/llm-council-v2`               | Explicit invoke only. Multi-model council; round-table cross-examination + synthesis         |
 | Self-critique current work                                    | `/reflect`                      | Adversarial review of current session trajectory                                             |
 | First-principles discussion or critique                       | `/elon-musk`                    | Elon-flavored thinking partner — discussion, critique, The Algorithm when a draft needs it   |
 | Confirm what I actually mean                                  | `/align`                        | Bidirectional steelman; optional file write-back (think from context, read before writing)   |
@@ -63,7 +63,7 @@ Skills live under `.agents/skills/` (see folder listing; includes aliases such a
 
 | Category | Skills |
 |---|---|
-| **Daily Workflow** | `start-my-day`, `end-my-day`, `breakdown-tasks`, `estimate-time`, `llm-council`, `daily-note-addition`, `practice-physics-gre-set` |
+| **Daily Workflow** | `start-my-day`, `end-my-day`, `breakdown-tasks`, `estimate-time`, `llm-council-v2`, `daily-note-addition`, `practice-physics-gre-set` |
 | **Knowledge Management** | `kickoff`, `archive`, `atomic-note` |
 | **Obsidian Features** | `obsidian-markdown`, `obsidian-bases`, `obsidian-cli`, `json-canvas`, `excalidraw-diagram-generator` |
 | **Learning** | `learn`, `retention`, `Feynman-Technique`, `phrasing-refining`, `insert-Feynman`, `vocabulary-absorption` |
