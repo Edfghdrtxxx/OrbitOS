@@ -23,8 +23,6 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 | Deep-dive a topic (new ML paper, visa pathway, TPC technique) | `/deep-research` (host)         | Host deep-research / workflow — vault `/research` archived 2026-07-29                        |
 | Learn something with guided tutoring                          | `/learn <topic>`                | Diagnose, scaffold, one step per turn; records to `60_Learning_Progress/` + index; compile finished derivations to `30_Research/` |
 | Clean up finished work                                        | `/archive`                      | Moves completed projects to 99_System/Archives/                                              |
-| Catch up on AI news                                           | `/ai-newsletters`               | Curates TLDR AI, The Rundown AI into 50_Resources/                                           |
-| See what's shipping in AI                                     | `/ai-products`                  | Product Hunt, HN, GitHub, Reddit roundup                                                     |
 | Break down complex tasks                                      | `/breakdown-tasks <task>`       | Stratified decomposition with estimates and dependencies, inserted into daily note           |
 | Estimate daily workload                                       | `/estimate-time`                | Reasoning-based time estimates for today's tasks at subtask resolution                       |
 | Create an atomic wiki note                                    | `/atomic-note`                  | Creates a single-concept note in 40_Wiki/ with auto-linking and wikilink discovery           |
@@ -47,6 +45,7 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 | Create a NotebookLM podcast                                   | `/notebooklm`                   | Full Google NotebookLM API — notebooks, sources, artifacts                                   |
 | Evolve skill definitions                                      | `/evolve-skills`                | Persists session lessons into per-skill evolution.md files                                   |
 | Anchor to my game framework                                   | `/anchor-game-framework`        | Surfaces identity statement, 1-year goal, daily levers                                       |
+| Summon Kun / how Kun thinks                                     | `/kun`                          | Answers as Kun thinks, builds, or solves problems                                            |
 
 ## Obsidian Features
 
@@ -67,7 +66,7 @@ Skills live under `.agents/skills/` (see folder listing; includes aliases such a
 | **Knowledge Management** | `kickoff`, `archive`, `atomic-note` |
 | **Obsidian Features** | `obsidian-markdown`, `obsidian-bases`, `obsidian-cli`, `json-canvas`, `excalidraw-diagram-generator` |
 | **Learning** | `learn`, `retention`, `Feynman-Technique`, `phrasing-refining`, `insert-Feynman`, `vocabulary-absorption` |
-| **Meta/Utility** | `reflect`, `elon-musk`, `evolve-skills`, `handoff-prompt`, `anchor-game-framework`, `align`, `defuddle`, `orchestrate-trust-taste` |
+| **Meta/Utility** | `reflect`, `elon-musk`, `evolve-skills`, `handoff-prompt`, `anchor-game-framework`, `align`, `kun`, `defuddle`, `orchestrate-trust-taste` |
 | **Tools** | `mcp-builder`, `notebooklm`, `storage-analyzer`, `expense-tracker`, `markitdown`, `pdf`, `docx`, `design-image-claude`, `phone-harness`, `academic-ppt`, `web-access`, `tmux-orchestrator` |
 
 > Note: README previously listed `ai-newsletters` / `ai-products`; those skill folders are not present on disk.
