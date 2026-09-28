@@ -19,7 +19,7 @@
 
   Diagrams (Kun / lavish-axi)
     Static figures: hand-authored inline SVG in main-content (diagram playbook).
-    Architecture / pipeline: SECTION whiteboard is ON by default — subject Mermaid in
+    Architecture / pipeline: SECTION whiteboard is OFF by default — CUT unless the user asks for an editable whiteboard. When kept, subject Mermaid in
     div.mermaid + SECTION mermaid-runtime. Agents rewrite caption + mermaid body to the
     real system before open; never leave mustache tokens in the caption.
     Open modes:
@@ -839,7 +839,8 @@
   <!-- /SECTION: glossary -->
 
   <!-- SECTION: whiteboard — architecture / pipeline via Mermaid → Lavish Excalidraw.
-       Rewrite caption + mermaid body to the SUBJECT before open. CUT only if no diagram. -->
+       OFF by default. CUT unless the user asks for an editable whiteboard.
+       When kept, rewrite caption + mermaid body to the SUBJECT before open. -->
   <figure class="wb">
     <figcaption class="wb-caption">Architecture / pipeline — replace stages with the subject system</figcaption>
     <div class="mermaid">

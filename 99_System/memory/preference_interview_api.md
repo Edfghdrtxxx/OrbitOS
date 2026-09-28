@@ -1,6 +1,6 @@
 ---
 name: preference_interview_api
-description: Main-agent Interview API — structured local:// payload in, dispatch agent lavish-interview, structured decisions out; main never loads skill://lavish or skill://web-access for interviews; child failure → host Ask fallback
+description: Main-agent Interview API — structured local:// payload in, dispatch agent lavish-interview, structured decisions out; main-agent ban: AGENTS.md · User interviews
 type: preference
 saved_at: 2026-09-16
 updated: 2026-09-16
@@ -16,7 +16,7 @@ This file is the **main-agent contract** (in/out + dispatch). Implementation det
 
 1. **Irreducible only** — investigate first (`feedback_investigate_over_ask`). No interview for discoverable facts.
 2. **Dispatch specialized agent** — `agent: "lavish-interview"` (user agent: `~/.omp/agent/agents/lavish-interview.md`). That agent is **`blocking: true`**, **autoloadSkills: [lavish]** (child loads lavish → web-access for CDP), and owns CLI, playbooks, HTML, open, CDP verify, poll, parse.
-3. **Main skill ban (absolute for interviews)** — main MUST NOT `read skill://lavish` or `skill://web-access` (or their `evolution.md` / references) for interviews — success **or** failure. Also MUST NOT write interview HTML, run `lavish-axi`, CDP-verify, poll, reopen the Lavish session, or open parallel session tabs “to help.” Main = **payload in → dispatch → decisions out** only. Curiosity / parallel verify / DIY recovery via those skills is not allowed.
+3. **Main skill ban:** AGENTS.md · User interviews.
 4. **Child failure → internal interview fallback** — when the child fails or cannot deliver decisions, main does **not** load lavish/web-access to diagnose or re-drive delivery. Trigger host **Ask** (omp `ask` / host AskUserQuestion) with the **same decision shape** as the payload (options+stakes or findings Fix/Leave). Prefer a brief hub nudge to the child first if it still owns the session and might self-recover; if still no decisions → Ask. Examples that trip fallback:
    - yield `status: failed_lavish` | `abandoned`
    - child error/cancel with no usable decisions
@@ -26,7 +26,7 @@ This file is the **main-agent contract** (in/out + dispatch). Implementation det
    - **Out:** structured decisions (and raw feedback if needed). Then continue the big picture.
 6. **Explain without assuming** — the specialist must understand question + friction, carry intent/big picture onto the page, and define terms/stakes for a smart non-insider. Terse chat option labels are the failure mode.
 7. **Channel:** Lavish HTML via `lavish-interview` when multi-option **or** stakes/jargon need explanation. Host Ask when Lavish cannot run (child failed / queue-reload broken), or for **1-bit** missing input with no jargon.
-8. **Session ownership while interviewing:** main does **not** `--reopen` the HTML, rewrite the artifact, or open parallel Lavish session tabs while the child owns it. Debug via `hub` to the child; the child alone reopens. Main never takes over CDP/lavish to “fix” the page.
+8. **Session ownership while interviewing:** AGENTS.md · User interviews.
 
 ## Standard payload (structured local file)
 
@@ -87,12 +87,12 @@ Fixed sections: Why / Grounded state / Options+stakes **or** Findings Fix/Leave 
 
 - **Name:** `lavish-interview`
 - **Location:** user `~/.omp/agent/agents/` (all omp projects on this Mac)
-- **Scope:** interview-only; lavish skill nearly exclusive to interviews
+- **Scope:** this agent runs user interviews. Lavish routing: AGENTS.md · User interviews.
 - **Model:** `google-antigravity/gemini-3.8-flash:high`, fallback `xai-oauth/grok-4.6:high`
 - **blocking:** `true` (parent waits under async task mode)
 - **autoloadSkills:** `[lavish]`
 - **Default output** on agent; parent still passes real `outputSchema` when shape differs
-- **Not** in thin v1: tool restrict list, pinned thinking essay, duplicated open-verify essay in agent body (skill + evolution remain SoT) — aside from stale-load + parent-race rules
+- **Not** in thin v1: tool restrict list, pinned thinking essay, duplicated open-verify essay in agent body (skill remains SoT)
 
 ## Reflect defaults (pilot)
 
