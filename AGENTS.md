@@ -21,6 +21,13 @@ This is the **single project rules file** for Grok Build, Claude Code, Codex, an
 - `99_System`: Templates/, Prompts/ (domain personas), Bases/ (Obsidian Bases dashboards), Archives/, `.scratch/` (agent working files), `memory/` (shared harness memory promoted into the vault)
 - Use `/orchestrate-trust-taste` for open-ended judgment/audit/PM tasks (subagents gather evidence; main owns the call)
 - Use `/llm-council-v2` for high-stakes decisions and stress-tests via a multi-model council
+- Use `/reflect` for on-demand adversarial self-critique of the current session trajectory
+- Use `/elon-musk` as a first-principles discussion/critique partner
+- Use `/align` to steelman and confirm user intent before judging a live decision
+- Use `/kun` to answer as Kun thinks/builds/solves problems
+- Use `/handoff-prompt` to generate a constraint-based handoff prompt transferring the mental model to another session
+- Use `/evolve-skills` on /evolve to persist confirmed session lessons into per-skill evolution.md
+- Use `/end-my-day` for the evening shutdown workflow (pairs with `/start-my-day`)
 
 ## Skill Files
 
