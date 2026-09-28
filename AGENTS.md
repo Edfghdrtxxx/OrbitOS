@@ -19,6 +19,8 @@ This is the **single project rules file** for Grok Build, Claude Code, Codex, an
 - `70_Presentations`: Academic talk decks, group-meeting slides, and defense presentations
 - `90_Plans`: Execution plans (archived after completion)
 - `99_System`: Templates/, Prompts/ (domain personas), Bases/ (Obsidian Bases dashboards), Archives/, `.scratch/` (agent working files), `memory/` (shared harness memory promoted into the vault)
+- Use `/orchestrate-trust-taste` for open-ended judgment/audit/PM tasks (subagents gather evidence; main owns the call)
+- Use `/llm-council-v2` for high-stakes decisions and stress-tests via a multi-model council
 
 ## Skill Files
 
