@@ -137,6 +137,12 @@ def compile_spec(spec: dict) -> dict:
         img = Image.frombytes("RGBA", (pix.width, pix.height), pix.samples)
         if bg == "black":
             img = tint_alpha(img, spec.get("color", "FFFFFF"))
+        if spec.get("trim", r"\ibox" in spec["body"]):
+            # Callouts need a padded page; crop to ink so the PNG places at 1:1.
+            x0, y0, x1, y1 = img.getchannel("A").getbbox()
+            pad = round(DPI * 0.03)
+            img = img.crop((max(x0 - pad, 0), max(y0 - pad, 0), min(x1 + pad, img.width), min(y1 + pad, img.height)))
+            w_in, h_in = img.width / DPI, img.height / DPI
         img.save(dest, "PNG")
         doc.close()
         return {
@@ -288,7 +294,7 @@ SPECS = [
     # ── leads ────────────────────────────────────────────────
     dict(
         name="lead_vcm",
-        body=r"The compound nucleus takes the full projectile momentum and recoils at $v_{\mathrm{cm}}$ --- slower than the unreacted beam.",
+        body=r"Fusion: projectile ($A_p$) + target at rest ($A_t$) $\to$ compound nucleus ($A_c$) $\to$ residue + a few evaporated n, p, $\alpha$.",
         pt=13,
         color="1A2332",
         width=9.1,
@@ -301,6 +307,7 @@ SPECS = [
         pt=12,
         color="1A2332",
         width=2.65,
+        align="center",
     ),
     dict(
         name="kine_beam_b",
@@ -308,6 +315,7 @@ SPECS = [
         pt=12,
         color="1A2332",
         width=2.65,
+        align="center",
     ),
     # ── content 2 chips + cards ──────────────────────────────
     dict(name="chip_theta", body=r"$\theta$", pt=14, color="FFFFFF", bg="black", border=1),
@@ -315,7 +323,7 @@ SPECS = [
     dict(name="chip_eps", body=r"$\varepsilon$", pt=14, color="FFFFFF", bg="black", border=1),
     dict(
         name="focus_theta_d",
-        body=r"$\theta$ = lab emission half-angle --- typically $\lesssim 2^{\circ}$, so residues stay on the beam axis.",
+        body=r"$\theta$ = lab emission half-angle; $\Omega < 5\,\mathrm{msr}$ gives $\theta \lesssim 2.3^{\circ}$.",
         pt=12,
         color="1A2332",
         width=2.65,
@@ -323,7 +331,7 @@ SPECS = [
     ),
     dict(
         name="focus_omega_d",
-        body=r"Forward cone $\lesssim 5\,\mathrm{msr}$ --- well matched to separator acceptance.",
+        body=r"Forward cone below $5\,\mathrm{msr}$ for beams with $A > 40$ near the Coulomb barrier.",
         pt=12,
         color="1A2332",
         width=2.65,
@@ -331,7 +339,7 @@ SPECS = [
     ),
     dict(
         name="focus_eps_d",
-        body=r"For heavy projectiles near the barrier, efficiencies of $20\%$--$100\%$.",
+        body=r"Near the barrier, heavy projectiles give separation efficiencies of $10\%$--$100\%$.",
         pt=12,
         color="1A2332",
         width=2.65,
@@ -397,7 +405,7 @@ Intensity is split across about five charge states.
     ),
     dict(
         name="power_beam_b",
-        body=r"Unretarded projectiles suppressed by ${>}10^{16}$. Scattered beam up to $10^{12}$.",
+        body=r"SHIP suppresses full-energy projectiles by ${>}10^{16}$ and scattered ones by up~to~$10^{12}$.",
         pt=12,
         color="1A2332",
         width=2.65,
@@ -405,7 +413,7 @@ Intensity is split across about five charge states.
     # ── content 5 / 6 ────────────────────────────────────────
     dict(
         name="ship_wien_b",
-        body=r"Separated $E$ then $B$ --- not crossed $E \times B$. Two low-dispersion stages, not one high-dispersion stage.",
+        body=r"Separated $E$ then $B$ --- not crossed $E \times B$. Two low-dispersion stages give high transmission.",
         pt=11,
         color="1A2332",
         width=2.76,
@@ -444,24 +452,24 @@ Intensity is split across about five charge states.
     ),
     dict(
         name="cap_lu",
-        body=r"Fig.~13  ·  Implant-decay spectrum, \nuc{151}{Lu}",
+        body=r"Fig.~13  ·  Implant-decay spectrum  ·  $\nuc{96}{Ru}(\nuc{58}{Ni},\,\mathrm{p2n})\nuc{151}{Lu}$",
         pt=10,
         color="8A96A0",
         border=1,
     ),
     dict(
         name="lu_flight_h",
-        body=r"Flight time $< 2\,\mu\mathrm{s}$",
+        body=r"Flight time < 2\,µs",
         pt=13,
-        color="174994",
+        color="0F2F5C",
         bold=True,
         border=1,
     ),
     dict(
         name="lu_proton_h",
-        body=r"$1.23\,\mathrm{MeV}$ proton line",
+        body=r"1.23\,MeV proton line",
         pt=13,
-        color="174994",
+        color="0F2F5C",
         bold=True,
         border=1,
     ),
@@ -481,16 +489,16 @@ Intensity is split across about five charge states.
     ),
     dict(
         name="lu_half_h",
-        body=r"$T_{1/2} = 0.08\,\mathrm{s}$",
+        body=r"\textit{T}\textsubscript{1/2} = 0.08\,s",
         pt=13,
-        color="174994",
+        color="0F2F5C",
         bold=True,
         border=1,
     ),
     # ── content 8 element 108 ────────────────────────────────
     dict(
         name="cap_hs",
-        body=r"Fig.~14  ·  \nuc{265}{108} from \nuc{58}{Fe} + \nuc{208}{Pb} --- four-tier $\alpha$ gating",
+        body=r"Fig.~14  ·  Four-tier $\alpha$ gating  ·  $\nuc{208}{Pb}(\nuc{58}{Fe},\,\mathrm{n})\nuc{265}{108}$",
         pt=10,
         color="8A96A0",
         border=1,
@@ -498,14 +506,14 @@ Intensity is split across about five charge states.
     # ── content 9 49Mn ───────────────────────────────────────
     dict(
         name="cap_mn",
-        body=r"Fig.~17  ·  Recoil-correlated prompt $\gamma$ spectrum of \nuc{49}{Mn}",
+        body=r"Fig.~17  ·  Recoil-correlated prompt $\gamma$ spectrum  ·  $\nuc{12}{C}(\nuc{40}{Ca},\,\mathrm{p2n})\nuc{49}{Mn}$",
         pt=10,
         color="8A96A0",
         border=1,
     ),
     dict(
         name="mn_drip_b",
-        body=r"$\nuc{12}{C}(\nuc{40}{Ca},\,p2n)\nuc{49}{Mn}$ --- discrete in-beam spectroscopy becomes possible.",
+        body=r"\nuc{49}{Mn} is \nuc{49}{Cr} with $Z$ and $N$ swapped ($Z = 25$, $N = 24$).",
         pt=12,
         color="1A2332",
         width=3.75,
@@ -564,34 +572,34 @@ Intensity is split across about five charge states.
     dict(
         name="hs_ungated_b",
         body=r"Raw $\alpha$ spectrum between beam pulses --- background dominates.",
-        pt=10,
+        pt=11,
         color="1A2332",
         width=2.88,
     ),
     dict(
         name="hs_daughter_b",
-        body=r"Parent--daughter $\alpha$ steps prove the isotope. SHIP never measured $A$ in flight.",
-        pt=10,
+        body=r"SHIP does not resolve the mass; parent--daughter $\alpha$ steps identify the isotope.",
+        pt=11,
         color="1A2332",
         width=2.88,
     ),
     dict(
         name="mn_tag_b",
-        body=r"Keep only $\gamma$ rays in coincidence with a velocity-selected recoil.",
+        body=r"Keep only $\gamma$ rays in coincidence with a mass-selected recoil at the focal plane.",
         pt=12,
         color="1A2332",
         width=3.75,
     ),
     dict(
         name="mn_why_b",
-        body=r"The target $\gamma$ array is central to this design, not an add-on.",
+        body=r"Its spectrometer selects recoils by mass; $\gamma$~detectors surround the target.",
         pt=12,
         color="1A2332",
         width=3.75,
     ),
     dict(
         name="contrib_decay",
-        body=r"Mass is not measured in flight --- $\alpha$-decay chains and recoil-$\gamma$ coincidences identify the isotope.",
+        body=r"SHIP does not resolve the mass; parent--daughter $\alpha$ chains proved element 108 from three atoms.",
         pt=13,
         color="1A2332",
         width=7.7,

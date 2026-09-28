@@ -5,7 +5,7 @@
 | Piece | Path |
 |---|---|
 | Canonical engine | `.agents/skills/academic-ppt/scripts/render_eq.py` |
-| Worked example (full SPECS) | `70_Presentations/717_Learning Group-20260916/render_eq.py` |
+| Worked example (full SPECS) — copy this one for callout eqs (`\ibox` preamble, 2 passes, auto-trim to 1:1) | `70_Presentations/717_Learning Group-20260916/render_eq.py` |
 
 ## Per-deck setup
 
@@ -38,7 +38,7 @@ node build_*.js   # pptxgenjs from 70_Presentations/node_modules
 ```js
 const FONT = "Times New Roman";  // when using this pipeline
 const EQ_META = require("./assets/eq/meta.json");
-function addEq(slide, name, x, y, opts = {}) { /* scale/maxW/maxH/center */ }
+function addEq(slide, name, x, y, opts = {}) { /* 1:1 at meta wIn; center; throw if > maxW (re-render smaller, never scale) */ }
 ```
 
 Display equations = `addImage` via `addEq`. No Cambria / ASCII `E_r =` heroes **when** the LaTeX path is on.

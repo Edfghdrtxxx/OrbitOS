@@ -1,4 +1,4 @@
-"""deckdiff.py A.pptx B.pptx — shape-level diff (text, geometry, fill, shadow, notes, images)."""
+"""deckdiff.py A.pptx B.pptx — shape-level diff (text, geometry, fill, shadow, notes, images) + B's PowerPoint comments."""
 import sys, hashlib
 from pptx import Presentation
 from lxml import etree
@@ -22,6 +22,16 @@ def deck(path):
         out.append(({sh.shape_id: sig(sh) for sh in s.shapes}, notes))
     return out
 
+def comments(path):
+    """(slide, text) for legacy and modern PowerPoint comments."""
+    out = []
+    for i, s in enumerate(Presentation(path).slides, 1):
+        for r in s.part.rels.values():
+            if not r.is_external and r.reltype.endswith("/comments"):
+                for cm in etree.fromstring(r.target_part.blob).xpath("//*[local-name()='cm']"):
+                    out.append((i, " ".join(cm.xpath(".//*[local-name()='text' or local-name()='t']/text()"))))
+    return out
+
 A, B = deck(sys.argv[1]), deck(sys.argv[2])
 print(f"slides {len(A)} -> {len(B)}")
 for i in range(max(len(A), len(B))):
@@ -38,3 +48,4 @@ for i in range(max(len(A), len(B))):
                     lines.append(f"  ~ {sid} {b[sid]['name']} {k}: {str(a[sid][k])[:90]!r} -> {str(b[sid][k])[:90]!r}")
     if an != bn: lines.append(f"  ~ notes: {bn[:120]!r}")
     if lines: print(f"[slide {i+1}]"); print("\n".join(lines))
+for i, t in comments(sys.argv[2]): print(f"[slide {i}] comment: {t[:120]!r}")

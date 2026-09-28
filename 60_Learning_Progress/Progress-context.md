@@ -1,7 +1,7 @@
 ---
 type: learning-index
 purpose: Terse cross-agent index of what the learner has solidly learned. Agents running /learn MUST read this first.
-updated: 2026-09-27
+updated: 2026-09-28
 ---
 # Learning Progress — Context Index
 
@@ -47,7 +47,7 @@ Session: [[2026-07-26-2112 Harmonic oscillator]]
 
 #### QM — expansion coefficients and expectation value
 
-Session: [[2026-09-27-2235 Expectation value in an eigenbasis]] (thread still active)
+Session: [[2026-09-27-2235 Expectation value in an eigenbasis]] (closed 2026-09-28)
 
 - **Projection coefficient:** acting with $\langle f_k|$ on $|\Psi\rangle=\sum_n c_n|f_n\rangle$ gives $c_k=\langle f_k|\Psi\rangle$; orthogonality kills $n\neq k$, normalization makes the survivor exactly $c_k$ (handwritten derivation verified)
 - **Sandwich derivation (card 5.6):** $\langle\Psi|\hat A|\Psi\rangle=\sum_k\lambda_k|c_k|^2$ via linearity of $\hat A$, dagger conjugating scalars ($c^*$ from the bra), separate dummy indices $j,k$, and a $\delta_{jk}$ collapse (handwritten derivation verified)
@@ -56,6 +56,7 @@ Session: [[2026-09-27-2235 Expectation value in an eigenbasis]] (thread still ac
 - **Completeness:** substituting $c_k=\langle f_k|\Psi\rangle$ into the expansion gives $\sum_k|f_k\rangle\langle f_k|=\hat 1$ (stated)
 - **Position form (card 5.5):** insert $\hat 1=\int|x\rangle\langle x|\,\mathrm{d}x$; conjugate symmetry gives $\langle f_n|x\rangle=f_n^*(x)$, so $c_n=\int f_n^*(x)\,\Psi(x,t)\,\mathrm{d}x$; $f_n$ has no $t$ (stated after hint)
 - **Same $\hat H$, new state:** readings stay $E_1,E_2$; only probabilities move ($\frac12,\frac12\to\frac15,\frac45$) (stated, numeric)
+- **Same state, new operator (same eigenbasis):** $\lambda_k$ change, $c_k$ fixed; $\langle\hat B\rangle=\frac15-\frac45=-\frac35$; $\lambda_k$ = operator's readings, $c_k$ = state's weights (unaided, Turn 13)
 
 #### QM — harmonic oscillator
 
@@ -82,6 +83,15 @@ Session: [[2026-08-07-1538 Radioactive beams projectile fragmentation]] (thread 
 
 - **Kinematic velocity matching:** Same fragment velocity $v \approx v_{\text{beam}} \implies$ magnetic rigidity $B\rho \propto A/q$.
 - **Rigidity ratio:** Fully stripped ions $A/Z$; $^{11}\mathrm{Be}$ ($Z=4$) vs $^{11}\mathrm{C}$ ($Z=6$) is stiffer by $3:2$.
+
+#### Exp. tech NP — velocity filters
+
+Session: [[2026-09-28-1604 Velocity filters]] (thread still active)
+
+- **The problem:** fusion residues leave the target forward, inside the unreacted beam; for element 108 that meant 3 atoms in $0.6\times10^{18}$ projectiles (stated)
+- **Momentum:** complete fusion gives $p_{\mathrm{CN}}=p_{\mathrm{beam}}$, so $v_{\mathrm{CN}}/v_{\mathrm p}=A_{\mathrm p}/A_{\mathrm c}$ (stated)
+- **Why a magnet alone fails:** $B\rho=p/q$ with equal $p$ leaves only $q$; the charge-state distributions overlap, so a magnet can't reject the beam (stated)
+- **Crossed-field (Wien) condition:** $qE=qvB\Rightarrow v_0=E/B$, independent of $q$ and $m$, so all charge states pass together (stated)
 
 #### Fluids — Bernoulli / Venturi
 
@@ -217,6 +227,7 @@ Only threads with unfinished core work (verified against session notes).
 
 - **QM: displacement operator $D(\alpha)$:** [next — unblocked] Resume [[2026-07-26-2030 Displacement operator]] $\to$ derivation of $D(\alpha) = e^{\alpha a^\dagger - \alpha^* a}$ (HO/ladder foundations solid).
 - **Exp. tech NP: radioactive beams / projectile fragmentation:** [active] Turn 5 relativistic kinematics of $\sigma(P_\parallel)/P$ plateau vs $\sigma(P_t)/P$ falloff $\to$ [[2026-08-07-1538 Radioactive beams projectile fragmentation]].
+- **Exp. tech NP: velocity filters (Ch. 11 §III.B):** [active] context reconstruction, Turn 4: stated what broke (3 in $0.6\times10^{18}$ forward beam) and $p_{\mathrm{CN}}=p_{\mathrm{beam}}\Rightarrow v_{\mathrm{CN}}/v_{\mathrm p}=A_{\mathrm p}/A_{\mathrm c}$; magnet fails (only $q$ left, overlapping charge states) stated; Wien $v_0=E/B$ stated; open: SHIP separated fields, derive $\theta_B$ and solve $\theta_E=\theta_B$ (Turn 7 trap: assumed $v=E/B$); Fig. 12/15 callout diagrams in note; parked: delayed coincidence, SHE cross section; for the learning-group deck $\to$ [[2026-09-28-1604 Velocity filters]].
 - **Bead on a rotating hoop:** [active] Small-$\theta$ centrifugal piece ($mg\sin\theta$ vs $F_{\mathrm{cf}}\cos\theta$) stability sign $\to$ [[2026-09-08-1247 Bead on a rotating hoop]].
 - **Fluid dynamics: Bernoulli & continuity:** [paused] Venturi locked; Torricelli, viscous $\Delta P$, and $r^4$ coupling open $\to$ [[2026-09-10-1522 Bernoulli equation]] · parent [[2026-09-10-1501 Fluid continuity equation]].
 - **Capacitor energy ($U_C$):** [active] Drill Batch 1 Item 3 (parallel share) $\to$ [[2026-09-14-0816 Capacitor energy]].
@@ -226,7 +237,6 @@ Only threads with unfinished core work (verified against session notes).
 - **E&M: AC maximum power transfer:** [active] Turn 9 — back-emf $\implies$ harder push locked; asking whether cancelling leftover $L$ with load $C$ raises $|I|$ $\to$ [[2026-09-21-0933 AC maximum power transfer]].
 - **E&M: magnetic energy of a square-cross-section toroid:** [active] Turn 2 — GRE clock ≠ slog or memorize; still locating cylindrical $s$ $\to$ [[2026-09-21-2048 Magnetic energy of a square-cross-section toroid]]
 - **Math: determinant equations / eigenvalues:** [active] Turn 1 — diagnosing floor (expansion mechanics vs $\det(M-\lambda I)=0$ setup) $\to$ [[2026-09-23-1713 Determinant equations]].
-- **QM: expectation value in an eigenbasis:** [active] Turn 12 — derivation chain for cards `cpgf-5.5` + `5.6` (expand → project $c_m$ → position form → Born weight → sandwich); retention weak, learner wants picture before memorizing; links 1, 2, 5 derived by hand (Turn 4); link 4 (normalization) done Turn 7; all five links done Turn 10 (card 5.5 conjugate after hint); Turn 12: numeric carrier landed on readings; root was calling $\langle\hat H\rangle$ a possible energy (trap logged); mirror check (same state, new $\hat B$) open $\to$ [[2026-09-27-2235 Expectation value in an eigenbasis]].
 
 
 ## Archived domains

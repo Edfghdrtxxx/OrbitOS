@@ -2,7 +2,7 @@
 type: learning-progress
 topic: "Expectation value in an eigenbasis"
 area: Quantum Mechanics
-status: active
+status: closed
 created: 2026-09-27
 project: "[[GRE_Physics_Prep]]"
 related: "[[2026-07-26-2112 Harmonic oscillator]]"
@@ -10,7 +10,7 @@ prerequisite: "[[2026-07-26-2126 Time-independent Schrödinger equation]]"
 ---
 # Expectation value in an eigenbasis
 
-**Status:** **active**. Turn 12: the numeric carrier landed on readings (same $E_1,E_2$; probabilities $\frac15,\frac45$). Root found: the learner called $\frac15E_1+\frac45E_2$ a "possible energy" (the average taken for an outcome; trap logged). Mirror check: same state, new operator $\hat B$ with the same eigenbasis.
+**Status:** **closed 2026-09-28** (Turn 13). All five links derived; the unaided mirror check (same state, new $\hat B$) passed, splitting $\lambda_k$ from $c_k$ in both directions. Open for retention: card 5.5 conjugate without a hint; $\langle A\rangle$ vs a single reading.
 
 **Why this note exists:** The learner brought Prep Studio formula card `cpgf-5.6` (Kahn eq. 5.6, tag *Formalism*, topic `qm`) from QM formula recall. Prior: $\langle\hat H\rangle=\sum_i P(E_i)E_i$ and the equal-weight two-level case are locked in [[2026-07-26-2112 Harmonic oscillator]]. The projection picture $\Psi(x)=\langle x|\Psi\rangle$ and the 3D-vector components analogy are locked in [[2026-07-27-1331 Position representation]]. Dirac notation is self-report only.
 
@@ -258,3 +258,20 @@ Line 2 is exactly right, so put it next to state A. The detector shows the same 
 Line 1 is where I think your "they both change" came from. $\frac15E_1+\frac45E_2=\frac{13}{5}\hbar\omega$ is a real and useful number, but it's $\langle\hat H\rangle$, not a possible energy. A single measurement can never show $2.6\,\hbar\omega$; it shows $\hbar\omega$ or $3\hbar\omega$. $\langle\hat H\rangle$ is the average over many runs, and it *does* change with the state, from $2\hbar\omega$ to $\frac{13}{5}\hbar\omega$. So something on card 5.6 changes, but it's $\langle A\rangle$ and the $c_k$, never the $\lambda_k$.
 
 Now run it the other way. Keep state B, but measure a different observable $\hat B$ that has the same eigenstates $|E_1\rangle,|E_2\rangle$, with eigenvalues $+1$ and $-1$. Which of $\lambda_k$ and $c_k$ change now, and what does card 5.6 give for $\langle\hat B\rangle$?
+
+
+### Turn 13 — 2026-09-28 (learner)
+
+> I see. In the previous case, we did't change A hat and eigenstates. The only thing we changed was |ψ>. So the eigenvalues λ_k have not changed since it only relates to A hat and eigenstate. When psi changed, C_n changed accordingly to fit the state.
+> Under the current circumstance, the operator changes, so 𝜆 changes with the same eigenstates. <B> = -3/5.
+
+### Tutor
+
+Both halves are right, and together they split $\lambda_k$ from $c_k$ in both directions. Last turn you kept $\hat H$ and changed the state, so the $c_k$ moved and the $\lambda_k$ stayed put. This time you kept the state and changed the operator. The eigenstates are the same, so $c_k=\langle E_k|\Psi\rangle$ stays $\frac{1}{\sqrt5},\frac{2}{\sqrt5}$, and only the $\lambda_k$ change, to $+1$ and $-1$. Card 5.6 then gives $\langle\hat B\rangle=(+1)\cdot\frac15+(-1)\cdot\frac45=-\frac35$. It's also a clean case of last turn's point: a single run of $\hat B$ reads $+1$ or $-1$, never $-\frac35$.
+
+So when the two blur again, ask which object each symbol depends on:
+- **$\lambda_k$** come from $\hat A|f_k\rangle=\lambda_k|f_k\rangle$. They belong to the operator: the readings the detector can show.
+- **$c_k=\langle f_k|\Psi\rangle$** belong to the state, measured against that basis. $|c_k|^2$ is how often each reading turns up.
+- **$\langle A\rangle=\sum_k\lambda_k|c_k|^2$** uses both, so it changes when either one changes.
+
+That closes the session. You derived the whole chain yourself: expand, project out $c_k$ by orthonormality, rewrite the projection in position space (card 5.5), read $|c_k|^2$ as a probability with $\sum_k|c_k|^2=1$, and sandwich $\hat A$ (card 5.6). Two traps stay open for a later `/retention` pass: writing card 5.5 from the bracket with the conjugate and no hint, and keeping $\langle A\rangle$ apart from a single reading. If you want a clean write-up of the full derivation in `30_Research/`, say so and I'll compile it.

@@ -20,9 +20,16 @@ draft .pptx → YOU open/edit/critique → implement → dual visual review → 
 - User ideas are proposals: check them against the source, challenge overstatement, and teach the physics behind a fix.
 - User-edited `.pptx` = ground truth that pass; **no** silent full rebuild without OK.
 - Script SoT: port intent into `build_*.js` / `render_eq.py`, confirm, rebuild.
-- PPT-only edits: surgical follow-up or ask which file wins; mechanics in `references/pptx-surgery.md`.
-- Two versions only: `<Deck>.pptx` = current work station; one sibling = last version = what was delivered at the last handoff. Each pass: first diff current vs last (= the user's edits; `scripts/deckdiff.py <last> <current>`), edit current, then at handoff copy current over last. Review renders export the real deck (no copies) and are wiped when the pass ends.
-- Handoff gate: before every implementation, check the target `.pptx` for changes since the last handoff (timestamp, slide pixels, and shape structure). If it changed, treat the current `.pptx` as ground truth and reconcile its confirmed edits into the script SoT or use a surgical PPTX edit before any rebuild; never run a stale builder over it. Never write or export while `~$<Deck>.pptx` exists; ask the user to close the deck.
+- PPT-only edits: surgical follow-up or ask which file wins.
+- Two versions only: `<Deck>.pptx` = current work station; one sibling = last version = what was delivered at the last handoff. Each pass: first diff current vs last (= the user's edits; `scripts/deckdiff.py <last> <current>`), edit current, then at handoff copy current over last. Review renders are wiped when the pass ends.
+- **User requests.** The user's words are the acceptance test.
+  - At the start of a pass, list every request: chat instructions; comments and note boxes (`deckdiff.py` lists both); edits the user started but didn't finish (e.g. 2 of 4 labels); items still open from earlier passes. A screenshot sent with an instruction marks where it applies first.
+  - Sweep a deck-wide instruction across every slide, text and pictures, and check every part of it.
+  - A comment on something already on the slide means it isn't enough: add what's missing rather than restating it. An answer given in chat goes on the slide too.
+  - Before building, show each item with its planned fix in one line. Ask where more than one fix would work. Build after the user's go.
+  - Answer each note or comment inline: edit the note itself and add a reply under the user's words; the slide fix goes in too. Keep the note until the user confirms.
+  - Before handoff, check each item against the rendered slides and give the list to every reviewer. Report item → slide → what it now shows, marking anything not done. Unconfirmed items carry into the next pass.
+- Handoff gate: before every implementation, check the target `.pptx` for changes since the last handoff (timestamp, slide pixels, and shape structure). If it changed, treat the current `.pptx` as ground truth and reconcile its confirmed edits into the script SoT or use a surgical PPTX edit before any rebuild; never run a stale builder over it. Never write while `~$<Deck>.pptx` exists; ask the user to close the deck (rendering reads the saved file and may run).
 - Style-audit gate: before refining an isolated slide or pair, render and scan the whole deck to identify its established visual grammar (backgrounds, headers, transitions, and density); derive local edits from that system. New blocks copy an existing block's parameters (fill, radius, shadow); no unshaded card beside shaded ones. An empty or unbalanced slide gets a whole-slide re-layout from an existing deck archetype (e.g. figure left + cards right), not a patch on one block; no element repeats another.
 - Sequence-consistency gate: compare adjacent slides in the same conceptual sequence for repeated card, chip, caption, and footer treatments. If a difference is not content-driven, normalize it before the content pass.
 - Content-audit gate: before deep content refinement, read the full deck and its source, then map each slide’s claim, evidence, and transition. Do not infer the deck’s content logic from the slide currently being edited.
@@ -49,7 +56,7 @@ draft .pptx → YOU open/edit/critique → implement → dual visual review → 
 
 ## Dual visual review (after every deck-updating implement)
 
-Fan **in parallel** against **slide pixels** (not scripts alone). Render: `scripts/export_deck.sh <deck> <out>` into a folder PowerPoint was already granted (`99_System/.scratch/vf-visual-review/`); a new folder triggers a blocking access prompt.
+Fan **in parallel** against **slide pixels** (not scripts alone). Render: `scripts/export_deck.sh <deck> 99_System/.scratch/<deck>-review/` (headless LibreOffice, as in Anthropic's pptx skill; no PowerPoint window or prompt). It approximates PowerPoint; the user's pass in PowerPoint is the fidelity check.
 
 | Role | Prefer | Looks at | Out |
 |---|---|---|---|
@@ -64,13 +71,14 @@ An adversarial, slide-by-slide audit of every statement (slide text, LaTeX bodie
 
 ## Hard rules
 
+- **Never invent data.** Every number, data point, and curve on a slide, chart, figure, or aside traces to the source. No source, no number: cut it or ask. A qualitative-only source gets a native, editable schematic captioned "Schematic" that shows no number the source lacks.
 - Human on critical path; explain don’t impress; minimal on-slide text.
 - Formulas: **in-eq** boxes + label→arrow callouts; when tooltips are not enough, a short **concept aside** beside the eq (see `references/latex-eq.md`). No detached under-eq legend grids unless asked.
 - **Phrasing:** before asides/on-slide prose, read `30_Research/Humanize/Registers.md`. Discuss → user audit → record **gold only** in that file (`30_Research/Humanize/README.md` = workflow). No style-guide fork here; no “— not X” tails. Disputed wording: research attested field usage (subagent) before recording.
-- Source-backed claims; fence neighbors when the material has them. Qualitative-only source → native, editable schematic captioned "Schematic"; never invent data.
-- Generated images: no text or numbers inside (numbers go on the slide as text); the deck palette overrides an image skill's brand.
-- Notes: every new visual element gets one spoken line; outline notes say "n of N"; the slogan recurs verbatim.
-- LaTeX-PNG white glyphs: black-on-white + alpha tint.
+- Source-backed claims; fence neighbors when the material has them.
+- Nuclear physics: wherever a reaction, kinematic formula, or spectrum appears, name the projectile, target, ejectile(s), and residue (e.g. ⁵⁸Fe + ²⁰⁸Pb → ²⁶⁵Hs + n); a symbol like A_t arrives with its reaction, not only as a gloss.
+- Generated images: picture only (ask the image model for no text); labels and numbers are PowerPoint text boxes grouped with the image; no title inside the image. The image skill's colours are fine if they sit well with the deck; a colour that means something in the deck keeps that meaning.
+- LaTeX PNGs: place at 1:1 (`meta.json` `wIn`); resize by the spec's `pt`/width and re-render, never by scaling the picture (baked-in labels shrink and blur). White glyphs: black-on-white + alpha tint.
 - No project-wide lint; rebuild + spot-check only.
 
 ## Orchestration

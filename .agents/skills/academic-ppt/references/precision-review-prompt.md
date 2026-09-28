@@ -1,6 +1,6 @@
 # Precision review prompt — template
 
-Fill the `<…>` slots, save as `99_System/.scratch/<deck>-precision-review/precision-review-prompt.md`, and give the user only that path. Inputs in the same folder: `slides/slide-NN.png` (from `scripts/export_deck.sh`, exported into an already-granted folder and moved) and `statements.md` (from `scripts/dump_statements.py`). Wipe the folder once the report is folded in.
+Fill the `<…>` slots, save as `99_System/.scratch/<deck>-precision-review/precision-review-prompt.md`, and give the user only that path. Inputs in the same folder: `slides/slide-NN.png` (`scripts/export_deck.sh <deck> <folder>/slides`, then delete its `deck.pdf`) and `statements.md` (from `scripts/dump_statements.py`). Wipe the folder once the report is folded in.
 
 ---
 
@@ -21,12 +21,16 @@ You are an adversarial academic precision reviewer with expertise in <field>. Au
 - **Structure:** <structure>
 - Elements marked "Schematic" or "Illustration" are qualitative by design. Judge whether they are qualitatively honest, not whether their numbers are exact.
 
+## User requests (acceptance tests)
+
+<the pass's checklist: request in the user's words → slide>. Check that each one is met on the slide; report any that isn't.
+
 ## Check every element, including the speaker notes
 
 - **Physics:** dependencies, directions and signs, limiting cases, and whether each formula matches the source (symbols, definitions, equation numbers).
 - **Numbers and units:** trace every number to the source or flag it as unsupported. Check orders of magnitude, rounding and units.
 - **Quantifiers and overclaims:** "cannot", "all", "never", "most", "unique", "zero": does the source justify the strength?
-- **Attribution:** facility, reaction, isotope, figure numbers, dates.
+- **Attribution:** facility, reaction (projectile, target, ejectile, residue), isotope, figure numbers, dates.
 - **Terminology:** standard usage in the field.
 - **Figure–claim consistency:** do the visible figures, labels, captions and colours support the claims made about them?
 - **Cross-slide consistency:** the same quantity stated differently; notes that contradict slide text; outline questions that don't match their content.
