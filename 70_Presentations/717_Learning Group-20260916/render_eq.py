@@ -159,6 +159,40 @@ def compile_spec(spec: dict) -> dict:
 SPECS = [
     # ── display ──────────────────────────────────────────────
     dict(
+        name="eq_rigidity",
+        body=r"""
+\begin{minipage}{5.2in}
+\centering
+\vspace*{0.62in}
+
+{\fontsize{22}{26}\selectfont\color[HTML]{0F2F5C}$\ibox{Br}{B\rho} = \dfrac{\ibox{p}{p}\rule[-9pt]{0pt}{0pt}}{\rule{0pt}{16pt}\ibox{q}{q}} \approx \dfrac{\ibox{M}{M}\,m_u\,\ibox{be}{\beta}\,c\rule[-9pt]{0pt}{0pt}}{\rule{0pt}{16pt}\ibox{qb}{\bar q}\,e} \propto \ibox{Mb}{\dfrac{M\beta}{\bar q}}$}
+
+\vspace{0.55in}
+\end{minipage}
+\begin{tikzpicture}[remember picture, overlay]
+  \annabove{Br}{magnetic rigidity}
+  \annabove{p}{ion momentum}
+  \annbelow{q}{ion charge}
+  \node[ilab, anchor=south] (MA) at ([yshift=24pt]M.north) {mass number};
+  \draw[iarr] (MA.south) -- (M.north);
+  \node[ilab, anchor=south] (beA) at ([yshift=24pt]be.north) {$\beta = v/c$};
+  \draw[iarr] (beA.south) -- (be.north);
+  \annbelow{qb}{mean charge state}
+  \annabove{Mb}{Fig.~9’s y-axis}
+\end{tikzpicture}
+""",
+        pt=10,
+        color="5F6B73",
+        border=8,
+        passes=2,
+    ),
+    dict(
+        name="eq_rigidity_note",
+        body=r"Eq.~9 \;·\; $\gamma \approx 1$",
+        pt=12,
+        color="5F6B73",
+    ),
+    dict(
         name="eq_er",
         body=r"""
 \begin{minipage}{6.4in}

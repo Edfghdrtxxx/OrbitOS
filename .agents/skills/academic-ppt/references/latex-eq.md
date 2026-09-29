@@ -1,6 +1,6 @@
 # LaTeX → PNG for pptxgenjs
 
-**Default for math-heavy decks; skip when no on-slide math or user opts out.**
+**Default for display equations in math-heavy decks; skip when no on-slide math or user opts out. Prose, titles, captions and card text are native text, never PNG.**
 
 | Piece | Path |
 |---|---|

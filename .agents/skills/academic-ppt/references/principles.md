@@ -61,6 +61,25 @@ Sources: MIT OCW course + transcript (ocw.mit.edu/courses/res-tll-005-how-to-spe
 - Arc (Aristotle's two wonders): wonder at the phenomenon → tension as the gap is described → "so that is what the answer looks like."
 - Fold audience questions into the next version of the talk.
 
+## Premise-title rules (Alon + Doumont + Alley)
+
+Content slides only; Title, Outline, and Contributions are exempt.
+
+1. **Claim, not topic.** Full sentence with subject and verb that states what the evidence means (the "so what"). A title that could not be false is a topic.
+2. **One premise = one main clause.** "but / so / because" joining two claims = two premises → split or cut. "and" inside one noun phrase ("charge states and isotopes") is fine.
+3. **Short.** ≤ ~12 words, ≤ 2 lines, broken at a phrase boundary.
+4. **Title ⊆ slide.** Every claim, number, and named quantity in the title points to evidence on this slide (equation, figure, schematic). The next slide's conclusion goes in notes or the next title, never as a "so X" tail.
+5. **Slide ⊆ title.** Every block serves the title's claim; a block serving another claim is a second premise → move or cut.
+6. **Source ceiling.** Quantifiers, superlatives, and priority claims (most, all, only, first, zero) no stronger than the source; dropping a source qualifier must not make the title false.
+7. **Answers its question.** Outline question + title reads as Q → A, linked to the previous slide by "but" / "therefore".
+8. **Audience's words.** Every term is known to the audience or defined on this slide or earlier.
+
+Fail example: "Residues share the beam's momentum but not its speed, so a magnet fails." — 13 words, three claims (rules 2–3); momentum and $B\rho$ appear nowhere on the slide (rule 4).
+
+Audit per slide: count words and lines → count claims → point each title phrase to its evidence → name the claim each block serves → compare quantifiers with the source sentence → read outline question + title as Q/A.
+
+Sources: Alon 2009 ("full sentence … subject, object, and verb"; "two premises … two slides"; "only what is essential for the premise") · Doumont, *Trees, maps, and theorems*, slide checklist ("the so what"; "get the point just by looking"; "no more than 12 words or so … up to two lines") · Alley, *The Craft of Scientific Presentations* (2013), AE checklist (sentence-assertion headline ≤ 2 lines, supported by visual evidence) · Garner & Alley, *Int. J. Eng. Educ.* 29(6), 1564 (2013) (sentence headline + visual evidence → better comprehension, p < .01).
+
 ## Minto — SCQA opening (The Pyramid Principle)
 
 - **S**ituation (what the audience already accepts) → **C**omplication (what breaks it) → **Q**uestion (the one it raises) → **A**nswer (the talk).

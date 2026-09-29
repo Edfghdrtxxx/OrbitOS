@@ -3,7 +3,7 @@ type: learning-session
 topic: Velocity filters — in-flight separation of fusion residues (Exp. Techniques NP Ch. 11 §III.B)
 source: "[[ExperimentTechniquesNP_Chapter10-11]]"
 status: active
-updated: 2026-09-28
+updated: 2026-09-29
 ---
 # Velocity filters
 
@@ -150,11 +150,11 @@ $$\theta_E\approx\frac{qE\,L_E/v}{mv}=\frac{qE\,L_E}{mv^2}.$$
 
 **(1) Diagrams.** Slide 12 is an outline slide with no figure. I read "slide 10 and 12" as slide 10's Fig. 12 (SHIP) and also annotated the other beam-line figure, Fig. 15 on slide 11 (Daresbury), so both readings are covered. Each diagram embeds the original drawing, with callouts outside it. Labels marked *(inferred)* are not printed on the original figure. I identified them from their shape and the text.
 
-![[vf-ship-fig12-callouts.excalidraw|1000]]
+![[vf-ship-fig12-callouts.excalidraw.md|1000]]
 
 Follow SHIP left to right. The condenser plates push ions sideways, the diaphragms and velocity slit keep only the chosen path, the dipole bends ions back, and the unreacted beam ends in the beam dump. The residues go on through the exit triplet and NASE to the focal-plane detector.
 
-![[vf-daresbury-fig15-callouts.excalidraw|1000]]
+![[vf-daresbury-fig15-callouts.excalidraw.md|1000]]
 
 At Daresbury the beam runs **right to left**: target and γ array, then two crossed-field filters where $\mathbf E$ and $\mathbf B$ overlap, then the DQQQ spectrometer and the focal plane.
 
@@ -163,3 +163,89 @@ At Daresbury the beam runs **right to left**: target and γ array, then two cros
 **(3) Half right.** $q/m$ does cancel. But "$v=E/B$" doesn't follow, because you skipped the step I asked for. In SHIP the two fields are in *different places*, so nothing balances forces at a single point. What has to match is the total **angle** each element gives the ion, and an angle builds up over the element's length. That's why $L_E$ appeared in $\theta_E=\frac{qE\,L_E}{mv^2}$. (Logged in [[Trap-Log]].) Narrowed hint: in the magnet the sideways force is $qvB$, it acts for a time $L_B/v$, and you divide the impulse by the forward momentum $mv$.
 
 **Question:** Write $\theta_B$, set it equal to $\theta_E$, and solve for $v$. Is the selected velocity $E/B$, and when would it be?
+
+### Turn 8 — 2026-09-29 (learner)
+
+> Yes, I did derive it from the momentum of the magnetic field. Theta_B = qvBL_B/(mv^2) = Theta_E = qEL_E/(mv^2) -> v = E/B.
+
+### Tutor
+
+Your $\theta_B$ is right: impulse $qvB\cdot\frac{L_B}{v}$ over forward momentum $mv$ gives $\theta_B=\frac{qvB\,L_B}{mv^2}=\frac{qB\,L_B}{mv}$. The slip is in the last arrow. You wrote $L_E$ and $L_B$ into the equation, then dropped them when you solved it. Keep them and cancel only what actually cancels ($q$, $m$, and one power of $v$):
+
+$$\frac{qE\,L_E}{mv^2}=\frac{qB\,L_B}{mv}\;\Longrightarrow\;v_0=\frac{E\,L_E}{B\,L_B}.$$
+
+So $v_0=E/B$ only in the special case $L_E=L_B$. The general rule is that the filter selects the ratio of the **field integrals**, $v_0=\int E\,dl\big/\int B\,dl$. The crossed-field Wien filter is the case where both fields share one length, which is why its $L$s vanished. The text makes the same point: for the resolution, "it is unimportant whether the deflection fields are superimposed or separated in space" (§II, just before Rochester). This is the same trap as Turn 7 (dropping the lengths), so it stays open in [[Trap-Log]].
+
+**Question:** Now ask why SHIP needs the magnet at all. The condenser alone gives $\theta_E=\frac{qE\,L_E}{mv^2}$. Take two residues of the same isotope, both at $v_0$, one in charge state $20^+$ and one in $22^+$. What does the condenser alone do to them, and what does the magnet then do for them?
+
+### Turn 9 — 2026-09-29 (learner)
+
+> The condenser alone does not have the ability to retain both of the residues since their chargestates are different. Then the magnet sort them together again.
+
+### Tutor
+
+Right idea, and it's the reason SHIP pairs the two fields. Here it is in numbers. Both angles are proportional to $q$. The $22^+$ ion gets $\frac{22}{20}=1.1$ times the condenser kick, so after the plates the two charge states have fanned out into separate paths. On its own, the condenser disperses charge states. The magnet then bends the other way, again in proportion to $q$, so the $22^+$ ion also gets 1.1 times the bend-back. At $v_0$, $\theta_B=\theta_E$ holds for each charge state separately, so every charge state ends with zero net deflection and they **recombine** on the axis. (Better wording than "sort together": the magnet *undoes* the charge dispersion the condenser created, exactly, and only at $v_0$.) That's slide 8's "all charge states pass" claim, carried over to separated fields.
+
+Now take an ion *away* from $v_0$. The two angles don't scale with velocity in the same way: $\theta_E\propto 1/v^2$ but $\theta_B\propto 1/v$.
+
+**Question:** The unreacted beam moves about $4.5\times$ faster than the residues ($v_{\mathrm p}/v_{\mathrm{CN}}=A_{\mathrm c}/A_{\mathrm p}$). Which element wins for the beam, condenser or magnet? Where does the beam end up? Check your answer against the beam dump's position in the SHIP diagram.
+
+### Turn 10 — 2026-09-29 (learner)
+
+> 1. I have a question that the SHIP could put them together in the first place but why they separate them? It makes no sense to me according to my instinct, because it takes extra effort. I mean E and B.
+> 2. The residues win, and the beam end up in the beam dump.
+
+### Tutor
+
+**(2) first, because (1) depends on it.** "Beam dump" is right. "Residues win" answers a different question, though. The question was which *element* deflects the beam more, the condenser or the magnet. Compare the two angles for one ion. Dividing $\theta_E=\frac{qE\,L_E}{mv^2}$ by $\theta_B=\frac{qB\,L_B}{mv}$ gives $\frac{\theta_E}{\theta_B}=\frac{v_0}{v}$. At $v_0$ this is 1, which is the balance. The beam is faster, $v\approx4.5\,v_0$, so its ratio is below 1.
+
+**(1) Your instinct is right that separating the fields costs something:** more elements, more length. The text gives the reason SHIP pays it (§III.B, SHIP paragraph): "The separated-field design starting with a plate condenser ensures that the projectile beam can never hit the plates and create a background of scattered projectiles or damage the plates in case of the high beam currents of up to particle microamperes used at SHIP."
+
+The problem is the beam, not the residues. It arrives at $\sim10^{12}$ particles per second. In a crossed-field filter, the beam is pushed sideways *while it is still between the electrodes*, so it can hit a plate. That damages the plate. Worse, every beam ion that scatters off the metal comes out with a random energy and charge state, and a few of them leak through to the detector as background (the Rochester paragraph in §III.A describes the same problem). In SHIP the fast beam goes through the condenser gap cleanly. Its sideways kick happens later, in the magnet, and that sends it into a beam dump built to absorb it. You pay extra hardware to decide *where* $10^{12}$ ions per second get thrown away.
+
+**Question:** Use $\frac{\theta_E}{\theta_B}=\frac{v_0}{v}$ with $v\approx4.5\,v_0$ for the beam. Which element wins, what is the beam's net angle as a fraction of $\theta_B$, and why does that mean the condenser plates are never at risk?
+
+### Turn 11 — 2026-09-29 (learner)
+
+> So Does that mean that another no-separated E-B example has considerably lower beam intensity, thus there is no need for them to separate E and B?
+> What plates would the beam hit if we use cross-field filter?
+> THe condenser wins. But how does ThetaE over ThetaB come? [image: handwritten derivation]
+>
+> ![[vf-turn11-thetaE-over-thetaB-handwritten.jpg|600]]
+>
+> (Handwritten: $\frac{\theta_E}{\theta_B}=\frac{qE L_E/(mv^2)}{qvBL_B/(mv^2)=qBL_B/(mv)}=\frac{E L_E/v}{B L_B}=\frac{E L_E}{B v L_B}$.)
+
+### Tutor
+
+**Your algebra is right**, and you're one substitution from the end. From Turn 8, $v_0=\frac{E\,L_E}{B\,L_B}$. That is exactly the factor in your last expression, so
+
+$$\frac{\theta_E}{\theta_B}=\frac{E\,L_E}{B\,L_B}\cdot\frac1v=\frac{v_0}{v}.$$
+
+**That same ratio says the condenser does *not* win for the beam.** For the beam, $\frac{v_0}{v}\approx\frac1{4.5}\approx0.22$, so $\theta_E$ is about a fifth of $\theta_B$. The magnet wins. This matches the scaling from Turn 9: $\theta_E\propto1/v^2$ falls off faster with speed than $\theta_B\propto1/v$, so faster ions are ruled by the magnet. (Logged in [[Trap-Log]].)
+
+**Which plates, in a crossed-field filter?** Its own electrodes: the $\pm$ high-voltage plates that make $\mathbf E$, which sit inside the magnet's field region. The beam is too fast, so $qvB>qE$ everywhere along the filter, and it drifts sideways toward one electrode for the whole length. For scale, the LISE crossed-field sections are $2.5\ \mathrm m$ long with a $10\ \mathrm{cm}$ gap (§III.D). The beam has to be rejected inside that $10\ \mathrm{cm}$, right next to the metal.
+
+**Lower beam intensity at Daresbury?** Partly yes, but that is my inference, because the text gives no Daresbury beam current. The text shows what each instrument was for. SHIP chases picobarn superheavy fusion (3 atoms in 10 days), which needs "particle microamperes" of beam, so where the beam goes becomes the main design problem. Daresbury's examples are recoil-$\gamma$ coincidences on nuclei like $^{49}\mathrm{Mn}$ and masses 130/131, with much larger cross sections. Those experiments don't need extreme beam intensity, and a $\gamma$ array around the target limits the usable intensity anyway. At those currents, a compact crossed-field filter is good enough. The trade-off, then: separated fields cost length but let the device survive very intense beams; crossed fields are compact but put the beam rejection next to the electrodes.
+
+**Question:** With $\frac{\theta_E}{\theta_B}\approx0.22$ for the beam, what is the beam's net angle $\theta_B-\theta_E$ as a fraction of $\theta_B$? Which way does it point, the condenser's direction or the magnet's?
+
+### Turn 12 — 2026-09-29 (learner)
+
+> Oh I see.
+> 1. v0 is the velocity of the residues, while v is the velocity of the beam particles
+> 2. We need to prevent beam particles from being bended too much in the plate capacitor to avoid huge image it might bring to the apparatus and downstream detectors.
+> 3. As a fraction of ThetaB, it is 0.78. The magnet's direction.
+
+### Tutor
+
+All three are right. The beam's net angle is $\theta_B-\theta_E=\theta_B\left(1-\frac{v_0}{v}\right)\approx0.78\,\theta_B$, pointing the magnet's way, which is where the beam dump sits in the SHIP diagram. One refinement to (2): the danger is less "bent too much" and more "bent *inside the plates*". The fast beam gets only a small kick in the condenser, clears the gap, and is steered away later by the magnet, into a dump built to take it. Hitting the plates would do two kinds of harm: it would damage them, and the scattered projectiles would reach the detector with random energy and charge state.
+
+That closes the separation mechanism. You can now carry this chain yourself:
+- **Problem:** residues fly forward inside the beam.
+- **Why a magnet alone fails:** equal momentum leaves only $q$ to sort by.
+- **Velocity selection:** it ignores $q$ and $m$. Crossed fields select $v_0=E/B$; separated fields select $v_0=\frac{E\,L_E}{B\,L_B}$.
+- **Why SHIP separates the fields:** the condenser spreads the residue charge states and the magnet recombines them at $v_0$. The beam, with $\frac{\theta_E}{\theta_B}=\frac{v_0}{v}\approx0.22$, is dumped by the magnet, clear of the plates.
+
+What's left in the section is the **identification** step (the text's "SHIP does not identify nuclear masses"). This is the parked delayed-coincidence branch, Figs. 13–14, slides 13–14.
+
+**Question:** A residue stops in the silicon detector at the focal plane. Nothing along the way measured its mass. After it stops, what could the detector record over time that would tell you it was $^{265}108$ and not a stray scattered projectile?

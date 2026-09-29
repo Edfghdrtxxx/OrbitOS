@@ -1,7 +1,7 @@
 ---
 type: learning-index
 purpose: Terse cross-agent index of what the learner has solidly learned. Agents running /learn MUST read this first.
-updated: 2026-09-28
+updated: 2026-09-29
 ---
 # Learning Progress — Context Index
 
@@ -92,6 +92,9 @@ Session: [[2026-09-28-1604 Velocity filters]] (thread still active)
 - **Momentum:** complete fusion gives $p_{\mathrm{CN}}=p_{\mathrm{beam}}$, so $v_{\mathrm{CN}}/v_{\mathrm p}=A_{\mathrm p}/A_{\mathrm c}$ (stated)
 - **Why a magnet alone fails:** $B\rho=p/q$ with equal $p$ leaves only $q$; the charge-state distributions overlap, so a magnet can't reject the beam (stated)
 - **Crossed-field (Wien) condition:** $qE=qvB\Rightarrow v_0=E/B$, independent of $q$ and $m$, so all charge states pass together (stated)
+- **Separated fields (SHIP), deflection angles:** $\theta_E=\frac{qEL_E}{mv^2}$, $\theta_B=\frac{qBL_B}{mv}$ from (impulse)/(forward momentum) (derived); solving $\theta_E=\theta_B$ still drops $L_E/L_B$ (correct: $v_0=EL_E/(BL_B)$)
+- **Why SHIP pairs condenser + magnet:** condenser alone fans out charge states; the magnet bends back $\propto q$, recombining them at $v_0$ (stated, qualitative)
+- **Beam rejection in SHIP:** $\theta_E/\theta_B=v_0/v$; beam at $4.5v_0$ nets $\approx0.78\,\theta_B$ in the magnet's direction, to the dump; separated fields keep the beam off the condenser plates (stated)
 
 #### Fluids — Bernoulli / Venturi
 
@@ -227,7 +230,7 @@ Only threads with unfinished core work (verified against session notes).
 
 - **QM: displacement operator $D(\alpha)$:** [next — unblocked] Resume [[2026-07-26-2030 Displacement operator]] $\to$ derivation of $D(\alpha) = e^{\alpha a^\dagger - \alpha^* a}$ (HO/ladder foundations solid).
 - **Exp. tech NP: radioactive beams / projectile fragmentation:** [active] Turn 5 relativistic kinematics of $\sigma(P_\parallel)/P$ plateau vs $\sigma(P_t)/P$ falloff $\to$ [[2026-08-07-1538 Radioactive beams projectile fragmentation]].
-- **Exp. tech NP: velocity filters (Ch. 11 §III.B):** [active] context reconstruction, Turn 4: stated what broke (3 in $0.6\times10^{18}$ forward beam) and $p_{\mathrm{CN}}=p_{\mathrm{beam}}\Rightarrow v_{\mathrm{CN}}/v_{\mathrm p}=A_{\mathrm p}/A_{\mathrm c}$; magnet fails (only $q$ left, overlapping charge states) stated; Wien $v_0=E/B$ stated; open: SHIP separated fields, derive $\theta_B$ and solve $\theta_E=\theta_B$ (Turn 7 trap: assumed $v=E/B$); Fig. 12/15 callout diagrams in note; parked: delayed coincidence, SHE cross section; for the learning-group deck $\to$ [[2026-09-28-1604 Velocity filters]].
+- **Exp. tech NP: velocity filters (Ch. 11 §III.B):** [active] context reconstruction, Turn 4: stated what broke (3 in $0.6\times10^{18}$ forward beam) and $p_{\mathrm{CN}}=p_{\mathrm{beam}}\Rightarrow v_{\mathrm{CN}}/v_{\mathrm p}=A_{\mathrm p}/A_{\mathrm c}$; magnet fails (only $q$ left, overlapping charge states) stated; Wien $v_0=E/B$ stated; Turn 8: derived $\theta_B=qBL_B/(mv)$ but dropped $L$s in the solve ($v_0=EL_E/(BL_B)$, trap recurred); separation mechanism complete through Turn 12 (SHIP beam net $0.78\,\theta_B$, magnet side); open: identification by implant–decay correlation (Figs. 13–14), Turn 12 question; re-test traps $L_E/L_B$ and which-element-wins; Fig. 12/15 callout diagrams in note; parked: delayed coincidence, SHE cross section; for the learning-group deck $\to$ [[2026-09-28-1604 Velocity filters]].
 - **Bead on a rotating hoop:** [active] Small-$\theta$ centrifugal piece ($mg\sin\theta$ vs $F_{\mathrm{cf}}\cos\theta$) stability sign $\to$ [[2026-09-08-1247 Bead on a rotating hoop]].
 - **Fluid dynamics: Bernoulli & continuity:** [paused] Venturi locked; Torricelli, viscous $\Delta P$, and $r^4$ coupling open $\to$ [[2026-09-10-1522 Bernoulli equation]] · parent [[2026-09-10-1501 Fluid continuity equation]].
 - **Capacitor energy ($U_C$):** [active] Drill Batch 1 Item 3 (parallel share) $\to$ [[2026-09-14-0816 Capacitor energy]].

@@ -1,4 +1,16 @@
 {
+  "eq_rigidity": {
+    "wIn": 4.0367,
+    "hIn": 1.5467,
+    "wPx": 1211,
+    "hPx": 464
+  },
+  "eq_rigidity_note": {
+    "wIn": 1.0318,
+    "hIn": 0.2047,
+    "wPx": 310,
+    "hPx": 62
+  },
   "eq_er": {
     "wIn": 4.89,
     "hIn": 1.0333,

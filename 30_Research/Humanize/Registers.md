@@ -25,6 +25,10 @@ Natural prose beside a formula or figure (concept layer when a symbol gloss is n
 - **Residue:** heavy remnant of the compound nucleus after it evaporates a few light particles.
 - **\(E_r = (A_p/A_c) E_p\):** the residue’s kinetic energy under full momentum transfer: motion at \(v_{\mathrm{cm}}\), slower than the beam.
 
+**Velocity Filters — factor 3 in Eq. 5**
+
+- **Factor 3:** each emission kicks the residue in a random direction. The squared kicks add up, and x, y and z share the sum equally; \(\sigma_r\) is the spread along one axis, so \(\sigma_r^2\) gets a third.
+
 ## Outline questions
 
 The audience's own questions on outline slides.

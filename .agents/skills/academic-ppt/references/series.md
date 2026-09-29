@@ -34,7 +34,7 @@ coral: "E85D4C", accentSoft: "E8F0FA", gold: "C9A227"
 - Author: Zhiheng Hu · Footer label: `Learning Group` · `page / TOTAL_CONTENT` (content slides only)
 - Layout `LAYOUT_16x9` · header bar `h: 0.57` · footer rule `y: 5.32`
 - Title: badge “Learning · Group” + IMP logo + full-width blue band
-- Long sentence titles: shrink 18→16→15 pt; or eq header image if math-heavy
+- Premise titles: one size, 18 pt bold, on every content slide. Never shrink a long title; shorten the sentence to one line
 - Coral banners: avoid white-on-coral; prefer blue banner or dark ink
 - Contributions close on blue full-bleed; three numbered takeaways
 

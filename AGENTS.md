@@ -127,6 +127,7 @@ Skip any related-repo path that does not exist on disk.
 - Flag potential issues proactively: duplicate projects, scheduling conflicts, stale tasks, or missing links — but execute the user's request regardless unless asked to reconsider
 - **Desktop & Host Automation (Background by Default):** Never invoke `win.raise()` or `{ delivery: "foreground" }` on desktop windows unless explicitly requested. Input dispatches must use `delivery: "background"` or AX actions (`el.press()`, `el.setValue()`) without stealing active window focus or moving the pointer. **omp computer-use:** load `99_System/memory/preference_omp_computer_no_interrupt.md`.
 - **Skill `evolution.md`:** Only real faults/fixes, or lessons you explicitly capture. Never self-author an entry — wait for a direct ask or a confirmed `/evolve`. If the preference already lives in the skill body, skip the lesson.
+- **No self-describing filler.** Write what is true and what to do. Omit the state or history of the text itself ("recorded", "not yet used", "newly added", "as discussed"). Keep a status only when it changes what the reader does: one word, said once. In notes, instructions, and this file: delete a phrase when the reader would act the same without it and no likely case is left unsettled. A reason that alone settles a case the sentence does not name stays. A note of when the sentence was written, who asked for it, or what it replaced goes.
 
 
 ## Principles of Paramount Importance

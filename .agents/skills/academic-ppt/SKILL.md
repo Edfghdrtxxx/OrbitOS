@@ -18,23 +18,24 @@ draft .pptx → YOU open/edit/critique → implement → dual visual review → 
 ```
 
 - User ideas are proposals: check them against the source, challenge overstatement, and teach the physics behind a fix.
-- User-edited `.pptx` = ground truth that pass; **no** silent full rebuild without OK.
+- User-edited `.pptx` = ground truth that pass; **no** silent full rebuild without OK. Figure size, crop and stretch set by the user are final: don't flag or undo them.
 - Script SoT: port intent into `build_*.js` / `render_eq.py`, confirm, rebuild.
 - PPT-only edits: surgical follow-up or ask which file wins.
 - Two versions only: `<Deck>.pptx` = current work station; one sibling = last version = what was delivered at the last handoff. Each pass: first diff current vs last (= the user's edits; `scripts/deckdiff.py <last> <current>`), edit current, then at handoff copy current over last. Review renders are wiped when the pass ends.
 - **User requests.** The user's words are the acceptance test.
-  - At the start of a pass, list every request: chat instructions; comments and note boxes (`deckdiff.py` lists both); edits the user started but didn't finish (e.g. 2 of 4 labels); items still open from earlier passes. A screenshot sent with an instruction marks where it applies first.
+  - At the start of a pass, list every request: chat instructions; comments in any form: PowerPoint comments, note or "Comment:" boxes, "(Comment: …)" inside a text, struck-through text (= rewrite it) (`deckdiff.py` shows each); edits the user started but didn't finish (e.g. 2 of 4 labels); items still open from earlier passes. A screenshot sent with an instruction marks where it applies first.
   - Sweep a deck-wide instruction across every slide, text and pictures, and check every part of it.
   - A comment on something already on the slide means it isn't enough: add what's missing rather than restating it. An answer given in chat goes on the slide too.
-  - Before building, show each item with its planned fix in one line. Ask where more than one fix would work. Build after the user's go.
-  - Answer each note or comment inline: edit the note itself and add a reply under the user's words; the slide fix goes in too. Keep the note until the user confirms.
+  - **Comments are actions.** The user writes a comment so that you act on it: research it, apply the fix (choose from the source and the deck's grammar), and replace the comment. No plan-and-wait, no "want me to?"; state the choice in the handoff report.
+  - Chat requests: before building, show each item with its planned fix in one line. Ask where more than one fix would work. Build after the user's go.
+  - Answer a note or comment by replacing it: delete the user's words and put the answer in its place on the slide. Never narrate the edit ("now in the aside"); the answer reads as if it had always been there.
   - Before handoff, check each item against the rendered slides and give the list to every reviewer. Report item → slide → what it now shows, marking anything not done. Unconfirmed items carry into the next pass.
 - Handoff gate: before every implementation, check the target `.pptx` for changes since the last handoff (timestamp, slide pixels, and shape structure). If it changed, treat the current `.pptx` as ground truth and reconcile its confirmed edits into the script SoT or use a surgical PPTX edit before any rebuild; never run a stale builder over it. Never write while `~$<Deck>.pptx` exists; ask the user to close the deck (rendering reads the saved file and may run).
 - Style-audit gate: before refining an isolated slide or pair, render and scan the whole deck to identify its established visual grammar (backgrounds, headers, transitions, and density); derive local edits from that system. New blocks copy an existing block's parameters (fill, radius, shadow); no unshaded card beside shaded ones. An empty or unbalanced slide gets a whole-slide re-layout from an existing deck archetype (e.g. figure left + cards right), not a patch on one block; no element repeats another.
-- Sequence-consistency gate: compare adjacent slides in the same conceptual sequence for repeated card, chip, caption, and footer treatments. If a difference is not content-driven, normalize it before the content pass.
+- Sequence-consistency gate: compare adjacent slides in the same conceptual sequence for repeated title size (`references/series.md`), card, chip, caption, and footer treatments. If a difference is not content-driven, normalize it before the content pass.
 - Content-audit gate: before deep content refinement, read the full deck and its source, then map each slide’s claim, evidence, and transition. Do not infer the deck’s content logic from the slide currently being edited.
 - Stakes-first gate: the audience feels the problem before any method appears. Before locking the outline, set the stakes (one concrete number or scene), then state the question the title raises at first glance and make outline item 1 answer it; discuss wording before editing. Then run a consolidation check: merge questions that share one answer thread; treat a one-slide section as a merge candidate; fewer sections wins. The stakes page fills the talk's Background slot. Method: `references/principles.md` (Winston).
-- Question-chain outline: outline items = the audience's own questions in the order they would ask them, each raised by the previous answer (link by "but"/"therefore", never "and then"). Voice the obvious objection ourselves before the audience does. Content-slide titles stay full-sentence answers. Sources: `references/principles.md`.
+- Question-chain outline: outline items = the audience's own questions in the order they would ask them, each raised by the previous answer (link by "but"/"therefore", never "and then"). Voice the obvious objection ourselves before the audience does. Content-slide titles stay full-sentence answers ending with a period. Sources: `references/principles.md`.
 - Page-level loop: after each implement, tell the user to open the editable `.pptx`; they may describe or screenshot changes, and the current page is refined to confirmation before moving on.
 - Meta-propulsion: when the user identifies friction in the loop, iterate the iteration process itself and record only confirmed workflow improvements here.
 
@@ -74,10 +75,12 @@ An adversarial, slide-by-slide audit of every statement (slide text, LaTeX bodie
 - **Never invent data.** Every number, data point, and curve on a slide, chart, figure, or aside traces to the source. No source, no number: cut it or ask. A qualitative-only source gets a native, editable schematic captioned "Schematic" that shows no number the source lacks.
 - Human on critical path; explain don’t impress; minimal on-slide text.
 - Formulas: **in-eq** boxes + label→arrow callouts; when tooltips are not enough, a short **concept aside** beside the eq (see `references/latex-eq.md`). No detached under-eq legend grids unless asked.
+- Figure annotations: use the types in `references/annotation-types.md` (region highlight: tint + outline + tag, plus variations chosen by what is pointed at) instead of ad-hoc boxes.
 - **Phrasing:** before asides/on-slide prose, read `30_Research/Humanize/Registers.md`. Discuss → user audit → record **gold only** in that file (`30_Research/Humanize/README.md` = workflow). No style-guide fork here; no “— not X” tails. Disputed wording: research attested field usage (subagent) before recording.
 - Source-backed claims; fence neighbors when the material has them.
 - Nuclear physics: wherever a reaction, kinematic formula, or spectrum appears, name the projectile, target, ejectile(s), and residue (e.g. ⁵⁸Fe + ²⁰⁸Pb → ²⁶⁵Hs + n); a symbol like A_t arrives with its reaction, not only as a gloss.
 - Generated images: picture only (ask the image model for no text); labels and numbers are PowerPoint text boxes grouped with the image; no title inside the image. The image skill's colours are fine if they sit well with the deck; a colour that means something in the deck keeps that meaning.
+- **Editable text.** Every word on a slide is native, editable text: titles, cards, captions, asides, labels. Inline symbols are runs (italic variables, `baseline` for sub/superscripts, Unicode for ×, μ, γ, ≈). LaTeX PNG is for display equations (glosses baked in) and math native text cannot set (stacked fractions, roots); the prose around a formula stays native.
 - LaTeX PNGs: place at 1:1 (`meta.json` `wIn`); resize by the spec's `pt`/width and re-render, never by scaling the picture (baked-in labels shrink and blur). White glyphs: black-on-white + alpha tint.
 - No project-wide lint; rebuild + spot-check only.
 
