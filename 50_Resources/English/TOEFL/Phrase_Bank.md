@@ -44,7 +44,7 @@ reconciled: 2026-08-27
 > 1. `Cmd+P` (Mac) / `Ctrl+P` (Win) → run **`Spaced Repetition: Review flashcards`**  
 >    (or **Review flashcards in this note** while this file is open)
 > 2. Select your targeted deck:
->    - **`flashcards` → `toefl`** (52 cards, one-way `?`: scenario/cue → phrase, model & collocations)
+   - **`flashcards` → `toefl`** (47 cards, one-way `?`: scenario/cue → phrase, model & collocations)
 >
 > Do **not** look for this note under `#review` in the sidebar.
 
@@ -61,12 +61,10 @@ reconciled: 2026-08-27
 
 ### TOEFL-01 · Stating a reason (causal closer)
 
-You've given a preference or claim and need a crisp "why" without stalling
-?
+Context: You've given a preference or claim and need a crisp "why" without stalling
 Phrase: That is precisely why I… / That is precisely the reason that I…
 Model: Face-to-face conversation builds empathy in a way screens never can — that is precisely why I prefer meeting friends in person.
 Note: Prefer "precisely why" for speech; "the reason that" is slightly more formal. Avoid "the reason why" (mildly redundant).
-<!--SR:!2026-09-16,4,270-->
 
 ### TOEFL-02 · Demanding experience / sheer volume
 
@@ -112,7 +110,7 @@ Wrapping up an answer or landing a preference cleanly
 ?
 Phrase: So all in all, that's basically why I'd rather… than…
 Model: So all in all, that’s basically why I’d rather travel with one or two close friends than in a big group.
-<!--SR:!2026-09-18,7,270-->
+<!--SR:!2026-10-04,4,250-->
 
 ### TOEFL-08 · Concluding / lesson learned
 
@@ -155,7 +153,7 @@ Academic debate — distinguishing surface causes from core student motivation (
 ?
 Phrase: The existence of… is merely a superficial trigger; genuinely motivated students remain committed to…
 Model: The existence of recordings is merely a superficial trigger; genuinely motivated students remain committed to attending live sessions regardless of available resources.
-<!--SR:!2026-09-18,6,250-->
+<!--SR:!2026-10-15,15,250-->
 
 ### TOEFL-14 · Upgrading value claims
 
@@ -260,7 +258,7 @@ Campus research ethics, planning, and maintaining participant trust
 ?
 Phrase: Careful planning and transparent communication protect… and strengthen trust in…
 Model: Careful planning and transparent communication protect participants and strengthen trust in campus research.
-<!--SR:!2026-09-18,8,190-->
+<!--SR:!2026-10-04,4,170-->
 
 ### TOEFL-27 · Concession openers (Hardly ever / Even though)
 
@@ -340,7 +338,7 @@ Happy childhood memory, memorable school celebration, or nostalgic event
 Phrase: One of my happiest childhood memories was… where the air was filled with laughter as…
 Model: One of my happiest childhood memories was a classroom party where the air was filled with laughter as we shared a birthday cake and played chasing games. I felt genuinely happy and content. Our teacher was excited too and meticulously took a lot of photos and videos, which I still look at today to remember that day.
 Collocations: happiest childhood memories · air was filled with laughter · shared a birthday cake · played chasing games · genuinely happy and content · was excited too · meticulously took a lot of photos and videos
-<!--SR:!2026-09-17,5,250-->
+<!--SR:!2026-10-13,13,250-->
 
 ### TOEFL-37 · AI impact: Building learning momentum
 
@@ -374,7 +372,7 @@ Debate prompt — keeping foundational subjects at the core of school curricula
 Phrase: I strongly advocate for maintaining… at the core of curricula.
 Model: I strongly advocate for maintaining traditional subjects like mathematics and literature at the core of curricula.
 Collocations: strongly advocate for · maintaining traditional subjects · at the core of curricula
-<!--SR:!2026-09-27,18,250-->
+<!--SR:!2026-10-08,8,230-->
 
 ### TOEFL-41 · Narrative: Value of teamwork & collaboration
 

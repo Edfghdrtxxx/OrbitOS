@@ -1,7 +1,7 @@
 ---
 type: learning-index
 purpose: Terse cross-agent index of what the learner has solidly learned. Agents running /learn MUST read this first.
-updated: 2026-09-29
+updated: 2026-09-30
 ---
 # Learning Progress — Context Index
 
@@ -65,6 +65,9 @@ Session: [[2026-07-26-2112 Harmonic oscillator]]
 - **Zero-point energy:** $E_0 = \frac{1}{2}\hbar\omega > 0$; strictly positive due to Heisenberg uncertainty $\Delta x \Delta p \ge \hbar/2$ (drill re-locked).
 - **Spectrum spacing:** Equal ladder spacing $E_{n+1} - E_n = \hbar\omega$; general level $E_n = \hbar\omega(n + \frac{1}{2})$.
 - **Ground state boundary:** $n \ge 0$; $n = -1$ is unphysical ($E_{-1} < E_0$).
+- **Node rule (Kahn 5.1.5 Q4):** $\psi_n$ has $n$ nodes (axis crossings, not peaks, not tails); parity $(-1)^n$ as cross-check; read Kahn figure as $n=3$, $\frac72\hbar\omega$ (stated, [[2026-09-30-1509 Kahn 5.1.5 and 5.2.3 debrief]])
+- **Virial + $\langle p^2\rangle$ (Kahn 5.2.3 Q1):** $2\langle T\rangle=k\langle V\rangle$ for $V\propto r^k$; HO $k=2\Rightarrow\langle T\rangle=\langle V\rangle=\frac12E_n$, $\langle p^2\rangle_n=mE_n$ as an *average* ($|n\rangle$ not a $\hat p^2$ eigenstate: $\langle n|$ reads the shadow, off-axis part orthogonal); $\frac{1}{\sqrt2}(|1\rangle+|4\rangle)\to3m\hbar\omega$ (handwritten + stated)
+- **Degeneracy (Kahn 5.2.3 Q2E, Q3):** degeneracy = 简并度 = number of distinct states per energy; 1D HO nondegenerate; 2D HO $E=(n_x+n_y+1)\hbar\omega$, $3\hbar\omega\to(2,0),(1,1),(0,2)$ = 3 (stated)
 
 #### QM — ladder operators
 
@@ -228,6 +231,7 @@ Session: [[2026-09-22-2235 Rolling sphere launch energy]] (closed 2026-09-27)
 
 Only threads with unfinished core work (verified against session notes).
 
+- **QM: Kahn 5.1.5 + 5.2.3 debrief (GRE reflexes):** [active] Turn 10 — R1–R4 locked (phase-only evolution; nodes $=n$ + parity; virial $\langle p^2\rangle_n=mE_n$ as average, not eigenvalue); R4: counted 2D $E=3\hbar\omega$ degeneracy 3 (简并度 = degeneracy was a vocabulary gap); asking $N+1$ generalization; R5 $\hbar c$ estimates open; learner wants diagrams as carrier, flags high load $\to$ [[2026-09-30-1509 Kahn 5.1.5 and 5.2.3 debrief]].
 - **QM: displacement operator $D(\alpha)$:** [next — unblocked] Resume [[2026-07-26-2030 Displacement operator]] $\to$ derivation of $D(\alpha) = e^{\alpha a^\dagger - \alpha^* a}$ (HO/ladder foundations solid).
 - **Exp. tech NP: radioactive beams / projectile fragmentation:** [active] Turn 5 relativistic kinematics of $\sigma(P_\parallel)/P$ plateau vs $\sigma(P_t)/P$ falloff $\to$ [[2026-08-07-1538 Radioactive beams projectile fragmentation]].
 - **Exp. tech NP: velocity filters (Ch. 11 §III.B):** [active] context reconstruction, Turn 4: stated what broke (3 in $0.6\times10^{18}$ forward beam) and $p_{\mathrm{CN}}=p_{\mathrm{beam}}\Rightarrow v_{\mathrm{CN}}/v_{\mathrm p}=A_{\mathrm p}/A_{\mathrm c}$; magnet fails (only $q$ left, overlapping charge states) stated; Wien $v_0=E/B$ stated; Turn 8: derived $\theta_B=qBL_B/(mv)$ but dropped $L$s in the solve ($v_0=EL_E/(BL_B)$, trap recurred); separation mechanism complete through Turn 12 (SHIP beam net $0.78\,\theta_B$, magnet side); open: identification by implant–decay correlation (Figs. 13–14), Turn 12 question; re-test traps $L_E/L_B$ and which-element-wins; Fig. 12/15 callout diagrams in note; parked: delayed coincidence, SHE cross section; for the learning-group deck $\to$ [[2026-09-28-1604 Velocity filters]].

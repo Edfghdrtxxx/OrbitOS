@@ -1050,7 +1050,7 @@ Three representative orbit energies are marked, *E*1, *E*2, and *E*3. An orbit w
 
 That is *not* to say that the orbit must be periodic: all it means is that, for a general potential, the body's orbit shape is enclosed within a ring-shaped region bounded by the circles of radii *r*<sup>1</sup> and *r*2. The orbit *E*<sup>3</sup> is a special case, where we sit exactly at the minimum of the effective potential: then, there is not enough energy to change the value of *r*, so *the minimum of V*(*r*) *corresponds to circular orbits*. To find the radius of these orbits, just solve *V* (*r*) = 0 for *r*. You should also check for stability by ensuring that *V*(*r*) > 0, otherwise we'd be sitting at an unstable *maximum*. Similarly, for more general orbit energies, we can read off the distance of closest approach by solving *E* = *V*(*r*) for *r*.
 
-We can be much more specific about orbit shapes in the case *U*(*r*) = *k*/*r*, as would be the case for a gravitational potential. Without getting into the details of the derivation, the results are
+We can be much more specific about orbit shapes in the case *U*(*r*) = *k*/*r* (with $k < 0$ for an attractive potential, as for Newtonian gravity $k = -GMm$; a repulsive $k > 0$ potential has no bound states and only hyperbolic scattering orbits occur), as would be the case for a gravitational potential. Without getting into the details of the derivation, the results are
 
 - *E* > 0: hyperbolic orbit
 - *E* = 0: parabolic orbit
