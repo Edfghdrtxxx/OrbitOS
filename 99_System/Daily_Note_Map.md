@@ -9,7 +9,7 @@ tags: [system, planning]
 The week is the unit of planning; a single day can be zero; the only required act is one reply on plan day.
 
 ## How a day is made
-Today's note = `cp` of the latest earlier daily note (top-level date strictly before today) + a surgical delta edit. Nothing is rebuilt from scratch. If today's note already exists it is never re-copied, and its resets/clears never replay. No earlier note and no today's note → stop; no template.
+Today's note = `cp` of the latest earlier daily note (`10_Daily/YYYY-MM/YYYY-MM-DD.md`, date strictly before today) + a surgical delta edit. Nothing is rebuilt from scratch. If today's note already exists it is never re-copied, and its resets/clears never replay. No earlier note and no today's note → stop; no template.
 
 Mode is the user's choice: bare `/start-my-day` is always full; lightweight runs only on an explicit keyword (short / lightweight / light / residual / copy-forward).
 

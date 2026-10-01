@@ -1,7 +1,7 @@
 ---
 type: learning-index
 purpose: Terse cross-agent index of what the learner has solidly learned. Agents running /learn MUST read this first.
-updated: 2026-09-30
+updated: 2026-10-01
 ---
 # Learning Progress — Context Index
 
@@ -67,7 +67,9 @@ Session: [[2026-07-26-2112 Harmonic oscillator]]
 - **Ground state boundary:** $n \ge 0$; $n = -1$ is unphysical ($E_{-1} < E_0$).
 - **Node rule (Kahn 5.1.5 Q4):** $\psi_n$ has $n$ nodes (axis crossings, not peaks, not tails); parity $(-1)^n$ as cross-check; read Kahn figure as $n=3$, $\frac72\hbar\omega$ (stated, [[2026-09-30-1509 Kahn 5.1.5 and 5.2.3 debrief]])
 - **Virial + $\langle p^2\rangle$ (Kahn 5.2.3 Q1):** $2\langle T\rangle=k\langle V\rangle$ for $V\propto r^k$; HO $k=2\Rightarrow\langle T\rangle=\langle V\rangle=\frac12E_n$, $\langle p^2\rangle_n=mE_n$ as an *average* ($|n\rangle$ not a $\hat p^2$ eigenstate: $\langle n|$ reads the shadow, off-axis part orthogonal); $\frac{1}{\sqrt2}(|1\rangle+|4\rangle)\to3m\hbar\omega$ (handwritten + stated)
-- **Degeneracy (Kahn 5.2.3 Q2E, Q3):** degeneracy = 简并度 = number of distinct states per energy; 1D HO nondegenerate; 2D HO $E=(n_x+n_y+1)\hbar\omega$, $3\hbar\omega\to(2,0),(1,1),(0,2)$ = 3 (stated)
+- **Degeneracy (Kahn 5.2.3 Q2E, Q3):** degeneracy = 简并度 = number of distinct states per energy; 1D HO nondegenerate; 2D HO $E=(n_x+n_y+1)\hbar\omega$, $3\hbar\omega\to(2,0),(1,1),(0,2)$ = 3 (stated); general 2D: $E=(N+1)\hbar\omega$ has $N+1$ states (stated after off-by-one fix); 3D $N=2$ counted 6 $\to\frac{(N+1)(N+2)}{2}$
+- **$\hbar c$ estimate (Kahn 5.1.5 Q8):** $E\sim\frac{(\hbar c)^2}{2mc^2L^2}$, $\hbar c\approx197$ eV·nm, $m_ec^2=511$ keV; bond 100 pm $\to$ 4 eV (stated)
+- **Zero-point energy (Kahn 5.2.3 Q2A):** classical HO minimum $E=0$ (at rest at $x=0$); quantum forbids $\Delta x=\Delta p=0$, so $E_0=\frac12\hbar\omega$, saturating $\Delta x\Delta p=\frac\hbar2$ (stated)
 
 #### QM — ladder operators
 
@@ -227,11 +229,22 @@ Session: [[2026-09-22-2235 Rolling sphere launch energy]] (closed 2026-09-27)
 - **Static friction, no slip:** contact point at rest $\implies$ zero work; reroutes translation $\to$ rotation; $mgh$ converts entirely (verified)
 - **Ramp launch:** $v=\sqrt{2gh/(1+I/mR^2)}$; solid $\sqrt{10gh/7}$, shell $\sqrt{6gh/5}$; smaller $I/mR^2$ wins the race (verified)
 
+### Mathematical Methods
+
+#### Math — determinants and characteristic equations
+
+Session: [[2026-09-23-1713 Determinant equations]]
+
+- **Geometric meaning:** $\det M$ = signed area/volume scale factor of the map $M$; $\det M=0$ $\iff$ space is flattened $\iff$ $\exists\,\mathbf v\neq0$ with $M\mathbf v=\mathbf 0$ (stated back)
+- **Characteristic equation origin:** $M\mathbf v=\lambda\mathbf v\Rightarrow(M-\lambda I)\mathbf v=\mathbf 0$, nonzero $\mathbf v$ requires $\det(M-\lambda I)=0$
+- **$\lambda I$ shifts the diagonal only:** off-diagonal entries untouched; check $\lambda=0$ must return $M$ (corrected from the all-entries trap)
+- **$2\times2$ solve:** $\det\begin{pmatrix}a&b\\c&d\end{pmatrix}=ad-bc$; $(2-\lambda)^2-1=0\Rightarrow\lambda=3,1$ via $2-\lambda=\pm1$ (unaided, no expansion needed)
+
 ## In progress
 
 Only threads with unfinished core work (verified against session notes).
 
-- **QM: Kahn 5.1.5 + 5.2.3 debrief (GRE reflexes):** [active] Turn 10 — R1–R4 locked (phase-only evolution; nodes $=n$ + parity; virial $\langle p^2\rangle_n=mE_n$ as average, not eigenvalue); R4: counted 2D $E=3\hbar\omega$ degeneracy 3 (简并度 = degeneracy was a vocabulary gap); asking $N+1$ generalization; R5 $\hbar c$ estimates open; learner wants diagrams as carrier, flags high load $\to$ [[2026-09-30-1509 Kahn 5.1.5 and 5.2.3 debrief]].
+- **QM: Kahn 5.1.5 + 5.2.3 debrief (GRE reflexes):** [paused] Turn 18 closed — R1–R5 locked; retake 11/11 by reflex; classical HO min $E=0$ at rest vs quantum $\frac12\hbar\omega$ (uncertainty) stated; watch $\frac1i=-i$ last line; next: Prep Studio drill; patterns: last-line bookkeeping, average vs eigenvalue, one-case generalization $\to$ [[2026-09-30-1509 Kahn 5.1.5 and 5.2.3 debrief]].
 - **QM: displacement operator $D(\alpha)$:** [next — unblocked] Resume [[2026-07-26-2030 Displacement operator]] $\to$ derivation of $D(\alpha) = e^{\alpha a^\dagger - \alpha^* a}$ (HO/ladder foundations solid).
 - **Exp. tech NP: radioactive beams / projectile fragmentation:** [active] Turn 5 relativistic kinematics of $\sigma(P_\parallel)/P$ plateau vs $\sigma(P_t)/P$ falloff $\to$ [[2026-08-07-1538 Radioactive beams projectile fragmentation]].
 - **Exp. tech NP: velocity filters (Ch. 11 §III.B):** [active] context reconstruction, Turn 4: stated what broke (3 in $0.6\times10^{18}$ forward beam) and $p_{\mathrm{CN}}=p_{\mathrm{beam}}\Rightarrow v_{\mathrm{CN}}/v_{\mathrm p}=A_{\mathrm p}/A_{\mathrm c}$; magnet fails (only $q$ left, overlapping charge states) stated; Wien $v_0=E/B$ stated; Turn 8: derived $\theta_B=qBL_B/(mv)$ but dropped $L$s in the solve ($v_0=EL_E/(BL_B)$, trap recurred); separation mechanism complete through Turn 12 (SHIP beam net $0.78\,\theta_B$, magnet side); open: identification by implant–decay correlation (Figs. 13–14), Turn 12 question; re-test traps $L_E/L_B$ and which-element-wins; Fig. 12/15 callout diagrams in note; parked: delayed coincidence, SHE cross section; for the learning-group deck $\to$ [[2026-09-28-1604 Velocity filters]].
@@ -243,7 +256,7 @@ Only threads with unfinished core work (verified against session notes).
 - **Circular orbit and effective potential:** [active] Stability for $F \propto -1/r^n$ ($n < 3$) locked; orbital mechanics drills $\to$ [[2026-09-18-1705 Circular orbit and effective potential]].
 - **E&M: AC maximum power transfer:** [active] Turn 9 — back-emf $\implies$ harder push locked; asking whether cancelling leftover $L$ with load $C$ raises $|I|$ $\to$ [[2026-09-21-0933 AC maximum power transfer]].
 - **E&M: magnetic energy of a square-cross-section toroid:** [active] Turn 2 — GRE clock ≠ slog or memorize; still locating cylindrical $s$ $\to$ [[2026-09-21-2048 Magnetic energy of a square-cross-section toroid]]
-- **Math: determinant equations / eigenvalues:** [active] Turn 1 — diagnosing floor (expansion mechanics vs $\det(M-\lambda I)=0$ setup) $\to$ [[2026-09-23-1713 Determinant equations]].
+- **Math: determinant equations / eigenvalues:** [active] Turn 7 — $2\times2$ characteristic equation solved unaided ($\lambda=3,1$); open: eigenvectors/normal modes, $3\times3$ cofactor expansion $\to$ [[2026-09-23-1713 Determinant equations]].
 
 
 ## Archived domains

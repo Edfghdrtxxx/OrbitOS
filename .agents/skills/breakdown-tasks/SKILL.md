@@ -17,7 +17,7 @@ Decompose tasks into a stratified checkbox hierarchy with contextual time estima
 
 1. Read the input source — a `20_Project/` note, a task in today's daily note, or free-text goal
 2. Read linked projects for phase/complexity context
-3. Read today's `10_Daily/YYYY-MM-DD.md` if it exists
+3. Read today's `10_Daily/YYYY-MM/YYYY-MM-DD.md` if it exists
 
 ## Step 2: Clarify (Conditional)
 

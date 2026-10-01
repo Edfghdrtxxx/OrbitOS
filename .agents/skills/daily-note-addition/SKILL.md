@@ -14,8 +14,8 @@ Pin one or more ideas to today's daily note as actionable checkboxes under the b
 # Workflow
 
 ## 1. Locate the note
-- Open `10_Daily/YYYY-MM-DD.md` for today.
-- Missing? Fall back to the most recently modified file in `10_Daily/` (glob + sort by mtime desc).
+- Open `10_Daily/YYYY-MM/YYYY-MM-DD.md` for today (month folder = that note's `YYYY-MM`).
+- Missing? Fall back to the latest `10_Daily/YYYY-MM/YYYY-MM-DD.md` dated before today. Ignore `99_System/Archives/`.
 - Read it once and extract the **existing bucket headings** (e.g. `**a1. Thesis & Paper Work**`, `**c1. Odd Jobs**`). Buckets vary per day — never hard-code them.
 
 ## 2. Split the input

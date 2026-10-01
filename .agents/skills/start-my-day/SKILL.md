@@ -14,8 +14,8 @@ Full is the default, including low energy or “quick morning.” Only an explic
 # Shared rules
 
 ## Copy, then edit
-- Find the latest top-level `10_Daily/YYYY-MM-DD.md` dated before today; ignore archives and future notes.
-- If today is absent, run `cp 10_Daily/<last-date>.md 10_Daily/<today>.md` via bash, then use `edit` for every change: never rebuild the note or use a script to rewrite it.
+- A daily note is `10_Daily/YYYY-MM/YYYY-MM-DD.md`. The month folder is that note's `YYYY-MM`. Find the latest one dated before today; ignore `99_System/Archives/` and future notes.
+- If today is absent, run `cp 10_Daily/<last-YYYY-MM>/<last-date>.md 10_Daily/<today-YYYY-MM>/<today>.md` via bash, then use `edit` for every change: never rebuild the note or use a script to rewrite it. Create the month folder if it is missing. Source and today may be different months.
 - If neither today nor a prior note exists, stop and explain; no template fallback.
 - If today exists, preserve its progress: no copy, counter bump, morning checkbox reset, or Log/Evening Review clearing; full mode may still plan and refresh context.
 - On a new copy, update date, weekday, ISO week and title.

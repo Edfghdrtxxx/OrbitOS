@@ -15,7 +15,7 @@
 ## 2026-09-19
 
 ### Lessons
-- **Daily note sync on solid/locked knowledge:** The moment knowledge is considered solid or locked (understanding verified, drill completed, or trap reworked), immediately update today's daily note (`10_Daily/YYYY-MM-DD.md`)—tick completed tasks/subtasks, append performed drills, and write a one-line summary under `## Log`—without waiting for user prompting.
+- **Daily note sync on solid/locked knowledge:** The moment knowledge is considered solid or locked (understanding verified, drill completed, or trap reworked), immediately update today's daily note (`10_Daily/YYYY-MM/YYYY-MM-DD.md`)—tick completed tasks/subtasks, append performed drills, and write a one-line summary under `## Log`—without waiting for user prompting.
 
 ## 2026-09-18
 

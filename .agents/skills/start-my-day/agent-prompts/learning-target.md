@@ -6,7 +6,7 @@ Analyze learner progress and syllabus state to determine today's specific learni
 - **Topic Breakdown Files:** `20_Project/GRE_Physics_Prep/03_Topic_Sets/` (detailed Sets 01–35; each heading is `### Set NN: Title (n Qs)` with Studio pack id and honest `n`)
 - **Formula Recall Decks:** `20_Project/GRE_Physics_Prep/02_Formulas_&_Recall/Formula-Recall-Decks.md` (numbered batches)
 - **Error Log & Misses Registry:** `20_Project/GRE_Physics_Prep/04_Diagnostics_&_Errors/Misses-Log.md`
-- **Last Daily Note:** `{last_daily_note}` (path to the preceding `10_Daily/YYYY-MM-DD.md`)
+- **Last Daily Note:** `{last_daily_note}` (path to the preceding `10_Daily/YYYY-MM/YYYY-MM-DD.md`)
 - **Prep Studio plan (derived mirror, not a source):** `/Users/Reid Hu/Physics GRE/js/data-plan.js` is generated from the syllabus
 
 ## Analysis Steps

@@ -90,7 +90,7 @@ Timed daily child left [ ] — custom/extra receipts do not close it
 # Launch workflow
 
 ## 1. Resolve pack id (succession)
-1. Read `10_Daily/YYYY-MM-DD.md` (today; if missing → most recent `10_Daily/*.md` by mtime).
+1. Read `10_Daily/YYYY-MM/YYYY-MM-DD.md` (today; if missing → latest `10_Daily/YYYY-MM/YYYY-MM-DD.md` by filename date).
 2. Collect **unpracticed** (`- [ ]`) GRE timed pack children that match `pack\s*0*(\d{1,2})` (optional `n\s*=\s*(\d+)`). Do **not** launch a `[*] · practiced, not logged` child — that is log-mode work.
 3. **Order:** first under **a0** / Priorities timed parent in document order; **if no unpracticed a0 timed pack child**, continue to the **next** unpracticed timed pack child later in the same daily note (other priority blocks). Still first-come-first in full-document order among matches.
 4. Pad to two digits (`3` → `03`). Range 01–35.

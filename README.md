@@ -5,7 +5,7 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 ## Folder Structure
 
 ```
-10_Daily/         → Daily logs. /start-my-day generates these. Captures land here via /daily-note-addition.
+10_Daily/         → Daily logs in YYYY-MM/ folders. /start-my-day generates these. Captures land here via /daily-note-addition.
 20_Project/       → Active projects (flat, linked to areas via frontmatter).
 30_Research/      → Deep dives — physics reference notes, supervisor research profiles.
 40_Wiki/          → Atomic concepts — 341 notes across 9 topic clusters, heavily linked.

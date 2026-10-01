@@ -7,7 +7,7 @@ This is the **single project rules file** for Grok Build, Claude Code, Codex, an
 ## Structure
 
 - `00_Inbox`: Ingestion and raw triage (completed items archive to `99_System/Archives/Inbox/`)
-- `10_Daily`: Daily logs (`YYYY-MM-DD.md`) → use `/start-my-day` every morning. Captures land here via `/daily-note-addition`
+- `10_Daily`: Daily logs (`YYYY-MM/YYYY-MM-DD.md`) → use `/start-my-day` every morning. Captures land here via `/daily-note-addition`
 - `20_Project`: Active projects (flat structure, organized by name NOT area)
   - Folder for 5+ files/assets, single file for simple projects
   - Frontmatter: `type: project`, `status: active|on-hold|done`, `area: "[[AreaName]]"`

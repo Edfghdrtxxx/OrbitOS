@@ -26,4 +26,4 @@ In those contexts, do not jump to a full-file rewrite. First load this memory an
 
 **Out of scope:** brand-new paths with no source; tiny single-hunk `edit` already aimed at the live file; user-ordered clean-slate replace.
 
-**Canonical example:** `/start-my-day` — `cp 10_Daily/<last>.md 10_Daily/<today>.md`, then `edit` every change. Never regenerate the daily note from recall.
+**Canonical example:** `/start-my-day` — `cp 10_Daily/<last-YYYY-MM>/<last>.md 10_Daily/<today-YYYY-MM>/<today>.md`, then `edit` every change. Never regenerate the daily note from recall.

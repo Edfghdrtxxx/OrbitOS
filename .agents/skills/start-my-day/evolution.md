@@ -29,7 +29,7 @@
 
 ## 2026-09-05
 ### Lessons
-- The daily note must ALWAYS be created via the ResNet identity shortcut: `cp 10_Daily/<last>.md 10_Daily/<today>.md` via bash, then surgical delta applied via `edit`. Never generate or write the daily note from scratch.
+- The daily note must ALWAYS be created via the ResNet identity shortcut: `cp 10_Daily/<last-YYYY-MM>/<last>.md 10_Daily/<today-YYYY-MM>/<today>.md` via bash, then surgical delta applied via `edit`. Never generate or write the daily note from scratch.
 - The speculative "week-slice" rewrite from 2026-09-04 that attempted to retire `cp - delta` directly violated the Necessity Check and OrbitOS design principles — reverted.
 - Carry tomorrow’s priority through the shared transfer check in `SKILL.md`, without duplicating or reviving an already-carried task.
 

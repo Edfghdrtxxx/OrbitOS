@@ -12,7 +12,7 @@ Per-project context (status, pause scope/reason, resume/review condition, source
 If a project's context is missing or says unknown, treat it as unknown — do not invent context.
 
 ## Scope
-- Read top-level daily notes in `10_Daily/` only (vault-relative; ignore `Archives/`).
+- Read daily notes at `10_Daily/YYYY-MM/YYYY-MM-DD.md` only (vault-relative; ignore `99_System/Archives/`).
 - Scan **newest-first**, starting from yesterday.
 - Window: up to 14 days back. Rationale: covers daily (~1 d) and weekly (~7 d) rituals with headroom. Widen only if the user's rituals become longer-period.
 - Stop per project only after verifying its newest completion; a weekly tick may need comparison with earlier notes.
