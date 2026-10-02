@@ -1,7 +1,7 @@
 ---
 type: learning-index
 purpose: Terse cross-agent index of what the learner has solidly learned. Agents running /learn MUST read this first.
-updated: 2026-10-01
+updated: 2026-10-02
 ---
 # Learning Progress — Context Index
 
@@ -194,6 +194,9 @@ Session: [[2026-09-21-0933 AC maximum power transfer]]
 - **Voltage budget:** series $L$ takes $V_L = L\mathrm{d}I/\mathrm{d}t \neq 0$ while $I$ oscillates; $V = V_R + V_L$; $I = V_R/R$ drops even though $L$ dissipates no average heat (verified)
 - **$L$ scales the cut:** bigger $L$, same oscillating $I$ $\implies$ larger $|V_L| = |\mathcal{E}| = L|\mathrm{d}I/\mathrm{d}t|$ (stated)
 - **Lenz / harder push:** $\mathrm{d}I/\mathrm{d}t > 0 \implies \mathcal{E}$ opposes the increase; the source covers an extra drop (stated)
+- **Conjugate match:** $X_\ell = -X_g$ zeroes the loop's net cut $\implies$ largest $|I|$ (stated)
+- **Trap $X_\ell = 0$:** leaves $X_g \neq 0$ in the loop; resistive load $\neq$ resistive loop, $P_\ell$ below maximum (stated)
+- **Power transferred:** energy per second from generator into the load, $P_\ell = I_{\mathrm{rms}}^2 R_\ell$; $R_\ell$ stands for any permanent energy removal, not only heat
 
 #### CM — constrained sliding
 
@@ -254,7 +257,6 @@ Only threads with unfinished core work (verified against session notes).
 - **Capacitance (two conductors):** [paused] Geometry invariant solid ($C$ fixed, $V$ doubles); resume energy parent $\to$ [[2026-09-14-0828 Capacitance]].
 - **Boundary condition on normal E:** [active] Turn 1 Gauss pillbox sheet vs conductor jump $\to$ [[2026-09-15-0916 Boundary condition on normal E]].
 - **Circular orbit and effective potential:** [active] Stability for $F \propto -1/r^n$ ($n < 3$) locked; orbital mechanics drills $\to$ [[2026-09-18-1705 Circular orbit and effective potential]].
-- **E&M: AC maximum power transfer:** [active] Turn 9 — back-emf $\implies$ harder push locked; asking whether cancelling leftover $L$ with load $C$ raises $|I|$ $\to$ [[2026-09-21-0933 AC maximum power transfer]].
 - **E&M: magnetic energy of a square-cross-section toroid:** [active] Turn 2 — GRE clock ≠ slog or memorize; still locating cylindrical $s$ $\to$ [[2026-09-21-2048 Magnetic energy of a square-cross-section toroid]]
 - **Math: determinant equations / eigenvalues:** [active] Turn 7 — $2\times2$ characteristic equation solved unaided ($\lambda=3,1$); open: eigenvectors/normal modes, $3\times3$ cofactor expansion $\to$ [[2026-09-23-1713 Determinant equations]].
 

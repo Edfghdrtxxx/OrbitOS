@@ -2,7 +2,7 @@
 type: learning-progress
 topic: "AC maximum power transfer"
 area: Electrodynamics
-status: in-progress
+status: done
 created: 2026-09-21
 tags:
   - physics
@@ -21,7 +21,7 @@ tags:
 2. State the conjugate-match condition $Z_\ell = Z_g^*$ and why, with $R_\ell$ already fixed at $R_g$, only $X_\ell = -X_g$ remains.
 3. Distinguish the trap $X_\ell = 0$ (purely resistive *load*) from a purely resistive *loop*.
 
-**Active 2026-09-21.** Turn 9: back-emf $\implies$ source pushes harder (locked). Next: can a load $C$ cancel leftover generator $L$?
+**Closed 2026-10-02.** Turn 12: all three targets stated by the learner. Retention on Prep Studio card `supp-max-power-match`.
 
 ### Prior context
 - **Already computable:** Extra series $R$ lowers $I$. Series $L$ claims $V_L=|\mathcal{E}|$; $V=V_R+V_L$; $I=V_R/R$ drops. Bigger $L$, larger cut. $\mathrm{d}I/\mathrm{d}t>0$ $\implies$ source pushes harder (Lenz). $P=I_{\mathrm{rms}}^2 R_\ell$.
@@ -182,3 +182,50 @@ Right. Back-emf means the source covers an extra drop whenever $I$ is changing.
 The generator already has some $L$ you cannot remove, so that extra drop is sitting in the loop. You *can* put a capacitor in the load. $C$ stores energy in $\mathbf{E}$ the way $L$ stores it in $\mathbf{B}$, and the two voltage cuts enter Kirchhoff with opposite character — they can cancel in the sum.
 
 If the net no-heat cut shrinks toward zero, the whole source lands on $R$. Does $|I|$ get larger, or stay the same?
+
+### Turn 10 — 2026-10-02 (learner)
+
+> Okay, okay, add one bullet to existing card now, and commit.
+> Then we quickly finish the session. Provided that you said the reason behind the rule is not complex, then we quickly finish it.
+
+### Tutor
+
+Short route to the end, using only what you have locked. The source voltage is split between the heat piece and the no-heat cut; whatever the cut takes, $V_R$ loses, and $I = V_R/R$ drops (your Turn 6). So the Turn 9 answer is: net cut $\to 0$ puts the whole source on $R$, and $|I|$ is as large as it can be. With $R_\ell$ locked at $R_g$, $P = I_{\mathrm{rms}}^2 R_\ell$ is then also as large as it can be.
+
+Reactance $X$ is the size of that cut per unit current, with a sign: inductor-like is $X > 0$, capacitor-like is $X < 0$. Generator and load sit in one series loop, so the loop's net cut is set by the sum $X_g + X_\ell$.
+
+The generator's $X_g \neq 0$ is fixed; you choose $X_\ell$. Which value makes the loop's net cut zero — and why does choosing $X_\ell = 0$ fail to do that?
+
+### Turn 11 — 2026-10-02 (learner)
+
+> I have found my weakness. Actually I don't even know the meaning of maximum power transfer. It is abstract to me in a circuit. transfer what? from what to what?
+> btw, 10-02 daily note has landed now.
+> The value that makes the loop's net cut zero is X_l = - X_g because in this case, the intensity of current is as high as possible.
+
+### Tutor
+
+$X_\ell = -X_g$ is right, and so is the reason: zero net cut, largest $|I|$.
+
+"Power transfer" is concrete. Power is energy per second. The thing transferred is energy; it goes from the generator (the only piece that supplies energy) to the load (the device you plugged in — a lamp, a heater, a motor). The energy arrives as heat or work in the load's resistance, at the rate $P_\ell = I_{\mathrm{rms}}^2 R_\ell$. That number is "the power transferred." The generator's own internal $R_g$ also heats, at $I_{\mathrm{rms}}^2 R_g$, but that energy never leaves the generator, so it does not count. "Maximum power transfer" just asks: which load makes $I_{\mathrm{rms}}^2 R_\ell$ largest?
+
+One piece of the last question is still open. Suppose you pick $X_\ell = 0$ instead. What is the loop's net cut $X_g + X_\ell$ then — zero or not — and so is the power into the load at its maximum?
+
+### Turn 12 — 2026-10-02 (learner)
+
+> Net cut is not zero. and the power is not at its maximum.
+> I was confused before because I thought pure heat was not the designated energy we want to transfer.
+
+### Tutor
+
+Correct on both. $X_\ell = 0$ leaves $X_g + 0 = X_g \neq 0$ in the loop: the load is purely resistive, the loop is not, so $|I|$ and $P_\ell$ sit below their maximum. That is exactly why choice A is the trap.
+
+Your heat worry was reasonable. $R_\ell$ does not have to be a heater: in circuit language a resistance stands for anything that takes energy out of the circuit for good — light from a lamp, mechanical work from a motor, sound from a speaker. Heat is just the simplest case. What $R_\ell$ never includes is energy that is stored and handed back, which is the reactance.
+
+You are done with this thread. What you can now state:
+
+- Power transferred = energy per second delivered from the generator into the load, $P_\ell = I_{\mathrm{rms}}^2 R_\ell$.
+- Series reactance takes a no-heat voltage cut, so it lowers $|I|$ without dissipating anything.
+- The loop's net cut is $X_g + X_\ell$; maximum $P_\ell$ needs it zero, so $X_\ell = -X_g$. Together with $R_\ell = R_g$ this is the conjugate match $Z_\ell = Z_g^*$.
+- $X_\ell = 0$ is the trap: resistive load, not resistive loop.
+
+Retention lives on the Prep Studio card `supp-max-power-match`.

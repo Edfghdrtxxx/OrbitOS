@@ -102,7 +102,7 @@ Mid-story low point — nearly gave up — before the turnaround
 ?
 Phrase: Honestly, there were times I wasn't sure I'd make it through…
 Model: Honestly, there were times I wasn’t sure I’d make it through, but I forced myself to take it one step at a time, and that’s what got me through.
-<!--SR:!2026-10-02,20,250-->
+<!--SR:!2026-11-21,50,250-->
 
 ### TOEFL-07 · Concluding a preference
 
@@ -266,7 +266,7 @@ Softening a claim or setting up a contrast before your main assertion
 ?
 Phrase: Hardly ever… / Even though…
 Model: Even though preparing for exams is demanding, I hardly ever skip my morning reading session.
-<!--SR:!2026-09-15,3,250-->
+<!--SR:!2026-10-10,8,250-->
 
 ### TOEFL-28 · Conversational opinion markers
 
@@ -306,7 +306,7 @@ Useful purchase, technological tool, or something that streamlined your workflow
 Phrase: The most delightful purchase I've made recently was… What made it such a smart decision was…
 Model: The most delightful purchase I've made recently was subscribing to an AI service. What made it such a smart decision was its incredible utility in streamlining my daily workflows. It essentially acts as a second brain, helping me organize my mind and clarify my intentions. Just last week, when I hit a wall analyzing complex experiment data during a particle physics project, this tool proved invaluable in helping me move forward efficiently.
 Collocations: delightful purchase · smart decision · streamlining my daily workflows · acts as a second brain · clarify my intentions · hit a wall · proved invaluable
-<!--SR:!2026-09-16,2,170-->
+<!--SR:!2026-10-06,5,190-->
 
 ### TOEFL-33 · Narrative: In-store vs online shopping
 
@@ -363,7 +363,7 @@ Teacher, mentor, or supervisor who made a lasting impact on your development
 Phrase: The educator who left the deepest impression on me was… That rigorous push transformed my perspective…
 Model: The educator who left the deepest impression on me was my graduate supervisor, who insisted I master English proficiency rapidly. That rigorous push transformed my perspective; I now realize that linguistic fluency is indispensable for seamlessly reading academic literature and engaging in high-level discourse with global researchers.
 Collocations: left the deepest impression · graduate supervisor · insisted I master · rigorous push · transformed my perspective · linguistic fluency · indispensable for · seamlessly reading academic literature · high-level discourse
-<!--SR:!2026-09-15,3,250-->
+<!--SR:!2026-10-12,11,270-->
 
 ### TOEFL-40 · Curriculum debate: Core traditional subjects
 
@@ -381,7 +381,7 @@ Teamwork, group collaboration, or working with a project partner
 Phrase: One instance that really highlighted the value of teamwork for me occurred during…
 Model: One instance that really highlighted the value of teamwork for me occurred during a particle physics project. By brainstorming ideas with my partner, we uncovered perspectives I had completely overlooked, which significantly improved the depth and quality of our final presentation.
 Collocations: highlighted the value of teamwork · particle physics project · brainstorming ideas · uncovered perspectives · completely overlooked · depth and quality
-<!--SR:!2026-09-16,4,190-->
+<!--SR:!2026-10-03,2,170-->
 
 ### TOEFL-42 · Narrative: Big city living / Urban infrastructure
 
@@ -435,7 +435,7 @@ Advocating for required writing workshops / structured academic skill training
 Phrase: I strongly advocate mandatory writing workshops every semester because they save students time by providing instant, targeted feedback from teachers.
 Model: I strongly advocate mandatory writing workshops every semester because they save students time by providing instant, targeted feedback from teachers. Specifically speaking, these workshops have highly experienced instructors and various essential resources that can significantly improve our writing skills. For example, last semester, attending a mandatory writing workshop allowed me to compare my writing with the teacher's feedback immediately, which gave me confidence that other methods cannot simply replicate.
 Collocations: strongly advocate · mandatory writing workshops · save students time · instant, targeted feedback · highly experienced instructors · essential resources · significantly improve · compare my writing with · gave me confidence · cannot simply replicate
-<!--SR:!2026-09-19,5,210-->
+<!--SR:!2026-10-05,3,190-->
 
 ### TOEFL-48 · Debate: Instant feedback vs written comments
 
