@@ -29,7 +29,7 @@ Skip: vague wins, speculative polish, preferences already in `SKILL.md` / refere
 
 Show the shortlist (skill → lesson bullets). User picks, edits, or rejects.
 
-**Write nothing until they confirm.** Interview API / host Ask when the choice set needs it; plain confirm is enough for a small list.
+**Write nothing until they confirm.** Use plain chat confirmation for a small shortlist. Use host Ask for a necessary structured choice; use the Interview API only when the shared visual-interview criteria apply.
 
 ### 3. Persist
 

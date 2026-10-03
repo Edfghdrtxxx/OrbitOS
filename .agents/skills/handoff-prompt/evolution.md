@@ -12,7 +12,7 @@
 
 ## 2026-04-23
 ### Lessons
-- Ask user a series of key questions to gather additional context you need to best write this prompt
+- Ask only for missing context that changes the handoff's success criteria, scope, or approval boundary; use one concise question when necessary and proceed when the files determine the path.
 
 ## 2026-08-19
 ### Lessons

@@ -34,16 +34,9 @@ A clipboard-ready outline, **under 20–30 lines** (the principle block at the e
 ## Non-document facts (only if such state exists)
 - [Anything non-inferable from the files: decisions the user made, overrides, rejected alternatives, off-repo responsibilities, declared off-limits, environment realities. Write as past-tense state, not imperatives — *"User has declared the server off-limits"*, not *"Do not touch the server"*. The context carries the why; the rule follows from it. Keep a bullet only if omitting it would cause the follow-up AI to re-open a closed question.]
 
-## Principles of Paramount Importance
-- **Zero Assumptions:** Never guess user intent. If multiple implementations exist or requirements are incomplete, **halt and use the `AskUserQuestion` tool** to gather explicit direction.
-- **No Silent Assumptions:** Even when the task is requested, confirm the *method* if it wasn't specified.
+## Decision gate
+Ask only when a missing user decision changes the task outcome, scope, or approval boundary. If the files and request determine a reversible path, proceed with the requested work.
 ```
-
-# Principles of Paramount Importance
-
-These apply not only to the follow-up AI receiving the handoff, **but also to you while drafting it**:
-- **Zero Assumptions:** Never guess user intent. If multiple implementations exist or requirements are incomplete, **halt and use the `AskUserQuestion` tool** to gather explicit direction.
-- **No Silent Assumptions:** Even when the task is requested, confirm the *method* if it wasn't specified.
 
 # Arguments
 - When the user invokes this skill with the argument "with brief document" or any semantically equivalent phrase, produce a concise document that enables a subsequent AI to continue your work seaminglessly. 
