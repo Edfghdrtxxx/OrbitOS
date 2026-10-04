@@ -1,7 +1,7 @@
 ---
 type: learning-index
 purpose: Terse cross-agent index of what the learner has solidly learned. Agents running /learn MUST read this first.
-updated: 2026-10-02
+updated: 2026-10-03
 ---
 # Learning Progress — Context Index
 
@@ -187,6 +187,18 @@ Session: [[2026-09-21-1447 Volume integral of rho from div E]]
 - **GRE move:** $\rho\propto z$ odd on a sphere symmetric about $z=0$ $\implies Q=0$ (no triple slog)
 - **Hemisphere transfer:** upper hemisphere has no negative $\rho$ to cancel $\implies Q\neq 0$ (verified)
 
+#### E&M — cylindrical volume integrals (toroid energy)
+
+Session: [[2026-09-21-2048 Magnetic energy of a square-cross-section toroid]] (closed 2026-10-03)
+
+- **Volume elements:** $\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z$; $s\,\mathrm{d}s\,\mathrm{d}\phi\,\mathrm{d}z$; $r^2\sin\theta\,\mathrm{d}r\,\mathrm{d}\theta\,\mathrm{d}\phi$ (handwritten, unaided)
+- **Factoring:** a variable absent from the integrand integrates to the length of its range; cylinder volume $\frac12R^2\cdot2\pi\cdot h=\pi R^2h$ (handwritten verified)
+- **Toroid pieces:** $z\to a$, $\phi\to2\pi$, $\int_R^{R+a}\mathrm{d}s/s=\ln\frac{R+a}{R}$; prefactor length is $a$ (stated + handwritten)
+- **Missing-$s$ check:** spotted the dropped measure factor in $\rho=ks$; $Q=\frac{2\pi}{3}khR^3$ (handwritten verified)
+- **Full toroid energy:** $U_B=\frac{1}{2\mu_0}\int B^2\,\mathrm{d}^3r=\frac{\mu_0N^2I^2a}{4\pi}\ln\frac{R+a}{R}$ from $B=\frac{\mu_0NI}{2\pi s}$, start to finish (handwritten, unaided, Turn 4)
+- **Walls as limits:** toroid cross-section walls $s=R$, $s=R+a$, $z=0$, $z=a$; coordinates are chosen to match the boundary's shape (stated, Turn 6)
+- **Coordinate choice (boundary first):** the region's boundary picks the system, the integrand is checked second; cube with $\rho=\rho_0x/L$ $\to$ Cartesian, $Q=\frac12\rho_0L^3$ (handwritten, Turn 7); cylinder with $\rho=\rho_0z/h$ $\to$ cylindrical, $Q=\frac12\rho_0\pi R^2h$ (handwritten, unaided transfer, Turn 9; system given, reason not stated) (trap reworked)
+
 #### E&M — series reactance and voltage budget
 
 Session: [[2026-09-21-0933 AC maximum power transfer]]
@@ -257,7 +269,6 @@ Only threads with unfinished core work (verified against session notes).
 - **Capacitance (two conductors):** [paused] Geometry invariant solid ($C$ fixed, $V$ doubles); resume energy parent $\to$ [[2026-09-14-0828 Capacitance]].
 - **Boundary condition on normal E:** [active] Turn 1 Gauss pillbox sheet vs conductor jump $\to$ [[2026-09-15-0916 Boundary condition on normal E]].
 - **Circular orbit and effective potential:** [active] Stability for $F \propto -1/r^n$ ($n < 3$) locked; orbital mechanics drills $\to$ [[2026-09-18-1705 Circular orbit and effective potential]].
-- **E&M: magnetic energy of a square-cross-section toroid:** [active] Turn 2 — GRE clock ≠ slog or memorize; still locating cylindrical $s$ $\to$ [[2026-09-21-2048 Magnetic energy of a square-cross-section toroid]]
 - **Math: determinant equations / eigenvalues:** [active] Turn 7 — $2\times2$ characteristic equation solved unaided ($\lambda=3,1$); open: eigenvectors/normal modes, $3\times3$ cofactor expansion $\to$ [[2026-09-23-1713 Determinant equations]].
 
 

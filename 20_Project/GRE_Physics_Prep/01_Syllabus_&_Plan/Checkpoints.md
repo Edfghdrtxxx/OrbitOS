@@ -9,7 +9,7 @@ tags: [gre, physics, checkpoints]
 # GRE Physics Checkpoints & Exam Commitments
 
 ## Critical Milestones
-- **2026-10-04 (Sun) [D-27]:** Full Diagnostic Test #1 (volume diagnostic on released ETS paper form GR0177/GR0877 to evaluate topic breadth and baseline accuracy).
+- **2026-10-05 (Mon) [D-27], moved from Sun 2026-10-04:** Full Diagnostic Test #1 (volume diagnostic on released ETS paper form GR0177/GR0877 to evaluate topic breadth and baseline accuracy).
 - **2026-10-25 (Sun) [D-48]:** **Full Rehearsal Test #2** (timed strict **120 minutes, 70 questions**, official 2024 Practice Book under strict exam simulation).
 - **2026-10-28 (Wed) [D-51]:** Official ETS reschedule/cancellation deadline (no later than 4 days before test date).
 - **2026-10-30 (Fri) [D-53]:** UTokyo Special Selection Period 1 closes.

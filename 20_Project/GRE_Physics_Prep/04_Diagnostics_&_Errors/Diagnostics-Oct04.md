@@ -12,7 +12,7 @@ tags: [gre, physics, diagnostic]
 Establish an authentic baseline topic accuracy profile and pacing endurance across all core domains using a released official form.
 
 ## Exam Protocol
-- **Date:** Sunday, 2026-10-04, 14:00.
+- **Date:** Monday, 2026-10-05, 14:00 (moved from Sunday, 2026-10-04).
 - **Form:** ETS Released Form (GR0177 or GR0877).
 - **Calculators / Aids:** Strictly prohibited.
 - **Target Accuracy:** ≥ 70–75% correct across attempted items.

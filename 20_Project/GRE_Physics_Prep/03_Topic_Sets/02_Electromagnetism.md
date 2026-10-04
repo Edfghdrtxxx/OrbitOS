@@ -52,4 +52,4 @@ Each timed set is a **Prep Studio pack** (`js/data-packs.js`) with honest `n`. L
 - **Studio pack:** `13` · n = 7
 - **Subtopics:** $\mathbf{D}$ and $\mathbf{H}$ fields, polarization and magnetization, EM boundary conditions at interfaces, AC circuits (phasors, impedance, resonance).
 - **Source:** Prep Studio pack 13 (Kahn Ch. 2 §2.5 + ETS drills). Honest short `n` — not padded off-theme.
-- **Log / Status:** `[ ] Open`
+- **Log / Status:** `[x] Done 2026-09-21` — Studio receipt 6/7

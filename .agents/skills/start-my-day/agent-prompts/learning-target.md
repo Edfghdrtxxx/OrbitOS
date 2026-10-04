@@ -12,6 +12,7 @@ Analyze learner progress and syllabus state to determine today's specific learni
 ## Analysis Steps
 1. **Identify Active Curriculum Window:**
    - Read `8-Week-Syllabus.md` (authoritative). `{today}` before 2026-09-14 is Week 0 (historical). From 2026-09-14 use the live table: W1 Sep 14–20, W2 Sep 21–27, W3 Sep 28–Oct 4, W4 Oct 5–11, W5 Oct 12–18, W6 Oct 19–25, W7 Oct 26–Nov 1.
+   - **From 2026-10-04 the syllabus section `Replan 2026-10-04` overrides this step and step 2's week lists:** the timed child is the pack(s) on `{today}`'s row of its day table, preceded by any earlier-dated pack not yet sat (check the last daily note and `03_Topic_Sets/` status); `null` on diagnostic, mock and no-pack rows. The formula child is "due cards + 10 new" in the topic the Replan order has reached. Parent durations: timed ~65 min, formula ~35 min, extra ~50 min.
    - Timed sets for that week are the IDs in that row, not a global 01→35 sequence. W1 default **03–07**; if Set 02 is still open on 2026-09-14, W1 is **02–06** and Set 07 is extras-only.
    - Hedged parent durations from Sep 14: timed **~100 min**, formula **~60 min**, extra **~50 min**. On week rollover, parent `#weekly` `~ mins` should match. Do not follow Prep Studio `js/data-plan.js` as a calendar (it is generated from this syllabus).
 2. **Determine Previous Completion & Next Set:**
@@ -20,7 +21,7 @@ Analyze learner progress and syllabus state to determine today's specific learni
      - If yesterday's child task was uncompleted (`- [ ] Set NN`), retain `Set NN` (do not advance prematurely).
    - **Check 2: Topic Sets Status:** Cross-check with `03_Topic_Sets/`. Skip `[x] Closed`. Among this week's timed IDs, take the first `[ ] Open`.
    - If no prior set was attempted this week, start with the first timed ID for that week in `8-Week-Syllabus.md` (W1: Set 03, or Set 02 if still open; W2: Set 08; W6: Set 26 then 27–29 only; W7 new: Set 32 then Set 33; W7 other weekday timed = replay latest miss-heavy set else Set 32; never 30/31/34/35 as new).
-   - **Checkpoint Sundays (no timed_set_child):** `{today}` is 2026-10-04 or 2026-10-25 — output timed_set_child `null`; the diagnostic/rehearsal is the day's GRE sitting. **W7 Fri–Sun:** timed_set_child `null` (no new sets; no Friday replay).
+   - **Checkpoint Sundays (no timed_set_child):** `{today}` is 2026-10-05 (diagnostic, moved from 2026-10-04), 2026-10-11, 2026-10-18 or 2026-10-25 — output timed_set_child `null`; the diagnostic/rehearsal is the day's GRE sitting. **W7 Fri–Sun:** timed_set_child `null` (no new sets; no Friday replay).
 3. **Determine Formula Recall Batch:**
    - Check the formula child task in `{last_daily_note}`.
    - If yesterday's batch was completed (`- [x]`), select the next batch from `02_Formulas_&_Recall/Formula-Recall-Decks.md` (e.g. CM Batch 1 → CM Batch 2).

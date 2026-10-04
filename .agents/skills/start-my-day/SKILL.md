@@ -55,7 +55,7 @@ Report a short retention check, including any unresolved weekly conflict.
 - Read the last note and today if present; collect active projects, next actions and deadlines from `20_Project/`.
 - Read pause context from the latest daily note (including Appendix and Related Projects), relevant project notes and user instructions: status, paused work, reason, resume/review date or condition, and source; unknown stays unknown.
 - Compute `plan-stale` days with `git log -1 --format="%ai" -- <project-file-or-folder>`; use the whole folder for folder projects so sibling edits count.
-- Launch three read-only subagents together using `scout` (fast read-only specialist; fallback: `glm-5_3`):
+- Launch three read-only subagents together using `scout` (fast read-only specialist; fallback: `glm-5_3`). On a host without `scout`, set a cheap model explicitly (Claude Code: `Explore` with `model: "sonnet"`); never let a scout inherit the main model:
   - [Deadline](agent-prompts/deadline.md): `{today}`, `{cutoff}` (+60 days), `{project_context}` (pause context above).
   - [Staleness](agent-prompts/staleness.md): `{today}`, `{projects}` (all active projects, vault/external paths and plan-stale), the same `{project_context}`.
   - [Learning Target](agent-prompts/learning-target.md): `{today}`, `{main_focus}`, `{last_daily_note}`, `8-Week-Syllabus.md`, `03_Topic_Sets/`, `Formula-Recall-Decks.md`, and `Misses-Log.md`.
@@ -77,9 +77,8 @@ Energy changes emphasis and new suggestions, never retention: high = deep work, 
 Follow Shared rules; use wikilinks and create no intermediate plan files.
 - Set energy, commitments and Main Focus from the answers; add genuinely new next actions in their topic sections.
 - For the primary learning/exam block (e.g. `a1. GRE Physics Prep`), inject the concrete objectives proposed by the Learning Target subagent as indented child checkboxes directly beneath the stable `#weekly` parent rows in `## Priorities`.
-  - Stable parent rows preserve `(n/N) #weekly` rollover and week-plan alignment.
-  - Indented child checkboxes provide concrete daily execution targets (e.g. `Set 03: Oscillations & Harmonic Motion (pack 03, n=8)`, specific formula recall batch, and targeted error rework). Hedged parent `~ mins` from 2026-09-14: timed ~100, formula ~60, extra ~50. Cite the Studio pack id and honest `n`.
-  - Gated injection: on a new copy, inject only under weekly parents that do not already carry an uncompleted child from yesterday; never replace a surviving uncompleted child, inject duplicates, or inject under rows that have reached `(N/N)`; never inject on repeat same-day runs.
+  - Stable parent rows preserve `(n/N) #weekly` rollover and week-plan alignment.  - Indented child checkboxes provide concrete daily execution targets (e.g. `Set 03: Oscillations & Harmonic Motion (pack 03, n=8)`, specific formula recall batch, and targeted error rework). Parent `~ mins` and weekly targets follow the syllabus (`Replan 2026-10-04`: timed ~65, formula ~35, extra ~50). Cite the Studio pack id and honest `n`.
+  - Gated injection: on a new copy, inject only under weekly parents that do not already carry an uncompleted child from yesterday. A surviving uncompleted child stays by default; replace or reword it when the user changes the plan or the learner data shows it is stale, and report the change. Never inject duplicates or under rows that have reached `(N/N)`; never inject on repeat same-day runs.
 - Keep Anchor unchanged; a separate skill owns it.
 - On a new copy only, after the shared transfer check, empty Log and Evening Review (keep only their `##` headings); remove AI Digest if present.
 - Keep reusable context and the weekly plan when refreshing Notes; use the callouts below, omitting empty ones, then loose bullets for focus, energy, commitments, inbox and review context.

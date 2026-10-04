@@ -47,14 +47,9 @@ Pass absolute `/Users/leyi/...` paths to tools; do not pass a literal `~`. Do no
 
 ## Memory System
 
-Harness auto-memory is **host-local and not fully portable**. Resolve `memory/<file>.md` in this order:
+Harness auto-memory is disabled on Claude Code and Codex. Resolve `memory/<file>.md` at `99_System/memory/<file>.md`.
 
-1. **Vault-tracked (preferred, portable):** `99_System/memory/<file>.md`
-2. **Grok Build (experimental):** `/Users/leyi/.grok/memory/` and the project-scoped dir under it (enable with `[memory] enabled = true` in `/Users/leyi/.grok/config.toml` or `/memory on`)
-3. **Claude Code (this Mac):** `/Users/leyi/.claude/projects/-Users-Reid-Hu-OrbitOS/memory/<file>.md`
-4. **Codex (this Mac):** `/Users/leyi/.codex/memories/`
-
-If a referenced memory file is missing after the full search, **say so** and fall back to vault notes — do not invent state.
+If a referenced memory file is missing there, **say so** and fall back to vault notes — do not invent state.
 
 ### Vault memory index
 
@@ -102,8 +97,7 @@ Read the matching file from `99_System/memory/` on trigger.
 ### Japan Immigration (top priority after graduation)
 
 - Finalized pathway: UTokyo CNS / RIKEN JRA, Route B Special Selection (supervisor: Imai, DONUTS). Execution plan: [[UTokyo_RIKEN]].
-- Before discussing Japan planning, read vault notes under `20_Project/Japan_Itinerary/` (especially [[Japan_Itinerary]] and [[UTokyo_RIKEN]]). If host auto-memory files exist, read those too and reconcile with the vault.
-- Japan, visa, university applications, Japanese language, and life-planning questions are high-priority.
+- Before discussing Japan planning, read vault notes under `20_Project/Japan_Itinerary/` (especially [[Japan_Itinerary]] and [[UTokyo_RIKEN]]).- Japan, visa, university applications, Japanese language, and life-planning questions are high-priority.
 
 ## Related repos on this Mac
 
@@ -127,6 +121,7 @@ Skip any related-repo path that does not exist on disk.
 - Flag potential issues proactively: duplicate projects, scheduling conflicts, stale tasks, or missing links — but execute the user's request regardless unless asked to reconsider
 - **Desktop & Host Automation (Background by Default):** Never invoke `win.raise()` or `{ delivery: "foreground" }` on desktop windows unless explicitly requested. Input dispatches must use `delivery: "background"` or AX actions (`el.press()`, `el.setValue()`) without stealing active window focus or moving the pointer. **omp computer-use:** load `99_System/memory/preference_omp_computer_no_interrupt.md`.
 - **Skill `evolution.md`:** Only real faults/fixes, or lessons you explicitly capture. Never self-author an entry — wait for a direct ask or a confirmed `/evolve`. If the preference already lives in the skill body, skip the lesson.
+- **Recording a decision:** when you write down something the user chose or approved (a plan, a rule, a preference), write it once, in the note that owns its topic. Refine the wording; add nothing to what they chose.
 - **No self-describing filler.** Write what is true and what to do. Omit the state or history of the text itself ("recorded", "not yet used", "newly added", "as discussed"). Keep a status only when it changes what the reader does: one word, said once. In notes, instructions, and this file: delete a phrase when the reader would act the same without it and no likely case is left unsettled. A reason that alone settles a case the sentence does not name stays. A note of when the sentence was written, who asked for it, or what it replaced goes.
 
 
@@ -135,8 +130,8 @@ Skip any related-repo path that does not exist on disk.
 - **Zero Assumptions:** Investigate first. Ask only for user intent, preference, constraint, or approval evidence that the files and request cannot resolve.
 - **No Silent Assumptions:** Do not ask the user to choose a routine implementation method when the requested outcome and constraints determine a reversible path. Ask when an unresolved choice changes the outcome, scope, or approval boundary.
 - **User interviews (Interview API):** Use ordinary chat or host **Ask** for a necessary question. Dispatch `agent: "lavish-interview"` only for an explicitly requested visual interview or a decision that requires visual inspection or annotation, especially diagram relationships, placement, or connections. Multiple options, jargon, or stakes alone do not require HTML or a subagent. For an actual visual interview, send a structured `local://interview-*.md` payload (`preference_interview_api.md`, template `99_System/Templates/Interview_API_Payload.md`); the specialist owns the visual session. The main agent MUST NOT load `skill://lavish` or `skill://web-access`, write interview HTML, run CLI/poll/CDP, or reopen the visual session. If the specialist is unavailable or the child fails, use host **Ask** with the same decision shape; do not load excluded skills to recover. If a specialist was dispatched for an ordinary thin input, it must return control without opening a page or inventing answers. Keep the full template for the optional visual path. Investigate first (`feedback_investigate_over_ask`).
-- **Delta over rewrite (trigger-based):** Load `preference_applying_delta_over_direct_rewrite.md` via the Memory System search order above and apply its gate **before** the write path when any trigger fires: (a) target path already on disk (including skill/note “refresh” or full `Write` replace), (b) deriving from a source/export/selection, or (c) about to rebuild a full body from recall. Base = bytes on disk → `cp`/Read then surgical `edit`. Full `Write` only for a true new path or an explicit clean-slate ask. Otherwise stay on `edit`.
-- **Necessity Check (trigger-based):** Load `feedback_necessity_check.md` via the Memory System search order above and apply its five-question check when either trigger fires: (a) the change touches structural/system surfaces (skills, AGENTS.md, memory, hooks, vault architecture), or (b) the user floats a modification/refactor idea — a new mechanism, a skill/workflow redesign — invoking their "questioning/interrogative spirit" (they want scrutiny, not agreement). Assess outcomes, concrete gaps, added load, and use-cases. If the existing solution already solves the problem, explain why no change is needed. If a concrete unsolved gap remains, investigate uncertainty and ask only for an unresolved user decision or required approval; a negative or unclear answer alone does not mandate an interview. Otherwise stay out of it. Do not sell speculation as an obvious win.
+- **Delta over rewrite (trigger-based):** Load `preference_applying_delta_over_direct_rewrite.md` from `99_System/memory/` and apply its gate **before** the write path when any trigger fires: (a) target path already on disk (including skill/note “refresh” or full `Write` replace), (b) deriving from a source/export/selection, or (c) about to rebuild a full body from recall. Base = bytes on disk → `cp`/Read then surgical `edit`. Full `Write` only for a true new path or an explicit clean-slate ask. Otherwise stay on `edit`.
+- **Necessity Check (trigger-based):** Load `feedback_necessity_check.md` from `99_System/memory/` and apply its five-question check when either trigger fires: (a) the change touches structural/system surfaces (skills, AGENTS.md, memory, hooks, vault architecture), or (b) the user floats a modification/refactor idea — a new mechanism, a skill/workflow redesign — invoking their "questioning/interrogative spirit" (they want scrutiny, not agreement). Assess outcomes, concrete gaps, added load, and use-cases. If the existing solution already solves the problem, explain why no change is needed. If a concrete unsolved gap remains, investigate uncertainty and ask only for an unresolved user decision or required approval; a negative or unclear answer alone does not mandate an interview. Otherwise stay out of it. Do not sell speculation as an obvious win.
 
 
 ## Maintaining this file

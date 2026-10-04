@@ -23,35 +23,35 @@ Each timed set is a **Prep Studio pack** (`js/data-packs.js`): explicit practice
 - **Subtopics:** 1D/2D kinematics, projectile motion with/without drag limits, circular motion, inclined planes, friction (static/kinetic), tension systems.
 - **Source:** Prep Studio pack 01 (preview + Kahn Ch. 1 §1.1–1.2 + ETS drills GR8677/GR9277).
 - **Target Pace:** ~100 min scheduled (hedge; exam target still ~1.7 min/Q).
-- **Log / Status:** `[x] Closed` (2026-09-08 daily sitting)
+- **Log / Status:** `[x] Closed` (2026-09-08 daily sitting) — the Studio store holds attempts for 4 of 11 questions; full sitting 2026-10-27
 
 ### Set 02: Work, Energy & Momentum Conservation (13 Qs)
 - **Studio pack:** `02` · n = 13
 - **Subtopics:** Work-energy theorem, conservative vs non-conservative forces, potential energy curves $V(x)$, 1D/2D elastic and inelastic collisions, center of mass frame.
 - **Source:** Prep Studio pack 02 (Kahn Ch. 1 §1.3–1.4 + ETS drills).
 - **Target Pace:** ~100 min.
-- **Log / Status:** `[ ] Open`
+- **Log / Status:** `[x] Done 2026-09-16` — Studio receipt 10/13
 
 ### Set 03: Oscillations & Harmonic Motion (8 Qs)
 - **Studio pack:** `03` · n = 8
 - **Subtopics:** Simple harmonic oscillators (springs, pendulums, torsional), small oscillations around equilibria, damped oscillations ($Q$-factor, overdamped/underdamped), driven oscillations & resonance.
 - **Source:** Prep Studio pack 03 (Kahn Ch. 1 §1.7 + mixed review + ETS drills).
 - **Target Pace:** ~100 min.
-- **Log / Status:** `[x] Done 2026-09-15` — user-confirmed at evening close; no agent receipt this session (scores/misses TBD)
+- **Log / Status:** `[x] Done 2026-09-15` — user-confirmed at evening close; no agent receipt; Studio first attempts 3/8; replay slot 2026-10-29
 
 ### Set 04: Central Forces & Orbital Mechanics (11 Qs)
 - **Studio pack:** `04` · n = 11
 - **Subtopics:** Gravitational potential, effective potential $V_{\text{eff}}(r)$, Kepler's three laws, orbital eccentricity, circular orbit speed, escape speed, angular momentum conservation.
 - **Source:** Prep Studio pack 04 (preview + Kahn Ch. 1 §1.6 + ETS drills).
 - **Target Pace:** ~100 min.
-- **Log / Status:** `[ ] Open`
+- **Log / Status:** `[x] Done 2026-09-18` — Studio receipt 10/11
 
 ### Set 05: Rotational Dynamics & Rigid Bodies (15 Qs)
 - **Studio pack:** `05` · n = 15
 - **Subtopics:** Moments of inertia calculations, parallel and perpendicular axis theorems, torque, angular momentum, rolling without slipping, physical pendulums.
 - **Source:** Prep Studio pack 05 (Kahn Ch. 1 §1.4 + ETS drills).
 - **Target Pace:** ~100 min.
-- **Log / Status:** `[ ] Open`
+- **Log / Status:** `[x] Done 2026-09-24` — Studio receipt 7/15; replay slot 2026-10-28
 
 ### Set 06: Lagrangian & Hamiltonian Formalism (9 Qs)
 - **Studio pack:** `06` · n = 9

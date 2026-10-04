@@ -103,7 +103,7 @@ Link liberally. The AI creates connections automatically, but manual links are j
 
 ## System Files
 
-- **AGENTS.md** — Single project rules file for Grok Build, Claude Code, and other hosts (vault structure, multi-host memory; minimal host-specific rules).
+- **AGENTS.md** — Single project rules file for Grok Build, Claude Code, and other hosts (vault structure, vault memory; minimal host-specific rules).
 - **`.grok/`** — Grok Build project layer: `config.toml` (no skill bridges by design; no tool-name maps — trust the model).
 - **99_System/Templates/** — Note templates (Daily, Project, Wiki, Inbox, Content, Derivation).
 - **99_System/Prompts/** — 16 AI personas across Finance, Health, General, Learning, and Software Engineering domains.

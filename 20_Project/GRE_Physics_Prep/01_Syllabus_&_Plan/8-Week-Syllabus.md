@@ -5,7 +5,7 @@ status: active
 area: "[[Japan_Itinerary]]"
 start: 2026-09-07
 due: 2026-11-01
-updated: 2026-09-15
+updated: 2026-10-04
 tags: [gre, physics, syllabus]
 ---
 # GRE Physics Syllabus & Plan (ETS Computer Exam Blueprint)
@@ -70,5 +70,60 @@ Do not schedule GR8677 or GR9277 as mocks (`ets-drill`, already in the daily poo
   - Book Sample Exams 1–3: optional extras, not calendar rows.
 - Parent `#weekly` rows on daily notes should read **~100 min / ~50 min / ~50 min** from the Sep 14 week rollover. Topic-set files that still say ~60 min are superseded by this hedge.
 
+## Replan 2026-10-04 (overrides the live table from Oct 4)
+
+Premise: all 35 packs are sat before 2026-11-01. The live table and the mock table above stay as written because `tools/build-plan.js` parses them; from 2026-10-04 the day table below decides the timed child.
+
+**Evidence** — Prep Studio state, Chrome Profile 1 `file://` store, read 2026-10-04; dates in UTC+8.
+- Packs fully sat: 02 (10/13, Sep 16), 03 (first-attempt 3/8, no receipt), 04 (10/11, Sep 18), 05 (7/15, Sep 24), 13 (6/7, Sep 21). Pack 01: 4 of 11 questions attempted in this store.
+- Pack questions attempted: 101 of 366. New questions since Sep 14: 67 in 20 days (3.4 per day).
+- Logged study time since Sep 14: 2.4 h per day (48 h). Time spent answering questions: 254 min in practice and 104 min in mistake drills (6 h). The time went to formula recall, reading and derivations, not to packs.
+- Pace on first attempts: about 160–180 s per question on CM and EM; the exam allows 103 s.
+- Formula cards: 176 of 336 learned — CM 52/52, EM complete, QM 28/52; Optics 0/32, Thermo 0/45, Atomic 1/12, SR 0/29, Lab 5/19, Specialized 0/9 (deck totals from the 2026-09-20 formula receipt).
+- Mistake book: 64 active, 37 due or overdue.
+
+**Rules**
+- Unit is questions per day, not packs per week: 30 packs (312 questions) over 21 working days ≈ 15 questions per day.
+- Daily block ≈ 2 h: timed pack(s) at 103 s per question plus miss review (~65 min), formula recall (~35 min), mistake book (~20 min).
+- **Daily sequence (accepted by Reid 2026-10-04):** timed pack and its misses first, then formula recall, then the mistake book; `/learn`, derivations and reading come after. Reason: 48 h were logged since Sep 14 and only 6 h went to answering questions. This is a default order, not a gate: on a day when another order fits better, Reid chooses.
+- Order follows the book: EM → Optics → Thermo → QM → Atomic → SR → Lab/Specialized; unfinished CM (01, 06) and the replays of 05 and 03 close the plan.
+- A slipped pack moves to the next working day; Oct 28–29 are the only buffer. No pack sitting on Oct 30–31.
+- Formula recall: clear due cards daily, plus 10 new cards per working day in book order — Optics (32) → Thermo (45) → QM remainder (24) → Atomic (11) → SR (29) → Lab (14) → Specialized (9). Ends about Oct 24. Diagnostic and mock days: due cards only.
+- Sundays keep the mock schedule above. The paper diagnostic GR0177/GR0877 moved from Sun Oct 4 to Mon Oct 5, 14:00.
+
+| Date | Timed packs | Questions |
+|---|---|---|
+| Sun Oct 4 | 08 | 16 |
+| Mon Oct 5 | Diagnostic GR0177/GR0877, 14:00 | 100 |
+| Tue Oct 6 | 09 | 14 |
+| Wed Oct 7 | 10, 11 | 18 |
+| Thu Oct 8 | 12 | 13 |
+| Fri Oct 9 | 14, 15 | 21 |
+| Sat Oct 10 | 16 | 14 |
+| Sun Oct 11 | Mock ets2024 | 70 |
+| Mon Oct 12 | 17, 18 | 14 |
+| Tue Oct 13 | 19, 07 | 12 |
+| Wed Oct 14 | 20 | 14 |
+| Thu Oct 15 | 21, 22 | 14 |
+| Fri Oct 16 | 23 | 18 |
+| Sat Oct 17 | 24, 25 | 15 |
+| Sun Oct 18 | Mock GR1777 | 100 |
+| Mon Oct 19 | 26 | 20 |
+| Tue Oct 20 | 27 | 13 |
+| Wed Oct 21 | 28 | 15 |
+| Thu Oct 22 | 29, 30 | 16 |
+| Fri Oct 23 | 31, 32 | 17 |
+| Sat Oct 24 | 33, 35 | 14 |
+| Sun Oct 25 | Mock GR9677 | 99 |
+| Mon Oct 26 | 34 | 14 |
+| Tue Oct 27 | 01, 06 | 20 |
+| Wed Oct 28 | Buffer, else replay 05 | 15 |
+| Thu Oct 29 | Buffer, else replay 03 | 8 |
+| Fri Oct 30 | No pack: logistics, due formula cards | — |
+| Sat Oct 31 | No pack: sleep, travel | — |
+| Sun Nov 1 | Exam, 14:00 | 70 |
+
+Weekly targets for the daily-note rows: timed packs 8 (Oct 4–10), 10 (Oct 12–17), 9 (Oct 19–24), 3 + 2 replays (Oct 26–29); formula recall 6 per week; extra rework 2 per week (the misses of that week's diagnostic or mock first).
+
 ## start-my-day
-Canonical Learning Target input. Week boundaries and set lists above override older examples (Week 0 = Set 01, Week 1 = Set 06).
+Canonical Learning Target input. From 2026-10-04 the Replan day table above decides the timed child and the formula topic; a pack not yet sat on its date is sat first. Week boundaries and set lists in the live table override older examples (Week 0 = Set 01, Week 1 = Set 06).

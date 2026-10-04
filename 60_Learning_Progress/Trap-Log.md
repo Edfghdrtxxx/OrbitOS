@@ -1,7 +1,7 @@
 ---
 type: trap-index
 purpose: Terse cross-agent registry of pitfalls, traps, and misconceptions encountered during practice and learning. Agents running /learn MUST check and update this.
-updated: 2026-10-01
+updated: 2026-10-03
 ---
 # Learning Trap Registry — Context Index
 
@@ -42,3 +42,4 @@ updated: 2026-10-01
 | 2026-10-01 | QM — HO degeneracy in $d$ dimensions | Extrapolated the 2D result to "degeneracy $=N+d-1$" from one column of data | Degeneracy = ways to split $N$ quanta among $d$ oscillators $=\binom{N+d-1}{d-1}$: 2D $N+1$, 3D $\frac{(N+1)(N+2)}{2}$. Test a guess on a second case (3D, $N=2$: 6 states, not 4) | [[2026-09-30-1509 Kahn 5.1.5 and 5.2.3 debrief]] || [x] (Turn 13: counted 6 for 3D $N=2$, rejected own guess) |
 | 2026-10-01 | QM — $\hbar c$ estimate (Kahn 5.1.5 Q8) | Plugged $\Delta x=0.1$ nm into $E\sim(\hbar c)^2/(2m_ec^2\Delta x^2)$ without squaring it: got 0.4 eV (off by 10) | Square the length: $\Delta x^2=0.01\ \mathrm{nm^2}$. Unit check on the last line catches it: eV$^2$nm$^2$/(eV$\cdot$nm) = eV$\cdot$nm is not an energy | [[2026-09-30-1509 Kahn 5.1.5 and 5.2.3 debrief]] || [x] (Turn 15: squared $\Delta x$, 4 eV) |
 | 2026-10-01 | Math — characteristic equation setup | Subtracted $\lambda$ from every entry: wrote $M-\lambda I=\begin{pmatrix}2-\lambda & 1-\lambda\\ 1-\lambda & 2-\lambda\end{pmatrix}$ | $\lambda I$ is $\lambda$ on the **diagonal only**, zeros off-diagonal, so only the diagonal shifts: $\begin{pmatrix}2-\lambda & 1\\ 1 & 2-\lambda\end{pmatrix}$. Check: at $\lambda=0$ the matrix must reduce to $M$ itself | [[2026-09-23-1713 Determinant equations]] || [ ] |
+| 2026-10-03 | E&M — choice of coordinates for a volume integral | Chose cylindrical for a cube of side $L$ with $\rho=\rho_0x/L$, reasoning that the density "fits the shape of the cylindrical coordinates" (no rule for when region and integrand disagree) | The boundary decides first: pick the system where every boundary surface is "coordinate = constant", so all limits are numbers and the integral factors. Cube faces are $x,y,z=$ const $\implies$ Cartesian; in cylindrical the face $x=L$ gives the limit $s=L/\cos\phi$. Integrand is checked second. $Q=\rho_0L^3/2$ | [[2026-09-21-2048 Magnetic energy of a square-cross-section toroid]] | [x] (Turn 7: cube redone, Cartesian; Turn 9: unaided transfer, cylinder with $\rho=\rho_0z/h$ $\to$ cylindrical, $Q=\frac12\rho_0\pi R^2h$) |

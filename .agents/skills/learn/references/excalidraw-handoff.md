@@ -38,7 +38,7 @@ When an Excalidraw schema is the chosen visual:
 1. **Load the generator skill.** Read and follow `skill://excalidraw-diagram-generator`. Do not tutor the learner; do not edit the session note, `Progress-context.md`, or `Trap-Log.md`.
 2. **Draw only the payload `show`.** Socratic partial scaffold: the one relationship, component, or step under discussion. Never draw `hide`. Never label the derived result the question asks for. One diagram, not a textbook plate.
 3. **Write the file.** Save as `60_Learning_Progress/<topic>/assets/<name>.excalidraw` (create `assets/` if needed). Valid Excalidraw JSON. All text uses `fontFamily: 5` (Excalifont). Light theme: `appState.viewBackgroundColor` `#ffffff` and `"theme": "light"` so Obsidian does not invert to a black canvas. Dark strokes, readable labels (font size 16+), no overlapping elements.
-   - **Inherent inline embed invariant:** Embed directly as `![[<name>.excalidraw|1000]]`. Never compromise by substituting `.svg` exports or altering embed syntax. The Obsidian Excalidraw plugin natively parses and renders `.excalidraw` JSON inline. If Obsidian momentarily shows an unresolved document card right after external file creation, it is solely an index sync delay in `metadataCache`; reloading or reopening the note ensures native inline rendering without any workaround.
+   - **Inherent inline embed invariant:** Embed directly as `![[<name>.excalidraw|1000]]`. Never compromise by substituting `.svg` exports or altering embed syntax. The Obsidian Excalidraw plugin natively parses and renders `.excalidraw` JSON inline. A document card in place of the drawing is a stale reading-view render, not a bad file; the parent clears it with the forced re-render in Learn-session recording. Reopening the note does not clear it.
 4. **Math.** If `math: latex` (display formulas, aligned equations, fractions, integrals, or labels with more than two math tokens), tag those text elements with `customData: { latex: "<TeX>", latexDisplay: true|false }` and run `excalidraw-diagram-generator/scripts/render-latex.js`. Isolated symbols may stay Unicode. If `math: none`, skip the Node pipeline.
 5. **Return a receipt to Learn.** On success:
 
@@ -56,6 +56,21 @@ When an Excalidraw schema is the chosen visual:
 ## Learn-session recording
 
 After a `status: launched` receipt, embed `![[<name>.excalidraw|1000]]` in the current session note's Tutor turn and, in chat, give the receipt's 1–2 sentence pointer plus the turn's one question. Do not paste JSON. Do not dump the finished mechanism in prose around the figure.
+
+### Force the inline render (mandatory after every embed)
+
+Right after writing the embed line, re-render the note in place and read back the counts. The command targets the note by path, so it neither switches tabs nor takes focus:
+
+```bash
+obsidian eval code="(async()=>{const p='<session_note path from vault root>';const ls=[];app.workspace.iterateAllLeaves(l=>{if(l.view?.file?.path===p&&l.view.previewMode)ls.push(l)});ls.forEach(l=>l.view.previewMode.rerender(true));await new Promise(r=>setTimeout(r,3000));const q=s=>ls.reduce((n,l)=>n+l.view.containerEl.querySelectorAll(s).length,0);return JSON.stringify({leaves:ls.length,cards:q('.internal-embed.file-embed'),drawn:q('.excalidraw-embedded-img')})})()"
+```
+
+- `cards: 0` with `drawn` ≥ 1 → rendered. Say so only on this evidence.
+- `leaves: 0` → the note is not open; nothing to clear.
+- `cards` > 0 after the re-render → check the file with `app.plugins.plugins['obsidian-excalidraw-plugin'].ea.createSVG('<path>')`. An SVG back means the file is sound: report the view as the blocker. An error means the file is bad: re-dispatch.
+- Never tell the learner to reopen the note, reload the app, or open the drawing in its own tab. Never report an embed as rendered from a JSON parse alone.
+
+2026-10-03 incident: the embed showed as a `file-embed mod-generic` card in reading view and survived a reopen; `previewMode.rerender(true)` drew it. Live Preview was not tested.
 
 The visual remains that turn's scaffold: one relationship, one question for what is missing.
 
