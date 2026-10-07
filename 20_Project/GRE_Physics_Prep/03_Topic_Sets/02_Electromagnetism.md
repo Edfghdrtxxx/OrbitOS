@@ -22,7 +22,7 @@ Each timed set is a **Prep Studio pack** (`js/data-packs.js`) with honest `n`. L
 - **Studio pack:** `08` · n = 16
 - **Subtopics:** Coulomb's law, electric field calculations, electric potential, Gauss's law for spherical/cylindrical/planar symmetries, conductors in electrostatic equilibrium.
 - **Source:** Prep Studio pack 08 (preview + Kahn Ch. 2 §2.1 + ETS drills).
-- **Log / Status:** `[ ] Open`
+- **Log / Status:** `[x] Done 2026-10-04` — Studio receipt 9/16
 
 ### Set 09: Capacitors, Dielectrics & DC Circuits (14 Qs)
 - **Studio pack:** `09` · n = 14

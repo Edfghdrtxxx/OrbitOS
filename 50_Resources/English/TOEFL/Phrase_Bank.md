@@ -110,7 +110,7 @@ Wrapping up an answer or landing a preference cleanly
 ?
 Phrase: So all in all, that's basically why I'd rather… than…
 Model: So all in all, that’s basically why I’d rather travel with one or two close friends than in a big group.
-<!--SR:!2026-10-04,4,250-->
+<!--SR:!2026-10-16,10,250-->
 
 ### TOEFL-08 · Concluding / lesson learned
 
@@ -234,7 +234,7 @@ Formal email opening — consulting a professor or advisor for resources/directi
 ?
 Phrase: I am writing to seek your expert guidance regarding resources for…
 Model: Dear Dr. Imai, I am writing to seek your expert guidance regarding resources for preparing the entrance examination.
-<!--SR:!2026-09-25,11,210-->
+<!--SR:!2026-10-12,6,190-->
 
 ### TOEFL-24 · Narrative: Healthy lifestyle & nutrition
 
@@ -250,7 +250,7 @@ Academic debate — educational institutions guiding students' lifestyle / healt
 ?
 Phrase: As integral components of societal education, schools must…
 Model: As integral components of societal education, schools must guide young people toward better lifestyle choices.
-<!--SR:!2026-09-16,2,190-->
+<!--SR:!2026-10-10,4,190-->
 
 ### TOEFL-26 · Research integrity and communication
 
@@ -258,7 +258,7 @@ Campus research ethics, planning, and maintaining participant trust
 ?
 Phrase: Careful planning and transparent communication protect… and strengthen trust in…
 Model: Careful planning and transparent communication protect participants and strengthen trust in campus research.
-<!--SR:!2026-10-04,4,170-->
+<!--SR:!2026-10-14,7,170-->
 
 ### TOEFL-27 · Concession openers (Hardly ever / Even though)
 
@@ -306,7 +306,7 @@ Useful purchase, technological tool, or something that streamlined your workflow
 Phrase: The most delightful purchase I've made recently was… What made it such a smart decision was…
 Model: The most delightful purchase I've made recently was subscribing to an AI service. What made it such a smart decision was its incredible utility in streamlining my daily workflows. It essentially acts as a second brain, helping me organize my mind and clarify my intentions. Just last week, when I hit a wall analyzing complex experiment data during a particle physics project, this tool proved invaluable in helping me move forward efficiently.
 Collocations: delightful purchase · smart decision · streamlining my daily workflows · acts as a second brain · clarify my intentions · hit a wall · proved invaluable
-<!--SR:!2026-10-06,5,190-->
+<!--SR:!2026-10-17,10,190-->
 
 ### TOEFL-33 · Narrative: In-store vs online shopping
 
@@ -381,7 +381,7 @@ Teamwork, group collaboration, or working with a project partner
 Phrase: One instance that really highlighted the value of teamwork for me occurred during…
 Model: One instance that really highlighted the value of teamwork for me occurred during a particle physics project. By brainstorming ideas with my partner, we uncovered perspectives I had completely overlooked, which significantly improved the depth and quality of our final presentation.
 Collocations: highlighted the value of teamwork · particle physics project · brainstorming ideas · uncovered perspectives · completely overlooked · depth and quality
-<!--SR:!2026-10-03,2,170-->
+<!--SR:!2026-10-09,3,170-->
 
 ### TOEFL-42 · Narrative: Big city living / Urban infrastructure
 
@@ -435,7 +435,7 @@ Advocating for required writing workshops / structured academic skill training
 Phrase: I strongly advocate mandatory writing workshops every semester because they save students time by providing instant, targeted feedback from teachers.
 Model: I strongly advocate mandatory writing workshops every semester because they save students time by providing instant, targeted feedback from teachers. Specifically speaking, these workshops have highly experienced instructors and various essential resources that can significantly improve our writing skills. For example, last semester, attending a mandatory writing workshop allowed me to compare my writing with the teacher's feedback immediately, which gave me confidence that other methods cannot simply replicate.
 Collocations: strongly advocate · mandatory writing workshops · save students time · instant, targeted feedback · highly experienced instructors · essential resources · significantly improve · compare my writing with · gave me confidence · cannot simply replicate
-<!--SR:!2026-10-05,3,190-->
+<!--SR:!2026-10-12,6,190-->
 
 ### TOEFL-48 · Debate: Instant feedback vs written comments
 
@@ -469,6 +469,7 @@ Phrase: If the network mislabels a track, that feeds straight into… and skews 
 Model: In my master's work at IMP, I built an automated framework called AFTPC to classify charged-particle tracks in Time Projection Chambers for the MATE experiment. I convert the 3D drift data into 2D projections and use a ResNet-18 backbone for particle identification — PID. Right now this is strictly a simulation-only study on Geant4-based data, because we have to guard against ML leakage and check the tracking before touching real beam data. If the network mislabels a track — confusing a proton with a deuteron, for instance — that feeds straight into the kinematics and skews the extracted nuclear cross section. So this gave me solid training in detector observables, but I'm not locked into hardware; I treat machine learning as a practical analysis tool I can carry into reaction physics.
 Collocations: classify charged-particle tracks · simulation-only study · guard against ML leakage · touching real beam data · if the network mislabels a track · feeds straight into the kinematics · skews the extracted cross section · locked into hardware · practical analysis tool
 Note: Lead with simulation-only so you are not ambushed on beam data. End on ML as a tool, not a CS pitch.
+<!--SR:!2026-10-07,0,210-->
 
 ### TOEFL-52 · Why CNS / OEDO-SHARAQ rather than IMP
 

@@ -16,6 +16,10 @@ related:
 
 Exclusive startup state. Stop here until the current state and next action are unambiguous. Do not load the full vault or MATE repository. Current state lives **only** here and in [[L1_Current_Campaign]]; the Wave 1 mid-automation report is frozen history, not a live log.
 
+> [!important] Priority rule set by Reid Hu, 2026-10-05
+> "最重要的就是自动化流水线推进，完成我的论文，这才是我的终极目标，其他的都是细枝末节"
+> The ultimate goal is the finished paper; the automated training pipeline moving forward is the means; everything else is a minor detail. Agents settle minor details themselves and do not bring them to him. Remote compute may run continuously, with no GPU-hour ceiling on the free Windows GPU PC; from 2026-10-10 agents avoid interrupting him. Full record: [[Plan_2026-09-18_GRE_Park_Research_Contract]] §9, both 2026-10-05 entries. Where this note says otherwise below, this rule wins.
+
 ## Primary goal
 
 Push TPC particle-identification research forward with **authentic public-data evidence** during GRE preparation. Campaign-level claim `physics_vs_generic_with_traditional_context` applies **only where an independent physics vector exists**. **Z-01 cannot support that claim:** image-derived moments are duplicate summaries of the same pixels. Do **not** label any Z-01 arm physics-informed. Z-01 is a cross-detector **classification smoke** only.

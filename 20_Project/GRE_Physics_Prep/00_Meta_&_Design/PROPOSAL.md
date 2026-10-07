@@ -1,6 +1,6 @@
 # Feature-Gap Proposal — what mainstream prep platforms have that this site doesn't
 
-*Written July 15, 2026 · exam October 28, 2026 · **status: ALL 15 ITEMS SHIPPED July 15, 2026** (see `DESIGN.md` §8 for where each landed). The "considered and ruled out" list below remains ruled out.*
+*Written July 15, 2026 · exam November 1, 2026 · **status: ALL 15 ITEMS SHIPPED July 15, 2026** (see `DESIGN.md` §8 for where each landed). The "considered and ruled out" list below remains ruled out.*
 
 A survey of features standard on mainstream test-prep platforms (Magoosh, UWorld,
 Kaplan, Achievable, Anki/Quizlet-style flashcard apps, and the

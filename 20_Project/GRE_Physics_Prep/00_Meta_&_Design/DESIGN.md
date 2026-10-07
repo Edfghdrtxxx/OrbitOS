@@ -1,6 +1,6 @@
 # Physics GRE Prep Studio — Design Document
 
-Personal, fully-local study site for the GRE Physics Test (exam day: **Wed, October 28, 2026**).
+Personal, fully-local study site for the GRE Physics Test (exam day: **Sun, November 1, 2026**).
 Everything runs from static files; all data stays on this machine (localStorage + IndexedDB).
 
 ---

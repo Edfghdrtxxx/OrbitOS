@@ -14,5 +14,6 @@ saved_at: 2026-09-15
   `cd "/Users/Reid Hu/Physics GRE" && python3 -m http.server 8000`
 - Practice pool ~366 Q (preview + Kahn chapter + GR8677/GR9277 drills). Intact ETS/book exams only in Mock exam.
 - Pages: Dashboard, Practice, History, Mistake book (SRS), Formula recall (334 cards), Study plan (`#/plan` from vault syllabus via `tools/build-plan.js`), Mock exam, Focus, Concepts, Analytics.
+- Read drill results: `GET http://127.0.0.1:4789/pgre-status` returns today's per-question results (`attempts`, `questions`, `mistakeBook`; fields in Prep Studio `AGENTS.md`). The data refreshes only while a Prep Studio tab is open.
 - Plan owner: OrbitOS `20_Project/GRE_Physics_Prep/` — do not hand-edit `js/data-plan.js`.
 - Bank/PDFs: gitignored under `content/`, `20_docs/`.

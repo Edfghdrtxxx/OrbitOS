@@ -1,7 +1,7 @@
 ---
 type: learning-index
 purpose: Terse cross-agent index of what the learner has solidly learned. Agents running /learn MUST read this first.
-updated: 2026-10-03
+updated: 2026-10-04
 ---
 # Learning Progress — Context Index
 
@@ -186,6 +186,10 @@ Session: [[2026-09-21-1447 Volume integral of rho from div E]]
 - **Volume element:** $\mathrm{d}^3 r=r^2\sin\theta\,\mathrm{d}r\,\mathrm{d}\theta\,\mathrm{d}\phi$ (handwritten product verified)
 - **GRE move:** $\rho\propto z$ odd on a sphere symmetric about $z=0$ $\implies Q=0$ (no triple slog)
 - **Hemisphere transfer:** upper hemisphere has no negative $\rho$ to cancel $\implies Q\neq 0$ (verified)
+- **Parity check transfer:** $\mathbf{E}=E_0z^3\hat{\mathbf{z}}\Rightarrow\rho\propto z^2$ even in $z$, no cancellation, $Q>0$ (stated unaided, Turn 19, 2026-10-04)
+- **Setup audit:** limits, integrand, measure compared against region, defining line, memorised element before evaluating; found own three slips ($\theta:0\to\frac\pi2$, $z$ for $z^2$, $\sin^2\theta$) in one pass (pointers given, Turn 21)
+- **Full evaluation:** $Q=3\epsilon_0E_0\int_0^Rr^4\,\mathrm{d}r\int_0^\pi\cos^2\theta\sin\theta\,\mathrm{d}\theta\int_0^{2\pi}\mathrm{d}\phi=\frac45\pi\epsilon_0E_0R^5$ (handwritten, Turns 22–23)
+- **Polar substitution:** $u=\cos\theta$, $\mathrm{d}u=-\sin\theta\,\mathrm{d}\theta$, limits $1\to-1$, $\int_{-1}^{1}u^2\,\mathrm{d}u=\frac23$ (handwritten; substitution handed over by tutor)
 
 #### E&M — cylindrical volume integrals (toroid energy)
 
@@ -255,6 +259,14 @@ Session: [[2026-09-23-1713 Determinant equations]]
 - **$\lambda I$ shifts the diagonal only:** off-diagonal entries untouched; check $\lambda=0$ must return $M$ (corrected from the all-entries trap)
 - **$2\times2$ solve:** $\det\begin{pmatrix}a&b\\c&d\end{pmatrix}=ad-bc$; $(2-\lambda)^2-1=0\Rightarrow\lambda=3,1$ via $2-\lambda=\pm1$ (unaided, no expansion needed)
 
+#### Math — sanity checks on a final answer
+
+Session: [[2026-10-04-1801 Sanity checks]] (thread still active)
+
+- **Units check is blind to pure numbers:** a lost $2$ or $\frac12$ passes it (stated, Turn 2)
+- **Units check on own picked options:** found the two Set 08 picks that fail, $\omega$ in Q1 and $\sigma=\frac{qd}{2\pi D^2}\to\mathrm{C/m}$ in Q13 (stated, Turn 3; Q1 units worded as "metre times second squared", corrected to $\sqrt{\mathrm{m}}/\mathrm{s}$)
+- **Formula length vs given length (Q4, image charge):** $r=2d\Rightarrow r^2=4d^2$, giving $16\pi$ (stated after prompt, Turn 4)
+
 ## In progress
 
 Only threads with unfinished core work (verified against session notes).
@@ -269,6 +281,8 @@ Only threads with unfinished core work (verified against session notes).
 - **Capacitance (two conductors):** [paused] Geometry invariant solid ($C$ fixed, $V$ doubles); resume energy parent $\to$ [[2026-09-14-0828 Capacitance]].
 - **Boundary condition on normal E:** [active] Turn 1 Gauss pillbox sheet vs conductor jump $\to$ [[2026-09-15-0916 Boundary condition on normal E]].
 - **Circular orbit and effective potential:** [active] Stability for $F \propto -1/r^n$ ($n < 3$) locked; orbital mechanics drills $\to$ [[2026-09-18-1705 Circular orbit and effective potential]].
+- **E&M: volume integral of $\rho$ over a sphere (retake):** [paused] closed 2026-10-04 at Turn 23 ($Q=\frac45\pi\epsilon_0E_0R^5$); next: `/retention` re-test without pointers — clean first-pass setup and the $u=\cos\theta$ step. History: reopened 2026-10-04, Turn 17 — Studio retake guessed $0$; handwritten attempt used cylinder limits for the sphere and got $\int_{-R}^{R}z\,\mathrm{d}z=R^2$; Turn 18: redid it, $\int_{-R}^{R}z\,\mathrm{d}z=0$ (after prompt); Turn 19: parity transfer on $E_0z^3\hat{\mathbf{z}}$ stated ($Q>0$); Turn 20: wrote $Q$ in spherical unaided ($r$, $\phi$ limits and $z=r\cos\theta$ right) with three slips ($\theta:0\to\frac\pi2$, $z$ for $z^2$, $\sin^2\theta$); Turn 21: found all three slips by comparison against landmarks, the $\rho$ line and the box edges (pointers given); setup audit named: limits, integrand, measure, run before evaluating; Turn 22: corrected setup and factoring all right, $Q=6\pi\epsilon_0E_0\cdot\frac15R^5\int_0^\pi\cos^2\theta\sin\theta\,\mathrm{d}\theta$ (handwritten, no slip); stopped at the $\theta$ integral; open: $u=\cos\theta$ substitution (Turn 22 question); pattern to re-test: one final-answer check (symmetry/sign, units, limiting case) $\to$ [[2026-09-21-1447 Volume integral of rho from div E]].
+- **Math: sanity checks on a final answer:** [paused] Turn 6 — learner's own summary: premises before calculating, check after; three patterns named (formula length vs given length; units of a formula option; odd integrand over symmetric limits); Q9 (count of forces) and Q16 (integral) not examined. Turn 2 — stated: a units check cannot see a lost pure number; three checks named by tutor (symmetry/sign, units, known special case); Set 08 misses (7) recorded in the note from the status endpoint; Turn 3 — units check found Q1 and Q13; tutor's sort of the 7 misses: 2 units, 2 factor-of-2 from the wrong length (Q4, Q5), 1 count (Q9), 1 fact (Q7), 1 integral (Q16); Turn 5 — Q4 ($r=2d$) and Q5 ($x=\frac d2$, $\sin\theta=\frac{d}{2L}$) lengths stated after prompts; open: Turn 5 question (one concrete case of the "(1/2) before R" slip), then an unaided rework of the factor-of-2 trap, then practice on real Studio questions; slips on record in the note; parent [[2026-09-21-1447 Volume integral of rho from div E]] $\to$ [[2026-10-04-1801 Sanity checks]].
 - **Math: determinant equations / eigenvalues:** [active] Turn 7 — $2\times2$ characteristic equation solved unaided ($\lambda=3,1$); open: eigenvectors/normal modes, $3\times3$ cofactor expansion $\to$ [[2026-09-23-1713 Determinant equations]].
 
 

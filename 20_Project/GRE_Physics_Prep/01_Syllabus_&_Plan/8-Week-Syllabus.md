@@ -5,7 +5,7 @@ status: active
 area: "[[Japan_Itinerary]]"
 start: 2026-09-07
 due: 2026-11-01
-updated: 2026-10-04
+updated: 2026-10-05
 tags: [gre, physics, syllabus]
 ---
 # GRE Physics Syllabus & Plan (ETS Computer Exam Blueprint)
@@ -82,13 +82,19 @@ Premise: all 35 packs are sat before 2026-11-01. The live table and the mock tab
 - Formula cards: 176 of 336 learned — CM 52/52, EM complete, QM 28/52; Optics 0/32, Thermo 0/45, Atomic 1/12, SR 0/29, Lab 5/19, Specialized 0/9 (deck totals from the 2026-09-20 formula receipt).
 - Mistake book: 64 active, 37 due or overdue.
 
+**Evidence** — same store, read 2026-10-05 08:19.
+- Pack 08 sat 2026-10-04: 9/16; 43.2 min of answering, 162 s per question on average, 9 of 16 over 103 s; answers spread from 11:35 to 17:32.
+- First attempts since Sep 28: EM 9/19 (47%).
+- Formula deck: 468 cards (the 336 above came from the 2026-09-20 receipt). 180 seen, 288 unseen — Optics 32, Thermo 48, book chapter 5 (QM + Atomic) 55, chapter 6: 33, chapter 7: 27, chapter 8: 24, chapter 9: 1, supplemental 68. New cards on Oct 4: 4.
+- Mistake book: 73 active, 55 due or overdue; 9 added on Oct 4.
+
 **Rules**
 - Unit is questions per day, not packs per week: 30 packs (312 questions) over 21 working days ≈ 15 questions per day.
-- Daily block ≈ 2 h: timed pack(s) at 103 s per question plus miss review (~65 min), formula recall (~35 min), mistake book (~20 min).
+- Daily block: timed pack(s) at 103 s per question plus miss review (~65 min), formula recall (~35 min), mistake book 25 questions per day (~50 min; raised from 15 by Reid 2026-10-05).
 - **Daily sequence (accepted by Reid 2026-10-04):** timed pack and its misses first, then formula recall, then the mistake book; `/learn`, derivations and reading come after. Reason: 48 h were logged since Sep 14 and only 6 h went to answering questions. This is a default order, not a gate: on a day when another order fits better, Reid chooses.
 - Order follows the book: EM → Optics → Thermo → QM → Atomic → SR → Lab/Specialized; unfinished CM (01, 06) and the replays of 05 and 03 close the plan.
 - A slipped pack moves to the next working day; Oct 28–29 are the only buffer. No pack sitting on Oct 30–31.
-- Formula recall: clear due cards daily, plus 10 new cards per working day in book order — Optics (32) → Thermo (45) → QM remainder (24) → Atomic (11) → SR (29) → Lab (14) → Specialized (9). Ends about Oct 24. Diagnostic and mock days: due cards only.
+- Formula recall: clear due cards daily, plus 14 new cards per working day in book order (all 288 unseen cards; Reid 2026-10-05) — Optics (32) → Thermo (48) → chapter 5 (55) → chapter 6 (33) → chapter 7 (27) → chapter 8 (24) → chapter 9 (1) → supplemental (68). 21 working days from Oct 6 × 14 = 294; ends Oct 29. Diagnostic and mock days: due cards only.
 - Sundays keep the mock schedule above. The paper diagnostic GR0177/GR0877 moved from Sun Oct 4 to Mon Oct 5, 14:00.
 
 | Date | Timed packs | Questions |

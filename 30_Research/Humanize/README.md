@@ -5,7 +5,7 @@ area: "[[Self-Development]]"
 ---
 # Humanize
 
-Shared library of natural academic English. One place for skills, agents, and you — not style guides forked into every `SKILL.md`.
+Shared library of natural academic English and Chinese self-media copy. One place for skills, agents, and you — not style guides forked into every `SKILL.md`.
 
 ## Workflow
 
@@ -18,7 +18,7 @@ Shared library of natural academic English. One place for skills, agents, and yo
 - **Gold only** in the register file: store what works. Do not paste rejected full sentences (they pollute later drafts).
 - **Never-do (abstract):** no defensive “— not X” tails on slides; define by what something *is*. No edit narration (*now in the aside*, *added below*): text reads as if it had always been there.
 - **Grow by example:** append audited lines under the right heading; residual edits, not rewrites.
-- **English** in bodies; keep this folder **flat**.
+- **English** in guidelines; examples in the language of their surface. Keep this folder **flat**.
 
 ## Entry point
 

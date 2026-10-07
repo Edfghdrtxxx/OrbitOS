@@ -23,7 +23,7 @@ related:
 * **Current Status:** `active: resumed_2026-09-20 (mentor discussion delayed; completing auto-research execution pipeline)`.
 * **Authorized Remote Training Window:** **Now → October 6, 2026, 0:00 AM**.
   - During this window, remote GPU training is authorized under strict caps ($\le 16.0$ cumulative GPU-hours; $\le 2.0$h for Z-01 smoke).
-* **GRE Hard Freeze:** **October 6, 2026, 0:00 AM → November 1, 2026 (Exam Date)**.
+* **GRE Hard Freeze:** **October 6, 2026, 0:00 AM → November 1, 2026 (Exam Date)**. (Lifted for remote compute on 2026-10-05 by Reid Hu. See [[Plan_2026-09-18_GRE_Park_Research_Contract]] §9.)
   - Zero remote server operations or overnight training permitted. Reid's cognitive bandwidth and daytime a-blocks are 100% reserved for GRE Physics prep.
 
 ---
@@ -78,5 +78,5 @@ The misunderstanding regarding $Z^2 A$ has been permanently resolved. The compre
 When Reid Hu instructs you to resume this project:
 1. **Do NOT re-read the full repository or past logs.** Load only `[[L0_Start_Here]]` and `[[INDEX]]`.
 2. **Review Mentor Feedback:** Ask Reid what guidance his mentor provided regarding the paper outline, detector scope, or publication timeline.
-3. **Respect the October 6 Deadline:** If today's date is between 2026-10-06 and 2026-11-01, **REFUSE** live execution and keep the system parked.
+3. **Respect the October 6 Deadline:** If today's date is between 2026-10-06 and 2026-11-01, **REFUSE** live execution and keep the system parked. **Superseded 2026-10-05 by Reid Hu:** the freeze no longer applies to remote compute (it may run continuously, no GPU-hour ceiling on the free Windows GPU PC; from 2026-10-10 avoid interrupting him); see [[Plan_2026-09-18_GRE_Park_Research_Contract]] §9, entry 2026-10-05, before refusing.
 4. **Follow the Composed Map:** All campaign files, specs, and recordings are indexed in `[[INDEX]]`.
