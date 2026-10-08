@@ -1,6 +1,6 @@
 ---
 name: personal_context
-description: Family, relationship, and decision-style facts; load when advising on life/career plans, tradeoffs, or anything touching parents, girlfriend, lock mechanics, or the post-PhD endgame
+description: Family, relationship, hard constraints, and decision-style facts; load when advising on life/career plans, tradeoffs, or anything touching parents, girlfriend, lock mechanics, or the post-PhD endgame
 type: user
 ---
 Interview 2026-09-12. Answered facts only. Do not store girlfriend location. Do not extend `user_background.md` (that file is MATE-paper framing only).
@@ -25,6 +25,21 @@ Interview 2026-09-12. Answered facts only. Do not store girlfriend location. Do 
 - Does not reopen locked career gates.
 - Failure → fallback inside the same destination.
 - No third-country rewrite, no China-default rewrite.
+
+## Hard constraints
+- Leave China. Hong Kong counts as China.
+- A Chinese company's overseas office is acceptable only if his right to stay in that country does not depend on that employer's offer.
+- Be with his partner.
+
+## PhD thesis
+- Must be deep nuclear-structure physics (Nilsson levels, deformation). ML can only be an add-on; an ML-led thesis would not pass.
+
+## Post-PhD career
+- Target (research post vs industry): undecided. "Not enough data" means gather evidence, not pick a default.
+- His view: permanent academic and institute posts are effectively closed worldwide, not only in Japan.
+- No preference among industry work types. He expects to learn whatever a role needs.
+- Plan against PhD completion about Sep 2030.
+- Evidence and gaps: `20_Project/Japan_Itinerary/Post_PhD_Career_Options.md`.
 
 ## Endgame
 - Japan is the next decade's vehicle, not the terminal country.

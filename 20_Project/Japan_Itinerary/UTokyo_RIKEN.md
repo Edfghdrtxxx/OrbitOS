@@ -365,3 +365,4 @@ Personal savings: 100–200k CNY (≈ 2–4M JPY). Comfortable at upper range; d
 - [[Game_Framework]]
 - [[Post_Acceptance_Timeline]]
 - [[UTokyo_PhD_Track_Timeline]]
+- [[Post_PhD_Career_Options]]

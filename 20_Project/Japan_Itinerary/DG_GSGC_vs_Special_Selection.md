@@ -80,7 +80,7 @@ This is not merely a preference — it is a structural eligibility question. The
 
 **Financial implications:**
 - 180k JPY/month scholarship included in GSGC
-- `[UNVERIFIED]` Whether GSGC scholarship (180k/month) can stack with RIKEN JRA (200k/month). If stackable: ~380k JPY/month — financially excellent. If mutually exclusive: must choose one, with significant income difference. **No official source addresses stacking.**
+- `[UNVERIFIED]` Whether GSGC scholarship (180k/month) can stack with RIKEN JRA (250k/month expected, FY2026 call). If stackable: ~430k JPY/month — financially excellent. If mutually exclusive: must choose one, with significant income difference. **No official source addresses stacking.**
 - If GSGC requires re-entering at M1 level: adds 2 years before doctoral phase, delaying JRA eligibility (JRA is for PhD students)
 
 **Timeline implications:**
@@ -108,7 +108,7 @@ This is not merely a preference — it is a structural eligibility question. The
 
 **Financial implications:**
 - No built-in scholarship (unlike GSGC's 180k/month)
-- Primary funding source: RIKEN JRA (~200k JPY/month `[UNVERIFIED — JRA amount]`) #upcoming-confirmation-needed
+- Primary funding source: RIKEN JRA (250k JPY/month expected, FY2026 call — `[V2]` in [[UTokyo_RIKEN]]) #upcoming-confirmation-needed
 - No stacking question arises — JRA would be the sole funding mechanism
 - If JRA is not obtained: self-funded PhD (financially precarious)
 - UTokyo tuition exemption (`[V4]`) would apply independently
@@ -153,7 +153,7 @@ Submit applications to both GSGC and Special Selection in the same cycle.
 |---|----------|-------------------|------------|----------|
 | U1 | **Can a master's degree holder apply to GSGC?** Or is GSGC restricted to applicants entering at the master's level (M1)? | `RESOLVED` — master's holders CANNOT apply to GSGC | Imai meeting 2026-04-13 | **CRITICAL** |
 | U2 | **If a master's holder enters GSGC, do they start at M1 (repeating master's) or can they enter directly at D1?** | `N/A` — GSGC ineligible | Imai meeting 2026-04-13 | **CRITICAL** |
-| U3 | **Can GSGC scholarship (180k/month) and RIKEN JRA (200k/month) be held simultaneously?** Or are they mutually exclusive? | `N/A` — GSGC ineligible | Imai meeting 2026-04-13 | **HIGH** |
+| U3 | **Can GSGC scholarship (180k/month) and RIKEN JRA (250k/month expected) be held simultaneously?** Or are they mutually exclusive? | `N/A` — GSGC ineligible | Imai meeting 2026-04-13 | **HIGH** |
 | U4 | **Can you apply to both GSGC and Special Selection in the same application cycle?** | `[VERIFIED]` — YES, dual application is officially allowed (pay fee twice). VERIFIED — UTokyo admissions page, Mar 2026 | Resolved | **HIGH** |
 | U5 | **Does Special Selection have different application windows than GSGC?** | `[VERIFIED]` — NO, they share the SAME application windows (Period 1: ~Oct 15-31, Period 2: ~Dec 5-22). VERIFIED — UTokyo admissions page, Mar 2026 | Resolved | **HIGH** |
 | U6 | **Does Special Selection require the GRE Physics Subject Test?** (GSGC requires it for Physics — is this true for Special Selection too?) | `[VERIFIED]` — YES, GRE Physics is required for Physics department under Special Selection. GRE General is NOT required. VERIFIED — UTokyo admissions page, Mar 2026 | Resolved | **MEDIUM** |
@@ -183,7 +183,7 @@ ELSE IF U1 = "master's holders CAN apply" AND U2 = "must start at M1"
 ELSE IF U1 = "CAN apply" AND U2 = "can enter at D1"
   → Evaluate based on:
     - U3 (scholarship stacking): If stackable with JRA → GSGC is financially superior.
-    - U3 (mutually exclusive): Compare 180k GSGC scholarship vs 200k JRA.
+    - U3 (mutually exclusive): Compare 180k GSGC scholarship vs 250k JRA.
       JRA includes Shakai Hoken `[UNVERIFIED — JRA details]` #upcoming-confirmation-needed — likely net superior if verified. Special Selection + JRA
       may be preferable unless GSGC has other benefits.
     - U4 (dual application): If allowed → apply to both; choose best offer.
@@ -204,7 +204,7 @@ ELSE IF information remains ambiguous after professor meeting
 | Dimension | Impact |
 |---|---|
 | **Study plan** | Phases 5–7 of [[Fundamental_Learning_plan]] revert to "conversational" level. Phase 0.5 (Complex Analysis) becomes optional. Add GRE Physics Subject Test prep block (target: TBD — no published minimum). Freed ~6-9 hrs/week from Jun–Dec 2026 redirect to GRE drilling. |
-| **Financial** | GSGC scholarship: 180k JPY/month. JRA stacking status determines total income (`[U3]`). If stackable: ~380k/month — highly comfortable. If exclusive: must choose; JRA (200k + Shakai Hoken) likely preferred over GSGC scholarship (180k). |
+| **Financial** | GSGC scholarship: 180k JPY/month. JRA stacking status determines total income (`[U3]`). If stackable: ~430k/month — highly comfortable. If exclusive: must choose; JRA (250k expected + Shakai Hoken) likely preferred over GSGC scholarship (180k). |
 | **Timeline** | If entering at D1: Oct 2027 – Sep 2030 (3 years). If forced to M1: Oct 2027 – Sep 2032 (5 years) — unacceptable without compelling reason. Application via Period 2 (~Dec 2026). |
 | **Downstream file updates** | [[Fundamental_Learning_plan]]: reduce Phases 5–7, add GRE prep block. [[UTokyo_RIKEN#Entrance Exam]]: mark written exam as waived. [[UTokyo_RIKEN#Route B — GSGC Physics]]: update status. [[Official_Deadlines]]: confirm GSGC-specific dates. |
 
@@ -222,7 +222,7 @@ ELSE IF information remains ambiguous after professor meeting
 | Dimension | Impact |
 |---|---|
 | **Study plan** | Core physics prep continues. GRE Physics prep continues (required for Special Selection — `[U6 VERIFIED]`). Written exam: **None — interview only** (U7 RESOLVED, Imai meeting 2026-04-13). Overall study plan similar to GSGC scenarios but without the GSGC scholarship safety net. |
-| **Financial** | No GSGC scholarship. Primary funding: RIKEN JRA (200k/month `[UNVERIFIED — JRA amount]`). If JRA not obtained: self-funded PhD — significantly higher financial risk. Tuition exemption (`[V4]`) becomes more critical. Budget aligns with current [[UTokyo_RIKEN#Financials]] PhD section. |
+| **Financial** | No GSGC scholarship. Primary funding: RIKEN JRA (250k/month expected, FY2026 call — `[V2]` in [[UTokyo_RIKEN]]). If JRA not obtained: self-funded PhD — significantly higher financial risk. Tuition exemption (`[V4]`) becomes more critical. Budget aligns with current [[UTokyo_RIKEN#Financials]] PhD section. |
 | **Timeline** | 3-year doctoral: Oct 2027 – Sep 2030. Application windows confirmed same as GSGC (`[U5 VERIFIED]`): Period 1 ~Oct 15-31, Period 2 ~Dec 5-22. |
 | **Downstream file updates** | [[UTokyo_RIKEN]]: remove/archive all GSGC-specific content; update Admission Routes Summary to show Special Selection as sole chosen route. [[Official_Deadlines]]: replace GSGC timeline with Special Selection-specific dates. [[General_Checklist]]: update Target Universities section. [[Fundamental_Learning_plan]]: adjust if test requirements differ. All files containing "GSGC vs Special Selection" callouts: replace with resolution statement. |
 

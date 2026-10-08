@@ -10,7 +10,7 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 
 > [!important] Pathway FINALIZED 2026-02-15 | Updated 2026-04-13
 > **UTokyo CNS / RIKEN JRA route — direct PhD entry is now the primary target.**
-> **Primary:** Special Selection application (~Dec 2026) → PhD D1 enrollment at UTokyo (Oct 2027), funded via RIKEN JRA (~200k JPY/month). **Special Selection confirmed** (interview only, no written exam). Supervisor: **Nobuaki Imai (DONUTS group)**.
+> **Primary:** Special Selection application (~Dec 2026) → PhD D1 enrollment at UTokyo (Oct 2027), funded via RIKEN JRA (250k JPY/month expected, FY2026 call). **Special Selection confirmed** (interview only, no written exam). Supervisor: **Nobuaki Imai (DONUTS group)**.
 > **Fallback:** If application unsuccessful → Kenkyusei at UTokyo CNS (Oct 2027 – Sep 2028), self-funded; retake exam for Oct 2028 PhD entry.
 > IPA pathway explicitly rejected — staying at CAS for the degree conflicts with the UTokyo-degree goal.
 > Full strategic roadmap: [[UTokyo_RIKEN]].
@@ -21,7 +21,7 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 
 ^64716f
 
-**Objective:** Immigrate from China permanently via a research-career PhD path. The goal is a stable academic or national-lab career (university faculty, RIKEN researcher) compatible with non-996 values, enabling permanent residency through the Highly Skilled Professional (HSP) point system. Identity and vision anchored in [[Game_Framework]]. ^48f305
+**Objective:** Immigrate from China permanently via a PhD path. The career after the PhD — research post or industry — is undecided until more evidence is in ([[Post_PhD_Career_Options]]); either must be compatible with non-996 values. Permanent residency through the Highly Skilled Professional (HSP) point system is available on both. Identity and vision anchored in [[Game_Framework]]. ^48f305
 
 ### Background
 
@@ -29,14 +29,14 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 - **Research background:** Time Projection Chambers (TPC), direct reactions, particle identification; ML methods (ResNet, ViT, DANN/MCD).
 - **Immigration anchor:** PhD at a Japanese university provides Student Visa, lab integration, Japanese language immersion, and a credential recognized in Japan — all of which are structurally unavailable via a direct overseas work-entry route.
 - **Decision basis:** A structured Work vs PhD comparison ([[Work_vs_PhD_Scorecard]], [[Work_vs_PhD_Decision_Workflow]]) across 3 scoring cycles (Feb 2026) produced PhD ahead by 10.10 points (54.52 vs 44.42), stable across best/base/worst scenarios.
-- **Career direction:** PhD is a deliberate research-career choice, not a risk hedge before entering industry.
+- **Career direction:** The PhD was chosen as a research-career path (2026-02-15). Whether the career after it is research or industry is undecided.
 
 ### Why UTokyo CNS + RIKEN
 
 - CNS (Center for Nuclear Study) is located on the RIKEN Wako campus — UTokyo degree and RIKEN RIBF experimental infrastructure in one place.
 - Direct research alignment: TPC, direct reactions, ML-PID extends current IMP work naturally.
 - UTokyo degree has stronger career and PR-track signaling in Japan than a CAS degree.
-- RIKEN JRA provides funded PhD stipend (~200k JPY/month, unverified — see `[V2]` in [[UTokyo_RIKEN]]) from D1 onward.
+- RIKEN JRA provides funded PhD stipend (250k JPY/month expected, FY2026 call — see `[V2]` in [[UTokyo_RIKEN]]) from D1 onward.
 
 ---
 
@@ -45,7 +45,7 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 ### Primary Path — Direct PhD Entry (Oct 2027)
 
 - Submit Special Selection application (~Dec 2026) and enroll directly as PhD D1 at UTokyo Graduate School of Science (Physics).
-- Funded by RIKEN JRA from D1 onward (~200k JPY/month `[V2]` — see [[UTokyo_RIKEN]]).
+- Funded by RIKEN JRA from D1 onward (250k JPY/month expected `[V2]` — see [[UTokyo_RIKEN]]).
 - **Exam route: Route B chosen** (decision by user + IMP supervisor). Route A (Regular/一般入試) archived. **Sub-track RESOLVED: Special Selection confirmed** (2026-04-13 Imai meeting). GSGC ineligible for candidates with an existing master's degree.
 - **GRE Physics Subject Test is compulsory** — minimum score 900 to be competitive.
 
@@ -112,6 +112,7 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 | 2026-02-17 | MEXT University Recommendation (Research Student) dropped — extremely fierce competition confirmed. Kenkyusei now self-funded. |
 | 2026-03-09 | **Supervisor outreach succeeded.** Two UTokyo CNS professors — Aoi Nori (青井 考) and Nobuaki Imai — accepted, conditional on passing the Graduate School of Science entrance exam. Both equally viable. Focus shifts to entrance exam preparation. |
 | 2026-04-13 | **Imai meeting completed.** Special Selection confirmed (GSGC ineligible for candidates with existing master's degree). Interview only, no written exam. GRE Physics 900 minimum. Committed to Imai's group (DONUTS). Aoi no longer primary candidate. JRA + 2 other scholarship types available. Self-rent in Wako (no dormitory). Admission materials before Dec 2026. |
+| 2026-10-08 | Post-PhD career target set to undecided (research post vs industry) pending evidence; completion planned for about Sep 2030. PhD pathway unchanged. Evidence: [[Post_PhD_Career_Options]]. |
 
 ### Current Status (2026-04-13)
 
@@ -121,7 +122,7 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 
 - **Decision:** FINALIZED — PhD Track (UTokyo CNS / RIKEN JRA route).
 - **Supervisor:** **Nobuaki Imai (DONUTS group) confirmed** as sole supervisor (2026-04-13). Aoi Nori remains accessible via same-campus collaboration.
-- **Primary path:** Direct PhD entry Oct 2027 (Special Selection application ~Dec 2026). Funded by RIKEN JRA (~200k JPY/month, verification pending `[V2]` in [[UTokyo_RIKEN]]).
+- **Primary path:** Direct PhD entry Oct 2027 (Special Selection application ~Dec 2026). Funded by RIKEN JRA (250k JPY/month expected, FY2026 call — `[V2]` in [[UTokyo_RIKEN]]).
 - **Fallback:** If application unsuccessful → Kenkyusei Oct 2027 – Sep 2028, self-funded (MEXT University Recommendation dropped); retake exam for Oct 2028 PhD entry.
 - **GRE Physics:** Compulsory. Minimum score: 900.
 - **Exam route:** Route B chosen; Route A archived. Sub-track RESOLVED: Special Selection (2026-04-13).
@@ -136,7 +137,7 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 | GRE Physics score ≥ 900 | Open (primary risk) | Minimum cutoff for competitive application; tracked in [[GRE_Physics_Prep]], [[Fundamental_Knowledge]] |
 | Supervisor acceptance / Naidaku | **Committed to Imai / DONUTS** (2026-04-13); Naidaku still pending | [[Prof_Nobuaki_Imai]], [[Supervisor_Relationship_Management]] |
 | Self-funded budget shortfall | Medium-High | Target ~2.5–2.8M JPY; savings 100–200k CNY (~2–4M JPY). Self-rent in Wako (no dormitory). |
-| Funding / scholarships | Open | RIKEN JRA (~200k JPY/month `[V2]`) + 2 other scholarship types mentioned by Imai (names TBD) |
+| Funding / scholarships | Open | RIKEN JRA (250k JPY/month expected `[V2]`) + 2 other scholarship types mentioned by Imai (names TBD) |
 | COE / visa timing for Jun–Sep 2027 gap | Open | Item `[V9]` in [[UTokyo_RIKEN]] |
 
 ---
@@ -159,7 +160,8 @@ tags: [japan, immigration, phd, pathway, utokyo, riken, kenkyusei]
 | [[UTokyo_Special_Selection_Interview]] | Physics Special Selection interview: official vs unpublished vs analog (compiled 2026-09-09) |
 | [[Plan_2026-02-15_UTokyo_Oct2027_Application]] | Concrete execution plan for UTokyo Oct 2027 application (in `90_Plans/`) |
 | [[UTokyo_RIKEN_Mind_Map.png]] | Visual mindmap of the UTokyo CNS / RIKEN JRA pathway |
-| [[Post_PhD_Immigration_Pathways]] | Post-PhD immigration: Japan HSP, Europe, Canada (academic default) |
+| [[Post_PhD_Immigration_Pathways]] | Post-PhD immigration: Japan HSP, Europe, Canada (written for the academic route) |
+| [[Post_PhD_Career_Options]] | Evidence register for research post vs industry after the PhD, with verification marks and open gaps |
 | [[US_Firms_Tokyo_Physics_PhD]] | US firms in Tokyo for a physics PhD — four jobs, named people, 2025–26 wages (compiled 2026-09-11) |
 
 ### Professors

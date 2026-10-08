@@ -8,7 +8,7 @@ tags: [immigration, career, post-phd, permanent-residency, research]
 ---
 # Post-PhD Immigration & Career Pathways
 > [!info] Research compiled 2026-03-29
-> Current policy information for a Chinese national completing a Physics PhD at UTokyo (experimental nuclear/particle physics, TPC, direct reactions, ML skills). All timelines assume PhD completion ~2031-2032.
+> Current policy information for a Chinese national completing a Physics PhD at UTokyo (experimental nuclear/particle physics, TPC, direct reactions, ML skills). All timelines assume PhD completion ~Sep 2030.
 
 > [!warning] Policy changes
 > Immigration laws change frequently. Key items flagged as uncertain or recently changed are marked with a warning icon. Verify all details before making decisions.
@@ -89,7 +89,7 @@ The HSP system uses a points-based calculation. Category **(i)(a) — Research/E
 
 Survey compiled 2026-09-11: **[[US_Firms_Tokyo_Physics_PhD]]**.
 
-English-first US offices in Tokyo are mostly SWE / sales. A physics PhD sells as industrial research (IBM Research Tokyo), product ML (Amazon AS / Microsoft DS), quant/Strats (Point72, Millennium, Goldman), or instruments (Thermo/Keysight/AMAT) — not as a nuclear physicist. First-year wage band for this profile: **¥5–8M** (physics track) vs **¥8M / ¥16M / ¥20–35M** (IBM scientist / applied ML / quant). Does not change the academic default in §1.3.
+English-first US offices in Tokyo are mostly SWE / sales. A physics PhD sells as industrial research (IBM Research Tokyo), product ML (Amazon AS / Microsoft DS), quant/Strats (Point72, Millennium, Goldman), or instruments (Thermo/Keysight/AMAT) — not as a nuclear physicist. First-year wage band for this profile: **¥5–8M** (physics track) vs **¥8M / ¥16M / ¥20–35M** (IBM scientist / applied ML / quant). Research post versus industry is undecided: [[Post_PhD_Career_Options]].
 
 ### 1.5 Partner Considerations (Japan)
 

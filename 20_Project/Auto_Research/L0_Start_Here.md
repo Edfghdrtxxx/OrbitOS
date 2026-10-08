@@ -3,7 +3,7 @@ title: Auto-Research L0 — Start Here
 type: plan
 status: stopped
 created: 2026-09-19
-revised: 2026-09-19
+revised: 2026-10-08
 parent: "[[Plan_2026-09-18_GRE_Park_Research_Contract]]"
 related:
   - "[[L1_Current_Campaign]]"
@@ -14,7 +14,7 @@ related:
 ---
 # L0 — Start Here
 
-Exclusive startup state. Stop here until the current state and next action are unambiguous. Do not load the full vault or MATE repository. Current state lives **only** here and in [[L1_Current_Campaign]]; the Wave 1 mid-automation report is frozen history, not a live log.
+Exclusive startup state. Stop here until the current state and next action are unambiguous. Do not load the full vault or MATE repository. The September campaign record on this page and in [[L1_Current_Campaign]] stops at 2026-09-25. Live queue pointer (2026-10-08): read the handoff at the top of `/Users/Reid Hu/firstmate/data/mate-gpu-lead/pipeline-plan.md`, plus `decisions.md` and `pr-check.md` in that directory, and channel files in `/Users/Reid Hu/firstmate/state/fm-mate-research-channel/`. The Wave 1 mid-automation report is frozen history, not a live log.
 
 > [!important] Priority rule set by Reid Hu, 2026-10-05
 > "最重要的就是自动化流水线推进，完成我的论文，这才是我的终极目标，其他的都是细枝末节"
@@ -46,7 +46,7 @@ The PM / context agent owns the big picture (goal, state, next action, disclosur
 
 ## Next action
 
-None — campaign stopped. If resumed: rerun the 4He label-fix 2×2 first (all four arms, seed 42), then the paired-Δ-gated ablation; staged configs and battery survive in git.
+September campaign: none. The October queue's next action is the handoff named in the live queue pointer above. The sentence that follows is the 2026-09-24 stop record, not the live queue. If that September campaign itself were resumed: rerun the 4He label-fix 2×2 first (all four arms, seed 42), then the paired-Δ-gated ablation; staged configs and battery survive in git.
 
 ## Disclosure instructions
 

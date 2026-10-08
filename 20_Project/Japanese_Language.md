@@ -52,6 +52,7 @@ tags: [japanese, jlpt, language]
 ## Related
 
 - [[Japan_Itinerary]] — Immigration planning
+- [[Post_PhD_Career_Options]] — which job types in Japan require Japanese, by role
 
 ---
 

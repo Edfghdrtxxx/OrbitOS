@@ -8,11 +8,11 @@ tags: [japan, career, post-phd, industry, tokyo, wage]
 ---
 # US Firms Tokyo — Physics PhD Map
 > [!info] Compiled 2026-09-11
-> Survey of US employers in Tokyo for a **Chinese national** completing a **UTokyo Physics PhD** (~2031–32): experimental nuclear (TPC, direct reactions, PID) + ML (ResNet, ViT, DANN/MCD). Parent: [[Japan_Itinerary]] · immigration: [[Post_PhD_Immigration_Pathways]] · identity: [[Game_Framework]].
+> Survey of US employers in Tokyo for a **Chinese national** completing a **UTokyo Physics PhD** (~Sep 2030): experimental nuclear (TPC, direct reactions, PID) + ML (ResNet, ViT, DANN/MCD). Parent: [[Japan_Itinerary]] · immigration: [[Post_PhD_Immigration_Pathways]] · identity: [[Game_Framework]].
 > Wages are **2025–26 JPY**. Ranking is more stable than the yen.
 
 > [!warning] Not a pathway change
-> Primary post-PhD plan remains academic / national-lab ([[UTokyo_RIKEN]], RIKEN, JSPS). This note maps the **US-firm option**, not a retarget of DONUTS.
+> The post-PhD target — research post or industry — is undecided ([[Post_PhD_Career_Options]]). This note maps the **US-firm option**, not a retarget of DONUTS.
 
 ---
 
@@ -88,7 +88,7 @@ Thermo Fisher Tokyo NanoPort (TEM/SEM), Bruker, Keysight (Hachioji), Applied Mat
 
 ## Skill transfer (this PhD)
 
-| Skill ~2031 | Who pays in Tokyo |
+| Skill ~2030 | Who pays in Tokyo |
 |---|---|
 | Weak-signal extraction, systematics | Quant (Point72 Cubist, Millennium DL-QR, GS Strats) |
 | PID classifiers, ResNet/ViT, domain adaptation | Amazon/Microsoft AS; IBM ML-for-science |
@@ -162,5 +162,6 @@ Income points (under 30; 30–34 loses the ¥4M band):
 ## Related
 
 - [[Post_PhD_Immigration_Pathways]] — HSP, RIKEN academic market, Europe, Canada
+- [[Post_PhD_Career_Options]] — evidence register with verification marks; lists three rows of this note that a re-check did not confirm
 - [[UTokyo_RIKEN]] — PhD funding / JRA
 - [[Game_Framework]] — research-career Tuesday; this note does not override it

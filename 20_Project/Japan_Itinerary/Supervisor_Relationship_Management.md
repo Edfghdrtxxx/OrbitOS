@@ -84,7 +84,7 @@ created: 2026-02-17
 
 | ID | Claim | Current Status | Question to Ask |
 |---|---|---|---|
-| V2 | JRA: 200k JPY/month, part-time employee, Shakai Hoken | `PARTIALLY VERIFIED` — JRA confirmed available + 2 other scholarship types (Imai 2026-04-13); exact amounts still unverified | Q7 |
+| V2 | JRA: 250k JPY/month expected (FY2026 call), part-time employee, Shakai Hoken | `VERIFIED` against the RIKEN FY2026 call ([[UTokyo_RIKEN#Verification Tracker]]); RIKEN's general page showed 200k — confirm with Imai which figure applies. JRA confirmed available + 2 other scholarship types (Imai 2026-04-13) | Q7 |
 | V4 | UTokyo tuition exemption for income < 6M JPY (international eligibility?) | `UNVERIFIED` | Q8 |
 | V5 | UTokyo tuition: 535,800 JPY/year | `UNVERIFIED` | Can verify via UTokyo website independently |
 | V6 | Kenkyusei can sit for doctoral entrance exam | `UNVERIFIED` | Q4 |
@@ -120,7 +120,7 @@ created: 2026-02-17
 > **1. Opening context** — Explain that your post-graduation goal is to immigrate from China permanently via a research career. Frame this as seeking guidance, not announcing a decision.
 >
 > **2. The plan in brief** — Walk through the roadmap so the advisor has the full picture:
->    - Primary: Direct PhD D1 entry at UTokyo (Oct 2027 or Oct 2028) via Route B, funded via RIKEN JRA (~200k JPY/month).
+>    - Primary: Direct PhD D1 entry at UTokyo (Oct 2027 or Oct 2028) via Route B, funded via RIKEN JRA (250k JPY/month expected, FY2026 call).
 >    - Fallback: If entrance exam failed → Kenkyusei (Research Student) at UTokyo CNS, self-funded; retake exam for next cycle PhD entry.
 >    - Long-term: permanent residency through an academic/research career in Japan.
 >
@@ -141,7 +141,7 @@ created: 2026-02-17
 > **6. Insider knowledge** — Practical questions the advisor can answer from firsthand UTokyo experience. **Several items still outstanding — ask in next meeting.**
 > - [ ] Can a Kenkyusei sit for the doctoral entrance exam during enrollment? `[V6]` — **still unverified**
 > - [ ] What is the maximum Kenkyusei enrollment duration — and can you extend and retake if you fail the exam? `[V8]` — **still unknown**
-> - [ ] Is RIKEN JRA funding (~200k JPY/month, Shakai Hoken) still accurate for CNS-affiliated PhD students? `[V2]` — **still unverified**
+> - [ ] Does the RIKEN JRA figure in the FY2026 call (250k JPY/month expected, Shakai Hoken) apply to CNS-affiliated PhD students? RIKEN's general page showed 200k. `[V2]`
 > - [ ] Are international PhD students eligible for UTokyo's tuition exemption? How is income defined — does JRA count? `[V4]` — **still unverified**
 > - [x] Any tips on housing near the Wako campus, or does UTokyo offer dormitory access for Kenkyusei? — **RESOLVED (Imai 2026-04-13):** Self-rent in Wako confirmed; no dormitory available.
 > - [ ] What is the lab culture like — language used in meetings, work-life balance expectations?
@@ -204,7 +204,7 @@ created: 2026-02-17
 >
 > | # | Question | Why It Matters | Links to |
 > |---|----------|----------------|----------|
-> | Q7 | **Is RIKEN JRA funding available for PhD students in your group? What is the current stipend and application process?** | JRA details are `[V2] UNVERIFIED` (200k JPY/month, Shakai Hoken). This is the primary PhD funding source. | [[UTokyo_RIKEN#Verification Tracker]] V2 |
+> | Q7 | **Is RIKEN JRA funding available for PhD students in your group? What is the current stipend and application process?** | JRA details `[V2]`: the RIKEN FY2026 call shows 250k JPY/month expected with Shakai Hoken; the general page showed 200k. This is the primary PhD funding source. | [[UTokyo_RIKEN#Verification Tracker]] V2 |
 > | Q8 | **Are international PhD students eligible for UTokyo's tuition exemption? How is "income" defined (does JRA count)?** ⚑ *Ask your IMP advisor first — may already know this from firsthand UTokyo experience. No need to burden the prospective UTokyo supervisor with a logistical question your IMP advisor can answer.* | Tuition exemption eligibility for international students is `[V4] UNVERIFIED`. | [[UTokyo_RIKEN#Verification Tracker]] V4 |
 >
 > ### Medium — Research Fit
