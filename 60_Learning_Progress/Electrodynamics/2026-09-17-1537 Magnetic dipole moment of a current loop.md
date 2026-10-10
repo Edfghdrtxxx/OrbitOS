@@ -522,6 +522,79 @@ We have completed the drill batch. Here are the **3 exact patterns** where ETS s
    - **Uniform field ($\nabla B = 0$):** $\mathbf{F}_{\text{net}} = \mathbf{0}$ always. The loop can rotate ($\boldsymbol{\tau} = \mathbf{m} \times \mathbf{B}$), but it cannot translate.
    - **Gradient field ($\nabla B \neq 0$):** $\mathbf{F} = \nabla(\mathbf{m}\cdot\mathbf{B}) \neq \mathbf{0}$. The dipole feels a net linear force pulling it toward the stronger field (if aligned).
 
+---
+
+**Reopened 2026-10-10 (Turn 12).** New question from a Prep Studio solution: why the far field of a loop is $B\propto m/r^3$. Asked in [[2026-10-10-1426 Ampère–Maxwell law and displacement current]] (Turn 1, item 2), where the source image is transcribed.
+
+### Turn 12 — 2026-10-10 (learner)
+
+> 2. Another question is why the relation between magnetic field and moment is like this?
+
+**Attached image (one line of a Prep Studio solution; the question itself is not in the image):**
+
+At a point far from the loop the field is that of a magnetic dipole, $B\propto m/r^3$,
+
+(The line is cut off after the comma.)
+
+### Tutor
+
+Start from a field that can be checked against one you already have. For a circular loop of radius $R$ carrying current $I$, the Biot–Savart law gives the field on the loop's axis, at distance $z$ from the centre:
+
+$$B(z)=\frac{\mu_0IR^2}{2\left(R^2+z^2\right)^{3/2}} .$$
+
+Check at $z=0$: $B=\dfrac{\mu_0IR^2}{2R^3}=\dfrac{\mu_0I}{2R}$, the centre field you used for the concentric loops on 2026-09-18.
+
+"Far from the loop" means $z\gg R$. You also have $m=IA=I\pi R^2$ for one turn.
+
+What does $B(z)$ become for $z\gg R$, written with $m$ in place of $I$ and $R$?
+
+### Turn 13 — 2026-10-10 (learner)
+
+> (No text. One attached image: a handwritten page.)
+
+**Transcription of the page, in the order written:**
+
+- $\dfrac{\left[(R^2+z^2)\right]^{3/2}}{R^2}$, and beside it $2-\dfrac43=\dfrac{6-4}{3}$
+- $=\left[\dfrac{1}{R^{4/3}}\cdot\left[R^2+z^2\right]\right]^{3/2}$
+- $=\left[R^{2/3}+\dfrac{z^{4/3}}{R^{4/3}}\cdot z^{2/3}\right]^{3/2}$
+- Since $z\gg R$
+- $\dfrac zR\gg1$
+- $\to\ =(z^2)^{3/2}=z^3$, and beside it $m=IA=I\pi R^2\to IR^2=\dfrac m\pi$
+- $\to\ B=\dfrac{\mu_0I\cdot R^2}{2(R^2+z^2)^{3/2}}$
+- $=\dfrac{\mu_0\cdot\frac m\pi}{2z^3}$
+
+### Tutor
+
+**Correct:** $B=\dfrac{\mu_0m}{2\pi z^3}$ on the axis, far from the loop. Both moves are right: $(R^2+z^2)^{3/2}\to z^3$ and $IR^2=m/\pi$.
+
+One point of bookkeeping. The top three lines divide by $R^2$, so their limit is $z^3/R^2$, and the line "$=(z^2)^{3/2}=z^3$" silently returns to the undivided quantity. The division is not needed. A shorter route that keeps every line equal to the one before: factor out the large quantity, $(R^2+z^2)^{3/2}=z^3\left(1+\dfrac{R^2}{z^2}\right)^{3/2}\approx z^3$, because $R^2/z^2\ll1$.
+
+**What the result says.** $I$ and $R$ no longer appear separately; only the product $m=I\pi R^2$ does. Far away, the field cannot tell which current and which radius produced $m$. That is the content of "the field is that of a magnetic dipole". Off the axis the field has the same $m/r^3$ in front and only an angular factor changes ($\theta$ measured from $\vec m$):
+
+$$\vec B=\frac{\mu_0m}{4\pi r^3}\left(2\cos\theta\,\hat{\mathbf r}+\sin\theta\,\hat{\boldsymbol\theta}\right),$$
+
+and $\theta=0$, $r=z$ returns your $\dfrac{\mu_0m}{2\pi z^3}$.
+
+Loop A carries current $I$ and has radius $R$. Loop B carries current $4I$ and has radius $R/2$. What is $B_{\text B}/B_{\text A}$ at the same far point on the axis, and what is it at the centre of each loop?
+
+### Turn 14 — 2026-10-10 (learner)
+
+> 1. When it is far from the loop, the ratio is 1
+> 2. When it is at the centre, the ratio is 8
+
+### Tutor
+
+Both correct.
+
+- **Far:** $m_{\text B}=4I\cdot\pi(R/2)^2=I\pi R^2=m_{\text A}$, and the far field depends on $m$ alone, so the ratio is $1$.
+- **Centre:** $B=\dfrac{\mu_0I}{2R}$ gives $\dfrac{4I/(R/2)}{I/R}=8$. Close to the loop, $I$ and $R$ matter separately.
+
+That contrast is the answer to "why is the relation like this": far away the loop's size is negligible next to the distance, the field keeps only one number about the source, $m$, and it falls as $1/r^3$ in every direction. The solution line $B\propto m/r^3$ is this statement.
+
+**Question 2 is closed (2026-10-10).** You derived $B=\dfrac{\mu_0m}{2\pi z^3}$ from the on-axis formula and used "only $m$ matters far away" on a new pair of loops. Not covered: why the power is 3 and not 2 (two opposite $1/r^2$ contributions that nearly cancel), and the electric twin $E=\dfrac{2p}{4\pi\epsilon_0z^3}$ on the axis of $\vec p$.
+
+**Question 3** (where $E=Q/(\epsilon_0A)$ stops holding) continues in [[2026-09-20-1803 Electric displacement D and linear dielectrics]], Turn 8.
+
 
 
 

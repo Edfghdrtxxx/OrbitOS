@@ -13,9 +13,9 @@ Final pre-exam simulation under exact computer test day conditions (70 questions
 
 ## Exam Protocol
 - **Date & Time:** Sunday, 2026-10-25, 14:00–16:00 (strict 120 min timer).
-- **Form:** Official 70-Question Practice Book (`[[GRE_Physics_Practice_Book.pdf]]`).
+- **Form:** Official 70-question practice test, form GR1775 (`[[GRE_Physics_Practice_Book.pdf]]`; Studio mock `ets2024`). Full sitting 3 of the Sunday series (Oct 11 GR0877, Oct 18 GR1777).
 - **Pacing:** Strict ~1.71 min / question average.
-- **Target Raw Score:** **≥ 52–56 / 70** (scaled score equivalent: **≥ 900+**).
+- **Target Raw Score:** goal **62 / 70** (990); gate **55 / 70** (900), per the practice book conversion table, page 26.
 
 ## Scorecard (70 Questions Total)
 
@@ -32,4 +32,4 @@ Final pre-exam simulation under exact computer test day conditions (70 questions
 | Specialized Topics (9%) | ~6 | - | - | - | -% |
 | **Total** | **70** | **-** | **-** | **-** | **-%** |
 
-**Scaled Score Result:** `TBD` / 990 (Goal: ≥900)
+**Scaled Score Result:** `TBD` / 990 (Goal: 990; gate 900)

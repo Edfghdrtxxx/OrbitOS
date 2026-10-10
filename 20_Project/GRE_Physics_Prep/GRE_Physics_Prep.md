@@ -13,7 +13,7 @@ aliases: ["Physics GRE", "Physics_GRE"]
 
 ## Context
 
-**Objective:** Score ≥900 on the GRE Physics Subject Test on 2026-11-01, 14:00 (arrive 13:30, STN80177D Beijing), with the free score recipient set to 7048 (UTokyo Grad School of Science, dept 0808 Physics).
+**Objective:** Goal 990 (62 / 70 or more), gate ≥900 (55 / 70), on the GRE Physics Subject Test on 2026-11-01, 14:00 (arrive 13:30, STN80177D Beijing), with the free score recipient set to 7048 (UTokyo Grad School of Science, dept 0808 Physics).
 
 - **Route B Gate:** Compulsory for Special Selection — minimum 900 per Prof. Imai. Registered & paid 2026-07-04, order #26365004, appointment #9631911263841188. Full registration detail → [[UTokyo_RIKEN]].
 - **Timeline Margin:** Score release ~5 weeks after the test → lands inside Special Selection Period 2 (Dec 7–22) with thin margin. Reschedule/cancel deadline: 2026-10-28.
@@ -21,9 +21,10 @@ aliases: ["Physics GRE", "Physics_GRE"]
 - **Honest Capacity Note:** From **2026-09-14**, weekly load is **15–17 h scheduled** via 5× ~100 min timed + 6× ~50 min formula + 2× ~50 min extra ≈ **16 h/wk** (hedge). ~7 remaining weeks ≈ **110 h** scheduled, vs typical **80–150 h** for rusty-breadth 900. Week 0 (Sep 7–13) was the thinner 5×60 / 6×30 / 2×30 rows. Oct 4 diagnostic is the primary data checkpoint.
 
 **Success Metrics:**
-- [ ] Oct 4 full diagnostic test completed and scored (accuracy baseline ≥ 70–75%) → [[Diagnostics-Oct04]]
-- [ ] Oct 25 full rehearsal completed under strict 70Q/120min computer exam timing (target raw ≥ 52–56 / 70) → [[Rehearsal-Oct25]]
-- [ ] ≥900 scaled score on 2026-11-01
+- [ ] Oct 11 full sitting 1 (GR0877, 100Q/170 min) completed and scored by topic → [[Diagnostics-Oct04]]
+- [ ] Oct 18 full sitting 2 (GR1777, 100Q/170 min) completed and scored by topic
+- [ ] Oct 25 full sitting 3 (ets2024, 70Q/120 min; goal 62 / 70, gate 55 / 70) → [[Rehearsal-Oct25]]
+- [ ] 2026-11-01: goal 990, gate ≥900
 
 **Key Constraints:**
 - Timeline: Sep 7 – Nov 1, 2026 (8 weeks); exam Nov 1, 14:00–16:00 (STN80177D, computer-delivered, 70 questions, 120 min). Full seat & registration logistics → [[GRE_Physics_Seat_Logistics]].
@@ -63,3 +64,4 @@ aliases: ["Physics GRE", "Physics_GRE"]
 - **2026-09-06:** TOEFL Attempt #1 scored 100 / C1 locked; Attempt #2 canceled; GRE pivot unlocked.
 - **2026-09-07:** GRE Physics Prep launched as sole morning a-block. Full consolidation into numbered directory taxonomy and 35 topic sets established.
 - **2026-09-11:** Syllabus rewritten: live calendar Mon 2026-09-14 → Nov 1; 15–17 h/wk via padded 5+6+2; W2–W3 absorb optics; W7 taper (Sets 32–33 new only). Canonical: [[8-Week-Syllabus]].
+- **2026-10-09:** Catch-up replan: new pack questions first each day; one full sitting every Sunday (GR0877, GR1777, ets2024); 26 remaining packs over Oct 9–27, Thursdays off for the group discussion, Oct 28 buffer; goal 990, gate 900 at 55 / 70. Studio intensity-feedback card merged (Physics-GRE-Practice PR 64, `9d78a45`): dashboard Intensity card, practice-summary pace lines, `intensity` in the status payload. Canonical: [[8-Week-Syllabus]] → Catch-up 2026-10-09.

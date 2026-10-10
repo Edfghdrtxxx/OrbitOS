@@ -1,21 +1,21 @@
 ---
-title: Full Diagnostic Test #1 (2026-10-04)
+title: Full Sitting 1 — GR0877 (2026-10-11)
 type: exam-log
 status: planned
 area: "[[Japan_Itinerary]]"
-date: 2026-10-04
+date: 2026-10-11
 tags: [gre, physics, diagnostic]
 ---
-# Full Diagnostic Test #1 — 2026-10-04 [D-27]
+# Full Sitting 1 — GR0877, 2026-10-11
 
 ## Objective
 Establish an authentic baseline topic accuracy profile and pacing endurance across all core domains using a released official form.
 
 ## Exam Protocol
-- **Date:** Monday, 2026-10-05, 14:00 (moved from Sunday, 2026-10-04).
-- **Form:** ETS Released Form (GR0177 or GR0877).
-- **Calculators / Aids:** Strictly prohibited.
-- **Target Accuracy:** ≥ 70–75% correct across attempted items.
+- **Date:** Sunday, 2026-10-11, 14:00 (moved from Oct 4, 5 and 8; no further move).
+- **Form:** GR0877 in the Prep Studio mock room, 100 questions, 170 minutes, continuous timer. GR0177 is excluded: it holds 13 answers from an unfinished Oct 5 sitting.
+- **Calculators / Aids:** Strictly prohibited. Every question answered; scoring counts correct answers only.
+- **Scoring, twice:** (1) all 100 questions, as the position against the 55 / 70 gate: 71% or above, 900 within reach; 63–70%, borderline; below 63%, unlikely. (2) The CM + EM + optics subset, as "do I know what I studied".
 
 ## Topic Scorecard (Official Weights)
 

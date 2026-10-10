@@ -12,7 +12,7 @@ tags: [gre, physics, syllabus]
 
 > [!info] Live Exam Format (Since Sept 2023)
 > Computer-delivered: **70 questions in 120 minutes**. Scaled score 200–990.
-> Raw target for **≥900**: approximately **52–56 / 70**.
+> Goal **990**: **62 / 70** or more. Gate **900** (Route B minimum): **55 / 70**; 54 gives 880. Source: ETS practice book, form GR1775 conversion table, page 26. Scoring counts correct answers only; answer every question.
 > Exam: **Sun 2026-11-01, 14:00**, STN80177D Beijing. Free score recipient **7048**.
 
 > [!warning] Rewrite lock (2026-09-11)
@@ -46,27 +46,27 @@ tags: [gre, physics, syllabus]
 
 ## Mock schedule
 
-Sundays are diagnostic days (Oct 4 paper diagnostic GR0177/GR0877 is already the W3 checkpoint on the live table). Remaining Sundays before exam day **2026-11-01**:
+Sundays are full-sitting days from Oct 11 (one each week; the Oct 4 diagnostic on the live table did not happen). Remaining Sundays before exam day **2026-11-01**:
 
 | Date | Form | Format | Role |
 |---|---|---|---|
-| **Sun 2026-10-11** | **ets2024** | 70Q/120 | Current-format sit. Highest-value unused mock. Occupies W4 Sunday; weekday timed 17–20 and the thermo review slot stay. |
-| **Sun 2026-10-18** | **GR1777** | 100Q/170 | Unused 100q intact form. Occupies W5 Sunday; weekday timed 21–25 stay. |
-| **Sun 2026-10-25** | **GR9677** | 99Q/170 | Unused intact form (99 questions as released). Replaces the 5th timed in W6 (live table). |
+| **Sun 2026-10-11** | **GR0877** | 100Q/170 | Full sitting 1, Studio mock room, 14:00. Every question answered. Score twice: all 100, and the CM + EM + optics subset. |
+| **Sun 2026-10-18** | **GR1777** | 100Q/170 | Full sitting 2, Studio mock room, 14:00. |
+| **Sun 2026-10-25** | **ets2024** (form GR1775) | 70Q/120 | Full sitting 3, the only current-format form; strict 120 min. |
 
 Book Sample Exams 1–3 (Prep Studio `cpg-exams`) are **optional extras**, not calendar rows. Use a spare weekday only after misses are empty. They already feed the weighted 70-question draw, so an intact sitting is optional, not required.
 
-Do not schedule GR8677 or GR9277 as mocks (`ets-drill`, already in the daily pool). GR0177/GR0877 were the Oct 4 paper diagnostic — do not re-sit as computer mocks.
+Do not schedule GR8677 or GR9277 as mocks (`ets-drill`, already in the daily pool). GR0177 holds 13 answers from an unfinished Oct 5 sitting; do not use it. GR9677 is the spare form.
 
 ## Drill contract
 - **35 Studio packs** still exist (honest `n` each; see [[01_Classical_Mechanics]] and siblings). W7 does not finish 31–35 as new timed work.
 - **Formula Recall:** 20 formulas/session × 6 days/week via [[Formula-Recall-Decks]]. Hedged **~50 min**.
 - **Error Rework:** 2× ~50 min/week into [[Misses-Log]]. Misses-first; only then leftover sets (07 if carried; 30; 31/34/35).
 - **Diagnostics (dated, not extra weekly rows):**
-  - Oct 4: volume diagnostic, ETS paper GR0177/GR0877.
-  - Oct 11: ets2024, 70Q/120 current-format computer mock.
-  - Oct 18: GR1777, 100Q/170 intact computer mock.
-  - Oct 25: GR9677, 99Q/170 intact computer mock (replaces W6 5th timed).
+  - One full sitting every Sunday from Oct 11, 14:00, in the Studio mock room; misses reworked in Monday's extra slot.
+  - Oct 11: GR0877, 100Q/170.
+  - Oct 18: GR1777, 100Q/170.
+  - Oct 25: ets2024 (form GR1775), 70Q/120.
   - Book Sample Exams 1–3: optional extras, not calendar rows.
 - Parent `#weekly` rows on daily notes should read **~100 min / ~50 min / ~50 min** from the Sep 14 week rollover. Topic-set files that still say ~60 min are superseded by this hedge.
 
@@ -129,7 +129,49 @@ Premise: all 35 packs are sat before 2026-11-01. The live table and the mock tab
 | Sat Oct 31 | No pack: sleep, travel | — |
 | Sun Nov 1 | Exam, 14:00 | 70 |
 
-Weekly targets for the daily-note rows: timed packs 8 (Oct 4–10), 10 (Oct 12–17), 9 (Oct 19–24), 3 + 2 replays (Oct 26–29); formula recall 6 per week; extra rework 2 per week (the misses of that week's diagnostic or mock first).
+Weekly targets for the daily-note rows: timed packs 8 (Oct 4–10), 10 (Oct 12–17), 9 (Oct 19–24), 3 + 2 replays (Oct 26–29); formula recall 6 per week; extra rework 2 per week (the misses of that week's diagnostic or mock first). Superseded from Oct 9 by the Catch-up below.
+
+## Catch-up 2026-10-09 (overrides the Replan day table from Oct 9)
+
+**Evidence** — Prep Studio state, Chrome Profile 1 `file://` store, read 2026-10-09 08:59.
+- Packs fully sat: 01–08 and 13 (06 and 07 on Oct 6). 26 packs remain, 272 questions whole-pack; 229 of their questions never attempted.
+- Packs 09–12 and 14–15 were due Oct 6–9 and are unsat. GR0177 was opened Oct 5 with 13 answers and never submitted.
+- First attempts since Sep 28: 45 questions, 62%; median 105 s, mean 135 s per question; wrong answers median 157 s, correct 80 s.
+
+**Rules**
+- New pack questions first each day, on a 103 s timer, before formula cards, reading, derivations, or mistake-book repeats. Rework every miss the same day and write one [[Misses-Log]] row per miss.
+- One full sitting every Sunday from Oct 11 (Mock schedule above). Monday's extra slot reworks its misses.
+- Thursdays are the group-discussion day: no pack. Two to three packs on the other days; small packs pair with large ones. A slipped pack moves to the next working day. Oct 28 is the buffer; no new pack on Oct 29–31.
+- Formula recall unchanged: due cards plus 14 new per working day in book order.
+
+| Date | Timed packs | Questions |
+|---|---|---|
+| Fri Oct 9 | 09 | 14 |
+| Sat Oct 10 | 10, 11 | 18 |
+| Sun Oct 11 | Full sitting 1: GR0877, 14:00 | 100 |
+| Mon Oct 12 | 12 + GR0877 misses | 13 |
+| Tue Oct 13 | 14, 15 | 21 |
+| Wed Oct 14 | 16, 17 | 20 |
+| Thu Oct 15 | Group discussion: no pack; formula cards as usual | — |
+| Fri Oct 16 | 18, 19 | 16 |
+| Sat Oct 17 | 20, 21, 22 | 28 |
+| Sun Oct 18 | Full sitting 2: GR1777, 14:00 | 100 |
+| Mon Oct 19 | 24, 25 + GR1777 misses | 15 |
+| Tue Oct 20 | 23 | 18 |
+| Wed Oct 21 | 26 | 20 |
+| Thu Oct 22 | Group discussion: no pack; formula cards as usual | — |
+| Fri Oct 23 | 27, 28 | 28 |
+| Sat Oct 24 | 29, 30, 31 | 26 |
+| Sun Oct 25 | Full sitting 3: ets2024, 14:00 | 70 |
+| Mon Oct 26 | 32, 33 + ets2024 misses | 15 |
+| Tue Oct 27 | 34, 35 | 20 |
+| Wed Oct 28 | Buffer, else replay the pack of the weakest mock topic | — |
+| Thu Oct 29 | Group discussion: no pack; due cards only | — |
+| Fri Oct 30 | No pack: logistics, due formula cards | — |
+| Sat Oct 31 | No pack: sleep, travel | — |
+| Sun Nov 1 | Exam, 14:00 | 70 |
+
+Weekly targets for the daily-note rows: timed packs 6 (Oct 4–10: 08, 06, 07 sat; 09, 10, 11), 10 (Oct 12–17), 9 (Oct 19–24), 4 (Oct 26–27); formula recall 6 per week; extra rework 2 per week (Sunday's misses first).
 
 ## start-my-day
-Canonical Learning Target input. From 2026-10-04 the Replan day table above decides the timed child and the formula topic; a pack not yet sat on its date is sat first. Week boundaries and set lists in the live table override older examples (Week 0 = Set 01, Week 1 = Set 06).
+Canonical Learning Target input. From 2026-10-09 the Catch-up day table above decides the timed child and the formula topic; a pack not yet sat on its date is sat first. Week boundaries and set lists in the live table override older examples (Week 0 = Set 01, Week 1 = Set 06).

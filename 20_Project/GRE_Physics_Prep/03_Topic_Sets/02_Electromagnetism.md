@@ -28,7 +28,7 @@ Each timed set is a **Prep Studio pack** (`js/data-packs.js`) with honest `n`. L
 - **Studio pack:** `09` · n = 14
 - **Subtopics:** Capacitance formulas, electrostatic energy density, dielectrics and bound charge, Ohm's law, Kirchhoff's loop/junction rules, RC circuit transients.
 - **Source:** Prep Studio pack 09 (preview + Kahn Ch. 2 §2.1/2.5/2.7 + ETS drills).
-- **Log / Status:** `[ ] Open`
+- **Log / Status:** `[x] Done 2026-10-09` — no Studio receipt; the Studio status for that day shows 20 new questions at 95 s per question and one practice session, 13/20
 
 ### Set 10: Magnetostatics & Ampère's Law (10 Qs)
 - **Studio pack:** `10` · n = 10

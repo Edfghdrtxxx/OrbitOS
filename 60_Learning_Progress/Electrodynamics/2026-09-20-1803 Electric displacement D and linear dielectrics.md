@@ -392,3 +392,76 @@ In this session, you grounded and verified:
 4. **Bound surface charge:** $\sigma_p = \mathbf{P}\cdot\hat{\mathbf{n}} = -P = \sigma\frac{1-K}{K}$ (negative charge partially screening the positive free charge, matching choice E).
 5. **Conductor electrostatic invariants:** Fully concluded and committed to Prep Studio formula card `cpgf-2.15a` via Grok 4.6 with 65/65 tests passing.
 6. **Drill items debriefed:** Planar pillbox (sheet vs. conductor $E$), spherical dielectric shell ($D, E, P$, and the inner bound charge sign invariant $Q_{b,\text{inner}} = -\frac{K-1}{K}Q$), and non-uniform cylindrical charge.
+
+---
+
+**Reopened 2026-10-10 (Turn 8).** Prep Studio miss: parallel-plate capacitor filled with a dielectric while the battery is connected; picked (D) $E_f>E_0$, correct (E) $D_f>D_0$. Asked in [[2026-10-10-1426 Ampère–Maxwell law and displacement current]] (Turn 1, item 3); the question and its solution are transcribed there (Images 4 and 5).
+
+### Turn 8 — 2026-10-10 (learner)
+
+> 3. I know the formula E = Q/(epsilon_0A) so I chose option D. It seems like I ignore the boundary of this formula, which is not universal
+
+**The question (Prep Studio):** A parallel-plate capacitor is connected to a battery. $V_0$ is the potential difference between the plates, $Q_0$ the charge on the positive plate, $E_0$ the magnitude of the electric field, and $D_0$ the magnitude of the displacement vector. The original vacuum between the plates is filled with a dielectric and then the battery is disconnected. If the corresponding electrical parameters for the final state of the capacitor are denoted by a subscript $f$, which of the following is true?
+
+- (A) $V_f>V_0$
+- (B) $V_f<V_0$
+- (C) $Q_f=Q_0$
+- (D) $E_f>E_0$ — the learner's pick
+- (E) $D_f>D_0$ — correct
+
+### Tutor
+
+Your diagnosis is right: $E=Q/(\epsilon_0A)$ is the vacuum case of a more general line, and the question leaves the vacuum case. The general line can be built from two results you derived in this note on 2026-09-20:
+
+- $D=\sigma_f=\dfrac{Q}{A}$ between the plates, for any filling ($Q$ is the free charge on the plate).
+- $D=\kappa\epsilon_0E$ in a linear dielectric of constant $\kappa$ (vacuum: $\kappa=1$).
+
+Write $E$ between the plates in terms of $Q$, $A$ and $\kappa$. Then use the fact that the battery stays connected while the dielectric goes in, so the charge grows from $Q_0$ to $\kappa Q_0$: what happens to $E$?
+
+### Turn 9 — 2026-10-10 (learner)
+
+> I see, so this is a more natural and universal version of the electrical field between the parallel plate capacitors.
+> The E stays the same value
+
+**Attached image (handwritten; other work at the page edges is cut off):**
+
+- $D=\sigma_f=\dfrac QA$
+- $D=\epsilon E=\dfrac QA$
+- $E=\dfrac{Q}{\epsilon A}$
+- Lower on the page, from question 2: $IR^2=\dfrac m\pi$
+
+### Tutor
+
+Correct on both counts. $E=\dfrac{Q}{\epsilon A}$ with $\epsilon=\kappa\epsilon_0$ is the general line, and $E=\dfrac{Q}{\epsilon_0A}$ is its $\kappa=1$ case. With the battery connected, $E_f=\dfrac{\kappa Q_0}{\kappa\epsilon_0A}=\dfrac{Q_0}{\epsilon_0A}=E_0$: the charge and the permittivity grow by the same factor $\kappa$. The second route agrees: the battery fixes $V$, and $E=V/d$ contains neither $Q$ nor $\kappa$.
+
+So the Studio pick came from letting $Q$ grow in the numerator while keeping $\epsilon_0$ in the denominator. $D=Q/A$ has no $\kappa$ at all, which is why $D$ is the quantity that follows the free charge: $D_f=\kappa D_0$.
+
+Now reverse the order of the two steps. The capacitor is charged to $Q_0$, the battery is disconnected **first**, and **then** the dielectric fills the gap. For each of $Q$, $D$, $E$ and $V$: does it stay the same, grow by $\kappa$, or shrink by $\kappa$?
+
+### Turn 10 — 2026-10-10 (learner)
+
+> In this case, the constant quantity is no longer the voltage but rather the charge.
+> After the dielectric fills the gap, D stays the same because Q/A doesn't change; E value decreases because E = σ/(κε_0 A); V shrinks by κ because V = Ed
+
+### Tutor
+
+All four are right, and you opened with the step that decides everything: name the quantity that is held fixed.
+
+- **$Q$:** fixed; the plate is isolated.
+- **$D$:** unchanged, $D=Q/A$.
+- **$E$:** shrinks by $\kappa$.
+- **$V$:** shrinks by $\kappa$, $V=Ed$.
+
+One slip in the formula you quoted: $E=\dfrac{\sigma}{\kappa\epsilon_0A}$ has an extra $A$. It is $E=\dfrac{\sigma}{\kappa\epsilon_0}=\dfrac{Q}{\kappa\epsilon_0A}$; $\sigma$ already is $Q/A$. A units check sees this one.
+
+**The two cases side by side:**
+
+- **Battery connected while the dielectric goes in ($V$ fixed):** $E=V/d$ same, $Q\to\kappa Q$, $D\to\kappa D$.
+- **Battery disconnected first ($Q$ fixed):** $D$ same, $E\to E/\kappa$, $V\to V/\kappa$.
+
+In the Studio question the battery is disconnected only *after* the dielectric is in, so the first case applies and the disconnection changes nothing: (E) $D_f>D_0$.
+
+**Question 3 is closed (2026-10-10), and with it the three questions of this session.** The trap "vacuum formula $E=Q/(\epsilon_0A)$ inside a dielectric" is marked reworked in [[Trap-Log]]: you rebuilt $E=Q/(\epsilon A)$ from $D$ and solved the reversed case without help.
+
+Left open, both from [[2026-10-10-1426 Ampère–Maxwell law and displacement current]]: write the vacuum form of the Ampère–Maxwell law with both $\mu_0$ in place, and test a derived factor at its limiting case before trusting it. Next exposure: Prep Studio pack 10 (Magnetostatics & Ampère's Law), which is on today's list.
+
