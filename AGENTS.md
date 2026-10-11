@@ -66,6 +66,7 @@ Read the matching file from `99_System/memory/` on trigger.
 | `user_background.md`                      | MATE, TPC/PID, or physics+ML paper/slides/notes       |
 | `feedback_investigate_over_ask.md`        | about to ask on a discoverable/checkable point        |
 | `preference_visualization_light_theme.md` | images, plots, HTML reports, decks                    |
+| `preference_lieflat_charts_html_charts.md` | chart/graph/plot request for an HTML page or PPT deck; `lieflat-charts` |
 | `project_japan_itinerary.md`              | Japan deadlines, funding, timeline, or checklist      |
 | `personal_context.md`                     | life/career tradeoffs: family, relationship, lock mechanics, post-PhD endgame |
 | `preference_clear_temp_files.md`          | install, pipeline/gate, smoke test, scratch, or leftover temps |
