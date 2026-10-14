@@ -74,6 +74,7 @@ Read the matching file from `99_System/memory/` on trigger.
 | `project_physics_gre.md`                  | Physics GRE website, Prep Studio, GRE drill/timed-set platform, or `/Users/Reid Hu/Physics GRE` |
 | `preference_interview_api.md`             | explicitly requested visual interview or decision requiring visual inspection/annotation — ordinary questions use chat/Ask; main: payload+dispatch only; never skill://lavish or skill://web-access; child fail → host Ask |
 | `genesis_papers.md`                       | 创世级, genesis papers, STAGE 1 鸟瞰主线, groundbreaking paper |
+| `preference_search_vault_first.md`        | user asks a standalone physics or math question (not a step inside a coding/editing task) |
 
 ### Writing memories
 
