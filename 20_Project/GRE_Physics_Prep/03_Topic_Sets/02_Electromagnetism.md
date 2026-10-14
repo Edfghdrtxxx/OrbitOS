@@ -34,13 +34,13 @@ Each timed set is a **Prep Studio pack** (`js/data-packs.js`) with honest `n`. L
 - **Studio pack:** `10` · n = 10
 - **Subtopics:** Biot-Savart law, Ampère's law, magnetic fields of wires/coils/solenoids/sheets, Lorentz force, cyclotron motion, magnetic dipoles and torque.
 - **Source:** Prep Studio pack 10 (Kahn Ch. 2 §2.2 + ETS drills).
-- **Log / Status:** `[ ] Open`
+- **Log / Status:** `[x] Done 2026-10-10` — ticked in [[2026-10-10]]; no Studio receipt, no score
 
 ### Set 11: Induction, Inductance & RL/LC Circuits (8 Qs)
 - **Studio pack:** `11` · n = 8
 - **Subtopics:** Faraday's law of induction, Lenz's law, motional EMF, mutual and self-inductance, RL and LC oscillations, energy in magnetic fields.
 - **Source:** Prep Studio pack 11 (Kahn Ch. 2 §2.3 + ETS drills).
-- **Log / Status:** `[ ] Open`
+- **Log / Status:** `[x] Done 2026-10-10` — ticked in [[2026-10-10]]; no Studio receipt, no score
 
 ### Set 12: Maxwell's Equations & Electromagnetic Waves (13 Qs)
 - **Studio pack:** `12` · n = 13

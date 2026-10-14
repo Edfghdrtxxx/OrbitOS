@@ -22,11 +22,11 @@ Full is the default, including low energy or “quick morning.” Only an explic
 - On a new copy, transfer “One priority for tomorrow” once before clearing reviews: unless explicitly renewed, skip it if already in the source Priorities (even completed) or unchanged from the source’s preceding note; otherwise add it.
 
 ## Carry tasks forward
-Apply this table only to a new copy’s Priorities, top to bottom; leave Appendix tasks alone.
+Apply this table only to a new copy’s Priorities, top to bottom; leave Appendix tasks alone (the `Today:` launch line follows Weekly plan).
 
 | Task | Change |
 |---|---|
-| `#weekly` | Keep; reset `[x]` to `[ ]`, preserve `(n/N)` |
+| `#weekly` | Keep; reset `[x]` to `[ ]`; set `n` by the recount in Weekly plan, keep `N` |
 | `#daily` | Keep; reset `[x]` to `[ ]` |
 | Child under `#weekly` | Ephemeral daily target: remove if `[x]`; keep in place if `[ ]` or `[*]`. Both modes inject a new child only when the parent has no surviving child (full: Learning Target scout; lightweight: local decks — [lightweight mode](references/lightweight-mode.md)). |
 | Other `[x]` | Remove, or keep unchanged if any descendant must survive |
@@ -34,8 +34,11 @@ Apply this table only to a new copy’s Priorities, top to bottom; leave Appendi
 Never delete a retained child with its parent, or resurrect a finished one-off as a new task.
 
 ## Weekly plan
-- A weekly checkbox means today’s occurrence is done; `(n/N)` is the user’s weekly total and target, never inferred from ticks.
-- Priorities owns weekly rows and counts; refresh the Notes summary as plain bullets, removing checkbox markers (unless preserving an unresolved conflict).
+- A weekly checkbox means today’s occurrence is done; `(n/N)` is the weekly total and target.
+- Recount `n` on every new copy, before the resets; never add 1 to the copied value. Read each daily note dated from `week_plan` to the source note. Per note and row: the number of `[x]` children, or 1 for a ticked row with no ticked child. `n` is the sum. A tick counts with or without a pack child or a Studio receipt (the user also ticks new questions done outside a pack); this rule wins over `/practice-physics-gre-set`. That skill's W1 also writes `n`, so adding would count twice.
+- Recount equals the row: keep it. Recount differs: full mode shows both and asks; lightweight writes the larger and reports both. A count the user stated for this week stands until they change it.
+- A date in that range with no note, or a note that holds several days, cannot be recounted: list each such date in the report and ask for its counts; assume nothing.
+- Priorities owns weekly rows and counts; refresh the Notes summary as plain bullets, removing checkbox markers (unless preserving an unresolved conflict). On a new copy, also rewrite the Appendix `Today:` launch line (packs and counts) from Priorities.
 - Before refreshing Notes, match legacy weekly rows by the action and linked project, not exact wording or counts alone; move only genuinely summary-only tasks into Priorities, with morning resets only on a new copy.
 - If a match or count is uncertain, full mode asks; lightweight keeps both versions and reports it without merging, duplicating or overwriting them.
 - Review is due when `week_plan` is missing or at least 7 days old; Sunday is preferred, not a forced reset.
@@ -46,7 +49,7 @@ Never delete a retained child with its parent, or resurrect a finished one-off a
 
 ## Check before finishing
 Compare the result with the copied source, or with today’s pre-edit contents on a repeat run: every open/in-progress task, weekly row and retained child must survive unless the user explicitly removed it.
-Check counts, summary agreement, allowed resets/removals and preservation of today’s progress; repair only unintended edits, never recopy over today.
+Check each `(n/N)` against the recount, agreement of the Notes summary and the Appendix `Today:` line with Priorities, allowed resets/removals and preservation of today’s progress; repair only unintended edits, never recopy over today.
 Report a short retention check, including any unresolved weekly conflict.
 
 # Full mode
@@ -77,10 +80,10 @@ Energy changes emphasis and new suggestions, never retention: high = deep work, 
 Follow Shared rules; use wikilinks and create no intermediate plan files.
 - Set energy, commitments and Main Focus from the answers; add genuinely new next actions in their topic sections.
 - For the primary learning/exam block (e.g. `a1. GRE Physics Prep`), inject the concrete objectives proposed by the Learning Target subagent as indented child checkboxes directly beneath the stable `#weekly` parent rows in `## Priorities`.
-  - Stable parent rows preserve `(n/N) #weekly` rollover and week-plan alignment.  - Indented child checkboxes provide concrete daily execution targets (e.g. `Set 03: Oscillations & Harmonic Motion (pack 03, n=8)`, specific formula recall batch, and targeted error rework). Parent `~ mins` and weekly targets follow the syllabus (`Replan 2026-10-04`: timed ~65, formula ~35, extra ~50). Cite the Studio pack id and honest `n`.
+  - Stable parent rows carry `(n/N) #weekly` across the week (recount in Weekly plan).  - Indented child checkboxes provide concrete daily execution targets (e.g. `Set 03: Oscillations & Harmonic Motion (pack 03, n=8)`, specific formula recall batch, and targeted error rework). Parent `~ mins` and weekly targets follow the syllabus (timed ~100, formula ~60, extra ~50). Cite the Studio pack id and honest `n`.
   - Gated injection: on a new copy, inject only under weekly parents that do not already carry an uncompleted child from yesterday. A surviving uncompleted child stays by default; replace or reword it when the user changes the plan or the learner data shows it is stale, and report the change. Never inject duplicates or under rows that have reached `(N/N)`; never inject on repeat same-day runs.
 - Keep Anchor unchanged; a separate skill owns it.
-- On a new copy only, after the shared transfer check, empty Log and Evening Review (keep only their `##` headings); remove AI Digest if present.
+- On a new copy only, after the shared transfer check, empty Log and Evening Review (keep only their `##` headings); delete every dated `## Evening Review — <date>` section; remove AI Digest if present.
 - Keep reusable context and the weekly plan when refreshing Notes; use the callouts below, omitting empty ones, then loose bullets for focus, energy, commitments, inbox and review context.
   1. `[!info] Week plan` — summary from Priorities, retaining relevant target/deadline explanations.
   2. `[!warning] Upcoming Deadlines` — agent findings without source file paths.

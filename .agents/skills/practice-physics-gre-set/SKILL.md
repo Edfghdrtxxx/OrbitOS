@@ -61,7 +61,7 @@ Two modes plus one Halt follow-up:
 - Custom: Other / strengthen-from-receipt after a formula receipt in this chat.
 - **Never** auto-launch from `/start-my-day`, ambient GRE chat, “what is pack 03”, formula recall / `pgre-formula-receipt` / “Copy status for agent”.
 - **Never** park waiting for a ~100 min set.
-- This skill does **not** gate `/end-my-day` / `/start-my-day` (sister lock). Evening may still `[x]` a timed child; on next log, treat bare `[x]` without W2/W3 as not logged.
+- This skill does **not** gate `/end-my-day` / `/start-my-day` (sister lock). The user or evening may `[x]` a timed child or its parent without a receipt, including for new questions done outside a pack. That tick is a completion: `/start-my-day` recounts the parent `(n/N)` from ticks and its rule wins over this skill. Never reopen or un-count it; a bare `[x]` only lacks W2/W3.
 
 # Mode routing
 Launch vs Log vs Custom is the Gate schema above. A Halt row never becomes Launch. Other / strengthen-from-receipt after Halt → Custom.
@@ -156,7 +156,9 @@ Stop. No mid-set coaching unless asked.
 | Logged (receipt) | `[x] · logged a/n (p%)` (short `[x]` OK **only if** W2+W3 exist for this pack+date) | +1 once | advance |
 | Override | `[x] · incomplete-misses` | +1 once | advance |
 
-Bare `[x]` with no W2 line and no W3 receipt-rows/override-row is **not logged**.
+| User tick, no receipt | bare `[x]` | counted by the `/start-my-day` recount; this skill leaves `n` alone | advance |
+
+Bare `[x]` with no W2 line and no W3 receipt-rows/override-row is done and counted; only its Log line and Misses-Log rows are missing.
 
 ---
 
@@ -203,7 +205,7 @@ Target pack NN = succession child (`[ ]` or `[*]` timed pack; else user-named). 
    - paste `kind: pgre-agent-receipt` JSON (Copy agent receipt on summary), or
    - explicit `incomplete-misses` override, or
    - mark `[*] · practiced, not logged` (parent unchanged).
-   If the child is already bare `[x]` without W2/W3: reopen to `[*] · practiced, not logged` and un-bump parent `(k/N)` → `(k-1/N)` when this child was counted (parent `[x]` → `[ ]` if it hit N/N from this). Then the same three offers.
+   If the child is already bare `[x]` without W2/W3: keep the `[x]` and the parent `(k/N)`; offer only the receipt paste or `incomplete-misses`, to add W2/W3.
    NEVER invent scores. NEVER scrape attempts/sessions/mistakes as primary. No parked poll.
 
 Override is **only** when the user explicitly says `incomplete-misses` (not inferred from “done”).
@@ -234,7 +236,7 @@ Override path: print `incomplete-misses` (no invented score) then write.
 ## L4. Vault writes
 
 ### W1 — Tick timed child + parent `(n/N)`
-**`[x]` + parent +1 ONLY from a validated receipt or explicit `incomplete-misses`.**
+**This skill writes `[x]` + parent +1 ONLY from a validated receipt or explicit `incomplete-misses`.** The user's own tick is outside this limit.
 
 - Find the daily timed pack child (`pack NN` / Set NN).
 - Custom/unlabeled receipt, or `pack`/ids that are not today's timed child → no W1 tick, no parent bump.
@@ -242,7 +244,7 @@ Override path: print `incomplete-misses` (no invented score) then write.
 - Override → `- [x] · incomplete-misses`.
 - Parent `(k/N)` → `(k+1/N)` only when this child **newly** flips to `[x]` from `[ ]` or `[*]`. Never double-bump. If parent reaches N/N, mark parent `[x]` if that is the house convention; else stay consistent with other dailies.
 - Already `[x] · logged …` or `[x] · incomplete-misses` with W2+W3: idempotent, no parent bump, still run W2/W3 idempotently.
-- Already bare `[x]` **without** W2/W3 and **no** receipt/override this turn: not logged — reopen to `[*]` (L1.4). Do not treat as success.
+- Already bare `[x]` **without** W2/W3: the user's tick stands. No receipt/override this turn → change nothing. Receipt/override this turn → add the marker and run W2/W3; no parent bump (the `/start-my-day` recount sets `n`).
 - `[*]` without receipt/override: leave `[*]` or set it if currently `[ ]` and user chose “practiced, not logged”. Parent unchanged.
 
 ### W2 — Daily Log line (mandatory on logged close)
@@ -281,7 +283,7 @@ Receipt, one row **per miss qid** (no unlabeled stubs). Skip if **Date + qid** a
 ```
 Logged pack NN · <correct>/<n> (<pct>%) · misses=<m>   OR   incomplete-misses
 source: paste|session|localStorage|lastAgentReceipt|packReceipts|override
-W1: child <logged|override|[*] not logged|reopened [*]|missing child>
+W1: child <logged|override|[*] not logged|user tick kept|missing child>
 W2: log <appended|exists|skipped not closed>
 W3: misses-log <+k qid rows|none perfect|incomplete-misses row>
 ```
@@ -303,5 +305,5 @@ Stop.
 - Log without Prep tab and without paste → L1.4 offers (paste / `incomplete-misses` / `[*]`). Do not guess. Durable keys absent → skip.
 - `file://` clipboard failure in Studio → user may paste from on-screen fallback `<pre>`; agent still accepts paste (v1 JSON included).
 - Non-macOS → same tab-reuse via platform browser automation.
-- Historical packs closed `[x]` without receipt (e.g. pack 03) are **not** recovered here; log mode may reopen today’s bare `[x]` to `[*]` or take override, but do not invent old miss qids.
+- Historical packs closed `[x]` without receipt (e.g. pack 03) are **not** recovered here; log mode may take an override for today’s bare `[x]`, but do not invent old miss qids.
 - Formula receipt / “Copy status for agent” / formula-recall dump → Gate **Halt**. Do not launch on that turn. List in-process GRE children; wait. Follow-up Other / strengthen-from-receipt → **Custom** (never succession pack, never `data-packs.js`). Ambiguous “activate” / “start practice” with no formula payload → **Launch** succession pack (do not interview).

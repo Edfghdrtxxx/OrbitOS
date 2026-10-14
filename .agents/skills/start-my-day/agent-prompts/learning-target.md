@@ -12,7 +12,7 @@ Analyze learner progress and syllabus state to determine today's specific learni
 ## Analysis Steps
 1. **Identify Active Curriculum Window:**
    - Read `8-Week-Syllabus.md` (authoritative). `{today}` before 2026-09-14 is Week 0 (historical). From 2026-09-14 use the live table: W1 Sep 14–20, W2 Sep 21–27, W3 Sep 28–Oct 4, W4 Oct 5–11, W5 Oct 12–18, W6 Oct 19–25, W7 Oct 26–Nov 1.
-   - **From 2026-10-04 the syllabus section `Replan 2026-10-04` overrides this step and step 2's week lists:** the timed child is the pack(s) on `{today}`'s row of its day table, preceded by any earlier-dated pack not yet sat (check the last daily note and `03_Topic_Sets/` status); `null` on diagnostic, mock and no-pack rows. The formula child is "due cards + N new" in the topic the Replan order has reached, with N read from the Replan formula-recall rule (14 from 2026-10-05); due cards only on diagnostic and mock days. Parent durations: timed ~65 min, formula ~35 min, extra ~50 min.
+   - **From 2026-10-04 the syllabus section `Replan 2026-10-04` overrides this step and step 2's week lists:** the timed child is the pack(s) on `{today}`'s row of its day table, preceded by any earlier-dated pack not yet sat (check the last daily note and `03_Topic_Sets/` status); `null` on diagnostic, mock and no-pack rows. The formula child is "due cards + N new" in the topic the Replan order has reached, with N read from the Replan formula-recall rule (14 from 2026-10-05); due cards only on diagnostic and mock days. Parent durations: timed ~100 min, formula ~60 min, extra ~50 min.
    - Timed sets for that week are the IDs in that row, not a global 01→35 sequence. W1 default **03–07**; if Set 02 is still open on 2026-09-14, W1 is **02–06** and Set 07 is extras-only.
    - Hedged parent durations from Sep 14: timed **~100 min**, formula **~60 min**, extra **~50 min**. On week rollover, parent `#weekly` `~ mins` should match. Do not follow Prep Studio `js/data-plan.js` as a calendar (it is generated from this syllabus).
 2. **Determine Previous Completion & Next Set:**
@@ -23,9 +23,9 @@ Analyze learner progress and syllabus state to determine today's specific learni
    - If no prior set was attempted this week, start with the first timed ID for that week in `8-Week-Syllabus.md` (W1: Set 03, or Set 02 if still open; W2: Set 08; W6: Set 26 then 27–29 only; W7 new: Set 32 then Set 33; W7 other weekday timed = replay latest miss-heavy set else Set 32; never 30/31/34/35 as new).
    - **Checkpoint Sundays (no timed_set_child):** `{today}` is 2026-10-05 (diagnostic, moved from 2026-10-04), 2026-10-11, 2026-10-18 or 2026-10-25 — output timed_set_child `null`; the diagnostic/rehearsal is the day's GRE sitting. **W7 Fri–Sun:** timed_set_child `null` (no new sets; no Friday replay).
 3. **Determine Formula Recall Batch:**
-   - Check the formula child task in `{last_daily_note}`.
-   - If yesterday's batch was completed (`- [x]`), select the next batch from `02_Formulas_&_Recall/Formula-Recall-Decks.md` (e.g. CM Batch 1 → CM Batch 2).
-   - If yesterday's batch was uncompleted, repeat that batch.
+   - From 2026-10-04 the child is `Clear due cards + N new cards in book order (<topic>)` per step 1; never a `Formula-Recall-Decks.md` batch.
+   - Topic: the one the Replan order has reached, from the last completed formula child and the latest unseen-card count in the daily notes. State whether it is logged or computed.
+   - If yesterday's formula child was uncompleted, keep it.
 4. **Determine Weak-Topic & Error Rework:**
    - Check the third weekly row count in `{last_daily_note}` (e.g. `(n/2)`). If the row has reached `(2/2)`, output `null` (no extra child needed today).
    - Otherwise, check `04_Diagnostics_&_Errors/Misses-Log.md` for un-reworked misses. If found, assign rework for those specific items.
@@ -39,9 +39,9 @@ Return exactly the following block:
 
 - **timed_set_child:**
   - [ ] {Set ID}: {Topic & Subtopics} (pack {NN}, n={n}) · Prep Studio pack {NN}
-  <!-- or `null` on 2026-10-04, 2026-10-25, and W7 Fri–Sun -->
+  <!-- or `null` on the checkpoint Sundays of step 2 and W7 Fri–Sun -->
 - **formula_recall_child:**
-  - [ ] {Topic} Batch {N}: {Key Formulas Focus} (20 formulas)
+  - [ ] Clear due cards + {N} new cards in book order ({Topic})
 - **weak_topic_child:**
   - [ ] Rework {Topic} misses from {Set ID} / log root error patterns into [[Misses-Log]]  <!-- or null if count reached -->
 - **rationale:** {One concise sentence explaining why this set and focus were selected based on syllabus schedule and previous progress}
