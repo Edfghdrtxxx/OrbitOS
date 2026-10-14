@@ -90,7 +90,7 @@ Premise: all 35 packs are sat before 2026-11-01. The live table and the mock tab
 
 **Rules**
 - Unit is questions per day, not packs per week: 30 packs (312 questions) over 21 working days ≈ 15 questions per day.
-- Daily block: timed pack(s) at 103 s per question plus miss review (~65 min), formula recall (~35 min), mistake book 25 questions per day (~50 min; raised from 15 by Reid 2026-10-05).
+- Daily block: timed pack(s) at 103 s per question plus miss review (~100 min), formula recall (~60 min), mistake book 25 questions per day (~50 min; raised from 15 by Reid 2026-10-05).
 - **Daily sequence (accepted by Reid 2026-10-04):** timed pack and its misses first, then formula recall, then the mistake book; `/learn`, derivations and reading come after. Reason: 48 h were logged since Sep 14 and only 6 h went to answering questions. This is a default order, not a gate: on a day when another order fits better, Reid chooses.
 - Order follows the book: EM → Optics → Thermo → QM → Atomic → SR → Lab/Specialized; unfinished CM (01, 06) and the replays of 05 and 03 close the plan.
 - A slipped pack moves to the next working day; Oct 28–29 are the only buffer. No pack sitting on Oct 30–31.
