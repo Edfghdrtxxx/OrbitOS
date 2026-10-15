@@ -17,10 +17,7 @@ Read the best matches. Skip PDFs.
 - If the search finds nothing, say "no vault source found" in one line, then answer.
 - If a vault source and an outside source disagree, show both.
 
-**Citation:** cite each vault claim as a Markdown link to the relative path plus the line: `[label](path:line)`.
-- In the path, replace each space with `%20`, `(` with `%28`, `)` with `%29`.
-- No angle brackets around the path: the desktop app reads them as part of the path and reports "Couldn't find this file".
-- No `[[wikilinks]]`: the desktop app shows them as plain text.
+**Citation:** cite each vault claim as `[label](path:line)`, with the line, in the format of `preference_file_citation_links.md`.
 - Example: `[Kahn, §1.5.1 Lagrangians](50_Resources/Physics/GRE/Conquering%20the%20Physics%20GRE%20%28Yoni%20Kahn%29/Conquering%20the%20Physics%20GRE%20%28Yoni%20Kahn%29.md:833)`
 
 **Why:** the user wants answers grounded in firsthand sources they can open and check. Format verified in the Claude desktop app on 2026-10-14.

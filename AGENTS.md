@@ -75,6 +75,7 @@ Read the matching file from `99_System/memory/` on trigger.
 | `preference_interview_api.md`             | explicitly requested visual interview or decision requiring visual inspection/annotation — ordinary questions use chat/Ask; main: payload+dispatch only; never skill://lavish or skill://web-access; child fail → host Ask |
 | `genesis_papers.md`                       | 创世级, genesis papers, STAGE 1 鸟瞰主线, groundbreaking paper |
 | `preference_search_vault_first.md`        | user asks a standalone physics or math question (not a step inside a coding/editing task) |
+| `preference_file_citation_links.md`       | a reply, report, or relayed subagent result claims something settled/changed or names a file or folder on disk |
 
 ### Writing memories
 
@@ -125,6 +126,7 @@ Skip any related-repo path that does not exist on disk.
 - **Skill `evolution.md`:** Only real faults/fixes, or lessons you explicitly capture. Never self-author an entry — wait for a direct ask or a confirmed `/evolve`. If the preference already lives in the skill body, skip the lesson.
 - **Recording a decision:** when you write down something the user chose or approved (a plan, a rule, a preference), write it once, in the note that owns its topic. Refine the wording; add nothing to what they chose.
 - **No self-describing filler.** Write what is true and what to do. Omit the state or history of the text itself ("recorded", "not yet used", "newly added", "as discussed"). Keep a status only when it changes what the reader does: one word, said once. In notes, instructions, and this file: delete a phrase when the reader would act the same without it and no likely case is left unsettled. A reason that alone settles a case the sentence does not name stays. A note of when the sentence was written, who asked for it, or what it replaced goes.
+- **Cite sources as clickable links.** In replies and reports, every claim that something is settled or changed carries its source (file path with line number, URL, or exact command), and every file or folder named on disk is a Markdown link `[label](path:line)` (vault: relative path; elsewhere: absolute path; spaces as `%20`) — never a bare name or a path in backticks. Standard: `/Users/Reid Hu/firstmate/data/captain.md` line 18; details: `99_System/memory/preference_file_citation_links.md`.
 
 
 ## Principles of Paramount Importance
