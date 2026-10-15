@@ -10,7 +10,7 @@ type: feedback
 **Source rule:** every claim that something is settled or changed carries its source — a file path with line number, a URL, or the exact command — so the user can check it independently. The source closes the sentence it supports.
 
 **Format:** `[label](path:line)`; drop `:line` only when the link names a whole file or folder, not a claim inside it. Plain web URLs stay as they are.
-- Inside the vault (`/Users/Reid Hu/OrbitOS`): path relative to the vault root, e.g. `[STATUS.md](90_Plans/Windows_PC_Sale/STATUS.md)`.
+- Inside the vault (`/Users/Reid Hu/OrbitOS`): path relative to the vault root, e.g. `[STATUS.md](99_System/Archives/Plans/2026/Windows_PC_Sale/STATUS.md)`.
 - Outside the vault (shared notes folder, scratchpad, `/Users/leyi/...`): absolute path, e.g. `[drive_reorg_plan.md](/Users/leyi/Library/Application%20Support/Claude/side-session-notes/<id>/drive_reorg_plan.md)`.
 - In the path, replace each space with `%20`, `(` with `%28`, `)` with `%29`.
 - No angle brackets around the path: the desktop app reads them as part of the path and reports "Couldn't find this file".

@@ -65,7 +65,7 @@ Repo: `/Users/Reid Hu/MATE-Automation/`
 
 ## Remote storage map
 
-- `90_Plans/Windows_PC_Sale/remote-storage-map.md` — Drive / IMP / AutoDL landing matrix (PC-sale context; not a Z-01 existence claim)
+- `99_System/Archives/Plans/2026/Windows_PC_Sale/remote-storage-map.md` — Drive / IMP / AutoDL landing matrix (PC-sale context; not a Z-01 existence claim)
 - Documented, **unverified** compute roots and **planned** Z-01 targets: [[L1_Current_Campaign]]
 
 ## Do not open for credentials (C-09, unresolved)

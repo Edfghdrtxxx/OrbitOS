@@ -14,7 +14,7 @@ Mac cannot rely on `git pull` for the latest Windows tip (unpushed / auth gone).
 
 | Gate | Status | Evidence |
 |------|--------|----------|
-| Drive personal pack `Windows_PC_Sale_202609` | **VERIFIED** earlier | Parent `1fsARSKmyDDnoKO2wL4xzsmWAxXk1sHRG` · Passport / 出签信 / Expense spot-opens OK |
+| Drive personal pack `Windows_PC_Sale_202609` | **DISSOLVED** 2026-10-15 | Parent `1fsARSKmyDDnoKO2wL4xzsmWAxXk1sHRG` in Drive Bin. Contents (same file IDs) now in `100_Memoranda`: `01_documents` → `Personal_Documents`, `02_media_photos_ID` → `ID_Photos`, `05_ExpenseTracker_input` → `Expense_Records`, `Gemini_Chats`; 出签信 PDF → `100_Memoranda/Japan_Visa_2026`; 膝盖治疗建议.pdf → `30_Research/Medical & Health`; 个人简历 PDF → `20_Project/Job Searching` |
 | Intentional Drive omissions (录音 / forJob / most Downloads extras / empty 07) | **Accepted** | Stand |
 | **`100_Memoranda` on Drive** | **CONFIRMED** | Top-level folder id `10ZEumYOC2hkYie3zqQ7illvOcdrlwDSt` · https://drive.google.com/drive/folders/10ZEumYOC2hkYie3zqQ7illvOcdrlwDSt · lists notes + **plaintext secret files** (e.g. `tpc_usr_imp_password.txt`, `PYTPC_PWD.txt`, `Google_account.txt`, `Japan_Visa_2026`, …). Off-box complete for wipe of local copies; **prefer password-manager migration + rotate lab creds** (secrets now also live on Drive). |
 | IMP archive `…/huzh_2022/windows_pc_sale_202609/` | **ACKNOWLEDGED (Windows-complete)** | Claimed: `outputs_ViT/` ~1.6G · `MATE/data_exp8/` ~838M · `MATE/runs/` ~8.7G (22 dirs) · **~11.1 GB total**; no bulk `trk_h5*` (accepted). **Mac live `du` not done** — no jump/SSH config on this Mac (`Permission denied` direct to `.64`). Trust Windows statement unless human wants later IMP check from lab network. |
