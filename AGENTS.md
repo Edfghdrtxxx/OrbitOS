@@ -75,6 +75,7 @@ Read the matching file from `99_System/memory/` on trigger.
 | `preference_interview_api.md`             | explicitly requested visual interview or decision requiring visual inspection/annotation — ordinary questions use chat/Ask; main: payload+dispatch only; never skill://lavish or skill://web-access; child fail → host Ask |
 | `genesis_papers.md`                       | 创世级, genesis papers, STAGE 1 鸟瞰主线, groundbreaking paper |
 | `preference_search_vault_first.md`        | user asks a standalone physics or math question (not a step inside a coding/editing task) |
+| `preference_find_documents_local_first.md` | user asks to find/retrieve/open one of their own documents (报告, 考核表, slides, forms, certificates), even when naming Google Drive or 云盘 |
 | `preference_file_citation_links.md`       | a reply, report, or relayed subagent result claims something settled/changed or names a file or folder on disk |
 
 ### Writing memories

@@ -33,6 +33,18 @@ updated: 2026-03-06
 - Timeline: Thesis must be submitted before June 2027 (prerequisite for UTokyo Kenkyusei application)
 - Dependencies: [[MATE-Automation]] codebase
 
+**Folder layout:** every UCAS/IMP degree document goes in `20_Project/Masters_Degree/`, one numbered subfolder per stage. Create a subfolder when its stage starts.
+
+| Folder | Stage | Contents |
+|---|---|---|
+| `01_Proposal/` | 开题 | 开题报告, 登记表, 专家签名页, proposal slides, template |
+| `02_Annual_Review/` | 学年考核 | 学年考核表, 打分表, 分组/成绩汇总, IMP/UCAS rules (附件2–8) |
+| `03_Midterm/` | 中期考核 | — |
+| `04_Thesis/` | 学位论文 | drafts, 查重, 送审 |
+| `05_Defense/` | 答辩, 学位申请 | — |
+
+Talk decks stay in `70_Presentations/` (e.g. `712_Mid-term_Assessment-0425/`).
+
 ---
 
 ## Actions
