@@ -4,7 +4,7 @@ type: reference
 status: active
 area: "[[Physics Research]]"
 created: 2026-09-01
-updated: 2026-09-07
+updated: 2026-10-16
 tags: [graduation, ucas, imp, master-thesis]
 ---
 # UCAS / IMP Graduation Map (Frozen 2026-09-01)
@@ -38,7 +38,7 @@ IMP’s still-posted 硕士生学习工作时间表 (2017 page, still the offici
 |---|---|---|---|
 | Done | Course 30 credits | Met | Nothing |
 | Done (early) | 开题 | *A Physical-Informed Deep Learning Approach for Data Analysis in MATE*, 已提交至培养单位 **2024-12-13** | Leave it. 培养计划 is 已完成 |
-| This semester (Nov–Dec 2026, wait for notice) | 中期考核 | 尚未撰写 / 未开始 | **Do not** click 撰写申请. IMP runs it as a batch. Public 通知公示 has no 2026 中期 notice yet |
+| This semester (Nov–Dec 2026, wait for notice) | 中期考核 | 草稿: *基于物理信息深度学习的MATE探测器反应重建方法*, last saved **2026-10-15 15:23:48** (SEP 培养指导 → 论文 → 中期考核, checked 2026-10-16) | Finish the draft, then click 请求指导 to send it to the supervisor. IMP runs it as a batch. Public 通知公示 has no 2026 中期 notice yet |
 | This semester (table: 第五学期 12月) | 作学术报告 0/1, 听报告 0/10 | 培养指导 暂无数据, 未提交 | IMP historically **schedules** a 研究生学术论坛 where you give the 1 talk (last public “第N届” page is 2018; later rounds look internal). **Listening** to 10 is not fully automatic — 杨澄中论坛 and 所学术报告 run year-round. **Logging is always yours.** Submit 学术报告 + 社会实践 together; supervisor reviews **once** |
 | Overdue on the 2017 table (第四学期 4月) | 社会实践 0/2 | 暂无数据 | Institute 主题教育 / 清明 / 拓展 / 科教帮扶 are the usual batch events. Still must be logged. April 2026 window on that table has already passed |
 | Not yet (第六学期, ~Mar–May 2027) | 答辩申请, 学位申请 | 2026秋季 申请未开放; 答辩 未开始 | Correct. Summer-graduation clock from IMP’s 答辩时间表: TOC ~Jan 10–20; 初稿查重 ~Mar 25–30; **发表文章证明 ~Apr 10**; 送审 ~May 5; 答辩 ~May 25; 学位会 ~Jun 30; certificates ~Jul 15 |
