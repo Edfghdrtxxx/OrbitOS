@@ -16,7 +16,7 @@ metadata:
 
 Choose an existing browser connection before starting anything. CDP means Chrome DevTools Protocol, the browser debugging interface.
 
-1. Check the available Claude in Chrome extension tools for a connected browser (for example, its tab-list tool). If connected, use those tools and skip the proxy.
+1. If the Claude in Chrome extension tool `tabs_context_mcp` is available, call it with `createIfEmpty: false` to check its connection without creating a tab. If connected, use the extension tools and skip the proxy. If unavailable or disconnected, continue below.
 2. Otherwise, request `GET http://127.0.0.1:3456/health`. If `connected` is `true`, reuse that proxy without starting another process.
 3. Only otherwise, start or wake the proxy with the command below. If the user is writing from Remote Control, first say: “Chrome will show an Allow remote debugging pop-up on your Mac. Click Allow on the Mac to let the browser connection complete.” If the request is already waiting for Allow, keep waiting; do not restart the proxy or open another debugging connection.
 
