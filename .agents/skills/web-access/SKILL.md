@@ -14,7 +14,11 @@ metadata:
 
 ## 前置检查
 
-在开始联网操作前，先检查 CDP 模式可用性：
+Choose an existing browser connection before starting anything. CDP means Chrome DevTools Protocol, the browser debugging interface.
+
+1. Check the available Claude in Chrome extension tools for a connected browser (for example, its tab-list tool). If connected, use those tools and skip the proxy.
+2. Otherwise, request `GET http://127.0.0.1:3456/health`. If `connected` is `true`, reuse that proxy without starting another process.
+3. Only otherwise, start or wake the proxy with the command below. If the user is writing from Remote Control, first say: “Chrome will show an Allow remote debugging pop-up on your Mac. Click Allow on the Mac to let the browser connection complete.” If the request is already waiting for Allow, keep waiting; do not restart the proxy or open another debugging connection.
 
 ```bash
 node "${CLAUDE_SKILL_DIR}/scripts/check-deps.mjs"
@@ -24,7 +28,7 @@ node "${CLAUDE_SKILL_DIR}/scripts/check-deps.mjs"
 - **Node.js 22+**：必需（使用原生 WebSocket）。版本低于 22 可用但需安装 `ws` 模块。
 - **Chrome remote-debugging**：在 Chrome 地址栏打开 `chrome://inspect/#remote-debugging`，勾选 **"Allow remote debugging for this browser instance"** 即可，可能需要重启浏览器。
 
-检查通过后并必须在回复中向用户直接展示以下须知，再启动 CDP Proxy 执行操作：
+Before browser automation, show this notice:
 
 ```
 温馨提示：部分站点对浏览器自动化操作检测严格，存在账号封禁风险。已内置防护措施但无法完全避免，Agent 继续操作即视为接受。
@@ -90,7 +94,7 @@ node "${CLAUDE_SKILL_DIR}/scripts/check-deps.mjs"
 node "${CLAUDE_SKILL_DIR}/scripts/check-deps.mjs"
 ```
 
-脚本会依次检查 Node.js、Chrome 端口，并确保 Proxy 已连接（未运行则自动启动并等待）。Proxy 启动后持续运行。
+Follow the connection-selection order in the prerequisite section first. Run this command only for a missing or disconnected proxy. It reuses a running proxy and waits for its connection. The proxy stays connected and reconnects after Chrome restarts; do not stop it after a task. See [README](README.md#macos-login-service) for the macOS login service.
 
 ### Proxy API
 
