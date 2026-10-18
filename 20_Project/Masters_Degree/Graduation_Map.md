@@ -9,7 +9,7 @@ tags: [graduation, ucas, imp, master-thesis]
 ---
 # UCAS / IMP Graduation Map (Frozen 2026-09-01)
 
-Checked on SEP 个人工作台 + 培养指导 + IMP 工作流程 / 科研成果要求. Course credits pass. Defense and degree application have **not** arrived — not current failures. Target: 2027-06 graduation → UTokyo Kenkyusei 2027-10. [[Masters_Thesis]] · [[MATE-Automation]] · [[Japan_Itinerary]]
+Checked on SEP 个人工作台 + 培养指导 + IMP 工作流程 / 科研成果要求. Course credits pass. Defense and degree application have **not** arrived — not current failures. Target: 2027-06 graduation → UTokyo PhD D1 2027-10 (fallback 2028-04). [[Masters_Thesis]] · [[MATE-Automation]] · [[Japan_Itinerary]]
 
 ## Course credits — pass
 

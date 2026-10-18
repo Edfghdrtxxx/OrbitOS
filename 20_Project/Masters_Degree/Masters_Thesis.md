@@ -30,7 +30,7 @@ updated: 2026-03-06
 **Key Constraints:**
 - Data: TPC simulation data (Geant4-based or equivalent) — already available
 - Compute: IMP lab resources; Python + ML framework (PyTorch or TensorFlow)
-- Timeline: Thesis must be submitted before June 2027 (prerequisite for UTokyo Kenkyusei application)
+- Timeline: Thesis must be submitted before June 2027 (the master's degree must be conferred before UTokyo PhD enrollment, Oct 2027)
 - Dependencies: [[MATE-Automation]] codebase
 
 **Folder layout:** every UCAS/IMP degree document goes in `20_Project/Masters_Degree/`, one numbered subfolder per stage. Create a subfolder when its stage starts.
@@ -119,4 +119,4 @@ Graduation gates, live SEP status, and the IMP defense clock: [[Graduation_Map]]
 
 - Simulation-only is standard at this stage — do not treat absence of real data as a blocker
 - Primary advisor deliverable: a clean, reproducible ML pipeline on TPC simulation + written thesis
-- Thesis completion by June 2027 is a hard prerequisite for the UTokyo Kenkyusei application window
+- Thesis completion by June 2027 is a hard prerequisite for UTokyo PhD enrollment (Oct 2027)

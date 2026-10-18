@@ -31,7 +31,7 @@ related:
 
 > [!info] Timeline: Feb 2026 → Aug 30 2026 (~6.5 months) — *compressed from original Sep/Oct target*
 > Current estimated level: 70-85 (old scale). Target: **band 5.0** (comparable to 100+/120). Daily study: 1-1.5 hours.
-> Weakest section: **Listening**. Score needed for [[UTokyo_RIKEN]] Kenkyusei & PhD applications. ^JjniPbhh
+> Weakest section: **Listening**. Score needed for [[UTokyo_RIKEN]] PhD applications. ^JjniPbhh
 
 > [!warning] New TOEFL iBT Format (Jan 21, 2026)
 > The TOEFL iBT switched to a **band score system (1-6, half-point increments)** per section. A comparable 0-120 total is provided during the 2026-2028 transition period. Test duration is now **~1.5 hours** (down from ~2 hours). Reading and Listening are **adaptive**. Speaking and Writing tasks have been completely redesigned. See section details below.
@@ -136,13 +136,13 @@ Jul 1 ██████████████████████ Sep 15 
 | Deadline | Reason |
 |---|---|
 | ~~Mid-2026~~ | ~~MEXT University Recommendation~~ → dropped (extremely fierce competition) |
-| Apr-May 2027 | **Kenkyusei formal application window** — TOEFL score is a required document |
+| ~Oct 15–30, 2027 | **Fallback: Special Selection window for Apr 2028 entry** — TOEFL score is a required document |
 | Aug 30, 2026 | **Attempt #1** — registered at STN80118A Beijing |
 | ~~Sep 13, 2026~~ | ~~**Attempt #2** — registered 2026-07-04 at STN80118A; compare with #1, send better score to UTokyo~~ → **退考 (canceled via NEEA) 2026-09-06 — #1 already hit 100/C1; send the #1 score to UTokyo before Period 2 (opens Dec 7)** |
 
-> [!warning] TOEFL scores are valid for **2 years**. A Sep 2026 score expires Sep 2028 — covers both Kenkyusei and PhD entrance applications.
+> [!warning] TOEFL scores are valid for **2 years**. The 2026-08-30 score expires 2028-08-30 — covers the Oct 2027 entry and the Apr 2028 fallback.
 
-> [!note] With MEXT dropped due to extremely fierce competition, the pathway is **self-funded Kenkyusei only**. This removes the mid-2026 urgency but makes savings verification ([[UTokyo_RIKEN#Financials]]) more critical.
+> [!note] MEXT dropped due to extremely fierce competition; the fallback is Apr 2028 PhD entry ([[UTokyo_RIKEN#TL;DR]]).
 
 ---
 
@@ -403,7 +403,7 @@ Sep-Nov 2026      Send Attempt #1 score (single date, no MyBest) to UTokyo (code
     ↓
 Nov 1 2026        ★ GRE PHYSICS ★ (Beijing, only regional fall seat — see [[UTokyo_RIKEN]])
     ↓
-Apr-May 2027      Kenkyusei application — TOEFL score submitted
+~Oct 2027         Fallback only: Apr 2028 entry application — TOEFL score submitted
 ```
 
 > [!tip] Your TOEFL prep has a **secondary benefit**: every hour improving English also improves the quality of your supervisor outreach emails, research statement, and future academic communication. This is not "wasted time" — it directly supports your UTokyo application.

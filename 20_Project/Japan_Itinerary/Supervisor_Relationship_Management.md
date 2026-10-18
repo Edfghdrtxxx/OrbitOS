@@ -44,7 +44,7 @@ created: 2026-02-17
 - [ ] Update [[UTokyo_RIKEN#Verification Tracker]] with any confirmed items (V2, V4, V5, V6, V7, V8)
 - [x] Apply the [[DG_GSGC_vs_Special_Selection#7. Impact Matrix]] — Special Selection confirmed (2026-04-13)
 - [x] Update [[General_Checklist]] — check off confirmed items (2026-03-09)
-- [ ] If Naidaku (Letter of Acceptance) is offered → begin Kenkyusei application document prep
+- [ ] If Naidaku (Letter of Acceptance) is offered → begin Special Selection application document prep
 - [ ] Schedule follow-up questions (from the Medium-priority list) for the next email exchange
 - [ ] Keep your IMP advisor in the loop on all correspondence — your IMP advisor may offer to vouch for you in a follow-up if needed
 
@@ -87,9 +87,9 @@ created: 2026-02-17
 | V2 | JRA: 250k JPY/month expected (FY2026 call), part-time employee, Shakai Hoken | `VERIFIED` against the RIKEN FY2026 call ([[UTokyo_RIKEN#Verification Tracker]]); RIKEN's general page showed 200k — confirm with Imai which figure applies. JRA confirmed available + 2 other scholarship types (Imai 2026-04-13) | Q7 |
 | V4 | UTokyo tuition exemption for income < 6M JPY (international eligibility?) | `UNVERIFIED` | Q8 |
 | V5 | UTokyo tuition: 535,800 JPY/year | `UNVERIFIED` | Can verify via UTokyo website independently |
-| V6 | Kenkyusei can sit for doctoral entrance exam | `UNVERIFIED` | Q4 |
+| V6 | Special Selection window ~Oct 15–30, 2027 for Apr 2028 enrollment (Physics) — the fallback route | `UNVERIFIED` | Ask Imai (questions in [[Mock-Review-Oct18]] §4) |
 | V7 | JRA application window: Apr–May for Oct start | `UNVERIFIED` | Q7 (secondary) |
-| V8 | Kenkyusei maximum enrollment duration | `UNKNOWN` | Q6 |
+| V8 | Sep 2027 GRE score arrives before the Apr 2028 window closes | `UNKNOWN` | Check ETS 2027–28 schedule (~Jul 2027) |
 
 ---
 
@@ -139,8 +139,8 @@ created: 2026-02-17
 > - [x] Does the advisor recommend contacting any professor not currently on your list? (2026-03-09: discussed)
 >
 > **6. Insider knowledge** — Practical questions the advisor can answer from firsthand UTokyo experience. **Several items still outstanding — ask in next meeting.**
-> - [ ] Can a Kenkyusei sit for the doctoral entrance exam during enrollment? `[V6]` — **still unverified**
-> - [ ] What is the maximum Kenkyusei enrollment duration — and can you extend and retake if you fail the exam? `[V8]` — **still unknown**
+> - ~~Can a Kenkyusei sit for the doctoral entrance exam during enrollment?~~ Not needed: the fallback is Apr 2028 PhD entry, not Kenkyusei ([[UTokyo_RIKEN#TL;DR]]).
+> - ~~What is the maximum Kenkyusei enrollment duration?~~ Not needed, same reason.
 > - [ ] Does the RIKEN JRA figure in the FY2026 call (250k JPY/month expected, Shakai Hoken) apply to CNS-affiliated PhD students? RIKEN's general page showed 200k. `[V2]`
 > - [ ] Are international PhD students eligible for UTokyo's tuition exemption? How is income defined — does JRA count? `[V4]` — **still unverified**
 > - [x] Any tips on housing near the Wako campus, or does UTokyo offer dormitory access for Kenkyusei? — **RESOLVED (Imai 2026-04-13):** Self-rent in Wako confirmed; no dormitory available.

@@ -18,16 +18,16 @@ decision_date: 2026-02-15
 
 ^f6663b
 
-- **Pathway (updated 2026-03-09):** **Primary:** Direct PhD D1 entry (Oct 2027) at UTokyo CNS, with RIKEN JRA funding from D1 onward. **Fallback:** If entrance exam failed → Kenkyusei (Oct 2027 – Sep 2028) → PhD D1 (Oct 2028).
-- **Funding:** PhD funded by RIKEN JRA (250k JPY/month *expected* FY2026 `[V2]`). Kenkyusei year (fallback only) self-funded (~2.5–2.8M JPY). MEXT University Recommendation (Research Student) dropped due to extremely fierce competition (2026-02-17).
+- **Pathway (updated 2026-03-09):** **Primary:** Direct PhD D1 entry (Oct 2027) at UTokyo CNS, with RIKEN JRA funding from D1 onward. **Fallback (user, 2026-10-18; not yet discussed with Imai):** If GRE < 900 or Period 2 fails → retake GRE Physics Apr 19–May 2, 2027 (also Sep 2027 if the 2027–28 ETS schedule repeats 2026's) → apply in the Special Selection window for **Apr 2028** enrollment (~Oct 15–30, 2027) → PhD D1 Apr 2028. Six-month delay; no self-funded year in Japan. Pattern source: the UTokyo page lists "October 15 to October 30, 2026 … to enroll in April 2027" ([UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html), fetched 2026-10-18); FY2028 dates unpublished.
+- **Funding:** PhD funded by RIKEN JRA (250k JPY/month *expected* FY2026 `[V2]`); JRA contracts start Apr 1 or Oct 1 `[V2]`, so an Apr 2028 start fits. MEXT University Recommendation (Research Student) dropped due to extremely fierce competition (2026-02-17).
 - **GRE Physics Subject Test:** Compulsory for Route B (Special Selection). Minimum score: 900.
 - **Exam route:** Route B chosen (decision by user + IMP supervisor). Route A archived. Sub-track RESOLVED: Special Selection confirmed (2026-04-13 Imai meeting). GSGC ineligible.
 
 > [!success] RESOLVED: Special Selection Confirmed (2026-04-13)
 > GSGC ineligible for master's holders. Special Selection is the sole admission path. Interview only — no written exam. GRE Physics minimum: 900. See [[DG_GSGC_vs_Special_Selection]] (RESOLVED).
-- **Next actions:** (1) Prioritize **GRE Physics (≥900) + TOEFL + application materials + interview** — Route B / Special Selection confirmed (no written UTokyo exam), (2) Prepare admission materials before Dec 2026 / Period 2, (3) ~~Register for GRE Physics~~ **REGISTERED 2026-07-04** — exam Nov 1, 2026 (see [[#Application Materials]]); prep for minimum 900, (4) Confirm Kenkyusei application window (fallback prep), (5) Continue physics foundations (GRE/interview depth) + Japanese (low priority).
+- **Next actions:** (1) Prioritize **GRE Physics (≥900) + TOEFL + application materials + interview** — Route B / Special Selection confirmed (no written UTokyo exam), (2) Prepare admission materials before Dec 2026 / Period 2, (3) ~~Register for GRE Physics~~ **REGISTERED 2026-07-04** — exam Nov 1, 2026 (see [[#Application Materials]]); prep for minimum 900, (4) Ask Imai about the fallback: is 900 a hard cut, the GRE arrival deadline for the Apr 2028 window, and JRA from Apr 2028 (questions in [[Mock-Review-Oct18]] §4), (5) Continue physics foundations (GRE/interview depth) + Japanese (low priority).
 - **Supervisor:** Committed to [[Prof_Nobuaki_Imai|Nobuaki Imai]] (DONUTS group) — confirmed 2026-04-13.
-- **Top risks:** GRE Physics ≥900 + interview / materials readiness (High), ~~supervisor acceptance (Medium-High)~~ **mitigated (2026-03-09)**, self-funded budget shortfall for fallback Kenkyusei year (Medium-High).
+- **Top risks:** GRE Physics ≥900 + interview / materials readiness (High), ~~supervisor acceptance (Medium-High)~~ **mitigated (2026-03-09)**, fallback route not yet confirmed with Imai (Medium).
 - **Rejected alternatives:** MEXT Embassy/CSC (return-service conflict), MEXT University Recommendation (Research Student, dropped 2026-02-17), IPA (requires CAS degree — user wants UTokyo degree).
 
 ## Pathway Overview
@@ -44,7 +44,7 @@ decision_date: 2026-02-15
 - CNS sits inside RIKEN Wako — UTokyo degree + RIKEN RIBF infrastructure in one place.
 - Direct alignment with current IMP research (TPC, direct reactions, PID).
 - Committed supervisor ([[Prof_Nobuaki_Imai|Nobuaki Imai]], DONUTS group) accepted conditionally (2026-03-09; confirmed 2026-04-13) — direct PhD entry is viable if entrance exam is passed.
-- If exam is failed, Kenkyusei buffer year provides a fallback for exam re-prep, language immersion, and lab integration.
+- If the gate is missed, Apr 2028 entry costs six months, with GRE re-prep in China (see TL;DR).
 - UTokyo degree carries stronger career signaling in Japan than a CAS degree.
 
 **Primary path (updated 2026-03-09):**
@@ -52,8 +52,8 @@ decision_date: 2026-02-15
 | Path | Period | Purpose | Funding |
 |---|---|---|---|
 | **Primary — Direct PhD (D1)** | Oct 2027 onwards | Pass Special Selection (docs + GRE + TOEFL + interview; Period 2 ~Dec 2026) → full doctoral enrollment | RIKEN JRA `[V2]` |
-| **Fallback — Kenkyusei** | Oct 2027 – Sep 2028 | If Special Selection failed → buffer year for re-prep (confirm route) + lab integration | Self-funded (MEXT Univ. Rec dropped 2026-02-17) |
-| **Fallback — PhD (D1)** | Oct 2028 onwards | Retake admission (route TBD) → full doctoral enrollment | RIKEN JRA `[V2]` |
+| **Fallback — GRE retake (in China)** | Apr 2027 – Oct 2027 | GRE Physics Apr 19–May 2, 2027 (Sep 2027 if repeated) → apply ~Oct 15–30, 2027 | Self (living at home) |
+| **Fallback — PhD (D1)** | Apr 2028 onwards | Special Selection for Apr 2028 enrollment → full doctoral enrollment | RIKEN JRA `[V2]` |
 
 > [!success] VERIFIED: Can apply before graduation (2026-03-09)
 > UTokyo eligibility: "One who **is expected to be conferred** a Master's Degree from an institution abroad **before entering the Doctoral program.**"
@@ -74,11 +74,11 @@ decision_date: 2026-02-15
 - [x] Identify 3–5 CNS professors who are also RIKEN collaborators *(2026-03-09: Two professors identified and contacted)*
 - [x] Prepare research-fit statement (TPC + direct reactions + ML-PID)
 - [x] Send first-contact emails with CV (target: by 2026-04-15) *(2026-03-09: Done ahead of deadline)*
-- [ ] Secure Naidaku — required for Kenkyusei enrollment *(2026-03-09: Both professors agreed to accept conditionally — Naidaku expected once entrance exam is passed)* → see [[Supervisor_Relationship_Management]]
+- [ ] Secure Naidaku *(2026-03-09: Both professors agreed to accept conditionally — Naidaku expected once entrance exam is passed)* → see [[Supervisor_Relationship_Management]]
 - [x] Leverage IMP supervisor connections for introductions
 
 > [!success] **Outreach Milestone (2026-03-09)**
-> Two UTokyo CNS professors — **[[Prof_Nori_Aoi|Aoi Nori]] (青井 考)** and **[[Prof_Nobuaki_Imai|Nobuaki Imai]]** — responded positively and agreed to accept conditionally on passing the Graduate School of Science entrance exam. **Direct PhD entry (Oct 2027) is now the primary target.** Kenkyusei is the fallback if the entrance exam is failed. Strategic focus shifts to entrance exam preparation.
+> Two UTokyo CNS professors — **[[Prof_Nori_Aoi|Aoi Nori]] (青井 考)** and **[[Prof_Nobuaki_Imai|Nobuaki Imai]]** — responded positively and agreed to accept conditionally on passing the Graduate School of Science entrance exam. **Direct PhD entry (Oct 2027) is now the primary target.** Strategic focus shifts to entrance exam preparation.
 >
 > **Group preference update (2026-03-24):** Leaning toward [[Prof_Nobuaki_Imai|Imai-san]]'s group (DONUTS). Pending confirmation via one-on-one meeting. See [[Supervisor_Relationship_Management]] for rationale.
 >
@@ -86,13 +86,13 @@ decision_date: 2026-02-15
 
 ### Jun – Dec 2026: Acceptance & Preparation
 
-- [ ] Confirm PhD application timeline (admission materials before Dec 2026 — Imai 2026-04-13) and Kenkyusei application window (fallback)
+- [ ] Confirm PhD application timeline (admission materials before Dec 2026 — Imai 2026-04-13) and the Apr 2028 enrollment window (fallback, ~Oct 15–30, 2027)
 - [ ] Begin COE / visa process through UTokyo `[V9]`
 - [ ] Prepare documents (transcripts, recommendations, research proposal)
 - [ ] **GRE Physics prep (min 900) + physics foundations for interview depth → [[Fundamental_Knowledge]], [[GRE_Physics_Prep]]** *(critical academic gate for Special Selection — not UTokyo 一般 written past exams)*
 - [ ] Japanese study → [[Japanese_Language]] *(low priority; not required for admission)*
 
-### Oct 2027: PhD D1 Enrollment (Primary) or Arrive as Kenkyusei (Fallback)
+### Oct 2027: PhD D1 Enrollment (Primary) or GRE Retake Year (Fallback)
 
 **If Special Selection passed (primary):**
 - [ ] Enroll at UTokyo Graduate School of Science as PhD D1
@@ -100,30 +100,29 @@ decision_date: 2026-02-15
 - [ ] Full research integration at CNS / RIBF
 - [ ] Immerse in Japanese language environment
 
-**If Special Selection failed (fallback — Kenkyusei):**
-- [ ] Begin Research Student period at CNS
-- [ ] **Priority: confirm retake route, then re-prep** (SS again vs Regular) — do not over-commit to experiments
-- [ ] Immerse in Japanese language environment
-- [ ] Build lab relationships
+**If Special Selection failed (fallback — Apr 2028 entry):**
+- [ ] Retake GRE Physics Apr 19–May 2, 2027; Sep 2027 is a second chance if the 2027–28 schedule repeats and the score arrives by the end of the application window
+- [ ] Apply in the Special Selection window for Apr 2028 enrollment (~Oct 15–30, 2027; all documents must arrive by the end of the window)
+- [ ] Stay in China Jun 2027 – Mar 2028; keep contact with Imai's group
 
 ### Doctoral Entrance — Route B (Special Selection, Confirmed 2026-04-13)
 
 - [ ] Confirm Special Selection interview / schedule details from official 2027/2028 cycle pages `[V6]` — current record: [[UTokyo_Special_Selection_Interview]] (2026-09-09: Physics protocol still unpublished)
   - ~~**Regular Physics route (ARCHIVED):** written exam (Aug), oral exam (Jan)~~
   - **Special Selection (Route B; confirmed 2026-04-13):** Interview only, no written exam. Admission materials before Dec 2026 (Period 2: Dec 7–22, 2026 realistic). Recheck Physics pages Nov 2026.
-- [ ] Only attempt April 2028 entry if **all** conditions met by Dec 2027: supervisor approval, confirmed eligibility, admission readiness for the **confirmed** retake route. Otherwise, default to Oct 2028.
+- [ ] Fallback = Apr 2028 entry (window ~Oct 15–30, 2027). If that window is also missed, the next is Oct 2028 entry (Period 2 ~Dec 2027).
 
 ### JRA Application (timing route-dependent)
 
 > [!note] **Primary path (Special Selection, direct PhD Oct 2027):** JRA + 2 other scholarship types confirmed available (names TBD, Imai 2026-04-13). If direct PhD entry achieved Oct 2027, JRA may be applied for earlier than Apr-May 2028.
-> **Fallback path (Kenkyusei → PhD Oct 2028):** Apply Apr–May 2028 for Oct 2028 start.
+> **Fallback path (PhD Apr 2028):** JRA contracts can start Apr 1 `[V2]`; application timing for an Apr 2028 start to confirm with Imai `[V7]`.
 
 - [ ] Apply for RIKEN JRA `[V7]`
 - [ ] Apply for UTokyo tuition exemption `[V4]`
 
-### Oct 2028: PhD D1 Enrollment (Fallback Path Only)
+### Apr 2028: PhD D1 Enrollment (Fallback Path Only)
 
-> [!note] This section only applies if the primary path (direct PhD Oct 2027) was not achieved and the Kenkyusei fallback year was activated.
+> [!note] This section only applies if the primary path (direct PhD Oct 2027) was not achieved.
 
 - [ ] Enroll at UTokyo Graduate School of Science
 - [ ] Funding switches to JRA
@@ -144,9 +143,9 @@ decision_date: 2026-02-15
 
 ## Financials
 
-### Kenkyusei Year — Fallback Only (Oct 2027 – Sep 2028)
+### Kenkyusei Year (Oct 2027 – Sep 2028) — not in the plan
 
-> [!note] These costs only apply if the Kenkyusei fallback path is activated (entrance exam for direct PhD Oct 2027 failed).
+> [!note] The fallback is Apr 2028 PhD entry with no year in Japan before it (see TL;DR). These costs apply only if a Kenkyusei year is chosen later; the living-cost rows also estimate a PhD year.
 
 **Self-funded**
 MEXT University Recommendation (Research Student) dropped due to extremely fierce competition (2026-02-17).
@@ -173,7 +172,7 @@ MEXT University Recommendation (Research Student) dropped due to extremely fierc
 
 Personal savings: 100–200k CNY (≈ 2–4M JPY). Comfortable at upper range; dangerously tight at lower range.
 
-### PhD (Oct 2027 primary / Oct 2028 fallback) — RIKEN JRA
+### PhD (Oct 2027 primary / Apr 2028 fallback) — RIKEN JRA
 
 | Item | Amount | Notes |
 |---|---|---|
@@ -190,7 +189,7 @@ Personal savings: 100–200k CNY (≈ 2–4M JPY). Comfortable at upper range; d
 
 ## Admission Gate (Special Selection) / Entrance Exam Reference
 
-> [!important] **Primary path (Special Selection):** gate = **GRE Physics (min 900) + TOEFL + application materials + interview** — no UTokyo written entrance exam (Imai 2026-04-13). Foundations below support GRE and interview depth; they are **not** a monthly 一般 過去問 requirement. If direct entry is missed, re-prep continues in the Kenkyusei year **after confirming retake route**.
+> [!important] **Primary path (Special Selection):** gate = **GRE Physics (min 900) + TOEFL + application materials + interview** — no UTokyo written entrance exam (Imai 2026-04-13). Foundations below support GRE and interview depth; they are **not** a monthly 一般 過去問 requirement. If direct entry is missed, retake GRE in Apr 2027 and apply for Apr 2028 entry (window ~Oct 15–30, 2027).
 
 **Core physics scope (GRE + interview depth; also Route A written subjects if Regular is ever reopened):**
 - Quantum Mechanics → [[Fundamental_Knowledge]]
@@ -289,21 +288,19 @@ Personal savings: 100–200k CNY (≈ 2–4M JPY). Comfortable at upper range; d
 
 | # | Risk | Severity | Mitigation |
 |---|---|---|---|
-| R1 | **Self-funded budget shortfall** — Kenkyusei year requires ~2.5–2.8M JPY | Med-High | Savings (2–4M JPY) cover it. Explore RIKEN part-time RA. Critical if savings are at lower range. |
-| R2 | **Entrance exam failure** — rigorous UTokyo Physics exam | High | Primary target is direct PhD (Oct 2027). If failed, Kenkyusei year is the fallback prep buffer — retake for Oct 2028. Prioritize study over research. |
+| R1 | **Fallback not confirmed** — Apr 2028 route not yet discussed with Imai | Medium | Ask Imai: 900 hard cut?, GRE arrival deadline for the Apr 2028 window, JRA from Apr 2028. |
+| R2 | **GRE < 900 on Nov 1** | High | Primary target is direct PhD (Oct 2027). If missed, retake GRE Apr 2027 (Sep 2027 if available) → Apr 2028 entry. |
 | R3 | **No supervisor acceptance** — cannot secure Naidaku | ~~Med-High~~ **Low (conditional)** — resurfaces if entrance exam fails | ~~Start outreach early (Feb 2026), leverage IMP connections.~~ **MITIGATED (2026-03-09):** Two CNS professors agreed to accept conditionally. **UPDATE (2026-04-13):** Committed to [[Prof_Nobuaki_Imai|Nobuaki Imai]] (DONUTS group) as primary supervisor. Naidaku expected upon passing. If exam fails, acceptance lapses and R3 returns to Med-High — see R7 for Plan B. |
-| R4 | **JRA competition** — not guaranteed even with passed exam | Medium | Build strong lab relationship during Kenkyusei year; discuss JRA with supervisor early. |
+| R4 | **JRA competition** — not guaranteed even with passed exam | Medium | Discuss JRA with supervisor early. |
 | R5 | **Tuition exemption denied** | Low | Apply for partial exemption as fallback; 535,800 JPY/year is coverable. |
-| R6 | **Visa gap** (Jun–Sep 2027) — no student status between IMP graduation and Kenkyusei start | Medium | Plan COE timing with UTokyo (2–3 months before arrival). Stay in China during gap. `[V9]` |
-| R7 | **Exam failure with no Plan B** — Kenkyusei ends without forward path | High | On **first** exam failure: reactivate [[Osaka_University]] monitoring (deadlines + professor outreach). On second failure: evaluate Kenkyusei extension, activate Osaka application. `[V8]` |
-| R8 | **Kenkyusei exam eligibility unverified** — assumption that Kenkyusei can sit for doctoral exam | Medium | Confirm with Graduate School Office during outreach. `[V6]` |
-| R9 | **Kenkyusei application window missed** — internal deadlines vary by department | Medium | Monitor official UTokyo Research Student page and confirm with Graduate School Office. |
+| R6 | **Visa gap** (Jun–Sep 2027, or Jun 2027 – Mar 2028 on the fallback) — no student status between IMP graduation and PhD start | Medium | Plan COE timing with UTokyo (2–3 months before arrival). Stay in China during gap. `[V9]` |
+| R7 | **Second miss with no Plan B** — Apr 2028 window also missed | High | On **first** miss: reactivate [[Osaka_University]] monitoring (deadlines + professor outreach). On second miss: next window is Oct 2028 entry (Period 2 ~Dec 2027); activate Osaka application. |
 
 ## Open Questions
 
 - [x] Which CNS professors best fit TPC + direct reactions + ML-PID? *(2026-03-09: Aoi Nori and Nobuaki Imai identified and contacted — both responded positively)* *(2026-04-13: Committed to Nobuaki Imai / DONUTS group)*
 - [ ] When will UTokyo publish the official Oct 2027 doctoral entrance exam schedule?
-- [ ] When will UTokyo publish official Oct 2027 Kenkyusei call pages (fallback)?
+- [ ] When will UTokyo publish the FY2028 Special Selection page with the Apr 2028 enrollment window (fallback)?
 - [ ] Is the 2026-cycle Physics exam structure applicable to the Oct 2027 cycle?
 
 ## Verification Tracker
@@ -317,9 +314,9 @@ Personal savings: 100–200k CNY (≈ 2–4M JPY). Comfortable at upper range; d
 | V3 | JRA commuting allowance up to 150k JPY/month | [RIKEN JRA FY2026](https://www.riken.jp/en/careers/programs/jra/jra2026/) | `VERIFIED` | — | Verified 2026-03-12. |
 | V4 | UTokyo 2025 policy: tuition exemption for income < 6M JPY | AI handoff | `UNVERIFIED` | High | Check [UTokyo exemptions](https://www.u-tokyo.ac.jp/en/prospective-students/exemptions.html) |
 | V5 | UTokyo tuition: 535,800 JPY/year | AI handoff | `UNVERIFIED` | Medium | Prior verified figure was 520,800 — check current |
-| V6 | Kenkyusei can sit for doctoral entrance exam | Assumed | `UNVERIFIED` | High | Confirm with grad office or supervisor |
+| V6 | Special Selection window ~Oct 15–30, 2027 for Apr 2028 enrollment (Physics) | Pattern from FY2027 page: Oct 15–30, 2026 window for Apr 2027 | `UNVERIFIED` | High | Confirm with Imai and the FY2028 page |
 | V7 | JRA application window: Apr–May for Oct start | AI handoff | `UNVERIFIED` | Medium | Confirm during outreach |
-| V8 | Kenkyusei maximum enrollment duration | Unknown | `UNKNOWN` | Medium | Critical for R7 (exam failure Plan B) |
+| V8 | Sep 2027 GRE score arrives before the Apr 2028 window closes | ETS 2027–28 schedule unpublished | `UNKNOWN` | Medium | Check ETS 2027–28 schedule when published (~Jul 2027) |
 | V9 | Visa/COE processing timeline for Oct 2027 from China | Unknown | `UNKNOWN` | Medium | Check with UTokyo international office |
 | V10 | Master's degree holder eligibility for GSGC (5-year M+D program) | Imai meeting 2026-04-13 | `N/A — GSGC ineligible (2026-04-13)` | — | Master's holders cannot apply to GSGC. Special Selection is the sole path. |
 | V11 | If master's holder is GSGC-eligible, entry at M1 or D1? | Imai meeting 2026-04-13 | `N/A — GSGC ineligible (2026-04-13)` | — | Moot — GSGC ineligible for master's holders. |

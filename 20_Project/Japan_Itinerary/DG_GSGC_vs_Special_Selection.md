@@ -231,7 +231,7 @@ ELSE IF information remains ambiguous after professor meeting
 | Dimension | Impact |
 |---|---|
 | **Study plan** | No significant additional study burden — both tracks use similar evaluation criteria. Prepare for the more demanding option (whichever requires written exam + GRE) to cover both. |
-| **Financial** | Best-case scenario: accepted to both, choose whichever offers better total funding (GSGC scholarship vs JRA, or both if stackable). Worst-case: accepted to neither — same fallback as Kenkyusei path. |
+| **Financial** | Best-case scenario: accepted to both, choose whichever offers better total funding (GSGC scholarship vs JRA, or both if stackable). Worst-case: accepted to neither — fallback is Apr 2028 entry ([[UTokyo_RIKEN#TL;DR]]). |
 | **Timeline** | Application windows are the same for both tracks (`[U5 VERIFIED]`): Period 1 ~Oct 15-31, Period 2 ~Dec 5-22. Prepare two sets of application materials if forms differ. Additional application fee: 10,000 JPY each. |
 | **Downstream file updates** | [[UTokyo_RIKEN]]: update Admission Routes Summary to reflect dual-track application strategy. [[Official_Deadlines]]: add both application windows with clear labels. [[General_Checklist]]: add dual-application checklist items. Prepare comparison framework for final choice if both offers received. |
 

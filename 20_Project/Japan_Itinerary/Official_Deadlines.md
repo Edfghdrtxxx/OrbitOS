@@ -26,8 +26,8 @@ last_verified: 2026-09-07 (TOEFL #2 退考; GRE a-block starts Sep 7); 2026-07-0
 | Results (Period 2) | ~Early March | VERIFIED — UTokyo admissions page | [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html) |
 
 > [!danger] NO deferred or late application
-> The Special Selection page lists **exactly two Oct 2027 enrollment windows** per cycle (plus a MEXT-only Jul–Aug window). There is no rolling admission and no mechanism for deferred or late application. **Missing both Period 1 (Oct 15–30) and Period 2 (Dec 7–22) means a full 1-year delay to Oct 2028.**
-> Verified: 2026-04-22. Source: [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html)
+> The Special Selection page lists **exactly two Oct 2027 enrollment windows** per cycle (plus a MEXT-only Jul–Aug window). There is no rolling admission and no mechanism for deferred or late application. The same page also lists an **Apr 2027 enrollment** window, Oct 15–30, 2026 (fetched 2026-10-18). **Missing both Oct 2027 periods means a six-month delay to Apr 2028 entry** (window ~Oct 15–30, 2027 by the same pattern; see §2).
+> Verified: 2026-04-22; Apr-enrollment window 2026-10-18. Source: [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html)
 
 > [!info] Realistic target: **Period 2 (Dec 7–22, 2026)** — confirmed (Imai 2026-04-13: admission materials before Dec 2026)
 > GRE Physics is **locked for Nov 1, 2026** (registered 2026-07-04; see §3 and [[UTokyo_RIKEN]]). Score release ≈ **Dec 6** → arrives inside Period 2 with a thin margin. **Period 1 (closes Oct 30) is not feasible** on this seat — scores will not exist yet. Period 2 is the only viable Special Selection window for this cycle.
@@ -52,9 +52,20 @@ Exam format CONFIRMED (2026-04-13 Imai meeting): **Interview only — no written
 > [!success] VERIFIED: Pre-graduation application allowed (2026-03-09)
 > Eligibility wording: "One who **is expected to be conferred** a Master's Degree … **before entering the Doctoral program.**" Degree completion required by enrollment (Oct 2027), not by application (Dec 2026). Submit certificate of expected graduation at application; actual degree certificate at enrollment. Source: [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html)
 
-## 2. UTokyo Special Selection Application (Oct 2028 — FALLBACK)
+## 2. UTokyo Special Selection Application (Apr 2028 — FALLBACK)
 
-Same pattern as Section 1, shifted +1 year. Application periods would fall in ~Oct–Dec 2027, exams TBD. TOEFL taken Jul–Aug 2026 remains valid (2-year validity covers through Jul–Aug 2028). GRE Physics may need retake depending on UTokyo's 2-year validity rule.
+Fallback route (user, 2026-10-18; not yet discussed with Imai): retake GRE Physics → apply for **Apr 2028** enrollment.
+
+| Item | Date/Window | Status | Source |
+|------|------------|--------|--------|
+| Application window (Apr 2028 enrollment) | ~Oct 15–30, 2027 | Estimated from FY2027 pattern ("October 15 to October 30, 2026 … to enroll in April 2027") | [UTokyo Special Selection](https://www.s.u-tokyo.ac.jp/en/admission/graduate.html), fetched 2026-10-18 |
+| GRE retake | Apr 19–May 2, 2027 | Published | §3 |
+| GRE second chance | ~Sep 2027 | Unpublished; 2026 pattern was Sep 14–27, scores ~Oct 5 | §3 |
+| Document deadline | End of the application window ("All application documents must arrive by the end of the application period") | Verified 2026-10-18 | Same UTokyo page |
+| Next window if Apr 2028 is missed | Oct 2028 enrollment (Period 2 ~Dec 2027) | Estimated | Same pattern as §1 |
+
+- TOEFL 2026-08-30 is valid through 2028-08-30 (§4), so it covers this window.
+- GRE Physics 2026-11-01 stays valid: UTokyo accepts scores taken within 2 years of the application start date.
 
 ## 3. GRE Physics Subject Test
 
@@ -120,7 +131,7 @@ Same pattern as Section 1, shifted +1 year. Application periods would fall in ~O
 - Request official send of Attempt #1 to institution code **8002-01** (single date, no MyBest)
 - Electronic delivery: **4–8 business days** — request score send **by late Nov 2026** (before Period 2 opens Dec 7)
 
-## 5. Kenkyusei (FALLBACK)
+## 5. Kenkyusei (not in the plan — the fallback is §2)
 
 | Item | Date/Window | Status | Source |
 |------|------------|--------|--------|

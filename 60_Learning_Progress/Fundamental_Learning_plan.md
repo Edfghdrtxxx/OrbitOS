@@ -10,11 +10,11 @@ tags: [learning, physics, math, PhD-prep, self-assessment]
 # Fundamental Learning Progress
 
 > [!info] Purpose
-> Track knowledge gaps identified from thesis reference papers and build foundations for PhD entrance exam prep. **Primary target: Route B exam for direct PhD entry (Summer 2027).** Fallback: retake for Summer 2028 if Kenkyusei path activated. Items are ordered by dependency so earlier items unlock later ones.
+> Track knowledge gaps identified from thesis reference papers and build foundations for PhD entrance exam prep. **Primary target: Route B exam for direct PhD entry (Summer 2027).** Fallback: retake GRE Apr 2027 for Apr 2028 entry ([[UTokyo_RIKEN#TL;DR]]). Items are ordered by dependency so earlier items unlock later ones.
 
 > [!important] Two-stage learning pathway (updated 2026-03-09 — Route B chosen)
 > **Stage 1 (this plan):** Thesis/paper comprehension + solid foundations in all four exam subjects through 2027.
-> **Stage 2 (separate project):** Intensive PhD entrance exam prep. For Route B (Special Selection): GRE Physics (900+ target) + TOEFL (100+ target) + interview preparation. No written exam. Stage 2 targets **Summer 2027** for direct PhD entry. If Kenkyusei fallback activates, Stage 2 extends to Summer 2028.
+> **Stage 2 (separate project):** Intensive PhD entrance exam prep. For Route B (Special Selection): GRE Physics (900+ target) + TOEFL (100+ target) + interview preparation. No written exam. Stage 2 targets **Summer 2027** for direct PhD entry. If the fallback activates, Stage 2 extends to the Apr 2027 GRE retake and the ~Oct 2027 application for Apr 2028 entry.
 > This plan covers Stage 1. Phases 0–4 are thesis-driven. Phases 5–7 build strong working foundations (not just conversational) so that Stage 2 can focus on exam-level drilling rather than learning from scratch.
 
 > [!success] Decision Gate: RESOLVED (2026-04-13 Imai meeting)
@@ -418,7 +418,7 @@ Math Foundations + Complex Analysis ─┬─→ Quantum Mechanics ──→ Nuc
 > [!info] Constraints
 > - **Graduation:** June 2027
 > - **Thesis defense:** ~April 2027 (~1 month intensive)
-> - **PhD entrance exam (primary):** Special Selection route (interview only, no written exam), target Summer 2027 for direct PhD entry. If Kenkyusei fallback: retake Summer 2028.
+> - **PhD entrance exam (primary):** Special Selection route (interview only, no written exam), target Summer 2027 for direct PhD entry. If fallback: GRE retake Apr 2027 → Apr 2028 entry.
 > - **Study budget:** 8-12 hrs/week (~10 hrs average), flexible daily blocks
 
 ### Detailed Monthly Plan

@@ -54,11 +54,11 @@ This is not someone who sacrifices enjoyment for discipline. It's someone for wh
 **Updated goal (2026-03-09): Pass the University of Tokyo Graduate School of Science entrance examination and complete one more involving physics project.**
 
 If this is true by February 2027: you are on the Japan track with direct PhD entry — no buffer year needed.
-If the exam is failed: the Kenkyusei fallback activates (Oct 2027 – Sep 2028), and you retake the exam for Oct 2028 PhD entry. The path is slower but not broken.
+If the gate is missed (e.g., GRE < 900): retake GRE in Apr 2027 and apply for Apr 2028 PhD entry (window ~Oct 15–30, 2027) — six months later, no self-funded year. The path is slower but not broken. Details: [[UTokyo_RIKEN#TL;DR]].
 The supervisor gate is cleared. **The entrance exam is now the gate.**
 
 > [!success] **Progress (2026-03-09) — SUPERVISOR GOAL ACHIEVED; NEW GOAL SET**
-> Two UTokyo CNS professors — **Aoi Nori (青井 考)** and **Nobuaki Imai** — responded positively and agreed to accept you conditionally on passing the Graduate School of Science entrance exam. The supervisor gate is cleared. **Direct PhD entry (Oct 2027) is now the primary target** — Kenkyusei is only the fallback if the exam is failed. The plan lived in outreach, and outreach worked. Now the plan must live in exam preparation.
+> Two UTokyo CNS professors — **Aoi Nori (青井 考)** and **Nobuaki Imai** — responded positively and agreed to accept you conditionally on passing the Graduate School of Science entrance exam. The supervisor gate is cleared. **Direct PhD entry (Oct 2027) is now the primary target.** The plan lived in outreach, and outreach worked. Now the plan must live in exam preparation.
 
 The thesis is the daily anchor — it does not need to be in this goal. It is already in the daily levers.
 
@@ -105,7 +105,7 @@ This is the boss fight because the entrance exam is the gate to everything. The 
 - **Health and sustainable pace** — no sprint that requires a crash. Compounding requires consistency.
 - **Find the true happy life** — the research career, Japan, the autonomy — these are not means to an end. They are the end. Don't grind your way past the thing you're grinding toward.
 - **No 996 culture, ever** — not at [[Institute of Modern Physics|IMP]], not at UTokyo, not anywhere. A supervisor or lab that demands this is a red flag before you arrive, not a problem to solve after.
-- **Financial buffer is non-negotiable** — if direct PhD entry succeeds, RIKEN JRA covers living costs from D1. If the Kenkyusei fallback activates, the self-funded year costs ~2.5–2.8M JPY. Savings must clear this threshold before departure in either case. Do not commit to the October 2027 timeline without confirmed liquidity. Money is not the goal; its absence collapses the path.
+- **Financial buffer is non-negotiable** — RIKEN JRA covers living costs from D1, whether entry is Oct 2027 or the Apr 2028 fallback. Savings must cover move-in and the months before the first salary. Do not commit to a departure date without confirmed liquidity. Money is not the goal; its absence collapses the path.
 
 ---
 

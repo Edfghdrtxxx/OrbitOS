@@ -4,7 +4,7 @@ description: Prep Studio path for GRE Physics drills
 type: project-pointer
 saved_at: 2026-09-15
 ---
-**Path:** `/Users/Reid Hu/Physics GRE` — local SPA *Physics GRE · Prep Studio* (`index.html`). Offline; progress in localStorage + IndexedDB. Not a tutorial site.
+**Path:** `/Users/Reid Hu/Physics GRE` — local SPA *Physics GRE · Prep Studio* (`index.html`). Offline; progress in localStorage `pgre-state-v1`, backup in localStorage `pgre-state-v1-backup` (`js/store.js` lines 930–931). IndexedDB `pgre-content` holds only imported content files (`js/store.js` line 1149). Not a tutorial site.
 
 **Progress is per origin** (`file://`, `http://localhost:8000`, `http://127.0.0.1:8000` are different stores). Opening the wrong origin looks like a blank new Studio (no formulas / mistake book).
 

@@ -12,7 +12,7 @@ tags: [utokyo, riken, professor-outreach, phd]
 > Record professor candidates to email for the UTokyo CNS / RIKEN JRA route and track outreach status. ^f0NoQCWy
 
 ## Outreach Context (Evidence-Linked)
-- Target route: **Primary:** Direct PhD D1 via Route B (Oct 2027); **Fallback:** Kenkyusei (Oct 2027) → PhD D1 (Oct 2028). UTokyo CNS with RIKEN JRA funding. *(Updated 2026-03-09: Route B chosen, Route A archived; Sub-track RESOLVED: Special Selection (confirmed 2026-04-13 Imai meeting))* [^utokyo-pathway]
+- Target route: **Primary:** Direct PhD D1 via Route B (Oct 2027); **Fallback:** GRE retake (Apr 2027) → PhD D1 (Apr 2028). UTokyo CNS with RIKEN JRA funding. *(Updated 2026-03-09: Route B chosen, Route A archived; Sub-track RESOLVED: Special Selection (confirmed 2026-04-13 Imai meeting))* [^utokyo-pathway]
 
 > [!success] Sub-track RESOLVED (2026-04-13)
 > Special Selection confirmed. GSGC ineligible for master's holders. See [[DG_GSGC_vs_Special_Selection]] (RESOLVED).
