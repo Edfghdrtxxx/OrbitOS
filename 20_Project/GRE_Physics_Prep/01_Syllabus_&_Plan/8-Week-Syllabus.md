@@ -52,10 +52,10 @@ Sundays are full-sitting days from Oct 11 (one each week; the Oct 4 diagnostic o
 |---|---|---|---|
 | **Sun 2026-10-11** | **GR0877** | 100Q/170 | Full sitting 1, Studio mock room, 14:00. Every question answered. Score twice: all 100, and the CM + EM + optics subset. |
 | **Sun 2026-10-18** | **GR1777** | 100Q/170 | Full sitting 2, Studio mock room, 14:00. |
-| **Wed 2026-10-21** | **GR0177** | 100Q/170 | Extra full sitting (Reid 2026-10-18), Studio mock room. |
+| **Wed 2026-10-21** | **Kahn Sample Exam 1** (Studio `x1`) | 100Q/170 | Extra full sitting (Reid 2026-10-18), Studio mock room. No official raw→scaled table: compare by raw and per-topic counts only. |
 | **Sun 2026-10-25** | **ets2024** (form GR1775) | 70Q/120 | Full sitting 3, the only current-format form; strict 120 min. |
 
-Book Sample Exams 1–3 (Prep Studio `cpg-exams`) are **optional extras**, not calendar rows. Use a spare weekday only after misses are empty. They already feed the weighted 70-question draw, so an intact sitting is optional, not required.
+Book Sample Exams 1–3 (Prep Studio `cpg-exams`): Sample Exam 1 is the Oct 21 sitting; Exams 2–3 are **optional extras**, not calendar rows. Use a spare weekday only after misses are empty. They already feed the weighted 70-question draw, so an intact sitting is optional, not required.
 
 Do not schedule GR8677 or GR9277 as mocks (`ets-drill`, already in the daily pool). GR0177's unfinished Oct 5 sitting (13 answers) is no longer in Studio storage (checked 2026-10-18), so it starts fresh; about 13 of its questions were seen without answers. GR9677 is the spare form.
 
@@ -67,9 +67,9 @@ Do not schedule GR8677 or GR9277 as mocks (`ets-drill`, already in the daily poo
   - One full sitting every Sunday from Oct 11, 14:00, in the Studio mock room; misses reworked in Monday's extra slot.
   - Oct 11: GR0877, 100Q/170.
   - Oct 18: GR1777, 100Q/170.
-  - Oct 21 (Wed): GR0177, 100Q/170.
+  - Oct 21 (Wed): Kahn Sample Exam 1, 100Q/170.
   - Oct 25: ets2024 (form GR1775), 70Q/120.
-  - Book Sample Exams 1–3: optional extras, not calendar rows.
+  - Book Sample Exams 2–3: optional extras, not calendar rows.
 - Parent `#weekly` rows on daily notes should read **~100 min / ~50 min / ~50 min** from the Sep 14 week rollover. Topic-set files that still say ~60 min are superseded by this hedge.
 
 ## Replan 2026-10-04 (overrides the live table from Oct 4)
@@ -180,7 +180,7 @@ Weekly targets for the daily-note rows: timed packs 6 (Oct 4–10: 08, 06, 07 sa
 New material comes from the Sunday full mocks. The other days go to weak spots: the mistake book, formula recall, and the misses of the latest mock.
 
 **Rules**
-- Sit the remaining full mocks in the Studio mock room: Sun Oct 18 GR1777 (100Q/170, 14:00), Wed Oct 21 GR0177 (100Q/170; Reid 2026-10-18), Sun Oct 25 ets2024 (70Q/120, 14:00) (Mock schedule above).
+- Sit the remaining full mocks in the Studio mock room: Sun Oct 18 GR1777 (100Q/170, 14:00), Wed Oct 21 Kahn Sample Exam 1 (100Q/170; Reid 2026-10-18), Sun Oct 25 ets2024 (70Q/120, 14:00) (Mock schedule above).
 - Answer at least 40 mistake-book questions each day from Oct 17 through Oct 29, Thursdays included; a full mock submitted that day meets the target on its own.
 - Rework the latest mock's misses first in the mistake book ([[2026-10-17]]: "Prioritize reviewing the questions I got wrong on the mock test.").
 - Keep formula recall as in the Catch-up rules above.
@@ -192,8 +192,8 @@ New material comes from the Sunday full mocks. The other days go to weak spots: 
 | Sat Oct 17 | 40 mistake-book questions |
 | Sun Oct 18 | Full sitting 2: GR1777, 14:00 |
 | Mon Oct 19 – Tue Oct 20 | 40 mistake-book questions a day, GR1777 misses first |
-| Wed Oct 21 | Extra full sitting: GR0177 |
-| Thu Oct 22 – Sat Oct 24 | 40 mistake-book questions a day, GR0177 misses first, then GR1777 |
+| Wed Oct 21 | Extra full sitting: Kahn Sample Exam 1 |
+| Thu Oct 22 – Sat Oct 24 | 40 mistake-book questions a day, Kahn Sample Exam 1 misses first, then GR1777 |
 | Sun Oct 25 | Full sitting 3: ets2024, 14:00 |
 | Mon Oct 26 – Thu Oct 29 | 40 mistake-book questions a day, ets2024 misses first |
 | Fri Oct 30 | No target: logistics, due formula cards |
