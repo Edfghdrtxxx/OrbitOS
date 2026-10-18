@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.orbitos.cdp-proxy</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Users/leyi/.nvm/versions/node/v24.14.0/bin/node</string>
+    <string>/Users/Reid Hu/OrbitOS/.agents/skills/web-access/scripts/cdp-proxy.mjs</string>
+  </array>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+  <key>ProcessType</key>
+  <string>Background</string>
+  <key>StandardOutPath</key>
+  <string>/tmp/cdp-proxy.log</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/cdp-proxy.log</string>
+</dict>
+</plist>

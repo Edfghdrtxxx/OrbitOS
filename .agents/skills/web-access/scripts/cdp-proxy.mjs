@@ -111,10 +111,17 @@ let chromePort = null;
 let chromeWsPath = null;
 
 let connectingPromise = null;
-async function connect() {
-  if (ws && (ws.readyState === WS.OPEN || ws.readyState === 1)) return;
-  if (connectingPromise) return connectingPromise;  // 复用进行中的连接
+function connect() {
+  if (ws?.readyState === WS.OPEN) return Promise.resolve();
+  if (!connectingPromise) {
+    connectingPromise = Promise.resolve().then(connectChrome).finally(() => {
+      connectingPromise = null;
+    });
+  }
+  return connectingPromise;
+}
 
+async function connectChrome() {
   if (!chromePort) {
     const discovered = await discoverChromePort();
     if (!discovered) {
@@ -132,24 +139,18 @@ async function connect() {
   const wsUrl = getWebSocketUrl(chromePort, chromeWsPath);
   if (!wsUrl) throw new Error('无法获取 Chrome WebSocket URL');
 
-  return connectingPromise = new Promise((resolve, reject) => {
-    ws = new WS(wsUrl);
+  return new Promise((resolve, reject) => {
+    const socket = new WS(wsUrl);
+    ws = socket;
 
     const onOpen = () => {
-      cleanup();
-      connectingPromise = null;
       console.log(`[CDP Proxy] 已连接 Chrome (端口 ${chromePort})`);
       resolve();
     };
     const onError = (e) => {
-      cleanup();
-      connectingPromise = null;
-      ws = null;
-      chromePort = null;
-      chromeWsPath = null;
       const msg = e.message || e.error?.message || '连接失败';
-      console.error('[CDP Proxy] 连接错误:', msg, '（端口缓存已清除，下次将重新发现）');
-      reject(new Error(msg));
+      console.error('[CDP Proxy] 连接错误:', msg);
+      socket.close();
     };
     const onClose = () => {
       console.log('[CDP Proxy] 连接断开');
@@ -157,6 +158,13 @@ async function connect() {
       chromePort = null; // 重置端口缓存，下次连接重新发现
       chromeWsPath = null;
       sessions.clear();
+      portGuardedSessions.clear();
+      for (const { reject: rejectCommand, timer } of pending.values()) {
+        clearTimeout(timer);
+        rejectCommand(new Error('Chrome connection closed'));
+      }
+      pending.clear();
+      reject(new Error('Chrome connection closed before opening'));
     };
     const onMessage = (evt) => {
       const data = typeof evt === 'string' ? evt : (evt.data || evt);
@@ -178,11 +186,6 @@ async function connect() {
         resolve(msg);
       }
     };
-
-    function cleanup() {
-      ws.removeEventListener?.('open', onOpen);
-      ws.removeEventListener?.('error', onError);
-    }
 
     // 兼容 Node 原生 WebSocket 和 ws 模块的事件 API
     if (ws.on) {
@@ -211,7 +214,7 @@ function sendCDP(method, params = {}, sessionId = null) {
       pending.delete(id);
       reject(new Error('CDP 命令超时: ' + method));
     }, 30000);
-    pending.set(id, { resolve, timer });
+    pending.set(id, { resolve, reject, timer });
     ws.send(JSON.stringify(msg));
   });
 }
@@ -295,7 +298,7 @@ const server = http.createServer(async (req, res) => {
   try {
     // /health 不需要连接 Chrome
     if (pathname === '/health') {
-      const connected = ws && (ws.readyState === WS.OPEN || ws.readyState === 1);
+      const connected = ws?.readyState === WS.OPEN;
       res.end(JSON.stringify({ status: 'ok', connected, sessions: sessions.size, chromePort }));
       return;
     }
@@ -585,8 +588,11 @@ async function main() {
 
   server.listen(PORT, '127.0.0.1', () => {
     console.log(`[CDP Proxy] 运行在 http://localhost:${PORT}`);
-    // 启动时尝试连接 Chrome（非阻塞）
-    connect().catch(e => console.error('[CDP Proxy] 初始连接失败:', e.message, '（将在首次请求时重试）'));
+    const maintainConnection = () => {
+      if (!connectingPromise) connect().catch(e => console.error('[CDP Proxy]', e.message));
+    };
+    maintainConnection();
+    setInterval(maintainConnection, 3000);
   });
 }
 

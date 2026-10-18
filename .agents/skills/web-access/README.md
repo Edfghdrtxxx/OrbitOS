@@ -110,6 +110,21 @@ node "${CLAUDE_SKILL_DIR}/scripts/check-deps.mjs"
 # 手动运行请替换为实际路径，如 ~/.claude/skills/web-access
 ```
 
+## macOS login service
+
+The [LaunchAgent](com.orbitos.cdp-proxy.plist) (a per-user macOS background service) starts the CDP (Chrome DevTools Protocol) proxy at login and keeps it running. It reconnects after Chrome restarts, with only one connection attempt while Chrome waits for Allow. [Chrome requests approval for each new debugging connection](https://developer.chrome.com/blog/chrome-devtools-mcp-debug-your-browser-session#how-it-works), including after Chrome restarts or a connection drops, not for each agent reusing the connection. When using Remote Control, allow the connection on the Mac itself.
+
+Check the absolute Node.js and script paths in [the service configuration](com.orbitos.cdp-proxy.plist) before installing; update the Node.js path after changing its installed version. Use the persistent vault checkout, not a disposable worktree.
+
+```bash
+mkdir -p /Users/leyi/Library/LaunchAgents
+cp '/Users/Reid Hu/OrbitOS/.agents/skills/web-access/com.orbitos.cdp-proxy.plist' /Users/leyi/Library/LaunchAgents/
+launchctl bootstrap "gui/$(id -u)" /Users/leyi/Library/LaunchAgents/com.orbitos.cdp-proxy.plist
+curl -s http://127.0.0.1:3456/health
+```
+
+If a manually started proxy already occupies port 3456, stop that process before installing so the login service can own the connection. Do not restart the service to resolve a pending Allow prompt.
+
 ## CDP Proxy API
 
 Proxy 通过 WebSocket 直连 Chrome（兼容 `chrome://inspect` 方式，无需命令行参数启动），提供 HTTP API：
