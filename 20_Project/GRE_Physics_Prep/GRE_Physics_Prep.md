@@ -18,11 +18,12 @@ aliases: ["Physics GRE", "Physics_GRE"]
 - **Route B Gate:** Compulsory for Special Selection — minimum 900 per Prof. Imai. Registered & paid 2026-07-04, order #26365004, appointment #9631911263841188. Full registration detail → [[UTokyo_RIKEN]].
 - **Timeline Margin:** Score release ~5 weeks after the test → lands inside Special Selection Period 2 (Dec 7–22) with thin margin. Reschedule/cancel deadline: 2026-10-28.
 - **Sole a-block Sep 7 – Nov 1:** This is the primary deep work block. See [[Daily_Note_Map]] for how daily rows surface.
-- **Honest Capacity Note:** From **2026-10-17** (Mock-first), the daily load is 40 mistake-book questions (~150 min) with the latest mock's misses first, plus formula recall (~60 min, 6/wk); the extra-rework row ended 2026-10-18 because it overlaps the mistake-book redo. Each Sunday is a full mock (Oct 18 GR1777 100Q/170, Oct 25 ets2024 70Q/120) in place of the 40 questions. No target Oct 30–31. Canonical: [[8-Week-Syllabus]] → Mock-first 2026-10-17. Before that, from 2026-09-14, the load was 5× ~100 min timed + 6× ~50 min formula + 2× ~50 min extra ≈ 16 h/wk; Week 0 (Sep 7–13) was the thinner 5×60 / 6×30 / 2×30 rows.
+- **Honest Capacity Note:** From **2026-10-17** (Mock-first), the daily load is 40 mistake-book questions (~150 min) with the latest mock's misses first, plus formula recall (~60 min, 6/wk); the extra-rework row ended 2026-10-18 because it overlaps the mistake-book redo. Each Sunday is a full mock (Oct 18 GR1777 100Q/170, Oct 25 ets2024 70Q/120) in place of the 40 questions, plus an extra full mock on Wed Oct 21 (GR0177 100Q/170). No target Oct 30–31. Canonical: [[8-Week-Syllabus]] → Mock-first 2026-10-17. Before that, from 2026-09-14, the load was 5× ~100 min timed + 6× ~50 min formula + 2× ~50 min extra ≈ 16 h/wk; Week 0 (Sep 7–13) was the thinner 5×60 / 6×30 / 2×30 rows.
 
 **Success Metrics:**
 - [ ] Oct 11 full sitting 1 (GR0877, 100Q/170 min) completed and scored by topic → [[Diagnostics-Oct04]]
 - [ ] Oct 18 full sitting 2 (GR1777, 100Q/170 min) completed and scored by topic
+- [ ] Oct 21 extra full sitting (GR0177, 100Q/170 min)
 - [ ] Oct 25 full sitting 3 (ets2024, 70Q/120 min; goal 62 / 70, gate 55 / 70) → [[Rehearsal-Oct25]]
 - [ ] 2026-11-01: goal 990, gate ≥900
 
