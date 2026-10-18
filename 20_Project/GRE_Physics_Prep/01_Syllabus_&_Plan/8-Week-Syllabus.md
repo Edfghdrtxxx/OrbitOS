@@ -5,7 +5,7 @@ status: active
 area: "[[Japan_Itinerary]]"
 start: 2026-09-07
 due: 2026-11-01
-updated: 2026-10-05
+updated: 2026-10-18
 tags: [gre, physics, syllabus]
 ---
 # GRE Physics Syllabus & Plan (ETS Computer Exam Blueprint)
@@ -171,7 +171,37 @@ Weekly targets for the daily-note rows: timed packs 8 (Oct 4–10), 10 (Oct 12�
 | Sat Oct 31 | No pack: sleep, travel | — |
 | Sun Nov 1 | Exam, 14:00 | 70 |
 
-Weekly targets for the daily-note rows: timed packs 6 (Oct 4–10: 08, 06, 07 sat; 09, 10, 11), 10 (Oct 12–17), 9 (Oct 19–24), 4 (Oct 26–27); formula recall 6 per week; extra rework 2 per week (Sunday's misses first).
+Weekly targets for the daily-note rows: timed packs 6 (Oct 4–10: 08, 06, 07 sat; 09, 10, 11), 10 (Oct 12–17), 9 (Oct 19–24), 4 (Oct 26–27); formula recall 6 per week; extra rework 2 per week (Sunday's misses first). Superseded from Oct 17 by Mock-first below.
+
+## Mock-first 2026-10-17 (overrides the Catch-up day table from Oct 17)
+
+New material comes from the Sunday full mocks. The other days go to weak spots: the mistake book, formula recall, and the misses of the latest mock.
+
+**Rules**
+- Sit the two remaining full mocks on Sundays at 14:00 in the Studio mock room: Oct 18 GR1777 (100Q/170), Oct 25 ets2024 (70Q/120) (Mock schedule above).
+- Answer at least 40 mistake-book questions each day from Oct 17 through Oct 29, Thursdays included; a full mock submitted that day meets the target on its own.
+- Rework the latest mock's misses first in the mistake book ([[2026-10-17]]: "Prioritize reviewing the questions I got wrong on the mock test.").
+- Keep formula recall as in the Catch-up rules above.
+- Leave the unsat timed packs out of the plan: no pack target, and a pack only after the day's 40 mistake-book questions.
+- Set no daily target on Oct 30 (logistics, due formula cards) or Oct 31 (sleep, travel).
+
+| Date | Plan |
+|---|---|
+| Sat Oct 17 | 40 mistake-book questions |
+| Sun Oct 18 | Full sitting 2: GR1777, 14:00 |
+| Mon Oct 19 – Sat Oct 24 | 40 mistake-book questions a day, GR1777 misses first |
+| Sun Oct 25 | Full sitting 3: ets2024, 14:00 |
+| Mon Oct 26 – Thu Oct 29 | 40 mistake-book questions a day, ets2024 misses first |
+| Fri Oct 30 | No target: logistics, due formula cards |
+| Sat Oct 31 | No target: sleep, travel |
+| Sun Nov 1 | Exam, 14:00 |
+
+Daily-note rows: the timed-pack row ends; the extra-rework row ends (Reid 2026-10-18: it overlaps the mistake-book redo); the mistake-book row is 40 questions a day (~150 min), or the Sunday mock; formula recall stays 6 per week.
+
+**Prep Studio Intensity card** (definitions in [intensity.js](/Users/Reid%20Hu/Physics%20GRE/js/intensity.js:13)):
+- Daily work: green at 40 mistake-book answers today or a full mock submitted today, yellow at 25–39, red under 25; no target after Oct 29 (3 days before the exam).
+- New questions and Repeat time: counts only, with no target and no band.
+- First-try accuracy and Pace: unchanged.
 
 ## start-my-day
-Canonical Learning Target input. From 2026-10-09 the Catch-up day table above decides the timed child and the formula topic; a pack not yet sat on its date is sat first. Week boundaries and set lists in the live table override older examples (Week 0 = Set 01, Week 1 = Set 06).
+Canonical Learning Target input. From 2026-10-17 the Mock-first rules above decide the daily rows: the Sunday mock on Sundays, otherwise 40 mistake-book questions with the latest mock's misses first; no timed pack child. Week boundaries and set lists in the live table override older examples (Week 0 = Set 01, Week 1 = Set 06).

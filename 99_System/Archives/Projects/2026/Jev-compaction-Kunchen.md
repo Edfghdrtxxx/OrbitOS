@@ -1,7 +1,9 @@
 ---
 title: "Jev-compaction-Kunchen"
 type: project
-status: active
+status: done
+archived: 2026-10-18
+archived-in: "[[2026-10-18]]"
 area: "[[ComputerScience]]"
 created: 2026-09-19
 due:
@@ -25,7 +27,7 @@ tags: [project, OMP, compaction, Jev, TypeSafe]
 
 ### Phase 2: Decision
 - [x] Decide whether to create a durable OMP-compatible package setup (no durable install made; upstream compatibility failed)
-- [ ] Review TypeSafe data-sharing implications before configuring a key
+- [x] Review TypeSafe data-sharing implications before configuring a key (Dropped because the project is no longer needed, 2026-10-18)
 - [x] Keep compact-adviser automatic mode disabled, while OMP’s own native compaction remains enabled/default
 
 ### Phase 3: Survey & Decision
@@ -38,6 +40,7 @@ tags: [project, OMP, compaction, Jev, TypeSafe]
 ## Progress
 - 2026-09-19: OMP compatibility smoke test passed after dependency repair; no permanent installation retained.
 - 2026-09-19: Architectural survey and cold-profile probe confirmed OMP 18.2.6 native remote compaction defaults, proved upstream `compact-adviser@0.1.3` lifecycle incompatibility (`agent_settled` missing), and verified X post contains no API keys. No durable adviser install made; zero OMP configuration changes; no TypeSafe data transmitted.
+- 2026-10-18: Marked done (Dropped because the project is no longer needed) and archived.
 
 ## Related
 - [[2026-09-19]]
