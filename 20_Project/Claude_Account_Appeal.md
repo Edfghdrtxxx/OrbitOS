@@ -1,7 +1,7 @@
 ---
 title: Claude Account Appeal
 type: project
-status: active
+status: on-hold
 area: "[[AI]]"
 created: 2026-10-03
 tags: [claude, account-appeal]
@@ -44,6 +44,8 @@ Reid Hu created and controlled the account, did not share access, paid Anthropic
 - Prepare locally and review the wording before sending email, entering information into a remote form, or signing into Claude.
 
 ## Actions
+
+**Start after the IMP 中期考核 (Nov–Dec 2026, no day pinned; see [[Graduation_Map]]).** Your call, 2026-10-19.
 
 - [ ] Review the email and form responses below for factual accuracy.
 - [ ] Submit the appeal through the chosen route in [[Claude_Account_Suspension_Appeals]].

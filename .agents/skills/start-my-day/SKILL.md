@@ -64,14 +64,15 @@ Report a short retention check, including any unresolved weekly conflict.
   - [Learning Target](agent-prompts/learning-target.md): `{today}`, `{main_focus}`, `{last_daily_note}`, `8-Week-Syllabus.md`, `03_Topic_Sets/`, `Formula-Recall-Decks.md`, and `Misses-Log.md`.
 - Wait for all three before writing recommendations; full mode never silently skips them.
 - Use `min(plan-stale, activity-stale)`, falling back to plan-stale when activity is unknown; flag unpaused work at ≥4 days, not deliberate pauses or repeated copied ticks; a partial pause does not excuse unrelated work.
-- Keep pauses visible with their reason; surface due reviews and external deadlines even for paused projects, without treating a review date as automatic resumption.
+- Keep pauses visible with their reason; surface due reviews, and external deadlines of paused projects from D-14 (Notes callout 3), without treating a review date as automatic resumption.
 - For `#Deferred` tasks, check the past 7 days and flag 5+ consecutive days of deferral; do not call deliberately parked work stuck.
 
 ## 2. Ask together
 1. Main focus: offer relevant active projects.
 2. Energy: high, normal, low, or tired.
 3. Fixed commitments: meetings, classes, appointments, deadlines.
-4. New tasks, ideas or blockers; QQ / WeChat / Gmail / CAS email selections mean “checked, nothing to capture,” while free text is the capture.
+4. Each overdue deadline: do it, give a date, or drop it.
+5. New tasks, ideas or blockers; QQ / WeChat / Gmail / CAS email selections mean “checked, nothing to capture,” while free text is the capture.
 
 Use answers already supplied; resolve conflicting tasks and any due weekly review here.
 Energy changes emphasis and new suggestions, never retention: high = deep work, normal = standard, low = 2–3 priorities, tired = one priority plus maintenance.
@@ -84,11 +85,13 @@ Follow Shared rules; use wikilinks and create no intermediate plan files.
   - Gated injection: on a new copy, inject only under weekly parents that do not already carry an uncompleted child from yesterday. A surviving uncompleted child stays by default; replace or reword it when the user changes the plan or the learner data shows it is stale, and report the change. Never inject duplicates or under rows that have reached `(N/N)`; never inject on repeat same-day runs.
 - Keep Anchor unchanged; a separate skill owns it.
 - On a new copy only, after the shared transfer check, empty Log and Evening Review (keep only their `##` headings); delete every dated `## Evening Review — <date>` section; remove AI Digest if present.
-- Keep reusable context and the weekly plan when refreshing Notes; use the callouts below, omitting empty ones, then loose bullets for focus, energy, commitments, inbox and review context.
+- Keep reusable context and the weekly plan when refreshing Notes; use the callouts below, omitting empty ones, then loose bullets for focus, energy, commitments, inbox and review context. Separate callouts with a truly empty line (no `>`); a `>` line between them nests the next callout and it renders as plain text that cannot fold.
   1. `[!info] Week plan` — summary from Priorities, retaining relevant target/deadline explanations.
-  2. `[!warning] Upcoming Deadlines` — agent findings without source file paths.
-  3. `[!Staleness] Project staleness (≥ 4 days)` — unpaused work only; distinguish omitted fresh projects from paused ones.
-  4. `[!Stuck] Stuck & slow-moving items` — active deferrals, bottlenecks and carry-overs.
+  2. `[!warning] Deadlines — next 7 days` (open) — overdue items and D-0 to D-7, agent findings without source file paths; apply the step 2 decision on each overdue item.
+  3. `[!note]- Later deadlines (D-8 to D-60)` — collapsed. Leave out a paused project's item until D-14.
+  4. `[!Staleness]- Project staleness (≥ 4 days)` — unpaused work only; distinguish omitted fresh projects from paused ones.
+  5. `[!Stuck]- Stuck & slow-moving items` — active deferrals, bottlenecks and carry-overs.
+- Drop a deadline item when it is optional with nothing registered or committed, when it only reports a window that opened or an event that passed, when a later item supersedes it, or when its project note says it waits on outside confirmation (e.g. 社会实践 waits on an email).
 - Related Projects lists all active projects and known pauses; no 4-day filter here.
 - Show activity age as `(M days stale via daily tasks)`; add `N days plan-stale` when ages differ by ≥7 days; without activity evidence use `(N days stale)`, and label paused work as paused rather than stale.
 - Deduplicate new user captures against today and projects, then pass the remaining batch to `/daily-note-addition`; it owns capture placement.
