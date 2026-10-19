@@ -80,7 +80,7 @@ Sorted A–Z as rendered (folders then docs):
 | `CoE_nimai` | Only `07_presentations_docs.md` (mentions the name). **PDF absent** |
 | `CoE` / `COE` | False positives (`code`/`Score`). **No `CoE_nimai.pdf`** |
 | `ZhiHeng` | CV PDF + CNS PPTs + generate_CV.py. **No invitation/CoE** |
-| `胡智恒` | Mid-term PPTX + Learning Group Arrangement. **No ID pack** |
+| `胡智恒` | Scholarship-evaluation PPTX + Learning Group Arrangement. **No ID pack** |
 | `CV` | Corpy PDF + Docs (see table). Cover **partial** |
 | `简历` | Job-strategy notes / Gemini chats; **no 简历 PDF** |
 | `invoice` | No invoice files |

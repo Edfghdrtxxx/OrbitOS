@@ -43,7 +43,7 @@ updated: 2026-03-06
 | `04_Thesis/` | 学位论文 | drafts, 查重, 送审 |
 | `05_Defense/` | 答辩, 学位申请 | — |
 
-Talk decks stay in `70_Presentations/` (e.g. `712_Mid-term_Assessment-0425/`).
+Talk decks stay in `70_Presentations/` (e.g. `712_Scholarship_Evaluation-0425/`).
 
 ---
 

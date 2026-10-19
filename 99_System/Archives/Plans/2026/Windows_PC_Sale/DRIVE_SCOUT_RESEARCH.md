@@ -107,7 +107,7 @@ Searches run (EN + CN where useful): `MATE`, `MATE-Automation`, `AFTPC`, `Garfie
 | **NimpSim / simulations** | No tree. AI Overview: NimpSim mentioned inside PPTX only. |
 | **Physics_Informed_LegacyBackup** | Absent. Only `Physics-informed_machine_learning2021.pdf` (literature). |
 | **TPC** | Literature PDFs + `TPC Point Cloud Visualization` (AI Studio). No TPC data. |
-| **毕业论文 / 论文 / 数据集** | Mid-term thesis **PPT**, dataset-scale-up **slides**. No 数据集. |
+| **毕业论文 / 论文 / 数据集** | Scholarship-evaluation thesis **PPT**, dataset-scale-up **slides**. No 数据集. |
 
 My Drive top-level (no research-data trees): `40_Deep Research`, `50_Resources`, `60_Presentations`, `70_Notes`, `Basics`, `CNN for data process`, `Colab Notebooks`, `Finance & Investment`, `Google AI Studio`, `Job Searching`, `Medical & Health`, `Personal practice`, `References for Curriculum`, `Saved from Chrome`, `Transfer`, plus Gemini Docs.
 

@@ -122,7 +122,7 @@ Size class: **S** = small cloud-OK (≲1 GB) · **M** = medium selective (1–20
 - MATE `data/srim/` + `truth_sidecar_v2.h5` only (not bulk `data\`).
 - MATE run dirs **that exist on Mac** (EXP8 pair + listed baselines/TRK5–6 pred dirs) — Windows may delete **those same named dirs** only after optional checksum; **not** a blanket `runs\` delete.
 - MATE thesis figures **after** spot-check vs Imai list (confirm or copy missing `example_tracks*`, `network_architecture*`, any AFTPC-only figure paths).
-- Recent presentation work already in `OrbitOS/70_Presentations/` (711–716, Progress Beyond Paper, mid-term) — does **not** cover CNS 2025 / Mar-2026 group-meeting archive under coursework.
+- Recent presentation work already in `OrbitOS/70_Presentations/` (711–716, Progress Beyond Paper, scholarship evaluation) — does **not** cover CNS 2025 / Mar-2026 group-meeting archive under coursework.
 
 ### Explicitly abandon on Windows (user policy)
 - Local WeChat/QQ databases.

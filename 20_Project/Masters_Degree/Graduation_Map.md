@@ -4,7 +4,7 @@ type: reference
 status: active
 area: "[[Physics Research]]"
 created: 2026-09-01
-updated: 2026-10-16
+updated: 2026-10-19
 tags: [graduation, ucas, imp, master-thesis]
 ---
 # UCAS / IMP Graduation Map (Frozen 2026-09-01)
@@ -48,5 +48,5 @@ IMP’s still-posted [硕士生学习工作时间表](https://imp.cas.cn/edu/pyy
 ## What this map does not claim
 
 - Course bar is met. 中期, 10+1 talks, 社会实践, and the qualifying paper are **not**.
-- 学年考核 ≠ 中期. The 2025–2026 学年考核 files in the vault do not close 中期考核. The April 2026 deck `70_Presentations/712_Mid-term_Assessment-0425/` is titled 中期考核 but was built 2026-04-23, the same week as the 学年考核 forms (2026-04-21/22); IMP’s 学年考核 rules (`02_Annual_Review/附件7`) do not mention 中期.
+- 学年考核 ≠ 中期. The 2025–2026 学年考核 files in the vault do not close 中期考核. The April 2026 deck `70_Presentations/712_Scholarship_Evaluation-0425/` was the talk for the scholarship evaluation (学业奖学金评定, rules in `02_Annual_Review/附件8`), held with the 学年考核 forms (2026-04-21/22). It is not 中期考核; its 中期考核 title is a mislabel.
 - 专业实践 on the SEP card has no count; academic master’s typically does not use that slot.
