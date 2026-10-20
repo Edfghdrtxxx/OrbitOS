@@ -234,7 +234,7 @@ Formal email opening — consulting a professor or advisor for resources/directi
 ?
 Phrase: I am writing to seek your expert guidance regarding resources for…
 Model: Dear Dr. Imai, I am writing to seek your expert guidance regarding resources for preparing the entrance examination.
-<!--SR:!2026-10-12,6,190-->
+<!--SR:!2026-10-30,11,190-->
 
 ### TOEFL-24 · Narrative: Healthy lifestyle & nutrition
 
@@ -250,7 +250,7 @@ Academic debate — educational institutions guiding students' lifestyle / healt
 ?
 Phrase: As integral components of societal education, schools must…
 Model: As integral components of societal education, schools must guide young people toward better lifestyle choices.
-<!--SR:!2026-10-10,4,190-->
+<!--SR:!2026-10-27,8,190-->
 
 ### TOEFL-26 · Research integrity and communication
 
@@ -306,7 +306,7 @@ Useful purchase, technological tool, or something that streamlined your workflow
 Phrase: The most delightful purchase I've made recently was… What made it such a smart decision was…
 Model: The most delightful purchase I've made recently was subscribing to an AI service. What made it such a smart decision was its incredible utility in streamlining my daily workflows. It essentially acts as a second brain, helping me organize my mind and clarify my intentions. Just last week, when I hit a wall analyzing complex experiment data during a particle physics project, this tool proved invaluable in helping me move forward efficiently.
 Collocations: delightful purchase · smart decision · streamlining my daily workflows · acts as a second brain · clarify my intentions · hit a wall · proved invaluable
-<!--SR:!2026-10-17,10,190-->
+<!--SR:!2026-11-07,19,190-->
 
 ### TOEFL-33 · Narrative: In-store vs online shopping
 
@@ -338,7 +338,7 @@ Happy childhood memory, memorable school celebration, or nostalgic event
 Phrase: One of my happiest childhood memories was… where the air was filled with laughter as…
 Model: One of my happiest childhood memories was a classroom party where the air was filled with laughter as we shared a birthday cake and played chasing games. I felt genuinely happy and content. Our teacher was excited too and meticulously took a lot of photos and videos, which I still look at today to remember that day.
 Collocations: happiest childhood memories · air was filled with laughter · shared a birthday cake · played chasing games · genuinely happy and content · was excited too · meticulously took a lot of photos and videos
-<!--SR:!2026-10-13,13,250-->
+<!--SR:!2026-12-04,46,270-->
 
 ### TOEFL-37 · AI impact: Building learning momentum
 
