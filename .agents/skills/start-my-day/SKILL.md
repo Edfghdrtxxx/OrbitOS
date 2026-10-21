@@ -98,5 +98,5 @@ Follow Shared rules; use wikilinks and create no intermediate plan files.
 
 ## 4. Finish
 Run the shared retention check; report today’s link, energy, priority/project counts and any gap or due review.
-Run `/reflect`, present its findings without acting on them, and recommend `/breakdown-tasks` → `/estimate-time`.
+Run `/reflect` and present its findings without acting on them.
 At the end of the response, output the user's primary concern recorded in the previous daily note's Evening Review (`**What's on my mind?**`).

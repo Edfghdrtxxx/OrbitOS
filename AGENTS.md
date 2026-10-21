@@ -34,7 +34,7 @@ This is the **single project rules file** for Grok Build, Claude Code, Codex, an
 - **Canonical path:** `.agents/skills/<skill-name>/SKILL.md` — install and edit only here
   - Claude: `.claude/skills` → `../.agents/skills` (symlink; never a real directory)
   - Grok: use `.agents/skills/` only — no parallel `.grok/skills/` copies
-- See [[README]] for the skill catalog (directory under `.agents/skills/`; `ask` archived — plain chat for Q&A, `/learn` for deep study; orchestrate-series + `research` archived 2026-07-29; `orchestrate-v3` archived 2026-09-15 → `/tmux-orchestrator` (pure-PM); `brainstorm` archived 2026-08-18; `super-alignment` archived 2026-08-18 → `/align`; `guide-derivation` archived 2026-09-08 → `/learn`; `pre-ppt` archived 2026-09-16 → `/academic-ppt`)
+- See [[README]] for the skill catalog. Archived skills live in `99_System/Archives/skills/<name>/`; each `ARCHIVED.md` names its successor and how to restore it.
 
 ## Vault root (this machine)
 
@@ -78,16 +78,13 @@ Read the matching file from `99_System/memory/` on trigger.
 | `preference_find_documents_local_first.md` | user asks to find/retrieve/open one of their own documents (报告, 考核表, slides, forms, certificates), even when naming Google Drive or 云盘 |
 | `preference_file_citation_links.md`       | a reply, report, or relayed subagent result claims something settled/changed or names a file or folder on disk |
 | `preference_direct_action_existing_tab.md` | user asks to directly select/do something in a web app (Prep Studio, any open site) via browser tools or `web-access` |
+| `lark_skills.md`                          | Feishu/Lark/飞书 task, a feishu.cn/larksuite.com URL, or `lark-cli` |
 
 ### Writing memories
 
 - Don't create or edit a memory unless the user asks to remember or save something, or confirms a file and trigger you propose.
 - Respect the layering: always-on invariants belong in `## Rules`, skill lessons in `evolution.md`, and facts in wiki or project notes. This directory is strictly for triggered preferences and feedback.
 - Write to `99_System/memory/<file>.md` and add a row to the index table; never write to host-local directories. Base triggers on observable cues (a tool, path, topic, or error), and edit existing files in place for the same trigger class.
-
-## Templates
-
-`Daily_Note.md`, `Project_Template.md`, `Content_Template.md`, `Wiki_Template.md`, `Inbox_Template.md`, `Derivation_Template.md`, `Interview_API_Payload.md`
 
 ## User Context
 
@@ -102,7 +99,8 @@ Read the matching file from `99_System/memory/` on trigger.
 ### Japan Immigration (top priority after graduation)
 
 - Finalized pathway: UTokyo CNS / RIKEN JRA, Route B Special Selection (supervisor: Imai, DONUTS). Execution plan: [[UTokyo_RIKEN]].
-- Before discussing Japan planning, read vault notes under `20_Project/Japan_Itinerary/` (especially [[Japan_Itinerary]] and [[UTokyo_RIKEN]]).- Japan, visa, university applications, Japanese language, and life-planning questions are high-priority.
+- Before discussing Japan planning, read vault notes under `20_Project/Japan_Itinerary/` (especially [[Japan_Itinerary]] and [[UTokyo_RIKEN]]).
+- Japan, visa, university applications, Japanese language, and life-planning questions are high-priority.
 
 ## Related repos on this Mac
 
@@ -127,8 +125,6 @@ Skip any related-repo path that does not exist on disk.
 - **Desktop & Host Automation (Background by Default):** Never invoke `win.raise()` or `{ delivery: "foreground" }` on desktop windows unless explicitly requested. Input dispatches must use `delivery: "background"` or AX actions (`el.press()`, `el.setValue()`) without stealing active window focus or moving the pointer. **omp computer-use:** load `99_System/memory/preference_omp_computer_no_interrupt.md`.
 - **Skill `evolution.md`:** Only real faults/fixes, or lessons you explicitly capture. Never self-author an entry — wait for a direct ask or a confirmed `/evolve`. If the preference already lives in the skill body, skip the lesson.
 - **Recording a decision:** when you write down something the user chose or approved (a plan, a rule, a preference), write it once, in the note that owns its topic. Refine the wording; add nothing to what they chose.
-- **No self-describing filler.** Write what is true and what to do. Omit the state or history of the text itself ("recorded", "not yet used", "newly added", "as discussed"). Keep a status only when it changes what the reader does: one word, said once. In notes, instructions, and this file: delete a phrase when the reader would act the same without it and no likely case is left unsettled. A reason that alone settles a case the sentence does not name stays. A note of when the sentence was written, who asked for it, or what it replaced goes.
-- **Cite sources as clickable links.** In replies and reports, every claim that something is settled or changed carries its source (file path with line number, URL, or exact command), and every file or folder named on disk is a Markdown link `[label](path:line)` (vault: relative path; elsewhere: absolute path; spaces as `%20`) — never a bare name or a path in backticks. Standard: `/Users/Reid Hu/firstmate/data/captain.md` line 18; details: `99_System/memory/preference_file_citation_links.md`.
 
 
 ## Principles of Paramount Importance

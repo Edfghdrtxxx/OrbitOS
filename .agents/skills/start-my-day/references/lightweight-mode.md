@@ -36,4 +36,4 @@ If review is due, mention it in the summary and leave it for full mode.
 ## 4. Finish
 Run the shared retention check; report source → today, gap, retained tasks, any injected GRE children, and any due review or conflict.
 At the end of the response, output the user's primary concern recorded in the previous daily note's Evening Review (`**What's on my mind?**`).
-Offer `/start-my-day` for a full replan; recommend `/breakdown-tasks` → `/estimate-time`.
+Offer `/start-my-day` for a full replan.

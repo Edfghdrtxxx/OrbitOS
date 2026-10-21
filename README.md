@@ -19,17 +19,14 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 | When I want to...                                             | I run                           | What happens                                                                                 |
 | ------------------------------------------------------------- | ------------------------------- | -------------------------------------------------------------------------------------------- |
 | Start today's GRE Physics timed pack                         | `/practice-physics-gre-set`     | Resolves today's a0 pack, reuses the live rich Prep tab (same origin as progress), launches `#/practice/pack/NN` |
-| Turn an idea into a project                                   | `/kickoff`                      | Structures it with C.A.P. layout (Context, Actions, Progress), asks clarifying questions     |
 | Deep-dive a topic (new ML paper, visa pathway, TPC technique) | `/deep-research` (host)         | Host deep-research / workflow — vault `/research` archived 2026-07-29                        |
 | Learn something with guided tutoring                          | `/learn <topic>`                | Diagnose, scaffold, one step per turn; records to `60_Learning_Progress/` + index; compile finished derivations to `30_Research/` |
 | Clean up finished work                                        | `/archive`                      | Moves completed projects to 99_System/Archives/                                              |
 | Break down complex tasks                                      | `/breakdown-tasks <task>`       | Stratified decomposition with estimates and dependencies, inserted into daily note           |
-| Estimate daily workload                                       | `/estimate-time`                | Reasoning-based time estimates for today's tasks at subtask resolution                       |
 | Create an atomic wiki note                                    | `/atomic-note`                  | Creates a single-concept note in 40_Wiki/ with auto-linking and wikilink discovery           |
 | Hand off work to another session                              | `/handoff-prompt`               | Generates a constraint-based handoff prompt without over-prescribing implementation          |
 | Re-test learned knowledge                                     | `/retention`                    | Quiz Progress-context threads; log in Retention-context. Replaces `/wiki-review`             |
 | Explain a concept simply                                      | `/Feynman-Technique`            | Feynman-style explanation as if teaching a 12-year-old                                       |
-| Annotate a confusing note                                     | `/insert-Feynman`               | Inserts Feynman explanation callouts directly into the note file                             |
 | Polish English writing                                        | `/phrasing-refining`            | Grammar, idiom, and naturalness review with terse inline corrections                         |
 | Stress-test an idea (`/llm-council-v2` only)                  | `/llm-council-v2`               | Explicit invoke only. Multi-model council; round-table cross-examination + synthesis         |
 | Self-critique current work                                    | `/reflect`                      | Adversarial review of current session trajectory                                             |
@@ -54,20 +51,19 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 | `obsidian-markdown` | Wikilinks, callouts, embeds, frontmatter |
 | `obsidian-bases` | Database-like views of notes (.base files) — 5 dashboards in 99_System/Bases/ |
 | `obsidian-cli` | Vault operations, plugin dev, search, and DOM inspection from CLI |
-| `json-canvas` | Visual maps and flowcharts (.canvas files) |
 
 ## Skill Categories
 
-Skills live under `.agents/skills/` (see folder listing; includes aliases such as `wiki-review`). Category table below is the navigational index — not a closed census. Archives: `ask` 2026-07-26; orchestrate family + `research` 2026-07-29; `orchestrate-v3` 2026-09-15 → `/tmux-orchestrator`; `brainstorm` / `super-alignment` 2026-08-18 → `/align`; `memo-api` + `markji-card-syntax` 2026-09-01; `guide-derivation` 2026-09-08 → `/learn`; `pre-ppt` 2026-09-16 → `/academic-ppt` (build-then-iterate):
+Skills live under `.agents/skills/` (see folder listing). Category table below is the navigational index — not a closed census. Archived skills: `99_System/Archives/skills/` (each with `ARCHIVED.md`). Lark/Feishu skills: `99_System/lark-skills/`, loaded on demand via `99_System/memory/lark_skills.md`.
 
 | Category | Skills |
 |---|---|
-| **Daily Workflow** | `start-my-day`, `end-my-day`, `breakdown-tasks`, `estimate-time`, `llm-council-v2`, `daily-note-addition`, `practice-physics-gre-set` |
-| **Knowledge Management** | `kickoff`, `archive`, `atomic-note` |
-| **Obsidian Features** | `obsidian-markdown`, `obsidian-bases`, `obsidian-cli`, `json-canvas`, `excalidraw-diagram-generator` |
-| **Learning** | `learn`, `retention`, `Feynman-Technique`, `phrasing-refining`, `insert-Feynman`, `vocabulary-absorption` |
+| **Daily Workflow** | `start-my-day`, `end-my-day`, `breakdown-tasks`, `llm-council-v2`, `daily-note-addition`, `practice-physics-gre-set` |
+| **Knowledge Management** | `archive`, `atomic-note` |
+| **Obsidian Features** | `obsidian-markdown`, `obsidian-bases`, `obsidian-cli`, `excalidraw-diagram-generator` |
+| **Learning** | `learn`, `retention`, `Feynman-Technique`, `phrasing-refining`, `vocabulary-absorption` |
 | **Meta/Utility** | `reflect`, `elon-musk`, `evolve-skills`, `handoff-prompt`, `anchor-game-framework`, `align`, `kun`, `defuddle`, `orchestrate-trust-taste` |
-| **Tools** | `mcp-builder`, `notebooklm`, `storage-analyzer`, `expense-tracker`, `markitdown`, `pdf`, `docx`, `design-image-claude`, `phone-harness`, `academic-ppt`, `web-access`, `tmux-orchestrator` |
+| **Tools** | `mcp-builder`, `notebooklm`, `storage-analyzer`, `markitdown`, `pdf`, `docx`, `design-image-claude`, `phone-harness`, `academic-ppt`, `web-access`, `tmux-orchestrator` |
 
 > Note: README previously listed `ai-newsletters` / `ai-products`; those skill folders are not present on disk.
 
