@@ -10,6 +10,21 @@ import path from 'node:path';
 import os from 'node:os';
 import net from 'node:net';
 
+// Prefix every log line with local time and UTC offset, in the format of `pmset -g log`,
+// so disconnections can be matched to sleep, wake and other system events.
+function logStamp() {
+  const d = new Date();
+  const pad = (n, w = 2) => String(n).padStart(w, '0');
+  const off = -d.getTimezoneOffset();
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ` +
+    `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}.${pad(d.getMilliseconds(), 3)} ` +
+    `${off >= 0 ? '+' : '-'}${pad(Math.floor(Math.abs(off) / 60))}${pad(Math.abs(off) % 60)}`;
+}
+for (const level of ['log', 'error']) {
+  const write = console[level].bind(console);
+  console[level] = (...args) => write(logStamp(), ...args);
+}
+
 const PORT = parseInt(process.env.CDP_PROXY_PORT || '3456');
 let ws = null;
 let cmdId = 0;
@@ -149,11 +164,16 @@ async function connectChrome() {
     };
     const onError = (e) => {
       const msg = e.message || e.error?.message || '连接失败';
-      console.error('[CDP Proxy] 连接错误:', msg);
+      // The native WebSocket often reports no message; keep the underlying cause when there is one.
+      const cause = e.error?.cause?.code || e.error?.cause?.message || e.error?.code;
+      console.error('[CDP Proxy] 连接错误:', cause ? `${msg} (cause: ${cause})` : msg);
       socket.close();
     };
-    const onClose = () => {
-      console.log('[CDP Proxy] 连接断开');
+    const onClose = (evt, reasonBuf) => {
+      // The native WebSocket passes a CloseEvent; the ws module passes (code, reason).
+      const code = typeof evt === 'number' ? evt : evt?.code;
+      const reason = String((typeof evt === 'number' ? reasonBuf : evt?.reason) || '') || 'none';
+      console.log(`[CDP Proxy] 连接断开 (code ${code ?? 'unknown'}, reason: ${reason})`);
       ws = null;
       chromePort = null; // 重置端口缓存，下次连接重新发现
       chromeWsPath = null;
