@@ -63,6 +63,13 @@ function activePortFiles() {
 }
 
 async function detectChromePort() {
+  if (process.env.CDP_CHROME_WS_URL) {
+    const endpoint = new URL(process.env.CDP_CHROME_WS_URL);
+    if (endpoint.protocol !== 'ws:' || endpoint.hostname !== '127.0.0.1' || !endpoint.port) return null;
+    const port = Number(endpoint.port);
+    return await checkPort(port) ? port : null;
+  }
+
   // 优先从 DevToolsActivePort 文件读取
   for (const filePath of activePortFiles()) {
     try {
@@ -119,6 +126,7 @@ async function ensureProxy() {
 
   // 等 proxy 进程就绪
   await new Promise((r) => setTimeout(r, 2000));
+  await httpGetJson(`http://127.0.0.1:${PROXY_PORT}/targets`);
 
   for (let i = 1; i <= 15; i++) {
     const result = await httpGetJson(healthUrl);

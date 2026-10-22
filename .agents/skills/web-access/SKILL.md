@@ -94,7 +94,7 @@ Before browser automation, show this notice:
 node "${CLAUDE_SKILL_DIR}/scripts/check-deps.mjs"
 ```
 
-Follow the connection-selection order in the prerequisite section first. Run this command only for a missing or disconnected proxy. It reuses a running proxy and waits for its connection. The proxy stays connected and reconnects after Chrome restarts; do not stop it after a task. See [README](README.md#macos-login-service) for the macOS login service.
+Follow the connection-selection order in the prerequisite section first. Run this command only for a missing or disconnected proxy. It reuses a running proxy and requests a Chrome connection. The proxy keeps an open connection, but after a disconnect it reconnects only for a browser request, never on a timer or health check. Requests share any pending approval; do not restart the proxy or open another debugging connection while waiting. See [README](README.md#macos-login-service) for the macOS login service.
 
 ### Proxy API
 
