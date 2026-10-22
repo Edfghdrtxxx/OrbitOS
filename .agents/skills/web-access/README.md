@@ -112,7 +112,7 @@ node "${CLAUDE_SKILL_DIR}/scripts/check-deps.mjs"
 
 ## macOS login service
 
-The [LaunchAgent](com.orbitos.cdp-proxy.plist) (a per-user macOS background service) starts the CDP (Chrome DevTools Protocol) proxy at login and keeps it running. It reconnects after Chrome restarts, with only one connection attempt while Chrome waits for Allow. [Chrome requests approval for each new debugging connection](https://developer.chrome.com/blog/chrome-devtools-mcp-debug-your-browser-session#how-it-works), including after Chrome restarts or a connection drops, not for each agent reusing the connection. When using Remote Control, allow the connection on the Mac itself.
+The [LaunchAgent](com.orbitos.cdp-proxy.plist) (a per-user macOS background service) starts the CDP (Chrome DevTools Protocol) proxy at login and keeps it running. The proxy connects only for a browser request (including `check-deps.mjs`), keeps that connection open, and shares any pending connection attempt across requests. Startup, health checks, and an idle disconnect do not start a connection. [Chrome requests approval for each new debugging connection](https://developer.chrome.com/blog/chrome-devtools-mcp-debug-your-browser-session#how-it-works), including after Chrome restarts or a connection drops, not for each agent reusing the connection. When using Remote Control, allow the connection on the Mac itself.
 
 Check the absolute Node.js and script paths in [the service configuration](com.orbitos.cdp-proxy.plist) before installing; update the Node.js path after changing its installed version. Use the persistent vault checkout, not a disposable worktree.
 

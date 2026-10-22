@@ -49,6 +49,14 @@ if (typeof globalThis.WebSocket !== 'undefined') {
 
 // --- 自动发现 Chrome 调试端口 ---
 async function discoverChromePort() {
+  if (process.env.CDP_CHROME_WS_URL) {
+    const endpoint = new URL(process.env.CDP_CHROME_WS_URL);
+    if (endpoint.protocol !== 'ws:' || endpoint.hostname !== '127.0.0.1' || !endpoint.port) {
+      throw new Error('CDP_CHROME_WS_URL must be ws://127.0.0.1:PORT/PATH');
+    }
+    return { port: Number(endpoint.port), wsPath: endpoint.pathname + endpoint.search };
+  }
+
   // 1. 尝试读 DevToolsActivePort 文件
   const possiblePaths = [];
   const platform = os.platform();
@@ -608,11 +616,6 @@ async function main() {
 
   server.listen(PORT, '127.0.0.1', () => {
     console.log(`[CDP Proxy] 运行在 http://localhost:${PORT}`);
-    const maintainConnection = () => {
-      if (!connectingPromise) connect().catch(e => console.error('[CDP Proxy]', e.message));
-    };
-    maintainConnection();
-    setInterval(maintainConnection, 3000);
   });
 }
 
