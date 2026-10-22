@@ -1,7 +1,7 @@
 ---
 type: learning-index
 purpose: Terse cross-agent index of what the learner has solidly learned. Agents running /learn MUST read this first.
-updated: 2026-10-04
+updated: 2026-10-22
 ---
 # Learning Progress — Context Index
 
@@ -81,6 +81,33 @@ Session: [[2026-07-26-2113 Ladder operators]]
 - **Commutation relation:** $[a, a^\dagger] = 1$, $[a^\dagger, a] = -1$; $a a^\dagger|n\rangle = (n+1)|n\rangle$.
 - **Hermitian adjoint:** $a$ is not Hermitian; $(a^\dagger a)^\dagger = a^\dagger a \implies \hat{N}^\dagger = \hat{N}$.
 - **Position & momentum inversion:** $a, a^\dagger \propto \hat{x} \mp i\hat{p}/(m\omega)$; $\hat{p} = i\sqrt{\frac{\hbar m\omega}{2}}(a^\dagger - a)$; under dagger $i \to -i$.
+
+#### QM — addition of three spin-1/2 (maximal-spin multiplet)
+
+Session: [[2026-10-22-1831 Spin-3-2 multiplet symmetry]]
+
+- **Top state:** $m=\sum m_i$ is maximal at $\frac32$, reached only by $|{\uparrow\uparrow\uparrow}\rangle$; $|m|\le S\le\frac32$ forces $S=m=\frac32$
+- **GRE rule:** maximal-spin multiplet is fully symmetric (two spin-½: triplet symmetric, singlet antisymmetric; ETS `gr0177-82`); filter by $m$, then by equal-weight all-plus combination
+- **Unaided:** $|\tfrac32,+\tfrac12\rangle=\frac{1}{\sqrt3}(|{\uparrow\uparrow\downarrow}\rangle+|{\uparrow\downarrow\uparrow}\rangle+|{\downarrow\uparrow\uparrow}\rangle)$ (verified)
+- **Definite $m$ is not enough:** every one-↑-two-↓ option has $m=-\frac12$; $S=\frac32$ picks the answer
+- **$S\ge|m|$ is one-way:** singlet $\Rightarrow m_s=0$, but $m_s=0\not\Rightarrow$ singlet (triplet has an $m_s=0$ member); at $m_s=0$ only the sign (symmetry) separates them (stated unaided); odd count of spin-½ has no singlet
+
+#### QM — neutrino flavor oscillation
+
+Session: [[2026-10-22-2235 Neutrino oscillation as a two-state superposition]]
+
+- **Flavor:** internal degree of freedom beside position and spin (learner's framing, confirmed); label = partner charged lepton at production and detection
+- **Mechanism:** prepare and detect in the flavor basis, evolve in the mass basis; separate phases $e^{-iE_kt/\hbar}$ (same as the 2026-09-30 [[Trap-Log]] row) turn $\nu_e$ into $\nu_\tau$; no collision needed (rejects choice B)
+- **Equal masses:** equal energies $\Rightarrow$ relative phase constant $\Rightarrow$ no oscillation; so oscillation implies mass differences (stated unaided)
+- **Studio card:** `supp-neutrino-oscillation`
+
+#### QM — rigid rotor (dumbbell)
+
+Session: [[2026-10-22-2303 Rigid rotor moment of inertia]]
+
+- **Levels:** $E=\frac{L^2}{2I}$ with $L^2=\hbar^2n(n+1)$; two masses $m$ on a rod $a$ give $I=\frac12ma^2$, $E=\frac{\hbar^2n(n+1)}{ma^2}$ (tutor-stated; the exam pick was a guess)
+- **Axis through the center of mass:** midpoint axis gave $ma^2$ for $m$, $3m$ ([[Trap-Log]]); then $m$, $m/2$ via $\mu=\frac{m_1m_2}{m_1+m_2}=\frac13m$, $I=\frac13ma^2$ unaided (verified)
+- **Studio card:** `supp-rigid-rotor` carries the derivation and the center-of-mass axis
 
 #### Exp. tech NP — radioactive beams
 
@@ -189,6 +216,14 @@ Session: [[2026-10-10-1426 Ampère–Maxwell law and displacement current]] (que
 - **Equations in matter:** the four equations, $\vec D=\epsilon_0\vec E+\vec P$, $\vec H=\vec B/\mu_0-\vec M$, $\vec P=\chi_e\epsilon_0\vec E$ with $\chi_e=k-1$ (handwritten from memory after the tutor's list)
 - **Not stated by learner:** $\nabla\cdot\vec J+\dot\rho=0$ as charge conservation; $\mu=\mu_0(1+\chi_m)$ (both given by tutor)
 
+#### E&M — factor $\frac12$ in electrostatic energy
+
+Session: [[2026-10-22-1711 Method of images work]]
+
+- **Charge near a grounded plane:** force is the full image force $\frac{1}{4\pi\epsilon_0}\frac{q^2}{(2z)^2}$; energy and work are half the image-pair energy, $W=-\frac{1}{4\pi\epsilon_0}\frac{q^2}{4d}$ (chain given by tutor after learner was stuck)
+- **Charged shell:** $U=\frac12 QV=\frac{Q^2}{8\pi\epsilon_0 a}$ (unaided); grounding removes the outside field, $\Delta U=-\frac{Q^2}{8\pi\epsilon_0 a}$
+- **State, not speed:** fast grounding or shorting changes where $\Delta U$ goes, not its size; shorted capacitor heat $\frac{Q^2}{2C}$ (unaided transfer)
+
 #### E&M — spherical coordinates (volume integral)
 
 Session: [[2026-09-21-1447 Volume integral of rho from div E]]
@@ -244,6 +279,9 @@ Session: [[2026-09-18-1705 Circular orbit and effective potential]]
 - **Circular orbit equilibrium:** $r = \text{const} \implies \ddot{r} = 0 \implies V'(r_0) = 0$ in equivalent 1D radial equation of motion $m\ddot{r} = -V'(r)$
 - **Radial stability:** $V''(r_0) > 0$ is a potential well (stable circular orbit with epicycles); $V''(r_0) < 0$ is a local maximum (runaway perturbation / collapse or unbinding)
 - **Power-law force stability ($F \propto -1/r^n$):** Stable circular orbits $\iff n < 3$; Newtonian gravity ($n=2$) is strictly stable ($V''(r_0) = +GMm/r_0^3 > 0$); $n \ge 3$ gives $V''(r_0) \le 0$ (unstable/runaway)
+- **Circle vs ellipse in the 1D picture:** circle needs $V'(r_0)=0$ and $E=V_{\min}$; an ellipse passes $r_0$ with $E-V_{\rm eff}(r_0)=\frac12 m\dot r^2>0$, so zero radial force there does not stop it (stated, 2026-10-22)
+- **Sign check:** Lagrangian $\partial L/\partial r$ gives the force $\frac{l^2}{mr^3}-\frac{k}{r^2}$; Kahn's $V_{\rm eff}'$ is its negative; both give $\frac{l^2}{mr^3}=\frac{k}{r^2}$
+- **Radius by force balance:** $\frac{mv^2}{r}=\frac{k}{r^2}$ with $l=mvr$ gives $r_0=\frac{l^2}{mk}$; $l=\hbar$, $k=\frac{e^2}{4\pi\epsilon_0}$ reproduces $a_0=\frac{4\pi\epsilon_0\hbar^2}{me^2}$ (handwritten, unaided, 2026-10-22)
 
 #### CM — pendulum coordinate choice ($\theta$ vs $x$) and effective spring
 
@@ -262,6 +300,23 @@ Session: [[2026-09-22-2235 Rolling sphere launch energy]] (closed 2026-09-27)
 - **Why two KE parts:** carry at $v_{\text{cm}}$ + spin about CM; $\frac12 I\omega^2=\sum\frac12 m_i\omega^2 r_i^2$; contact point $v=0$, top $2v$; same decomposition as parallel-axis ($I_P=\frac75 mR^2$ reproduces $\frac{7}{10}$) (verified)
 - **Static friction, no slip:** contact point at rest $\implies$ zero work; reroutes translation $\to$ rotation; $mgh$ converts entirely (verified)
 - **Ramp launch:** $v=\sqrt{2gh/(1+I/mR^2)}$; solid $\sqrt{10gh/7}$, shell $\sqrt{6gh/5}$; smaller $I/mR^2$ wins the race (verified)
+
+#### CM — 1D elastic collision, target at rest
+
+Session: [[2026-10-22-1609 Elastic collision recoil velocities]]
+
+- **Option screen:** target KE cannot exceed incident KE, $\frac12 m_2v_2'^2\le\frac12 m_1v^2$; a candidate where the incident block stops fails KE unless $m_1=m_2$ (stated, rejected $\frac14 v$ via $\frac18 mv^2\neq\frac12 mv^2$)
+- **Two linear equations:** momentum + relative-velocity reversal $v_2'-v_1'=v$; solved $m$ on $3m$ unaided: $v_2'=\frac12 v$, $v_1'=-\frac12 v$, incident block reverses (verified)
+- **Studio card:** `supp-newton-momentum` asks for the reversal and the limits $m_2\gg m_1$, $m_2\ll m_1$
+
+#### CM — conservation laws from the Lagrangian
+
+Session: [[2026-10-22-1753 Energy conservation from a time-independent Lagrangian]]
+
+- **Decision rule:** $\partial L/\partial t=0 \Rightarrow$ energy conserved; $\partial L/\partial x=0 \Rightarrow$ momentum conserved (Noether: time shift $\to$ energy, space shift $\to$ momentum) (self-report, memorized)
+- **Friction:** cannot hide in a time-independent $L$; damped oscillator needs $L=e^{\gamma t}(\frac12 m\dot x^2-\frac12 kx^2)$, explicit $t$ (self-report)
+- **Open:** derive $\frac{d}{dt}(\dot x\,\partial L/\partial\dot x-L)=-\partial L/\partial t$ (learner deferred)
+- **Studio card:** `cpgf-1.32` back carries the friction example and the decision rule
 
 ### Mathematical Methods
 
@@ -282,6 +337,17 @@ Session: [[2026-10-04-1801 Sanity checks]] (thread still active)
 - **Units check on own picked options:** found the two Set 08 picks that fail, $\omega$ in Q1 and $\sigma=\frac{qd}{2\pi D^2}\to\mathrm{C/m}$ in Q13 (stated, Turn 3; Q1 units worded as "metre times second squared", corrected to $\sqrt{\mathrm{m}}/\mathrm{s}$)
 - **Formula length vs given length (Q4, image charge):** $r=2d\Rightarrow r^2=4d^2$, giving $16\pi$ (stated after prompt, Turn 4)
 
+#### Lab — counting statistics (binomial, Poisson, Gaussian)
+
+Session: [[2026-10-22-2132 Poisson upper limit with zero events]]
+
+- **Pick by what is given:** $N$ and $p$ $\to$ binomial; only a rate $\to$ Poisson; classified coin tosses and Geiger clicks unaided (stated, Turn 3)
+- **Counting error:** Poisson $\sigma=\sqrt N$ (absolute, counts) vs $\sigma/N=1/\sqrt N$ (relative); $N=400\Rightarrow 400\pm20$, $5\%$ unaided after one swap ([[Trap-Log]]) (verified)
+- **Large count $\to$ Gaussian:** continuity explains smoothness; the bell comes from summing many independent sub-window counts (central limit theorem) (tutor-stated)
+- **Zero-event upper limit:** exclude rates where $P(0)=e^{-rT}$ falls below $1-\mathrm{CL}$; wrote the 95% case $e^{-r_{\rm up}T}=0.05$ unaided ($\approx3$ events; 90% $\approx2.3$); labelled the threshold "1 − upper limit", corrected to 1 − CL (verified)
+- **Practice (Turn 8):** counting time for 1% from 2,500 counts in 100 s $\to$ 400 s; at least one right of 5 guesses $1-(0.8)^5\approx0.67$, self-corrected from $1-(0.2)^5$ (verified)
+- **Studio card:** `supp-counting-distributions` carries the absolute/relative error, $P(0)$ from the binomial limit, and the zero-event upper limit
+
 ## In progress
 
 Only threads with unfinished core work (verified against session notes).
@@ -295,7 +361,7 @@ Only threads with unfinished core work (verified against session notes).
 - **Capacitor energy ($U_C$):** [active] Drill Batch 1 Item 3 (parallel share) $\to$ [[2026-09-14-0816 Capacitor energy]].
 - **Capacitance (two conductors):** [paused] Geometry invariant solid ($C$ fixed, $V$ doubles); resume energy parent $\to$ [[2026-09-14-0828 Capacitance]].
 - **Boundary condition on normal E:** [active] Turn 1 Gauss pillbox sheet vs conductor jump $\to$ [[2026-09-15-0916 Boundary condition on normal E]].
-- **Circular orbit and effective potential:** [active] Stability for $F \propto -1/r^n$ ($n < 3$) locked; orbital mechanics drills $\to$ [[2026-09-18-1705 Circular orbit and effective potential]].
+- **Circular orbit and effective potential:** [active] Stability for $F \propto -1/r^n$ ($n < 3$) locked; Kahn SE1 #9 closed 2026-10-22 (Turns 5–8; card `cpgf-1.38` carries the $V_{\rm eff}$ figure); open: orbital mechanics drills $\to$ [[2026-09-18-1705 Circular orbit and effective potential]].
 - **E&M: volume integral of $\rho$ over a sphere (retake):** [paused] closed 2026-10-04 at Turn 23 ($Q=\frac45\pi\epsilon_0E_0R^5$); next: `/retention` re-test without pointers — clean first-pass setup and the $u=\cos\theta$ step. History: reopened 2026-10-04, Turn 17 — Studio retake guessed $0$; handwritten attempt used cylinder limits for the sphere and got $\int_{-R}^{R}z\,\mathrm{d}z=R^2$; Turn 18: redid it, $\int_{-R}^{R}z\,\mathrm{d}z=0$ (after prompt); Turn 19: parity transfer on $E_0z^3\hat{\mathbf{z}}$ stated ($Q>0$); Turn 20: wrote $Q$ in spherical unaided ($r$, $\phi$ limits and $z=r\cos\theta$ right) with three slips ($\theta:0\to\frac\pi2$, $z$ for $z^2$, $\sin^2\theta$); Turn 21: found all three slips by comparison against landmarks, the $\rho$ line and the box edges (pointers given); setup audit named: limits, integrand, measure, run before evaluating; Turn 22: corrected setup and factoring all right, $Q=6\pi\epsilon_0E_0\cdot\frac15R^5\int_0^\pi\cos^2\theta\sin\theta\,\mathrm{d}\theta$ (handwritten, no slip); stopped at the $\theta$ integral; open: $u=\cos\theta$ substitution (Turn 22 question); pattern to re-test: one final-answer check (symmetry/sign, units, limiting case) $\to$ [[2026-09-21-1447 Volume integral of rho from div E]].
 - **Math: sanity checks on a final answer:** [paused] Turn 6 — learner's own summary: premises before calculating, check after; three patterns named (formula length vs given length; units of a formula option; odd integrand over symmetric limits); Q9 (count of forces) and Q16 (integral) not examined. Turn 2 — stated: a units check cannot see a lost pure number; three checks named by tutor (symmetry/sign, units, known special case); Set 08 misses (7) recorded in the note from the status endpoint; Turn 3 — units check found Q1 and Q13; tutor's sort of the 7 misses: 2 units, 2 factor-of-2 from the wrong length (Q4, Q5), 1 count (Q9), 1 fact (Q7), 1 integral (Q16); Turn 5 — Q4 ($r=2d$) and Q5 ($x=\frac d2$, $\sin\theta=\frac{d}{2L}$) lengths stated after prompts; open: Turn 5 question (one concrete case of the "(1/2) before R" slip), then an unaided rework of the factor-of-2 trap, then practice on real Studio questions; slips on record in the note; parent [[2026-09-21-1447 Volume integral of rho from div E]] $\to$ [[2026-10-04-1801 Sanity checks]].
 - **E&M: Ampère–Maxwell law, far-field dipole, dielectric capacitor (3 questions, 2026-10-10):** [paused] question 1 closed at Turn 6 (see Known solid); open reworks: missing $\mu_0$ on $\vec J$ in the vacuum form, and the $\chi_m$ route with the unchecked limiting case ([[Trap-Log]]); question 2 closed at Turn 14 of [[2026-09-17-1537 Magnetic dipole moment of a current loop]] (not covered: why the power is 3; electric twin); question 3 open at Turn 8 of [[2026-09-20-1803 Electric displacement D and linear dielectrics]]: Turn 9 — wrote $E=\frac{Q}{\epsilon A}$ and stated $E$ unchanged; question 3 closed at Turn 10 (reversed case unaided; trap reworked); next: the two open reworks, then pack 10 $\to$ [[2026-10-10-1426 Ampère–Maxwell law and displacement current]].

@@ -79,6 +79,7 @@ Read the matching file from `99_System/memory/` on trigger.
 | `preference_file_citation_links.md`       | a reply, report, or relayed subagent result claims something settled/changed or names a file or folder on disk |
 | `preference_direct_action_existing_tab.md` | user asks to directly select/do something in a web app (Prep Studio, any open site) via browser tools or `web-access` |
 | `lark_skills.md`                          | Feishu/Lark/飞书 task, a feishu.cn/larksuite.com URL, or `lark-cli` |
+| `preference_chinese_body_english_terms.md` | the main body of a reply is in Chinese                |
 
 ### Writing memories
 

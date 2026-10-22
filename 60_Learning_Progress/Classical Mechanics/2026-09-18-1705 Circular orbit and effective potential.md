@@ -113,3 +113,93 @@ Because the inward attractive force steepens faster than the centrifugal barrier
 1. **Circular orbit condition:** A circular orbit requires constant radius $r(t) = r_0$, meaning radial velocity and acceleration vanish identically ($\dot{r} = 0, \ddot{r} = 0$). In the 1D effective equation of motion $m\ddot{r} = -V'(r)$, this forces **$V'(r_0) = 0$** (exact balance between physical central force and centrifugal pseudo-force).
 2. **Radial stability condition:** An orbit is stable against small radial perturbations if and only if it sits in a potential bowl, **$V''(r_0) > 0$**.
 3. **Power-law criterion:** For an attractive central force $F(r) = -C/r^n$, circular orbits are stable $\iff n < 3$. Standard Newtonian gravity ($n = 2$) and harmonic spring potentials ($n = -1$) are strictly stable, while steeper forces ($n \ge 3$) are unstable.
+
+## Context — Kahn Sample Exam 1 #9 (2026-10-22)
+
+- Daily-note item (`10_Daily/2026-10/2026-10-22.md`, a1): `/learn circular-orbit radius in U=-k/r (Kahn Sample Exam 1 #9)`.
+- Source: Kahn Sample Exam 1, question 9, sat 2026-10-22 in the Prep Studio mock room (record `ex-mviw8wmq-8zkv`); review in [[Mock-Review-Oct18]] section 6.
+- Question (verbatim, `/Users/Reid Hu/Physics GRE/content/bank/cpg-exams.js`, id `cpg-x1-9`): A particle with mass $m$ and angular momentum $l$ moves in a constant central potential $U(r) = -k/r$, with $k > 0$. What, if any, is the radius of its stable circular orbit?
+  - (A) The particle has no allowed stable circular orbit.
+  - (B) $\dfrac{l^2}{mk}$
+  - (C) $\dfrac{l^2}{2mk}$
+  - (D) $\dfrac{2l^2}{mk}$
+  - (E) $\dfrac{2l^2}{3mk}$
+- Learner's answer: (C), flagged (by the learner's flag rule, a guess), 97 s on screen. Correct: (B). No reason stated yet for (C).
+- Kahn's solution: $\dfrac{dV_{\text{eff}}}{dr} = -\dfrac{l^2}{mr^3} + \dfrac{k}{r^2} = 0 \Rightarrow r = \dfrac{l^2}{mk}$; stability from the shape of $V_{\text{eff}}$: $+\infty$ at $r \to 0$, approaches 0 from below as $r \to \infty$, one critical point, so it is a minimum.
+- Studio's note on (C): "Off by a factor of 2, from mishandling $\frac{d}{dr}\frac{1}{r^2}=-\frac{2}{r^3}$ (dropping the 2) when differentiating the centrifugal term."
+
+### Turn 5 — 2026-10-22 (learner)
+
+> Next: 9
+
+### Tutor
+
+这道题的概念你在这条笔记里已经掌握了：圆轨道就是 $V'(r_0) = 0$，它的物理意义是吸引力正好等于离心项 $\dfrac{l^2}{mr^3}$（Turn 1）；$1/r$ 势的圆轨道一定稳定（Turn 3–4 的 $n < 3$），所以 (A) 可以直接排除。剩下的四个选项只差一个数字因子，这正是量纲检查看不出来的地方。(C) $\dfrac{l^2}{2mk}$ 是对离心项 $\dfrac{l^2}{2mr^2}$ 求导时漏掉指数 2 的结果；我不知道你考试时是不是这样算的。
+
+有一种写法根本不用对 $V_{\text{eff}}$ 求导：直接写圆周运动的力平衡 $\dfrac{mv^2}{r} = \dfrac{k}{r^2}$，再用 $l = mvr$ 消去 $v$。还有一个现成的检查：氢原子的 Bohr 模型就是这道题，其中 $k = \dfrac{e^2}{4\pi\epsilon_0}$，$l = \hbar$。
+
+请用 $\dfrac{mv^2}{r} = \dfrac{k}{r^2}$ 和 $l = mvr$ 求出 $r$；然后代入 $k = \dfrac{e^2}{4\pi\epsilon_0}$、$l = \hbar$，看看结果是不是你熟悉的 Bohr 半径 $a_0$。
+
+### Turn 6 — 2026-10-22 (learner)
+
+> （针对 Context 中 Kahn 解法那一行）我对Kahn的解法有点疑问，我自己推导的时候Lagrangian后面有一个-U, 然后所以出来一个k/r, derive之后是 -k/rr
+>
+> （针对 Turn 5 第一段）我还是不太理解为什么圆轨道就是V prime = 0. 如果是elliptic呢？我记得原先有一个E total与0关系对应轨道形状的flashcard，好像可以在那里supplement？
+
+### Tutor
+
+**符号**：你的推导是对的，和 Kahn 是同一个方程，只差一个整体负号。拉格朗日量 $L = \frac12 m(\dot r^2 + r^2\dot\theta^2) + \frac{k}{r}$（$-U = +\frac{k}{r}$），径向方程是
+$$m\ddot r = \frac{\partial L}{\partial r} = mr\dot\theta^2 - \frac{k}{r^2} = \frac{l^2}{mr^3} - \frac{k}{r^2}.$$
+你得到的 $-\frac{k}{r^2}$ 是径向**力**：负号表示指向中心。Kahn 写的是 $V_{\text{eff}}'$，而 $m\ddot r = -V_{\text{eff}}'$，所以他的每一项都和你的差一个负号：$V_{\text{eff}}' = -\frac{l^2}{mr^3} + \frac{k}{r^2}$。令 $\ddot r = 0$ 时，两种写法给出同一个等式 $\frac{l^2}{mr^3} = \frac{k}{r^2}$。
+
+**为什么圆轨道是 $V'_{\text{eff}} = 0$，椭圆呢**：把径向运动看成一维运动，$E = \frac12 m\dot r^2 + V_{\text{eff}}(r)$。$\frac12 m\dot r^2 \ge 0$，所以粒子只能待在 $V_{\text{eff}}(r) \le E$ 的范围里：
+
+![[veff-orbit-shapes.excalidraw|1000]]
+
+- **椭圆**：$E$ 高于谷底。$r$ 在两个转折点 $r_{\min}$、$r_{\max}$（$E = V_{\text{eff}}$ 的两个交点，即近点和远点）之间来回。粒子经过谷底 $r_0$ 时 $V_{\text{eff}}' = 0$，但这时 $\dot r \neq 0$，所以它不会停在那里。
+- **圆**：$E$ 正好等于谷底 $V_{\min}$。这时 $\frac12 m\dot r^2 = E - V_{\text{eff}}(r)$ 只在 $r_0$ 处为 0、在其他地方为负，所以粒子只能在 $r_0$，且 $\dot r = 0$；要一直停在那里还需要 $\ddot r = 0$，也就是 $V_{\text{eff}}'(r_0) = 0$。
+
+所以圆轨道需要两个条件同时成立：$V_{\text{eff}}'(r_0) = 0$（径向不受力），并且 $\dot r = 0$（$E = V_{\min}$）。
+
+**卡片**：你记得的那张是 `cpgf-1.38`（"Attractive potential $U = -k/r$ ... how does the total energy $E$ fix the orbit shape?"）。我在它的问题里加了"为什么圆轨道需要 $V_{\text{eff}}'(r_0) = 0$，半径是多少"，答案里加了上面两条：圆轨道的 $\dot r = 0$、$\ddot r = 0$ 推出力平衡和 $r_0 = \frac{l^2}{mk}$；椭圆经过 $r_0$ 时 $\dot r \neq 0$。Studio 页面刷新后可见。按你随后的要求（"别忘了directly select"），这张卡已加入今天的复习列表（复习卡）。
+
+问题：椭圆轨道上的粒子经过 $r_0$ 时，径向受力为 0。用上面的图说明，它为什么不会停在 $r_0$ 变成圆轨道？
+
+### Turn 7 — 2026-10-22 (learner)
+
+> 椭圆轨道上的粒子经过 𝑟0 时，径向受力为 0。但是粒子的E0高于Veff，用一维运动的视角来看仍然有动能从谷底往上走，不会停在 𝑟0 变成圆轨道
+
+### Tutor
+
+对。在 $r_0$ 处 $E - V_{\text{eff}}(r_0) = \frac12 m\dot r^2 > 0$，所以 $\dot r \neq 0$；受力为 0 只说明 $\ddot r = 0$，也就是径向速度在这一刻不变，不说明速度为 0。粒子带着这个径向速度继续往上走，直到碰到转折点 $r_{\max}$（或 $r_{\min}$）才掉头。打一个类比：单摆经过最低点时回复力为 0，但它正是在那里跑得最快。
+
+所以"圆轨道"需要两个条件：$V_{\text{eff}}'(r_0) = 0$ 和 $E = V_{\min}$。椭圆只满足第一个条件的那一瞬间。
+
+现在回到第 9 题本身，算出半径。请用力平衡 $\dfrac{mv^2}{r} = \dfrac{k}{r^2}$ 和 $l = mvr$ 消去 $v$ 求出 $r$；然后代入 $k = \dfrac{e^2}{4\pi\epsilon_0}$、$l = \hbar$，看看结果是不是 Bohr 半径 $a_0$。
+
+### Turn 8 — 2026-10-22 (learner)
+
+> （手写照片，转写如下）
+> $\dfrac{mv^2}{r} = \dfrac{k}{r^2}$，$v = \dfrac{l}{mr}$
+> $\dfrac{mv^2}{r} = \dfrac{m}{r}\cdot\dfrac{l^2}{m^2r^2} = \dfrac{l^2}{mr^3}$
+> $\dfrac{l^2}{mr^3} = \dfrac{k}{r^2}$
+> $r = \dfrac{l^2}{mk}$
+> when $k = \dfrac{e^2}{4\pi\epsilon_0}$, $l = \hbar$
+> $r = \dfrac{4\pi\epsilon_0\,\hbar^2}{me^2}$
+>
+> Add this excalidraw figure to our flashcard.
+
+Image notes: one handwritten page, black ink on white paper; in line 2 the first $r$ in the denominator is written over another letter; no other marks.
+
+### Tutor
+
+全对，而且没有用任何提示。$r = \dfrac{l^2}{mk}$ 就是选项 (B)；代入后的 $\dfrac{4\pi\epsilon_0\hbar^2}{me^2}$ 正是 Bohr 半径 $a_0$。这条路线没有对 $\dfrac{l^2}{2mr^2}$ 求导，所以不会出现 (C) 那种漏掉因子 2 的错误。
+
+第 9 题到这里完成。总结：
+
+- 圆轨道 = 径向不受力（$V_{\text{eff}}'(r_0) = 0$）且没有径向速度（$E = V_{\min}$）；椭圆经过 $r_0$ 时仍有 $\frac12 m\dot r^2 > 0$。
+- 求半径最快的写法是力平衡 $\dfrac{mv^2}{r} = \dfrac{k}{r^2}$ 加 $l = mvr$，得 $r_0 = \dfrac{l^2}{mk}$。
+- 检查：$l = \hbar$、$k = \dfrac{e^2}{4\pi\epsilon_0}$ 时必须得到 Bohr 半径，没有多余的因子 2。
+- $1/r$ 势的圆轨道一定稳定，所以"没有稳定圆轨道"的选项可以直接排除。
+
+卡片：上面的 Excalidraw 图已导出为 `/Users/Reid Hu/Physics GRE/content/book-assets/veff-orbit-shapes.svg`，挂在 Studio 卡片 `cpgf-1.38` 的 note 里。note 只在翻开答案后显示，所以图不会出现在卡片正面，也不会进入 Match、Quiz 的选项。已在 Studio 里确认图片能加载。

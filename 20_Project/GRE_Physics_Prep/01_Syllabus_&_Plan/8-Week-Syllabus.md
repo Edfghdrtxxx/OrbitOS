@@ -5,7 +5,7 @@ status: active
 area: "[[Japan_Itinerary]]"
 start: 2026-09-07
 due: 2026-11-01
-updated: 2026-10-18
+updated: 2026-10-22
 tags: [gre, physics, syllabus]
 ---
 # GRE Physics Syllabus & Plan (ETS Computer Exam Blueprint)
@@ -181,10 +181,10 @@ New material comes from the Sunday full mocks. The other days go to weak spots: 
 
 **Rules**
 - Sit the remaining full mocks in the Studio mock room: Sun Oct 18 GR1777 (100Q/170, 14:00), Wed Oct 21 Kahn Sample Exam 1 (100Q/170; Reid 2026-10-18), Sun Oct 25 ets2024 (70Q/120, 14:00) (Mock schedule above).
-- Answer at least 40 mistake-book questions each day from Oct 17 through Oct 29, Thursdays included; a full mock submitted that day meets the target on its own.
+- Answer at least 60 mistake-book questions each day through Oct 29, Thursdays included (raised from 40 on Oct 22); a full mock submitted that day meets the target on its own.
 - Rework the latest mock's misses first in the mistake book ([[2026-10-17]]: "Prioritize reviewing the questions I got wrong on the mock test.").
 - Keep formula recall as in the Catch-up rules above.
-- Leave the unsat timed packs out of the plan: no pack target, and a pack only after the day's 40 mistake-book questions.
+- Leave the unsat timed packs out of the plan: no pack target, and a pack only after the day's 60 mistake-book questions.
 - Set no daily target on Oct 30 (logistics, due formula cards) or Oct 31 (sleep, travel).
 
 | Date | Plan |
@@ -193,19 +193,20 @@ New material comes from the Sunday full mocks. The other days go to weak spots: 
 | Sun Oct 18 | Full sitting 2: GR1777, 14:00 |
 | Mon Oct 19 – Tue Oct 20 | 40 mistake-book questions a day, GR1777 misses first |
 | Wed Oct 21 | Extra full sitting: Kahn Sample Exam 1 |
-| Thu Oct 22 – Sat Oct 24 | 40 mistake-book questions a day, Kahn Sample Exam 1 misses first, then GR1777 |
+| Thu Oct 22 | Kahn Sample Exam 1 submitted; the full mock meets the daily target |
+| Fri Oct 23 – Sat Oct 24 | 60 mistake-book questions a day, Kahn Sample Exam 1 misses first, then GR1777 |
 | Sun Oct 25 | Full sitting 3: ets2024, 14:00 |
-| Mon Oct 26 – Thu Oct 29 | 40 mistake-book questions a day, ets2024 misses first |
+| Mon Oct 26 – Thu Oct 29 | 60 mistake-book questions a day, ets2024 misses first |
 | Fri Oct 30 | No target: logistics, due formula cards |
 | Sat Oct 31 | No target: sleep, travel |
 | Sun Nov 1 | Exam, 14:00 |
 
-Daily-note rows: the timed-pack row ends; the extra-rework row ends (Reid 2026-10-18: it overlaps the mistake-book redo); the mistake-book row is 40 questions a day (~150 min), or the Sunday mock; formula recall stays 6 per week.
+Daily-note rows: the timed-pack row ends; the extra-rework row ends (Reid 2026-10-18: it overlaps the mistake-book redo); the mistake-book row is 60 questions a day, or a full mock submitted that day; formula recall stays 6 per week.
 
 **Prep Studio Intensity card** (definitions in [intensity.js](/Users/Reid%20Hu/Physics%20GRE/js/intensity.js:13)):
-- Daily work: green at 40 mistake-book answers today or a full mock submitted today, yellow at 25–39, red under 25; no target after Oct 29 (3 days before the exam).
+- Daily work: green at 60 mistake-book answers today or a full mock submitted today, yellow at 25–59, red under 25; no target after Oct 29 (3 days before the exam).
 - New questions and Repeat time: counts only, with no target and no band.
 - First-try accuracy and Pace: unchanged.
 
 ## start-my-day
-Canonical Learning Target input. From 2026-10-17 the Mock-first rules above decide the daily rows: the Sunday mock on Sundays, otherwise 40 mistake-book questions with the latest mock's misses first; no timed pack child. Week boundaries and set lists in the live table override older examples (Week 0 = Set 01, Week 1 = Set 06).
+Canonical Learning Target input. The Mock-first rules above decide the daily rows: the Sunday mock on Sundays, otherwise 60 mistake-book questions with the latest mock's misses first; no timed pack child. Week boundaries and set lists in the live table override older examples (Week 0 = Set 01, Week 1 = Set 06).
