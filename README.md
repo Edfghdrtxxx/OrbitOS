@@ -19,6 +19,7 @@ A self-contained iterative daily working AI-collaborative repo. Everything orbit
 | When I want to...                                             | I run                           | What happens                                                                                 |
 | ------------------------------------------------------------- | ------------------------------- | -------------------------------------------------------------------------------------------- |
 | Start today's GRE Physics timed pack                         | `/practice-physics-gre-set`     | Resolves today's a0 pack, reuses the live rich Prep tab (same origin as progress), launches `#/practice/pack/NN` |
+| Drill GRE Physics repeat misses                               | `/physics-gre-miss-drill`       | Ranks misses across mocks, launches a targeted drill in the live Prep tab, routes each gap to a Recall card or `/learn` |
 | Deep-dive a topic (new ML paper, visa pathway, TPC technique) | `/deep-research` (host)         | Host deep-research / workflow — vault `/research` archived 2026-07-29                        |
 | Learn something with guided tutoring                          | `/learn <topic>`                | Diagnose, scaffold, one step per turn; records to `60_Learning_Progress/` + index; compile finished derivations to `30_Research/` |
 | Clean up finished work                                        | `/archive`                      | Moves completed projects to 99_System/Archives/                                              |
@@ -58,7 +59,7 @@ Skills live under `.agents/skills/` (see folder listing). Category table below i
 
 | Category | Skills |
 |---|---|
-| **Daily Workflow** | `start-my-day`, `end-my-day`, `breakdown-tasks`, `llm-council-v2`, `daily-note-addition`, `practice-physics-gre-set` |
+| **Daily Workflow** | `start-my-day`, `end-my-day`, `breakdown-tasks`, `llm-council-v2`, `daily-note-addition`, `practice-physics-gre-set`, `physics-gre-miss-drill` |
 | **Knowledge Management** | `archive`, `atomic-note` |
 | **Obsidian Features** | `obsidian-markdown`, `obsidian-bases`, `obsidian-cli`, `excalidraw-diagram-generator` |
 | **Learning** | `learn`, `retention`, `Feynman-Technique`, `phrasing-refining`, `vocabulary-absorption` |
