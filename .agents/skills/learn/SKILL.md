@@ -49,6 +49,14 @@ The **progress note is the primary surface**. Chat may mirror it; chat-only teac
 **Reuse first:** if a matching topic folder or note exists, continue there — never open a parallel note for the same topic/subtopic.  
 **Only if missing:** create `60_Learning_Progress/<topic>/<YYYY-MM-DD-HHmm> <subtopic>.md`.
 
+**Open it in Obsidian for the learner (mandatory, once per session):** right after you create or first resume the session note, before your first reply, run this with `<path>` from the vault root (escape `'` as `\'`). It focuses the note's tab if one is open, otherwise opens a new tab; plain `obsidian open` replaces the learner's current tab, and `newtab` duplicates an open note.
+
+```bash
+obsidian vault=OrbitOS eval code="(async()=>{const p='<path>';let leaf;app.workspace.iterateAllLeaves(l=>{if(!leaf&&l.getViewState().state?.file===p)leaf=l});if(leaf){app.workspace.setActiveLeaf(leaf,{focus:true});return 'focused'}const f=app.vault.getAbstractFileByPath(p);if(!f)return 'missing';await app.workspace.getLeaf('tab').openFile(f);return 'opened'})()"
+```
+
+`focused` or `opened` = done. Any other result (Obsidian not running, `missing`): give the note as a clickable link in chat and continue.
+
 ### Turn format (mandatory — match AD / solid English sessions)
 
 ```markdown
