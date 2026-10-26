@@ -29,8 +29,8 @@ tags:
 - Removal needs `sudo`; the user runs it.
 
 **Success Metrics:**
-- [ ] After the 26.7.1 update and login: FlClash TUN on, `curl -s -o /dev/null -w '%{http_code}\n' --max-time 10 https://api.github.com` prints `200`.
-- [ ] Job removed; the same test prints `200`.
+- [x] After the 26.7.1 update and login: FlClash TUN on, `curl -s -o /dev/null -w '%{http_code}\n' --max-time 10 https://api.github.com` prints `200`. (2026-10-25)
+- [x] Job removed; the same test prints `200`. (2026-10-25)
 - [ ] FlClash runs well without the job → ask the user whether to archive this project.
 
 ---
@@ -39,17 +39,17 @@ tags:
 
 ### Phase 1: Confirm the macOS update
 
-- [ ] Check `/Users/leyi/Library/Logs/orbitos-macos-update.log` and `sw_vers` (expect 26.7.1, build 25G241).
-- [ ] Run the GitHub test above; check `route -n get 104.18.40.202` → `en0`.
+- [x] Check `/Users/leyi/Library/Logs/orbitos-macos-update.log` and `sw_vers` (expect 26.7.1, build 25G241). (2026-10-25: `sw_vers` 26.7.1, 25G241; the log's last lines say "Failed to queue update and restart", but the install at 01:00:06 on 2026-10-23 completed)
+- [x] Run the GitHub test above; check `route -n get 104.18.40.202` → `en0`. (2026-10-25: 200; `en0`)
 
 ### Phase 2: Remove the job
 
-- [ ] User runs:
+- [x] User runs (2026-10-25):
   ```
   sudo launchctl bootout system/com.orbitos.flclash-node-direct && sudo rm /Library/LaunchDaemons/com.orbitos.flclash-node-direct.plist "/Users/leyi/Library/Application Support/orbitos/flclash-node-direct.sh"
   ```
-- [ ] Confirm `launchctl print system/com.orbitos.flclash-node-direct` reports the service is not found.
-- [ ] Run the GitHub test again.
+- [x] Confirm `launchctl print system/com.orbitos.flclash-node-direct` reports the service is not found. (2026-10-25: "Could not find service"; both files absent per `ls`)
+- [x] Run the GitHub test again. (2026-10-25: 200; `104.18.40.202` still routes through `en0`)
 
 ### Phase 3: Observe and close
 
@@ -62,6 +62,7 @@ tags:
 ## Progress
 
 - 2026-10-22: [[2026-10-22]] - Project initiated; job found redundant; removal deferred until after the 2026-10-23 01:00 macOS update.
+- 2026-10-25: [[2026-10-25]] - Phase 1 passed (macOS 26.7.1, GitHub test 200, `.202` on `en0`); user removed the job; service not found, both files gone, GitHub test 200. Phase 3 (observe) starts.
 
 ---
 

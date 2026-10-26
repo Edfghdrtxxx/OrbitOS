@@ -116,7 +116,7 @@ pathway: "Primary: Direct PhD D1 via Route B (Oct 2027); Fallback: Kenkyusei (Oc
 
 - [x] **2026-07-01:** ~~Check UTokyo Special Selection page for Oct 2027 cycle info~~ — RESOLVED 2026-04-22 (dates published early)
 - [x] **2026-09-01:** ~~Check if Special Selection guidelines for Oct 2027 have been released~~ — RESOLVED 2026-04-22
-- [ ] **2026-10-15:** Period 1 opens — submit if GRE/TOEFL scores ready in time
+- [x] **2026-10-15:** ~~Period 1 opens — submit if GRE/TOEFL scores ready in time~~ — DROPPED 2026-10-25 (Reid): the GRE score will not exist before Period 1 closes Oct 30
 - [ ] **2026-12-07:** Period 2 opens — realistic submission target (materials ready before this date)
 - [ ] Prepare all required documents:
   - [ ] Application forms

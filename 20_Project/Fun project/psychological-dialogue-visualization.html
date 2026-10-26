@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>心智创伤、性缘依恋与防御演进：个案对话记录的心理动力学可视化</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Noto+Serif+SC:wght@400;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: light;
+    --canvas: #fbf9f5;
+    --canvas-subtle: #f5f0e6;
+    --surface: #ffffff;
+    --surface-elevated: #ffffff;
+    --surface-card: #f8f5ee;
+    --surface-tint: #f2ebd9;
+    --surface-dark: #1e1b18;
+    
+    --ink: #1c1a17;
+    --ink-strong: #0f0e0c;
+    --body: #3c3833;
+    --muted: #6f685f;
+    --muted-soft: #989085;
+    --hairline: #e6dfd1;
+    --hairline-soft: #efe9dc;
+    --hairline-strong: #d3c9b7;
+
+    --primary: #b84a39;        /* 创伤朱红 / 痛苦与断裂 */
+    --primary-soft: #fbf0ee;
+    --primary-active: #943526;
+    --accent-teal: #2f6b6b;    /* 冷峻理智 / 男友A界限 */
+    --accent-teal-soft: #edf5f5;
+    --accent-amber: #c47c2b;   /* 代偿算计 / 假自我面具 */
+    --accent-amber-soft: #fcf5eb;
+    --accent-purple: #6a4c82;  /* 病理共振 / B与自毁镜像 */
+    --accent-purple-soft: #f6f0fa;
+    --accent-blue: #335c8d;    /* 躯体化/前额叶门控缺失 */
+    --accent-blue-soft: #eef4fb;
+
+    --font-serif: "Noto Serif SC", "Cormorant Garamond", STSong, "Songti SC", serif;
+    --font-sans: Inter, -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+
+    --r-xs: 4px;
+    --r-sm: 8px;
+    --r-md: 12px;
+    --r-lg: 16px;
+    --r-pill: 9999px;
+
+    --shadow-sm: 0 1px 3px rgba(28, 26, 23, 0.05);
+    --shadow-md: 0 4px 14px rgba(28, 26, 23, 0.07);
+    --shadow-lg: 0 10px 30px rgba(28, 26, 23, 0.09);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  ::selection { background: color-mix(in srgb, var(--primary) 18%, var(--canvas)); }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background-color: var(--canvas);
+    color: var(--body);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* 顶部全局导航 */
+  .top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(251, 249, 245, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--hairline);
+    padding: 10px 24px;
+  }
+  .nav-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .nav-brand .badge {
+    background: var(--primary-soft);
+    color: var(--primary);
+    border: 1px solid color-mix(in srgb, var(--primary) 30%, transparent);
+    font-size: 11px;
+    padding: 2px 7px;
+    border-radius: var(--r-pill);
+    font-family: var(--font-mono);
+    font-weight: 500;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .nav-btn {
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--muted);
+    padding: 6px 12px;
+    border-radius: var(--r-sm);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .nav-btn:hover {
+    color: var(--ink);
+    background: var(--canvas-subtle);
+  }
+  .nav-btn.active {
+    color: var(--primary);
+    background: var(--primary-soft);
+    border-color: color-mix(in srgb, var(--primary) 25%, transparent);
+    font-weight: 600;
+  }
+
+  /* 页面主布局 */
+  .layout {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 32px 24px 100px;
+  }
+
+  /* 档案头部 Hero */
+  .hero-card {
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-lg);
+    padding: 36px 36px 28px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent-amber), var(--accent-teal), var(--accent-purple));
+  }
+  .hero-meta-strip {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+    margin-bottom: 16px;
+  }
+  .tag {
+    font-size: 11.5px;
+    font-weight: 500;
+    padding: 3px 9px;
+    border-radius: var(--r-pill);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .tag-danger { background: var(--primary-soft); color: var(--primary); border: 1px solid color-mix(in srgb, var(--primary) 25%, transparent); }
+  .tag-teal { background: var(--accent-teal-soft); color: var(--accent-teal); border: 1px solid color-mix(in srgb, var(--accent-teal) 25%, transparent); }
+  .tag-amber { background: var(--accent-amber-soft); color: var(--accent-amber); border: 1px solid color-mix(in srgb, var(--accent-amber) 25%, transparent); }
+  .tag-purple { background: var(--accent-purple-soft); color: var(--accent-purple); border: 1px solid color-mix(in srgb, var(--accent-purple) 25%, transparent); }
+  .tag-blue { background: var(--accent-blue-soft); color: var(--accent-blue); border: 1px solid color-mix(in srgb, var(--accent-blue) 25%, transparent); }
+
+  .hero-title {
+    font-family: var(--font-serif);
+    font-size: clamp(24px, 3.2vw, 34px);
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--ink-strong);
+    margin: 0 0 16px;
+    letter-spacing: -0.02em;
+  }
+  .hero-desc {
+    color: var(--body);
+    font-size: 15.5px;
+    line-height: 1.7;
+    max-width: 980px;
+    margin: 0 0 24px;
+  }
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 14px;
+    padding-top: 20px;
+    border-top: 1px solid var(--hairline-soft);
+  }
+  .stat-item {
+    background: var(--canvas-subtle);
+    padding: 12px 16px;
+    border-radius: var(--r-sm);
+    border: 1px solid var(--hairline-soft);
+  }
+  .stat-label {
+    font-size: 11.5px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .stat-val {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* 核心章节标题 */
+  .section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 40px 0 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--hairline);
+  }
+  .section-heading h2 {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink-strong);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-sub {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  /* 网格与容器卡片 */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 900px) {
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-md);
+    padding: 22px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card:hover {
+    box-shadow: var(--shadow-md);
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--hairline-soft);
+  }
+  .card-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* 图解 SVG 样式 */
+  .diagram-container {
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-lg);
+    padding: 24px;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow-sm);
+  }
+  .diagram-caption {
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-top: 14px;
+    text-align: center;
+    font-family: var(--font-mono);
+  }
+
+  /* 长城冰雹事件时间线 */
+  .timeline {
+    position: relative;
+    padding-left: 28px;
+    margin: 20px 0;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: var(--hairline-strong);
+  }
+  .timeline-node {
+    position: relative;
+    margin-bottom: 24px;
+  }
+  .timeline-node:last-child { margin-bottom: 0; }
+  .timeline-dot {
+    position: absolute;
+    left: -28px;
+    top: 4px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 3px solid var(--primary);
+    box-shadow: 0 0 0 2px var(--canvas);
+  }
+  .timeline-dot.teal { border-color: var(--accent-teal); }
+  .timeline-dot.amber { border-color: var(--accent-amber); }
+  .timeline-time {
+    font-size: 12px;
+    font-family: var(--font-mono);
+    color: var(--muted);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .timeline-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 0 0 6px;
+  }
+  .timeline-body {
+    font-size: 13.5px;
+    color: var(--body);
+    line-height: 1.6;
+    background: var(--canvas-subtle);
+    padding: 12px 14px;
+    border-radius: var(--r-sm);
+    border: 1px solid var(--hairline-soft);
+  }
+
+  /* 对比双栏卡片 */
+  .comparison-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  @media (max-width: 720px) {
+    .comparison-box { grid-template-columns: 1fr; }
+  }
+  .compare-panel {
+    border-radius: var(--r-sm);
+    padding: 16px;
+    border: 1px solid var(--hairline);
+  }
+  .compare-panel.left {
+    background: var(--primary-soft);
+    border-color: color-mix(in srgb, var(--primary) 25%, transparent);
+  }
+  .compare-panel.right {
+    background: var(--accent-teal-soft);
+    border-color: color-mix(in srgb, var(--accent-teal) 25%, transparent);
+  }
+  .compare-panel h4 {
+    margin: 0 0 8px;
+    font-size: 14.5px;
+    font-weight: 700;
+  }
+  .compare-panel.left h4 { color: var(--primary); }
+  .compare-panel.right h4 { color: var(--accent-teal); }
+
+  /* 防御机制阶梯 */
+  .ladder-step {
+    border-left: 4px solid var(--hairline-strong);
+    padding: 14px 18px;
+    background: var(--surface);
+    margin-bottom: 12px;
+    border-radius: 0 var(--r-sm) var(--r-sm) 0;
+    transition: all 0.2s ease;
+    border-top: 1px solid var(--hairline-soft);
+    border-right: 1px solid var(--hairline-soft);
+    border-bottom: 1px solid var(--hairline-soft);
+  }
+  .ladder-step.step-1 { border-left-color: var(--accent-amber); }
+  .ladder-step.step-2 { border-left-color: var(--primary); }
+  .ladder-step.step-3 { border-left-color: var(--accent-teal); }
+  .ladder-step.step-4 { border-left-color: var(--accent-blue); }
+  .ladder-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+  .ladder-title {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .ladder-desc {
+    font-size: 13.5px;
+    color: var(--body);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* 原始陈述归档展示器 */
+  .statement-archive-card {
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-md);
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  .statement-archive-head {
+    padding: 14px 20px;
+    background: var(--surface-card);
+    border-bottom: 1px solid var(--hairline);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .statement-topic {
+    font-family: var(--font-serif);
+    font-size: 15.5px;
+    font-weight: 700;
+    color: var(--ink-strong);
+  }
+  .statement-body-wrap {
+    padding: 20px;
+  }
+  .statement-raw {
+    font-size: 14.5px;
+    line-height: 1.85;
+    color: var(--ink);
+    background: #faf8f5;
+    padding: 18px 20px;
+    border-radius: var(--r-sm);
+    border-left: 4px solid var(--muted-soft);
+    white-space: pre-wrap;
+    font-family: var(--font-sans);
+    margin-bottom: 16px;
+  }
+  .statement-raw.dialogue {
+    background: #f7f9fa;
+    border-left-color: var(--accent-teal);
+    font-family: var(--font-mono);
+    font-size: 13.5px;
+    line-height: 1.8;
+  }
+  .statement-analysis {
+    background: var(--canvas-subtle);
+    padding: 14px 18px;
+    border-radius: var(--r-sm);
+    border: 1px solid var(--hairline);
+  }
+  .analysis-tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .analysis-content {
+    font-size: 13px;
+    color: var(--body);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* 交互开关与高亮词条 */
+  .highlight-danger {
+    background: rgba(184, 74, 57, 0.12);
+    color: var(--primary-active);
+    font-weight: 600;
+    padding: 0 4px;
+    border-radius: 3px;
+    border-bottom: 1px solid var(--primary);
+  }
+  .highlight-mask {
+    background: rgba(196, 124, 43, 0.15);
+    color: #9c5c11;
+    font-weight: 600;
+    padding: 0 4px;
+    border-radius: 3px;
+    border-bottom: 1px solid var(--accent-amber);
+  }
+  .highlight-neuro {
+    background: rgba(51, 92, 141, 0.12);
+    color: var(--accent-blue);
+    font-weight: 600;
+    padding: 0 4px;
+    border-radius: 3px;
+    border-bottom: 1px solid var(--accent-blue);
+  }
+
+  /* 表格样式 */
+  .matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    margin-top: 10px;
+  }
+  .matrix-table th, .matrix-table td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--hairline);
+    vertical-align: top;
+  }
+  .matrix-table th {
+    background: var(--canvas-subtle);
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .matrix-table tr:hover td {
+    background: rgba(0,0,0,0.015);
+  }
+
+  /* 底部声明 */
+  footer {
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 1px solid var(--hairline);
+    text-align: center;
+    color: var(--muted);
+    font-size: 12.5px;
+  }
+</style>
+</head>
+<body>
+
+<!-- 顶部导航 -->
+<header class="top-nav">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <span>心智个案全景图谱</span>
+      <span class="badge">CLINICAL PSYCHOLOGY</span>
+    </div>
+    <div class="nav-links">
+      <button class="nav-btn active" onclick="scrollToSection('sec-field')">力场拓扑</button>
+      <button class="nav-btn" onclick="scrollToSection('sec-wall')">长城认知断裂</button>
+      <button class="nav-btn" onclick="scrollToSection('sec-defense')">防御演进</button>
+      <button class="nav-btn" onclick="scrollToSection('sec-neuro')">神经与原生家庭</button>
+      <button class="nav-btn" onclick="scrollToSection('sec-compare')">客体矩阵</button>
+      <button class="nav-btn" onclick="scrollToSection('sec-archive')">逐字原话档案</button>
+    </div>
+  </div>
+</header>
+
+<main class="layout">
+
+  <!-- 头部卡片 -->
+  <section class="hero-card">
+    <div class="hero-meta-strip">
+      <span class="tag tag-danger">分离性转化障碍 (F44)</span>
+      <span class="tag tag-blue">器质指征: 前额叶受损 & 门控缺失</span>
+      <span class="tag tag-amber">亲职化代际创伤 (Parentification)</span>
+      <span class="tag tag-teal">客体依恋断裂: “女友≠家人”</span>
+      <span class="tag tag-purple">强迫性重复: 极化共振</span>
+    </div>
+    <h1 class="hero-title">主体性崩解、性缘面具与代际毒性依恋：深度心理动力学个案图解</h1>
+    <p class="hero-desc">
+      本档案系统解构一名20岁大三女性在经历长城冰雹失温事件、男友边界驱逐、原生家庭弑母式负罪、器质性前额叶门控缺失以及高浓度创伤镜像介入下的核心心理轨迹。页面将无干预原始对话记录与临床精神动力学模型进行双向印证。
+    </p>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-label">主体核心特质</div>
+        <div class="stat-val">20岁大三 / 门控缺失 / 亲职化童年</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">现实断裂原爆点</div>
+        <div class="stat-val">长城烽火台30min冰雹失温与被遗弃</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">防御演化形态</div>
+        <div class="stat-val">全情献祭 → 假自我算计面具 → 衰竭摆烂</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">深层依恋冲突</div>
+        <div class="stat-val">理智渴求A的健康边界 vs 潜意识沉溺B的致死浓烈</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 章节 1: 关系与创伤力场拓扑图 -->
+  <section id="sec-field">
+    <div class="section-heading">
+      <div>
+        <h2>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="22"/><line x1="2" y1="12" x2="8" y2="12"/><line x1="16" y1="12" x2="22" y2="12"/></svg>
+          关系与创伤力场拓扑 (Relational Dynamic Field)
+        </h2>
+        <div class="section-sub">主体在三维客体引力中的撕裂态势与病理回环</div>
+      </div>
+    </div>
+
+    <div class="diagram-container">
+      <svg viewBox="0 0 960 480" width="100%" height="auto" style="overflow: visible;">
+        <defs>
+          <linearGradient id="gradSubject" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#fff5f5"/>
+            <stop offset="100%" stop-color="#fee2e2"/>
+          </linearGradient>
+          <linearGradient id="gradMother" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#fff1f2"/>
+            <stop offset="100%" stop-color="#fecdd3"/>
+          </linearGradient>
+          <linearGradient id="gradA" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#f0fdf4"/>
+            <stop offset="100%" stop-color="#dcfce7"/>
+          </linearGradient>
+          <linearGradient id="gradB" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#faf5ff"/>
+            <stop offset="100%" stop-color="#f3e8ff"/>
+          </linearGradient>
+          <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="#b84a39"/>
+          </marker>
+          <marker id="arrow-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="#2f6b6b"/>
+          </marker>
+          <marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="#6a4c82"/>
+          </marker>
+        </defs>
+
+        <!-- 连线向量 -->
+        <!-- 主体 -> 母亲: 愧疚、弑母冲动、亲职化反哺 -->
+        <path d="M 440, 240 Q 320, 160 250, 140" fill="none" stroke="#b84a39" stroke-width="2.5" stroke-dasharray="6,4" marker-end="url(#arrow-red)"/>
+        <!-- 母亲 -> 主体: 负罪捆绑、"为了你活下来" -->
+        <path d="M 230, 170 Q 300, 250 410, 270" fill="none" stroke="#b84a39" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+
+        <!-- 主体 -> 男友A: 假面算计、渴求安全确认、过度让利 -->
+        <path d="M 520, 230 Q 640, 160 720, 140" fill="none" stroke="#2f6b6b" stroke-width="2.5" marker-end="url(#arrow-teal)"/>
+        <!-- 男友A -> 主体: "女朋友≠家人"、完美受害者审查、情感自保 -->
+        <path d="M 700, 170 Q 620, 250 510, 270" fill="none" stroke="#2f6b6b" stroke-width="2.5" stroke-dasharray="6,4" marker-end="url(#arrow-teal)"/>
+
+        <!-- 主体 <-> 男生B: 创伤镜像、2-3k金钱供养、极化自毁共振 -->
+        <path d="M 480, 310 Q 480, 370 480, 390" fill="none" stroke="#6a4c82" stroke-width="3" marker-end="url(#arrow-purple)"/>
+
+        <!-- 母亲节点 (左上) -->
+        <g transform="translate(180, 120)">
+          <rect x="-100" y="-55" width="200" height="110" rx="12" fill="url(#gradMother)" stroke="#b84a39" stroke-width="1.8"/>
+          <text x="0" y="-24" font-family="Noto Serif SC" font-size="16" font-weight="700" fill="#943526" text-anchor="middle">原生家庭母体 (Mother)</text>
+          <text x="0" y="0" font-size="12" fill="#3c3833" text-anchor="middle">情感寄生 & 自杀威胁</text>
+          <text x="0" y="20" font-size="11.5" fill="#6f685f" text-anchor="middle">“我是为了你才活下来的”</text>
+          <text x="0" y="38" font-size="11" font-weight="600" fill="#b84a39" text-anchor="middle">[弑母冲动 / 愧疚自残原型]</text>
+        </g>
+
+        <!-- 男友A节点 (右上) -->
+        <g transform="translate(770, 120)">
+          <rect x="-100" y="-55" width="200" height="110" rx="12" fill="url(#gradA)" stroke="#2f6b6b" stroke-width="1.8"/>
+          <text x="0" y="-24" font-family="Noto Serif SC" font-size="16" font-weight="700" fill="#1b4d4d" text-anchor="middle">现实对象 男友A (Partner)</text>
+          <text x="0" y="0" font-size="12" fill="#3c3833" text-anchor="middle">超理智防御 & 严格界限</text>
+          <text x="0" y="20" font-size="11.5" fill="#6f685f" text-anchor="middle">“女朋友是女朋友，家人是家人”</text>
+          <text x="0" y="38" font-size="11" font-weight="600" fill="#2f6b6b" text-anchor="middle">[冰雹遗弃 / 完美受害者审查]</text>
+        </g>
+
+        <!-- 主体核心节点 (中央) -->
+        <g transform="translate(480, 260)">
+          <circle r="72" fill="url(#gradSubject)" stroke="#b84a39" stroke-width="3" filter="drop-shadow(0 4px 10px rgba(184,74,57,0.15))"/>
+          <text x="0" y="-30" font-family="Noto Serif SC" font-size="17" font-weight="700" fill="#1c1a17" text-anchor="middle">主体 (User / 20岁)</text>
+          <text x="0" y="-10" font-size="12" font-weight="600" fill="#b84a39" text-anchor="middle">分离性转化障碍</text>
+          <text x="0" y="10" font-size="11.5" fill="#3c3833" text-anchor="middle">前额叶受损 · 门控缺失</text>
+          <text x="0" y="28" font-size="11" fill="#6f685f" text-anchor="middle">性缘价值自弃与渴求</text>
+          <text x="0" y="44" font-size="10.5" font-weight="600" fill="#c47c2b" text-anchor="middle">[假自我算计面具]</text>
+        </g>
+
+        <!-- 男生B节点 (下方) -->
+        <g transform="translate(480, 420)">
+          <rect x="-110" y="-35" width="220" height="70" rx="10" fill="url(#gradB)" stroke="#6a4c82" stroke-width="1.8"/>
+          <text x="0" y="-12" font-family="Noto Serif SC" font-size="15" font-weight="700" fill="#583670" text-anchor="middle">创伤镜像 男生B (Mirror)</text>
+          <text x="0" y="8" font-size="11.5" fill="#3c3833" text-anchor="middle">26岁直播间金钱供养(2-3k) · 创伤共感</text>
+          <text x="0" y="24" font-size="11" font-weight="600" fill="#6a4c82" text-anchor="middle">[全能自毁爱恋 / 极端浓烈代偿]</text>
+        </g>
+
+        <!-- 向量标注 -->
+        <g transform="translate(300, 200)">
+          <rect x="-55" y="-12" width="110" height="24" rx="4" fill="#ffffff" stroke="#e6dfd1"/>
+          <text x="0" y="4" font-size="10.5" font-weight="600" fill="#b84a39" text-anchor="middle">亲职化反哺/负罪撕扯</text>
+        </g>
+        <g transform="translate(640, 200)">
+          <rect x="-55" y="-12" width="110" height="24" rx="4" fill="#ffffff" stroke="#e6dfd1"/>
+          <text x="0" y="4" font-size="10.5" font-weight="600" fill="#2f6b6b" text-anchor="middle">界限驱逐/算计防御</text>
+        </g>
+        <g transform="translate(540, 350)">
+          <rect x="-50" y="-12" width="100" height="24" rx="4" fill="#ffffff" stroke="#e6dfd1"/>
+          <text x="0" y="4" font-size="10.5" font-weight="600" fill="#6a4c82" text-anchor="middle">极端自毁吸引</text>
+        </g>
+      </svg>
+      <div class="diagram-caption">图 1.0：主体在三维病理场中的力矩分布图（红虚线为负罪投射，绿实线为现实防御，紫线为镜像自毁吸引）</div>
+    </div>
+  </section>
+
+  <!-- 章节 2: 长城冰雹事件——认知断裂解构 -->
+  <section id="sec-wall">
+    <div class="section-heading">
+      <div>
+        <h2>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          长城冰雹事件：微观时序与认知断裂
+        </h2>
+        <div class="section-sub">创伤应激事件的过程推演与“家人特权”概念的彻底破灭</div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <!-- 左栏：时序推演 -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">长城烽火台时空链 (Chronology of Rupture)</span>
+          <span class="tag tag-danger">关键应激节点</span>
+        </div>
+        <div class="timeline">
+          <div class="timeline-node">
+            <div class="timeline-dot amber"></div>
+            <div class="timeline-time">T1 · 长城底买票处</div>
+            <div class="timeline-title">情绪冲突爆发与冷战开始</div>
+            <div class="timeline-body">
+              双方在买票时爆发口角，随后长达1小时沿途攀爬中没有任何语言和情感交流。在此之前，男友曾强行披外套给受访者，受访者因心疼其受冻主动归还。
+            </div>
+          </div>
+          <div class="timeline-node">
+            <div class="timeline-dot"></div>
+            <div class="timeline-time">T2 · 烽火台 · 持续约30分钟</div>
+            <div class="timeline-title">突降冰雹、失温与身体绝境中的袖手旁观</div>
+            <div class="timeline-body">
+              夏日突降极端冰雹。受访者身患重感冒且衣着单薄，全身湿透失温，冷到无法站立而蹲下硬抗30分钟。男友身着厚外套且未感冒，双方身处不同避难处，男友30分钟内未曾前来探视、问候或提供外套支援。
+            </div>
+          </div>
+          <div class="timeline-node">
+            <div class="timeline-dot teal"></div>
+            <div class="timeline-time">T3 · 陡峭下山 · 约25分钟</div>
+            <div class="timeline-title">身体物理脱险过程中的“客体错位”</div>
+            <div class="timeline-body">
+              受访者穿拖鞋在长满青苔、陡峭且仅容1.5人通行的险峻下山路上行走，由一名已有女友的同行男性单手扶护下山；男友间隔数人跟在后方，直至下山全程依然零互动。
+            </div>
+          </div>
+          <div class="timeline-node">
+            <div class="timeline-dot"></div>
+            <div class="timeline-time">T4 · 当夜和好复盘</div>
+            <div class="timeline-title">核爆级归因：完美受害者审判</div>
+            <div class="timeline-body">
+              受访者询问为何不过来送外套，男友给出归因：<strong>“因为你表现得不可怜，看起来不需要帮助。”</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右栏：概念对立与心理裂变 -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">“家人特权”概念的认知裂变</span>
+          <span class="tag tag-teal">结构性对立</span>
+        </div>
+        <p style="font-size:13.5px; color:var(--muted); margin-top:0;">
+          事件触发了双方关于亲密关系底线定义的剧烈对立：是“本能的身体优先”还是“审视式的条件关爱”？
+        </p>
+
+        <div class="comparison-box">
+          <div class="compare-panel left">
+            <h4>受访者的“家人特权”认知</h4>
+            <ul style="margin:0; padding-left:18px; font-size:13px; line-height:1.65; color:var(--body);">
+              <li><strong>本体级生理关切：</strong>对对方身体安全的本能担忧，绝对高于争吵、赌气和自尊。</li>
+              <li><strong>免除受害者审查：</strong>关怀不需要依赖“表现得可怜”、“下跪求助”或特定的示弱表演。</li>
+              <li><strong>去身份化保护：</strong>并非“男人怜悯女人”，而是将彼此视作不可分割的生命共同体。</li>
+            </ul>
+          </div>
+          <div class="compare-panel right">
+            <h4>男友的“现实契约”界限</h4>
+            <ul style="margin:0; padding-left:18px; font-size:13px; line-height:1.65; color:var(--body);">
+              <li><strong>条件化响应审查：</strong>关怀触发前提是客体必须表现出符合预期的“弱小与求助信号”。</li>
+              <li><strong>情感自保优先：</strong>在情绪对抗中优先固守理性防御，避免自身卷入不适或受冻。</li>
+              <li><strong>身份等级森严：</strong>明确宣称“女朋友是女朋友，家人是家人，未上升到家人”。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-top:20px; background:var(--canvas-subtle); padding:14px; border-radius:var(--r-sm); border:1px solid var(--hairline);">
+          <div style="font-size:12px; font-weight:700; color:var(--primary); margin-bottom:4px;">心理动力学诊断：</div>
+          <div style="font-size:13px; color:var(--body); line-height:1.6;">
+            男友一句“没有上升到家人”，实质上宣布了受访者付出的金钱、退让的比赛名额、手工戒指以及全部身体性全情卷入在契约结构中属于“非必要消费”，彻底粉碎了受访者试图通过亲密关系修复原生家庭缺失的童年幻想。
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 章节 3: 心理防御机制演进阶梯 -->
+  <section id="sec-defense">
+    <div class="section-heading">
+      <div>
+        <h2>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          心理防御机制四阶演化轨迹 (Evolution of Defenses)
+        </h2>
+        <div class="section-sub">从全能献祭到假自我武装，直至入冬后的神经性解离坍塌</div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:20px;">
+      <div class="ladder-step step-1">
+        <div class="ladder-header">
+          <span class="ladder-title">阶段一：躁狂式过度代偿与自毁献祭 (Manic Over-functioning)</span>
+          <span class="tag tag-amber">初恋第1年 · 强迫性给予</span>
+        </div>
+        <p class="ladder-desc">
+          <strong>心理表现：</strong>“算钱，一定要我比他花的多才舒心”、“给他让比赛名额”、“20岁偷偷量指围手工打中指订婚戒指”。<br>
+          <strong>动力学机制：</strong>内心深处盘踞着极端的自我轻蔑（“像婊子一样缺爱”、“廉价感”）。通过极致的物质付出与全能照顾，把控关系支配权，强行抵御“自己配不上被爱”的深层恐惧。
+        </p>
+      </div>
+
+      <div class="ladder-step step-2">
+        <div class="ladder-header">
+          <span class="ladder-title">阶段二：创伤性觉醒与现实暴击 (Traumatic Awakening)</span>
+          <span class="tag tag-danger">长城冰雹 & “女朋友≠家人”界限宣告</span>
+        </div>
+        <p class="ladder-desc">
+          <strong>心理表现：</strong>“一棍子把我打醒”、“想起这件事心里都麻麻的”、“感觉很耻辱，摘掉戒指”。<br>
+          <strong>动力学机制：</strong>付出未能换来本体性的安全包裹，反而遭遇“完美受害者”的条件审查。主体经历严峻的自恋性重创（Narcissistic Mortification），原有的“生命共同体”幻想全面崩塌。
+        </p>
+      </div>
+
+      <div class="ladder-step step-3">
+        <div class="ladder-header">
+          <span class="ladder-title">阶段三：工具化假自我与算计面具 (The Calculated False-Self)</span>
+          <span class="tag tag-teal">近期应对 · 假性亲密与压抑眼泪</span>
+        </div>
+        <p class="ladder-desc">
+          <strong>心理表现：</strong>质问为何不戴戒指时，秒速编造温顺体贴的谎言哄骗对方；停止哭泣打电话（“哭声只会让他觉得烦，让他出于自保更冷漠”）；衡量每一步行为的利弊以维持控制。<br>
+          <strong>动力学机制：</strong>退行回熟练的社交讨好面具（社交情境下嘴甜真诚的伪装）。用分裂（Splitting）和假自我隔离真实的绝望与恨意，将伴侣降级为“需要用技巧拿捏的朋友”。
+        </p>
+      </div>
+
+      <div class="ladder-step step-4">
+        <div class="ladder-header">
+          <span class="ladder-title">阶段四：神经生物衰竭与解离摆烂 (Neurobiological Depletion & Apathy)</span>
+          <span class="tag tag-blue">入冬复发 · 前额叶资源耗尽</span>
+        </div>
+        <p class="ladder-desc">
+          <strong>心理表现：</strong>入冬后睡眠饮食骤降；换位思考能力彻底关闭；对方提分手时毫无恐惧，直接进入摆烂；无力挽留又恐惧终结。<br>
+          <strong>动力学机制：</strong>前额叶皮层受损叠加季节性情感波动，导致执行功能耗竭。假自我面具无法继续维系，认知抑制失控，进入典型的分离性冷漠（Dissociative Numbness）。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 章节 4: 神经生理机制与代际创伤链 -->
+  <section id="sec-neuro">
+    <div class="section-heading">
+      <div>
+        <h2>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10S2 17.523 2 12A10 10 0 0 1 12 2z"/><path d="M12 6v6l4 2"/></svg>
+          神经生理器质损伤与代际创伤链 (Neuro-Trauma Axis)
+        </h2>
+        <div class="section-sub">天津市安定医院确诊与前额叶门控缺失的躯体化印证</div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <!-- 临床脑机能报告映射 -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">神经器质指征与症状映射</span>
+          <span class="tag tag-blue">天津市安定医院脑CT</span>
+        </div>
+        <table class="matrix-table">
+          <thead>
+            <tr>
+              <th style="width:35%">临床器质表现</th>
+              <th>个案实际症状映射与行为表征</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>感觉门控缺失 (Sensory Gating Deficit)</strong></td>
+              <td>外界负面刺激无法被皮层滤过。长城冰雹失温时躯体感觉过载；母亲摔破碗流血时产生压倒性的暴怒与应激自残。</td>
+            </tr>
+            <tr>
+              <td><strong>前额叶功能受损 (PFC Hypofunction)</strong></td>
+              <td>应激状态下抑制控制失效。入冬后“无法换位思考”、无法维持日常情商社交面具；情绪爆发时哭到脱力双眼失明。</td>
+            </tr>
+            <tr>
+              <td><strong>分离性转化障碍 (Conversion Disorder)</strong></td>
+              <td>剧烈精神痛苦直接转化为躯体症状：持续24小时病理性困顿、失眠绝食、失语性哭泣与痛觉钝化。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 原生家庭亲职化回环 -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">原生家庭“亲职化”反转模型</span>
+          <span class="tag tag-danger">代际毒性寄生</span>
+        </div>
+        <p style="font-size:13px; color:var(--body); margin:0 0 12px;">
+          五年级父亲出轨事件导致家庭情感权力彻底倒错，受访者童年结构被过早截断：
+        </p>
+        <ul style="margin:0; padding-left:18px; font-size:13px; line-height:1.7; color:var(--body);">
+          <li><strong>“我才是大人”：</strong>剥夺作为儿童哭泣的权利，强迫性扮演母亲、父亲、奶奶的情绪救赎者（“妈妈只有我了”）。</li>
+          <li><strong>生存负罪质押：</strong>母亲将自身生存绑架在女儿身上（“为了你才活下来”），引发主体深层的弑母与自毁冲动（“想把她杀了然后自杀”）。</li>
+          <li><strong>摔碗割手事件：</strong>母亲受伤后借机阴阳怪气指责“你克我”；受访者体验到吞噬性的内疚，但因防御机制选择极端狂暴对骂与割手代偿。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 章节 5: 关系矩阵对照：A vs B vs 母亲 -->
+  <section id="sec-compare">
+    <div class="section-heading">
+      <div>
+        <h2>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+          客体表征对比矩阵：男友A vs 男生B vs 原生母体
+        </h2>
+        <div class="section-sub">理智向往的成长型健康边界，为何总败给病态浓烈的自毁吸引？</div>
+      </div>
+    </div>
+
+    <div class="card" style="overflow-x:auto;">
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>比较维度</th>
+            <th style="color:var(--accent-teal)">男友A（现实对象）</th>
+            <th style="color:var(--accent-purple)">男生B（直播创伤镜像）</th>
+            <th style="color:var(--primary)">原生母亲（创伤母题）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>心理边界</strong></td>
+            <td>高社会化、理智、享受独处、界限分明（“女友≠家人”）</td>
+            <td>无边界、恋爱脑、将伴侣置于自身之前</td>
+            <td>完全共生吞噬、剥夺边界（“为了你才活下来”）</td>
+          </tr>
+          <tr>
+            <td><strong>资源供给</strong></td>
+            <td>在读大学生无经济能力；接受受访者让渡与倒贴</td>
+            <td>高额金钱供养（认识1月耗资2-3k），无偿给予</td>
+            <td>生存负债感转移，情感高利贷式索取</td>
+          </tr>
+          <tr>
+            <td><strong>创伤激活度</strong></td>
+            <td>拒绝对话哭泣，视弱者表现为审查条件，激活被遗弃创伤</td>
+            <td>自身重度PTSD，女友自杀阴影，深度激活同质自毁共鸣</td>
+            <td>出轨受害者诱发亲职化，直接促成自残与门控损伤</td>
+          </tr>
+          <tr>
+            <td><strong>主体的本能体验</strong></td>
+            <td>理性敬佩（“最适合我”、“上进”），但躯体感受冰冷、疲惫与窒息</td>
+            <td><strong>“特别爽”、“特别心动”</strong>，体验到全能拯救与深度被爱</td>
+            <td><strong>极度痛苦、愧疚至死，却构成无法割舍的母性依恋原型</strong></td>
+          </tr>
+          <tr>
+            <td><strong>精神分析定论</strong></td>
+            <td>代表“健康但疏离”的超我楷模，主体无法在其中消化创伤</td>
+            <td>母体创伤的浪漫化异化身，属于高危险自毁强迫性重复</td>
+            <td>病灶核心；一切“性缘价值低下与极端爱欲渴望”的源头</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 章节 6: 原始逐字陈述档案 -->
+  <section id="sec-archive">
+    <div class="section-heading">
+      <div>
+        <h2>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          原始对话逐字记录与临床动力学边注
+        </h2>
+        <div class="section-sub">无AI干预用户单方面输入原文归档（按时间与话题严格保留）</div>
+      </div>
+    </div>
+
+    <!-- 模块 1 -->
+    <div class="statement-archive-card">
+      <div class="statement-archive-head">
+        <span class="statement-topic">【关于长城冰雹与家人定义】</span>
+        <span class="tag tag-danger">档案编号: ARC-01</span>
+      </div>
+      <div class="statement-body-wrap">
+        <div class="statement-raw">两个月前我和男朋友还有他的朋友们一起去长城，在长城底下买票的时候我俩吵架了，之后将近一个小时我们都没有任何交流，一个小时之后我们到了一个长城烽火台，当时本来已经是夏天了，但是突然下起了冰雹，我穿的很少，我当时也感冒正在加重期，我们站的不是一个地方，当时我的视角就是我很冷很冷，身上都湿透了正在失温，风很大，冷的我人都几乎站不住了，中间蹲下来了一段时间，冰雹下了大概半个小时，我硬抗了半个小时。我男朋友穿了一件外套，虽然不厚但是比我穿的厚，他没感冒，我俩吵架前他还强行给我批外套，让我穿了一段时间，但是我心疼他冷我就还给他了，下冰雹的半个小时他没有来，下完冰雹下长城的时候，路很抖，有青苔（我穿拖鞋），下去大概二十五分钟，我是一个有女朋友的男生扶着下去的，他一手扶着我一手扶着他女朋友，我男朋友和我们隔了几个人，路确实很窄，几乎只能1.5人通过，也很陡，我们就这样直到下山回去都没有任何交流。
+这件事我记在心里很久，如果让我说一件我最不能接受的事情，这半年内，就是这件事，当时真的让我心寒的有点懵逼了，心里想起这件事都麻麻的，我当时晚上和好之后问他为什么不过来给我一个外套呢？他说因为我表现得不可怜，看起来不需要帮助。</div>
+        
+        <div class="statement-analysis">
+          <div class="analysis-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            临床动力学剖析
+          </div>
+          <p class="analysis-content">
+            <strong>躯体失温与孤立防御：</strong>在重感冒与失温生理危机下，主体因习惯了“亲职化”的坚忍（“硬抗半小时”），未能在当下呼救；而男友的“不可怜不施援”论调，将关系推向了冷酷的功利审查，直接诱发主体内心的躯体麻木感（“心里麻麻的”是典型的解离初期体感）。
+          </p>
+        </div>
+
+        <div style="margin-top:16px;"></div>
+
+        <div class="statement-raw dialogue">我：在家⼈⾯前我们通常有⼀种特权，是对对⽅⾝体健康下意识的在乎，绝对⼤过那⼀瞬间的任何负⾯情绪
+我：不是作为⼀个男⼈去关爱⼀个需要保护的⼥⼈
+对面：我明白了
+我：是家⼈把另外⼀位家⼈的⾝体安全放在⽐⼀切都重要的位置
+我：你觉得我事后向你讨要⼀个说法，是⼥朋友对男朋友的那种“你为什么不来保护我关爱我”
+我：我是想问，如果你把我当成真正在乎的家⼈的话，也会明知道当时已经冷到你都快失温了，明知道我感冒了，是会本能的衡量我是不是⼀个完美受害者，还是知道当时真的很冷所以下意识担⼼我冷出事，对家⼈⾝体状况的担忧完全盖过了任何“道理”和“赌⽓”
+对面：我内⼼是没有上升到家人的
+对面：⼥朋友是⼥朋友
+对面：家⼈是家⼈</div>
+
+        <div class="statement-analysis">
+          <div class="analysis-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            依恋契约破裂分析
+          </div>
+          <p class="analysis-content">
+            主体精确阐释了“健康原生家庭”所应具有的无条件生理庇护特权；而对方三句短促回复（“没有上升到家人 / 女友是女友 / 家人是家人”）构建起冷硬的界限高墙，彻底阻断了主体在客体身上寻找“理想化父母”的退行通道。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 模块 2 -->
+    <div class="statement-archive-card">
+      <div class="statement-archive-head">
+        <span class="statement-topic">【关于自我厌恶与性缘价值】</span>
+        <span class="tag tag-amber">档案编号: ARC-02</span>
+      </div>
+      <div class="statement-body-wrap">
+        <div class="statement-raw">我痛恨自己，我痛恨我承认自己很多行为像婊子一样缺爱但我还不想真的成为一个自甘堕落靠不停地索求性或陪伴的婊子。我痛恨我愚蠢。我男朋友社会化程度那么高，像杨诗瑶，像科普视频里说的那样理智，永远能享受独处，能在任何时候把事业的优先级排在第一位，能分清恋爱和家人的区别，知道在爱里保留自己的主体性，分得清女朋友和家人的区别，知道恋爱只是恋爱而已。为什么我不能分清恋爱只是恋爱而已？我为什么要把他当家人，为什么要给他花钱为什么要给他让我的比赛名额为什么要官宣为什么我付出了这么多最后得到一句没有上升到家人？觉得以后和我一起生活都这么窒息的话一点都不期待结婚。我也不是很想结婚啊，我只是想用更牢固的法律效应把我们绑在一起而已，为什么要这么对我，听起来我好廉价。我痛恨自己总是把性缘价值作为自己价值的很大一部分，我总是试图展现性魅力来稳固和朋友的关系，我为什么这么贱。我还总这样，我知道自己贱我还总这样，我控制不了。</div>
+
+        <div class="statement-raw">不是的，我男朋友如果不陪我的话，我就觉得我可以去找别的男生或者别的女生，只要他们陪我聊天，对我好就可以了。</div>
+
+        <div class="statement-analysis">
+          <div class="analysis-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            认同自卑与性缘防御
+          </div>
+          <p class="analysis-content">
+            <strong>超我残酷审判与自罪语言：</strong>主体用极其严苛的污名化词汇（“像婊子一样”、“这么贱”）进行内在审判。其背后是将“性魅力”视作自己唯一能掌控的流通货币，试图用身体和性换取不可被抛弃的保证。对法律绑定的执念，实质是对内在“廉价与易碎感”的防御。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 模块 3 -->
+    <div class="statement-archive-card">
+      <div class="statement-archive-head">
+        <span class="statement-topic">【关于边界感、社交面具与算计】</span>
+        <span class="tag tag-teal">档案编号: ARC-03</span>
+      </div>
+      <div class="statement-body-wrap">
+        <div class="statement-raw">我在和朋友的相处过程中一直都是个很会拿捏“分寸”的人，我的嘴很甜，对人也真诚，会让很多朋友都觉得我是他们非常重要的人，心甘情愿为我付出，给我花钱，陪我，帮我做事…但是在我第一次谈恋爱的第一年简直就是，天呐，不像我，我做了很多特别疯狂的事，我第一次让我爱的人讨厌我，厌烦我，我疯狂的表达爱，但不敢接收他的金钱，会算钱，一定要我比他花的多我才舒心，我也不好意思让他帮我做任何事，我总想疯狂的付出，直到一个月前他说了特别伤害我的话才一棍子把我打醒，现在我俩也挺好的，他看起来也表现的很爱我，我也表现的和之前一样？也许吧，但我内心更多是对朋友那种有点小算计有点小真诚的疏离，没有那种特别疯狂特别纯粹的爱了，反而不管是生气还是想做任何有攻击性的行为之前都会思考这个行为的利弊，做出最有可能让对方离不开我/觉得我好的行为。他上个月说完那句女友是女友家人是家人一棒子敲醒我，我意识到他只是我的恋爱对象，所以我把之前亲手打的戒指摘了，一个月之后，今天，他有点伤心的质问我我的戒指呢，他看到了我的自拍发现没戴戒指，我以前第一反应是告诉他因为你那句话让我很伤心之类的，但我现在好像第一反应是假惺惺的像哄朋友一样：“带着呢，我昨晚洗脸的时候嫌划脸摘掉了，今早忘带了，对不起之前两周特别伤心的时候我摘掉了，后面戴回来了戒指就在我洗漱的那个台子上，我今早困懵逼了忘戴回去了，两点多卸妆的时候看到了就戴上了哥哥你下次要是发现了然后不舒服的话早点问我好不好，我感觉你难受了好久才问的，不想你憋着”我发完自己都觉得很不可思议，我根本不是这么想的，我其实很恨他还敢问我戒指的事情，打这个戒指的时候我那么爱他，夹杂了那么多私心，我提前很久偷偷量他的指围，是左手中指的，我想让别人觉得我俩订婚了，我才20岁，我觉得我那时候像疯了，我现在也不想戴这个戒指，感觉很耻辱，但他质问我的时候我下意识给出了最完美的回答，其实全是编的，我不知道我是怎么了。</div>
+
+        <div class="statement-raw">我不会再哭着给他打电话了，他只会觉得烦，在我一周之前哭着走出房子打算给他打电话让他听到我的崩溃，但我又停住了，没有拨打电话而是打字冷静交流的时候，我已经彻底放弃了通过眼泪来换取他的共情，因为哭声只会让他觉得愧疚，愧疚会让他自保，以照顾自己的感受为先。</div>
+
+        <div class="statement-analysis">
+          <div class="analysis-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            假自我（False-Self）武装
+          </div>
+          <p class="analysis-content">
+            从“疯狂付出、手制订婚戒指”的真性情退回至“算计利弊、编织温顺谎言”的社交面具。主体敏锐觉察到男友的防御机制（“哭泣会引发对方愧疚，愧疚会促使其自保逃跑”），因而关闭真实脆弱表达，转用高情商的虚伪抚慰控制局面。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 模块 4 -->
+    <div class="statement-archive-card">
+      <div class="statement-archive-head">
+        <span class="statement-topic">【关于确诊与原生家庭创伤】</span>
+        <span class="tag tag-danger">档案编号: ARC-04</span>
+      </div>
+      <div class="statement-body-wrap">
+        <div class="statement-raw">我好像在很小的时候，幼儿园，小学，在爸爸出轨之前，我害怕的是作业写不完，偷偷吃糖被抓住，挨打，被老师批评。五年级下六年级上开始，妈妈发现爸爸出轨，情绪彻底崩溃，我还记得那天的起始……（中略）那一年还是半年，我不敢在任何大人哭的时候跟着哭，因为我才是大人，我需要安慰妈妈，安慰爸爸，安慰奶奶，奶奶也哭，哭的很厉害，抱着我哭，每个人都在哭，我是什么状态我已经忘了，我只记得我真的要好好安慰妈妈，妈妈只有我了。初中高中我学习成绩不断下滑，每天都开始比前一天更痛苦，我开始学会自残，从钝刀换成剃须刀片，流的血越来越多，但我知道我不能死，我死了我妈一定会跟着我死，我痛苦的原因多的数不清，我需要权衡我爸我妈的心态，不能让我爸我妈伤心，我妈每天都因为我的成绩焦虑，可我真的学不进去，我坐不住，可能是网课玩手机玩的，我就是学不进去，我看她每天都因为我这么焦虑，又想到她说她是为了我才活下来的，我就好崩溃，我总说想把命还给她，我觉得她为了我活下来，但每天都因为焦虑我的问题这么痛苦，那为什么还要活着呢，一起死了多好啊，我总这样想，我总这样想，我想把她杀了然后自杀。索性我考上了不错的一本，情况好多了，不过今年我大二升大三的假期在家呆的时间太长了，她又开始焦虑……我昨晚和她吵架又哭到脱力，哭到眼睛看不清，哭了两个多小时，但直到现在，都快24小时了，我还是好难受，一直很痛苦，情绪低迷，病理性的困顿。（我在去年的十二月在天津市安定医院确诊了分离性转化，脑CT结果是前额叶受损和门控缺失）。</div>
+
+        <div class="statement-raw">我妈前段时间把手割出血了，是我摔碎的碗，我放在塑料袋里没告诉她，她手伸进去割破了，当时我们在吵架，她抱着流血的指头气势汹汹的进我屋子，用那种，有点埋怨有点阴阳怪气的语气说：“你真行啊，xxxx（具体的话我忘了，大概意思是我有克她还是我是故意的，反正就是我本来就惹她生气又害她受伤了）”，我当时直接应激了，我看到她流血的手我特别痛苦特别愧疚，我想死，我想割一个一模一样的，但我就是不想道歉，我疯狂的跳脚，和她对骂，自残，但我就是不道歉，其实我心里愧疚的恨不得我立马去死了。</div>
+
+        <div class="statement-analysis">
+          <div class="analysis-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            代际弑母冲突与器质病理
+          </div>
+          <p class="analysis-content">
+            <strong>器质诊断与躯体化闭环：</strong>“天津市安定医院脑CT确诊前额叶受损与门控缺失”揭示了神经基础的脆弱性。碎碗事件体现了深层的内疚转化为愤怒机制：因愧疚过载导致无法道歉，借由自残与对骂以痛制痛，避免自身精神结构在内疚的重压下彻底瓦解。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 模块 5 -->
+    <div class="statement-archive-card">
+      <div class="statement-archive-head">
+        <span class="statement-topic">【关于A、B与近期状态】</span>
+        <span class="tag tag-purple">档案编号: ARC-05</span>
+      </div>
+      <div class="statement-body-wrap">
+        <div class="statement-raw">我有一个谈了一年半的男朋友……我一个月前开始直播，认识了一个26岁的男生……B，遇到他，我真的，我天，我不知道怎么说，我有心理疾病，他给我讲他的故事的时候我就特别的触动，想起自己，然后他讲他和他女朋友，讲他女朋友犯病的时候他一直陪着，他女朋友死了他也想跟着走 讲得很忧郁吧，我听着真的很触动，我分不清对他是什么情感，是憧憬一种自毁的情感，还是可怜他，还是有点喜欢他？他很舍得给我花钱，每天都给我花好多钱 认识一个月有两三千了，他还特别恋爱脑，把伴侣放在自己之前的那种人，说什么就喜欢挣钱给女朋友花呀啥的，然后他又特别理解我，我伤心他也表现得很触动很在意，我就特别的心动啊，我确实是，因为我对象现在毕竟还是大学生，没挣什么钱，第一次有男人给我花钱，真的很爽，然后他还恋爱脑，把我放在第一位，特别特别的关注我，但我也知道他ptsd还没好，我俩认识一个月可谓是兵荒马乱，他事业也因为我当时消失他ptsd犯了，被扣钱，被骂，我也因为他的出现和我对象吵架了，我俩确实应该不联系了，我俩这样只会反复激活彼此的创伤，但真的不联系我又好痛苦，我特别讨厌和人分别，还是和表现得这么喜欢我的人。</div>
+
+        <div class="statement-raw">你说句客观的，我和A也不一定结婚吧，我希望未来的伴侣月薪至少在1.5w以上，我感觉他做不到，而且我也不知道他现在愿意低头愿意沟通，以后累了压力大了会不会又回去了，人的底色是无法改变的，我只是想现在谈一段很爽的被恋爱而已。我已经和B达成共识，这种不高浓度联系了，，但是极我还是好难受呀，我对象也特别爱我吧，我也特别爱他呀，呜呜呜，我对象职业规划挺清晰的，特别上进。</div>
+
+        <div class="statement-raw">但是我男朋友现在想跟我分手，不是因为B，是因为现在入冬了，我又犯病了，去年就是这个时候，简直像噩梦一样，你知道吗，我的状态如果差的话就是睡不着，吃不下，也不会体谅他，我会不像平时一样换位思考，这是我的强项，我去年这个时候还能凭借本能，为了挽留他给他希望，但现在我感觉，可能因为我们一起经历的事情太多了，我在两个月前彻底接受了他有可能离开的事实，我这个人就是很死脑筋，我认定一个人就会用我的生命用尽全力来爱，来保留关系的延续，但当我意识到他有可能随时会逃离我的时候，我再也不会像以前那样在很痛苦的时候依然理解他然后留住他，我会有种摆烂的想法，他昨晚说分手我甚至心里没有那种恐惧了，我不知道是我觉得后面有人接盘呢，还是其实我早就不怕了。</div>
+
+        <div class="statement-raw">我需要的究竟是什么，我爱我对象的时候真心实意的觉得他就是最适合我的人，他心理边界健康，爱我，成长型人格，可是我遇到像我妈一样情感浓烈因为我要死要活的人，我好像又更容易端的爱吸引。</div>
+
+        <div class="statement-raw">A他自己想走，我只是没力气挽留了。</div>
+
+        <div class="statement-raw">我现在没有动力挽留他，客观来说，有我之前就做好准备的原因，也有我觉得现在有其他人喜欢我的原因，对吗。</div>
+
+        <div class="statement-raw">一定要分手吗，我真的到这一刻又感觉我没做好准备了。</div>
+
+        <div class="statement-analysis">
+          <div class="analysis-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            深层依恋矛盾与强迫性重复
+          </div>
+          <p class="analysis-content">
+            <strong>核心命题：“像我妈一样情感浓烈因为我要死要活的人”：</strong>这是全篇最具穿透力的自省。主体在理性上认同A的心理边界与健康人格，但在潜意识神经回路中，唯有像母亲/B那样“以死相逼、生死相随、无节制供养”的致死烈度，才能激活她被爱的体感。对A的“摆烂放手”实为心理力竭后的解离防御。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>个案心理动力学可视化系统 · 基于原始无干预文本档案生成 · 遵循轻量奶油色与严谨证据原则</p>
+  </footer>
+
+</main>
+
+<script>
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = Array.from(document.querySelectorAll('.nav-btn')).find(b => b.getAttribute('onclick').includes(id));
+      if (activeBtn) activeBtn.classList.add('active');
+    }
+  }
+
+  // 监听滚动更新导航状态
+  window.addEventListener('scroll', () => {
+    const sections = ['sec-field', 'sec-wall', 'sec-defense', 'sec-neuro', 'sec-compare', 'sec-archive'];
+    const scrollPos = window.scrollY + 120;
+    for (const id of sections) {
+      const el = document.getElementById(id);
+      if (el) {
+        const top = el.offsetTop;
+        const height = el.offsetHeight;
+        if (scrollPos >= top && scrollPos < top + height) {
+          document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+          const btn = Array.from(document.querySelectorAll('.nav-btn')).find(b => b.getAttribute('onclick').includes(id));
+          if (btn) btn.classList.add('active');
+          break;
+        }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
