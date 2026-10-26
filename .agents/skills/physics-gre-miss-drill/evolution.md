@@ -1,0 +1,2 @@
+- Use Chinese explanations with English terms during drill debriefs too; keep questions in English.
+- Before each step, connect the goal, why the step is needed, and what its result will establish; do not substitute small algebra steps for the missing reasoning.
