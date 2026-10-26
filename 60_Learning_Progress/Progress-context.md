@@ -1,7 +1,7 @@
 ---
 type: learning-index
 purpose: Terse cross-agent index of what the learner has solidly learned. Agents running /learn MUST read this first.
-updated: 2026-10-22
+updated: 2026-10-23
 ---
 # Learning Progress — Context Index
 
@@ -108,6 +108,17 @@ Session: [[2026-10-22-2303 Rigid rotor moment of inertia]]
 - **Levels:** $E=\frac{L^2}{2I}$ with $L^2=\hbar^2n(n+1)$; two masses $m$ on a rod $a$ give $I=\frac12ma^2$, $E=\frac{\hbar^2n(n+1)}{ma^2}$ (tutor-stated; the exam pick was a guess)
 - **Axis through the center of mass:** midpoint axis gave $ma^2$ for $m$, $3m$ ([[Trap-Log]]); then $m$, $m/2$ via $\mu=\frac{m_1m_2}{m_1+m_2}=\frac13m$, $I=\frac13ma^2$ unaided (verified)
 - **Studio card:** `supp-rigid-rotor` carries the derivation and the center-of-mass axis
+
+#### Atomic — E1 selection rules (hydrogen, light atoms)
+
+Session: [[2026-10-23-1121 Electric-dipole selection rules]] (closed 2026-10-23)
+
+- **One electron:** $\Delta l=\pm1$, $\Delta m=0,\pm1$, $\Delta n$ any; reason: photon spin 1 + parity $(-1)^l$ must flip; compute $\Delta l=l_f-l_i$, ignore $n$ (3d and 5f parallels unaided; matrix-element parity integral dropped as beyond GRE, learner's call)
+- **$2s\to1s$:** $\Delta l=0$ violated, $\Delta m=0$ satisfied; E1-forbidden is not impossible; two-photon decay, 2s metastable (stated)
+- **One photon vs two:** atom recoil allows one photon in $2p\to1s$; $e^+e^-$ at rest needs two ([[Trap-Log]], reworked)
+- **Cascade:** $3s\to2p\to1s$ (unaided)
+- **LS coupling:** opposite parity, $\Delta S=0$, $\Delta L=0,\pm1$, $\Delta J=0,\pm1$, no $0\to0$ for $L$ or $J$; $L$ read from the letter, $J$ from $|L-S|$ to $L+S$; term-symbol question 4/4 unaided
+- **Check:** 3/3 on fresh questions aimed at `gr1777-99`, `cpg-x1-85`, the one-photon reason and $\Delta m$ (verified)
 
 #### Exp. tech NP — radioactive beams
 
@@ -317,6 +328,21 @@ Session: [[2026-10-22-1753 Energy conservation from a time-independent Lagrangia
 - **Friction:** cannot hide in a time-independent $L$; damped oscillator needs $L=e^{\gamma t}(\frac12 m\dot x^2-\frac12 kx^2)$, explicit $t$ (self-report)
 - **Open:** derive $\frac{d}{dt}(\dot x\,\partial L/\partial\dot x-L)=-\partial L/\partial t$ (learner deferred)
 - **Studio card:** `cpgf-1.32` back carries the friction example and the decision rule
+
+#### Thermo — Carnot cycle
+
+Session: [[2026-10-23-1706 Carnot cycle step by step]] (closed 2026-10-23)
+
+- **Step 1, isothermal expansion at $T_H$:** $Q=W=nRT\ln\frac{V_f}{V_i}>0$, $\Delta U=nC_V\Delta T=0$, $\Delta S=Q_H/T_H=nR\ln\frac{V_f}{V_i}>0$, $\Delta F=-W<0$, so `cpg-x1-18` answer is (A) (handwritten, after the tutor named the $\delta Q=C\,dT$ contradiction)
+- **Reversibility test:** nudge the conditions slightly; gas at $T_H=600$ K on a $300$ K reservoir needs the reservoir raised to $600$ K to reverse the heat flow, so irreversible; the adiabat brings the gas from $T_H$ to $T_C$ so contact is across an infinitesimal gap (stated, after the 600/300 K scaffold)
+- **Why expansion at $T_H$:** on an isotherm $Q=W$; giving heat to the cold reservoir means $Q<0\Rightarrow W<0\Rightarrow dV<0$, compression (stated, after the $Q=W$ prompt)
+- **Four-step sign table** (Q, W, ΔU, ΔS; ΔF on isotherms): 1→2 $+,+,0,+,-$; 2→3 $0,+,-,0$; 3→4 $-,-,0,-,+$; 4→1 $0,-,+,0$; adiabat: $Q=0$, $\Delta U=-W$ (handwritten, unaided, Turn 7)
+- **Four `cpg-x1-18` doubts, one sentence each** (Turn 8, unaided): $\Delta F=-T\Delta S<0$ so (A) is the answer; $\Delta S=nR\ln\frac{V_f}{V_i}>0$; all steps reversible; heat in at $T_H$ needs expansion. Wording fixed by tutor: step 1 called "adiabatic" ([[Trap-Log]]); reversibility reason said "infinitesimal temperature change", correct is infinitesimal gas–reservoir temperature difference during heat exchange
+- **Check questions (Turn 9, tutor-authored, times not written): 2/3.** Right: NOT-question on the isothermal compression (total entropy of gas + reservoir unchanged); reversible adiabat $TV^{2/3}$ gives $2^{-2/3}T_0$ vs free expansion $T_0$, $\Delta S=R\ln2$. Missed: Carnot refrigerator work on a $T$–$S$ rectangle ([[Trap-Log]])
+- **Rework (Turn 12):** Carnot refrigerator $250\to300$ K removing 500 J: $\Delta S=2$ J/K, $W=(300-250)\times2=100$ J, $Q_H=600$ J (handwritten, unaided, 85 s)
+- **Studio cards:** `supp-carnot-steps` (four steps and signs, why $T_H$, why reversible); `supp-cycle-area` back adds the Carnot rectangle reading and the per-isotherm $Q=W$ trap
+- **$T$–$S$ areas (Turn 14):** heat pump $\mathrm{COP}=Q_H/W=\frac{T_H\Delta S}{(T_H-T_C)\Delta S}=\frac{T_H}{T_H-T_C}$, $270/300$ K gives $10$ (handwritten, unaided, after the area mix-up was corrected); figure on both cards
+- **Cycle direction (Turn 15):** clockwise = heat engine (heat in on the top edge at $T_H$, net work out); counterclockwise = refrigerator, air conditioner, heat pump
 
 ### Mathematical Methods
 

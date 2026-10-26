@@ -183,7 +183,8 @@ New material comes from the Sunday full mocks. The other days go to weak spots: 
 - Sit the remaining full mocks in the Studio mock room: Sun Oct 18 GR1777 (100Q/170, 14:00), Wed Oct 21 Kahn Sample Exam 1 (100Q/170; Reid 2026-10-18), Sun Oct 25 ets2024 (70Q/120, 14:00) (Mock schedule above).
 - Answer at least 60 mistake-book questions each day through Oct 29, Thursdays included (raised from 40 on Oct 22); a full mock submitted that day meets the target on its own.
 - Rework the latest mock's misses first in the mistake book ([[2026-10-17]]: "Prioritize reviewing the questions I got wrong on the mock test.").
-- Keep formula recall as in the Catch-up rules above.
+- Keep formula recall as in the Catch-up rules above, except Oct 26–29: about 24 new cards a day, to finish chapters 5–8 (QM & Atomic, Special Relativity, Laboratory Methods, Specialized Topics) by Oct 29 (Reid 2026-10-26).
+- Wed Oct 28: GR9677 full sitting (99 scored questions / 170 min). The Oct 25 ets2024 form repeated all 70 questions from GR1777, so it did not test new questions; GR9677 shares no question with the Studio bank (3-word-overlap check, 2026-10-26). No mock on Oct 26 (Reid 2026-10-26).
 - Leave the unsat timed packs out of the plan: no pack target, and a pack only after the day's 60 mistake-book questions.
 - Set no daily target on Oct 30 (logistics, due formula cards) or Oct 31 (sleep, travel).
 
@@ -196,7 +197,9 @@ New material comes from the Sunday full mocks. The other days go to weak spots: 
 | Thu Oct 22 | Kahn Sample Exam 1 submitted; the full mock meets the daily target |
 | Fri Oct 23 – Sat Oct 24 | 60 mistake-book questions a day, Kahn Sample Exam 1 misses first, then GR1777 |
 | Sun Oct 25 | Full sitting 3: ets2024, 14:00 |
-| Mon Oct 26 – Thu Oct 29 | 60 mistake-book questions a day, ets2024 misses first |
+| Mon Oct 26 – Tue Oct 27 | 60 mistake-book questions a day, Kahn Sample Exam 1 misses first; about 24 new formula cards a day |
+| Wed Oct 28 | Full sitting 4: GR9677; the full mock meets the daily target; due formula cards only |
+| Thu Oct 29 | 60 mistake-book questions, GR9677 misses first; about 24 new formula cards |
 | Fri Oct 30 | No target: logistics, due formula cards |
 | Sat Oct 31 | No target: sleep, travel |
 | Sun Nov 1 | Exam, 14:00 |
