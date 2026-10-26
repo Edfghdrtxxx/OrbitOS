@@ -49,6 +49,7 @@ All migrated EXP3 records live below this directory. Each chapter retains its so
 - [[30_Data_Integrity/fm-ar-label-blast|Label-map blast radius (`fm-ar-label-blast`)]]
 - [[30_Data_Integrity/fm-ar-label-settle|Label-settle report (`fm-ar-label-settle`)]]
 - [[30_Data_Integrity/fm-ar-results-audit|Results audit (`fm-ar-results-audit`)]]
+- [[30_Data_Integrity/lit-tpc-signal-selection|Real TPC signal-pad selection, literature (`lit-tpc-signal-selection`)]]
 - [[40_Manuscript_Provenance/fm-ar-amend-package|Manuscript amendment package (`fm-ar-amend-package`)]]
 - [[40_Manuscript_Provenance/fm-ar-bib-fixsheet|Bib fix sheet for references.bib (`fm-ar-bib-fixsheet`)]]
 - [[40_Manuscript_Provenance/fm-ar-bib-additions|Bib additions sheet for references.bib (`fm-ar-bib-additions`)]]

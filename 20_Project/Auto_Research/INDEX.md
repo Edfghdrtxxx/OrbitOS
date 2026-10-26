@@ -39,6 +39,7 @@ updated: 2026-09-20
 |---|---|---|
 | **[[MATE_Physics_Picture_and_Pipeline_Role]]** | **Active-Target Kinematics** | MATE is a reaction spectrometer for inverse kinematics ($E_x, d\sigma/d\Omega$), not merely a $Z^2 A$ isotope counter. |
 | **`paper_anchor.md`** | **NIM A Manuscript Anchor** | Physics paper using ML: physics-informed ResNet-18 vs generic ResNet-18. |
+| **[[docs/30_Data_Integrity/lit-tpc-signal-selection]]** | **Real readout hit selection (fidelity)** | Real TPCs fire a pad on amplitude/charge (3–5σ after FPN and baseline subtraction) and time only fired pads; the Raw "drift time > 0.1" mask has no readout analogue. Sim-to-real: Kuchera binary F1 0.90 real-trained / 0.72 sim-trained / 0.55 with uniform noise. |
 | **`Comparison_Mine_Others.md`** | **Literature Positioning** | Detailed comparison of AFTPC against AT-TPC, NOvA, UrQMD, and KAN literature. |
 
 ---

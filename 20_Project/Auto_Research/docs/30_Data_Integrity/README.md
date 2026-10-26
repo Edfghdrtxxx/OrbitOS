@@ -10,3 +10,4 @@ Reports auditing labels, contamination, quantitative result support, code behavi
 - [[fm-ar-label-blast|Label-map blast radius]] — Analyzes event-level consequences of Garfield HDF5 label mapping across completed runs.
 - [[fm-ar-label-settle|Label-settle report]] — Settles the two Windows-machine concerns from surviving evidence: V6 Table 4 almost certainly triton-vs-rest (~80%); EXP2 clean accuracy unrecoverable; replacement task specs T1–T5.
 - [[fm-ar-results-audit|Results audit]] — Verifies quantitative claims against raw run metrics, checkpoints, and evaluation logs.
+- [[lit-tpc-signal-selection|Real TPC signal-pad selection]] — Literature (2026-10-23): real readouts fire a pad on amplitude or charge and time only fired pads; the Raw "drift time > 0.1" mask has no readout analogue; sim-to-real numbers and a CPU comparison to run.
