@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rayleigh scattering — daytime sky and sunset (three.js)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  :root {
+    --ink: #111827; --muted: #5b6472; --faint: #8b93a1; --line: #e3e7ee; --card: #ffffff; --page: #f6f8fb;
+    --blue: #2563eb; --sunset: #ea580c; --accent: #0f766e;
+  }
+  body { margin: 0; background: var(--page); color: var(--ink);
+    font: 14px/1.5 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .wrap { max-width: 1480px; margin: 0 auto; padding: 22px 22px 48px; }
+  .kicker { letter-spacing: .08em; text-transform: uppercase; font-size: 11.5px; font-weight: 650; color: var(--muted); margin: 0 0 4px; }
+  h1 { font-size: clamp(22px, 2.3vw, 30px); line-height: 1.2; margin: 0 0 6px; letter-spacing: -0.01em; }
+  .lead { color: var(--muted); max-width: 980px; margin: 0 0 18px; font-size: 15px; }
+  .lead b { color: var(--ink); }
+
+  .grid-top { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 16px; align-items: stretch; }
+  .grid-top > .main { display: flex; flex-direction: column; min-width: 0; }
+  .grid-mid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 16px; margin-top: 16px; }
+  @media (max-width: 1100px) {
+    .grid-top, .grid-mid { grid-template-columns: minmax(0, 1fr); }
+    .grid-top .sky { flex: none; aspect-ratio: 16 / 10; }
+  }
+
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; min-width: 0; }
+  .card h2 { font-size: 13.5px; margin: 0 0 10px; letter-spacing: .01em; }
+  .card h2 .sub { font-weight: 450; color: var(--muted); }
+
+  /* Sky view */
+  .sky { position: relative; border-radius: 12px; overflow: hidden; background: #dfe7f1; flex: 1; min-height: 440px; border: 1px solid var(--line); }
+  .sky canvas { width: 100%; height: 100%; display: block; cursor: grab; touch-action: none; }
+  .sky canvas:active { cursor: grabbing; }
+  .hud { position: absolute; left: 12px; top: 10px; font-size: 12px; color: #fff; background: rgba(17,24,39,.55);
+    padding: 4px 9px; border-radius: 7px; pointer-events: none; backdrop-filter: blur(4px); }
+  .hud.right { left: auto; right: 12px; }
+  .hud.bl { top: auto; bottom: 10px; }
+  .sky-note { font-size: 12px; color: var(--faint); margin: 6px 2px 0; }
+
+  .row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .presets { margin-top: 10px; }
+  button.chip { border: 1px solid var(--line); background: #fff; color: var(--ink); border-radius: 999px; padding: 5px 12px;
+    font: inherit; font-size: 12.5px; cursor: pointer; transition: background .12s, border-color .12s; }
+  button.chip:hover { border-color: #b9c2cf; }
+  button.chip.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+  button.chip.day.on { background: var(--blue); border-color: var(--blue); }
+  button.chip.dusk.on { background: var(--sunset); border-color: var(--sunset); }
+  button.chip .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: 0; }
+  .sep { width: 1px; height: 20px; background: var(--line); margin: 0 4px; }
+
+  /* Controls */
+  .ctl { margin: 0 0 12px; }
+  .ctl:last-child { margin-bottom: 0; }
+  .ctl label.t { display: flex; justify-content: space-between; font-size: 12.5px; color: var(--muted); margin-bottom: 3px; }
+  .ctl label.t output { color: var(--ink); font-variant-numeric: tabular-nums; font-weight: 600; }
+  input[type=range] { width: 100%; accent-color: var(--ink); margin: 0; }
+  .checks { display: grid; gap: 5px; }
+  .checks label { display: flex; gap: 8px; align-items: baseline; font-size: 13px; cursor: pointer; }
+  .checks label small { color: var(--faint); }
+  input[type=checkbox], input[type=radio] { accent-color: var(--ink); }
+  .seg { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; }
+  .seg button { border: 1px solid var(--line); background: #fff; border-radius: 8px; padding: 6px 4px; font: inherit; font-size: 12px; cursor: pointer; }
+  .seg button.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .divider { height: 1px; background: var(--line); margin: 12px -16px; }
+
+  /* Readouts */
+  .kv { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3px 10px; font-size: 13px; }
+  .kv span:nth-child(odd) { color: var(--muted); }
+  .kv span:nth-child(even) { font-variant-numeric: tabular-nums; font-weight: 600; text-align: right; }
+  .bars { display: grid; gap: 4px; margin-top: 8px; }
+  .bar { display: grid; grid-template-columns: 56px minmax(0, 1fr) 54px; gap: 8px; align-items: center; font-size: 12px; }
+  .bar .track { height: 8px; background: #eef1f5; border-radius: 4px; overflow: hidden; }
+  .bar .fill { height: 100%; border-radius: 4px; }
+  .bar .v { text-align: right; font-variant-numeric: tabular-nums; color: var(--ink); }
+  .bar .k { color: var(--muted); }
+  .swatches { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-top: 4px; }
+  .sw { text-align: center; font-size: 11px; color: var(--muted); }
+  .sw i { display: block; height: 38px; border-radius: 8px; border: 1px solid rgba(0,0,0,.08); margin-bottom: 4px; }
+  .sw b { display: block; color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+
+  /* Path view */
+  .pv { position: relative; aspect-ratio: 1.75 / 1; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); }
+  .pv canvas { width: 100%; height: 100%; display: block; }
+  .pv-overlay { position: absolute; inset: 0; pointer-events: none; }
+  .pv-label { position: absolute; font-size: 11.5px; color: var(--ink); white-space: nowrap; }
+  .pv-label.muted { color: var(--muted); font-size: 10.5px; }
+  .pv-label.strong { background: rgba(255,255,255,.85); padding: 2px 7px; border-radius: 6px; border: 1px solid var(--line); }
+  .pv-label.sun { color: #b45309; font-weight: 600; }
+  table.mc { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-top: 10px; font-variant-numeric: tabular-nums; }
+  table.mc th { text-align: right; font-weight: 600; color: var(--muted); padding: 4px 6px; border-bottom: 1px solid var(--line); }
+  table.mc th:first-child, table.mc td:first-child { text-align: left; }
+  table.mc td { text-align: right; padding: 4px 6px; border-bottom: 1px solid #f0f2f5; }
+  table.mc td .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; }
+  .mc-note { font-size: 12px; color: var(--faint); margin: 6px 0 0; }
+
+  .spec canvas { width: 100%; height: 400px; display: block; }
+
+  /* Explanation */
+  .explain { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
+  @media (max-width: 1100px) { .explain { grid-template-columns: minmax(0, 1fr); } }
+  .explain .card p { margin: 0 0 8px; color: #374151; }
+  .explain .num { display: inline-flex; width: 22px; height: 22px; border-radius: 50%; background: var(--ink); color: #fff;
+    align-items: center; justify-content: center; font-size: 12px; margin-right: 8px; }
+  .physics { margin-top: 16px; }
+  .physics .cols { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 24px; }
+  @media (max-width: 1100px) { .physics .cols { grid-template-columns: minmax(0, 1fr); } }
+  .physics p, .physics li { color: #374151; }
+  .physics .katex-display { margin: .6em 0; overflow-x: auto; overflow-y: hidden; }
+  table.val { border-collapse: collapse; width: 100%; font-size: 13px; font-variant-numeric: tabular-nums; }
+  table.val th, table.val td { padding: 5px 8px; border-bottom: 1px solid var(--line); text-align: right; }
+  table.val th:first-child, table.val td:first-child { text-align: left; }
+  table.val th { color: var(--muted); font-weight: 600; }
+  .refs { font-size: 12.5px; color: var(--muted); padding-left: 18px; }
+  .refs li { margin-bottom: 4px; }
+  .err { display: none; padding: 12px 14px; background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; border-radius: 10px; margin-bottom: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">Physics visualization · atmospheric optics · three.js</p>
+  <h1>Rayleigh scattering: why the daytime sky is blue and the sunset is red</h1>
+  <p class="lead">A spectral simulation of sunlight crossing Earth's atmosphere. Air molecules scatter light with a cross section
+    that grows as <b>λ⁻⁴</b>, so blue light is scattered about <b id="ratioLead">4.5</b> times more than red.
+    In daytime you look at that <b>scattered</b> light, which is blue. At sunset you look at the light that is
+    <b>left</b> after a path through the air that is tens of times longer, which is red.</p>
+
+  <div class="err" id="err"></div>
+
+  <div class="grid-top">
+    <div class="main">
+      <div class="sky" id="skyBox">
+        <canvas id="sky"></canvas>
+        <div class="hud" id="hudL"></div>
+        <div class="hud right" id="hudR" style="display:none"></div>
+        <div class="hud bl" id="hudB">Drag to look around · scroll to zoom</div>
+      </div>
+      <div class="row presets">
+        <button class="chip day" data-elev="45"><span class="dot" style="background:#3b82f6"></span>Daytime 45°</button>
+        <button class="chip day" data-elev="20">Afternoon 20°</button>
+        <button class="chip dusk" data-elev="6">Golden hour 6°</button>
+        <button class="chip dusk" data-elev="0.5"><span class="dot" style="background:#ea580c"></span>Sunset 0.5°</button>
+        <button class="chip dusk" data-elev="-3">Twilight −3°</button>
+        <span class="sep"></span>
+        <button class="chip" id="play">▶ Play sunset</button>
+        <button class="chip" id="compare">Compare day | sunset</button>
+      </div>
+      <p class="sky-note">Each pixel integrates the light scattered along its line of sight at 16 wavelengths (380–740 nm),
+        then converts the spectrum to colour with the CIE 1931 observer. The mountains are 5, 19 and 58 km away, so their
+        haze shows the same scattering (aerial perspective).</p>
+    </div>
+
+    <aside class="card" id="controls">
+      <h2>Sun and view</h2>
+      <div class="ctl">
+        <label class="t">Sun elevation <output id="elevOut">45.0°</output></label>
+        <input type="range" id="elev" min="-6" max="90" step="0.1" value="45">
+      </div>
+      <div class="ctl">
+        <div class="seg" id="viewSeg">
+          <button data-view="sun" class="on">Toward Sun</button>
+          <button data-view="anti">Away from Sun</button>
+          <button data-view="sky">Whole sky</button>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <h2>What is in the air</h2>
+      <div class="ctl checks">
+        <label><input type="checkbox" id="cR" checked> Air molecules <small>Rayleigh scattering</small></label>
+        <label><input type="checkbox" id="cO" checked> Ozone <small>absorbs orange (Chappuis band)</small></label>
+        <label><input type="checkbox" id="cM" checked> Aerosols / haze <small>Mie scattering</small></label>
+        <label><input type="checkbox" id="cMS" checked> Multiple scattering <small>light scattered 2+ times</small></label>
+      </div>
+      <div class="ctl">
+        <label class="t">Aerosol optical depth at 550 nm <output id="aodOut">0.08</output></label>
+        <input type="range" id="aod" min="0" max="0.8" step="0.01" value="0.08">
+      </div>
+      <div class="ctl">
+        <label class="t">Amount of air (× Earth) <output id="densOut">1.00×</output></label>
+        <input type="range" id="dens" min="0" max="4" step="0.05" value="1">
+      </div>
+      <div class="ctl checks">
+        <label><input type="radio" name="law" id="lawExact" checked> Exact Rayleigh formula <small id="effExp"></small></label>
+        <label><input type="radio" name="law" id="lawCustom"> What if β ∝ λ⁻ᵏ instead <small>k = 0: no colour preference</small></label>
+      </div>
+      <div class="ctl">
+        <label class="t">Exponent k <output id="expOut">4.0</output></label>
+        <input type="range" id="exp" min="0" max="8" step="0.1" value="4" disabled>
+      </div>
+      <div class="divider"></div>
+      <h2>Observer and camera</h2>
+      <div class="ctl">
+        <label class="t">Observer altitude <output id="altOut">0.2 km</output></label>
+        <input type="range" id="alt" min="0" max="40" step="0.1" value="0.2">
+      </div>
+      <div class="ctl checks">
+        <label><input type="checkbox" id="cAuto" checked> Auto exposure <small>like an eye adapting</small></label>
+        <label><input type="checkbox" id="cMtn" checked> Mountains</label>
+      </div>
+      <div class="ctl">
+        <label class="t">Exposure compensation <output id="evOut">0.0 EV</output></label>
+        <input type="range" id="ev" min="-4" max="4" step="0.1" value="0">
+      </div>
+    </aside>
+  </div>
+
+  <div class="grid-mid">
+    <div class="card">
+      <h2>The path of sunlight to you <span class="sub">· Monte Carlo photons, cross-section along the Sun's direction</span></h2>
+      <div class="pv" id="pvBox"><canvas id="pv"></canvas><div class="pv-overlay" id="pvOverlay"></div></div>
+      <table class="mc" id="mc"></table>
+      <p class="mc-note">Each photon follows the line from the top of the atmosphere to you and, at every 2 km step, is scattered with
+        probability 1 − exp(−β·ρ(h)·Δs) using the same coefficients as the sky render. Scattered photons continue in a new
+        direction drawn from the Rayleigh phase function; those are the photons that make the sky glow.</p>
+    </div>
+    <div style="display:grid; gap:16px; min-width:0">
+      <div class="card">
+        <h2>Sunlight reaching you <span class="sub">· along the direct beam</span></h2>
+        <div class="kv" id="kv"></div>
+        <div class="bars" id="bars"></div>
+        <div class="divider"></div>
+        <h2>Colours in this sky <span class="sub">· hue, with luminance in cd/m²</span></h2>
+        <div class="swatches" id="swatches"></div>
+      </div>
+      <div class="card spec"><canvas id="spec"></canvas></div>
+    </div>
+  </div>
+
+  <div class="explain">
+    <div class="card"><h2><span class="num">1</span>Small molecules prefer short waves</h2>
+      <p>An N₂ or O₂ molecule is about 1000 times smaller than a wavelength of light. The light's electric field drives
+        its electrons as a tiny oscillating dipole, and a dipole radiates power ∝ ω⁴ ∝ λ⁻⁴.</p>
+      <p>Here the exact formula gives β(450 nm)/β(650 nm) = <b id="ratio1">–</b>; a pure λ⁻⁴ law gives (650/450)⁴ = 4.35.
+        The small excess comes from the dispersion of air's refractive index and from the King factor.</p></div>
+    <div class="card"><h2><span class="num">2</span>Daytime: you see the scattered light</h2>
+      <p>Looking away from the Sun, every photon you receive was scattered toward you. Blue is scattered most, so the sky is blue.
+        The sky is not violet because sunlight contains less violet, the eye is less sensitive there, and the violet is partly
+        scattered away before it reaches the lower air.</p>
+      <p>Zenith optical depth at 550 nm is only <b id="tauZ">–</b>, so most sunlight still reaches the ground and the Sun looks white.</p></div>
+    <div class="card"><h2><span class="num">3</span>Sunset: you see what is left</h2>
+      <p>Near the horizon the beam crosses about <b id="amSun">–</b> times as much air as at the zenith. Transmittance is
+        exp(−τ·m), so blue, with a larger τ, is removed first. The Sun and the clouds or mountains it lights turn orange and red.</p>
+      <p>Switch to <b>Away from Sun</b> at sunset or in twilight to see Earth's shadow rising in the east, with the pink
+        band above it lit by reddened sunlight.</p></div>
+  </div>
+
+  <div class="card physics">
+    <h2>What the simulation computes</h2>
+    <div class="cols">
+      <div>
+        <p><b>Cross section per molecule</b> (Bodhaine et al. 1999, eq. 22), with the refractive index of standard air $n_s$
+          from Peck &amp; Reeder (1972) and the King depolarization factor $F_K$ from Bates (1984):</p>
+        $$\sigma(\lambda)=\frac{24\pi^3}{\lambda^4 N_s^2}\left(\frac{n_s^2-1}{n_s^2+2}\right)^2F_K(\lambda),\qquad N_s=\frac{p_0}{k_BT_0}$$
+        <p><b>Scattering coefficient</b> with an exponential atmosphere. The scale height $H_R=k_BT_0/(m g)=8.43$ km makes the
+          column $N_sH_R$ equal to the hydrostatic column $p_0/(mg)$:</p>
+        $$\beta_R(\lambda,h)=N_s\,\sigma(\lambda)\,e^{-h/H_R},\qquad P_R(\theta)=\frac{3}{16\pi}\left(1+\cos^2\theta\right)$$
+        <p><b>Single scattering</b> along each view ray (Nishita et al. 1993), with aerosols (Cornette–Shanks phase, $g=0.8$)
+          and ozone absorption included in the extinction:</p>
+        $$L(\lambda)=E_\odot(\lambda)\int_0^{t_\text{max}}\!\Big[\beta_R P_R(\theta)+\beta_M P_M(\theta)\Big]\,
+          T_{\text{eye}\to x}(\lambda)\,T_{x\to\odot}(\lambda)\,dt$$
+        $$T(\lambda)=\exp\!\Big(-\!\int\big[\beta_R+\beta_{M,\text{ext}}+\beta_{O_3}\big]\,ds\Big)$$
+        <p><b>Multiple scattering</b> (Hillaire 2020): light scattered two or more times is treated as isotropic.
+          At each altitude and Sun angle, a table stores the second-order radiance $L_2$ and the fraction $f_{ms}$ of light
+          that scatters again; the sum of all orders is a geometric series, and $\sigma_s\Psi_{ms}$ is added at every step:</p>
+        $$\Psi_{ms}=L_2\left(1+f_{ms}+f_{ms}^2+\dots\right)=\frac{L_2}{1-f_{ms}}$$
+        <p><b>Colour</b>: $X,Y,Z=\sum_i L(\lambda_i)\,\{\bar x,\bar y,\bar z\}_i\,\Delta\lambda$ with the CIE 1931 functions
+          (analytic fit of Wyman et al. 2013), then linear sRGB, white-balanced so that the Sun above the atmosphere is neutral,
+          then exposure and a hue-preserving tone curve. Luminance is $683\,Y$ in cd/m².</p>
+      </div>
+      <div>
+        <p><b>Check against published values</b> (computed live in this page):</p>
+        <table class="val" id="val"></table>
+        <p style="margin-top:12px"><b>Limits of the model</b></p>
+        <ul style="margin:0; padding-left:18px">
+          <li>Multiple scattering is approximate: isotropic, a function of altitude and Sun angle only, with a 10% grey ground.
+            Untick it to see single scattering alone: Earth's shadow in twilight then turns black.</li>
+          <li>Spherical Earth, exponential air and aerosol profiles, a 10–40 km triangular ozone layer of 300 Dobson units,
+            no clouds, no refraction (the real Sun stays visible about 0.5° below the geometric horizon).</li>
+          <li>The Monte Carlo panel scatters photons within the drawing plane; the sky render uses the full 3-D phase function.</li>
+        </ul>
+        <p style="margin-top:12px"><b>Sources</b></p>
+        <ol class="refs">
+          <li>B. A. Bodhaine, N. B. Wood, E. G. Dutton, J. R. Slusser, "On Rayleigh optical depth calculations",
+            <i>J. Atmos. Oceanic Technol.</i> 16, 1854–1861 (1999).</li>
+          <li>E. R. Peck, K. Reeder, "Dispersion of air", <i>J. Opt. Soc. Am.</i> 62, 958–962 (1972),
+            <a href="https://doi.org/10.1364/JOSA.62.000958">doi:10.1364/JOSA.62.000958</a>.</li>
+          <li>C. Wyman, P.-P. Sloan, P. Shirley, "Simple analytic approximations to the CIE XYZ color matching functions",
+            <i>JCGT</i> 2(2), 2013, <a href="https://jcgt.org/published/0002/02/01/">jcgt.org</a>.</li>
+          <li>E. Bruneton, Precomputed Atmospheric Scattering, demo constants (ASTM G-173 solar spectrum and 233 K ozone
+            cross sections, 10 nm bins), <a href="https://github.com/ebruneton/precomputed_atmospheric_scattering/blob/master/atmosphere/demo/demo.cc">demo.cc</a>.</li>
+          <li>T. Nishita, T. Sirai, K. Tadamura, E. Nakamae, "Display of the Earth taking into account atmospheric scattering",
+            SIGGRAPH 1993.</li>
+          <li>S. Hillaire, "A scalable and production ready sky and atmosphere rendering technique",
+            <i>Computer Graphics Forum</i> 39(4), EGSR 2020.</li>
+          <li>W. M. Cornette, J. G. Shanks, "Physically reasonable analytic expression for the single-scattering phase function",
+            <i>Appl. Opt.</i> 31, 3152 (1992).</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="physics.js"></script>
+<script src="sky.js"></script>
+<script src="path.js"></script>
+<script src="chart.js"></script>
+<script type="importmap">
+  { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js" } }
+</script>
+<script type="module">
+import * as THREE from 'three';
+const RS = window.RS;
+const $ = id => document.getElementById(id);
+const D2R = Math.PI / 180;
+
+const state = {
+  elev: 45, hObs: 0.2, rayleigh: true, ozone: true, aerosol: true, aod: 0.08, density: 1,
+  exact: true, exponent: 4, autoExp: true, ev: 0, mountains: true, multiple: true,
+  view: 'sun', yaw: 0, pitch: 23 * D2R, fov: 60, compare: false, playing: false,
+};
+const COMPARE = [35, 0.5];
+const KEY = 0.16;                       // target for the log-average sky luminance after exposure
+
+let sky, path, lut;
+try {
+  lut = RS.buildLUT();
+  sky = window.createSkyView(THREE, $('sky'), RS, lut);
+  path = window.createPathView(THREE, $('pv'), $('pvOverlay'), RS);
+} catch (e) {
+  $('err').style.display = 'block';
+  $('err').textContent = 'WebGL could not start: ' + e.message;
+  throw e;
+}
+
+const params = () => ({ rayleigh: state.rayleigh, ozone: state.ozone, aerosol: state.aerosol, aod: state.aod,
+  density: state.density, exponent: state.exact ? null : state.exponent });
+const sunDirOf = e => [0, Math.sin(e * D2R), Math.cos(e * D2R)];
+
+// Fixed exposure reference: default atmosphere, Sun at 45°.
+const REF = (() => {
+  const co = RS.coefficients({ rayleigh: true, ozone: true, aerosol: true, aod: 0.08, density: 1, exponent: null });
+  return RS.skyStats(sunDirOf(45), 0.2, co, lut, RS.buildMSLUT(co, lut)).logAvgLum;
+})();
+
+// Multiple-scattering table: depends only on what is in the air, not on the Sun's position.
+// Slider drags reuse the previous table and rebuild ~80 ms after the last change.
+let ms = null, msKey = '', msTimer = 0;
+function refreshMS(p, coNow, immediate) {
+  const key = JSON.stringify(p);
+  if (key === msKey) return;
+  const build = () => { ms = RS.buildMSLUT(coNow, lut); msKey = key; sky.setMS(ms); };
+  clearTimeout(msTimer);
+  if (immediate || !ms) build();
+  else msTimer = setTimeout(() => { build(); update(); }, 80);
+}
+const msOrNull = () => state.multiple ? ms : null;
+
+let panes = [], co, dirty = true, immediateMS = true;
+function paneFor(e) {
+  const sd = sunDirOf(e);
+  const st = RS.skyStats(sd, state.hObs, co, lut, msOrNull());
+  const auto = KEY * 683 / Math.max(st.logAvgLum, 1e-4);
+  const fixed = KEY * 683 / REF;
+  const exposure = (state.autoExp ? auto : fixed) * Math.pow(2, state.ev);
+  return { sunDir: sd, exposure, ambient: st.irradiance, elev: e, evRel: Math.log2(exposure / fixed) };
+}
+
+function viewForPane() {
+  if (state.view === 'sky') return { yaw: 0, pitch: 0, fov: state.fov, fisheye: true };
+  return { yaw: state.yaw, pitch: state.pitch, fov: state.fov, fisheye: false };
+}
+function aimCamera() {
+  if (state.view === 'sun') { state.yaw = 0; state.pitch = Math.min(25, Math.max(10, (state.compare ? 14 : state.elev - 22))) * D2R; }
+  if (state.view === 'anti') { state.yaw = Math.PI; state.pitch = 12 * D2R; }
+}
+
+function fmtPct(x) {
+  if (x >= 0.995) return (100 * x).toFixed(0) + '%';
+  if (x >= 0.1) return (100 * x).toFixed(1) + '%';
+  if (x >= 1e-3) return (100 * x).toFixed(2) + '%';
+  if (x >= 1e-6) return (100 * x).toPrecision(1) + '%';
+  return x > 0 ? '≈0%' : '0%';
+}
+
+function update() {
+  const p = params();
+  co = RS.coefficients(p);
+  refreshMS(p, co, immediateMS);
+  immediateMS = false;
+  panes = state.compare ? COMPARE.map(paneFor) : [paneFor(state.elev)];
+  dirty = true;
+
+  // ---- direct beam ----
+  const e = state.elev * D2R;
+  const tr = RS.sunTransmittance(state.hObs, e, co);
+  const zen = RS.opticalDepthToTop(RS.R_E + state.hObs, 1, 4000);
+  const od = tr.od;
+  const Tfn = nm => tr.blocked ? 0 : Math.exp(-(RS.betaRayleigh(nm, p) * od[0] + RS.betaMieExt(nm, p) * od[1] + RS.betaOzone(nm, p) * od[2]));
+  const am = tr.blocked ? null : od[0] / zen[0];
+  $('kv').innerHTML = `
+    <span>Sun elevation</span><span>${state.elev.toFixed(1)}°</span>
+    <span>Relative air mass m (air crossed ÷ air at zenith)</span><span>${am ? am.toFixed(2) : 'below horizon'}</span>
+    <span>Beam path inside the atmosphere (to 100 km)</span><span>${tr.blocked ? '—' : tr.pathKm.toFixed(0) + ' km'}</span>
+    <span>Rayleigh τ along the beam, 450 / 550 / 650 nm</span><span>${tr.blocked ? '—' : [450, 550, 650].map(nm => (RS.betaRayleigh(nm, p) * od[0]).toFixed(2)).join(' / ')}</span>`;
+  $('bars').innerHTML = [[450, '#3b82f6'], [550, '#22c55e'], [650, '#ef4444']].map(([nm, c]) => {
+    const T = Tfn(nm);
+    return `<div class="bar"><span class="k">T(${nm})</span><div class="track"><div class="fill" style="width:${(100 * T).toFixed(2)}%;background:${c}"></div></div><span class="v">${fmtPct(T)}</span></div>`;
+  }).join('');
+  $('amSun').textContent = (() => { const o = RS.opticalDepthToTop(RS.R_E + state.hObs, Math.sin(0.5 * D2R), 4000); return (o[0] / zen[0]).toFixed(0); })();
+
+  // ---- colour swatches (hue only; luminance written underneath) ----
+  const sd = sunDirOf(state.elev);
+  const sunS = RS.SUN.map((s, i) => s * (tr.blocked ? 0 : tr.T[i]));
+  const sw = [
+    ['Sun disk', sunS, true],
+    ['Zenith', RS.skyRadiance([0, 1, 0], sd, state.hObs, co, lut, 64, msOrNull())],
+    ['Horizon, Sun side', RS.skyRadiance([Math.sin(35 * D2R) * Math.cos(4 * D2R), Math.sin(4 * D2R), Math.cos(35 * D2R) * Math.cos(4 * D2R)], sd, state.hObs, co, lut, 64, msOrNull())],
+    ['Horizon, opposite', RS.skyRadiance([0, Math.sin(4 * D2R), -Math.cos(4 * D2R)], sd, state.hObs, co, lut, 64, msOrNull())],
+  ];
+  $('swatches').innerHTML = sw.map(([name, S, isSun]) => {
+    const rgb = RS.spectrumToLinearRGB(S);
+    const lum = RS.luminance(S) / (isSun ? Math.PI * (0.2666 * D2R) ** 2 : 1);
+    const ok = lum > 1e-6;
+    const css = ok ? RS.cssColor(RS.chroma(rgb)) : '#111';
+    const v = !ok ? 'dark' : lum >= 1e6 ? (lum / 1e6).toFixed(lum >= 1e7 ? 0 : 1) + 'M' : lum >= 1e4 ? (lum / 1e3).toFixed(0) + 'k' : lum >= 100 ? lum.toFixed(0) : lum.toPrecision(2);
+    return `<div class="sw"><i style="background:${css}"></i><b>${v}</b>${name}</div>`;
+  }).join('');
+
+  // ---- spectrum chart ----
+  window.drawSpectrum($('spec'), RS, { params: p, T: Tfn, zenith: Array.from(sw[1][1]), sunElevDeg: state.elev });
+
+  // ---- photon path ----
+  path.setState(p, e, state.hObs);
+
+  // ---- explanations / HUD ----
+  const r = RS.betaRayleigh(450, p) / RS.betaRayleigh(650, p);
+  $('ratio1').textContent = isFinite(r) ? r.toFixed(2) : '–';
+  const rEx = RS.betaRayleighExact(450) / RS.betaRayleighExact(650);
+  $('effExp').textContent = '≈ λ^−' + (Math.log(rEx) / Math.log(650 / 450)).toFixed(2) + ' in the visible';
+  $('ratioLead').textContent = isFinite(r) ? r.toFixed(1) : '–';
+  $('tauZ').textContent = (RS.betaRayleigh(550, p) * zen[0]).toFixed(3);
+  hud();
+}
+
+function hud() {
+  const viewName = { sun: 'looking toward the Sun', anti: 'looking away from the Sun', sky: 'whole sky, zenith at centre', free: 'free look' }[state.view];
+  const ev = pn => (state.autoExp ? 'auto exposure ' : 'fixed exposure ') + (pn.evRel >= 0 ? '+' : '') + pn.evRel.toFixed(1) + ' EV';
+  if (panes.length !== (state.compare ? 2 : 1)) return;        // update() will call hud() again
+  if (state.compare) {
+    $('hudL').textContent = `Daytime · Sun ${COMPARE[0]}° · ${ev(panes[0])}`;
+    $('hudR').textContent = `Sunset · Sun ${COMPARE[1]}° · ${ev(panes[1])}`;
+    $('hudR').style.display = '';
+  } else {
+    $('hudL').textContent = `Sun ${state.elev.toFixed(1)}° · ${viewName} · ${ev(panes[0])}`;
+    $('hudR').style.display = 'none';
+  }
+}
+
+// ---------- Monte Carlo table ----------
+function drawMC() {
+  const { bands, stats, theory } = path.stats();
+  const mid = b => RS.cssColor(RS.wavelengthColor((b.lo + b.hi) / 2));
+  $('mc').innerHTML = `<tr><th>Band</th><th>Sent</th><th>Scattered out</th><th>Absorbed</th><th>Reached you (simulated)</th><th>Theory exp(−τ)</th></tr>` +
+    bands.map((b, i) => {
+      const s = stats[i], n = s.sent;
+      const pHat = n ? s.arrived / n : 0, err = n ? Math.sqrt(Math.max(pHat * (1 - pHat), 1 / n) / n) : 0;
+      return `<tr><td><span class="dot" style="background:${mid(b)}"></span>${b.lo}–${b.hi} nm</td><td>${n}</td>` +
+        `<td>${n ? fmtPct(s.scattered / n) : '–'}</td><td>${n ? fmtPct(s.absorbed / n) : '–'}</td>` +
+        `<td>${n ? fmtPct(pHat) + ' ± ' + (100 * err).toFixed(1) : '–'}</td><td>${fmtPct(theory[i] || 0)}</td></tr>`;
+    }).join('');
+}
+
+// ---------- Controls ----------
+function bindRange(id, outId, fmt, apply) {
+  const el = $(id);
+  const fn = () => { const v = parseFloat(el.value); $(outId).textContent = fmt(v); apply(v); update(); };
+  el.addEventListener('input', fn);
+  return v => { el.value = v; $(outId).textContent = fmt(v); };
+}
+const setElevUI = bindRange('elev', 'elevOut', v => v.toFixed(1) + '°', v => { state.elev = v; markPreset(); aimCamera(); });
+bindRange('aod', 'aodOut', v => v.toFixed(2), v => { state.aod = v; });
+bindRange('dens', 'densOut', v => v.toFixed(2) + '×', v => { state.density = v; });
+bindRange('exp', 'expOut', v => v.toFixed(1), v => { state.exponent = v; });
+bindRange('alt', 'altOut', v => v.toFixed(1) + ' km', v => { state.hObs = v; });
+bindRange('ev', 'evOut', v => (v >= 0 ? '+' : '') + v.toFixed(1) + ' EV', v => { state.ev = v; });
+for (const [id, key] of [['cR', 'rayleigh'], ['cO', 'ozone'], ['cM', 'aerosol'], ['cAuto', 'autoExp'], ['cMtn', 'mountains'], ['cMS', 'multiple']])
+  $(id).addEventListener('change', e => { state[key] = e.target.checked; immediateMS = true; update(); });
+for (const id of ['lawExact', 'lawCustom'])
+  $(id).addEventListener('change', () => { state.exact = $('lawExact').checked; $('exp').disabled = state.exact; immediateMS = true; update(); });
+
+function markPreset() {
+  document.querySelectorAll('[data-elev]').forEach(b => b.classList.toggle('on', !state.compare && Math.abs(+b.dataset.elev - state.elev) < 0.05));
+}
+document.querySelectorAll('[data-elev]').forEach(b => b.addEventListener('click', () => {
+  stopPlay(); state.compare = false; $('compare').classList.remove('on');
+  state.elev = +b.dataset.elev; setElevUI(state.elev); markPreset(); aimCamera(); update();
+}));
+function setView(v) {
+  state.view = v;
+  document.querySelectorAll('#viewSeg button').forEach(b => b.classList.toggle('on', b.dataset.view === v));
+  aimCamera(); dirty = true; hud();
+}
+document.querySelectorAll('#viewSeg button').forEach(b => b.addEventListener('click', () => setView(b.dataset.view)));
+$('compare').addEventListener('click', () => {
+  stopPlay(); state.compare = !state.compare; $('compare').classList.toggle('on', state.compare);
+  if (state.compare && state.view === 'free') setView('sun');
+  markPreset(); aimCamera(); update();
+});
+
+let playT = 0;
+function stopPlay() { state.playing = false; $('play').textContent = '▶ Play sunset'; $('play').classList.remove('on'); }
+$('play').addEventListener('click', () => {
+  if (state.playing) return stopPlay();
+  state.compare = false; $('compare').classList.remove('on');
+  state.playing = true; playT = 0; $('play').textContent = '❚❚ Pause'; $('play').classList.add('on');
+  if (state.view === 'sky' || state.view === 'free') setView('sun');
+});
+
+// Drag to look, wheel to zoom.
+const skyCanvas = $('sky');
+let drag = null;
+skyCanvas.addEventListener('pointerdown', e => { drag = { x: e.clientX, y: e.clientY }; skyCanvas.setPointerCapture(e.pointerId); });
+skyCanvas.addEventListener('pointermove', e => {
+  if (!drag || state.view === 'sky') return;
+  const k = state.fov * D2R / skyCanvas.clientHeight;
+  state.yaw -= (e.clientX - drag.x) * k; state.pitch = Math.max(-30 * D2R, Math.min(89 * D2R, state.pitch + (e.clientY - drag.y) * k));
+  drag = { x: e.clientX, y: e.clientY };
+  if (state.view !== 'free') { state.view = 'free'; document.querySelectorAll('#viewSeg button').forEach(b => b.classList.remove('on')); }
+  dirty = true; hud();
+});
+skyCanvas.addEventListener('pointerup', () => { drag = null; });
+skyCanvas.addEventListener('wheel', e => {
+  if (state.view === 'sky') return;
+  e.preventDefault();
+  state.fov = Math.max(15, Math.min(100, state.fov * Math.exp(e.deltaY * 0.001)));
+  dirty = true;
+}, { passive: false });
+
+// ---------- Validation table ----------
+(() => {
+  const s550 = RS.rayleighCrossSection(550) * 1e4;
+  const tau550 = RS.betaRayleighExact(550) * RS.H_R;
+  const rows = [
+    ['σ(550 nm), cm²', s550.toExponential(4), '4.5105e-27', 'Bodhaine 1999, Table 3'],
+    ['King factor F(air), 550 nm', RS.kingFactor(550).toFixed(5), '1.04882', 'Bodhaine 1999, Table 3'],
+    ['Zenith τ_R(550 nm), sea level', tau550.toFixed(4), '0.0971', 'Bodhaine 1999, Table 3'],
+    ['N_s at 288.15 K, 1013.25 hPa, cm⁻³', (RS.N_S * 1e-6).toExponential(5), '2.54690e+19', 'Bodhaine 1999, eq. 22'],
+  ];
+  $('val').innerHTML = '<tr><th>Quantity</th><th>This page</th><th>Published</th><th>Source</th></tr>' +
+    rows.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td style="color:var(--muted)">${r[3]}</td></tr>`).join('');
+})();
+
+// ---------- Sizing and main loop ----------
+function resize() {
+  const sb = $('skyBox'), pb = $('pvBox');
+  sky.resize(sb.clientWidth, sb.clientHeight);
+  path.resize(pb.clientWidth, pb.clientHeight);
+  dirty = true;
+  update();
+}
+new ResizeObserver(resize).observe($('skyBox'));
+window.addEventListener('resize', resize);
+
+let last = performance.now(), mcTimer = 0;
+function loop(now) {
+  const dt = Math.min(0.1, (now - last) / 1000); last = now;
+  if (state.playing) {
+    playT += dt;
+    const T = 26, t = playT % T;
+    const e = t < 24 ? 40 - 46 * (1 - Math.cos(Math.PI * t / 24)) / 2 : -6;
+    state.elev = Math.round(e * 10) / 10; setElevUI(state.elev); markPreset(); aimCamera(); update();
+  }
+  if (dirty) { sky.render(panes, viewForPane(), { co, hObs: state.hObs, mountains: state.mountains, multiple: state.multiple }); dirty = false; }
+  path.frame(dt, true);
+  mcTimer += dt;
+  if (mcTimer > 0.25) { mcTimer = 0; drawMC(); }
+  requestAnimationFrame(loop);
+}
+aimCamera(); markPreset(); resize();
+requestAnimationFrame(loop);
+window.__rs = { state, update, setView, panes: () => panes };
+</script>
+</body>
+</html>
